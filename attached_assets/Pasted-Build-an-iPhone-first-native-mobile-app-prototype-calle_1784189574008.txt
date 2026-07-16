@@ -1,0 +1,99 @@
+Build an iPhone-first native mobile app prototype called PinHunt UK using React Native, Expo, Expo Router and strict TypeScript.
+
+This application is for Disney pin collectors in the UK and Europe. For this first version, use local mocked data only. Do not connect Supabase, eBay, OpenAI or any paid external service yet.
+
+Create five bottom navigation tabs:
+
+1. Home
+2. Catalogue
+3. Scan
+4. Collection
+5. Profile
+
+Home screen:
+
+* Welcome header
+* Search bar
+* Recently viewed pins
+* New releases section
+* Collection summary showing number owned, wanted and available for trade
+
+Catalogue:
+
+* Display pins as attractive image cards
+* Search by pin name
+* Filters for character, brand, collection and ownership status
+* Brands should include Disney Parks, Loungefly and BoxLunch
+* Tapping a pin opens its full detail page
+
+Pin detail page:
+
+* Large front image
+* Optional back image
+* Pin title
+* Brand
+* Collection or series
+* Characters
+* Release date
+* Original retail price
+* Limited-edition size where applicable
+* Buttons for Owned, Wanted and For Trade
+* Notes field
+* Mock UK estimated value with a clear label stating that it is sample data
+
+Scan screen:
+
+* Create a camera-style interface
+* Include buttons for photographing the front and back
+* For now, use a mocked scan process
+* After the user presses Identify Pin, show three possible matches with confidence scores
+* Let the user select the correct match
+* Add the selected pin to their collection
+* Clearly mark this as prototype recognition rather than real AI recognition
+
+Collection:
+
+* Sections for Owned, Wanted and For Trade
+* Grid and list views
+* Search and filters
+* Collection summary
+* Estimated collection value using sample values
+
+Profile:
+
+* Display name
+* General UK region
+* Trading preferences
+* Settings placeholders
+* About and feedback options
+
+Sample data:
+
+* Create approximately 20 fictional or generic sample pin records
+* Include a mixture of Disney Parks, Loungefly and BoxLunch-style entries
+* Do not copy copyrighted product photography
+* Use simple placeholder images, gradients or original generic pin illustrations
+* Include realistic metadata fields so the application structure can later support real records
+
+Design:
+
+* Polished collector-focused interface
+* Large pin photography
+* Rounded cards
+* Light and dark mode
+* Accessible font sizes and controls
+* Designed primarily for current iPhone screen dimensions
+* Avoid copying Disney’s branding or another pin application’s interface
+
+Technical requirements:
+
+* Use Expo Router
+* Use reusable components
+* Keep sample data in a clearly named mock-data folder
+* Create TypeScript types for pins, collections and users
+* Preserve a clean structure that can later connect to Supabase
+* Include loading, empty and error states
+* Do not add unnecessary packages
+* Do not create a web-only app
+
+First explain the proposed screen structure and file structure. Then build the working prototype.

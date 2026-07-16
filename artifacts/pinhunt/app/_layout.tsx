@@ -5,6 +5,7 @@ import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { CollectionProvider } from '@/context/CollectionContext';
+import { BoardsProvider } from '@/context/BoardsContext';
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -23,13 +24,8 @@ function RootLayoutNav() {
   return (
     <Stack screenOptions={{ headerBackTitle: 'Back' }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen
-        name="pin/[id]"
-        options={{
-          title: 'Pin Detail',
-          headerBackTitle: 'Back',
-        }}
-      />
+      <Stack.Screen name="pin/[id]" options={{ title: 'Pin Detail' }} />
+      <Stack.Screen name="board/[id]" options={{ title: 'Board' }} />
     </Stack>
   );
 }
@@ -55,11 +51,13 @@ export default function RootLayout() {
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
           <CollectionProvider>
-            <GestureHandlerRootView style={{ flex: 1 }}>
-              <KeyboardProvider>
-                <RootLayoutNav />
-              </KeyboardProvider>
-            </GestureHandlerRootView>
+            <BoardsProvider>
+              <GestureHandlerRootView style={{ flex: 1 }}>
+                <KeyboardProvider>
+                  <RootLayoutNav />
+                </KeyboardProvider>
+              </GestureHandlerRootView>
+            </BoardsProvider>
           </CollectionProvider>
         </QueryClientProvider>
       </ErrorBoundary>

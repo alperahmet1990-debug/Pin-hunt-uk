@@ -93,7 +93,7 @@ export default function ProfileScreen() {
             <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
             <View style={styles.statItem}>
               <Text style={[styles.statCount, { color: colors.wanted }]}>{counts.wanted}</Text>
-              <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Wanted</Text>
+              <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>ISO</Text>
             </View>
             <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
             <View style={styles.statItem}>

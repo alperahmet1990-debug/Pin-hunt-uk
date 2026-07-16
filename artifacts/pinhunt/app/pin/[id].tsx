@@ -21,7 +21,7 @@ import type { CollectionStatus } from '@/types/pin';
 
 const STATUS_CONFIG: Array<{ status: CollectionStatus; label: string; icon: keyof typeof Feather.glyphMap }> = [
   { status: 'owned', label: 'Owned', icon: 'check-circle' },
-  { status: 'wanted', label: 'Wanted', icon: 'bookmark' },
+  { status: 'wanted', label: 'ISO', icon: 'bookmark' },
   { status: 'for_trade', label: 'For Trade', icon: 'repeat' },
 ];
 

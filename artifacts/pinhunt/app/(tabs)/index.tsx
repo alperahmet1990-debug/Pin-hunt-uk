@@ -107,7 +107,7 @@ export default function HomeScreen() {
             <View style={[styles.summaryDivider, { backgroundColor: colors.border }]} />
             <View style={styles.summaryItem}>
               <Text style={[styles.summaryCount, { color: colors.wanted }]}>{counts.wanted}</Text>
-              <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>Wanted</Text>
+              <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>ISO</Text>
             </View>
             <View style={[styles.summaryDivider, { backgroundColor: colors.border }]} />
             <View style={styles.summaryItem}>

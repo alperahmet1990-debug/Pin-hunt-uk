@@ -23,7 +23,7 @@ type ViewMode = 'grid' | 'list';
 
 const SECTIONS: Array<{ key: Section; label: string }> = [
   { key: 'owned', label: 'Owned' },
-  { key: 'wanted', label: 'Wanted' },
+  { key: 'wanted', label: 'ISO' },
   { key: 'for_trade', label: 'For Trade' },
 ];
 
@@ -74,7 +74,7 @@ export default function CollectionScreen() {
 
   const emptyMessages: Record<Section, { title: string; subtitle: string }> = {
     owned: { title: 'No pins owned yet', subtitle: 'Mark pins as Owned from the Catalogue or Scan tabs.' },
-    wanted: { title: 'Wish list is empty', subtitle: 'Mark pins as Wanted to build your wish list.' },
+    wanted: { title: 'No ISO pins yet', subtitle: 'Mark pins as ISO to track what you are searching for.' },
     for_trade: { title: 'Nothing up for trade', subtitle: "Mark pins as For Trade to let others know you're open to swaps." },
   };
 
@@ -106,7 +106,7 @@ export default function CollectionScreen() {
           </View>
           <View style={styles.summaryItem}>
             <Text style={[styles.summaryCount, { color: colors.wanted }]}>{counts.wanted}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>Wanted</Text>
+            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>ISO</Text>
           </View>
           <View style={styles.summaryItem}>
             <Text style={[styles.summaryCount, { color: colors.forTrade }]}>{counts.forTrade}</Text>

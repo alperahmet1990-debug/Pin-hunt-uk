@@ -10,7 +10,7 @@ interface CollectionBadgeProps {
 
 const LABELS: Record<CollectionStatus, string> = {
   owned: 'Owned',
-  wanted: 'Wanted',
+  wanted: 'ISO',
   for_trade: 'For Trade',
   none: '',
 };

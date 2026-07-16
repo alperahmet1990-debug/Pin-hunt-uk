@@ -23,7 +23,7 @@ const BRANDS: Array<Brand | 'All'> = ['All', 'Disney Parks', 'Loungefly', 'BoxLu
 const STATUSES: Array<{ label: string; value: StatusFilter }> = [
   { label: 'All', value: 'any' },
   { label: 'Owned', value: 'owned' },
-  { label: 'Wanted', value: 'wanted' },
+  { label: 'ISO', value: 'wanted' },
   { label: 'For Trade', value: 'for_trade' },
   { label: 'Not in Collection', value: 'none' },
 ];

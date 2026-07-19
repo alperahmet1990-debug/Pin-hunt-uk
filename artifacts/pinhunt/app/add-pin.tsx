@@ -254,11 +254,10 @@ export default function AddPinScreen() {
         try {
           const path = `${user.id}/${Date.now()}/front.jpg`;
           await uploadLocalImageToStorage(frontUri, 'pin-submissions', path, supabase.storage);
-          // 1-year signed URL — long enough for a moderator to swap in a permanent one
-          const { data: urlData } = await supabase.storage
+          const { data: urlData } = supabase.storage
             .from('pin-submissions')
-            .createSignedUrl(path, 31_536_000);
-          imageUrl = urlData?.signedUrl ?? undefined;
+            .getPublicUrl(path);
+          imageUrl = urlData.publicUrl;
         } catch (uploadErr) {
           console.warn('[add-pin] image upload failed:', uploadErr);
           Alert.alert(

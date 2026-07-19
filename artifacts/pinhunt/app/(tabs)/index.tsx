@@ -14,16 +14,19 @@ import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
-import { PINS, NEW_RELEASES } from '@/mock-data/pins';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { getPinImageSource } from '@/utils/pinImage';
 import { MOCK_USER } from '@/mock-data/user';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SearchBar } from '@/components/SearchBar';
 import { CollectionBadge } from '@/components/CollectionBadge';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 function SmallPinCard({ pinId, onPress }: { pinId: string; onPress: () => void }) {
   const colors = useColors();
   const { getEntry } = useCollection();
-  const pin = PINS.find(p => p.id === pinId);
+  const { pins } = usePinCatalogue();
+  const pin = pins.find(p => p.id === pinId);
   if (!pin) return null;
   const entry = getEntry(pin.id);
 
@@ -33,7 +36,7 @@ function SmallPinCard({ pinId, onPress }: { pinId: string; onPress: () => void }
       activeOpacity={0.85}
       style={[styles.smallCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
     >
-      <Image source={pin.image} style={styles.smallImage} />
+      <Image source={getPinImageSource(pin)} style={styles.smallImage} />
       <View style={styles.smallInfo}>
         <Text style={[styles.smallTitle, { color: colors.foreground }]} numberOfLines={2}>{pin.title}</Text>
         {entry && <CollectionBadge status={entry.status} size="sm" />}
@@ -42,7 +45,7 @@ function SmallPinCard({ pinId, onPress }: { pinId: string; onPress: () => void }
   );
 }
 
-function NewReleaseCard({ pin, onPress }: { pin: typeof PINS[0]; onPress: () => void }) {
+function NewReleaseCard({ pin, onPress }: { pin: CataloguePin; onPress: () => void }) {
   const colors = useColors();
   return (
     <TouchableOpacity
@@ -50,11 +53,11 @@ function NewReleaseCard({ pin, onPress }: { pin: typeof PINS[0]; onPress: () => 
       activeOpacity={0.85}
       style={[styles.newCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
     >
-      <Image source={pin.image} style={styles.newImage} />
+      <Image source={getPinImageSource(pin)} style={styles.newImage} />
       <View style={styles.newInfo}>
         <Text style={[styles.newTitle, { color: colors.foreground }]} numberOfLines={2}>{pin.title}</Text>
         <Text style={[styles.newBrand, { color: colors.mutedForeground }]}>{pin.brand}</Text>
-        <Text style={[styles.newPrice, { color: colors.gold }]}>Est. £{pin.estimatedValueGBP}</Text>
+        <Text style={[styles.newPrice, { color: colors.gold }]}>Est. £{pin.estimatedValueGBP ?? '—'}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -65,6 +68,7 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { counts, recentlyViewed } = useCollection();
+  const { pins, newReleases } = usePinCatalogue();
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -99,6 +103,7 @@ export default function HomeScreen() {
         {/* Collection Summary */}
         <View style={[styles.summaryCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius, marginHorizontal: 16 }]}>
           <Text style={[styles.summaryTitle, { color: colors.foreground }]}>My Collection</Text>
+          {/* pins.length available for catalogue size display */}
           <View style={styles.summaryRow}>
             <View style={styles.summaryItem}>
               <Text style={[styles.summaryCount, { color: colors.owned }]}>{counts.owned}</Text>
@@ -149,7 +154,7 @@ export default function HomeScreen() {
             onAction={() => router.push('/(tabs)/catalogue')}
           />
           <FlatList
-            data={NEW_RELEASES}
+            data={newReleases}
             keyExtractor={p => p.id}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -167,7 +172,7 @@ export default function HomeScreen() {
         <View style={styles.section}>
           <SectionHeader
             title="Browse Catalogue"
-            actionLabel={`${PINS.length} Pins`}
+            actionLabel={`${pins.length} Pins`}
             onAction={() => router.push('/(tabs)/catalogue')}
           />
           <TouchableOpacity

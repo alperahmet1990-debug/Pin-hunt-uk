@@ -18,9 +18,11 @@ import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
-import { PINS } from '@/mock-data/pins';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
-import type { CollectionStatus, Pin } from '@/types/pin';
+import type { CollectionStatus } from '@/types/pin';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── Status config ───────────────────────────────────────────────────────────
 
@@ -73,7 +75,7 @@ interface EbayListing {
   hoursLeft?: number;
 }
 
-function generateListings(pin: Pin, country: EbayCountry): EbayListing[] {
+function generateListings(pin: CataloguePin, country: EbayCountry): EbayListing[] {
   const cfg = COUNTRY_CONFIG[country];
   const seed = pin.id + country;
 
@@ -81,7 +83,7 @@ function generateListings(pin: Pin, country: EbayCountry): EbayListing[] {
     const r = (off: number) => seededHash(seed, i * 11 + off);
 
     const variance = 0.72 + r(0) * 0.75;
-    const rawPrice = pin.estimatedValueGBP * cfg.rate * variance;
+    const rawPrice = (pin.estimatedValueGBP ?? 0) * cfg.rate * variance;
     const priceNum = rawPrice < 10
       ? Math.round(rawPrice * 100) / 100
       : Math.round(rawPrice * 2) / 2;
@@ -126,10 +128,10 @@ export default function PinDetailScreen() {
   const router = useRouter();
   const { getEntry, setStatus, markViewed } = useCollection();
   const { allBoards, customBoards, createBoard, addPinToBoard, removePinFromBoard } = useBoards();
+  const { pins } = usePinCatalogue();
 
-  const pin = PINS.find(p => p.id === id);
+  const pin = pins.find(p => p.id === id);
   const entry = pin ? getEntry(pin.id) : undefined;
-  const [showBack, setShowBack] = useState(false);
   const [ebayCountry, setEbayCountry] = useState<EbayCountry>('UK');
   const [boardModalVisible, setBoardModalVisible] = useState(false);
   const [newBoardName, setNewBoardName] = useState('');
@@ -163,7 +165,7 @@ export default function PinDetailScreen() {
     s === 'owned' ? colors.owned : s === 'wanted' ? colors.wanted : colors.forTrade;
 
   // Pins in the same collection, excluding current
-  const setmates = PINS.filter(p => p.collection === pin.collection && p.id !== pin.id);
+  const setmates = pins.filter(p => p.collection === pin.collection && p.id !== pin.id);
 
   // eBay listings for selected country
   const listings = useMemo(() => generateListings(pin, ebayCountry), [pin.id, ebayCountry]);
@@ -211,21 +213,9 @@ export default function PinDetailScreen() {
         {/* ── Hero Image ── */}
         <View style={styles.imageWrap}>
           <Image
-            source={showBack && pin.backImage ? pin.backImage : pin.image}
+            source={getPinImageSource(pin)}
             style={styles.mainImage}
           />
-          {pin.backImage && (
-            <TouchableOpacity
-              onPress={() => setShowBack(b => !b)}
-              style={[styles.flipBtn, { backgroundColor: colors.card, borderColor: colors.border }]}
-              activeOpacity={0.8}
-            >
-              <Feather name="refresh-cw" size={14} color={colors.foreground} />
-              <Text style={[styles.flipLabel, { color: colors.foreground }]}>
-                {showBack ? 'Front' : 'Back'}
-              </Text>
-            </TouchableOpacity>
-          )}
           {pin.limitedEditionSize && (
             <View style={[styles.leBadge, { backgroundColor: colors.gold }]}>
               <Text style={styles.leLabel}>LE {pin.limitedEditionSize.toLocaleString()}</Text>
@@ -321,12 +311,12 @@ export default function PinDetailScreen() {
             {pin.characters.length > 0 && (
               <MetaRow label="Characters" value={pin.characters.join(', ')} colors={colors} />
             )}
-            <MetaRow label="Origin" value={pin.origin} colors={colors} />
-            <MetaRow label="Edition" value={pin.edition} colors={colors} />
-            <MetaRow label="Release Date" value={formatDate(pin.releaseDate)} colors={colors} />
+            <MetaRow label="Origin" value={pin.origin ?? '—'} colors={colors} />
+            <MetaRow label="Edition" value={pin.edition ?? '—'} colors={colors} />
+            <MetaRow label="Release Date" value={pin.releaseDate ? formatDate(pin.releaseDate) : '—'} colors={colors} />
             <MetaRow
               label="Retail Price"
-              value={`£${pin.retailPrice.toFixed(2)}`}
+              value={pin.retailPriceGBP != null ? `£${pin.retailPriceGBP.toFixed(2)}` : '—'}
               colors={colors}
               last={!pin.limitedEditionSize}
             />
@@ -400,14 +390,14 @@ export default function PinDetailScreen() {
               <View style={styles.valueRange}>
                 <View style={styles.valueRangeItem}>
                   <Text style={[styles.valueRangeNum, { color: colors.owned }]}>
-                    {cfg.symbol}{(pin.estimatedValueGBP * cfg.rate * 0.72).toFixed(2)}
+                    {cfg.symbol}{((pin.estimatedValueGBP ?? 0) * cfg.rate * 0.72).toFixed(2)}
                   </Text>
                   <Text style={[styles.valueRangeLabel, { color: colors.mutedForeground }]}>Low</Text>
                 </View>
                 <View style={[styles.valueRangeDivider, { backgroundColor: colors.border }]} />
                 <View style={styles.valueRangeItem}>
                   <Text style={[styles.valueRangeNum, { color: colors.forTrade }]}>
-                    {cfg.symbol}{(pin.estimatedValueGBP * cfg.rate * 1.47).toFixed(2)}
+                    {cfg.symbol}{((pin.estimatedValueGBP ?? 0) * cfg.rate * 1.47).toFixed(2)}
                   </Text>
                   <Text style={[styles.valueRangeLabel, { color: colors.mutedForeground }]}>High</Text>
                 </View>
@@ -510,7 +500,7 @@ export default function PinDetailScreen() {
                     idx === listings.length - 1 && styles.listingRowLast,
                   ]}
                 >
-                  <Image source={pin.image} style={[styles.listingThumb, { borderRadius: 6 }]} />
+                  <Image source={getPinImageSource(pin)} style={[styles.listingThumb, { borderRadius: 6 }]} />
                   <View style={styles.listingInfo}>
                     <Text
                       style={[styles.listingTitle, { color: colors.foreground }]}

@@ -17,10 +17,11 @@ import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useBoards } from '@/context/BoardsContext';
 import { useCollection } from '@/context/CollectionContext';
-import { PINS } from '@/mock-data/pins';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
 import { EmptyState } from '@/components/EmptyState';
-import type { Pin } from '@/types/pin';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 export default function BoardDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -28,6 +29,7 @@ export default function BoardDetailScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { getBoardById, getBoardPins, addPinToBoard, removePinFromBoard, deleteBoard } = useBoards();
+  const { pins: catalogue } = usePinCatalogue();
   const { collection } = useCollection();
 
   const [addModalVisible, setAddModalVisible] = useState(false);
@@ -47,7 +49,7 @@ export default function BoardDetailScreen() {
         .filter(e => e.status === 'owned')
         .map(e => e.pinId),
     );
-    return PINS.filter(p => ownedIds.has(p.id) && !boardPinIds.has(p.id));
+    return catalogue.filter(p => ownedIds.has(p.id) && !boardPinIds.has(p.id));
   }, [board, collection]);
 
   if (!board) {
@@ -81,12 +83,12 @@ export default function BoardDetailScreen() {
     );
   };
 
-  const handleAddPin = (pin: Pin) => {
+  const handleAddPin = (pin: CataloguePin) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     addPinToBoard(board.id, pin.id);
   };
 
-  const handleRemovePin = (pin: Pin) => {
+  const handleRemovePin = (pin: CataloguePin) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     Alert.alert(
       'Remove Pin',
@@ -234,7 +236,7 @@ export default function BoardDetailScreen() {
                   activeOpacity={0.8}
                   style={[styles.addRow, { borderBottomColor: colors.border }]}
                 >
-                  <Image source={item.image} style={styles.addRowImage} />
+                  <Image source={getPinImageSource(item)} style={styles.addRowImage} />
                   <View style={styles.addRowInfo}>
                     <Text style={[styles.addRowTitle, { color: colors.foreground }]} numberOfLines={2}>
                       {item.title}

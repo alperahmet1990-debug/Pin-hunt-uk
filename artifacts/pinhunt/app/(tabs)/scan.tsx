@@ -18,8 +18,9 @@ import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
-import { PINS } from '@/mock-data/pins';
-import type { Pin } from '@/types/pin';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { getPinImageSource } from '@/utils/pinImage';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── API ─────────────────────────────────────────────────────────────────────
 
@@ -55,7 +56,7 @@ interface CapturedImage {
 }
 
 interface Match {
-  pin: Pin;
+  pin: CataloguePin;
   confidence: number;
   reasoning: string;
 }
@@ -83,11 +84,12 @@ export default function ScanScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { setStatus, markViewed } = useCollection();
+  const { pins } = usePinCatalogue();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
-  const [selectedMatch, setSelectedMatch] = useState<Pin | null>(null);
+  const [selectedMatch, setSelectedMatch] = useState<CataloguePin | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
@@ -163,11 +165,11 @@ export default function ScanScreen() {
 
       const resolved: Match[] = rawMatches
         .map(m => {
-          const pin = PINS.find(p => p.id === m.pinId);
+          const pin = pins.find(p => p.id === m.pinId);
           if (!pin) return null;
           return { pin, confidence: m.confidence, reasoning: m.reasoning };
         })
-        .filter((m): m is Match => m !== null);
+        .filter(Boolean) as Match[];
 
       if (resolved.length === 0) {
         setErrorMsg('No matches found. Try a clearer photo with good lighting.');
@@ -339,7 +341,7 @@ export default function ScanScreen() {
           {scanState === 'confirmed' && selectedMatch && (
             <View style={styles.confirmedBlock}>
               <View style={[styles.confirmedCard, { backgroundColor: colors.card, borderRadius: colors.radius, borderColor: colors.border }]}>
-                <Image source={selectedMatch.image} style={styles.confirmedCardImage} />
+                <Image source={getPinImageSource(selectedMatch)} style={styles.confirmedCardImage} />
                 <View style={styles.confirmedCardInfo}>
                   <Text style={[styles.confirmedCardTitle, { color: colors.foreground }]}>{selectedMatch.title}</Text>
                   <Text style={[styles.confirmedCardBrand, { color: colors.mutedForeground }]}>{selectedMatch.brand}</Text>
@@ -387,7 +389,7 @@ export default function ScanScreen() {
                 <View style={styles.matchRankWrap}>
                   <Text style={[styles.matchRank, { color: colors.mutedForeground }]}>#{i + 1}</Text>
                 </View>
-                <Image source={match.pin.image} style={styles.matchImage} />
+                <Image source={getPinImageSource(match.pin)} style={styles.matchImage} />
                 <View style={styles.matchInfo}>
                   <Text style={[styles.matchTitle, { color: colors.foreground }]} numberOfLines={2}>
                     {match.pin.title}

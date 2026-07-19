@@ -12,7 +12,7 @@ import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
-import { PINS } from '@/mock-data/pins';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinCard } from '@/components/PinCard';
 import { SearchBar } from '@/components/SearchBar';
 import { FilterBar, StatusFilter } from '@/components/FilterBar';
@@ -27,6 +27,7 @@ export default function CatalogueScreen() {
   const router = useRouter();
   const { getEntry } = useCollection();
 
+  const { pins } = usePinCatalogue();
   const [query, setQuery] = useState('');
   const [brand, setBrand] = useState<Brand | 'All'>('All');
   const [status, setStatus] = useState<StatusFilter>('any');
@@ -36,7 +37,7 @@ export default function CatalogueScreen() {
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
 
   const filtered = useMemo(() => {
-    return PINS.filter(pin => {
+    return pins.filter(pin => {
       if (query) {
         const q = query.toLowerCase();
         const match =

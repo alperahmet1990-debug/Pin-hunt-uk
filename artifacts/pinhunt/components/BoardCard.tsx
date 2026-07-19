@@ -8,12 +8,13 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { getPinImageSource } from '@/utils/pinImage';
 import type { Board } from '@/types/board';
-import type { Pin } from '@/types/pin';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 interface BoardCardProps {
   board: Board;
-  pins: Pin[];
+  pins: CataloguePin[];
   onPress: () => void;
 }
 
@@ -40,13 +41,13 @@ export function BoardCard({ board, pins, onPress }: BoardCardProps) {
           <Feather name="grid" size={24} color={colors.mutedForeground} />
         </View>
       ) : thumbs.length === 1 ? (
-        <Image source={thumbs[0].image} style={styles.singleThumb} />
+        <Image source={getPinImageSource(thumbs[0])} style={styles.singleThumb} />
       ) : (
         <View style={styles.thumbGrid}>
           {[0, 1, 2, 3].map(i => (
             <View key={i} style={[styles.thumbCell, { backgroundColor: colors.muted }]}>
               {thumbs[i] ? (
-                <Image source={thumbs[i].image} style={styles.thumbCellImage} />
+                <Image source={getPinImageSource(thumbs[i]!)} style={styles.thumbCellImage} />
               ) : null}
             </View>
           ))}
@@ -92,7 +93,7 @@ export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
       ]}
     >
       {thumb ? (
-        <Image source={thumb.image} style={styles.hThumb} />
+        <Image source={getPinImageSource(thumb)} style={styles.hThumb} />
       ) : (
         <View style={[styles.hThumb, styles.hThumbEmpty, { backgroundColor: colors.muted }]}>
           <Feather name="grid" size={18} color={colors.mutedForeground} />

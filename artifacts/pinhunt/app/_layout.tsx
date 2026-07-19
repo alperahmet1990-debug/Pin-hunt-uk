@@ -6,6 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { CollectionProvider } from '@/context/CollectionContext';
 import { BoardsProvider } from '@/context/BoardsContext';
+import { PinCatalogueProvider } from '@/context/PinCatalogueContext';
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -50,6 +51,7 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
+          <PinCatalogueProvider>
           <CollectionProvider>
             <BoardsProvider>
               <GestureHandlerRootView style={{ flex: 1 }}>
@@ -59,6 +61,7 @@ export default function RootLayout() {
               </GestureHandlerRootView>
             </BoardsProvider>
           </CollectionProvider>
+          </PinCatalogueProvider>
         </QueryClientProvider>
       </ErrorBoundary>
     </SafeAreaProvider>

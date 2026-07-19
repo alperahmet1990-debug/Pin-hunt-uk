@@ -10,7 +10,8 @@ import {
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { CollectionBadge } from './CollectionBadge';
-import type { Pin } from '@/types/pin';
+import { getPinImageSource } from '@/utils/pinImage';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const GRID_CARD_WIDTH = (SCREEN_WIDTH - 16 * 2 - 12) / 2;
@@ -22,7 +23,7 @@ const BRAND_COLORS: Record<string, string> = {
 };
 
 interface PinCardProps {
-  pin: Pin;
+  pin: CataloguePin;
   onPress: () => void;
   mode?: 'grid' | 'list';
 }
@@ -47,7 +48,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
           },
         ]}
       >
-        <Image source={pin.image} style={styles.listImage} />
+        <Image source={getPinImageSource(pin)} style={styles.listImage} />
         <View style={styles.listInfo}>
           <Text
             style={[styles.listTitle, { color: colors.foreground }]}
@@ -70,7 +71,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
           </Text>
           <View style={styles.listFooter}>
             <Text style={[styles.listPrice, { color: colors.gold }]}>
-              £{pin.estimatedValueGBP.toFixed(0)}
+              £{(pin.estimatedValueGBP ?? 0).toFixed(0)}
             </Text>
             {status !== 'none' && <CollectionBadge status={status} size="sm" />}
           </View>
@@ -99,7 +100,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
       ]}
     >
       <View style={styles.imageWrap}>
-        <Image source={pin.image} style={styles.gridImage} />
+        <Image source={getPinImageSource(pin)} style={styles.gridImage} />
         {pin.limitedEditionSize ? (
           <View style={[styles.leBadge, { backgroundColor: colors.gold }]}>
             <Text style={styles.leLabel}>LE</Text>
@@ -130,7 +131,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
         </View>
         <View style={styles.gridFooter}>
           <Text style={[styles.gridPrice, { color: colors.gold }]}>
-            £{pin.estimatedValueGBP.toFixed(0)}
+            £{(pin.estimatedValueGBP ?? 0).toFixed(0)}
           </Text>
           {status !== 'none' && <CollectionBadge status={status} size="sm" />}
         </View>

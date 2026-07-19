@@ -17,12 +17,13 @@ import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
-import { PINS } from '@/mock-data/pins';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinCard } from '@/components/PinCard';
 import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
 import { BoardCardHorizontal } from '@/components/BoardCard';
 import type { CollectionStatus } from '@/types/pin';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 type Section = 'owned' | 'wanted' | 'for_trade';
 type ViewMode = 'grid' | 'list';
@@ -38,6 +39,7 @@ export default function CollectionScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection, counts } = useCollection();
+  const { pins: catalogue } = usePinCatalogue();
   const { allBoards, createBoard, getBoardPins } = useBoards();
 
   const [section, setSection] = useState<Section>('owned');
@@ -55,8 +57,8 @@ export default function CollectionScreen() {
       .filter(e => e.status === section)
       .map(e => e.pinId);
     const pins = pinIds
-      .map(id => PINS.find(p => p.id === id))
-      .filter((p): p is (typeof PINS)[0] => p !== undefined);
+      .map(id => catalogue.find(p => p.id === id))
+      .filter((p): p is CataloguePin => p !== undefined);
 
     if (!query) return pins;
     const q = query.toLowerCase();
@@ -71,7 +73,7 @@ export default function CollectionScreen() {
   const estimatedValue = useMemo(() => {
     const owned = Object.values(collection)
       .filter(e => e.status === 'owned')
-      .map(e => PINS.find(p => p.id === e.pinId))
+      .map(e => catalogue.find(p => p.id === e.pinId))
       .filter(Boolean);
     return owned.reduce((sum, p) => sum + (p?.estimatedValueGBP ?? 0), 0);
   }, [collection]);

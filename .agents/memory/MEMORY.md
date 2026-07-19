@@ -1,0 +1,1 @@
+- [PinHunt architecture](pinhunt-arch.md) — repository pattern, mock fallback, provider hierarchy, lib build requirements

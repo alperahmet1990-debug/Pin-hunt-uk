@@ -1,24 +1,15 @@
-export type Brand = 'Disney Parks' | 'Loungefly' | 'BoxLunch';
+/**
+ * App-level type definitions.
+ *
+ * Catalogue pin data (what a pin IS) comes from @workspace/pin-repository.
+ * Only app-specific types live here — user collection state and UI enums.
+ */
+
+// Re-export for convenience so existing imports don't all need updating at once
+export type { CataloguePin as Pin } from '@workspace/pin-repository';
+
+/** User's relationship to a pin in their local collection. */
 export type CollectionStatus = 'owned' | 'wanted' | 'for_trade' | 'none';
 
-export interface Pin {
-  id: string;
-  title: string;
-  brand: Brand;
-  collection: string;
-  characters: string[];
-  releaseDate: string;
-  retailPrice: number; // GBP
-  limitedEditionSize?: number;
-  estimatedValueGBP: number; // mock/sample value
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  image: any; // require() result
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  backImage?: any;
-  description: string;
-  isNewRelease?: boolean;
-  /** Where the pin was originally sold, e.g. "Walt Disney World", "Disneyland Paris" */
-  origin: string;
-  /** Edition type, e.g. "Open Edition", "LE 2500", "WDI", "Artist Series" */
-  edition: string;
-}
+/** The three active pin manufacturers — used by FilterBar and search UI. */
+export type Brand = 'Disney Parks' | 'Loungefly' | 'BoxLunch';

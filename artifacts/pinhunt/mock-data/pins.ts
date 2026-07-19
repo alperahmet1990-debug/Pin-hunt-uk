@@ -1,6 +1,28 @@
-import type { Pin } from '@/types/pin';
+/**
+ * Legacy mock pin format — used only as the offline fallback in PinCatalogueContext.
+ * All app screens use CataloguePin from @workspace/pin-repository.
+ */
+export interface MockPin {
+  id: string;
+  title: string;
+  brand: string;
+  collection: string;
+  characters: string[];
+  releaseDate?: string;
+  retailPrice: number;
+  estimatedValueGBP: number;
+  origin?: string;
+  edition?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  image: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  backImage?: any;
+  description?: string;
+  isNewRelease?: boolean;
+  limitedEditionSize?: number;
+}
 
-export const PINS: Pin[] = [
+export const PINS: MockPin[] = [
   // ── Disney Parks ────────────────────────────────────────────────────────────
   {
     id: 'dp-001',

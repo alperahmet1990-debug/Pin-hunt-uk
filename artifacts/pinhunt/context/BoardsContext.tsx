@@ -7,10 +7,10 @@ import React, {
   useState,
 } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { PINS } from '@/mock-data/pins';
 import { useCollection } from '@/context/CollectionContext';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import type { Board } from '@/types/board';
-import type { Pin } from '@/types/pin';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 interface BoardsContextValue {
   customBoards: Board[];
@@ -21,7 +21,7 @@ interface BoardsContextValue {
   addPinToBoard: (boardId: string, pinId: string) => void;
   removePinFromBoard: (boardId: string, pinId: string) => void;
   getBoardById: (boardId: string) => Board | undefined;
-  getBoardPins: (board: Board) => Pin[];
+  getBoardPins: (board: Board) => CataloguePin[];
 }
 
 const BoardsContext = createContext<BoardsContextValue | null>(null);
@@ -34,6 +34,7 @@ function makeId() {
 
 export function BoardsProvider({ children }: { children: React.ReactNode }) {
   const { collection } = useCollection();
+  const { pins } = usePinCatalogue();
   const [customBoards, setCustomBoards] = useState<Board[]>([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -51,9 +52,10 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
   // Auto-suggested boards: one per unique collection among owned pins
   const suggestedBoards = useMemo<Board[]>(() => {
     const ownedEntries = Object.values(collection).filter(e => e.status === 'owned');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const byCollection = new Map<string, string[]>();
     for (const entry of ownedEntries) {
-      const pin = PINS.find(p => p.id === entry.pinId);
+      const pin = pins.find(p => p.id === entry.pinId);
       if (!pin) continue;
       const existing = byCollection.get(pin.collection) ?? [];
       byCollection.set(pin.collection, [...existing, pin.id]);
@@ -66,7 +68,7 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
       isCustom: false,
       suggestedCollection: col,
     }));
-  }, [collection]);
+  }, [collection, pins]);
 
   const allBoards = useMemo(
     () => [...suggestedBoards, ...customBoards],
@@ -127,7 +129,7 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
   );
 
   const getBoardPins = useCallback(
-    (board: Board): Pin[] => {
+    (board: Board): CataloguePin[] => {
       if (!board.isCustom && board.suggestedCollection) {
         // Suggested: all owned pins from that collection
         const ownedIds = new Set(
@@ -135,16 +137,16 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
             .filter(e => e.status === 'owned')
             .map(e => e.pinId),
         );
-        return PINS.filter(
+        return pins.filter(
           p => p.collection === board.suggestedCollection && ownedIds.has(p.id),
         );
       }
       // Custom: pins in pinIds order
       return board.pinIds
-        .map(id => PINS.find(p => p.id === id))
-        .filter((p): p is Pin => p !== undefined);
+        .map(id => pins.find(p => p.id === id))
+        .filter((p): p is CataloguePin => p !== undefined);
     },
-    [collection],
+    [collection, pins],
   );
 
   if (!loaded) return null;

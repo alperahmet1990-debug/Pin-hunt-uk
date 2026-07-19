@@ -232,20 +232,44 @@ export default function AddPinScreen() {
       Alert.alert('Not connected', 'Supabase is not configured.');
       return;
     }
+
     const characters = characterNames.trim()
       ? characterNames.split(',').map(s => s.trim()).filter(Boolean)
       : undefined;
 
     const description = [
       notes.trim(),
-      facNumber.trim()   ? `FAC: ${facNumber.trim()}`             : '',
-      sku.trim()         ? `SKU: ${sku.trim()}`                   : '',
-      releaseYear.trim() ? `Year: ${releaseYear.trim()}`          : '',
-      editionSize.trim() ? `Edition size: ${editionSize.trim()}`  : '',
+      facNumber.trim()   ? `FAC: ${facNumber.trim()}`            : '',
+      sku.trim()         ? `SKU: ${sku.trim()}`                  : '',
+      releaseYear.trim() ? `Year: ${releaseYear.trim()}`         : '',
+      editionSize.trim() ? `Edition size: ${editionSize.trim()}` : '',
     ].filter(Boolean).join('\n') || undefined;
 
     try {
       setSaving(true);
+
+      // ── Upload front image ────────────────────────────────────────────────
+      let imageUrl: string | undefined;
+      if (frontUri && user?.id) {
+        try {
+          const path = `${user.id}/${Date.now()}/front.jpg`;
+          const blob = await fetch(frontUri).then(r => r.blob());
+          const { error: upErr } = await supabase.storage
+            .from('pin-submissions')
+            .upload(path, blob, { contentType: 'image/jpeg', upsert: true });
+          if (!upErr) {
+            // 1-year signed URL — enough time for a moderator to process
+            const { data: urlData } = await supabase.storage
+              .from('pin-submissions')
+              .createSignedUrl(path, 31_536_000);
+            imageUrl = urlData?.signedUrl ?? undefined;
+          }
+        } catch {
+          // Non-fatal — submit without image if upload fails
+        }
+      }
+
+      // ── Insert into catalogue ─────────────────────────────────────────────
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const repo = createSupabasePinRepository(supabase as any);
       await repo.submitMissingPin({
@@ -256,9 +280,10 @@ export default function AddPinScreen() {
         edition:     editionType !== 'unknown' ? editionType : undefined,
         origin:      releaseLocation.trim() || undefined,
         description,
+        imageUrl,
         submittedBy: user?.id,
-        // imageUrl: not yet wired — storage bucket pending
       });
+
       setDone(true);
     } catch (err) {
       Alert.alert('Error', err instanceof Error ? err.message : 'Could not add pin. Try again.');

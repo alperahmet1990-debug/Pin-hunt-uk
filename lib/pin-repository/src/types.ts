@@ -313,6 +313,36 @@ export interface TradeMessage {
   createdAt: string;
 }
 
+// ─── Trade rating types ───────────────────────────────────────────────────────
+
+/** Public profile enriched with rating summary — used for the "for trade" list. */
+export interface TraderProfile extends PublicProfile {
+  positiveRatings: number;
+  totalRatings: number;
+}
+
+export interface TradeRating {
+  id: string;
+  tradeId?: string;
+  raterId: string;
+  rateeId: string;
+  isPositive: boolean;
+  comment?: string;
+  createdAt: string;
+}
+
+export interface CreateTradeRatingInput {
+  tradeId?: string;
+  rateeId: string;
+  isPositive: boolean;
+  comment?: string;
+}
+
+export interface TraderRatingSummary {
+  positive: number;
+  total: number;
+}
+
 // ─── External marketplace listing types ──────────────────────────────────────
 export type ExternalSaleListingPlatform = 'vinted' | 'ebay' | 'other';
 export type ExternalSaleListingStatus = 'draft' | 'active' | 'sold' | 'expired' | 'removed';

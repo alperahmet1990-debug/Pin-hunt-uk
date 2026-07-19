@@ -141,6 +141,7 @@ export default function PinDetailScreen() {
   const [newBoardName, setNewBoardName] = useState('');
   const [creatingBoard, setCreatingBoard] = useState(false);
   const [marketplaceListings, setMarketplaceListings] = useState<ExternalSaleListing[]>([]);
+  const [traderCount, setTraderCount] = useState(0);
 
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
 
@@ -153,6 +154,13 @@ export default function PinDetailScreen() {
     marketplaceRepo.getExternalListingsForPin(pin.id)
       .then(setMarketplaceListings)
       .catch(() => { /* non-fatal */ });
+  }, [pin?.id, marketplaceRepo]);
+
+  useEffect(() => {
+    if (!pin || !marketplaceRepo) return;
+    marketplaceRepo.getUsersWithPinForTrade(pin.id)
+      .then(traders => setTraderCount(traders.length))
+      .catch(() => {});
   }, [pin?.id, marketplaceRepo]);
 
   if (!pin) {
@@ -448,6 +456,43 @@ export default function PinDetailScreen() {
               </ScrollView>
             </View>
           )}
+
+          {/* ── For Trade ── */}
+          <View>
+            <SectionTitle
+              title="For Trade"
+              subtitle={
+                traderCount > 0
+                  ? `${traderCount} collector${traderCount !== 1 ? 's' : ''} offering this`
+                  : 'No traders yet'
+              }
+              colors={colors}
+            />
+            <TouchableOpacity
+              onPress={() => router.push({ pathname: '/traders/[pinId]', params: { pinId: pin.id } })}
+              activeOpacity={0.85}
+              style={[styles.traderBanner, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+            >
+              <View style={[styles.traderIconWrap, { backgroundColor: colors.forTrade + '20' }]}>
+                <Feather name="repeat" size={18} color={colors.forTrade} />
+              </View>
+              {traderCount === 0 ? (
+                <Text style={[styles.traderEmpty, { color: colors.mutedForeground }]}>
+                  No one has this for trade yet — tap to check
+                </Text>
+              ) : (
+                <View style={{ flex: 1 }}>
+                  <Text style={[styles.traderCountLabel, { color: colors.foreground }]}>
+                    {traderCount} collector{traderCount !== 1 ? 's' : ''} offering this for trade
+                  </Text>
+                  <Text style={[styles.traderSubLabel, { color: colors.mutedForeground }]}>
+                    Tap to view traders and request a swap
+                  </Text>
+                </View>
+              )}
+              <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+            </TouchableOpacity>
+          </View>
 
           {/* ── Marketplace Listings ── */}
           <View>
@@ -1228,4 +1273,13 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
   },
   mktAddLabel: { fontSize: 13, fontFamily: 'Inter_500Medium' },
+  // For Trade banner
+  traderBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: 12,
+    padding: 14, borderWidth: 1, marginHorizontal: 16,
+  },
+  traderIconWrap: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+  traderEmpty: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular' },
+  traderCountLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  traderSubLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
 });

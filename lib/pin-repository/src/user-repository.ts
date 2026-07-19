@@ -6,6 +6,10 @@ import type {
   ExternalSaleListing,
   PinSubmission,
   PinSubmissionStatus,
+  TraderProfile,
+  TradeRating,
+  TraderRatingSummary,
+  CreateTradeRatingInput,
   Profile,
   PublicProfile,
   SearchCollectorsInput,
@@ -200,4 +204,18 @@ export interface IUserPinRepository {
    * `storagePath` is the value stored in `front_image_path` / `back_image_path`.
    */
   getSubmissionImageUrl(storagePath: string): Promise<string>;
+
+  // ── Trade ratings & for-trade discovery ───────────────────────────────────
+
+  /**
+   * Return all users who have the given pin (internal UUID) marked as for_trade,
+   * enriched with their positive/total rating counts.
+   */
+  getUsersWithPinForTrade(pinId: string): Promise<TraderProfile[]>;
+
+  /** Aggregate positive/total ratings received by a user. */
+  getTraderRating(userId: string): Promise<TraderRatingSummary>;
+
+  /** Submit a positive or negative rating for a trader after a trade. */
+  createTradeRating(raterId: string, input: CreateTradeRatingInput): Promise<TradeRating>;
 }

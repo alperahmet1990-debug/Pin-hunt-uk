@@ -351,6 +351,30 @@ export interface Database {
           { foreignKeyName: 'trade_messages_sender_id_fkey'; columns: ['sender_id']; referencedRelation: 'users'; referencedColumns: ['id'] }
         ];
       };
+      trade_ratings: {
+        Row: {
+          id: string;
+          trade_id: string | null;
+          rater_id: string;
+          ratee_id: string;
+          is_positive: boolean;
+          comment: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          trade_id?: string | null;
+          rater_id: string;
+          ratee_id: string;
+          is_positive: boolean;
+          comment?: string | null;
+          created_at?: string;
+        };
+        Update: Record<string, never>;
+        Relationships: [
+          { foreignKeyName: 'trade_ratings_trade_id_fkey'; columns: ['trade_id']; referencedRelation: 'trades'; referencedColumns: ['id'] }
+        ];
+      };
       external_sale_listings: {
         Row: {
           id: string;

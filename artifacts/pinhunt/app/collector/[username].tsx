@@ -16,6 +16,7 @@ import { Feather } from '@expo/vector-icons';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
+import { useMarketplace } from '@/hooks/useMarketplace';
 import type { PublicProfile } from '@workspace/pin-repository';
 
 function initials(p: PublicProfile): string {
@@ -33,21 +34,29 @@ export default function CollectorProfileScreen() {
   const { username } = useLocalSearchParams<{ username: string }>();
   const { getPublicProfile } = useProfile();
 
+  const { repo } = useMarketplace();
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [rating, setRating] = useState<{ positive: number; total: number } | null>(null);
 
   useEffect(() => {
     if (!username) return;
     setLoading(true);
     getPublicProfile(username)
       .then(p => {
-        if (!p) setNotFound(true);
-        else setProfile(p);
+        if (!p) { setNotFound(true); return; }
+        setProfile(p);
+        // Load rating in background
+        if (repo) {
+          repo.getTraderRating(p.id)
+            .then(r => setRating(r))
+            .catch(() => {});
+        }
       })
       .catch(() => setNotFound(true))
       .finally(() => setLoading(false));
-  }, [username, getPublicProfile]);
+  }, [username, getPublicProfile, repo]);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
 
@@ -102,6 +111,25 @@ export default function CollectorProfileScreen() {
                 <View style={[styles.badge, { backgroundColor: colors.primary + '22' }]}>
                   <Feather name="globe" size={12} color={colors.primary} />
                   <Text style={[styles.badgeText, { color: colors.primary }]}>Open to international trades</Text>
+                </View>
+              )}
+
+              {/* Trade rating badge */}
+              {rating !== null && rating.total > 0 && (() => {
+                const pct = Math.round((rating.positive / rating.total) * 100);
+                const color = pct >= 80 ? '#16A34A' : pct >= 50 ? '#F59E0B' : '#EF4444';
+                return (
+                  <View style={[styles.badge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
+                    <Text style={{ fontSize: 12 }}>👍</Text>
+                    <Text style={[styles.badgeText, { color }]}>
+                      {rating.positive}/{rating.total} trades rated positive ({pct}%)
+                    </Text>
+                  </View>
+                );
+              })()}
+              {rating !== null && rating.total === 0 && (
+                <View style={[styles.badge, { backgroundColor: colors.secondary }]}>
+                  <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>No trade ratings yet</Text>
                 </View>
               )}
             </View>

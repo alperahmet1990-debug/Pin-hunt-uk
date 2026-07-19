@@ -1,5 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type { IUserPinRepository } from './user-repository';
+import { PinRepositoryError } from './repository';
 import type {
   AddUserPinInput,
   CataloguePin,
@@ -13,9 +14,12 @@ import type {
   Profile,
   PublicProfile,
   SearchCollectorsInput,
+  CreateTradeRatingInput,
   Trade,
   TradeItem,
   TradeMessage,
+  TraderProfile,
+  TradeRating,
   UpdateExternalSaleListingInput,
   UpdatePinSubmissionInput,
   UpdateProfileInput,
@@ -776,6 +780,90 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .createSignedUrl(storagePath, 3600);
     if (error || !data?.signedUrl) throw new Error(`Could not generate image URL: ${error?.message ?? 'unknown'}`);
     return data.signedUrl;
+  }
+
+  // ── Trade ratings & for-trade discovery ─────────────────────────────────────
+
+  async getUsersWithPinForTrade(pinId: string): Promise<TraderProfile[]> {
+    // 1. Get user_ids of people with this pin for_trade
+    const { data: pinData, error: pinErr } = await this.client
+      .from('user_pins')
+      .select('user_id')
+      .eq('pin_id', pinId)
+      .eq('status', 'for_trade');
+
+    if (pinErr || !pinData || pinData.length === 0) return [];
+    const userIds = (pinData as { user_id: string }[]).map(r => r.user_id);
+
+    // 2. Fetch their profiles (only users who have set a username = public)
+    const { data: profileData, error: profileErr } = await this.client
+      .from('profiles')
+      .select('id, username, display_name, avatar_url, bio, trading_region, international_trading_enabled')
+      .in('id', userIds)
+      .not('username', 'is', null);
+
+    if (profileErr || !profileData || profileData.length === 0) return [];
+
+    // 3. Fetch all ratings for these users in one query
+    const { data: ratingData } = await this.client
+      .from('trade_ratings')
+      .select('ratee_id, is_positive')
+      .in('ratee_id', userIds);
+
+    const ratingMap = new Map<string, { positive: number; total: number }>();
+    ((ratingData ?? []) as { ratee_id: string; is_positive: boolean }[]).forEach(r => {
+      const cur = ratingMap.get(r.ratee_id) ?? { positive: 0, total: 0 };
+      ratingMap.set(r.ratee_id, { positive: cur.positive + (r.is_positive ? 1 : 0), total: cur.total + 1 });
+    });
+
+    return (profileData as Record<string, unknown>[]).map(p => ({
+      id: p.id as string,
+      username: p.username as string,
+      displayName: (p.display_name as string | null) ?? undefined,
+      avatarUrl: (p.avatar_url as string | null) ?? undefined,
+      bio: (p.bio as string | null) ?? undefined,
+      tradingRegion: (p.trading_region as string | null) ?? undefined,
+      internationalTradingEnabled: (p.international_trading_enabled as boolean) ?? false,
+      positiveRatings: ratingMap.get(p.id as string)?.positive ?? 0,
+      totalRatings: ratingMap.get(p.id as string)?.total ?? 0,
+    }));
+  }
+
+  async getTraderRating(userId: string): Promise<{ positive: number; total: number }> {
+    const { data, error } = await this.client
+      .from('trade_ratings')
+      .select('is_positive')
+      .eq('ratee_id', userId);
+
+    if (error || !data) return { positive: 0, total: 0 };
+    const rows = data as { is_positive: boolean }[];
+    return { positive: rows.filter(r => r.is_positive).length, total: rows.length };
+  }
+
+  async createTradeRating(raterId: string, input: CreateTradeRatingInput): Promise<TradeRating> {
+    const { data, error } = await this.client
+      .from('trade_ratings')
+      .insert({
+        trade_id: input.tradeId ?? null,
+        rater_id: raterId,
+        ratee_id: input.rateeId,
+        is_positive: input.isPositive,
+        comment: input.comment ?? null,
+      })
+      .select()
+      .single();
+
+    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+    const row = data as Record<string, unknown>;
+    return {
+      id: row.id as string,
+      tradeId: (row.trade_id as string | null) ?? undefined,
+      raterId: row.rater_id as string,
+      rateeId: row.ratee_id as string,
+      isPositive: row.is_positive as boolean,
+      comment: (row.comment as string | null) ?? undefined,
+      createdAt: row.created_at as string,
+    };
   }
 }
 

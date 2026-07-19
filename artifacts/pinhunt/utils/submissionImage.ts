@@ -113,17 +113,9 @@ export async function uploadLocalImageToStorage(
     bytes[i] = binaryString.charCodeAt(i);
   }
 
-  // List available buckets to help diagnose name mismatches
-  const { data: buckets } = await storageClient.listBuckets();
-  const bucketNames = buckets?.map((b: { name: string }) => b.name).join(', ') ?? 'none';
-
   const { error } = await storageClient
     .from(bucket)
     .upload(path, bytes, { contentType: 'image/jpeg', upsert: true });
 
-  if (error) {
-    throw new Error(
-      `Storage upload failed: ${error.message}\n\nTrying bucket: "${bucket}"\nAvailable buckets: ${bucketNames}`,
-    );
-  }
+  if (error) throw new Error(`Storage upload failed: ${error.message}`);
 }

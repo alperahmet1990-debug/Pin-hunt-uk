@@ -17,4 +17,8 @@ export interface Pin {
   backImage?: any;
   description: string;
   isNewRelease?: boolean;
+  /** Where the pin was originally sold, e.g. "Walt Disney World", "Disneyland Paris" */
+  origin: string;
+  /** Edition type, e.g. "Open Edition", "LE 2500", "WDI", "Artist Series" */
+  edition: string;
 }

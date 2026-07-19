@@ -165,6 +165,11 @@ export default function ProfileScreen() {
                 icon="shopping-bag"
                 label="My Marketplace Listings"
                 onPress={() => router.push('/my-listings')}
+              />
+              <SettingsRow
+                icon="upload"
+                label="My Pin Submissions"
+                onPress={() => router.push('/my-submissions')}
                 last
               />
             </Section>

@@ -239,12 +239,72 @@ export interface Database {
         ];
       };
       pin_submissions: {
-        Row: { id: string; submitted_by: string; pin_id: string | null; submission_type: 'new_pin' | 'correction' | 'image'; proposed_data: Json; notes: string | null; status: 'pending' | 'approved' | 'rejected'; reviewed_by: string | null; reviewed_at: string | null; created_at: string; updated_at: string };
-        Insert: { id?: string; submitted_by: string; pin_id?: string | null; submission_type: 'new_pin' | 'correction' | 'image'; proposed_data?: Json; notes?: string | null; status?: 'pending' | 'approved' | 'rejected'; reviewed_by?: string | null; reviewed_at?: string | null; created_at?: string; updated_at?: string };
-        Update: { status?: 'pending' | 'approved' | 'rejected'; reviewed_by?: string | null; reviewed_at?: string | null; updated_at?: string };
+        Row: {
+          id: string;
+          submitted_by: string;
+          proposed_name: string;
+          brand: string;
+          series_name: string | null;
+          release_location: string | null;
+          release_year: number | null;
+          edition_type: 'open_edition' | 'limited_edition' | 'limited_release' | 'mystery' | 'hidden_disney' | 'unknown';
+          edition_size: number | null;
+          fac_number: string | null;
+          sku: string | null;
+          character_names: string[] | null;
+          front_image_path: string;
+          back_image_path: string | null;
+          notes: string | null;
+          status: 'draft' | 'submitted' | 'under_review' | 'approved' | 'rejected' | 'needs_changes';
+          reviewer_notes: string | null;
+          approved_pin_id: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          submitted_by: string;
+          proposed_name: string;
+          brand: string;
+          series_name?: string | null;
+          release_location?: string | null;
+          release_year?: number | null;
+          edition_type?: 'open_edition' | 'limited_edition' | 'limited_release' | 'mystery' | 'hidden_disney' | 'unknown';
+          edition_size?: number | null;
+          fac_number?: string | null;
+          sku?: string | null;
+          character_names?: string[] | null;
+          front_image_path: string;
+          back_image_path?: string | null;
+          notes?: string | null;
+          status?: 'draft' | 'submitted' | 'under_review' | 'approved' | 'rejected' | 'needs_changes';
+          reviewer_notes?: string | null;
+          approved_pin_id?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          proposed_name?: string;
+          brand?: string;
+          series_name?: string | null;
+          release_location?: string | null;
+          release_year?: number | null;
+          edition_type?: 'open_edition' | 'limited_edition' | 'limited_release' | 'mystery' | 'hidden_disney' | 'unknown';
+          edition_size?: number | null;
+          fac_number?: string | null;
+          sku?: string | null;
+          character_names?: string[] | null;
+          front_image_path?: string;
+          back_image_path?: string | null;
+          notes?: string | null;
+          status?: 'draft' | 'submitted' | 'under_review' | 'approved' | 'rejected' | 'needs_changes';
+          reviewer_notes?: string | null;
+          approved_pin_id?: string | null;
+          updated_at?: string;
+        };
         Relationships: [
-          { foreignKeyName: 'pin_submissions_submitted_by_fkey'; columns: ['submitted_by']; referencedRelation: 'users'; referencedColumns: ['id'] },
-          { foreignKeyName: 'pin_submissions_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
+          { foreignKeyName: 'pin_submissions_submitted_by_fkey'; columns: ['submitted_by']; referencedRelation: 'profiles'; referencedColumns: ['id'] },
+          { foreignKeyName: 'pin_submissions_approved_pin_id_fkey'; columns: ['approved_pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
         ];
       };
       scan_attempts: {

@@ -1,0 +1,174 @@
+Implement the first PinHunt UK catalogue contribution workflow.
+
+Do not implement AI image recognition, eBay price checking, social feeds, selling or trading in this task.
+
+The purpose of this feature is to let the authenticated user photograph a physical pin, enter its basic details and save it as a catalogue submission for review.
+
+Do not write user submissions directly into the verified pins catalogue table.
+
+Add Pin flow
+
+Create an “Add Pin” screen with these steps:
+
+1. Take or upload a front photograph
+2. Take or upload a back photograph
+3. Enter the pin details
+4. Save as draft or submit for review
+5. Show a confirmation screen
+
+Support both the device camera and photo library where available.
+
+Required fields
+
+Require:
+
+* front image
+* proposed pin name
+* brand or source
+
+Optional fields:
+
+* back image
+* character names
+* series or collection
+* release location
+* release year
+* edition type
+* edition size
+* FAC number
+* SKU or product number
+* notes
+
+Allowed edition types:
+
+* open_edition
+* limited_edition
+* limited_release
+* mystery
+* hidden_disney
+* unknown
+
+Database
+
+Use or update the existing pin_submissions table so it contains:
+
+* id uuid primary key default gen_random_uuid()
+* submitted_by uuid not null references profiles(id) on delete cascade
+* proposed_name text not null
+* brand text not null
+* series_name text nullable
+* release_location text nullable
+* release_year integer nullable
+* edition_type text default ‘unknown’
+* edition_size integer nullable
+* fac_number text nullable
+* sku text nullable
+* character_names text[] nullable
+* front_image_path text not null
+* back_image_path text nullable
+* notes text nullable
+* status text default ‘draft’
+* reviewer_notes text nullable
+* approved_pin_id uuid nullable references pins(id)
+* created_at timestamptz default now()
+* updated_at timestamptz default now()
+
+Allowed submission statuses:
+
+* draft
+* submitted
+* under_review
+* approved
+* rejected
+* needs_changes
+
+Add suitable check constraints for status, edition type, release year and edition size.
+
+Image storage
+
+Create or use a private Supabase Storage bucket for pin submission images.
+
+Store images using a structure similar to:
+
+pin-submissions/{user_id}/{submission_id}/front.jpg
+pin-submissions/{user_id}/{submission_id}/back.jpg
+
+Do not store image files directly inside database columns.
+
+Store only the storage paths in the database.
+
+Compress uploaded images to a sensible mobile size while preserving enough detail to read markings on the back of the pin.
+
+Security
+
+Use Row Level Security so:
+
+* authenticated users can create submissions only for themselves
+* users can read and edit their own draft or needs-changes submissions
+* users cannot alter submissions after they are approved
+* users cannot approve or reject their own submissions
+* only administrators or authorised reviewers can change review statuses
+* submission image files are not publicly accessible by default
+
+Do not trust a user-supplied submitted_by value. Derive it from the authenticated Supabase user.
+
+Repository and service layer
+
+Do not call Supabase directly from screens.
+
+Create repository and service methods for:
+
+* createPinSubmission
+* updatePinSubmission
+* uploadSubmissionFrontImage
+* uploadSubmissionBackImage
+* submitPinForReview
+* getMyPinSubmissions
+* getPinSubmission
+* deleteDraftSubmission
+
+Screens
+
+Create:
+
+* Add Pin
+* My Pin Submissions
+* Pin Submission Details
+* Edit Draft Submission
+
+The My Pin Submissions screen should show:
+
+* front-image thumbnail
+* proposed name
+* status
+* submission date
+* reviewer notes where applicable
+
+Catalogue approval boundary
+
+Do not automatically insert approved submissions into all catalogue tables in this task unless a safe existing approval service already exists.
+
+Instead, clearly separate:
+
+* submission creation
+* moderator review
+* catalogue approval
+
+If an existing approval workflow exists, reuse it through a service layer.
+
+Testing
+
+Test and report:
+
+* authenticated user can create a draft
+* front image uploads successfully
+* back image uploads successfully
+* draft changes persist
+* draft can be submitted for review
+* one user cannot view or edit another user’s private submission
+* ordinary users cannot approve submissions
+* invalid edition sizes are rejected
+* missing required fields show clear validation errors
+* deleting a draft also removes or cleans up its uploaded images where appropriate
+
+Do not mark the feature complete until the tests have been run and the results reported.

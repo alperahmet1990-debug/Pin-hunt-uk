@@ -1,7 +1,11 @@
 import type {
   AddUserPinInput,
   CreateExternalSaleListingInput,
+  CreatePinSubmissionInput,
+  EditionType,
   ExternalSaleListing,
+  PinSubmission,
+  PinSubmissionStatus,
   Profile,
   PublicProfile,
   SearchCollectorsInput,
@@ -9,6 +13,7 @@ import type {
   TradeItem,
   TradeMessage,
   UpdateExternalSaleListingInput,
+  UpdatePinSubmissionInput,
   UpdateProfileInput,
   UpdateUserPinInput,
   UserPin,
@@ -141,4 +146,58 @@ export interface IUserPinRepository {
 
   /** Convenience: set a listing's status to 'sold'. */
   markExternalListingSold(listingId: string): Promise<ExternalSaleListing>;
+
+  // ── Pin submissions (catalogue contributions) ─────────────────────────────
+
+  /**
+   * Create a new pin submission.
+   * Uploads front (and optionally back) images to Supabase Storage,
+   * then inserts the submission row. `userId` must equal `auth.uid()`.
+   * Defaults status to 'draft'.
+   */
+  createPinSubmission(userId: string, input: CreatePinSubmissionInput): Promise<PinSubmission>;
+
+  /**
+   * Update metadata fields on a draft or needs-changes submission.
+   * Does not change images or status.
+   */
+  updatePinSubmission(submissionId: string, input: UpdatePinSubmissionInput): Promise<PinSubmission>;
+
+  /**
+   * Upload (or replace) the front image on an existing submission.
+   * Uploads to Supabase Storage and updates `front_image_path`.
+   * `localUri` is a device file URI.
+   */
+  uploadSubmissionFrontImage(submissionId: string, localUri: string): Promise<PinSubmission>;
+
+  /**
+   * Upload (or replace) the back image on an existing submission.
+   * Uploads to Supabase Storage and updates `back_image_path`.
+   * `localUri` is a device file URI.
+   */
+  uploadSubmissionBackImage(submissionId: string, localUri: string): Promise<PinSubmission>;
+
+  /**
+   * Change a draft submission's status to 'submitted', making it
+   * available for moderator review.
+   */
+  submitPinForReview(submissionId: string): Promise<PinSubmission>;
+
+  /** Return all submissions for the authenticated user, newest first. */
+  getMyPinSubmissions(userId: string): Promise<PinSubmission[]>;
+
+  /** Return a single submission. Returns null if not found or not owned. */
+  getPinSubmission(submissionId: string): Promise<PinSubmission | null>;
+
+  /**
+   * Delete a draft submission and remove its images from Supabase Storage.
+   * Only draft submissions can be deleted.
+   */
+  deleteDraftSubmission(submissionId: string): Promise<void>;
+
+  /**
+   * Return a signed URL (1 hour TTL) for a private submission image.
+   * `storagePath` is the value stored in `front_image_path` / `back_image_path`.
+   */
+  getSubmissionImageUrl(storagePath: string): Promise<string>;
 }

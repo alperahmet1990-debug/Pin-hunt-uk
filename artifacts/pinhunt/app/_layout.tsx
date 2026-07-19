@@ -81,6 +81,10 @@ function RootLayoutNav() {
       <Stack.Screen name="board/[id]" options={{ title: 'Board' }} />
       <Stack.Screen name="sell/[pinId]" options={{ title: 'List for Sale' }} />
       <Stack.Screen name="my-listings" options={{ title: 'My Listings' }} />
+      <Stack.Screen name="add-pin" options={{ title: 'Add Pin' }} />
+      <Stack.Screen name="my-submissions" options={{ title: 'My Submissions' }} />
+      <Stack.Screen name="submission/[id]" options={{ title: 'Submission' }} />
+      <Stack.Screen name="edit-submission/[id]" options={{ title: 'Edit Submission' }} />
     </Stack>
   );
 }

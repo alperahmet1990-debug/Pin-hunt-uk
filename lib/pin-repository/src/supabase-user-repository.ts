@@ -4,8 +4,12 @@ import type {
   AddUserPinInput,
   CataloguePin,
   CreateExternalSaleListingInput,
+  CreatePinSubmissionInput,
+  EditionType,
   ExternalIdentifiers,
   ExternalSaleListing,
+  PinSubmission,
+  PinSubmissionStatus,
   Profile,
   PublicProfile,
   SearchCollectorsInput,
@@ -13,6 +17,7 @@ import type {
   TradeItem,
   TradeMessage,
   UpdateExternalSaleListingInput,
+  UpdatePinSubmissionInput,
   UpdateProfileInput,
   UpdateUserPinInput,
   UserPin,
@@ -93,6 +98,31 @@ function rowToPublicProfile(row: Record<string, unknown>): PublicProfile {
     bio: (row.bio as string | null) ?? undefined,
     tradingRegion: (row.trading_region as string | null) ?? undefined,
     internationalTradingEnabled: (row.international_trading_enabled as boolean) ?? false,
+  };
+}
+
+function rowToPinSubmission(row: Record<string, unknown>): PinSubmission {
+  return {
+    id: row.id as string,
+    submittedBy: row.submitted_by as string,
+    proposedName: row.proposed_name as string,
+    brand: row.brand as string,
+    seriesName: (row.series_name as string | null) ?? undefined,
+    releaseLocation: (row.release_location as string | null) ?? undefined,
+    releaseYear: (row.release_year as number | null) ?? undefined,
+    editionType: (row.edition_type as EditionType) ?? 'unknown',
+    editionSize: (row.edition_size as number | null) ?? undefined,
+    facNumber: (row.fac_number as string | null) ?? undefined,
+    sku: (row.sku as string | null) ?? undefined,
+    characterNames: (row.character_names as string[] | null) ?? undefined,
+    frontImagePath: row.front_image_path as string,
+    backImagePath: (row.back_image_path as string | null) ?? undefined,
+    notes: (row.notes as string | null) ?? undefined,
+    status: row.status as PinSubmissionStatus,
+    reviewerNotes: (row.reviewer_notes as string | null) ?? undefined,
+    approvedPinId: (row.approved_pin_id as string | null) ?? undefined,
+    createdAt: row.created_at as string,
+    updatedAt: row.updated_at as string,
   };
 }
 
@@ -540,6 +570,207 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   async markExternalListingSold(listingId: string): Promise<ExternalSaleListing> {
     return this.updateExternalSaleListing(listingId, { status: 'sold' });
+  }
+
+  // ── Pin submissions ───────────────────────────────────────────────────────────
+
+  /** Upload a local image URI to Supabase Storage and return the storage path. */
+  private async uploadSubmissionImage(
+    userId: string,
+    submissionId: string,
+    localUri: string,
+    side: 'front' | 'back',
+  ): Promise<string> {
+    const path = `${userId}/${submissionId}/${side}.jpg`;
+    const response = await fetch(localUri);
+    const blob = await response.blob();
+    const { error } = await this.client.storage
+      .from('pin-submissions')
+      .upload(path, blob, { contentType: 'image/jpeg', upsert: true });
+    if (error) throw new Error(`Image upload failed: ${error.message}`);
+    return path;
+  }
+
+  async createPinSubmission(userId: string, input: CreatePinSubmissionInput): Promise<PinSubmission> {
+    // Generate the submission UUID upfront so we can build storage paths.
+    const submissionId = crypto.randomUUID();
+
+    // Upload front image (required).
+    const frontPath = await this.uploadSubmissionImage(userId, submissionId, input.frontImageUri, 'front');
+
+    // Upload back image (optional).
+    let backPath: string | null = null;
+    if (input.backImageUri) {
+      backPath = await this.uploadSubmissionImage(userId, submissionId, input.backImageUri, 'back');
+    }
+
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      .insert({
+        id: submissionId,
+        submitted_by: userId,
+        proposed_name: input.proposedName,
+        brand: input.brand,
+        series_name: input.seriesName ?? null,
+        release_location: input.releaseLocation ?? null,
+        release_year: input.releaseYear ?? null,
+        edition_type: (input.editionType ?? 'unknown') as EditionType,
+        edition_size: input.editionSize ?? null,
+        fac_number: input.facNumber ?? null,
+        sku: input.sku ?? null,
+        character_names: input.characterNames ?? null,
+        front_image_path: frontPath,
+        back_image_path: backPath,
+        notes: input.notes ?? null,
+        status: (input.status ?? 'draft') as PinSubmissionStatus,
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToPinSubmission(data as Record<string, unknown>);
+  }
+
+  async updatePinSubmission(submissionId: string, input: UpdatePinSubmissionInput): Promise<PinSubmission> {
+    const updates: Record<string, unknown> = {};
+    if (input.proposedName !== undefined) updates.proposed_name = input.proposedName;
+    if (input.brand !== undefined) updates.brand = input.brand;
+    if (input.seriesName !== undefined) updates.series_name = input.seriesName;
+    if (input.releaseLocation !== undefined) updates.release_location = input.releaseLocation;
+    if (input.releaseYear !== undefined) updates.release_year = input.releaseYear;
+    if (input.editionType !== undefined) updates.edition_type = input.editionType;
+    if (input.editionSize !== undefined) updates.edition_size = input.editionSize;
+    if (input.facNumber !== undefined) updates.fac_number = input.facNumber;
+    if (input.sku !== undefined) updates.sku = input.sku;
+    if (input.characterNames !== undefined) updates.character_names = input.characterNames;
+    if (input.notes !== undefined) updates.notes = input.notes;
+
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update(updates as any)
+      .eq('id', submissionId)
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToPinSubmission(data as Record<string, unknown>);
+  }
+
+  async uploadSubmissionFrontImage(submissionId: string, localUri: string): Promise<PinSubmission> {
+    const { data: sub, error: subError } = await this.client
+      .from('pin_submissions')
+      .select('submitted_by')
+      .eq('id', submissionId)
+      .single();
+    if (subError || !sub) throw new Error('Submission not found.');
+
+    const userId = (sub as { submitted_by: string }).submitted_by;
+    const frontPath = await this.uploadSubmissionImage(userId, submissionId, localUri, 'front');
+
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update({ front_image_path: frontPath } as any)
+      .eq('id', submissionId)
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToPinSubmission(data as Record<string, unknown>);
+  }
+
+  async uploadSubmissionBackImage(submissionId: string, localUri: string): Promise<PinSubmission> {
+    const { data: sub, error: subError } = await this.client
+      .from('pin_submissions')
+      .select('submitted_by')
+      .eq('id', submissionId)
+      .single();
+    if (subError || !sub) throw new Error('Submission not found.');
+
+    const userId = (sub as { submitted_by: string }).submitted_by;
+    const backPath = await this.uploadSubmissionImage(userId, submissionId, localUri, 'back');
+
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update({ back_image_path: backPath } as any)
+      .eq('id', submissionId)
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToPinSubmission(data as Record<string, unknown>);
+  }
+
+  async submitPinForReview(submissionId: string): Promise<PinSubmission> {
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update({ status: 'submitted' } as any)
+      .eq('id', submissionId)
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToPinSubmission(data as Record<string, unknown>);
+  }
+
+  async getMyPinSubmissions(userId: string): Promise<PinSubmission[]> {
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      .select('*')
+      .eq('submitted_by', userId)
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+    return (data as unknown as Record<string, unknown>[]).map(rowToPinSubmission);
+  }
+
+  async getPinSubmission(submissionId: string): Promise<PinSubmission | null> {
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      .select('*')
+      .eq('id', submissionId)
+      .maybeSingle();
+
+    if (error) throw new Error(error.message);
+    if (!data) return null;
+    return rowToPinSubmission(data as Record<string, unknown>);
+  }
+
+  async deleteDraftSubmission(submissionId: string): Promise<void> {
+    // Fetch the submission to get storage paths before deleting.
+    const { data: sub, error: fetchError } = await this.client
+      .from('pin_submissions')
+      .select('submitted_by, front_image_path, back_image_path, status')
+      .eq('id', submissionId)
+      .maybeSingle();
+
+    if (fetchError) throw new Error(fetchError.message);
+    if (!sub) throw new Error('Submission not found.');
+    const s = sub as { submitted_by: string; front_image_path: string; back_image_path: string | null; status: string };
+    if (s.status !== 'draft') throw new Error('Only draft submissions can be deleted.');
+
+    // Delete the DB row first (RLS enforces ownership + draft status).
+    const { error: deleteError } = await this.client
+      .from('pin_submissions')
+      .delete()
+      .eq('id', submissionId);
+    if (deleteError) throw new Error(deleteError.message);
+
+    // Clean up storage (best-effort — do not throw on failure).
+    const paths: string[] = [s.front_image_path];
+    if (s.back_image_path) paths.push(s.back_image_path);
+    await this.client.storage.from('pin-submissions').remove(paths).catch(() => {});
+  }
+
+  async getSubmissionImageUrl(storagePath: string): Promise<string> {
+    const { data, error } = await this.client.storage
+      .from('pin-submissions')
+      .createSignedUrl(storagePath, 3600);
+    if (error || !data?.signedUrl) throw new Error(`Could not generate image URL: ${error?.message ?? 'unknown'}`);
+    return data.signedUrl;
   }
 }
 

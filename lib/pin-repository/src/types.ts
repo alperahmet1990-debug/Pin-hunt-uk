@@ -358,20 +358,78 @@ export interface UpdateExternalSaleListingInput {
   status?: ExternalSaleListingStatus;
 }
 
-// ─── Submission types ─────────────────────────────────────────────────────────
-export type SubmissionType = 'new_pin' | 'correction' | 'image';
-export type SubmissionStatus = 'pending' | 'approved' | 'rejected';
+// ─── Pin submission (catalogue contribution) types ───────────────────────────
+
+export type EditionType =
+  | 'open_edition'
+  | 'limited_edition'
+  | 'limited_release'
+  | 'mystery'
+  | 'hidden_disney'
+  | 'unknown';
+
+export type PinSubmissionStatus =
+  | 'draft'
+  | 'submitted'
+  | 'under_review'
+  | 'approved'
+  | 'rejected'
+  | 'needs_changes';
 
 export interface PinSubmission {
   id: string;
   submittedBy: string;
-  pinId?: string;
-  submissionType: SubmissionType;
-  proposedData: Record<string, unknown>;
+  proposedName: string;
+  brand: string;
+  seriesName?: string;
+  releaseLocation?: string;
+  releaseYear?: number;
+  editionType: EditionType;
+  editionSize?: number;
+  facNumber?: string;
+  sku?: string;
+  characterNames?: string[];
+  /** Supabase storage path — use repository to get a signed URL for display. */
+  frontImagePath: string;
+  backImagePath?: string;
   notes?: string;
-  status: SubmissionStatus;
-  reviewedBy?: string;
-  reviewedAt?: string;
+  status: PinSubmissionStatus;
+  reviewerNotes?: string;
+  approvedPinId?: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface CreatePinSubmissionInput {
+  proposedName: string;
+  brand: string;
+  seriesName?: string;
+  releaseLocation?: string;
+  releaseYear?: number;
+  editionType?: EditionType;
+  editionSize?: number;
+  facNumber?: string;
+  sku?: string;
+  characterNames?: string[];
+  /** Local file URI — the repository compresses and uploads to Supabase Storage. */
+  frontImageUri: string;
+  /** Local file URI — optional. */
+  backImageUri?: string;
+  notes?: string;
+  /** Defaults to 'draft'. */
+  status?: PinSubmissionStatus;
+}
+
+export interface UpdatePinSubmissionInput {
+  proposedName?: string;
+  brand?: string;
+  seriesName?: string | null;
+  releaseLocation?: string | null;
+  releaseYear?: number | null;
+  editionType?: EditionType;
+  editionSize?: number | null;
+  facNumber?: string | null;
+  sku?: string | null;
+  characterNames?: string[] | null;
+  notes?: string | null;
 }

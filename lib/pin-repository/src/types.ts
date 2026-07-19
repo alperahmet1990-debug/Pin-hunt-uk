@@ -1,60 +1,73 @@
+// ─── Verification / data-quality status ──────────────────────────────────────
+export type PinVerificationStatus =
+  | 'verified'
+  | 'needs_source_verification'
+  | 'community_submitted'
+  | 'unverified';
+
+// ─── Operational lifecycle status ─────────────────────────────────────────────
+export type CataloguePinStatus = 'active' | 'pending_review' | 'archived';
+
 // ─── External identifier map ─────────────────────────────────────────────────
 // Stores IDs from any external system without a fixed schema.
-// New providers can be added here without a DB migration.
+// Structured rows live in the pin_external_ids table for indexed lookups.
 export interface ExternalIdentifiers {
-  /** PinPics.com catalogue number */
   pinpicsId?: string;
-  /** Retailer or manufacturer SKU */
   sku?: string;
-  /** eBay item or reference ID */
   ebayItemId?: string;
-  /** BoxLunch product code */
   boxlunchSku?: string;
-  /** Loungefly product code */
   loungeflySku?: string;
-  /** shopDisney / Disney store product code */
   disneySku?: string;
-  /** WDI (Walt Disney Imagineering) catalogue number */
   wdiNumber?: string;
-  /** DSSH (DisneyShopping.com) legacy ID */
   dsshId?: string;
-  // Any future provider can be added without schema changes:
   [key: string]: string | undefined;
 }
 
 // ─── Core catalogue type ──────────────────────────────────────────────────────
-export type CataloguePinStatus = 'active' | 'pending_review' | 'rejected';
-
 /**
  * A pin in the PinHunt catalogue.
  *
- * Catalogue data (all fields here) is owned by the PinHunt import pipeline
- * and can be refreshed from external sources at any time.
+ * `id` = the stable pinhunt_id (e.g. "PHUK-00000001") — used throughout
+ * the app for routing, AsyncStorage keys, and display. The database UUID
+ * primary key is an internal repository detail and is never exposed here.
  *
- * User data (collection status, personal photos, notes, trade history) lives
- * in separate tables and is NEVER touched by catalogue imports.
+ * Catalogue data is owned by the PinHunt import pipeline and can be refreshed
+ * from external sources at any time. User data (collection status, photos,
+ * notes, trade history) lives in separate tables and is never touched by
+ * catalogue imports.
  */
 export interface CataloguePin {
-  /** Stable internal PinHunt ID — never changes, never reused. */
+  /** Stable public identifier — the pinhunt_id (e.g. "PHUK-00000001"). */
   id: string;
 
   title: string;
   brand: string;
-  /** Series / collection name (e.g. "Haunted Mansion 50th", "Tropical Vibes"). */
+  /** Series / range name (e.g. "Hidden Mickey 2026 Wave A"). */
   collection: string;
-  characters: string[];
 
-  releaseDate?: string;       // ISO date string
-  retailPriceGBP?: number;
+  /** Characters featured on this pin (populated from pin_characters join). */
+  characters: string[];
+  /** Categories / tags (populated from pin_categories join). */
+  categories: string[];
+
+  releaseDate?: string;      // ISO date string
+  releaseYear?: number;
+  retailPriceGBP?: number;   // retail_price in DB (currency stored separately)
+  currency?: string;          // 'GBP' | 'USD' | 'EUR' — currency of retail_price
   limitedEditionSize?: number;
   estimatedValueGBP?: number;
   description?: string;
   isNewRelease?: boolean;
-  origin?: string;            // "Walt Disney World", "Disneyland Paris", "BoxLunch Retail" …
-  edition?: string;           // "Open Edition", "LE 2500", "WDI", "Artist Series" …
 
-  /** Primary catalogue image URL (CDN / object storage). */
+  /** Venue / retailer (e.g. "Walt Disney World", "Disneyland Paris"). */
+  origin?: string;
+  /** Edition type (e.g. "Common", "Chaser", "Super Chaser", "LE 500"). */
+  edition?: string;
+
+  /** Primary catalogue image URL. */
   imageUrl?: string;
+  /** Back face image URL. */
+  backImageUrl?: string;
 
   /**
    * IDs from external catalogue providers, retailers, or licensed data sources.
@@ -62,19 +75,23 @@ export interface CataloguePin {
    */
   externalIdentifiers: ExternalIdentifiers;
 
-  status: CataloguePinStatus;
-  isUserSubmitted: boolean;
-  submittedBy?: string;       // user identifier, if submitted via the app
-
   /**
-   * Which pipeline last wrote this record.
-   * e.g. 'pinhunt_seed' | 'pinpics_import' | 'user_submission'
+   * Data-quality / verification status.
+   * Public reads via the anon key only return 'verified' pins (enforced by RLS).
    */
+  verificationStatus?: PinVerificationStatus;
+
+  /** Operational lifecycle status. */
+  status: CataloguePinStatus;
+
+  isUserSubmitted: boolean;
+  submittedBy?: string;
+
+  /** Which pipeline last wrote this record. */
   catalogueSource?: string;
 
   createdAt?: string;
   updatedAt?: string;
-  /** Timestamp of the last external-data sync for this record. */
   catalogueUpdatedAt?: string;
 }
 
@@ -82,10 +99,12 @@ export interface CataloguePin {
 export interface PinFilters {
   brand?: string | string[];
   character?: string;
+  category?: string;
   collection?: string;
   edition?: string;
   isNewRelease?: boolean;
   status?: CataloguePinStatus;
+  verificationStatus?: PinVerificationStatus;
   limit?: number;
   offset?: number;
 }
@@ -93,15 +112,10 @@ export interface PinFilters {
 // ─── Scan matching ────────────────────────────────────────────────────────────
 export interface PinMatch {
   pin: CataloguePin;
-  confidence: number;   // 0–100
+  confidence: number;  // 0–100
   reasoning?: string;
 }
 
-/**
- * Adapter that injects AI vision logic into the repository at construction time.
- * Keeps the repository package free of hard AI-SDK dependencies so the same
- * code runs in both the Expo app (no AI) and the API server (with AI).
- */
 export interface AiMatchAdapter {
   identifyFromCatalogue(
     imageBase64: string,
@@ -110,16 +124,19 @@ export interface AiMatchAdapter {
   ): Promise<Array<{ pinId: string; confidence: number; reasoning: string }>>;
 }
 
-// ─── Write input types ────────────────────────────────────────────────────────
+// ─── Catalogue write inputs ───────────────────────────────────────────────────
 export interface CreatePinInput {
-  /** Provide a stable ID to enable idempotent imports; omit to auto-generate. */
-  id?: string;
+  /** Provide the stable pinhunt_id to enable idempotent imports. */
+  pinhuntId: string;
   title: string;
   brand: string;
   collection: string;
   characters?: string[];
+  categories?: string[];
   releaseDate?: string;
+  releaseYear?: number;
   retailPriceGBP?: number;
+  currency?: string;
   limitedEditionSize?: number;
   estimatedValueGBP?: number;
   description?: string;
@@ -127,7 +144,9 @@ export interface CreatePinInput {
   origin?: string;
   edition?: string;
   imageUrl?: string;
+  backImageUrl?: string;
   externalIdentifiers?: ExternalIdentifiers;
+  verificationStatus?: PinVerificationStatus;
   catalogueSource?: string;
 }
 
@@ -136,8 +155,11 @@ export interface UpdatePinInput {
   brand?: string;
   collection?: string;
   characters?: string[];
+  categories?: string[];
   releaseDate?: string;
+  releaseYear?: number;
   retailPriceGBP?: number;
+  currency?: string;
   limitedEditionSize?: number;
   estimatedValueGBP?: number;
   description?: string;
@@ -145,7 +167,9 @@ export interface UpdatePinInput {
   origin?: string;
   edition?: string;
   imageUrl?: string;
+  backImageUrl?: string;
   externalIdentifiers?: ExternalIdentifiers;
+  verificationStatus?: PinVerificationStatus;
   status?: CataloguePinStatus;
   catalogueSource?: string;
   catalogueUpdatedAt?: string;
@@ -156,11 +180,122 @@ export interface SubmitMissingPinInput {
   brand: string;
   collection: string;
   characters?: string[];
+  categories?: string[];
   edition?: string;
   origin?: string;
   description?: string;
   imageUrl?: string;
-  /** App-level user identifier (not a Supabase auth UID — auth is future work). */
   submittedBy?: string;
   externalIdentifiers?: ExternalIdentifiers;
+}
+
+// ─── User collection types ────────────────────────────────────────────────────
+export type UserPinStatus = 'owned' | 'wanted' | 'for_trade' | 'traded';
+export type PinCondition = 'mint' | 'near_mint' | 'good' | 'fair' | 'poor';
+
+export interface UserPin {
+  id: string;               // UUID
+  userId: string;           // auth.users UUID
+  pinId: string;            // pins.id UUID (internal FK)
+  pinhuntId: string;        // pins.pinhunt_id (stable public identifier)
+  pin?: CataloguePin;       // joined catalogue data when fetched with pin detail
+  status: UserPinStatus;
+  acquiredDate?: string;
+  purchasePriceGBP?: number;
+  currentValueGBP?: number;
+  notes?: string;
+  condition?: PinCondition;
+  isFavourite: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AddUserPinInput {
+  pinId: string;            // pins.id UUID or pinhunt_id — repository resolves
+  status: UserPinStatus;
+  acquiredDate?: string;
+  purchasePriceGBP?: number;
+  notes?: string;
+  condition?: PinCondition;
+  isFavourite?: boolean;
+}
+
+export interface UpdateUserPinInput {
+  status?: UserPinStatus;
+  acquiredDate?: string;
+  purchasePriceGBP?: number;
+  currentValueGBP?: number;
+  notes?: string;
+  condition?: PinCondition;
+  isFavourite?: boolean;
+}
+
+// ─── Profile types ────────────────────────────────────────────────────────────
+export interface Profile {
+  id: string;               // auth.users UUID
+  username?: string;
+  displayName?: string;
+  avatarUrl?: string;
+  bio?: string;
+  location?: string;
+  isAdmin: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface UpdateProfileInput {
+  username?: string;
+  displayName?: string;
+  avatarUrl?: string;
+  bio?: string;
+  location?: string;
+}
+
+// ─── Trade types ──────────────────────────────────────────────────────────────
+export type TradeStatus = 'pending' | 'accepted' | 'rejected' | 'completed' | 'cancelled';
+
+export interface Trade {
+  id: string;
+  initiatorId: string;
+  recipientId: string;
+  status: TradeStatus;
+  notes?: string;
+  items?: TradeItem[];
+  messages?: TradeMessage[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface TradeItem {
+  id: string;
+  tradeId: string;
+  userPinId: string;
+  direction: 'offered' | 'requested';
+  createdAt: string;
+}
+
+export interface TradeMessage {
+  id: string;
+  tradeId: string;
+  senderId: string;
+  message: string;
+  createdAt: string;
+}
+
+// ─── Submission types ─────────────────────────────────────────────────────────
+export type SubmissionType = 'new_pin' | 'correction' | 'image';
+export type SubmissionStatus = 'pending' | 'approved' | 'rejected';
+
+export interface PinSubmission {
+  id: string;
+  submittedBy: string;
+  pinId?: string;
+  submissionType: SubmissionType;
+  proposedData: Record<string, unknown>;
+  notes?: string;
+  status: SubmissionStatus;
+  reviewedBy?: string;
+  reviewedAt?: string;
+  createdAt: string;
+  updatedAt: string;
 }

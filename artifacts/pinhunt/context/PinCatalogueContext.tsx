@@ -26,16 +26,14 @@ import {
   type CataloguePin,
   type PinRepository,
 } from '@workspace/pin-repository';
+import { supabase } from '@/lib/supabase';
 
-// ─── Env vars ────────────────────────────────────────────────────────────────
-// Set EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY in your
-// Replit secrets. The dev workflow picks them up automatically via
-// process.env at Metro bundle time.
-
-const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
-const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
-
-const isConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
+// Supabase credentials come from the singleton client; only the flag is
+// checked here so the mock fallback still works in environments where the
+// env vars aren't configured yet.
+const isConfigured = Boolean(
+  process.env.EXPO_PUBLIC_SUPABASE_URL && process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
+);
 
 // ─── Context value ────────────────────────────────────────────────────────────
 interface PinCatalogueContextValue {
@@ -61,10 +59,10 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  // Create repository once (stable reference — Supabase client is lightweight)
+  // Create repository once using the app-wide Supabase singleton.
   const repository = useMemo<PinRepository | null>(() => {
     if (!isConfigured) return null;
-    return createSupabasePinRepository(SUPABASE_URL, SUPABASE_ANON_KEY);
+    return createSupabasePinRepository(supabase);
   }, []);
 
   const fetchCatalogue = useCallback(async () => {
@@ -83,8 +81,10 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
           brand: p.brand,
           collection: p.collection,
           characters: p.characters,
+          categories: [],
           releaseDate: p.releaseDate,
           retailPriceGBP: p.retailPrice,
+          currency: 'GBP',
           limitedEditionSize: p.limitedEditionSize,
           estimatedValueGBP: p.estimatedValueGBP,
           description: p.description,
@@ -92,7 +92,9 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
           origin: p.origin,
           edition: p.edition,
           imageUrl: undefined, // local images handled by getPinImageSource fallback
+          backImageUrl: undefined,
           externalIdentifiers: {},
+          verificationStatus: 'needs_source_verification' as const,
           status: 'active' as const,
           isUserSubmitted: false,
         }));

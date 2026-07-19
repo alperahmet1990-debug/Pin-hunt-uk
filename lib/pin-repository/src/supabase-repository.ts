@@ -8,55 +8,72 @@ import type {
   ExternalIdentifiers,
   PinFilters,
   PinMatch,
+  PinVerificationStatus,
   SubmitMissingPinInput,
   UpdatePinInput,
 } from './types';
+import type { Database } from './database.types';
 
-// ─── DB row → domain type mapping ────────────────────────────────────────────
+// ─── DB row shape (with joined relations) ─────────────────────────────────────
 
 interface PinRow {
-  id: string;
+  id: string;                    // UUID primary key (internal)
+  pinhunt_id: string;            // stable public catalogue ID
   title: string;
   brand: string;
   collection: string;
-  characters: string[];
   release_date: string | null;
-  retail_price_gbp: number | null;
+  release_year: number | null;
+  retail_price: number | null;
+  currency: string;
   limited_edition_size: number | null;
   estimated_value_gbp: number | null;
   description: string | null;
   is_new_release: boolean;
   origin: string | null;
-  edition: string | null;
+  edition_type: string | null;
   image_url: string | null;
+  back_image_url: string | null;
   external_identifiers: ExternalIdentifiers;
-  status: CataloguePinStatus;
+  verification_status: string;
+  status: string;
   is_user_submitted: boolean;
   submitted_by: string | null;
   catalogue_source: string | null;
+  catalogue_updated_at: string | null;
   created_at: string;
   updated_at: string;
-  catalogue_updated_at: string | null;
+  // Joined via PostgREST resource embedding
+  pin_characters: Array<{ characters: { name: string } }> | null;
+  pin_categories: Array<{ categories: { name: string } }> | null;
 }
+
+// ─── Row → domain mapping ──────────────────────────────────────────────────────
 
 function rowToPin(row: PinRow): CataloguePin {
   return {
-    id: row.id,
+    // CataloguePin.id = pinhunt_id (stable, app-facing identifier)
+    id: row.pinhunt_id,
     title: row.title,
     brand: row.brand,
     collection: row.collection,
-    characters: row.characters ?? [],
+    characters: row.pin_characters?.map(pc => pc.characters.name) ?? [],
+    categories: row.pin_categories?.map(pc => pc.categories.name) ?? [],
     releaseDate: row.release_date ?? undefined,
-    retailPriceGBP: row.retail_price_gbp ?? undefined,
+    releaseYear: row.release_year ?? undefined,
+    retailPriceGBP: row.retail_price ?? undefined,
+    currency: row.currency,
     limitedEditionSize: row.limited_edition_size ?? undefined,
     estimatedValueGBP: row.estimated_value_gbp ?? undefined,
     description: row.description ?? undefined,
     isNewRelease: row.is_new_release,
     origin: row.origin ?? undefined,
-    edition: row.edition ?? undefined,
+    edition: row.edition_type ?? undefined,      // maps edition_type → edition
     imageUrl: row.image_url ?? undefined,
+    backImageUrl: row.back_image_url ?? undefined,
     externalIdentifiers: row.external_identifiers ?? {},
-    status: row.status,
+    verificationStatus: row.verification_status as PinVerificationStatus,
+    status: row.status as CataloguePinStatus,
     isUserSubmitted: row.is_user_submitted,
     submittedBy: row.submitted_by ?? undefined,
     catalogueSource: row.catalogue_source ?? undefined,
@@ -66,35 +83,20 @@ function rowToPin(row: PinRow): CataloguePin {
   };
 }
 
-function pinToInsertRow(input: CreatePinInput, status: CataloguePinStatus = 'active', isUserSubmitted = false) {
-  return {
-    ...(input.id ? { id: input.id } : {}),
-    title: input.title,
-    brand: input.brand,
-    collection: input.collection,
-    characters: input.characters ?? [],
-    release_date: input.releaseDate ?? null,
-    retail_price_gbp: input.retailPriceGBP ?? null,
-    limited_edition_size: input.limitedEditionSize ?? null,
-    estimated_value_gbp: input.estimatedValueGBP ?? null,
-    description: input.description ?? null,
-    is_new_release: input.isNewRelease ?? false,
-    origin: input.origin ?? null,
-    edition: input.edition ?? null,
-    image_url: input.imageUrl ?? null,
-    external_identifiers: input.externalIdentifiers ?? {},
-    status,
-    is_user_submitted: isUserSubmitted,
-    catalogue_source: input.catalogueSource ?? 'pinhunt_seed',
-  };
-}
+// ─── SELECT fragment (reused across all pin queries) ─────────────────────────
 
-// ─── Construction options ─────────────────────────────────────────────────────
+const SELECT_PINS = `
+  *,
+  pin_characters(characters(name)),
+  pin_categories(categories(name))
+`.trim();
+
+// ─── Options ──────────────────────────────────────────────────────────────────
 
 export interface SupabasePinRepositoryOptions {
   /**
    * Inject an AI adapter to enable findPossibleMatches.
-   * Omit in client-side / mobile contexts — use the scan API endpoint instead.
+   * Omit in mobile contexts — route through POST /api/scan/identify instead.
    */
   aiAdapter?: AiMatchAdapter;
 }
@@ -102,22 +104,70 @@ export interface SupabasePinRepositoryOptions {
 // ─── Implementation ───────────────────────────────────────────────────────────
 
 class SupabasePinRepository implements PinRepository {
-  private readonly client: SupabaseClient;
+  private readonly client: SupabaseClient<Database>;
   private readonly ai?: AiMatchAdapter;
 
-  constructor(supabaseUrl: string, supabaseKey: string, options: SupabasePinRepositoryOptions = {}) {
-    this.client = createClient(supabaseUrl, supabaseKey);
+  constructor(
+    client: SupabaseClient<Database>,
+    options: SupabasePinRepositoryOptions = {},
+  ) {
+    this.client = client;
     this.ai = options.aiAdapter;
   }
 
-  // ── searchPins ──────────────────────────────────────────────────────────────
+  // ── Junction table helpers ──────────────────────────────────────────────
+
+  private async upsertCharacters(pinUuid: string, names: string[]): Promise<void> {
+    if (!names.length) return;
+    // Ensure all characters exist in the lookup table
+    await this.client
+      .from('characters')
+      .upsert(names.map(name => ({ name })), { onConflict: 'name', ignoreDuplicates: true });
+    // Fetch UUIDs for this set of names
+    const { data: rows } = await this.client
+      .from('characters')
+      .select('id')
+      .in('name', names);
+    if (!rows?.length) return;
+    // Replace junction entries for this pin
+    await this.client.from('pin_characters').delete().eq('pin_id', pinUuid);
+    await this.client
+      .from('pin_characters')
+      .insert(rows.map(r => ({ pin_id: pinUuid, character_id: r.id })));
+  }
+
+  private async upsertCategories(pinUuid: string, names: string[]): Promise<void> {
+    if (!names.length) return;
+    await this.client
+      .from('categories')
+      .upsert(names.map(name => ({ name })), { onConflict: 'name', ignoreDuplicates: true });
+    const { data: rows } = await this.client
+      .from('categories')
+      .select('id')
+      .in('name', names);
+    if (!rows?.length) return;
+    await this.client.from('pin_categories').delete().eq('pin_id', pinUuid);
+    await this.client
+      .from('pin_categories')
+      .insert(rows.map(r => ({ pin_id: pinUuid, category_id: r.id })));
+  }
+
+  // ── searchPins ─────────────────────────────────────────────────────────
+
   async searchPins(query: string, filters: PinFilters = {}): Promise<CataloguePin[]> {
-    let q = this.client.from('pins').select('*');
+    // Build the base query. RLS automatically restricts to verification_status='verified'
+    // when using the anon key — no need to duplicate that check here.
+    let q = this.client.from('pins').select(SELECT_PINS);
 
-    // Status filter (default to active only)
-    q = q.eq('status', filters.status ?? 'active');
+    // Explicit status filter (e.g. to list pending_review pins with service role)
+    if (filters.status) {
+      q = q.eq('status', filters.status);
+    }
 
-    // Brand filter
+    if (filters.verificationStatus) {
+      q = q.eq('verification_status', filters.verificationStatus);
+    }
+
     if (filters.brand) {
       const brands = Array.isArray(filters.brand) ? filters.brand : [filters.brand];
       q = q.in('brand', brands);
@@ -128,111 +178,179 @@ class SupabasePinRepository implements PinRepository {
     }
 
     if (filters.edition) {
-      q = q.ilike('edition', `%${filters.edition}%`);
+      q = q.ilike('edition_type', `%${filters.edition}%`);
     }
 
     if (filters.isNewRelease !== undefined) {
       q = q.eq('is_new_release', filters.isNewRelease);
     }
 
-    // Character filter — array contains
+    // Character filter: resolve name → UUID → filter by junction
     if (filters.character) {
-      q = q.contains('characters', [filters.character]);
+      const { data: charRows } = await this.client
+        .from('characters')
+        .select('id')
+        .ilike('name', `%${filters.character}%`);
+
+      if (!charRows?.length) return [];
+
+      const { data: pcRows } = await this.client
+        .from('pin_characters')
+        .select('pin_id')
+        .in('character_id', charRows.map(r => r.id));
+
+      if (!pcRows?.length) return [];
+      q = q.in('id', [...new Set(pcRows.map(r => r.pin_id))]);
     }
 
-    // Text search across title, brand and collection
+    // Category filter: same pattern
+    if (filters.category) {
+      const { data: catRows } = await this.client
+        .from('categories')
+        .select('id')
+        .ilike('name', `%${filters.category}%`);
+
+      if (!catRows?.length) return [];
+
+      const { data: pcRows } = await this.client
+        .from('pin_categories')
+        .select('pin_id')
+        .in('category_id', catRows.map(r => r.id));
+
+      if (!pcRows?.length) return [];
+      q = q.in('id', [...new Set(pcRows.map(r => r.pin_id))]);
+    }
+
+    // Full-text search across title, brand and collection
     if (query.trim()) {
       q = q.or(
         `title.ilike.%${query}%,brand.ilike.%${query}%,collection.ilike.%${query}%`,
       );
     }
 
-    // Pagination
     if (filters.limit) q = q.limit(filters.limit);
-    if (filters.offset) q = q.range(filters.offset, filters.offset + (filters.limit ?? 50) - 1);
+    if (filters.offset) {
+      q = q.range(filters.offset, filters.offset + (filters.limit ?? 50) - 1);
+    }
 
     q = q.order('title');
 
     const { data, error } = await q;
     if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    return (data as PinRow[]).map(rowToPin);
+    return (data as unknown as PinRow[]).map(rowToPin);
   }
 
-  // ── getPinById ──────────────────────────────────────────────────────────────
-  async getPinById(id: string): Promise<CataloguePin | null> {
+  // ── getPinById / getPinByPinhuntId ─────────────────────────────────────
+
+  async getPinById(pinhuntId: string): Promise<CataloguePin | null> {
+    return this.getPinByPinhuntId(pinhuntId);
+  }
+
+  async getPinByPinhuntId(pinhuntId: string): Promise<CataloguePin | null> {
     const { data, error } = await this.client
       .from('pins')
-      .select('*')
-      .eq('id', id)
+      .select(SELECT_PINS)
+      .eq('pinhunt_id', pinhuntId)
       .maybeSingle();
 
     if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
     if (!data) return null;
-    return rowToPin(data as PinRow);
+    return rowToPin(data as unknown as PinRow);
   }
 
-  // ── getPinsBySeries ─────────────────────────────────────────────────────────
+  // ── getPinsBySeries ────────────────────────────────────────────────────
+
   async getPinsBySeries(series: string): Promise<CataloguePin[]> {
     const { data, error } = await this.client
       .from('pins')
-      .select('*')
+      .select(SELECT_PINS)
       .eq('collection', series)
-      .eq('status', 'active')
       .order('title');
 
     if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    return (data as PinRow[]).map(rowToPin);
+    return (data as unknown as PinRow[]).map(rowToPin);
   }
 
-  // ── getPinsByCharacter ──────────────────────────────────────────────────────
+  // ── getPinsByCharacter ─────────────────────────────────────────────────
+
   async getPinsByCharacter(character: string): Promise<CataloguePin[]> {
-    // Use Postgres array overlap: find any pin whose characters array contains
-    // at least one element matching the search string (case-insensitive).
-    const { data, error } = await this.client
-      .from('pins')
-      .select('*')
-      .eq('status', 'active')
-      .order('title');
-
-    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-
-    const lower = character.toLowerCase();
-    return (data as PinRow[])
-      .map(rowToPin)
-      .filter(p => p.characters.some(c => c.toLowerCase().includes(lower)));
+    return this.searchPins('', { character });
   }
 
-  // ── createPin ───────────────────────────────────────────────────────────────
+  // ── getPinsByCategory ──────────────────────────────────────────────────
+
+  async getPinsByCategory(category: string): Promise<CataloguePin[]> {
+    return this.searchPins('', { category });
+  }
+
+  // ── createPin ─────────────────────────────────────────────────────────
+
   async createPin(input: CreatePinInput): Promise<CataloguePin> {
-    const row = pinToInsertRow(input);
+    const row = {
+      pinhunt_id: input.pinhuntId,
+      title: input.title,
+      brand: input.brand,
+      collection: input.collection,
+      release_date: input.releaseDate ?? null,
+      release_year: input.releaseYear ?? null,
+      retail_price: input.retailPriceGBP ?? null,
+      currency: input.currency ?? 'GBP',
+      limited_edition_size: input.limitedEditionSize ?? null,
+      estimated_value_gbp: input.estimatedValueGBP ?? null,
+      description: input.description ?? null,
+      is_new_release: input.isNewRelease ?? false,
+      origin: input.origin ?? null,
+      edition_type: input.edition ?? null,
+      image_url: input.imageUrl ?? null,
+      back_image_url: input.backImageUrl ?? null,
+      external_identifiers: input.externalIdentifiers ?? {},
+      verification_status: input.verificationStatus ?? 'needs_source_verification',
+      status: 'active' as const,
+      is_user_submitted: false,
+      catalogue_source: input.catalogueSource ?? 'pinhunt_import',
+    };
 
     const { data, error } = await this.client
       .from('pins')
-      .upsert(row, { onConflict: 'id' })
-      .select()
+      .upsert(row, { onConflict: 'pinhunt_id' })
+      .select('id, pinhunt_id')
       .single();
 
     if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    return rowToPin(data as PinRow);
+
+    const pinUuid = (data as { id: string }).id;
+
+    // Manage junction tables
+    await this.upsertCharacters(pinUuid, input.characters ?? []);
+    await this.upsertCategories(pinUuid, input.categories ?? []);
+
+    // Re-fetch with joins to return the full domain object
+    const pin = await this.getPinByPinhuntId(input.pinhuntId);
+    if (!pin) throw new PinRepositoryError('UPSTREAM_ERROR', 'Pin not found after insert');
+    return pin;
   }
 
-  // ── updatePin ───────────────────────────────────────────────────────────────
-  async updatePin(id: string, input: UpdatePinInput): Promise<CataloguePin> {
-    const updates: Record<string, unknown> = { updated_at: new Date().toISOString() };
+  // ── updatePin ─────────────────────────────────────────────────────────
+
+  async updatePin(pinhuntId: string, input: UpdatePinInput): Promise<CataloguePin> {
+    const updates: Record<string, unknown> = {};
 
     if (input.title !== undefined) updates.title = input.title;
     if (input.brand !== undefined) updates.brand = input.brand;
     if (input.collection !== undefined) updates.collection = input.collection;
-    if (input.characters !== undefined) updates.characters = input.characters;
     if (input.releaseDate !== undefined) updates.release_date = input.releaseDate;
-    if (input.retailPriceGBP !== undefined) updates.retail_price_gbp = input.retailPriceGBP;
+    if (input.releaseYear !== undefined) updates.release_year = input.releaseYear;
+    if (input.retailPriceGBP !== undefined) updates.retail_price = input.retailPriceGBP;
+    if (input.currency !== undefined) updates.currency = input.currency;
     if (input.limitedEditionSize !== undefined) updates.limited_edition_size = input.limitedEditionSize;
     if (input.estimatedValueGBP !== undefined) updates.estimated_value_gbp = input.estimatedValueGBP;
     if (input.description !== undefined) updates.description = input.description;
     if (input.isNewRelease !== undefined) updates.is_new_release = input.isNewRelease;
     if (input.origin !== undefined) updates.origin = input.origin;
-    if (input.edition !== undefined) updates.edition = input.edition;
+    if (input.edition !== undefined) updates.edition_type = input.edition;
     if (input.imageUrl !== undefined) updates.image_url = input.imageUrl;
+    if (input.backImageUrl !== undefined) updates.back_image_url = input.backImageUrl;
+    if (input.verificationStatus !== undefined) updates.verification_status = input.verificationStatus;
     if (input.status !== undefined) updates.status = input.status;
     if (input.catalogueSource !== undefined) updates.catalogue_source = input.catalogueSource;
     if (input.catalogueUpdatedAt !== undefined) updates.catalogue_updated_at = input.catalogueUpdatedAt;
@@ -240,47 +358,97 @@ class SupabasePinRepository implements PinRepository {
     // Merge external_identifiers rather than overwriting
     if (input.externalIdentifiers !== undefined) {
       const { data: existing } = await this.client
-        .from('pins').select('external_identifiers').eq('id', id).single();
+        .from('pins')
+        .select('external_identifiers')
+        .eq('pinhunt_id', pinhuntId)
+        .single();
       updates.external_identifiers = {
-        ...(existing?.external_identifiers ?? {}),
+        ...((existing?.external_identifiers ?? {}) as Record<string, unknown>),
         ...input.externalIdentifiers,
       };
     }
 
-    const { data, error } = await this.client
-      .from('pins')
-      .update(updates)
-      .eq('id', id)
-      .select()
-      .single();
+    if (Object.keys(updates).length > 0) {
+      const { data: pinData, error } = await this.client
+        .from('pins')
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .update(updates as any)
+        .eq('pinhunt_id', pinhuntId)
+        .select('id')
+        .single();
 
-    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    if (!data) throw new PinRepositoryError('NOT_FOUND', `Pin ${id} not found`);
-    return rowToPin(data as PinRow);
+      if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+      if (!pinData) throw new PinRepositoryError('NOT_FOUND', `Pin not found: ${pinhuntId}`);
+
+      const pinUuid = (pinData as { id: string }).id;
+
+      // Update junction tables only when explicitly provided
+      if (input.characters !== undefined) {
+        await this.upsertCharacters(pinUuid, input.characters);
+      }
+      if (input.categories !== undefined) {
+        await this.upsertCategories(pinUuid, input.categories);
+      }
+    }
+
+    const pin = await this.getPinByPinhuntId(pinhuntId);
+    if (!pin) throw new PinRepositoryError('NOT_FOUND', `Pin not found: ${pinhuntId}`);
+    return pin;
   }
 
-  // ── submitMissingPin ────────────────────────────────────────────────────────
+  // ── submitMissingPin ──────────────────────────────────────────────────
+
   async submitMissingPin(input: SubmitMissingPinInput): Promise<CataloguePin> {
-    const row = pinToInsertRow(
-      { ...input, catalogueSource: 'user_submission' },
-      'pending_review',
-      true,
-    );
-    if (input.submittedBy) {
-      (row as Record<string, unknown>).submitted_by = input.submittedBy;
-    }
+    // Auto-generate a temporary pinhunt_id for the pending submission.
+    // A moderator assigns the final PHUK-XXXXXXXX ID on approval.
+    const tempId = `PHUK-SUB-${Date.now()}`;
+
+    const row = {
+      pinhunt_id: tempId,
+      title: input.title,
+      brand: input.brand,
+      collection: input.collection,
+      release_date: null,
+      release_year: null,
+      retail_price: null,
+      currency: 'GBP',
+      limited_edition_size: null,
+      estimated_value_gbp: null,
+      description: input.description ?? null,
+      is_new_release: false,
+      origin: input.origin ?? null,
+      edition_type: input.edition ?? null,
+      image_url: input.imageUrl ?? null,
+      back_image_url: null,
+      external_identifiers: input.externalIdentifiers ?? {},
+      verification_status: 'community_submitted' as const,
+      status: 'pending_review' as const,
+      is_user_submitted: true,
+      submitted_by: input.submittedBy ?? null,
+      catalogue_source: 'user_submission',
+    };
 
     const { data, error } = await this.client
       .from('pins')
       .insert(row)
-      .select()
+      .select('id, pinhunt_id')
       .single();
 
     if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    return rowToPin(data as PinRow);
+
+    const pinUuid = (data as { id: string; pinhunt_id: string }).id;
+    const pinhuntId = (data as { id: string; pinhunt_id: string }).pinhunt_id;
+
+    await this.upsertCharacters(pinUuid, input.characters ?? []);
+    await this.upsertCategories(pinUuid, input.categories ?? []);
+
+    const pin = await this.getPinByPinhuntId(pinhuntId);
+    if (!pin) throw new PinRepositoryError('UPSTREAM_ERROR', 'Submission not found after insert');
+    return pin;
   }
 
-  // ── findPossibleMatches ─────────────────────────────────────────────────────
+  // ── findPossibleMatches ────────────────────────────────────────────────
+
   async findPossibleMatches(imageBase64: string, mimeType = 'image/jpeg'): Promise<PinMatch[]> {
     if (!this.ai) {
       throw new PinRepositoryError(
@@ -290,27 +458,45 @@ class SupabasePinRepository implements PinRepository {
       );
     }
 
-    // Fetch full active catalogue to give the AI full context
-    const catalogue = await this.searchPins('', { status: 'active', limit: 500 });
+    const catalogue = await this.searchPins('', { limit: 500 });
     if (catalogue.length === 0) return [];
 
     const rawMatches = await this.ai.identifyFromCatalogue(imageBase64, mimeType, catalogue);
 
-    const mapped = rawMatches.map(m => {
-      const pin = catalogue.find(p => p.id === m.pinId);
-      if (!pin) return null;
-      return { pin, confidence: m.confidence, reasoning: m.reasoning } as PinMatch;
-    });
-    return mapped.filter(Boolean) as PinMatch[];
+    return rawMatches
+      .map(m => {
+        const pin = catalogue.find(p => p.id === m.pinId);
+        if (!pin) return null;
+        return { pin, confidence: m.confidence, reasoning: m.reasoning } as PinMatch;
+      })
+      .filter(Boolean) as PinMatch[];
   }
 }
 
 // ─── Factory ──────────────────────────────────────────────────────────────────
+// Overloaded to accept either a pre-built SupabaseClient (preferred for the
+// Expo app, which uses a singleton) or a url + key pair (api-server / scripts).
 
+export function createSupabasePinRepository(
+  client: SupabaseClient,
+  options?: SupabasePinRepositoryOptions,
+): PinRepository;
 export function createSupabasePinRepository(
   supabaseUrl: string,
   supabaseKey: string,
   options?: SupabasePinRepositoryOptions,
+): PinRepository;
+export function createSupabasePinRepository(
+  clientOrUrl: SupabaseClient | string,
+  keyOrOptions?: string | SupabasePinRepositoryOptions,
+  options?: SupabasePinRepositoryOptions,
 ): PinRepository {
-  return new SupabasePinRepository(supabaseUrl, supabaseKey, options);
+  if (typeof clientOrUrl === 'string') {
+    const client = createClient<Database>(clientOrUrl, keyOrOptions as string);
+    return new SupabasePinRepository(client, options);
+  }
+  return new SupabasePinRepository(
+    clientOrUrl as SupabaseClient<Database>,
+    keyOrOptions as SupabasePinRepositoryOptions | undefined,
+  );
 }

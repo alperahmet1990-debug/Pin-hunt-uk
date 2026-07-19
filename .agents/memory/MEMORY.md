@@ -1,1 +1,2 @@
 - [PinHunt architecture](pinhunt-arch.md) — repository pattern, mock fallback, provider hierarchy, lib build requirements
+- [PinHunt schema & auth implementation](pinhunt-schema-auth.md) — batch 2–5 completion status, outstanding manual steps, key decisions

@@ -8,9 +8,9 @@ import type {
 } from './types';
 
 /**
- * PinRepository — the single point of access for all pin catalogue data.
+ * PinRepository — the single point of access for catalogue data.
  *
- * Screens and services MUST use this interface; no component may query
+ * All screens and services MUST use this interface; no component may query
  * Supabase (or any other data source) directly.
  *
  * Implementations:
@@ -23,44 +23,57 @@ export interface PinRepository {
 
   /**
    * Full-text search across title, brand, collection and characters.
-   * Pass an empty string to list all pins (subject to filters).
+   * Pass an empty string to list all accessible pins (subject to RLS + filters).
    */
   searchPins(query: string, filters?: PinFilters): Promise<CataloguePin[]>;
 
-  /** Fetch a single pin by its stable internal PinHunt ID. */
-  getPinById(id: string): Promise<CataloguePin | null>;
+  /**
+   * Fetch a single pin by its stable pinhunt_id (e.g. "PHUK-00000001").
+   * Returns null if not found or not accessible via RLS.
+   */
+  getPinById(pinhuntId: string): Promise<CataloguePin | null>;
 
-  /** All active pins belonging to a named series / collection. */
+  /** Alias for getPinById — always queries by pinhunt_id. */
+  getPinByPinhuntId(pinhuntId: string): Promise<CataloguePin | null>;
+
+  /** All accessible pins belonging to a named series / collection. */
   getPinsBySeries(series: string): Promise<CataloguePin[]>;
 
   /**
-   * All active pins featuring a character.
-   * Uses case-insensitive substring matching so "Mickey" matches "Mickey Mouse".
+   * All accessible pins featuring a character (case-insensitive substring match).
+   * e.g. "Mickey" matches "Mickey Mouse".
    */
   getPinsByCharacter(character: string): Promise<CataloguePin[]>;
 
+  /**
+   * All accessible pins in a given category (case-insensitive substring match).
+   * e.g. "Hidden" matches "Hidden Disney", "Hidden Mickey".
+   */
+  getPinsByCategory(category: string): Promise<CataloguePin[]>;
+
   // ── Catalogue writes ─────────────────────────────────────────────────────
-  // (Intended for admin tooling and import pipelines, not end-user screens.)
+  // Intended for admin tooling and import pipelines, not end-user screens.
+  // Requires service-role key or admin privileges.
 
   /**
-   * Insert a new pin into the catalogue.
-   * Provide `id` for idempotent imports (upsert-by-id behaviour).
+   * Insert or update a pin in the catalogue.
+   * Idempotent: upserts by pinhunt_id.
+   * Also manages junction rows for characters and categories.
    */
   createPin(input: CreatePinInput): Promise<CataloguePin>;
 
   /**
-   * Update catalogue fields on an existing pin.
-   * NEVER touches user collection records, photos, notes or trade history —
-   * those live in separate tables and are not addressable from this method.
+   * Update catalogue fields on an existing pin (by pinhunt_id).
+   * NEVER touches user collection records, photos, notes or trade history.
    */
-  updatePin(id: string, input: UpdatePinInput): Promise<CataloguePin>;
+  updatePin(pinhuntId: string, input: UpdatePinInput): Promise<CataloguePin>;
 
   // ── Community contribution ───────────────────────────────────────────────
 
   /**
-   * Record a user-submitted "this pin is missing from the catalogue" report.
-   * The pin is inserted with status='pending_review' and isUserSubmitted=true.
-   * A moderator must approve it before it becomes visible to other users.
+   * Record a user-submitted "missing pin" report.
+   * Inserts with status='pending_review' and isUserSubmitted=true.
+   * A moderator must approve before it becomes publicly visible.
    */
   submitMissingPin(input: SubmitMissingPinInput): Promise<CataloguePin>;
 
@@ -68,10 +81,9 @@ export interface PinRepository {
 
   /**
    * Vision-based scan matching against the live catalogue.
-   *
-   * Requires an AiMatchAdapter to be provided at construction time.
-   * Throws PinRepositoryError('AI_ADAPTER_REQUIRED') if none was given —
-   * in that case the caller should route through the scan API endpoint instead.
+   * Requires an AiMatchAdapter at construction time.
+   * Throws PinRepositoryError('AI_ADAPTER_REQUIRED') otherwise —
+   * mobile callers should route through POST /api/scan/identify instead.
    */
   findPossibleMatches(imageBase64: string, mimeType?: string): Promise<PinMatch[]>;
 }

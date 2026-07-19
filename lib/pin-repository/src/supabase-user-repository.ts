@@ -593,7 +593,12 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   async createPinSubmission(userId: string, input: CreatePinSubmissionInput): Promise<PinSubmission> {
     // Generate the submission UUID upfront so we can build storage paths.
-    const submissionId = crypto.randomUUID();
+    // crypto.randomUUID() is not available in all React Native runtimes,
+    // so we use a simple RFC 4122 v4 UUID generator instead.
+    const submissionId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+      const r = (Math.random() * 16) | 0;
+      return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+    });
 
     // Upload front image (required).
     const frontPath = await this.uploadSubmissionImage(userId, submissionId, input.frontImageUri, 'front');

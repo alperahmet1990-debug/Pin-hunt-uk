@@ -25,6 +25,11 @@ export interface Database {
           avatar_url: string | null;
           bio: string | null;
           location: string | null;
+          trading_region: string | null;
+          international_trading_enabled: boolean;
+          allow_trade_requests: boolean;
+          allow_messages: boolean;
+          profile_visibility: 'public' | 'private';
           is_admin: boolean;
           created_at: string;
           updated_at: string;
@@ -36,6 +41,11 @@ export interface Database {
           avatar_url?: string | null;
           bio?: string | null;
           location?: string | null;
+          trading_region?: string | null;
+          international_trading_enabled?: boolean;
+          allow_trade_requests?: boolean;
+          allow_messages?: boolean;
+          profile_visibility?: 'public' | 'private';
           is_admin?: boolean;
           created_at?: string;
           updated_at?: string;
@@ -47,6 +57,11 @@ export interface Database {
           avatar_url?: string | null;
           bio?: string | null;
           location?: string | null;
+          trading_region?: string | null;
+          international_trading_enabled?: boolean;
+          allow_trade_requests?: boolean;
+          allow_messages?: boolean;
+          profile_visibility?: 'public' | 'private';
           is_admin?: boolean;
           updated_at?: string;
         };

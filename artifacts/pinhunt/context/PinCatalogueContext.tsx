@@ -62,7 +62,8 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
   // Create repository once using the app-wide Supabase singleton.
   const repository = useMemo<PinRepository | null>(() => {
     if (!isConfigured) return null;
-    return createSupabasePinRepository(supabase);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return createSupabasePinRepository(supabase as any);
   }, []);
 
   const fetchCatalogue = useCallback(async () => {

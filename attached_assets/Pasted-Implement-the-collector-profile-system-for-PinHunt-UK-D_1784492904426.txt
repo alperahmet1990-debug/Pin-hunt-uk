@@ -1,0 +1,150 @@
+Implement the collector profile system for PinHunt UK.
+
+Do not implement followers, social feeds, trading or messaging yet. Focus only on user profiles and profile discovery.
+
+Authentication
+
+Use Supabase Auth for authentication.
+
+When a new user registers:
+
+* automatically create a matching row in the profiles table if one does not already exist
+* use the authenticated user’s UUID as the profile ID
+* never expose email addresses publicly
+
+Profiles
+
+Ensure the profiles table contains at least:
+
+* id (UUID, linked to auth.users)
+* username (required, unique)
+* display_name
+* bio
+* avatar_url
+* trading_region
+* international_trading_enabled (boolean)
+* allow_trade_requests (boolean)
+* allow_messages (boolean)
+* profile_visibility
+* created_at
+* updated_at
+
+Allowed profile visibility values:
+
+* public
+* private
+
+Add appropriate constraints and indexes for efficient searching by:
+
+* username
+* display_name
+* trading_region
+
+Public profile access
+
+Create a safe public profile query or view exposing only:
+
+* id
+* username
+* display_name
+* avatar_url
+* bio
+* trading_region
+* international_trading_enabled
+
+Do NOT expose:
+
+* email address
+* authentication data
+* admin flags
+* private settings
+
+Repository and service layer
+
+Do not access Supabase directly from screens.
+
+Create repository/service methods for:
+
+* getMyProfile
+* updateMyProfile
+* getPublicProfile
+* searchCollectors
+* checkUsernameAvailable
+
+Screens
+
+Implement these screens:
+
+1. Complete Profile
+
+* shown after first sign-in if username has not been completed
+* username
+* display name
+* bio
+* region
+* avatar upload (optional)
+
+2. My Profile
+
+* avatar
+* username
+* display name
+* bio
+* region
+* edit button
+
+3. Edit Profile
+
+* edit all profile fields
+* validate username uniqueness
+* save changes
+
+4. Find Collectors
+
+* search by username
+* search by display name
+* search by trading region
+
+5. Collector Profile
+
+* avatar
+* username
+* display name
+* bio
+* trading region
+
+Validation
+
+Usernames must:
+
+* be unique
+* be case-insensitive
+* contain only letters, numbers, underscores and periods
+* be between 3 and 20 characters
+
+Show clear validation messages.
+
+Row Level Security
+
+Users may:
+
+* read their own profile
+* update only their own profile
+
+Public users may:
+
+* read only public profiles
+
+Testing
+
+After implementation, automatically test:
+
+* new account creates a profile
+* duplicate usernames are rejected
+* profile edits persist
+* profile search returns correct users
+* private profiles are hidden
+* public profiles are visible
+* users cannot edit another user’s profile
+
+Provide a summary of all tests and identify any failures before considering the feature complete.

@@ -8,6 +8,7 @@ import { CollectionProvider } from '@/context/CollectionContext';
 import { BoardsProvider } from '@/context/BoardsContext';
 import { PinCatalogueProvider } from '@/context/PinCatalogueContext';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
+import { ProfileProvider, useProfile } from '@/context/ProfileContext';
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -22,29 +23,45 @@ SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
 
-// ─── Auth guard ────────────────────────────────────────────────────────────────
-// Watches session state and redirects to /(auth)/login when unauthenticated.
-// Must be rendered inside <AuthProvider>.
+// ─── Auth + profile guard ─────────────────────────────────────────────────────
+// Watches session and profile state, redirecting as needed:
+//   • No session → /(auth)/login
+//   • Session + no username → /complete-profile
+//   • Session + username → /(tabs) (if still in auth group)
 function AuthGuard({ children }: { children: React.ReactNode }) {
-  const { session, loading } = useAuth();
+  const { session, loading: authLoading } = useAuth();
+  const { needsUsername, loading: profileLoading } = useProfile();
   const segments = useSegments();
   const router = useRouter();
+
+  const loading = authLoading || profileLoading;
 
   useEffect(() => {
     if (loading) return;
 
     const inAuthGroup = segments[0] === '(auth)';
+    const inCompleteProfile = segments[0] === 'complete-profile';
+    const inTabs = segments[0] === '(tabs)';
 
     if (!session && !inAuthGroup) {
-      // Not signed in — redirect to login
+      // Not signed in — send to login
       router.replace('/(auth)/login');
     } else if (session && inAuthGroup) {
-      // Signed in — leave auth screens
+      // Just signed in — check if profile is complete
+      if (needsUsername) {
+        router.replace('/complete-profile');
+      } else {
+        router.replace('/(tabs)');
+      }
+    } else if (session && needsUsername && !inCompleteProfile) {
+      // Signed in but no username yet — must complete profile
+      router.replace('/complete-profile');
+    } else if (session && !needsUsername && inCompleteProfile) {
+      // Profile now complete — move into the app
       router.replace('/(tabs)');
     }
-  }, [session, loading, segments, router]);
+  }, [session, loading, needsUsername, segments, router]);
 
-  // While checking session, render nothing (splash is still showing)
   if (loading) return null;
 
   return <>{children}</>;
@@ -56,6 +73,10 @@ function RootLayoutNav() {
     <Stack screenOptions={{ headerBackTitle: 'Back' }}>
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="complete-profile" options={{ headerShown: false }} />
+      <Stack.Screen name="edit-profile" options={{ title: 'Edit Profile' }} />
+      <Stack.Screen name="find-collectors" options={{ title: 'Find Collectors' }} />
+      <Stack.Screen name="collector/[username]" options={{ title: 'Collector' }} />
       <Stack.Screen name="pin/[id]" options={{ title: 'Pin Detail' }} />
       <Stack.Screen name="board/[id]" options={{ title: 'Board' }} />
     </Stack>
@@ -84,19 +105,21 @@ export default function RootLayout() {
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
-            <PinCatalogueProvider>
-              <CollectionProvider>
-                <BoardsProvider>
-                  <GestureHandlerRootView style={{ flex: 1 }}>
-                    <KeyboardProvider>
-                      <AuthGuard>
-                        <RootLayoutNav />
-                      </AuthGuard>
-                    </KeyboardProvider>
-                  </GestureHandlerRootView>
-                </BoardsProvider>
-              </CollectionProvider>
-            </PinCatalogueProvider>
+            <ProfileProvider>
+              <PinCatalogueProvider>
+                <CollectionProvider>
+                  <BoardsProvider>
+                    <GestureHandlerRootView style={{ flex: 1 }}>
+                      <KeyboardProvider>
+                        <AuthGuard>
+                          <RootLayoutNav />
+                        </AuthGuard>
+                      </KeyboardProvider>
+                    </GestureHandlerRootView>
+                  </BoardsProvider>
+                </CollectionProvider>
+              </PinCatalogueProvider>
+            </ProfileProvider>
           </AuthProvider>
         </QueryClientProvider>
       </ErrorBoundary>

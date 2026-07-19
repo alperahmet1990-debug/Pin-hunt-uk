@@ -1,6 +1,8 @@
 import type {
   AddUserPinInput,
   Profile,
+  PublicProfile,
+  SearchCollectorsInput,
   Trade,
   TradeItem,
   TradeMessage,
@@ -22,11 +24,39 @@ import type {
 export interface IUserPinRepository {
   // ── Profile ──────────────────────────────────────────────────────────────
 
-  /** Fetch a user's public profile by their auth UUID. */
+  /** Fetch a user's own profile (full data including private fields). */
   getProfile(userId: string): Promise<Profile | null>;
 
-  /** Update the calling user's own profile. Cannot change is_admin. */
+  /** Alias for getProfile — semantic clarity for "my own" profile. */
+  getMyProfile(userId: string): Promise<Profile | null>;
+
+  /**
+   * Upsert the calling user's own profile.
+   * Creates the row if it doesn't exist (handles pre-trigger accounts).
+   * Cannot change is_admin.
+   */
   updateProfile(userId: string, input: UpdateProfileInput): Promise<Profile>;
+
+  /** Alias for updateProfile. */
+  updateMyProfile(userId: string, input: UpdateProfileInput): Promise<Profile>;
+
+  /**
+   * Fetch a public profile by username (case-insensitive).
+   * Returns null if profile is private or username doesn't exist.
+   */
+  getPublicProfile(username: string): Promise<PublicProfile | null>;
+
+  /**
+   * Search public collector profiles by username, display name, or
+   * trading region. Only public profiles with a username are returned.
+   */
+  searchCollectors(input: SearchCollectorsInput): Promise<PublicProfile[]>;
+
+  /**
+   * Check whether a username is available (case-insensitive).
+   * Pass excludeUserId to allow the current user's own username through.
+   */
+  checkUsernameAvailable(username: string, excludeUserId?: string): Promise<boolean>;
 
   // ── Collection ───────────────────────────────────────────────────────────
 

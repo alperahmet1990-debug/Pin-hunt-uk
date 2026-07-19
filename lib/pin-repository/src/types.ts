@@ -231,6 +231,8 @@ export interface UpdateUserPinInput {
 }
 
 // ─── Profile types ────────────────────────────────────────────────────────────
+export type ProfileVisibility = 'public' | 'private';
+
 export interface Profile {
   id: string;               // auth.users UUID
   username?: string;
@@ -238,6 +240,11 @@ export interface Profile {
   avatarUrl?: string;
   bio?: string;
   location?: string;
+  tradingRegion?: string;
+  internationalTradingEnabled: boolean;
+  allowTradeRequests: boolean;
+  allowMessages: boolean;
+  profileVisibility: ProfileVisibility;
   isAdmin: boolean;
   createdAt: string;
   updatedAt: string;
@@ -249,6 +256,30 @@ export interface UpdateProfileInput {
   avatarUrl?: string;
   bio?: string;
   location?: string;
+  tradingRegion?: string;
+  internationalTradingEnabled?: boolean;
+  allowTradeRequests?: boolean;
+  allowMessages?: boolean;
+  profileVisibility?: ProfileVisibility;
+}
+
+/** Safe public subset — returned by getPublicProfile and searchCollectors. */
+export interface PublicProfile {
+  id: string;
+  username: string;
+  displayName?: string;
+  avatarUrl?: string;
+  bio?: string;
+  tradingRegion?: string;
+  internationalTradingEnabled: boolean;
+}
+
+export interface SearchCollectorsInput {
+  /** Searches username and display_name (case-insensitive partial match). */
+  query?: string;
+  tradingRegion?: string;
+  limit?: number;
+  offset?: number;
 }
 
 // ─── Trade types ──────────────────────────────────────────────────────────────

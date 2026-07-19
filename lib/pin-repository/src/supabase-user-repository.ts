@@ -5,6 +5,8 @@ import type {
   CataloguePin,
   ExternalIdentifiers,
   Profile,
+  PublicProfile,
+  SearchCollectorsInput,
   Trade,
   TradeItem,
   TradeMessage,
@@ -68,9 +70,26 @@ function rowToProfile(row: Record<string, unknown>): Profile {
     avatarUrl: (row.avatar_url as string | null) ?? undefined,
     bio: (row.bio as string | null) ?? undefined,
     location: (row.location as string | null) ?? undefined,
+    tradingRegion: (row.trading_region as string | null) ?? undefined,
+    internationalTradingEnabled: (row.international_trading_enabled as boolean) ?? false,
+    allowTradeRequests: (row.allow_trade_requests as boolean) ?? true,
+    allowMessages: (row.allow_messages as boolean) ?? true,
+    profileVisibility: ((row.profile_visibility as string) ?? 'public') as Profile['profileVisibility'],
     isAdmin: (row.is_admin as boolean) ?? false,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
+  };
+}
+
+function rowToPublicProfile(row: Record<string, unknown>): PublicProfile {
+  return {
+    id: row.id as string,
+    username: row.username as string,
+    displayName: (row.display_name as string | null) ?? undefined,
+    avatarUrl: (row.avatar_url as string | null) ?? undefined,
+    bio: (row.bio as string | null) ?? undefined,
+    tradingRegion: (row.trading_region as string | null) ?? undefined,
+    internationalTradingEnabled: (row.international_trading_enabled as boolean) ?? false,
   };
 }
 
@@ -116,24 +135,89 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return rowToProfile(data as Record<string, unknown>);
   }
 
+  async getMyProfile(userId: string): Promise<Profile | null> {
+    return this.getProfile(userId);
+  }
+
   async updateProfile(userId: string, input: UpdateProfileInput): Promise<Profile> {
-    const updates: Record<string, unknown> = {};
-    if (input.username !== undefined) updates.username = input.username;
-    if (input.displayName !== undefined) updates.display_name = input.displayName;
-    if (input.avatarUrl !== undefined) updates.avatar_url = input.avatarUrl;
-    if (input.bio !== undefined) updates.bio = input.bio;
-    if (input.location !== undefined) updates.location = input.location;
+    // Use upsert so this works even if the trigger hasn't created the row yet
+    // (handles accounts created before migration 003 was applied).
+    const upsertData: Record<string, unknown> = { id: userId, updated_at: new Date().toISOString() };
+    if (input.username !== undefined) upsertData.username = input.username ?? null;
+    if (input.displayName !== undefined) upsertData.display_name = input.displayName ?? null;
+    if (input.avatarUrl !== undefined) upsertData.avatar_url = input.avatarUrl ?? null;
+    if (input.bio !== undefined) upsertData.bio = input.bio ?? null;
+    if (input.location !== undefined) upsertData.location = input.location ?? null;
+    if (input.tradingRegion !== undefined) upsertData.trading_region = input.tradingRegion ?? null;
+    if (input.internationalTradingEnabled !== undefined) upsertData.international_trading_enabled = input.internationalTradingEnabled;
+    if (input.allowTradeRequests !== undefined) upsertData.allow_trade_requests = input.allowTradeRequests;
+    if (input.allowMessages !== undefined) upsertData.allow_messages = input.allowMessages;
+    if (input.profileVisibility !== undefined) upsertData.profile_visibility = input.profileVisibility;
 
     const { data, error } = await this.client
       .from('profiles')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .update(updates as any)
-      .eq('id', userId)
+      .upsert(upsertData as any, { onConflict: 'id' })
       .select()
       .single();
 
     if (error) throw new Error(error.message);
     return rowToProfile(data as Record<string, unknown>);
+  }
+
+  async updateMyProfile(userId: string, input: UpdateProfileInput): Promise<Profile> {
+    return this.updateProfile(userId, input);
+  }
+
+  async getPublicProfile(username: string): Promise<PublicProfile | null> {
+    const { data, error } = await this.client
+      .from('public_profiles')
+      .select('*')
+      .eq('username', username.toLowerCase())
+      .maybeSingle();
+
+    if (error) throw new Error(error.message);
+    if (!data) return null;
+    return rowToPublicProfile(data as unknown as Record<string, unknown>);
+  }
+
+  async searchCollectors(input: SearchCollectorsInput): Promise<PublicProfile[]> {
+    let query = this.client
+      .from('public_profiles')
+      .select('*');
+
+    if (input.query?.trim()) {
+      const term = `%${input.query.trim().toLowerCase()}%`;
+      query = query.or(`username.ilike.${term},display_name.ilike.${term}`);
+    }
+
+    if (input.tradingRegion?.trim()) {
+      query = query.ilike('trading_region', `%${input.tradingRegion.trim()}%`);
+    }
+
+    query = query
+      .order('username', { ascending: true })
+      .limit(input.limit ?? 30)
+      .range(input.offset ?? 0, (input.offset ?? 0) + (input.limit ?? 30) - 1);
+
+    const { data, error } = await query;
+    if (error) throw new Error(error.message);
+    return (data as unknown as Record<string, unknown>[]).map(rowToPublicProfile);
+  }
+
+  async checkUsernameAvailable(username: string, excludeUserId?: string): Promise<boolean> {
+    let query = this.client
+      .from('profiles')
+      .select('id')
+      .eq('username', username.toLowerCase());
+
+    if (excludeUserId) {
+      query = query.neq('id', excludeUserId);
+    }
+
+    const { data, error } = await query.maybeSingle();
+    if (error) throw new Error(error.message);
+    return data === null; // null means no matching row → username is available
   }
 
   // ── Collection ────────────────────────────────────────────────────────

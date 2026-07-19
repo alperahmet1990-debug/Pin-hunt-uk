@@ -264,8 +264,14 @@ export default function AddPinScreen() {
               .createSignedUrl(path, 31_536_000);
             imageUrl = urlData?.signedUrl ?? undefined;
           }
-        } catch {
-          // Non-fatal — submit without image if upload fails
+        } catch (uploadErr) {
+          console.warn('[add-pin] image upload failed:', uploadErr);
+          Alert.alert(
+            'Image upload failed',
+            uploadErr instanceof Error ? uploadErr.message : String(uploadErr),
+          );
+          setSaving(false);
+          return;
         }
       }
 

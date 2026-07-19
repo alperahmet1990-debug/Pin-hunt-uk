@@ -43,13 +43,16 @@ export default function RegisterScreen() {
     }
     setError(null);
     setLoading(true);
-    const { error: err } = await signUp(email.trim(), password, displayName);
+    const { error: err, needsEmailConfirmation } = await signUp(email.trim(), password, displayName);
     setLoading(false);
     if (err) {
       setError(err);
-    } else {
+    } else if (needsEmailConfirmation) {
+      // Email confirmation is enabled in Supabase — show the check-your-email screen.
       setSuccess(true);
     }
+    // If needsEmailConfirmation is false the session is already set and
+    // AuthGuard will navigate away automatically — no action needed here.
   };
 
   const styles = makeStyles(colors);

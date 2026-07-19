@@ -28,7 +28,7 @@ interface AuthContextValue {
     email: string,
     password: string,
     displayName?: string,
-  ): Promise<{ error: string | null }>;
+  ): Promise<{ error: string | null; needsEmailConfirmation: boolean }>;
   signOut(): Promise<void>;
 }
 
@@ -74,18 +74,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const signUp = async (email: string, password: string, displayName?: string) => {
-    if (!isSupabaseConfigured) return { error: NOT_CONFIGURED };
+    if (!isSupabaseConfigured) return { error: NOT_CONFIGURED, needsEmailConfirmation: false };
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
           data: { display_name: displayName?.trim() || email },
         },
       });
-      return { error: error?.message ?? null };
+      if (error) return { error: error.message, needsEmailConfirmation: false };
+      // session is null when Supabase requires email confirmation before login.
+      // session is set immediately when "Confirm email" is disabled in the dashboard.
+      const needsEmailConfirmation = !data.session;
+      return { error: null, needsEmailConfirmation };
     } catch (err) {
-      return { error: err instanceof Error ? err.message : 'Sign-up failed. Please try again.' };
+      return {
+        error: err instanceof Error ? err.message : 'Sign-up failed. Please try again.',
+        needsEmailConfirmation: false,
+      };
     }
   };
 

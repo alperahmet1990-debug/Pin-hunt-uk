@@ -24,7 +24,7 @@ import type { Pin } from '@/types/pin';
 // ─── API ─────────────────────────────────────────────────────────────────────
 
 const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api-server/api`
+  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
   : 'http://localhost:8080/api';
 
 async function identifyPin(

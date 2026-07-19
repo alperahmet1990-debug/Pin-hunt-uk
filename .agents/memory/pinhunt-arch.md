@@ -1,52 +1,70 @@
 ---
 name: PinHunt architecture
-description: Key decisions for the PinHunt Expo app — repository pattern, CataloguePin type, provider hierarchy, lib build requirements
+description: Repository pattern, mock fallback, provider hierarchy, lib build requirements, and key decisions
 ---
 
-# PinHunt — Architecture Decisions
-
 ## Repository pattern
-All screens use `usePinCatalogue()` from `context/PinCatalogueContext.tsx`. No screen queries Supabase or mock data directly. The context provides `{ pins, newReleases, loading, error }`. Fallback: when Supabase env vars are absent, it adapts mock data from `mock-data/pins.ts` (which uses `MockPin` type with `retailPrice` / `image` — NOT `CataloguePin`).
 
-**Why:** Allows swapping the data source (external licensed API, etc.) without touching screens.
+- All Supabase access from the Expo app goes through repository interfaces in `lib/pin-repository`.
+- `createSupabasePinRepository(supabase as any)` — the `as any` cast is required because the Supabase client's `SupabaseClient<Database>` type doesn't structurally match the factory's parameter type; this is a Supabase TypeScript quirk, not a real type error.
+- Same cast required in `ProfileContext.tsx`: `createSupabaseUserRepository(supabase as any)`.
 
-## CataloguePin vs MockPin
-- `CataloguePin` lives in `@workspace/pin-repository` — use this in all screens, components, contexts.
-- `MockPin` (local interface in `mock-data/pins.ts`) has legacy fields: `retailPrice`, `image: any`, `backImage?: any`. The context maps MockPin → CataloguePin.
-- `types/pin.ts` re-exports `CataloguePin as Pin` for backward compat; also exports `CollectionStatus` and `Brand`.
-- `getPinImageSource(pin: CataloguePin)` in `utils/pinImage.ts` returns `{uri: imageUrl}` or placeholder — always use this; never `pin.image`.
+## Provider hierarchy (artifacts/pinhunt/app/_layout.tsx)
 
-## Provider hierarchy (must maintain this order in _layout.tsx)
 ```
-PinCatalogueProvider        ← outermost (data source)
-  CollectionProvider        ← uses collection state only
-    BoardsProvider          ← uses both collection AND usePinCatalogue()
+SafeAreaProvider
+└── ErrorBoundary
+    └── QueryClientProvider
+        └── AuthProvider          ← session, signIn, signUp, signOut
+            └── ProfileProvider   ← profile, needsUsername, profile ops
+                └── PinCatalogueProvider
+                    └── CollectionProvider
+                        └── BoardsProvider
+                            └── GestureHandlerRootView
+                                └── KeyboardProvider
+                                    └── AuthGuard  ← redirects based on session + needsUsername
+                                        └── RootLayoutNav
 ```
-`BoardsContext` uses `usePinCatalogue()` so it MUST be a child of `PinCatalogueProvider`.
 
-## lib/pin-repository build
-- tsconfig extends `../../tsconfig.base.json` (moduleResolution: bundler).
-- `emitDeclarationOnly: true`, `composite: true`, outDir: `dist`.
-- Must run `pnpm --filter @workspace/pin-repository run build` after changes.
-- After build, Expo typecheck and api-server typecheck both pass.
-- Internal imports use no `.js` extension (bundler resolution).
+**Why this order:** ProfileProvider needs to be inside AuthProvider (it calls useAuth internally) and outside AuthGuard (AuthGuard reads needsUsername from ProfileProvider).
 
-## lib/integrations-openai-ai-server build
-- Also needs `pnpm --filter @workspace/integrations-openai-ai-server run build` for api-server typecheck.
-- Has `@types/node` and same composite/emitDeclarationOnly pattern.
+## AuthGuard redirect logic
 
-## Supabase setup (still pending)
-- Env vars needed: `SUPABASE_URL` + `SUPABASE_ANON_KEY` (server), `EXPO_PUBLIC_SUPABASE_URL` + `EXPO_PUBLIC_SUPABASE_ANON_KEY` (mobile).
-- User must add Supabase connector via workspace Settings → Connectors first.
-- After connecting: run `POST /api/admin/seed-pins` to populate the catalogue.
-- `POST /api/admin/catalogue-status` to verify the seed ran.
+1. No session → `/(auth)/login`
+2. Session + in auth group + needsUsername → `/complete-profile`
+3. Session + in auth group + has username → `/(tabs)`
+4. Session + needsUsername + not in complete-profile → `/complete-profile`
+5. Session + has username + in complete-profile → `/(tabs)`
 
-## api-server scan route
-- Reads pin catalogue from Supabase at request time (via repository).
-- Falls back gracefully: if Supabase not configured, returns 503 with clear message.
-- Filters matches to only return pinIds that exist in the live catalogue.
+The guard blocks on `authLoading || profileLoading` before acting.
 
-## eBay mock / estimated value
-- `pin.estimatedValueGBP` is optional in CataloguePin — always use `?? 0` before arithmetic.
-- `pin.retailPriceGBP` replaces old `pin.retailPrice`.
-- `pin.origin`, `pin.edition` are optional — use `?? '—'` when passed to MetaRow (expects string).
+## Lib build requirement
+
+Run `pnpm --filter @workspace/pin-repository run build` after any change to `lib/pin-repository/src/`. The Expo app imports from the compiled output.
+
+**Why:** Metro bundler cannot resolve TypeScript source from workspace libs; the lib must be compiled to JS first.
+
+## Database Views and the Database type
+
+Do NOT add typed Views to `lib/pin-repository/src/database.types.ts` using the Supabase generic approach. Changing `Views: Record<string, never>` to a specific view type breaks the table type resolution in the Supabase TS client (all table operations get `never` type).
+
+**Fix pattern:** Keep `Views: Record<string, never>` in `database.types.ts`. For view queries, use `as unknown as Record<string, unknown>[]` casts in the repository implementation.
+
+## Username storage
+
+Usernames are always lowercased before saving (in `updateProfile`). The DB has a `UNIQUE INDEX` on `lower(username)`. Client-side validation regex: `/^[a-zA-Z0-9_.]{3,20}$/`.
+
+## Profile upsert
+
+`updateProfile` uses `.upsert({ id: userId, ...fields }, { onConflict: 'id' })` — not `.update()`. This ensures the profile row is created even if the `handle_new_user` trigger hasn't fired yet (e.g. for users who existed before migration 003 was applied).
+
+## Navigation routes
+
+- `/complete-profile` — first-time profile setup, Stack screen, `headerShown: false`
+- `/edit-profile` — edit all profile fields, Stack screen with header
+- `/find-collectors` — search public collectors, Stack screen
+- `/collector/[username]` — public collector profile, dynamic Stack screen
+
+## Mock data to remove
+
+`artifacts/pinhunt/mock-data/user.ts` (MOCK_USER) is no longer used by profile.tsx — it was replaced with real ProfileContext data. The file can be deleted when other references are cleaned up.

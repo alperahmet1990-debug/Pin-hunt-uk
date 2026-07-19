@@ -33,7 +33,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
-import { pickSubmissionImage } from '@/utils/submissionImage';
+import { pickSubmissionImage, uploadLocalImageToStorage } from '@/utils/submissionImage';
 import { createSupabasePinRepository } from '@workspace/pin-repository';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -253,17 +253,12 @@ export default function AddPinScreen() {
       if (frontUri && user?.id) {
         try {
           const path = `${user.id}/${Date.now()}/front.jpg`;
-          const blob = await fetch(frontUri).then(r => r.blob());
-          const { error: upErr } = await supabase.storage
+          await uploadLocalImageToStorage(frontUri, 'pin-submissions', path, supabase.storage);
+          // 1-year signed URL — long enough for a moderator to swap in a permanent one
+          const { data: urlData } = await supabase.storage
             .from('pin-submissions')
-            .upload(path, blob, { contentType: 'image/jpeg', upsert: true });
-          if (!upErr) {
-            // 1-year signed URL — enough time for a moderator to process
-            const { data: urlData } = await supabase.storage
-              .from('pin-submissions')
-              .createSignedUrl(path, 31_536_000);
-            imageUrl = urlData?.signedUrl ?? undefined;
-          }
+            .createSignedUrl(path, 31_536_000);
+          imageUrl = urlData?.signedUrl ?? undefined;
         } catch (uploadErr) {
           console.warn('[add-pin] image upload failed:', uploadErr);
           Alert.alert(

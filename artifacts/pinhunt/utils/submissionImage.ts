@@ -4,6 +4,7 @@
  * Keeps camera/library access and compression logic out of screens.
  * The repository handles the actual Supabase Storage upload.
  */
+import * as FileSystem from 'expo-file-system';
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import { Alert, Platform } from 'react-native';
@@ -83,4 +84,38 @@ export async function pickSubmissionImage(source: ImageSource): Promise<PickedIm
     width: compressed.width,
     height: compressed.height,
   };
+}
+
+/**
+ * Upload a local image URI to Supabase Storage.
+ *
+ * Uses expo-file-system to read the file as base64 (works reliably in
+ * Expo Go on device — `fetch(localUri).blob()` does not).
+ *
+ * Returns the storage path on success so the caller can generate a URL.
+ */
+export async function uploadLocalImageToStorage(
+  localUri: string,
+  bucket: string,
+  path: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  storageClient: any,
+): Promise<void> {
+  // Read file as base64 string via expo-file-system
+  const base64 = await FileSystem.readAsStringAsync(localUri, {
+    encoding: FileSystem.EncodingType.Base64,
+  });
+
+  // Decode base64 → Uint8Array without any extra packages
+  const binaryString = atob(base64);
+  const bytes = new Uint8Array(binaryString.length);
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+
+  const { error } = await storageClient
+    .from(bucket)
+    .upload(path, bytes, { contentType: 'image/jpeg', upsert: true });
+
+  if (error) throw new Error(`Storage upload failed: ${error.message}`);
 }

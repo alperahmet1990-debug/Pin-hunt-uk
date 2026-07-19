@@ -1,0 +1,259 @@
+Important
+
+Use Supabase as the only database. Do not create or configure a Replit Database. Use the existing GitHub repository for version control and commit changes in logical stages.
+
+If any manual action is required in Supabase (such as running SQL migrations, enabling extensions, or creating Storage buckets), stop and tell me exactly what I need to do instead of trying to work around it.
+
+The project must remain portable so it can later be developed in Cursor, VS Code, Xcode or another environment.
+
+Do not delete or replace the existing working app until the GitHub connection, Supabase connection and database setup have all been verified.
+
+I have already:
+
+* Connected GitHub to this project.
+* Added these Replit Secrets:
+    * EXPO_PUBLIC_SUPABASE_URL
+    * EXPO_PUBLIC_SUPABASE_ANON_KEY
+* Uploaded PinHunt_UK_Master_Pin_Catalogue_Template_Updated.xlsx.
+
+Use that workbook as the source for the catalogue import.
+
+⸻
+
+Before making any changes
+
+First give me a concise implementation plan.
+
+Do not immediately start changing files.
+
+The implementation plan should include:
+
+* Files you will create.
+* Database tables.
+* Row Level Security strategy.
+* Storage buckets.
+* Authentication approach.
+* Import process.
+* Git commit plan.
+* Which manual steps I must perform in Supabase.
+
+Wait for my confirmation before applying any changes.
+
+⸻
+
+Architecture
+
+Build a production-quality architecture.
+
+The app must use:
+
+* Expo React Native
+* TypeScript
+* Supabase
+* Repository pattern
+* Service layer
+* GitHub
+
+The UI must never talk directly to Supabase.
+
+Instead use:
+
+React Native Screens
+
+↓
+
+Services
+
+↓
+
+Repository Interfaces
+
+↓
+
+Supabase Repository Implementations
+
+This allows a licensed catalogue API to be added later without changing the UI.
+
+⸻
+
+Database
+
+Create Supabase SQL migrations for:
+
+* profiles
+* pins
+* characters
+* pin_characters
+* categories
+* pin_categories
+* pin_external_ids
+* pin_images
+* user_pins
+* user_pin_images
+* pin_submissions
+* scan_attempts
+* pin_sources
+* trades
+* trade_items
+* trade_messages
+
+Use proper foreign keys, indexes, constraints and updated_at triggers.
+
+The permanent internal catalogue ID is:
+
+pinhunt_id
+
+Never replace it with IDs from external providers.
+
+⸻
+
+Authentication
+
+Configure Supabase Auth with:
+
+* Register
+* Login
+* Logout
+* Session persistence
+* Protected routes
+* Automatic profile creation
+
+Do not add Google or Apple sign-in yet.
+
+⸻
+
+Storage
+
+Create or document Storage buckets for:
+
+* avatars
+* catalogue-images
+* user-pin-images
+* scan-images
+
+Use secure Row Level Security policies.
+
+⸻
+
+Security
+
+Enable Row Level Security.
+
+Requirements:
+
+* Users manage only their own collections.
+* Public users can only read verified catalogue data.
+* Users cannot edit the master catalogue.
+* Catalogue changes go through submissions.
+* Users cannot change their own admin status.
+* Trades are visible only to participants.
+
+Use secure helper functions where appropriate.
+
+⸻
+
+Import
+
+Create an import utility that reads:
+
+PinHunt_UK_Master_Pin_Catalogue_Template_Updated.xlsx
+
+Import:
+
+* Pins
+* Characters
+* Categories
+* External IDs
+
+The import must:
+
+* Preserve every pinhunt_id
+* Be repeatable
+* Be idempotent
+* Produce an import report
+* Avoid duplicates
+
+⸻
+
+Repository Layer
+
+Create:
+
+* Supabase client
+* Repository interfaces
+* Supabase repository implementations
+* Services
+
+Include methods such as:
+
+* searchPins
+* getPinById
+* getPinByPinhuntId
+* getPinsBySeries
+* getPinsByCharacter
+* getPinsByCategory
+* getUserCollection
+* addPinToCollection
+* updateUserPin
+* removeUserPin
+* submitMissingPin
+* submitPinCorrection
+* findPossibleMatches
+
+⸻
+
+Git
+
+Commit work in logical stages.
+
+Do not commit secrets.
+
+Create an .env.example.
+
+Use sensible commit messages.
+
+⸻
+
+README
+
+Update the README with:
+
+* Local setup
+* Supabase setup
+* Running migrations
+* Running imports
+* Running Expo
+* Authentication
+* Storage
+* Architecture
+* Future external catalogue integration
+
+⸻
+
+Testing
+
+Create basic verification for:
+
+* Database connection
+* Authentication
+* RLS
+* Imports
+* Collection permissions
+* Duplicate prevention
+
+⸻
+
+Final report
+
+When everything is complete, provide:
+
+* Files created
+* Migration files created
+* Tables created
+* RLS policies created
+* Storage buckets
+* Manual Supabase steps
+* Import results
+* Any warnings or remaining work
+
+Do not claim anything is complete unless it has actually been verified.

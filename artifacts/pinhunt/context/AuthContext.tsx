@@ -11,7 +11,12 @@
  */
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+
+// Shown to the user when they attempt auth without Supabase configured.
+const NOT_CONFIGURED =
+  'Supabase is not set up yet. Add EXPO_PUBLIC_SUPABASE_URL and ' +
+  'EXPO_PUBLIC_SUPABASE_ANON_KEY to Replit Secrets, then restart the app.';
 
 // ─── Context shape ────────────────────────────────────────────────────────────
 interface AuthContextValue {
@@ -35,6 +40,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Skip Supabase calls entirely when not configured — avoids the
+    // "invalid path in request URL" fetch error on unconfigured builds.
+    if (!isSupabaseConfigured) {
+      setLoading(false);
+      return;
+    }
+
     // Hydrate session from AsyncStorage on first mount
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
@@ -52,23 +64,38 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    return { error: error?.message ?? null };
+    if (!isSupabaseConfigured) return { error: NOT_CONFIGURED };
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      return { error: error?.message ?? null };
+    } catch (err) {
+      return { error: err instanceof Error ? err.message : 'Sign-in failed. Please try again.' };
+    }
   };
 
   const signUp = async (email: string, password: string, displayName?: string) => {
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { display_name: displayName?.trim() || email },
-      },
-    });
-    return { error: error?.message ?? null };
+    if (!isSupabaseConfigured) return { error: NOT_CONFIGURED };
+    try {
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { display_name: displayName?.trim() || email },
+        },
+      });
+      return { error: error?.message ?? null };
+    } catch (err) {
+      return { error: err instanceof Error ? err.message : 'Sign-up failed. Please try again.' };
+    }
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    if (!isSupabaseConfigured) return;
+    try {
+      await supabase.auth.signOut();
+    } catch {
+      // Ignore sign-out errors — session is cleared locally regardless
+    }
   };
 
   return (

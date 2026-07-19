@@ -94,11 +94,16 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
 
     let matches: ScanMatch[] = [];
     try {
-      // Strip any accidental markdown fences
-      const cleaned = raw.replace(/```json|```/g, "").trim();
-      const parsed = JSON.parse(cleaned);
-      matches = Array.isArray(parsed) ? parsed.slice(0, 3) : [];
-    } catch {
+      // Extract the first JSON array found in the response, ignoring any
+      // surrounding prose or markdown fences the model may have added
+      const start = raw.indexOf("[");
+      const end = raw.lastIndexOf("]");
+      if (start !== -1 && end > start) {
+        const parsed = JSON.parse(raw.slice(start, end + 1));
+        matches = Array.isArray(parsed) ? parsed.slice(0, 3) : [];
+      }
+    } catch (parseErr) {
+      console.error("JSON parse error from model response:", parseErr, "\nRaw:", raw);
       matches = [];
     }
 

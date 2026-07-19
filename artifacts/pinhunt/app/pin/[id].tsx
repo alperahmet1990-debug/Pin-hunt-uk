@@ -19,10 +19,12 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { useMarketplace } from '@/hooks/useMarketplace';
 import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
+import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
 import type { CollectionStatus } from '@/types/pin';
-import type { CataloguePin } from '@workspace/pin-repository';
+import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repository';
 
 // ─── Status config ───────────────────────────────────────────────────────────
 
@@ -130,18 +132,28 @@ export default function PinDetailScreen() {
   const { allBoards, customBoards, createBoard, addPinToBoard, removePinFromBoard } = useBoards();
   const { pins } = usePinCatalogue();
 
+  const { repo: marketplaceRepo } = useMarketplace();
+
   const pin = pins.find(p => p.id === id);
   const entry = pin ? getEntry(pin.id) : undefined;
   const [ebayCountry, setEbayCountry] = useState<EbayCountry>('UK');
   const [boardModalVisible, setBoardModalVisible] = useState(false);
   const [newBoardName, setNewBoardName] = useState('');
   const [creatingBoard, setCreatingBoard] = useState(false);
+  const [marketplaceListings, setMarketplaceListings] = useState<ExternalSaleListing[]>([]);
 
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
 
   useEffect(() => {
     if (pin) markViewed(pin.id);
   }, [pin?.id]);
+
+  useEffect(() => {
+    if (!pin || !marketplaceRepo) return;
+    marketplaceRepo.getExternalListingsForPin(pin.id)
+      .then(setMarketplaceListings)
+      .catch(() => { /* non-fatal */ });
+  }, [pin?.id, marketplaceRepo]);
 
   if (!pin) {
     return (
@@ -436,6 +448,104 @@ export default function PinDetailScreen() {
               </ScrollView>
             </View>
           )}
+
+          {/* ── Marketplace Listings ── */}
+          <View>
+            <SectionTitle
+              title="Marketplace Listings"
+              subtitle={
+                marketplaceListings.length > 0
+                  ? `${marketplaceListings.length} active listing${marketplaceListings.length !== 1 ? 's' : ''}`
+                  : 'No active listings'
+              }
+              colors={colors}
+            />
+
+            {/* Safety notice */}
+            <View style={[styles.mktWarning, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B' }]}>
+              <Feather name="shield" size={12} color="#92400E" />
+              <Text style={styles.mktWarningText}>
+                Complete payment only through the marketplace's official checkout. Payments arranged outside the marketplace may not be protected.
+              </Text>
+            </View>
+
+            {marketplaceListings.length === 0 ? (
+              <View style={[styles.mktEmpty, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
+                <Text style={[styles.mktEmptyText, { color: colors.mutedForeground }]}>
+                  No pins listed for sale here yet.
+                </Text>
+                {currentStatus === 'for_trade' && (
+                  <TouchableOpacity
+                    onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
+                    activeOpacity={0.85}
+                    style={[styles.mktSellBtn, { backgroundColor: colors.primary, borderRadius: colors.radius - 2 }]}
+                  >
+                    <Feather name="tag" size={14} color="#fff" />
+                    <Text style={styles.mktSellBtnLabel}>List this pin for sale</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            ) : (
+              <View style={[styles.mktCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
+                {marketplaceListings.map((listing, idx) => {
+                  const pcfg = PLATFORM_CONFIG[listing.platform];
+                  const currSym = CURRENCY_SYMBOLS[(listing.currency as keyof typeof CURRENCY_SYMBOLS)] ?? listing.currency ?? '';
+                  return (
+                    <View
+                      key={listing.id}
+                      style={[
+                        styles.mktRow,
+                        { borderBottomColor: colors.border },
+                        idx === marketplaceListings.length - 1 && styles.mktRowLast,
+                      ]}
+                    >
+                      {/* Platform badge */}
+                      <View style={[styles.mktPlatformBadge, { backgroundColor: pcfg.color + '18' }]}>
+                        <Feather name={pcfg.icon as keyof typeof Feather.glyphMap} size={13} color={pcfg.color} />
+                        <Text style={[styles.mktPlatformLabel, { color: pcfg.color }]}>{pcfg.label}</Text>
+                      </View>
+
+                      {/* Seller + price */}
+                      <View style={styles.mktMeta}>
+                        {listing.sellerUsername && (
+                          <Text style={[styles.mktSeller, { color: colors.mutedForeground }]}>
+                            @{listing.sellerUsername}
+                          </Text>
+                        )}
+                        {listing.askingPrice != null && (
+                          <Text style={[styles.mktPrice, { color: colors.foreground }]}>
+                            {currSym}{listing.askingPrice.toFixed(2)}
+                          </Text>
+                        )}
+                      </View>
+
+                      {/* View button */}
+                      <TouchableOpacity
+                        onPress={() => Linking.openURL(listing.listingUrl)}
+                        activeOpacity={0.75}
+                        style={[styles.mktViewBtn, { backgroundColor: colors.primary + '18', borderColor: colors.primary + '40' }]}
+                      >
+                        <Text style={[styles.mktViewBtnLabel, { color: colors.primary }]}>View</Text>
+                        <Feather name="external-link" size={10} color={colors.primary} />
+                      </TouchableOpacity>
+                    </View>
+                  );
+                })}
+
+                {/* List your own */}
+                {currentStatus === 'for_trade' && (
+                  <TouchableOpacity
+                    onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
+                    activeOpacity={0.8}
+                    style={[styles.mktAddRow, { borderTopColor: colors.border }]}
+                  >
+                    <Feather name="plus" size={14} color={colors.primary} />
+                    <Text style={[styles.mktAddLabel, { color: colors.primary }]}>Add your listing</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            )}
+          </View>
 
           {/* ── eBay Listings ── */}
           <View>
@@ -1044,4 +1154,78 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   modalDoneLabel: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  // ── Marketplace listings section ────────────────────────────────────────────
+  mktWarning: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 7,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 10,
+  },
+  mktWarningText: {
+    flex: 1,
+    fontSize: 11,
+    fontFamily: 'Inter_400Regular',
+    color: '#92400E',
+    lineHeight: 15,
+  },
+  mktEmpty: {
+    borderWidth: 1,
+    padding: 16,
+    alignItems: 'center',
+    gap: 12,
+  },
+  mktEmptyText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
+  mktSellBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  mktSellBtnLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold', color: '#fff' },
+  mktCard: { borderWidth: 1, overflow: 'hidden' },
+  mktRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    gap: 10,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  mktRowLast: { borderBottomWidth: 0 },
+  mktPlatformBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    paddingHorizontal: 7,
+    paddingVertical: 4,
+    borderRadius: 6,
+  },
+  mktPlatformLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  mktMeta: { flex: 1, gap: 1 },
+  mktSeller: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  mktPrice: { fontSize: 15, fontFamily: 'Inter_700Bold' },
+  mktViewBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderWidth: 1,
+    borderRadius: 8,
+  },
+  mktViewBtnLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
+  mktAddRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 11,
+    borderTopWidth: StyleSheet.hairlineWidth,
+  },
+  mktAddLabel: { fontSize: 13, fontFamily: 'Inter_500Medium' },
 });

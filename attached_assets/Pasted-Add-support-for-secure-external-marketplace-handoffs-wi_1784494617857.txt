@@ -1,0 +1,90 @@
+Add support for secure external marketplace handoffs without directly processing payments.
+
+Create an external_sale_listings table with:
+
+* id uuid primary key default gen_random_uuid()
+* seller_id uuid not null references profiles(id) on delete cascade
+* pin_id uuid not null references pins(id) on delete cascade
+* platform text not null
+* listing_url text not null
+* asking_price numeric(10,2) nullable
+* currency text nullable
+* status text default ‘active’
+* created_at timestamptz default now()
+* updated_at timestamptz default now()
+
+Allowed platform values:
+
+* vinted
+* ebay
+* other
+
+Allowed status values:
+
+* draft
+* active
+* sold
+* expired
+* removed
+
+Users may create, update and delete only their own external sale listings.
+
+Other users may read active listings linked to public pins and public seller profiles.
+
+Validate that submitted URLs belong to the selected marketplace domain.
+
+Create repository and service methods for:
+
+* createExternalSaleListing
+* updateExternalSaleListing
+* removeExternalSaleListing
+* getExternalListingsForPin
+* getSellerExternalListings
+* markExternalListingSold
+
+Add a “Sell Securely” flow:
+
+1. User selects a pin from their collection.
+2. User chooses a marketplace (Vinted, eBay or Other).
+3. The app explains that the marketplace listing must be created by the user.
+4. The user pastes the marketplace listing URL.
+5. PinHunt validates and stores the URL.
+6. Interested buyers are redirected to the marketplace to complete payment.
+
+Display a clear warning:
+
+“Complete payment only through the marketplace’s official checkout. Payments arranged outside the marketplace may not be protected.”
+
+Do not scrape Vinted or eBay.
+
+Do not use unofficial marketplace APIs.
+
+Do not attempt to automatically create marketplace listings unless official API access has been granted.
+
+Keep marketplace sales completely separate from pin-for-pin trades.
+
+Create an external_sale_listings screen on each pin showing active marketplace listings with:
+
+* marketplace
+* asking price
+* currency
+* seller username
+* button to open the marketplace listing
+
+If a listing is marked as sold or removed, automatically hide it from public searches.
+
+Add Row Level Security policies so:
+
+* sellers can manage only their own listings
+* public users can view only active listings linked to public profiles
+* private profiles do not expose marketplace listings
+
+Implement automated tests that verify:
+
+* only valid marketplace URLs are accepted
+* users cannot edit another seller’s listings
+* inactive listings are hidden
+* public listings appear on the relevant pin page
+* invalid URLs are rejected with clear error messages
+
+Provide a summary of all tests before marking the feature complete.

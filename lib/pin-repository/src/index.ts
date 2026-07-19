@@ -29,6 +29,12 @@ export type {
   UpdateUserPinInput,
   UserPin,
   UserPinStatus,
+  // External marketplace listings
+  CreateExternalSaleListingInput,
+  ExternalSaleListing,
+  ExternalSaleListingPlatform,
+  ExternalSaleListingStatus,
+  UpdateExternalSaleListingInput,
 } from './types';
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────

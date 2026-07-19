@@ -291,6 +291,43 @@ export interface Database {
           { foreignKeyName: 'trade_messages_sender_id_fkey'; columns: ['sender_id']; referencedRelation: 'users'; referencedColumns: ['id'] }
         ];
       };
+      external_sale_listings: {
+        Row: {
+          id: string;
+          seller_id: string;
+          pin_id: string;
+          platform: 'vinted' | 'ebay' | 'other';
+          listing_url: string;
+          asking_price: number | null;
+          currency: string | null;
+          status: 'draft' | 'active' | 'sold' | 'expired' | 'removed';
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          seller_id: string;
+          pin_id: string;
+          platform: 'vinted' | 'ebay' | 'other';
+          listing_url: string;
+          asking_price?: number | null;
+          currency?: string | null;
+          status?: 'draft' | 'active' | 'sold' | 'expired' | 'removed';
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          listing_url?: string;
+          asking_price?: number | null;
+          currency?: string | null;
+          status?: 'draft' | 'active' | 'sold' | 'expired' | 'removed';
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'external_sale_listings_seller_id_fkey'; columns: ['seller_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] },
+          { foreignKeyName: 'external_sale_listings_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
+        ];
+      };
     };
     Views: Record<string, never>;
     Functions: {

@@ -1,11 +1,14 @@
 import type {
   AddUserPinInput,
+  CreateExternalSaleListingInput,
+  ExternalSaleListing,
   Profile,
   PublicProfile,
   SearchCollectorsInput,
   Trade,
   TradeItem,
   TradeMessage,
+  UpdateExternalSaleListingInput,
   UpdateProfileInput,
   UpdateUserPinInput,
   UserPin,
@@ -104,4 +107,38 @@ export interface IUserPinRepository {
 
   /** Send a message in a trade thread. */
   sendTradeMessage(tradeId: string, senderId: string, message: string): Promise<TradeMessage>;
+
+  // ── External marketplace listings ─────────────────────────────────────────
+
+  /**
+   * Create a new external marketplace listing.
+   * `input.pinPinhuntId` is the pinhunt_id (e.g. "PHUK-00000001"); the
+   * repository resolves it to the internal UUID.
+   */
+  createExternalSaleListing(sellerId: string, input: CreateExternalSaleListingInput): Promise<ExternalSaleListing>;
+
+  /** Update an existing listing (URL, price, status). Only the owner may call this. */
+  updateExternalSaleListing(listingId: string, input: UpdateExternalSaleListingInput): Promise<ExternalSaleListing>;
+
+  /** Permanently delete a listing. Only the owner may call this. */
+  removeExternalSaleListing(listingId: string): Promise<void>;
+
+  /**
+   * Return active listings for a pin visible to the public:
+   * - status = 'active'
+   * - seller has a public profile with a username
+   * - pin is verified
+   * `pinPinhuntId` is the pinhunt_id (e.g. "PHUK-00000001").
+   * Includes joined seller username/display name for display.
+   */
+  getExternalListingsForPin(pinPinhuntId: string): Promise<ExternalSaleListing[]>;
+
+  /**
+   * Return all listings for a seller (all statuses).
+   * Includes joined pin title/pinhunt_id/image for display.
+   */
+  getSellerExternalListings(sellerId: string): Promise<ExternalSaleListing[]>;
+
+  /** Convenience: set a listing's status to 'sold'. */
+  markExternalListingSold(listingId: string): Promise<ExternalSaleListing>;
 }

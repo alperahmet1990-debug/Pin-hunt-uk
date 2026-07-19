@@ -3,13 +3,16 @@ import type { IUserPinRepository } from './user-repository';
 import type {
   AddUserPinInput,
   CataloguePin,
+  CreateExternalSaleListingInput,
   ExternalIdentifiers,
+  ExternalSaleListing,
   Profile,
   PublicProfile,
   SearchCollectorsInput,
   Trade,
   TradeItem,
   TradeMessage,
+  UpdateExternalSaleListingInput,
   UpdateProfileInput,
   UpdateUserPinInput,
   UserPin,
@@ -90,6 +93,21 @@ function rowToPublicProfile(row: Record<string, unknown>): PublicProfile {
     bio: (row.bio as string | null) ?? undefined,
     tradingRegion: (row.trading_region as string | null) ?? undefined,
     internationalTradingEnabled: (row.international_trading_enabled as boolean) ?? false,
+  };
+}
+
+function rowToExternalSaleListing(row: Record<string, unknown>): ExternalSaleListing {
+  return {
+    id: row.id as string,
+    sellerId: row.seller_id as string,
+    pinId: row.pin_id as string,
+    platform: row.platform as ExternalSaleListing['platform'],
+    listingUrl: row.listing_url as string,
+    askingPrice: (row.asking_price as number | null) ?? undefined,
+    currency: (row.currency as string | null) ?? undefined,
+    status: row.status as ExternalSaleListing['status'],
+    createdAt: row.created_at as string,
+    updatedAt: row.updated_at as string,
   };
 }
 
@@ -407,6 +425,121 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       message: row.message as string,
       createdAt: row.created_at as string,
     };
+  }
+
+  // ── External marketplace listings ───────────────────────────────────────────
+
+  async createExternalSaleListing(
+    sellerId: string,
+    input: CreateExternalSaleListingInput,
+  ): Promise<ExternalSaleListing> {
+    // Resolve pinhunt_id → internal UUID (same pattern as addPinToCollection)
+    const { data: pinRow, error: pinError } = await this.client
+      .from('pins')
+      .select('id')
+      .eq('pinhunt_id', input.pinPinhuntId)
+      .maybeSingle();
+    if (pinError) throw new Error(pinError.message);
+    if (!pinRow) throw new Error(`Pin not found: ${input.pinPinhuntId}`);
+
+    const { data, error } = await this.client
+      .from('external_sale_listings')
+      .insert({
+        seller_id: sellerId,
+        pin_id: (pinRow as { id: string }).id,
+        platform: input.platform,
+        listing_url: input.listingUrl,
+        asking_price: input.askingPrice ?? null,
+        currency: input.currency ?? null,
+        status: input.status ?? 'active',
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToExternalSaleListing(data as Record<string, unknown>);
+  }
+
+  async updateExternalSaleListing(
+    listingId: string,
+    input: UpdateExternalSaleListingInput,
+  ): Promise<ExternalSaleListing> {
+    const updates: Record<string, unknown> = {};
+    if (input.listingUrl !== undefined) updates.listing_url = input.listingUrl;
+    if (input.askingPrice !== undefined) updates.asking_price = input.askingPrice ?? null;
+    if (input.currency !== undefined) updates.currency = input.currency ?? null;
+    if (input.status !== undefined) updates.status = input.status;
+
+    const { data, error } = await this.client
+      .from('external_sale_listings')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update(updates as any)
+      .eq('id', listingId)
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToExternalSaleListing(data as Record<string, unknown>);
+  }
+
+  async removeExternalSaleListing(listingId: string): Promise<void> {
+    const { error } = await this.client
+      .from('external_sale_listings')
+      .delete()
+      .eq('id', listingId);
+    if (error) throw new Error(error.message);
+  }
+
+  async getExternalListingsForPin(pinPinhuntId: string): Promise<ExternalSaleListing[]> {
+    // Resolve pinhunt_id → internal UUID
+    const { data: pinRow, error: pinError } = await this.client
+      .from('pins')
+      .select('id')
+      .eq('pinhunt_id', pinPinhuntId)
+      .maybeSingle();
+    if (pinError) throw new Error(pinError.message);
+    if (!pinRow) return []; // unknown pin → no listings
+
+    const pinUuid = (pinRow as { id: string }).id;
+    const { data, error } = await this.client
+      .from('external_sale_listings')
+      .select('*, profiles(username, display_name)')
+      .eq('pin_id', pinUuid)
+      .eq('status', 'active')
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+    return (data as unknown as Record<string, unknown>[]).map(row => {
+      const profileRow = row.profiles as Record<string, unknown> | null;
+      return {
+        ...rowToExternalSaleListing(row),
+        sellerUsername: (profileRow?.username as string | null) ?? undefined,
+        sellerDisplayName: (profileRow?.display_name as string | null) ?? undefined,
+      };
+    });
+  }
+
+  async getSellerExternalListings(sellerId: string): Promise<ExternalSaleListing[]> {
+    const { data, error } = await this.client
+      .from('external_sale_listings')
+      .select('*, pins(pinhunt_id, title, image_url)')
+      .eq('seller_id', sellerId)
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+    return (data as unknown as Record<string, unknown>[]).map(row => {
+      const pinRow = row.pins as Record<string, unknown> | null;
+      return {
+        ...rowToExternalSaleListing(row),
+        pinTitle: (pinRow?.title as string | null) ?? undefined,
+        pinPinhuntId: (pinRow?.pinhunt_id as string | null) ?? undefined,
+        pinImageUrl: (pinRow?.image_url as string | null) ?? undefined,
+      };
+    });
+  }
+
+  async markExternalListingSold(listingId: string): Promise<ExternalSaleListing> {
+    return this.updateExternalSaleListing(listingId, { status: 'sold' });
   }
 }
 

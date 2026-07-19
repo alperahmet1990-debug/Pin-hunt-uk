@@ -313,6 +313,51 @@ export interface TradeMessage {
   createdAt: string;
 }
 
+// ─── External marketplace listing types ──────────────────────────────────────
+export type ExternalSaleListingPlatform = 'vinted' | 'ebay' | 'other';
+export type ExternalSaleListingStatus = 'draft' | 'active' | 'sold' | 'expired' | 'removed';
+
+export interface ExternalSaleListing {
+  id: string;
+  sellerId: string;
+  /** Internal UUID of the pin (pins.id). */
+  pinId: string;
+  platform: ExternalSaleListingPlatform;
+  listingUrl: string;
+  askingPrice?: number;
+  currency?: string;
+  status: ExternalSaleListingStatus;
+  // Optional joined fields — populated depending on the query used.
+  sellerUsername?: string;
+  sellerDisplayName?: string;
+  pinTitle?: string;
+  pinPinhuntId?: string;
+  pinImageUrl?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CreateExternalSaleListingInput {
+  /**
+   * The pin's pinhunt_id (e.g. "PHUK-00000001").
+   * The repository resolves this to the internal UUID.
+   */
+  pinPinhuntId: string;
+  platform: ExternalSaleListingPlatform;
+  listingUrl: string;
+  askingPrice?: number;
+  currency?: string;
+  /** Defaults to 'active'. Use 'draft' to save without publishing. */
+  status?: ExternalSaleListingStatus;
+}
+
+export interface UpdateExternalSaleListingInput {
+  listingUrl?: string;
+  askingPrice?: number | null;
+  currency?: string | null;
+  status?: ExternalSaleListingStatus;
+}
+
 // ─── Submission types ─────────────────────────────────────────────────────────
 export type SubmissionType = 'new_pin' | 'correction' | 'image';
 export type SubmissionStatus = 'pending' | 'approved' | 'rejected';

@@ -160,6 +160,11 @@ export default function ProfileScreen() {
                 icon="users"
                 label="Find Collectors"
                 onPress={() => router.push('/find-collectors')}
+              />
+              <SettingsRow
+                icon="shopping-bag"
+                label="My Marketplace Listings"
+                onPress={() => router.push('/my-listings')}
                 last
               />
             </Section>

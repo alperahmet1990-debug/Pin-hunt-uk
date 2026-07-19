@@ -4,7 +4,7 @@
  * Keeps camera/library access and compression logic out of screens.
  * The repository handles the actual Supabase Storage upload.
  */
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import { Alert, Platform } from 'react-native';

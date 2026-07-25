@@ -1,10 +1,12 @@
 /**
  * Catalogue Import Routes
  *
- * POST /api/admin/catalogue-import/preview   — parse xlsx, return headers + first 20 rows
- * POST /api/admin/catalogue-import           — dry-run or real import
- * GET  /api/admin/catalogue-import/batches   — list recent import batches
- * POST /api/admin/catalogue-import/batches/:batchId/rollback — undo a batch
+ * POST /api/admin/catalogue-import/preview              — parse xlsx, return headers + first 20 rows
+ * POST /api/admin/catalogue-import                      — dry-run or kick off async real import
+ * GET  /api/admin/catalogue-import/batches              — list recent import batches
+ * GET  /api/admin/catalogue-import/batches/:batchId     — live status / progress for one batch
+ * POST /api/admin/catalogue-import/batches/:batchId/rollback     — undo a batch
+ * POST /api/admin/catalogue-import/batches/:batchId/reprocess-row — fix one error row in-place
  *
  * Security: all endpoints require a valid Supabase JWT belonging to an admin
  * profile. The service-role key is used server-side only and never exposed to
@@ -228,6 +230,8 @@ interface RowError {
   title: string | null;
   result: "error" | "warning";
   message: string;
+  /** Editable field values stored so the app can pre-fill the edit form */
+  fields?: Record<string, unknown>;
 }
 
 function mapRow(
@@ -243,17 +247,17 @@ function mapRow(
   const collection = clean(rawRow["collection"]) ?? "";
 
   if (!title) {
-    errors.push({ rowNum, pinhuntId, title, result: "error", message: "Pin name is required" });
+    errors.push({ rowNum, pinhuntId, title, result: "error", message: "Pin name is required", fields: rawRow });
     return { row: null, errors };
   }
 
   if (pinhuntId && !/^PHUK-\d+$/i.test(pinhuntId)) {
-    errors.push({ rowNum, pinhuntId, title, result: "warning", message: `PinHunt ID format unexpected: ${pinhuntId}` });
+    errors.push({ rowNum, pinhuntId, title, result: "warning", message: `PinHunt ID format unexpected: ${pinhuntId}`, fields: rawRow });
   }
 
   const releaseYear = toInt(rawRow["release_year"]);
   if (releaseYear !== null && (releaseYear < 1900 || releaseYear > 2030)) {
-    errors.push({ rowNum, pinhuntId, title, result: "warning", message: `Unusual release year: ${releaseYear}` });
+    errors.push({ rowNum, pinhuntId, title, result: "warning", message: `Unusual release year: ${releaseYear}`, fields: rawRow });
   }
 
   const limitedEditionSize = toInt(rawRow["limited_edition_size"]);
@@ -271,10 +275,10 @@ function mapRow(
   const categories = splitSemicolon(rawRow["categories"]);
 
   if (imageUrl && !isValidUrl(imageUrl)) {
-    errors.push({ rowNum, pinhuntId, title, result: "warning", message: "Front image URL invalid" });
+    errors.push({ rowNum, pinhuntId, title, result: "warning", message: "Front image URL invalid", fields: rawRow });
   }
   if (backImageUrl && !isValidUrl(backImageUrl)) {
-    errors.push({ rowNum, pinhuntId, title, result: "warning", message: "Back image URL invalid" });
+    errors.push({ rowNum, pinhuntId, title, result: "warning", message: "Back image URL invalid", fields: rawRow });
   }
 
   // External IDs — try to parse as JSON
@@ -291,7 +295,7 @@ function mapRow(
   // Duplicate detection (within this batch)
   const fallbackKey = normaliseKey(brand, collection, title, characters[0] ?? "", releaseYear);
   if (!pinhuntId && seenKeys.has(fallbackKey)) {
-    errors.push({ rowNum, pinhuntId, title, result: "warning", message: "Possible duplicate row (no pinhunt_id, same brand/series/title/character/year)" });
+    errors.push({ rowNum, pinhuntId, title, result: "warning", message: "Possible duplicate row (no pinhunt_id, same brand/series/title/character/year)", fields: rawRow });
   }
   if (!pinhuntId) seenKeys.add(fallbackKey);
 
@@ -344,6 +348,309 @@ function parseWorkbook(buffer: Buffer, sheetName?: string): {
   return { sheetNames, selectedSheet: selected, headers: rawHeaders, canonicalHeaders, rawRows: dataRows, totalRows: dataRows.length };
 }
 
+// ─── Core import processor (shared by real import and reprocess-row) ──────────
+
+async function upsertSingleRow(
+  db: SupabaseClient,
+  row: MappedRow,
+  batchId: string,
+  existingMap: Map<string, Record<string, unknown>>,
+  catMap: Map<string, string>,
+  charMap: Map<string, string>,
+): Promise<{ action: "inserted" | "updated" | "skipped"; error?: string }> {
+  if (row.pinhuntId.startsWith("PHUK-NOID-")) return { action: "skipped" };
+
+  const existing = existingMap.get(row.pinhuntId);
+  const now = new Date().toISOString();
+
+  let pinRecord: Record<string, unknown>;
+  if (existing) {
+    const targetVerStatus = existing.verification_status === "verified" ? "verified" : row.verificationStatus;
+    const targetSeed = existing.verification_status === "verified" ? false : row.isSeedRecord;
+    const targetReview = existing.verification_status === "verified" ? false : row.needsReview;
+    pinRecord = {
+      pinhunt_id: row.pinhuntId,
+      title: row.title, brand: row.brand, collection: row.collection,
+      release_year: row.releaseYear, release_date: row.releaseDate,
+      limited_edition_size: row.limitedEditionSize,
+      edition_type: row.editionType, retailer: row.retailer,
+      retail_price: row.retailPrice, currency: row.currency,
+      image_url: row.imageUrl ?? existing.image_url,
+      back_image_url: row.backImageUrl ?? existing.back_image_url,
+      source_url: row.sourceUrl, manufacturer: row.manufacturer,
+      external_identifiers: Object.keys(row.externalIds).length ? row.externalIds : {},
+      verification_status: targetVerStatus,
+      is_seed_record: targetSeed, needs_review: targetReview,
+      confidence_level: row.confidenceLevel,
+      needs_front_image: row.needsFrontImage, needs_back_image: row.needsBackImage,
+      import_batch_id: batchId, catalogue_source: "pinhunt_import",
+      catalogue_updated_at: now,
+    };
+  } else {
+    pinRecord = {
+      pinhunt_id: row.pinhuntId,
+      title: row.title, brand: row.brand, collection: row.collection,
+      release_year: row.releaseYear, release_date: row.releaseDate,
+      limited_edition_size: row.limitedEditionSize,
+      edition_type: row.editionType, retailer: row.retailer,
+      retail_price: row.retailPrice, currency: row.currency,
+      image_url: row.imageUrl, back_image_url: row.backImageUrl,
+      source_url: row.sourceUrl, manufacturer: row.manufacturer,
+      external_identifiers: Object.keys(row.externalIds).length ? row.externalIds : {},
+      verification_status: row.verificationStatus,
+      is_seed_record: row.isSeedRecord, needs_review: row.needsReview,
+      confidence_level: row.confidenceLevel,
+      needs_front_image: row.needsFrontImage, needs_back_image: row.needsBackImage,
+      import_batch_id: batchId, catalogue_source: "pinhunt_import",
+    };
+  }
+
+  const { data: upserted, error: upsertErr } = await db
+    .from("pins")
+    .upsert(pinRecord, { onConflict: "pinhunt_id" })
+    .select("id, pinhunt_id");
+
+  if (upsertErr) return { action: "skipped", error: upsertErr.message };
+
+  const pinId = (upserted as Array<{ id: string }>)?.[0]?.id;
+  if (pinId) {
+    await Promise.all([
+      db.from("pin_categories").delete().eq("pin_id", pinId),
+      db.from("pin_characters").delete().eq("pin_id", pinId),
+    ]);
+
+    const categoryJunctions = row.categories
+      .map(cat => catMap.get(cat))
+      .filter(Boolean)
+      .map(catId => ({ pin_id: pinId, category_id: catId as string }));
+
+    const characterJunctions = row.characters
+      .map(char => charMap.get(char))
+      .filter(Boolean)
+      .map(charId => ({ pin_id: pinId, character_id: charId as string }));
+
+    if (categoryJunctions.length > 0) {
+      await db.from("pin_categories").upsert(categoryJunctions, { onConflict: "pin_id,category_id", ignoreDuplicates: true });
+    }
+    if (characterJunctions.length > 0) {
+      await db.from("pin_characters").upsert(characterJunctions, { onConflict: "pin_id,character_id", ignoreDuplicates: true });
+    }
+  }
+
+  return { action: existing ? "updated" : "inserted" };
+}
+
+// ─── Async import processor ───────────────────────────────────────────────────
+
+async function runImportJob(
+  db: SupabaseClient,
+  batchId: string,
+  validRows: MappedRow[],
+  allErrors: RowError[],
+  summary: {
+    seedRows: number;
+    verifiedRows: number;
+    totalRows: number;
+    errorRows: number;
+    warningRows: number;
+    missingFrontImage: number;
+    missingBackImage: number;
+  },
+  existingMap: Map<string, Record<string, unknown>>,
+): Promise<void> {
+  // Pre-load all categories + characters
+  const allCategoryNames = new Set<string>();
+  const allCharacterNames = new Set<string>();
+  validRows.forEach(r => {
+    r.categories.forEach(c => allCategoryNames.add(c));
+    r.characters.forEach(c => allCharacterNames.add(c));
+  });
+
+  if (allCategoryNames.size > 0) {
+    await db.from("categories").upsert(
+      [...allCategoryNames].map(name => ({ name })),
+      { onConflict: "name", ignoreDuplicates: true },
+    );
+  }
+  if (allCharacterNames.size > 0) {
+    await db.from("characters").upsert(
+      [...allCharacterNames].map(name => ({ name })),
+      { onConflict: "name", ignoreDuplicates: true },
+    );
+  }
+
+  const { data: catRows } = await db.from("categories").select("id, name").in("name", [...allCategoryNames]);
+  const { data: charRows } = await db.from("characters").select("id, name").in("name", [...allCharacterNames]);
+  const catMap = new Map((catRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
+  const charMap = new Map((charRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
+
+  let insertedRows = 0, updatedRows = 0, skippedRows = 0;
+  const rowSnapshots: Record<string, unknown> = {};
+
+  // Save snapshots for rollback
+  validRows.forEach(r => {
+    if (r.pinhuntId.startsWith("PHUK-NOID-")) return;
+    const existing = existingMap.get(r.pinhuntId);
+    if (existing) {
+      rowSnapshots[r.pinhuntId] = {
+        existed: true,
+        title: existing.title, brand: existing.brand, collection: existing.collection,
+        release_year: existing.release_year, release_date: existing.release_date,
+        limited_edition_size: existing.limited_edition_size, edition_type: existing.edition_type,
+        retailer: existing.retailer, retail_price: existing.retail_price, currency: existing.currency,
+        image_url: existing.image_url, back_image_url: existing.back_image_url,
+        source_url: existing.source_url, manufacturer: existing.manufacturer,
+        external_identifiers: existing.external_identifiers,
+        verification_status: existing.verification_status,
+        is_seed_record: existing.is_seed_record, needs_review: existing.needs_review,
+        confidence_level: existing.confidence_level,
+        needs_front_image: existing.needs_front_image, needs_back_image: existing.needs_back_image,
+        import_batch_id: existing.import_batch_id, catalogue_source: existing.catalogue_source,
+        catalogue_updated_at: existing.catalogue_updated_at,
+        categories: (existing.pin_categories as Array<{ categories: { name: string } }> | null)
+          ?.map(pc => pc.categories.name) ?? [],
+        characters: (existing.pin_characters as Array<{ characters: { name: string } }> | null)
+          ?.map(pc => pc.characters.name) ?? [],
+      };
+    } else {
+      rowSnapshots[r.pinhuntId] = { existed: false };
+    }
+  });
+
+  // Process in mini-batches of 500, updating progress_rows after each
+  const BATCH_SIZE = 500;
+  let processedCount = 0;
+
+  for (let batchStart = 0; batchStart < validRows.length; batchStart += BATCH_SIZE) {
+    const chunk = validRows.slice(batchStart, batchStart + BATCH_SIZE);
+
+    const actionable = chunk.filter(r => !r.pinhuntId.startsWith("PHUK-NOID-"));
+    const noid = chunk.length - actionable.length;
+    skippedRows += noid;
+
+    if (actionable.length === 0) {
+      processedCount += chunk.length;
+      await db.from("import_batches").update({
+        progress_rows: processedCount,
+        inserted_rows: insertedRows,
+        updated_rows: updatedRows,
+        skipped_rows: skippedRows,
+      }).eq("id", batchId);
+      continue;
+    }
+
+    const pinUpserts = actionable.map(r => {
+      const existing = existingMap.get(r.pinhuntId);
+      const now = new Date().toISOString();
+      if (existing) {
+        updatedRows++;
+        const targetVerStatus = existing.verification_status === "verified" ? "verified" : r.verificationStatus;
+        const targetSeed = existing.verification_status === "verified" ? false : r.isSeedRecord;
+        const targetReview = existing.verification_status === "verified" ? false : r.needsReview;
+        return {
+          pinhunt_id: r.pinhuntId,
+          title: r.title, brand: r.brand, collection: r.collection,
+          release_year: r.releaseYear, release_date: r.releaseDate,
+          limited_edition_size: r.limitedEditionSize,
+          edition_type: r.editionType, retailer: r.retailer,
+          retail_price: r.retailPrice, currency: r.currency,
+          image_url: r.imageUrl ?? existing.image_url,
+          back_image_url: r.backImageUrl ?? existing.back_image_url,
+          source_url: r.sourceUrl, manufacturer: r.manufacturer,
+          external_identifiers: Object.keys(r.externalIds).length ? r.externalIds : {},
+          verification_status: targetVerStatus,
+          is_seed_record: targetSeed, needs_review: targetReview,
+          confidence_level: r.confidenceLevel,
+          needs_front_image: r.needsFrontImage, needs_back_image: r.needsBackImage,
+          import_batch_id: batchId, catalogue_source: "pinhunt_import",
+          catalogue_updated_at: now,
+        };
+      } else {
+        insertedRows++;
+        return {
+          pinhunt_id: r.pinhuntId,
+          title: r.title, brand: r.brand, collection: r.collection,
+          release_year: r.releaseYear, release_date: r.releaseDate,
+          limited_edition_size: r.limitedEditionSize,
+          edition_type: r.editionType, retailer: r.retailer,
+          retail_price: r.retailPrice, currency: r.currency,
+          image_url: r.imageUrl, back_image_url: r.backImageUrl,
+          source_url: r.sourceUrl, manufacturer: r.manufacturer,
+          external_identifiers: Object.keys(r.externalIds).length ? r.externalIds : {},
+          verification_status: r.verificationStatus,
+          is_seed_record: r.isSeedRecord, needs_review: r.needsReview,
+          confidence_level: r.confidenceLevel,
+          needs_front_image: r.needsFrontImage, needs_back_image: r.needsBackImage,
+          import_batch_id: batchId, catalogue_source: "pinhunt_import",
+        };
+      }
+    });
+
+    const { data: upserted, error: upsertErr } = await db
+      .from("pins")
+      .upsert(pinUpserts, { onConflict: "pinhunt_id" })
+      .select("id, pinhunt_id");
+
+    if (upsertErr) {
+      allErrors.push({ rowNum: batchStart, pinhuntId: null, title: null, result: "error", message: "Batch upsert failed: " + upsertErr.message });
+    } else {
+      const upsertedMap = new Map((upserted ?? []).map((p: Record<string, unknown>) => [p.pinhunt_id as string, p.id as string]));
+      const pinIds = [...upsertedMap.values()];
+      if (pinIds.length > 0) {
+        await Promise.all([
+          db.from("pin_categories").delete().in("pin_id", pinIds),
+          db.from("pin_characters").delete().in("pin_id", pinIds),
+        ]);
+
+        const categoryJunctions: Array<{ pin_id: string; category_id: string }> = [];
+        const characterJunctions: Array<{ pin_id: string; character_id: string }> = [];
+
+        actionable.forEach(r => {
+          const pinId = upsertedMap.get(r.pinhuntId);
+          if (!pinId) return;
+          r.categories.forEach(cat => {
+            const catId = catMap.get(cat);
+            if (catId) categoryJunctions.push({ pin_id: pinId, category_id: catId });
+          });
+          r.characters.forEach(char => {
+            const charId = charMap.get(char);
+            if (charId) characterJunctions.push({ pin_id: pinId, character_id: charId });
+          });
+        });
+
+        if (categoryJunctions.length > 0) {
+          await db.from("pin_categories").upsert(categoryJunctions, { onConflict: "pin_id,category_id", ignoreDuplicates: true });
+        }
+        if (characterJunctions.length > 0) {
+          await db.from("pin_characters").upsert(characterJunctions, { onConflict: "pin_id,character_id", ignoreDuplicates: true });
+        }
+      }
+    }
+
+    processedCount += chunk.length;
+
+    // Push live progress update
+    await db.from("import_batches").update({
+      progress_rows: processedCount,
+      inserted_rows: insertedRows,
+      updated_rows: updatedRows,
+      skipped_rows: skippedRows,
+    }).eq("id", batchId);
+  }
+
+  // Finalize
+  const errorReport = allErrors.slice(0, 1000);
+  await db.from("import_batches").update({
+    status: "completed",
+    progress_rows: validRows.length,
+    inserted_rows: insertedRows, updated_rows: updatedRows,
+    skipped_rows: skippedRows, error_rows: allErrors.filter(e => e.result === "error").length,
+    seed_rows: summary.seedRows, verified_rows: summary.verifiedRows,
+    error_report: errorReport, row_snapshots: rowSnapshots,
+    completed_at: new Date().toISOString(),
+  }).eq("id", batchId);
+}
+
 // ─── Preview endpoint ─────────────────────────────────────────────────────────
 
 router.post("/admin/catalogue-import/preview", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
@@ -368,7 +675,7 @@ router.post("/admin/catalogue-import/preview", requireAdmin, async (req: Request
   }
 });
 
-// ─── Import endpoint ──────────────────────────────────────────────────────────
+// ─── Import endpoint (dry-run or async kick-off) ──────────────────────────────
 
 router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
   const {
@@ -400,7 +707,7 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
     }
   }
 
-  let { rawRows, totalRows } = parseWorkbook(buffer, sheetName);
+  const { rawRows, totalRows } = parseWorkbook(buffer, sheetName);
 
   // Map + validate all rows
   const seenKeys = new Set<string>();
@@ -430,7 +737,6 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
   };
 
   if (dryRun) {
-    // Rows without a real pinhunt_id are skipped by the real import — be consistent here
     const actionableRows = validRows.filter(r => !r.pinhuntId.startsWith("PHUK-NOID-"));
     const skippedNoid = validRows.length - actionableRows.length;
 
@@ -445,14 +751,14 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
     return;
   }
 
-  // ── Real import ──
+  // ── Real import: create batch record, respond immediately, process in background ──
 
-  // Create batch record
   const { data: batch, error: batchErr } = await db
     .from("import_batches")
     .insert({
       filename, file_hash: fileHash, status: "running",
       total_rows: totalRows, imported_by: req.adminUserId,
+      progress_rows: 0,
     })
     .select("id")
     .single();
@@ -463,10 +769,8 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
   }
 
   const batchId: string = batch.id;
-  let insertedRows = 0, updatedRows = 0, skippedRows = 0;
-  const rowSnapshots: Record<string, unknown> = {};
 
-  // Fetch existing pins (all fields we will overwrite + junction memberships for rollback snapshots)
+  // Fetch existing pins for snapshots + update detection
   const allPinhuntIds = validRows.map(r => r.pinhuntId).filter(id => !id.startsWith("PHUK-NOID-"));
   const { data: existingPins } = await db
     .from("pins")
@@ -483,187 +787,49 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
     ].join(", "))
     .in("pinhunt_id", allPinhuntIds);
 
-  // Cast required: Supabase TS inference mis-resolves the complex select (PostgREST embed syntax)
   const existingMap = new Map(
     ((existingPins ?? []) as unknown as Record<string, unknown>[])
       .map(p => [p.pinhunt_id as string, p]),
   );
 
-  // Collect unique categories + characters for bulk upsert
-  const allCategoryNames = new Set<string>();
-  const allCharacterNames = new Set<string>();
-  validRows.forEach(r => {
-    r.categories.forEach(c => allCategoryNames.add(c));
-    r.characters.forEach(c => allCharacterNames.add(c));
-  });
-
-  // Upsert categories
-  if (allCategoryNames.size > 0) {
-    await db.from("categories").upsert(
-      [...allCategoryNames].map(name => ({ name })),
-      { onConflict: "name", ignoreDuplicates: true },
-    );
-  }
-
-  // Upsert characters
-  if (allCharacterNames.size > 0) {
-    await db.from("characters").upsert(
-      [...allCharacterNames].map(name => ({ name })),
-      { onConflict: "name", ignoreDuplicates: true },
-    );
-  }
-
-  // Fetch IDs for all categories + characters
-  const { data: catRows } = await db.from("categories").select("id, name").in("name", [...allCategoryNames]);
-  const { data: charRows } = await db.from("characters").select("id, name").in("name", [...allCharacterNames]);
-  const catMap = new Map((catRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
-  const charMap = new Map((charRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
-
-  // Process in batches of 500
-  const BATCH_SIZE = 500;
-  for (let batchStart = 0; batchStart < validRows.length; batchStart += BATCH_SIZE) {
-    const chunk = validRows.slice(batchStart, batchStart + BATCH_SIZE);
-
-    const pinUpserts = chunk
-      .filter(r => !r.pinhuntId.startsWith("PHUK-NOID-"))
-      .map(r => {
-        const existing = existingMap.get(r.pinhuntId);
-        if (existing) {
-          // Full snapshot of every field we overwrite + junction memberships (for lossless rollback)
-          rowSnapshots[r.pinhuntId] = {
-            existed: true,
-            title: existing.title, brand: existing.brand, collection: existing.collection,
-            release_year: existing.release_year, release_date: existing.release_date,
-            limited_edition_size: existing.limited_edition_size, edition_type: existing.edition_type,
-            retailer: existing.retailer, retail_price: existing.retail_price, currency: existing.currency,
-            image_url: existing.image_url, back_image_url: existing.back_image_url,
-            source_url: existing.source_url, manufacturer: existing.manufacturer,
-            external_identifiers: existing.external_identifiers,
-            verification_status: existing.verification_status,
-            is_seed_record: existing.is_seed_record, needs_review: existing.needs_review,
-            confidence_level: existing.confidence_level,
-            needs_front_image: existing.needs_front_image, needs_back_image: existing.needs_back_image,
-            import_batch_id: existing.import_batch_id, catalogue_source: existing.catalogue_source,
-            catalogue_updated_at: existing.catalogue_updated_at,
-            // Junction memberships so rollback can restore associations exactly
-            categories: (existing.pin_categories as Array<{ categories: { name: string } }> | null)
-              ?.map(pc => pc.categories.name) ?? [],
-            characters: (existing.pin_characters as Array<{ characters: { name: string } }> | null)
-              ?.map(pc => pc.characters.name) ?? [],
-          };
-          updatedRows++;
-
-          // Never downgrade a verified record to seed
-          const targetVerStatus = existing.verification_status === "verified" ? "verified" : r.verificationStatus;
-          const targetSeed = existing.verification_status === "verified" ? false : r.isSeedRecord;
-          const targetReview = existing.verification_status === "verified" ? false : r.needsReview;
-
-          return {
-            pinhunt_id: r.pinhuntId,
-            title: r.title, brand: r.brand, collection: r.collection,
-            release_year: r.releaseYear, release_date: r.releaseDate,
-            limited_edition_size: r.limitedEditionSize,
-            edition_type: r.editionType, retailer: r.retailer,
-            retail_price: r.retailPrice, currency: r.currency,
-            // Never overwrite existing user-contributed images with blank
-            image_url: r.imageUrl ?? existing.image_url,
-            back_image_url: r.backImageUrl ?? existing.back_image_url,
-            source_url: r.sourceUrl, manufacturer: r.manufacturer,
-            external_identifiers: Object.keys(r.externalIds).length ? r.externalIds : {},
-            verification_status: targetVerStatus,
-            is_seed_record: targetSeed, needs_review: targetReview,
-            confidence_level: r.confidenceLevel,
-            needs_front_image: r.needsFrontImage, needs_back_image: r.needsBackImage,
-            import_batch_id: batchId, catalogue_source: "pinhunt_import",
-            catalogue_updated_at: new Date().toISOString(),
-          };
-        } else {
-          rowSnapshots[r.pinhuntId] = { existed: false };
-          insertedRows++;
-          return {
-            pinhunt_id: r.pinhuntId,
-            title: r.title, brand: r.brand, collection: r.collection,
-            release_year: r.releaseYear, release_date: r.releaseDate,
-            limited_edition_size: r.limitedEditionSize,
-            edition_type: r.editionType, retailer: r.retailer,
-            retail_price: r.retailPrice, currency: r.currency,
-            image_url: r.imageUrl, back_image_url: r.backImageUrl,
-            source_url: r.sourceUrl, manufacturer: r.manufacturer,
-            external_identifiers: Object.keys(r.externalIds).length ? r.externalIds : {},
-            verification_status: r.verificationStatus,
-            is_seed_record: r.isSeedRecord, needs_review: r.needsReview,
-            confidence_level: r.confidenceLevel,
-            needs_front_image: r.needsFrontImage, needs_back_image: r.needsBackImage,
-            import_batch_id: batchId, catalogue_source: "pinhunt_import",
-          };
-        }
-      });
-
-    if (pinUpserts.length === 0) { skippedRows += chunk.length; continue; }
-
-    const { data: upserted, error: upsertErr } = await db
-      .from("pins")
-      .upsert(pinUpserts, { onConflict: "pinhunt_id" })
-      .select("id, pinhunt_id");
-
-    if (upsertErr) {
-      allErrors.push({ rowNum: batchStart, pinhuntId: null, title: null, result: "error", message: "Batch upsert failed: " + upsertErr.message });
-      continue;
-    }
-
-    // Update pin_categories and pin_characters for this chunk
-    const upsertedMap = new Map((upserted ?? []).map((p: Record<string, unknown>) => [p.pinhunt_id as string, p.id as string]));
-
-    const pinIds = [...upsertedMap.values()];
-    if (pinIds.length > 0) {
-      // Clear existing junction rows for these pins
-      await Promise.all([
-        db.from("pin_categories").delete().in("pin_id", pinIds),
-        db.from("pin_characters").delete().in("pin_id", pinIds),
-      ]);
-
-      const categoryJunctions: Array<{ pin_id: string; category_id: string }> = [];
-      const characterJunctions: Array<{ pin_id: string; character_id: string }> = [];
-
-      chunk.forEach(r => {
-        const pinId = upsertedMap.get(r.pinhuntId);
-        if (!pinId) return;
-        r.categories.forEach(cat => {
-          const catId = catMap.get(cat);
-          if (catId) categoryJunctions.push({ pin_id: pinId, category_id: catId });
-        });
-        r.characters.forEach(char => {
-          const charId = charMap.get(char);
-          if (charId) characterJunctions.push({ pin_id: pinId, character_id: charId });
-        });
-      });
-
-      if (categoryJunctions.length > 0) {
-        await db.from("pin_categories").upsert(categoryJunctions, { onConflict: "pin_id,category_id", ignoreDuplicates: true });
-      }
-      if (characterJunctions.length > 0) {
-        await db.from("pin_characters").upsert(characterJunctions, { onConflict: "pin_id,character_id", ignoreDuplicates: true });
-      }
-    }
-  }
-
-  // Finalize batch record
-  const errorReport = allErrors.slice(0, 1000);
-  await db.from("import_batches").update({
-    status: "completed",
-    inserted_rows: insertedRows, updated_rows: updatedRows,
-    skipped_rows: skippedRows, error_rows: errorRows.length,
-    seed_rows: summary.seedRows, verified_rows: summary.verifiedRows,
-    error_report: errorReport, row_snapshots: rowSnapshots,
-    completed_at: new Date().toISOString(),
-  }).eq("id", batchId);
-
+  // Respond immediately — client starts polling
   res.json({
     dryRun: false,
     batchId,
-    summary: { ...summary, insertedRows, updatedRows, skippedRows },
-    errorReport: errorReport.slice(0, 200),
+    status: "running",
+    totalRows,
+    message: "Import started. Poll /batches/:batchId for live progress.",
   });
+
+  // Continue processing in the background (Node.js event loop continues after response)
+  setImmediate(async () => {
+    try {
+      await runImportJob(db, batchId, validRows, allErrors, summary, existingMap);
+    } catch (err) {
+      console.error(`[import job ${batchId}] fatal error:`, err);
+      await db.from("import_batches").update({
+        status: "failed",
+        error_report: [{ message: err instanceof Error ? err.message : "Unknown error" }],
+        completed_at: new Date().toISOString(),
+      }).eq("id", batchId);
+    }
+  });
+});
+
+// ─── Single batch status (for live polling) ───────────────────────────────────
+
+router.get("/admin/catalogue-import/batches/:batchId", requireAdmin, async (req, res: Response) => {
+  const { batchId } = req.params;
+  const db = getAdminClient();
+
+  const { data, error } = await db
+    .from("import_batches")
+    .select("id, filename, status, total_rows, progress_rows, inserted_rows, updated_rows, skipped_rows, error_rows, seed_rows, verified_rows, imported_by, started_at, completed_at, error_report")
+    .eq("id", batchId)
+    .single();
+
+  if (error || !data) { res.status(404).json({ error: "Batch not found" }); return; }
+  res.json(data);
 });
 
 // ─── List batches ─────────────────────────────────────────────────────────────
@@ -672,11 +838,102 @@ router.get("/admin/catalogue-import/batches", requireAdmin, async (_req, res: Re
   const db = getAdminClient();
   const { data, error } = await db
     .from("import_batches")
-    .select("id, filename, status, total_rows, inserted_rows, updated_rows, skipped_rows, error_rows, seed_rows, verified_rows, imported_by, started_at, completed_at")
+    .select("id, filename, status, total_rows, progress_rows, inserted_rows, updated_rows, skipped_rows, error_rows, seed_rows, verified_rows, imported_by, started_at, completed_at")
     .order("started_at", { ascending: false })
     .limit(20);
   if (error) { res.status(500).json({ error: error.message }); return; }
   res.json({ batches: data ?? [] });
+});
+
+// ─── Reprocess single error row ───────────────────────────────────────────────
+
+router.post("/admin/catalogue-import/batches/:batchId/reprocess-row", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
+  const batchId = String(req.params.batchId);
+  const { rowNum, fields } = req.body as { rowNum: number; fields: Record<string, unknown> };
+
+  if (!fields) { res.status(400).json({ error: "fields is required" }); return; }
+
+  const db = getAdminClient();
+
+  // Load the batch to make sure it exists and is in a state we can update
+  const { data: batch, error: batchErr } = await db
+    .from("import_batches")
+    .select("id, status, error_report, inserted_rows, updated_rows")
+    .eq("id", batchId)
+    .single();
+
+  if (batchErr || !batch) { res.status(404).json({ error: "Batch not found" }); return; }
+
+  // Map and validate the edited row
+  const seenKeys = new Set<string>();
+  const result = mapRow(fields, rowNum ?? 0, seenKeys);
+
+  if (!result.row) {
+    res.status(400).json({ error: "Row still has errors after editing", details: result.errors });
+    return;
+  }
+
+  const row = result.row;
+
+  // Ensure referenced categories/characters exist
+  const allCategoryNames = row.categories;
+  const allCharacterNames = row.characters;
+
+  if (allCategoryNames.length > 0) {
+    await db.from("categories").upsert(
+      allCategoryNames.map(name => ({ name })),
+      { onConflict: "name", ignoreDuplicates: true },
+    );
+  }
+  if (allCharacterNames.length > 0) {
+    await db.from("characters").upsert(
+      allCharacterNames.map(name => ({ name })),
+      { onConflict: "name", ignoreDuplicates: true },
+    );
+  }
+
+  const { data: catRows } = await db.from("categories").select("id, name").in("name", allCategoryNames.length ? allCategoryNames : ["__none__"]);
+  const { data: charRows } = await db.from("characters").select("id, name").in("name", allCharacterNames.length ? allCharacterNames : ["__none__"]);
+  const catMap = new Map((catRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
+  const charMap = new Map((charRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
+
+  // Check if pin already exists (for snapshot preservation)
+  const { data: existingPin } = row.pinhuntId.startsWith("PHUK-NOID-")
+    ? { data: null }
+    : await db.from("pins").select("id, pinhunt_id, verification_status, image_url, back_image_url").eq("pinhunt_id", row.pinhuntId).maybeSingle();
+
+  const existingMap = new Map<string, Record<string, unknown>>(
+    existingPin ? [[row.pinhuntId, existingPin as Record<string, unknown>]] : [],
+  );
+
+  const { action, error: rowErr } = await upsertSingleRow(db, row, batchId, existingMap, catMap, charMap);
+
+  if (rowErr) {
+    res.status(500).json({ error: rowErr });
+    return;
+  }
+
+  // Remove this rowNum from the batch error_report
+  const currentReport = (batch.error_report as RowError[] | null) ?? [];
+  const updatedReport = currentReport.filter(e => e.rowNum !== rowNum);
+
+  // Update batch counters
+  const insIncrement = action === "inserted" ? 1 : 0;
+  const updIncrement = action === "updated" ? 1 : 0;
+
+  await db.from("import_batches").update({
+    error_report: updatedReport,
+    error_rows: updatedReport.filter(e => e.result === "error").length,
+    inserted_rows: (batch.inserted_rows as number ?? 0) + insIncrement,
+    updated_rows: (batch.updated_rows as number ?? 0) + updIncrement,
+  }).eq("id", batchId);
+
+  res.json({
+    success: true,
+    action,
+    remainingErrors: updatedReport.filter(e => e.result === "error").length,
+    warnings: result.errors,
+  });
 });
 
 // ─── Rollback ─────────────────────────────────────────────────────────────────
@@ -708,7 +965,6 @@ router.post("/admin/catalogue-import/batches/:batchId/rollback", requireAdmin, a
     const pinUuids = [...pinIdMap.values()];
 
     if (pinUuids.length > 0) {
-      // Fetch ALL user_pins rows for the affected pins — no limit so every referenced pin is protected
       const { data: userRefs } = await db.from("user_pins").select("pin_id").in("pin_id", pinUuids);
       const referencedPinIds = new Set((userRefs ?? []).map((r: Record<string, unknown>) => r.pin_id as string));
 
@@ -720,7 +976,6 @@ router.post("/admin/catalogue-import/batches/:batchId/rollback", requireAdmin, a
         rolledBack += deletable.length;
       }
       if (skippable.length > 0) {
-        // Mark as needing review instead of deleting
         await db.from("pins").update({ needs_review: true }).in("id", skippable);
         skipped += skippable.length;
       }
@@ -731,7 +986,6 @@ router.post("/admin/catalogue-import/batches/:batchId/rollback", requireAdmin, a
   for (const [pinhuntId, snap] of Object.entries(snapshots)) {
     if (!snap.existed) continue;
 
-    // Restore every field the import overwrote
     await db.from("pins").update({
       title: snap.title, brand: snap.brand, collection: snap.collection,
       release_year: snap.release_year, release_date: snap.release_date,
@@ -749,12 +1003,10 @@ router.post("/admin/catalogue-import/batches/:batchId/rollback", requireAdmin, a
       catalogue_updated_at: snap.catalogue_updated_at ?? null,
     }).eq("pinhunt_id", pinhuntId);
 
-    // Restore junction table memberships exactly
     const { data: pinRow } = await db.from("pins").select("id").eq("pinhunt_id", pinhuntId).single();
     if (pinRow) {
       const pinId = pinRow.id as string;
 
-      // Categories
       await db.from("pin_categories").delete().eq("pin_id", pinId);
       const prevCategories = (snap.categories as string[]) ?? [];
       if (prevCategories.length > 0) {
@@ -763,7 +1015,6 @@ router.post("/admin/catalogue-import/batches/:batchId/rollback", requireAdmin, a
         if (catJunctions.length > 0) await db.from("pin_categories").insert(catJunctions);
       }
 
-      // Characters
       await db.from("pin_characters").delete().eq("pin_id", pinId);
       const prevCharacters = (snap.characters as string[]) ?? [];
       if (prevCharacters.length > 0) {

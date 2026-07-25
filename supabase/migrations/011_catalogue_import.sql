@@ -56,6 +56,8 @@ CREATE TABLE IF NOT EXISTS import_batches (
   -- For rollback: stores the pre-import snapshot for every row that was inserted
   -- or updated. Key = pinhunt_id, value = previous DB row (null for inserts).
   row_snapshots JSONB       NOT NULL DEFAULT '{}',
+  -- Live progress counter: incremented after each mini-batch during async processing
+  progress_rows INTEGER     NOT NULL DEFAULT 0,
   started_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   completed_at  TIMESTAMPTZ
 );

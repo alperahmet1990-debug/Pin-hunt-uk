@@ -13,6 +13,7 @@ import { ebayConfigured } from "../services/ebay";
 import {
   DRY_RUN_MAX_PINS,
   startImageDryRun,
+  BULK_INGEST_MAX_PINS,
   isDryRunActive,
   getDryRunSummary,
   getDryRunResults,
@@ -67,13 +68,20 @@ router.post("/catalogue/ebay-image-dry-run", requireAdmin, async (req: Request, 
       res.status(503).json({ error: "eBay credentials are not configured" });
       return;
     }
-    const rawLimit = (req.body as { limit?: unknown })?.limit;
-    const limit = typeof rawLimit === "number" && Number.isFinite(rawLimit) ? Math.floor(rawLimit) : DRY_RUN_MAX_PINS;
-    if (limit < 1 || limit > DRY_RUN_MAX_PINS) {
-      res.status(400).json({ error: `limit must be between 1 and ${DRY_RUN_MAX_PINS}` });
+    const body = req.body as { limit?: unknown; releaseYear?: unknown; autoApplyMinScore?: unknown };
+    const releaseYear = typeof body.releaseYear === "number" && Number.isInteger(body.releaseYear) ? body.releaseYear : undefined;
+    const autoApplyMinScore =
+      typeof body.autoApplyMinScore === "number" && body.autoApplyMinScore >= 50 && body.autoApplyMinScore <= 100
+        ? body.autoApplyMinScore
+        : undefined;
+    const isBulk = releaseYear != null || autoApplyMinScore != null;
+    const maxPins = isBulk ? BULK_INGEST_MAX_PINS : DRY_RUN_MAX_PINS;
+    const limit = typeof body.limit === "number" && Number.isFinite(body.limit) ? Math.floor(body.limit) : DRY_RUN_MAX_PINS;
+    if (limit < 1 || limit > maxPins) {
+      res.status(400).json({ error: `limit must be between 1 and ${maxPins}` });
       return;
     }
-    const runId = await startImageDryRun(limit);
+    const runId = await startImageDryRun(limit, { releaseYear, autoApplyMinScore });
     res.status(202).json({ runId, status: "running" });
   } catch (e) {
     const status = (e as { status?: number }).status ?? 500;

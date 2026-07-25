@@ -16,6 +16,14 @@ import { buildSearchQueries } from "./valuation";
 import { logger } from "../lib/logger";
 
 export const DRY_RUN_MAX_PINS = 50;
+export const BULK_INGEST_MAX_PINS = 500;
+
+export interface DryRunOptions {
+  /** Only pins from this release year. */
+  releaseYear?: number;
+  /** Auto-apply candidate images scoring at least this (skips pins with conflicting metadata). */
+  autoApplyMinScore?: number;
+}
 
 const SEARCH_DELAY_MS = 300;
 const MAX_RETRIES = 2;
@@ -63,16 +71,17 @@ interface SelectedPin {
  * Round-robins across brands (with LE / mystery / set records prioritised
  * inside each brand bucket) so the test group isn't 50 near-identical pins.
  */
-async function selectTestPins(limit: number): Promise<SelectedPin[]> {
+async function selectTestPins(limit: number, releaseYear?: number): Promise<SelectedPin[]> {
   const sb = getServiceClient();
-  const { data, error } = await sb
+  let q = sb
     .from("pins")
     .select("id, pinhunt_id, title, brand, collection, limited_edition_size, edition_type")
     // Select on the real image field — the needs_front_image flags are stale
     // (false across the catalogue even where image_url is null).
     .or("image_url.is.null,image_url.eq.")
-    .eq("status", "active")
-    .limit(3000);
+    .eq("status", "active");
+  if (releaseYear != null) q = q.eq("release_year", releaseYear);
+  const { data, error } = await q.limit(3000);
   if (error) throw new Error(`Pin selection failed: ${error.message}`);
 
   type Row = {
@@ -337,8 +346,9 @@ export function isDryRunActive(): boolean {
 }
 
 /** Start a dry run in the background. Returns the run id immediately. */
-export async function startImageDryRun(limit: number): Promise<string> {
-  if (limit > DRY_RUN_MAX_PINS) throw Object.assign(new Error(`limit must be ${DRY_RUN_MAX_PINS} or lower`), { status: 400 });
+export async function startImageDryRun(limit: number, opts: DryRunOptions = {}): Promise<string> {
+  const maxPins = opts.autoApplyMinScore != null || opts.releaseYear != null ? BULK_INGEST_MAX_PINS : DRY_RUN_MAX_PINS;
+  if (limit > maxPins) throw Object.assign(new Error(`limit must be ${maxPins} or lower`), { status: 400 });
   if (runningRunId) throw Object.assign(new Error("A dry run is already in progress"), { status: 409 });
 
   const sb = getServiceClient();
@@ -351,7 +361,7 @@ export async function startImageDryRun(limit: number): Promise<string> {
   const runId = data.id as string;
   runningRunId = runId;
 
-  const job = processDryRun(runId, limit);
+  const job = processDryRun(runId, limit, opts);
   job
     .catch(async e => {
       logger.error({ runId, err: String(e) }, "image dry run failed");
@@ -364,12 +374,12 @@ export async function startImageDryRun(limit: number): Promise<string> {
   return runId;
 }
 
-async function processDryRun(runId: string, limit: number): Promise<void> {
+async function processDryRun(runId: string, limit: number, opts: DryRunOptions = {}): Promise<void> {
   const sb = getServiceClient();
-  const pins = await selectTestPins(limit);
-  logger.info({ runId, count: pins.length }, "image dry run started");
+  const pins = await selectTestPins(limit, opts.releaseYear);
+  logger.info({ runId, count: pins.length, opts }, "image dry run started");
 
-  const counts = { high_confidence: 0, provisional: 0, review_required: 0, no_match: 0, error: 0 };
+  const counts = { high_confidence: 0, provisional: 0, review_required: 0, no_match: 0, error: 0, applied: 0 };
 
   for (const sel of pins) {
     const rejectionLog: string[] = [];
@@ -439,8 +449,37 @@ async function processDryRun(runId: string, limit: number): Promise<void> {
       };
     }
 
-    const { error: insErr } = await sb.from("ebay_image_dry_run_results").insert(row);
+    const { data: inserted, error: insErr } = await sb
+      .from("ebay_image_dry_run_results")
+      .insert(row)
+      .select("id")
+      .single();
     if (insErr) logger.warn({ runId, err: insErr.message }, "dry run result insert failed");
+
+    // Bulk ingest: auto-apply strong candidates straight to the pin.
+    if (
+      opts.autoApplyMinScore != null &&
+      inserted &&
+      typeof row.match_score === "number" &&
+      row.match_score >= opts.autoApplyMinScore &&
+      row.image_url &&
+      // Conflicting metadata (e.g. wrong LE size) must never auto-apply.
+      !(row.rejection_reasons as string[]).some(r => r.startsWith("conflicting"))
+    ) {
+      try {
+        await applyCandidateImage(sb, {
+          resultId: inserted.id as string,
+          pinId: row.pin_id as string,
+          pinhuntId: row.pinhunt_id as string,
+          imageUrl: row.image_url as string,
+          listingUrl: (row.listing_url as string | null) ?? null,
+        });
+        counts.applied++;
+      } catch (e) {
+        // Pin already has an image or another writer beat us — fine, skip.
+        logger.info({ runId, pin: sel.pinhuntId, err: String(e) }, "auto-apply skipped");
+      }
+    }
 
     // Keep the summary fresh so progress is visible while the run is going.
     await sb.from("ebay_image_dry_run_runs").update({
@@ -541,23 +580,32 @@ export async function applyDryRunImage(resultId: string): Promise<{ pinhuntId: s
   if (!result.image_url) throw Object.assign(new Error("This result has no candidate image"), { status: 400 });
   if (result.applied_at) throw Object.assign(new Error("Image already applied"), { status: 409 });
 
-  const { data: pin, error: pinErr } = await sb
-    .from("pins")
-    .select("id, image_url")
-    .eq("id", result.pin_id)
-    .single();
-  if (pinErr) throw new Error(pinErr.message);
-  if (pin.image_url) {
-    throw Object.assign(new Error("Pin already has an image — not overwriting"), { status: 409 });
-  }
+  await applyCandidateImage(sb, {
+    resultId,
+    pinId: result.pin_id as string,
+    pinhuntId: result.pinhunt_id as string,
+    imageUrl: result.image_url as string,
+    listingUrl: (result.listing_url as string | null) ?? null,
+  });
+  return { pinhuntId: result.pinhunt_id as string, imageUrl: result.image_url as string };
+}
 
+/**
+ * Shared apply path: write the candidate image (hi-res) to the live pin,
+ * record provenance, and stamp applied_at. Throws 409 if the pin already
+ * has an image (conditional update must hit exactly one row).
+ */
+async function applyCandidateImage(
+  sb: ReturnType<typeof getServiceClient>,
+  args: { resultId: string; pinId: string; pinhuntId: string; imageUrl: string; listingUrl: string | null },
+): Promise<void> {
   // eBay serves the same image at multiple sizes; request the 1600px version.
-  const hiResUrl = (result.image_url as string).replace(/\/s-l\d+(\.\w+)$/, "/s-l1600$1");
+  const hiResUrl = args.imageUrl.replace(/\/s-l\d+(\.\w+)$/, "/s-l1600$1");
 
   const { data: updatedRows, error: updErr } = await sb
     .from("pins")
     .update({ image_url: hiResUrl, needs_front_image: false })
-    .eq("id", result.pin_id)
+    .eq("id", args.pinId)
     .is("image_url", null)
     .select("id");
   if (updErr) throw new Error(`Applying image failed: ${updErr.message}`);
@@ -569,20 +617,19 @@ export async function applyDryRunImage(resultId: string): Promise<{ pinhuntId: s
 
   // Provenance record so temporary eBay images are identifiable later.
   await sb.from("pin_images").insert({
-    pin_id: result.pin_id,
-    image_url: result.image_url,
+    pin_id: args.pinId,
+    image_url: args.imageUrl,
     image_type: "front",
     is_primary: true,
-    description: `Temporary fallback image from eBay listing: ${result.listing_url ?? "unknown"}`,
+    description: `Temporary fallback image from eBay listing: ${args.listingUrl ?? "unknown"}`,
   });
 
   await sb
     .from("ebay_image_dry_run_results")
     .update({ applied_at: new Date().toISOString() })
-    .eq("id", resultId);
+    .eq("id", args.resultId);
 
-  logger.info({ resultId, pin: result.pinhunt_id }, "dry-run image applied to live pin");
-  return { pinhuntId: result.pinhunt_id as string, imageUrl: result.image_url as string };
+  logger.info({ resultId: args.resultId, pin: args.pinhuntId }, "dry-run image applied to live pin");
 }
 
 // ─── Reads ────────────────────────────────────────────────────────────────────

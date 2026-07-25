@@ -10,6 +10,7 @@ import { PinCatalogueProvider } from '@/context/PinCatalogueContext';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ProfileProvider, useProfile } from '@/context/ProfileContext';
 import { SubmissionNotificationsProvider } from '@/context/SubmissionNotificationsContext';
+import { pruneOldBannerDismissals } from '@/utils/tradeBannerDismissals';
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -119,6 +120,11 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [fontsLoaded, fontError]);
+
+  // One-off storage housekeeping: prune stale trade-banner dismissal keys.
+  useEffect(() => {
+    pruneOldBannerDismissals();
+  }, []);
 
   if (!fontsLoaded && !fontError) return null;
 

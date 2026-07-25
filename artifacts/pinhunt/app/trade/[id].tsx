@@ -22,6 +22,11 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import {
+  isDismissedValue,
+  persistBannerDismissal,
+  tradeBannerDismissalKey,
+} from '@/utils/tradeBannerDismissals';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -288,15 +293,15 @@ export default function TradeScreen() {
   // Load persisted dismissal state for this trade
   useEffect(() => {
     if (!id) return;
-    AsyncStorage.getItem(`trade_banner_dismissed_${id}`)
-      .then(val => { if (val === '1') setBannerDismissed(true); })
+    AsyncStorage.getItem(tradeBannerDismissalKey(id))
+      .then(val => { if (isDismissedValue(val)) setBannerDismissed(true); })
       .catch(() => { /* ignore */ });
   }, [id]);
 
   const dismissBanner = useCallback(() => {
     setBannerDismissed(true);
     if (id) {
-      AsyncStorage.setItem(`trade_banner_dismissed_${id}`, '1').catch(() => { /* ignore */ });
+      persistBannerDismissal(id).catch(() => { /* ignore */ });
     }
   }, [id]);
   const scrollRef = useRef<ScrollView>(null);

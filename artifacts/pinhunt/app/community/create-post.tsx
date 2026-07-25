@@ -25,7 +25,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { supabase } from '@/lib/supabase';
 import type { CommunityPostType } from '@workspace/pin-repository';
 
-const MAX_PHOTOS = 9;
+const MAX_PHOTOS = 3;
 
 const POST_TYPES: Array<{ key: CommunityPostType; label: string; emoji: string; hint: string }> = [
   { key: 'in_search_of', label: 'In Search Of', emoji: '🔍', hint: 'Looking for a specific pin' },

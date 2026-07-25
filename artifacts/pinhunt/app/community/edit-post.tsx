@@ -21,10 +21,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
-import * as ImageManipulator from 'expo-image-manipulator';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
-import { supabase } from '@/lib/supabase';
+import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import type { CommunityPostType } from '@workspace/pin-repository';
 
 const MAX_PHOTOS = 3;
@@ -44,50 +43,6 @@ const TYPE_COLOR: Record<CommunityPostType, string> = {
   new_pickup:   '#8B5CF6',
   discussion:   '#64748B',
 };
-
-// ─── Compress a local image URI to stay well under the 5 MB bucket limit ─────
-
-const MAX_DIMENSION = 1400;
-const JPEG_QUALITY  = 0.8;
-
-async function compressPhoto(uri: string): Promise<string> {
-  const result = await ImageManipulator.manipulateAsync(
-    uri,
-    [],
-    { compress: JPEG_QUALITY, format: ImageManipulator.SaveFormat.JPEG },
-  );
-  const longestSide = Math.max(result.width, result.height);
-  if (longestSide > MAX_DIMENSION) {
-    const resize = result.width >= result.height
-      ? { width: MAX_DIMENSION }
-      : { height: MAX_DIMENSION };
-    const resized = await ImageManipulator.manipulateAsync(
-      result.uri,
-      [{ resize }],
-      { compress: JPEG_QUALITY, format: ImageManipulator.SaveFormat.JPEG },
-    );
-    return resized.uri;
-  }
-  return result.uri;
-}
-
-// ─── Upload a single local URI to Supabase storage ───────────────────────────
-
-async function uploadPhoto(userId: string, uri: string, index: number): Promise<string> {
-  const compressedUri = await compressPhoto(uri);
-  const path = `${userId}/${Date.now()}-${index}.jpg`;
-  const formData = new FormData();
-  formData.append('file', { uri: compressedUri, name: `photo-${index}.jpg`, type: 'image/jpeg' } as unknown as Blob);
-
-  const { error } = await supabase.storage
-    .from('community-photos')
-    .upload(path, formData, { upsert: false });
-
-  if (error) throw new Error(error.message);
-
-  const { data } = supabase.storage.from('community-photos').getPublicUrl(path);
-  return data.publicUrl;
-}
 
 export default function EditPostScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -169,7 +124,7 @@ export default function EditPostScreen() {
         for (let i = 0; i < newPhotos.length; i++) {
           setUploadProgress(`Uploading photos (${i + 1}/${newPhotos.length})…`);
           try {
-            const url = await uploadPhoto(userId, newPhotos[i], i);
+            const url = await uploadCommunityPhoto(userId, newPhotos[i], i);
             uploaded.push(url);
           } catch {
             failedCount++;

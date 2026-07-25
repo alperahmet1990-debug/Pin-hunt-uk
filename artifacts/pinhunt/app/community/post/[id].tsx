@@ -243,6 +243,8 @@ export default function PostDetailScreen() {
   const [commentText, setCommentText] = useState('');
   const [sending,     setSending]     = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [hasReported, setHasReported] = useState(false);
+  const [reporting,   setReporting]   = useState(false);
   const scrollRef = useRef<ScrollView>(null);
 
   const load = useCallback(async () => {
@@ -255,6 +257,13 @@ export default function PostDetailScreen() {
       setPost(p);
       setComments(c);
 
+      // Check whether the viewer already reported this post (non-authors only)
+      if (userId && p && p.authorId !== userId) {
+        repo.hasReportedPost(id, userId)
+          .then(setHasReported)
+          .catch(() => { /* non-fatal */ });
+      }
+
       // Auto-open lightbox if navigated from feed photo tap
       const openIdx = params.openPhotoIndex ? parseInt(params.openPhotoIndex, 10) : null;
       if (openIdx !== null && !isNaN(openIdx) && (p?.photos ?? []).length > 0) {
@@ -265,7 +274,7 @@ export default function PostDetailScreen() {
     } finally {
       setLoading(false);
     }
-  }, [repo, id]);
+  }, [repo, id, userId]);
 
   useEffect(() => { load(); }, [load]);
 
@@ -324,6 +333,35 @@ export default function PostDetailScreen() {
     ]);
   };
 
+  const submitReport = async (reason: string) => {
+    if (!repo || !userId || !post) return;
+    try {
+      setReporting(true);
+      await repo.reportCommunityPost(post.id, userId, reason);
+      setHasReported(true);
+      Alert.alert('Report sent', 'Thanks — an admin will review this post.');
+    } catch (e) {
+      Alert.alert('Error', e instanceof Error ? e.message : 'Could not report post.');
+    } finally {
+      setReporting(false);
+    }
+  };
+
+  const handleReport = () => {
+    if (!userId) { Alert.alert('Sign in to report posts'); return; }
+    if (hasReported) {
+      Alert.alert('Already reported', 'You\'ve already reported this post. An admin will review it.');
+      return;
+    }
+    Alert.alert('Report post', 'Why are you reporting this post?', [
+      { text: 'Spam',          onPress: () => submitReport('Spam') },
+      { text: 'Inappropriate', onPress: () => submitReport('Inappropriate') },
+      { text: 'Scam or fraud', onPress: () => submitReport('Scam or fraud') },
+      { text: 'Other',         onPress: () => submitReport('Other') },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
+  };
+
   const handleMessage = () => {
     if (!userId) { Alert.alert('Sign in to message'); return; }
     if (!post) return;
@@ -374,11 +412,23 @@ export default function PostDetailScreen() {
       <Stack.Screen
         options={{
           title: TYPE_LABEL[post.postType] ?? 'Post',
-          headerRight: canDeletePost
+          headerRight: (canDeletePost || (!isAuthor && userId))
             ? () => (
-                <TouchableOpacity onPress={handleDeletePost} style={{ padding: 8 }}>
-                  <Feather name="trash-2" size={18} color={colors.destructive} />
-                </TouchableOpacity>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  {!isAuthor && userId ? (
+                    <TouchableOpacity onPress={handleReport} disabled={reporting} style={{ padding: 8 }}>
+                      {reporting
+                        ? <ActivityIndicator size="small" color={colors.mutedForeground} />
+                        : <Feather name="flag" size={18} color={hasReported ? colors.destructive : colors.mutedForeground} />
+                      }
+                    </TouchableOpacity>
+                  ) : null}
+                  {canDeletePost ? (
+                    <TouchableOpacity onPress={handleDeletePost} style={{ padding: 8 }}>
+                      <Feather name="trash-2" size={18} color={colors.destructive} />
+                    </TouchableOpacity>
+                  ) : null}
+                </View>
               )
             : undefined,
         }}

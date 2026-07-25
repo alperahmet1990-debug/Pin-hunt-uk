@@ -555,6 +555,23 @@ export interface PostComment {
   createdAt: string;
 }
 
+export interface PostReport {
+  id: string;
+  postId: string;
+  reporterId: string;
+  reason?: string;
+  createdAt: string;
+}
+
+/** Aggregated report info per post, for the admin moderation queue. */
+export interface PostReportSummary {
+  postId: string;
+  reportCount: number;
+  latestReportAt: string;
+  /** Distinct reasons supplied by reporters (deduped, may be empty). */
+  reasons: string[];
+}
+
 export interface Conversation {
   id: string;
   participantAId: string;

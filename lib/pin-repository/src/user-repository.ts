@@ -16,6 +16,8 @@ import type {
   PinSubmission,
   PinSubmissionStatus,
   PostComment,
+  PostReport,
+  PostReportSummary,
   PotentialTradePin,
   StartConversationInput,
   TraderProfile,
@@ -285,6 +287,23 @@ export interface IUserPinRepository {
 
   /** Delete own comment (RLS enforced on server). */
   deletePostComment(commentId: string): Promise<void>;
+
+  // ── Post reports (moderation) ──────────────────────────────────────────────
+
+  /**
+   * Report a post as the given user. Idempotent per (post, reporter):
+   * reporting the same post twice resolves without creating a duplicate.
+   */
+  reportCommunityPost(postId: string, reporterId: string, reason?: string): Promise<PostReport>;
+
+  /** Whether the given user has already reported the post. */
+  hasReportedPost(postId: string, reporterId: string): Promise<boolean>;
+
+  /**
+   * Aggregated report summaries for the admin moderation queue,
+   * most-recently-reported first. Admin RLS applies.
+   */
+  getPostReportSummaries(): Promise<PostReportSummary[]>;
 
   // ── Conversations / DMs ────────────────────────────────────────────────────
 

@@ -21,7 +21,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
-import type { CommunityPost } from '@workspace/pin-repository';
+import type { CommunityPost, PostReportSummary } from '@workspace/pin-repository';
 
 const PAGE_SIZE = 30;
 
@@ -64,6 +64,8 @@ export default function CommunityModerationScreen() {
   const [hasMore,    setHasMore]    = useState(true);
   const [error,      setError]      = useState<string | null>(null);
   const [removingId, setRemovingId] = useState<string | null>(null);
+  const [reports,    setReports]    = useState<Map<string, PostReportSummary>>(new Map());
+  const [reportedOnly, setReportedOnly] = useState(false);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -72,8 +74,12 @@ export default function CommunityModerationScreen() {
     try {
       if (isRefresh) setRefreshing(true); else setLoading(true);
       setError(null);
-      const rows = await repo.getCommunityFeed({ limit: PAGE_SIZE, offset: 0 });
+      const [rows, summaries] = await Promise.all([
+        repo.getCommunityFeed({ limit: PAGE_SIZE, offset: 0 }),
+        repo.getPostReportSummaries(),
+      ]);
       setPosts(rows);
+      setReports(new Map(summaries.map(s => [s.postId, s])));
       setHasMore(rows.length === PAGE_SIZE);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load posts.');
@@ -128,16 +134,42 @@ export default function CommunityModerationScreen() {
     );
   }, [repo]);
 
+  // Reported posts first (most recently reported at top), then newest posts.
+  const displayPosts = React.useMemo(() => {
+    const reported = posts.filter(p => reports.has(p.id));
+    reported.sort((a, b) =>
+      (reports.get(b.id)!.latestReportAt).localeCompare(reports.get(a.id)!.latestReportAt),
+    );
+    if (reportedOnly) return reported;
+    const rest = posts.filter(p => !reports.has(p.id));
+    return [...reported, ...rest];
+  }, [posts, reports, reportedOnly]);
+
+  const reportedCount = React.useMemo(
+    () => posts.reduce((n, p) => n + (reports.has(p.id) ? 1 : 0), 0),
+    [posts, reports],
+  );
+
   const renderItem = useCallback(({ item }: { item: CommunityPost }) => {
     const typeColor  = TYPE_COLOR[item.postType] ?? '#64748B';
     const authorName = item.authorProfile?.username ?? '…';
     const removing   = removingId === item.id;
+    const report     = reports.get(item.id);
     return (
       <TouchableOpacity
         activeOpacity={0.85}
         onPress={() => router.push({ pathname: '/community/post/[id]' as any, params: { id: item.id } })}
         style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
       >
+        {report && (
+          <View style={[styles.reportedBanner, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}>
+            <Feather name="flag" size={12} color={colors.destructive} />
+            <Text style={[styles.reportedBannerText, { color: colors.destructive }]} numberOfLines={1}>
+              Reported {report.reportCount > 1 ? `${report.reportCount}× ` : ''}
+              {report.reasons.length > 0 ? `· ${report.reasons.join(', ')}` : ''}
+            </Text>
+          </View>
+        )}
         <View style={styles.cardTop}>
           <Avatar uri={item.authorProfile?.avatarUrl} name={authorName} size={32} />
           <View style={{ flex: 1 }}>
@@ -182,7 +214,7 @@ export default function CommunityModerationScreen() {
         </View>
       </TouchableOpacity>
     );
-  }, [colors, removingId, router, handleRemove]);
+  }, [colors, removingId, router, handleRemove, reports]);
 
   return (
     <>
@@ -204,7 +236,26 @@ export default function CommunityModerationScreen() {
           </View>
         ) : (
           <FlatList
-            data={posts}
+            data={displayPosts}
+            ListHeaderComponent={
+              reportedCount > 0 || reportedOnly ? (
+                <TouchableOpacity
+                  onPress={() => setReportedOnly(v => !v)}
+                  activeOpacity={0.85}
+                  style={[
+                    styles.filterChip,
+                    reportedOnly
+                      ? { backgroundColor: colors.destructive, borderColor: colors.destructive }
+                      : { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' },
+                  ]}
+                >
+                  <Feather name="flag" size={13} color={reportedOnly ? '#fff' : colors.destructive} />
+                  <Text style={[styles.filterChipLabel, { color: reportedOnly ? '#fff' : colors.destructive }]}>
+                    Reported ({reportedCount})
+                  </Text>
+                </TouchableOpacity>
+              ) : null
+            }
             keyExtractor={p => p.id}
             renderItem={renderItem}
             contentContainerStyle={{ padding: 16, paddingBottom: botPad, gap: 12 }}
@@ -218,7 +269,7 @@ export default function CommunityModerationScreen() {
               <View style={styles.center}>
                 <Feather name="check-circle" size={28} color={colors.mutedForeground} />
                 <Text style={[styles.emptyText, { color: colors.mutedForeground }]}>
-                  No community posts yet.
+                  {reportedOnly ? 'No reported posts. All clear!' : 'No community posts yet.'}
                 </Text>
               </View>
             }
@@ -245,6 +296,10 @@ const styles = StyleSheet.create({
   retryLabel:    { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   emptyText:     { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
   card:          { borderWidth: 1, borderRadius: 14, padding: 14, gap: 10 },
+  reportedBanner:{ flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, borderRadius: 8 },
+  reportedBannerText: { flex: 1, fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  filterChip:    { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', paddingHorizontal: 12, paddingVertical: 7, borderWidth: 1, borderRadius: 20 },
+  filterChipLabel:{ fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   cardTop:       { flexDirection: 'row', alignItems: 'center', gap: 10 },
   author:        { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   time:          { fontSize: 11, fontFamily: 'Inter_400Regular' },

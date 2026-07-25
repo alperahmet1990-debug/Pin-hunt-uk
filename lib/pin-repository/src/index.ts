@@ -55,6 +55,8 @@ export type {
   ConversationMessage,
   CreateCommunityPostInput,
   PostComment,
+  PostReport,
+  PostReportSummary,
   StartConversationInput,
 } from './types';
 

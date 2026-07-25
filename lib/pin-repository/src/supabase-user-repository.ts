@@ -22,6 +22,8 @@ import type {
   PinSubmission,
   PinSubmissionStatus,
   PostComment,
+  PostReport,
+  PostReportSummary,
   PotentialTradePin,
   Profile,
   PublicProfile,
@@ -1303,6 +1305,75 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .delete()
       .eq('id', commentId);
     if (error) throw new Error(error.message);
+  }
+
+  // ── Post reports (moderation) ─────────────────────────────────────────────
+
+  async reportCommunityPost(postId: string, reporterId: string, reason?: string): Promise<PostReport> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('post_reports' as any)
+      .upsert(
+        { post_id: postId, reporter_id: reporterId, reason: reason ?? null },
+        { onConflict: 'post_id,reporter_id', ignoreDuplicates: false },
+      )
+      .select('*')
+      .single();
+
+    if (error) throw new Error(error.message);
+    const row = data as unknown as Record<string, unknown>;
+    return {
+      id: row.id as string,
+      postId: row.post_id as string,
+      reporterId: row.reporter_id as string,
+      reason: (row.reason as string | null) ?? undefined,
+      createdAt: row.created_at as string,
+    };
+  }
+
+  async hasReportedPost(postId: string, reporterId: string): Promise<boolean> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('post_reports' as any)
+      .select('id')
+      .eq('post_id', postId)
+      .eq('reporter_id', reporterId)
+      .maybeSingle();
+
+    if (error) throw new Error(error.message);
+    return data != null;
+  }
+
+  async getPostReportSummaries(): Promise<PostReportSummary[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('post_reports' as any)
+      .select('post_id, reason, created_at')
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+
+    const byPost = new Map<string, PostReportSummary>();
+    for (const r of (data ?? []) as unknown as Record<string, unknown>[]) {
+      const postId = r.post_id as string;
+      const reason = (r.reason as string | null) ?? undefined;
+      const createdAt = r.created_at as string;
+      const existing = byPost.get(postId);
+      if (existing) {
+        existing.reportCount += 1;
+        if (createdAt > existing.latestReportAt) existing.latestReportAt = createdAt;
+        if (reason && !existing.reasons.includes(reason)) existing.reasons.push(reason);
+      } else {
+        byPost.set(postId, {
+          postId,
+          reportCount: 1,
+          latestReportAt: createdAt,
+          reasons: reason ? [reason] : [],
+        });
+      }
+    }
+    // Most recently reported first
+    return [...byPost.values()].sort((a, b) => b.latestReportAt.localeCompare(a.latestReportAt));
   }
 
   // ── Conversations / DMs ──────────────────────────────────────────────────────

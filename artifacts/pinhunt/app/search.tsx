@@ -150,7 +150,12 @@ export default function SearchScreen() {
     <View style={[styles.screen, { backgroundColor: colors.background, paddingTop: topPad }]}>
       {/* ── Header: back + search input ── */}
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => router.back()} hitSlop={8} style={styles.backBtn} activeOpacity={0.7}>
+        <TouchableOpacity
+          onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/scan'))}
+          hitSlop={8}
+          style={styles.backBtn}
+          activeOpacity={0.7}
+        >
           <Feather name="chevron-left" size={24} color={colors.foreground} />
         </TouchableOpacity>
         <View style={[styles.inputWrap, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: 999 }]}>

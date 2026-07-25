@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
+  ActivityIndicator,
   Image,
   Linking,
   Modal,
@@ -47,11 +48,28 @@ export default function PinDetailScreen() {
   const router = useRouter();
   const { getEntry, setStatus, markViewed } = useCollection();
   const { allBoards, customBoards, createBoard, addPinToBoard, removePinFromBoard } = useBoards();
-  const { pins } = usePinCatalogue();
+  const { pins, repository } = usePinCatalogue();
 
   const { repo: marketplaceRepo } = useMarketplace();
 
-  const pin = pins.find(p => p.id === id);
+  const cachedPin = pins.find(p => p.id === id);
+  const [fetchedPin, setFetchedPin] = useState<CataloguePin | null>(null);
+  const [pinLoading, setPinLoading] = useState(false);
+
+  // The cached catalogue holds a subset of the full database. When the pin
+  // isn't cached (e.g. reached from search), fetch it by id directly.
+  useEffect(() => {
+    if (cachedPin || !id || !repository) { setFetchedPin(null); return; }
+    let cancelled = false;
+    setPinLoading(true);
+    repository.getPinById(id)
+      .then(p => { if (!cancelled) setFetchedPin(p); })
+      .catch(() => { if (!cancelled) setFetchedPin(null); })
+      .finally(() => { if (!cancelled) setPinLoading(false); });
+    return () => { cancelled = true; };
+  }, [id, cachedPin, repository]);
+
+  const pin = cachedPin ?? fetchedPin ?? undefined;
   const entry = pin ? getEntry(pin.id) : undefined;
   const [boardModalVisible, setBoardModalVisible] = useState(false);
   const [newBoardName, setNewBoardName] = useState('');
@@ -80,6 +98,13 @@ export default function PinDetailScreen() {
   }, [pin?.id, marketplaceRepo]);
 
   if (!pin) {
+    if (pinLoading) {
+      return (
+        <View style={[styles.notFound, { backgroundColor: colors.background }]}>
+          <ActivityIndicator color={colors.primary} />
+        </View>
+      );
+    }
     return (
       <View style={[styles.notFound, { backgroundColor: colors.background }]}>
         <Text style={[styles.notFoundText, { color: colors.foreground }]}>Pin not found.</Text>

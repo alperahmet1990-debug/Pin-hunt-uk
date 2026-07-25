@@ -69,6 +69,7 @@ export default function ProfileScreen() {
   const { counts } = useCollection();
   const { profile, loading } = useProfile();
   const { signOut, user } = useAuth();
+  const isAdmin = user?.app_metadata?.role === 'admin';
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -186,6 +187,18 @@ export default function ProfileScreen() {
               <SettingsRow icon="message-circle" label="Send Feedback" />
               <SettingsRow icon="star" label="Rate the App" last />
             </Section>
+
+            {/* Admin */}
+            {isAdmin && (
+              <Section title="Admin">
+                <SettingsRow
+                  icon="settings"
+                  label="Admin Area"
+                  onPress={() => router.push('/admin')}
+                  last
+                />
+              </Section>
+            )}
 
             {/* Sign out */}
             <Section title="Account">

@@ -85,8 +85,8 @@ export default function CollectionScreen() {
     s === 'owned' ? colors.owned : s === 'wanted' ? colors.wanted : colors.forTrade;
 
   const emptyMessages: Record<Section, { title: string; subtitle: string }> = {
-    owned: { title: 'No pins owned yet', subtitle: 'Mark pins as Owned from the Catalogue or Scan tabs.' },
-    wanted: { title: 'No ISO pins yet', subtitle: 'Mark pins as ISO to track what you are searching for.' },
+    owned: { title: 'No pins owned yet', subtitle: 'Scan a pin or browse the catalogue in Discover to mark pins as Owned.' },
+    wanted: { title: 'No ISO pins yet', subtitle: 'Mark pins as ISO from Discover to track what you are searching for.' },
     for_trade: { title: 'Nothing up for trade', subtitle: "Mark pins as For Trade to let others know you're open to swaps." },
   };
 
@@ -235,7 +235,7 @@ export default function CollectionScreen() {
           title={emptyMessages[section].title}
           subtitle={emptyMessages[section].subtitle}
           actionLabel="Browse Catalogue"
-          onAction={() => router.push('/(tabs)/catalogue')}
+          onAction={() => router.push('/(tabs)/index')}
         />
       ) : section === 'owned' && filtered.length === 0 && allBoards.length === 0 ? (
         <>
@@ -245,7 +245,7 @@ export default function CollectionScreen() {
             title={emptyMessages.owned.title}
             subtitle={emptyMessages.owned.subtitle}
             actionLabel="Browse Catalogue"
-            onAction={() => router.push('/(tabs)/catalogue')}
+            onAction={() => router.push('/(tabs)/index')}
           />
         </>
       ) : (

@@ -41,6 +41,11 @@ export type {
   ExternalSaleListingPlatform,
   ExternalSaleListingStatus,
   UpdateExternalSaleListingInput,
+  // Nearby collectors (migration 007)
+  NearbyCollector,
+  GetNearbyCollectorsInput,
+  PotentialTradePin,
+  GetPotentialTradesInput,
 } from './types';
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────

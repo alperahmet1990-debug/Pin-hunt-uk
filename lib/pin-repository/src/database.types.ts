@@ -1,9 +1,6 @@
 // ============================================================
 // PinHunt UK — Supabase Database Types
-// Generated from supabase/migrations/001_schema.sql
-//
-// These types mirror what `supabase gen types typescript` produces.
-// Update this file whenever the schema changes.
+// Updated through migration 007 (Collectors Nearby)
 // ============================================================
 
 export type Json =
@@ -33,9 +30,34 @@ export interface Database {
           is_admin: boolean;
           created_at: string;
           updated_at: string;
+          // ── Migration 007: local discovery ──────────────────────────────
+          town: string | null;
+          county: string | null;
+          country: string | null;
+          /**
+           * Internal use only — column SELECT is REVOKED for authenticated/anon
+           * (migration 008). Never read this from client code.
+           */
+          approx_lat: number | null;
+          /**
+           * Internal use only — column SELECT is REVOKED for authenticated/anon
+           * (migration 008). Never read this from client code.
+           */
+          approx_lng: number | null;
+          /**
+           * Safe, client-readable boolean kept in sync with approx_lat by
+           * the sync_has_location_set trigger (migration 008).
+           * Use this instead of reading approx_lat.
+           */
+          has_location_set: boolean;
+          nearby_discovery_enabled: boolean;
+          preferred_radius_miles: number;
+          open_to_local_trades: boolean;
+          open_to_postal_trades: boolean;
+          happy_to_travel: boolean;
         };
         Insert: {
-          id: string; // FK to auth.users — required
+          id: string;
           username?: string | null;
           display_name?: string | null;
           avatar_url?: string | null;
@@ -49,6 +71,18 @@ export interface Database {
           is_admin?: boolean;
           created_at?: string;
           updated_at?: string;
+          town?: string | null;
+          county?: string | null;
+          country?: string | null;
+          approx_lat?: number | null;
+          approx_lng?: number | null;
+          /** Managed by sync_has_location_set trigger — do not set manually. */
+          has_location_set?: boolean;
+          nearby_discovery_enabled?: boolean;
+          preferred_radius_miles?: number;
+          open_to_local_trades?: boolean;
+          open_to_postal_trades?: boolean;
+          happy_to_travel?: boolean;
         };
         Update: {
           id?: string;
@@ -64,6 +98,18 @@ export interface Database {
           profile_visibility?: 'public' | 'private';
           is_admin?: boolean;
           updated_at?: string;
+          town?: string | null;
+          county?: string | null;
+          country?: string | null;
+          approx_lat?: number | null;
+          approx_lng?: number | null;
+          /** Managed by sync_has_location_set trigger — do not set manually. */
+          has_location_set?: boolean;
+          nearby_discovery_enabled?: boolean;
+          preferred_radius_miles?: number;
+          open_to_local_trades?: boolean;
+          open_to_postal_trades?: boolean;
+          happy_to_travel?: boolean;
         };
         Relationships: [
           {
@@ -215,7 +261,7 @@ export interface Database {
       pin_sources: {
         Row: { id: string; pin_id: string; source_url: string; source_name: string | null; notes: string | null; created_at: string; updated_at: string };
         Insert: { id?: string; pin_id: string; source_url: string; source_name?: string | null; notes?: string | null; created_at?: string; updated_at?: string };
-        Update: { source_url?: string; source_name?: string | null; notes?: string | null; updated_at?: string };
+        Update: { source_url?: string; source_name?: string | null; notes?: string | null };
         Relationships: [
           { foreignKeyName: 'pin_sources_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
         ];
@@ -413,11 +459,78 @@ export interface Database {
         ];
       };
     };
-    Views: Record<string, never>;
+    Views: {
+      /**
+       * Security-barrier view for public profile reads.
+       * Intentionally excludes approx_lat and approx_lng — use this view
+       * (or explicit column selection on profiles) for any public-facing query.
+       */
+      public_profiles_safe: {
+        Row: {
+          id: string;
+          username: string | null;
+          display_name: string | null;
+          avatar_url: string | null;
+          bio: string | null;
+          location: string | null;
+          trading_region: string | null;
+          international_trading_enabled: boolean;
+          allow_trade_requests: boolean;
+          allow_messages: boolean;
+          profile_visibility: 'public' | 'private';
+          is_admin: boolean;
+          created_at: string;
+          updated_at: string;
+          town: string | null;
+          county: string | null;
+          country: string | null;
+          nearby_discovery_enabled: boolean;
+          preferred_radius_miles: number;
+          open_to_local_trades: boolean;
+          open_to_postal_trades: boolean;
+          happy_to_travel: boolean;
+        };
+        Relationships: [];
+      };
+    };
     Functions: {
       is_admin: {
         Args: Record<string, never>;
         Returns: boolean;
+      };
+      get_collectors_nearby: {
+        Args: { p_viewer_id: string; p_radius_miles?: number };
+        Returns: Array<{
+          id: string;
+          username: string;
+          avatar_url: string | null;
+          bio: string | null;
+          town: string | null;
+          county: string | null;
+          distance_band: string;
+          distance_sort_key: number;
+          open_to_local_trades: boolean;
+          open_to_postal_trades: boolean;
+          happy_to_travel: boolean;
+          for_trade_count: number;
+          wanted_count: number;
+          pins_they_have_i_want: number;
+          pins_i_have_they_want: number;
+          match_score: number;
+          last_active_at: string | null;
+          positive_ratings: number;
+          total_ratings: number;
+        }>;
+      };
+      get_potential_trades: {
+        Args: { p_viewer_id: string; p_collector_id: string };
+        Returns: Array<{
+          direction: string;
+          pin_id: string;
+          pinhunt_id: string;
+          title: string;
+          image_url: string | null;
+        }>;
       };
     };
     Enums: Record<string, never>;
@@ -425,7 +538,6 @@ export interface Database {
   };
 }
 
-// Convenience helpers — pick individual table row types without the full path.
 export type Tables<T extends keyof Database['public']['Tables']> =
   Database['public']['Tables'][T]['Row'];
 

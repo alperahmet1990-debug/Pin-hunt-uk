@@ -53,6 +53,16 @@ export default function EditProfileScreen() {
   const [allowMsgs, setAllowMsgs] = useState(profile?.allowMessages ?? true);
   const [visibility, setVisibility] = useState<ProfileVisibility>(profile?.profileVisibility ?? 'public');
 
+  // Local discovery (migration 007)
+  const [town, setTown] = useState(profile?.town ?? '');
+  const [county, setCounty] = useState(profile?.county ?? '');
+  const [country, setCountry] = useState(profile?.country ?? '');
+  const [nearbyDiscovery, setNearbyDiscovery] = useState(profile?.nearbyDiscoveryEnabled ?? false);
+  const [preferredRadius, setPreferredRadius] = useState<number>(profile?.preferredRadiusMiles ?? 25);
+  const [openToLocal, setOpenToLocal] = useState(profile?.openToLocalTrades ?? false);
+  const [openToPostal, setOpenToPostal] = useState(profile?.openToPostalTrades ?? false);
+  const [happyToTravel, setHappyToTravel] = useState(profile?.happyToTravel ?? false);
+
   const [usernameError, setUsernameError] = useState<string | null>(null);
   const [usernameAvailable, setUsernameAvailable] = useState<boolean | null>(null);
   const [checkingUsername, setCheckingUsername] = useState(false);
@@ -115,6 +125,15 @@ export default function EditProfileScreen() {
         allowTradeRequests: allowTradeReqs,
         allowMessages: allowMsgs,
         profileVisibility: visibility,
+        // Local discovery
+        town: town.trim() || undefined,
+        county: county.trim() || undefined,
+        country: country.trim() || undefined,
+        nearbyDiscoveryEnabled: nearbyDiscovery,
+        preferredRadiusMiles: preferredRadius,
+        openToLocalTrades: openToLocal,
+        openToPostalTrades: openToPostal,
+        happyToTravel: happyToTravel,
       });
       router.back();
     } catch (err: unknown) {
@@ -214,6 +233,105 @@ export default function EditProfileScreen() {
               value={allowMsgs}
               onValueChange={setAllowMsgs}
             />
+          </View>
+
+          {/* Local trading and discovery */}
+          <SectionHeader title="Local Trading & Discovery" />
+
+          <Field label="Town / City">
+            <TextInput
+              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              value={town}
+              onChangeText={setTown}
+              placeholder="e.g. Watford"
+              placeholderTextColor={colors.mutedForeground}
+              maxLength={60}
+            />
+          </Field>
+
+          <Field label="County / Region">
+            <TextInput
+              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              value={county}
+              onChangeText={setCounty}
+              placeholder="e.g. Hertfordshire"
+              placeholderTextColor={colors.mutedForeground}
+              maxLength={60}
+            />
+          </Field>
+
+          <Field label="Country">
+            <TextInput
+              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              value={country}
+              onChangeText={setCountry}
+              placeholder="e.g. England"
+              placeholderTextColor={colors.mutedForeground}
+              maxLength={60}
+            />
+          </Field>
+
+          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}>
+            <ToggleRow
+              label="Appear in Collectors Nearby"
+              description="Let nearby collectors discover your profile"
+              value={nearbyDiscovery}
+              onValueChange={setNearbyDiscovery}
+            />
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <ToggleRow
+              label="Open to Local Trades"
+              description="Happy to meet up and trade in person"
+              value={openToLocal}
+              onValueChange={setOpenToLocal}
+            />
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <ToggleRow
+              label="Open to Postal Trades"
+              description="Happy to trade by post"
+              value={openToPostal}
+              onValueChange={setOpenToPostal}
+            />
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <ToggleRow
+              label="Happy to Travel"
+              description="Willing to travel to meet collectors"
+              value={happyToTravel}
+              onValueChange={setHappyToTravel}
+            />
+          </View>
+
+          {nearbyDiscovery && (
+            <View style={{ marginTop: 12, gap: 8 }}>
+              <Text style={[styles.label, { color: colors.foreground }]}>Discovery Radius</Text>
+              <View style={styles.radiusRow}>
+                {([10, 25, 50, 100] as const).map(r => (
+                  <TouchableOpacity
+                    key={r}
+                    onPress={() => setPreferredRadius(r)}
+                    style={[
+                      styles.radiusPill,
+                      {
+                        backgroundColor: preferredRadius === r ? colors.primary : colors.card,
+                        borderColor: preferredRadius === r ? colors.primary : colors.border,
+                      },
+                    ]}
+                    activeOpacity={0.75}
+                  >
+                    <Text style={[styles.radiusPillText, { color: preferredRadius === r ? '#fff' : colors.foreground }]}>
+                      {r} mi
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          )}
+
+          <View style={[styles.privacyNote, { backgroundColor: colors.secondary, borderRadius: 10 }]}>
+            <Feather name="shield" size={14} color={colors.mutedForeground} />
+            <Text style={[styles.privacyNoteText, { color: colors.mutedForeground }]}>
+              Your exact location is never shared. Only your town and county are shown to other collectors — approximate distance is shown as a band (e.g. "Within 10 miles"), not a precise figure.
+            </Text>
           </View>
 
           {/* Privacy */}
@@ -354,4 +472,22 @@ const styles = StyleSheet.create({
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
   saveBtn: { borderRadius: 12, paddingVertical: 16, alignItems: 'center', marginTop: 8 },
   saveBtnText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  radiusRow: { flexDirection: 'row', gap: 8 },
+  radiusPill: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+  },
+  radiusPillText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
+  privacyNote: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
+    padding: 12,
+    marginTop: 12,
+    marginBottom: 4,
+  },
+  privacyNoteText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 18 },
 });

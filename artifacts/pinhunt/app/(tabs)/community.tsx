@@ -1,27 +1,30 @@
 /**
- * Community tab — placeholder screen.
- *
- * Full community features (feed, messaging, trade requests) are planned
- * in a future task. This screen makes the navigation slot visible without
- * showing fake or misleading UI.
+ * Community tab — entry point for collector community features.
  */
 import React from 'react';
-import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 
-const PLANNED_FEATURES = [
+const COMING_SOON = [
   { icon: 'rss' as const, label: 'Community feed — see what collectors are trading' },
-  { icon: 'repeat' as const, label: 'Trade requests — propose swaps with other members' },
-  { icon: 'message-circle' as const, label: 'Direct messages — chat with traders' },
-  { icon: 'users' as const, label: 'Find collectors — browse profiles near you' },
-  { icon: 'award' as const, label: 'Trading reputation — ratings and badges' },
+  { icon: 'message-circle' as const, label: 'Direct messages — chat privately with traders' },
+  { icon: 'award' as const, label: 'Events & meets — local Disney pin trading events' },
 ];
 
 export default function CommunityScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
+  const router = useRouter();
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -39,67 +42,93 @@ export default function CommunityScreen() {
         {/* Page title */}
         <View style={styles.header}>
           <Text style={[styles.title, { color: colors.foreground }]}>Community</Text>
-        </View>
-
-        {/* Dev-state notice */}
-        <View
-          style={[
-            styles.noticeCard,
-            {
-              backgroundColor: colors.card,
-              borderColor: colors.border,
-              borderRadius: colors.radius,
-              marginHorizontal: 16,
-            },
-          ]}
-        >
-          <View style={[styles.noticeIconWrap, { backgroundColor: colors.secondary, borderRadius: 20 }]}>
-            <Feather name="tool" size={22} color={colors.primary} />
-          </View>
-          <Text style={[styles.noticeTitle, { color: colors.foreground }]}>
-            Coming soon
-          </Text>
-          <Text style={[styles.noticeBody, { color: colors.mutedForeground }]}>
-            Community features are in development and will be released in a future update.
-            The tab is here so you can see where everything will live.
+          <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
+            Find collectors and trade pins near you
           </Text>
         </View>
 
-        {/* Planned features list */}
-        <View style={styles.featuresSection}>
-          <Text style={[styles.featuresHeading, { color: colors.mutedForeground }]}>
-            WHAT'S PLANNED
-          </Text>
-          <View
+        {/* ── Collectors Nearby card ── */}
+        <View style={[styles.sectionPad]}>
+          <TouchableOpacity
+            onPress={() => router.push('/nearby')}
+            activeOpacity={0.85}
             style={[
-              styles.featuresCard,
+              styles.nearbyCard,
               {
-                backgroundColor: colors.card,
-                borderColor: colors.border,
+                backgroundColor: colors.primary,
                 borderRadius: colors.radius,
               },
             ]}
           >
-            {PLANNED_FEATURES.map((f, i) => (
+            <View style={styles.nearbyCardInner}>
+              <View style={[styles.nearbyIconWrap, { backgroundColor: 'rgba(255,255,255,0.18)' }]}>
+                <Feather name="map-pin" size={26} color="#fff" />
+              </View>
+              <View style={styles.nearbyText}>
+                <Text style={styles.nearbyTitle}>Collectors Nearby</Text>
+                <Text style={styles.nearbySub}>
+                  Discover pin collectors in your area and find great trade matches
+                </Text>
+              </View>
+              <Feather name="chevron-right" size={20} color="rgba(255,255,255,0.7)" />
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        {/* ── Trade requests (existing entry) ── */}
+        <View style={[styles.sectionPad]}>
+          <Text style={[styles.sectionHeading, { color: colors.mutedForeground }]}>
+            TRADING
+          </Text>
+          <View
+            style={[
+              styles.actionCard,
+              { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+            ]}
+          >
+            <TouchableOpacity
+              style={styles.actionRow}
+              activeOpacity={0.7}
+              onPress={() => router.push('/find-collectors')}
+            >
+              <View style={[styles.actionIcon, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
+                <Feather name="users" size={18} color={colors.primary} />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.actionLabel, { color: colors.foreground }]}>Find Collectors</Text>
+                <Text style={[styles.actionDesc, { color: colors.mutedForeground }]}>Search by username or region</Text>
+              </View>
+              <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* ── Coming soon ── */}
+        <View style={[styles.sectionPad]}>
+          <Text style={[styles.sectionHeading, { color: colors.mutedForeground }]}>
+            COMING SOON
+          </Text>
+          <View
+            style={[
+              styles.actionCard,
+              { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+            ]}
+          >
+            {COMING_SOON.map((f, i) => (
               <View
                 key={f.label}
                 style={[
-                  styles.featureRow,
-                  i < PLANNED_FEATURES.length - 1 && {
+                  styles.actionRow,
+                  i < COMING_SOON.length - 1 && {
                     borderBottomWidth: StyleSheet.hairlineWidth,
                     borderBottomColor: colors.border,
                   },
                 ]}
               >
-                <View
-                  style={[
-                    styles.featureIcon,
-                    { backgroundColor: colors.secondary, borderRadius: 8 },
-                  ]}
-                >
-                  <Feather name={f.icon} size={16} color={colors.primary} />
+                <View style={[styles.actionIcon, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
+                  <Feather name={f.icon} size={16} color={colors.mutedForeground} />
                 </View>
-                <Text style={[styles.featureLabel, { color: colors.foreground }]}>
+                <Text style={[styles.actionLabel, { color: colors.mutedForeground, flex: 1 }]}>
                   {f.label}
                 </Text>
               </View>
@@ -113,62 +142,60 @@ export default function CommunityScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  header: { paddingHorizontal: 16, marginBottom: 20 },
+  header: { paddingHorizontal: 16, marginBottom: 24, gap: 4 },
   title: { fontSize: 32, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
+  subtitle: { fontSize: 14, fontFamily: 'Inter_400Regular' },
 
-  noticeCard: {
-    alignItems: 'center',
-    padding: 28,
-    borderWidth: 1,
-    gap: 12,
-    marginBottom: 32,
-  },
-  noticeIconWrap: {
-    width: 52,
-    height: 52,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 4,
-  },
-  noticeTitle: {
-    fontSize: 20,
-    fontFamily: 'Inter_700Bold',
-  },
-  noticeBody: {
-    fontSize: 14,
-    fontFamily: 'Inter_400Regular',
-    textAlign: 'center',
-    lineHeight: 20,
-  },
-
-  featuresSection: { marginHorizontal: 16 },
-  featuresHeading: {
+  sectionPad: { paddingHorizontal: 16, marginBottom: 20 },
+  sectionHeading: {
     fontSize: 11,
     fontFamily: 'Inter_600SemiBold',
     letterSpacing: 0.8,
     marginBottom: 8,
   },
-  featuresCard: {
-    borderWidth: 1,
-    overflow: 'hidden',
+
+  nearbyCard: { overflow: 'hidden' },
+  nearbyCardInner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 18,
+    gap: 14,
   },
-  featureRow: {
+  nearbyIconWrap: {
+    width: 50,
+    height: 50,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  nearbyText: { flex: 1 },
+  nearbyTitle: {
+    fontSize: 17,
+    fontFamily: 'Inter_700Bold',
+    color: '#fff',
+    marginBottom: 3,
+  },
+  nearbySub: {
+    fontSize: 12,
+    fontFamily: 'Inter_400Regular',
+    color: 'rgba(255,255,255,0.8)',
+    lineHeight: 16,
+  },
+
+  actionCard: { borderWidth: 1, overflow: 'hidden' },
+  actionRow: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 14,
     paddingVertical: 13,
     gap: 12,
   },
-  featureIcon: {
-    width: 32,
-    height: 32,
+  actionIcon: {
+    width: 34,
+    height: 34,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  featureLabel: {
-    flex: 1,
-    fontSize: 14,
-    fontFamily: 'Inter_400Regular',
-    lineHeight: 18,
-  },
+  actionLabel: { fontSize: 14, fontFamily: 'Inter_500Medium' },
+  actionDesc: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
 });

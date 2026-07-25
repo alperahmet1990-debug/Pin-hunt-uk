@@ -88,6 +88,7 @@ function RootLayoutNav() {
       <Stack.Screen name="catalogue" options={{ title: 'Pin Catalogue' }} />
       <Stack.Screen name="traders/[pinId]" options={{ title: 'Traders' }} />
       <Stack.Screen name="trade/[id]" options={{ title: 'Trade' }} />
+      <Stack.Screen name="nearby" options={{ title: 'Collectors Nearby' }} />
     </Stack>
   );
 }

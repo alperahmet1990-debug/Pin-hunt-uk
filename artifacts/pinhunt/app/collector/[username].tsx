@@ -1,23 +1,24 @@
 /**
  * Collector Profile screen — public profile view.
- * Accessible from Find Collectors or any deep-link to /collector/:username.
+ * Accessible from Find Collectors, Collectors Nearby, or any deep-link to /collector/:username.
  */
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
-import type { PublicProfile } from '@workspace/pin-repository';
+import type { PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
 
 function initials(p: PublicProfile): string {
   const name = p.username;
@@ -28,18 +29,58 @@ function initials(p: PublicProfile): string {
     .slice(0, 2);
 }
 
+// ─── Potential trade card ─────────────────────────────────────────────────────
+
+function PotentialTradeCard({
+  pin,
+}: {
+  pin: PotentialTradePin;
+}) {
+  const colors = useColors();
+  const isTheyHave = pin.direction === 'they_have_i_want';
+  return (
+    <View
+      style={[
+        styles.tradePin,
+        {
+          backgroundColor: isTheyHave ? colors.wanted + '14' : colors.forTrade + '14',
+          borderColor: isTheyHave ? colors.wanted + '40' : colors.forTrade + '40',
+          borderRadius: 10,
+        },
+      ]}
+    >
+      <Feather
+        name={isTheyHave ? 'download' : 'upload'}
+        size={12}
+        color={isTheyHave ? colors.wanted : colors.forTrade}
+      />
+      <Text style={[styles.tradePinTitle, { color: colors.foreground }]} numberOfLines={2}>
+        {pin.title}
+      </Text>
+    </View>
+  );
+}
+
+// ─── Screen ───────────────────────────────────────────────────────────────────
+
 export default function CollectorProfileScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
+  const router = useRouter();
   const { username } = useLocalSearchParams<{ username: string }>();
   const { getPublicProfile } = useProfile();
+  const { repo, userId } = useMarketplace();
 
-  const { repo } = useMarketplace();
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [rating, setRating] = useState<{ positive: number; total: number } | null>(null);
 
+  const [potentialTrades, setPotentialTrades] = useState<PotentialTradePin[]>([]);
+  const [tradesLoading, setTradesLoading] = useState(false);
+  const [startingTrade, setStartingTrade] = useState(false);
+
+  // Load public profile
   useEffect(() => {
     if (!username) return;
     setLoading(true);
@@ -47,7 +88,6 @@ export default function CollectorProfileScreen() {
       .then(p => {
         if (!p) { setNotFound(true); return; }
         setProfile(p);
-        // Load rating in background
         if (repo) {
           repo.getTraderRating(p.id)
             .then(r => setRating(r))
@@ -58,7 +98,39 @@ export default function CollectorProfileScreen() {
       .finally(() => setLoading(false));
   }, [username, getPublicProfile, repo]);
 
-  const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
+  // Load potential trades once we have both IDs
+  const loadPotentialTrades = useCallback(async () => {
+    if (!repo || !userId || !profile) return;
+    setTradesLoading(true);
+    try {
+      const trades = await repo.getPotentialTrades({ viewerId: userId, collectorId: profile.id });
+      setPotentialTrades(trades);
+    } catch {
+      // Non-critical — silently ignore
+    } finally {
+      setTradesLoading(false);
+    }
+  }, [repo, userId, profile]);
+
+  useEffect(() => { loadPotentialTrades(); }, [loadPotentialTrades]);
+
+  // Start a conversation (create trade + navigate to chat)
+  const handleStartConversation = async () => {
+    if (!repo || !userId || !profile || startingTrade) return;
+    setStartingTrade(true);
+    try {
+      const trade = await repo.createTrade(userId, profile.id);
+      router.push({ pathname: '/trade/[id]', params: { id: trade.id } });
+    } catch {
+      // silently ignore
+    } finally {
+      setStartingTrade(false);
+    }
+  };
+
+  const theyHaveIWant = potentialTrades.filter(p => p.direction === 'they_have_i_want');
+  const iHaveTheyWant = potentialTrades.filter(p => p.direction === 'i_have_they_want');
+  const hasPotentialTrades = potentialTrades.length > 0;
 
   return (
     <>
@@ -94,25 +166,49 @@ export default function CollectorProfileScreen() {
               <Text style={[styles.displayName, { color: colors.foreground }]}>
                 @{profile.username}
               </Text>
-              <Text style={[styles.username, { color: colors.mutedForeground }]}>
-                @{profile.username}
-              </Text>
 
-              {/* Trading region */}
-              {profile.tradingRegion ? (
+              {/* Location */}
+              {(profile.town || profile.county) ? (
+                <View style={styles.metaRow}>
+                  <Feather name="map-pin" size={13} color={colors.mutedForeground} />
+                  <Text style={[styles.metaText, { color: colors.mutedForeground }]}>
+                    {[profile.town, profile.county].filter(Boolean).join(', ')}
+                  </Text>
+                </View>
+              ) : profile.tradingRegion ? (
                 <View style={styles.metaRow}>
                   <Feather name="map-pin" size={13} color={colors.mutedForeground} />
                   <Text style={[styles.metaText, { color: colors.mutedForeground }]}>{profile.tradingRegion}</Text>
                 </View>
               ) : null}
 
-              {/* International trading badge */}
-              {profile.internationalTradingEnabled && (
-                <View style={[styles.badge, { backgroundColor: colors.primary + '22' }]}>
-                  <Feather name="globe" size={12} color={colors.primary} />
-                  <Text style={[styles.badgeText, { color: colors.primary }]}>Open to international trades</Text>
-                </View>
-              )}
+              {/* Trade preference badges */}
+              <View style={styles.badgeRow}>
+                {profile.internationalTradingEnabled && (
+                  <View style={[styles.badge, { backgroundColor: colors.primary + '22' }]}>
+                    <Feather name="globe" size={12} color={colors.primary} />
+                    <Text style={[styles.badgeText, { color: colors.primary }]}>Open to international trades</Text>
+                  </View>
+                )}
+                {profile.openToLocalTrades && (
+                  <View style={[styles.badge, { backgroundColor: colors.primary + '14' }]}>
+                    <Feather name="map-pin" size={12} color={colors.primary} />
+                    <Text style={[styles.badgeText, { color: colors.primary }]}>Local trades</Text>
+                  </View>
+                )}
+                {profile.openToPostalTrades && (
+                  <View style={[styles.badge, { backgroundColor: colors.secondary }]}>
+                    <Feather name="package" size={12} color={colors.mutedForeground} />
+                    <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>Postal trades</Text>
+                  </View>
+                )}
+                {profile.happyToTravel && (
+                  <View style={[styles.badge, { backgroundColor: colors.secondary }]}>
+                    <Feather name="navigation" size={12} color={colors.mutedForeground} />
+                    <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>Happy to travel</Text>
+                  </View>
+                )}
+              </View>
 
               {/* Trade rating badge */}
               {rating !== null && rating.total > 0 && (() => {
@@ -143,6 +239,87 @@ export default function CollectorProfileScreen() {
                 </View>
               </View>
             ) : null}
+
+            {/* ── Potential trades ── */}
+            {(hasPotentialTrades || tradesLoading) && (
+              <View style={[styles.section, { marginHorizontal: 16, marginTop: 20 }]}>
+                <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>POTENTIAL TRADE MATCH</Text>
+
+                {tradesLoading ? (
+                  <ActivityIndicator color={colors.primary} style={{ marginTop: 8 }} />
+                ) : (
+                  <View
+                    style={[
+                      styles.tradeMatchCard,
+                      { backgroundColor: colors.card, borderColor: colors.border },
+                    ]}
+                  >
+                    {theyHaveIWant.length > 0 && (
+                      <View style={styles.tradeGroup}>
+                        <Text style={[styles.tradeGroupLabel, { color: colors.wanted }]}>
+                          They have — you want ({theyHaveIWant.length})
+                        </Text>
+                        <View style={styles.tradePins}>
+                          {theyHaveIWant.slice(0, 5).map(p => (
+                            <PotentialTradeCard key={p.pinId} pin={p} />
+                          ))}
+                          {theyHaveIWant.length > 5 && (
+                            <Text style={[styles.moreLabel, { color: colors.mutedForeground }]}>
+                              +{theyHaveIWant.length - 5} more
+                            </Text>
+                          )}
+                        </View>
+                      </View>
+                    )}
+                    {theyHaveIWant.length > 0 && iHaveTheyWant.length > 0 && (
+                      <View style={[styles.tradeDivider, { backgroundColor: colors.border }]} />
+                    )}
+                    {iHaveTheyWant.length > 0 && (
+                      <View style={styles.tradeGroup}>
+                        <Text style={[styles.tradeGroupLabel, { color: colors.forTrade }]}>
+                          You have — they want ({iHaveTheyWant.length})
+                        </Text>
+                        <View style={styles.tradePins}>
+                          {iHaveTheyWant.slice(0, 5).map(p => (
+                            <PotentialTradeCard key={p.pinId} pin={p} />
+                          ))}
+                          {iHaveTheyWant.length > 5 && (
+                            <Text style={[styles.moreLabel, { color: colors.mutedForeground }]}>
+                              +{iHaveTheyWant.length - 5} more
+                            </Text>
+                          )}
+                        </View>
+                      </View>
+                    )}
+
+                    {/* Safety note */}
+                    <View style={[styles.safetyNote, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
+                      <Feather name="shield" size={13} color={colors.mutedForeground} />
+                      <Text style={[styles.safetyText, { color: colors.mutedForeground }]}>
+                        Always meet in a public place or use tracked postage. Never send cash — use PayPal Goods &amp; Services for financial protection.
+                      </Text>
+                    </View>
+
+                    {/* Start conversation button */}
+                    <TouchableOpacity
+                      onPress={handleStartConversation}
+                      activeOpacity={0.85}
+                      disabled={startingTrade}
+                      style={[styles.convoBtn, { backgroundColor: colors.primary }]}
+                    >
+                      {startingTrade ? (
+                        <ActivityIndicator color="#fff" size="small" />
+                      ) : (
+                        <>
+                          <Feather name="message-circle" size={16} color="#fff" />
+                          <Text style={styles.convoBtnText}>Start Conversation</Text>
+                        </>
+                      )}
+                    </TouchableOpacity>
+                  </View>
+                )}
+              </View>
+            )}
           </ScrollView>
         )}
       </View>
@@ -173,21 +350,56 @@ const styles = StyleSheet.create({
   },
   avatarText: { fontSize: 32, fontFamily: 'Inter_700Bold', color: '#fff' },
   displayName: { fontSize: 22, fontFamily: 'Inter_700Bold', textAlign: 'center' },
-  username: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   metaText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
+  badgeRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 6, marginTop: 4 },
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
-    paddingHorizontal: 12,
+    paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 20,
-    marginTop: 4,
   },
   badgeText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+
   section: { gap: 8 },
   sectionLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8 },
   bioCard: { borderWidth: 1, borderRadius: 14, padding: 16 },
   bioText: { fontSize: 15, fontFamily: 'Inter_400Regular', lineHeight: 22 },
+
+  // Potential trades
+  tradeMatchCard: { borderWidth: 1, borderRadius: 14, overflow: 'hidden' },
+  tradeGroup: { padding: 14, gap: 8 },
+  tradeGroupLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  tradePins: { gap: 6 },
+  tradePin: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 7,
+    borderWidth: 1,
+    padding: 9,
+  },
+  tradePinTitle: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 17 },
+  moreLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', paddingLeft: 4 },
+  tradeDivider: { height: StyleSheet.hairlineWidth, marginHorizontal: 14 },
+  safetyNote: {
+    flexDirection: 'row',
+    gap: 8,
+    alignItems: 'flex-start',
+    margin: 14,
+    padding: 10,
+  },
+  safetyText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 },
+  convoBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    margin: 14,
+    marginTop: 4,
+    paddingVertical: 13,
+    borderRadius: 10,
+  },
+  convoBtnText: { color: '#fff', fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 });

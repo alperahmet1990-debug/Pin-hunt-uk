@@ -9,8 +9,12 @@ import type {
   EditionType,
   ExternalIdentifiers,
   ExternalSaleListing,
+  GetNearbyCollectorsInput,
+  GetPotentialTradesInput,
+  NearbyCollector,
   PinSubmission,
   PinSubmissionStatus,
+  PotentialTradePin,
   Profile,
   PublicProfile,
   SearchCollectorsInput,
@@ -90,6 +94,19 @@ function rowToProfile(row: Record<string, unknown>): Profile {
     isAdmin: (row.is_admin as boolean) ?? false,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
+    // ── Migration 007: local discovery ──────────────────────────────────────
+    town: (row.town as string | null) ?? undefined,
+    county: (row.county as string | null) ?? undefined,
+    country: (row.country as string | null) ?? undefined,
+    // approx_lat/lng are column-revoked for the authenticated role (migration 008)
+    // and must never be read by client code. has_location_set is a safe boolean
+    // kept in sync by a DB trigger (sync_has_location_set).
+    hasLocationSet: (row.has_location_set as boolean) ?? false,
+    nearbyDiscoveryEnabled: (row.nearby_discovery_enabled as boolean) ?? false,
+    preferredRadiusMiles: (row.preferred_radius_miles as number) ?? 25,
+    openToLocalTrades: (row.open_to_local_trades as boolean) ?? false,
+    openToPostalTrades: (row.open_to_postal_trades as boolean) ?? false,
+    happyToTravel: (row.happy_to_travel as boolean) ?? false,
   };
 }
 
@@ -102,6 +119,12 @@ function rowToPublicProfile(row: Record<string, unknown>): PublicProfile {
     bio: (row.bio as string | null) ?? undefined,
     tradingRegion: (row.trading_region as string | null) ?? undefined,
     internationalTradingEnabled: (row.international_trading_enabled as boolean) ?? false,
+    // ── Migration 007 fields ─────────────────────────────────────────────
+    town: (row.town as string | null) ?? undefined,
+    county: (row.county as string | null) ?? undefined,
+    openToLocalTrades: (row.open_to_local_trades as boolean) ?? false,
+    openToPostalTrades: (row.open_to_postal_trades as boolean) ?? false,
+    happyToTravel: (row.happy_to_travel as boolean) ?? false,
   };
 }
 
@@ -157,6 +180,22 @@ function rowToTrade(row: Record<string, unknown>): Trade {
   };
 }
 
+// ─── Safe profile column list ─────────────────────────────────────────────────
+// approx_lat and approx_lng are REVOKED for the authenticated role
+// (migration 008). Using select('*') on profiles would fail for those columns.
+// All profile reads must use this explicit safe list instead.
+
+const SAFE_PROFILE_COLUMNS = [
+  'id', 'username', 'display_name', 'avatar_url', 'bio', 'location',
+  'trading_region', 'international_trading_enabled', 'allow_trade_requests',
+  'allow_messages', 'profile_visibility', 'is_admin', 'created_at', 'updated_at',
+  // migration 007 — discovery fields (coordinates excluded)
+  'town', 'county', 'country',
+  'has_location_set',           // safe boolean — kept in sync by trigger (migration 008)
+  'nearby_discovery_enabled', 'preferred_radius_miles',
+  'open_to_local_trades', 'open_to_postal_trades', 'happy_to_travel',
+].join(', ');
+
 // ─── SELECT fragment for user_pins with joined pin data ───────────────────────
 
 const SELECT_USER_PINS = `
@@ -178,13 +217,13 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async getProfile(userId: string): Promise<Profile | null> {
     const { data, error } = await this.client
       .from('profiles')
-      .select('*')
+      .select(SAFE_PROFILE_COLUMNS)
       .eq('id', userId)
       .maybeSingle();
 
     if (error) throw new Error(error.message);
     if (!data) return null;
-    return rowToProfile(data as Record<string, unknown>);
+    return rowToProfile(data as unknown as Record<string, unknown>);
   }
 
   async getMyProfile(userId: string): Promise<Profile | null> {
@@ -205,16 +244,25 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (input.allowTradeRequests !== undefined) upsertData.allow_trade_requests = input.allowTradeRequests;
     if (input.allowMessages !== undefined) upsertData.allow_messages = input.allowMessages;
     if (input.profileVisibility !== undefined) upsertData.profile_visibility = input.profileVisibility;
+    // ── Migration 007: local discovery ──────────────────────────────────────
+    if (input.town !== undefined) upsertData.town = input.town ?? null;
+    if (input.county !== undefined) upsertData.county = input.county ?? null;
+    if (input.country !== undefined) upsertData.country = input.country ?? null;
+    if (input.nearbyDiscoveryEnabled !== undefined) upsertData.nearby_discovery_enabled = input.nearbyDiscoveryEnabled;
+    if (input.preferredRadiusMiles !== undefined) upsertData.preferred_radius_miles = input.preferredRadiusMiles;
+    if (input.openToLocalTrades !== undefined) upsertData.open_to_local_trades = input.openToLocalTrades;
+    if (input.openToPostalTrades !== undefined) upsertData.open_to_postal_trades = input.openToPostalTrades;
+    if (input.happyToTravel !== undefined) upsertData.happy_to_travel = input.happyToTravel;
 
     const { data, error } = await this.client
       .from('profiles')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .upsert(upsertData as any, { onConflict: 'id' })
-      .select()
+      .select(SAFE_PROFILE_COLUMNS)
       .single();
 
     if (error) throw new Error(error.message);
-    return rowToProfile(data as Record<string, unknown>);
+    return rowToProfile(data as unknown as Record<string, unknown>);
   }
 
   async updateMyProfile(userId: string, input: UpdateProfileInput): Promise<Profile> {
@@ -222,10 +270,16 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   }
 
   async getPublicProfile(username: string): Promise<PublicProfile | null> {
+    // Use the `profiles` table directly with explicit safe column selection so
+    // that new migration-007 fields are available without waiting for the
+    // public_profiles view to be updated. approx_lat/approx_lng are never
+    // included in the select list — only display-safe fields are fetched.
     const { data, error } = await this.client
-      .from('public_profiles')
-      .select('*')
+      .from('profiles')
+      .select('id, username, display_name, avatar_url, bio, trading_region, international_trading_enabled, town, county, open_to_local_trades, open_to_postal_trades, happy_to_travel')
       .eq('username', username.toLowerCase())
+      .eq('profile_visibility', 'public')
+      .not('username', 'is', null)
       .maybeSingle();
 
     if (error) throw new Error(error.message);
@@ -235,8 +289,10 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   async searchCollectors(input: SearchCollectorsInput): Promise<PublicProfile[]> {
     let query = this.client
-      .from('public_profiles')
-      .select('*');
+      .from('profiles')
+      .select('id, username, display_name, avatar_url, bio, trading_region, international_trading_enabled, town, county, open_to_local_trades, open_to_postal_trades, happy_to_travel')
+      .eq('profile_visibility', 'public')
+      .not('username', 'is', null);
 
     if (input.query?.trim()) {
       const term = `%${input.query.trim().toLowerCase()}%`;
@@ -798,7 +854,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     // 2. Fetch their profiles (only users who have set a username = public)
     const { data: profileData, error: profileErr } = await this.client
       .from('profiles')
-      .select('id, username, display_name, avatar_url, bio, trading_region, international_trading_enabled')
+      .select('id, username, display_name, avatar_url, bio, trading_region, international_trading_enabled, town, county, open_to_local_trades, open_to_postal_trades, happy_to_travel')
       .in('id', userIds)
       .not('username', 'is', null);
 
@@ -824,6 +880,11 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       bio: (p.bio as string | null) ?? undefined,
       tradingRegion: (p.trading_region as string | null) ?? undefined,
       internationalTradingEnabled: (p.international_trading_enabled as boolean) ?? false,
+      town: (p.town as string | null) ?? undefined,
+      county: (p.county as string | null) ?? undefined,
+      openToLocalTrades: (p.open_to_local_trades as boolean) ?? false,
+      openToPostalTrades: (p.open_to_postal_trades as boolean) ?? false,
+      happyToTravel: (p.happy_to_travel as boolean) ?? false,
       positiveRatings: ratingMap.get(p.id as string)?.positive ?? 0,
       totalRatings: ratingMap.get(p.id as string)?.total ?? 0,
     }));
@@ -864,6 +925,59 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       comment: (row.comment as string | null) ?? undefined,
       createdAt: row.created_at as string,
     };
+  }
+
+  // ── Nearby collectors (migration 007) ────────────────────────────────────────
+
+  async getNearbyCollectors(input: GetNearbyCollectorsInput): Promise<NearbyCollector[]> {
+    // The RPC reads the viewer's own coords server-side — we never pass lat/lng.
+    const { data, error } = await this.client.rpc('get_collectors_nearby', {
+      p_viewer_id: input.viewerId,
+      p_radius_miles: input.radiusMiles,
+    });
+
+    if (error) throw new Error(error.message);
+    if (!data) return [];
+
+    return (data as Array<Record<string, unknown>>).map(row => ({
+      id: row.id as string,
+      username: row.username as string,
+      avatarUrl: (row.avatar_url as string | null) ?? undefined,
+      bio: (row.bio as string | null) ?? undefined,
+      town: (row.town as string | null) ?? undefined,
+      county: (row.county as string | null) ?? undefined,
+      distanceBand: row.distance_band as string,
+      distanceSortKey: row.distance_sort_key as number,
+      openToLocalTrades: (row.open_to_local_trades as boolean) ?? false,
+      openToPostalTrades: (row.open_to_postal_trades as boolean) ?? false,
+      happyToTravel: (row.happy_to_travel as boolean) ?? false,
+      forTradeCount: (row.for_trade_count as number) ?? 0,
+      wantedCount: (row.wanted_count as number) ?? 0,
+      pinsTheyHaveIWant: (row.pins_they_have_i_want as number) ?? 0,
+      pinsIHaveTheyWant: (row.pins_i_have_they_want as number) ?? 0,
+      matchScore: (row.match_score as number) ?? 0,
+      lastActiveAt: (row.last_active_at as string | null) ?? undefined,
+      positiveRatings: (row.positive_ratings as number) ?? 0,
+      totalRatings: (row.total_ratings as number) ?? 0,
+    }));
+  }
+
+  async getPotentialTrades(input: GetPotentialTradesInput): Promise<PotentialTradePin[]> {
+    const { data, error } = await this.client.rpc('get_potential_trades', {
+      p_viewer_id: input.viewerId,
+      p_collector_id: input.collectorId,
+    });
+
+    if (error) throw new Error(error.message);
+    if (!data) return [];
+
+    return (data as Array<Record<string, unknown>>).map(row => ({
+      direction: row.direction as PotentialTradePin['direction'],
+      pinId: row.pin_id as string,
+      pinhuntId: row.pinhunt_id as string,
+      title: row.title as string,
+      imageUrl: (row.image_url as string | null) ?? undefined,
+    }));
   }
 }
 

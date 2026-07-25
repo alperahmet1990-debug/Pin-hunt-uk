@@ -4,8 +4,12 @@ import type {
   CreatePinSubmissionInput,
   EditionType,
   ExternalSaleListing,
+  GetNearbyCollectorsInput,
+  GetPotentialTradesInput,
+  NearbyCollector,
   PinSubmission,
   PinSubmissionStatus,
+  PotentialTradePin,
   TraderProfile,
   TradeRating,
   TraderRatingSummary,
@@ -218,4 +222,20 @@ export interface IUserPinRepository {
 
   /** Submit a positive or negative rating for a trader after a trade. */
   createTradeRating(raterId: string, input: CreateTradeRatingInput): Promise<TradeRating>;
+
+  // ── Nearby collectors (migration 007) ────────────────────────────────────
+
+  /**
+   * Return collectors near the viewer who have opted in to discovery.
+   * The viewer's own coordinates are looked up server-side via the
+   * get_collectors_nearby RPC — no lat/lng is passed from the client.
+   * Distance is returned as a privacy-safe band label only.
+   */
+  getNearbyCollectors(input: GetNearbyCollectorsInput): Promise<NearbyCollector[]>;
+
+  /**
+   * Return pins that each side has that the other wants,
+   * to surface a potential trade match.
+   */
+  getPotentialTrades(input: GetPotentialTradesInput): Promise<PotentialTradePin[]>;
 }

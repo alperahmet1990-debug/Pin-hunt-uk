@@ -1,5 +1,6 @@
 /**
  * Admin Review — full view of a community submission with approve/reject/needs-changes actions.
+ * Shows a duplicate-warning banner when existing catalogue pins closely match the submission.
  */
 import React, { useEffect, useState } from 'react';
 import {
@@ -21,7 +22,11 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
-import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
+import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
+
+const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
+  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
+  : 'http://localhost:8080/api';
 
 async function getSignedUrl(path: string): Promise<string | null> {
   try {
@@ -69,6 +74,10 @@ export default function AdminReviewScreen() {
   const [error, setError]           = useState<string | null>(null);
   const [reviewerNotes, setReviewerNotes] = useState('');
 
+  const [candidates, setCandidates]         = useState<DuplicateCandidate[]>([]);
+  const [candidatesLoading, setCandidatesLoading] = useState(false);
+  const [duplicateBannerDismissed, setDuplicateBannerDismissed] = useState(false);
+
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
   useEffect(() => {
@@ -92,6 +101,22 @@ export default function AdminReviewScreen() {
       }
     })();
   }, [id, repo]);
+
+  // Load duplicate candidates once submission is available and actionable
+  useEffect(() => {
+    if (!submission) return;
+    const actionable = submission.status === 'submitted' || submission.status === 'under_review';
+    if (!actionable) return;
+
+    setCandidatesLoading(true);
+    fetch(`${API_BASE}/admin/submissions/${submission.id}/duplicate-candidates`)
+      .then(r => r.json())
+      .then((body: { candidates?: DuplicateCandidate[]; error?: string }) => {
+        if (body.candidates) setCandidates(body.candidates);
+      })
+      .catch(() => { /* non-fatal */ })
+      .finally(() => setCandidatesLoading(false));
+  }, [submission]);
 
   const takeAction = async (action: ReviewAction) => {
     if (!repo || !submission) return;
@@ -141,6 +166,35 @@ export default function AdminReviewScreen() {
 
   const markUnderReview = () => takeAction('under_review');
 
+  const mergeIntoExisting = (candidate: DuplicateCandidate) => {
+    if (!repo || !submission) return;
+    Alert.alert(
+      'Merge into Existing Pin',
+      `Approve this submission and credit the submitter against the existing catalogue pin "${candidate.title}" (${candidate.pinhuntId})?`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Merge',
+          onPress: async () => {
+            try {
+              setSaving(true);
+              await repo.reviewPinSubmission(submission.id, {
+                status: 'approved',
+                reviewerNotes: reviewerNotes.trim() || `Merged into existing catalogue pin ${candidate.pinhuntId}.`,
+                approvedPinhuntId: candidate.pinhuntId,
+              });
+              router.back();
+            } catch (err) {
+              Alert.alert('Error', err instanceof Error ? err.message : 'Merge failed.');
+            } finally {
+              setSaving(false);
+            }
+          },
+        },
+      ],
+    );
+  };
+
   const approveAndAddToCatalogue = () => {
     if (!submission) return;
     router.push({
@@ -188,6 +242,7 @@ export default function AdminReviewScreen() {
   }
 
   const isActionable = submission.status === 'submitted' || submission.status === 'under_review';
+  const showDuplicateWarning = isActionable && candidates.length > 0 && !duplicateBannerDismissed;
 
   return (
     <>
@@ -220,6 +275,65 @@ export default function AdminReviewScreen() {
                 {STATUS_LABEL[submission.status]}
               </Text>
             </View>
+
+            {/* ── Duplicate warning banner ── */}
+            {candidatesLoading && isActionable && (
+              <View style={[styles.dupBanner, { backgroundColor: '#FEF9C3', borderColor: '#FDE047' }]}>
+                <ActivityIndicator size="small" color="#92400E" style={{ marginRight: 8 }} />
+                <Text style={styles.dupBannerText}>Checking for existing catalogue matches…</Text>
+              </View>
+            )}
+
+            {showDuplicateWarning && (
+              <View style={[styles.dupBanner, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flex: 1 }}>
+                    <Feather name="alert-triangle" size={15} color="#92400E" />
+                    <Text style={[styles.dupBannerTitle, { color: '#92400E' }]}>
+                      Possible duplicate{candidates.length > 1 ? 's' : ''} found
+                    </Text>
+                  </View>
+                  <TouchableOpacity
+                    onPress={() => setDuplicateBannerDismissed(true)}
+                    hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                  >
+                    <Feather name="x" size={14} color="#92400E" />
+                  </TouchableOpacity>
+                </View>
+
+                {candidates.map(c => (
+                  <View
+                    key={c.pinhuntId}
+                    style={[styles.dupCandidate, { backgroundColor: '#FFFBEB', borderColor: '#FDE68A' }]}
+                  >
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.dupCandidateName} numberOfLines={1}>{c.title}</Text>
+                      <Text style={styles.dupCandidateMeta}>
+                        {c.pinhuntId}{c.releaseYear ? ` · ${c.releaseYear}` : ''} · {c.matchReason}
+                      </Text>
+                    </View>
+                    {c.imageUrl ? (
+                      <Image source={{ uri: c.imageUrl }} style={styles.dupThumb} resizeMode="cover" />
+                    ) : (
+                      <View style={[styles.dupThumb, { backgroundColor: '#FDE68A', alignItems: 'center', justifyContent: 'center' }]}>
+                        <Feather name="image" size={12} color="#92400E" />
+                      </View>
+                    )}
+                    <TouchableOpacity
+                      onPress={() => mergeIntoExisting(c)}
+                      disabled={saving}
+                      style={[styles.mergeBtn, { backgroundColor: '#92400E' }]}
+                    >
+                      <Text style={styles.mergeBtnLabel}>Merge</Text>
+                    </TouchableOpacity>
+                  </View>
+                ))}
+
+                <Text style={[styles.dupBannerHint, { color: '#92400E' }]}>
+                  Tap Merge to approve and link this submission to the existing pin, or dismiss to create a new entry.
+                </Text>
+              </View>
+            )}
 
             {/* Submission detail */}
             <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 14 }]}>
@@ -411,4 +525,15 @@ const styles = StyleSheet.create({
   reviewerBox:     { flexDirection: 'row', gap: 10, padding: 12, borderWidth: 1 },
   reviewerTitle:   { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#92400E' },
   reviewerText:    { fontSize: 13, fontFamily: 'Inter_400Regular', color: '#92400E', lineHeight: 18 },
+  // ── Duplicate warning ────────────────────────────────────────────────────
+  dupBanner:       { borderWidth: 1, borderRadius: 10, padding: 12, gap: 8, flexDirection: 'column' },
+  dupBannerTitle:  { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  dupBannerText:   { fontSize: 13, fontFamily: 'Inter_400Regular', color: '#92400E', flex: 1 },
+  dupBannerHint:   { fontSize: 11, fontFamily: 'Inter_400Regular', lineHeight: 16, marginTop: 4 },
+  dupCandidate:    { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderRadius: 8, padding: 8 },
+  dupCandidateName:{ fontSize: 13, fontFamily: 'Inter_600SemiBold', color: '#1C1917' },
+  dupCandidateMeta:{ fontSize: 11, fontFamily: 'Inter_400Regular', color: '#78716C', marginTop: 2 },
+  dupThumb:        { width: 40, height: 40, borderRadius: 6, flexShrink: 0 },
+  mergeBtn:        { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 6 },
+  mergeBtnLabel:   { fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#fff' },
 });

@@ -7,6 +7,7 @@ import type {
   CreateCommunityPostInput,
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
+  DuplicateCandidate,
   EditionType,
   ExternalSaleListing,
   GetAllSubmissionsInput,
@@ -232,6 +233,14 @@ export interface IUserPinRepository {
    * Admin only — enforced by RLS.
    */
   reviewPinSubmission(submissionId: string, input: AdminReviewInput): Promise<PinSubmission>;
+
+  /**
+   * Search the catalogue for pins that may already represent the same pin
+   * as the given submission. Matches on title+brand similarity, FAC number,
+   * and SKU. Returns up to 10 candidates with a human-readable match reason.
+   * Admin only.
+   */
+  findSubmissionDuplicateCandidates(submissionId: string): Promise<DuplicateCandidate[]>;
 
   // ── Trade ratings & for-trade discovery ───────────────────────────────────
 

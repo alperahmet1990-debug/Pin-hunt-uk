@@ -58,6 +58,8 @@ export type {
   PostReport,
   PostReportSummary,
   StartConversationInput,
+  // Duplicate detection
+  DuplicateCandidate,
 } from './types';
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────

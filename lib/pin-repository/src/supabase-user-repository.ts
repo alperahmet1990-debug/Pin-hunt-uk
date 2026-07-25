@@ -1,4 +1,4 @@
-import type { SupabaseClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import type { IUserPinRepository } from './user-repository';
 import { PinRepositoryError } from './repository';
 import type {
@@ -12,6 +12,7 @@ import type {
   CreateCommunityPostInput,
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
+  DuplicateCandidate,
   EditionType,
   ExternalIdentifiers,
   ExternalSaleListing,
@@ -950,6 +951,78 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return rowToPinSubmission(data as Record<string, unknown>);
   }
 
+  async findSubmissionDuplicateCandidates(submissionId: string): Promise<DuplicateCandidate[]> {
+    const sub = await this.getPinSubmission(submissionId);
+    if (!sub) throw new Error('Submission not found');
+
+    const PIN_COLS = 'pinhunt_id, title, brand, collection, release_year, image_url';
+    const candidates = new Map<string, DuplicateCandidate>();
+
+    const addCandidate = (row: Record<string, unknown>, reason: string) => {
+      const id = row.pinhunt_id as string;
+      if (candidates.has(id)) {
+        // Upgrade the reason to reflect multiple signals
+        const existing = candidates.get(id)!;
+        if (!existing.matchReason.includes(reason)) {
+          existing.matchReason = `${existing.matchReason} + ${reason}`;
+        }
+      } else {
+        candidates.set(id, {
+          pinhuntId: id,
+          title: row.title as string,
+          brand: row.brand as string,
+          collection: row.collection as string,
+          releaseYear: (row.release_year as number | null) ?? undefined,
+          imageUrl: (row.image_url as string | null) ?? undefined,
+          matchReason: reason,
+        });
+      }
+    };
+
+    // 1. Title + brand similarity (primary signal)
+    const titleSlug = sub.proposedName.trim().substring(0, 40);
+    if (titleSlug) {
+      const { data: titleMatches } = await this.client
+        .from('pins')
+        .select(PIN_COLS)
+        .ilike('title', `%${titleSlug}%`)
+        .ilike('brand', `%${sub.brand.trim()}%`)
+        .limit(10);
+
+      for (const row of (titleMatches ?? []) as Record<string, unknown>[]) {
+        addCandidate(row, 'title + brand');
+      }
+    }
+
+    // 2. FAC number match (strong external ID signal)
+    if (sub.facNumber?.trim()) {
+      const { data: facMatches } = await this.client
+        .from('pins')
+        .select(PIN_COLS)
+        .contains('external_identifiers', { facNumber: sub.facNumber.trim() })
+        .limit(5);
+
+      for (const row of (facMatches ?? []) as Record<string, unknown>[]) {
+        addCandidate(row, 'FAC number');
+      }
+    }
+
+    // 3. SKU match (strong external ID signal)
+    if (sub.sku?.trim()) {
+      const { data: skuMatches } = await this.client
+        .from('pins')
+        .select(PIN_COLS)
+        .contains('external_identifiers', { sku: sub.sku.trim() })
+        .limit(5);
+
+      for (const row of (skuMatches ?? []) as Record<string, unknown>[]) {
+        addCandidate(row, 'SKU');
+      }
+    }
+
+    return Array.from(candidates.values());
+  }
+
   // ── Trade ratings & for-trade discovery ─────────────────────────────────────
 
   async getUsersWithPinForTrade(pinId: string): Promise<TraderProfile[]> {
@@ -1575,9 +1648,23 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 }
 
 // ─── Factory ──────────────────────────────────────────────────────────────────
+// Overloaded to accept either a pre-built SupabaseClient (preferred for the
+// Expo app, which uses a singleton) or a url + key pair (api-server / scripts).
 
 export function createSupabaseUserRepository(
   client: SupabaseClient,
+): IUserPinRepository;
+export function createSupabaseUserRepository(
+  supabaseUrl: string,
+  supabaseKey: string,
+): IUserPinRepository;
+export function createSupabaseUserRepository(
+  clientOrUrl: SupabaseClient | string,
+  supabaseKey?: string,
 ): IUserPinRepository {
-  return new SupabaseUserPinRepository(client as SupabaseClient<Database>);
+  if (typeof clientOrUrl === 'string') {
+    const client = createClient<Database>(clientOrUrl, supabaseKey as string);
+    return new SupabaseUserPinRepository(client);
+  }
+  return new SupabaseUserPinRepository(clientOrUrl as SupabaseClient<Database>);
 }

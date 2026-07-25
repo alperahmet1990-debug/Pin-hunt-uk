@@ -14,6 +14,7 @@
 import { Router, type IRouter } from "express";
 import {
   createSupabasePinRepository,
+  createSupabaseUserRepository,
   SEED_PINS,
   type PinRepository,
 } from "@workspace/pin-repository";
@@ -44,6 +45,19 @@ function getReadRepository(): PinRepository {
     );
   }
   return createSupabasePinRepository(url, key);
+}
+
+/** User repository with service-role key — bypasses RLS for admin operations. */
+function getAdminUserRepository() {
+  const url = process.env.SUPABASE_URL;
+  const key =
+    process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_ANON_KEY;
+  if (!url || !key) {
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set to use admin routes.",
+    );
+  }
+  return createSupabaseUserRepository(url, key);
 }
 
 /**
@@ -190,5 +204,31 @@ router.patch("/admin/pins/:pinhuntId/images", async (req, res) => {
     res.status(status).json({ error: msg });
   }
 });
+
+/**
+ * GET /admin/submissions/:id/duplicate-candidates
+ *
+ * Returns catalogue pins that may already represent the same pin as the
+ * given submission, matched by title+brand similarity, FAC number, and SKU.
+ * Admins use this before approving to decide whether to merge or create new.
+ *
+ * curl https://<domain>/api/admin/submissions/<id>/duplicate-candidates
+ */
+router.get(
+  "/admin/submissions/:id/duplicate-candidates",
+  async (req, res) => {
+    try {
+      const userRepo = getAdminUserRepository();
+      const candidates = await userRepo.findSubmissionDuplicateCandidates(
+        req.params.id,
+      );
+      res.json({ candidates });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      const status = msg.includes("not found") ? 404 : 500;
+      res.status(status).json({ error: msg });
+    }
+  },
+);
 
 export default router;

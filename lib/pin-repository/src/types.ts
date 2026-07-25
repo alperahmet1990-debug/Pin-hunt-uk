@@ -601,6 +601,23 @@ export interface StartConversationInput {
   openingMessage: string;
 }
 
+// ─── Duplicate detection ──────────────────────────────────────────────────────
+
+/**
+ * A catalogue pin that may be a duplicate of a community submission,
+ * returned by findSubmissionDuplicateCandidates.
+ */
+export interface DuplicateCandidate {
+  pinhuntId: string;
+  title: string;
+  brand: string;
+  collection: string;
+  releaseYear?: number;
+  imageUrl?: string;
+  /** Human-readable reason why this pin was flagged, e.g. "title + brand" or "FAC number". */
+  matchReason: string;
+}
+
 // ─── Admin review types ───────────────────────────────────────────────────────
 
 export interface AdminReviewInput {

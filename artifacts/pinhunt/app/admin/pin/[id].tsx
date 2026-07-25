@@ -25,7 +25,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
-import { createSupabasePinRepository } from '@workspace/pin-repository';
+import { createSupabasePinRepository, createSupabaseUserRepository } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { pickSubmissionImage } from '@/utils/submissionImage';
 import type {
@@ -101,7 +101,40 @@ function Field({
 // ─── Main screen ──────────────────────────────────────────────────────────────
 
 export default function AdminPinEditorScreen() {
-  const { id: routeId } = useLocalSearchParams<{ id: string }>();
+  const {
+    id: routeId,
+    // Prefill params from "Approve & Add to Catalogue" flow
+    submissionId,
+    prefillTitle,
+    prefillBrand,
+    prefillSeries,
+    prefillOrigin,
+    prefillYear,
+    prefillEditionType,
+    prefillEditionSize,
+    prefillFacNumber,
+    prefillSku,
+    prefillCharacters,
+    prefillNotes,
+    prefillFrontPath,
+    prefillBackPath,
+  } = useLocalSearchParams<{
+    id: string;
+    submissionId?: string;
+    prefillTitle?: string;
+    prefillBrand?: string;
+    prefillSeries?: string;
+    prefillOrigin?: string;
+    prefillYear?: string;
+    prefillEditionType?: string;
+    prefillEditionSize?: string;
+    prefillFacNumber?: string;
+    prefillSku?: string;
+    prefillCharacters?: string;
+    prefillNotes?: string;
+    prefillFrontPath?: string;
+    prefillBackPath?: string;
+  }>();
   const isNew = routeId === 'new';
   const colors = useColors();
   const insets = useSafeAreaInsets();
@@ -112,6 +145,12 @@ export default function AdminPinEditorScreen() {
     if (!isSupabaseConfigured) return null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return createSupabasePinRepository(supabase as any);
+  }, []);
+
+  const userRepo = useMemo(() => {
+    if (!isSupabaseConfigured) return null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return createSupabaseUserRepository(supabase as any);
   }, []);
 
   // ── Loading existing pin ────────────────────────────────────────────────────
@@ -154,6 +193,43 @@ export default function AdminPinEditorScreen() {
   const [errors,  setErrors]  = useState<Record<string, string>>({});
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
+
+  // ── Pre-fill from submission params (Approve & Add to Catalogue flow) ───────
+  useEffect(() => {
+    if (!isNew || !submissionId) return;
+    if (prefillTitle)       setTitle(prefillTitle);
+    if (prefillBrand)       setBrand(prefillBrand);
+    if (prefillSeries)      setCollection(prefillSeries);
+    if (prefillOrigin)      setOrigin(prefillOrigin);
+    if (prefillYear)        setReleaseYear(prefillYear);
+    if (prefillEditionType) setEditionType(prefillEditionType);
+    if (prefillEditionSize) setEditionSize(prefillEditionSize);
+    if (prefillFacNumber)   setFacNumber(prefillFacNumber);
+    if (prefillSku)         setSku(prefillSku);
+    if (prefillCharacters)  setCharacters(prefillCharacters);
+    if (prefillNotes)       setDescription(prefillNotes);
+    // Submissions approved by an admin are marked verified — the admin is
+    // asserting the data is correct before adding it to the catalogue.
+    setVerificationStatus('verified');
+
+    // Fetch signed URLs for submission images so admin can review them.
+    // They will be re-uploaded to the pin-catalogue bucket on save.
+    (async () => {
+      if (prefillFrontPath) {
+        try {
+          const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(prefillFrontPath, 3600);
+          if (data?.signedUrl) setNewFrontUri(data.signedUrl);
+        } catch { /* best-effort */ }
+      }
+      if (prefillBackPath) {
+        try {
+          const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(prefillBackPath, 3600);
+          if (data?.signedUrl) setNewBackUri(data.signedUrl);
+        } catch { /* best-effort */ }
+      }
+    })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [submissionId]);
 
   // ── Load existing pin ───────────────────────────────────────────────────────
   useEffect(() => {
@@ -288,6 +364,18 @@ export default function AdminPinEditorScreen() {
 
       if (isNew) {
         await repo.createPin(input);
+
+        // ── Approve & Add to Catalogue: link submission → catalogue pin ──────
+        // Must run after createPin so the pinhunt_id is guaranteed to exist.
+        if (submissionId) {
+          if (!userRepo) throw new Error('Repository not available. Cannot approve submission.');
+          // reviewPinSubmission resolves the pinhunt_id → UUID internally and
+          // writes both status and approved_pin_id atomically.
+          await userRepo.reviewPinSubmission(submissionId, {
+            status: 'approved',
+            approvedPinhuntId: pinhuntId.trim(),
+          });
+        }
       } else {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { pinhuntId: _pid, ...updateInput } = input;

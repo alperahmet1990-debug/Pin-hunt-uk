@@ -141,6 +141,30 @@ export default function AdminReviewScreen() {
 
   const markUnderReview = () => takeAction('under_review');
 
+  const approveAndAddToCatalogue = () => {
+    if (!submission) return;
+    router.push({
+      pathname: '/admin/pin/[id]',
+      params: {
+        id: 'new',
+        submissionId:       submission.id,
+        prefillTitle:       submission.proposedName ?? '',
+        prefillBrand:       submission.brand ?? '',
+        prefillSeries:      submission.seriesName ?? '',
+        prefillOrigin:      submission.releaseLocation ?? '',
+        prefillYear:        submission.releaseYear?.toString() ?? '',
+        prefillEditionType: submission.editionType ?? 'unknown',
+        prefillEditionSize: submission.editionSize?.toString() ?? '',
+        prefillFacNumber:   submission.facNumber ?? '',
+        prefillSku:         submission.sku ?? '',
+        prefillCharacters:  (submission.characterNames ?? []).join(', '),
+        prefillNotes:       submission.notes ?? '',
+        prefillFrontPath:   submission.frontImagePath ?? '',
+        prefillBackPath:    submission.backImagePath ?? '',
+      },
+    });
+  };
+
   if (loading) {
     return (
       <>
@@ -268,13 +292,24 @@ export default function AdminReviewScreen() {
                 <ActivityIndicator color={colors.primary} style={{ marginTop: 8 }} />
               ) : (
                 <View style={{ gap: 10 }}>
+                  {/* Primary CTA: approve and open pre-filled pin editor */}
                   <TouchableOpacity
-                    onPress={() => takeAction('approved')}
+                    onPress={approveAndAddToCatalogue}
                     activeOpacity={0.85}
                     style={[styles.actionBtn, { backgroundColor: '#16A34A', borderRadius: 12 }]}
                   >
-                    <Feather name="check-circle" size={16} color="#fff" />
-                    <Text style={styles.actionBtnLabel}>Approve</Text>
+                    <Feather name="book-open" size={16} color="#fff" />
+                    <Text style={styles.actionBtnLabel}>Approve &amp; Add to Catalogue</Text>
+                  </TouchableOpacity>
+
+                  {/* Secondary: approve without creating a catalogue entry */}
+                  <TouchableOpacity
+                    onPress={() => takeAction('approved')}
+                    activeOpacity={0.85}
+                    style={[styles.outlineBtn, { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card }]}
+                  >
+                    <Feather name="check-circle" size={15} color="#16A34A" />
+                    <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>Approve Only</Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity

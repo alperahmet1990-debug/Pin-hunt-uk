@@ -567,6 +567,12 @@ export interface AdminReviewInput {
   status: 'approved' | 'rejected' | 'needs_changes' | 'under_review';
   /** Optional note shown to the submitter. Required for rejected/needs_changes. */
   reviewerNotes?: string;
+  /**
+   * When approving via "Approve & Add to Catalogue", pass the pinhunt_id
+   * (e.g. "PHUK-00000001") of the newly created catalogue pin. The repository
+   * resolves it to the internal UUID and writes it to approved_pin_id.
+   */
+  approvedPinhuntId?: string;
 }
 
 export interface GetAllSubmissionsInput {

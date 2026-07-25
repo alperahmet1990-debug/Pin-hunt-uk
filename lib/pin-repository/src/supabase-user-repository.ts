@@ -919,6 +919,19 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       updates.reviewer_notes = input.reviewerNotes;
     }
 
+    // Resolve pinhunt_id → internal UUID so we can write the FK column.
+    if (input.approvedPinhuntId) {
+      const { data: pinRow, error: pinErr } = await this.client
+        .from('pins')
+        .select('id')
+        .eq('pinhunt_id', input.approvedPinhuntId)
+        .maybeSingle();
+      if (pinErr) throw new Error(pinErr.message);
+      if (pinRow) {
+        updates.approved_pin_id = (pinRow as { id: string }).id;
+      }
+    }
+
     const { data, error } = await this.client
       .from('pin_submissions')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

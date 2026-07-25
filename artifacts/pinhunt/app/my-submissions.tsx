@@ -2,10 +2,11 @@
  * My Submissions — list of the authenticated user's pin catalogue contributions.
  * Shows front-image thumbnail, proposed name, status, date, and reviewer notes.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  AppState,
   Image,
   Platform,
   RefreshControl,
@@ -201,6 +202,22 @@ export default function MySubmissionsScreen() {
 
   useEffect(() => { load(); }, [load]);
 
+  // Keep a stable reference to `load` so the realtime subscription and the
+  // AppState listener below don't tear down and resubscribe every time the
+  // callback identity changes.
+  const loadRef = useRef(load);
+  useEffect(() => { loadRef.current = load; }, [load]);
+
+  // Realtime sockets are suspended while the app is backgrounded, so events
+  // sent during that window are lost. Run one catch-up fetch whenever the app
+  // returns to the foreground (no polling).
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', state => {
+      if (state === 'active') { loadRef.current(); }
+    });
+    return () => { sub.remove(); };
+  }, []);
+
   // Realtime: patch statuses live while the screen is open
   useEffect(() => {
     if (!userId || !isSupabaseConfigured) return;
@@ -238,7 +255,11 @@ export default function MySubmissionsScreen() {
           );
         },
       )
-      .subscribe();
+      .subscribe(status => {
+        // On (re)connect, run one catch-up fetch so status changes that
+        // happened while the channel was down are picked up.
+        if (status === 'SUBSCRIBED') { loadRef.current(); }
+      });
 
     return () => {
       supabase.removeChannel(channel);

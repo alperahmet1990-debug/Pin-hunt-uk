@@ -173,7 +173,11 @@ export function SubmissionNotificationsProvider({
           }
         },
       )
-      .subscribe();
+      .subscribe(status => {
+        // On (re)connect, run one catch-up fetch so status changes that
+        // happened while the channel was down are picked up.
+        if (status === 'SUBSCRIBED') { refresh(); }
+      });
 
     return () => {
       supabase.removeChannel(channel);

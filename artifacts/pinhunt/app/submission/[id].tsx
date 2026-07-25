@@ -2,9 +2,10 @@
  * Submission Detail — full view of a single pin submission.
  * Loads front/back images as signed URLs from the private storage bucket.
  */
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
+  AppState,
   Image,
   Platform,
   ScrollView,
@@ -18,7 +19,7 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
 const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
@@ -70,27 +71,64 @@ export default function SubmissionDetailScreen() {
   const [loading, setLoading]       = useState(true);
   const [error, setError]           = useState<string | null>(null);
 
-  useEffect(() => {
+  const load = useCallback(async () => {
     if (!repo || !id) { setLoading(false); return; }
-    (async () => {
-      try {
-        const sub = await repo.getPinSubmission(id);
-        if (!sub) { setError('Submission not found.'); setLoading(false); return; }
-        setSubmission(sub);
-        // Load images in parallel
-        const [front, back] = await Promise.all([
-          getSignedUrl(sub.frontImagePath),
-          sub.backImagePath ? getSignedUrl(sub.backImagePath) : Promise.resolve(null),
-        ]);
-        setFrontUrl(front);
-        setBackUrl(back);
-      } catch (e) {
-        setError(e instanceof Error ? e.message : 'Failed to load submission.');
-      } finally {
-        setLoading(false);
-      }
-    })();
+    try {
+      const sub = await repo.getPinSubmission(id);
+      if (!sub) { setError('Submission not found.'); setLoading(false); return; }
+      setSubmission(sub);
+      // Load images in parallel
+      const [front, back] = await Promise.all([
+        getSignedUrl(sub.frontImagePath),
+        sub.backImagePath ? getSignedUrl(sub.backImagePath) : Promise.resolve(null),
+      ]);
+      setFrontUrl(front);
+      setBackUrl(back);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to load submission.');
+    } finally {
+      setLoading(false);
+    }
   }, [id, repo]);
+
+  useEffect(() => { load(); }, [load]);
+
+  // Keep a stable reference to `load` so the realtime subscription and the
+  // AppState listener below don't tear down and resubscribe every time the
+  // callback identity changes.
+  const loadRef = useRef(load);
+  useEffect(() => { loadRef.current = load; }, [load]);
+
+  // Realtime: refresh this submission when its row changes (status,
+  // reviewer notes, etc.) while the screen is open.
+  useEffect(() => {
+    if (!isSupabaseConfigured || !id) return;
+
+    const channel = supabase
+      .channel(`submission-detail-${id}`)
+      .on(
+        'postgres_changes',
+        { event: 'UPDATE', schema: 'public', table: 'pin_submissions', filter: `id=eq.${id}` },
+        () => { loadRef.current(); },
+      )
+      .subscribe(status => {
+        // On (re)connect, run one catch-up fetch so changes that happened
+        // while the channel was down are picked up.
+        if (status === 'SUBSCRIBED') { loadRef.current(); }
+      });
+
+    return () => { supabase.removeChannel(channel); };
+  }, [id]);
+
+  // Realtime sockets are suspended while the app is backgrounded, so events
+  // sent during that window are lost. Run one catch-up fetch whenever the app
+  // returns to the foreground (no polling).
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', state => {
+      if (state === 'active') { loadRef.current(); }
+    });
+    return () => { sub.remove(); };
+  }, []);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 

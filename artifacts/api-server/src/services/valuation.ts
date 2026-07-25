@@ -155,6 +155,25 @@ const BASE_EXCLUDE_TERMS = [
   "scrapper",
   "fake",
   "replica",
+  // Non-pin merchandise that often surfaces in keyword searches
+  "lanyard",
+  "keychain",
+  "keyring",
+  "plush",
+  "t-shirt",
+  "tshirt",
+  "sweatshirt",
+  "hoodie",
+  "mug",
+  "tumbler",
+  "funko",
+  "ears headband",
+  "loungefly bag",
+  "backpack",
+  "wallet",
+  "phone case",
+  "sticker",
+  "poster",
 ];
 
 function tokenise(s: string): string[] {
@@ -182,13 +201,45 @@ export function scoreListing(pin: CataloguePin, listing: EbayListing): number | 
   }
   if (!isMysteryRecord && /\bmystery\b/.test(title)) return null;
 
+  // Must actually be a pin/badge listing.
+  if (!/\bpins?\b|\bbadge\b/.test(title)) return null;
+
   let score = 0;
   const titleTokens = new Set(tokenise(listing.title));
 
   // Pin name overlap (strongest signal)
   const nameTokens = tokenise(pin.title);
   const nameHits = nameTokens.filter(t => titleTokens.has(t)).length;
-  if (nameTokens.length > 0) score += (nameHits / nameTokens.length) * 50;
+  const nameRatio = nameTokens.length > 0 ? nameHits / nameTokens.length : 0;
+  if (nameTokens.length > 0) score += nameRatio * 50;
+
+  // Conflicting edition size is disqualifying — different pin.
+  const leInTitle = title.match(/\ble\s*(\d{2,6})\b/);
+  if (pin.limitedEditionSize && leInTitle && Number(leInTitle[1]) !== pin.limitedEditionSize) {
+    return null;
+  }
+
+  // Character conflict: if the record has characters and the listing names a
+  // different well-known character but none of the record's, don't force it.
+  const hasRecordCharacter = pin.characters.some(c => c && title.includes(c.toLowerCase()));
+
+  // Series/edition discriminators — crucial for pins with generic names
+  // (e.g. "Hatbox Ghost" exists across many series; only the collection and
+  // edition words distinguish the right one).
+  const GENERIC_TOKENS = new Set([
+    "disney", "pin", "pins", "the", "and", "wave", "series", "edition",
+    "open", "limited", "collection", "wdw", "dlr", "parks",
+  ]);
+  const discTokens = [
+    ...tokenise(pin.collection ?? ""),
+    ...tokenise(pin.edition ?? ""),
+  ].filter(t => !GENERIC_TOKENS.has(t));
+  const discHits = discTokens.filter(t => titleTokens.has(t)).length;
+  score += Math.min(discHits, 3) * 8;
+
+  // Generic-name guard: a short pin name that matches everything is not
+  // enough on its own — require at least one series/edition word too.
+  if (nameTokens.length <= 3 && discTokens.length >= 2 && discHits === 0) return null;
 
   // Character match
   for (const c of pin.characters) {
@@ -207,8 +258,13 @@ export function scoreListing(pin: CataloguePin, listing: EbayListing): number | 
   const codes = Object.values(pin.externalIdentifiers ?? {}).filter(Boolean) as string[];
   if (codes.some(code => code.length >= 4 && title.includes(code.toLowerCase()))) score += 20;
 
-  // Require at least a meaningful name overlap to accept
-  return score >= 25 ? score : null;
+  // Stricter acceptance: require genuine name overlap so keyword-adjacent
+  // listings don't pollute the comparable pool. If the record has character
+  // metadata, the listing must also mention one of them or match most of the
+  // pin name — otherwise it's likely a different pin.
+  if (nameRatio < 0.4) return null;
+  if (pin.characters.length > 0 && !hasRecordCharacter && nameRatio < 0.7) return null;
+  return score >= 40 ? score : null;
 }
 
 // ─── Statistics ───────────────────────────────────────────────────────────────
@@ -359,13 +415,23 @@ export async function getMarketValueForPin(pinhuntId: string): Promise<MarketVal
 
   const [estimatesRes, comparablesRes] = await Promise.all([
     sb.from("pin_market_estimates").select("*").eq("pin_id", pinUuid),
-    sb
-      .from("ebay_listing_snapshots")
-      .select("*")
-      .eq("pin_id", pinUuid)
-      .eq("accepted_for_valuation", true)
-      .order("relevance_score", { ascending: false })
-      .limit(10),
+    // Fetch comparables per marketplace so US listings aren't crowded out
+    // when UK results have higher relevance scores.
+    Promise.all(
+      (["EBAY_GB", "EBAY_US"] as const).map(mp =>
+        sb
+          .from("ebay_listing_snapshots")
+          .select("*")
+          .eq("pin_id", pinUuid)
+          .eq("marketplace", mp)
+          .eq("accepted_for_valuation", true)
+          .order("relevance_score", { ascending: false })
+          .limit(5),
+      ),
+    ).then(parts => ({
+      data: parts.flatMap(p => p.data ?? []),
+      error: parts.find(p => p.error)?.error ?? null,
+    })),
   ]);
   if (estimatesRes.error) throw new Error(estimatesRes.error.message);
   if (comparablesRes.error) throw new Error(comparablesRes.error.message);

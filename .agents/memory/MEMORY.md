@@ -4,4 +4,5 @@
 - [Admin RLS patterns](admin-rls-patterns.md) — catalogue write policies, storage admin access, pin-catalogue bucket — all in migration 009
 - [Supabase direct DB access](supabase-db-access.md) — psql via eu-west-1 pooler; how to apply migrations; password rotation caveat
 - [eBay integration quirks](ebay-integration.md) — prod keyset locked until deletion-endpoint verified; App ID vs Cert ID 401s; temp-user trick for testing authed routes
+- [PinHunt catalogue images](pinhunt-images.md) — no real images anywhere yet (all placeholder); stale needs_*_image flags; eBay match-scoring lessons (series tokens, Buy It Now only)
 - [Expo web photo uploads](expo-web-uploads.md) — FormData uploads 0 bytes and image-manipulator crashes on web; use Blob + canvas path

@@ -1,0 +1,379 @@
+Use the eBay Browse API to run a 50-pin dry-run test for populating missing images in the existing PinHunt database.
+
+## Goal
+
+Test whether eBay can provide reliable temporary fallback images for PinHunt pins before making any live database changes.
+
+For this task:
+
+- Select 50 varied pins that do not currently have an approved image.
+- Search eBay for likely matching listings.
+- Score the quality of each match.
+- Identify the best candidate image.
+- Produce a detailed dry-run report.
+- Do not update any pin image fields.
+- Do not display any eBay images in the live app yet.
+- Do not process more than 50 pins.
+
+Preserve the current app, database, authentication and existing image data.
+
+## eBay access
+
+Use the existing production eBay OAuth client-credentials integration.
+
+Use these server-side environment variables if they are not already configured:
+
+EBAY_CLIENT_ID
+EBAY_CLIENT_SECRET
+EBAY_ENVIRONMENT=production
+
+Keep all credentials and access tokens server-side.
+
+Use the eBay Browse API item-summary search endpoint.
+
+Search EBAY_GB first.
+
+If there is no strong UK match, search EBAY_US as a fallback.
+
+## Selecting the 50 pins
+
+Choose a varied test group from pins without an approved image.
+
+Include a representative mix where possible:
+
+- Disney Parks pins
+- Artland pins
+- Loungefly pins
+- Pink a la Mode pins
+- Limited-edition pins
+- Open-edition pins
+- Mystery pins
+- Complete sets
+- Popular characters
+- Less common characters
+- Pins with strong metadata
+- Pins with sparse metadata
+
+Do not select 50 near-identical pins from the same collection.
+
+Store or return the selected pin IDs so the same test can be repeated.
+
+## Search-query generation
+
+Generate up to three useful search queries per pin using the strongest available fields:
+
+- Pin name
+- Character
+- Franchise
+- Collection or series
+- Manufacturer
+- Retailer
+- Park
+- Release year
+- Limited-edition size
+- SKU
+- FAC number
+- Product code
+
+Examples:
+
+Disney Artland Rabbit Winnie the Pooh pin LE 250
+
+Artland Rabbit Disney pin
+
+Rabbit Winnie the Pooh limited edition pin
+
+Avoid duplicate or excessively broad searches.
+
+Record every query used in the dry-run report.
+
+## Matching and relevance scoring
+
+Create a relevance score from 0 to 100 for each listing.
+
+Increase the score for:
+
+- Exact SKU, FAC or product-code match
+- Exact limited-edition-size match
+- Manufacturer match
+- Character match
+- Collection or series match
+- Strong title similarity
+- Franchise match
+- Release-year match
+
+Reduce or reject the score for:
+
+- lot
+- job lot
+- bundle
+- multiple pins
+- choose
+- selection
+- random
+- pin backs
+- backing card only
+- box only
+- custom
+- fantasy
+- inspired
+- scrapper
+- fake
+- replica
+
+Important exceptions:
+
+- Do not reject “set” where the PinHunt record is a complete set.
+- Do not reject “mystery” where the pin belongs to a mystery collection.
+- Do not reject multi-pin images where the PinHunt record represents the full set.
+
+Deduplicate listings returned by multiple queries.
+
+For each listing, record:
+
+- eBay item ID
+- Marketplace
+- Listing title
+- Listing URL
+- Primary image URL
+- Additional image URLs where available
+- Price
+- Condition
+- Match score
+- Match reasons
+- Rejection reasons
+- Retrieval date
+
+## Image-quality checks
+
+Assess whether the candidate image appears suitable as a temporary fallback.
+
+Prefer:
+
+- A clear image of one pin
+- Front-facing image
+- Centred pin
+- Large usable image
+- Plain or uncluttered background
+
+Penalise:
+
+- Multiple unrelated pins
+- Back-only photos
+- Blurry images
+- Packaging-dominated photos
+- Large watermarks
+- Placeholder images
+- Heavy text overlays
+- Duplicate images assigned to unrelated pins
+
+Use existing image-analysis capabilities where available.
+
+Do not build an unnecessarily complex computer-vision system for this test.
+
+## Dry-run classifications
+
+Classify the best result for each pin as:
+
+### High confidence
+
+Score 90–100.
+
+Would be safe to assign automatically.
+
+### Provisional
+
+Score 85–89.
+
+Likely correct, but should remain marked temporary.
+
+### Review required
+
+Score 70–84.
+
+Store in the report only. Do not assign.
+
+### No reliable match
+
+Score below 70 or no suitable listing.
+
+Do not assign.
+
+Conflicting character, manufacturer, edition size or product-code information must prevent automatic assignment.
+
+Never force a match merely to improve coverage.
+
+## Dry-run endpoint
+
+Create a protected server-side endpoint using the app’s existing authentication conventions:
+
+POST /api/catalogue/ebay-image-dry-run
+
+It should accept:
+
+{
+  "limit": 50
+}
+
+The endpoint must refuse values above 50 for this test.
+
+The process should:
+
+1. Select the 50 pins.
+2. Generate search queries.
+3. Search eBay.
+4. Score and filter listings.
+5. Select the best candidate per pin.
+6. Produce a dry-run report.
+7. Save the report separately from live pin image data.
+
+Do not modify:
+
+- primary image fields
+- fallback image fields
+- approved image records
+- live pin-detail display behaviour
+
+## Dry-run report storage
+
+Create a lightweight table or reuse an appropriate existing job/report table.
+
+Store data equivalent to:
+
+ebay_image_dry_run_results
+
+- id
+- run_id
+- pin_id
+- pin_name
+- queries_used jsonb
+- best_ebay_item_id
+- marketplace
+- listing_title
+- listing_url
+- image_url
+- additional_image_urls jsonb
+- match_score
+- confidence_classification
+- match_reasons jsonb
+- rejection_reasons jsonb
+- would_assign
+- created_at
+
+Also create or store a run summary containing:
+
+- run_id
+- started_at
+- completed_at
+- pins_examined
+- high_confidence_count
+- provisional_count
+- review_required_count
+- no_match_count
+- error_count
+- status
+
+Do not create permanent pin-image candidate records yet unless an existing table is already suitable and clearly marked as dry-run only.
+
+## Results view
+
+Create a simple protected results page or development report view.
+
+For each of the 50 pins, show:
+
+- Existing pin name
+- Existing metadata
+- Search queries used
+- Best eBay listing title
+- Candidate image
+- Marketplace
+- Listing link
+- Match score
+- Classification
+- Match reasons
+- Rejection or warning reasons
+- “Would assign” yes or no
+
+Allow filtering by:
+
+- High confidence
+- Provisional
+- Review required
+- No match
+- Error
+
+Do not add approve or reject controls yet.
+
+## Summary output
+
+At the top of the report, show:
+
+- 50 pins examined
+- Number of high-confidence matches
+- Number of provisional matches
+- Number requiring review
+- Number with no reliable match
+- Number of errors
+- Estimated automatic coverage percentage
+
+Automatic coverage percentage should include only high-confidence and provisional matches.
+
+## Reliability
+
+Implement:
+
+- Safe OAuth token reuse
+- eBay rate-limit handling
+- Small delays or controlled concurrency
+- Request timeouts
+- Limited retries for temporary failures
+- Partial-result handling
+- Progress logging without secrets
+- No exposure of access tokens
+- No live database image updates
+
+If one pin fails, continue processing the remaining pins.
+
+## Testing
+
+Test the dry-run logic against:
+
+- An exact title match
+- A pin with an FAC or SKU
+- A limited-edition pin
+- A mystery pin
+- A complete set
+- A result containing a bundle
+- A fantasy or custom pin
+- A result with several pins in one photo
+- A pin with no eBay results
+- A US fallback result
+- Duplicate listings from several queries
+- Missing image URLs
+- eBay authentication or API failure
+
+## Completion requirements
+
+Do not mark the task complete unless:
+
+- Exactly 50 or fewer pins are processed
+- No live pin image is changed
+- Existing approved images remain untouched
+- Every search query is recorded
+- Every proposed image has a source listing URL
+- Match scores and reasons are visible
+- The report clearly identifies which images would be assigned
+- The app builds successfully
+
+At completion, tell me:
+
+1. Which files were changed
+2. Which database migration was created
+3. How to start the 50-pin dry run
+4. Where to view the results
+5. How many were high confidence
+6. How many were provisional
+7. How many need review
+8. How many had no reliable match
+9. Any eBay API or rate-limit problems
+10. Whether you recommend proceeding to a live batch based on the results

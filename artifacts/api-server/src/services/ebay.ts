@@ -53,6 +53,7 @@ async function getAccessToken(): Promise<string> {
   const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
   const resp = await fetch(`${auth}/identity/v1/oauth2/token`, {
     method: "POST",
+    signal: AbortSignal.timeout(15_000),
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization: `Basic ${basic}`,
@@ -87,10 +88,17 @@ export async function searchListings(
 ): Promise<EbayListing[]> {
   const token = await getAccessToken();
   const { api } = getBaseUrls();
-  const params = new URLSearchParams({ q: query, limit: String(limit) });
+  const params = new URLSearchParams({
+    q: query,
+    limit: String(limit),
+    // Fixed-price (Buy It Now) only: auction listings report the *current bid*,
+    // which skews estimates low. Sold-price data needs a restricted eBay API.
+    filter: "buyingOptions:{FIXED_PRICE}",
+  });
   const resp = await fetch(
     `${api}/buy/browse/v1/item_summary/search?${params.toString()}`,
     {
+      signal: AbortSignal.timeout(20_000),
       headers: {
         Authorization: `Bearer ${token}`,
         "X-EBAY-C-MARKETPLACE-ID": marketplace,

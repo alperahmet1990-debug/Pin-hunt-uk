@@ -6,6 +6,7 @@ import geocodeRouter from "./geocode";
 import catalogueImportRouter from "./catalogue-import";
 import marketValueRouter from "./market-value";
 import ebayDeletionRouter from "./ebay-deletion";
+import ebayImageDryRunRouter from "./ebay-image-dryrun";
 
 const router: IRouter = Router();
 
@@ -16,5 +17,6 @@ router.use(geocodeRouter);
 router.use(catalogueImportRouter);
 router.use(marketValueRouter);
 router.use(ebayDeletionRouter);
+router.use(ebayImageDryRunRouter);
 
 export default router;

@@ -1,0 +1,400 @@
+/**
+ * Admin — eBay Image Dry Run report.
+ *
+ * Starts a 50-pin dry-run test (server side) and shows the resulting report:
+ * per-pin best eBay listing candidate, match score, classification, reasons,
+ * and whether the image would be assigned. Report only — no approve/reject
+ * controls, and nothing here changes live pin images.
+ */
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  ActivityIndicator,
+  FlatList,
+  Image,
+  Linking,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Stack } from 'expo-router';
+import { Feather } from '@expo/vector-icons';
+import { useColors } from '@/hooks/useColors';
+import { useAuth } from '@/context/AuthContext';
+
+const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
+  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
+  : 'http://localhost:8080/api';
+
+// ─── Types (mirror api-server dry-run service) ───────────────────────────────
+
+type Classification = 'high_confidence' | 'provisional' | 'review_required' | 'no_match' | 'error';
+
+interface RunSummary {
+  id: string;
+  started_at: string;
+  completed_at: string | null;
+  pins_examined: number;
+  high_confidence_count: number;
+  provisional_count: number;
+  review_required_count: number;
+  no_match_count: number;
+  error_count: number;
+  status: 'running' | 'completed' | 'failed';
+}
+
+interface DryRunResult {
+  id: string;
+  pinhunt_id: string;
+  pin_name: string;
+  pin_metadata: Record<string, unknown>;
+  queries_used: string[];
+  best_ebay_item_id: string | null;
+  marketplace: string | null;
+  listing_title: string | null;
+  listing_url: string | null;
+  image_url: string | null;
+  match_score: number | null;
+  confidence_classification: Classification;
+  match_reasons: string[];
+  rejection_reasons: string[];
+  would_assign: boolean;
+}
+
+const CLASS_META: Record<Classification, { label: string; color: string }> = {
+  high_confidence: { label: 'High confidence', color: '#16a34a' },
+  provisional: { label: 'Provisional', color: '#2563eb' },
+  review_required: { label: 'Review required', color: '#d97706' },
+  no_match: { label: 'No match', color: '#6b7280' },
+  error: { label: 'Error', color: '#dc2626' },
+};
+
+const FILTERS: Array<{ key: Classification | 'all'; label: string }> = [
+  { key: 'all', label: 'All' },
+  { key: 'high_confidence', label: 'High' },
+  { key: 'provisional', label: 'Provisional' },
+  { key: 'review_required', label: 'Review' },
+  { key: 'no_match', label: 'No match' },
+  { key: 'error', label: 'Error' },
+];
+
+// ─── Screen ──────────────────────────────────────────────────────────────────
+
+export default function EbayImageDryRunScreen() {
+  const colors = useColors();
+  const insets = useSafeAreaInsets();
+  const { session } = useAuth();
+  const token = session?.access_token;
+
+  const [loading, setLoading] = useState(true);
+  const [starting, setStarting] = useState(false);
+  const [summary, setSummary] = useState<RunSummary | null>(null);
+  const [results, setResults] = useState<DryRunResult[]>([]);
+  const [filter, setFilter] = useState<Classification | 'all'>('all');
+  const [error, setError] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const authHeaders = useCallback(
+    (): Record<string, string> => (token ? { Authorization: `Bearer ${token}` } : {}),
+    [token],
+  );
+
+  const loadRun = useCallback(async (runId: string) => {
+    const resp = await fetch(`${API_BASE}/catalogue/ebay-image-dry-run/runs/${runId}`, {
+      headers: authHeaders(),
+    });
+    if (!resp.ok) throw new Error(`Failed to load run (HTTP ${resp.status})`);
+    const data = (await resp.json()) as { summary: RunSummary; results: DryRunResult[] };
+    setSummary(data.summary);
+    setResults(data.results);
+    return data.summary;
+  }, [authHeaders]);
+
+  const loadLatest = useCallback(async () => {
+    setError(null);
+    try {
+      const resp = await fetch(`${API_BASE}/catalogue/ebay-image-dry-run/runs`, {
+        headers: authHeaders(),
+      });
+      if (!resp.ok) throw new Error(`Failed to load runs (HTTP ${resp.status})`);
+      const data = (await resp.json()) as { runs: RunSummary[] };
+      if (data.runs.length > 0) await loadRun(data.runs[0].id);
+      else { setSummary(null); setResults([]); }
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to load');
+    } finally {
+      setLoading(false);
+    }
+  }, [authHeaders, loadRun]);
+
+  useEffect(() => { if (token) loadLatest(); }, [token, loadLatest]);
+
+  // Poll while a run is in progress.
+  useEffect(() => {
+    if (summary?.status === 'running' && !pollRef.current) {
+      pollRef.current = setInterval(async () => {
+        try {
+          const s = await loadRun(summary.id);
+          if (s.status !== 'running' && pollRef.current) {
+            clearInterval(pollRef.current);
+            pollRef.current = null;
+          }
+        } catch { /* keep polling */ }
+      }, 5000);
+    }
+    return () => {
+      if (pollRef.current) { clearInterval(pollRef.current); pollRef.current = null; }
+    };
+  }, [summary?.status, summary?.id, loadRun]);
+
+  const startRun = useCallback(async () => {
+    setStarting(true);
+    setError(null);
+    try {
+      const resp = await fetch(`${API_BASE}/catalogue/ebay-image-dry-run`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', ...authHeaders() },
+        body: JSON.stringify({ limit: 50 }),
+      });
+      const data = (await resp.json()) as { runId?: string; error?: string };
+      if (!resp.ok || !data.runId) throw new Error(data.error ?? `HTTP ${resp.status}`);
+      await loadRun(data.runId);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to start dry run');
+    } finally {
+      setStarting(false);
+    }
+  }, [authHeaders, loadRun]);
+
+  const filtered = filter === 'all'
+    ? results
+    : results.filter(r => r.confidence_classification === filter);
+
+  const autoCoverage = summary && summary.pins_examined > 0
+    ? Math.round(((summary.high_confidence_count + summary.provisional_count) / summary.pins_examined) * 100)
+    : 0;
+
+  return (
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <Stack.Screen options={{ title: 'eBay Image Dry Run' }} />
+      <FlatList
+        data={filtered}
+        keyExtractor={r => r.id}
+        contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 32 }}
+        refreshControl={<RefreshControl refreshing={loading} onRefresh={loadLatest} tintColor={colors.primary} />}
+        ListHeaderComponent={
+          <View>
+            <Text style={[styles.intro, { color: colors.mutedForeground }]}>
+              Report-only test: finds candidate eBay images for pins with no photo.
+              Nothing in the live catalogue is changed.
+            </Text>
+            {error ? <Text style={[styles.error, { color: '#dc2626' }]}>{error}</Text> : null}
+
+            <TouchableOpacity
+              style={[styles.startBtn, { backgroundColor: colors.primary, opacity: starting || summary?.status === 'running' ? 0.6 : 1 }]}
+              disabled={starting || summary?.status === 'running'}
+              onPress={startRun}
+            >
+              {starting ? (
+                <ActivityIndicator color="#fff" />
+              ) : (
+                <Text style={styles.startBtnText}>
+                  {summary?.status === 'running' ? 'Run in progress…' : 'Start 50-pin dry run'}
+                </Text>
+              )}
+            </TouchableOpacity>
+
+            {summary && (
+              <View style={[styles.summaryCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+                <View style={styles.summaryHeader}>
+                  <Text style={[styles.summaryTitle, { color: colors.text }]}>
+                    {summary.status === 'running'
+                      ? `Running — ${summary.pins_examined} pins done`
+                      : summary.status === 'failed'
+                        ? 'Run failed'
+                        : `${summary.pins_examined} pins examined`}
+                  </Text>
+                  {summary.status === 'running' && <ActivityIndicator size="small" color={colors.primary} />}
+                </View>
+                <SummaryRow label="High confidence" value={summary.high_confidence_count} color={CLASS_META.high_confidence.color} colors={colors} />
+                <SummaryRow label="Provisional" value={summary.provisional_count} color={CLASS_META.provisional.color} colors={colors} />
+                <SummaryRow label="Review required" value={summary.review_required_count} color={CLASS_META.review_required.color} colors={colors} />
+                <SummaryRow label="No reliable match" value={summary.no_match_count} color={CLASS_META.no_match.color} colors={colors} />
+                <SummaryRow label="Errors" value={summary.error_count} color={CLASS_META.error.color} colors={colors} />
+                <Text style={[styles.coverage, { color: colors.text }]}>
+                  Estimated automatic coverage: {autoCoverage}%
+                </Text>
+              </View>
+            )}
+
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 12 }}>
+              {FILTERS.map(f => (
+                <TouchableOpacity
+                  key={f.key}
+                  style={[
+                    styles.chip,
+                    {
+                      backgroundColor: filter === f.key ? colors.primary : colors.card,
+                      borderColor: filter === f.key ? colors.primary : colors.border,
+                    },
+                  ]}
+                  onPress={() => setFilter(f.key)}
+                >
+                  <Text style={{ color: filter === f.key ? '#fff' : colors.text, fontSize: 13 }}>
+                    {f.label}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+        }
+        ListEmptyComponent={
+          loading ? null : (
+            <Text style={[styles.empty, { color: colors.mutedForeground }]}>
+              {summary ? 'No results in this filter.' : 'No dry run has been started yet.'}
+            </Text>
+          )
+        }
+        renderItem={({ item }) => (
+          <ResultCard
+            result={item}
+            colors={colors}
+            expanded={expanded === item.id}
+            onToggle={() => setExpanded(expanded === item.id ? null : item.id)}
+          />
+        )}
+      />
+    </View>
+  );
+}
+
+// ─── Pieces ──────────────────────────────────────────────────────────────────
+
+function SummaryRow({ label, value, color, colors }: { label: string; value: number; color: string; colors: ReturnType<typeof useColors> }) {
+  return (
+    <View style={styles.summaryRow}>
+      <View style={[styles.dot, { backgroundColor: color }]} />
+      <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>{label}</Text>
+      <Text style={[styles.summaryValue, { color: colors.text }]}>{value}</Text>
+    </View>
+  );
+}
+
+function ResultCard({ result, colors, expanded, onToggle }: {
+  result: DryRunResult;
+  colors: ReturnType<typeof useColors>;
+  expanded: boolean;
+  onToggle: () => void;
+}) {
+  const meta = CLASS_META[result.confidence_classification];
+  const md = result.pin_metadata ?? {};
+  return (
+    <TouchableOpacity
+      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
+      onPress={onToggle}
+      activeOpacity={0.8}
+    >
+      <View style={styles.cardRow}>
+        {result.image_url ? (
+          <Image source={{ uri: result.image_url }} style={styles.thumb} resizeMode="contain" />
+        ) : (
+          <View style={[styles.thumb, styles.thumbEmpty, { backgroundColor: colors.background }]}>
+            <Feather name="image" size={20} color={colors.mutedForeground} />
+          </View>
+        )}
+        <View style={{ flex: 1 }}>
+          <Text style={[styles.pinName, { color: colors.text }]} numberOfLines={2}>{result.pin_name}</Text>
+          <Text style={[styles.pinId, { color: colors.mutedForeground }]}>{result.pinhunt_id}</Text>
+          <View style={styles.badgeRow}>
+            <View style={[styles.badge, { backgroundColor: meta.color + '18', borderColor: meta.color + '40' }]}>
+              <Text style={[styles.badgeText, { color: meta.color }]}>{meta.label}</Text>
+            </View>
+            {result.match_score != null && (
+              <Text style={[styles.score, { color: colors.text }]}>{result.match_score}/100</Text>
+            )}
+            {result.would_assign && (
+              <View style={[styles.badge, { backgroundColor: '#16a34a18', borderColor: '#16a34a40' }]}>
+                <Text style={[styles.badgeText, { color: '#16a34a' }]}>Would assign</Text>
+              </View>
+            )}
+          </View>
+        </View>
+        <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={18} color={colors.mutedForeground} />
+      </View>
+
+      {expanded && (
+        <View style={[styles.detail, { borderTopColor: colors.border }]}>
+          <DetailLine label="Metadata" value={[
+            md.brand, md.collection,
+            Array.isArray(md.characters) && md.characters.length ? (md.characters as string[]).join(', ') : null,
+            md.limitedEditionSize ? `LE ${md.limitedEditionSize}` : null,
+            md.releaseYear ? String(md.releaseYear) : null,
+          ].filter(Boolean).join(' · ') || '—'} colors={colors} />
+          <DetailLine label="Queries" value={(result.queries_used ?? []).join('\n') || '—'} colors={colors} />
+          {result.listing_title && <DetailLine label="Best listing" value={result.listing_title} colors={colors} />}
+          {result.marketplace && <DetailLine label="Marketplace" value={result.marketplace === 'EBAY_GB' ? 'eBay UK' : 'eBay US'} colors={colors} />}
+          {(result.match_reasons ?? []).length > 0 && (
+            <DetailLine label="Match reasons" value={result.match_reasons.join('\n')} colors={colors} />
+          )}
+          {(result.rejection_reasons ?? []).length > 0 && (
+            <DetailLine label="Warnings / rejections" value={result.rejection_reasons.join('\n')} colors={colors} />
+          )}
+          {result.listing_url && (
+            <TouchableOpacity style={styles.linkRow} onPress={() => Linking.openURL(result.listing_url!)}>
+              <Feather name="external-link" size={14} color={colors.primary} />
+              <Text style={[styles.linkText, { color: colors.primary }]}>View listing on eBay</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      )}
+    </TouchableOpacity>
+  );
+}
+
+function DetailLine({ label, value, colors }: { label: string; value: string; colors: ReturnType<typeof useColors> }) {
+  return (
+    <View style={{ marginBottom: 8 }}>
+      <Text style={[styles.detailLabel, { color: colors.mutedForeground }]}>{label}</Text>
+      <Text style={[styles.detailValue, { color: colors.text }]}>{value}</Text>
+    </View>
+  );
+}
+
+// ─── Styles ──────────────────────────────────────────────────────────────────
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  intro: { fontSize: 13, lineHeight: 18, marginBottom: 12 },
+  error: { fontSize: 13, marginBottom: 8 },
+  startBtn: { borderRadius: 10, paddingVertical: 12, alignItems: 'center', marginBottom: 16 },
+  startBtnText: { color: '#fff', fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  summaryCard: { borderWidth: 1, borderRadius: 12, padding: 14, marginBottom: 16 },
+  summaryHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
+  summaryTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  summaryRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 6 },
+  dot: { width: 8, height: 8, borderRadius: 4, marginRight: 8 },
+  summaryLabel: { flex: 1, fontSize: 13 },
+  summaryValue: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  coverage: { fontSize: 13, fontFamily: 'Inter_600SemiBold', marginTop: 8 },
+  chip: { borderWidth: 1, borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6, marginRight: 8 },
+  empty: { textAlign: 'center', fontSize: 14, marginTop: 24 },
+  card: { borderWidth: 1, borderRadius: 12, padding: 12, marginBottom: 10 },
+  cardRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  thumb: { width: 56, height: 56, borderRadius: 8, backgroundColor: '#fff' },
+  thumbEmpty: { alignItems: 'center', justifyContent: 'center' },
+  pinName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  pinId: { fontSize: 11, marginTop: 1 },
+  badgeRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 5, flexWrap: 'wrap' },
+  badge: { borderWidth: 1, borderRadius: 12, paddingHorizontal: 8, paddingVertical: 2 },
+  badgeText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  score: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  detail: { borderTopWidth: 1, marginTop: 10, paddingTop: 10 },
+  detailLabel: { fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 2 },
+  detailValue: { fontSize: 13, lineHeight: 18 },
+  linkRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4 },
+  linkText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+});

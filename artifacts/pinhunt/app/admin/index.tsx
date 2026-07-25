@@ -171,6 +171,13 @@ export default function AdminIndexScreen() {
           colors={colors}
         />
         <ActionCard
+          icon="search"
+          title="eBay Image Dry Run"
+          description="Test whether eBay can supply fallback images for pins with no photo. Report only."
+          onPress={() => router.push('/admin/ebay-image-dryrun' as any)}
+          colors={colors}
+        />
+        <ActionCard
           icon="plus-circle"
           title="Add New Pin"
           description="Create a new catalogue entry directly."

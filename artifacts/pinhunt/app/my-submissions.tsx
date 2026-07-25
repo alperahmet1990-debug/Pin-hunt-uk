@@ -25,6 +25,11 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 
+/** Lifetime of signed image URLs (seconds). */
+const SIGNED_URL_TTL_SECONDS = 3600;
+/** Proactively re-sign URLs a comfortable margin before they expire. */
+const SIGNED_URL_REFRESH_MS = (SIGNED_URL_TTL_SECONDS - 600) * 1000;
+
 const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   draft:          'Draft',
   submitted:      'Submitted',
@@ -51,6 +56,7 @@ function SubmissionCard({
   onDelete,
   onCreditedPinPress,
   isUnseen,
+  onImageError,
 }: {
   submission: PinSubmission;
   imageUrl?: string;
@@ -59,6 +65,7 @@ function SubmissionCard({
   onDelete?: () => void;
   onCreditedPinPress?: () => void;
   isUnseen?: boolean;
+  onImageError?: () => void;
 }) {
   const statusColor = STATUS_COLOR[submission.status];
   const canDelete   = submission.status === 'draft';
@@ -80,7 +87,7 @@ function SubmissionCard({
       {/* Thumbnail */}
       <View style={[styles.thumb, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
         {imageUrl ? (
-          <Image source={{ uri: imageUrl }} style={styles.thumbImg} resizeMode="cover" />
+          <Image source={{ uri: imageUrl }} style={styles.thumbImg} resizeMode="cover" onError={onImageError} />
         ) : (
           <Feather name="image" size={24} color={colors.mutedForeground} />
         )}
@@ -168,12 +175,41 @@ export default function MySubmissionsScreen() {
     try {
       const { data } = await supabase.storage
         .from('pin-submissions')
-        .createSignedUrl(path, 3600);
+        .createSignedUrl(path, SIGNED_URL_TTL_SECONDS);
       return data?.signedUrl ?? null;
     } catch {
       return null;
     }
   };
+
+  // Signed URLs expire after SIGNED_URL_TTL_SECONDS. If an image fails to
+  // load (typically because its URL expired while the screen stayed open),
+  // re-sign just that submission's URL so the thumbnail recovers.
+  const submissionsRef = useRef<PinSubmission[]>([]);
+  useEffect(() => { submissionsRef.current = submissions; }, [submissions]);
+
+  const lastErrorRefreshRef = useRef<Record<string, number>>({});
+
+  const refreshImageUrl = useCallback(async (submissionId: string) => {
+    // Throttle per submission so a genuinely broken image can't trigger an
+    // endless re-sign loop (each new URL failing fires onError again).
+    const now = Date.now();
+    const last = lastErrorRefreshRef.current[submissionId] ?? 0;
+    if (now - last < 30_000) return;
+    lastErrorRefreshRef.current[submissionId] = now;
+
+    const sub = submissionsRef.current.find(s => s.id === submissionId);
+    if (!sub) return;
+    const url = await loadImageUrl(sub.frontImagePath);
+    setImageUrls(prev => {
+      if (!url) {
+        if (!(submissionId in prev)) return prev;
+        const { [submissionId]: _removed, ...rest } = prev;
+        return rest;
+      }
+      return { ...prev, [submissionId]: url };
+    });
+  }, []);
 
   const load = useCallback(async (isRefresh = false) => {
     if (!repo || !userId) { setLoading(false); return; }
@@ -216,6 +252,24 @@ export default function MySubmissionsScreen() {
       if (state === 'active') { loadRef.current(); }
     });
     return () => { sub.remove(); };
+  }, []);
+
+  // Proactively re-sign all thumbnail URLs before they expire so images
+  // never go blank while the screen stays open for over an hour.
+  useEffect(() => {
+    const timer = setInterval(async () => {
+      const subs = submissionsRef.current;
+      if (subs.length === 0) return;
+      const urls: Record<string, string> = {};
+      await Promise.all(
+        subs.map(async s => {
+          const url = await loadImageUrl(s.frontImagePath);
+          if (url) urls[s.id] = url;
+        }),
+      );
+      setImageUrls(prev => ({ ...prev, ...urls }));
+    }, SIGNED_URL_REFRESH_MS);
+    return () => { clearInterval(timer); };
   }, []);
 
   // Realtime: patch statuses live while the screen is open
@@ -356,6 +410,7 @@ export default function MySubmissionsScreen() {
                     : undefined
                 }
                 isUnseen={unseenIds.has(s.id)}
+                onImageError={() => refreshImageUrl(s.id)}
               />
             ))}
           </>

@@ -20,7 +20,7 @@ import {
 import * as ImagePicker from 'expo-image-picker';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
@@ -79,6 +79,22 @@ export default function EditProfileScreen() {
   const router = useRouter();
   const { profile, updateMyProfile, checkUsernameAvailable, refreshProfile } = useProfile();
   const { session } = useAuth();
+  const { section } = useLocalSearchParams<{ section?: string }>();
+
+  // Scroll-to-section support (e.g. Profile tab location banner → "location")
+  const scrollRef = useRef<ScrollView>(null);
+  const locationSectionY = useRef<number | null>(null);
+  const didAutoScroll = useRef(false);
+
+  const maybeScrollToSection = useCallback(() => {
+    if (section === 'location' && !didAutoScroll.current && locationSectionY.current != null) {
+      didAutoScroll.current = true;
+      // Small delay so layout settles before scrolling
+      setTimeout(() => {
+        scrollRef.current?.scrollTo({ y: Math.max(locationSectionY.current! - 12, 0), animated: true });
+      }, 250);
+    }
+  }, [section]);
 
   // Pre-fill from current profile
   const userId = session?.user?.id;
@@ -309,6 +325,7 @@ export default function EditProfileScreen() {
     <View style={[styles.root, { backgroundColor: colors.background }]}>
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <ScrollView
+          ref={scrollRef}
           contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 40, paddingHorizontal: 20 }}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
@@ -406,7 +423,14 @@ export default function EditProfileScreen() {
           </View>
 
           {/* Local trading and discovery */}
-          <SectionHeader title="Local Trading & Discovery" />
+          <View
+            onLayout={(e) => {
+              locationSectionY.current = e.nativeEvent.layout.y;
+              maybeScrollToSection();
+            }}
+          >
+            <SectionHeader title="Local Trading & Discovery" />
+          </View>
 
           {/* Postcode geocoding */}
           <Field

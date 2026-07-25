@@ -72,10 +72,11 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 interface LocationStatusBannerProps {
   hasLocationSet: boolean;
   nearbyEnabled: boolean;
+  radiusMiles: number;
   onPress: () => void;
 }
 
-function LocationStatusBanner({ hasLocationSet, nearbyEnabled, onPress }: LocationStatusBannerProps) {
+function LocationStatusBanner({ hasLocationSet, nearbyEnabled, radiusMiles, onPress }: LocationStatusBannerProps) {
   const colors = useColors();
 
   const active   = hasLocationSet && nearbyEnabled;
@@ -88,10 +89,10 @@ function LocationStatusBanner({ hasLocationSet, nearbyEnabled, onPress }: Locati
   const bgColor    = active ? colors.owned + '12' : setOnly ? '#F59E0B12' : colors.secondary;
 
   const headline = active
-    ? 'Location active'
+    ? `Discoverable · Within ${radiusMiles} miles`
     : setOnly
-    ? 'Nearby is turned off'
-    : 'Location not set';
+    ? 'Set location'
+    : 'Set location';
 
   const detail = active
     ? 'You appear in Collectors Nearby searches'
@@ -190,7 +191,8 @@ export default function ProfileScreen() {
             <LocationStatusBanner
               hasLocationSet={profile?.hasLocationSet ?? false}
               nearbyEnabled={profile?.nearbyDiscoveryEnabled ?? false}
-              onPress={() => router.push('/edit-profile')}
+              radiusMiles={profile?.preferredRadiusMiles ?? 25}
+              onPress={() => router.push({ pathname: '/edit-profile', params: { section: 'location' } })}
             />
 
             {/* Account */}

@@ -2,7 +2,7 @@
  * Avatar — shows a profile photo when available, falls back to a coloured
  * initials circle. Used everywhere a user's face would appear.
  */
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import type { ViewStyle } from 'react-native';
 import { useColors } from '@/hooks/useColors';
@@ -29,33 +29,39 @@ function getInitials(name: string): string {
 export function Avatar({ uri, name, size, style }: AvatarProps) {
   const colors = useColors();
   const radius = size / 2;
+  const [imgError, setImgError] = useState(false);
 
-  if (uri) {
-    return (
-      <View style={[{ width: size, height: size, borderRadius: radius, overflow: 'hidden' }, style]}>
-        <Image
-          source={{ uri }}
-          style={{ width: size, height: size }}
-          resizeMode="cover"
-        />
-      </View>
-    );
-  }
+  const showInitials = !uri || imgError;
 
   return (
     <View
       style={[
+        {
+          width: size,
+          height: size,
+          borderRadius: radius,
+          overflow: 'hidden',
+          backgroundColor: colors.primary,
+        },
         styles.wrap,
-        { width: size, height: size, borderRadius: radius, backgroundColor: colors.primary },
         style,
       ]}
     >
-      <Text
-        style={[styles.initials, { fontSize: Math.round(size * 0.36) }]}
-        allowFontScaling={false}
-      >
-        {getInitials(name)}
-      </Text>
+      {!showInitials ? (
+        <Image
+          source={{ uri }}
+          style={{ width: size, height: size }}
+          resizeMode="cover"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <Text
+          style={[styles.initials, { fontSize: Math.round(size * 0.36) }]}
+          allowFontScaling={false}
+        >
+          {getInitials(name)}
+        </Text>
+      )}
     </View>
   );
 }

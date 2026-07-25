@@ -484,6 +484,8 @@ export interface PinSubmission {
   status: PinSubmissionStatus;
   reviewerNotes?: string;
   approvedPinId?: string;
+  /** The PHUK-XXXXXXXX identifier of the catalogue pin created from this submission. */
+  approvedPinhuntId?: string;
   createdAt: string;
   updatedAt: string;
 }

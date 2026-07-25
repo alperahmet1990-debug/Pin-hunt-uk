@@ -286,21 +286,41 @@ export default function AdminReviewScreen() {
               </View>
             )}
 
+            {/* View in Catalogue (already approved + linked) */}
+            {submission.approvedPinId && submission.approvedPinhuntId && (
+              <TouchableOpacity
+                onPress={() =>
+                  router.push({
+                    pathname: '/admin/pin/[id]',
+                    params: { id: submission.approvedPinhuntId! },
+                  })
+                }
+                activeOpacity={0.85}
+                style={[styles.outlineBtn, { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card }]}
+              >
+                <Feather name="book-open" size={15} color="#16A34A" />
+                <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>View in Catalogue</Text>
+              </TouchableOpacity>
+            )}
+
             {/* Action buttons */}
             {isActionable && (
               saving ? (
                 <ActivityIndicator color={colors.primary} style={{ marginTop: 8 }} />
               ) : (
                 <View style={{ gap: 10 }}>
-                  {/* Primary CTA: approve and open pre-filled pin editor */}
-                  <TouchableOpacity
-                    onPress={approveAndAddToCatalogue}
-                    activeOpacity={0.85}
-                    style={[styles.actionBtn, { backgroundColor: '#16A34A', borderRadius: 12 }]}
-                  >
-                    <Feather name="book-open" size={16} color="#fff" />
-                    <Text style={styles.actionBtnLabel}>Approve &amp; Add to Catalogue</Text>
-                  </TouchableOpacity>
+                  {/* Primary CTA: approve and open pre-filled pin editor.
+                      Hidden when this submission already has a linked catalogue pin. */}
+                  {!submission.approvedPinId && (
+                    <TouchableOpacity
+                      onPress={approveAndAddToCatalogue}
+                      activeOpacity={0.85}
+                      style={[styles.actionBtn, { backgroundColor: '#16A34A', borderRadius: 12 }]}
+                    >
+                      <Feather name="book-open" size={16} color="#fff" />
+                      <Text style={styles.actionBtnLabel}>Approve &amp; Add to Catalogue</Text>
+                    </TouchableOpacity>
+                  )}
 
                   {/* Secondary: approve without creating a catalogue entry */}
                   <TouchableOpacity

@@ -26,6 +26,8 @@ import type {
   PostComment,
   PostReport,
   PostReportSummary,
+  CommentReport,
+  ReportedComment,
   PotentialTradePin,
   Profile,
   PublicProfile,
@@ -1515,6 +1517,78 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .delete()
       .eq('post_id', postId);
     if (error) throw new Error(error.message);
+  }
+
+  // ── Comment reports (moderation) ──────────────────────────────────────────
+
+  async reportPostComment(commentId: string, reporterId: string, reason?: string): Promise<CommentReport> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('comment_reports' as any)
+      .upsert(
+        { comment_id: commentId, reporter_id: reporterId, reason: reason ?? null },
+        { onConflict: 'comment_id,reporter_id', ignoreDuplicates: false },
+      )
+      .select('*')
+      .single();
+
+    if (error) throw new Error(error.message);
+    const row = data as unknown as Record<string, unknown>;
+    return {
+      id: row.id as string,
+      commentId: row.comment_id as string,
+      reporterId: row.reporter_id as string,
+      reason: (row.reason as string | null) ?? undefined,
+      createdAt: row.created_at as string,
+    };
+  }
+
+  async getMyReportedCommentIds(commentIds: string[], reporterId: string): Promise<string[]> {
+    if (commentIds.length === 0) return [];
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('comment_reports' as any)
+      .select('comment_id')
+      .eq('reporter_id', reporterId)
+      .in('comment_id', commentIds);
+
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as unknown as Record<string, unknown>[]).map(r => r.comment_id as string);
+  }
+
+  async getReportedComments(): Promise<ReportedComment[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('comment_reports' as any)
+      .select('comment_id, reason, created_at, post_comments(*, profiles(id, username, display_name, avatar_url))')
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+
+    const byComment = new Map<string, ReportedComment>();
+    for (const r of (data ?? []) as unknown as Record<string, unknown>[]) {
+      const commentId = r.comment_id as string;
+      const reason = (r.reason as string | null) ?? undefined;
+      const createdAt = r.created_at as string;
+      const existing = byComment.get(commentId);
+      if (existing) {
+        existing.reportCount += 1;
+        if (createdAt > existing.latestReportAt) existing.latestReportAt = createdAt;
+        if (reason && !existing.reasons.includes(reason)) existing.reasons.push(reason);
+      } else {
+        const commentRow = r.post_comments as Record<string, unknown> | null;
+        // Comment already deleted (reports cascade) — skip defensively.
+        if (!commentRow) continue;
+        byComment.set(commentId, {
+          comment: this.rowToPostComment(commentRow),
+          reportCount: 1,
+          latestReportAt: createdAt,
+          reasons: reason ? [reason] : [],
+        });
+      }
+    }
+    // Most recently reported first
+    return [...byComment.values()].sort((a, b) => b.latestReportAt.localeCompare(a.latestReportAt));
   }
 
   // ── Conversations / DMs ──────────────────────────────────────────────────────

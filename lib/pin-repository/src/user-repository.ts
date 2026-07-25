@@ -20,6 +20,8 @@ import type {
   PostComment,
   PostReport,
   PostReportSummary,
+  CommentReport,
+  ReportedComment,
   PotentialTradePin,
   StartConversationInput,
   TraderProfile,
@@ -323,6 +325,21 @@ export interface IUserPinRepository {
    * Admin delete RLS applies.
    */
   dismissPostReports(postId: string): Promise<void>;
+
+  /**
+   * Report a comment as the given user. Idempotent per (comment, reporter):
+   * reporting the same comment twice resolves without creating a duplicate.
+   */
+  reportPostComment(commentId: string, reporterId: string, reason?: string): Promise<CommentReport>;
+
+  /** IDs (within the given set) of comments the user has already reported. */
+  getMyReportedCommentIds(commentIds: string[], reporterId: string): Promise<string[]>;
+
+  /**
+   * Reported comments (with comment body, author, and aggregated report info)
+   * for the admin moderation queue, most-recently-reported first. Admin RLS applies.
+   */
+  getReportedComments(): Promise<ReportedComment[]>;
 
   // ── Conversations / DMs ────────────────────────────────────────────────────
 

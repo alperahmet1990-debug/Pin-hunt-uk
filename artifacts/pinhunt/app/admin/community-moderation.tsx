@@ -21,7 +21,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
-import type { CommunityPost, PostReportSummary } from '@workspace/pin-repository';
+import type { CommunityPost, PostReportSummary, ReportedComment } from '@workspace/pin-repository';
 
 const PAGE_SIZE = 30;
 
@@ -67,6 +67,8 @@ export default function CommunityModerationScreen() {
   const [reports,    setReports]    = useState<Map<string, PostReportSummary>>(new Map());
   const [dismissingId, setDismissingId] = useState<string | null>(null);
   const [reportedOnly, setReportedOnly] = useState(false);
+  const [reportedComments, setReportedComments] = useState<ReportedComment[]>([]);
+  const [removingCommentId, setRemovingCommentId] = useState<string | null>(null);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -75,12 +77,14 @@ export default function CommunityModerationScreen() {
     try {
       if (isRefresh) setRefreshing(true); else setLoading(true);
       setError(null);
-      const [rows, summaries] = await Promise.all([
+      const [rows, summaries, commentRows] = await Promise.all([
         repo.getCommunityFeed({ limit: PAGE_SIZE, offset: 0 }),
         repo.getPostReportSummaries(),
+        repo.getReportedComments(),
       ]);
       setPosts(rows);
       setReports(new Map(summaries.map(s => [s.postId, s])));
+      setReportedComments(commentRows);
       setHasMore(rows.length === PAGE_SIZE);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load posts.');
@@ -157,6 +161,32 @@ export default function CommunityModerationScreen() {
               Alert.alert('Error', e instanceof Error ? e.message : 'Could not dismiss the report.');
             } finally {
               setDismissingId(null);
+            }
+          },
+        },
+      ],
+    );
+  }, [repo]);
+
+  const handleRemoveComment = useCallback((rc: ReportedComment) => {
+    if (!repo) return;
+    Alert.alert(
+      'Remove comment?',
+      'This will permanently remove the comment from the post.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Remove',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              setRemovingCommentId(rc.comment.id);
+              await repo.deletePostComment(rc.comment.id);
+              setReportedComments(prev => prev.filter(c => c.comment.id !== rc.comment.id));
+            } catch (e) {
+              Alert.alert('Error', e instanceof Error ? e.message : 'Could not remove comment.');
+            } finally {
+              setRemovingCommentId(null);
             }
           },
         },
@@ -287,23 +317,89 @@ export default function CommunityModerationScreen() {
           <FlatList
             data={displayPosts}
             ListHeaderComponent={
-              reportedCount > 0 || reportedOnly ? (
-                <TouchableOpacity
-                  onPress={() => setReportedOnly(v => !v)}
-                  activeOpacity={0.85}
-                  style={[
-                    styles.filterChip,
-                    reportedOnly
-                      ? { backgroundColor: colors.destructive, borderColor: colors.destructive }
-                      : { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' },
-                  ]}
-                >
-                  <Feather name="flag" size={13} color={reportedOnly ? '#fff' : colors.destructive} />
-                  <Text style={[styles.filterChipLabel, { color: reportedOnly ? '#fff' : colors.destructive }]}>
-                    Reported ({reportedCount})
-                  </Text>
-                </TouchableOpacity>
-              ) : null
+              <View style={{ gap: 12 }}>
+                {(reportedCount > 0 || reportedOnly) && (
+                  <TouchableOpacity
+                    onPress={() => setReportedOnly(v => !v)}
+                    activeOpacity={0.85}
+                    style={[
+                      styles.filterChip,
+                      reportedOnly
+                        ? { backgroundColor: colors.destructive, borderColor: colors.destructive }
+                        : { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' },
+                    ]}
+                  >
+                    <Feather name="flag" size={13} color={reportedOnly ? '#fff' : colors.destructive} />
+                    <Text style={[styles.filterChipLabel, { color: reportedOnly ? '#fff' : colors.destructive }]}>
+                      Reported ({reportedCount})
+                    </Text>
+                  </TouchableOpacity>
+                )}
+
+                {reportedComments.length > 0 && (
+                  <View style={{ gap: 8 }}>
+                    <Text style={[styles.sectionHeading, { color: colors.mutedForeground }]}>
+                      REPORTED COMMENTS ({reportedComments.length})
+                    </Text>
+                    {reportedComments.map(rc => {
+                      const removing = removingCommentId === rc.comment.id;
+                      const name = rc.comment.authorProfile?.username ?? '…';
+                      return (
+                        <TouchableOpacity
+                          key={rc.comment.id}
+                          activeOpacity={0.85}
+                          onPress={() => router.push({ pathname: '/community/post/[id]' as any, params: { id: rc.comment.postId } })}
+                          style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
+                        >
+                          <View style={[styles.reportedBanner, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}>
+                            <Feather name="flag" size={12} color={colors.destructive} />
+                            <Text style={[styles.reportedBannerText, { color: colors.destructive }]} numberOfLines={1}>
+                              Comment reported {rc.reportCount > 1 ? `${rc.reportCount}× ` : ''}
+                              {rc.reasons.length > 0 ? `· ${rc.reasons.join(', ')}` : ''}
+                            </Text>
+                          </View>
+                          <View style={styles.cardTop}>
+                            <Avatar uri={rc.comment.authorProfile?.avatarUrl} name={name} size={32} />
+                            <View style={{ flex: 1 }}>
+                              <Text style={[styles.author, { color: colors.foreground }]} numberOfLines={1}>@{name}</Text>
+                              <Text style={[styles.time, { color: colors.mutedForeground }]}>{timeAgo(rc.comment.createdAt)}</Text>
+                            </View>
+                          </View>
+                          <Text style={[styles.snippet, { color: colors.foreground }]} numberOfLines={3}>
+                            {rc.comment.body}
+                          </Text>
+                          <View style={styles.cardBottom}>
+                            <View style={styles.metaChip}>
+                              <Feather name="message-circle" size={12} color={colors.mutedForeground} />
+                              <Text style={[styles.metaChipLabel, { color: colors.mutedForeground }]}>View post</Text>
+                            </View>
+                            <View style={{ flex: 1 }} />
+                            <TouchableOpacity
+                              onPress={() => handleRemoveComment(rc)}
+                              disabled={removing}
+                              activeOpacity={0.85}
+                              style={[styles.removeBtn, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}
+                              hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                            >
+                              {removing ? (
+                                <ActivityIndicator size="small" color={colors.destructive} />
+                              ) : (
+                                <>
+                                  <Feather name="trash-2" size={13} color={colors.destructive} />
+                                  <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Remove</Text>
+                                </>
+                              )}
+                            </TouchableOpacity>
+                          </View>
+                        </TouchableOpacity>
+                      );
+                    })}
+                    <Text style={[styles.sectionHeading, { color: colors.mutedForeground, marginTop: 4 }]}>
+                      POSTS
+                    </Text>
+                  </View>
+                )}
+              </View>
             }
             keyExtractor={p => p.id}
             renderItem={renderItem}
@@ -347,6 +443,7 @@ const styles = StyleSheet.create({
   card:          { borderWidth: 1, borderRadius: 14, padding: 14, gap: 10 },
   reportedBanner:{ flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, borderRadius: 8 },
   reportedBannerText: { flex: 1, fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  sectionHeading:{ fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8 },
   filterChip:    { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', paddingHorizontal: 12, paddingVertical: 7, borderWidth: 1, borderRadius: 20 },
   filterChipLabel:{ fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   cardTop:       { flexDirection: 'row', alignItems: 'center', gap: 10 },

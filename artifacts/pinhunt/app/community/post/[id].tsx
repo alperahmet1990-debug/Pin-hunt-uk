@@ -203,10 +203,13 @@ function DetailPhotoGrid({ photos, onPress }: { photos: string[]; onPress(i: num
 
 // ─── Comment row ─────────────────────────────────────────────────────────────
 
-function CommentRow({ comment, isMe, isAdmin, onDelete, colors }: {
+function CommentRow({ comment, isMe, isAdmin, canReport, hasReported, onReport, onDelete, colors }: {
   comment: PostComment;
   isMe: boolean;
   isAdmin: boolean;
+  canReport: boolean;
+  hasReported: boolean;
+  onReport: () => void;
   onDelete: () => void;
   colors: ReturnType<typeof useColors>;
 }) {
@@ -218,6 +221,11 @@ function CommentRow({ comment, isMe, isAdmin, onDelete, colors }: {
         <View style={styles.commentMeta}>
           <Text style={[styles.commentAuthor, { color: colors.foreground }]}>@{name}</Text>
           <Text style={[styles.commentTime, { color: colors.mutedForeground }]}>{timeAgo(comment.createdAt)}</Text>
+          {canReport && (
+            <TouchableOpacity onPress={onReport} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+              <Feather name="flag" size={13} color={hasReported ? colors.destructive : colors.mutedForeground} />
+            </TouchableOpacity>
+          )}
           {(isMe || isAdmin) && (
             <TouchableOpacity onPress={onDelete} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
               <Feather name="trash-2" size={13} color={colors.destructive} />
@@ -251,6 +259,7 @@ export default function PostDetailScreen() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [hasReported, setHasReported] = useState(false);
   const [reporting,   setReporting]   = useState(false);
+  const [reportedCommentIds, setReportedCommentIds] = useState<Set<string>>(new Set());
   const scrollRef = useRef<ScrollView>(null);
 
   const load = useCallback(async () => {
@@ -267,6 +276,13 @@ export default function PostDetailScreen() {
       if (userId && p && p.authorId !== userId) {
         repo.hasReportedPost(id, userId)
           .then(setHasReported)
+          .catch(() => { /* non-fatal */ });
+      }
+
+      // Check which comments the viewer already reported
+      if (userId && c.length > 0) {
+        repo.getMyReportedCommentIds(c.map(cm => cm.id), userId)
+          .then(ids => setReportedCommentIds(new Set(ids)))
           .catch(() => { /* non-fatal */ });
       }
 
@@ -373,6 +389,32 @@ export default function PostDetailScreen() {
       { text: 'Inappropriate', onPress: () => submitReport('Inappropriate') },
       { text: 'Scam or fraud', onPress: () => submitReport('Scam or fraud') },
       { text: 'Other',         onPress: () => submitReport('Other') },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
+  };
+
+  const submitCommentReport = async (commentId: string, reason: string) => {
+    if (!repo || !userId) return;
+    try {
+      await repo.reportPostComment(commentId, userId, reason);
+      setReportedCommentIds(prev => new Set(prev).add(commentId));
+      Alert.alert('Report sent', 'Thanks — an admin will review this comment.');
+    } catch (e) {
+      Alert.alert('Error', e instanceof Error ? e.message : 'Could not report comment.');
+    }
+  };
+
+  const handleReportComment = (comment: PostComment) => {
+    if (!userId) { Alert.alert('Sign in to report comments'); return; }
+    if (reportedCommentIds.has(comment.id)) {
+      Alert.alert('Already reported', 'You\'ve already reported this comment. An admin will review it.');
+      return;
+    }
+    Alert.alert('Report comment', 'Why are you reporting this comment?', [
+      { text: 'Spam',          onPress: () => submitCommentReport(comment.id, 'Spam') },
+      { text: 'Inappropriate', onPress: () => submitCommentReport(comment.id, 'Inappropriate') },
+      { text: 'Scam or fraud', onPress: () => submitCommentReport(comment.id, 'Scam or fraud') },
+      { text: 'Other',         onPress: () => submitCommentReport(comment.id, 'Other') },
       { text: 'Cancel', style: 'cancel' },
     ]);
   };
@@ -553,6 +595,9 @@ export default function PostDetailScreen() {
                   comment={c}
                   isMe={c.authorId === userId}
                   isAdmin={isAdmin}
+                  canReport={!!userId && c.authorId !== userId}
+                  hasReported={reportedCommentIds.has(c.id)}
+                  onReport={() => handleReportComment(c)}
                   onDelete={() => handleDeleteComment(c.id)}
                   colors={colors}
                 />

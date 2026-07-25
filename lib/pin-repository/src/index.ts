@@ -59,6 +59,8 @@ export type {
   PostComment,
   PostReport,
   PostReportSummary,
+  CommentReport,
+  ReportedComment,
   StartConversationInput,
   // Duplicate detection
   DuplicateCandidate,

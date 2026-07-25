@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   ActivityIndicator,
   Alert,
+  AppState,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -363,10 +364,24 @@ export default function TradeScreen() {
         { event: '*', schema: 'public', table: 'user_pins', filter: `user_id=in.(${initiatorId},${recipientId})` },
         () => { loadRef.current(); },
       )
-      .subscribe();
+      .subscribe(status => {
+        // On (re)connect, run one catch-up fetch so anything that happened
+        // while the channel was down is picked up.
+        if (status === 'SUBSCRIBED') { loadRef.current(); }
+      });
 
     return () => { supabase.removeChannel(channel); };
   }, [id, userId, initiatorId, recipientId]);
+
+  // Realtime sockets are suspended while the app is backgrounded, so events
+  // sent during that window are lost. Run one catch-up fetch whenever the app
+  // returns to the foreground (no polling).
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', state => {
+      if (state === 'active') { loadRef.current(); }
+    });
+    return () => { sub.remove(); };
+  }, []);
 
   const sendMessage = async () => {
     if (!repo || !userId || !trade || !msgText.trim()) return;

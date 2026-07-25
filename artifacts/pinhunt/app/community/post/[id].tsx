@@ -56,6 +56,12 @@ function timeAgo(iso: string): string {
   return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
+/** True when updatedAt is later than createdAt (small tolerance for timestamp serialization), i.e. edited after publishing. */
+function wasEdited(createdAt: string, updatedAt?: string): boolean {
+  if (!updatedAt) return false;
+  return new Date(updatedAt).getTime() - new Date(createdAt).getTime() > 1_000;
+}
+
 function initials(username: string): string {
   return username.split(' ').map(n => n[0]?.toUpperCase() ?? '').join('').slice(0, 2);
 }
@@ -483,7 +489,10 @@ export default function PostDetailScreen() {
               <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={40} />
               <View style={{ flex: 1 }}>
                 <Text style={[styles.authorName, { color: colors.foreground }]}>@{authorName}</Text>
-                <Text style={[styles.postTime, { color: colors.mutedForeground }]}>{timeAgo(post.createdAt)}</Text>
+                <Text style={[styles.postTime, { color: colors.mutedForeground }]}>
+                  {timeAgo(post.createdAt)}
+                  {wasEdited(post.createdAt, post.updatedAt) ? ' · Edited' : ''}
+                </Text>
               </View>
               {!isAuthor && userId && (
                 <TouchableOpacity

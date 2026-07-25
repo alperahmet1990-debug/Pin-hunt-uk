@@ -70,6 +70,12 @@ function timeAgo(iso: string): string {
   return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 }
 
+/** True when updatedAt is later than createdAt (small tolerance for timestamp serialization), i.e. edited after publishing. */
+function wasEdited(createdAt: string, updatedAt?: string): boolean {
+  if (!updatedAt) return false;
+  return new Date(updatedAt).getTime() - new Date(createdAt).getTime() > 1_000;
+}
+
 // ─── Photo preview grid (up to 4 cells) ──────────────────────────────────────
 
 function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: number): void }) {
@@ -200,7 +206,10 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
         <View style={styles.cardMeta}>
           <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={22} />
           <Text style={[styles.cardAuthor, { color: colors.foreground }]}>@{authorName}</Text>
-          <Text style={[styles.cardTime, { color: colors.mutedForeground }]}>{timeAgo(post.createdAt)}</Text>
+          <Text style={[styles.cardTime, { color: colors.mutedForeground }]}>
+            {timeAgo(post.createdAt)}
+            {wasEdited(post.createdAt, post.updatedAt) ? ' · Edited' : ''}
+          </Text>
         </View>
       </View>
 

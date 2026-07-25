@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -85,7 +85,7 @@ export default function ScanScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { setStatus, markViewed } = useCollection();
-  const { pins } = usePinCatalogue();
+  const { pins, repository } = usePinCatalogue();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
@@ -93,22 +93,75 @@ export default function ScanScreen() {
   const [selectedMatch, setSelectedMatch] = useState<CataloguePin | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<CataloguePin[]>([]);
+  const [searching, setSearching] = useState(false);
+  const searchSeq = useRef(0);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
-  // ── Text search results ─────────────────────────────────────────────────────
-  const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    const q = searchQuery.toLowerCase();
-    return pins
-      .filter(
-        p =>
-          p.title.toLowerCase().includes(q) ||
-          p.characters.some(c => c.toLowerCase().includes(q)) ||
-          p.collection.toLowerCase().includes(q) ||
-          p.brand.toLowerCase().includes(q),
-      )
-      .slice(0, 20);
-  }, [searchQuery, pins]);
+  // Keep pins in a ref so the search effect doesn't re-fire on catalogue refreshes.
+  const pinsRef = useRef(pins);
+  pinsRef.current = pins;
+
+  // ── Text search: query the database (debounced) ────────────────────────────
+  useEffect(() => {
+    const q = searchQuery.trim();
+    const seq = ++searchSeq.current;
+
+    // Never show results from a previous query.
+    setSearchResults([]);
+
+    if (!q) {
+      setSearching(false);
+      return;
+    }
+
+    // Fallback: no repository (mock mode) — filter the cached list locally.
+    if (!repository) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps -- pinsRef keeps deps stable
+      const pins = pinsRef.current;
+      const lower = q.toLowerCase();
+      setSearchResults(
+        pins
+          .filter(
+            p =>
+              p.title.toLowerCase().includes(lower) ||
+              p.characters.some(c => c.toLowerCase().includes(lower)) ||
+              p.collection.toLowerCase().includes(lower) ||
+              p.brand.toLowerCase().includes(lower),
+          )
+          .slice(0, 20),
+      );
+      return;
+    }
+
+    setSearching(true);
+    const timer = setTimeout(async () => {
+      try {
+        // Two parallel DB queries: text match on title/brand/collection,
+        // plus a character-name match, merged and deduped.
+        const [textMatches, characterMatches] = await Promise.all([
+          repository.searchPins(q, { limit: 20 }),
+          repository.searchPins('', { character: q, limit: 20 }),
+        ]);
+        if (seq !== searchSeq.current) return; // stale response
+        const seen = new Set<string>();
+        const merged: CataloguePin[] = [];
+        for (const pin of [...textMatches, ...characterMatches]) {
+          if (!seen.has(pin.id)) {
+            seen.add(pin.id);
+            merged.push(pin);
+          }
+        }
+        setSearchResults(merged.slice(0, 20));
+      } catch {
+        if (seq === searchSeq.current) setSearchResults([]);
+      } finally {
+        if (seq === searchSeq.current) setSearching(false);
+      }
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery, repository]);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -255,7 +308,12 @@ export default function ScanScreen() {
           />
           {searchQuery.trim().length > 0 && (
             <View style={[styles.searchResults, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-              {searchResults.length === 0 ? (
+              {searching && searchResults.length === 0 ? (
+                <View style={styles.searchEmpty}>
+                  <ActivityIndicator size="small" color={colors.mutedForeground} />
+                  <Text style={[styles.searchEmptyText, { color: colors.mutedForeground }]}>Searching…</Text>
+                </View>
+              ) : searchResults.length === 0 ? (
                 <View style={styles.searchEmpty}>
                   <Feather name="search" size={14} color={colors.mutedForeground} />
                   <Text style={[styles.searchEmptyText, { color: colors.mutedForeground }]}>No pins found</Text>

@@ -349,7 +349,8 @@ function calculateEstimate(
   currency: string,
   accepted: ScoredListing[],
 ): Omit<MarketEstimate, "calculatedAt" | "expiresAt" | "stale"> {
-  const prices = removeOutliers(accepted.map(l => l.totalPrice));
+  // Estimate on item price only — delivery cost is not part of a pin's value.
+  const prices = removeOutliers(accepted.map(l => l.itemPrice ?? 0));
   const sorted = [...prices].sort((a, b) => a - b);
   const count = sorted.length;
   if (count === 0) {

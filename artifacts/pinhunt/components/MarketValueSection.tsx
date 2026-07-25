@@ -303,11 +303,6 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
                         <Text style={[styles.compMeta, { color: colors.mutedForeground }]}>
                           {item.itemPrice != null &&
                             formatMoney(item.itemPrice, meta.locale, item.currency ?? meta.currency)}
-                          {item.deliveryPrice != null
-                            ? ` + ${formatMoney(item.deliveryPrice, meta.locale, item.currency ?? meta.currency)} delivery`
-                            : ' · delivery not shown'}
-                          {item.totalPrice != null &&
-                            ` · total ${formatMoney(item.totalPrice, meta.locale, item.currency ?? meta.currency)}`}
                         </Text>
                         <Text style={[styles.compMeta, { color: colors.mutedForeground }]}>
                           {item.condition ?? 'Condition not stated'} · External eBay listing

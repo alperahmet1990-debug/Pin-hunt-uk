@@ -54,7 +54,6 @@ router.post("/ebay/account-deletion", (req, res) => {
       topic: req.body?.metadata?.topic,
       notificationId: notification?.notificationId,
       eventDate: notification?.eventDate,
-      username: notification?.data?.username,
     },
     "eBay account deletion notification received",
   );

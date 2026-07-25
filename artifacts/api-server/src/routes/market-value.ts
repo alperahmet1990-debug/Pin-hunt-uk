@@ -6,7 +6,8 @@
  *
  * :pinId is the public pinhunt id. eBay credentials never leave the server.
  */
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
+import { createClient } from "@supabase/supabase-js";
 import { ebayConfigured } from "../services/ebay";
 import {
   getMarketValueForPin,
@@ -15,9 +16,34 @@ import {
 
 const router: IRouter = Router();
 
+/** Require a valid signed-in Supabase user (Bearer token). */
+async function requireUser(req: Request, res: Response, next: NextFunction) {
+  const authHeader = req.headers.authorization ?? "";
+  const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : null;
+  if (!token) {
+    res.status(401).json({ error: "Sign in required" });
+    return;
+  }
+  try {
+    const client = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
+    const { data: { user }, error } = await client.auth.getUser(token);
+    if (error || !user) {
+      res.status(401).json({ error: "Invalid or expired session" });
+      return;
+    }
+    next();
+  } catch {
+    res.status(401).json({ error: "Authentication failed" });
+  }
+}
+
+// Per-pin cooldown so anonymous retries / rapid taps can't hammer eBay.
+const REFRESH_COOLDOWN_MS = 60_000;
+const lastRefreshAt = new Map<string, number>();
+
 router.get("/pins/:pinId/market-value", async (req, res) => {
   try {
-    const result = await getMarketValueForPin(req.params.pinId);
+    const result = await getMarketValueForPin(String(req.params.pinId));
     if (!result) {
       res.status(404).json({ error: "Pin not found" });
       return;
@@ -29,13 +55,20 @@ router.get("/pins/:pinId/market-value", async (req, res) => {
   }
 });
 
-router.post("/pins/:pinId/market-value/refresh", async (req, res) => {
+router.post("/pins/:pinId/market-value/refresh", requireUser, async (req, res) => {
   if (!ebayConfigured()) {
     res.status(503).json({ error: "eBay is not configured on this server yet." });
     return;
   }
+  const last = lastRefreshAt.get(String(req.params.pinId));
+  if (last && Date.now() - last < REFRESH_COOLDOWN_MS) {
+    res.status(429).json({ error: "This pin was just checked — try again in a minute." });
+    return;
+  }
+  lastRefreshAt.set(String(req.params.pinId), Date.now());
+  if (lastRefreshAt.size > 5000) lastRefreshAt.clear();
   try {
-    const result = await refreshMarketValueForPin(req.params.pinId);
+    const result = await refreshMarketValueForPin(String(req.params.pinId));
     res.json({ ...result, ebayConfigured: true });
   } catch (err) {
     const status = (err as { status?: number }).status ?? 502;

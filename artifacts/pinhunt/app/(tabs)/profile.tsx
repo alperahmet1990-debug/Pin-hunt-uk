@@ -159,7 +159,6 @@ export default function ProfileScreen() {
 
             {/* App Settings */}
             <Section title="App">
-              <SettingsRow icon="moon" label="Appearance" value="System" />
               <SettingsRow icon="download" label="Export Collection" last />
             </Section>
 

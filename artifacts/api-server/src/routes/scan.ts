@@ -34,16 +34,46 @@ function buildCatalogueText(pins: CataloguePin[]): string {
     .join("\n");
 }
 
-/** Fetch live catalogue from Supabase; fall back to empty list with a warning. */
-async function getCatalogue(): Promise<CataloguePin[]> {
+/**
+ * Find candidate pins for what the vision model saw in the photo.
+ *
+ * The catalogue is ~13k pins — far too many to hand to the model — so we
+ * first describe the pin (stage 1), then search the catalogue by the
+ * characters and keywords seen, and only rank those candidates (stage 2).
+ */
+async function findCandidates(description: {
+  characters: string[];
+  keywords: string[];
+}): Promise<CataloguePin[]> {
   if (!repository) {
-    console.warn(
-      "[scan] Supabase not configured — set SUPABASE_URL and SUPABASE_ANON_KEY " +
-        "then POST /api/admin/seed-pins to populate the catalogue.",
-    );
+    console.warn("[scan] Supabase not configured.");
     return [];
   }
-  return repository.searchPins("", { status: "active", limit: 500 });
+  const byId = new Map<string, CataloguePin>();
+  const add = (pins: CataloguePin[]) => {
+    for (const p of pins) if (!byId.has(p.id)) byId.set(p.id, p);
+  };
+
+  // Character matches are the strongest signal.
+  for (const character of description.characters.slice(0, 4)) {
+    try {
+      add(await repository.searchPins("", { status: "active", character, limit: 120 }));
+    } catch { /* keep going with other terms */ }
+    if (byId.size >= 350) break;
+  }
+  // Character names + keywords against title/brand/collection.
+  for (const term of [...description.characters, ...description.keywords].slice(0, 8)) {
+    if (byId.size >= 350) break;
+    if (term.trim().length < 3) continue;
+    try {
+      add(await repository.searchPins(term.trim(), { status: "active", limit: 80 }));
+    } catch { /* keep going */ }
+  }
+  // Last resort so the scan still returns something rather than erroring.
+  if (byId.size === 0) {
+    add(await repository.searchPins("", { status: "active", limit: 300 }));
+  }
+  return [...byId.values()].slice(0, 350);
 }
 
 // ── POST /scan/identify ───────────────────────────────────────────────────────
@@ -65,20 +95,62 @@ router.post("/scan/identify", async (req, res) => {
     return;
   }
 
-  // Load the live catalogue — gives the AI accurate, up-to-date pin data
-  const catalogue = await getCatalogue();
-
-  if (catalogue.length === 0) {
-    res.status(503).json({
-      error:
-        "Pin catalogue is empty. Connect Supabase and seed the database first.",
-    });
+  if (!repository) {
+    res.status(503).json({ error: "Pin catalogue is not available yet." });
     return;
   }
 
-  const catalogueText = buildCatalogueText(catalogue);
-
   try {
+    // ── Stage 1: describe the pin in the photo ──
+    const describeResp = await openai.chat.completions.create({
+      model: "gpt-5.6-luna",
+      max_completion_tokens: 2048,
+      messages: [
+        {
+          role: "system",
+          content: `You identify Disney enamel pins. Look at the photo and return ONLY valid JSON (no markdown):
+{ "characters": ["<Disney character names visible, e.g. Mulan, Mushu>"], "keywords": ["<other search terms: film/series name, visible text on the pin, distinctive objects, e.g. Macaron, Princess, Hidden Mickey>"] }
+List up to 4 characters and up to 6 keywords. Use empty arrays if unsure.`,
+        },
+        {
+          role: "user",
+          content: [
+            {
+              type: "image_url",
+              image_url: { url: `data:${mimeType};base64,${imageBase64}`, detail: "high" },
+            },
+            { type: "text", text: "Describe this pin as JSON." },
+          ],
+        },
+      ],
+    });
+
+    let description = { characters: [] as string[], keywords: [] as string[] };
+    try {
+      const raw = describeResp.choices[0]?.message?.content ?? "{}";
+      const s = raw.indexOf("{");
+      const e = raw.lastIndexOf("}");
+      const parsed = s !== -1 && e > s ? JSON.parse(raw.slice(s, e + 1)) : {};
+      description = {
+        characters: Array.isArray(parsed.characters) ? parsed.characters.map(String) : [],
+        keywords: Array.isArray(parsed.keywords) ? parsed.keywords.map(String) : [],
+      };
+    } catch { /* fall through with empty description */ }
+    console.log("[scan] stage-1 description:", JSON.stringify(description));
+    if (description.characters.length === 0 && description.keywords.length === 0) {
+      console.log("[scan] stage-1 raw content:", JSON.stringify(describeResp.choices[0]?.message?.content ?? null), "finish:", describeResp.choices[0]?.finish_reason);
+    }
+
+    // ── Stage 2: search the full catalogue for candidates, then rank ──
+    const catalogue = await findCandidates(description);
+    if (catalogue.length === 0) {
+      res.status(503).json({
+        error: "Pin catalogue is empty. Connect Supabase and seed the database first.",
+      });
+      return;
+    }
+    const catalogueText = buildCatalogueText(catalogue);
+
     const response = await openai.chat.completions.create({
       model: "gpt-5.6-luna",
       max_completion_tokens: 1024,

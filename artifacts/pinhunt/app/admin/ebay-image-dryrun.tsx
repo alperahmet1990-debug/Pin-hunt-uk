@@ -101,6 +101,7 @@ export default function EbayImageDryRunScreen() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [viewerUrl, setViewerUrl] = useState<string | null>(null);
   const [applyingId, setApplyingId] = useState<string | null>(null);
+  const [retryingId, setRetryingId] = useState<string | null>(null);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const authHeaders = useCallback(
@@ -190,7 +191,11 @@ export default function EbayImageDryRunScreen() {
                 `${API_BASE}/catalogue/ebay-image-dry-run/results/${result.id}/apply`,
                 { method: 'POST', headers: authHeaders() },
               );
-              const data = await resp.json();
+              const text = await resp.text();
+              let data: any;
+              try { data = JSON.parse(text); } catch {
+                throw new Error('The server was interrupted — please try again.');
+              }
               if (!resp.ok) throw new Error(data?.error ?? `HTTP ${resp.status}`);
               setResults(prev =>
                 prev.map(r => (r.id === result.id ? { ...r, applied_at: new Date().toISOString() } : r)),
@@ -204,6 +209,31 @@ export default function EbayImageDryRunScreen() {
         },
       ],
     );
+  }, [authHeaders]);
+
+  const retrySearch = useCallback(async (result: DryRunResult) => {
+    setRetryingId(result.id);
+    try {
+      const resp = await fetch(
+        `${API_BASE}/catalogue/ebay-image-dry-run/results/${result.id}/retry`,
+        { method: 'POST', headers: authHeaders() },
+      );
+      const text = await resp.text();
+      let data: any;
+      try { data = JSON.parse(text); } catch {
+        throw new Error('The server was interrupted — please try again.');
+      }
+      if (!resp.ok) throw new Error(data?.error ?? `HTTP ${resp.status}`);
+      const updated = data.result as Partial<DryRunResult>;
+      setResults(prev => prev.map(r => (r.id === result.id ? { ...r, ...updated } : r)));
+      if (!updated.image_url) {
+        Alert.alert('No other image found', 'eBay has no other listing that matches this pin well enough right now.');
+      }
+    } catch (e) {
+      Alert.alert('Could not search again', e instanceof Error ? e.message : 'Unknown error');
+    } finally {
+      setRetryingId(null);
+    }
   }, [authHeaders]);
 
   const filtered = filter === 'all'
@@ -304,6 +334,8 @@ export default function EbayImageDryRunScreen() {
             onViewImage={() => item.image_url && setViewerUrl(item.image_url)}
             onApply={() => applyImage(item)}
             applying={applyingId === item.id}
+            onRetry={() => retrySearch(item)}
+            retrying={retryingId === item.id}
           />
         )}
       />
@@ -334,7 +366,7 @@ function SummaryRow({ label, value, color, colors }: { label: string; value: num
   );
 }
 
-function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, applying }: {
+function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, applying, onRetry, retrying }: {
   result: DryRunResult;
   colors: ReturnType<typeof useColors>;
   expanded: boolean;
@@ -342,6 +374,8 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, 
   onViewImage: () => void;
   onApply: () => void;
   applying: boolean;
+  onRetry: () => void;
+  retrying: boolean;
 }) {
   const meta = CLASS_META[result.confidence_classification];
   const md = result.pin_metadata ?? {};
@@ -423,6 +457,22 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, 
                 <Feather name="check-circle" size={15} color="#fff" />
               )}
               <Text style={styles.applyBtnText}>Use this image for the pin</Text>
+            </TouchableOpacity>
+          )}
+          {!result.applied_at && (
+            <TouchableOpacity
+              style={[styles.applyBtn, { backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border, opacity: retrying ? 0.6 : 1 }]}
+              disabled={retrying}
+              onPress={onRetry}
+            >
+              {retrying ? (
+                <ActivityIndicator size="small" color={colors.primary} />
+              ) : (
+                <Feather name="refresh-cw" size={15} color={colors.primary} />
+              )}
+              <Text style={[styles.applyBtnText, { color: colors.primary }]}>
+                {retrying ? 'Searching eBay…' : 'Find a different image'}
+              </Text>
             </TouchableOpacity>
           )}
           {result.applied_at && (

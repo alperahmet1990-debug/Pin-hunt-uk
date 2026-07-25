@@ -18,6 +18,7 @@ import {
   getDryRunResults,
   listDryRuns,
   applyDryRunImage,
+  retryDryRunResult,
 } from "../services/ebay-image-dryrun";
 
 const router: IRouter = Router();
@@ -99,6 +100,21 @@ router.get("/catalogue/ebay-image-dry-run/runs/:runId", requireAdmin, async (req
     res.status(500).json({ error: e instanceof Error ? e.message : "Failed to load run" });
   }
 });
+
+// Re-search eBay for a different candidate image (excludes rejected listings).
+router.post(
+  "/catalogue/ebay-image-dry-run/results/:resultId/retry",
+  requireAdmin,
+  async (req, res: Response) => {
+    try {
+      const result = await retryDryRunResult(String(req.params.resultId));
+      res.json({ result });
+    } catch (e) {
+      const status = (e as { status?: number }).status ?? 500;
+      res.status(status).json({ error: e instanceof Error ? e.message : "Retry failed" });
+    }
+  },
+);
 
 // Admin-confirmed apply: writes the candidate image to the live pin.
 router.post(

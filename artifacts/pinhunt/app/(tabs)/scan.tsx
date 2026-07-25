@@ -84,7 +84,7 @@ export default function ScanScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { setStatus, markViewed } = useCollection();
-  const { pins } = usePinCatalogue();
+  const { pins, repository } = usePinCatalogue();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
@@ -163,13 +163,24 @@ export default function ScanScreen() {
     try {
       const rawMatches = await identifyPin(captured.base64, captured.mimeType);
 
-      const resolved: Match[] = rawMatches
-        .map(m => {
-          const pin = pins.find(p => p.id === m.pinId);
-          if (!pin) return null;
-          return { pin, confidence: m.confidence, reasoning: m.reasoning };
-        })
-        .filter(Boolean) as Match[];
+      // The cached list only holds part of the catalogue — fetch any matched
+      // pin that isn't cached directly from the repository.
+      const resolved: Match[] = (
+        await Promise.all(
+          rawMatches.map(async m => {
+            let pin = pins.find(p => p.id === m.pinId) ?? null;
+            if (!pin && repository) {
+              try {
+                pin = await repository.getPinById(m.pinId);
+              } catch {
+                pin = null;
+              }
+            }
+            if (!pin) return null;
+            return { pin, confidence: m.confidence, reasoning: m.reasoning };
+          }),
+        )
+      ).filter(Boolean) as Match[];
 
       if (resolved.length === 0) {
         setErrorMsg('No matches found. Try a clearer photo with good lighting.');
@@ -184,7 +195,7 @@ export default function ScanScreen() {
       setErrorMsg(msg);
       setScanState('captured');
     }
-  }, [captured]);
+  }, [captured, pins, repository]);
 
   // ── Confirm match ─────────────────────────────────────────────────────────────
   const handleSelectMatch = (match: Match) => {

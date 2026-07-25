@@ -298,6 +298,7 @@ async function bestCandidateInMarketplace(
   marketplace: EbayMarketplace,
   queries: string[],
   rejectionLog: string[],
+  exclude?: Set<string>,
 ): Promise<ScoredCandidate | null> {
   const byItemId = new Map<string, EbayListing>();
   for (const q of queries) {
@@ -308,6 +309,7 @@ async function bestCandidateInMarketplace(
 
   let best: ScoredCandidate | null = null;
   for (const listing of byItemId.values()) {
+    if (exclude?.has(listing.itemId)) continue;
     const { score, matchReasons, rejectionReasons, warnings } = scoreListingForImage(pin, listing);
     if (score == null) {
       if (rejectionLog.length < 12 && rejectionReasons.length > 0) {
@@ -456,6 +458,68 @@ async function processDryRun(runId: string, limit: number): Promise<void> {
     completed_at: new Date().toISOString(),
   }).eq("id", runId);
   logger.info({ runId, counts }, "image dry run completed");
+}
+
+// ─── Admin retry: re-search eBay for a different candidate image ────────────
+
+/**
+ * Re-run the eBay image search for one result, excluding every listing the
+ * admin has already rejected (and the current one). Updates the result row
+ * in place with the next-best candidate, or no_match if nothing else scores.
+ */
+export async function retryDryRunResult(resultId: string): Promise<Record<string, unknown>> {
+  const sb = getServiceClient();
+  const { data: result, error } = await sb
+    .from("ebay_image_dry_run_results")
+    .select("id, pinhunt_id, best_ebay_item_id, excluded_item_ids, applied_at")
+    .eq("id", resultId)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  if (!result) throw Object.assign(new Error("Result not found"), { status: 404 });
+  if (result.applied_at) throw Object.assign(new Error("Image already applied — nothing to retry"), { status: 409 });
+
+  const excluded = new Set<string>((result.excluded_item_ids as string[]) ?? []);
+  if (result.best_ebay_item_id) excluded.add(result.best_ebay_item_id as string);
+
+  const pin = await loadFullPin(result.pinhunt_id as string);
+  if (!pin) throw Object.assign(new Error("Pin not found"), { status: 404 });
+
+  const queries = buildSearchQueries(pin);
+  const rejectionLog: string[] = [];
+  const gb = await bestCandidateInMarketplace(pin, "EBAY_GB", queries, rejectionLog, excluded);
+  let best = gb;
+  if (!gb || gb.score < STRONG_UK_SCORE) {
+    const us = await bestCandidateInMarketplace(pin, "EBAY_US", queries, rejectionLog, excluded);
+    if (us && (!best || us.score > best.score)) best = us;
+  }
+
+  const classification = classify(best?.score ?? null);
+  const conflict = best?.warnings.some(w => w.startsWith("conflicting")) ?? false;
+  const wouldAssign =
+    (classification === "high_confidence" || classification === "provisional") &&
+    (best?.warnings.length ?? 0) === 0 && !conflict;
+
+  const patch = {
+    best_ebay_item_id: best?.listing.itemId ?? null,
+    marketplace: best?.marketplace ?? null,
+    listing_title: best?.listing.title ?? null,
+    listing_url: best?.listing.itemUrl ?? null,
+    image_url: best?.listing.imageUrl ?? null,
+    match_score: best?.score ?? null,
+    confidence_classification: classification,
+    match_reasons: best?.matchReasons ?? [],
+    rejection_reasons: [...(best?.warnings ?? []), ...rejectionLog],
+    would_assign: wouldAssign,
+    excluded_item_ids: [...excluded],
+  };
+  const { error: updErr } = await sb
+    .from("ebay_image_dry_run_results")
+    .update(patch)
+    .eq("id", resultId);
+  if (updErr) throw new Error(updErr.message);
+
+  logger.info({ resultId, pin: result.pinhunt_id, found: !!best }, "dry-run retry completed");
+  return { id: resultId, ...patch };
 }
 
 // ─── Admin apply: write an approved candidate image to the live pin ─────────

@@ -22,6 +22,7 @@ import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -274,6 +275,40 @@ export default function CommunityScreen() {
   }, [repo, filter]);
 
   useEffect(() => { load(); }, [load]);
+
+  // ── Realtime: prepend new posts as they arrive ─────────────────────────────
+  useEffect(() => {
+    if (!repo || !isSupabaseConfigured) return;
+
+    const channel = supabase
+      .channel('community_posts_inserts')
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'community_posts' },
+        async (payload) => {
+          const newRow = payload.new as { id: string; post_type: string };
+          // Only prepend if it matches the active filter (or filter is 'all')
+          if (filter !== 'all' && newRow.post_type !== filter) return;
+          try {
+            const fullPost = await repo.getCommunityPost(newRow.id);
+            if (!fullPost) return;
+            setPosts(prev => {
+              // Guard against duplicates (e.g. if the user created the post themselves)
+              if (prev.some(p => p.id === fullPost.id)) return prev;
+              return [fullPost, ...prev];
+            });
+          } catch {
+            // Silently ignore fetch errors for realtime updates;
+            // pull-to-refresh is still available as a fallback.
+          }
+        },
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [repo, filter]);
 
   const handleFilterChange = (key: CommunityPostType | 'all') => {
     setFilter(key);

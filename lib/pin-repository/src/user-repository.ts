@@ -318,6 +318,12 @@ export interface IUserPinRepository {
    */
   getPostReportSummaries(): Promise<PostReportSummary[]>;
 
+  /**
+   * Dismiss all reports for a post (admin action after review).
+   * Admin delete RLS applies.
+   */
+  dismissPostReports(postId: string): Promise<void>;
+
   // ── Conversations / DMs ────────────────────────────────────────────────────
 
   /** Return all conversations for userId, sorted by most recent message. */

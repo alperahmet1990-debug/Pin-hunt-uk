@@ -1508,6 +1508,15 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return [...byPost.values()].sort((a, b) => b.latestReportAt.localeCompare(a.latestReportAt));
   }
 
+  async dismissPostReports(postId: string): Promise<void> {
+    const { error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('post_reports' as any)
+      .delete()
+      .eq('post_id', postId);
+    if (error) throw new Error(error.message);
+  }
+
   // ── Conversations / DMs ──────────────────────────────────────────────────────
 
   private rowToConversation(row: Record<string, unknown>, currentUserId: string): Conversation {

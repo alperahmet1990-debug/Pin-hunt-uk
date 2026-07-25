@@ -65,6 +65,7 @@ export default function CommunityModerationScreen() {
   const [error,      setError]      = useState<string | null>(null);
   const [removingId, setRemovingId] = useState<string | null>(null);
   const [reports,    setReports]    = useState<Map<string, PostReportSummary>>(new Map());
+  const [dismissingId, setDismissingId] = useState<string | null>(null);
   const [reportedOnly, setReportedOnly] = useState(false);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
@@ -134,6 +135,35 @@ export default function CommunityModerationScreen() {
     );
   }, [repo]);
 
+  const handleDismiss = useCallback((post: CommunityPost) => {
+    if (!repo) return;
+    Alert.alert(
+      'Dismiss report?',
+      'This clears all reports on this post. The post stays in the feed.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Dismiss',
+          onPress: async () => {
+            try {
+              setDismissingId(post.id);
+              await repo.dismissPostReports(post.id);
+              setReports(prev => {
+                const next = new Map(prev);
+                next.delete(post.id);
+                return next;
+              });
+            } catch (e) {
+              Alert.alert('Error', e instanceof Error ? e.message : 'Could not dismiss the report.');
+            } finally {
+              setDismissingId(null);
+            }
+          },
+        },
+      ],
+    );
+  }, [repo]);
+
   // Reported posts first (most recently reported at top), then newest posts.
   const displayPosts = React.useMemo(() => {
     const reported = posts.filter(p => reports.has(p.id));
@@ -154,6 +184,7 @@ export default function CommunityModerationScreen() {
     const typeColor  = TYPE_COLOR[item.postType] ?? '#64748B';
     const authorName = item.authorProfile?.username ?? '…';
     const removing   = removingId === item.id;
+    const dismissing = dismissingId === item.id;
     const report     = reports.get(item.id);
     return (
       <TouchableOpacity
@@ -195,6 +226,24 @@ export default function CommunityModerationScreen() {
             </View>
           )}
           <View style={{ flex: 1 }} />
+          {report && (
+            <TouchableOpacity
+              onPress={() => handleDismiss(item)}
+              disabled={dismissing}
+              activeOpacity={0.85}
+              style={[styles.removeBtn, { backgroundColor: colors.mutedForeground + '12', borderColor: colors.border }]}
+              hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+            >
+              {dismissing ? (
+                <ActivityIndicator size="small" color={colors.mutedForeground} />
+              ) : (
+                <>
+                  <Feather name="check" size={13} color={colors.mutedForeground} />
+                  <Text style={[styles.removeBtnLabel, { color: colors.mutedForeground }]}>Dismiss</Text>
+                </>
+              )}
+            </TouchableOpacity>
+          )}
           <TouchableOpacity
             onPress={() => handleRemove(item)}
             disabled={removing}
@@ -214,7 +263,7 @@ export default function CommunityModerationScreen() {
         </View>
       </TouchableOpacity>
     );
-  }, [colors, removingId, router, handleRemove, reports]);
+  }, [colors, removingId, dismissingId, router, handleRemove, handleDismiss, reports]);
 
   return (
     <>

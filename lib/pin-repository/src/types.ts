@@ -227,6 +227,11 @@ export interface Profile {
    * Derived server-side — approx_lat/lng are NEVER exposed to the client.
    */
   hasLocationSet: boolean;
+  /**
+   * The last UK postcode the collector used for geocoding.
+   * Stored for UX pre-fill only — never used for precise location.
+   */
+  postcode?: string;
   nearbyDiscoveryEnabled: boolean;
   preferredRadiusMiles: number;
   openToLocalTrades: boolean;
@@ -249,6 +254,8 @@ export interface UpdateProfileInput {
   town?: string;
   county?: string;
   country?: string;
+  /** Update the stored postcode (used for geocoding pre-fill). */
+  postcode?: string;
   nearbyDiscoveryEnabled?: boolean;
   preferredRadiusMiles?: number;
   openToLocalTrades?: boolean;

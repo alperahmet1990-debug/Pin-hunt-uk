@@ -111,6 +111,7 @@ function rowToProfile(row: Record<string, unknown>): Profile {
     // and must never be read by client code. has_location_set is a safe boolean
     // kept in sync by a DB trigger (sync_has_location_set).
     hasLocationSet: (row.has_location_set as boolean) ?? false,
+    postcode: (row.postcode as string | null) ?? undefined,
     nearbyDiscoveryEnabled: (row.nearby_discovery_enabled as boolean) ?? false,
     preferredRadiusMiles: (row.preferred_radius_miles as number) ?? 25,
     openToLocalTrades: (row.open_to_local_trades as boolean) ?? false,
@@ -211,6 +212,7 @@ const SAFE_PROFILE_COLUMNS = [
   // migration 007 — local discovery fields (coordinates excluded)
   'town', 'county', 'country',
   'has_location_set',           // safe boolean — kept in sync by trigger (migration 008)
+  'postcode',                   // last geocoded postcode — display-safe, for UX pre-fill (migration 012)
   'nearby_discovery_enabled', 'preferred_radius_miles',
   'open_to_local_trades', 'open_to_postal_trades', 'happy_to_travel',
 ].join(', ');
@@ -294,6 +296,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (input.openToLocalTrades !== undefined) upsertData.open_to_local_trades = input.openToLocalTrades;
     if (input.openToPostalTrades !== undefined) upsertData.open_to_postal_trades = input.openToPostalTrades;
     if (input.happyToTravel !== undefined) upsertData.happy_to_travel = input.happyToTravel;
+    if (input.postcode !== undefined) upsertData.postcode = input.postcode ?? null;
 
     const { data, error } = await this.client
       .from('profiles')

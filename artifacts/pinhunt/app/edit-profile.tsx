@@ -178,7 +178,7 @@ export default function EditProfileScreen() {
   const [town, setTown] = useState(profile?.town ?? '');
   const [county, setCounty] = useState(profile?.county ?? '');
   const [country, setCountry] = useState(profile?.country ?? '');
-  const [postcode, setPostcode] = useState('');
+  const [postcode, setPostcode] = useState(profile?.postcode ?? '');
   const [nearbyDiscovery, setNearbyDiscovery] = useState(profile?.nearbyDiscoveryEnabled ?? false);
   const [preferredRadius, setPreferredRadius] = useState<number>(profile?.preferredRadiusMiles ?? 25);
   const [openToLocal, setOpenToLocal] = useState(profile?.openToLocalTrades ?? false);

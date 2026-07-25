@@ -109,11 +109,14 @@ router.post('/geocode', async (req: Request, res: Response) => {
   }
 
   // ── 6. Persist approx_lat / approx_lng (service role bypasses column RLS) ──
+  // Also store the normalised postcode so Edit Profile can pre-fill it.
+  const normalisedPostcode = postcode.trim().toUpperCase();
   const { error: updateError } = await adminClient
     .from('profiles')
     .update({
       approx_lat: coords.lat,
       approx_lng: coords.lng,
+      postcode: normalisedPostcode,
       updated_at: new Date().toISOString(),
     })
     .eq('id', user.id);

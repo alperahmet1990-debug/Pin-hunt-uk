@@ -25,6 +25,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
+import { useProfile } from '@/context/ProfileContext';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
@@ -196,9 +197,10 @@ function DetailPhotoGrid({ photos, onPress }: { photos: string[]; onPress(i: num
 
 // ─── Comment row ─────────────────────────────────────────────────────────────
 
-function CommentRow({ comment, isMe, onDelete, colors }: {
+function CommentRow({ comment, isMe, isAdmin, onDelete, colors }: {
   comment: PostComment;
   isMe: boolean;
+  isAdmin: boolean;
   onDelete: () => void;
   colors: ReturnType<typeof useColors>;
 }) {
@@ -210,7 +212,7 @@ function CommentRow({ comment, isMe, onDelete, colors }: {
         <View style={styles.commentMeta}>
           <Text style={[styles.commentAuthor, { color: colors.foreground }]}>@{name}</Text>
           <Text style={[styles.commentTime, { color: colors.mutedForeground }]}>{timeAgo(comment.createdAt)}</Text>
-          {isMe && (
+          {(isMe || isAdmin) && (
             <TouchableOpacity onPress={onDelete} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
               <Feather name="trash-2" size={13} color={colors.destructive} />
             </TouchableOpacity>
@@ -231,6 +233,8 @@ export default function PostDetailScreen() {
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
   const { repo, userId } = useCommunity();
+  const { profile } = useProfile();
+  const isAdmin = profile?.isAdmin === true;
 
   const [post,        setPost]        = useState<CommunityPost | null>(null);
   const [comments,    setComments]    = useState<PostComment[]>([]);
@@ -299,10 +303,16 @@ export default function PostDetailScreen() {
 
   const handleDeletePost = async () => {
     if (!repo || !post) return;
-    Alert.alert('Delete post?', 'This cannot be undone.', [
+    const title   = isAdmin && !isAuthor ? 'Remove post?' : 'Delete post?';
+    const message = isAdmin && !isAuthor
+      ? 'This will permanently remove the post from the community feed.'
+      : 'This cannot be undone.';
+    Alert.alert(title, message, [
       { text: 'Cancel', style: 'cancel' },
       {
-        text: 'Delete', style: 'destructive', onPress: async () => {
+        text: isAdmin && !isAuthor ? 'Remove' : 'Delete',
+        style: 'destructive',
+        onPress: async () => {
           try {
             await repo.deleteCommunityPost(post.id);
             router.back();
@@ -331,6 +341,7 @@ export default function PostDetailScreen() {
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 8;
   const isAuthor = post?.authorId === userId;
+  const canDeletePost = isAuthor || isAdmin;
   const photos = post?.photos ?? [];
 
   if (loading) {
@@ -363,7 +374,7 @@ export default function PostDetailScreen() {
       <Stack.Screen
         options={{
           title: TYPE_LABEL[post.postType] ?? 'Post',
-          headerRight: isAuthor
+          headerRight: canDeletePost
             ? () => (
                 <TouchableOpacity onPress={handleDeletePost} style={{ padding: 8 }}>
                   <Feather name="trash-2" size={18} color={colors.destructive} />
@@ -465,6 +476,7 @@ export default function PostDetailScreen() {
                   key={c.id}
                   comment={c}
                   isMe={c.authorId === userId}
+                  isAdmin={isAdmin}
                   onDelete={() => handleDeleteComment(c.id)}
                   colors={colors}
                 />

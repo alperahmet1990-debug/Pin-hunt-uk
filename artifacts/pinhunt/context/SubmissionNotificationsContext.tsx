@@ -139,6 +139,47 @@ export function SubmissionNotificationsProvider({
     }
   }, [userId, refresh]);
 
+  // ── Realtime: react to status changes on the user's submissions ────────────
+  useEffect(() => {
+    if (!userId || !isSupabaseConfigured) return;
+
+    const channel = supabase
+      .channel(`pin_submissions_user_${userId}`)
+      .on(
+        'postgres_changes',
+        {
+          event: 'UPDATE',
+          schema: 'public',
+          table: 'pin_submissions',
+          filter: `submitted_by=eq.${userId}`,
+        },
+        async (payload) => {
+          const row = payload.new as { id?: string; status?: PinSubmissionStatus };
+          if (!row?.id || !row?.status) return;
+
+          const existing = submissionsRef.current.find(s => s.id === row.id);
+          if (existing) {
+            // Patch the cached submission's status and recompute unseen
+            // without a full refetch.
+            submissionsRef.current = submissionsRef.current.map(s =>
+              s.id === row.id ? { ...s, status: row.status as PinSubmissionStatus } : s,
+            );
+            const unseen = await computeUnseen(submissionsRef.current);
+            setUnseenIds(unseen);
+          } else {
+            // Unknown submission (e.g. created on another device) — fall back
+            // to a full refresh.
+            refresh();
+          }
+        },
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [userId, computeUnseen, refresh]);
+
   // ── Re-fetch when app returns to foreground ─────────────────────────────────
   useEffect(() => {
     const sub = AppState.addEventListener('change', (state) => {

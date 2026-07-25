@@ -20,7 +20,7 @@ import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 
@@ -200,6 +200,50 @@ export default function MySubmissionsScreen() {
   }, [repo, userId]);
 
   useEffect(() => { load(); }, [load]);
+
+  // Realtime: patch statuses live while the screen is open
+  useEffect(() => {
+    if (!userId || !isSupabaseConfigured) return;
+
+    const channel = supabase
+      .channel(`my_submissions_${userId}`)
+      .on(
+        'postgres_changes',
+        {
+          event: 'UPDATE',
+          schema: 'public',
+          table: 'pin_submissions',
+          filter: `submitted_by=eq.${userId}`,
+        },
+        (payload) => {
+          const row = payload.new as {
+            id?: string;
+            status?: PinSubmissionStatus;
+            reviewer_notes?: string | null;
+          };
+          if (!row?.id || !row?.status) return;
+          setSubmissions(prev =>
+            prev.map(s =>
+              s.id === row.id
+                ? {
+                    ...s,
+                    status: row.status as PinSubmissionStatus,
+                    reviewerNotes:
+                      row.reviewer_notes !== undefined
+                        ? row.reviewer_notes ?? undefined
+                        : s.reviewerNotes,
+                  }
+                : s,
+            ),
+          );
+        },
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [userId]);
 
   // Mark all unseen submissions as seen when this screen mounts
   useEffect(() => {

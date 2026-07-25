@@ -26,3 +26,4 @@ defaultBucketID = "replit-objstore-b56dd563-927e-45cb-ad9d-8ed9707b5055"
 
 [userenv.shared]
 EBAY_ENVIRONMENT = "production"
+EBAY_DELETION_ENDPOINT_URL = "https://mobile-app-builder-alperahmet1990.replit.app/api/ebay/account-deletion"

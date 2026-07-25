@@ -14,6 +14,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Tabs } from 'expo-router';
 import { Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
 import { SymbolView } from 'expo-symbols';
+import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 
 // ─── Raised scan button (ClassicTabLayout only) ───────────────────────────────
 
@@ -68,6 +69,24 @@ function NativeTabLayout() {
   );
 }
 
+// ─── Profile tab icon with optional badge dot ─────────────────────────────────
+
+function ProfileTabIcon({ color, hasBadge }: { color: string; hasBadge: boolean }) {
+  const isIOS = Platform.OS === 'ios';
+  return (
+    <View>
+      {isIOS ? (
+        <SymbolView name="person" tintColor={color} size={24} />
+      ) : (
+        <Feather name="user" size={22} color={color} />
+      )}
+      {hasBadge && (
+        <View style={styles.badgeDot} />
+      )}
+    </View>
+  );
+}
+
 // ─── Classic tab layout (Android + Web) ──────────────────────────────────────
 
 function ClassicTabLayout() {
@@ -76,6 +95,7 @@ function ClassicTabLayout() {
   const isDark = colorScheme === 'dark';
   const isIOS = Platform.OS === 'ios';
   const isWeb = Platform.OS === 'web';
+  const { unseenCount } = useSubmissionNotifications();
 
   return (
     <Tabs
@@ -162,12 +182,9 @@ function ClassicTabLayout() {
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) =>
-            isIOS ? (
-              <SymbolView name="person" tintColor={color} size={24} />
-            ) : (
-              <Feather name="user" size={22} color={color} />
-            ),
+          tabBarIcon: ({ color }) => (
+            <ProfileTabIcon color={color} hasBadge={unseenCount > 0} />
+          ),
         }}
       />
 
@@ -208,5 +225,14 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     // Elevation (Android)
     elevation: 10,
+  },
+  badgeDot: {
+    position: 'absolute',
+    top: -2,
+    right: -4,
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#EF4444',
   },
 });

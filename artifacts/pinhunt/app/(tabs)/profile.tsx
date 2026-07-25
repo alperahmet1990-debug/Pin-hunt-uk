@@ -15,6 +15,7 @@ import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
+import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
@@ -25,9 +26,10 @@ interface SettingsRowProps {
   onPress?: () => void;
   destructive?: boolean;
   last?: boolean;
+  badge?: number;
 }
 
-function SettingsRow({ icon, label, value, onPress, destructive, last }: SettingsRowProps) {
+function SettingsRow({ icon, label, value, onPress, destructive, last, badge }: SettingsRowProps) {
   const colors = useColors();
   const fg = destructive ? colors.destructive : colors.foreground;
   return (
@@ -40,6 +42,11 @@ function SettingsRow({ icon, label, value, onPress, destructive, last }: Setting
         <Feather name={icon} size={16} color={fg} />
       </View>
       <Text style={[styles.rowLabel, { color: fg }]}>{label}</Text>
+      {badge != null && badge > 0 ? (
+        <View style={styles.badgePill}>
+          <Text style={styles.badgePillText}>{badge}</Text>
+        </View>
+      ) : null}
       {value ? (
         <Text style={[styles.rowValue, { color: colors.mutedForeground }]}>{value}</Text>
       ) : null}
@@ -68,6 +75,7 @@ export default function ProfileScreen() {
   const router = useRouter();
   const { profile, loading } = useProfile();
   const { signOut } = useAuth();
+  const { unseenCount } = useSubmissionNotifications();
   const isAdmin = profile?.isAdmin === true;
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
@@ -146,6 +154,7 @@ export default function ProfileScreen() {
                 icon="upload"
                 label="My Pin Submissions"
                 onPress={() => router.push('/my-submissions')}
+                badge={unseenCount}
                 last
               />
             </Section>
@@ -224,6 +233,16 @@ const styles = StyleSheet.create({
   rowIcon: { width: 30, height: 30, alignItems: 'center', justifyContent: 'center' },
   rowLabel: { flex: 1, fontSize: 14, fontFamily: 'Inter_500Medium' },
   rowValue: { fontSize: 13, fontFamily: 'Inter_400Regular', marginRight: 4 },
+  badgePill: {
+    backgroundColor: '#EF4444',
+    borderRadius: 10,
+    paddingHorizontal: 7,
+    paddingVertical: 2,
+    minWidth: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  badgePillText: { fontSize: 11, fontFamily: 'Inter_700Bold', color: '#fff' },
   footer: { alignItems: 'center', paddingTop: 8, gap: 4 },
   footerText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
 });

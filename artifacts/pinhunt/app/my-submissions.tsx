@@ -22,6 +22,7 @@ import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
+import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 
 const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   draft:          'Draft',
@@ -47,12 +48,14 @@ function SubmissionCard({
   colors,
   onPress,
   onDelete,
+  isUnseen,
 }: {
   submission: PinSubmission;
   imageUrl?: string;
   colors: ReturnType<typeof useColors>;
   onPress: () => void;
   onDelete?: () => void;
+  isUnseen?: boolean;
 }) {
   const statusColor = STATUS_COLOR[submission.status];
   const canDelete   = submission.status === 'draft';
@@ -61,7 +64,15 @@ function SubmissionCard({
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
-      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+      style={[
+        styles.card,
+        {
+          backgroundColor: colors.card,
+          borderColor: isUnseen ? statusColor : colors.border,
+          borderRadius: colors.radius,
+          borderWidth: isUnseen ? 2 : 1,
+        },
+      ]}
     >
       {/* Thumbnail */}
       <View style={[styles.thumb, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
@@ -74,9 +85,16 @@ function SubmissionCard({
 
       {/* Info */}
       <View style={styles.cardInfo}>
-        <Text style={[styles.cardName, { color: colors.foreground }]} numberOfLines={2}>
-          {submission.proposedName}
-        </Text>
+        <View style={styles.cardNameRow}>
+          <Text style={[styles.cardName, { color: colors.foreground, flex: 1 }]} numberOfLines={2}>
+            {submission.proposedName}
+          </Text>
+          {isUnseen && (
+            <View style={[styles.newBadge, { backgroundColor: statusColor }]}>
+              <Text style={styles.newBadgeLabel}>NEW</Text>
+            </View>
+          )}
+        </View>
         <Text style={[styles.cardBrand, { color: colors.mutedForeground }]}>
           {submission.brand}
         </Text>
@@ -120,6 +138,7 @@ export default function MySubmissionsScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { repo, userId } = useMarketplace();
+  const { unseenIds, markAllSeen } = useSubmissionNotifications();
 
   const [submissions, setSubmissions] = useState<PinSubmission[]>([]);
   const [imageUrls, setImageUrls]     = useState<Record<string, string>>({});
@@ -164,6 +183,13 @@ export default function MySubmissionsScreen() {
   }, [repo, userId]);
 
   useEffect(() => { load(); }, [load]);
+
+  // Mark all unseen submissions as seen when this screen mounts
+  useEffect(() => {
+    markAllSeen();
+  // We only want to run this once on mount — markAllSeen is stable
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleDelete = (submission: PinSubmission) => {
     Alert.alert(
@@ -242,6 +268,7 @@ export default function MySubmissionsScreen() {
                 colors={colors}
                 onPress={() => router.push({ pathname: '/submission/[id]', params: { id: s.id } })}
                 onDelete={s.status === 'draft' ? () => handleDelete(s) : undefined}
+                isUnseen={unseenIds.has(s.id)}
               />
             ))}
           </>
@@ -263,12 +290,15 @@ const styles = StyleSheet.create({
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
   card: {
     flexDirection: 'row', alignItems: 'flex-start',
-    padding: 12, marginBottom: 12, borderWidth: 1, gap: 12,
+    padding: 12, marginBottom: 12, gap: 12,
   },
   thumb: { width: 70, height: 70, alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 },
   thumbImg: { width: 70, height: 70 },
   cardInfo: { flex: 1, gap: 4 },
+  cardNameRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 6 },
   cardName: { fontSize: 14, fontFamily: 'Inter_600SemiBold', lineHeight: 19 },
+  newBadge: { paddingHorizontal: 5, paddingVertical: 2, borderRadius: 4, alignSelf: 'flex-start', marginTop: 2 },
+  newBadgeLabel: { fontSize: 9, fontFamily: 'Inter_700Bold', color: '#fff', letterSpacing: 0.5 },
   cardBrand: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   cardMeta: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
   statusBadge: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 6 },

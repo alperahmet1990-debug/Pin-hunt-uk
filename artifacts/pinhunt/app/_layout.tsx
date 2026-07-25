@@ -9,6 +9,7 @@ import { BoardsProvider } from '@/context/BoardsContext';
 import { PinCatalogueProvider } from '@/context/PinCatalogueContext';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ProfileProvider, useProfile } from '@/context/ProfileContext';
+import { SubmissionNotificationsProvider } from '@/context/SubmissionNotificationsContext';
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -129,13 +130,15 @@ export default function RootLayout() {
               <PinCatalogueProvider>
                 <CollectionProvider>
                   <BoardsProvider>
-                    <GestureHandlerRootView style={{ flex: 1 }}>
-                      <KeyboardProvider>
-                        <AuthGuard>
-                          <RootLayoutNav />
-                        </AuthGuard>
-                      </KeyboardProvider>
-                    </GestureHandlerRootView>
+                    <SubmissionNotificationsProvider>
+                      <GestureHandlerRootView style={{ flex: 1 }}>
+                        <KeyboardProvider>
+                          <AuthGuard>
+                            <RootLayoutNav />
+                          </AuthGuard>
+                        </KeyboardProvider>
+                      </GestureHandlerRootView>
+                    </SubmissionNotificationsProvider>
                   </BoardsProvider>
                 </CollectionProvider>
               </PinCatalogueProvider>

@@ -9,6 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Image,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -22,17 +23,124 @@ import { PinCard } from '@/components/PinCard';
 import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
 import { BoardCardHorizontal } from '@/components/BoardCard';
-import type { CollectionStatus } from '@/types/pin';
+import { getPinImageSource } from '@/utils/pinImage';
 import type { CataloguePin } from '@workspace/pin-repository';
 
-type Section = 'owned' | 'wanted' | 'for_trade';
+// ─── View types ───────────────────────────────────────────────────────────────
+
+type CollectionView =
+  | 'all'
+  | 'sets'
+  | 'collections'
+  | 'duplicates'
+  | 'for_trade'
+  | 'for_sale'
+  | 'iso';
+
 type ViewMode = 'grid' | 'list';
 
-const SECTIONS: Array<{ key: Section; label: string }> = [
-  { key: 'owned', label: 'Owned' },
-  { key: 'wanted', label: 'ISO' },
-  { key: 'for_trade', label: 'For Trade' },
+const VIEWS: Array<{ key: CollectionView; label: string; icon: keyof typeof Feather.glyphMap }> = [
+  { key: 'all', label: 'All Pins', icon: 'layers' },
+  { key: 'sets', label: 'Official Sets', icon: 'package' },
+  { key: 'collections', label: 'My Boards', icon: 'grid' },
+  { key: 'duplicates', label: 'Duplicates', icon: 'copy' },
+  { key: 'for_trade', label: 'For Trade', icon: 'repeat' },
+  { key: 'for_sale', label: 'For Sale', icon: 'tag' },
+  { key: 'iso', label: 'ISO', icon: 'bookmark' },
 ];
+
+// ─── Set card for Official Sets view ──────────────────────────────────────────
+
+interface SetInfo {
+  collectionName: string;
+  totalInCatalogue: number;
+  ownedCount: number;
+  samplePins: CataloguePin[];
+}
+
+function SetCard({ info, colors, onPress }: { info: SetInfo; colors: ReturnType<typeof import('@/hooks/useColors').useColors>; onPress: () => void }) {
+  const pct = info.totalInCatalogue > 0
+    ? Math.round((info.ownedCount / info.totalInCatalogue) * 100)
+    : 0;
+
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.85}
+      style={[
+        setStyles.card,
+        { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+      ]}
+    >
+      {/* Thumbnail strip */}
+      <View style={setStyles.thumbRow}>
+        {info.samplePins.slice(0, 4).map(p => (
+          <Image
+            key={p.id}
+            source={getPinImageSource(p)}
+            style={[setStyles.thumb, { borderRadius: colors.radius - 4 }]}
+          />
+        ))}
+        {info.samplePins.length === 0 && (
+          <View style={[setStyles.thumbEmpty, { backgroundColor: colors.secondary, borderRadius: colors.radius - 4 }]}>
+            <Feather name="image" size={18} color={colors.mutedForeground} />
+          </View>
+        )}
+      </View>
+
+      {/* Info */}
+      <View style={setStyles.info}>
+        <Text style={[setStyles.name, { color: colors.foreground }]} numberOfLines={2}>
+          {info.collectionName}
+        </Text>
+        <Text style={[setStyles.owned, { color: colors.mutedForeground }]}>
+          {info.ownedCount} / {info.totalInCatalogue} owned
+        </Text>
+
+        {/* Progress bar */}
+        <View style={[setStyles.progressTrack, { backgroundColor: colors.secondary }]}>
+          <View
+            style={[
+              setStyles.progressFill,
+              {
+                backgroundColor: pct === 100 ? colors.owned : colors.primary,
+                width: `${pct}%` as any,
+              },
+            ]}
+          />
+        </View>
+        <Text style={[setStyles.pct, { color: pct === 100 ? colors.owned : colors.mutedForeground }]}>
+          {pct}% complete{pct === 100 ? ' ✓' : ''}
+        </Text>
+      </View>
+
+      <Feather name="chevron-right" size={16} color={colors.mutedForeground} style={{ marginLeft: 4 }} />
+    </TouchableOpacity>
+  );
+}
+
+const setStyles = StyleSheet.create({
+  card: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    marginHorizontal: 16,
+    marginBottom: 10,
+    padding: 12,
+    gap: 12,
+  },
+  thumbRow: { flexDirection: 'row', gap: 4 },
+  thumb: { width: 44, height: 44, resizeMode: 'cover' },
+  thumbEmpty: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  info: { flex: 1, gap: 4 },
+  name: { fontSize: 14, fontFamily: 'Inter_600SemiBold', lineHeight: 18 },
+  owned: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  progressTrack: { height: 4, borderRadius: 2, overflow: 'hidden' },
+  progressFill: { height: '100%', borderRadius: 2 },
+  pct: { fontSize: 11, fontFamily: 'Inter_500Medium' },
+});
+
+// ─── Main screen ──────────────────────────────────────────────────────────────
 
 export default function CollectionScreen() {
   const colors = useColors();
@@ -40,9 +148,9 @@ export default function CollectionScreen() {
   const router = useRouter();
   const { collection, counts } = useCollection();
   const { pins: catalogue } = usePinCatalogue();
-  const { allBoards, createBoard, getBoardPins } = useBoards();
+  const { allBoards, customBoards, createBoard, getBoardPins, suggestedBoards } = useBoards();
 
-  const [section, setSection] = useState<Section>('owned');
+  const [view, setView] = useState<CollectionView>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [query, setQuery] = useState('');
   const [createModalVisible, setCreateModalVisible] = useState(false);
@@ -52,43 +160,83 @@ export default function CollectionScreen() {
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
 
-  const filtered = useMemo(() => {
-    const pinIds = Object.values(collection)
-      .filter(e => e.status === section)
-      .map(e => e.pinId);
-    const pins = pinIds
-      .map(id => catalogue.find(p => p.id === id))
-      .filter((p): p is CataloguePin => p !== undefined);
+  // ── Derived collection data ──────────────────────────────────────────────────
 
-    if (!query) return pins;
+  const ownedIds = useMemo(
+    () => new Set(Object.values(collection).filter(e => e.status === 'owned').map(e => e.pinId)),
+    [collection],
+  );
+
+  const forTradeIds = useMemo(
+    () => new Set(Object.values(collection).filter(e => e.status === 'for_trade').map(e => e.pinId)),
+    [collection],
+  );
+
+  const wantedIds = useMemo(
+    () => new Set(Object.values(collection).filter(e => e.status === 'wanted').map(e => e.pinId)),
+    [collection],
+  );
+
+  // All pins with any status
+  const allStatusPins = useMemo(() => {
+    const ids = new Set([...ownedIds, ...forTradeIds, ...wantedIds]);
+    return catalogue.filter(p => ids.has(p.id));
+  }, [catalogue, ownedIds, forTradeIds, wantedIds]);
+
+  // Estimated value — only sum pins that actually have estimatedValueGBP set
+  const estimatedValue = useMemo(() => {
+    let sum = 0;
+    let hasAny = false;
+    for (const id of ownedIds) {
+      const pin = catalogue.find(p => p.id === id);
+      if (pin?.estimatedValueGBP != null) {
+        sum += pin.estimatedValueGBP;
+        hasAny = true;
+      }
+    }
+    return hasAny ? sum : null;
+  }, [ownedIds, catalogue]);
+
+  // Official sets — grouped by pin.collection, from catalogue (all pins in set, not just owned)
+  const officialSets = useMemo<SetInfo[]>(() => {
+    const byCollection = new Map<string, CataloguePin[]>();
+    for (const pin of catalogue) {
+      const list = byCollection.get(pin.collection) ?? [];
+      list.push(pin);
+      byCollection.set(pin.collection, list);
+    }
+    // Only show sets where the user owns at least one pin
+    return Array.from(byCollection.entries())
+      .filter(([, pins]) => pins.some(p => ownedIds.has(p.id)))
+      .map(([collectionName, pins]) => ({
+        collectionName,
+        totalInCatalogue: pins.length,
+        ownedCount: pins.filter(p => ownedIds.has(p.id)).length,
+        samplePins: pins.filter(p => ownedIds.has(p.id)).slice(0, 4),
+      }))
+      .sort((a, b) => b.ownedCount - a.ownedCount);
+  }, [catalogue, ownedIds]);
+
+  // ── Filtered pins for list views ──────────────────────────────────────────────
+
+  const filtered = useMemo(() => {
+    let base: CataloguePin[];
+    if (view === 'all') base = allStatusPins;
+    else if (view === 'for_trade') base = catalogue.filter(p => forTradeIds.has(p.id));
+    else if (view === 'iso') base = catalogue.filter(p => wantedIds.has(p.id));
+    else base = [];
+
+    if (!query) return base;
     const q = query.toLowerCase();
-    return pins.filter(
+    return base.filter(
       p =>
         p.title.toLowerCase().includes(q) ||
         p.collection.toLowerCase().includes(q) ||
         p.characters.some(c => c.toLowerCase().includes(q)),
     );
-  }, [collection, section, query]);
+  }, [view, allStatusPins, catalogue, forTradeIds, wantedIds, query]);
 
-  const estimatedValue = useMemo(() => {
-    const owned = Object.values(collection)
-      .filter(e => e.status === 'owned')
-      .map(e => catalogue.find(p => p.id === e.pinId))
-      .filter(Boolean);
-    return owned.reduce((sum, p) => sum + (p?.estimatedValueGBP ?? 0), 0);
-  }, [collection]);
-
-  const sectionCount = (s: Section) =>
-    s === 'owned' ? counts.owned : s === 'wanted' ? counts.wanted : counts.forTrade;
-
-  const activeColor = (s: Section) =>
-    s === 'owned' ? colors.owned : s === 'wanted' ? colors.wanted : colors.forTrade;
-
-  const emptyMessages: Record<Section, { title: string; subtitle: string }> = {
-    owned: { title: 'No pins owned yet', subtitle: 'Scan a pin or browse the catalogue in Discover to mark pins as Owned.' },
-    wanted: { title: 'No ISO pins yet', subtitle: 'Mark pins as ISO from Discover to track what you are searching for.' },
-    for_trade: { title: 'Nothing up for trade', subtitle: "Mark pins as For Trade to let others know you're open to swaps." },
-  };
+  // ── Handlers ──────────────────────────────────────────────────────────────────
 
   const handleCreateBoard = () => {
     const name = newBoardName.trim();
@@ -100,65 +248,181 @@ export default function CollectionScreen() {
     router.push({ pathname: '/board/[id]', params: { id: board.id } });
   };
 
-  // Boards section shown at top of Owned list
-  const BoardsHeader = useMemo(() => {
-    if (section !== 'owned') return null;
-    return (
-      <View style={styles.boardsSection}>
-        <View style={styles.boardsSectionHeader}>
-          <Text style={[styles.boardsSectionTitle, { color: colors.foreground }]}>Boards</Text>
-          <TouchableOpacity
-            onPress={() => {
+  const handleViewChange = (v: CollectionView) => {
+    Haptics.selectionAsync();
+    setView(v);
+    setQuery('');
+  };
+
+  // ── Empty messages ─────────────────────────────────────────────────────────────
+
+  const emptyConfig: Record<CollectionView, { icon: keyof typeof Feather.glyphMap; title: string; subtitle: string; actionLabel?: string }> = {
+    all: { icon: 'layers', title: 'No pins in your collection', subtitle: 'Browse the catalogue in Discover to mark pins as Owned, ISO, or For Trade.' },
+    sets: { icon: 'package', title: 'No official sets yet', subtitle: 'When you mark pins as Owned, their sets will appear here with completion tracking.' },
+    collections: { icon: 'grid', title: 'No boards yet', subtitle: 'Create a board to organise your pins into custom collections.', actionLabel: 'Create Board' },
+    duplicates: { icon: 'copy', title: 'Duplicate tracking coming soon', subtitle: 'Once quantity tracking is added, your duplicate pins will appear here.' },
+    for_trade: { icon: 'repeat', title: 'Nothing up for trade', subtitle: "Mark pins as For Trade to let others know you're open to swaps." },
+    for_sale: { icon: 'tag', title: 'No listings yet', subtitle: 'List pins for sale on Vinted or eBay and link them here from a pin detail page.' },
+    iso: { icon: 'bookmark', title: 'No ISO pins yet', subtitle: 'Mark pins as ISO from Discover to track what you are searching for.' },
+  };
+
+  // ── Render content by view ─────────────────────────────────────────────────────
+
+  const renderContent = () => {
+    // Views with special layouts
+    if (view === 'sets') {
+      if (officialSets.length === 0) {
+        return (
+          <EmptyState
+            icon={emptyConfig.sets.icon}
+            title={emptyConfig.sets.title}
+            subtitle={emptyConfig.sets.subtitle}
+            actionLabel="Browse Catalogue"
+            onAction={() => router.push('/(tabs)/index' as any)}
+          />
+        );
+      }
+      return (
+        <FlatList
+          data={officialSets}
+          keyExtractor={s => s.collectionName}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingTop: 12, paddingBottom: botPad }}
+          renderItem={({ item }) => (
+            <SetCard
+              info={item}
+              colors={colors}
+              onPress={() =>
+                router.push({
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    pathname: '/set/[collection]' as any,
+                  params: { collection: item.collectionName },
+                })
+              }
+            />
+          )}
+        />
+      );
+    }
+
+    if (view === 'collections') {
+      if (customBoards.length === 0) {
+        return (
+          <EmptyState
+            icon={emptyConfig.collections.icon}
+            title={emptyConfig.collections.title}
+            subtitle={emptyConfig.collections.subtitle}
+            actionLabel="Create Board"
+            onAction={() => {
               setNewBoardName('');
               setCreateModalVisible(true);
             }}
-            style={[styles.newBoardBtn, { backgroundColor: colors.secondary, borderRadius: 8, borderColor: colors.border }]}
-            activeOpacity={0.75}
-          >
-            <Feather name="plus" size={14} color={colors.primary} />
-            <Text style={[styles.newBoardBtnLabel, { color: colors.primary }]}>New Board</Text>
-          </TouchableOpacity>
-        </View>
-
-        {allBoards.length === 0 ? (
-          <View style={[styles.emptyBoards, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius, marginHorizontal: 16 }]}>
-            <Feather name="grid" size={20} color={colors.mutedForeground} />
-            <Text style={[styles.emptyBoardsText, { color: colors.mutedForeground }]}>
-              No boards yet. Create one to organise your pins, or add pins to your collection for suggested boards.
-            </Text>
-          </View>
-        ) : (
-          <View style={styles.boardsList}>
-            {allBoards.map(board => {
-              const pins = getBoardPins(board);
-              return (
+          />
+        );
+      }
+      return (
+        <FlatList
+          data={customBoards}
+          keyExtractor={b => b.id}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingTop: 12, paddingBottom: botPad }}
+          renderItem={({ item }) => {
+            const pins = getBoardPins(item);
+            return (
+              <View style={{ marginHorizontal: 0 }}>
                 <BoardCardHorizontal
-                  key={board.id}
-                  board={board}
+                  board={item}
                   pins={pins}
                   onPress={() =>
-                    router.push({ pathname: '/board/[id]', params: { id: board.id } })
+                    router.push({ pathname: '/board/[id]', params: { id: item.id } })
                   }
                 />
-              );
-            })}
-          </View>
-        )}
+              </View>
+            );
+          }}
+          ListFooterComponent={() => (
+            <TouchableOpacity
+              onPress={() => { setNewBoardName(''); setCreateModalVisible(true); }}
+              activeOpacity={0.8}
+              style={[
+                styles.newBoardFooterBtn,
+                { borderColor: colors.border, borderRadius: colors.radius, marginHorizontal: 16, marginTop: 8 },
+              ]}
+            >
+              <Feather name="plus" size={16} color={colors.primary} />
+              <Text style={[styles.newBoardFooterLabel, { color: colors.primary }]}>New Board</Text>
+            </TouchableOpacity>
+          )}
+        />
+      );
+    }
 
-        {/* Divider before pin grid */}
-        {filtered.length > 0 && (
-          <View style={styles.allPinsHeader}>
-            <Text style={[styles.allPinsTitle, { color: colors.foreground }]}>All Owned Pins</Text>
-          </View>
+    if (view === 'duplicates') {
+      return (
+        <EmptyState
+          icon="copy"
+          title={emptyConfig.duplicates.title}
+          subtitle={emptyConfig.duplicates.subtitle}
+        />
+      );
+    }
+
+    if (view === 'for_sale') {
+      return (
+        <EmptyState
+          icon="tag"
+          title={emptyConfig.for_sale.title}
+          subtitle={emptyConfig.for_sale.subtitle}
+          actionLabel="Browse Catalogue"
+          onAction={() => router.push('/(tabs)/index' as any)}
+        />
+      );
+    }
+
+    // Pin list views: all, for_trade, iso
+    if (filtered.length === 0) {
+      return (
+        <EmptyState
+          icon={emptyConfig[view].icon}
+          title={emptyConfig[view].title}
+          subtitle={emptyConfig[view].subtitle}
+          actionLabel="Browse Catalogue"
+          onAction={() => router.push('/(tabs)/index' as any)}
+        />
+      );
+    }
+
+    return (
+      <FlatList
+        key={viewMode}
+        data={filtered}
+        keyExtractor={p => p.id}
+        numColumns={viewMode === 'grid' ? 2 : 1}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          styles.listContent,
+          { paddingBottom: botPad },
+          viewMode === 'grid' && styles.gridPadding,
+        ]}
+        columnWrapperStyle={viewMode === 'grid' ? styles.gridRow : undefined}
+        renderItem={({ item }) => (
+          <PinCard
+            pin={item}
+            mode={viewMode}
+            onPress={() =>
+              router.push({ pathname: '/pin/[id]', params: { id: item.id } })
+            }
+          />
         )}
-      </View>
+      />
     );
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [section, allBoards, filtered.length, colors]);
+  };
+
+  const showSearchAndToggle = ['all', 'for_trade', 'iso'].includes(view);
 
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
-      {/* Header */}
+      {/* ── Header ── */}
       <View
         style={[
           styles.headerBar,
@@ -167,121 +431,103 @@ export default function CollectionScreen() {
       >
         <View style={styles.headerRow}>
           <Text style={[styles.headerTitle, { color: colors.foreground }]}>Collection</Text>
-          <TouchableOpacity
-            onPress={() => setViewMode(v => (v === 'grid' ? 'list' : 'grid'))}
-            style={[styles.toggleBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}
-            activeOpacity={0.75}
-          >
-            <Feather name={viewMode === 'grid' ? 'list' : 'grid'} size={18} color={colors.foreground} />
-          </TouchableOpacity>
+          {showSearchAndToggle && (
+            <TouchableOpacity
+              onPress={() => setViewMode(v => (v === 'grid' ? 'list' : 'grid'))}
+              style={[styles.toggleBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}
+              activeOpacity={0.75}
+            >
+              <Feather name={viewMode === 'grid' ? 'list' : 'grid'} size={18} color={colors.foreground} />
+            </TouchableOpacity>
+          )}
         </View>
 
-        {/* Summary row */}
-        <View style={styles.summaryRow}>
-          <View style={styles.summaryItem}>
-            <Text style={[styles.summaryCount, { color: colors.owned }]}>{counts.owned}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>Owned</Text>
-          </View>
-          <View style={styles.summaryItem}>
-            <Text style={[styles.summaryCount, { color: colors.wanted }]}>{counts.wanted}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>ISO</Text>
-          </View>
-          <View style={styles.summaryItem}>
-            <Text style={[styles.summaryCount, { color: colors.forTrade }]}>{counts.forTrade}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>For Trade</Text>
-          </View>
-          <View style={[styles.valueDivider, { backgroundColor: colors.border }]} />
-          <View style={styles.summaryItem}>
-            <Text style={[styles.summaryCount, { color: colors.gold }]}>£{estimatedValue}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>Est. Value*</Text>
-          </View>
-        </View>
+        {/* ── Summary stats ── */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.summaryRow}
+        >
+          <StatChip label="Owned" value={counts.owned} color={colors.owned} colors={colors} />
+          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
+          <StatChip label="For Trade" value={counts.forTrade} color={colors.forTrade} colors={colors} />
+          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
+          <StatChip label="ISO" value={counts.wanted} color={colors.wanted} colors={colors} />
+          {estimatedValue !== null && (
+            <>
+              <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
+              <StatChip
+                label="Est. Value"
+                value={`£${estimatedValue.toFixed(0)}`}
+                color={colors.gold}
+                colors={colors}
+                isString
+              />
+            </>
+          )}
+          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
+          <StatChip label="Sets" value={officialSets.length} color={colors.primary} colors={colors} />
+          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
+          <StatChip label="Boards" value={customBoards.length} color={colors.accent} colors={colors} />
+        </ScrollView>
 
-        {/* Section tabs */}
-        <View style={[styles.tabRow, { borderBottomColor: colors.border }]}>
-          {SECTIONS.map(s => {
-            const isActive = s.key === section;
+        {/* ── View tabs ── */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.tabScroll}
+        >
+          {VIEWS.map(v => {
+            const isActive = v.key === view;
+            const activeColor =
+              v.key === 'for_trade' ? colors.forTrade
+              : v.key === 'iso' ? colors.wanted
+              : colors.primary;
             return (
               <TouchableOpacity
-                key={s.key}
-                onPress={() => { setSection(s.key); setQuery(''); }}
+                key={v.key}
+                onPress={() => handleViewChange(v.key)}
                 style={[
                   styles.tab,
-                  isActive && { borderBottomColor: activeColor(s.key), borderBottomWidth: 2 },
+                  isActive && {
+                    backgroundColor: activeColor + '18',
+                    borderColor: activeColor,
+                  },
+                  !isActive && { borderColor: colors.border },
+                  { borderRadius: 20 },
                 ]}
                 activeOpacity={0.75}
               >
-                <Text style={[styles.tabLabel, { color: isActive ? activeColor(s.key) : colors.mutedForeground }]}>
-                  {s.label}
+                <Feather
+                  name={v.icon}
+                  size={13}
+                  color={isActive ? activeColor : colors.mutedForeground}
+                />
+                <Text
+                  style={[
+                    styles.tabLabel,
+                    { color: isActive ? activeColor : colors.mutedForeground },
+                  ]}
+                >
+                  {v.label}
                 </Text>
-                <View style={[styles.tabBadge, { backgroundColor: isActive ? activeColor(s.key) : colors.secondary }]}>
-                  <Text style={[styles.tabBadgeLabel, { color: isActive ? '#fff' : colors.mutedForeground }]}>
-                    {sectionCount(s.key)}
-                  </Text>
-                </View>
               </TouchableOpacity>
             );
           })}
-        </View>
+        </ScrollView>
 
-        <View style={{ paddingBottom: 8 }}>
-          <SearchBar value={query} onChangeText={setQuery} placeholder="Search this section…" />
-        </View>
+        {/* ── Search bar (only for pin-list views) ── */}
+        {showSearchAndToggle && (
+          <View style={{ paddingBottom: 8 }}>
+            <SearchBar value={query} onChangeText={setQuery} placeholder="Search pins…" />
+          </View>
+        )}
       </View>
 
-      {section !== 'owned' && filtered.length === 0 ? (
-        <EmptyState
-          icon={section === 'wanted' ? 'bookmark' : 'repeat'}
-          title={emptyMessages[section].title}
-          subtitle={emptyMessages[section].subtitle}
-          actionLabel="Browse Catalogue"
-          onAction={() => router.push('/(tabs)/index')}
-        />
-      ) : section === 'owned' && filtered.length === 0 && allBoards.length === 0 ? (
-        <>
-          {BoardsHeader}
-          <EmptyState
-            icon="heart"
-            title={emptyMessages.owned.title}
-            subtitle={emptyMessages.owned.subtitle}
-            actionLabel="Browse Catalogue"
-            onAction={() => router.push('/(tabs)/index')}
-          />
-        </>
-      ) : (
-        <FlatList
-          key={viewMode}
-          data={filtered}
-          keyExtractor={p => p.id}
-          numColumns={viewMode === 'grid' ? 2 : 1}
-          showsVerticalScrollIndicator={false}
-          ListHeaderComponent={BoardsHeader}
-          contentContainerStyle={[
-            styles.listContent,
-            { paddingBottom: botPad },
-            viewMode === 'grid' && styles.gridPadding,
-          ]}
-          columnWrapperStyle={viewMode === 'grid' ? styles.gridRow : undefined}
-          renderItem={({ item }) => (
-            <PinCard
-              pin={item}
-              mode={viewMode}
-              onPress={() =>
-                router.push({ pathname: '/pin/[id]', params: { id: item.id } })
-              }
-            />
-          )}
-        />
-      )}
+      {/* ── Content ── */}
+      {renderContent()}
 
-      {/* Estimated value disclaimer */}
-      <View style={[styles.disclaimer, { backgroundColor: colors.muted, borderTopColor: colors.border }]}>
-        <Text style={[styles.disclaimerText, { color: colors.mutedForeground }]}>
-          * Estimated values are sample data only and do not reflect real market prices.
-        </Text>
-      </View>
-
-      {/* Create Board Modal */}
+      {/* ── Create Board Modal ── */}
       <Modal
         visible={createModalVisible}
         animationType="fade"
@@ -345,6 +591,33 @@ export default function CollectionScreen() {
   );
 }
 
+// ─── Stat chip helper ─────────────────────────────────────────────────────────
+
+function StatChip({
+  label,
+  value,
+  color,
+  colors,
+  isString,
+}: {
+  label: string;
+  value: number | string;
+  color: string;
+  colors: ReturnType<typeof import('@/hooks/useColors').useColors>;
+  isString?: boolean;
+}) {
+  return (
+    <View style={styles.statItem}>
+      <Text style={[styles.statCount, { color }]}>
+        {isString ? value : (value as number)}
+      </Text>
+      <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>{label}</Text>
+    </View>
+  );
+}
+
+// ─── Styles ───────────────────────────────────────────────────────────────────
+
 const styles = StyleSheet.create({
   root: { flex: 1 },
   headerBar: { borderBottomWidth: StyleSheet.hairlineWidth },
@@ -357,86 +630,50 @@ const styles = StyleSheet.create({
   },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
   toggleBtn: { padding: 8 },
+  // Stats
   summaryRow: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    marginBottom: 12,
-    gap: 4,
+    paddingBottom: 12,
+    gap: 0,
   },
-  summaryItem: { flex: 1, alignItems: 'center' },
-  summaryCount: { fontSize: 20, fontFamily: 'Inter_700Bold' },
-  summaryLabel: { fontSize: 10, fontFamily: 'Inter_400Regular', marginTop: 2 },
-  valueDivider: { width: StyleSheet.hairlineWidth, height: 32 },
-  tabRow: {
+  statItem: { alignItems: 'center', paddingHorizontal: 12 },
+  statCount: { fontSize: 20, fontFamily: 'Inter_700Bold' },
+  statLabel: { fontSize: 10, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  statDivider: { width: StyleSheet.hairlineWidth, height: 32 },
+  // Tabs
+  tabScroll: {
     flexDirection: 'row',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    marginBottom: 8,
+    paddingHorizontal: 12,
+    paddingBottom: 10,
+    gap: 8,
   },
   tab: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 10,
-    gap: 6,
-    borderBottomWidth: 2,
-    borderBottomColor: 'transparent',
-  },
-  tabLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  tabBadge: {
-    minWidth: 20,
-    height: 18,
-    borderRadius: 9,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 5,
-  },
-  tabBadgeLabel: { fontSize: 10, fontFamily: 'Inter_700Bold' },
-  listContent: { paddingTop: 0 },
-  gridPadding: { paddingHorizontal: 16 },
-  gridRow: { gap: 12, justifyContent: 'space-between' },
-  disclaimer: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
-  disclaimerText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  // Boards section
-  boardsSection: { paddingTop: 16, paddingBottom: 4 },
-  boardsSectionHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    marginBottom: 12,
-  },
-  boardsSectionTitle: { fontSize: 18, fontFamily: 'Inter_700Bold' },
-  newBoardBtn: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 7,
     borderWidth: 1,
   },
-  newBoardBtnLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  emptyBoards: {
+  tabLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  // List
+  listContent: { paddingTop: 12 },
+  gridPadding: { paddingHorizontal: 16 },
+  gridRow: { gap: 12, justifyContent: 'space-between' },
+  // New board footer button
+  newBoardFooterBtn: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    padding: 14,
-    gap: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    paddingVertical: 14,
     borderWidth: 1,
-    marginBottom: 16,
+    borderStyle: 'dashed',
+    marginBottom: 20,
   },
-  emptyBoardsText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
-  boardsList: { marginBottom: 16 },
-  allPinsHeader: {
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    paddingTop: 4,
-  },
-  allPinsTitle: { fontSize: 16, fontFamily: 'Inter_700Bold' },
+  newBoardFooterLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   // Create modal
   modalBackdrop: {
     flex: 1,

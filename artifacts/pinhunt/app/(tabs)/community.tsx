@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  AppState,
   Dimensions,
   Image,
   Platform,
@@ -276,6 +277,22 @@ export default function CommunityScreen() {
 
   useEffect(() => { load(); }, [load]);
 
+  // Keep a stable reference to `load` so the realtime subscriptions and the
+  // AppState listener below don't tear down and resubscribe every time the
+  // callback identity changes.
+  const loadRef = useRef(load);
+  useEffect(() => { loadRef.current = load; }, [load]);
+
+  // Realtime sockets are suspended while the app is backgrounded, so events
+  // sent during that window are lost. Run one catch-up fetch whenever the app
+  // returns to the foreground (no polling).
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', state => {
+      if (state === 'active') { loadRef.current(); }
+    });
+    return () => { sub.remove(); };
+  }, []);
+
   // ── Realtime: prepend new posts as they arrive ─────────────────────────────
   useEffect(() => {
     if (!repo || !isSupabaseConfigured) return;
@@ -303,7 +320,11 @@ export default function CommunityScreen() {
           }
         },
       )
-      .subscribe();
+      .subscribe(status => {
+        // On (re)connect, run one catch-up fetch so posts created while the
+        // channel was down are picked up.
+        if (status === 'SUBSCRIBED') { loadRef.current(); }
+      });
 
     return () => {
       supabase.removeChannel(channel);
@@ -332,7 +353,11 @@ export default function CommunityScreen() {
           });
         },
       )
-      .subscribe();
+      .subscribe(status => {
+        // On (re)connect, refresh the feed so comment counts that changed
+        // while the channel was down are corrected.
+        if (status === 'SUBSCRIBED') { loadRef.current(); }
+      });
 
     return () => {
       supabase.removeChannel(channel);

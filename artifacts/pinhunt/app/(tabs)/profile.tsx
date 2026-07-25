@@ -13,7 +13,6 @@ import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
-import { useCollection } from '@/context/CollectionContext';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 
@@ -67,7 +66,6 @@ export default function ProfileScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { counts } = useCollection();
   const { profile, loading } = useProfile();
   const { signOut } = useAuth();
   const isAdmin = profile?.isAdmin === true;
@@ -106,12 +104,6 @@ export default function ProfileScreen() {
                 {profile?.username ? `@${profile.username}` : 'Your Profile'}
               </Text>
 
-              {profile?.username && (
-                <Text style={[styles.usernameLabel, { color: colors.mutedForeground }]}>
-                  @{profile.username}
-                </Text>
-              )}
-
               {profile?.tradingRegion && (
                 <View style={styles.regionRow}>
                   <Feather name="map-pin" size={12} color={colors.mutedForeground} />
@@ -131,23 +123,6 @@ export default function ProfileScreen() {
                 </Text>
               )}
 
-              {/* Collection stats */}
-              <View style={[styles.statsRow, { borderTopColor: colors.border }]}>
-                <View style={styles.statItem}>
-                  <Text style={[styles.statCount, { color: colors.owned }]}>{counts.owned}</Text>
-                  <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Owned</Text>
-                </View>
-                <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
-                <View style={styles.statItem}>
-                  <Text style={[styles.statCount, { color: colors.wanted }]}>{counts.wanted}</Text>
-                  <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>ISO</Text>
-                </View>
-                <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
-                <View style={styles.statItem}>
-                  <Text style={[styles.statCount, { color: colors.forTrade }]}>{counts.forTrade}</Text>
-                  <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>For Trade</Text>
-                </View>
-              </View>
             </View>
 
             {/* Account */}
@@ -177,7 +152,6 @@ export default function ProfileScreen() {
 
             {/* App Settings */}
             <Section title="App">
-              <SettingsRow icon="moon" label="Appearance" value="System" />
               <SettingsRow icon="download" label="Export Collection" last />
             </Section>
 
@@ -232,33 +206,11 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     gap: 6,
   },
-  avatar: {
-    width: 72,
-    height: 72,
-    borderRadius: 36,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 8,
-  },
-  avatarInitials: { fontSize: 24, fontFamily: 'Inter_700Bold', color: '#fff' },
   displayName: { fontSize: 20, fontFamily: 'Inter_700Bold' },
-  usernameLabel: { fontSize: 14, fontFamily: 'Inter_400Regular', marginTop: -2 },
   regionRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   region: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   bio: { fontSize: 13, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 18, paddingHorizontal: 8 },
   memberSince: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  statsRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    marginTop: 16,
-    paddingTop: 16,
-    width: '100%',
-  },
-  statItem: { flex: 1, alignItems: 'center', gap: 4 },
-  statCount: { fontSize: 22, fontFamily: 'Inter_700Bold' },
-  statLabel: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  statDivider: { width: StyleSheet.hairlineWidth, height: 36 },
   section: { marginBottom: 20, marginHorizontal: 16 },
   sectionTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', marginBottom: 8, letterSpacing: 0.8 },
   sectionCard: { overflow: 'hidden', borderWidth: 1 },

@@ -1,0 +1,439 @@
+I need you to add an Excel catalogue import feature to the PinHunt UK app and import the attached workbook into the existing Supabase database.
+
+The workbook is:
+
+PinHunt_UK_Master_Seed_13000_Pins.xlsx
+
+It contains approximately 13,000 catalogue records. Some records are source-verified, while many are speculative seed records intended to be corrected and improved by users over time.
+
+Objective
+
+Build a safe, repeatable Excel import process that:
+
+1. Reads the Master Catalogue worksheet.
+2. Maps each spreadsheet row into the existing pin catalogue database.
+3. Preserves the distinction between verified and speculative records.
+4. Prevents duplicate imports.
+5. Produces a clear import report.
+6. Supports future re-imports and updated versions of the workbook.
+
+Do not replace or damage existing production data.
+
+First inspect the existing app
+
+Before changing anything:
+
+* Inspect the current Supabase schema.
+* Identify the existing pin catalogue table and related tables.
+* Reuse the current schema where practical.
+* Check whether there are already fields for manufacturer, character, collection, year, edition size, images, confidence, verification or source.
+* Create a migration only where required.
+* Do not create a completely separate catalogue system unless the current schema genuinely cannot support the import.
+
+Spreadsheet columns
+
+The Master Catalogue sheet contains fields similar to:
+
+* PinHunt ID
+* Pin name
+* Brand
+* Series / Collection
+* Character
+* Year
+* Edition size
+* External IDs
+* Categories
+* Release date
+* Retailer
+* Edition type
+* Original price
+* Currency
+* Front image
+* Back image
+* Source URL
+* Verification status
+* Notes
+
+Inspect the exact header names in the workbook rather than relying only on this list.
+
+Recommended database fields
+
+Map the workbook into the existing catalogue fields. Where missing, add suitable columns such as:
+
+pinhunt_id text unique
+name text
+brand text
+manufacturer text
+series_name text
+character_names text[]
+release_year integer
+release_date date
+edition_size integer
+edition_type text
+retailer text
+categories text[]
+original_price numeric
+currency text
+front_image_url text
+back_image_url text
+source_url text
+external_ids jsonb
+verification_status text
+confidence_level text
+record_type text
+needs_review boolean
+is_seed_record boolean
+import_batch_id uuid
+import_source text
+raw_import_data jsonb
+created_at timestamptz
+updated_at timestamptz
+
+Adapt these names to the existing schema rather than duplicating equivalent fields.
+
+Use PostgreSQL arrays or join tables for characters and categories if that matches the existing architecture.
+
+Verification and seed logic
+
+Use the workbook’s verification status to classify each record.
+
+Suggested mapping:
+
+Verified records
+
+Statuses containing terms such as:
+
+* Source verified
+* Official
+* Verified
+* High
+
+Set:
+
+is_seed_record = false
+needs_review = false
+confidence_level = verified or high
+
+Speculative records
+
+Statuses containing terms such as:
+
+* AI expanded
+* speculative
+* Medium
+* Low
+* Seed
+
+Set:
+
+is_seed_record = true
+needs_review = true
+confidence_level = medium or low
+
+Do not present speculative records in the UI as confirmed facts.
+
+In the pin detail page, speculative records should display a small label such as:
+
+Community verification needed
+
+Do not use alarming wording such as “fake” or “invalid”.
+
+Duplicate protection
+
+Use pinhunt_id as the primary import key where available.
+
+The import must be idempotent.
+
+Re-importing the same workbook must not create another 13,000 rows.
+
+Use an upsert strategy:
+
+* If pinhunt_id exists, update the existing catalogue record.
+* If it does not exist, insert it.
+* Never overwrite user-contributed images or corrections with blank spreadsheet values.
+* Never downgrade a community-verified or admin-verified record back to speculative.
+* Do not overwrite newer manual edits unless the importer is explicitly told to do so.
+
+Create a normalised fallback duplicate key for rows without a PinHunt ID using:
+
+brand
++ series
++ pin name
++ character
++ release year
+
+Normalise case, punctuation and whitespace before comparison.
+
+External IDs
+
+The spreadsheet may contain values such as:
+
+* Pin & Pop IDs
+* PinPics IDs
+* retailer SKUs
+* other catalogue IDs
+
+Store these as structured JSON where possible.
+
+Example:
+
+{
+  "pin_and_pop": "122763",
+  "pinpics": null,
+  "retailer_sku": null
+}
+
+Do not lose the original spreadsheet value. Store the original value in raw_import_data if parsing is uncertain.
+
+Import batch tracking
+
+Create an import batch table if one does not already exist.
+
+Suggested fields:
+
+id uuid primary key
+filename text
+file_hash text
+started_at timestamptz
+completed_at timestamptz
+status text
+total_rows integer
+inserted_rows integer
+updated_rows integer
+skipped_rows integer
+error_rows integer
+imported_by uuid
+error_report jsonb
+
+Calculate a hash of the uploaded workbook.
+
+If the identical file has already been successfully imported, warn the admin and require an explicit “Import again” action.
+
+Admin import interface
+
+Create a lightweight admin page called:
+
+Catalogue Import
+
+It should allow an authorised admin to:
+
+1. Upload an .xlsx file.
+2. Select the worksheet, defaulting to Master Catalogue.
+3. Preview the detected headers.
+4. Preview the first 20 rows.
+5. Show how columns will map to database fields.
+6. Validate the workbook before import.
+7. Run a dry run.
+8. Start the real import.
+9. Show live progress.
+10. Download an error report.
+
+The dry run should show:
+
+* Total spreadsheet rows
+* Valid rows
+* New records
+* Existing records to update
+* Possible duplicates
+* Missing required fields
+* Invalid years
+* Invalid edition sizes
+* Invalid URLs
+* Unknown verification statuses
+
+Required validation
+
+At minimum:
+
+* Pin name must not be blank.
+* PinHunt ID should match a format similar to PHUK-00000001.
+* Year should be a reasonable four-digit number when present.
+* Edition size should be numeric when present.
+* Currency should use a normal code such as GBP, USD or EUR.
+* URLs should be validated but should not block import if empty.
+* Blank strings should be converted to null.
+* Semicolon-separated characters and categories should be split and trimmed.
+* Excel serial dates should be converted properly.
+* Preserve Unicode characters and punctuation.
+
+Rows with non-critical issues should still import with needs_review = true.
+
+Rows with critical issues should be skipped and included in the error report.
+
+Performance
+
+Do not insert 13,000 records one at a time from the browser.
+
+Use a server-side import process.
+
+Recommended approach:
+
+* Parse the Excel file server-side using the existing backend environment.
+* Use the xlsx package or another suitable library.
+* Validate and normalise all rows.
+* Import in batches of approximately 250–1,000 records.
+* Use Supabase upsert operations or a PostgreSQL function.
+* Keep the UI responsive.
+* Show processed row counts.
+
+If the current Replit architecture supports background jobs, use one. Otherwise use a server-side endpoint that processes batches safely and reports progress.
+
+Security
+
+Only authenticated admins should be able to access the importer.
+
+Do not expose the Supabase service role key to the browser.
+
+Use server-side environment variables.
+
+Add appropriate Row Level Security policies.
+
+Normal app users must not be able to:
+
+* Upload catalogue spreadsheets
+* Bulk modify catalogue records
+* Promote speculative records to verified without moderation
+* Access raw import logs containing sensitive system details
+
+Community correction support
+
+Ensure imported seed records can later be corrected by users.
+
+Add or retain a correction workflow with:
+
+* catalogue record ID
+* user ID
+* field being corrected
+* current value
+* proposed value
+* optional evidence URL
+* optional front image
+* optional back image
+* status: pending, approved or rejected
+* reviewer
+* timestamps
+
+Approved corrections should update the catalogue record and record the change history.
+
+A record should be promoted from speculative to community-verified only after an approved correction or admin review.
+
+Catalogue filtering
+
+After import, make sure the app can filter catalogue records by:
+
+* Brand
+* Manufacturer
+* Retailer
+* Series
+* Character
+* Year
+* Edition type
+* Edition size
+* Verified only
+* Needs review
+* Has image
+* Missing image
+
+By default, ordinary catalogue search should include seed records, but visually distinguish them from verified records.
+
+Add a toggle:
+
+Verified pins only
+
+Image handling
+
+The spreadsheet may contain front or back image URLs, but many rows will be blank.
+
+Do not create fake placeholder image URLs.
+
+Use the app’s normal placeholder design when no image exists.
+
+Add fields such as:
+
+needs_front_image
+needs_back_image
+
+Set these automatically based on missing image data.
+
+Do not download or copy third-party images during this import unless the app already has a rights-safe image ingestion process.
+
+Import report
+
+At completion, show:
+
+Total rows read
+Inserted
+Updated
+Skipped
+Possible duplicates
+Marked as verified
+Marked as seed records
+Missing front image
+Missing back image
+Errors
+
+Allow the admin to download a CSV containing:
+
+* Spreadsheet row number
+* PinHunt ID
+* Pin name
+* Result
+* Error or warning
+* Database record ID
+
+Audit history
+
+Maintain a change log for important catalogue fields.
+
+Record:
+
+* imported value
+* later corrected value
+* who changed it
+* source of the change
+* timestamp
+
+Do not lose previous values when a user or admin corrects a record.
+
+Rollback
+
+The admin must be able to roll back a completed import batch.
+
+Rollback should:
+
+* Delete records created exclusively by that batch if they have not received user activity.
+* Restore the previous values of records updated by that batch.
+* Never delete user photos, trades, wishlists, collection ownership or community corrections.
+* Refuse automatic deletion where imported records are already referenced by users, and instead mark them for admin review.
+
+Deliverables
+
+Implement:
+
+1. Any required Supabase migration.
+2. Server-side Excel parser and validator.
+3. Batch upsert logic.
+4. Import batch tracking.
+5. Admin upload, preview and dry-run screen.
+6. Import progress screen.
+7. Downloadable error report.
+8. Rollback capability.
+9. Seed-versus-verified UI labels.
+10. Catalogue filters for verification and missing images.
+11. Clear setup instructions.
+12. Tests for duplicate prevention, status mapping and re-import behaviour.
+
+Final verification
+
+Before considering the work complete:
+
+* Import the workbook in dry-run mode.
+* Confirm approximately 13,000 rows are detected.
+* Confirm no duplicate rows are created when the same file is run twice.
+* Confirm verified records remain verified.
+* Confirm speculative rows are marked is_seed_record = true and needs_review = true.
+* Confirm existing user data is unaffected.
+* Confirm the import summary totals match the database.
+* Confirm the app still builds and runs successfully.
+
+Do not simplify this into a basic CSV upload. Build it as a reusable catalogue ingestion tool because we will use updated workbooks and additional pin sources later.

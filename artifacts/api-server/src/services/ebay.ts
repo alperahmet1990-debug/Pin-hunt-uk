@@ -139,7 +139,12 @@ export async function searchListings(
     return {
       itemId: item.itemId,
       title: item.title,
-      itemUrl: item.itemWebUrl,
+      // eBay often returns .com web URLs even for GB-marketplace searches;
+      // point UK results at ebay.co.uk so buyers land on the UK listing page.
+      itemUrl:
+        marketplace === "EBAY_GB" && item.itemWebUrl
+          ? item.itemWebUrl.replace(/^https:\/\/www\.ebay\.com\//, "https://www.ebay.co.uk/")
+          : item.itemWebUrl,
       imageUrl: item.image?.imageUrl,
       itemPrice: item.price?.value != null ? Number(item.price.value) : undefined,
       deliveryPrice: shippingValues.length > 0 ? Math.min(...shippingValues) : undefined,

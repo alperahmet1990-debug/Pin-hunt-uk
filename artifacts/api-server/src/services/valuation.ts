@@ -341,6 +341,19 @@ async function collectListings(
     });
   }
   accepted.sort((a, b) => b.relevance - a.relevance);
+
+  // Specificity band: when some listings match the exact pin far more
+  // strongly (e.g. LE/collection words hit), generic same-theme listings
+  // must not dilute the price. Keep only listings close to the top score.
+  if (accepted.length > 0) {
+    const top = accepted[0].relevance;
+    if (top >= 90) {
+      // Even a tiny sample of the right pin beats a big sample of wrong ones.
+      const banded = accepted.filter(l => l.relevance >= top - 15);
+      rejected.push(...accepted.filter(l => l.relevance < top - 15));
+      return { accepted: banded, rejected };
+    }
+  }
   return { accepted, rejected };
 }
 

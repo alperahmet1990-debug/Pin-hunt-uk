@@ -19,6 +19,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
+import * as ImageManipulator from 'expo-image-manipulator';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
@@ -43,18 +44,49 @@ const TYPE_COLOR: Record<CommunityPostType, string> = {
   discussion:   '#64748B',
 };
 
+// ─── Compress a local image URI to stay well under the 5 MB bucket limit ─────
+
+const MAX_DIMENSION = 1400;
+const JPEG_QUALITY  = 0.8;
+
+async function compressPhoto(uri: string): Promise<string> {
+  // We always output JPEG so we know the mime type and size stays predictable.
+  const result = await ImageManipulator.manipulateAsync(
+    uri,
+    // Pass an empty actions array — manipulateAsync still re-encodes at the
+    // given quality, which alone is enough to bring most phone photos under 5 MB.
+    // We also cap the longest edge at MAX_DIMENSION for very large originals.
+    [],
+    { compress: JPEG_QUALITY, format: ImageManipulator.SaveFormat.JPEG },
+  );
+  // If the image is still very large in pixel terms, do a second pass with resize.
+  const longestSide = Math.max(result.width, result.height);
+  if (longestSide > MAX_DIMENSION) {
+    const resize = result.width >= result.height
+      ? { width: MAX_DIMENSION }
+      : { height: MAX_DIMENSION };
+    const resized = await ImageManipulator.manipulateAsync(
+      result.uri,
+      [{ resize }],
+      { compress: JPEG_QUALITY, format: ImageManipulator.SaveFormat.JPEG },
+    );
+    return resized.uri;
+  }
+  return result.uri;
+}
+
 // ─── Upload a single local URI to Supabase storage ───────────────────────────
 
 async function uploadPhoto(userId: string, uri: string, index: number): Promise<string> {
-  const rawExt = uri.split('?')[0].split('.').pop()?.toLowerCase() ?? 'jpg';
-  const ext = ['jpg', 'jpeg', 'png', 'webp'].includes(rawExt) ? rawExt : 'jpg';
-  const mime = ext === 'png' ? 'image/png' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
-  const path = `${userId}/${Date.now()}-${index}.${ext}`;
+  // Compress first so the file reliably fits within the 5 MB bucket limit.
+  const compressedUri = await compressPhoto(uri);
+
+  const path = `${userId}/${Date.now()}-${index}.jpg`;
 
   // React Native / Expo: fetch().blob() does not upload correctly to Supabase
   // Storage. FormData with a typed file descriptor is the reliable pattern.
   const formData = new FormData();
-  formData.append('file', { uri, name: `photo-${index}.${ext}`, type: mime } as unknown as Blob);
+  formData.append('file', { uri: compressedUri, name: `photo-${index}.jpg`, type: 'image/jpeg' } as unknown as Blob);
 
   const { error } = await supabase.storage
     .from('community-photos')
@@ -133,6 +165,7 @@ export default function CreatePostScreen() {
 
       // Upload photos if any
       let photoUrls: string[] = [];
+      let failedCount = 0;
       if (localPhotos.length > 0) {
         setUploadProgress(`Uploading photos (0/${localPhotos.length})…`);
         const uploaded: string[] = [];
@@ -142,7 +175,7 @@ export default function CreatePostScreen() {
             const url = await uploadPhoto(userId, localPhotos[i], i);
             uploaded.push(url);
           } catch {
-            // Skip failed uploads rather than aborting the whole post
+            failedCount++;
           }
         }
         photoUrls = uploaded;
@@ -155,7 +188,20 @@ export default function CreatePostScreen() {
         photos: photoUrls,
         linkedPinId,
       });
+
+      // Navigate first, then surface any photo failures so the user can see the post was saved.
       router.replace({ pathname: '/community/post/[id]' as any, params: { id: post.id } });
+
+      if (failedCount > 0) {
+        const saved = localPhotos.length - failedCount;
+        const photoWord = (n: number) => `${n} photo${n === 1 ? '' : 's'}`;
+        Alert.alert(
+          'Some photos couldn\'t upload',
+          failedCount === localPhotos.length
+            ? 'None of your photos could be uploaded. Your post was saved without any photos.'
+            : `${photoWord(failedCount)} couldn't be uploaded — post saved with ${photoWord(saved)}.`,
+        );
+      }
     } catch (e) {
       Alert.alert('Error', e instanceof Error ? e.message : 'Could not create post. Try again.');
     } finally {

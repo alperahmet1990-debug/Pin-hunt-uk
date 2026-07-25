@@ -1,28 +1,33 @@
 const colors = {
   light: {
-    text: '#1C1C2E',
-    tint: '#C4933A',
-    background: '#F5F2ED',
-    foreground: '#1C1C2E',
+    // ── Golden Era palette ──────────────────────────────────────────────────
+    // Warm amber-honey tones; every surface feels bathed in golden-hour light.
+    text: '#2D1800',
+    tint: '#E07800',
+    background: '#FFF8EE',
+    foreground: '#2D1800',
     card: '#FFFFFF',
-    cardForeground: '#1C1C2E',
-    primary: '#C4933A',
+    cardForeground: '#2D1800',
+    primary: '#E07800',
     primaryForeground: '#FFFFFF',
-    secondary: '#EDE8DF',
-    secondaryForeground: '#1C1C2E',
-    muted: '#EDE8DF',
-    mutedForeground: '#7A7A8C',
+    // Gradient pair for scan button, hero banners, active pills
+    primaryGradientStart: '#FFC84A',
+    primaryGradientEnd: '#E07800',
+    secondary: '#FFF0D0',
+    secondaryForeground: '#5C3A00',
+    muted: '#FFF0D0',
+    mutedForeground: '#B08040',
     accent: '#3A5FA0',
     accentForeground: '#FFFFFF',
     destructive: '#D9463E',
     destructiveForeground: '#FFFFFF',
-    border: '#DDD7CD',
-    input: '#DDD7CD',
+    border: '#F0E0C0',
+    input: '#F0E0C0',
     // Semantic status colours
     owned: '#2D9E6B',
     wanted: '#D97832',
     forTrade: '#5B6EE8',
-    gold: '#C4933A',
+    gold: '#E07800',
   },
   dark: {
     text: '#EDE8DF',
@@ -33,6 +38,8 @@ const colors = {
     cardForeground: '#EDE8DF',
     primary: '#D4AC54',
     primaryForeground: '#0E0E1A',
+    primaryGradientStart: '#D4AC54',
+    primaryGradientEnd: '#A87730',
     secondary: '#222236',
     secondaryForeground: '#EDE8DF',
     muted: '#222236',
@@ -49,7 +56,7 @@ const colors = {
     forTrade: '#5B6EE8',
     gold: '#D4AC54',
   },
-  radius: 14,
+  radius: 16,
 };
 
 export default colors;

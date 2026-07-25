@@ -45,6 +45,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
             backgroundColor: colors.card,
             borderRadius: colors.radius,
             borderColor: colors.border,
+            shadowColor: colors.primary,
           },
         ]}
       >
@@ -95,6 +96,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
           backgroundColor: colors.card,
           borderRadius: colors.radius,
           borderColor: colors.border,
+          shadowColor: colors.primary,
           width: GRID_CARD_WIDTH,
         },
       ]}
@@ -146,6 +148,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderWidth: 1,
     marginBottom: 12,
+    // Warm golden-hour shadow
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    elevation: 3,
   },
   imageWrap: {
     position: 'relative',
@@ -183,6 +190,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginBottom: 10,
     position: 'relative',
+    // Warm golden-hour shadow
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.07,
+    shadowRadius: 6,
+    elevation: 2,
   },
   listImage: {
     width: 90,

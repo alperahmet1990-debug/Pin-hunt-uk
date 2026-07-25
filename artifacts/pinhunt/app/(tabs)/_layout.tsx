@@ -10,6 +10,7 @@ import { useColors } from '@/hooks/useColors';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Tabs } from 'expo-router';
 import { Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
 import { SymbolView } from 'expo-symbols';
@@ -24,16 +25,15 @@ function ScanTabButton({ onPress }: { onPress?: () => void }) {
       activeOpacity={0.85}
       style={styles.scanBtn}
     >
-      <View
-        style={[
-          styles.scanBtnInner,
-          {
-            backgroundColor: colors.primary,
-            shadowColor: colors.primary,
-          },
-        ]}
-      >
-        <Feather name="camera" size={26} color={colors.primaryForeground} />
+      <View style={[styles.scanBtnRing, { borderColor: colors.background }]}>
+        <LinearGradient
+          colors={[colors.primaryGradientStart, colors.primaryGradientEnd]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={[styles.scanBtnInner, { shadowColor: colors.primary }]}
+        >
+          <Feather name="camera" size={26} color="#FFFFFF" />
+        </LinearGradient>
       </View>
     </TouchableOpacity>
   );
@@ -191,18 +191,22 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingBottom: 4,
   },
+  scanBtnRing: {
+    borderRadius: 34,
+    borderWidth: 3,
+    marginBottom: 4,
+  },
   scanBtnInner: {
     width: 60,
     height: 60,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 4,
     // Shadow (iOS)
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.35,
-    shadowRadius: 8,
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
     // Elevation (Android)
-    elevation: 8,
+    elevation: 10,
   },
 });

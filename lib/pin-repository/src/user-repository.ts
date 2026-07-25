@@ -1,5 +1,9 @@
 import type {
   AddUserPinInput,
+  CommunityPost,
+  Conversation,
+  ConversationMessage,
+  CreateCommunityPostInput,
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
   EditionType,
@@ -9,7 +13,9 @@ import type {
   NearbyCollector,
   PinSubmission,
   PinSubmissionStatus,
+  PostComment,
   PotentialTradePin,
+  StartConversationInput,
   TraderProfile,
   TradeRating,
   TraderRatingSummary,
@@ -238,4 +244,49 @@ export interface IUserPinRepository {
    * to surface a potential trade match.
    */
   getPotentialTrades(input: GetPotentialTradesInput): Promise<PotentialTradePin[]>;
+
+  // ── Community posts ────────────────────────────────────────────────────────
+
+  /** Return community posts, newest first. Optional filter by post type. */
+  getCommunityFeed(options?: { postType?: string; limit?: number; offset?: number }): Promise<CommunityPost[]>;
+
+  /** Return a single post with author profile and linked pin. */
+  getCommunityPost(postId: string): Promise<CommunityPost | null>;
+
+  /** Create a community post as the given author. */
+  createCommunityPost(authorId: string, input: CreateCommunityPostInput): Promise<CommunityPost>;
+
+  /** Delete own post (RLS enforced on server). */
+  deleteCommunityPost(postId: string): Promise<void>;
+
+  // ── Post comments ──────────────────────────────────────────────────────────
+
+  /** Return all comments for a post, oldest first. */
+  getPostComments(postId: string): Promise<PostComment[]>;
+
+  /** Add a comment to a post. */
+  createPostComment(postId: string, authorId: string, body: string): Promise<PostComment>;
+
+  /** Delete own comment (RLS enforced on server). */
+  deletePostComment(commentId: string): Promise<void>;
+
+  // ── Conversations / DMs ────────────────────────────────────────────────────
+
+  /** Return all conversations for userId, sorted by most recent message. */
+  getConversations(userId: string): Promise<Conversation[]>;
+
+  /** Return a single conversation with messages and other participant profile. */
+  getConversation(conversationId: string, currentUserId: string): Promise<Conversation | null>;
+
+  /**
+   * Start a conversation with a recipient and send the opening message.
+   * Returns the new conversation.
+   */
+  startConversation(initiatorId: string, input: StartConversationInput): Promise<Conversation>;
+
+  /** Return all messages in a conversation, oldest first. */
+  getConversationMessages(conversationId: string): Promise<ConversationMessage[]>;
+
+  /** Send a message in an existing conversation. */
+  sendConversationMessage(conversationId: string, senderId: string, body: string): Promise<ConversationMessage>;
 }

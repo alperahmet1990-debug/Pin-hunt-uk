@@ -1,9 +1,14 @@
 /**
- * Community tab — entry point for collector community features.
+ * Community tab — feed of collector posts filterable by category chips,
+ * with a Collectors Nearby entry point.
  */
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
+  ActivityIndicator,
+  Alert,
+  Image,
   Platform,
+  RefreshControl,
   ScrollView,
   StyleSheet,
   Text,
@@ -14,188 +19,385 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { useCommunity } from '@/hooks/useCommunity';
+import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 
-const COMING_SOON = [
-  { icon: 'rss' as const, label: 'Community feed — see what collectors are trading' },
-  { icon: 'message-circle' as const, label: 'Direct messages — chat privately with traders' },
-  { icon: 'award' as const, label: 'Events & meets — local Disney pin trading events' },
+// ─── Constants ────────────────────────────────────────────────────────────────
+
+const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; emoji: string }> = [
+  { key: 'all',          label: 'All',       emoji: '✨' },
+  { key: 'in_search_of', label: 'ISO',       emoji: '🔍' },
+  { key: 'for_trade',    label: 'Trade',     emoji: '🔄' },
+  { key: 'for_sale',     label: 'For Sale',  emoji: '🏷️' },
+  { key: 'new_pickup',   label: 'Pickup',    emoji: '📦' },
+  { key: 'discussion',   label: 'Chat',      emoji: '💬' },
 ];
 
-export default function CommunityScreen() {
+const TYPE_COLOR: Record<CommunityPostType | 'all', string> = {
+  all:          '#6366F1',
+  in_search_of: '#F59E0B',
+  for_trade:    '#3B82F6',
+  for_sale:     '#16A34A',
+  new_pickup:   '#8B5CF6',
+  discussion:   '#64748B',
+};
+
+const TYPE_LABEL: Record<CommunityPostType, string> = {
+  in_search_of: 'In Search Of',
+  for_trade:    'For Trade',
+  for_sale:     'For Sale',
+  new_pickup:   'New Pickup',
+  discussion:   'Discussion',
+};
+
+function timeAgo(iso: string): string {
+  const diff = Date.now() - new Date(iso).getTime();
+  const min = Math.floor(diff / 60000);
+  if (min < 1) return 'just now';
+  if (min < 60) return `${min}m ago`;
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return `${hr}h ago`;
+  const day = Math.floor(hr / 24);
+  if (day < 7) return `${day}d ago`;
+  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+}
+
+// ─── Category chip ────────────────────────────────────────────────────────────
+
+function Chip({ label, emoji, color, active, onPress }: {
+  label: string; emoji: string; color: string; active: boolean; onPress(): void;
+}) {
   const colors = useColors();
-  const insets = useSafeAreaInsets();
-  const router = useRouter();
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.75}
+      style={[
+        styles.chip,
+        {
+          backgroundColor: active ? color : colors.secondary,
+          borderColor: active ? color : colors.border,
+        },
+      ]}
+    >
+      <Text style={styles.chipEmoji}>{emoji}</Text>
+      <Text style={[styles.chipLabel, { color: active ? '#fff' : colors.mutedForeground }]}>
+        {label}
+      </Text>
+    </TouchableOpacity>
+  );
+}
+
+// ─── Post card ────────────────────────────────────────────────────────────────
+
+function PostCard({ post, onPress, colors }: {
+  post: CommunityPost;
+  onPress(): void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  const color = TYPE_COLOR[post.postType];
+  const authorName = post.authorProfile?.username ?? '…';
+
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.85}
+      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+    >
+      {/* Header row */}
+      <View style={styles.cardHeader}>
+        {/* Type badge */}
+        <View style={[styles.typeBadge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
+          <Text style={[styles.typeBadgeLabel, { color }]}>{TYPE_LABEL[post.postType]}</Text>
+        </View>
+
+        {/* Author + time */}
+        <View style={styles.cardMeta}>
+          <Text style={[styles.cardAuthor, { color: colors.foreground }]}>@{authorName}</Text>
+          <Text style={[styles.cardTime, { color: colors.mutedForeground }]}>{timeAgo(post.createdAt)}</Text>
+        </View>
+      </View>
+
+      {/* Body */}
+      <Text style={[styles.cardBody, { color: colors.foreground }]} numberOfLines={3}>
+        {post.body}
+      </Text>
+
+      {/* Linked pin */}
+      {post.linkedPin && (
+        <View style={[styles.pinChip, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
+          {post.linkedPin.imageUrl
+            ? <Image source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
+            : <Feather name="tag" size={12} color={colors.mutedForeground} />
+          }
+          <Text style={[styles.pinChipLabel, { color: colors.mutedForeground }]} numberOfLines={1}>
+            {post.linkedPin.title}
+          </Text>
+        </View>
+      )}
+
+      {/* Footer */}
+      <View style={styles.cardFooter}>
+        <Feather name="message-circle" size={13} color={colors.mutedForeground} />
+        <Text style={[styles.cardCommentCount, { color: colors.mutedForeground }]}>
+          {post.commentCount ?? 0} comment{post.commentCount !== 1 ? 's' : ''}
+        </Text>
+        <Feather name="chevron-right" size={14} color={colors.mutedForeground} style={{ marginLeft: 'auto' }} />
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+// ─── Screen ───────────────────────────────────────────────────────────────────
+
+export default function CommunityScreen() {
+  const colors  = useColors();
+  const insets  = useSafeAreaInsets();
+  const router  = useRouter();
+  const { repo, userId } = useCommunity();
+
+  const [filter, setFilter]     = useState<CommunityPostType | 'all'>('all');
+  const [posts, setPosts]       = useState<CommunityPost[]>([]);
+  const [loading, setLoading]   = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [error, setError]       = useState<string | null>(null);
+  const scrollRef               = useRef<ScrollView>(null);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
 
+  const load = useCallback(async (isRefresh = false) => {
+    if (!repo) { setLoading(false); return; }
+    try {
+      if (isRefresh) setRefreshing(true); else setLoading(true);
+      setError(null);
+      const data = await repo.getCommunityFeed({
+        postType: filter === 'all' ? undefined : filter,
+        limit: 40,
+      });
+      setPosts(data);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to load feed.');
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  }, [repo, filter]);
+
+  useEffect(() => { load(); }, [load]);
+
+  const handleFilterChange = (key: CommunityPostType | 'all') => {
+    setFilter(key);
+    scrollRef.current?.scrollTo({ y: 0, animated: false });
+  };
+
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingTop: topPad + 16,
-          paddingBottom: botPad,
-          flexGrow: 1,
-        }}
-      >
-        {/* Page title */}
-        <View style={styles.header}>
+      {/* Fixed header */}
+      <View style={[styles.header, { paddingTop: topPad + 8, backgroundColor: colors.background, borderBottomColor: colors.border }]}>
+        <View style={styles.titleRow}>
           <Text style={[styles.title, { color: colors.foreground }]}>Community</Text>
-          <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-            Find collectors and trade pins near you
-          </Text>
-        </View>
-
-        {/* ── Collectors Nearby card ── */}
-        <View style={[styles.sectionPad]}>
-          <TouchableOpacity
-            onPress={() => router.push('/nearby')}
-            activeOpacity={0.85}
-            style={[
-              styles.nearbyCard,
-              {
-                backgroundColor: colors.primary,
-                borderRadius: colors.radius,
-              },
-            ]}
-          >
-            <View style={styles.nearbyCardInner}>
-              <View style={[styles.nearbyIconWrap, { backgroundColor: 'rgba(255,255,255,0.18)' }]}>
-                <Feather name="map-pin" size={26} color="#fff" />
-              </View>
-              <View style={styles.nearbyText}>
-                <Text style={styles.nearbyTitle}>Collectors Nearby</Text>
-                <Text style={styles.nearbySub}>
-                  Discover pin collectors in your area and find great trade matches
-                </Text>
-              </View>
-              <Feather name="chevron-right" size={20} color="rgba(255,255,255,0.7)" />
-            </View>
-          </TouchableOpacity>
-        </View>
-
-        {/* ── Trade requests (existing entry) ── */}
-        <View style={[styles.sectionPad]}>
-          <Text style={[styles.sectionHeading, { color: colors.mutedForeground }]}>
-            TRADING
-          </Text>
-          <View
-            style={[
-              styles.actionCard,
-              { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-            ]}
-          >
+          <View style={styles.headerActions}>
             <TouchableOpacity
-              style={styles.actionRow}
-              activeOpacity={0.7}
-              onPress={() => router.push('/find-collectors')}
+              onPress={() => router.push('/community/conversations' as any)}
+              style={[styles.headerIconBtn, { backgroundColor: colors.secondary, borderColor: colors.border }]}
+              activeOpacity={0.75}
             >
-              <View style={[styles.actionIcon, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
-                <Feather name="users" size={18} color={colors.primary} />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={[styles.actionLabel, { color: colors.foreground }]}>Find Collectors</Text>
-                <Text style={[styles.actionDesc, { color: colors.mutedForeground }]}>Search by username or region</Text>
-              </View>
-              <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+              <Feather name="mail" size={18} color={colors.foreground} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                if (!userId) { Alert.alert('Sign in to post'); return; }
+                router.push('/community/create-post' as any);
+              }}
+              style={[styles.headerIconBtn, { backgroundColor: colors.primary }]}
+              activeOpacity={0.85}
+            >
+              <Feather name="plus" size={20} color="#fff" />
             </TouchableOpacity>
           </View>
         </View>
 
-        {/* ── Coming soon ── */}
-        <View style={[styles.sectionPad]}>
-          <Text style={[styles.sectionHeading, { color: colors.mutedForeground }]}>
-            COMING SOON
-          </Text>
-          <View
-            style={[
-              styles.actionCard,
-              { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-            ]}
-          >
-            {COMING_SOON.map((f, i) => (
-              <View
-                key={f.label}
-                style={[
-                  styles.actionRow,
-                  i < COMING_SOON.length - 1 && {
-                    borderBottomWidth: StyleSheet.hairlineWidth,
-                    borderBottomColor: colors.border,
-                  },
-                ]}
-              >
-                <View style={[styles.actionIcon, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
-                  <Feather name={f.icon} size={16} color={colors.mutedForeground} />
-                </View>
-                <Text style={[styles.actionLabel, { color: colors.mutedForeground, flex: 1 }]}>
-                  {f.label}
-                </Text>
-              </View>
-            ))}
+        {/* Collectors Nearby banner */}
+        <TouchableOpacity
+          onPress={() => router.push('/nearby')}
+          activeOpacity={0.85}
+          style={[styles.nearbyBanner, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
+        >
+          <View style={[styles.nearbyIconWrap, { backgroundColor: 'rgba(255,255,255,0.18)' }]}>
+            <Feather name="map-pin" size={18} color="#fff" />
           </View>
-        </View>
+          <Text style={styles.nearbyBannerLabel}>Collectors Nearby</Text>
+          <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.7)" style={{ marginLeft: 'auto' }} />
+        </TouchableOpacity>
+
+        {/* Category chips */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.chips}
+        >
+          {POST_TYPES.map(pt => (
+            <Chip
+              key={pt.key}
+              label={pt.label}
+              emoji={pt.emoji}
+              color={TYPE_COLOR[pt.key]}
+              active={filter === pt.key}
+              onPress={() => handleFilterChange(pt.key)}
+            />
+          ))}
+        </ScrollView>
+      </View>
+
+      {/* Feed */}
+      <ScrollView
+        ref={scrollRef}
+        style={styles.feed}
+        contentContainerStyle={{ padding: 12, paddingBottom: botPad, gap: 10 }}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={() => load(true)}
+            tintColor={colors.primary}
+          />
+        }
+      >
+        {loading ? (
+          <View style={styles.center}>
+            <ActivityIndicator color={colors.primary} />
+          </View>
+        ) : error ? (
+          <View style={styles.center}>
+            <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
+            <TouchableOpacity onPress={() => load()} style={{ padding: 8 }}>
+              <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
+            </TouchableOpacity>
+          </View>
+        ) : posts.length === 0 ? (
+          <View style={styles.empty}>
+            <Feather name="rss" size={40} color={colors.mutedForeground} />
+            <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No posts yet</Text>
+            <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+              {filter === 'all'
+                ? 'Be the first to post in the community!'
+                : `No ${TYPE_LABEL[filter as CommunityPostType]} posts yet.`}
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                if (!userId) { Alert.alert('Sign in to post'); return; }
+                router.push('/community/create-post' as any);
+              }}
+              style={[styles.emptyBtn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
+              activeOpacity={0.85}
+            >
+              <Feather name="plus" size={14} color="#fff" />
+              <Text style={styles.emptyBtnLabel}>Create Post</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          posts.map(post => (
+            <PostCard
+              key={post.id}
+              post={post}
+              colors={colors}
+              onPress={() => router.push({ pathname: '/community/post/[id]' as any, params: { id: post.id } })}
+            />
+          ))
+        )}
       </ScrollView>
     </View>
   );
 }
 
+// ─── Styles ───────────────────────────────────────────────────────────────────
+
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  header: { paddingHorizontal: 16, marginBottom: 24, gap: 4 },
-  title: { fontSize: 32, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
-  subtitle: { fontSize: 14, fontFamily: 'Inter_400Regular' },
 
-  sectionPad: { paddingHorizontal: 16, marginBottom: 20 },
-  sectionHeading: {
-    fontSize: 11,
-    fontFamily: 'Inter_600SemiBold',
-    letterSpacing: 0.8,
-    marginBottom: 8,
+  header: {
+    paddingHorizontal: 16,
+    paddingBottom: 10,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    gap: 10,
   },
-
-  nearbyCard: { overflow: 'hidden' },
-  nearbyCardInner: {
+  titleRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 18,
-    gap: 14,
+    justifyContent: 'space-between',
+  },
+  title: { fontSize: 32, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
+  headerActions: { flexDirection: 'row', gap: 8 },
+  headerIconBtn: {
+    width: 38, height: 38, borderRadius: 19,
+    alignItems: 'center', justifyContent: 'center',
+    borderWidth: 1,
+  },
+
+  nearbyBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
   },
   nearbyIconWrap: {
-    width: 50,
-    height: 50,
-    borderRadius: 14,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: 32, height: 32, borderRadius: 8,
+    alignItems: 'center', justifyContent: 'center',
   },
-  nearbyText: { flex: 1 },
-  nearbyTitle: {
-    fontSize: 17,
-    fontFamily: 'Inter_700Bold',
-    color: '#fff',
-    marginBottom: 3,
-  },
-  nearbySub: {
-    fontSize: 12,
-    fontFamily: 'Inter_400Regular',
-    color: 'rgba(255,255,255,0.8)',
-    lineHeight: 16,
-  },
+  nearbyBannerLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold', color: '#fff' },
 
-  actionCard: { borderWidth: 1, overflow: 'hidden' },
-  actionRow: {
+  chips: { gap: 7, paddingVertical: 2, paddingRight: 4 },
+  chip: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 14,
-    paddingVertical: 13,
-    gap: 12,
+    gap: 4,
+    paddingHorizontal: 11,
+    paddingVertical: 7,
+    borderRadius: 20,
+    borderWidth: 1,
   },
-  actionIcon: {
-    width: 34,
-    height: 34,
-    alignItems: 'center',
-    justifyContent: 'center',
+  chipEmoji: { fontSize: 13 },
+  chipLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+
+  feed: { flex: 1 },
+
+  card: {
+    borderWidth: 1,
+    padding: 14,
+    gap: 8,
   },
-  actionLabel: { fontSize: 14, fontFamily: 'Inter_500Medium' },
-  actionDesc: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
+  cardHeader: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  typeBadge: {
+    paddingHorizontal: 8, paddingVertical: 3,
+    borderRadius: 6, borderWidth: 1,
+  },
+  typeBadgeLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  cardMeta: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 6, justifyContent: 'flex-end' },
+  cardAuthor: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  cardTime: { fontSize: 11, fontFamily: 'Inter_400Regular' },
+  cardBody: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
+
+  pinChip: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 5,
+    borderRadius: 8, borderWidth: 1,
+  },
+  pinChipImage: { width: 20, height: 20, borderRadius: 4 },
+  pinChipLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', maxWidth: 200 },
+
+  cardFooter: { flexDirection: 'row', alignItems: 'center', gap: 5 },
+  cardCommentCount: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+
+  center: { paddingTop: 60, alignItems: 'center', gap: 12 },
+  errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
+  empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
+  emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
+  emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 260 },
+  emptyBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: 18, paddingVertical: 10, marginTop: 4,
+  },
+  emptyBtnLabel: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

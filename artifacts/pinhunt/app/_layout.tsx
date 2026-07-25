@@ -88,7 +88,14 @@ function RootLayoutNav() {
       <Stack.Screen name="catalogue" options={{ title: 'Pin Catalogue' }} />
       <Stack.Screen name="traders/[pinId]" options={{ title: 'Traders' }} />
       <Stack.Screen name="trade/[id]" options={{ title: 'Trade' }} />
+      {/* Collectors Nearby (task #5) */}
       <Stack.Screen name="nearby" options={{ title: 'Collectors Nearby' }} />
+      {/* Community (task #3) */}
+      <Stack.Screen name="community/post/[id]" options={{ title: 'Post' }} />
+      <Stack.Screen name="community/create-post" options={{ title: 'New Post' }} />
+      <Stack.Screen name="community/conversations" options={{ title: 'Messages' }} />
+      <Stack.Screen name="community/chat/[id]" options={{ title: 'Chat' }} />
+      <Stack.Screen name="community/start-conversation" options={{ title: 'New Message' }} />
     </Stack>
   );
 }

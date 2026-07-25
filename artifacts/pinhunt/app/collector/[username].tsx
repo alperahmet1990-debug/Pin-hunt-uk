@@ -5,6 +5,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
+  Alert,
   Platform,
   ScrollView,
   StyleSheet,
@@ -69,7 +70,10 @@ export default function CollectorProfileScreen() {
   const router = useRouter();
   const { username } = useLocalSearchParams<{ username: string }>();
   const { getPublicProfile } = useProfile();
+
   const { repo, userId } = useMarketplace();
+  // currentUserId used for the Message button guard (don't show message button to yourself)
+  const currentUserId = userId;
 
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -228,6 +232,23 @@ export default function CollectorProfileScreen() {
                   <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>No trade ratings yet</Text>
                 </View>
               )}
+
+              {/* Message button */}
+              {currentUserId && profile.id !== currentUserId && (
+                <TouchableOpacity
+                  onPress={() =>
+                    router.push({
+                      pathname: '/community/start-conversation' as any,
+                      params: { recipientId: profile.id, recipientName: profile.username },
+                    })
+                  }
+                  activeOpacity={0.85}
+                  style={[styles.messageBtn, { backgroundColor: colors.primary, borderRadius: 10 }]}
+                >
+                  <Feather name="mail" size={14} color="#fff" />
+                  <Text style={styles.messageBtnLabel}>Message</Text>
+                </TouchableOpacity>
+              )}
             </View>
 
             {/* Bio */}
@@ -367,6 +388,12 @@ const styles = StyleSheet.create({
   sectionLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8 },
   bioCard: { borderWidth: 1, borderRadius: 14, padding: 16 },
   bioText: { fontSize: 15, fontFamily: 'Inter_400Regular', lineHeight: 22 },
+
+  messageBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: 18, paddingVertical: 10, marginTop: 4,
+  },
+  messageBtnLabel: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 
   // Potential trades
   tradeMatchCard: { borderWidth: 1, borderRadius: 14, overflow: 'hidden' },

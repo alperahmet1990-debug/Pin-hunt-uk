@@ -4,6 +4,11 @@ import { PinRepositoryError } from './repository';
 import type {
   AddUserPinInput,
   CataloguePin,
+  CommunityPost,
+  CommunityPostType,
+  Conversation,
+  ConversationMessage,
+  CreateCommunityPostInput,
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
   EditionType,
@@ -14,10 +19,12 @@ import type {
   NearbyCollector,
   PinSubmission,
   PinSubmissionStatus,
+  PostComment,
   PotentialTradePin,
   Profile,
   PublicProfile,
   SearchCollectorsInput,
+  StartConversationInput,
   CreateTradeRatingInput,
   Trade,
   TradeItem,
@@ -1022,6 +1029,387 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       title: row.title as string,
       imageUrl: (row.image_url as string | null) ?? undefined,
     }));
+  }
+
+  // ── Community posts ─────────────────────────────────────────────────────────
+
+  private rowToCommunityPost(row: Record<string, unknown>): CommunityPost {
+    const authorRow = row.profiles as Record<string, unknown> | null;
+    const pinRow = row.pins as Record<string, unknown> | null;
+    return {
+      id: row.id as string,
+      authorId: row.author_id as string,
+      postType: row.post_type as CommunityPostType,
+      body: row.body as string,
+      photos: (row.photos as string[] | null) ?? [],
+      linkedPinId: (row.linked_pin_id as string | null) ?? undefined,
+      authorProfile: authorRow
+        ? {
+            id: authorRow.id as string,
+            username: authorRow.username as string,
+            displayName: (authorRow.display_name as string | null) ?? undefined,
+            avatarUrl: (authorRow.avatar_url as string | null) ?? undefined,
+            bio: (authorRow.bio as string | null) ?? undefined,
+            tradingRegion: (authorRow.trading_region as string | null) ?? undefined,
+            internationalTradingEnabled: (authorRow.international_trading_enabled as boolean) ?? false,
+            openToLocalTrades: (authorRow.open_to_local_trades as boolean) ?? false,
+            openToPostalTrades: (authorRow.open_to_postal_trades as boolean) ?? false,
+            happyToTravel: (authorRow.happy_to_travel as boolean) ?? false,
+          }
+        : undefined,
+      linkedPin: pinRow
+        ? {
+            id: pinRow.pinhunt_id as string,
+            title: pinRow.title as string,
+            brand: pinRow.brand as string,
+            imageUrl: (pinRow.image_url as string | null) ?? undefined,
+          }
+        : undefined,
+      commentCount: (row.comment_count as number | null) ?? undefined,
+      createdAt: row.created_at as string,
+      updatedAt: row.updated_at as string,
+    };
+  }
+
+  async getCommunityFeed(options?: { postType?: string; limit?: number; offset?: number }): Promise<CommunityPost[]> {
+    let query = this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('community_posts')
+      .select(`
+        *,
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        pins(pinhunt_id, title, brand, image_url)
+      `)
+      .order('created_at', { ascending: false });
+
+    if (options?.postType) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      query = (query as any).eq('post_type', options.postType);
+    }
+    const limit = options?.limit ?? 30;
+    const offset = options?.offset ?? 0;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    query = (query as any).range(offset, offset + limit - 1);
+
+    const { data, error } = await query;
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as Record<string, unknown>[]).map(r => this.rowToCommunityPost(r));
+  }
+
+  async getCommunityPost(postId: string): Promise<CommunityPost | null> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('community_posts')
+      .select(`
+        *,
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        pins(pinhunt_id, title, brand, image_url)
+      `)
+      .eq('id', postId)
+      .maybeSingle();
+
+    if (error) throw new Error(error.message);
+    if (!data) return null;
+    return this.rowToCommunityPost(data as Record<string, unknown>);
+  }
+
+  async createCommunityPost(authorId: string, input: CreateCommunityPostInput): Promise<CommunityPost> {
+    // Resolve pinhunt_id to internal UUID if provided
+    let linkedPinUuid: string | null = null;
+    if (input.linkedPinId) {
+      const { data: pinRow } = await this.client
+        .from('pins')
+        .select('id')
+        .eq('pinhunt_id', input.linkedPinId)
+        .maybeSingle();
+      if (pinRow) linkedPinUuid = (pinRow as { id: string }).id;
+    }
+
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('community_posts')
+      .insert({
+        author_id: authorId,
+        post_type: input.postType,
+        body: input.body,
+        photos: input.photos ?? [],
+        linked_pin_id: linkedPinUuid,
+      })
+      .select(`
+        *,
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        pins(pinhunt_id, title, brand, image_url)
+      `)
+      .single();
+
+    if (error) throw new Error(error.message);
+    return this.rowToCommunityPost(data as Record<string, unknown>);
+  }
+
+  async deleteCommunityPost(postId: string): Promise<void> {
+    const { error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('community_posts')
+      .delete()
+      .eq('id', postId);
+    if (error) throw new Error(error.message);
+  }
+
+  // ── Post comments ─────────────────────────────────────────────────────────────
+
+  private rowToPostComment(row: Record<string, unknown>): PostComment {
+    const authorRow = row.profiles as Record<string, unknown> | null;
+    return {
+      id: row.id as string,
+      postId: row.post_id as string,
+      authorId: row.author_id as string,
+      body: row.body as string,
+      authorProfile: authorRow
+        ? {
+            id: authorRow.id as string,
+            username: authorRow.username as string,
+            displayName: (authorRow.display_name as string | null) ?? undefined,
+            avatarUrl: (authorRow.avatar_url as string | null) ?? undefined,
+            bio: (authorRow.bio as string | null) ?? undefined,
+            tradingRegion: (authorRow.trading_region as string | null) ?? undefined,
+            internationalTradingEnabled: (authorRow.international_trading_enabled as boolean) ?? false,
+            openToLocalTrades: (authorRow.open_to_local_trades as boolean) ?? false,
+            openToPostalTrades: (authorRow.open_to_postal_trades as boolean) ?? false,
+            happyToTravel: (authorRow.happy_to_travel as boolean) ?? false,
+          }
+        : undefined,
+      createdAt: row.created_at as string,
+    };
+  }
+
+  async getPostComments(postId: string): Promise<PostComment[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('post_comments')
+      .select('*, profiles(id, username, display_name, avatar_url)')
+      .eq('post_id', postId)
+      .order('created_at', { ascending: true });
+
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as Record<string, unknown>[]).map(r => this.rowToPostComment(r));
+  }
+
+  async createPostComment(postId: string, authorId: string, body: string): Promise<PostComment> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('post_comments')
+      .insert({ post_id: postId, author_id: authorId, body })
+      .select('*, profiles(id, username, display_name, avatar_url)')
+      .single();
+
+    if (error) throw new Error(error.message);
+    return this.rowToPostComment(data as Record<string, unknown>);
+  }
+
+  async deletePostComment(commentId: string): Promise<void> {
+    const { error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('post_comments')
+      .delete()
+      .eq('id', commentId);
+    if (error) throw new Error(error.message);
+  }
+
+  // ── Conversations / DMs ──────────────────────────────────────────────────────
+
+  private rowToConversation(row: Record<string, unknown>, currentUserId: string): Conversation {
+    const isA = row.participant_a_id === currentUserId;
+    const otherProfileRow = isA
+      ? (row.participant_b_profile as Record<string, unknown> | null)
+      : (row.participant_a_profile as Record<string, unknown> | null);
+
+    const lastMsgRow = row.last_msg as Record<string, unknown> | null;
+
+    return {
+      id: row.id as string,
+      participantAId: row.participant_a_id as string,
+      participantBId: row.participant_b_id as string,
+      contextPostId: (row.context_post_id as string | null) ?? undefined,
+      contextPinId: (row.context_pin_id as string | null) ?? undefined,
+      lastMessageAt: (row.last_message_at as string | null) ?? undefined,
+      createdAt: row.created_at as string,
+      otherParticipant: otherProfileRow
+        ? {
+            id: otherProfileRow.id as string,
+            username: (otherProfileRow.username as string) ?? '',
+            displayName: (otherProfileRow.display_name as string | null) ?? undefined,
+            avatarUrl: (otherProfileRow.avatar_url as string | null) ?? undefined,
+            tradingRegion: (otherProfileRow.trading_region as string | null) ?? undefined,
+            internationalTradingEnabled: (otherProfileRow.international_trading_enabled as boolean) ?? false,
+            openToLocalTrades: (otherProfileRow.open_to_local_trades as boolean) ?? false,
+            openToPostalTrades: (otherProfileRow.open_to_postal_trades as boolean) ?? false,
+            happyToTravel: (otherProfileRow.happy_to_travel as boolean) ?? false,
+          }
+        : undefined,
+      lastMessage: lastMsgRow
+        ? {
+            id: lastMsgRow.id as string,
+            conversationId: lastMsgRow.conversation_id as string,
+            senderId: lastMsgRow.sender_id as string,
+            body: lastMsgRow.body as string,
+            createdAt: lastMsgRow.created_at as string,
+          }
+        : undefined,
+    };
+  }
+
+  async getConversations(userId: string): Promise<Conversation[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('conversations')
+      .select('*')
+      .or(`participant_a_id.eq.${userId},participant_b_id.eq.${userId}`)
+      .order('last_message_at', { ascending: false, nullsFirst: false });
+
+    if (error) throw new Error(error.message);
+    const convRows = (data ?? []) as Record<string, unknown>[];
+    if (convRows.length === 0) return [];
+
+    // Collect all participant IDs we need profiles for
+    const otherIds = convRows.map(r =>
+      r.participant_a_id === userId ? r.participant_b_id : r.participant_a_id,
+    ) as string[];
+
+    const { data: profileData } = await this.client
+      .from('profiles')
+      .select('id, username, display_name, avatar_url, trading_region, international_trading_enabled')
+      .in('id', otherIds);
+
+    const profileMap = new Map<string, Record<string, unknown>>();
+    ((profileData ?? []) as Record<string, unknown>[]).forEach(p => profileMap.set(p.id as string, p));
+
+    // Fetch last message for each conversation
+    const convIds = convRows.map(r => r.id as string);
+    // We'll get the last message per conversation via a separate query and match by conversation_id
+    const { data: msgData } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('conversation_messages')
+      .select('*')
+      .in('conversation_id', convIds)
+      .order('created_at', { ascending: false });
+
+    const lastMsgMap = new Map<string, Record<string, unknown>>();
+    ((msgData ?? []) as Record<string, unknown>[]).forEach(m => {
+      const cid = m.conversation_id as string;
+      if (!lastMsgMap.has(cid)) lastMsgMap.set(cid, m);
+    });
+
+    return convRows.map(r => {
+      const otherId = r.participant_a_id === userId ? r.participant_b_id : r.participant_a_id;
+      const isA = r.participant_a_id === userId;
+      const otherProfile = profileMap.get(otherId as string) ?? null;
+      const enriched = {
+        ...r,
+        participant_a_profile: isA ? null : otherProfile,
+        participant_b_profile: isA ? otherProfile : null,
+        last_msg: lastMsgMap.get(r.id as string) ?? null,
+      };
+      return this.rowToConversation(enriched, userId);
+    });
+  }
+
+  async getConversation(conversationId: string, currentUserId: string): Promise<Conversation | null> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('conversations')
+      .select('*')
+      .eq('id', conversationId)
+      .maybeSingle();
+
+    if (error) throw new Error(error.message);
+    if (!data) return null;
+
+    const row = data as Record<string, unknown>;
+    const otherId = row.participant_a_id === currentUserId ? row.participant_b_id : row.participant_a_id;
+
+    const { data: profileData } = await this.client
+      .from('profiles')
+      .select('id, username, display_name, avatar_url, trading_region, international_trading_enabled')
+      .eq('id', otherId as string)
+      .maybeSingle();
+
+    const isA = row.participant_a_id === currentUserId;
+    return this.rowToConversation({
+      ...row,
+      participant_a_profile: isA ? null : (profileData ?? null),
+      participant_b_profile: isA ? (profileData ?? null) : null,
+      last_msg: null,
+    }, currentUserId);
+  }
+
+  async startConversation(initiatorId: string, input: StartConversationInput): Promise<Conversation> {
+    // Resolve pin pinhunt_id → UUID if provided
+    let contextPinUuid: string | null = null;
+    if (input.contextPinId) {
+      const { data: pinRow } = await this.client
+        .from('pins')
+        .select('id')
+        .eq('pinhunt_id', input.contextPinId)
+        .maybeSingle();
+      if (pinRow) contextPinUuid = (pinRow as { id: string }).id;
+    }
+
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('conversations')
+      .insert({
+        participant_a_id: initiatorId,
+        participant_b_id: input.recipientId,
+        context_post_id: input.contextPostId ?? null,
+        context_pin_id: contextPinUuid,
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    const conv = data as Record<string, unknown>;
+
+    // Send opening message
+    await this.sendConversationMessage(conv.id as string, initiatorId, input.openingMessage);
+
+    return this.getConversation(conv.id as string, initiatorId) as Promise<Conversation>;
+  }
+
+  async getConversationMessages(conversationId: string): Promise<ConversationMessage[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('conversation_messages')
+      .select('*')
+      .eq('conversation_id', conversationId)
+      .order('created_at', { ascending: true });
+
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as Record<string, unknown>[]).map(r => ({
+      id: r.id as string,
+      conversationId: r.conversation_id as string,
+      senderId: r.sender_id as string,
+      body: r.body as string,
+      createdAt: r.created_at as string,
+    }));
+  }
+
+  async sendConversationMessage(conversationId: string, senderId: string, body: string): Promise<ConversationMessage> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('conversation_messages')
+      .insert({ conversation_id: conversationId, sender_id: senderId, body })
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    const r = data as Record<string, unknown>;
+    return {
+      id: r.id as string,
+      conversationId: r.conversation_id as string,
+      senderId: r.sender_id as string,
+      body: r.body as string,
+      createdAt: r.created_at as string,
+    };
   }
 }
 

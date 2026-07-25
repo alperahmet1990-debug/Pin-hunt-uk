@@ -46,6 +46,14 @@ export type {
   GetNearbyCollectorsInput,
   PotentialTradePin,
   GetPotentialTradesInput,
+  // Community (migration 007_community)
+  CommunityPost,
+  CommunityPostType,
+  Conversation,
+  ConversationMessage,
+  CreateCommunityPostInput,
+  PostComment,
+  StartConversationInput,
 } from './types';
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────

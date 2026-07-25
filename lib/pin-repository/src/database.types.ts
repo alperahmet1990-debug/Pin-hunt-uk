@@ -458,6 +458,112 @@ export interface Database {
           { foreignKeyName: 'external_sale_listings_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
         ];
       };
+      community_posts: {
+        Row: {
+          id: string;
+          author_id: string;
+          post_type: 'in_search_of' | 'for_trade' | 'for_sale' | 'new_pickup' | 'discussion';
+          body: string;
+          photos: Json;
+          linked_pin_id: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          author_id: string;
+          post_type: 'in_search_of' | 'for_trade' | 'for_sale' | 'new_pickup' | 'discussion';
+          body: string;
+          photos?: Json;
+          linked_pin_id?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          post_type?: 'in_search_of' | 'for_trade' | 'for_sale' | 'new_pickup' | 'discussion';
+          body?: string;
+          photos?: Json;
+          linked_pin_id?: string | null;
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'community_posts_author_id_fkey'; columns: ['author_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] },
+          { foreignKeyName: 'community_posts_linked_pin_id_fkey'; columns: ['linked_pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
+        ];
+      };
+      post_comments: {
+        Row: {
+          id: string;
+          post_id: string;
+          author_id: string;
+          body: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          post_id: string;
+          author_id: string;
+          body: string;
+          created_at?: string;
+        };
+        Update: {
+          body?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'post_comments_post_id_fkey'; columns: ['post_id']; referencedRelation: 'community_posts'; referencedColumns: ['id'] },
+          { foreignKeyName: 'post_comments_author_id_fkey'; columns: ['author_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] }
+        ];
+      };
+      conversations: {
+        Row: {
+          id: string;
+          participant_a_id: string;
+          participant_b_id: string;
+          context_post_id: string | null;
+          context_pin_id: string | null;
+          last_message_at: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          participant_a_id: string;
+          participant_b_id: string;
+          context_post_id?: string | null;
+          context_pin_id?: string | null;
+          last_message_at?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          last_message_at?: string | null;
+        };
+        Relationships: [
+          { foreignKeyName: 'conversations_participant_a_id_fkey'; columns: ['participant_a_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] },
+          { foreignKeyName: 'conversations_participant_b_id_fkey'; columns: ['participant_b_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] }
+        ];
+      };
+      conversation_messages: {
+        Row: {
+          id: string;
+          conversation_id: string;
+          sender_id: string;
+          body: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          conversation_id: string;
+          sender_id: string;
+          body: string;
+          created_at?: string;
+        };
+        Update: {
+          body?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'conversation_messages_conversation_id_fkey'; columns: ['conversation_id']; referencedRelation: 'conversations'; referencedColumns: ['id'] },
+          { foreignKeyName: 'conversation_messages_sender_id_fkey'; columns: ['sender_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] }
+        ];
+      };
     };
     Views: {
       /**

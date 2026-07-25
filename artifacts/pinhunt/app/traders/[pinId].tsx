@@ -46,9 +46,10 @@ function RatingBadge({ positive, total, colors }: {
 
 // ─── Trader card ──────────────────────────────────────────────────────────────
 
-function TraderCard({ trader, onRequestTrade, isMe, colors }: {
+function TraderCard({ trader, onRequestTrade, onMessage, isMe, colors }: {
   trader: TraderProfile;
   onRequestTrade: () => void;
+  onMessage: () => void;
   isMe: boolean;
   colors: ReturnType<typeof useColors>;
 }) {
@@ -82,16 +83,25 @@ function TraderCard({ trader, onRequestTrade, isMe, colors }: {
         <RatingBadge positive={trader.positiveRatings} total={trader.totalRatings} colors={colors} />
       </View>
 
-      {/* Action */}
+      {/* Actions */}
       {!isMe && (
-        <TouchableOpacity
-          onPress={onRequestTrade}
-          activeOpacity={0.85}
-          style={[styles.tradeBtn, { backgroundColor: colors.primary, borderRadius: 8 }]}
-        >
-          <Feather name="repeat" size={13} color="#fff" />
-          <Text style={styles.tradeBtnLabel}>Trade</Text>
-        </TouchableOpacity>
+        <View style={styles.cardActions}>
+          <TouchableOpacity
+            onPress={onRequestTrade}
+            activeOpacity={0.85}
+            style={[styles.tradeBtn, { backgroundColor: colors.primary, borderRadius: 8 }]}
+          >
+            <Feather name="repeat" size={13} color="#fff" />
+            <Text style={styles.tradeBtnLabel}>Trade</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={onMessage}
+            activeOpacity={0.85}
+            style={[styles.tradeBtn, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: 8, borderWidth: 1 }]}
+          >
+            <Feather name="mail" size={13} color={colors.foreground} />
+          </TouchableOpacity>
+        </View>
       )}
     </TouchableOpacity>
   );
@@ -193,6 +203,17 @@ export default function TradersScreen() {
                 trader={trader}
                 isMe={trader.id === userId}
                 onRequestTrade={() => handleRequestTrade(trader)}
+                onMessage={() =>
+                  router.push({
+                    pathname: '/community/start-conversation' as any,
+                    params: {
+                      recipientId: trader.id,
+                      recipientName: trader.username,
+                      contextPinId: pin?.id,
+                      contextPinTitle: pin?.title,
+                    },
+                  })
+                }
                 colors={colors}
               />
             ))}
@@ -228,6 +249,7 @@ const styles = StyleSheet.create({
   regionText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   badge: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 6, borderWidth: 1, marginTop: 2 },
   badgeText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  cardActions: { flexDirection: 'row', gap: 6 },
   tradeBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 12, paddingVertical: 8 },
   tradeBtnLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#fff' },
 });

@@ -487,6 +487,79 @@ export interface CreatePinSubmissionInput {
   status?: PinSubmissionStatus;
 }
 
+// ─── Community post types ──────────────────────────────────────────────────────
+
+export type CommunityPostType =
+  | 'in_search_of'
+  | 'for_trade'
+  | 'for_sale'
+  | 'new_pickup'
+  | 'discussion';
+
+export interface CommunityPost {
+  id: string;
+  authorId: string;
+  postType: CommunityPostType;
+  body: string;
+  /** Storage paths or external URLs */
+  photos: string[];
+  linkedPinId?: string;
+  /** Joined author profile when fetched with profile data. */
+  authorProfile?: PublicProfile;
+  /** Joined catalogue pin when fetched with pin data. */
+  linkedPin?: Pick<CataloguePin, 'id' | 'title' | 'brand' | 'imageUrl'>;
+  commentCount?: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CreateCommunityPostInput {
+  postType: CommunityPostType;
+  body: string;
+  photos?: string[];
+  linkedPinId?: string;
+}
+
+export interface PostComment {
+  id: string;
+  postId: string;
+  authorId: string;
+  body: string;
+  authorProfile?: PublicProfile;
+  createdAt: string;
+}
+
+export interface Conversation {
+  id: string;
+  participantAId: string;
+  participantBId: string;
+  contextPostId?: string;
+  contextPinId?: string;
+  lastMessageAt?: string;
+  createdAt: string;
+  /** Joined profile of the other participant (relative to current user). */
+  otherParticipant?: PublicProfile;
+  lastMessage?: ConversationMessage;
+}
+
+export interface ConversationMessage {
+  id: string;
+  conversationId: string;
+  senderId: string;
+  body: string;
+  createdAt: string;
+}
+
+export interface StartConversationInput {
+  recipientId: string;
+  contextPostId?: string;
+  contextPinId?: string;
+  /** Opening message body (sent immediately after creating the conversation). */
+  openingMessage: string;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export interface UpdatePinSubmissionInput {
   proposedName?: string;
   brand?: string;

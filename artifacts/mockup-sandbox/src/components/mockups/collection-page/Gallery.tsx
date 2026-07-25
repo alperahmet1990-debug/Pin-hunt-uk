@@ -101,11 +101,11 @@ export function Gallery() {
           {filters.map((f, i) => (
             <button 
               key={f} 
-              className={\`whitespace-nowrap px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all \${
+              className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all ${
                 i === 0 
                   ? 'bg-[#2D1800] text-[#FFF8EE] shadow-md shadow-[#2D1800]/10' 
                   : 'bg-[#FFF8EE] border border-[#F0E0C0] text-[#2D1800]/70 hover:bg-[#F0E0C0]/40'
-              }\`}
+              }`}
             >
               {f}
             </button>
@@ -127,30 +127,30 @@ export function Gallery() {
                 return (
                   <div 
                     key={pin.id}
-                    className={\`
+                    className={`
                       group relative rounded-[1.25rem] overflow-hidden aspect-square cursor-pointer
                       shadow-[0_4px_12px_rgba(45,24,0,0.06)] hover:shadow-[0_8px_24px_rgba(45,24,0,0.12)]
                       transition-all duration-300 transform hover:-translate-y-0.5
-                      \${isLarge ? 'col-span-2 row-span-2 rounded-[1.75rem]' : 'col-span-1 row-span-1'}
-                    \`}
+                      ${isLarge ? 'col-span-2 row-span-2 rounded-[1.75rem]' : 'col-span-1 row-span-1'}
+                    `}
                     style={{ background: pin.gradient }}
                   >
                     {/* Gloss / Specular Highlight */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(255,255,255,0.4)_0%,transparent_50%)] mix-blend-overlay pointer-events-none"></div>
                     
                     {/* Inner Bevels */}
-                    <div className={\`absolute inset-0 ring-1 ring-inset ring-white/30 pointer-events-none \${isLarge ? 'rounded-[1.75rem]' : 'rounded-[1.25rem]'}\`}></div>
-                    <div className={\`absolute inset-0 shadow-[inset_0_-4px_8px_rgba(0,0,0,0.15)] pointer-events-none \${isLarge ? 'rounded-[1.75rem]' : 'rounded-[1.25rem]'}\`}></div>
+                    <div className={`absolute inset-0 ring-1 ring-inset ring-white/30 pointer-events-none ${isLarge ? 'rounded-[1.75rem]' : 'rounded-[1.25rem]'}`}></div>
+                    <div className={`absolute inset-0 shadow-[inset_0_-4px_8px_rgba(0,0,0,0.15)] pointer-events-none ${isLarge ? 'rounded-[1.75rem]' : 'rounded-[1.25rem]'}`}></div>
                     
                     {/* Status Dot */}
                     <div 
-                      className={\`absolute \${isLarge ? 'top-3.5 right-3.5 w-3 h-3 ring-[2.5px]' : 'top-2.5 right-2.5 w-2.5 h-2.5 ring-2'} rounded-full ring-white/80 shadow-sm z-10\`}
+                      className={`absolute ${isLarge ? 'top-3.5 right-3.5 w-3 h-3 ring-[2.5px]' : 'top-2.5 right-2.5 w-2.5 h-2.5 ring-2'} rounded-full ring-white/80 shadow-sm z-10`}
                       style={{ backgroundColor: getStatusColor(pin.status) }}
                     />
 
                     {/* Pin Name Overlay */}
                     <div className="absolute inset-x-0 bottom-0 p-3 pt-12 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
-                      <p className={\`text-white font-medium drop-shadow-md truncate w-full \${isLarge ? 'text-[15px] pb-1 pl-1' : 'text-[11px] leading-tight'}\`}>
+                      <p className={`text-white font-medium drop-shadow-md truncate w-full ${isLarge ? 'text-[15px] pb-1 pl-1' : 'text-[11px] leading-tight'}`}>
                         {pin.name}
                       </p>
                     </div>

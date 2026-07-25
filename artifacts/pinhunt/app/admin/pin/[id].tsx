@@ -192,6 +192,13 @@ export default function AdminPinEditorScreen() {
   const [saving,  setSaving]  = useState(false);
   const [errors,  setErrors]  = useState<Record<string, string>>({});
 
+  // ── Already-approved submission guard ───────────────────────────────────────
+  // If the editor was opened directly (bookmark/history) with a submissionId
+  // that already has a catalogue entry, block saving to avoid creating a
+  // duplicate pin and overwriting the existing approved_pin_id link.
+  const [alreadyApprovedPinhuntId, setAlreadyApprovedPinhuntId] = useState<string | null>(null);
+  const [checkingSubmission, setCheckingSubmission] = useState(Boolean(isNew && submissionId));
+
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
   // ── Pre-fill from submission params (Approve & Add to Catalogue flow) ───────
@@ -230,6 +237,25 @@ export default function AdminPinEditorScreen() {
     })();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submissionId]);
+
+  // ── Guard: check whether the submission is already linked to a pin ─────────
+  useEffect(() => {
+    if (!isNew || !submissionId || !userRepo) { setCheckingSubmission(false); return; }
+    let cancelled = false;
+    (async () => {
+      try {
+        const submission = await userRepo.getPinSubmission(submissionId);
+        if (!cancelled && submission?.approvedPinId) {
+          setAlreadyApprovedPinhuntId(submission.approvedPinhuntId ?? '');
+        }
+      } catch { /* best-effort — do not block editing if the check fails */ }
+      if (!cancelled) setCheckingSubmission(false);
+    })();
+    return () => { cancelled = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [submissionId, userRepo]);
+
+  const submissionAlreadyApproved = alreadyApprovedPinhuntId !== null;
 
   // ── Load existing pin ───────────────────────────────────────────────────────
   useEffect(() => {
@@ -318,6 +344,13 @@ export default function AdminPinEditorScreen() {
   // ── Save ────────────────────────────────────────────────────────────────────
   const handleSave = async (andAddAnother = false) => {
     if (!repo) { Alert.alert('Not configured', 'Supabase is not configured.'); return; }
+    if (submissionAlreadyApproved) {
+      Alert.alert(
+        'Already in catalogue',
+        'This submission already has a catalogue entry. Saving again would create a duplicate pin.',
+      );
+      return;
+    }
     if (!validate()) return;
 
     try {
@@ -433,7 +466,7 @@ export default function AdminPinEditorScreen() {
   );
 
   // ── Loading / error states ──────────────────────────────────────────────────
-  if (loadingPin) {
+  if (loadingPin || checkingSubmission) {
     return (
       <>
         <Stack.Screen options={{ title: 'Loading…' }} />
@@ -467,6 +500,33 @@ export default function AdminPinEditorScreen() {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
+
+          {/* ── Already-approved submission warning ── */}
+          {submissionAlreadyApproved && (
+            <View style={[styles.dupBox, { backgroundColor: '#FEE2E2', borderColor: '#EF4444', borderRadius: 10 }]}>
+              <Feather name="alert-octagon" size={14} color="#991B1B" />
+              <View style={{ flex: 1, gap: 6 }}>
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#991B1B' }}>
+                  This submission already has a catalogue entry
+                </Text>
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: '#991B1B' }}>
+                  Saving is disabled to prevent creating a duplicate pin.
+                </Text>
+                {!!alreadyApprovedPinhuntId && (
+                  <TouchableOpacity
+                    onPress={() => router.replace(`/admin/pin/${alreadyApprovedPinhuntId}`)}
+                    activeOpacity={0.8}
+                    style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}
+                  >
+                    <Feather name="external-link" size={12} color="#991B1B" />
+                    <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#991B1B', textDecorationLine: 'underline' }}>
+                      View in Catalogue ({alreadyApprovedPinhuntId})
+                    </Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            </View>
+          )}
 
           {/* ── PinHunt ID ── */}
           <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>IDENTIFIER</Text>
@@ -670,13 +730,18 @@ export default function AdminPinEditorScreen() {
               <TouchableOpacity
                 onPress={() => handleSave(false)}
                 activeOpacity={0.85}
-                style={[styles.btn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+                disabled={submissionAlreadyApproved}
+                style={[styles.btn, {
+                  backgroundColor: colors.primary,
+                  borderRadius: 12,
+                  opacity: submissionAlreadyApproved ? 0.4 : 1,
+                }]}
               >
                 <Feather name="save" size={16} color="#fff" />
                 <Text style={styles.btnLabel}>{isNew ? 'Add to Catalogue' : 'Save Changes'}</Text>
               </TouchableOpacity>
 
-              {isNew && (
+              {isNew && !submissionAlreadyApproved && (
                 <TouchableOpacity
                   onPress={() => handleSave(true)}
                   activeOpacity={0.85}

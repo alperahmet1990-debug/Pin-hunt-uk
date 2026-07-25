@@ -163,6 +163,7 @@ function rowToPinSubmission(row: Record<string, unknown>): PinSubmission {
     reviewerNotes: (row.reviewer_notes as string | null) ?? undefined,
     approvedPinId: (row.approved_pin_id as string | null) ?? undefined,
     approvedPinhuntId: (row.approved_pin as { pinhunt_id: string } | null)?.pinhunt_id ?? undefined,
+    approvedPinTitle: (row.approved_pin as { title?: string } | null)?.title ?? undefined,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -845,7 +846,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async getMyPinSubmissions(userId: string): Promise<PinSubmission[]> {
     const { data, error } = await this.client
       .from('pin_submissions')
-      .select('*')
+      .select('*, approved_pin:pins!approved_pin_id(pinhunt_id, title)')
       .eq('submitted_by', userId)
       .order('created_at', { ascending: false });
 
@@ -856,7 +857,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async getPinSubmission(submissionId: string): Promise<PinSubmission | null> {
     const { data, error } = await this.client
       .from('pin_submissions')
-      .select('*, approved_pin:pins!approved_pin_id(pinhunt_id)')
+      .select('*, approved_pin:pins!approved_pin_id(pinhunt_id, title)')
       .eq('id', submissionId)
       .maybeSingle();
 

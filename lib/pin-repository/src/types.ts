@@ -492,6 +492,8 @@ export interface PinSubmission {
   approvedPinId?: string;
   /** The PHUK-XXXXXXXX identifier of the catalogue pin created from this submission. */
   approvedPinhuntId?: string;
+  /** Title of the catalogue pin this submission was credited on (set when merged/approved). */
+  approvedPinTitle?: string;
   createdAt: string;
   updatedAt: string;
 }

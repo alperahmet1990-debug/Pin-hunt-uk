@@ -131,6 +131,24 @@ export default function SubmissionDetailScreen() {
                 </Text>
               </View>
 
+              {/* Credited pin (merged into existing catalogue pin) */}
+              {submission.status === 'approved' && submission.approvedPinhuntId && (
+                <TouchableOpacity
+                  onPress={() => router.push({ pathname: '/pin/[id]', params: { id: submission.approvedPinhuntId! } })}
+                  activeOpacity={0.8}
+                  style={[styles.creditedBox, { backgroundColor: '#16A34A14', borderColor: '#16A34A44', borderRadius: 10 }]}
+                >
+                  <Feather name="link" size={14} color="#16A34A" />
+                  <View style={{ flex: 1, gap: 2 }}>
+                    <Text style={styles.creditedTitle}>Credited on</Text>
+                    <Text style={styles.creditedText} numberOfLines={2}>
+                      {submission.approvedPinTitle ?? submission.approvedPinhuntId}
+                    </Text>
+                  </View>
+                  <Feather name="chevron-right" size={16} color="#16A34A" />
+                </TouchableOpacity>
+              )}
+
               {/* Reviewer notes */}
               {submission.reviewerNotes && (
                 <View style={[styles.reviewerBox, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>
@@ -201,6 +219,9 @@ const styles = StyleSheet.create({
   statusBanner: { padding: 12, borderWidth: 1, alignItems: 'center' },
   statusText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   reviewerBox: { flexDirection: 'row', gap: 10, padding: 12, borderWidth: 1 },
+  creditedBox: { flexDirection: 'row', alignItems: 'center', gap: 10, padding: 12, borderWidth: 1 },
+  creditedTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#16A34A' },
+  creditedText: { fontSize: 13, fontFamily: 'Inter_500Medium', color: '#166534', lineHeight: 18 },
   reviewerBoxTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#92400E' },
   reviewerBoxText: { fontSize: 13, fontFamily: 'Inter_400Regular', color: '#92400E', lineHeight: 18 },
   card: { borderWidth: 1, overflow: 'hidden' },

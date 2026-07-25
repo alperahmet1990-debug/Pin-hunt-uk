@@ -48,6 +48,7 @@ function SubmissionCard({
   colors,
   onPress,
   onDelete,
+  onCreditedPinPress,
   isUnseen,
 }: {
   submission: PinSubmission;
@@ -55,6 +56,7 @@ function SubmissionCard({
   colors: ReturnType<typeof useColors>;
   onPress: () => void;
   onDelete?: () => void;
+  onCreditedPinPress?: () => void;
   isUnseen?: boolean;
 }) {
   const statusColor = STATUS_COLOR[submission.status];
@@ -108,6 +110,21 @@ function SubmissionCard({
             {new Date(submission.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
           </Text>
         </View>
+
+        {/* Credited pin (merged into existing catalogue pin) */}
+        {submission.status === 'approved' && submission.approvedPinhuntId && (
+          <TouchableOpacity
+            onPress={onCreditedPinPress}
+            hitSlop={{ top: 6, bottom: 6 }}
+            style={[styles.creditedRow, { backgroundColor: '#16A34A14', borderRadius: 6 }]}
+          >
+            <Feather name="link" size={11} color="#16A34A" />
+            <Text style={styles.creditedRowText} numberOfLines={1}>
+              Credited on {submission.approvedPinTitle ?? submission.approvedPinhuntId}
+            </Text>
+            <Feather name="chevron-right" size={12} color="#16A34A" />
+          </TouchableOpacity>
+        )}
 
         {/* Reviewer notes */}
         {submission.reviewerNotes && (
@@ -268,6 +285,11 @@ export default function MySubmissionsScreen() {
                 colors={colors}
                 onPress={() => router.push({ pathname: '/submission/[id]', params: { id: s.id } })}
                 onDelete={s.status === 'draft' ? () => handleDelete(s) : undefined}
+                onCreditedPinPress={
+                  s.approvedPinhuntId
+                    ? () => router.push({ pathname: '/pin/[id]', params: { id: s.approvedPinhuntId! } })
+                    : undefined
+                }
                 isUnseen={unseenIds.has(s.id)}
               />
             ))}
@@ -304,6 +326,8 @@ const styles = StyleSheet.create({
   statusBadge: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 6 },
   statusLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   cardDate: { fontSize: 11, fontFamily: 'Inter_400Regular' },
+  creditedRow: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 7, paddingVertical: 6, marginTop: 2 },
+  creditedRowText: { flex: 1, fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#16A34A' },
   reviewerNoteBox: { flexDirection: 'row', alignItems: 'flex-start', gap: 5, padding: 7, marginTop: 2 },
   reviewerNote: { flex: 1, fontSize: 11, fontFamily: 'Inter_400Regular', lineHeight: 15 },
   cardActions: { gap: 12, alignItems: 'center', justifyContent: 'space-between' },

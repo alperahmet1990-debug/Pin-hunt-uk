@@ -353,6 +353,26 @@ export default function AdminReviewScreen() {
               )
             )}
 
+            {/* View in Catalogue — shown once approved and linked to a pin */}
+            {submission.status === 'approved' && submission.approvedPinhuntId && (
+              <TouchableOpacity
+                onPress={() =>
+                  router.push({
+                    pathname: '/admin/pin/[id]',
+                    params: { id: submission.approvedPinhuntId! },
+                  })
+                }
+                activeOpacity={0.85}
+                style={[
+                  styles.outlineBtn,
+                  { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card },
+                ]}
+              >
+                <Feather name="external-link" size={15} color="#16A34A" />
+                <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>View in Catalogue</Text>
+              </TouchableOpacity>
+            )}
+
             {/* Previous reviewer note (read-only when not actionable) */}
             {!isActionable && submission.reviewerNotes && (
               <View style={[styles.reviewerBox, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>

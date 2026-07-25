@@ -83,6 +83,19 @@ interface BatchStatus {
   error_report: ErrorRow[] | null;
 }
 
+interface BatchListItem {
+  id: string;
+  filename: string;
+  status: string;
+  total_rows: number;
+  progress_rows: number;
+  inserted_rows: number;
+  updated_rows: number;
+  error_rows: number;
+  started_at: string;
+  completed_at: string | null;
+}
+
 interface ErrorRow {
   rowNum: number;
   pinhuntId: string | null;
@@ -155,6 +168,11 @@ export default function CatalogueImportScreen() {
   const [showMapping, setShowMapping] = useState(false);
   const [showPreviewRows, setShowPreviewRows] = useState(false);
 
+  // Import history (past batches)
+  const [batchList, setBatchList] = useState<BatchListItem[]>([]);
+  const [loadingBatches, setLoadingBatches] = useState(false);
+  const [openingBatchId, setOpeningBatchId] = useState<string | null>(null);
+
   // Edit modal state
   const [editingRow, setEditingRow] = useState<ErrorRow | null>(null);
   const [editFields, setEditFields] = useState<EditableFields | null>(null);
@@ -199,6 +217,55 @@ export default function CatalogueImportScreen() {
   }, [fetchBatchStatus, stopPolling]);
 
   useEffect(() => () => stopPolling(), [stopPolling]);
+
+  // ── Import history ──
+
+  const fetchBatchList = useCallback(async () => {
+    if (!token) return;
+    setLoadingBatches(true);
+    try {
+      const resp = await fetch(`${API_BASE}/admin/catalogue-import/batches`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (resp.ok) {
+        const data = await resp.json();
+        setBatchList(data.batches ?? []);
+      }
+    } catch {
+      // ignore — history is best-effort
+    } finally {
+      setLoadingBatches(false);
+    }
+  }, [token]);
+
+  useEffect(() => {
+    if (step === 'idle') fetchBatchList();
+  }, [step, fetchBatchList]);
+
+  const openPastBatch = async (batch: BatchListItem) => {
+    if (!token || openingBatchId) return;
+    setOpeningBatchId(batch.id);
+    try {
+      const resp = await fetch(`${API_BASE}/admin/catalogue-import/batches/${batch.id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data: BatchStatus = await resp.json();
+      if (!resp.ok) throw new Error((data as unknown as { error?: string }).error ?? 'Could not load batch');
+      setBatchId(batch.id);
+      setBatchStatus(data);
+      setErrorReport(data.error_report ?? []);
+      if (data.status === 'running' || data.status === 'pending') {
+        setStep('importing');
+        startPolling(batch.id);
+      } else {
+        setStep('done');
+      }
+    } catch (e) {
+      Alert.alert('Error', e instanceof Error ? e.message : 'Could not load batch');
+    } finally {
+      setOpeningBatchId(null);
+    }
+  };
 
   // ── File picker ──
 
@@ -446,6 +513,52 @@ export default function CatalogueImportScreen() {
             <Feather name="upload" size={20} color="#fff" />
             <Text style={styles.pickBtnLabel}>Choose .xlsx File</Text>
           </TouchableOpacity>
+        )}
+
+        {/* ── Import history (past batches) ── */}
+        {step === 'idle' && (
+          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+            <View style={styles.sectionHeader}>
+              <Text style={[styles.cardTitle, { color: colors.mutedForeground }]}>IMPORT HISTORY</Text>
+              {loadingBatches && <ActivityIndicator size="small" color={colors.primary} />}
+            </View>
+            {!loadingBatches && batchList.length === 0 && (
+              <Text style={[styles.editHint, { color: colors.mutedForeground }]}>No past imports yet.</Text>
+            )}
+            {batchList.length > 0 && (
+              <Text style={[styles.editHint, { color: colors.mutedForeground }]}>
+                Tap a batch to reopen its summary and error report — you can keep fixing error rows where you left off.
+              </Text>
+            )}
+            {batchList.map(b => (
+              <TouchableOpacity
+                key={b.id}
+                onPress={() => openPastBatch(b)}
+                disabled={!!openingBatchId}
+                activeOpacity={0.75}
+                style={[styles.batchRow, { borderTopColor: colors.border }]}
+              >
+                <View style={{ flex: 1, gap: 2 }}>
+                  <Text style={[styles.batchRowName, { color: colors.foreground }]} numberOfLines={1}>
+                    {b.filename}
+                  </Text>
+                  <Text style={[styles.batchRowMeta, { color: colors.mutedForeground }]}>
+                    {new Date(b.started_at).toLocaleDateString()} · {b.total_rows.toLocaleString()} rows · {b.status}
+                  </Text>
+                </View>
+                {b.error_rows > 0 && (
+                  <View style={[styles.errorCountBadge, { backgroundColor: colors.destructive + '18' }]}>
+                    <Text style={[styles.errorCountBadgeText, { color: colors.destructive }]}>
+                      {b.error_rows} {b.error_rows === 1 ? 'error' : 'errors'}
+                    </Text>
+                  </View>
+                )}
+                {openingBatchId === b.id
+                  ? <ActivityIndicator size="small" color={colors.primary} />
+                  : <Feather name="chevron-right" size={16} color={colors.mutedForeground} />}
+              </TouchableOpacity>
+            ))}
+          </View>
         )}
 
         {/* ── Loading: preview / dry run ── */}
@@ -969,6 +1082,13 @@ const styles = StyleSheet.create({
   editBadge:         { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10 },
   editBadgeText:     { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   moreRows:          { fontSize: 12, fontFamily: 'Inter_400Regular', textAlign: 'center', paddingTop: 8 },
+
+  // Import history
+  batchRow:            { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, borderTopWidth: StyleSheet.hairlineWidth },
+  batchRowName:        { fontSize: 13, fontFamily: 'Inter_500Medium' },
+  batchRowMeta:        { fontSize: 11, fontFamily: 'Inter_400Regular' },
+  errorCountBadge:     { paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10 },
+  errorCountBadgeText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
 
   // Modal
   modalHeader:       { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 16, borderBottomWidth: StyleSheet.hairlineWidth },

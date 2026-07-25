@@ -389,7 +389,7 @@ export default function ScanScreen() {
 
             {matches.map((match, i) => (
               <TouchableOpacity
-                key={match.pin.id}
+                key={`${match.pin.id}-${i}`}
                 onPress={() => handleSelectMatch(match)}
                 activeOpacity={0.85}
                 style={[

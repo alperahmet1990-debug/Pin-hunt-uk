@@ -109,8 +109,10 @@ router.post("/scan/identify", async (req, res) => {
         {
           role: "system",
           content: `You identify Disney enamel pins. Look at the photo and return ONLY valid JSON (no markdown):
-{ "characters": ["<Disney character names visible, e.g. Mulan, Mushu>"], "keywords": ["<other search terms: film/series name, visible text on the pin, distinctive objects, e.g. Macaron, Princess, Hidden Mickey>"] }
-List up to 4 characters and up to 6 keywords. Use empty arrays if unsure.`,
+{ "characters": ["<Disney character names>"], "keywords": ["<search terms: series/collection name guesses, visible text, distinctive objects>"] }
+
+IMPORTANT: many Disney pins are objects THEMED after a character (a dessert, dress, ear hat or flower in a character's colours with their signature props) without showing the character's face. Read the props and palette: e.g. a fan + comb + jade green suggests Mulan; a glass slipper + powder blue suggests Cinderella. Include your best character guesses in "characters" even when no face is visible — up to 4, most likely first.
+For keywords, include the object type AND close synonyms/series words (e.g. macaron → pastry, pastries, treats, dessert). Up to 8 keywords. Use empty arrays only if you truly cannot tell.`,
         },
         {
           role: "user",
@@ -211,9 +213,15 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       matches = [];
     }
 
-    // Validate each match has a known pinId from the live catalogue
+    // Validate each match has a known pinId from the live catalogue,
+    // and never return the same pin twice.
     const validIds = new Set(catalogue.map((p) => p.id));
-    matches = matches.filter((m) => validIds.has(m.pinId));
+    const seen = new Set<string>();
+    matches = matches.filter((m) => {
+      if (!validIds.has(m.pinId) || seen.has(m.pinId)) return false;
+      seen.add(m.pinId);
+      return true;
+    });
 
     res.json({ matches });
   } catch (err) {

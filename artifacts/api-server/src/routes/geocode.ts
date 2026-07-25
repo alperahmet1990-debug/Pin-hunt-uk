@@ -131,4 +131,63 @@ router.post('/geocode', async (req: Request, res: Response) => {
   res.json({ success: true });
 });
 
+// ─── POST /geocode/clear ───────────────────────────────────────────────────────
+// Nulls out approx_lat / approx_lng (and postcode) so the DB trigger from
+// migration 008 flips has_location_set back to false and the collector stops
+// appearing in Nearby searches.
+
+router.post('/geocode/clear', async (req: Request, res: Response) => {
+  // ── 1. Extract and validate JWT ────────────────────────────────────────────
+  const authHeader = req.headers.authorization ?? '';
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : null;
+  if (!token) {
+    res.status(401).json({ error: 'Missing Authorization header (Bearer token required)' });
+    return;
+  }
+
+  // ── 2. Build service-role Supabase client ──────────────────────────────────
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !serviceKey) {
+    res.status(500).json({
+      error:
+        'SUPABASE_SERVICE_ROLE_KEY is not configured on the server. Contact support.',
+    });
+    return;
+  }
+
+  const adminClient = createClient(supabaseUrl, serviceKey, {
+    auth: { persistSession: false },
+  });
+
+  // ── 3. Verify JWT → get authenticated user ─────────────────────────────────
+  const { data: { user }, error: authError } = await adminClient.auth.getUser(token);
+  if (authError || !user) {
+    logger.warn({ authError }, '[geocode/clear] JWT verification failed');
+    res.status(401).json({ error: 'Invalid or expired token' });
+    return;
+  }
+
+  // ── 4. Null out location columns (service role bypasses column RLS) ────────
+  const { error: updateError } = await adminClient
+    .from('profiles')
+    .update({
+      approx_lat: null,
+      approx_lng: null,
+      postcode: null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('id', user.id);
+
+  if (updateError) {
+    logger.error({ err: updateError, userId: user.id }, '[geocode/clear] profile update failed');
+    res.status(500).json({ error: 'Failed to remove location. Please try again.' });
+    return;
+  }
+
+  logger.info({ userId: user.id }, '[geocode/clear] location cleared successfully');
+  res.json({ success: true });
+});
+
 export default router;

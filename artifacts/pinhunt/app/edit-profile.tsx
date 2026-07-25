@@ -58,6 +58,25 @@ async function geocodePostcode(postcode: string, jwt: string): Promise<string | 
   }
 }
 
+/**
+ * Calls the server-side clear-location endpoint. Nulls approx_lat/approx_lng
+ * server-side; the DB trigger flips hasLocationSet back to false.
+ * Returns null on success, or an error message string on failure.
+ */
+async function clearLocation(jwt: string): Promise<string | null> {
+  try {
+    const res = await fetch(`${API_BASE}/geocode/clear`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${jwt}` },
+    });
+    if (res.ok) return null;
+    const body = await res.json().catch(() => ({})) as { error?: string };
+    return body.error ?? 'Failed to remove location. Please try again.';
+  } catch {
+    return 'Could not reach the server. Please check your connection and try again.';
+  }
+}
+
 // ─── Validation ───────────────────────────────────────────────────────────────
 
 const USERNAME_REGEX = /^[a-zA-Z0-9_.]{3,20}$/;
@@ -208,6 +227,37 @@ export default function EditProfileScreen() {
   const [saveError, setSaveError] = useState<string | null>(null);
   const [geocodingStatus, setGeocodingStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [geocodingError, setGeocodingError] = useState<string | null>(null);
+  const [removingLocation, setRemovingLocation] = useState(false);
+
+  const handleRemoveLocation = () => {
+    Alert.alert(
+      'Remove location?',
+      "Your saved location will be deleted and you'll no longer appear in Collectors Nearby. You can set it again anytime by entering your postcode.",
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Remove',
+          style: 'destructive',
+          onPress: async () => {
+            const jwt = session?.access_token;
+            if (!jwt) return;
+            setRemovingLocation(true);
+            setGeocodingStatus('idle');
+            setGeocodingError(null);
+            const err = await clearLocation(jwt);
+            if (err) {
+              setGeocodingStatus('error');
+              setGeocodingError(err);
+            } else {
+              setPostcode('');
+              await refreshProfile();
+            }
+            setRemovingLocation(false);
+          },
+        },
+      ],
+    );
+  };
 
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const originalUsername = profile?.username ?? '';
@@ -472,6 +522,25 @@ export default function EditProfileScreen() {
             {geocodingError && (
               <Text style={[styles.fieldError, { color: colors.destructive }]}>{geocodingError}</Text>
             )}
+            {profile?.hasLocationSet && (
+              <TouchableOpacity
+                onPress={handleRemoveLocation}
+                disabled={removingLocation}
+                style={[styles.removeLocationBtn, { borderColor: colors.destructive + '55' }]}
+                activeOpacity={0.7}
+              >
+                {removingLocation ? (
+                  <ActivityIndicator size="small" color={colors.destructive} />
+                ) : (
+                  <>
+                    <Feather name="x-circle" size={14} color={colors.destructive} />
+                    <Text style={[styles.removeLocationText, { color: colors.destructive }]}>
+                      Remove location
+                    </Text>
+                  </>
+                )}
+              </TouchableOpacity>
+            )}
           </Field>
 
           <Field label="Town / City">
@@ -719,6 +788,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   radiusPillText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
+  removeLocationBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingVertical: 10,
+    marginTop: 8,
+  },
+  removeLocationText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
   privacyNote: {
     flexDirection: 'row',
     alignItems: 'flex-start',

@@ -180,21 +180,44 @@ function rowToTrade(row: Record<string, unknown>): Trade {
   };
 }
 
-// ─── Safe profile column list ─────────────────────────────────────────────────
+// ─── Profile column lists ─────────────────────────────────────────────────────
 // approx_lat and approx_lng are REVOKED for the authenticated role
 // (migration 008). Using select('*') on profiles would fail for those columns.
-// All profile reads must use this explicit safe list instead.
+// All profile reads must use an explicit safe column list.
+//
+// BASE_PROFILE_COLUMNS: columns present in the initial schema (migrations 001–006).
+//   Used as a fallback when migration 007/008 haven't been applied yet.
+//
+// SAFE_PROFILE_COLUMNS: full list including discovery fields added in 007/008.
+//   Preferred when migrations are applied.
 
-const SAFE_PROFILE_COLUMNS = [
+const BASE_PROFILE_COLUMNS = [
   'id', 'username', 'display_name', 'avatar_url', 'bio', 'location',
   'trading_region', 'international_trading_enabled', 'allow_trade_requests',
   'allow_messages', 'profile_visibility', 'is_admin', 'created_at', 'updated_at',
-  // migration 007 — discovery fields (coordinates excluded)
+].join(', ');
+
+const SAFE_PROFILE_COLUMNS = [
+  ...BASE_PROFILE_COLUMNS.split(', '),
+  // migration 007 — local discovery fields (coordinates excluded)
   'town', 'county', 'country',
   'has_location_set',           // safe boolean — kept in sync by trigger (migration 008)
   'nearby_discovery_enabled', 'preferred_radius_miles',
   'open_to_local_trades', 'open_to_postal_trades', 'happy_to_travel',
 ].join(', ');
+
+/**
+ * Returns true when the Supabase error indicates a column doesn't exist yet
+ * (i.e. migration 007/008 haven't been applied to this environment).
+ * PostgreSQL error code 42703 = undefined_column.
+ */
+function isMissingColumnError(err: { code?: string; message?: string } | null): boolean {
+  if (!err) return false;
+  return (
+    err.code === '42703' ||
+    Boolean(err.message?.includes('does not exist') && err.message?.includes('column'))
+  );
+}
 
 // ─── SELECT fragment for user_pins with joined pin data ───────────────────────
 
@@ -215,11 +238,20 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   // ── Profile ───────────────────────────────────────────────────────────
 
   async getProfile(userId: string): Promise<Profile | null> {
-    const { data, error } = await this.client
+    let { data, error } = await this.client
       .from('profiles')
       .select(SAFE_PROFILE_COLUMNS)
       .eq('id', userId)
       .maybeSingle();
+
+    // Migrations 007/008 not yet applied — fall back to base columns.
+    if (isMissingColumnError(error as { code?: string; message?: string })) {
+      ({ data, error } = await this.client
+        .from('profiles')
+        .select(BASE_PROFILE_COLUMNS)
+        .eq('id', userId)
+        .maybeSingle());
+    }
 
     if (error) throw new Error(error.message);
     if (!data) return null;
@@ -260,6 +292,18 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .upsert(upsertData as any, { onConflict: 'id' })
       .select(SAFE_PROFILE_COLUMNS)
       .single();
+
+    // Migrations 007/008 not yet applied — retry returning base columns only.
+    if (isMissingColumnError(error as { code?: string; message?: string })) {
+      const fallback = await this.client
+        .from('profiles')
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .upsert(upsertData as any, { onConflict: 'id' })
+        .select(BASE_PROFILE_COLUMNS)
+        .single();
+      if (fallback.error) throw new Error(fallback.error.message);
+      return rowToProfile(fallback.data as unknown as Record<string, unknown>);
+    }
 
     if (error) throw new Error(error.message);
     return rowToProfile(data as unknown as Record<string, unknown>);

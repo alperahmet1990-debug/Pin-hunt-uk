@@ -1,50 +1,59 @@
 ---
 name: PinHunt schema & auth implementation
-description: Migration status, key decisions, and outstanding manual steps
+description: Migration completion status, outstanding manual steps, and key decisions through batch 5 (Collectors Nearby).
 ---
 
-## Migration status
+## Completed migrations
 
-| File | Status |
-|------|--------|
-| 001_schema.sql | ✅ Applied manually |
-| 002_rls.sql | ✅ Applied manually |
-| 003_profiles_v2.sql | ✅ Applied manually |
-| 004_external_sale_listings.sql | ✅ Applied manually |
-| 005_pin_submissions_v2.sql | ⏳ User must apply in Supabase SQL editor |
+| # | File | Status |
+|---|------|--------|
+| 001 | schema + pins catalogue | ✅ applied |
+| 002 | RLS policies | ✅ applied |
+| 003 | profiles v2 | ✅ applied |
+| 004 | external_sale_listings | ✅ applied |
+| 005 | pin_submissions_v2 | ✅ applied |
+| 006 | trade_ratings | ✅ applied |
+| 007 | collectors_nearby | ❌ NOT YET RUN |
+| 008 | profiles_rls_hardening | ❌ NOT YET RUN |
+
+## Migration 007 — what it adds
+
+- Columns on `profiles`: `town`, `county`, `country`, `approx_lat`, `approx_lng` (internal-only), `nearby_discovery_enabled` (default false), `preferred_radius_miles` (default 25), `open_to_local_trades`, `open_to_postal_trades`, `happy_to_travel`
+- Filtered B-tree index on `(approx_lat, approx_lng) WHERE nearby_discovery_enabled = true`
+- Helper functions: `haversine_miles`, `distance_band_label`, `distance_band_sort_key`
+- RPC `get_collectors_nearby(p_viewer_id, p_radius_miles)` — SECURITY DEFINER, reads coords internally, returns safe fields + match scores, never exposes lat/lng
+- RPC `get_potential_trades(p_viewer_id, p_collector_id)` — SECURITY DEFINER, requires `p_collector_id` to have `profile_visibility='public' AND username IS NOT NULL` before reading `user_pins`
+
+## Migration 008 — what it adds
+
+- `has_location_set` boolean column on profiles (default false) — safe for client reads
+- `sync_has_location_set` trigger — keeps `has_location_set` in sync with `approx_lat`
+- `REVOKE SELECT (approx_lat, approx_lng) ON profiles FROM authenticated, anon` — coordinate columns are column-revoked for client roles; SECURITY DEFINER RPCs unaffected
+- Drops `profiles_select_authenticated` (broad any-authenticated-user SELECT)
+- Adds: `profiles_select_own` (auth.uid()=id), `profiles_select_public` (public+username set), `profiles_select_admin` (uses `is_admin()` helper — avoids self-referential subquery)
+- Adds `public_profiles_safe` security-barrier view excluding coordinates
 
 ## Key decisions
 
-### Profile system (003)
-- New profile fields added to existing `profiles` table (not separate).
-- `updateProfile` uses upsert so it works for pre-trigger accounts.
-- Usernames always stored lowercase; unique index on `lower(username)`.
-- `complete-profile` is a root Stack screen guarded by `AuthGuard` which checks `needsUsername` from `ProfileContext`.
-- Find Collectors and Collector Profile are pushed Stack screens, not extra tabs.
+**approx_lat/lng are never client-readable.** Coordinate columns are column-revoked for `authenticated`/`anon` (migration 008). SECURITY DEFINER RPCs are the only access path for coordinate-based computation.
 
-### External sale listings (004)
-- `external_sale_listings.pin_id` is the internal UUID.
-- `createExternalSaleListing` and `getExternalListingsForPin` both accept pinhunt_id and resolve to UUID internally — consistent with `addPinToCollection`.
-- URL validation is client-side in `utils/marketplaceUrl.ts`.
-- `useMarketplace` hook (not context) — screens manage own fetch state.
+**`has_location_set` replaces client-side approx_lat derivation.** A trigger-maintained boolean column is used by the app to know whether a user has coords set, without reading the coords themselves. Kept in `SAFE_PROFILE_COLUMNS` (not revoked).
 
-### Pin submissions (005)
-- Old JSONB pin_submissions table dropped and replaced with explicit columns.
-- `createPinSubmission` generates the UUID client-side upfront so storage paths can be built before the DB row is inserted. This avoids the NOT NULL front_image_path constraint problem.
-- Images uploaded via `fetch(localUri) → blob → supabase.storage.upload`. Works in Expo because `fetch` is global.
-- Image compression in `utils/submissionImage.ts` (not in the repo layer): resize to 1400px max, JPEG 0.8 quality.
-- `deleteDraftSubmission` deletes DB row first (RLS enforces draft-only), then cleans up storage as best-effort (no throw on storage failure).
-- Signed URLs (1h TTL) generated in screens directly via `supabase.storage.createSignedUrl` — also exposed via `repo.getSubmissionImageUrl` for consistency.
-- RLS: users can only set status to draft/submitted/needs_changes themselves; approved/rejected/under_review require is_admin().
+**Migration-safe fallback in repository.** `getProfile` and `updateProfile` try `SAFE_PROFILE_COLUMNS` first; if they get a `42703` (column not found) error, they retry with `BASE_PROFILE_COLUMNS` (pre-007 columns only). This keeps the app working even when migrations 007/008 haven't been applied yet.
 
-### Views and Database type
-- `Views: Record<string, never>` must stay in `database.types.ts`. Adding a typed view entry breaks all table type inference.
+**`getPublicProfile` and `searchCollectors` use `profiles` table directly** (not `public_profiles` view) with explicit safe column list, so migration-007 local-discovery fields are available without updating the view.
 
-## Outstanding items
+**`get_potential_trades` authorization.** Verifies `p_collector_id` has `profile_visibility='public' AND username IS NOT NULL` before reading their `user_pins`. Prevents arbitrary ID probing via SECURITY DEFINER bypass.
 
-1. **Migration 005** — user must paste `005_pin_submissions_v2.sql` into Supabase SQL editor.
-2. **Avatar upload** — deferred; `avatar_url` field exists in DB/types but upload UI skipped (no storage bucket yet).
-3. **Catalogue data** — pins table is empty; import pipeline not run.
-4. **Storage buckets** — avatars, catalogue-images, user-pin-images, scan-images still need creating (pin-submissions bucket is now created by migration 005 via storage.buckets insert).
-5. **`SUPABASE_SERVICE_ROLE_KEY`** — needed for the import pipeline.
-6. **Expo typecheck** — passes clean as of last session (`tsc --noEmit` exits 0).
+**Nearby screen gates on `nearbyDiscoveryEnabled`** (not `hasLocationSet`). Users who have enabled discovery but don't yet have coordinates (before geocoding step is built) can access the screen and see an empty state with guidance.
+
+## Outstanding manual steps
+
+1. Run migration 007 in Supabase SQL editor (`supabase/migrations/007_collectors_nearby.sql`)
+2. Run migration 008 in Supabase SQL editor (`supabase/migrations/008_profiles_rls_hardening.sql`)
+3. Set `approx_lat`/`approx_lng` for test users via admin SQL (geocoding UI is follow-up task #6)
+4. Verify column revoke: `SELECT has_column_privilege('authenticated', 'profiles', 'approx_lat', 'SELECT');` → should return false
+
+## Username-only identity (completed earlier)
+
+`display_name` column stays in DB but is unused. All UI shows `@username` only. No migration needed.

@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Dimensions,
   Image,
   Platform,
   RefreshControl,
@@ -23,6 +24,10 @@ import { useCommunity } from '@/hooks/useCommunity';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
+// Card has 12px margin on each side + 14px internal padding each side
+const CARD_INNER_WIDTH = SCREEN_WIDTH - 24 - 28;
 
 const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; emoji: string }> = [
   { key: 'all',          label: 'All',       emoji: '✨' },
@@ -62,6 +67,84 @@ function timeAgo(iso: string): string {
   return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 }
 
+// ─── Photo preview grid (up to 4 cells) ──────────────────────────────────────
+
+function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: number): void }) {
+  const count = photos.length;
+  if (count === 0) return null;
+
+  const gap = 2;
+
+  if (count === 1) {
+    return (
+      <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9} style={styles.photoGrid1}>
+        <Image source={{ uri: photos[0] }} style={styles.photoGrid1Image} />
+      </TouchableOpacity>
+    );
+  }
+
+  if (count === 2) {
+    const cellW = (CARD_INNER_WIDTH - gap) / 2;
+    return (
+      <View style={[styles.photoGridRow, { gap }]}>
+        {photos.slice(0, 2).map((uri, i) => (
+          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9}>
+            <Image source={{ uri }} style={{ width: cellW, height: 140, borderRadius: 6 }} />
+          </TouchableOpacity>
+        ))}
+      </View>
+    );
+  }
+
+  if (count === 3) {
+    const rightW = (CARD_INNER_WIDTH - gap) / 2;
+    const leftW = CARD_INNER_WIDTH - rightW - gap;
+    return (
+      <View style={[styles.photoGridRow, { gap }]}>
+        <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9}>
+          <Image source={{ uri: photos[0] }} style={{ width: leftW, height: 180, borderRadius: 6 }} />
+        </TouchableOpacity>
+        <View style={{ gap, flexDirection: 'column' }}>
+          {photos.slice(1, 3).map((uri, i) => (
+            <TouchableOpacity key={i} onPress={() => onPress(i + 1)} activeOpacity={0.9}>
+              <Image source={{ uri }} style={{ width: rightW, height: (180 - gap) / 2, borderRadius: 6 }} />
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
+    );
+  }
+
+  // 4+ photos — 2×2 grid, last cell shows "+N more" overlay
+  const cellW = (CARD_INNER_WIDTH - gap) / 2;
+  const cellH = 130;
+  const extra = count - 4;
+
+  return (
+    <View style={{ gap }}>
+      <View style={[styles.photoGridRow, { gap }]}>
+        {[0, 1].map(i => (
+          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9}>
+            <Image source={{ uri: photos[i] }} style={{ width: cellW, height: cellH, borderRadius: 6 }} />
+          </TouchableOpacity>
+        ))}
+      </View>
+      <View style={[styles.photoGridRow, { gap }]}>
+        {[2, 3].map(i => (
+          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9} style={{ position: 'relative' }}>
+            <Image source={{ uri: photos[i] }} style={{ width: cellW, height: cellH, borderRadius: 6 }} />
+            {i === 3 && extra > 0 && (
+              <View style={[styles.moreOverlay, { width: cellW, height: cellH, borderRadius: 6 }]}>
+                <Text style={styles.moreOverlayText}>+{extra}</Text>
+              </View>
+            )}
+          </TouchableOpacity>
+        ))}
+      </View>
+    </View>
+  );
+}
+
 // ─── Category chip ────────────────────────────────────────────────────────────
 
 function Chip({ label, emoji, color, active, onPress }: {
@@ -90,13 +173,15 @@ function Chip({ label, emoji, color, active, onPress }: {
 
 // ─── Post card ────────────────────────────────────────────────────────────────
 
-function PostCard({ post, onPress, colors }: {
+function PostCard({ post, onPress, onPhotoPress, colors }: {
   post: CommunityPost;
   onPress(): void;
+  onPhotoPress(index: number): void;
   colors: ReturnType<typeof useColors>;
 }) {
   const color = TYPE_COLOR[post.postType];
   const authorName = post.authorProfile?.username ?? '…';
+  const photos = post.photos ?? [];
 
   return (
     <TouchableOpacity
@@ -106,12 +191,9 @@ function PostCard({ post, onPress, colors }: {
     >
       {/* Header row */}
       <View style={styles.cardHeader}>
-        {/* Type badge */}
         <View style={[styles.typeBadge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
           <Text style={[styles.typeBadgeLabel, { color }]}>{TYPE_LABEL[post.postType]}</Text>
         </View>
-
-        {/* Author + time */}
         <View style={styles.cardMeta}>
           <Text style={[styles.cardAuthor, { color: colors.foreground }]}>@{authorName}</Text>
           <Text style={[styles.cardTime, { color: colors.mutedForeground }]}>{timeAgo(post.createdAt)}</Text>
@@ -119,9 +201,14 @@ function PostCard({ post, onPress, colors }: {
       </View>
 
       {/* Body */}
-      <Text style={[styles.cardBody, { color: colors.foreground }]} numberOfLines={3}>
+      <Text style={[styles.cardBody, { color: colors.foreground }]} numberOfLines={photos.length > 0 ? 2 : 4}>
         {post.body}
       </Text>
+
+      {/* Photo grid */}
+      {photos.length > 0 && (
+        <PhotoGrid photos={photos} onPress={onPhotoPress} />
+      )}
 
       {/* Linked pin */}
       {post.linkedPin && (
@@ -189,6 +276,14 @@ export default function CommunityScreen() {
   const handleFilterChange = (key: CommunityPostType | 'all') => {
     setFilter(key);
     scrollRef.current?.scrollTo({ y: 0, animated: false });
+  };
+
+  const handlePhotoPress = (post: CommunityPost, index: number) => {
+    // Navigate to post detail — the lightbox is shown there
+    router.push({
+      pathname: '/community/post/[id]' as any,
+      params: { id: post.id, openPhotoIndex: String(index) },
+    });
   };
 
   return (
@@ -303,6 +398,7 @@ export default function CommunityScreen() {
               post={post}
               colors={colors}
               onPress={() => router.push({ pathname: '/community/post/[id]' as any, params: { id: post.id } })}
+              onPhotoPress={(index) => handlePhotoPress(post, index)}
             />
           ))
         )}
@@ -366,7 +462,7 @@ const styles = StyleSheet.create({
   card: {
     borderWidth: 1,
     padding: 14,
-    gap: 8,
+    gap: 10,
   },
   cardHeader: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   typeBadge: {
@@ -378,6 +474,17 @@ const styles = StyleSheet.create({
   cardAuthor: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   cardTime: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   cardBody: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
+
+  // Photo grid helpers
+  photoGridRow: { flexDirection: 'row' },
+  photoGrid1: { width: '100%', height: 200, borderRadius: 8, overflow: 'hidden' },
+  photoGrid1Image: { width: '100%', height: '100%', resizeMode: 'cover' },
+  moreOverlay: {
+    position: 'absolute', top: 0, left: 0,
+    backgroundColor: 'rgba(0,0,0,0.52)',
+    alignItems: 'center', justifyContent: 'center',
+  },
+  moreOverlayText: { color: '#fff', fontSize: 22, fontFamily: 'Inter_700Bold' },
 
   pinChip: {
     flexDirection: 'row', alignItems: 'center', gap: 6,

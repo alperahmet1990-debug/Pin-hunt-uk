@@ -1,10 +1,11 @@
 /**
- * Create Community Post screen.
+ * Create Community Post screen — with multi-photo support.
  */
 import React, { useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -17,10 +18,14 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { supabase } from '@/lib/supabase';
 import type { CommunityPostType } from '@workspace/pin-repository';
+
+const MAX_PHOTOS = 9;
 
 const POST_TYPES: Array<{ key: CommunityPostType; label: string; emoji: string; hint: string }> = [
   { key: 'in_search_of', label: 'In Search Of', emoji: '🔍', hint: 'Looking for a specific pin' },
@@ -38,6 +43,26 @@ const TYPE_COLOR: Record<CommunityPostType, string> = {
   discussion:   '#64748B',
 };
 
+// ─── Upload a single local URI to Supabase storage ───────────────────────────
+
+async function uploadPhoto(userId: string, uri: string, index: number): Promise<string> {
+  const ext = uri.split('.').pop()?.toLowerCase() ?? 'jpg';
+  const mime = ext === 'png' ? 'image/png' : 'image/jpeg';
+  const path = `${userId}/${Date.now()}-${index}.${ext}`;
+
+  const response = await fetch(uri);
+  const blob = await response.blob();
+
+  const { error } = await supabase.storage
+    .from('community-photos')
+    .upload(path, blob, { contentType: mime, upsert: false });
+
+  if (error) throw new Error(error.message);
+
+  const { data } = supabase.storage.from('community-photos').getPublicUrl(path);
+  return data.publicUrl;
+}
+
 export default function CreatePostScreen() {
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
@@ -51,6 +76,8 @@ export default function CreatePostScreen() {
   const [pinSearch,   setPinSearch]   = useState('');
   const [showPins,    setShowPins]    = useState(false);
   const [saving,      setSaving]      = useState(false);
+  const [localPhotos, setLocalPhotos] = useState<string[]>([]);   // local file URIs
+  const [uploadProgress, setUploadProgress] = useState('');
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
   const selectedPin = linkedPinId ? pins.find(p => p.id === linkedPinId) : undefined;
@@ -64,14 +91,65 @@ export default function CreatePostScreen() {
         .slice(0, 12)
     : [];
 
+  const handlePickPhotos = async () => {
+    const remaining = MAX_PHOTOS - localPhotos.length;
+    if (remaining <= 0) {
+      Alert.alert(`Maximum ${MAX_PHOTOS} photos`, 'Remove a photo to add another.');
+      return;
+    }
+
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (status !== 'granted') {
+      Alert.alert('Permission required', 'Please allow photo library access in Settings.');
+      return;
+    }
+
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsMultipleSelection: true,
+      selectionLimit: remaining,
+      quality: 0.85,
+      exif: false,
+    });
+
+    if (!result.canceled) {
+      const uris = result.assets.map(a => a.uri);
+      setLocalPhotos(prev => [...prev, ...uris].slice(0, MAX_PHOTOS));
+    }
+  };
+
+  const handleRemovePhoto = (index: number) => {
+    setLocalPhotos(prev => prev.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = async () => {
     if (!repo || !userId) return;
     if (!body.trim()) { Alert.alert('Please add some content to your post.'); return; }
     try {
       setSaving(true);
+
+      // Upload photos if any
+      let photoUrls: string[] = [];
+      if (localPhotos.length > 0) {
+        setUploadProgress(`Uploading photos (0/${localPhotos.length})…`);
+        const uploaded: string[] = [];
+        for (let i = 0; i < localPhotos.length; i++) {
+          setUploadProgress(`Uploading photos (${i + 1}/${localPhotos.length})…`);
+          try {
+            const url = await uploadPhoto(userId, localPhotos[i], i);
+            uploaded.push(url);
+          } catch {
+            // Skip failed uploads rather than aborting the whole post
+          }
+        }
+        photoUrls = uploaded;
+        setUploadProgress('');
+      }
+
       const post = await repo.createCommunityPost(userId, {
         postType,
         body: body.trim(),
+        photos: photoUrls,
         linkedPinId,
       });
       router.replace({ pathname: '/community/post/[id]' as any, params: { id: post.id } });
@@ -79,6 +157,7 @@ export default function CreatePostScreen() {
       Alert.alert('Error', e instanceof Error ? e.message : 'Could not create post. Try again.');
     } finally {
       setSaving(false);
+      setUploadProgress('');
     }
   };
 
@@ -149,6 +228,42 @@ export default function CreatePostScreen() {
             {body.length} / 2000
           </Text>
 
+          {/* Photos */}
+          <Text style={[styles.label, { color: colors.mutedForeground }]}>
+            PHOTOS ({localPhotos.length}/{MAX_PHOTOS})
+          </Text>
+          <View style={styles.photoGrid}>
+            {localPhotos.map((uri, idx) => (
+              <View key={uri + idx} style={[styles.photoCell, { borderRadius: colors.radius, borderColor: colors.border }]}>
+                <Image source={{ uri }} style={styles.photoCellImage} />
+                <TouchableOpacity
+                  onPress={() => handleRemovePhoto(idx)}
+                  style={styles.photoRemoveBtn}
+                  hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
+                >
+                  <Feather name="x" size={12} color="#fff" />
+                </TouchableOpacity>
+              </View>
+            ))}
+            {localPhotos.length < MAX_PHOTOS && (
+              <TouchableOpacity
+                onPress={handlePickPhotos}
+                activeOpacity={0.8}
+                style={[
+                  styles.photoAddBtn,
+                  {
+                    backgroundColor: colors.secondary,
+                    borderColor: colors.border,
+                    borderRadius: colors.radius,
+                  },
+                ]}
+              >
+                <Feather name="camera" size={22} color={colors.mutedForeground} />
+                <Text style={[styles.photoAddLabel, { color: colors.mutedForeground }]}>Add photos</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+
           {/* Link a pin */}
           <Text style={[styles.label, { color: colors.mutedForeground }]}>LINK A PIN (OPTIONAL)</Text>
           {selectedPin ? (
@@ -212,6 +327,13 @@ export default function CreatePostScreen() {
             </>
           )}
 
+          {/* Upload progress */}
+          {uploadProgress ? (
+            <Text style={[styles.uploadProgress, { color: colors.mutedForeground }]}>
+              {uploadProgress}
+            </Text>
+          ) : null}
+
           {/* Submit */}
           <TouchableOpacity
             onPress={handleSubmit}
@@ -243,6 +365,8 @@ export default function CreatePostScreen() {
   );
 }
 
+const PHOTO_CELL_SIZE = 96;
+
 const styles = StyleSheet.create({
   scroll: { padding: 16, gap: 10 },
   label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: 4, marginBottom: 4 },
@@ -267,6 +391,38 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   charCount: { fontSize: 11, fontFamily: 'Inter_400Regular', textAlign: 'right', marginTop: -6 },
+
+  // Photo grid
+  photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  photoCell: {
+    width: PHOTO_CELL_SIZE,
+    height: PHOTO_CELL_SIZE,
+    borderWidth: 1,
+    overflow: 'hidden',
+  },
+  photoCellImage: { width: '100%', height: '100%', resizeMode: 'cover' },
+  photoRemoveBtn: {
+    position: 'absolute',
+    top: 4, right: 4,
+    width: 20, height: 20, borderRadius: 10,
+    backgroundColor: 'rgba(0,0,0,0.55)',
+    alignItems: 'center', justifyContent: 'center',
+  },
+  photoAddBtn: {
+    width: PHOTO_CELL_SIZE,
+    height: PHOTO_CELL_SIZE,
+    borderWidth: 1.5,
+    borderStyle: 'dashed',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 4,
+  },
+  photoAddLabel: { fontSize: 10, fontFamily: 'Inter_500Medium', textAlign: 'center' },
+
+  uploadProgress: {
+    fontSize: 12, fontFamily: 'Inter_400Regular',
+    textAlign: 'center', marginTop: 4,
+  },
 
   selectedPin: {
     flexDirection: 'row', alignItems: 'center',

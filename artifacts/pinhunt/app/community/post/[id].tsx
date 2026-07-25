@@ -1,13 +1,16 @@
 /**
- * Community Post Detail — shows the post body, linked pin, and comments.
- * Users can add a comment and start a private conversation with the author.
+ * Community Post Detail — shows the post body, photos, linked pin, and comments.
+ * Users can tap photos to view them full-screen, add comments, and message the author.
  */
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Dimensions,
+  FlatList,
   Image,
   KeyboardAvoidingView,
+  Modal,
   Platform,
   ScrollView,
   StyleSheet,
@@ -22,6 +25,8 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 const TYPE_LABEL: Record<string, string> = {
   in_search_of: 'In Search Of',
@@ -53,6 +58,143 @@ function initials(username: string): string {
   return username.split(' ').map(n => n[0]?.toUpperCase() ?? '').join('').slice(0, 2);
 }
 
+// ─── Full-screen photo lightbox ───────────────────────────────────────────────
+
+function PhotoLightbox({
+  photos,
+  startIndex,
+  onClose,
+}: {
+  photos: string[];
+  startIndex: number;
+  onClose(): void;
+}) {
+  const listRef = useRef<FlatList>(null);
+  const [current, setCurrent] = useState(startIndex);
+
+  useEffect(() => {
+    if (photos.length > 1) {
+      setTimeout(() => {
+        listRef.current?.scrollToIndex({ index: startIndex, animated: false });
+      }, 50);
+    }
+  }, [startIndex, photos.length]);
+
+  return (
+    <Modal
+      visible
+      transparent
+      animationType="fade"
+      statusBarTranslucent
+      onRequestClose={onClose}
+    >
+      <View style={lb.root}>
+        {/* Close button */}
+        <TouchableOpacity onPress={onClose} style={lb.closeBtn} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
+          <Feather name="x" size={24} color="#fff" />
+        </TouchableOpacity>
+
+        {/* Counter */}
+        {photos.length > 1 && (
+          <View style={lb.counter}>
+            <Text style={lb.counterText}>{current + 1} / {photos.length}</Text>
+          </View>
+        )}
+
+        {/* Paging list */}
+        <FlatList
+          ref={listRef}
+          data={photos}
+          keyExtractor={(_, i) => String(i)}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          getItemLayout={(_, index) => ({ length: SCREEN_WIDTH, offset: SCREEN_WIDTH * index, index })}
+          onMomentumScrollEnd={e => {
+            const page = Math.round(e.nativeEvent.contentOffset.x / SCREEN_WIDTH);
+            setCurrent(page);
+          }}
+          renderItem={({ item }) => (
+            <View style={lb.page}>
+              <Image
+                source={{ uri: item }}
+                style={lb.image}
+                resizeMode="contain"
+              />
+            </View>
+          )}
+        />
+      </View>
+    </Modal>
+  );
+}
+
+// ─── Photo grid (full detail view) ───────────────────────────────────────────
+
+function DetailPhotoGrid({ photos, onPress }: { photos: string[]; onPress(i: number): void }) {
+  const count = photos.length;
+  if (count === 0) return null;
+
+  const gap = 2;
+
+  if (count === 1) {
+    return (
+      <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9} style={dg.single}>
+        <Image source={{ uri: photos[0] }} style={dg.singleImage} />
+      </TouchableOpacity>
+    );
+  }
+
+  if (count === 2) {
+    return (
+      <View style={[dg.row, { gap }]}>
+        {photos.map((uri, i) => (
+          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9} style={{ flex: 1 }}>
+            <Image source={{ uri }} style={{ height: 180, borderRadius: 6, width: '100%' }} resizeMode="cover" />
+          </TouchableOpacity>
+        ))}
+      </View>
+    );
+  }
+
+  // 3+ — masonry-style: full-width first, then 3-col grid
+  return (
+    <View style={{ gap }}>
+      <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9} style={dg.single}>
+        <Image source={{ uri: photos[0] }} style={dg.singleImage} />
+      </TouchableOpacity>
+      <View style={[dg.row, { gap, flexWrap: 'wrap' }]}>
+        {photos.slice(1).map((uri, i) => {
+          const realIndex = i + 1;
+          const isLast = realIndex === Math.min(count - 1, 5);
+          const extra = count - 6;
+          return (
+            <TouchableOpacity
+              key={realIndex}
+              onPress={() => onPress(realIndex)}
+              activeOpacity={0.9}
+              style={{ position: 'relative', flex: 1, minWidth: (SCREEN_WIDTH - 32 - gap * 2) / 3 }}
+            >
+              <Image
+                source={{ uri }}
+                style={{ height: 100, borderRadius: 6, width: '100%' }}
+                resizeMode="cover"
+              />
+              {isLast && extra > 0 && (
+                <View style={dg.overlay}>
+                  <Text style={dg.overlayText}>+{extra}</Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    </View>
+  );
+}
+
+// ─── Comment row ─────────────────────────────────────────────────────────────
+
 function CommentRow({ comment, isMe, onDelete, colors }: {
   comment: PostComment;
   isMe: boolean;
@@ -62,7 +204,6 @@ function CommentRow({ comment, isMe, onDelete, colors }: {
   const name = comment.authorProfile?.username ?? '…';
   return (
     <View style={[styles.commentRow, { borderBottomColor: colors.border }]}>
-      {/* Avatar */}
       <View style={[styles.commentAvatar, { backgroundColor: colors.primary }]}>
         <Text style={styles.commentAvatarText}>{initials(name)}</Text>
       </View>
@@ -82,8 +223,11 @@ function CommentRow({ comment, isMe, onDelete, colors }: {
   );
 }
 
+// ─── Screen ───────────────────────────────────────────────────────────────────
+
 export default function PostDetailScreen() {
-  const { id }  = useLocalSearchParams<{ id: string }>();
+  const params = useLocalSearchParams<{ id: string; openPhotoIndex?: string }>();
+  const id = params.id;
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
@@ -95,6 +239,7 @@ export default function PostDetailScreen() {
   const [error,       setError]       = useState<string | null>(null);
   const [commentText, setCommentText] = useState('');
   const [sending,     setSending]     = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const scrollRef = useRef<ScrollView>(null);
 
   const load = useCallback(async () => {
@@ -106,6 +251,12 @@ export default function PostDetailScreen() {
       ]);
       setPost(p);
       setComments(c);
+
+      // Auto-open lightbox if navigated from feed photo tap
+      const openIdx = params.openPhotoIndex ? parseInt(params.openPhotoIndex, 10) : null;
+      if (openIdx !== null && !isNaN(openIdx) && (p?.photos ?? []).length > 0) {
+        setLightboxIndex(openIdx);
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load post.');
     } finally {
@@ -181,6 +332,7 @@ export default function PostDetailScreen() {
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 8;
   const isAuthor = post?.authorId === userId;
+  const photos = post?.photos ?? [];
 
   if (loading) {
     return (
@@ -221,6 +373,16 @@ export default function PostDetailScreen() {
             : undefined,
         }}
       />
+
+      {/* Photo lightbox */}
+      {lightboxIndex !== null && photos.length > 0 && (
+        <PhotoLightbox
+          photos={photos}
+          startIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
+
       <KeyboardAvoidingView
         style={{ flex: 1, backgroundColor: colors.background }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -232,7 +394,7 @@ export default function PostDetailScreen() {
           contentContainerStyle={{ paddingBottom: botPad }}
           showsVerticalScrollIndicator={false}
         >
-          {/* Post header */}
+          {/* Post card */}
           <View style={[styles.postCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
             {/* Type badge */}
             <View style={[styles.typeBadge, { backgroundColor: typeColor + '18', borderColor: typeColor + '44' }]}>
@@ -262,6 +424,14 @@ export default function PostDetailScreen() {
 
             {/* Body */}
             <Text style={[styles.postBody, { color: colors.foreground }]}>{post.body}</Text>
+
+            {/* Photos */}
+            {photos.length > 0 && (
+              <DetailPhotoGrid
+                photos={photos}
+                onPress={i => setLightboxIndex(i)}
+              />
+            )}
 
             {/* Linked pin */}
             {post.linkedPin && (
@@ -335,6 +505,63 @@ export default function PostDetailScreen() {
     </>
   );
 }
+
+// ─── Lightbox styles ──────────────────────────────────────────────────────────
+
+const lb = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.95)',
+    justifyContent: 'center',
+  },
+  closeBtn: {
+    position: 'absolute',
+    top: 56, right: 20,
+    zIndex: 10,
+    width: 40, height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255,255,255,0.15)',
+    alignItems: 'center', justifyContent: 'center',
+  },
+  counter: {
+    position: 'absolute',
+    top: 60,
+    alignSelf: 'center',
+    zIndex: 10,
+  },
+  counterText: {
+    color: 'rgba(255,255,255,0.7)',
+    fontSize: 13,
+    fontFamily: 'Inter_500Medium',
+  },
+  page: {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT * 0.8,
+  },
+});
+
+// ─── Detail grid styles ───────────────────────────────────────────────────────
+
+const dg = StyleSheet.create({
+  single: { height: 260, borderRadius: 8, overflow: 'hidden' },
+  singleImage: { width: '100%', height: '100%', resizeMode: 'cover' },
+  row: { flexDirection: 'row' },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.52)',
+    alignItems: 'center', justifyContent: 'center',
+    borderRadius: 6,
+  },
+  overlayText: { color: '#fff', fontSize: 22, fontFamily: 'Inter_700Bold' },
+});
+
+// ─── Screen styles ────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },

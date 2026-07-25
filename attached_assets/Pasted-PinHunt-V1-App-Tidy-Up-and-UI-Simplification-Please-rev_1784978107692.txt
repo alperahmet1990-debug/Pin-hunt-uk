@@ -1,0 +1,573 @@
+PinHunt V1 App Tidy-Up and UI Simplification
+
+Please review the existing PinHunt application and tidy up the current product experience around the agreed V1 vision.
+
+This is primarily a UI, navigation and product-structure refactor. Do not rebuild the application from scratch, remove working backend functionality, change the existing database schema unnecessarily, or introduce large new features during this task.
+
+Before making changes:
+
+1. Inspect the existing routes, screens, components, database tables and working features.
+2. Identify duplicated, unfinished or conflicting UI elements.
+3. Preserve all useful existing functionality.
+4. Reuse and refactor existing components wherever practical.
+5. Produce a short implementation summary before starting, then implement the changes.
+
+Core Product Vision
+
+PinHunt should be the fastest way for Disney pin collectors to:
+
+1. Identify a pin using AI.
+2. Add it to their inventory.
+3. Organise their pins into official sets or custom collections.
+4. Understand the likely current value of a pin.
+5. Find collectors who have pins they are searching for.
+
+Every prominent screen and action should support one of these goals.
+
+The experience should feel clean, fast and collector-focused rather than like a generic marketplace or social network.
+
+⸻
+
+Primary User Journey
+
+The main journey should be:
+
+Scan or search for a pin → identify it → review the pin details → see its estimated value → add it to inventory → assign it to collections or mark its status.
+
+The user should then be able to see whether other collectors:
+
+* Own the pin
+* Are searching for it
+* Have it available for trade
+* Have it available for sale
+
+A user should not have to navigate through several unrelated screens to complete this journey.
+
+⸻
+
+Main Navigation
+
+Simplify the mobile navigation to the following four primary areas:
+
+1. Collection
+
+This is the user’s inventory and collection-management area.
+
+2. Discover
+
+This contains:
+
+* Scan a Pin
+* Search the pin catalogue
+* Browse official sets
+* Browse pins and recent additions
+
+3. Community
+
+This contains:
+
+* Community posts
+* In Search Of posts
+* For Trade posts
+* For Sale posts
+* New Pickup posts
+* Private messages
+
+4. Profile
+
+This contains:
+
+* User profile
+* Collection statistics
+* Settings
+* Admin access for authorised users
+
+There should also be a highly visible, persistent Scan action.
+
+This could be:
+
+* A central raised scan button in the bottom navigation, or
+* A floating action button displayed on the key screens
+
+The scan action must be one of the most obvious controls in the app.
+
+Remove or consolidate navigation items that duplicate these areas.
+
+⸻
+
+Home and Discover Experience
+
+Make the Discover screen the natural starting point for identifying pins.
+
+The top of the page should contain a large primary action:
+
+Scan a Pin
+
+Underneath, provide:
+
+* Search the catalogue
+* Recently viewed pins
+* Browse official sets
+* Recently added pins
+
+Avoid placing too many cards, statistics or community elements above the scan and search functions.
+
+The user should understand what to do within a few seconds.
+
+⸻
+
+AI Pin Scanning Flow
+
+Retain any existing scan or image-upload functionality and simplify the user flow.
+
+The intended flow is:
+
+1. Take a photo or upload an image.
+2. Show a processing state.
+3. Present the best matching pin or a short list of possible matches.
+4. Display a confidence indication.
+5. Allow the user to confirm the match.
+6. Allow the user to select “None of these” if the result is incorrect.
+7. Open the selected pin detail page.
+8. Provide immediate actions to add or classify the pin.
+
+Do not pretend that AI recognition is complete if the backend is not yet connected.
+
+Where functionality is still pending, retain a clearly labelled development state and structure the UI so the real recognition service can be connected later.
+
+Do not use fake successful scan results in production flows.
+
+⸻
+
+Pin Detail Page
+
+Create one consistent pin detail layout and use it throughout the app.
+
+The page should contain:
+
+Pin identity
+
+* Main image
+* Pin name
+* Character or characters
+* Official series or set
+* Release year
+* Edition type
+* Limited edition size, where applicable
+* Release location
+* Pin number or catalogue reference, where available
+
+Valuation
+
+* Estimated UK value
+* Estimated US value
+* Valuation range rather than false precision
+* Confidence level
+* Date last updated
+* Recent sold-listing summary
+* Similar-pin data clearly labelled as similar rather than exact matches
+
+Until the eBay integration is connected, use honest empty states such as:
+
+Market data not available yet
+
+Do not display fabricated prices.
+
+Inventory actions
+
+Provide clear actions for:
+
+* Add to inventory
+* Remove from inventory
+* Increase or reduce quantity
+* Add to an official set
+* Add to a custom collection
+* Mark In Search Of
+* Mark Available for Trade
+* Mark Available for Sale
+
+Avoid showing every action as an equally prominent button.
+
+Use one primary action and group secondary actions into a clean status or action sheet.
+
+Community availability
+
+Where the data exists, show:
+
+* Number of collectors who own it
+* Number searching for it
+* Number offering it for trade
+* Number offering it for sale
+
+Users should be able to open the relevant collector list and message a user.
+
+⸻
+
+Collection Area
+
+The Collection tab should focus on inventory rather than social activity.
+
+At the top, show:
+
+* Total unique pins
+* Total pin quantity
+* Number of duplicates
+* Number marked for trade
+* Estimated collection value only when reliable valuation data exists
+
+Do not calculate misleading totals from missing or placeholder valuations.
+
+Provide clear views for:
+
+* All Pins
+* Official Sets
+* Custom Collections
+* Duplicates
+* Available for Trade
+* Available for Sale
+* In Search Of
+
+Support both list and grid presentation if this already exists, but choose one sensible mobile default.
+
+Official sets
+
+Official sets represent the catalogue series a pin belongs to.
+
+Examples include:
+
+* Disney Princess Pastries
+* Villains Portraits
+* Munchlings
+* Snack Attack
+
+An official set page should show:
+
+* Owned pins
+* Missing pins
+* Completion count
+* Completion percentage
+* Duplicates within the set
+
+Custom collections
+
+Users should be able to create their own collections, such as:
+
+* Stitch
+* Disneyland Paris
+* Limited Editions
+* Keep Forever
+* Orlando 2026
+* Traders
+
+A pin may belong to more than one custom collection.
+
+Make the distinction between an official set and a custom collection clear in the UI.
+
+⸻
+
+Community Area
+
+Keep Community lightweight for V1.
+
+Do not build a complicated checkout, offer-management or transaction system.
+
+Support these post types:
+
+* In Search Of
+* For Trade
+* For Sale
+* New Pickup
+* General Discussion
+
+Each post should support:
+
+* One or more photos
+* Description
+* Linked catalogue pin where applicable
+* Post type
+* Comments
+* Private message action
+* Created date
+* Author
+
+Use filters or compact category chips so users can quickly switch between post types.
+
+The community feed should not dominate the app’s home or scanning experience.
+
+⸻
+
+Messaging
+
+Retain or simplify the existing private messaging experience.
+
+Users should be able to start a conversation from:
+
+* A community post
+* A pin’s collectors list
+* A user’s trade list
+* A user’s sale list
+
+Where possible, include the relevant pin or post reference in the opening message context.
+
+Do not add complex trade contracts, payment processing or structured negotiation workflows in this task.
+
+⸻
+
+Admin Catalogue Tool
+
+Create or tidy an authorised admin-only section for building the catalogue before launch.
+
+This should not appear for normal users.
+
+The admin workflow should prioritise fast entry:
+
+1. Scan or upload an image.
+2. Crop or confirm the image.
+3. Search for possible existing matches.
+4. Flag likely duplicates.
+5. Create a new pin or update an existing record.
+6. Save as draft or publish.
+
+The admin pin form should support:
+
+* Pin name
+* Primary image
+* Additional images
+* Official set or series
+* Characters
+* Release year
+* Release date where known
+* Release location
+* Edition type
+* Edition size
+* Product type
+* Description
+* Tags
+* Variant information
+* Source or reference notes
+* Draft, verified and published status
+
+Where practical, support rapid repeated entry:
+
+Save and Add Another
+
+A full bulk scanning workflow can come later, but the structure should not prevent it.
+
+Do not automatically publish AI-generated metadata without human confirmation.
+
+⸻
+
+UI Design Direction
+
+Refresh the app so it feels:
+
+* Clean
+* Modern
+* Friendly
+* Collectible-focused
+* Mobile-first
+* Fast to use while standing at a pin board or trading event
+
+Use:
+
+* Consistent spacing
+* Clear typography hierarchy
+* Rounded cards used sparingly
+* Large tap targets
+* Consistent icons
+* Strong image presentation
+* Clear primary and secondary actions
+* Skeleton loading states where appropriate
+* Helpful empty states
+
+Avoid:
+
+* Excessive gradients
+* Too many dashboard cards
+* Multiple competing accent colours
+* Large blocks of explanatory text
+* Oversized headings that push content below the fold
+* Repeating the same information in several places
+* Placeholder statistics presented as real information
+* Excessive modal windows
+* Desktop layouts compressed into mobile screens
+
+The interface should prioritise pin images and fast actions.
+
+Use UK localisation by default:
+
+* Currency displayed as £ for UK valuation
+* Dates formatted appropriately for en-GB
+* Use “organise” rather than “organize” in user-facing copy
+
+⸻
+
+Component Consistency
+
+Create or standardise reusable components for:
+
+* Pin cards
+* Set cards
+* Collection cards
+* Value displays
+* Status badges
+* Empty states
+* Loading states
+* Search bars
+* Filters
+* Image upload
+* Confirmation dialogs
+* User avatars
+* Community posts
+
+Do not leave several visually different versions of the same component.
+
+Ensure pin cards have a consistent information hierarchy.
+
+A standard pin card should usually show:
+
+* Image
+* Name
+* Series
+* Edition badge where relevant
+* User status such as Owned, Wanted or For Trade
+
+Do not overcrowd cards with every available data field.
+
+⸻
+
+Data and Technical Requirements
+
+* Preserve the existing authentication system.
+* Preserve useful existing data and database relationships.
+* Do not delete tables or fields without first confirming they are obsolete.
+* Use migrations for necessary database changes.
+* Keep catalogue pin records separate from user inventory records.
+* Keep valuation or market records separate from core pin metadata.
+* Ensure users cannot access admin routes without the correct role.
+* Ensure one user cannot edit another user’s inventory or collections.
+* Handle image-upload failures gracefully.
+* Check for broken routes and dead navigation links.
+* Remove unused imports, obvious dead components and duplicate code where safe.
+* Keep the application responsive across common mobile sizes.
+* Do not expose secret keys in client-side code.
+* Do not begin the eBay API integration during this task unless some code already exists and only needs to be preserved.
+
+⸻
+
+Suggested Data Concepts
+
+Do not replace a sound existing schema simply to match these names, but ensure the product supports the equivalent concepts:
+
+* Catalogue Pin
+* Official Set
+* Official Set Membership
+* User Inventory Item
+* Custom Collection
+* Custom Collection Membership
+* User Pin Status
+* Community Post
+* Message Conversation
+* Message
+* Pin Image
+* Valuation Snapshot
+* Sold Listing Match
+* Admin Review Status
+
+A user’s ownership, quantity, trade status and wishlist status must not be stored directly on the shared catalogue pin record.
+
+⸻
+
+Scope Control
+
+For this task, do not add:
+
+* Payments
+* Checkout
+* Auctions
+* Shipping labels
+* Structured trade offers
+* Reputation scoring
+* Gamification
+* Achievements
+* Social follower systems
+* Automated AI training pipelines
+* Push-notification infrastructure
+* Full eBay integration
+* Advanced analytics dashboards
+
+Create sensible placeholders or extension points only where required.
+
+⸻
+
+Acceptance Criteria
+
+The tidy-up is complete when:
+
+1. The app has a clear four-area navigation structure.
+2. Scan is immediately visible and easy to access.
+3. Duplicate or conflicting screens have been consolidated.
+4. A consistent pin detail page is used across the application.
+5. Users can clearly distinguish official sets from custom collections.
+6. Inventory, wishlist, trade and sale statuses are easy to understand.
+7. The community feed is simple and supports the agreed post types.
+8. Admin users have a lightweight catalogue-entry workflow.
+9. Normal users cannot access admin tools.
+10. Placeholder prices and fake statistics are removed.
+11. Empty, loading and error states are present.
+12. The mobile UI is consistent and uncluttered.
+13. Existing working backend functionality and user data remain intact.
+14. The application builds and runs without new console or TypeScript errors.
+15. All primary routes and actions have been manually tested.
+
+⸻
+
+Delivery
+
+Please complete this in phases:
+
+Phase 1: Audit
+
+Summarise:
+
+* Existing screens and routes
+* Features that already work
+* Duplicate or confusing areas
+* Components that can be reused
+* Proposed changes
+* Any database changes genuinely required
+
+Phase 2: Refactor
+
+Implement the navigation, page hierarchy, reusable components and simplified user flows.
+
+Phase 3: Admin tidy-up
+
+Implement or refine the lightweight catalogue admin area with role protection.
+
+Phase 4: Quality check
+
+Test:
+
+* Authentication
+* Navigation
+* Pin scanning or upload flow
+* Pin detail pages
+* Adding pins to inventory
+* Collections
+* Status changes
+* Community posts
+* Messaging entry points
+* Admin access
+* Mobile responsiveness
+
+At the end, provide:
+
+* A summary of changes made
+* Files and routes changed
+* Database migrations created
+* Features preserved but not yet connected
+* Known limitations
+* Recommended next step for connecting the eBay sold-listing integration
+
+Do not stop after producing recommendations. Complete the audit and implement the tidy-up within the current codebase.

@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -19,7 +20,7 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
-import type { Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
+import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -37,6 +38,122 @@ const STATUS_COLOR: Record<TradeStatus, string> = {
   completed: '#16A34A',
   cancelled: '#6B7280',
 };
+
+// ─── Potential match banner ───────────────────────────────────────────────────
+
+function PotentialMatchBanner({
+  pins,
+  colors,
+  onDismiss,
+  onPinPress,
+}: {
+  pins: PotentialTradePin[];
+  colors: ReturnType<typeof useColors>;
+  onDismiss: () => void;
+  onPinPress: (pinhuntId: string) => void;
+}) {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const theyHave = pins.filter(p => p.direction === 'they_have_i_want');
+  const iHave    = pins.filter(p => p.direction === 'i_have_they_want');
+
+  return (
+    <View style={[bannerStyles.container, { backgroundColor: colors.primary + '12', borderColor: colors.primary + '40' }]}>
+      {/* Header row */}
+      <View style={bannerStyles.header}>
+        <View style={bannerStyles.headerLeft}>
+          <Feather name="shuffle" size={14} color={colors.primary} />
+          <Text style={[bannerStyles.headerTitle, { color: colors.primary }]}>Potential match</Text>
+          <Text style={[bannerStyles.headerCount, { color: colors.primary + 'BB' }]}>
+            {pins.length} pin{pins.length !== 1 ? 's' : ''}
+          </Text>
+        </View>
+        <View style={bannerStyles.headerActions}>
+          <TouchableOpacity onPress={() => setCollapsed(c => !c)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+            <Feather name={collapsed ? 'chevron-down' : 'chevron-up'} size={16} color={colors.primary} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onDismiss} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginLeft: 12 }}>
+            <Feather name="x" size={16} color={colors.mutedForeground} />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Pin lists */}
+      {!collapsed && (
+        <View style={{ gap: 10 }}>
+          {theyHave.length > 0 && (
+            <View style={{ gap: 6 }}>
+              <Text style={[bannerStyles.groupLabel, { color: colors.mutedForeground }]}>They have · you want</Text>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={bannerStyles.pinRow}>
+                {theyHave.map(pin => (
+                  <TouchableOpacity
+                    key={pin.pinId}
+                    onPress={() => onPinPress(pin.pinhuntId)}
+                    activeOpacity={0.8}
+                    style={[bannerStyles.pinCard, { backgroundColor: colors.card, borderColor: colors.border }]}
+                  >
+                    {pin.imageUrl ? (
+                      <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
+                    ) : (
+                      <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.secondary }]}>
+                        <Feather name="image" size={18} color={colors.mutedForeground} />
+                      </View>
+                    )}
+                    <Text style={[bannerStyles.pinTitle, { color: colors.foreground }]} numberOfLines={2}>
+                      {pin.title}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            </View>
+          )}
+
+          {iHave.length > 0 && (
+            <View style={{ gap: 6 }}>
+              <Text style={[bannerStyles.groupLabel, { color: colors.mutedForeground }]}>You have · they want</Text>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={bannerStyles.pinRow}>
+                {iHave.map(pin => (
+                  <TouchableOpacity
+                    key={pin.pinId}
+                    onPress={() => onPinPress(pin.pinhuntId)}
+                    activeOpacity={0.8}
+                    style={[bannerStyles.pinCard, { backgroundColor: colors.card, borderColor: colors.border }]}
+                  >
+                    {pin.imageUrl ? (
+                      <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
+                    ) : (
+                      <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.secondary }]}>
+                        <Feather name="image" size={18} color={colors.mutedForeground} />
+                      </View>
+                    )}
+                    <Text style={[bannerStyles.pinTitle, { color: colors.foreground }]} numberOfLines={2}>
+                      {pin.title}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            </View>
+          )}
+        </View>
+      )}
+    </View>
+  );
+}
+
+const bannerStyles = StyleSheet.create({
+  container:       { margin: 10, borderWidth: 1, borderRadius: 12, padding: 12, gap: 10 },
+  header:          { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  headerLeft:      { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  headerTitle:     { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  headerCount:     { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  headerActions:   { flexDirection: 'row', alignItems: 'center' },
+  groupLabel:      { fontSize: 11, fontFamily: 'Inter_500Medium', textTransform: 'uppercase', letterSpacing: 0.4 },
+  pinRow:          { gap: 8, paddingRight: 4 },
+  pinCard:         { width: 80, borderRadius: 10, borderWidth: 1, overflow: 'hidden', gap: 4, paddingBottom: 6 },
+  pinImage:        { width: 80, height: 80 },
+  pinImagePlaceholder: { width: 80, height: 80, alignItems: 'center', justifyContent: 'center' },
+  pinTitle:        { fontSize: 11, fontFamily: 'Inter_400Regular', paddingHorizontal: 5, lineHeight: 14 },
+});
 
 // ─── Rating modal ─────────────────────────────────────────────────────────────
 
@@ -156,13 +273,15 @@ export default function TradeScreen() {
   const router  = useRouter();
   const { repo, userId } = useMarketplace();
 
-  const [trade,       setTrade]       = useState<Trade | null>(null);
-  const [loading,     setLoading]     = useState(true);
-  const [error,       setError]       = useState<string | null>(null);
-  const [msgText,     setMsgText]     = useState('');
-  const [sending,     setSending]     = useState(false);
-  const [actioning,   setActioning]   = useState(false);
-  const [showRating,  setShowRating]  = useState(false);
+  const [trade,          setTrade]          = useState<Trade | null>(null);
+  const [loading,        setLoading]        = useState(true);
+  const [error,          setError]          = useState<string | null>(null);
+  const [msgText,        setMsgText]        = useState('');
+  const [sending,        setSending]        = useState(false);
+  const [actioning,      setActioning]      = useState(false);
+  const [showRating,     setShowRating]     = useState(false);
+  const [potentialPins,  setPotentialPins]  = useState<PotentialTradePin[]>([]);
+  const [bannerDismissed, setBannerDismissed] = useState(false);
   const scrollRef = useRef<ScrollView>(null);
 
   const load = useCallback(async () => {
@@ -177,6 +296,16 @@ export default function TradeScreen() {
       setLoading(false);
     }
   }, [repo, id]);
+
+  // Load potential trades once we know both parties (only needs to run once)
+  useEffect(() => {
+    if (!repo || !userId || !trade) return;
+    const otherId = trade.initiatorId === userId ? trade.recipientId : trade.initiatorId;
+    repo.getPotentialTrades({ viewerId: userId, collectorId: otherId })
+      .then(pins => setPotentialPins(pins))
+      .catch(() => { /* silently ignore — banner just won't appear */ });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [repo, userId, trade?.id]);
 
   useEffect(() => { load(); }, [load]);
 
@@ -226,6 +355,12 @@ export default function TradeScreen() {
   const isActive    = trade && !['rejected', 'completed', 'cancelled'].includes(trade.status);
   const botPad      = Platform.OS === 'web' ? 24 : insets.bottom + 8;
 
+  const showBanner = potentialPins.length > 0 && !bannerDismissed;
+
+  const handlePinPress = (pinhuntId: string) => {
+    router.push({ pathname: '/pin/[id]', params: { id: pinhuntId } });
+  };
+
   return (
     <>
       <Stack.Screen options={{ title: 'Trade Request' }} />
@@ -258,6 +393,16 @@ export default function TradeScreen() {
                 <Text style={[styles.noteText, { color: colors.mutedForeground }]}>{trade.notes}</Text>
               </View>
             ) : null}
+
+            {/* Potential match banner */}
+            {showBanner && (
+              <PotentialMatchBanner
+                pins={potentialPins}
+                colors={colors}
+                onDismiss={() => setBannerDismissed(true)}
+                onPinPress={handlePinPress}
+              />
+            )}
 
             {/* Messages */}
             <ScrollView

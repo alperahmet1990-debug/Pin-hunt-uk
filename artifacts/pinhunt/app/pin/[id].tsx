@@ -23,6 +23,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
+import { MarketValueSection } from '@/components/MarketValueSection';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
 import type { CollectionStatus } from '@/types/pin';
 import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repository';
@@ -343,6 +344,12 @@ export default function PinDetailScreen() {
                 </Text>
               </View>
             )}
+          </View>
+
+          {/* ── eBay market value ── */}
+          <View>
+            <SectionTitle title="Estimated Market Value" colors={colors} />
+            <MarketValueSection pinId={pin.id} />
           </View>
 
           {/* ── Pins in this Set ── */}

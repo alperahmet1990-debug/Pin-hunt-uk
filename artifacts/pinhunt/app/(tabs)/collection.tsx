@@ -14,6 +14,8 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import Svg, { Circle } from 'react-native-svg';
 import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
@@ -119,6 +121,96 @@ function SetCard({ info, colors, onPress }: { info: SetInfo; colors: ReturnType<
   );
 }
 
+// ─── Progress ring for Nearly Complete cards ─────────────────────────────────
+
+function ProgressRing({ pct, size, stroke, track, color }: { pct: number; size: number; stroke: number; track: string; color: string }) {
+  const r = (size - stroke) / 2;
+  const c = 2 * Math.PI * r;
+  return (
+    <Svg width={size} height={size}>
+      <Circle cx={size / 2} cy={size / 2} r={r} stroke={track} strokeWidth={stroke} fill="none" />
+      <Circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        stroke={color}
+        strokeWidth={stroke}
+        fill="none"
+        strokeDasharray={`${c}`}
+        strokeDashoffset={c * (1 - pct / 100)}
+        strokeLinecap="round"
+        transform={`rotate(-90 ${size / 2} ${size / 2})`}
+      />
+    </Svg>
+  );
+}
+
+// ─── Gallery tile for the pin grid ────────────────────────────────────────────
+
+function GalleryTile({
+  pin,
+  statusColor,
+  colors,
+  onPress,
+}: {
+  pin: CataloguePin;
+  statusColor: string | null;
+  colors: ReturnType<typeof import('@/hooks/useColors').useColors>;
+  onPress: () => void;
+}) {
+  return (
+    <TouchableOpacity onPress={onPress} activeOpacity={0.85} style={galleryStyles.tile}>
+      <Image source={getPinImageSource(pin)} style={galleryStyles.image} />
+      <LinearGradient
+        colors={['transparent', 'rgba(0,0,0,0.62)']}
+        style={galleryStyles.scrim}
+      />
+      {statusColor && (
+        <View style={[galleryStyles.dot, { backgroundColor: statusColor }]} />
+      )}
+      <View style={galleryStyles.caption}>
+        <Text style={galleryStyles.captionSet} numberOfLines={1}>
+          {pin.collection.toUpperCase()}
+        </Text>
+        <Text style={galleryStyles.captionTitle} numberOfLines={1}>
+          {pin.title}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+const galleryStyles = StyleSheet.create({
+  tile: {
+    flex: 1,
+    aspectRatio: 1,
+    borderRadius: 20,
+    overflow: 'hidden',
+    backgroundColor: '#00000010',
+  },
+  image: { ...StyleSheet.absoluteFillObject, width: undefined, height: undefined, resizeMode: 'cover' },
+  scrim: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '45%' },
+  dot: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.9)',
+  },
+  caption: { position: 'absolute', left: 10, right: 10, bottom: 8 },
+  captionSet: {
+    color: 'rgba(255,255,255,0.75)',
+    fontSize: 8,
+    fontFamily: 'Inter_600SemiBold',
+    letterSpacing: 1,
+    marginBottom: 1,
+  },
+  captionTitle: { color: '#FFFFFF', fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+});
+
 const setStyles = StyleSheet.create({
   card: {
     flexDirection: 'row',
@@ -216,6 +308,19 @@ export default function CollectionScreen() {
       }))
       .sort((a, b) => b.ownedCount - a.ownedCount);
   }, [catalogue, ownedIds]);
+
+  // Nearly-complete sets for the hero carousel
+  const nearlyComplete = useMemo(
+    () =>
+      officialSets
+        .filter(s => s.ownedCount > 0 && s.ownedCount < s.totalInCatalogue)
+        .sort(
+          (a, b) =>
+            b.ownedCount / b.totalInCatalogue - a.ownedCount / a.totalInCatalogue,
+        )
+        .slice(0, 6),
+    [officialSets],
+  );
 
   // ── Filtered pins for list views ──────────────────────────────────────────────
 
@@ -405,15 +510,34 @@ export default function CollectionScreen() {
           viewMode === 'grid' && styles.gridPadding,
         ]}
         columnWrapperStyle={viewMode === 'grid' ? styles.gridRow : undefined}
-        renderItem={({ item }) => (
-          <PinCard
-            pin={item}
-            mode={viewMode}
-            onPress={() =>
-              router.push({ pathname: '/pin/[id]', params: { id: item.id } })
-            }
-          />
-        )}
+        renderItem={({ item }) =>
+          viewMode === 'grid' ? (
+            <GalleryTile
+              pin={item}
+              statusColor={
+                ownedIds.has(item.id)
+                  ? colors.owned
+                  : forTradeIds.has(item.id)
+                    ? colors.forTrade
+                    : wantedIds.has(item.id)
+                      ? colors.wanted
+                      : null
+              }
+              colors={colors}
+              onPress={() =>
+                router.push({ pathname: '/pin/[id]', params: { id: item.id } })
+              }
+            />
+          ) : (
+            <PinCard
+              pin={item}
+              mode="list"
+              onPress={() =>
+                router.push({ pathname: '/pin/[id]', params: { id: item.id } })
+              }
+            />
+          )
+        }
       />
     );
   };
@@ -422,54 +546,119 @@ export default function CollectionScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
-      {/* ── Header ── */}
-      <View
-        style={[
-          styles.headerBar,
-          { paddingTop: topPad + 12, backgroundColor: colors.card, borderBottomColor: colors.border },
-        ]}
+      {/* ── Gold hero header ── */}
+      <LinearGradient
+        colors={[colors.primaryGradientStart, colors.primaryGradientEnd]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={[styles.hero, { paddingTop: topPad + 14 }]}
       >
-        <View style={styles.headerRow}>
-          <Text style={[styles.headerTitle, { color: colors.foreground }]}>Collection</Text>
+        <View style={styles.heroRow}>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.heroTitle}>My Collection</Text>
+            <Text style={styles.heroSub}>
+              {counts.owned} {counts.owned === 1 ? 'pin' : 'pins'}
+              {estimatedValue !== null ? ` · est £${estimatedValue.toFixed(0)}` : ''}
+            </Text>
+          </View>
           {showSearchAndToggle && (
             <TouchableOpacity
               onPress={() => setViewMode(v => (v === 'grid' ? 'list' : 'grid'))}
-              style={[styles.toggleBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}
+              style={styles.heroToggleBtn}
               activeOpacity={0.75}
             >
-              <Feather name={viewMode === 'grid' ? 'list' : 'grid'} size={18} color={colors.foreground} />
+              <Feather name={viewMode === 'grid' ? 'list' : 'grid'} size={18} color="#FFFFFF" />
             </TouchableOpacity>
           )}
         </View>
+      </LinearGradient>
 
-        {/* ── Summary stats ── */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.summaryRow}
-        >
-          <StatChip label="Owned" value={counts.owned} color={colors.owned} colors={colors} />
-          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
-          <StatChip label="For Trade" value={counts.forTrade} color={colors.forTrade} colors={colors} />
-          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
-          <StatChip label="ISO" value={counts.wanted} color={colors.wanted} colors={colors} />
-          {estimatedValue !== null && (
-            <>
-              <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
-              <StatChip
-                label="Est. Value"
-                value={`£${estimatedValue.toFixed(0)}`}
-                color={colors.gold}
-                colors={colors}
-                isString
-              />
-            </>
-          )}
-          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
-          <StatChip label="Sets" value={officialSets.length} color={colors.primary} colors={colors} />
-          <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
-          <StatChip label="Boards" value={customBoards.length} color={colors.accent} colors={colors} />
-        </ScrollView>
+      {/* ── Stat medallions overlapping the hero ── */}
+      <View style={styles.medalRow}>
+        {(
+          [
+            { label: 'OWNED', value: counts.owned, color: colors.owned },
+            { label: 'TRADING', value: counts.forTrade, color: colors.forTrade },
+            { label: 'ISO', value: counts.wanted, color: colors.wanted },
+          ] as const
+        ).map(m => (
+          <View
+            key={m.label}
+            style={[styles.medal, { backgroundColor: colors.card, borderColor: colors.border }]}
+          >
+            <Text style={[styles.medalLabel, { color: m.color }]}>{m.label}</Text>
+            <Text style={[styles.medalValue, { color: colors.foreground }]}>{m.value}</Text>
+            <View style={[styles.medalBar, { backgroundColor: m.color }]} />
+          </View>
+        ))}
+      </View>
+
+      <View>
+      {/* ── Nearly complete carousel ── */}
+      {view === 'all' && nearlyComplete.length > 0 && (
+        <View style={styles.nearlyWrap}>
+          <View style={styles.nearlyHeader}>
+            <Text style={[styles.nearlyTitle, { color: colors.mutedForeground }]}>
+              NEARLY COMPLETE
+            </Text>
+            <TouchableOpacity onPress={() => handleViewChange('sets')} activeOpacity={0.7}>
+              <Text style={[styles.nearlyViewAll, { color: colors.primary }]}>View All ›</Text>
+            </TouchableOpacity>
+          </View>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.nearlyScroll}
+          >
+            {nearlyComplete.map(s => {
+              const pct = Math.round((s.ownedCount / s.totalInCatalogue) * 100);
+              const toGo = s.totalInCatalogue - s.ownedCount;
+              return (
+                <TouchableOpacity
+                  key={s.collectionName}
+                  activeOpacity={0.85}
+                  onPress={() =>
+                    router.push({
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      pathname: '/set/[collection]' as any,
+                      params: { collection: s.collectionName },
+                    })
+                  }
+                  style={[styles.nearlyCard, { backgroundColor: colors.card, borderColor: colors.border }]}
+                >
+                  <View style={styles.ringWrap}>
+                    <ProgressRing
+                      pct={pct}
+                      size={46}
+                      stroke={4}
+                      track={colors.secondary}
+                      color={colors.primary}
+                    />
+                    <View style={styles.ringLabelWrap}>
+                      <Text style={[styles.ringLabel, { color: colors.foreground }]}>
+                        {s.ownedCount}
+                        <Text style={[styles.ringLabelSub, { color: colors.mutedForeground }]}>
+                          /{s.totalInCatalogue}
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={{ flex: 1, gap: 4 }}>
+                    <Text style={[styles.nearlyName, { color: colors.foreground }]} numberOfLines={1}>
+                      {s.collectionName}
+                    </Text>
+                    <View style={[styles.toGoChip, { backgroundColor: colors.secondary }]}>
+                      <Text style={[styles.toGoLabel, { color: colors.secondaryForeground }]}>
+                        {toGo} {toGo === 1 ? 'PIN' : 'PINS'} TO GO
+                      </Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+        </View>
+      )}
 
         {/* ── View tabs ── */}
         <ScrollView
@@ -591,57 +780,82 @@ export default function CollectionScreen() {
   );
 }
 
-// ─── Stat chip helper ─────────────────────────────────────────────────────────
-
-function StatChip({
-  label,
-  value,
-  color,
-  colors,
-  isString,
-}: {
-  label: string;
-  value: number | string;
-  color: string;
-  colors: ReturnType<typeof import('@/hooks/useColors').useColors>;
-  isString?: boolean;
-}) {
-  return (
-    <View style={styles.statItem}>
-      <Text style={[styles.statCount, { color }]}>
-        {isString ? value : (value as number)}
-      </Text>
-      <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>{label}</Text>
-    </View>
-  );
-}
-
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  headerBar: { borderBottomWidth: StyleSheet.hairlineWidth },
-  headerRow: {
+  // Gold hero
+  hero: {
+    paddingHorizontal: 16,
+    paddingBottom: 42,
+    borderBottomLeftRadius: 28,
+    borderBottomRightRadius: 28,
+  },
+  heroRow: { flexDirection: 'row', alignItems: 'center' },
+  heroTitle: { fontSize: 27, fontFamily: 'Inter_700Bold', color: '#FFFFFF' },
+  heroSub: {
+    fontSize: 13,
+    fontFamily: 'Inter_500Medium',
+    color: 'rgba(255,255,255,0.9)',
+    marginTop: 2,
+  },
+  heroToggleBtn: {
+    padding: 9,
+    borderRadius: 12,
+    backgroundColor: 'rgba(255,255,255,0.22)',
+  },
+  // Stat medallions
+  medalRow: {
+    flexDirection: 'row',
+    gap: 10,
+    marginHorizontal: 16,
+    marginTop: -28,
+    marginBottom: 12,
+  },
+  medal: {
+    flex: 1,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingTop: 10,
+    overflow: 'hidden',
+    shadowColor: '#2D1800',
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 3 },
+    elevation: 2,
+  },
+  medalLabel: { fontSize: 10, fontFamily: 'Inter_700Bold', letterSpacing: 1 },
+  medalValue: { fontSize: 20, fontFamily: 'Inter_700Bold', marginTop: 2, marginBottom: 8 },
+  medalBar: { height: 3, alignSelf: 'stretch' },
+  // Nearly complete carousel
+  nearlyWrap: { marginBottom: 4 },
+  nearlyHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
-    marginBottom: 12,
+    marginBottom: 8,
   },
-  headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
-  toggleBtn: { padding: 8 },
-  // Stats
-  summaryRow: {
+  nearlyTitle: { fontSize: 11, fontFamily: 'Inter_700Bold', letterSpacing: 1.2 },
+  nearlyViewAll: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  nearlyScroll: { paddingHorizontal: 16, gap: 10, paddingBottom: 12 },
+  nearlyCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingBottom: 12,
-    gap: 0,
+    gap: 10,
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 12,
+    width: 210,
   },
-  statItem: { alignItems: 'center', paddingHorizontal: 12 },
-  statCount: { fontSize: 20, fontFamily: 'Inter_700Bold' },
-  statLabel: { fontSize: 10, fontFamily: 'Inter_400Regular', marginTop: 2 },
-  statDivider: { width: StyleSheet.hairlineWidth, height: 32 },
+  ringWrap: { width: 46, height: 46, alignItems: 'center', justifyContent: 'center' },
+  ringLabelWrap: { ...StyleSheet.absoluteFillObject, alignItems: 'center', justifyContent: 'center' },
+  ringLabel: { fontSize: 12, fontFamily: 'Inter_700Bold' },
+  ringLabelSub: { fontSize: 9, fontFamily: 'Inter_500Medium' },
+  nearlyName: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  toGoChip: { alignSelf: 'flex-start', borderRadius: 8, paddingHorizontal: 7, paddingVertical: 3 },
+  toGoLabel: { fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: 0.5 },
   // Tabs
   tabScroll: {
     flexDirection: 'row',

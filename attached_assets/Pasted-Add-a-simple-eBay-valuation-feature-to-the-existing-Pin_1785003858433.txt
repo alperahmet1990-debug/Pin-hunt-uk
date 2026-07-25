@@ -1,0 +1,361 @@
+Add a simple eBay valuation feature to the existing PinHunt app.
+
+Goal
+
+When a user opens a pin details page, show an estimated UK and US market value based on current eBay listings.
+
+Do not build the scanner yet.
+
+Do not build admin tools yet.
+
+Do not bulk-value all pins yet.
+
+The first version should work like this:
+
+User opens pin details
+→ PinHunt checks for a saved value
+→ If a saved value exists, display it
+→ If no value exists, search eBay
+→ Calculate an estimated value
+→ Save it in Supabase
+→ Display it on the pin details page
+
+Preserve the existing app structure, styling, authentication and Supabase setup.
+
+1. eBay credentials
+
+Use these server-side environment variables:
+
+EBAY_CLIENT_ID=
+EBAY_CLIENT_SECRET=
+EBAY_ENVIRONMENT=production
+
+Keep the eBay Client Secret completely server-side.
+
+Do not expose eBay credentials or access tokens in the browser.
+
+Support both production and sandbox environments.
+
+2. eBay authentication
+
+Use the eBay OAuth client-credentials flow.
+
+Create a simple reusable server-side eBay service that:
+
+* Requests an eBay application access token
+* Caches the token until it expires
+* Refreshes it when required
+* Handles errors safely
+* Never logs credentials or full access tokens
+
+Users should not need to connect their own eBay accounts.
+
+3. Search eBay
+
+Use the eBay Browse API to search current active listings.
+
+Search separately in:
+
+EBAY_GB
+EBAY_US
+
+Use the information available in the existing pin record, such as:
+
+* Pin name
+* Character
+* Franchise
+* Collection or series
+* Manufacturer
+* Release year
+* Limited-edition size
+* SKU, FAC or product code
+
+Generate two or three useful search variations.
+
+Example:
+
+Disney Artland Rabbit Winnie the Pooh pin LE 250
+Artland Rabbit Disney pin
+Rabbit Winnie the Pooh limited edition pin
+
+Avoid duplicate searches.
+
+4. Filter irrelevant results
+
+Create a simple relevance score for each listing.
+
+Prioritise listings that match:
+
+* Pin name
+* Character
+* Collection
+* Manufacturer
+* Edition size
+* Product code
+
+Exclude obvious irrelevant listings containing terms such as:
+
+lot
+job lot
+bundle
+pin backs
+backing card only
+box only
+custom
+fantasy
+inspired
+scrapper
+fake
+replica
+
+Do not exclude the word “set” when the database record represents a complete pin set.
+
+Do not exclude the word “mystery” when the pin belongs to a mystery collection.
+
+Deduplicate listings returned by multiple searches.
+
+5. Calculate the estimated value
+
+Calculate UK and US values separately.
+
+Keep UK results in GBP and US results in USD.
+
+Use the listing price plus delivery where delivery is available.
+
+Do not treat unavailable delivery as free.
+
+Use accepted relevant listings only.
+
+Calculate:
+
+Estimated low
+Estimated midpoint
+Estimated high
+Number of comparable listings
+Confidence
+
+Use the median price for the midpoint.
+
+Suggested confidence rules:
+
+0 listings = Insufficient data
+1–3 listings = Low confidence
+4–9 listings = Medium confidence
+10+ listings = High confidence
+
+Remove extreme price outliers where there are enough listings.
+
+Label the result:
+
+Estimated current eBay market value
+
+Do not call it:
+
+Sold value
+Last sold value
+Guaranteed value
+
+6. Save values in Supabase
+
+Inspect the existing pin schema and create additive migrations only.
+
+Create a table similar to:
+
+pin_market_estimates
+
+id
+pin_id
+marketplace
+currency
+estimated_low
+estimated_mid
+estimated_high
+comparable_count
+confidence
+calculated_at
+expires_at
+created_at
+updated_at
+
+Create a table similar to:
+
+ebay_listing_snapshots
+
+id
+pin_id
+ebay_item_id
+marketplace
+title
+item_url
+image_url
+item_price
+delivery_price
+total_price
+currency
+condition
+relevance_score
+accepted_for_valuation
+retrieved_at
+
+Use the existing pin ID type and foreign-key conventions.
+
+Store eBay listing images as external marketplace evidence.
+
+Do not add eBay seller images to the permanent PinHunt pin-image catalogue.
+
+7. API routes
+
+Follow the project’s existing API conventions.
+
+Create functionality equivalent to:
+
+GET /api/pins/:pinId/market-value
+
+Return the saved UK and US values.
+
+POST /api/pins/:pinId/market-value/refresh
+
+This should:
+
+1. Load the pin
+2. Generate search queries
+3. Search eBay UK
+4. Search eBay US
+5. Filter and score the listings
+6. Calculate both valuations
+7. Save the results
+8. Return the updated values
+
+Prevent multiple identical refreshes from running at the same time.
+
+8. Pin details page
+
+Add a section to the existing pin details page called:
+
+Estimated market value
+
+Include this explanation:
+
+Based on comparable active eBay listings. Actual sale and trade values may vary.
+
+Display:
+
+UK
+
+Typical value: £28
+Estimated range: £24–£32
+7 comparable listings
+Medium confidence
+Last updated today
+
+US
+
+Typical value: $35
+Estimated range: $29–$42
+6 comparable listings
+Medium confidence
+Last updated today
+
+Use proper en-GB formatting for UK values.
+
+Support these states:
+
+* Checking value
+* Value available
+* No value yet
+* Insufficient data
+* eBay unavailable
+* Saved value is out of date
+
+When there is no saved value, show a button:
+
+Check eBay value
+
+When the user presses it, call the refresh endpoint and update the page.
+
+Do not automatically call eBay every time the page loads.
+
+Once a value is saved, reuse it.
+
+9. Comparable listings
+
+Add a simple expandable area:
+
+View comparable eBay listings
+
+Show up to five accepted listings for each marketplace.
+
+Display:
+
+* Listing image
+* Title
+* Item price
+* Delivery cost where available
+* Total price
+* Condition
+* Link to open the listing on eBay
+
+Clearly present these as external eBay listings.
+
+10. Caching
+
+Use the saved valuation for 14 days.
+
+After 14 days, mark it as out of date but continue showing the last known value.
+
+Allow the user to press:
+
+Refresh eBay value
+
+Do not remove an existing value when eBay is temporarily unavailable.
+
+11. Future scanner compatibility
+
+Create a reusable function equivalent to:
+
+getMarketValueForPin(pinId)
+
+The future scanner will use the same pin details page:
+
+Take pin photo
+→ Identify pin
+→ Open pin details
+→ Show saved eBay value
+
+Do not create a separate valuation system for scanning.
+
+12. Testing
+
+Test:
+
+* A pin with several exact matches
+* A rare pin with one result
+* A pin with no results
+* A pin where eBay returns bundles
+* A complete pin set
+* UK and US values
+* Missing delivery prices
+* Duplicate listings
+* An extreme price outlier
+* eBay authentication failure
+
+Completion checklist
+
+Before finishing:
+
+* The app builds successfully
+* Existing pin pages still work
+* eBay credentials remain server-side
+* A test pin can retrieve UK and US listings
+* The valuation is stored in Supabase
+* The valuation appears on the pin details page
+* Saved values are reused
+* Insufficient-data cases do not invent a price
+
+At the end, tell me:
+
+1. Which Replit Secrets I need to add
+2. Which files were changed
+3. Which database migrations were created
+4. How to test the first pin
+5. Any limitations in the first version

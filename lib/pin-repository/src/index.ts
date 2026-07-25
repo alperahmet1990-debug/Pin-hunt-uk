@@ -8,6 +8,7 @@ export type {
   CataloguePinStatus,
   CreatePinInput,
   ExternalIdentifiers,
+  MissingImageCounts,
   PinFilters,
   PinMatch,
   PinVerificationStatus,

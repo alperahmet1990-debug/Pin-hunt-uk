@@ -62,6 +62,18 @@ export interface CataloguePin {
 }
 
 // ─── Query types ──────────────────────────────────────────────────────────────
+/** Counts of pins still missing images, for backfill progress tracking. */
+export interface MissingImageCounts {
+  /** Pins with needs_front_image = true */
+  missingFront: number;
+  /** Pins with needs_back_image = true */
+  missingBack: number;
+  /** Pins missing front OR back (distinct pins) */
+  missingAny: number;
+  /** Total pins visible to this client */
+  totalPins: number;
+}
+
 export interface PinFilters {
   brand?: string | string[];
   character?: string;

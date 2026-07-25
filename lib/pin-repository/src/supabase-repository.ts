@@ -6,6 +6,7 @@ import type {
   CataloguePinStatus,
   CreatePinInput,
   ExternalIdentifiers,
+  MissingImageCounts,
   PinFilters,
   PinMatch,
   PinVerificationStatus,
@@ -348,6 +349,32 @@ class SupabasePinRepository implements PinRepository {
     }
 
     return values;
+  }
+
+  // ── countMissingImages ────────────────────────────────────────────────
+
+  async countMissingImages(): Promise<MissingImageCounts> {
+    const head = () =>
+      this.client.from('pins').select('id', { count: 'exact', head: true });
+
+    const [front, back, any, total] = await Promise.all([
+      head().or('needs_front_image.eq.true'),
+      head().or('needs_back_image.eq.true'),
+      head().or('needs_front_image.eq.true,needs_back_image.eq.true'),
+      head(),
+    ]);
+
+    const err = front.error ?? back.error ?? any.error ?? total.error;
+    if (err) {
+      throw new PinRepositoryError('UPSTREAM_ERROR', `countMissingImages failed: ${err.message}`);
+    }
+
+    return {
+      missingFront: front.count ?? 0,
+      missingBack:  back.count ?? 0,
+      missingAny:   any.count ?? 0,
+      totalPins:    total.count ?? 0,
+    };
   }
 
   // ── createPin ─────────────────────────────────────────────────────────

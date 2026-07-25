@@ -8,3 +8,4 @@ All migrations through 014 applied as of 2026-07-25. Use `psql -h aws-0-eu-west-
 ## Bulk catalogue imports
 Row-by-row Supabase JS upserts stall/take hours for 13k rows. Use scripts/bulk-import.mjs (XLSX → CSVs in /tmp/pin-import) + scripts/bulk-import.sql (psql \copy into temp staging + set-based upserts) — completes in seconds and is idempotent. Note: `xlsx` ESM builds lack XLSX.readFile; use XLSX.read(fs.readFileSync(...), {type:'buffer'}).
 Catalogue visibility: RLS only shows verification_status='verified' pins to regular users; imported rows default to needs_source_verification and must be verified to appear in-app.
+After changing `lib/pin-repository/src/`, rebuild the lib declarations (`pnpm --filter @workspace/pin-repository run build`) before running the app typecheck — stale `dist/*.d.ts` makes valid app code fail with "has no exported member" errors.

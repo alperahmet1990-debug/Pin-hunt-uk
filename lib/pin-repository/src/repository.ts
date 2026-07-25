@@ -1,6 +1,7 @@
 import type {
   CataloguePin,
   CreatePinInput,
+  MissingImageCounts,
   PinFilters,
   PinMatch,
   SubmitMissingPinInput,
@@ -61,6 +62,12 @@ export interface PinRepository {
     search?: string,
     limit?: number,
   ): Promise<string[]>;
+
+  /**
+   * Exact counts of pins still missing images, for backfill progress tracking.
+   * Uses head-count queries so it stays cheap even with tens of thousands of pins.
+   */
+  countMissingImages(): Promise<MissingImageCounts>;
 
   // ── Catalogue writes ─────────────────────────────────────────────────────
   // Intended for admin tooling and import pipelines, not end-user screens.

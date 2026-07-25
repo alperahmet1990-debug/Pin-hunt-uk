@@ -2,7 +2,7 @@
  * Admin Dashboard — entry point for the admin area.
  * Shows submission queue counts and quick-access links.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Platform,
@@ -14,10 +14,12 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useFocusEffect, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { createSupabasePinRepository, type MissingImageCounts } from '@workspace/pin-repository';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 interface QueueCounts {
   submitted: number;
@@ -31,7 +33,14 @@ export default function AdminIndexScreen() {
   const router  = useRouter();
   const { repo } = useMarketplace();
 
+  const pinRepo = useMemo(() => {
+    if (!isSupabaseConfigured) return null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return createSupabasePinRepository(supabase as any);
+  }, []);
+
   const [counts, setCounts]     = useState<QueueCounts | null>(null);
+  const [imageCounts, setImageCounts] = useState<MissingImageCounts | null>(null);
   const [loading, setLoading]   = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError]       = useState<string | null>(null);
@@ -43,21 +52,26 @@ export default function AdminIndexScreen() {
     try {
       if (isRefresh) setRefreshing(true); else setLoading(true);
       setError(null);
-      const all = await repo.getAllPinSubmissions();
+      const [all, imgCounts] = await Promise.all([
+        repo.getAllPinSubmissions(),
+        pinRepo ? pinRepo.countMissingImages().catch(() => null) : Promise.resolve(null),
+      ]);
       setCounts({
         submitted:    all.filter(s => s.status === 'submitted').length,
         under_review: all.filter(s => s.status === 'under_review').length,
         total:        all.length,
       });
+      setImageCounts(imgCounts);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load data.');
     } finally {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [repo]);
+  }, [repo, pinRepo]);
 
-  useEffect(() => { load(); }, [load]);
+  // Reload on focus so counts refresh after a backfill session.
+  useFocusEffect(useCallback(() => { load(); }, [load]));
 
   return (
     <>
@@ -140,7 +154,19 @@ export default function AdminIndexScreen() {
         <ActionCard
           icon="image"
           title="Image Backfill"
-          description="Add missing front or back photos to imported pins — paste a URL or upload directly."
+          description={
+            imageCounts && imageCounts.missingAny > 0
+              ? `${imageCounts.missingFront.toLocaleString()} front and ${imageCounts.missingBack.toLocaleString()} back images still missing across ${imageCounts.missingAny.toLocaleString()} pins.`
+              : imageCounts && imageCounts.totalPins > 0
+                ? 'All catalogue pins have images — nothing left to backfill.'
+                : 'Add missing front or back photos to imported pins — paste a URL or upload directly.'
+          }
+          badge={imageCounts && imageCounts.missingAny > 0 ? imageCounts.missingAny : undefined}
+          progress={
+            imageCounts && imageCounts.totalPins > 0
+              ? (imageCounts.totalPins - imageCounts.missingAny) / imageCounts.totalPins
+              : undefined
+          }
           onPress={() => router.push('/admin/image-backfill' as any)}
           colors={colors}
         />
@@ -167,12 +193,14 @@ function CountPill({ label, count, color }: { label: string; count: number; colo
 }
 
 function ActionCard({
-  icon, title, description, badge, onPress, colors, primary,
+  icon, title, description, badge, progress, onPress, colors, primary,
 }: {
   icon: React.ComponentProps<typeof Feather>['name'];
   title: string;
   description: string;
   badge?: number;
+  /** 0..1 — renders a completion bar under the description when provided. */
+  progress?: number;
   onPress: () => void;
   colors: ReturnType<typeof useColors>;
   primary?: boolean;
@@ -198,6 +226,24 @@ function ActionCard({
         <Text style={[styles.actionDesc, { color: primary ? 'rgba(255,255,255,0.75)' : colors.mutedForeground }]} numberOfLines={2}>
           {description}
         </Text>
+        {progress !== undefined && (
+          <View style={styles.progressWrap}>
+            <View style={[styles.progressTrack, { backgroundColor: colors.secondary }]}>
+              <View
+                style={[
+                  styles.progressFill,
+                  {
+                    backgroundColor: progress >= 1 ? '#22C55E' : colors.primary,
+                    width: `${Math.round(Math.min(1, Math.max(0, progress)) * 100)}%`,
+                  },
+                ]}
+              />
+            </View>
+            <Text style={[styles.progressLabel, { color: colors.mutedForeground }]}>
+              {Math.floor(Math.min(1, Math.max(0, progress)) * 100)}% complete
+            </Text>
+          </View>
+        )}
       </View>
       {badge !== undefined && (
         <View style={[styles.badge, { backgroundColor: '#EF4444' }]}>
@@ -231,6 +277,10 @@ const styles = StyleSheet.create({
   actionIconWrap:  { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
   actionTitle:     { fontSize: 15, fontFamily: 'Inter_600SemiBold', marginBottom: 2 },
   actionDesc:      { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+  progressWrap:    { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
+  progressTrack:   { flex: 1, height: 6, borderRadius: 3, overflow: 'hidden' },
+  progressFill:    { height: '100%', borderRadius: 3 },
+  progressLabel:   { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   badge:           { minWidth: 22, height: 22, borderRadius: 11, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 5 },
   badgeLabel:      { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#fff' },
 });

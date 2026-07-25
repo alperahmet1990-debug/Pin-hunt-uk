@@ -36,6 +36,7 @@ const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
   : 'http://localhost:8080/api';
 
 const POLL_INTERVAL_MS = 2000;
+const BATCH_LIST_POLL_MS = 3000;
 
 type Step = 'idle' | 'previewing' | 'preview_done' | 'dry_running' | 'dry_done' | 'importing' | 'done';
 
@@ -83,19 +84,6 @@ interface BatchStatus {
   error_report: ErrorRow[] | null;
 }
 
-interface BatchListItem {
-  id: string;
-  filename: string;
-  status: string;
-  total_rows: number;
-  progress_rows: number;
-  inserted_rows: number;
-  updated_rows: number;
-  error_rows: number;
-  started_at: string;
-  completed_at: string | null;
-}
-
 interface ErrorRow {
   rowNum: number;
   pinhuntId: string | null;
@@ -125,6 +113,28 @@ interface EditableFields {
   source_url: string;
   manufacturer: string;
   notes: string;
+}
+
+interface BatchListItem {
+  id: string;
+  filename: string;
+  status: 'pending' | 'running' | 'completed' | 'failed' | 'rolled_back';
+  total_rows: number;
+  progress_rows: number;
+  inserted_rows: number;
+  updated_rows: number;
+  error_rows: number;
+  started_at: string;
+  completed_at: string | null;
+}
+
+function formatElapsed(startedAt: string, now: number): string {
+  const start = new Date(startedAt).getTime();
+  if (!Number.isFinite(start)) return '';
+  const secs = Math.max(0, Math.floor((now - start) / 1000));
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return m > 0 ? `${m}m ${s}s` : `${s}s`;
 }
 
 function makeEditableFields(row: ErrorRow): EditableFields {
@@ -178,7 +188,10 @@ export default function CatalogueImportScreen() {
   const [editFields, setEditFields] = useState<EditableFields | null>(null);
   const [saving, setSaving] = useState(false);
 
+  const [nowTick, setNowTick] = useState(() => Date.now());
+
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const listPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const token = session?.access_token;
   const botPad = Platform.OS === 'web' ? 32 : insets.bottom + 20;
 
@@ -218,7 +231,7 @@ export default function CatalogueImportScreen() {
 
   useEffect(() => () => stopPolling(), [stopPolling]);
 
-  // ── Import history ──
+  // ── Import history (with live progress polling) ──
 
   const fetchBatchList = useCallback(async () => {
     if (!token) return;
@@ -229,7 +242,8 @@ export default function CatalogueImportScreen() {
       });
       if (resp.ok) {
         const data = await resp.json();
-        setBatchList(data.batches ?? []);
+        setBatchList(Array.isArray(data.batches) ? data.batches : []);
+        setNowTick(Date.now());
       }
     } catch {
       // ignore — history is best-effort
@@ -238,9 +252,29 @@ export default function CatalogueImportScreen() {
     }
   }, [token]);
 
+  const anyBatchRunning = batchList.some(b => b.status === 'running' || b.status === 'pending');
+
+  // Load on mount and when an import starts/finishes or we return to idle
   useEffect(() => {
-    if (step === 'idle') fetchBatchList();
+    if (step === 'idle' || step === 'importing' || step === 'done') fetchBatchList();
   }, [step, fetchBatchList]);
+
+  // Auto-refresh every 3 s while any batch is running; stop when all settled
+  useEffect(() => {
+    if (listPollRef.current !== null) {
+      clearInterval(listPollRef.current);
+      listPollRef.current = null;
+    }
+    if (anyBatchRunning) {
+      listPollRef.current = setInterval(fetchBatchList, BATCH_LIST_POLL_MS);
+    }
+    return () => {
+      if (listPollRef.current !== null) {
+        clearInterval(listPollRef.current);
+        listPollRef.current = null;
+      }
+    };
+  }, [anyBatchRunning, fetchBatchList]);
 
   const openPastBatch = async (batch: BatchListItem) => {
     if (!token || openingBatchId) return;
@@ -538,15 +572,10 @@ export default function CatalogueImportScreen() {
                 activeOpacity={0.75}
                 style={[styles.batchRow, { borderTopColor: colors.border }]}
               >
-                <View style={{ flex: 1, gap: 2 }}>
-                  <Text style={[styles.batchRowName, { color: colors.foreground }]} numberOfLines={1}>
-                    {b.filename}
-                  </Text>
-                  <Text style={[styles.batchRowMeta, { color: colors.mutedForeground }]}>
-                    {new Date(b.started_at).toLocaleDateString()} · {b.total_rows.toLocaleString()} rows · {b.status}
-                  </Text>
+                <View style={{ flex: 1 }}>
+                  <BatchHistoryCard batch={b} colors={colors} now={nowTick} />
                 </View>
-                {b.error_rows > 0 && (
+                {b.error_rows > 0 && b.status !== 'running' && b.status !== 'pending' && (
                   <View style={[styles.errorCountBadge, { backgroundColor: colors.destructive + '18' }]}>
                     <Text style={[styles.errorCountBadgeText, { color: colors.destructive }]}>
                       {b.error_rows} {b.error_rows === 1 ? 'error' : 'errors'}
@@ -934,6 +963,84 @@ function SummaryGrid({ summary, colors }: { summary: ImportSummary; colors: Retu
   );
 }
 
+function BatchHistoryCard({
+  batch,
+  colors,
+  now,
+}: {
+  batch: BatchListItem;
+  colors: ReturnType<typeof useColors>;
+  now: number;
+}) {
+  const isRunning = batch.status === 'running' || batch.status === 'pending';
+  const fraction = batch.total_rows > 0 ? Math.min(batch.progress_rows / batch.total_rows, 1) : 0;
+
+  const statusColor =
+    batch.status === 'completed' ? colors.owned
+    : batch.status === 'failed' ? colors.destructive
+    : batch.status === 'rolled_back' ? colors.mutedForeground
+    : colors.primary;
+
+  const statusLabel =
+    batch.status === 'running' ? 'Running'
+    : batch.status === 'pending' ? 'Pending'
+    : batch.status === 'completed' ? 'Completed'
+    : batch.status === 'failed' ? 'Failed'
+    : 'Rolled back';
+
+  const elapsed = isRunning ? formatElapsed(batch.started_at, now) : '';
+  const startedDate = new Date(batch.started_at);
+  const startedLabel = Number.isFinite(startedDate.getTime())
+    ? startedDate.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })
+    : '';
+
+  return (
+    <View style={[styles.batchCard, { borderTopColor: colors.border }]}>
+      <View style={styles.batchRowTop}>
+        <Text style={[styles.batchFilename, { color: colors.foreground }]} numberOfLines={1}>
+          {batch.filename}
+        </Text>
+        <View style={[styles.statusBadge, { backgroundColor: statusColor + '20' }]}>
+          {isRunning && <ActivityIndicator size="small" color={statusColor} style={styles.statusSpinner} />}
+          <Text style={[styles.statusBadgeText, { color: statusColor }]}>{statusLabel}</Text>
+        </View>
+      </View>
+
+      {isRunning ? (
+        <>
+          {/* Compact progress bar */}
+          <View style={[styles.batchProgressTrack, { backgroundColor: colors.secondary }]}>
+            <View
+              style={[
+                styles.batchProgressFill,
+                { backgroundColor: colors.primary, width: `${Math.round(fraction * 100)}%` as `${number}%` },
+              ]}
+            />
+          </View>
+          <View style={styles.batchRowBottom}>
+            <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>
+              {batch.progress_rows.toLocaleString()} / {batch.total_rows.toLocaleString()} rows · {Math.round(fraction * 100)}%
+            </Text>
+            {elapsed !== '' && (
+              <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>{elapsed} elapsed</Text>
+            )}
+          </View>
+        </>
+      ) : (
+        <View style={styles.batchRowBottom}>
+          <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>
+            {batch.total_rows.toLocaleString()} rows
+            {batch.error_rows > 0 ? ` · ${batch.error_rows.toLocaleString()} errors` : ''}
+          </Text>
+          {startedLabel !== '' && (
+            <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>{startedLabel}</Text>
+          )}
+        </View>
+      )}
+    </View>
+  );
+}
+
 function ErrorRowCard({
   row,
   colors,
@@ -1068,6 +1175,18 @@ const styles = StyleSheet.create({
   batchId:           { fontSize: 11, fontFamily: 'Inter_400Regular', marginBottom: 8 },
   resetBtn:          { alignItems: 'center', paddingVertical: 8 },
   resetLabel:        { fontSize: 13, fontFamily: 'Inter_400Regular' },
+
+  // Batch history list
+  batchCard:          { gap: 6 },
+  batchRowTop:        { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8 },
+  batchFilename:      { fontSize: 13, fontFamily: 'Inter_500Medium', flex: 1 },
+  statusBadge:        { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10 },
+  statusBadgeText:    { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  statusSpinner:      { transform: [{ scale: 0.6 }] },
+  batchProgressTrack: { height: 5, borderRadius: 3, overflow: 'hidden' },
+  batchProgressFill:  { height: 5, borderRadius: 3 },
+  batchRowBottom:     { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  batchMeta:          { fontSize: 11, fontFamily: 'Inter_400Regular' },
 
   // Error report
   sectionHeader:     { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 },

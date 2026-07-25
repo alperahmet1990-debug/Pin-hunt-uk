@@ -21,7 +21,38 @@ import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
+import { useAuth } from '@/context/AuthContext';
 import type { ProfileVisibility } from '@workspace/pin-repository';
+
+// ─── Geocoding API ────────────────────────────────────────────────────────────
+
+const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
+  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
+  : 'http://localhost:8080/api';
+
+/**
+ * Calls the server-side geocode endpoint.
+ * Sends the user's JWT so the server can verify identity and write
+ * approx_lat / approx_lng using the service-role key (bypassing column RLS).
+ * Returns null on success, or an error message string on failure.
+ */
+async function geocodePostcode(postcode: string, jwt: string): Promise<string | null> {
+  try {
+    const res = await fetch(`${API_BASE}/geocode`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${jwt}`,
+      },
+      body: JSON.stringify({ postcode }),
+    });
+    if (res.ok) return null;
+    const body = await res.json().catch(() => ({})) as { error?: string };
+    return body.error ?? 'Geocoding failed. Please try again.';
+  } catch {
+    return 'Could not reach the server. Please check your connection and try again.';
+  }
+}
 
 // ─── Validation ───────────────────────────────────────────────────────────────
 
@@ -42,7 +73,8 @@ export default function EditProfileScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { profile, updateMyProfile, checkUsernameAvailable } = useProfile();
+  const { profile, updateMyProfile, checkUsernameAvailable, refreshProfile } = useProfile();
+  const { session } = useAuth();
 
   // Pre-fill from current profile
   const [username, setUsername] = useState(profile?.username ?? '');
@@ -57,6 +89,7 @@ export default function EditProfileScreen() {
   const [town, setTown] = useState(profile?.town ?? '');
   const [county, setCounty] = useState(profile?.county ?? '');
   const [country, setCountry] = useState(profile?.country ?? '');
+  const [postcode, setPostcode] = useState('');
   const [nearbyDiscovery, setNearbyDiscovery] = useState(profile?.nearbyDiscoveryEnabled ?? false);
   const [preferredRadius, setPreferredRadius] = useState<number>(profile?.preferredRadiusMiles ?? 25);
   const [openToLocal, setOpenToLocal] = useState(profile?.openToLocalTrades ?? false);
@@ -68,6 +101,8 @@ export default function EditProfileScreen() {
   const [checkingUsername, setCheckingUsername] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [geocodingStatus, setGeocodingStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [geocodingError, setGeocodingError] = useState<string | null>(null);
 
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const originalUsername = profile?.username ?? '';
@@ -116,6 +151,9 @@ export default function EditProfileScreen() {
 
     setSaving(true);
     setSaveError(null);
+    setGeocodingStatus('idle');
+    setGeocodingError(null);
+
     try {
       await updateMyProfile({
         username: username.trim().toLowerCase(),
@@ -135,13 +173,38 @@ export default function EditProfileScreen() {
         openToPostalTrades: openToPostal,
         happyToTravel: happyToTravel,
       });
-      router.back();
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Failed to save';
       setSaveError(msg.includes('duplicate') || msg.includes('unique') ? 'This username is already taken' : msg);
-    } finally {
       setSaving(false);
+      return;
     }
+
+    // If the user provided a postcode, geocode it so approx_lat/lng are set
+    // and hasLocationSet becomes true (via DB trigger from migration 008).
+    const trimmedPostcode = postcode.trim();
+    if (trimmedPostcode) {
+      const jwt = session?.access_token;
+      if (jwt) {
+        setGeocodingStatus('loading');
+        const geoError = await geocodePostcode(trimmedPostcode, jwt);
+        if (geoError) {
+          setGeocodingStatus('error');
+          setGeocodingError(geoError);
+          // Profile saved OK — let user see the error but stay on the screen
+          setSaving(false);
+          // Refresh profile so other fields are reflected
+          await refreshProfile();
+          return;
+        }
+        setGeocodingStatus('success');
+        // Refresh profile so hasLocationSet is updated in context
+        await refreshProfile();
+      }
+    }
+
+    setSaving(false);
+    router.back();
   };
 
   const canSave =
@@ -149,7 +212,8 @@ export default function EditProfileScreen() {
     !usernameError &&
     usernameAvailable !== false &&
     !checkingUsername &&
-    !saving;
+    !saving &&
+    geocodingStatus !== 'loading';
 
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
@@ -237,6 +301,44 @@ export default function EditProfileScreen() {
 
           {/* Local trading and discovery */}
           <SectionHeader title="Local Trading & Discovery" />
+
+          {/* Postcode geocoding */}
+          <Field
+            label={profile?.hasLocationSet ? 'Update UK Postcode' : 'UK Postcode'}
+            hint={
+              profile?.hasLocationSet
+                ? 'Your location is set. Enter a new postcode to update it.'
+                : 'Enter your postcode so collectors nearby can discover you.'
+            }
+          >
+            <View style={[styles.inputRow, { borderColor: geocodingStatus === 'error' ? colors.destructive : colors.border, backgroundColor: colors.card }]}>
+              <TextInput
+                style={[styles.input, styles.inputFlex, { color: colors.foreground }]}
+                value={postcode}
+                onChangeText={(v) => {
+                  setPostcode(v);
+                  if (geocodingStatus !== 'idle') {
+                    setGeocodingStatus('idle');
+                    setGeocodingError(null);
+                  }
+                }}
+                placeholder="e.g. WD17 1AB"
+                placeholderTextColor={colors.mutedForeground}
+                autoCapitalize="characters"
+                autoCorrect={false}
+                maxLength={8}
+              />
+              {geocodingStatus === 'loading' && <ActivityIndicator size="small" color={colors.mutedForeground} />}
+              {geocodingStatus === 'success' && <Feather name="check-circle" size={16} color={colors.owned} />}
+              {geocodingStatus === 'error' && <Feather name="x-circle" size={16} color={colors.destructive} />}
+              {geocodingStatus === 'idle' && profile?.hasLocationSet && !postcode && (
+                <Feather name="map-pin" size={16} color={colors.owned} />
+              )}
+            </View>
+            {geocodingError && (
+              <Text style={[styles.fieldError, { color: colors.destructive }]}>{geocodingError}</Text>
+            )}
+          </Field>
 
           <Field label="Town / City">
             <TextInput
@@ -378,11 +480,12 @@ function SectionHeader({ title }: { title: string }) {
   );
 }
 
-function Field({ label, error, children }: { label: string; error?: string | null; children: React.ReactNode }) {
+function Field({ label, hint, error, children }: { label: string; hint?: string; error?: string | null; children: React.ReactNode }) {
   const colors = useColors();
   return (
     <View style={styles.fieldWrapper}>
       <Text style={[styles.label, { color: colors.foreground }]}>{label}</Text>
+      {hint && <Text style={[styles.fieldHint, { color: colors.mutedForeground }]}>{hint}</Text>}
       {children}
       {error && <Text style={[styles.fieldError, { color: colors.destructive }]}>{error}</Text>}
     </View>
@@ -446,6 +549,7 @@ const styles = StyleSheet.create({
   fieldWrapper: { gap: 6, marginBottom: 16 },
   label: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   fieldError: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  fieldHint: { fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 16, marginTop: -2 },
   inputRow: {
     flexDirection: 'row',
     alignItems: 'center',

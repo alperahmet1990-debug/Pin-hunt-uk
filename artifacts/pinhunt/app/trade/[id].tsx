@@ -21,6 +21,7 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -323,15 +324,44 @@ export default function TradeScreen() {
 
   useEffect(() => { load(); }, [load]);
 
-  // Poll for new messages every 10 s while screen is open
+  // Keep a stable reference to `load` so the realtime subscription below
+  // doesn't tear down and resubscribe every time the callback identity changes.
+  const loadRef = useRef(load);
+  useEffect(() => { loadRef.current = load; }, [load]);
+
+  // Live updates via Supabase Realtime (replaces the old 10 s poll):
+  //  * trade_messages for this trade → new messages appear instantly
+  //  * trades row for this trade → status banner/actions update when the
+  //    other collector accepts/declines/completes/cancels
+  //  * user_pins for either collector → potential-match banner stays current
+  // RLS still applies to delivered events, so each collector only receives
+  // rows they are allowed to select. Channel is removed on unmount.
+  const initiatorId = trade?.initiatorId;
+  const recipientId = trade?.recipientId;
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (trade && trade.status !== 'completed' && trade.status !== 'rejected' && trade.status !== 'cancelled') {
-        load();
-      }
-    }, 10_000);
-    return () => clearInterval(interval);
-  }, [trade, load]);
+    if (!isSupabaseConfigured || !id || !userId || !initiatorId || !recipientId) return;
+
+    const channel = supabase
+      .channel(`trade-chat-${id}`)
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'trade_messages', filter: `trade_id=eq.${id}` },
+        () => { loadRef.current(); },
+      )
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'trades', filter: `id=eq.${id}` },
+        () => { loadRef.current(); },
+      )
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'user_pins', filter: `user_id=in.(${initiatorId},${recipientId})` },
+        () => { loadRef.current(); },
+      )
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
+  }, [id, userId, initiatorId, recipientId]);
 
   const sendMessage = async () => {
     if (!repo || !userId || !trade || !msgText.trim()) return;

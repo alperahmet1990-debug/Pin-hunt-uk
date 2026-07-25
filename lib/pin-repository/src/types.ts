@@ -71,6 +71,8 @@ export interface PinFilters {
   isNewRelease?: boolean;
   status?: CataloguePinStatus;
   verificationStatus?: PinVerificationStatus;
+  /** When true, returns only pins where needs_front_image OR needs_back_image is true. */
+  needsAnyImage?: boolean;
   limit?: number;
   offset?: number;
 }
@@ -140,6 +142,10 @@ export interface UpdatePinInput {
   status?: CataloguePinStatus;
   catalogueSource?: string;
   catalogueUpdatedAt?: string;
+  /** Explicitly clear the "needs front image" flag after supplying an image. */
+  needsFrontImage?: boolean;
+  /** Explicitly clear the "needs back image" flag after supplying an image. */
+  needsBackImage?: boolean;
 }
 
 export interface SubmitMissingPinInput {

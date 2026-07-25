@@ -203,6 +203,10 @@ class SupabasePinRepository implements PinRepository {
       q = q.eq('is_new_release', filters.isNewRelease);
     }
 
+    if (filters.needsAnyImage) {
+      q = q.or('needs_front_image.eq.true,needs_back_image.eq.true');
+    }
+
     // Character filter: resolve name → UUID → filter by junction
     if (filters.character) {
       const { data: charRows } = await this.client
@@ -372,6 +376,8 @@ class SupabasePinRepository implements PinRepository {
     if (input.status !== undefined) updates.status = input.status;
     if (input.catalogueSource !== undefined) updates.catalogue_source = input.catalogueSource;
     if (input.catalogueUpdatedAt !== undefined) updates.catalogue_updated_at = input.catalogueUpdatedAt;
+    if (input.needsFrontImage !== undefined) updates.needs_front_image = input.needsFrontImage;
+    if (input.needsBackImage  !== undefined) updates.needs_back_image  = input.needsBackImage;
 
     // Merge external_identifiers rather than overwriting
     if (input.externalIdentifiers !== undefined) {

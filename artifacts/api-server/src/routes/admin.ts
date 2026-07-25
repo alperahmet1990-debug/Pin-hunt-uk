@@ -124,4 +124,71 @@ router.get("/admin/catalogue-status", async (_req, res) => {
   }
 });
 
+/**
+ * GET /admin/pins/missing-images
+ *
+ * Lists pins where needs_front_image OR needs_back_image is true.
+ * Supports optional ?brand= and ?collection= query params.
+ *
+ * curl "https://<domain>/api/admin/pins/missing-images?brand=Disney"
+ */
+router.get("/admin/pins/missing-images", async (req, res) => {
+  try {
+    const repo = getWriteRepository(); // service role to see all pins
+    const { brand, collection, limit = "200" } = req.query as Record<string, string>;
+
+    const pins = await repo.searchPins("", {
+      needsAnyImage: true,
+      ...(brand ? { brand } : {}),
+      ...(collection ? { collection } : {}),
+      limit: Math.min(parseInt(limit, 10) || 200, 500),
+    });
+
+    res.json({ pins, total: pins.length });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    res.status(500).json({ error: msg });
+  }
+});
+
+/**
+ * PATCH /admin/pins/:pinhuntId/images
+ *
+ * Updates image_url and/or back_image_url for a pin and clears the
+ * corresponding needs_front_image / needs_back_image flags.
+ *
+ * Body: { imageUrl?: string; backImageUrl?: string }
+ *
+ * curl -X PATCH https://<domain>/api/admin/pins/PHUK-00000001/images \
+ *   -H "Content-Type: application/json" \
+ *   -d '{"imageUrl":"https://..."}'
+ */
+router.patch("/admin/pins/:pinhuntId/images", async (req, res) => {
+  try {
+    const { pinhuntId } = req.params;
+    const { imageUrl, backImageUrl } = req.body as {
+      imageUrl?: string;
+      backImageUrl?: string;
+    };
+
+    if (!imageUrl && !backImageUrl) {
+      res.status(400).json({ error: "Provide at least imageUrl or backImageUrl." });
+      return;
+    }
+
+    const repo = getWriteRepository();
+
+    const update: Parameters<typeof repo.updatePin>[1] = {};
+    if (imageUrl    !== undefined) { update.imageUrl      = imageUrl;    update.needsFrontImage = false; }
+    if (backImageUrl !== undefined) { update.backImageUrl = backImageUrl; update.needsBackImage  = false; }
+
+    const pin = await repo.updatePin(pinhuntId, update);
+    res.json({ pin });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    const status = msg.includes("NOT_FOUND") ? 404 : 500;
+    res.status(status).json({ error: msg });
+  }
+});
+
 export default router;

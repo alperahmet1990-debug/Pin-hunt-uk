@@ -138,6 +138,13 @@ export default function AdminIndexScreen() {
           colors={colors}
         />
         <ActionCard
+          icon="image"
+          title="Image Backfill"
+          description="Add missing front or back photos to imported pins — paste a URL or upload directly."
+          onPress={() => router.push('/admin/image-backfill' as any)}
+          colors={colors}
+        />
+        <ActionCard
           icon="plus-circle"
           title="Add New Pin"
           description="Create a new catalogue entry directly."

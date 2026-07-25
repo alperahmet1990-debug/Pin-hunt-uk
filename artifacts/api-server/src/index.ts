@@ -1,5 +1,6 @@
 import app from "./app";
 import { logger } from "./lib/logger";
+import { recoverOrphanedImportBatches } from "./routes/catalogue-import";
 
 const rawPort = process.env["PORT"];
 
@@ -22,4 +23,9 @@ app.listen(port, (err) => {
   }
 
   logger.info({ port }, "Server listening");
+
+  // Recover import batches orphaned by a previous restart/crash
+  void recoverOrphanedImportBatches().catch((err) => {
+    logger.error({ err }, "Import batch recovery failed");
+  });
 });

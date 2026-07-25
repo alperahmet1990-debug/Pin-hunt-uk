@@ -19,6 +19,72 @@ import crypto from "crypto";
 
 const router = Router();
 
+// ─── Stall / recovery configuration ──────────────────────────────────────────
+
+/** Running batches with no progress update for this long are flagged `stalled` when polled. */
+const STALL_WARNING_MINUTES = Number(process.env.IMPORT_STALL_WARNING_MINUTES) > 0
+  ? Number(process.env.IMPORT_STALL_WARNING_MINUTES)
+  : 5;
+
+/**
+ * Startup recovery: import jobs run in-process, so they cannot survive a
+ * restart. When the server boots, every batch still in 'running' status was
+ * necessarily orphaned by the previous process — mark them all failed
+ * immediately so polling clients stop spinning.
+ *
+ * `olderThanMinutes` (default 0 = all running batches) exists so a future
+ * periodic sweep can reuse this with an age gate.
+ */
+export async function recoverOrphanedImportBatches(olderThanMinutes = 0): Promise<void> {
+  try {
+    const db = getAdminClient();
+    const cutoff = new Date(Date.now() - olderThanMinutes * 60_000).toISOString();
+
+    const { data: stuck, error } = await db
+      .from("import_batches")
+      .select("id, filename, started_at, progress_rows, progress_updated_at, error_report")
+      .eq("status", "running");
+
+    if (error) {
+      console.error("[import recovery] failed to query running batches:", error.message);
+      return;
+    }
+
+    const orphaned = (stuck ?? []).filter(b => {
+      if (olderThanMinutes <= 0) return true;
+      const lastActivity = (b.progress_updated_at as string | null) ?? (b.started_at as string | null);
+      return !lastActivity || lastActivity < cutoff;
+    });
+
+    for (const batch of orphaned) {
+      const existingReport = Array.isArray(batch.error_report) ? batch.error_report : [];
+      const { error: updErr } = await db.from("import_batches").update({
+        status: "failed",
+        error_report: [
+          ...existingReport,
+          {
+            rowNum: 0,
+            pinhuntId: null,
+            title: null,
+            result: "error",
+            message: `Import was interrupted by a server restart and could not resume. Marked failed automatically on startup. ${batch.progress_rows ?? 0} rows had been processed; re-run the import to finish (already-imported rows are upserted safely).`,
+          },
+        ],
+        completed_at: new Date().toISOString(),
+      }).eq("id", batch.id).eq("status", "running");
+
+      if (updErr) {
+        console.error(`[import recovery] failed to mark batch ${batch.id} failed:`, updErr.message);
+      } else {
+        console.warn(`[import recovery] marked orphaned batch ${batch.id} (${batch.filename}) as failed`);
+      }
+    }
+  } catch (e) {
+    // Recovery must never crash startup
+    console.error("[import recovery] unexpected error:", e);
+  }
+}
+
 // ─── Supabase clients ─────────────────────────────────────────────────────────
 
 function getAdminClient(): SupabaseClient {
@@ -537,6 +603,7 @@ async function runImportJob(
         inserted_rows: insertedRows,
         updated_rows: updatedRows,
         skipped_rows: skippedRows,
+        progress_updated_at: new Date().toISOString(),
       }).eq("id", batchId);
       continue;
     }
@@ -639,6 +706,7 @@ async function runImportJob(
       inserted_rows: insertedRows,
       updated_rows: updatedRows,
       skipped_rows: skippedRows,
+      progress_updated_at: new Date().toISOString(),
     }).eq("id", batchId);
   }
 
@@ -651,6 +719,7 @@ async function runImportJob(
     skipped_rows: skippedRows, error_rows: allErrors.filter(e => e.result === "error").length,
     seed_rows: summary.seedRows, verified_rows: summary.verifiedRows,
     error_report: errorReport, row_snapshots: rowSnapshots,
+    progress_updated_at: new Date().toISOString(),
     completed_at: new Date().toISOString(),
   }).eq("id", batchId);
 }
@@ -762,7 +831,7 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
     .insert({
       filename, file_hash: fileHash, status: "running",
       total_rows: totalRows, imported_by: req.adminUserId,
-      progress_rows: 0,
+      progress_rows: 0, progress_updated_at: new Date().toISOString(),
     })
     .select("id")
     .single();
@@ -828,12 +897,22 @@ router.get("/admin/catalogue-import/batches/:batchId", requireAdmin, async (req,
 
   const { data, error } = await db
     .from("import_batches")
-    .select("id, filename, status, total_rows, progress_rows, inserted_rows, updated_rows, skipped_rows, error_rows, seed_rows, verified_rows, imported_by, started_at, completed_at, error_report")
+    .select("id, filename, status, total_rows, progress_rows, inserted_rows, updated_rows, skipped_rows, error_rows, seed_rows, verified_rows, imported_by, started_at, completed_at, error_report, progress_updated_at")
     .eq("id", batchId)
     .single();
 
   if (error || !data) { res.status(404).json({ error: "Batch not found" }); return; }
-  res.json(data);
+
+  // Stall detection: running batch whose progress hasn't moved recently.
+  let stalled = false;
+  if (data.status === "running") {
+    const lastActivity = (data.progress_updated_at as string | null) ?? (data.started_at as string | null);
+    if (lastActivity) {
+      stalled = Date.now() - new Date(lastActivity).getTime() > STALL_WARNING_MINUTES * 60_000;
+    }
+  }
+
+  res.json({ ...data, stalled });
 });
 
 // ─── List batches ─────────────────────────────────────────────────────────────

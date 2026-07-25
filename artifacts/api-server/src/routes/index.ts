@@ -5,6 +5,7 @@ import adminRouter from "./admin";
 import geocodeRouter from "./geocode";
 import catalogueImportRouter from "./catalogue-import";
 import marketValueRouter from "./market-value";
+import ebayDeletionRouter from "./ebay-deletion";
 
 const router: IRouter = Router();
 
@@ -14,5 +15,6 @@ router.use(adminRouter);
 router.use(geocodeRouter);
 router.use(catalogueImportRouter);
 router.use(marketValueRouter);
+router.use(ebayDeletionRouter);
 
 export default router;

@@ -252,7 +252,9 @@ export default function CommunityScreen() {
   const [loading, setLoading]   = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError]       = useState<string | null>(null);
+  const [newPostCount, setNewPostCount] = useState(0);
   const scrollRef               = useRef<ScrollView>(null);
+  const scrollOffsetRef         = useRef(0);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -312,6 +314,10 @@ export default function CommunityScreen() {
             setPosts(prev => {
               // Guard against duplicates (e.g. if the user created the post themselves)
               if (prev.some(p => p.id === fullPost.id)) return prev;
+              // If the user is scrolled down, show a nudge instead of shifting silently
+              if (scrollOffsetRef.current > 8) {
+                setNewPostCount(c => c + 1);
+              }
               return [fullPost, ...prev];
             });
           } catch {
@@ -366,7 +372,13 @@ export default function CommunityScreen() {
 
   const handleFilterChange = (key: CommunityPostType | 'all') => {
     setFilter(key);
+    setNewPostCount(0);
     scrollRef.current?.scrollTo({ y: 0, animated: false });
+  };
+
+  const handleNewPostsPress = () => {
+    setNewPostCount(0);
+    scrollRef.current?.scrollTo({ y: 0, animated: true });
   };
 
   const handlePhotoPress = (post: CommunityPost, index: number) => {
@@ -436,12 +448,35 @@ export default function CommunityScreen() {
         </ScrollView>
       </View>
 
+      <View style={{ flex: 1 }}>
+      {/* New-posts nudge */}
+      {newPostCount > 0 && (
+        <View style={styles.newPostsWrap} pointerEvents="box-none">
+          <TouchableOpacity
+            onPress={handleNewPostsPress}
+            activeOpacity={0.85}
+            style={[styles.newPostsBanner, { backgroundColor: colors.primary }]}
+          >
+            <Feather name="arrow-up" size={13} color="#fff" />
+            <Text style={styles.newPostsLabel}>
+              {newPostCount} new post{newPostCount !== 1 ? 's' : ''}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
       {/* Feed */}
       <ScrollView
         ref={scrollRef}
         style={styles.feed}
         contentContainerStyle={{ padding: 12, paddingBottom: botPad, gap: 10 }}
         showsVerticalScrollIndicator={false}
+        onScroll={(e) => {
+          scrollOffsetRef.current = e.nativeEvent.contentOffset.y;
+          // Dismiss the nudge if the user scrolls back to the top themselves
+          if (e.nativeEvent.contentOffset.y <= 8) setNewPostCount(0);
+        }}
+        scrollEventThrottle={64}
         refreshControl={
           <RefreshControl
             refreshing={refreshing}
@@ -494,6 +529,7 @@ export default function CommunityScreen() {
           ))
         )}
       </ScrollView>
+      </View>
     </View>
   );
 }
@@ -549,6 +585,28 @@ const styles = StyleSheet.create({
   chipLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
 
   feed: { flex: 1 },
+
+  newPostsWrap: {
+    position: 'absolute',
+    top: 0, left: 0, right: 0,
+    alignItems: 'center',
+    zIndex: 10,
+  },
+  newPostsBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginTop: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 4,
+  },
+  newPostsLabel: { color: '#fff', fontSize: 13, fontFamily: 'Inter_600SemiBold' },
 
   card: {
     borderWidth: 1,

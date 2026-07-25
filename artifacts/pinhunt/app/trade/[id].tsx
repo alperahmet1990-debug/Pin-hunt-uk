@@ -290,22 +290,20 @@ export default function TradeScreen() {
       const t = await repo.getTrade(id);
       if (!t) { setError('Trade not found.'); setLoading(false); return; }
       setTrade(t);
+      // Re-fetch potential pins on every load so the banner stays current if
+      // either collector adds or removes pins while the chat is open.
+      if (userId) {
+        const otherId = t.initiatorId === userId ? t.recipientId : t.initiatorId;
+        repo.getPotentialTrades({ viewerId: userId, collectorId: otherId })
+          .then(pins => setPotentialPins(pins))
+          .catch(() => { /* silently ignore — banner just won't appear */ });
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load trade.');
     } finally {
       setLoading(false);
     }
-  }, [repo, id]);
-
-  // Load potential trades once we know both parties (only needs to run once)
-  useEffect(() => {
-    if (!repo || !userId || !trade) return;
-    const otherId = trade.initiatorId === userId ? trade.recipientId : trade.initiatorId;
-    repo.getPotentialTrades({ viewerId: userId, collectorId: otherId })
-      .then(pins => setPotentialPins(pins))
-      .catch(() => { /* silently ignore — banner just won't appear */ });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [repo, userId, trade?.id]);
+  }, [repo, id, userId]);
 
   useEffect(() => { load(); }, [load]);
 

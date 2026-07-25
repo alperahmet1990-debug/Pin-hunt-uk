@@ -60,7 +60,8 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
       // Profile now complete — move into the app
       router.replace('/(tabs)');
     }
-  }, [session, loading, needsUsername, segments, router]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session, loading, needsUsername, segments]);
 
   if (loading) return null;
 

@@ -44,21 +44,21 @@ function ScanTabButton({ onPress }: { onPress?: () => void }) {
 function NativeTabLayout() {
   return (
     <NativeTabs>
-      <NativeTabs.Trigger name="collection">
-        <Icon sf={{ default: 'heart', selected: 'heart.fill' }} />
-        <Label>Collection</Label>
-      </NativeTabs.Trigger>
       <NativeTabs.Trigger name="index">
         <Icon sf={{ default: 'safari', selected: 'safari.fill' }} />
         <Label>Discover</Label>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="community">
+        <Icon sf={{ default: 'bubble.left.and.bubble.right', selected: 'bubble.left.and.bubble.right.fill' }} />
+        <Label>Community</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="scan">
         <Icon sf={{ default: 'camera.circle.fill', selected: 'camera.circle.fill' }} />
         <Label>Scan</Label>
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="community">
-        <Icon sf={{ default: 'bubble.left.and.bubble.right', selected: 'bubble.left.and.bubble.right.fill' }} />
-        <Label>Community</Label>
+      <NativeTabs.Trigger name="collection">
+        <Icon sf={{ default: 'heart', selected: 'heart.fill' }} />
+        <Label>Collection</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="profile">
         <Icon sf={{ default: 'person', selected: 'person.fill' }} />
@@ -103,20 +103,6 @@ function ClassicTabLayout() {
           ) : null,
       }}
     >
-      {/* Collection */}
-      <Tabs.Screen
-        name="collection"
-        options={{
-          title: 'Collection',
-          tabBarIcon: ({ color }) =>
-            isIOS ? (
-              <SymbolView name="heart" tintColor={color} size={24} />
-            ) : (
-              <Ionicons name="heart-outline" size={22} color={color} />
-            ),
-        }}
-      />
-
       {/* Discover (index) */}
       <Tabs.Screen
         name="index"
@@ -127,6 +113,20 @@ function ClassicTabLayout() {
               <SymbolView name="safari" tintColor={color} size={24} />
             ) : (
               <Feather name="compass" size={22} color={color} />
+            ),
+        }}
+      />
+
+      {/* Community */}
+      <Tabs.Screen
+        name="community"
+        options={{
+          title: 'Community',
+          tabBarIcon: ({ color }) =>
+            isIOS ? (
+              <SymbolView name="bubble.left.and.bubble.right" tintColor={color} size={24} />
+            ) : (
+              <Feather name="message-circle" size={22} color={color} />
             ),
         }}
       />
@@ -143,16 +143,16 @@ function ClassicTabLayout() {
         }}
       />
 
-      {/* Community */}
+      {/* Collection */}
       <Tabs.Screen
-        name="community"
+        name="collection"
         options={{
-          title: 'Community',
+          title: 'Collection',
           tabBarIcon: ({ color }) =>
             isIOS ? (
-              <SymbolView name="bubble.left.and.bubble.right" tintColor={color} size={24} />
+              <SymbolView name="heart" tintColor={color} size={24} />
             ) : (
-              <Feather name="message-circle" size={22} color={color} />
+              <Ionicons name="heart-outline" size={22} color={color} />
             ),
         }}
       />

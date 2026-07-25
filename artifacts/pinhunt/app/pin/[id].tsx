@@ -173,6 +173,16 @@ export default function PinDetailScreen() {
             )}
           </View>
 
+          {/* ── Seed record notice ── */}
+          {pin.isSeedRecord && (
+            <View style={[styles.seedBanner, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B' }]}>
+              <Feather name="alert-circle" size={13} color="#92400E" />
+              <Text style={[styles.seedBannerText, { color: '#92400E' }]}>
+                Community verification needed — details may be incomplete
+              </Text>
+            </View>
+          )}
+
           {/* ── Inventory Status Buttons ── */}
           <View style={styles.statusRow}>
             {STATUS_CONFIG.map(cfg => {
@@ -763,6 +773,8 @@ const styles = StyleSheet.create({
   brandChipLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#fff' },
   newChip: { borderRadius: 6, paddingHorizontal: 8, paddingVertical: 4, alignSelf: 'flex-start', marginTop: 2 },
   newChipLabel: { fontSize: 10, fontFamily: 'Inter_700Bold', color: '#fff' },
+  seedBanner: { flexDirection: 'row', alignItems: 'center', gap: 6, borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 7 },
+  seedBannerText: { fontSize: 12, fontFamily: 'Inter_500Medium', flex: 1, lineHeight: 17 },
   // Status
   statusRow: { flexDirection: 'row', gap: 8 },
   statusBtn: {

@@ -124,6 +124,13 @@ export default function AdminIndexScreen() {
           colors={colors}
         />
         <ActionCard
+          icon="upload-cloud"
+          title="Catalogue Import"
+          description="Bulk-load pins from an Excel workbook with dry-run preview and rollback."
+          onPress={() => router.push('/admin/import' as any)}
+          colors={colors}
+        />
+        <ActionCard
           icon="plus-circle"
           title="Add New Pin"
           description="Create a new catalogue entry directly."

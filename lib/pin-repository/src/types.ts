@@ -47,6 +47,15 @@ export interface CataloguePin {
   isUserSubmitted: boolean;
   submittedBy?: string;
   catalogueSource?: string;
+  manufacturer?: string;
+  retailer?: string;
+  sourceUrl?: string;
+  confidenceLevel?: string;
+  isSeedRecord?: boolean;
+  needsReview?: boolean;
+  needsFrontImage?: boolean;
+  needsBackImage?: boolean;
+  importBatchId?: string;
   createdAt?: string;
   updatedAt?: string;
   catalogueUpdatedAt?: string;

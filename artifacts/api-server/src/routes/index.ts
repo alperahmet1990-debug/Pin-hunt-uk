@@ -3,6 +3,7 @@ import healthRouter from "./health";
 import scanRouter from "./scan";
 import adminRouter from "./admin";
 import geocodeRouter from "./geocode";
+import catalogueImportRouter from "./catalogue-import";
 
 const router: IRouter = Router();
 
@@ -10,5 +11,6 @@ router.use(healthRouter);
 router.use(scanRouter);
 router.use(adminRouter);
 router.use(geocodeRouter);
+router.use(catalogueImportRouter);
 
 export default router;

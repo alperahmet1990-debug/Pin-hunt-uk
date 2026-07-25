@@ -41,6 +41,15 @@ interface PinRow {
   submitted_by: string | null;
   catalogue_source: string | null;
   catalogue_updated_at: string | null;
+  manufacturer: string | null;
+  retailer: string | null;
+  source_url: string | null;
+  confidence_level: string | null;
+  is_seed_record: boolean;
+  needs_review: boolean;
+  needs_front_image: boolean;
+  needs_back_image: boolean;
+  import_batch_id: string | null;
   created_at: string;
   updated_at: string;
   // Joined via PostgREST resource embedding
@@ -77,6 +86,15 @@ function rowToPin(row: PinRow): CataloguePin {
     isUserSubmitted: row.is_user_submitted,
     submittedBy: row.submitted_by ?? undefined,
     catalogueSource: row.catalogue_source ?? undefined,
+    manufacturer: row.manufacturer ?? undefined,
+    retailer: row.retailer ?? undefined,
+    sourceUrl: row.source_url ?? undefined,
+    confidenceLevel: row.confidence_level ?? undefined,
+    isSeedRecord: row.is_seed_record ?? false,
+    needsReview: row.needs_review ?? false,
+    needsFrontImage: row.needs_front_image ?? false,
+    needsBackImage: row.needs_back_image ?? false,
+    importBatchId: row.import_batch_id ?? undefined,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
     catalogueUpdatedAt: row.catalogue_updated_at ?? undefined,

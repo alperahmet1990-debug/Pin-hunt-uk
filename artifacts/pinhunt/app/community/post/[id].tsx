@@ -20,7 +20,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { Stack, useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
@@ -278,6 +278,15 @@ export default function PostDetailScreen() {
 
   useEffect(() => { load(); }, [load]);
 
+  // Refresh the post when returning from the edit screen so changes show immediately.
+  const isFirstFocus = useRef(true);
+  useFocusEffect(
+    useCallback(() => {
+      if (isFirstFocus.current) { isFirstFocus.current = false; return; }
+      load();
+    }, [load]),
+  );
+
   const handleSendComment = async () => {
     if (!repo || !userId || !id || !commentText.trim()) return;
     try {
@@ -421,6 +430,14 @@ export default function PostDetailScreen() {
                         ? <ActivityIndicator size="small" color={colors.mutedForeground} />
                         : <Feather name="flag" size={18} color={hasReported ? colors.destructive : colors.mutedForeground} />
                       }
+                    </TouchableOpacity>
+                  ) : null}
+                  {isAuthor ? (
+                    <TouchableOpacity
+                      onPress={() => router.push({ pathname: '/community/edit-post' as any, params: { id: post.id } })}
+                      style={{ padding: 8 }}
+                    >
+                      <Feather name="edit-2" size={18} color={colors.foreground} />
                     </TouchableOpacity>
                   ) : null}
                   {canDeletePost ? (

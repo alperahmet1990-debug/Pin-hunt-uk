@@ -10,6 +10,7 @@ import type {
   Conversation,
   ConversationMessage,
   CreateCommunityPostInput,
+  UpdateCommunityPostInput,
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
   DuplicateCandidate,
@@ -1277,6 +1278,63 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .single();
 
     if (error) throw new Error(error.message);
+    return this.rowToCommunityPost(data as Record<string, unknown>);
+  }
+
+  async updateCommunityPost(postId: string, input: UpdateCommunityPostInput): Promise<CommunityPost> {
+    // If photos are being replaced, fetch the current list first so removed
+    // photos can be cleaned out of storage afterwards.
+    let previousPhotos: string[] = [];
+    if (input.photos !== undefined) {
+      const { data: existing, error: fetchError } = await this.client
+        .from('community_posts')
+        .select('photos')
+        .eq('id', postId)
+        .maybeSingle();
+      if (fetchError) throw new Error(fetchError.message);
+      previousPhotos = (existing?.photos as string[] | null) ?? [];
+    }
+
+    const updates: Record<string, unknown> = { updated_at: new Date().toISOString() };
+    if (input.postType !== undefined) updates.post_type = input.postType;
+    if (input.body !== undefined) updates.body = input.body;
+    if (input.photos !== undefined) updates.photos = input.photos;
+
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('community_posts')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update(updates as any)
+      .eq('id', postId)
+      .select(`
+        *,
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        pins(pinhunt_id, title, brand, image_url)
+      `)
+      .single();
+
+    if (error) throw new Error(error.message);
+
+    // Best-effort: delete photos that were removed from the post.
+    if (input.photos !== undefined) {
+      const kept = new Set(input.photos);
+      const removed = previousPhotos.filter(url => !kept.has(url));
+      if (removed.length > 0) {
+        const BUCKET = 'community-photos';
+        const MARKER = `/${BUCKET}/`;
+        const paths = removed
+          .map(url => {
+            const idx = url.indexOf(MARKER);
+            return idx !== -1 ? url.slice(idx + MARKER.length) : null;
+          })
+          .filter((p): p is string => p !== null && p.length > 0);
+        if (paths.length > 0) {
+          // Ignore storage errors — the post row is already updated.
+          await this.client.storage.from(BUCKET).remove(paths);
+        }
+      }
+    }
+
     return this.rowToCommunityPost(data as Record<string, unknown>);
   }
 

@@ -54,6 +54,7 @@ export type {
   Conversation,
   ConversationMessage,
   CreateCommunityPostInput,
+  UpdateCommunityPostInput,
   PostComment,
   PostReport,
   PostReportSummary,

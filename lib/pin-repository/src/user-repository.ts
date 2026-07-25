@@ -5,6 +5,7 @@ import type {
   Conversation,
   ConversationMessage,
   CreateCommunityPostInput,
+  UpdateCommunityPostInput,
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
   DuplicateCandidate,
@@ -282,6 +283,9 @@ export interface IUserPinRepository {
 
   /** Create a community post as the given author. */
   createCommunityPost(authorId: string, input: CreateCommunityPostInput): Promise<CommunityPost>;
+
+  /** Update own post's body, type, and/or photos (RLS enforced on server). */
+  updateCommunityPost(postId: string, input: UpdateCommunityPostInput): Promise<CommunityPost>;
 
   /** Delete own post (RLS enforced on server). */
   deleteCommunityPost(postId: string): Promise<void>;

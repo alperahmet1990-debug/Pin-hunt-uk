@@ -546,6 +546,14 @@ export interface CreateCommunityPostInput {
   linkedPinId?: string;
 }
 
+export interface UpdateCommunityPostInput {
+  postType?: CommunityPostType;
+  body?: string;
+  /** Full replacement list of photo URLs. Photos removed from the previous
+   *  list are deleted from storage (best-effort). */
+  photos?: string[];
+}
+
 export interface PostComment {
   id: string;
   postId: string;

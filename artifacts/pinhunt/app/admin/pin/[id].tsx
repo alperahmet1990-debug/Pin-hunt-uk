@@ -438,6 +438,43 @@ export default function AdminPinEditorScreen() {
     }
   };
 
+  // ── Delete ──────────────────────────────────────────────────────────────────
+  const [deleting, setDeleting] = useState(false);
+
+  const performDelete = async () => {
+    if (!repo) return;
+    try {
+      setDeleting(true);
+      // deletePin also removes the pin's catalogue images from storage
+      // (best-effort — storage failures are logged, not surfaced).
+      await repo.deletePin(pinhuntId.trim());
+      router.back();
+    } catch (err) {
+      Alert.alert('Error', err instanceof Error ? err.message : 'Could not delete pin.');
+    } finally {
+      setDeleting(false);
+    }
+  };
+
+  const handleDelete = () => {
+    if (!repo) { Alert.alert('Not configured', 'Supabase is not configured.'); return; }
+    if (Platform.OS === 'web') {
+      // eslint-disable-next-line no-alert
+      if (window.confirm(`Permanently delete "${title || pinhuntId}" from the catalogue? This cannot be undone.`)) {
+        void performDelete();
+      }
+      return;
+    }
+    Alert.alert(
+      'Delete Pin',
+      `Permanently delete "${title || pinhuntId}" from the catalogue? This cannot be undone.`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Delete', style: 'destructive', onPress: () => void performDelete() },
+      ],
+    );
+  };
+
   // ── Input helper ────────────────────────────────────────────────────────────
   const inp = (
     value: string,
@@ -723,7 +760,7 @@ export default function AdminPinEditorScreen() {
           </View>
 
           {/* ── Actions ── */}
-          {saving ? (
+          {saving || deleting ? (
             <ActivityIndicator color={colors.primary} style={{ marginTop: 16 }} />
           ) : (
             <View style={{ gap: 10, marginTop: 8 }}>
@@ -749,6 +786,17 @@ export default function AdminPinEditorScreen() {
                 >
                   <Feather name="plus" size={16} color={colors.foreground} />
                   <Text style={[styles.btnLabel, { color: colors.foreground }]}>Save and Add Another</Text>
+                </TouchableOpacity>
+              )}
+
+              {!isNew && (
+                <TouchableOpacity
+                  onPress={handleDelete}
+                  activeOpacity={0.85}
+                  style={[styles.btn, { backgroundColor: colors.card, borderColor: '#EF4444', borderWidth: 1, borderRadius: 12 }]}
+                >
+                  <Feather name="trash-2" size={16} color="#EF4444" />
+                  <Text style={[styles.btnLabel, { color: '#EF4444' }]}>Delete Pin</Text>
                 </TouchableOpacity>
               )}
             </View>

@@ -68,6 +68,14 @@ export interface PinRepository {
    */
   updatePin(pinhuntId: string, input: UpdatePinInput): Promise<CataloguePin>;
 
+  /**
+   * Permanently delete a pin from the catalogue (by pinhunt_id).
+   * Also removes the pin's front/back images from the `pin-catalogue`
+   * storage bucket (best-effort: storage failures are logged, not thrown).
+   * Throws PinRepositoryError('NOT_FOUND') if the pin does not exist.
+   */
+  deletePin(pinhuntId: string): Promise<void>;
+
   // ── Community contribution ───────────────────────────────────────────────
 
   /**

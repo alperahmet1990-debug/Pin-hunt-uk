@@ -420,6 +420,32 @@ class SupabasePinRepository implements PinRepository {
     return pin;
   }
 
+  // ── deletePin ─────────────────────────────────────────────────────────
+
+  async deletePin(pinhuntId: string): Promise<void> {
+    const { data, error } = await this.client
+      .from('pins')
+      .delete()
+      .eq('pinhunt_id', pinhuntId)
+      .select('id');
+
+    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+    if (!data?.length) throw new PinRepositoryError('NOT_FOUND', `Pin not found: ${pinhuntId}`);
+
+    // Best-effort cleanup of catalogue images. The DB record is already gone;
+    // a storage failure must never surface to the caller — just log it.
+    try {
+      const { error: storageError } = await this.client.storage
+        .from('pin-catalogue')
+        .remove([`pins/${pinhuntId}/front.jpg`, `pins/${pinhuntId}/back.jpg`]);
+      if (storageError) {
+        console.warn(`[pin-repository] Failed to remove catalogue images for ${pinhuntId}: ${storageError.message}`);
+      }
+    } catch (e) {
+      console.warn(`[pin-repository] Failed to remove catalogue images for ${pinhuntId}:`, e);
+    }
+  }
+
   // ── submitMissingPin ──────────────────────────────────────────────────
 
   async submitMissingPin(input: SubmitMissingPinInput): Promise<CataloguePin> {

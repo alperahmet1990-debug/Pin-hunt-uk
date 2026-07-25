@@ -2,7 +2,7 @@
  * Admin Review — full view of a community submission with approve/reject/needs-changes actions.
  * Shows a duplicate-warning banner when existing catalogue pins closely match the submission.
  */
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -28,9 +28,14 @@ const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
   ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
   : 'http://localhost:8080/api';
 
+/** Lifetime of signed image URLs (seconds). */
+const SIGNED_URL_TTL_SECONDS = 3600;
+/** Proactively re-sign URLs a comfortable margin before they expire. */
+const SIGNED_URL_REFRESH_MS = (SIGNED_URL_TTL_SECONDS - 600) * 1000;
+
 async function getSignedUrl(path: string): Promise<string | null> {
   try {
-    const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(path, 3600);
+    const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(path, SIGNED_URL_TTL_SECONDS);
     return data?.signedUrl ?? null;
   } catch { return null; }
 }
@@ -101,6 +106,36 @@ export default function AdminReviewScreen() {
       }
     })();
   }, [id, repo]);
+
+  // Signed URLs expire after SIGNED_URL_TTL_SECONDS. Re-sign them when an
+  // image fails to load, and proactively before expiry, so photos never go
+  // blank while the screen stays open for over an hour.
+  const submissionRef = useRef<PinSubmission | null>(null);
+  useEffect(() => { submissionRef.current = submission; }, [submission]);
+
+  const lastErrorRefreshRef = useRef(0);
+
+  const refreshImageUrls = useCallback(async () => {
+    // Throttle so a genuinely broken image can't trigger an endless
+    // re-sign loop (each new URL failing fires onError again).
+    const now = Date.now();
+    if (now - lastErrorRefreshRef.current < 30_000) return;
+    lastErrorRefreshRef.current = now;
+
+    const sub = submissionRef.current;
+    if (!sub) return;
+    const [front, back] = await Promise.all([
+      getSignedUrl(sub.frontImagePath),
+      sub.backImagePath ? getSignedUrl(sub.backImagePath) : Promise.resolve(null),
+    ]);
+    if (front) setFrontUrl(front);
+    if (back) setBackUrl(back);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => { refreshImageUrls(); }, SIGNED_URL_REFRESH_MS);
+    return () => { clearInterval(timer); };
+  }, [refreshImageUrls]);
 
   // Load duplicate candidates once submission is available and actionable
   useEffect(() => {
@@ -257,7 +292,7 @@ export default function AdminReviewScreen() {
         >
           {/* Front image */}
           {frontUrl ? (
-            <Image source={{ uri: frontUrl }} style={styles.heroImage} resizeMode="contain" />
+            <Image source={{ uri: frontUrl }} style={styles.heroImage} resizeMode="contain" onError={refreshImageUrls} />
           ) : (
             <View style={[styles.heroPlaceholder, { backgroundColor: colors.secondary }]}>
               <Feather name="image" size={36} color={colors.mutedForeground} />
@@ -360,7 +395,7 @@ export default function AdminReviewScreen() {
             {backUrl && (
               <View style={{ gap: 8 }}>
                 <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>BACK OF PIN</Text>
-                <Image source={{ uri: backUrl }} style={[styles.backImage, { borderRadius: 12 }]} resizeMode="contain" />
+                <Image source={{ uri: backUrl }} style={[styles.backImage, { borderRadius: 12 }]} resizeMode="contain" onError={refreshImageUrls} />
               </View>
             )}
 

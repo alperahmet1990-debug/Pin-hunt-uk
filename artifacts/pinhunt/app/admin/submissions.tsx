@@ -2,7 +2,7 @@
  * Admin Submission Queue — lists all community pin submissions.
  * Filter tabs: Pending Review | Under Review | All
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Image,
@@ -47,9 +47,14 @@ const STATUS_COLOR: Record<PinSubmissionStatus, string> = {
   needs_changes: '#F97316',
 };
 
+/** Lifetime of signed image URLs (seconds). */
+const SIGNED_URL_TTL_SECONDS = 3600;
+/** Proactively re-sign URLs a comfortable margin before they expire. */
+const SIGNED_URL_REFRESH_MS = (SIGNED_URL_TTL_SECONDS - 600) * 1000;
+
 async function getSignedUrl(path: string): Promise<string | null> {
   try {
-    const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(path, 3600);
+    const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(path, SIGNED_URL_TTL_SECONDS);
     return data?.signedUrl ?? null;
   } catch { return null; }
 }
@@ -99,6 +104,53 @@ export default function AdminSubmissionsScreen() {
   }, [repo, currentTab.statuses]);
 
   useEffect(() => { load(); }, [load]);
+
+  // Signed URLs expire after SIGNED_URL_TTL_SECONDS. Re-sign a thumbnail's
+  // URL when its image fails to load (typically because the URL expired
+  // while the screen stayed open), and proactively before expiry.
+  const submissionsRef = useRef<PinSubmission[]>([]);
+  useEffect(() => { submissionsRef.current = submissions; }, [submissions]);
+
+  const lastErrorRefreshRef = useRef<Record<string, number>>({});
+
+  const refreshImageUrl = useCallback(async (submissionId: string) => {
+    // Throttle per submission so a genuinely broken image can't trigger an
+    // endless re-sign loop (each new URL failing fires onError again).
+    const now = Date.now();
+    const last = lastErrorRefreshRef.current[submissionId] ?? 0;
+    if (now - last < 30_000) return;
+    lastErrorRefreshRef.current[submissionId] = now;
+
+    const sub = submissionsRef.current.find(s => s.id === submissionId);
+    if (!sub) return;
+    const url = await getSignedUrl(sub.frontImagePath);
+    setImageUrls(prev => {
+      if (!url) {
+        if (!(submissionId in prev)) return prev;
+        const { [submissionId]: _removed, ...rest } = prev;
+        return rest;
+      }
+      return { ...prev, [submissionId]: url };
+    });
+  }, []);
+
+  // Proactively re-sign all thumbnail URLs before they expire so images
+  // never go blank while the screen stays open for over an hour.
+  useEffect(() => {
+    const timer = setInterval(async () => {
+      const subs = submissionsRef.current;
+      if (subs.length === 0) return;
+      const urls: Record<string, string> = {};
+      await Promise.all(
+        subs.map(async s => {
+          const url = await getSignedUrl(s.frontImagePath);
+          if (url) urls[s.id] = url;
+        }),
+      );
+      setImageUrls(prev => ({ ...prev, ...urls }));
+    }, SIGNED_URL_REFRESH_MS);
+    return () => { clearInterval(timer); };
+  }, []);
 
   return (
     <>
@@ -167,7 +219,7 @@ export default function AdminSubmissionsScreen() {
                 {/* Thumbnail */}
                 <View style={[styles.thumb, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
                   {imageUrls[s.id] ? (
-                    <Image source={{ uri: imageUrls[s.id] }} style={styles.thumbImg} resizeMode="cover" />
+                    <Image source={{ uri: imageUrls[s.id] }} style={styles.thumbImg} resizeMode="cover" onError={() => refreshImageUrl(s.id)} />
                   ) : (
                     <Feather name="image" size={24} color={colors.mutedForeground} />
                   )}

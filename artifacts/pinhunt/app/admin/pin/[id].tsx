@@ -65,6 +65,22 @@ function generatePinhuntId(): string {
   return `PHUK-${String(n).padStart(8, '0')}`;
 }
 
+/** Lifetime of signed submission-image URLs (seconds). */
+const SIGNED_URL_TTL_SECONDS = 3600;
+/** Proactively re-sign URLs a comfortable margin before they expire. */
+const SIGNED_URL_REFRESH_MS = (SIGNED_URL_TTL_SECONDS - 600) * 1000;
+
+async function getSubmissionSignedUrl(path: string): Promise<string | null> {
+  try {
+    const { data } = await supabase.storage
+      .from('pin-submissions')
+      .createSignedUrl(path, SIGNED_URL_TTL_SECONDS);
+    return data?.signedUrl ?? null;
+  } catch {
+    return null;
+  }
+}
+
 async function uploadImage(localUri: string, storagePath: string): Promise<string> {
   const response = await fetch(localUri);
   const blob = await response.blob();
@@ -223,20 +239,48 @@ export default function AdminPinEditorScreen() {
     // They will be re-uploaded to the pin-catalogue bucket on save.
     (async () => {
       if (prefillFrontPath) {
-        try {
-          const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(prefillFrontPath, 3600);
-          if (data?.signedUrl) setNewFrontUri(data.signedUrl);
-        } catch { /* best-effort */ }
+        const url = await getSubmissionSignedUrl(prefillFrontPath);
+        if (url) { frontIsPrefillRef.current = true; setNewFrontUri(url); }
       }
       if (prefillBackPath) {
-        try {
-          const { data } = await supabase.storage.from('pin-submissions').createSignedUrl(prefillBackPath, 3600);
-          if (data?.signedUrl) setNewBackUri(data.signedUrl);
-        } catch { /* best-effort */ }
+        const url = await getSubmissionSignedUrl(prefillBackPath);
+        if (url) { backIsPrefillRef.current = true; setNewBackUri(url); }
       }
     })();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submissionId]);
+
+  // ── Keep prefill submission images from expiring ────────────────────────────
+  // The prefill URIs above are signed URLs with a 1h TTL. Re-sign them when
+  // an image fails to load, and proactively before expiry, so review photos
+  // never go blank during long admin sessions. Once the admin picks a
+  // replacement image (a local URI that never expires), the refs flip to
+  // false and refreshing stops for that slot.
+  const frontIsPrefillRef = useRef(false);
+  const backIsPrefillRef  = useRef(false);
+  const lastErrorRefreshRef = useRef(0);
+
+  const refreshPrefillUrls = useCallback(async () => {
+    // Throttle so a genuinely broken image can't trigger an endless
+    // re-sign loop (each new URL failing fires onError again).
+    const now = Date.now();
+    if (now - lastErrorRefreshRef.current < 30_000) return;
+    lastErrorRefreshRef.current = now;
+
+    if (frontIsPrefillRef.current && prefillFrontPath) {
+      const url = await getSubmissionSignedUrl(prefillFrontPath);
+      if (url && frontIsPrefillRef.current) setNewFrontUri(url);
+    }
+    if (backIsPrefillRef.current && prefillBackPath) {
+      const url = await getSubmissionSignedUrl(prefillBackPath);
+      if (url && backIsPrefillRef.current) setNewBackUri(url);
+    }
+  }, [prefillFrontPath, prefillBackPath]);
+
+  useEffect(() => {
+    const timer = setInterval(() => { refreshPrefillUrls(); }, SIGNED_URL_REFRESH_MS);
+    return () => { clearInterval(timer); };
+  }, [refreshPrefillUrls]);
 
   // ── Guard: check whether the submission is already linked to a pin ─────────
   useEffect(() => {
@@ -579,8 +623,9 @@ export default function AdminPinEditorScreen() {
               uri={newFrontUri ?? imageUrl ?? null}
               onPick={async (src) => {
                 const img = await pickSubmissionImage(src);
-                if (img) setNewFrontUri(img.uri);
+                if (img) { frontIsPrefillRef.current = false; setNewFrontUri(img.uri); }
               }}
+              onImageError={frontIsPrefillRef.current ? refreshPrefillUrls : undefined}
               colors={colors}
             />
             <ImagePickerCard
@@ -588,8 +633,9 @@ export default function AdminPinEditorScreen() {
               uri={newBackUri ?? backImageUrl ?? null}
               onPick={async (src) => {
                 const img = await pickSubmissionImage(src);
-                if (img) setNewBackUri(img.uri);
+                if (img) { backIsPrefillRef.current = false; setNewBackUri(img.uri); }
               }}
+              onImageError={backIsPrefillRef.current ? refreshPrefillUrls : undefined}
               colors={colors}
             />
           </View>
@@ -810,17 +856,18 @@ export default function AdminPinEditorScreen() {
 // ─── Image picker card ────────────────────────────────────────────────────────
 
 function ImagePickerCard({
-  label, uri, onPick, colors,
+  label, uri, onPick, onImageError, colors,
 }: {
   label: string;
   uri: string | null;
   onPick: (src: 'camera' | 'library') => void;
+  onImageError?: () => void;
   colors: ReturnType<typeof useColors>;
 }) {
   return (
     <View style={[styles.photoCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
       {uri ? (
-        <Image source={{ uri }} style={styles.photoThumb} resizeMode="cover" />
+        <Image source={{ uri }} style={styles.photoThumb} resizeMode="cover" onError={onImageError} />
       ) : (
         <View style={[styles.photoPlaceholder, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
           <Feather name="image" size={22} color={colors.mutedForeground} />

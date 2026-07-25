@@ -2,7 +2,7 @@
  * Edit Draft Submission — re-open a draft or needs-changes submission for editing.
  * Users can update all metadata fields, replace images, and re-submit or save.
  */
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -34,11 +34,20 @@ const EDITION_TYPES: { value: EditionType; label: string }[] = [
   { value: 'hidden_disney',  label: 'Hidden Disney' },
 ];
 
+/** Lifetime of signed image URLs (seconds). */
+const SIGNED_URL_TTL_SECONDS = 3600;
+/** Proactively re-sign URLs a comfortable margin before they expire. */
+const SIGNED_URL_REFRESH_MS = (SIGNED_URL_TTL_SECONDS - 600) * 1000;
+
 async function getSignedUrl(path: string): Promise<string | null> {
-  const { data } = await supabase.storage
-    .from('pin-submissions')
-    .createSignedUrl(path, 3600);
-  return data?.signedUrl ?? null;
+  try {
+    const { data } = await supabase.storage
+      .from('pin-submissions')
+      .createSignedUrl(path, SIGNED_URL_TTL_SECONDS);
+    return data?.signedUrl ?? null;
+  } catch {
+    return null;
+  }
 }
 
 export default function EditSubmissionScreen() {
@@ -108,6 +117,37 @@ export default function EditSubmissionScreen() {
       }
     })();
   }, [id, repo]);
+
+  // Signed URLs expire after SIGNED_URL_TTL_SECONDS. Re-sign them when an
+  // image fails to load, and proactively before expiry, so photos never go
+  // blank while the screen stays open for over an hour. Newly picked local
+  // images (newFrontUri / newBackUri) never expire, so they're left alone.
+  const submissionRef = useRef<PinSubmission | null>(null);
+  useEffect(() => { submissionRef.current = submission; }, [submission]);
+
+  const lastErrorRefreshRef = useRef(0);
+
+  const refreshImageUrls = useCallback(async () => {
+    // Throttle so a genuinely broken image can't trigger an endless
+    // re-sign loop (each new URL failing fires onError again).
+    const now = Date.now();
+    if (now - lastErrorRefreshRef.current < 30_000) return;
+    lastErrorRefreshRef.current = now;
+
+    const sub = submissionRef.current;
+    if (!sub) return;
+    const [front, back] = await Promise.all([
+      getSignedUrl(sub.frontImagePath),
+      sub.backImagePath ? getSignedUrl(sub.backImagePath) : Promise.resolve(null),
+    ]);
+    if (front) setFrontUrl(front);
+    if (back) setBackUrl(back);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => { refreshImageUrls(); }, SIGNED_URL_REFRESH_MS);
+    return () => { clearInterval(timer); };
+  }, [refreshImageUrls]);
 
   const validate = (): boolean => {
     const errs: Record<string, string> = {};
@@ -257,6 +297,7 @@ export default function EditSubmissionScreen() {
               source={{ uri: newFrontUri ?? frontUrl ?? undefined }}
               style={styles.thumbImg}
               resizeMode="cover"
+              onError={newFrontUri ? undefined : refreshImageUrls}
             />
             <View style={styles.photoActions}>
               <TouchableOpacity onPress={() => pickFront('camera')} style={[styles.photoBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
@@ -276,7 +317,7 @@ export default function EditSubmissionScreen() {
           <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>BACK PHOTO (OPTIONAL)</Text>
           <View style={[styles.photoCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
             {(newBackUri ?? backUrl) ? (
-              <Image source={{ uri: newBackUri ?? backUrl ?? undefined }} style={styles.thumbImg} resizeMode="cover" />
+              <Image source={{ uri: newBackUri ?? backUrl ?? undefined }} style={styles.thumbImg} resizeMode="cover" onError={newBackUri ? undefined : refreshImageUrls} />
             ) : (
               <View style={[styles.thumbPlaceholder, { backgroundColor: colors.secondary }]}>
                 <Feather name="image" size={24} color={colors.mutedForeground} />

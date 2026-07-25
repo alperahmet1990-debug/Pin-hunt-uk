@@ -9,9 +9,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
+  Alert,
   FlatList,
   Image,
   Linking,
+  Modal,
   RefreshControl,
   ScrollView,
   StyleSheet,
@@ -62,6 +64,7 @@ interface DryRunResult {
   match_reasons: string[];
   rejection_reasons: string[];
   would_assign: boolean;
+  applied_at: string | null;
 }
 
 const CLASS_META: Record<Classification, { label: string; color: string }> = {
@@ -96,6 +99,8 @@ export default function EbayImageDryRunScreen() {
   const [filter, setFilter] = useState<Classification | 'all'>('all');
   const [error, setError] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [viewerUrl, setViewerUrl] = useState<string | null>(null);
+  const [applyingId, setApplyingId] = useState<string | null>(null);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const authHeaders = useCallback(
@@ -169,6 +174,37 @@ export default function EbayImageDryRunScreen() {
       setStarting(false);
     }
   }, [authHeaders, loadRun]);
+
+  const applyImage = useCallback((result: DryRunResult) => {
+    Alert.alert(
+      'Use this image?',
+      `This sets the eBay listing photo as the live catalogue image for "${result.pin_name}". It can be replaced later with an official photo.`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Confirm',
+          onPress: async () => {
+            setApplyingId(result.id);
+            try {
+              const resp = await fetch(
+                `${API_BASE}/catalogue/ebay-image-dry-run/results/${result.id}/apply`,
+                { method: 'POST', headers: authHeaders() },
+              );
+              const data = await resp.json();
+              if (!resp.ok) throw new Error(data?.error ?? `HTTP ${resp.status}`);
+              setResults(prev =>
+                prev.map(r => (r.id === result.id ? { ...r, applied_at: new Date().toISOString() } : r)),
+              );
+            } catch (e) {
+              Alert.alert('Could not apply image', e instanceof Error ? e.message : 'Unknown error');
+            } finally {
+              setApplyingId(null);
+            }
+          },
+        },
+      ],
+    );
+  }, [authHeaders]);
 
   const filtered = filter === 'all'
     ? results
@@ -265,9 +301,23 @@ export default function EbayImageDryRunScreen() {
             colors={colors}
             expanded={expanded === item.id}
             onToggle={() => setExpanded(expanded === item.id ? null : item.id)}
+            onViewImage={() => item.image_url && setViewerUrl(item.image_url)}
+            onApply={() => applyImage(item)}
+            applying={applyingId === item.id}
           />
         )}
       />
+
+      {/* Full-screen image viewer */}
+      <Modal visible={viewerUrl != null} transparent animationType="fade" onRequestClose={() => setViewerUrl(null)}>
+        <TouchableOpacity style={styles.viewerBackdrop} activeOpacity={1} onPress={() => setViewerUrl(null)}>
+          {viewerUrl && <Image source={{ uri: viewerUrl }} style={styles.viewerImage} resizeMode="contain" />}
+          <View style={styles.viewerClose}>
+            <Feather name="x" size={22} color="#fff" />
+            <Text style={styles.viewerCloseText}>Tap anywhere to close</Text>
+          </View>
+        </TouchableOpacity>
+      </Modal>
     </View>
   );
 }
@@ -284,11 +334,14 @@ function SummaryRow({ label, value, color, colors }: { label: string; value: num
   );
 }
 
-function ResultCard({ result, colors, expanded, onToggle }: {
+function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, applying }: {
   result: DryRunResult;
   colors: ReturnType<typeof useColors>;
   expanded: boolean;
   onToggle: () => void;
+  onViewImage: () => void;
+  onApply: () => void;
+  applying: boolean;
 }) {
   const meta = CLASS_META[result.confidence_classification];
   const md = result.pin_metadata ?? {};
@@ -300,7 +353,12 @@ function ResultCard({ result, colors, expanded, onToggle }: {
     >
       <View style={styles.cardRow}>
         {result.image_url ? (
-          <Image source={{ uri: result.image_url }} style={styles.thumb} resizeMode="contain" />
+          <TouchableOpacity onPress={onViewImage} activeOpacity={0.8}>
+            <Image source={{ uri: result.image_url }} style={styles.thumb} resizeMode="contain" />
+            <View style={styles.zoomHint}>
+              <Feather name="maximize-2" size={10} color="#fff" />
+            </View>
+          </TouchableOpacity>
         ) : (
           <View style={[styles.thumb, styles.thumbEmpty, { backgroundColor: colors.background }]}>
             <Feather name="image" size={20} color={colors.mutedForeground} />
@@ -316,11 +374,15 @@ function ResultCard({ result, colors, expanded, onToggle }: {
             {result.match_score != null && (
               <Text style={[styles.score, { color: colors.text }]}>{result.match_score}/100</Text>
             )}
-            {result.would_assign && (
+            {result.applied_at ? (
+              <View style={[styles.badge, { backgroundColor: '#16a34a', borderColor: '#16a34a' }]}>
+                <Text style={[styles.badgeText, { color: '#fff' }]}>Applied</Text>
+              </View>
+            ) : result.would_assign ? (
               <View style={[styles.badge, { backgroundColor: '#16a34a18', borderColor: '#16a34a40' }]}>
                 <Text style={[styles.badgeText, { color: '#16a34a' }]}>Would assign</Text>
               </View>
-            )}
+            ) : null}
           </View>
         </View>
         <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={18} color={colors.mutedForeground} />
@@ -348,6 +410,25 @@ function ResultCard({ result, colors, expanded, onToggle }: {
               <Feather name="external-link" size={14} color={colors.primary} />
               <Text style={[styles.linkText, { color: colors.primary }]}>View listing on eBay</Text>
             </TouchableOpacity>
+          )}
+          {result.image_url && !result.applied_at && (
+            <TouchableOpacity
+              style={[styles.applyBtn, { backgroundColor: colors.primary, opacity: applying ? 0.6 : 1 }]}
+              disabled={applying}
+              onPress={onApply}
+            >
+              {applying ? (
+                <ActivityIndicator size="small" color="#fff" />
+              ) : (
+                <Feather name="check-circle" size={15} color="#fff" />
+              )}
+              <Text style={styles.applyBtnText}>Use this image for the pin</Text>
+            </TouchableOpacity>
+          )}
+          {result.applied_at && (
+            <Text style={[styles.detailValue, { color: '#16a34a', marginTop: 4 }]}>
+              ✓ Applied as the live catalogue image
+            </Text>
           )}
         </View>
       )}
@@ -397,4 +478,11 @@ const styles = StyleSheet.create({
   detailValue: { fontSize: 13, lineHeight: 18 },
   linkRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4 },
   linkText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  zoomHint: { position: 'absolute', right: 3, bottom: 3, backgroundColor: 'rgba(0,0,0,0.55)', borderRadius: 8, padding: 3 },
+  applyBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, borderRadius: 10, paddingVertical: 11, marginTop: 10 },
+  applyBtnText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  viewerBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.92)', alignItems: 'center', justifyContent: 'center' },
+  viewerImage: { width: '94%', height: '75%' },
+  viewerClose: { position: 'absolute', bottom: 48, alignItems: 'center', gap: 6 },
+  viewerCloseText: { color: '#fff', fontSize: 13 },
 });

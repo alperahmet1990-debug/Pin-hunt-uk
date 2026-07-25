@@ -17,6 +17,7 @@ import {
   getDryRunSummary,
   getDryRunResults,
   listDryRuns,
+  applyDryRunImage,
 } from "../services/ebay-image-dryrun";
 
 const router: IRouter = Router();
@@ -98,5 +99,20 @@ router.get("/catalogue/ebay-image-dry-run/runs/:runId", requireAdmin, async (req
     res.status(500).json({ error: e instanceof Error ? e.message : "Failed to load run" });
   }
 });
+
+// Admin-confirmed apply: writes the candidate image to the live pin.
+router.post(
+  "/catalogue/ebay-image-dry-run/results/:resultId/apply",
+  requireAdmin,
+  async (req, res: Response) => {
+    try {
+      const applied = await applyDryRunImage(String(req.params.resultId));
+      res.json({ applied });
+    } catch (e) {
+      const status = (e as { status?: number }).status ?? 500;
+      res.status(status).json({ error: e instanceof Error ? e.message : "Failed to apply image" });
+    }
+  },
+);
 
 export default router;

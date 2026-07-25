@@ -458,6 +458,60 @@ async function processDryRun(runId: string, limit: number): Promise<void> {
   logger.info({ runId, counts }, "image dry run completed");
 }
 
+// ─── Admin apply: write an approved candidate image to the live pin ─────────
+
+/**
+ * Apply a dry-run candidate image to the live pin. Admin-confirmed only.
+ * Refuses when the pin already has an image (never overwrites), and records
+ * provenance in pin_images plus applied_at on the result row.
+ */
+export async function applyDryRunImage(resultId: string): Promise<{ pinhuntId: string; imageUrl: string }> {
+  const sb = getServiceClient();
+  const { data: result, error } = await sb
+    .from("ebay_image_dry_run_results")
+    .select("id, pin_id, pinhunt_id, image_url, listing_url, applied_at")
+    .eq("id", resultId)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  if (!result) throw Object.assign(new Error("Result not found"), { status: 404 });
+  if (!result.image_url) throw Object.assign(new Error("This result has no candidate image"), { status: 400 });
+  if (result.applied_at) throw Object.assign(new Error("Image already applied"), { status: 409 });
+
+  const { data: pin, error: pinErr } = await sb
+    .from("pins")
+    .select("id, image_url")
+    .eq("id", result.pin_id)
+    .single();
+  if (pinErr) throw new Error(pinErr.message);
+  if (pin.image_url) {
+    throw Object.assign(new Error("Pin already has an image — not overwriting"), { status: 409 });
+  }
+
+  const { error: updErr } = await sb
+    .from("pins")
+    .update({ image_url: result.image_url, needs_front_image: false })
+    .eq("id", result.pin_id)
+    .is("image_url", null);
+  if (updErr) throw new Error(`Applying image failed: ${updErr.message}`);
+
+  // Provenance record so temporary eBay images are identifiable later.
+  await sb.from("pin_images").insert({
+    pin_id: result.pin_id,
+    image_url: result.image_url,
+    image_type: "front",
+    is_primary: true,
+    description: `Temporary fallback image from eBay listing: ${result.listing_url ?? "unknown"}`,
+  });
+
+  await sb
+    .from("ebay_image_dry_run_results")
+    .update({ applied_at: new Date().toISOString() })
+    .eq("id", resultId);
+
+  logger.info({ resultId, pin: result.pinhunt_id }, "dry-run image applied to live pin");
+  return { pinhuntId: result.pinhunt_id as string, imageUrl: result.image_url as string };
+}
+
 // ─── Reads ────────────────────────────────────────────────────────────────────
 
 export async function getDryRunSummary(runId: string) {

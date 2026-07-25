@@ -51,6 +51,17 @@ export interface PinRepository {
    */
   getPinsByCategory(category: string): Promise<CataloguePin[]>;
 
+  /**
+   * Distinct values of a text column (brand or collection) for autocomplete.
+   * Optional case-insensitive substring `search` narrows the results.
+   * Returned values are sorted alphabetically and capped at `limit` (default 25).
+   */
+  getDistinctFieldValues(
+    field: 'brand' | 'collection',
+    search?: string,
+    limit?: number,
+  ): Promise<string[]>;
+
   // ── Catalogue writes ─────────────────────────────────────────────────────
   // Intended for admin tooling and import pipelines, not end-user screens.
   // Requires service-role key or admin privileges.

@@ -305,6 +305,51 @@ class SupabasePinRepository implements PinRepository {
     return this.searchPins('', { category });
   }
 
+  // ── getDistinctFieldValues ─────────────────────────────────────────────
+
+  async getDistinctFieldValues(
+    field: 'brand' | 'collection',
+    search?: string,
+    limit = 25,
+  ): Promise<string[]> {
+    // PostgREST has no DISTINCT, so page through the (sorted) column and
+    // dedupe client-side. With a search term the scan is narrow; without one
+    // we cap the scan to keep it bounded.
+    const PAGE = 1000;
+    const MAX_SCAN = 10000;
+    const seen = new Set<string>();
+    const values: string[] = [];
+
+    for (let offset = 0; offset < MAX_SCAN; offset += PAGE) {
+      let q = this.client
+        .from('pins')
+        .select(field)
+        .not(field, 'is', null)
+        .order(field)
+        .range(offset, offset + PAGE - 1);
+
+      if (search?.trim()) {
+        q = q.ilike(field, `%${search.trim()}%`);
+      }
+
+      const { data, error } = await q;
+      if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+
+      for (const row of (data ?? []) as unknown as Array<Record<string, string | null>>) {
+        const v = row[field]?.trim();
+        if (v && !seen.has(v.toLowerCase())) {
+          seen.add(v.toLowerCase());
+          values.push(v);
+          if (values.length >= limit) return values;
+        }
+      }
+
+      if (!data || data.length < PAGE) break;
+    }
+
+    return values;
+  }
+
   // ── createPin ─────────────────────────────────────────────────────────
 
   async createPin(input: CreatePinInput): Promise<CataloguePin> {

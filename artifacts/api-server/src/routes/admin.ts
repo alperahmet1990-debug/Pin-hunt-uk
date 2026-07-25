@@ -166,6 +166,40 @@ router.get("/admin/pins/missing-images", async (req, res) => {
 });
 
 /**
+ * GET /admin/catalogue/distinct
+ *
+ * Returns distinct brand or collection values for autocomplete suggestions.
+ * Query params:
+ *   field  — "brand" | "collection" (required)
+ *   search — optional case-insensitive substring filter
+ *   limit  — max values to return (default 25, capped at 100)
+ *
+ * curl "https://<domain>/api/admin/catalogue/distinct?field=brand&search=dis"
+ */
+router.get("/admin/catalogue/distinct", async (req, res) => {
+  try {
+    const { field, search, limit = "25" } = req.query as Record<string, string>;
+
+    if (field !== "brand" && field !== "collection") {
+      res.status(400).json({ error: 'Query param "field" must be "brand" or "collection".' });
+      return;
+    }
+
+    const repo = getWriteRepository(); // service role — include unverified pins
+    const values = await repo.getDistinctFieldValues(
+      field,
+      search,
+      Math.min(parseInt(limit, 10) || 25, 100),
+    );
+
+    res.json({ field, values });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    res.status(500).json({ error: msg });
+  }
+});
+
+/**
  * PATCH /admin/pins/:pinhuntId/images
  *
  * Updates image_url and/or back_image_url for a pin and clears the

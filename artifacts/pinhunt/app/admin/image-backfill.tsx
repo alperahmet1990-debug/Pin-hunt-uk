@@ -428,6 +428,109 @@ function ImageSection({
   );
 }
 
+// ─── Filter autocomplete ──────────────────────────────────────────────────────
+
+function FilterAutocomplete({
+  field,
+  value,
+  onChange,
+  onSelect,
+  placeholder,
+  repo,
+  colors,
+}: {
+  field: 'brand' | 'collection';
+  value: string;
+  onChange: (v: string) => void;
+  onSelect: (v: string) => void;
+  placeholder: string;
+  repo: ReturnType<typeof createSupabasePinRepository> | null;
+  colors: ReturnType<typeof useColors>;
+}) {
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [focused, setFocused] = useState(false);
+  const fetchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Suppress the dropdown right after a suggestion is picked
+  const suppressRef = useRef(false);
+
+  // Fetch matching distinct values (debounced) while focused
+  useEffect(() => {
+    if (!repo || !focused) return;
+    if (suppressRef.current) { suppressRef.current = false; return; }
+    if (fetchTimer.current) clearTimeout(fetchTimer.current);
+    fetchTimer.current = setTimeout(async () => {
+      try {
+        const values = await repo.getDistinctFieldValues(field, value.trim() || undefined, 8);
+        setSuggestions(values);
+      } catch {
+        setSuggestions([]);
+      }
+    }, 250);
+    return () => { if (fetchTimer.current) clearTimeout(fetchTimer.current); };
+  }, [repo, field, value, focused]);
+
+  const showDropdown =
+    focused &&
+    suggestions.length > 0 &&
+    !(suggestions.length === 1 && suggestions[0].toLowerCase() === value.trim().toLowerCase());
+
+  return (
+    <View style={{ zIndex: field === 'brand' ? 20 : 10 }}>
+      <View style={[styles.filterInput, { backgroundColor: colors.card, borderColor: colors.border }]}>
+        <TextInput
+          value={value}
+          onChangeText={onChange}
+          onFocus={() => setFocused(true)}
+          onBlur={() => {
+            // Delay so a tap on a suggestion registers before the list hides
+            setTimeout(() => setFocused(false), 150);
+          }}
+          placeholder={placeholder}
+          placeholderTextColor={colors.mutedForeground + '88'}
+          autoCapitalize="none"
+          autoCorrect={false}
+          style={[styles.filterInputText, { color: colors.foreground }]}
+        />
+        {value.length > 0 && (
+          <TouchableOpacity
+            onPress={() => { suppressRef.current = true; setSuggestions([]); onSelect(''); }}
+            style={styles.filterClear}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          >
+            <Feather name="x" size={14} color={colors.mutedForeground} />
+          </TouchableOpacity>
+        )}
+      </View>
+
+      {showDropdown && (
+        <View style={[styles.suggestBox, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          {suggestions.map(s => (
+            <TouchableOpacity
+              key={s}
+              onPress={() => {
+                suppressRef.current = true;
+                setSuggestions([]);
+                setFocused(false);
+                onSelect(s);
+              }}
+              style={[styles.suggestItem, { borderBottomColor: colors.border }]}
+            >
+              <Feather
+                name={field === 'brand' ? 'tag' : 'layers'}
+                size={12}
+                color={colors.mutedForeground}
+              />
+              <Text style={[styles.suggestText, { color: colors.foreground }]} numberOfLines={1}>
+                {s}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
+    </View>
+  );
+}
+
 // ─── Main screen ──────────────────────────────────────────────────────────────
 
 export default function ImageBackfillScreen() {
@@ -456,9 +559,6 @@ export default function ImageBackfillScreen() {
   const [editPin,  setEditPin]  = useState<CataloguePin | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
 
-  // Debounced search ref
-  const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   // ── Load ──────────────────────────────────────────────────────────────────
   const load = useCallback(async (isRefresh = false) => {
     if (!repo) { setLoading(false); return; }
@@ -480,7 +580,13 @@ export default function ImageBackfillScreen() {
     }
   }, [repo, brandFilter, collFilter]);
 
-  useEffect(() => { load(); }, [load]);
+  // Debounced reload whenever the brand/collection filters change.
+  // `load` is recreated on filter changes, so this both debounces typing and
+  // fires promptly when a suggestion is picked.
+  useEffect(() => {
+    const t = setTimeout(() => load(), 350);
+    return () => clearTimeout(t);
+  }, [load]);
 
   // ── Client-side text search ───────────────────────────────────────────────
   const filtered = useMemo(() => {
@@ -560,35 +666,27 @@ export default function ImageBackfillScreen() {
             )}
           </View>
 
-          {/* Brand filter */}
-          <View style={[styles.filterInput, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <TextInput
-              value={brandFilter}
-              onChangeText={v => {
-                setBrandFilter(v);
-                if (searchTimer.current) clearTimeout(searchTimer.current);
-                searchTimer.current = setTimeout(() => load(), 600);
-              }}
-              placeholder="Brand…"
-              placeholderTextColor={colors.mutedForeground + '88'}
-              style={[styles.filterInputText, { color: colors.foreground }]}
-            />
-          </View>
+          {/* Brand filter with autocomplete */}
+          <FilterAutocomplete
+            field="brand"
+            value={brandFilter}
+            onChange={setBrandFilter}
+            onSelect={setBrandFilter}
+            placeholder="Brand…"
+            repo={repo}
+            colors={colors}
+          />
 
-          {/* Collection filter */}
-          <View style={[styles.filterInput, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <TextInput
-              value={collFilter}
-              onChangeText={v => {
-                setCollFilter(v);
-                if (searchTimer.current) clearTimeout(searchTimer.current);
-                searchTimer.current = setTimeout(() => load(), 600);
-              }}
-              placeholder="Series…"
-              placeholderTextColor={colors.mutedForeground + '88'}
-              style={[styles.filterInputText, { color: colors.foreground }]}
-            />
-          </View>
+          {/* Collection filter with autocomplete */}
+          <FilterAutocomplete
+            field="collection"
+            value={collFilter}
+            onChange={setCollFilter}
+            onSelect={setCollFilter}
+            placeholder="Series…"
+            repo={repo}
+            colors={colors}
+          />
         </View>
 
         {/* ── List ── */}
@@ -663,8 +761,14 @@ const styles = StyleSheet.create({
   filterBar:       { gap: 8, padding: 12, borderBottomWidth: 1 },
   searchBox:       { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, paddingVertical: 9, borderRadius: 10, borderWidth: 1 },
   searchInput:     { flex: 1, fontSize: 14, fontFamily: 'Inter_400Regular', padding: 0 },
-  filterInput:     { paddingHorizontal: 12, paddingVertical: 9, borderRadius: 10, borderWidth: 1 },
-  filterInputText: { fontSize: 14, fontFamily: 'Inter_400Regular', padding: 0 },
+  filterInput:     { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, paddingVertical: 9, borderRadius: 10, borderWidth: 1 },
+  filterInputText: { flex: 1, fontSize: 14, fontFamily: 'Inter_400Regular', padding: 0 },
+  filterClear:     { flexShrink: 0 },
+
+  // Autocomplete dropdown
+  suggestBox:      { position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 4, borderRadius: 10, borderWidth: 1, overflow: 'hidden', elevation: 6, shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, zIndex: 100 },
+  suggestItem:     { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, paddingVertical: 10, borderBottomWidth: StyleSheet.hairlineWidth },
+  suggestText:     { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular' },
 
   // Pin row
   row:             { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12, borderRadius: 12, borderWidth: 1 },

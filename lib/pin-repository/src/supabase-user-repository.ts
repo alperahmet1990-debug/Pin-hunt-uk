@@ -1206,12 +1206,43 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   }
 
   async deleteCommunityPost(postId: string): Promise<void> {
+    // Fetch the post first so we can clean up any stored photos.
+    const { data: postData, error: fetchError } = await this.client
+      .from('community_posts')
+      .select('photos')
+      .eq('id', postId)
+      .maybeSingle();
+
+    if (fetchError) throw new Error(fetchError.message);
+
+    // Delete the DB row.
     const { error } = await this.client
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .from('community_posts')
       .delete()
       .eq('id', postId);
     if (error) throw new Error(error.message);
+
+    // Best-effort: remove storage objects for any photos attached to the post.
+    // Photos are stored as full public URLs; extract the object path (the part
+    // after `/community-photos/`) so we can call storage.remove().
+    const photos = (postData?.photos as string[] | null) ?? [];
+    if (photos.length > 0) {
+      const BUCKET = 'community-photos';
+      const MARKER = `/${BUCKET}/`;
+      const paths = photos
+        .map(url => {
+          const idx = url.indexOf(MARKER);
+          return idx !== -1 ? url.slice(idx + MARKER.length) : null;
+        })
+        .filter((p): p is string => p !== null && p.length > 0);
+
+      if (paths.length > 0) {
+        // Ignore storage errors — the DB row is already gone and RLS may
+        // prevent an admin from deleting another user's files anyway.
+        await this.client.storage.from(BUCKET).remove(paths);
+      }
+    }
   }
 
   // ── Post comments ─────────────────────────────────────────────────────────────

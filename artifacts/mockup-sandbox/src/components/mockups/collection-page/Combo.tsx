@@ -82,33 +82,35 @@ export function Combo() {
 
       <div className="relative z-10 flex flex-col h-full overflow-y-auto pb-28 no-scrollbar">
         
-        {/* Header */}
-        <div className="pt-12 pb-6 px-4 flex items-start justify-between">
-          <div>
-            <h1 className="text-3xl font-black tracking-tight text-[#2D1800]">My Collection</h1>
-            <p className="text-[13px] font-bold text-[#2D1800]/60 mt-0.5">128 pins &middot; £342</p>
+        {/* Gradient Hero Header */}
+        <div className="relative bg-gradient-to-br from-[#FFC84A] to-[#E07800] text-white pt-12 pb-8 px-4 rounded-b-[2rem] shadow-md mb-10 z-10">
+          <div className="flex items-start justify-between mb-6">
+            <div>
+              <h1 className="text-3xl font-black tracking-tight drop-shadow-sm">My Collection</h1>
+              <p className="text-[13px] font-bold text-white/90 mt-1 drop-shadow-sm">128 pins &middot; £342</p>
+            </div>
+            <button className="p-2 text-[#E07800] bg-white border border-white/20 shadow-sm hover:bg-white/90 rounded-full transition-colors">
+              <SearchIcon size={20} strokeWidth={2.5} />
+            </button>
           </div>
-          <button className="p-2 text-[#2D1800] bg-white border border-[#F0E0C0] shadow-sm hover:bg-amber-50 rounded-full transition-colors">
-            <SearchIcon size={20} strokeWidth={2.5} />
-          </button>
-        </div>
 
-        {/* 3 Stat Medallions */}
-        <div className="flex gap-3 justify-between px-4 pb-8">
-          <div className="flex-1 bg-white border border-[#F0E0C0] rounded-2xl p-2.5 flex flex-col items-center justify-center shadow-sm relative overflow-hidden">
-            <div className="absolute inset-x-0 bottom-0 h-1.5 bg-[#2D9E6B]"></div>
-            <span className="text-[#2D9E6B] bg-[#2D9E6B]/10 rounded-full px-2 py-0.5 text-[9px] font-black uppercase mb-1 tracking-wider">Owned</span>
-            <span className="text-xl font-black text-[#2D1800]">128</span>
-          </div>
-          <div className="flex-1 bg-white border border-[#F0E0C0] rounded-2xl p-2.5 flex flex-col items-center justify-center shadow-sm relative overflow-hidden">
-             <div className="absolute inset-x-0 bottom-0 h-1.5 bg-[#5B6EE8]"></div>
-            <span className="text-[#5B6EE8] bg-[#5B6EE8]/10 rounded-full px-2 py-0.5 text-[9px] font-black uppercase mb-1 tracking-wider">Trading</span>
-            <span className="text-xl font-black text-[#2D1800]">12</span>
-          </div>
-          <div className="flex-1 bg-white border border-[#F0E0C0] rounded-2xl p-2.5 flex flex-col items-center justify-center shadow-sm relative overflow-hidden">
-             <div className="absolute inset-x-0 bottom-0 h-1.5 bg-[#D97832]"></div>
-            <span className="text-[#D97832] bg-[#D97832]/10 rounded-full px-2 py-0.5 text-[9px] font-black uppercase mb-1 tracking-wider">ISO</span>
-            <span className="text-xl font-black text-[#2D1800]">24</span>
+          {/* 3 Stat Medallions Overlapping Bottom Edge */}
+          <div className="absolute left-4 right-4 -bottom-6 flex gap-3 justify-between">
+            <div className="flex-1 bg-white border border-[#F0E0C0] rounded-2xl p-2.5 flex flex-col items-center justify-center shadow-md relative overflow-hidden">
+              <div className="absolute inset-x-0 bottom-0 h-1.5 bg-[#2D9E6B]"></div>
+              <span className="text-[#2D9E6B] bg-[#2D9E6B]/10 rounded-full px-2 py-0.5 text-[9px] font-black uppercase mb-1 tracking-wider">Owned</span>
+              <span className="text-xl font-black text-[#2D1800]">128</span>
+            </div>
+            <div className="flex-1 bg-white border border-[#F0E0C0] rounded-2xl p-2.5 flex flex-col items-center justify-center shadow-md relative overflow-hidden">
+               <div className="absolute inset-x-0 bottom-0 h-1.5 bg-[#5B6EE8]"></div>
+              <span className="text-[#5B6EE8] bg-[#5B6EE8]/10 rounded-full px-2 py-0.5 text-[9px] font-black uppercase mb-1 tracking-wider">Trading</span>
+              <span className="text-xl font-black text-[#2D1800]">12</span>
+            </div>
+            <div className="flex-1 bg-white border border-[#F0E0C0] rounded-2xl p-2.5 flex flex-col items-center justify-center shadow-md relative overflow-hidden">
+               <div className="absolute inset-x-0 bottom-0 h-1.5 bg-[#D97832]"></div>
+              <span className="text-[#D97832] bg-[#D97832]/10 rounded-full px-2 py-0.5 text-[9px] font-black uppercase mb-1 tracking-wider">ISO</span>
+              <span className="text-xl font-black text-[#2D1800]">24</span>
+            </div>
           </div>
         </div>
 

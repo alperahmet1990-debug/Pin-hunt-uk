@@ -2,11 +2,12 @@
  * Discover screen — the primary entry point of PinHunt.
  *
  * Layout (top → bottom):
- *   1. Scan a Pin — large primary CTA
- *   2. Search the catalogue — inline search with live results
- *   3. Recently Viewed — horizontal strip
- *   4. Official Sets — horizontal strip (browse by collection)
- *   5. Recently Added — horizontal strip (new releases)
+ *   1. Search bar (with inline results)
+ *   2. Scan a Pin — compact CTA
+ *   3. New to the Catalogue — horizontal strip of new releases
+ *   4. Browse by Brand — colourful 2-column grid cards
+ *   5. Browse by Collection — horizontal pill strip
+ *   6. Recently Viewed — horizontal strip (shown only when populated)
  */
 import React, { useMemo, useState } from 'react';
 import {
@@ -22,14 +23,82 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SearchBar } from '@/components/SearchBar';
-import { PinCard } from '@/components/PinCard';
 import type { CataloguePin } from '@workspace/pin-repository';
+
+// ─── Brand definitions ────────────────────────────────────────────────────────
+
+const BRAND_CARDS = [
+  {
+    key: 'Disney Parks',
+    label: 'Disney Parks',
+    subtitle: 'Official park exclusives',
+    gradientStart: '#1B4FA8',
+    gradientEnd: '#0D2D6E',
+    icon: 'star' as const,
+  },
+  {
+    key: 'Loungefly',
+    label: 'Loungefly',
+    subtitle: 'Fashion-forward designs',
+    gradientStart: '#C0457A',
+    gradientEnd: '#7A1A4A',
+    icon: 'heart' as const,
+  },
+  {
+    key: 'BoxLunch',
+    label: 'BoxLunch',
+    subtitle: 'Pop-culture favourites',
+    gradientStart: '#1A8A50',
+    gradientEnd: '#0D5530',
+    icon: 'gift' as const,
+  },
+] as const;
+
+// ─── Colourful brand grid card ────────────────────────────────────────────────
+
+function BrandCard({
+  brand,
+  count,
+  onPress,
+}: {
+  brand: (typeof BRAND_CARDS)[number];
+  count: number;
+  onPress: () => void;
+}) {
+  return (
+    <TouchableOpacity onPress={onPress} activeOpacity={0.88} style={styles.brandCard}>
+      <LinearGradient
+        colors={[brand.gradientStart, brand.gradientEnd]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.brandGradient}
+      >
+        {/* Decorative large icon in corner */}
+        <View style={styles.brandIconDecor} pointerEvents="none">
+          <Feather name={brand.icon} size={64} color="rgba(255,255,255,0.12)" />
+        </View>
+
+        <View style={styles.brandContent}>
+          <View style={[styles.brandIconBadge, { backgroundColor: 'rgba(255,255,255,0.18)' }]}>
+            <Feather name={brand.icon} size={18} color="#FFFFFF" />
+          </View>
+          <Text style={styles.brandLabel}>{brand.label}</Text>
+          <Text style={styles.brandSubtitle}>{brand.subtitle}</Text>
+          {count > 0 && (
+            <Text style={styles.brandCount}>{count} pin{count !== 1 ? 's' : ''}</Text>
+          )}
+        </View>
+      </LinearGradient>
+    </TouchableOpacity>
+  );
+}
 
 // ─── Small horizontally-scrolling pin card ────────────────────────────────────
 
@@ -57,7 +126,7 @@ function SmallPinCard({ pin, onPress }: { pin: CataloguePin; onPress: () => void
   );
 }
 
-// ─── New-release card (slightly wider) ────────────────────────────────────────
+// ─── New-release card ─────────────────────────────────────────────────────────
 
 function NewReleaseCard({ pin, onPress }: { pin: CataloguePin; onPress: () => void }) {
   const colors = useColors();
@@ -84,24 +153,35 @@ function NewReleaseCard({ pin, onPress }: { pin: CataloguePin; onPress: () => vo
   );
 }
 
-// ─── Official-set pill ────────────────────────────────────────────────────────
+// ─── Collection pill ──────────────────────────────────────────────────────────
 
-function SetPill({ name, count, onPress }: { name: string; count: number; onPress: () => void }) {
+function CollectionPill({
+  name,
+  count,
+  onPress,
+}: {
+  name: string;
+  count: number;
+  onPress: () => void;
+}) {
   const colors = useColors();
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
       style={[
-        styles.setPill,
-        { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+        styles.collectionPill,
+        {
+          backgroundColor: colors.secondary,
+          borderColor: colors.border,
+          borderRadius: colors.radius,
+        },
       ]}
     >
-      <Feather name="layers" size={16} color={colors.primary} />
-      <Text style={[styles.setPillName, { color: colors.foreground }]} numberOfLines={1}>
+      <Text style={[styles.collectionPillName, { color: colors.foreground }]} numberOfLines={1}>
         {name}
       </Text>
-      <Text style={[styles.setPillCount, { color: colors.mutedForeground }]}>{count}</Text>
+      <Text style={[styles.collectionPillCount, { color: colors.mutedForeground }]}>{count}</Text>
     </TouchableOpacity>
   );
 }
@@ -112,12 +192,10 @@ function SearchResults({
   query,
   pins,
   onPinPress,
-  onClear,
 }: {
   query: string;
   pins: CataloguePin[];
   onPinPress: (id: string) => void;
-  onClear: () => void;
 }) {
   const colors = useColors();
   const results = useMemo(() => {
@@ -150,10 +228,7 @@ function SearchResults({
             : `${results.length} result${results.length !== 1 ? 's' : ''}`}
         </Text>
         {results.length > 0 && (
-          <TouchableOpacity
-            onPress={() => onPinPress('__catalogue')}
-            activeOpacity={0.7}
-          >
+          <TouchableOpacity onPress={() => onPinPress('__catalogue')} activeOpacity={0.7}>
             <Text style={[styles.searchResultsViewAll, { color: colors.primary }]}>
               View all in Catalogue
             </Text>
@@ -215,8 +290,17 @@ export default function DiscoverScreen() {
     [recentlyViewed, pins],
   );
 
-  // Derive unique official sets with pin counts
-  const officialSets = useMemo(() => {
+  // Count pins per brand
+  const brandCounts = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const pin of pins) {
+      map.set(pin.brand, (map.get(pin.brand) ?? 0) + 1);
+    }
+    return map;
+  }, [pins]);
+
+  // Derive unique collections with counts (top 12)
+  const collections = useMemo(() => {
     const map = new Map<string, number>();
     for (const pin of pins) {
       if (pin.collection) {
@@ -238,28 +322,24 @@ export default function DiscoverScreen() {
     setSearchQuery('');
   };
 
-  const handleBrowseSet = (setName: string) => {
-    // Navigate to catalogue pre-filtered to this set
-    // (Catalogue screen currently filters by brand; sets/collections map similarly)
-    router.push('/catalogue');
-  };
-
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad }}
+        contentContainerStyle={{ paddingTop: topPad + 12, paddingBottom: botPad }}
         keyboardShouldPersistTaps="handled"
       >
-        {/* ── Page title ── */}
-        <View style={styles.pageHeader}>
-          <Text style={[styles.pageTitle, { color: colors.foreground }]}>Discover</Text>
-          <Text style={[styles.pageSubtitle, { color: colors.mutedForeground }]}>
-            Scan, search, and explore Disney pins
-          </Text>
+        {/* ── Search ── */}
+        <View style={styles.searchWrap}>
+          <SearchBar
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder="Search pins, characters, sets…"
+          />
+          <SearchResults query={searchQuery} pins={pins} onPinPress={handlePinResult} />
         </View>
 
-        {/* ── Primary CTA: Scan a Pin ── */}
+        {/* ── Compact Scan CTA ── */}
         <TouchableOpacity
           onPress={() => router.push('/(tabs)/scan')}
           activeOpacity={0.88}
@@ -272,36 +352,82 @@ export default function DiscoverScreen() {
             },
           ]}
         >
-          <View style={styles.scanCtaIconWrap}>
-            <View style={[styles.scanCtaIconBg, { backgroundColor: 'rgba(255,255,255,0.2)' }]}>
-              <Feather name="camera" size={28} color={colors.primaryForeground} />
-            </View>
+          <View style={[styles.scanCtaIconBg, { backgroundColor: 'rgba(255,255,255,0.2)' }]}>
+            <Feather name="camera" size={20} color="#FFFFFF" />
           </View>
-          <View style={styles.scanCtaText}>
-            <Text style={[styles.scanCtaTitle, { color: colors.primaryForeground }]}>
-              Scan a Pin
-            </Text>
-            <Text style={[styles.scanCtaSubtitle, { color: colors.primaryForeground + 'cc' }]}>
-              AI-powered identification
-            </Text>
-          </View>
-          <Feather name="chevron-right" size={22} color={colors.primaryForeground + 'bb'} />
+          <Text style={styles.scanCtaLabel}>Scan a Pin</Text>
+          <Text style={[styles.scanCtaDot, { color: 'rgba(255,255,255,0.5)' }]}>·</Text>
+          <Text style={styles.scanCtaSub}>AI-powered identification</Text>
+          <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.7)" style={{ marginLeft: 'auto' }} />
         </TouchableOpacity>
 
-        {/* ── Search ── */}
-        <View style={styles.searchWrap}>
-          <SearchBar
-            value={searchQuery}
-            onChangeText={setSearchQuery}
-            placeholder="Search pins, characters, sets…"
+        {/* ── New to the Catalogue ── */}
+        {newReleases.length > 0 && (
+          <View style={styles.section}>
+            <SectionHeader
+              title="New to the Catalogue"
+              actionLabel="See All"
+              onAction={() => router.push('/catalogue')}
+            />
+            <FlatList
+              data={newReleases}
+              keyExtractor={p => p.id}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.hList}
+              renderItem={({ item }) => (
+                <NewReleaseCard
+                  pin={item}
+                  onPress={() => router.push({ pathname: '/pin/[id]', params: { id: item.id } })}
+                />
+              )}
+            />
+          </View>
+        )}
+
+        {/* ── Browse by Brand ── */}
+        <View style={styles.section}>
+          <SectionHeader
+            title="Browse by Brand"
+            actionLabel="Full Catalogue"
+            onAction={() => router.push('/catalogue')}
           />
-          <SearchResults
-            query={searchQuery}
-            pins={pins}
-            onPinPress={handlePinResult}
-            onClear={() => setSearchQuery('')}
-          />
+          <View style={styles.brandGrid}>
+            {BRAND_CARDS.map(brand => (
+              <BrandCard
+                key={brand.key}
+                brand={brand}
+                count={brandCounts.get(brand.key) ?? 0}
+                onPress={() => router.push('/catalogue')}
+              />
+            ))}
+          </View>
         </View>
+
+        {/* ── Browse by Collection ── */}
+        {collections.length > 0 && (
+          <View style={styles.section}>
+            <SectionHeader
+              title="Browse by Collection"
+              actionLabel={`${collections.length} sets`}
+              onAction={() => router.push('/catalogue')}
+            />
+            <FlatList
+              data={collections}
+              keyExtractor={c => c.name}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.hList}
+              renderItem={({ item }) => (
+                <CollectionPill
+                  name={item.name}
+                  count={item.count}
+                  onPress={() => router.push('/catalogue')}
+                />
+              )}
+            />
+          </View>
+        )}
 
         {/* ── Recently Viewed ── */}
         {recentPins.length > 0 && (
@@ -320,95 +446,12 @@ export default function DiscoverScreen() {
               renderItem={({ item }) => (
                 <SmallPinCard
                   pin={item}
-                  onPress={() =>
-                    router.push({ pathname: '/pin/[id]', params: { id: item.id } })
-                  }
+                  onPress={() => router.push({ pathname: '/pin/[id]', params: { id: item.id } })}
                 />
               )}
             />
           </View>
         )}
-
-        {/* ── Official Sets ── */}
-        {officialSets.length > 0 && (
-          <View style={styles.section}>
-            <SectionHeader
-              title="Official Sets"
-              actionLabel={`${officialSets.length} sets`}
-              onAction={() => router.push('/catalogue')}
-            />
-            <FlatList
-              data={officialSets}
-              keyExtractor={s => s.name}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.hList}
-              renderItem={({ item }) => (
-                <SetPill
-                  name={item.name}
-                  count={item.count}
-                  onPress={() => handleBrowseSet(item.name)}
-                />
-              )}
-            />
-          </View>
-        )}
-
-        {/* ── Recently Added ── */}
-        {newReleases.length > 0 && (
-          <View style={styles.section}>
-            <SectionHeader
-              title="Recently Added"
-              actionLabel="See All"
-              onAction={() => router.push('/catalogue')}
-            />
-            <FlatList
-              data={newReleases}
-              keyExtractor={p => p.id}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.hList}
-              renderItem={({ item }) => (
-                <NewReleaseCard
-                  pin={item}
-                  onPress={() =>
-                    router.push({ pathname: '/pin/[id]', params: { id: item.id } })
-                  }
-                />
-              )}
-            />
-          </View>
-        )}
-
-        {/* ── Browse full catalogue banner ── */}
-        <View style={styles.section}>
-          <TouchableOpacity
-            onPress={() => router.push('/catalogue')}
-            activeOpacity={0.85}
-            style={[
-              styles.catalogueBanner,
-              {
-                backgroundColor: colors.card,
-                borderColor: colors.border,
-                borderRadius: colors.radius,
-                marginHorizontal: 16,
-              },
-            ]}
-          >
-            <View style={[styles.catalogueBannerIcon, { backgroundColor: colors.secondary, borderRadius: 10 }]}>
-              <Feather name="grid" size={22} color={colors.primary} />
-            </View>
-            <View style={styles.catalogueBannerText}>
-              <Text style={[styles.catalogueBannerTitle, { color: colors.foreground }]}>
-                Full Pin Catalogue
-              </Text>
-              <Text style={[styles.catalogueBannerSub, { color: colors.mutedForeground }]}>
-                {pins.length} pins · Disney Parks, Loungefly, BoxLunch
-              </Text>
-            </View>
-            <Feather name="chevron-right" size={20} color={colors.mutedForeground} />
-          </TouchableOpacity>
-        </View>
       </ScrollView>
     </View>
   );
@@ -419,52 +462,9 @@ export default function DiscoverScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1 },
 
-  pageHeader: {
-    paddingHorizontal: 16,
-    marginBottom: 20,
-  },
-  pageTitle: {
-    fontSize: 32,
-    fontFamily: 'Inter_700Bold',
-    letterSpacing: -0.5,
-  },
-  pageSubtitle: {
-    fontSize: 14,
-    fontFamily: 'Inter_400Regular',
-    marginTop: 2,
-  },
-
-  // Scan CTA
-  scanCta: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 18,
-    marginBottom: 20,
-    gap: 14,
-  },
-  scanCtaIconWrap: {},
-  scanCtaIconBg: {
-    width: 54,
-    height: 54,
-    borderRadius: 27,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  scanCtaText: { flex: 1 },
-  scanCtaTitle: {
-    fontSize: 18,
-    fontFamily: 'Inter_700Bold',
-  },
-  scanCtaSubtitle: {
-    fontSize: 13,
-    fontFamily: 'Inter_400Regular',
-    marginTop: 2,
-  },
-
   // Search
   searchWrap: {
-    marginHorizontal: 0,
-    marginBottom: 8,
+    marginBottom: 12,
     position: 'relative',
     zIndex: 10,
   },
@@ -503,9 +503,105 @@ const styles = StyleSheet.create({
   },
   noResultsText: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
 
+  // Compact scan CTA
+  scanCta: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    gap: 10,
+    marginBottom: 28,
+  },
+  scanCtaIconBg: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  scanCtaLabel: {
+    fontSize: 14,
+    fontFamily: 'Inter_700Bold',
+    color: '#FFFFFF',
+  },
+  scanCtaDot: {
+    fontSize: 14,
+  },
+  scanCtaSub: {
+    fontSize: 13,
+    fontFamily: 'Inter_400Regular',
+    color: 'rgba(255,255,255,0.8)',
+  },
+
   // Sections
-  section: { marginBottom: 24 },
+  section: { marginBottom: 28 },
   hList: { paddingHorizontal: 16, gap: 12 },
+
+  // Brand grid — two columns
+  brandGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingHorizontal: 16,
+    gap: 12,
+  },
+  brandCard: {
+    // Each card takes ~half the row minus gap
+    flexBasis: '47%',
+    flexGrow: 1,
+    borderRadius: 16,
+    overflow: 'hidden',
+    minHeight: 130,
+  },
+  brandGradient: {
+    flex: 1,
+    padding: 16,
+    minHeight: 130,
+    justifyContent: 'flex-end',
+    overflow: 'hidden',
+  },
+  brandIconDecor: {
+    position: 'absolute',
+    top: -8,
+    right: -8,
+  },
+  brandContent: { gap: 4 },
+  brandIconBadge: {
+    width: 34,
+    height: 34,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 6,
+  },
+  brandLabel: {
+    fontSize: 15,
+    fontFamily: 'Inter_700Bold',
+    color: '#FFFFFF',
+    letterSpacing: -0.2,
+  },
+  brandSubtitle: {
+    fontSize: 11,
+    fontFamily: 'Inter_400Regular',
+    color: 'rgba(255,255,255,0.75)',
+  },
+  brandCount: {
+    fontSize: 11,
+    fontFamily: 'Inter_600SemiBold',
+    color: 'rgba(255,255,255,0.6)',
+    marginTop: 2,
+  },
+
+  // Collection pills
+  collectionPill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 9,
+    paddingHorizontal: 14,
+    gap: 8,
+    borderWidth: 1,
+  },
+  collectionPillName: { fontSize: 13, fontFamily: 'Inter_600SemiBold', maxWidth: 180 },
+  collectionPillCount: { fontSize: 11, fontFamily: 'Inter_400Regular' },
 
   // Small recently-viewed card
   smallCard: {
@@ -529,31 +625,4 @@ const styles = StyleSheet.create({
   newTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', lineHeight: 17 },
   newBrand: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   newPrice: { fontSize: 13, fontFamily: 'Inter_700Bold' },
-
-  // Set pill
-  setPill: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 14,
-    gap: 8,
-    borderWidth: 1,
-    minWidth: 120,
-    maxWidth: 200,
-  },
-  setPillName: { flex: 1, fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  setPillCount: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-
-  // Catalogue banner
-  catalogueBanner: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 16,
-    borderWidth: 1,
-    gap: 14,
-  },
-  catalogueBannerIcon: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
-  catalogueBannerText: { flex: 1 },
-  catalogueBannerTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
-  catalogueBannerSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
 });

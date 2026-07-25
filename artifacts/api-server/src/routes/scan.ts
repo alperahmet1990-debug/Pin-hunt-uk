@@ -1,4 +1,5 @@
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
+import { createClient } from "@supabase/supabase-js";
 import { openai } from "@workspace/integrations-openai-ai-server";
 import {
   createSupabasePinRepository,
@@ -84,7 +85,35 @@ interface ScanMatch {
   reasoning: string;
 }
 
-router.post("/scan/identify", async (req, res) => {
+/** Require a valid signed-in Supabase user (Bearer token). */
+async function requireUser(req: Request, res: Response, next: NextFunction) {
+  const authHeader = req.headers.authorization ?? "";
+  const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : null;
+  if (!token) {
+    res.status(401).json({ error: "Sign in to identify pins" });
+    return;
+  }
+  try {
+    const client = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
+    const { data: { user }, error } = await client.auth.getUser(token);
+    if (error || !user) {
+      res.status(401).json({ error: "Invalid or expired session" });
+      return;
+    }
+    (req as Request & { userId?: string }).userId = user.id;
+    next();
+  } catch {
+    res.status(401).json({ error: "Authentication failed" });
+  }
+}
+
+// Per-user cooldown: the scan runs up to 3 AI calls, so rapid retries are
+// expensive. One scan per user every 5 seconds is plenty for real use.
+const SCAN_COOLDOWN_MS = 5_000;
+const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image
+const lastScanAt = new Map<string, number>();
+
+router.post("/scan/identify", requireUser, async (req, res) => {
   const { imageBase64, mimeType = "image/jpeg" } = req.body as {
     imageBase64: string;
     mimeType?: string;
@@ -94,6 +123,18 @@ router.post("/scan/identify", async (req, res) => {
     res.status(400).json({ error: "imageBase64 is required" });
     return;
   }
+  if (imageBase64.length > MAX_IMAGE_BASE64_CHARS) {
+    res.status(413).json({ error: "Photo is too large — please retake it." });
+    return;
+  }
+  const userId = (req as Request & { userId?: string }).userId ?? "unknown";
+  const last = lastScanAt.get(userId);
+  if (last && Date.now() - last < SCAN_COOLDOWN_MS) {
+    res.status(429).json({ error: "One moment — please wait a few seconds between scans." });
+    return;
+  }
+  lastScanAt.set(userId, Date.now());
+  if (lastScanAt.size > 5000) lastScanAt.clear();
 
   if (!repository) {
     res.status(503).json({ error: "Pin catalogue is not available yet." });
@@ -161,12 +202,12 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
           role: "system",
           content: `You are an expert Disney enamel pin identifier with deep knowledge of Disney Parks, Loungefly, and BoxLunch pin collections.
 
-You will be shown a photo of a Disney enamel pin. Your job is to identify it from the catalogue below and return the top 3 most likely matches.
+You will be shown a photo of a Disney enamel pin. Your job is to identify it from the catalogue below and return the top 5 most likely matches.
 
 PIN CATALOGUE:
 ${catalogueText}
 
-Respond with ONLY a valid JSON array of exactly 3 objects, no markdown, no explanation outside the JSON:
+Respond with ONLY a valid JSON array of exactly 5 objects, no markdown, no explanation outside the JSON:
 [
   { "pinId": "<id from catalogue>", "confidence": <0-100 integer>, "reasoning": "<1 sentence why>" },
   ...
@@ -186,7 +227,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
             },
             {
               type: "text",
-              text: "Please identify this Disney pin and return the top 3 matches as JSON.",
+              text: "Please identify this Disney pin and return the top 5 matches as JSON.",
             },
           ],
         },
@@ -201,7 +242,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       const end = raw.lastIndexOf("]");
       if (start !== -1 && end > start) {
         const parsed = JSON.parse(raw.slice(start, end + 1));
-        matches = Array.isArray(parsed) ? parsed.slice(0, 3) : [];
+        matches = Array.isArray(parsed) ? parsed.slice(0, 5) : [];
       }
     } catch (parseErr) {
       console.error(
@@ -223,7 +264,109 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       return true;
     });
 
-    res.json({ matches });
+    // ── Stage 3: visual verification against real catalogue images ──
+    // When any candidate has a stored catalogue photo, show the model the
+    // user's photo alongside those reference images and let it re-rank.
+    // Text metadata alone confuses similar pins (e.g. every Princess
+    // Pastries macaron shares the same collection description).
+    const byPinId = new Map(catalogue.map((p) => [p.id, p]));
+
+    // Pull in same-collection siblings that have real catalogue images.
+    // Similar pins in one collection (e.g. all Princess Pastries macarons)
+    // are indistinguishable by text, so any sibling with a photo must be
+    // shown to the model even if the text ranking missed it.
+    const topCollections = [...new Set(
+      matches.slice(0, 3).map((m) => byPinId.get(m.pinId)?.collection).filter(Boolean),
+    )] as string[];
+    for (const collection of topCollections.slice(0, 2)) {
+      try {
+        const siblings = await repository.searchPins("", { status: "active", collection, limit: 50 });
+        for (const s of siblings) {
+          if (!s.imageUrl || byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
+          byPinId.set(s.id, s);
+          if (!matches.some((m) => m.pinId === s.id)) {
+            matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a reference image for comparison." });
+          }
+        }
+      } catch { /* siblings are best-effort */ }
+    }
+    validIds.clear();
+    for (const id of byPinId.keys()) validIds.add(id);
+    // Hard cap the rerank candidate list to keep stage-3 prompts bounded.
+    matches = matches.slice(0, 10);
+
+    const withImages = matches
+      .map((m) => ({ match: m, pin: byPinId.get(m.pinId)! }))
+      .filter((c) => !!c.pin?.imageUrl)
+      .slice(0, 6);
+
+    if (withImages.length > 0) {
+      try {
+        const refContent: Array<
+          | { type: "text"; text: string }
+          | { type: "image_url"; image_url: { url: string; detail: "low" | "high" } }
+        > = [
+          {
+            type: "image_url",
+            image_url: { url: `data:${mimeType};base64,${imageBase64}`, detail: "high" },
+          },
+          { type: "text", text: "Photo above is the USER'S PIN. Reference images follow:" },
+        ];
+        for (const c of withImages) {
+          refContent.push({ type: "text", text: `Reference for ${c.pin.id} — "${c.pin.title}" (${c.pin.collection}):` });
+          refContent.push({ type: "image_url", image_url: { url: c.pin.imageUrl!, detail: "low" } });
+        }
+        refContent.push({
+          type: "text",
+          text: "Compare the user's pin to each reference image and re-rank ALL candidates as JSON.",
+        });
+
+        const candidateList = matches
+          .map((m) => {
+            const p = byPinId.get(m.pinId)!;
+            return `${p.id} | "${p.title}" | ${p.collection} | reference image: ${p.imageUrl ? "YES (shown below)" : "no image available"}`;
+          })
+          .join("\n");
+
+        const verifyResp = await openai.chat.completions.create({
+          model: "gpt-5.6-luna",
+          max_completion_tokens: 1024,
+          messages: [
+            {
+              role: "system",
+              content: `You verify Disney pin identifications by comparing photos. Candidates:
+${candidateList}
+
+Where a reference image is shown, compare it DIRECTLY to the user's pin photo — same shapes, colours, props and layout means a match; visible differences mean it is NOT that pin, no matter how similar the text sounds. Candidates without reference images keep roughly their original plausibility.
+Respond with ONLY a JSON array re-ranking all ${matches.length} candidates, best first:
+[ { "pinId": "<id>", "confidence": <0-100>, "reasoning": "<1 sentence>" }, ... ]
+Give a confidence above 85 only when a reference image visually confirms the match.`,
+            },
+            { role: "user", content: refContent },
+          ],
+        });
+
+        const vraw = verifyResp.choices[0]?.message?.content ?? "[]";
+        const vs = vraw.indexOf("[");
+        const ve = vraw.lastIndexOf("]");
+        if (vs !== -1 && ve > vs) {
+          const reranked = (JSON.parse(vraw.slice(vs, ve + 1)) as ScanMatch[]).filter(
+            (m) => validIds.has(m.pinId),
+          );
+          const rerankedSeen = new Set<string>();
+          const deduped = reranked.filter((m) => {
+            if (rerankedSeen.has(m.pinId)) return false;
+            rerankedSeen.add(m.pinId);
+            return true;
+          });
+          if (deduped.length > 0) matches = deduped;
+        }
+      } catch (verifyErr) {
+        console.warn("[scan] visual verification failed, using text ranking:", verifyErr);
+      }
+    }
+
+    res.json({ matches: matches.slice(0, 3) });
   } catch (err) {
     console.error("[scan] Vision analysis error:", err);
     res.status(500).json({ error: "Vision analysis failed. Please try again." });

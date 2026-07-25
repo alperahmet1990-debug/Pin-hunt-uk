@@ -554,12 +554,18 @@ export async function applyDryRunImage(resultId: string): Promise<{ pinhuntId: s
   // eBay serves the same image at multiple sizes; request the 1600px version.
   const hiResUrl = (result.image_url as string).replace(/\/s-l\d+(\.\w+)$/, "/s-l1600$1");
 
-  const { error: updErr } = await sb
+  const { data: updatedRows, error: updErr } = await sb
     .from("pins")
     .update({ image_url: hiResUrl, needs_front_image: false })
     .eq("id", result.pin_id)
-    .is("image_url", null);
+    .is("image_url", null)
+    .select("id");
   if (updErr) throw new Error(`Applying image failed: ${updErr.message}`);
+  // Conditional update must have hit exactly one row — otherwise another
+  // writer set an image between our check and the update.
+  if (!updatedRows || updatedRows.length !== 1) {
+    throw Object.assign(new Error("Pin already has an image — not overwriting"), { status: 409 });
+  }
 
   // Provenance record so temporary eBay images are identifiable later.
   await sb.from("pin_images").insert({

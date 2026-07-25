@@ -17,6 +17,7 @@ import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useColors } from '@/hooks/useColors';
+import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
@@ -31,10 +32,14 @@ const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
 async function identifyPin(
   imageBase64: string,
   mimeType: string,
+  accessToken?: string,
 ): Promise<Array<{ pinId: string; confidence: number; reasoning: string }>> {
   const res = await fetch(`${API_BASE}/scan/identify`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+    },
     body: JSON.stringify({ imageBase64, mimeType }),
   });
   if (!res.ok) {
@@ -85,6 +90,7 @@ export default function ScanScreen() {
   const router = useRouter();
   const { setStatus, markViewed } = useCollection();
   const { pins, repository } = usePinCatalogue();
+  const { session } = useAuth();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
@@ -161,7 +167,7 @@ export default function ScanScreen() {
     setScanState('identifying');
 
     try {
-      const rawMatches = await identifyPin(captured.base64, captured.mimeType);
+      const rawMatches = await identifyPin(captured.base64, captured.mimeType, session?.access_token);
 
       // The cached list only holds part of the catalogue — fetch any matched
       // pin that isn't cached directly from the repository.
@@ -195,7 +201,7 @@ export default function ScanScreen() {
       setErrorMsg(msg);
       setScanState('captured');
     }
-  }, [captured, pins, repository]);
+  }, [captured, pins, repository, session?.access_token]);
 
   // ── Confirm match ─────────────────────────────────────────────────────────────
   const handleSelectMatch = (match: Match) => {

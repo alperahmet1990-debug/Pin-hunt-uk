@@ -310,6 +310,35 @@ export default function CommunityScreen() {
     };
   }, [repo, filter]);
 
+  // ── Realtime: bump comment counts on cards as comments arrive ──────────────
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+
+    const channel = supabase
+      .channel('post_comments_inserts')
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'post_comments' },
+        (payload) => {
+          const newRow = payload.new as { post_id: string };
+          // Only update the affected card, if it's currently in the feed.
+          setPosts(prev => {
+            if (!prev.some(p => p.id === newRow.post_id)) return prev;
+            return prev.map(p =>
+              p.id === newRow.post_id
+                ? { ...p, commentCount: (p.commentCount ?? 0) + 1 }
+                : p,
+            );
+          });
+        },
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
   const handleFilterChange = (key: CommunityPostType | 'all') => {
     setFilter(key);
     scrollRef.current?.scrollTo({ y: 0, animated: false });

@@ -2,6 +2,7 @@
  * Trade Chat screen — messages, status controls, and post-trade rating.
  */
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   ActivityIndicator,
   Alert,
@@ -282,6 +283,21 @@ export default function TradeScreen() {
   const [showRating,     setShowRating]     = useState(false);
   const [potentialPins,  setPotentialPins]  = useState<PotentialTradePin[]>([]);
   const [bannerDismissed, setBannerDismissed] = useState(false);
+
+  // Load persisted dismissal state for this trade
+  useEffect(() => {
+    if (!id) return;
+    AsyncStorage.getItem(`trade_banner_dismissed_${id}`)
+      .then(val => { if (val === '1') setBannerDismissed(true); })
+      .catch(() => { /* ignore */ });
+  }, [id]);
+
+  const dismissBanner = useCallback(() => {
+    setBannerDismissed(true);
+    if (id) {
+      AsyncStorage.setItem(`trade_banner_dismissed_${id}`, '1').catch(() => { /* ignore */ });
+    }
+  }, [id]);
   const scrollRef = useRef<ScrollView>(null);
 
   const load = useCallback(async () => {
@@ -397,7 +413,7 @@ export default function TradeScreen() {
               <PotentialMatchBanner
                 pins={potentialPins}
                 colors={colors}
-                onDismiss={() => setBannerDismissed(true)}
+                onDismiss={dismissBanner}
                 onPinPress={handlePinPress}
               />
             )}

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -20,7 +20,6 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
-import { SearchBar } from '@/components/SearchBar';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── API ─────────────────────────────────────────────────────────────────────
@@ -85,83 +84,14 @@ export default function ScanScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { setStatus, markViewed } = useCollection();
-  const { pins, repository } = usePinCatalogue();
+  const { pins } = usePinCatalogue();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
   const [selectedMatch, setSelectedMatch] = useState<CataloguePin | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<CataloguePin[]>([]);
-  const [searching, setSearching] = useState(false);
-  const searchSeq = useRef(0);
   const shutterAnim = useRef(new Animated.Value(1)).current;
-
-  // Keep pins in a ref so the search effect doesn't re-fire on catalogue refreshes.
-  const pinsRef = useRef(pins);
-  pinsRef.current = pins;
-
-  // ── Text search: query the database (debounced) ────────────────────────────
-  useEffect(() => {
-    const q = searchQuery.trim();
-    const seq = ++searchSeq.current;
-
-    // Never show results from a previous query.
-    setSearchResults([]);
-
-    if (!q) {
-      setSearching(false);
-      return;
-    }
-
-    // Fallback: no repository (mock mode) — filter the cached list locally.
-    if (!repository) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps -- pinsRef keeps deps stable
-      const pins = pinsRef.current;
-      const lower = q.toLowerCase();
-      setSearchResults(
-        pins
-          .filter(
-            p =>
-              p.title.toLowerCase().includes(lower) ||
-              p.characters.some(c => c.toLowerCase().includes(lower)) ||
-              p.collection.toLowerCase().includes(lower) ||
-              p.brand.toLowerCase().includes(lower),
-          )
-          .slice(0, 20),
-      );
-      return;
-    }
-
-    setSearching(true);
-    const timer = setTimeout(async () => {
-      try {
-        // Two parallel DB queries: text match on title/brand/collection,
-        // plus a character-name match, merged and deduped.
-        const [textMatches, characterMatches] = await Promise.all([
-          repository.searchPins(q, { limit: 20 }),
-          repository.searchPins('', { character: q, limit: 20 }),
-        ]);
-        if (seq !== searchSeq.current) return; // stale response
-        const seen = new Set<string>();
-        const merged: CataloguePin[] = [];
-        for (const pin of [...textMatches, ...characterMatches]) {
-          if (!seen.has(pin.id)) {
-            seen.add(pin.id);
-            merged.push(pin);
-          }
-        }
-        setSearchResults(merged.slice(0, 20));
-      } catch {
-        if (seq === searchSeq.current) setSearchResults([]);
-      } finally {
-        if (seq === searchSeq.current) setSearching(false);
-      }
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [searchQuery, repository]);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -299,63 +229,6 @@ export default function ScanScreen() {
           </Text>
         </View>
 
-        {/* ── Text search ── */}
-        <View style={[styles.searchWrap, { zIndex: 10 }]}>
-          <SearchBar
-            value={searchQuery}
-            onChangeText={v => { setSearchQuery(v); }}
-            placeholder="Search pins, characters, sets…"
-          />
-          {searchQuery.trim().length > 0 && (
-            <View style={[styles.searchResults, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-              {searching && searchResults.length === 0 ? (
-                <View style={styles.searchEmpty}>
-                  <ActivityIndicator size="small" color={colors.mutedForeground} />
-                  <Text style={[styles.searchEmptyText, { color: colors.mutedForeground }]}>Searching…</Text>
-                </View>
-              ) : searchResults.length === 0 ? (
-                <View style={styles.searchEmpty}>
-                  <Feather name="search" size={14} color={colors.mutedForeground} />
-                  <Text style={[styles.searchEmptyText, { color: colors.mutedForeground }]}>No pins found</Text>
-                </View>
-              ) : (
-                <>
-                  <View style={styles.searchHeader}>
-                    <Text style={[styles.searchCount, { color: colors.mutedForeground }]}>
-                      {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
-                    </Text>
-                    <TouchableOpacity onPress={() => { router.push('/catalogue'); setSearchQuery(''); }} activeOpacity={0.7}>
-                      <Text style={[styles.searchViewAll, { color: colors.primary }]}>View all in Catalogue</Text>
-                    </TouchableOpacity>
-                  </View>
-                  {searchResults.map(pin => (
-                    <TouchableOpacity
-                      key={pin.id}
-                      onPress={() => { router.push({ pathname: '/pin/[id]', params: { id: pin.id } }); setSearchQuery(''); }}
-                      activeOpacity={0.8}
-                      style={[styles.searchRow, { borderTopColor: colors.border }]}
-                    >
-                      <Image source={getPinImageSource(pin)} style={styles.searchRowImage} />
-                      <View style={styles.searchRowInfo}>
-                        <Text style={[styles.searchRowTitle, { color: colors.foreground }]} numberOfLines={1}>{pin.title}</Text>
-                        <Text style={[styles.searchRowMeta, { color: colors.mutedForeground }]}>{pin.brand} · {pin.collection}</Text>
-                      </View>
-                      <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
-                    </TouchableOpacity>
-                  ))}
-                </>
-              )}
-            </View>
-          )}
-        </View>
-
-        {/* ── Divider ── */}
-        <View style={styles.orRow}>
-          <View style={[styles.orLine, { backgroundColor: colors.border }]} />
-          <Text style={[styles.orText, { color: colors.mutedForeground }]}>or scan with camera</Text>
-          <View style={[styles.orLine, { backgroundColor: colors.border }]} />
-        </View>
-
         {/* ── Viewfinder ── */}
         <View style={[styles.viewfinderWrap, { marginHorizontal: 16 }]}>
           <Animated.View
@@ -413,16 +286,26 @@ export default function ScanScreen() {
         {/* ── Controls ── */}
         <View style={styles.controls}>
           {scanState === 'idle' && (
-            <TouchableOpacity
-              style={[styles.primaryBtn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
-              onPress={handleOpenCamera}
-              activeOpacity={0.85}
-            >
-              <Feather name={Platform.OS === 'web' ? 'image' : 'camera'} size={20} color={colors.primaryForeground} />
-              <Text style={[styles.primaryBtnLabel, { color: colors.primaryForeground }]}>
-                {Platform.OS === 'web' ? 'Choose Photo' : 'Open Camera'}
-              </Text>
-            </TouchableOpacity>
+            <>
+              <TouchableOpacity
+                style={[styles.primaryBtn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
+                onPress={handleOpenCamera}
+                activeOpacity={0.85}
+              >
+                <Feather name={Platform.OS === 'web' ? 'image' : 'camera'} size={20} color={colors.primaryForeground} />
+                <Text style={[styles.primaryBtnLabel, { color: colors.primaryForeground }]}>
+                  {Platform.OS === 'web' ? 'Choose Photo' : 'Scan'}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.primaryBtn, { backgroundColor: colors.accent, borderRadius: colors.radius }]}
+                onPress={() => router.push('/search')}
+                activeOpacity={0.85}
+              >
+                <Feather name="search" size={20} color={colors.accentForeground} />
+                <Text style={[styles.primaryBtnLabel, { color: colors.accentForeground }]}>Manually Search</Text>
+              </TouchableOpacity>
+            </>
           )}
 
           {scanState === 'captured' && (
@@ -540,23 +423,6 @@ export default function ScanScreen() {
           </View>
         )}
 
-        {/* ── Tips (idle only) ── */}
-        {scanState === 'idle' && (
-          <View style={[styles.tipsCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-            <Text style={[styles.tipsTitle, { color: colors.foreground }]}>Tips for best results</Text>
-            {[
-              { icon: 'sun' as const, text: 'Good lighting — natural light works best' },
-              { icon: 'maximize' as const, text: 'Fill the frame with just the pin' },
-              { icon: 'eye' as const, text: 'Keep the pin facing front, not angled' },
-              { icon: 'droplet' as const, text: 'Clean background — plain table or card' },
-            ].map(tip => (
-              <View key={tip.text} style={styles.tipRow}>
-                <Feather name={tip.icon} size={14} color={colors.primary} />
-                <Text style={[styles.tipText, { color: colors.mutedForeground }]}>{tip.text}</Text>
-              </View>
-            ))}
-          </View>
-        )}
       </ScrollView>
     </View>
   );
@@ -570,31 +436,7 @@ const styles = StyleSheet.create({
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
   headerSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2 },
   // Search
-  searchWrap: { marginHorizontal: 16, marginBottom: 4, position: 'relative' },
-  searchResults: {
-    marginTop: 4,
-    borderWidth: 1,
-    overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    elevation: 6,
-  },
-  searchHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 12, paddingVertical: 8 },
-  searchCount: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  searchViewAll: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  searchRow: { flexDirection: 'row', alignItems: 'center', padding: 10, gap: 10, borderTopWidth: StyleSheet.hairlineWidth },
-  searchRowImage: { width: 44, height: 44, borderRadius: 6, resizeMode: 'cover' },
-  searchRowInfo: { flex: 1 },
-  searchRowTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  searchRowMeta: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 1 },
-  searchEmpty: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 12 },
-  searchEmptyText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   // Or divider
-  orRow: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 16, marginVertical: 14, gap: 10 },
-  orLine: { flex: 1, height: StyleSheet.hairlineWidth },
-  orText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
   // Viewfinder
   viewfinderWrap: { marginBottom: 16 },
   viewfinder: {
@@ -723,8 +565,4 @@ const styles = StyleSheet.create({
   noneMatch: { alignItems: 'center', paddingVertical: 14 },
   noneMatchText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   // Tips
-  tipsCard: { marginHorizontal: 16, marginTop: 20, padding: 16, borderWidth: 1, gap: 12 },
-  tipsTitle: { fontSize: 15, fontFamily: 'Inter_700Bold' },
-  tipRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  tipText: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
 });

@@ -76,6 +76,7 @@ function RootLayoutNav() {
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="complete-profile" options={{ headerShown: false }} />
+      <Stack.Screen name="search" options={{ headerShown: false, animation: 'fade' }} />
       <Stack.Screen name="edit-profile" options={{ title: 'Edit Profile' }} />
       <Stack.Screen name="find-collectors" options={{ title: 'Find Collectors' }} />
       <Stack.Screen name="collector/[username]" options={{ title: 'Collector' }} />

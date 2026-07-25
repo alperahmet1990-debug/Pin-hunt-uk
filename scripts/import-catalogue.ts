@@ -307,7 +307,8 @@ async function main() {
   console.log('');
 
   // Parse spreadsheet
-  const workbook = XLSX.readFile(XLSX_PATH);
+  // XLSX.readFile is unavailable in ESM builds — read via fs and parse the buffer.
+  const workbook = XLSX.read(fs.readFileSync(XLSX_PATH), { type: 'buffer' });
   const sheetName = workbook.SheetNames[0];
   const sheet = workbook.Sheets[sheetName];
   const rows = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, {

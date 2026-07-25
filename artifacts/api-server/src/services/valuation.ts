@@ -460,6 +460,8 @@ export function refreshMarketValueForPin(pinhuntId: string): Promise<MarketValue
   })();
 
   inFlight.set(pinhuntId, run);
-  run.finally(() => inFlight.delete(pinhuntId));
+  // Swallow rejection on this side-channel so it never becomes an unhandled
+  // promise rejection (the caller still receives the original rejection).
+  run.catch(() => {}).finally(() => inFlight.delete(pinhuntId));
   return run;
 }

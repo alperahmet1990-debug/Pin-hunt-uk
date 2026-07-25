@@ -171,13 +171,6 @@ function ClassicTabLayout() {
         }}
       />
 
-      {/* Catalogue — hidden from tab bar, route kept for deep links */}
-      <Tabs.Screen
-        name="catalogue"
-        options={{
-          href: null,
-        }}
-      />
     </Tabs>
   );
 }

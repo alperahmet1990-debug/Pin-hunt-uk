@@ -231,7 +231,7 @@ export default function DiscoverScreen() {
 
   const handlePinResult = (id: string) => {
     if (id === '__catalogue') {
-      router.push('/(tabs)/catalogue');
+      router.push('/catalogue');
       return;
     }
     router.push({ pathname: '/pin/[id]', params: { id } });
@@ -241,7 +241,7 @@ export default function DiscoverScreen() {
   const handleBrowseSet = (setName: string) => {
     // Navigate to catalogue pre-filtered to this set
     // (Catalogue screen currently filters by brand; sets/collections map similarly)
-    router.push('/(tabs)/catalogue');
+    router.push('/catalogue');
   };
 
   return (
@@ -335,7 +335,7 @@ export default function DiscoverScreen() {
             <SectionHeader
               title="Official Sets"
               actionLabel={`${officialSets.length} sets`}
-              onAction={() => router.push('/(tabs)/catalogue')}
+              onAction={() => router.push('/catalogue')}
             />
             <FlatList
               data={officialSets}
@@ -360,7 +360,7 @@ export default function DiscoverScreen() {
             <SectionHeader
               title="Recently Added"
               actionLabel="See All"
-              onAction={() => router.push('/(tabs)/catalogue')}
+              onAction={() => router.push('/catalogue')}
             />
             <FlatList
               data={newReleases}
@@ -383,7 +383,7 @@ export default function DiscoverScreen() {
         {/* ── Browse full catalogue banner ── */}
         <View style={styles.section}>
           <TouchableOpacity
-            onPress={() => router.push('/(tabs)/catalogue')}
+            onPress={() => router.push('/catalogue')}
             activeOpacity={0.85}
             style={[
               styles.catalogueBanner,

@@ -13,8 +13,8 @@ description: Migration completion status, outstanding manual steps, and key deci
 | 004 | external_sale_listings | ✅ applied |
 | 005 | pin_submissions_v2 | ✅ applied |
 | 006 | trade_ratings | ✅ applied |
-| 007 | collectors_nearby | ❌ NOT YET RUN |
-| 008 | profiles_rls_hardening | ❌ NOT YET RUN |
+| 007 | collectors_nearby | ✅ applied |
+| 008 | profiles_rls_hardening | ✅ applied |
 
 ## Migration 007 — what it adds
 
@@ -49,9 +49,9 @@ description: Migration completion status, outstanding manual steps, and key deci
 
 ## Outstanding manual steps
 
-1. Run migration 007 in Supabase SQL editor (`supabase/migrations/007_collectors_nearby.sql`)
-2. Run migration 008 in Supabase SQL editor (`supabase/migrations/008_profiles_rls_hardening.sql`)
-3. Set `approx_lat`/`approx_lng` for test users via admin SQL (geocoding UI is follow-up task #6)
+1. ~~Run migration 007~~ ✅ applied
+2. ~~Run migration 008~~ ✅ applied
+3. Set `approx_lat`/`approx_lng` for test users via admin SQL (geocoding UI is a follow-up task)
 4. Verify column revoke: `SELECT has_column_privilege('authenticated', 'profiles', 'approx_lat', 'SELECT');` → should return false
 
 ## Username-only identity (completed earlier)

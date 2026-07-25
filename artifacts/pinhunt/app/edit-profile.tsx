@@ -428,7 +428,11 @@ export default function EditProfileScreen() {
                     setGeocodingError(null);
                   }
                 }}
-                placeholder="e.g. WD17 1AB"
+                placeholder={
+                  profile?.hasLocationSet && !profile?.postcode
+                    ? 'Location already set — enter postcode to update'
+                    : 'e.g. WD17 1AB'
+                }
                 placeholderTextColor={colors.mutedForeground}
                 autoCapitalize="characters"
                 autoCorrect={false}

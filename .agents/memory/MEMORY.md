@@ -2,3 +2,4 @@
 - [PinHunt schema & auth implementation](pinhunt-schema-auth.md) — batch 2–5 completion status, outstanding manual steps, key decisions
 - [Community feature implementation](community-feature.md) — schema (007), repository pattern, route structure, messaging entry points, typed-routes caveat
 - [Admin RLS patterns](admin-rls-patterns.md) — catalogue write policies, storage admin access, pin-catalogue bucket — all in migration 009
+- [Supabase direct DB access](supabase-db-access.md) — psql via eu-west-1 pooler; how to apply migrations; password rotation caveat

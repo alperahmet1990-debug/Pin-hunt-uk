@@ -15,6 +15,10 @@ description: Migration completion status, outstanding manual steps, and key deci
 | 006 | trade_ratings | ✅ applied |
 | 007 | collectors_nearby | ✅ applied |
 | 008 | profiles_rls_hardening | ✅ applied |
+| 009 | admin_catalogue_rls | ✅ applied |
+| 010 | community_photos_bucket | ✅ applied |
+| 011 | catalogue_import + pin_catalogue_bucket_policies | ✅ applied |
+| 012 | admin_community_moderation + profiles_postcode | ✅ applied |
 
 ## Migration 007 — what it adds
 

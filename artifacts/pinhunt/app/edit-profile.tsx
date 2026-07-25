@@ -89,17 +89,26 @@ export default function EditProfileScreen() {
     if (!userId) return;
     setUploadingAvatar(true);
     try {
-      const ext = uri.split('.').pop()?.toLowerCase() ?? 'jpg';
-      const mime = ext === 'png' ? 'image/png' : 'image/jpeg';
+      // Derive extension and MIME type from the URI.
+      const rawExt = uri.split('?')[0].split('.').pop()?.toLowerCase() ?? 'jpg';
+      const ext = ['jpg', 'jpeg', 'png', 'webp'].includes(rawExt) ? rawExt : 'jpg';
+      const mime = ext === 'png' ? 'image/png' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
+      // Always overwrite the same path so old photos don't accumulate in storage.
       const path = `${userId}/avatar.${ext}`;
-      const response = await fetch(uri);
-      const blob = await response.blob();
+
+      // React Native / Expo: fetch().blob() doesn't upload correctly to Supabase
+      // Storage. FormData with a typed file descriptor is the reliable approach.
+      const formData = new FormData();
+      formData.append('file', { uri, name: `avatar.${ext}`, type: mime } as unknown as Blob);
+
       const { error } = await supabase.storage
         .from('avatars')
-        .upload(path, blob, { contentType: mime, upsert: true });
+        .upload(path, formData, { upsert: true });
       if (error) throw new Error(error.message);
+
+      // getPublicUrl is synchronous and never fails — bust cache with a timestamp
+      // so the image reloads on every update without a CDN stale-hit.
       const { data } = supabase.storage.from('avatars').getPublicUrl(path);
-      // Bust cache by appending a timestamp
       const url = `${data.publicUrl}?t=${Date.now()}`;
       setAvatarUrl(url);
       await updateMyProfile({ avatarUrl: url });

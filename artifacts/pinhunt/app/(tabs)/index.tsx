@@ -1,15 +1,17 @@
 /**
- * Discover screen — the primary entry point of PinHunt.
+ * Discover screen — home page of PinHunt.
  *
  * Layout (top → bottom):
- *   1. Search bar (with inline results)
- *   2. Scan a Pin — compact CTA
- *   3. New to the Catalogue — horizontal strip of new releases
- *   4. Browse by Brand — colourful 2-column grid cards
- *   5. Browse by Collection — horizontal pill strip
- *   6. Recently Viewed — horizontal strip (shown only when populated)
+ *   1. Header — greeting (avatar + Hi, name) left, PinHunt logo right
+ *   2. Search bar — full-width, below header
+ *   3. Inline search results (floats below bar when active)
+ *   4. Scan a Pin — Disney-Parks-style hero gradient card
+ *   5. New to the Catalogue — horizontal strip of new releases
+ *   6. Browse by Brand — colourful 2-column grid cards
+ *   7. Browse by Collection — horizontal pill strip
+ *   8. Recently Viewed — horizontal strip (shown only when populated)
  */
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import {
   FlatList,
   Image,
@@ -27,9 +29,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { useProfile } from '@/context/ProfileContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { SectionHeader } from '@/components/SectionHeader';
-import { SearchBar } from '@/components/SearchBar';
+import { Avatar } from '@/components/Avatar';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── Brand definitions ────────────────────────────────────────────────────────
@@ -80,11 +83,9 @@ function BrandCard({
         end={{ x: 1, y: 1 }}
         style={styles.brandGradient}
       >
-        {/* Decorative large icon in corner */}
         <View style={styles.brandIconDecor} pointerEvents="none">
           <Feather name={brand.icon} size={64} color="rgba(255,255,255,0.12)" />
         </View>
-
         <View style={styles.brandContent}>
           <View style={[styles.brandIconBadge, { backgroundColor: 'rgba(255,255,255,0.18)' }]}>
             <Feather name={brand.icon} size={18} color="#FFFFFF" />
@@ -155,15 +156,7 @@ function NewReleaseCard({ pin, onPress }: { pin: CataloguePin; onPress: () => vo
 
 // ─── Collection pill ──────────────────────────────────────────────────────────
 
-function CollectionPill({
-  name,
-  count,
-  onPress,
-}: {
-  name: string;
-  count: number;
-  onPress: () => void;
-}) {
+function CollectionPill({ name, count, onPress }: { name: string; count: number; onPress: () => void }) {
   const colors = useColors();
   return (
     <TouchableOpacity
@@ -171,11 +164,7 @@ function CollectionPill({
       activeOpacity={0.85}
       style={[
         styles.collectionPill,
-        {
-          backgroundColor: colors.secondary,
-          borderColor: colors.border,
-          borderRadius: colors.radius,
-        },
+        { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: colors.radius },
       ]}
     >
       <Text style={[styles.collectionPillName, { color: colors.foreground }]} numberOfLines={1}>
@@ -274,11 +263,13 @@ export default function DiscoverScreen() {
   const router = useRouter();
   const { recentlyViewed } = useCollection();
   const { pins, newReleases } = usePinCatalogue();
-
-  const [searchQuery, setSearchQuery] = useState('');
+  const { profile } = useProfile();
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+
+  // Greeting — first name or username
+  const firstName = profile?.displayName?.split(' ')[0] ?? profile?.username ?? null;
 
   // Derive recently-viewed CataloguePin objects
   const recentPins = useMemo(
@@ -313,52 +304,76 @@ export default function DiscoverScreen() {
       .map(([name, count]) => ({ name, count }));
   }, [pins]);
 
-  const handlePinResult = (id: string) => {
-    if (id === '__catalogue') {
-      router.push('/catalogue');
-      return;
-    }
-    router.push({ pathname: '/pin/[id]', params: { id } });
-    setSearchQuery('');
-  };
-
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
+
+      {/* ── Sticky header: greeting only ── */}
+      <View style={[styles.stickyHeader, { paddingTop: topPad + 8, backgroundColor: colors.background }]}>
+        <View style={styles.greetingRow}>
+          <TouchableOpacity
+            onPress={() => router.push('/edit-profile')}
+            activeOpacity={0.8}
+            style={styles.greetingLeft}
+          >
+            <Avatar
+              uri={profile?.avatarUrl ?? null}
+              name={profile?.username ?? '?'}
+              size={38}
+            />
+            <View style={styles.greetingText}>
+              <Text style={[styles.greetingName, { color: colors.foreground }]} numberOfLines={1}>
+                {firstName ? `Hi, ${firstName}!` : 'Hi there!'}
+              </Text>
+              <Text style={[styles.greetingHi, { color: colors.mutedForeground }]}>
+                Welcome back
+              </Text>
+            </View>
+          </TouchableOpacity>
+
+          <View style={styles.logoArea}>
+            <Text style={[styles.logoText, { color: colors.primary }]}>PinHunt</Text>
+          </View>
+        </View>
+      </View>
+
+      {/* ── Scrollable content ── */}
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingTop: topPad + 12, paddingBottom: botPad }}
+        contentContainerStyle={{ paddingBottom: botPad }}
         keyboardShouldPersistTaps="handled"
       >
-        {/* ── Search ── */}
-        <View style={styles.searchWrap}>
-          <SearchBar
-            value={searchQuery}
-            onChangeText={setSearchQuery}
-            placeholder="Search pins, characters, sets…"
-          />
-          <SearchResults query={searchQuery} pins={pins} onPinPress={handlePinResult} />
-        </View>
-
-        {/* ── Compact Scan CTA ── */}
+        {/* ── Scan CTA — Disney Parks card style ── */}
         <TouchableOpacity
           onPress={() => router.push('/(tabs)/scan')}
           activeOpacity={0.88}
-          style={[
-            styles.scanCta,
-            {
-              backgroundColor: colors.primary,
-              borderRadius: colors.radius,
-              marginHorizontal: 16,
-            },
-          ]}
+          style={[styles.scanCard, { borderRadius: 20, marginHorizontal: 16, marginTop: 16, marginBottom: 16 }]}
         >
-          <View style={[styles.scanCtaIconBg, { backgroundColor: 'rgba(255,255,255,0.2)' }]}>
-            <Feather name="camera" size={20} color="#FFFFFF" />
-          </View>
-          <Text style={styles.scanCtaLabel}>Scan a Pin</Text>
-          <Text style={[styles.scanCtaDot, { color: 'rgba(255,255,255,0.5)' }]}>·</Text>
-          <Text style={styles.scanCtaSub}>AI-powered identification</Text>
-          <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.7)" style={{ marginLeft: 'auto' }} />
+          <LinearGradient
+            colors={['#F97316', '#C2410C']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.scanGradient}
+          >
+            {/* Large decorative camera in corner */}
+            <View style={styles.scanDecorIcon} pointerEvents="none">
+              <Feather name="camera" size={90} color="rgba(255,255,255,0.08)" />
+            </View>
+
+            {/* Content */}
+            <View style={styles.scanContent}>
+              <View style={styles.scanIconBadge}>
+                <Feather name="camera" size={22} color="#FFFFFF" />
+              </View>
+              <Text style={styles.scanTitle}>Scan a Pin</Text>
+              <Text style={styles.scanSubtitle}>
+                Point your camera at any Disney pin for instant AI identification
+              </Text>
+              <View style={styles.scanCta}>
+                <Text style={styles.scanCtaText}>Identify now</Text>
+                <Feather name="arrow-right" size={14} color="#FFFFFF" />
+              </View>
+            </View>
+          </LinearGradient>
         </TouchableOpacity>
 
         {/* ── New to the Catalogue ── */}
@@ -462,17 +477,67 @@ export default function DiscoverScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1 },
 
+  // ── Sticky header ──
+  stickyHeader: {
+    paddingHorizontal: 16,
+    paddingBottom: 10,
+    gap: 10,
+  },
+
+  // Greeting row
+  greetingRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  greetingLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    flex: 1,
+  },
+  greetingText: {
+    gap: 1,
+    flex: 1,
+  },
+  greetingHi: {
+    fontSize: 11,
+    fontFamily: 'Inter_400Regular',
+    letterSpacing: 0.2,
+  },
+  greetingName: {
+    fontSize: 17,
+    fontFamily: 'Inter_700Bold',
+    letterSpacing: -0.3,
+  },
+  logoArea: {
+    paddingLeft: 12,
+  },
+  logoText: {
+    fontSize: 18,
+    fontFamily: 'Inter_700Bold',
+    letterSpacing: -0.5,
+  },
+
   // Search
   searchWrap: {
-    marginBottom: 12,
     position: 'relative',
-    zIndex: 10,
   },
   searchResults: {
-    marginHorizontal: 16,
+    position: 'absolute',
+    top: '100%',
+    left: 0,
+    right: 0,
     marginTop: 4,
     borderWidth: 1,
     overflow: 'hidden',
+    zIndex: 20,
+    // Shadow
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.12,
+    shadowRadius: 12,
+    elevation: 8,
   },
   searchResultsHeader: {
     flexDirection: 'row',
@@ -503,34 +568,61 @@ const styles = StyleSheet.create({
   },
   noResultsText: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
 
-  // Compact scan CTA
+  // ── Scan CTA — Disney Parks card ──
+  scanCard: {
+    overflow: 'hidden',
+    // Shadow
+    shadowColor: '#C2410C',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.35,
+    shadowRadius: 16,
+    elevation: 10,
+  },
+  scanGradient: {
+    minHeight: 160,
+    padding: 24,
+    justifyContent: 'flex-end',
+    overflow: 'hidden',
+  },
+  scanDecorIcon: {
+    position: 'absolute',
+    top: -10,
+    right: -10,
+  },
+  scanContent: {
+    gap: 6,
+  },
+  scanIconBadge: {
+    width: 42,
+    height: 42,
+    borderRadius: 13,
+    backgroundColor: 'rgba(255,255,255,0.18)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 4,
+  },
+  scanTitle: {
+    fontSize: 22,
+    fontFamily: 'Inter_700Bold',
+    color: '#FFFFFF',
+    letterSpacing: -0.4,
+  },
+  scanSubtitle: {
+    fontSize: 13,
+    fontFamily: 'Inter_400Regular',
+    color: 'rgba(255,255,255,0.75)',
+    lineHeight: 18,
+  },
   scanCta: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 14,
-    gap: 10,
-    marginBottom: 28,
+    gap: 6,
+    marginTop: 6,
   },
-  scanCtaIconBg: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  scanCtaLabel: {
-    fontSize: 14,
-    fontFamily: 'Inter_700Bold',
-    color: '#FFFFFF',
-  },
-  scanCtaDot: {
-    fontSize: 14,
-  },
-  scanCtaSub: {
+  scanCtaText: {
     fontSize: 13,
-    fontFamily: 'Inter_400Regular',
-    color: 'rgba(255,255,255,0.8)',
+    fontFamily: 'Inter_600SemiBold',
+    color: 'rgba(255,255,255,0.9)',
   },
 
   // Sections
@@ -545,7 +637,6 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   brandCard: {
-    // Each card takes ~half the row minus gap
     flexBasis: '47%',
     flexGrow: 1,
     borderRadius: 16,

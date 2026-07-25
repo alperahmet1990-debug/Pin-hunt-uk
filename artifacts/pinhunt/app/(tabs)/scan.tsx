@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -20,6 +20,7 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
+import { SearchBar } from '@/components/SearchBar';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── API ─────────────────────────────────────────────────────────────────────
@@ -91,7 +92,23 @@ export default function ScanScreen() {
   const [matches, setMatches] = useState<Match[]>([]);
   const [selectedMatch, setSelectedMatch] = useState<CataloguePin | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const shutterAnim = useRef(new Animated.Value(1)).current;
+
+  // ── Text search results ─────────────────────────────────────────────────────
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase();
+    return pins
+      .filter(
+        p =>
+          p.title.toLowerCase().includes(q) ||
+          p.characters.some(c => c.toLowerCase().includes(q)) ||
+          p.collection.toLowerCase().includes(q) ||
+          p.brand.toLowerCase().includes(q),
+      )
+      .slice(0, 20);
+  }, [searchQuery, pins]);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -223,20 +240,62 @@ export default function ScanScreen() {
       >
         {/* ── Header ── */}
         <View style={styles.headerRow}>
-          <View>
-            <Text style={[styles.headerTitle, { color: colors.foreground }]}>Scan Pin</Text>
-            <Text style={[styles.headerSub, { color: colors.mutedForeground }]}>
-              {scanState === 'idle'
-                ? 'Take a photo to identify any Disney pin'
-                : scanState === 'identifying'
-                ? 'AI is analysing your pin…'
-                : scanState === 'results'
-                ? 'Select the correct match'
-                : scanState === 'confirmed'
-                ? 'Pin identified!'
-                : 'Review your photo'}
-            </Text>
-          </View>
+          <Text style={[styles.headerTitle, { color: colors.foreground }]}>Find a Pin</Text>
+          <Text style={[styles.headerSub, { color: colors.mutedForeground }]}>
+            Search by name or scan with your camera
+          </Text>
+        </View>
+
+        {/* ── Text search ── */}
+        <View style={[styles.searchWrap, { zIndex: 10 }]}>
+          <SearchBar
+            value={searchQuery}
+            onChangeText={v => { setSearchQuery(v); }}
+            placeholder="Search pins, characters, sets…"
+          />
+          {searchQuery.trim().length > 0 && (
+            <View style={[styles.searchResults, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
+              {searchResults.length === 0 ? (
+                <View style={styles.searchEmpty}>
+                  <Feather name="search" size={14} color={colors.mutedForeground} />
+                  <Text style={[styles.searchEmptyText, { color: colors.mutedForeground }]}>No pins found</Text>
+                </View>
+              ) : (
+                <>
+                  <View style={styles.searchHeader}>
+                    <Text style={[styles.searchCount, { color: colors.mutedForeground }]}>
+                      {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
+                    </Text>
+                    <TouchableOpacity onPress={() => { router.push('/catalogue'); setSearchQuery(''); }} activeOpacity={0.7}>
+                      <Text style={[styles.searchViewAll, { color: colors.primary }]}>View all in Catalogue</Text>
+                    </TouchableOpacity>
+                  </View>
+                  {searchResults.map(pin => (
+                    <TouchableOpacity
+                      key={pin.id}
+                      onPress={() => { router.push({ pathname: '/pin/[id]', params: { id: pin.id } }); setSearchQuery(''); }}
+                      activeOpacity={0.8}
+                      style={[styles.searchRow, { borderTopColor: colors.border }]}
+                    >
+                      <Image source={getPinImageSource(pin)} style={styles.searchRowImage} />
+                      <View style={styles.searchRowInfo}>
+                        <Text style={[styles.searchRowTitle, { color: colors.foreground }]} numberOfLines={1}>{pin.title}</Text>
+                        <Text style={[styles.searchRowMeta, { color: colors.mutedForeground }]}>{pin.brand} · {pin.collection}</Text>
+                      </View>
+                      <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+                    </TouchableOpacity>
+                  ))}
+                </>
+              )}
+            </View>
+          )}
+        </View>
+
+        {/* ── Divider ── */}
+        <View style={styles.orRow}>
+          <View style={[styles.orLine, { backgroundColor: colors.border }]} />
+          <Text style={[styles.orText, { color: colors.mutedForeground }]}>or scan with camera</Text>
+          <View style={[styles.orLine, { backgroundColor: colors.border }]} />
         </View>
 
         {/* ── Viewfinder ── */}
@@ -449,9 +508,35 @@ export default function ScanScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  headerRow: { paddingHorizontal: 16, marginBottom: 16 },
+  headerRow: { paddingHorizontal: 16, marginBottom: 12 },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
   headerSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  // Search
+  searchWrap: { marginHorizontal: 16, marginBottom: 4, position: 'relative' },
+  searchResults: {
+    marginTop: 4,
+    borderWidth: 1,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 6,
+  },
+  searchHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 12, paddingVertical: 8 },
+  searchCount: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  searchViewAll: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  searchRow: { flexDirection: 'row', alignItems: 'center', padding: 10, gap: 10, borderTopWidth: StyleSheet.hairlineWidth },
+  searchRowImage: { width: 44, height: 44, borderRadius: 6, resizeMode: 'cover' },
+  searchRowInfo: { flex: 1 },
+  searchRowTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  searchRowMeta: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 1 },
+  searchEmpty: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 12 },
+  searchEmptyText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
+  // Or divider
+  orRow: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 16, marginVertical: 14, gap: 10 },
+  orLine: { flex: 1, height: StyleSheet.hairlineWidth },
+  orText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
   // Viewfinder
   viewfinderWrap: { marginBottom: 16 },
   viewfinder: {

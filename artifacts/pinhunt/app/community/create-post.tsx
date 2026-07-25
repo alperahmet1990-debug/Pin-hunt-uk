@@ -46,16 +46,19 @@ const TYPE_COLOR: Record<CommunityPostType, string> = {
 // ─── Upload a single local URI to Supabase storage ───────────────────────────
 
 async function uploadPhoto(userId: string, uri: string, index: number): Promise<string> {
-  const ext = uri.split('.').pop()?.toLowerCase() ?? 'jpg';
-  const mime = ext === 'png' ? 'image/png' : 'image/jpeg';
+  const rawExt = uri.split('?')[0].split('.').pop()?.toLowerCase() ?? 'jpg';
+  const ext = ['jpg', 'jpeg', 'png', 'webp'].includes(rawExt) ? rawExt : 'jpg';
+  const mime = ext === 'png' ? 'image/png' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
   const path = `${userId}/${Date.now()}-${index}.${ext}`;
 
-  const response = await fetch(uri);
-  const blob = await response.blob();
+  // React Native / Expo: fetch().blob() does not upload correctly to Supabase
+  // Storage. FormData with a typed file descriptor is the reliable pattern.
+  const formData = new FormData();
+  formData.append('file', { uri, name: `photo-${index}.${ext}`, type: mime } as unknown as Blob);
 
   const { error } = await supabase.storage
     .from('community-photos')
-    .upload(path, blob, { contentType: mime, upsert: false });
+    .upload(path, formData, { upsert: false });
 
   if (error) throw new Error(error.message);
 

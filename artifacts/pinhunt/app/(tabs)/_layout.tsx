@@ -54,7 +54,7 @@ function NativeTabLayout() {
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="scan">
         <Icon sf={{ default: 'camera.circle.fill', selected: 'camera.circle.fill' }} />
-        <Label>Scan</Label>
+        <Label>Find</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="collection">
         <Icon sf={{ default: 'heart', selected: 'heart.fill' }} />
@@ -131,11 +131,11 @@ function ClassicTabLayout() {
         }}
       />
 
-      {/* Scan — raised central button */}
+      {/* Find — raised central button */}
       <Tabs.Screen
         name="scan"
         options={{
-          title: '',
+          title: 'Find',
           tabBarLabel: () => null,
           tabBarButton: (props) => (
             <ScanTabButton onPress={props.onPress ? () => (props.onPress as (() => void))() : undefined} />

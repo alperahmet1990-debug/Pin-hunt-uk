@@ -40,6 +40,7 @@ export default function AdminLayout() {
       <Stack.Screen name="review/[id]"  options={{ title: 'Review Submission' }} />
       <Stack.Screen name="catalogue"    options={{ title: 'Catalogue' }} />
       <Stack.Screen name="pin/[id]"     options={{ title: 'Pin Editor' }} />
+      <Stack.Screen name="community-moderation" options={{ title: 'Community Moderation' }} />
     </Stack>
   );
 }

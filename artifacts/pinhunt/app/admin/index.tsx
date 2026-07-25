@@ -131,6 +131,13 @@ export default function AdminIndexScreen() {
           colors={colors}
         />
         <ActionCard
+          icon="flag"
+          title="Community Moderation"
+          description="Scan recent community posts and remove inappropriate content."
+          onPress={() => router.push('/admin/community-moderation' as any)}
+          colors={colors}
+        />
+        <ActionCard
           icon="plus-circle"
           title="Add New Pin"
           description="Create a new catalogue entry directly."

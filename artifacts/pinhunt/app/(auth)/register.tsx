@@ -20,7 +20,6 @@ export default function RegisterScreen() {
   const insets = useSafeAreaInsets();
   const { signUp } = useAuth();
 
-  const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
@@ -43,7 +42,7 @@ export default function RegisterScreen() {
     }
     setError(null);
     setLoading(true);
-    const { error: err, needsEmailConfirmation } = await signUp(email.trim(), password, displayName);
+    const { error: err, needsEmailConfirmation } = await signUp(email.trim(), password);
     setLoading(false);
     if (err) {
       setError(err);
@@ -97,18 +96,6 @@ export default function RegisterScreen() {
           <Text style={styles.heading}>Create account</Text>
 
           {error ? <Text style={styles.error}>{error}</Text> : null}
-
-          <TextInput
-            style={styles.input}
-            placeholder="Display name (optional)"
-            placeholderTextColor={colors.mutedForeground}
-            value={displayName}
-            onChangeText={setDisplayName}
-            autoCapitalize="words"
-            autoCorrect={false}
-            textContentType="name"
-            returnKeyType="next"
-          />
 
           <TextInput
             style={styles.input}

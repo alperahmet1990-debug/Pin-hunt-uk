@@ -53,7 +53,7 @@ function TraderCard({ trader, onRequestTrade, isMe, colors }: {
   colors: ReturnType<typeof useColors>;
 }) {
   const router = useRouter();
-  const initials = (trader.displayName || trader.username)
+  const initials = trader.username
     .split(' ').map(n => n[0]?.toUpperCase() ?? '').join('').slice(0, 2);
 
   return (
@@ -70,10 +70,9 @@ function TraderCard({ trader, onRequestTrade, isMe, colors }: {
       {/* Info */}
       <View style={styles.cardInfo}>
         <Text style={[styles.displayName, { color: colors.foreground }]}>
-          {trader.displayName || `@${trader.username}`}
+          @{trader.username}
           {isMe && <Text style={[styles.meTag, { color: colors.mutedForeground }]}> (you)</Text>}
         </Text>
-        <Text style={[styles.username, { color: colors.mutedForeground }]}>@{trader.username}</Text>
         {trader.tradingRegion ? (
           <View style={styles.regionRow}>
             <Feather name="map-pin" size={11} color={colors.mutedForeground} />

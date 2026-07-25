@@ -42,7 +42,6 @@ export default function CompleteProfileScreen() {
   const { updateMyProfile, checkUsernameAvailable } = useProfile();
 
   const [username, setUsername] = useState('');
-  const [displayName, setDisplayName] = useState('');
   const [bio, setBio] = useState('');
   const [tradingRegion, setTradingRegion] = useState('');
 
@@ -96,7 +95,6 @@ export default function CompleteProfileScreen() {
     try {
       await updateMyProfile({
         username: username.trim().toLowerCase(),
-        displayName: displayName.trim() || undefined,
         bio: bio.trim() || undefined,
         tradingRegion: tradingRegion.trim() || undefined,
       });
@@ -140,7 +138,7 @@ export default function CompleteProfileScreen() {
 
           {/* Form */}
           <View style={styles.form}>
-            <Field label="Username *" hint="3–20 characters. Letters, numbers, _ and . only.">
+            <Field label="Username *" hint="3–20 characters · Letters, numbers, _ and . only · This will be your public name on PinHunt">
               <View style={[styles.inputRow, { borderColor: usernameError ? colors.destructive : colors.border, backgroundColor: colors.card }]}>
                 <Text style={[styles.atSign, { color: colors.mutedForeground }]}>@</Text>
                 <TextInput
@@ -162,17 +160,6 @@ export default function CompleteProfileScreen() {
                 )}
               </View>
               {usernameError && <Text style={[styles.fieldError, { color: colors.destructive }]}>{usernameError}</Text>}
-            </Field>
-
-            <Field label="Display Name">
-              <TextInput
-                style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
-                value={displayName}
-                onChangeText={setDisplayName}
-                placeholder="Your Name"
-                placeholderTextColor={colors.mutedForeground}
-                maxLength={60}
-              />
             </Field>
 
             <Field label="Bio" hint="Tell other collectors about yourself.">

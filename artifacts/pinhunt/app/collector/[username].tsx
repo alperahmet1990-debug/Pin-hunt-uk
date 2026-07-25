@@ -20,7 +20,7 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import type { PublicProfile } from '@workspace/pin-repository';
 
 function initials(p: PublicProfile): string {
-  const name = p.displayName || p.username;
+  const name = p.username;
   return name
     .split(' ')
     .map(n => n[0]?.toUpperCase() ?? '')
@@ -92,7 +92,7 @@ export default function CollectorProfileScreen() {
                 <Text style={styles.avatarText}>{initials(profile)}</Text>
               </View>
               <Text style={[styles.displayName, { color: colors.foreground }]}>
-                {profile.displayName || `@${profile.username}`}
+                @{profile.username}
               </Text>
               <Text style={[styles.username, { color: colors.mutedForeground }]}>
                 @{profile.username}

@@ -46,7 +46,6 @@ export default function EditProfileScreen() {
 
   // Pre-fill from current profile
   const [username, setUsername] = useState(profile?.username ?? '');
-  const [displayName, setDisplayName] = useState(profile?.displayName ?? '');
   const [bio, setBio] = useState(profile?.bio ?? '');
   const [tradingRegion, setTradingRegion] = useState(profile?.tradingRegion ?? '');
   const [intlTrading, setIntlTrading] = useState(profile?.internationalTradingEnabled ?? false);
@@ -110,7 +109,6 @@ export default function EditProfileScreen() {
     try {
       await updateMyProfile({
         username: username.trim().toLowerCase(),
-        displayName: displayName.trim() || undefined,
         bio: bio.trim() || undefined,
         tradingRegion: tradingRegion.trim() || undefined,
         internationalTradingEnabled: intlTrading,
@@ -166,17 +164,6 @@ export default function EditProfileScreen() {
                 <Feather name="x-circle" size={16} color={colors.destructive} />
               )}
             </View>
-          </Field>
-
-          <Field label="Display Name">
-            <TextInput
-              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
-              value={displayName}
-              onChangeText={setDisplayName}
-              placeholder="Your Name"
-              placeholderTextColor={colors.mutedForeground}
-              maxLength={60}
-            />
           </Field>
 
           <Field label="Bio">

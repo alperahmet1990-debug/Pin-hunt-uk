@@ -75,7 +75,7 @@ export default function ProfileScreen() {
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
 
   // Avatar initials from display name, username, or email
-  const nameForInitials = profile?.displayName || profile?.username || user?.email || '?';
+  const nameForInitials = profile?.username || user?.email || '?';
   const avatarInitials = nameForInitials
     .split(/[\s@]/)
     .map((n: string) => n[0]?.toUpperCase() ?? '')
@@ -103,7 +103,7 @@ export default function ProfileScreen() {
               </View>
 
               <Text style={[styles.displayName, { color: colors.foreground }]}>
-                {profile?.displayName || (profile?.username ? `@${profile.username}` : 'Your Profile')}
+                {profile?.username ? `@${profile.username}` : 'Your Profile'}
               </Text>
 
               {profile?.username && (

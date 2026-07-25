@@ -21,7 +21,7 @@ import { useProfile } from '@/context/ProfileContext';
 import type { PublicProfile } from '@workspace/pin-repository';
 
 function initials(profile: PublicProfile): string {
-  const name = profile.displayName || profile.username;
+  const name = profile.username;
   return name
     .split(' ')
     .map(n => n[0]?.toUpperCase() ?? '')
@@ -44,11 +44,6 @@ function CollectorCard({ item, onPress }: { item: PublicProfile; onPress(): void
       </View>
       <View style={{ flex: 1, gap: 2 }}>
         <Text style={[styles.username, { color: colors.foreground }]}>@{item.username}</Text>
-        {item.displayName ? (
-          <Text style={[styles.displayName, { color: colors.mutedForeground }]} numberOfLines={1}>
-            {item.displayName}
-          </Text>
-        ) : null}
         {item.tradingRegion ? (
           <View style={styles.regionRow}>
             <Feather name="map-pin" size={11} color={colors.mutedForeground} />

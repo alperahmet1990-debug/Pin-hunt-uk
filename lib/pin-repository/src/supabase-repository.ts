@@ -305,7 +305,7 @@ class SupabasePinRepository implements PinRepository {
       back_image_url: input.backImageUrl ?? null,
       external_identifiers: input.externalIdentifiers ?? {},
       verification_status: input.verificationStatus ?? 'needs_source_verification',
-      status: 'active' as const,
+      status: (input.status ?? 'active') as CataloguePinStatus,
       is_user_submitted: false,
       catalogue_source: input.catalogueSource ?? 'pinhunt_import',
     };

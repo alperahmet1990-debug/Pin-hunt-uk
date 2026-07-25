@@ -1,3 +1,4 @@
 - [PinHunt architecture](pinhunt-arch.md) — repository pattern, mock fallback, provider hierarchy, lib build requirements
 - [PinHunt schema & auth implementation](pinhunt-schema-auth.md) — batch 2–5 completion status, outstanding manual steps, key decisions
 - [Community feature implementation](community-feature.md) — schema (007), repository pattern, route structure, messaging entry points, typed-routes caveat
+- [Admin RLS patterns](admin-rls-patterns.md) — catalogue write policies, storage admin access, pin-catalogue bucket — all in migration 009

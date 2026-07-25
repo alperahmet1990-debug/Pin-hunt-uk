@@ -103,6 +103,8 @@ export interface CreatePinInput {
   backImageUrl?: string;
   externalIdentifiers?: ExternalIdentifiers;
   verificationStatus?: PinVerificationStatus;
+  /** Catalogue lifecycle status. Defaults to 'active' when omitted. */
+  status?: CataloguePinStatus;
   catalogueSource?: string;
 }
 
@@ -556,6 +558,22 @@ export interface StartConversationInput {
   contextPinId?: string;
   /** Opening message body (sent immediately after creating the conversation). */
   openingMessage: string;
+}
+
+// ─── Admin review types ───────────────────────────────────────────────────────
+
+export interface AdminReviewInput {
+  /** New status set by the admin. */
+  status: 'approved' | 'rejected' | 'needs_changes' | 'under_review';
+  /** Optional note shown to the submitter. Required for rejected/needs_changes. */
+  reviewerNotes?: string;
+}
+
+export interface GetAllSubmissionsInput {
+  /** Filter to one or more statuses. Omit to return all statuses. */
+  statuses?: PinSubmissionStatus[];
+  limit?: number;
+  offset?: number;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

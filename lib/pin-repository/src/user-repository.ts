@@ -1,5 +1,6 @@
 import type {
   AddUserPinInput,
+  AdminReviewInput,
   CommunityPost,
   Conversation,
   ConversationMessage,
@@ -8,6 +9,7 @@ import type {
   CreatePinSubmissionInput,
   EditionType,
   ExternalSaleListing,
+  GetAllSubmissionsInput,
   GetNearbyCollectorsInput,
   GetPotentialTradesInput,
   NearbyCollector,
@@ -214,6 +216,20 @@ export interface IUserPinRepository {
    * `storagePath` is the value stored in `front_image_path` / `back_image_path`.
    */
   getSubmissionImageUrl(storagePath: string): Promise<string>;
+
+  // ── Admin-only submission operations ──────────────────────────────────────
+
+  /**
+   * Return all submissions across all users (admin only — enforced by RLS).
+   * Optionally filter by one or more statuses.
+   */
+  getAllPinSubmissions(input?: GetAllSubmissionsInput): Promise<PinSubmission[]>;
+
+  /**
+   * Approve, reject, mark under review, or request changes on a submission.
+   * Admin only — enforced by RLS.
+   */
+  reviewPinSubmission(submissionId: string, input: AdminReviewInput): Promise<PinSubmission>;
 
   // ── Trade ratings & for-trade discovery ───────────────────────────────────
 

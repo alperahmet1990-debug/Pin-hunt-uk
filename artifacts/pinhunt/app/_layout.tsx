@@ -96,6 +96,8 @@ function RootLayoutNav() {
       <Stack.Screen name="community/conversations" options={{ title: 'Messages' }} />
       <Stack.Screen name="community/chat/[id]" options={{ title: 'Chat' }} />
       <Stack.Screen name="community/start-conversation" options={{ title: 'New Message' }} />
+      {/* Admin area — nested Stack with its own layout guard */}
+      <Stack.Screen name="admin" options={{ headerShown: false }} />
     </Stack>
   );
 }

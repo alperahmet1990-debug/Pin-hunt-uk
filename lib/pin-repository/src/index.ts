@@ -2,6 +2,8 @@
 export type {
   // Catalogue
   AiMatchAdapter,
+  AdminReviewInput,
+  GetAllSubmissionsInput,
   CataloguePin,
   CataloguePinStatus,
   CreatePinInput,

@@ -3,6 +3,7 @@ import type { IUserPinRepository } from './user-repository';
 import { PinRepositoryError } from './repository';
 import type {
   AddUserPinInput,
+  AdminReviewInput,
   CataloguePin,
   CommunityPost,
   CommunityPostType,
@@ -14,6 +15,7 @@ import type {
   EditionType,
   ExternalIdentifiers,
   ExternalSaleListing,
+  GetAllSubmissionsInput,
   GetNearbyCollectorsInput,
   GetPotentialTradesInput,
   NearbyCollector,
@@ -887,6 +889,46 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .createSignedUrl(storagePath, 3600);
     if (error || !data?.signedUrl) throw new Error(`Could not generate image URL: ${error?.message ?? 'unknown'}`);
     return data.signedUrl;
+  }
+
+  // ── Admin-only submission operations ─────────────────────────────────────────
+
+  async getAllPinSubmissions(input?: GetAllSubmissionsInput): Promise<PinSubmission[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let q = (this.client as any)
+      .from('pin_submissions')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (input?.statuses && input.statuses.length > 0) {
+      q = q.in('status', input.statuses);
+    }
+    if (input?.limit !== undefined) {
+      const from = input.offset ?? 0;
+      q = q.range(from, from + input.limit - 1);
+    }
+
+    const { data, error } = await q;
+    if (error) throw new Error(error.message);
+    return (data as unknown as Record<string, unknown>[]).map(rowToPinSubmission);
+  }
+
+  async reviewPinSubmission(submissionId: string, input: AdminReviewInput): Promise<PinSubmission> {
+    const updates: Record<string, unknown> = { status: input.status };
+    if (input.reviewerNotes !== undefined) {
+      updates.reviewer_notes = input.reviewerNotes;
+    }
+
+    const { data, error } = await this.client
+      .from('pin_submissions')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update(updates as any)
+      .eq('id', submissionId)
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToPinSubmission(data as Record<string, unknown>);
   }
 
   // ── Trade ratings & for-trade discovery ─────────────────────────────────────

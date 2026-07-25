@@ -138,7 +138,7 @@ function ClassicTabLayout() {
           title: '',
           tabBarLabel: () => null,
           tabBarButton: (props) => (
-            <ScanTabButton onPress={props.onPress ?? undefined} />
+            <ScanTabButton onPress={props.onPress ? () => (props.onPress as (() => void))() : undefined} />
           ),
         }}
       />

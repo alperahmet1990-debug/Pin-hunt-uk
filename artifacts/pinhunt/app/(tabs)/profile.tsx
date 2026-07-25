@@ -68,13 +68,14 @@ export default function ProfileScreen() {
   const router = useRouter();
   const { counts } = useCollection();
   const { profile, loading } = useProfile();
-  const { signOut, user } = useAuth();
-  const isAdmin = user?.app_metadata?.role === 'admin';
+  const { signOut } = useAuth();
+  const isAdmin = profile?.isAdmin === true;
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
 
   // Avatar initials from display name, username, or email
+  const { user } = useAuth();
   const nameForInitials = profile?.username || user?.email || '?';
   const avatarInitials = nameForInitials
     .split(/[\s@]/)
@@ -194,7 +195,7 @@ export default function ProfileScreen() {
                 <SettingsRow
                   icon="settings"
                   label="Admin Area"
-                  onPress={() => router.push('/admin')}
+                  onPress={() => router.push('/admin' as any)}
                   last
                 />
               </Section>

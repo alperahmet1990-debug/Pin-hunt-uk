@@ -67,6 +67,59 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
+// ─── Location status banner ───────────────────────────────────────────────────
+
+interface LocationStatusBannerProps {
+  hasLocationSet: boolean;
+  nearbyEnabled: boolean;
+  onPress: () => void;
+}
+
+function LocationStatusBanner({ hasLocationSet, nearbyEnabled, onPress }: LocationStatusBannerProps) {
+  const colors = useColors();
+
+  const active   = hasLocationSet && nearbyEnabled;
+  const setOnly  = hasLocationSet && !nearbyEnabled;
+  // not set = neither flag
+
+  const iconName: keyof typeof Feather.glyphMap = active ? 'map-pin' : setOnly ? 'map-pin' : 'map-pin';
+  const iconColor  = active ? colors.owned : setOnly ? '#F59E0B' : colors.mutedForeground;
+  const borderColor = active ? colors.owned + '40' : setOnly ? '#F59E0B40' : colors.border;
+  const bgColor    = active ? colors.owned + '12' : setOnly ? '#F59E0B12' : colors.secondary;
+
+  const headline = active
+    ? 'Location active'
+    : setOnly
+    ? 'Nearby is turned off'
+    : 'Location not set';
+
+  const detail = active
+    ? 'You appear in Collectors Nearby searches'
+    : setOnly
+    ? 'Turn on "Appear in Collectors Nearby" in Edit Profile'
+    : 'Add your postcode in Edit Profile to appear in nearby searches';
+
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.75}
+      style={[
+        styles.locationBanner,
+        { backgroundColor: bgColor, borderColor, marginHorizontal: 16 },
+      ]}
+    >
+      <View style={[styles.locationIconWrap, { backgroundColor: iconColor + '20' }]}>
+        <Feather name={iconName} size={16} color={iconColor} />
+      </View>
+      <View style={styles.locationText}>
+        <Text style={[styles.locationHeadline, { color: iconColor }]}>{headline}</Text>
+        <Text style={[styles.locationDetail, { color: colors.mutedForeground }]}>{detail}</Text>
+      </View>
+      <Feather name="chevron-right" size={14} color={colors.mutedForeground} />
+    </TouchableOpacity>
+  );
+}
+
 // ─── Screen ───────────────────────────────────────────────────────────────────
 
 export default function ProfileScreen() {
@@ -132,6 +185,13 @@ export default function ProfileScreen() {
               )}
 
             </View>
+
+            {/* Location / Nearby status */}
+            <LocationStatusBanner
+              hasLocationSet={profile?.hasLocationSet ?? false}
+              nearbyEnabled={profile?.nearbyDiscoveryEnabled ?? false}
+              onPress={() => router.push('/edit-profile')}
+            />
 
             {/* Account */}
             <Section title="Account">
@@ -245,4 +305,18 @@ const styles = StyleSheet.create({
   badgePillText: { fontSize: 11, fontFamily: 'Inter_700Bold', color: '#fff' },
   footer: { alignItems: 'center', paddingTop: 8, gap: 4 },
   footerText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
+  // Location status banner
+  locationBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    padding: 12,
+    borderRadius: 12,
+    borderWidth: 1,
+    marginBottom: 20,
+  },
+  locationIconWrap: { width: 32, height: 32, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
+  locationText: { flex: 1 },
+  locationHeadline: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  locationDetail: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1, lineHeight: 16 },
 });

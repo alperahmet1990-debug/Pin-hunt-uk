@@ -22,19 +22,25 @@ CREATE TEMP TABLE stage_srcs  (pinhunt_id text, source_url text) ON COMMIT DROP;
 INSERT INTO pins (pinhunt_id, title, brand, collection, release_year, release_date,
                   retail_price, currency, limited_edition_size, origin, edition_type,
                   image_url, back_image_url, verification_status, status,
-                  catalogue_source, catalogue_updated_at)
+                  catalogue_source, catalogue_updated_at,
+                  needs_front_image, needs_back_image)
 SELECT DISTINCT ON (pinhunt_id) pinhunt_id, title, brand, collection, release_year,
        NULLIF(release_date,'')::date, retail_price, currency, limited_edition_size,
        origin, edition_type, image_url, back_image_url, verification_status,
-       'active', 'pinhunt_import', now()
+       'active', 'pinhunt_import', now(),
+       NULLIF(image_url,'') IS NULL, NULLIF(back_image_url,'') IS NULL
 FROM stage_pins
 ON CONFLICT (pinhunt_id) DO UPDATE SET
   title = EXCLUDED.title, brand = EXCLUDED.brand, collection = EXCLUDED.collection,
   release_year = EXCLUDED.release_year, release_date = EXCLUDED.release_date,
   retail_price = EXCLUDED.retail_price, currency = EXCLUDED.currency,
   limited_edition_size = EXCLUDED.limited_edition_size, origin = EXCLUDED.origin,
-  edition_type = EXCLUDED.edition_type, image_url = EXCLUDED.image_url,
-  back_image_url = EXCLUDED.back_image_url,
+  edition_type = EXCLUDED.edition_type,
+  image_url = COALESCE(NULLIF(EXCLUDED.image_url,''), pins.image_url),
+  back_image_url = COALESCE(NULLIF(EXCLUDED.back_image_url,''), pins.back_image_url),
+  -- Flags must reflect the effective (kept) image URLs
+  needs_front_image = COALESCE(NULLIF(EXCLUDED.image_url,''), pins.image_url) IS NULL,
+  needs_back_image  = COALESCE(NULLIF(EXCLUDED.back_image_url,''), pins.back_image_url) IS NULL,
   verification_status = EXCLUDED.verification_status, status = 'active',
   catalogue_source = 'pinhunt_import', catalogue_updated_at = now();
 

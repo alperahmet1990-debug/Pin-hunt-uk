@@ -382,7 +382,9 @@ async function upsertSingleRow(
       verification_status: targetVerStatus,
       is_seed_record: targetSeed, needs_review: targetReview,
       confidence_level: row.confidenceLevel,
-      needs_front_image: row.needsFrontImage, needs_back_image: row.needsBackImage,
+      // Flags must reflect the EFFECTIVE image URLs (incl. existing ones kept on update)
+      needs_front_image: !(row.imageUrl ?? existing.image_url),
+      needs_back_image: !(row.backImageUrl ?? existing.back_image_url),
       import_batch_id: batchId, catalogue_source: "pinhunt_import",
       catalogue_updated_at: now,
     };
@@ -561,7 +563,9 @@ async function runImportJob(
           verification_status: targetVerStatus,
           is_seed_record: targetSeed, needs_review: targetReview,
           confidence_level: r.confidenceLevel,
-          needs_front_image: r.needsFrontImage, needs_back_image: r.needsBackImage,
+          // Flags must reflect the EFFECTIVE image URLs (incl. existing ones kept on update)
+          needs_front_image: !(r.imageUrl ?? existing.image_url),
+          needs_back_image: !(r.backImageUrl ?? existing.back_image_url),
           import_batch_id: batchId, catalogue_source: "pinhunt_import",
           catalogue_updated_at: now,
         };

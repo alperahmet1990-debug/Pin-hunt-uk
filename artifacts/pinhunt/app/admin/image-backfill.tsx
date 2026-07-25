@@ -125,15 +125,21 @@ function EditModal({
   const [backUrl,     setBackUrl]     = useState('');
   const [backUri,     setBackUri]     = useState<string | null>(null);
 
+  // Replace toggles — sections with an existing image are read-only until enabled
+  const [replaceFront, setReplaceFront] = useState(false);
+  const [replaceBack,  setReplaceBack]  = useState(false);
+
   const [saving, setSaving] = useState(false);
 
   // Sync fields when pin changes
   useEffect(() => {
     if (!pin) return;
-    setFrontUrl(pin.imageUrl ?? '');
+    setFrontUrl('');
     setFrontUri(null);
-    setBackUrl(pin.backImageUrl ?? '');
+    setBackUrl('');
     setBackUri(null);
+    setReplaceFront(false);
+    setReplaceBack(false);
     setSaving(false);
   }, [pin]);
 
@@ -150,11 +156,15 @@ function EditModal({
     else                  { setBackUri(img.uri);  setBackUrl('');  }
   }, []);
 
+  // Editable only when there's no existing image, or the admin explicitly chose to replace
+  const frontEditable = !pin?.imageUrl     || replaceFront;
+  const backEditable  = !pin?.backImageUrl || replaceBack;
+
   const handleSave = async () => {
     if (!repo || !pin) return;
 
-    const hasFrontChange = frontUri || frontUrl.trim();
-    const hasBackChange  = backUri  || backUrl.trim();
+    const hasFrontChange = frontEditable && (frontUri || frontUrl.trim());
+    const hasBackChange  = backEditable  && (backUri  || backUrl.trim());
 
     if (!hasFrontChange && !hasBackChange) {
       Alert.alert('Nothing to save', 'Paste a URL or pick an image first.');
@@ -236,6 +246,12 @@ function EditModal({
               currentUrl={pin.imageUrl}
               pastedUrl={frontUrl}
               localUri={frontUri}
+              editable={frontEditable}
+              replacing={!!pin.imageUrl && replaceFront}
+              onToggleReplace={() => {
+                if (replaceFront) { setFrontUrl(''); setFrontUri(null); }
+                setReplaceFront(v => !v);
+              }}
               onUrlChange={v => { setFrontUrl(v); setFrontUri(null); }}
               onPick={src => pickImage('front', src)}
               colors={colors}
@@ -249,6 +265,12 @@ function EditModal({
               currentUrl={pin.backImageUrl}
               pastedUrl={backUrl}
               localUri={backUri}
+              editable={backEditable}
+              replacing={!!pin.backImageUrl && replaceBack}
+              onToggleReplace={() => {
+                if (replaceBack) { setBackUrl(''); setBackUri(null); }
+                setReplaceBack(v => !v);
+              }}
               onUrlChange={v => { setBackUrl(v); setBackUri(null); }}
               onPick={src => pickImage('back', src)}
               colors={colors}
@@ -284,6 +306,9 @@ function ImageSection({
   currentUrl,
   pastedUrl,
   localUri,
+  editable,
+  replacing,
+  onToggleReplace,
   onUrlChange,
   onPick,
   colors,
@@ -292,15 +317,65 @@ function ImageSection({
   currentUrl?: string;
   pastedUrl: string;
   localUri: string | null;
+  editable: boolean;
+  replacing: boolean;
+  onToggleReplace: () => void;
   onUrlChange: (v: string) => void;
   onPick: (src: 'camera' | 'library') => void;
   colors: ReturnType<typeof useColors>;
 }) {
   const preview = localUri ?? (pastedUrl.trim() || currentUrl) ?? null;
+  const hasExisting = !!currentUrl;
+
+  // Read-only (collapsed) state: pin already has this image and admin hasn't opted to replace
+  if (hasExisting && !editable) {
+    return (
+      <View style={[styles.imageSection, { borderColor: colors.border }]}>
+        <View style={styles.sectionHeaderRow}>
+          <Text style={[styles.imageSectionLabel, { color: colors.foreground }]}>{label}</Text>
+          <View style={[styles.badge, { backgroundColor: '#10B98118', borderColor: '#10B98140' }]}>
+            <Text style={[styles.badgeText, { color: '#10B981' }]}>Image set</Text>
+          </View>
+        </View>
+        <View style={styles.previewRow}>
+          <Image source={{ uri: currentUrl }} style={styles.preview} resizeMode="cover" />
+          <View style={{ flex: 1, gap: 8 }}>
+            <Text style={[styles.urlLabel, { color: colors.mutedForeground }]}>
+              This pin already has a {label.toLowerCase()}. It won't be changed when you save.
+            </Text>
+            <TouchableOpacity
+              onPress={onToggleReplace}
+              activeOpacity={0.8}
+              style={[styles.replaceBtn, { borderColor: colors.border, backgroundColor: colors.card }]}
+            >
+              <Feather name="refresh-cw" size={13} color={colors.foreground} />
+              <Text style={[styles.pickBtnLabel, { color: colors.foreground }]}>Replace image</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    );
+  }
 
   return (
-    <View style={[styles.imageSection, { borderColor: colors.border }]}>
-      <Text style={[styles.imageSectionLabel, { color: colors.foreground }]}>{label}</Text>
+    <View style={[styles.imageSection, { borderColor: replacing ? '#F59E0B' : colors.border }]}>
+      <View style={styles.sectionHeaderRow}>
+        <Text style={[styles.imageSectionLabel, { color: colors.foreground }]}>{label}</Text>
+        {replacing ? (
+          <View style={styles.sectionHeaderActions}>
+            <View style={[styles.badge, { backgroundColor: '#F59E0B18', borderColor: '#F59E0B40' }]}>
+              <Text style={[styles.badgeText, { color: '#F59E0B' }]}>Replacing existing</Text>
+            </View>
+            <TouchableOpacity onPress={onToggleReplace} hitSlop={8}>
+              <Text style={[styles.cancelReplaceLabel, { color: colors.mutedForeground }]}>Cancel</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View style={[styles.badge, { backgroundColor: '#EF444418', borderColor: '#EF444440' }]}>
+            <Text style={[styles.badgeText, { color: '#EF4444' }]}>Adding missing</Text>
+          </View>
+        )}
+      </View>
 
       {/* Preview */}
       <View style={styles.previewRow}>
@@ -623,6 +698,10 @@ const styles = StyleSheet.create({
   // Image section
   imageSection:    { borderWidth: 1, borderRadius: 12, padding: 14, gap: 10 },
   imageSectionLabel:{ fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  sectionHeaderRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
+  sectionHeaderActions: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  cancelReplaceLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
+  replaceBtn:       { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', paddingHorizontal: 12, paddingVertical: 8, borderRadius: 8, borderWidth: 1 },
   previewRow:      { flexDirection: 'row', alignItems: 'center', gap: 12 },
   preview:         { width: 80, height: 80, borderRadius: 8, flexShrink: 0 },
   previewPlaceholder:{ width: 80, height: 80, borderRadius: 8, alignItems: 'center', justifyContent: 'center', flexShrink: 0 },

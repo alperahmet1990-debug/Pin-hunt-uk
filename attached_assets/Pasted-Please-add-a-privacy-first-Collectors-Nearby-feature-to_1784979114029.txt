@@ -1,0 +1,277 @@
+Please add a privacy-first “Collectors Nearby” feature to the existing PinHunt UK app.
+
+Objective
+
+Allow users to discover other pin collectors near them, especially collectors who may be a good trade match.
+
+This must be an optional feature. Users should never appear in nearby search unless they explicitly opt in.
+
+Before making changes
+
+Please first inspect the existing:
+
+* user profile schema
+* authentication setup
+* trade list and ISO list data
+* messaging system
+* blocking/reporting functionality
+* navigation structure
+* design system and current colour palette
+
+Reuse existing components, patterns and database tables wherever practical. Do not rebuild working functionality unnecessarily.
+
+User profile settings
+
+Add a new section to profile settings called:
+
+Local trading and discovery
+
+Include:
+
+* Town or city
+* County or region
+* Country
+* Preferred search radius:
+    * 10 miles
+    * 25 miles
+    * 50 miles
+    * 100 miles
+* Open to local trades
+* Open to postal trades
+* Happy to travel
+* Appear in Collectors Nearby
+
+“Appear in Collectors Nearby” must be switched off by default.
+
+Add a clear privacy explanation:
+
+Your exact location is never shown. Other collectors will only see your approximate area and distance.
+
+Where possible, let the user enter a town, city or partial postcode and convert it into approximate coordinates. Do not require or store a full address.
+
+Database changes
+
+Extend the existing user profile model using suitable field names consistent with the current codebase.
+
+Store:
+
+* town or city
+* county or region
+* country
+* approximate latitude
+* approximate longitude
+* nearby discovery enabled
+* preferred radius in miles
+* accepts local trades
+* accepts postal trades
+* happy to travel
+
+Coordinates must only be used internally for distance calculations.
+
+Never expose coordinates through the client API, profile responses, logs or user-facing screens.
+
+Use database migrations and preserve all existing user data.
+
+New Collectors Nearby page
+
+Add a new page called:
+
+Collectors Nearby
+
+Add it to the most appropriate existing navigation area.
+
+The page should include:
+
+* Search radius filter
+* Trade preference filter
+* Sort options:
+    * Best trade match
+    * Nearest
+    * Recently active
+* Empty state
+* Loading state
+* Error state
+* Pagination or infinite loading if needed
+
+Do not use a map in the first version.
+
+Display collectors as friendly profile cards.
+
+Each card should show:
+
+* Profile photo or fallback avatar
+* Username
+* Approximate area, such as “Near Watford”
+* Approximate distance band, such as:
+    * Within 5 miles
+    * Within 10 miles
+    * Around 25 miles away
+* Recently active status
+* Open to local trades
+* Open to postal trades
+* Number of pins available for trade
+* Number of ISO pins
+* Number of completed trades, where already supported
+* Trade-match summary
+* View profile button
+* Message button
+
+Never display exact distance, precise coordinates, full postcode or home address.
+
+Do not show the current user in their own search results.
+
+Do not show blocked users, users who have blocked the current user, suspended users or users who have disabled discovery.
+
+Trade matching
+
+Use the existing trade and ISO data to calculate a useful match.
+
+For each nearby collector, calculate:
+
+* How many pins they have that appear on the current user’s ISO list
+* How many pins the current user has that appear on their ISO list
+* Whether there is a two-way trade opportunity
+
+Display clear summaries such as:
+
+* “They have 3 pins you want”
+* “You have 2 pins they want”
+* “Strong two-way trade match”
+* “Similar collection interests”
+
+Prioritise practical matching information over an unexplained percentage.
+
+Create a documented match score for sorting. For example:
+
+* Highest weighting: two-way pin matches
+* Next: pins they have from the user’s ISO list
+* Next: pins the user has from their ISO list
+* Small boost: recently active
+* Small boost: closer approximate distance
+* Penalty: inactive for more than 30 days
+
+Keep the scoring logic in a reusable server-side service rather than embedding it in the page component.
+
+Do not rely on AI for the first implementation.
+
+Collector profile integration
+
+When opening a collector’s profile from the Nearby page, add a section called:
+
+Potential trades
+
+Show:
+
+* Pins they have that the current user wants
+* Pins the current user has that they want
+* Clear links to the relevant pin records
+* A button to start a conversation
+
+Prefill the new-message context with something simple such as:
+
+Hi, I found you through Collectors Nearby and it looks like we may have a potential trade.
+
+Do not automatically send the message.
+
+Privacy and safety
+
+The feature must be fully opt-in.
+
+Users must be able to disable discovery immediately.
+
+When discovery is disabled:
+
+* Remove them from new nearby search results
+* Keep their private profile data intact
+* Do not expose their location to other users
+
+Respect all existing block and report rules.
+
+Add a short safety reminder before a user messages someone about a local meetup:
+
+Arrange trades in a public place and do not share your home address.
+
+Do not add live location, exact map pins, background tracking or continuous device location access.
+
+Location implementation
+
+Perform distance calculations on the server or within the database.
+
+Use an appropriate geographic distance calculation, such as the Haversine formula or supported geospatial database functions.
+
+Only return a privacy-safe distance band to the client.
+
+Use miles throughout the UK-facing interface.
+
+Avoid expensive all-user queries. Add suitable indexes and filter by a broad coordinate range before applying exact distance calculations if needed.
+
+UI and styling
+
+Match the current PinHunt design system.
+
+The page should feel like a collector community, not a dating app or location tracker.
+
+Use:
+
+* Clean cards
+* Existing typography
+* Existing button components
+* Existing badges
+* Friendly trade-match indicators
+* Good mobile layouts
+* Accessible controls and contrast
+
+Do not add copyrighted Disney artwork, logos or character illustrations.
+
+Analytics
+
+If the app already has analytics, add events for:
+
+* Nearby discovery enabled
+* Nearby discovery disabled
+* Nearby search viewed
+* Nearby profile opened
+* Potential trade viewed
+* Nearby message started
+
+Do not include coordinates, postcode or other precise location data in analytics events.
+
+Testing
+
+Add tests for:
+
+* Opt-in default is false
+* Hidden users do not appear
+* Blocked users do not appear
+* Radius filtering works
+* Distance bands are privacy-safe
+* Coordinates are not returned to the client
+* Two-way trade matching is calculated correctly
+* Current user is excluded
+* Messaging opens with the correct collector
+* Existing profile and trade functionality still works
+
+Delivery approach
+
+Implement this in small, safe stages:
+
+1. Inspect and document the relevant existing architecture.
+2. Add the database migration.
+3. Add profile discovery settings.
+4. Add server-side nearby search and matching.
+5. Add the Collectors Nearby page.
+6. Add potential trades to collector profiles.
+7. Add privacy, safety and blocking checks.
+8. Add tests.
+9. Run the app and fix all TypeScript, lint, build and runtime errors.
+
+At the end, provide a concise summary of:
+
+* Files changed
+* Database changes
+* Matching logic used
+* Privacy protections
+* Tests added
+* Any environment variables or external geocoding setup required
+
+Do not replace or remove existing working functionality unless it is necessary for this feature.

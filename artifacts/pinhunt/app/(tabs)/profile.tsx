@@ -12,6 +12,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { Avatar } from '@/components/Avatar';
 import { useCollection } from '@/context/CollectionContext';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
@@ -99,9 +100,7 @@ export default function ProfileScreen() {
           <>
             {/* Profile card */}
             <View style={[styles.profileCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 16, marginHorizontal: 16 }]}>
-              <View style={[styles.avatar, { backgroundColor: colors.primary }]}>
-                <Text style={styles.avatarInitials}>{avatarInitials}</Text>
-              </View>
+              <Avatar uri={profile?.avatarUrl} name={nameForInitials} size={80} />
 
               <Text style={[styles.displayName, { color: colors.foreground }]}>
                 {profile?.username ? `@${profile.username}` : 'Your Profile'}

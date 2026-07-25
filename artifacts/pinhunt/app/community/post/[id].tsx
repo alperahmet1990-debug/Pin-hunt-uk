@@ -23,6 +23,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
 
@@ -204,9 +205,7 @@ function CommentRow({ comment, isMe, onDelete, colors }: {
   const name = comment.authorProfile?.username ?? '…';
   return (
     <View style={[styles.commentRow, { borderBottomColor: colors.border }]}>
-      <View style={[styles.commentAvatar, { backgroundColor: colors.primary }]}>
-        <Text style={styles.commentAvatarText}>{initials(name)}</Text>
-      </View>
+      <Avatar uri={comment.authorProfile?.avatarUrl} name={name} size={32} />
       <View style={styles.commentBody}>
         <View style={styles.commentMeta}>
           <Text style={[styles.commentAuthor, { color: colors.foreground }]}>@{name}</Text>
@@ -403,9 +402,7 @@ export default function PostDetailScreen() {
 
             {/* Author row */}
             <View style={styles.authorRow}>
-              <View style={[styles.avatar, { backgroundColor: colors.primary }]}>
-                <Text style={styles.avatarText}>{initials(authorName)}</Text>
-              </View>
+              <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={40} />
               <View style={{ flex: 1 }}>
                 <Text style={[styles.authorName, { color: colors.foreground }]}>@{authorName}</Text>
                 <Text style={[styles.postTime, { color: colors.mutedForeground }]}>{timeAgo(post.createdAt)}</Text>

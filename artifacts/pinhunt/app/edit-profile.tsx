@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -16,12 +17,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
+import { supabase } from '@/lib/supabase';
+import { Avatar } from '@/components/Avatar';
 import type { ProfileVisibility } from '@workspace/pin-repository';
 
 // ─── Geocoding API ────────────────────────────────────────────────────────────
@@ -77,6 +81,82 @@ export default function EditProfileScreen() {
   const { session } = useAuth();
 
   // Pre-fill from current profile
+  const userId = session?.user?.id;
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(profile?.avatarUrl ?? null);
+  const [uploadingAvatar, setUploadingAvatar] = useState(false);
+
+  const uploadAndSetAvatar = async (uri: string) => {
+    if (!userId) return;
+    setUploadingAvatar(true);
+    try {
+      const ext = uri.split('.').pop()?.toLowerCase() ?? 'jpg';
+      const mime = ext === 'png' ? 'image/png' : 'image/jpeg';
+      const path = `${userId}/avatar.${ext}`;
+      const response = await fetch(uri);
+      const blob = await response.blob();
+      const { error } = await supabase.storage
+        .from('avatars')
+        .upload(path, blob, { contentType: mime, upsert: true });
+      if (error) throw new Error(error.message);
+      const { data } = supabase.storage.from('avatars').getPublicUrl(path);
+      // Bust cache by appending a timestamp
+      const url = `${data.publicUrl}?t=${Date.now()}`;
+      setAvatarUrl(url);
+      await updateMyProfile({ avatarUrl: url });
+      await refreshProfile();
+    } catch (e) {
+      Alert.alert('Upload failed', e instanceof Error ? e.message : 'Could not upload photo.');
+    } finally {
+      setUploadingAvatar(false);
+    }
+  };
+
+  const handlePickAvatar = () => {
+    const options: Array<{ text: string; style?: 'cancel' | 'destructive'; onPress?: () => void }> = [
+      {
+        text: 'Take Photo',
+        onPress: async () => {
+          const { status } = await ImagePicker.requestCameraPermissionsAsync();
+          if (status !== 'granted') {
+            Alert.alert('Permission required', 'Camera access is needed to take a photo.');
+            return;
+          }
+          const result = await ImagePicker.launchCameraAsync({
+            allowsEditing: true, aspect: [1, 1], quality: 0.85,
+          });
+          if (!result.canceled) await uploadAndSetAvatar(result.assets[0].uri);
+        },
+      },
+      {
+        text: 'Choose from Library',
+        onPress: async () => {
+          const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+          if (status !== 'granted') {
+            Alert.alert('Permission required', 'Photo library access is needed.');
+            return;
+          }
+          const result = await ImagePicker.launchImageLibraryAsync({
+            allowsEditing: true, aspect: [1, 1], quality: 0.85,
+          });
+          if (!result.canceled) await uploadAndSetAvatar(result.assets[0].uri);
+        },
+      },
+    ];
+    if (avatarUrl) {
+      options.push({
+        text: 'Remove Photo',
+        style: 'destructive',
+        onPress: async () => {
+          setAvatarUrl(null);
+          await updateMyProfile({ avatarUrl: undefined });
+          await refreshProfile();
+        },
+      });
+    }
+    options.push({ text: 'Cancel', style: 'cancel' });
+    Alert.alert('Profile Photo', undefined, options);
+  };
+
   const [username, setUsername] = useState(profile?.username ?? '');
   const [bio, setBio] = useState(profile?.bio ?? '');
   const [tradingRegion, setTradingRegion] = useState(profile?.tradingRegion ?? '');
@@ -158,6 +238,7 @@ export default function EditProfileScreen() {
       await updateMyProfile({
         username: username.trim().toLowerCase(),
         bio: bio.trim() || undefined,
+        avatarUrl: avatarUrl ?? undefined,
         tradingRegion: tradingRegion.trim() || undefined,
         internationalTradingEnabled: intlTrading,
         allowTradeRequests: allowTradeReqs,
@@ -223,6 +304,22 @@ export default function EditProfileScreen() {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
+          {/* Avatar picker */}
+          <View style={styles.avatarSection}>
+            <TouchableOpacity onPress={handlePickAvatar} activeOpacity={0.8} style={styles.avatarWrap}>
+              <Avatar uri={avatarUrl} name={username || 'Me'} size={90} />
+              <View style={[styles.avatarEditBadge, { backgroundColor: colors.primary }]}>
+                {uploadingAvatar
+                  ? <ActivityIndicator size="small" color="#fff" />
+                  : <Feather name="camera" size={14} color="#fff" />
+                }
+              </View>
+            </TouchableOpacity>
+            <Text style={[styles.avatarHint, { color: colors.mutedForeground }]}>
+              Tap to change photo
+            </Text>
+          </View>
+
           {/* Basic Info */}
           <SectionHeader title="Basic Info" />
 
@@ -594,4 +691,15 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   privacyNoteText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+
+  // Avatar picker
+  avatarSection: { alignItems: 'center', paddingVertical: 20 },
+  avatarWrap: { position: 'relative' },
+  avatarEditBadge: {
+    position: 'absolute', bottom: 0, right: 0,
+    width: 28, height: 28, borderRadius: 14,
+    alignItems: 'center', justifyContent: 'center',
+    borderWidth: 2, borderColor: '#fff',
+  },
+  avatarHint: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 8 },
 });

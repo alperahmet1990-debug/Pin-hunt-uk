@@ -19,6 +19,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { Avatar } from '@/components/Avatar';
 import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import type { NearbyCollector } from '@workspace/pin-repository';
@@ -69,9 +70,7 @@ function CollectorCard({ item, onPress }: { item: NearbyCollector; onPress(): vo
     >
       {/* Header row */}
       <View style={styles.cardHeader}>
-        <View style={[styles.avatar, { backgroundColor: colors.primary }]}>
-          <Text style={styles.avatarText}>{initials}</Text>
-        </View>
+        <Avatar uri={item.avatarUrl} name={item.username} size={48} />
 
         <View style={styles.cardInfo}>
           <Text style={[styles.cardUsername, { color: colors.foreground }]}>

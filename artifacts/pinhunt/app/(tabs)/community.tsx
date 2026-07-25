@@ -20,6 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 
@@ -195,6 +196,7 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
           <Text style={[styles.typeBadgeLabel, { color }]}>{TYPE_LABEL[post.postType]}</Text>
         </View>
         <View style={styles.cardMeta}>
+          <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={22} />
           <Text style={[styles.cardAuthor, { color: colors.foreground }]}>@{authorName}</Text>
           <Text style={[styles.cardTime, { color: colors.mutedForeground }]}>{timeAgo(post.createdAt)}</Text>
         </View>

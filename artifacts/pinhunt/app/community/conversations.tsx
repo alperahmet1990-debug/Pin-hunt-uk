@@ -16,6 +16,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import type { Conversation } from '@workspace/pin-repository';
 
@@ -52,9 +53,7 @@ function ConversationRow({ conv, onPress, colors }: {
       style={[styles.row, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
     >
       {/* Avatar */}
-      <View style={[styles.avatar, { backgroundColor: colors.primary }]}>
-        <Text style={styles.avatarText}>{initials(name)}</Text>
-      </View>
+      <Avatar uri={other?.avatarUrl} name={name} size={46} />
 
       {/* Content */}
       <View style={styles.rowContent}>

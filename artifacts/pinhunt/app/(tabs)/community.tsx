@@ -381,11 +381,12 @@ export default function CommunityScreen() {
     scrollRef.current?.scrollTo({ y: 0, animated: true });
   };
 
-  const handlePhotoPress = (post: CommunityPost, index: number) => {
-    // Navigate to post detail — the lightbox is shown there
+  const handlePhotoPress = (post: CommunityPost, _index: number) => {
+    // Tapping a photo on the feed opens the post detail (no lightbox) —
+    // the lightbox is available from the detail screen itself.
     router.push({
       pathname: '/community/post/[id]' as any,
-      params: { id: post.id, openPhotoIndex: String(index) },
+      params: { id: post.id },
     });
   };
 

@@ -119,7 +119,8 @@ export default function CreatePostScreen() {
           try {
             const url = await uploadCommunityPhoto(userId, localPhotos[i], i);
             uploaded.push(url);
-          } catch {
+          } catch (err) {
+            console.error('[create-post] photo upload failed: ' + (err instanceof Error ? err.message : String(err)));
             failedCount++;
           }
         }

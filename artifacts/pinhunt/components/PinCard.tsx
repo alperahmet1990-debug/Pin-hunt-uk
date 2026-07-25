@@ -11,6 +11,7 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { CollectionBadge } from './CollectionBadge';
 import { getPinImageSource } from '@/utils/pinImage';
+import { useLatestMarketValue, formatLatestValue } from '@/hooks/useMarketValue';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -33,6 +34,12 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
   const { getEntry } = useCollection();
   const entry = getEntry(pin.id);
   const status = entry?.status ?? 'none';
+  // Latest saved eBay value (batched, read-only) — falls back to the
+  // catalogue estimate when no eBay value has been checked yet.
+  const latest = useLatestMarketValue(pin.id);
+  const priceLabel = latest
+    ? formatLatestValue(latest)
+    : `£${(pin.estimatedValueGBP ?? 0).toFixed(0)}`;
 
   if (mode === 'list') {
     return (
@@ -72,7 +79,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
           </Text>
           <View style={styles.listFooter}>
             <Text style={[styles.listPrice, { color: colors.gold }]}>
-              £{(pin.estimatedValueGBP ?? 0).toFixed(0)}
+              {priceLabel}
             </Text>
             {status !== 'none' && <CollectionBadge status={status} size="sm" />}
           </View>
@@ -133,7 +140,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
         </View>
         <View style={styles.gridFooter}>
           <Text style={[styles.gridPrice, { color: colors.gold }]}>
-            £{(pin.estimatedValueGBP ?? 0).toFixed(0)}
+            {priceLabel}
           </Text>
           {status !== 'none' && <CollectionBadge status={status} size="sm" />}
         </View>

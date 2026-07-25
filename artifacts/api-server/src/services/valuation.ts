@@ -443,6 +443,52 @@ export async function getMarketValueForPin(pinhuntId: string): Promise<MarketVal
   };
 }
 
+/**
+ * Batch read: latest saved UK (fallback US) mid value for a list of pins.
+ * Used by catalogue/collection cards to show the latest price without
+ * triggering any eBay calls.
+ */
+export async function getLatestValuesForPins(
+  pinhuntIds: string[],
+): Promise<Record<string, { marketplace: EbayMarketplace; currency: string; mid: number; calculatedAt: string; stale: boolean }>> {
+  if (pinhuntIds.length === 0) return {};
+  const sb = getServiceClient();
+
+  const { data: pinRows, error: pinErr } = await sb
+    .from("pins")
+    .select("id, pinhunt_id")
+    .in("pinhunt_id", pinhuntIds);
+  if (pinErr) throw new Error(pinErr.message);
+  const uuidToPinhunt = new Map((pinRows ?? []).map(r => [r.id as string, r.pinhunt_id as string]));
+  if (uuidToPinhunt.size === 0) return {};
+
+  const { data: estRows, error: estErr } = await sb
+    .from("pin_market_estimates")
+    .select("pin_id, marketplace, currency, estimated_mid, calculated_at, expires_at")
+    .in("pin_id", [...uuidToPinhunt.keys()])
+    .not("estimated_mid", "is", null);
+  if (estErr) throw new Error(estErr.message);
+
+  const out: Record<string, { marketplace: EbayMarketplace; currency: string; mid: number; calculatedAt: string; stale: boolean }> = {};
+  for (const row of estRows ?? []) {
+    const pinhuntId = uuidToPinhunt.get(row.pin_id as string);
+    if (!pinhuntId) continue;
+    const existing = out[pinhuntId];
+    // Prefer UK values; fall back to US when there's no UK estimate.
+    if (existing && existing.marketplace === "EBAY_GB") continue;
+    if (!existing || row.marketplace === "EBAY_GB") {
+      out[pinhuntId] = {
+        marketplace: row.marketplace as EbayMarketplace,
+        currency: String(row.currency),
+        mid: Number(row.estimated_mid),
+        calculatedAt: String(row.calculated_at),
+        stale: new Date(String(row.expires_at)).getTime() < Date.now(),
+      };
+    }
+  }
+  return out;
+}
+
 // In-flight refresh lock: one refresh per pin at a time.
 const inFlight = new Map<string, Promise<MarketValueResult>>();
 

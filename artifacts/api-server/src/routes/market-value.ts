@@ -11,6 +11,7 @@ import { createClient } from "@supabase/supabase-js";
 import { ebayConfigured } from "../services/ebay";
 import {
   getMarketValueForPin,
+  getLatestValuesForPins,
   refreshMarketValueForPin,
 } from "../services/valuation";
 
@@ -40,6 +41,22 @@ async function requireUser(req: Request, res: Response, next: NextFunction) {
 // Per-pin cooldown so anonymous retries / rapid taps can't hammer eBay.
 const REFRESH_COOLDOWN_MS = 60_000;
 const lastRefreshAt = new Map<string, number>();
+
+// Batch: latest saved values for up to 100 pins (read-only, no eBay calls).
+router.get("/pins/market-values", async (req, res) => {
+  try {
+    const raw = String(req.query.ids ?? "");
+    const ids = [...new Set(raw.split(",").map(s => s.trim()).filter(Boolean))].slice(0, 100);
+    if (ids.length === 0) {
+      res.status(400).json({ error: "Provide ids as a comma-separated list" });
+      return;
+    }
+    res.json({ values: await getLatestValuesForPins(ids) });
+  } catch (err) {
+    req.log.error({ err }, "market-values batch read failed");
+    res.status(500).json({ error: "Failed to load market values" });
+  }
+});
 
 router.get("/pins/:pinId/market-value", async (req, res) => {
   try {

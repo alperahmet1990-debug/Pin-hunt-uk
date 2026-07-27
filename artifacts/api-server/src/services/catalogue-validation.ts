@@ -454,18 +454,33 @@ async function findSuspectedDuplicate(
 
 // ─── Pin selection (varied sample) ───────────────────────────────────────────
 
-async function selectPinsForValidation(sb: SupabaseClient, limit: number): Promise<Array<{ id: string; pinhunt_id: string }>> {
+async function selectPinsForValidation(
+  sb: SupabaseClient,
+  limit: number,
+  collection?: string,
+): Promise<Array<{ id: string; pinhunt_id: string }>> {
   // Skip pins already validated (any run) so re-runs extend coverage.
   const { data: done } = await sb.from("pin_ebay_validations").select("pin_id").limit(20000);
   const doneSet = new Set((done ?? []).map(r => r.pin_id as string));
 
-  const { data, error } = await sb
+  let query = sb
     .from("pins")
     .select("id, pinhunt_id, title, brand, collection, origin, limited_edition_size, edition_type, release_year, description")
     .eq("status", "active")
     .limit(5000);
+  if (collection) query = query.ilike("collection", collection);
+  const { data, error } = await query;
   if (error) throw new Error(`Pin selection failed: ${error.message}`);
   const rows = (data ?? []).filter(r => !doneSet.has(r.id as string));
+
+  // A series run works through the series in catalogue order rather than
+  // sampling for variety.
+  if (collection) {
+    return rows
+      .sort((a, b) => String(a.pinhunt_id).localeCompare(String(b.pinhunt_id)))
+      .slice(0, limit)
+      .map(r => ({ id: r.id as string, pinhunt_id: r.pinhunt_id as string }));
+  }
 
   // Bucket by brand/origin/edition-type variety, plus "suspicious" buckets:
   // incomplete records and speculative-looking ones.
@@ -524,7 +539,7 @@ export function requestPause(): boolean {
 export async function startValidationRun(
   limit: number,
   startedBy: string | null,
-  opts: { retryRunId?: string } = {},
+  opts: { retryRunId?: string; collection?: string } = {},
 ): Promise<string> {
   if (limit < 1 || limit > VALIDATION_MAX_LIMIT) {
     throw Object.assign(new Error(`limit must be 1–${VALIDATION_MAX_LIMIT}`), { status: 400 });
@@ -534,7 +549,7 @@ export async function startValidationRun(
   const sb = getServiceClient();
   const { data, error } = await sb
     .from("ebay_validation_runs")
-    .insert({ status: "running", requested_limit: limit, started_by: startedBy })
+    .insert({ status: "running", requested_limit: limit, started_by: startedBy, filter_collection: opts.collection ?? null })
     .select("id")
     .single();
   if (error || !data) {
@@ -564,7 +579,7 @@ export async function startValidationRun(
 async function processValidationRun(
   runId: string,
   limit: number,
-  opts: { retryRunId?: string },
+  opts: { retryRunId?: string; collection?: string },
 ): Promise<void> {
   const sb = getServiceClient();
 
@@ -578,7 +593,7 @@ async function processValidationRun(
       .eq("validation_status", "error");
     pins = (data ?? []).map(r => ({ id: r.pin_id as string, pinhunt_id: r.pinhunt_id as string })).slice(0, limit);
   } else {
-    pins = await selectPinsForValidation(sb, limit);
+    pins = await selectPinsForValidation(sb, limit, opts.collection);
   }
   logger.info({ runId, count: pins.length }, "catalogue validation run started");
 

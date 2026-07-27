@@ -80,7 +80,7 @@ router.post("/catalogue/validation", requireAdmin, async (req: AdminRequest, res
       res.status(503).json({ error: "eBay credentials are not configured" });
       return;
     }
-    const body = req.body as { limit?: unknown; retryRunId?: unknown };
+    const body = req.body as { limit?: unknown; retryRunId?: unknown; collection?: unknown };
     const limit = typeof body.limit === "number" && Number.isFinite(body.limit)
       ? Math.floor(body.limit)
       : VALIDATION_DEFAULT_LIMIT;
@@ -89,7 +89,10 @@ router.post("/catalogue/validation", requireAdmin, async (req: AdminRequest, res
       return;
     }
     const retryRunId = typeof body.retryRunId === "string" ? body.retryRunId : undefined;
-    const runId = await startValidationRun(limit, req.adminId ?? null, { retryRunId });
+    const collection = typeof body.collection === "string" && body.collection.trim().length > 0
+      ? body.collection.trim()
+      : undefined;
+    const runId = await startValidationRun(limit, req.adminId ?? null, { retryRunId, collection });
     res.status(202).json({ runId, status: "running" });
   } catch (e) {
     const status = (e as { status?: number }).status ?? 500;

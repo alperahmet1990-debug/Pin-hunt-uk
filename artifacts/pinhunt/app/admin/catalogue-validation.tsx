@@ -16,6 +16,7 @@ import {
   Modal,
   Platform,
   RefreshControl,
+  TextInput,
   ScrollView,
   StyleSheet,
   Text,
@@ -43,6 +44,7 @@ type ValidationStatus =
 interface RunSummary {
   id: string;
   status: 'running' | 'paused' | 'completed' | 'failed';
+  filter_collection: string | null;
   started_at: string;
   completed_at: string | null;
   pins_checked: number;
@@ -141,6 +143,10 @@ export default function CatalogueValidationScreen() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [viewerUrl, setViewerUrl] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
+  // Optional series scope for the next run.
+  const [seriesQuery, setSeriesQuery] = useState('');
+  const [seriesChosen, setSeriesChosen] = useState<string | null>(null);
+  const [seriesOptions, setSeriesOptions] = useState<string[]>([]);
   // Field-approval picker state (per expanded record).
   const [pickedFields, setPickedFields] = useState<Record<string, Set<string>>>({});
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -193,6 +199,24 @@ export default function CatalogueValidationScreen() {
     };
   }, [summary?.status, summary?.id, loadRun]);
 
+  // Series autocomplete (existing catalogue distinct-values endpoint).
+  useEffect(() => {
+    if (!token || seriesChosen || seriesQuery.trim().length < 2) { setSeriesOptions([]); return; }
+    const t = setTimeout(async () => {
+      try {
+        const resp = await fetch(
+          `${API_BASE}/admin/catalogue/distinct?field=collection&search=${encodeURIComponent(seriesQuery.trim())}&limit=8`,
+          { headers: authHeaders() },
+        );
+        if (resp.ok) {
+          const data = (await resp.json()) as { values: string[] };
+          setSeriesOptions(data.values ?? []);
+        }
+      } catch { /* suggestions are best-effort */ }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [seriesQuery, seriesChosen, token, authHeaders]);
+
   const startRun = useCallback(async () => {
     setStarting(true);
     setError(null);
@@ -200,7 +224,7 @@ export default function CatalogueValidationScreen() {
       const resp = await fetch(`${API_BASE}/catalogue/validation`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...authHeaders() },
-        body: JSON.stringify({ limit: 50 }),
+        body: JSON.stringify({ limit: 50, ...(seriesChosen ? { collection: seriesChosen } : {}) }),
       });
       const data = (await resp.json()) as { runId?: string; error?: string };
       if (!resp.ok || !data.runId) throw new Error(data.error ?? `HTTP ${resp.status}`);
@@ -210,7 +234,7 @@ export default function CatalogueValidationScreen() {
     } finally {
       setStarting(false);
     }
-  }, [authHeaders, loadRun]);
+  }, [authHeaders, loadRun, seriesChosen]);
 
   const sendDecision = useCallback(async (
     result: ValidationResult,
@@ -337,6 +361,41 @@ export default function CatalogueValidationScreen() {
             </Text>
             {error ? <Text style={[styles.error, { color: '#dc2626' }]}>{error}</Text> : null}
 
+            {/* Optional series scope */}
+            <View style={[styles.seriesBox, { backgroundColor: colors.card, borderColor: colors.border }]}>
+              <Text style={[styles.seriesLabel, { color: colors.mutedForeground }]}>Limit to a series (optional)</Text>
+              {seriesChosen ? (
+                <View style={styles.seriesChosenRow}>
+                  <View style={[styles.badge, { backgroundColor: colors.primary + '18', borderColor: colors.primary + '40' }]}>
+                    <Text style={[styles.badgeText, { color: colors.primary }]}>{seriesChosen}</Text>
+                  </View>
+                  <TouchableOpacity onPress={() => { setSeriesChosen(null); setSeriesQuery(''); }}>
+                    <Feather name="x-circle" size={18} color={colors.mutedForeground} />
+                  </TouchableOpacity>
+                </View>
+              ) : (
+                <>
+                  <TextInput
+                    style={[styles.seriesInput, { color: colors.text, borderColor: colors.border, backgroundColor: colors.background }]}
+                    placeholder="Start typing a series name…"
+                    placeholderTextColor={colors.mutedForeground}
+                    value={seriesQuery}
+                    onChangeText={setSeriesQuery}
+                  />
+                  {seriesOptions.map(opt => (
+                    <TouchableOpacity
+                      key={opt}
+                      style={[styles.seriesOption, { borderColor: colors.border }]}
+                      onPress={() => { setSeriesChosen(opt); setSeriesOptions([]); }}
+                    >
+                      <Feather name="tag" size={13} color={colors.primary} />
+                      <Text style={[styles.seriesOptionText, { color: colors.text }]}>{opt}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </>
+              )}
+            </View>
+
             <TouchableOpacity
               style={[styles.startBtn, { backgroundColor: colors.primary, opacity: starting || summary?.status === 'running' ? 0.6 : 1 }]}
               disabled={starting || summary?.status === 'running'}
@@ -344,7 +403,11 @@ export default function CatalogueValidationScreen() {
             >
               {starting ? <ActivityIndicator color="#fff" /> : (
                 <Text style={styles.startBtnText}>
-                  {summary?.status === 'running' ? 'Validation in progress…' : 'Validate next 50 pins'}
+                  {summary?.status === 'running'
+                    ? 'Validation in progress…'
+                    : seriesChosen
+                      ? `Validate "${seriesChosen}" pins`
+                      : 'Validate next 50 pins'}
                 </Text>
               )}
             </TouchableOpacity>
@@ -358,6 +421,7 @@ export default function CatalogueValidationScreen() {
                       : summary.status === 'failed' ? 'Run failed'
                       : summary.status === 'paused' ? `Paused at ${summary.pins_checked} pins`
                       : `${summary.pins_checked} pins checked`}
+                    {summary.filter_collection ? ` — ${summary.filter_collection}` : ''}
                   </Text>
                   {summary.status === 'running' && <ActivityIndicator size="small" color={colors.primary} />}
                 </View>
@@ -665,6 +729,12 @@ const styles = StyleSheet.create({
   intro: { fontSize: 13, lineHeight: 18, marginBottom: 12 },
   error: { fontSize: 13, marginBottom: 8 },
   startBtn: { borderRadius: 10, paddingVertical: 12, alignItems: 'center', marginBottom: 16 },
+  seriesBox: { borderWidth: 1, borderRadius: 12, padding: 12, marginBottom: 12 },
+  seriesLabel: { fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 8 },
+  seriesInput: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8, fontSize: 14 },
+  seriesOption: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 9, borderBottomWidth: StyleSheet.hairlineWidth },
+  seriesOptionText: { fontSize: 13.5, flex: 1 },
+  seriesChosenRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   startBtnText: { color: '#fff', fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   summaryCard: { borderWidth: 1, borderRadius: 12, padding: 14, marginBottom: 16 },
   summaryHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },

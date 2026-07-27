@@ -49,3 +49,6 @@ END $$;
 
 -- Service-role only; do not expose to normal clients.
 REVOKE ALL ON FUNCTION apply_validation_changes(UUID, JSONB, JSONB) FROM PUBLIC, anon, authenticated;
+
+-- Optional series/collection scope for a run.
+ALTER TABLE ebay_validation_runs ADD COLUMN IF NOT EXISTS filter_collection TEXT;

@@ -20,7 +20,6 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
-import { BoardCardHorizontal } from '@/components/BoardCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import type { CataloguePin } from '@workspace/pin-repository';
 
@@ -520,6 +519,75 @@ export default function CollectionScreen() {
               </View>
             ) : (
               <>
+                {/* ── My Boards (top) ── */}
+                <View style={[s.shelf, { paddingTop: 20 }]}>
+                  <SectionHeader
+                    title="My Boards"
+                    subtitle={
+                      customBoards.length > 0
+                        ? `${customBoards.length} custom ${customBoards.length === 1 ? 'board' : 'boards'}`
+                        : 'Organise pins your way'
+                    }
+                    colors={colors}
+                    onPress={() => {
+                      setNewBoardName('');
+                      setCreateModalVisible(true);
+                    }}
+                    chevron={false}
+                  />
+                  <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={s.shelfRow}
+                  >
+                    {customBoards.map(b => {
+                      const boardPins = getBoardPins(b);
+                      const thumbPin =
+                        (b.thumbnailPinId && boardPins.find(p => p.id === b.thumbnailPinId)) ||
+                        boardPins[0];
+                      return (
+                        <TouchableOpacity
+                          key={b.id}
+                          activeOpacity={0.85}
+                          onPress={() => goBoard(b.id)}
+                          style={[s.boardTile, { backgroundColor: colors.card, borderColor: colors.border }]}
+                        >
+                          {thumbPin ? (
+                            <Image source={getPinImageSource(thumbPin)} style={s.boardTileImg} />
+                          ) : (
+                            <View style={[s.boardTileEmpty, { backgroundColor: colors.secondary }]}>
+                              <Feather name="grid" size={22} color={colors.primary} />
+                            </View>
+                          )}
+                          <Text
+                            style={[s.boardTileName, { color: colors.foreground }]}
+                            numberOfLines={1}
+                          >
+                            {b.name}
+                          </Text>
+                          <Text style={[s.boardTileCount, { color: colors.mutedForeground }]}>
+                            {boardPins.length} {boardPins.length === 1 ? 'pin' : 'pins'}
+                          </Text>
+                        </TouchableOpacity>
+                      );
+                    })}
+                    <TouchableOpacity
+                      activeOpacity={0.8}
+                      onPress={() => {
+                        setNewBoardName('');
+                        setCreateModalVisible(true);
+                      }}
+                      style={[s.boardTile, s.boardTileNew, { borderColor: colors.border }]}
+                    >
+                      <View style={[s.boardTileEmpty, { backgroundColor: colors.secondary }]}>
+                        <Feather name="plus" size={22} color={colors.primary} />
+                      </View>
+                      <Text style={[s.boardTileName, { color: colors.primary }]}>New Board</Text>
+                      <Text style={[s.boardTileCount, { color: colors.mutedForeground }]}> </Text>
+                    </TouchableOpacity>
+                  </ScrollView>
+                </View>
+
                 {/* ── Hero: Nearly Complete ── */}
                 {heroSet && (
                   <View style={s.heroWrap}>
@@ -592,46 +660,6 @@ export default function CollectionScreen() {
 
                 {/* ── Set shelves ── */}
                 {setSections.map(renderShelf)}
-
-                {/* ── Custom boards ── */}
-                {customBoards.length > 0 && (
-                  <View style={s.shelf}>
-                    <SectionHeader
-                      title="My Boards"
-                      subtitle={`${customBoards.length} custom ${customBoards.length === 1 ? 'board' : 'boards'}`}
-                      colors={colors}
-                      onPress={() => {
-                        setNewBoardName('');
-                        setCreateModalVisible(true);
-                      }}
-                      chevron={false}
-                    />
-                    {customBoards.map(b => (
-                      <BoardCardHorizontal
-                        key={b.id}
-                        board={b}
-                        pins={getBoardPins(b)}
-                        onPress={() => goBoard(b.id)}
-                      />
-                    ))}
-                  </View>
-                )}
-                {customBoards.length === 0 && (
-                  <View style={s.shelf}>
-                    <SectionHeader title="My Boards" subtitle="Organise pins your way" colors={colors} />
-                    <TouchableOpacity
-                      onPress={() => {
-                        setNewBoardName('');
-                        setCreateModalVisible(true);
-                      }}
-                      activeOpacity={0.8}
-                      style={[s.newBoardBtn, { borderColor: colors.border }]}
-                    >
-                      <Feather name="plus" size={16} color={colors.primary} />
-                      <Text style={[s.newBoardLabel, { color: colors.primary }]}>Create a Board</Text>
-                    </TouchableOpacity>
-                  </View>
-                )}
 
                 {/* ── Singles ── */}
                 {singlePins.length > 0 && (
@@ -981,6 +1009,27 @@ const s = StyleSheet.create({
   switchPill: { flex: 1, borderRadius: 24 },
   switchTap: { paddingVertical: 12, alignItems: 'center', justifyContent: 'center' },
   switchLabel: { fontSize: 14, fontFamily: 'Inter_700Bold' },
+
+  // Board tiles
+  boardTile: {
+    width: 118,
+    borderRadius: 20,
+    borderWidth: 1,
+    padding: 10,
+    alignItems: 'center',
+  },
+  boardTileNew: { borderStyle: 'dashed', backgroundColor: 'transparent', justifyContent: 'center' },
+  boardTileImg: { width: 88, height: 88, borderRadius: 16, resizeMode: 'cover', marginBottom: 8 },
+  boardTileEmpty: {
+    width: 88,
+    height: 88,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 8,
+  },
+  boardTileName: { fontSize: 13, fontFamily: 'Inter_600SemiBold', maxWidth: 98 },
+  boardTileCount: { fontSize: 11, fontFamily: 'Inter_500Medium', marginTop: 2 },
 
   // Hero
   heroWrap: { paddingHorizontal: 20, paddingTop: 20 },

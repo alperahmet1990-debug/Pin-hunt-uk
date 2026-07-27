@@ -20,6 +20,7 @@ interface BoardsContextValue {
   deleteBoard: (boardId: string) => void;
   addPinToBoard: (boardId: string, pinId: string) => void;
   removePinFromBoard: (boardId: string, pinId: string) => void;
+  setBoardThumbnail: (boardId: string, pinId: string | undefined) => void;
   getBoardById: (boardId: string) => Board | undefined;
   getBoardPins: (board: Board) => CataloguePin[];
 }
@@ -115,8 +116,23 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
     setCustomBoards(prev => {
       const next = prev.map(b =>
         b.id === boardId
-          ? { ...b, pinIds: b.pinIds.filter(id => id !== pinId) }
+          ? {
+              ...b,
+              pinIds: b.pinIds.filter(id => id !== pinId),
+              // A removed pin can't stay the cover.
+              thumbnailPinId: b.thumbnailPinId === pinId ? undefined : b.thumbnailPinId,
+            }
           : b,
+      );
+      persist(next);
+      return next;
+    });
+  }, [persist]);
+
+  const setBoardThumbnail = useCallback((boardId: string, pinId: string | undefined) => {
+    setCustomBoards(prev => {
+      const next = prev.map(b =>
+        b.id === boardId ? { ...b, thumbnailPinId: pinId } : b,
       );
       persist(next);
       return next;
@@ -161,6 +177,7 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
         deleteBoard,
         addPinToBoard,
         removePinFromBoard,
+        setBoardThumbnail,
         getBoardById,
         getBoardPins,
       }}

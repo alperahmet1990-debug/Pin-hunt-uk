@@ -28,7 +28,7 @@ export default function BoardDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { getBoardById, getBoardPins, addPinToBoard, removePinFromBoard, deleteBoard } = useBoards();
+  const { getBoardById, getBoardPins, addPinToBoard, removePinFromBoard, deleteBoard, setBoardThumbnail } = useBoards();
   const { pins: catalogue } = usePinCatalogue();
   const { collection } = useCollection();
 
@@ -184,6 +184,12 @@ export default function BoardDetailScreen() {
                       : router.push({ pathname: '/pin/[id]', params: { id: item.id } })
                   }
                 />
+                {!editMode && board.thumbnailPinId === item.id && (
+                  <View style={[styles.coverChip, { backgroundColor: colors.primary }]}>
+                    <Feather name="image" size={10} color="#fff" />
+                    <Text style={styles.coverChipText}>Cover</Text>
+                  </View>
+                )}
                 {editMode && (
                   <TouchableOpacity
                     style={[styles.removeOverlay, { borderRadius: colors.radius }]}
@@ -193,6 +199,28 @@ export default function BoardDetailScreen() {
                     <View style={[styles.removeBadge, { backgroundColor: colors.destructive }]}>
                       <Feather name="minus" size={14} color="#fff" />
                     </View>
+                    <TouchableOpacity
+                      style={[
+                        styles.coverBadge,
+                        {
+                          backgroundColor:
+                            board.thumbnailPinId === item.id ? colors.primary : 'rgba(0,0,0,0.55)',
+                        },
+                      ]}
+                      onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        setBoardThumbnail(
+                          board.id,
+                          board.thumbnailPinId === item.id ? undefined : item.id,
+                        );
+                      }}
+                      activeOpacity={0.8}
+                      accessibilityLabel={
+                        board.thumbnailPinId === item.id ? 'Remove as board cover' : 'Set as board cover'
+                      }
+                    >
+                      <Feather name="image" size={13} color="#fff" />
+                    </TouchableOpacity>
                   </TouchableOpacity>
                 )}
               </View>
@@ -310,6 +338,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  coverBadge: {
+    position: 'absolute',
+    top: 6,
+    left: 6,
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  coverChip: {
+    position: 'absolute',
+    top: 6,
+    left: 6,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+    borderRadius: 8,
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+  },
+  coverChipText: { fontSize: 10, fontFamily: 'Inter_600SemiBold', color: '#fff' },
   // Add pins modal
   modalRoot: { flex: 1 },
   modalHeader: {

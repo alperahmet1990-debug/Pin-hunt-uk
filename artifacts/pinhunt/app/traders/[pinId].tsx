@@ -83,23 +83,24 @@ function TraderCard({ trader, onRequestTrade, onMessage, isMe, colors }: {
         <RatingBadge positive={trader.positiveRatings} total={trader.totalRatings} colors={colors} />
       </View>
 
-      {/* Actions */}
+      {/* Actions — messaging first; a formal trade can start from the chat */}
       {!isMe && (
         <View style={styles.cardActions}>
           <TouchableOpacity
-            onPress={onRequestTrade}
+            onPress={onMessage}
             activeOpacity={0.85}
             style={[styles.tradeBtn, { backgroundColor: colors.primary, borderRadius: 8 }]}
           >
-            <Feather name="repeat" size={13} color="#fff" />
-            <Text style={styles.tradeBtnLabel}>Trade</Text>
+            <Feather name="mail" size={13} color="#fff" />
+            <Text style={styles.tradeBtnLabel}>Message</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={onMessage}
+            onPress={onRequestTrade}
             activeOpacity={0.85}
+            accessibilityLabel="Request trade"
             style={[styles.tradeBtn, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: 8, borderWidth: 1 }]}
           >
-            <Feather name="mail" size={13} color={colors.foreground} />
+            <Feather name="repeat" size={13} color={colors.foreground} />
           </TouchableOpacity>
         </View>
       )}

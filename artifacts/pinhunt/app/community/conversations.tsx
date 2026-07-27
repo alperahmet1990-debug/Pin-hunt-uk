@@ -45,6 +45,7 @@ function ConversationRow({ conv, onPress, colors }: {
   const name  = other?.username ?? '…';
   const lastMsg = conv.lastMessage;
   const ts = conv.lastMessageAt ?? conv.createdAt;
+  const unread = conv.unreadCount ?? 0;
 
   return (
     <TouchableOpacity
@@ -59,10 +60,18 @@ function ConversationRow({ conv, onPress, colors }: {
       <View style={styles.rowContent}>
         <View style={styles.rowHeader}>
           <Text style={[styles.rowName, { color: colors.foreground }]}>@{name}</Text>
-          <Text style={[styles.rowTime, { color: colors.mutedForeground }]}>{timeAgo(ts)}</Text>
+          <Text style={[styles.rowTime, { color: unread ? colors.primary : colors.mutedForeground }]}>{timeAgo(ts)}</Text>
         </View>
         {lastMsg ? (
-          <Text style={[styles.rowPreview, { color: colors.mutedForeground }]} numberOfLines={1}>
+          <Text
+            style={[
+              styles.rowPreview,
+              unread
+                ? { color: colors.foreground, fontFamily: 'Inter_600SemiBold' }
+                : { color: colors.mutedForeground },
+            ]}
+            numberOfLines={1}
+          >
             {lastMsg.body}
           </Text>
         ) : (
@@ -70,7 +79,13 @@ function ConversationRow({ conv, onPress, colors }: {
         )}
       </View>
 
-      <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+      {unread ? (
+        <View style={[styles.unreadBadge, { backgroundColor: colors.primary }]}>
+          <Text style={styles.unreadBadgeText}>{unread > 9 ? '9+' : unread}</Text>
+        </View>
+      ) : (
+        <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+      )}
     </TouchableOpacity>
   );
 }
@@ -172,4 +187,13 @@ const styles = StyleSheet.create({
   rowName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   rowTime: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   rowPreview: { fontSize: 13, fontFamily: 'Inter_400Regular' },
+  unreadBadge: {
+    minWidth: 20,
+    height: 20,
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  unreadBadgeText: { color: '#fff', fontSize: 11, fontFamily: 'Inter_700Bold' },
 });

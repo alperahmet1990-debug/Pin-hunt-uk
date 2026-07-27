@@ -10,6 +10,7 @@ import { PinCatalogueProvider } from '@/context/PinCatalogueContext';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ProfileProvider, useProfile } from '@/context/ProfileContext';
 import { SubmissionNotificationsProvider } from '@/context/SubmissionNotificationsContext';
+import { UnreadMessagesProvider } from '@/context/UnreadMessagesContext';
 import { pruneOldBannerDismissals } from '@/utils/tradeBannerDismissals';
 import {
   Inter_400Regular,
@@ -138,6 +139,7 @@ export default function RootLayout() {
                 <CollectionProvider>
                   <BoardsProvider>
                     <SubmissionNotificationsProvider>
+                      <UnreadMessagesProvider>
                       <GestureHandlerRootView style={{ flex: 1 }}>
                         <KeyboardProvider>
                           <AuthGuard>
@@ -145,6 +147,7 @@ export default function RootLayout() {
                           </AuthGuard>
                         </KeyboardProvider>
                       </GestureHandlerRootView>
+                      </UnreadMessagesProvider>
                     </SubmissionNotificationsProvider>
                   </BoardsProvider>
                 </CollectionProvider>

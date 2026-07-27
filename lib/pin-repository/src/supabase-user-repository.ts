@@ -1683,6 +1683,25 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       if (!lastMsgMap.has(cid)) lastMsgMap.set(cid, m);
     });
 
+    // Unread = messages from the other participant newer than my last-read mark.
+    const unreadMap = new Map<string, number>();
+    const lastReadByConv = new Map<string, string | null>();
+    convRows.forEach(r => {
+      const isA = r.participant_a_id === userId;
+      lastReadByConv.set(
+        r.id as string,
+        ((isA ? r.a_last_read_at : r.b_last_read_at) as string | null) ?? null,
+      );
+    });
+    ((msgData ?? []) as Record<string, unknown>[]).forEach(m => {
+      if (m.sender_id === userId) return;
+      const cid = m.conversation_id as string;
+      const lastRead = lastReadByConv.get(cid);
+      if (lastRead == null || (m.created_at as string) > lastRead) {
+        unreadMap.set(cid, (unreadMap.get(cid) ?? 0) + 1);
+      }
+    });
+
     return convRows.map(r => {
       const otherId = r.participant_a_id === userId ? r.participant_b_id : r.participant_a_id;
       const isA = r.participant_a_id === userId;
@@ -1693,8 +1712,27 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         participant_b_profile: isA ? otherProfile : null,
         last_msg: lastMsgMap.get(r.id as string) ?? null,
       };
-      return this.rowToConversation(enriched, userId);
+      const conv = this.rowToConversation(enriched, userId);
+      conv.unreadCount = unreadMap.get(conv.id) ?? 0;
+      return conv;
     });
+  }
+
+  async getConversationUnreadCounts(): Promise<Record<string, number>> {
+    const { data, error } = await this.client.rpc('get_conversation_unread_counts');
+    if (error) throw new Error(error.message);
+    const map: Record<string, number> = {};
+    ((data ?? []) as { conversation_id: string; unread_count: number }[]).forEach(r => {
+      map[r.conversation_id] = Number(r.unread_count);
+    });
+    return map;
+  }
+
+  async markConversationRead(conversationId: string): Promise<void> {
+    const { error } = await this.client.rpc('mark_conversation_read', {
+      p_conversation_id: conversationId,
+    });
+    if (error) throw new Error(error.message);
   }
 
   async getConversation(conversationId: string, currentUserId: string): Promise<Conversation | null> {

@@ -49,7 +49,9 @@ function matchSummary(c: NearbyCollector): string | null {
 
 // ─── Collector card ────────────────────────────────────────────────────────────
 
-function CollectorCard({ item, onPress }: { item: NearbyCollector; onPress(): void }) {
+function CollectorCard({ item, onPress, onMessage }: {
+  item: NearbyCollector; onPress(): void; onMessage(): void;
+}) {
   const colors = useColors();
   const initials = item.username.slice(0, 2).toUpperCase();
   const summary = matchSummary(item);
@@ -144,8 +146,16 @@ function CollectorCard({ item, onPress }: { item: NearbyCollector; onPress(): vo
         </View>
       )}
 
-      {/* View profile button */}
+      {/* Footer actions */}
       <View style={[styles.cardFooter, { borderTopColor: colors.border }]}>
+        <TouchableOpacity
+          onPress={onMessage}
+          activeOpacity={0.85}
+          style={[styles.messageBtn, { backgroundColor: colors.primary }]}
+        >
+          <Feather name="mail" size={13} color="#fff" />
+          <Text style={styles.messageBtnLabel}>Message</Text>
+        </TouchableOpacity>
         <Text style={[styles.viewProfile, { color: colors.primary }]}>View profile →</Text>
       </View>
     </TouchableOpacity>
@@ -350,6 +360,12 @@ export default function NearbyScreen() {
             <CollectorCard
               item={item}
               onPress={() => router.push({ pathname: '/collector/[username]', params: { username: item.username } })}
+              onMessage={() =>
+                router.push({
+                  pathname: '/community/start-conversation' as any,
+                  params: { recipientId: item.id, recipientName: item.username },
+                })
+              }
             />
           )}
         />
@@ -457,7 +473,18 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     paddingVertical: 10,
     paddingHorizontal: 14,
-    alignItems: 'flex-end',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
+  messageBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  messageBtnLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#fff' },
   viewProfile: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
 });

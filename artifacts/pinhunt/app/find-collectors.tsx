@@ -18,7 +18,24 @@ import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
+import { useMarketplace } from '@/hooks/useMarketplace';
 import type { PublicProfile } from '@workspace/pin-repository';
+
+/** Trade-match counts for a collector relative to the current user. */
+interface MatchCounts {
+  theyHave: number;
+  iHave: number;
+}
+
+function matchLabel(m: MatchCounts | undefined): string | null {
+  if (!m) return null;
+  if (m.theyHave > 0 && m.iHave > 0) {
+    return `They have ${m.theyHave} you want · you have ${m.iHave} they want`;
+  }
+  if (m.theyHave > 0) return `Has ${m.theyHave} pin${m.theyHave > 1 ? 's' : ''} you want`;
+  if (m.iHave > 0) return `Wants ${m.iHave} of your trade pins`;
+  return null;
+}
 
 function initials(profile: PublicProfile): string {
   const name = profile.username;
@@ -31,8 +48,11 @@ function initials(profile: PublicProfile): string {
 
 // ─── Collector card ───────────────────────────────────────────────────────────
 
-function CollectorCard({ item, onPress }: { item: PublicProfile; onPress(): void }) {
+function CollectorCard({ item, match, onPress }: {
+  item: PublicProfile; match?: MatchCounts; onPress(): void;
+}) {
   const colors = useColors();
+  const label = matchLabel(match);
   return (
     <TouchableOpacity
       style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
@@ -48,6 +68,12 @@ function CollectorCard({ item, onPress }: { item: PublicProfile; onPress(): void
           <View style={styles.regionRow}>
             <Feather name="map-pin" size={11} color={colors.mutedForeground} />
             <Text style={[styles.region, { color: colors.mutedForeground }]}>{item.tradingRegion}</Text>
+          </View>
+        ) : null}
+        {label ? (
+          <View style={styles.regionRow}>
+            <Feather name="repeat" size={11} color={colors.primary} />
+            <Text style={[styles.matchText, { color: colors.primary }]} numberOfLines={1}>{label}</Text>
           </View>
         ) : null}
       </View>
@@ -69,10 +95,12 @@ export default function FindCollectorsScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { searchCollectors } = useProfile();
+  const { repo, userId } = useMarketplace();
 
   const [query, setQuery] = useState('');
   const [region, setRegion] = useState('');
   const [results, setResults] = useState<PublicProfile[]>([]);
+  const [matches, setMatches] = useState<Record<string, MatchCounts>>({});
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -88,12 +116,30 @@ export default function FindCollectorsScreen() {
       const res = await searchCollectors({ query: q.trim() || undefined, tradingRegion: r.trim() || undefined });
       setResults(res);
       setSearched(true);
+
+      // Surface trade matches on the result cards (best-effort, first 8 results).
+      if (repo && userId) {
+        const targets = res.filter(p => p.id !== userId).slice(0, 8);
+        const entries = await Promise.all(
+          targets.map(async p => {
+            try {
+              const trades = await repo.getPotentialTrades({ viewerId: userId, collectorId: p.id });
+              const theyHave = trades.filter(t => t.direction === 'they_have_i_want').length;
+              const iHave = trades.filter(t => t.direction === 'i_have_they_want').length;
+              return [p.id, { theyHave, iHave }] as const;
+            } catch {
+              return null;
+            }
+          }),
+        );
+        setMatches(Object.fromEntries(entries.filter((e): e is NonNullable<typeof e> => e != null)));
+      }
     } catch {
       setResults([]);
     } finally {
       setLoading(false);
     }
-  }, [searchCollectors]);
+  }, [searchCollectors, repo, userId]);
 
   const scheduleSearch = useCallback((q: string, r: string) => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -160,6 +206,7 @@ export default function FindCollectorsScreen() {
           renderItem={({ item }) => (
             <CollectorCard
               item={item}
+              match={matches[item.id]}
               onPress={() => router.push(`/collector/${item.username}`)}
             />
           )}
@@ -233,6 +280,7 @@ const styles = StyleSheet.create({
   displayName: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   regionRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 2 },
   region: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  matchText: { flex: 1, fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   badge: {
     flexDirection: 'row',
     alignItems: 'center',

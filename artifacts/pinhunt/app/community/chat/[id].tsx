@@ -15,10 +15,11 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
+import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import type { Conversation, ConversationMessage } from '@workspace/pin-repository';
 
 function MessageBubble({ msg, isMe, colors }: {
@@ -47,6 +48,12 @@ export default function ChatScreen() {
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
   const { repo, userId } = useCommunity();
+  const { markRead } = useUnreadMessages();
+  const seenIdsRef = useRef<Set<string>>(new Set());
+  // Only mark read while the user is actually looking at this screen —
+  // a chat restored in the background navigation stack must not clear unread.
+  const isFocusedRef = useRef(false);
+  const pendingReadRef = useRef(false);
 
   const [conv,      setConv]     = useState<Conversation | null>(null);
   const [messages,  setMessages] = useState<ConversationMessage[]>([]);
@@ -65,15 +72,36 @@ export default function ChatScreen() {
         repo.getConversationMessages(id),
       ]);
       if (isInitial) setConv(c);
+      // Mark read whenever the screen shows messages we hadn't seen yet.
+      // (Tracked via a ref so the state updater stays pure.)
+      const hasNewFromOther =
+        isInitial || msgs.some(m => m.senderId !== userId && !seenIdsRef.current.has(m.id));
+      seenIdsRef.current = new Set(msgs.map(m => m.id));
       setMessages(msgs);
+      if (hasNewFromOther) {
+        if (isFocusedRef.current) markRead(id);
+        else pendingReadRef.current = true; // defer until the screen is focused
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load conversation.');
     } finally {
       setLoading(false);
     }
-  }, [repo, userId, id, conv]);
+  }, [repo, userId, id, conv, markRead]);
 
   useEffect(() => { load(true); }, [repo, userId, id]);
+
+  // Track focus and flush any deferred mark-read once the screen gains focus.
+  useFocusEffect(
+    useCallback(() => {
+      isFocusedRef.current = true;
+      if (pendingReadRef.current && id) {
+        pendingReadRef.current = false;
+        markRead(id);
+      }
+      return () => { isFocusedRef.current = false; };
+    }, [id, markRead]),
+  );
 
   // Poll for new messages every 8 s
   useEffect(() => {

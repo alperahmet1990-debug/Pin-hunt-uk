@@ -522,6 +522,8 @@ export interface Database {
           context_post_id: string | null;
           context_pin_id: string | null;
           last_message_at: string | null;
+          a_last_read_at: string | null;
+          b_last_read_at: string | null;
           created_at: string;
         };
         Insert: {
@@ -535,6 +537,8 @@ export interface Database {
         };
         Update: {
           last_message_at?: string | null;
+          a_last_read_at?: string | null;
+          b_last_read_at?: string | null;
         };
         Relationships: [
           { foreignKeyName: 'conversations_participant_a_id_fkey'; columns: ['participant_a_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] },
@@ -600,6 +604,14 @@ export interface Database {
       };
     };
     Functions: {
+      mark_conversation_read: {
+        Args: { p_conversation_id: string };
+        Returns: undefined;
+      };
+      get_conversation_unread_counts: {
+        Args: Record<string, never>;
+        Returns: { conversation_id: string; unread_count: number }[];
+      };
       set_user_pin_status: {
         Args: { p_pinhunt_id: string; p_status: string };
         Returns: undefined;
@@ -631,10 +643,6 @@ export interface Database {
           positive_ratings: number;
           total_ratings: number;
         }>;
-      };
-      set_user_pin_status: {
-        Args: { p_pinhunt_id: string; p_status: string };
-        Returns: undefined;
       };
       get_potential_trades: {
         Args: { p_viewer_id: string; p_collector_id: string };

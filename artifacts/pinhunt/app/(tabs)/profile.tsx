@@ -192,7 +192,11 @@ export default function ProfileScreen() {
               hasLocationSet={profile?.hasLocationSet ?? false}
               nearbyEnabled={profile?.nearbyDiscoveryEnabled ?? false}
               radiusMiles={profile?.preferredRadiusMiles ?? 25}
-              onPress={() => router.push({ pathname: '/edit-profile', params: { section: 'location' } })}
+              onPress={() =>
+                profile?.hasLocationSet && profile?.nearbyDiscoveryEnabled
+                  ? router.push('/nearby')
+                  : router.push({ pathname: '/edit-profile', params: { section: 'location' } })
+              }
             />
 
             {/* Account */}

@@ -12,9 +12,31 @@ import { BlurView } from 'expo-blur';
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Tabs } from 'expo-router';
-import { Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
+import { Badge, Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
 import { SymbolView } from 'expo-symbols';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
+import { useUnreadMessages } from '@/context/UnreadMessagesContext';
+import { Text } from 'react-native';
+
+// ─── Community tab icon with unread-message count badge ──────────────────────
+
+function CommunityTabIcon({ color, count }: { color: string; count: number }) {
+  const isIOS = Platform.OS === 'ios';
+  return (
+    <View>
+      {isIOS ? (
+        <SymbolView name="bubble.left.and.bubble.right" tintColor={color} size={24} />
+      ) : (
+        <Feather name="message-circle" size={22} color={color} />
+      )}
+      {count > 0 && (
+        <View style={styles.countBadge}>
+          <Text style={styles.countBadgeText}>{count > 9 ? '9+' : count}</Text>
+        </View>
+      )}
+    </View>
+  );
+}
 
 // ─── Raised scan button (ClassicTabLayout only) ───────────────────────────────
 
@@ -43,6 +65,7 @@ function ScanTabButton({ onPress }: { onPress?: () => void }) {
 // ─── Native tab layout (iOS Liquid Glass / native look) ───────────────────────
 
 function NativeTabLayout() {
+  const { totalUnread } = useUnreadMessages();
   return (
     <NativeTabs>
       <NativeTabs.Trigger name="index">
@@ -52,6 +75,7 @@ function NativeTabLayout() {
       <NativeTabs.Trigger name="community">
         <Icon sf={{ default: 'bubble.left.and.bubble.right', selected: 'bubble.left.and.bubble.right.fill' }} />
         <Label>Community</Label>
+        {totalUnread > 0 && <Badge>{totalUnread > 9 ? '9+' : String(totalUnread)}</Badge>}
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="scan">
         <Icon sf={{ default: 'camera.circle.fill', selected: 'camera.circle.fill' }} />
@@ -96,6 +120,7 @@ function ClassicTabLayout() {
   const isIOS = Platform.OS === 'ios';
   const isWeb = Platform.OS === 'web';
   const { unseenCount } = useSubmissionNotifications();
+  const { totalUnread } = useUnreadMessages();
 
   return (
     <Tabs
@@ -142,12 +167,7 @@ function ClassicTabLayout() {
         name="community"
         options={{
           title: 'Community',
-          tabBarIcon: ({ color }) =>
-            isIOS ? (
-              <SymbolView name="bubble.left.and.bubble.right" tintColor={color} size={24} />
-            ) : (
-              <Feather name="message-circle" size={22} color={color} />
-            ),
+          tabBarIcon: ({ color }) => <CommunityTabIcon color={color} count={totalUnread} />,
         }}
       />
 
@@ -226,6 +246,19 @@ const styles = StyleSheet.create({
     // Elevation (Android)
     elevation: 10,
   },
+  countBadge: {
+    position: 'absolute',
+    top: -5,
+    right: -9,
+    minWidth: 16,
+    height: 16,
+    borderRadius: 8,
+    paddingHorizontal: 4,
+    backgroundColor: '#EF4444',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  countBadgeText: { color: '#fff', fontSize: 10, fontFamily: 'Inter_700Bold' },
   badgeDot: {
     position: 'absolute',
     top: -2,

@@ -23,6 +23,7 @@ import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
+import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 
@@ -255,6 +256,7 @@ export default function CommunityScreen() {
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
   const { repo, userId } = useCommunity();
+  const { totalUnread } = useUnreadMessages();
 
   const [filter, setFilter]     = useState<CommunityPostType | 'all'>('all');
   const [posts, setPosts]       = useState<CommunityPost[]>([]);
@@ -412,6 +414,11 @@ export default function CommunityScreen() {
               activeOpacity={0.75}
             >
               <Feather name="mail" size={18} color={colors.foreground} />
+              {totalUnread > 0 && (
+                <View style={styles.mailBadge}>
+                  <Text style={styles.mailBadgeText}>{totalUnread > 9 ? '9+' : totalUnread}</Text>
+                </View>
+              )}
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
@@ -547,6 +554,19 @@ export default function CommunityScreen() {
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
+  mailBadge: {
+    position: 'absolute',
+    top: -4,
+    right: -4,
+    minWidth: 16,
+    height: 16,
+    borderRadius: 8,
+    paddingHorizontal: 4,
+    backgroundColor: '#EF4444',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  mailBadgeText: { color: '#fff', fontSize: 10, fontFamily: 'Inter_700Bold' },
   root: { flex: 1 },
 
   header: {

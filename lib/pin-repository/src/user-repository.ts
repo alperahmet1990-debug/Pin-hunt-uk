@@ -346,6 +346,11 @@ export interface IUserPinRepository {
   /** Return all conversations for userId, sorted by most recent message. */
   getConversations(userId: string): Promise<Conversation[]>;
 
+  /** Mark a conversation as read for the current user (updates their last-read timestamp). */
+  markConversationRead(conversationId: string): Promise<void>;
+  /** Lightweight per-conversation unread counts for the current user (badge polling). */
+  getConversationUnreadCounts(): Promise<Record<string, number>>;
+
   /** Return a single conversation with messages and other participant profile. */
   getConversation(conversationId: string, currentUserId: string): Promise<Conversation | null>;
 

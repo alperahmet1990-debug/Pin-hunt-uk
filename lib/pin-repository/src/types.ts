@@ -628,6 +628,8 @@ export interface Conversation {
   /** Joined profile of the other participant (relative to current user). */
   otherParticipant?: PublicProfile;
   lastMessage?: ConversationMessage;
+  /** Messages from the other participant since the current user last read this conversation. */
+  unreadCount?: number;
 }
 
 export interface ConversationMessage {

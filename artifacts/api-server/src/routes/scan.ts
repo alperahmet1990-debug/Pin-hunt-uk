@@ -27,10 +27,16 @@ const repository: PinRepository | null = makeRepository();
 function buildCatalogueText(pins: CataloguePin[]): string {
   return pins
     .map(
-      (p) =>
-        `ID: ${p.id} | "${p.title}" | ${p.brand} | ${p.collection}` +
-        ` | Characters: ${p.characters.join(", ") || "none"}` +
-        ` | ${p.edition ?? "Open Edition"}`,
+      (p) => {
+        const chars = [...new Set([
+          ...(p.mainCharacter ? [p.mainCharacter] : []),
+          ...p.characters,
+          ...(p.allCharacters ?? "").split(/[;,]/).map(c => c.trim()).filter(Boolean),
+        ])];
+        return `ID: ${p.id} | "${p.title}" | ${p.brand} | ${p.collection}` +
+          ` | Characters: ${chars.join(", ") || "none"}` +
+          ` | ${p.edition ?? "Open Edition"}`;
+      },
     )
     .join("\n");
 }

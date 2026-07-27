@@ -87,9 +87,11 @@ async function loadPin(pinhuntId: string): Promise<CataloguePin | null> {
 
 // ─── Query generation ─────────────────────────────────────────────────────────
 
+import { pinCharacterList, primaryCharacter } from "./catalogue-validation";
+
 /** Generate up to 3 distinct search queries from pin metadata. */
 export function buildSearchQueries(pin: CataloguePin): string[] {
-  const character = pin.characters[0];
+  const character = primaryCharacter(pin);
   const productCode =
     pin.externalIdentifiers?.sku ??
     pin.externalIdentifiers?.disneySku ??
@@ -221,7 +223,8 @@ export function scoreListing(pin: CataloguePin, listing: EbayListing): number | 
 
   // Character conflict: if the record has characters and the listing names a
   // different well-known character but none of the record's, don't force it.
-  const hasRecordCharacter = pin.characters.some(c => c && title.includes(c.toLowerCase()));
+  const recordCharacters = pinCharacterList(pin);
+  const hasRecordCharacter = recordCharacters.some(c => c && title.includes(c.toLowerCase()));
 
   // Series/edition discriminators — crucial for pins with generic names
   // (e.g. "Hatbox Ghost" exists across many series; only the collection and
@@ -241,8 +244,8 @@ export function scoreListing(pin: CataloguePin, listing: EbayListing): number | 
   // enough on its own — require at least one series/edition word too.
   if (nameTokens.length <= 3 && discTokens.length >= 2 && discHits === 0) return null;
 
-  // Character match
-  for (const c of pin.characters) {
+  // Character match — merged junction + enriched character list
+  for (const c of pinCharacterList(pin)) {
     if (c && title.includes(c.toLowerCase())) { score += 15; break; }
   }
   // Collection match
@@ -263,7 +266,7 @@ export function scoreListing(pin: CataloguePin, listing: EbayListing): number | 
   // metadata, the listing must also mention one of them or match most of the
   // pin name — otherwise it's likely a different pin.
   if (nameRatio < 0.4) return null;
-  if (pin.characters.length > 0 && !hasRecordCharacter && nameRatio < 0.7) return null;
+  if (recordCharacters.length > 0 && !hasRecordCharacter && nameRatio < 0.7) return null;
   return score >= 40 ? score : null;
 }
 

@@ -51,6 +51,10 @@ interface PinRow {
   needs_front_image: boolean;
   needs_back_image: boolean;
   import_batch_id: string | null;
+  main_character: string | null;
+  all_characters: string | null;
+  character_confidence: string | null;
+  character_review_status: string | null;
   created_at: string;
   updated_at: string;
   // Joined via PostgREST resource embedding
@@ -96,6 +100,10 @@ function rowToPin(row: PinRow): CataloguePin {
     needsFrontImage: row.needs_front_image ?? false,
     needsBackImage: row.needs_back_image ?? false,
     importBatchId: row.import_batch_id ?? undefined,
+    mainCharacter: row.main_character ?? undefined,
+    allCharacters: row.all_characters ?? undefined,
+    characterConfidence: row.character_confidence ?? undefined,
+    characterReviewStatus: row.character_review_status ?? undefined,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
     catalogueUpdatedAt: row.catalogue_updated_at ?? undefined,
@@ -208,22 +216,40 @@ class SupabasePinRepository implements PinRepository {
       q = q.or('needs_front_image.eq.true,needs_back_image.eq.true');
     }
 
-    // Character filter: resolve name → UUID → filter by junction
+    // Character filter: junction-table matches OR the enriched
+    // all_characters text column, so imported character data is searchable
+    // even for pins with no pin_characters rows.
     if (filters.character) {
+      // PostgREST .or() syntax breaks on these characters inside patterns.
+      const safe = filters.character.replace(/[,().]/g, ' ').trim();
       const { data: charRows } = await this.client
         .from('characters')
         .select('id')
         .ilike('name', `%${filters.character}%`);
 
-      if (!charRows?.length) return [];
+      let junctionPinIds: string[] = [];
+      if (charRows?.length) {
+        const { data: pcRows } = await this.client
+          .from('pin_characters')
+          .select('pin_id')
+          .in('character_id', charRows.map(r => r.id));
+        junctionPinIds = [...new Set((pcRows ?? []).map(r => r.pin_id))];
+      }
 
-      const { data: pcRows } = await this.client
-        .from('pin_characters')
-        .select('pin_id')
-        .in('character_id', charRows.map(r => r.id));
-
-      if (!pcRows?.length) return [];
-      q = q.in('id', [...new Set(pcRows.map(r => r.pin_id))]);
+      // The enriched all_characters column covers the whole catalogue, so it
+      // is the primary match path. Junction IDs are only added when the list
+      // is small — inlining thousands of UUIDs would blow past URL limits.
+      const MAX_INLINE_IDS = 150;
+      const inlineIds = junctionPinIds.slice(0, MAX_INLINE_IDS);
+      if (inlineIds.length > 0 && safe) {
+        q = q.or(`id.in.(${inlineIds.join(',')}),all_characters.ilike.%${safe}%,main_character.ilike.%${safe}%`);
+      } else if (inlineIds.length > 0) {
+        q = q.in('id', inlineIds);
+      } else if (safe) {
+        q = q.or(`all_characters.ilike.%${safe}%,main_character.ilike.%${safe}%`);
+      } else {
+        return [];
+      }
     }
 
     // Category filter: same pattern
@@ -244,10 +270,11 @@ class SupabasePinRepository implements PinRepository {
       q = q.in('id', [...new Set(pcRows.map(r => r.pin_id))]);
     }
 
-    // Full-text search across title, brand and collection
+    // Full-text search across title, brand, collection and character fields
     if (query.trim()) {
+      const safe = query.trim().replace(/[,().]/g, ' ').trim();
       q = q.or(
-        `title.ilike.%${query}%,brand.ilike.%${query}%,collection.ilike.%${query}%`,
+        `title.ilike.%${safe}%,brand.ilike.%${safe}%,collection.ilike.%${safe}%,main_character.ilike.%${safe}%,all_characters.ilike.%${safe}%`,
       );
     }
 

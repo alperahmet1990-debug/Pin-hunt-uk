@@ -62,6 +62,51 @@ function loadFullPin(pinhuntId: string): Promise<CataloguePin | null> {
   ).getPinById(pinhuntId);
 }
 
+// ─── Character helpers ───────────────────────────────────────────────────────
+
+// The enrichment sometimes stores non-character entities (venues,
+// attractions, logos) or just repeats the pin title. Those must not be
+// treated as character constraints in scoring — a listing that doesn't
+// mention "Disney's Contemporary Resort" is not evidence of a wrong pin.
+const NON_CHARACTER_HINTS =
+  /resort|pavilion|hotel|restaurant|monorail|railroad|attraction|entrance|logo|icon|building|ride|kingdom|epcot|studios/i;
+
+function looksLikeCharacter(name: string, pinTitle: string): boolean {
+  const n = name.trim();
+  if (!n) return false;
+  if (NON_CHARACTER_HINTS.test(n)) return false;
+  if (n.split(/\s+/).length > 4) return false;
+  // Enrichment sometimes copies the whole title into main_character.
+  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (norm(n) === norm(pinTitle)) return false;
+  return true;
+}
+
+/**
+ * Merged character list: junction-table characters plus the enriched
+ * main_character / all_characters columns — filtered so non-character
+ * entries never become scoring constraints.
+ */
+export function pinCharacterList(pin: CataloguePin): string[] {
+  const out = new Set<string>();
+  for (const c of pin.characters) if (looksLikeCharacter(c ?? "", pin.title)) out.add(c.trim());
+  if (pin.mainCharacter && looksLikeCharacter(pin.mainCharacter, pin.title)) {
+    out.add(pin.mainCharacter.trim());
+  }
+  for (const c of (pin.allCharacters ?? "").split(/[;,]/)) {
+    if (looksLikeCharacter(c, pin.title)) out.add(c.trim());
+  }
+  return [...out];
+}
+
+/** Best single character for search queries — enriched main character first. */
+export function primaryCharacter(pin: CataloguePin): string | undefined {
+  const main = pin.mainCharacter?.trim();
+  if (main && looksLikeCharacter(main, pin.title)) return main;
+  const junction = pin.characters.find(c => looksLikeCharacter(c ?? "", pin.title));
+  return junction ?? pin.characters[0];
+}
+
 // ─── Text helpers ────────────────────────────────────────────────────────────
 
 function tokenise(s: string): string[] {
@@ -97,7 +142,7 @@ export function isTooVague(pin: CataloguePin): boolean {
 // ─── Query generation ────────────────────────────────────────────────────────
 
 export function buildValidationQueries(pin: CataloguePin): string[] {
-  const character = pin.characters[0];
+  const character = primaryCharacter(pin);
   const productCode =
     pin.externalIdentifiers?.sku ??
     pin.externalIdentifiers?.disneySku ??
@@ -209,7 +254,9 @@ export function scoreCandidate(
   const evidence = extractEvidence(listing.title);
 
   // Character — up to 20; wrong character −35.
-  const recordChars = pin.characters.map(c => c.toLowerCase()).filter(Boolean);
+  // Uses the merged list (junction table + enriched main/all characters) so a
+  // multi-character pin isn't penalised when the listing names a co-star.
+  const recordChars = pinCharacterList(pin).map(c => c.toLowerCase()).filter(Boolean);
   const charHit = recordChars.find(c => title.includes(c));
   if (charHit) { score += 20; reasons.push(`character match (${charHit})`); }
   else if (recordChars.length > 0 && evidence.characters.length > 0 &&
@@ -393,12 +440,13 @@ function analyseCandidates(pin: CataloguePin, scored: CandidateScore[]): Analysi
   }
 
   // Character sanity: candidates agree on a character the record lacks.
-  const recordChars = pin.characters.map(c => c.toLowerCase());
+  const knownChars = pinCharacterList(pin);
+  const recordChars = knownChars.map(c => c.toLowerCase());
   const charVotes = countBy(evidencePool.flatMap(e => e.characters.length ? [e.characters[0]] : []));
   if (charVotes[0] && charVotes[0][1] >= 2 &&
       recordChars.length > 0 &&
       !recordChars.some(rc => rc.includes(charVotes[0][0]) || charVotes[0][0].includes(rc))) {
-    flags.push({ code: "character_mismatch", message: `Record lists ${pin.characters.join(", ")}, but matching listings consistently mention ${charVotes[0][0]}. eBay evidence suggests the character may be recorded incorrectly.` });
+    flags.push({ code: "character_mismatch", message: `Record lists ${knownChars.join(", ")}, but matching listings consistently mention ${charVotes[0][0]}. eBay evidence suggests the character may be recorded incorrectly.` });
   }
 
   // Set-vs-single suspicion.
@@ -616,7 +664,8 @@ async function processValidationRun(
 
       const pinSnapshot = {
         title: pin.title, brand: pin.brand, collection: pin.collection,
-        characters: pin.characters, releaseYear: pin.releaseYear ?? null,
+        characters: pinCharacterList(pin), releaseYear: pin.releaseYear ?? null,
+        mainCharacter: pin.mainCharacter ?? null,
         limitedEditionSize: pin.limitedEditionSize ?? null,
         editionType: pin.edition ?? null, origin: pin.origin ?? null,
         manufacturer: pin.manufacturer ?? null,

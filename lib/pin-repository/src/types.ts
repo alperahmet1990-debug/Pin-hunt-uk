@@ -56,6 +56,12 @@ export interface CataloguePin {
   needsFrontImage?: boolean;
   needsBackImage?: boolean;
   importBatchId?: string;
+  /** Enriched character data from the master catalogue import. */
+  mainCharacter?: string;
+  /** Semicolon-separated list of all characters on the pin. */
+  allCharacters?: string;
+  characterConfidence?: string;
+  characterReviewStatus?: string;
   createdAt?: string;
   updatedAt?: string;
   catalogueUpdatedAt?: string;

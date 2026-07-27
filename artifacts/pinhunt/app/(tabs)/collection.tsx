@@ -239,6 +239,9 @@ export default function CollectionScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection, counts } = useCollection();
+  // `pins` already includes any collection pins pulled in via ensurePins
+  // (see CollectionContext), so owned pins render even when they fall
+  // outside the cached catalogue slice.
   const { pins: catalogue } = usePinCatalogue();
   const { allBoards, customBoards, createBoard, getBoardPins, suggestedBoards } = useBoards();
 

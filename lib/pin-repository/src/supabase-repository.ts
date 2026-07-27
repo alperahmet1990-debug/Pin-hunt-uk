@@ -281,6 +281,23 @@ class SupabasePinRepository implements PinRepository {
     return rowToPin(data as unknown as PinRow);
   }
 
+  // ── getPinsByIds ───────────────────────────────────────────────────────
+
+  async getPinsByIds(pinhuntIds: string[]): Promise<CataloguePin[]> {
+    if (pinhuntIds.length === 0) return [];
+    const out: CataloguePin[] = [];
+    // Chunk to keep query URLs a safe size for large collections.
+    for (let i = 0; i < pinhuntIds.length; i += 200) {
+      const { data, error } = await this.client
+        .from('pins')
+        .select(SELECT_PINS)
+        .in('pinhunt_id', pinhuntIds.slice(i, i + 200));
+      if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+      out.push(...(data as unknown as PinRow[]).map(rowToPin));
+    }
+    return out;
+  }
+
   // ── getPinsBySeries ────────────────────────────────────────────────────
 
   async getPinsBySeries(series: string): Promise<CataloguePin[]> {

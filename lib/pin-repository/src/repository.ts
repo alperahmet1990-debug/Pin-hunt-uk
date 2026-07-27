@@ -40,6 +40,9 @@ export interface PinRepository {
   /** All accessible pins belonging to a named series / collection. */
   getPinsBySeries(series: string): Promise<CataloguePin[]>;
 
+  /** Fetch multiple pins by their PinHunt IDs (order not guaranteed). */
+  getPinsByIds(pinhuntIds: string[]): Promise<CataloguePin[]>;
+
   /**
    * All accessible pins featuring a character (case-insensitive substring match).
    * e.g. "Mickey" matches "Mickey Mouse".

@@ -8,6 +8,7 @@ import React, {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { CollectionEntry, CollectionMap } from '@/types/collection';
 import type { CollectionStatus } from '@/types/pin';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
 
 interface CollectionContextValue {
   collection: CollectionMap;
@@ -29,6 +30,16 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
   const [collection, setCollection] = useState<CollectionMap>({});
   const [recentlyViewed, setRecentlyViewed] = useState<string[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const { ensurePins } = usePinCatalogue();
+
+  // The catalogue context caches only a slice of the catalogue; pins in the
+  // user's collection may fall outside it. Pull any missing ones in so the
+  // Collection tab, boards, and home screen can always render them.
+  useEffect(() => {
+    if (!loaded) return;
+    const ids = Object.keys(collection);
+    if (ids.length > 0) void ensurePins(ids);
+  }, [loaded, collection, ensurePins]);
 
   useEffect(() => {
     Promise.all([

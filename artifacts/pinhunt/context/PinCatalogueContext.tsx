@@ -49,6 +49,12 @@ interface PinCatalogueContextValue {
   repository: PinRepository | null;
   /** Re-fetch the full catalogue from Supabase. */
   refresh(): Promise<void>;
+  /**
+   * Make sure the given PinHunt IDs are present in `pins`, fetching any that
+   * fall outside the cached slice. Collection/boards call this so pins a user
+   * owns always render even when they're not in the first catalogue page.
+   */
+  ensurePins(pinhuntIds: string[]): Promise<void>;
 }
 
 const PinCatalogueContext = createContext<PinCatalogueContextValue | null>(null);
@@ -126,6 +132,35 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
     fetchCatalogue();
   }, [fetchCatalogue]);
 
+  // Track in-flight/failed lookups so we don't refetch the same missing IDs
+  // on every call (e.g. IDs that no longer exist in the catalogue).
+  const requestedIdsRef = useRef<Set<string>>(new Set());
+
+  const ensurePins = useCallback(async (pinhuntIds: string[]) => {
+    if (!repository || pinhuntIds.length === 0) return;
+    const have = new Set(pinsRef.current.map(p => p.id));
+    const missing = pinhuntIds.filter(id => !have.has(id) && !requestedIdsRef.current.has(id));
+    if (missing.length === 0) return;
+    missing.forEach(id => requestedIdsRef.current.add(id));
+    try {
+      const fetched = await repository.getPinsByIds(missing);
+      if (fetched.length > 0) {
+        setPins(current => {
+          const existing = new Set(current.map(p => p.id));
+          const additions = fetched.filter(p => !existing.has(p.id));
+          return additions.length > 0 ? [...current, ...additions] : current;
+        });
+      }
+    } catch {
+      // Allow a retry on next call.
+      missing.forEach(id => requestedIdsRef.current.delete(id));
+    }
+  }, [repository]);
+
+  // Ref mirror of pins so ensurePins reads fresh state without re-creating.
+  const pinsRef = useRef<CataloguePin[]>([]);
+  useEffect(() => { pinsRef.current = pins; }, [pins]);
+
   const newReleases = useMemo(() => pins.filter(p => p.isNewRelease), [pins]);
   const series = useMemo(
     () => [...new Set(pins.map(p => p.collection))].sort(),
@@ -133,8 +168,8 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
   );
 
   const value = useMemo<PinCatalogueContextValue>(
-    () => ({ pins, loading, error, newReleases, series, repository, refresh: fetchCatalogue }),
-    [pins, loading, error, newReleases, series, repository, fetchCatalogue],
+    () => ({ pins, loading, error, newReleases, series, repository, refresh: fetchCatalogue, ensurePins }),
+    [pins, loading, error, newReleases, series, repository, fetchCatalogue, ensurePins],
   );
 
   return (

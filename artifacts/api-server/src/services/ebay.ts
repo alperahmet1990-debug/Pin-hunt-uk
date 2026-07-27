@@ -95,7 +95,10 @@ export async function searchListings(
     limit: String(limit),
     // Fixed-price (Buy It Now) only: auction listings report the *current bid*,
     // which skews estimates low. Sold-price data needs a restricted eBay API.
-    filter: "buyingOptions:{FIXED_PRICE}",
+    // Also restrict to sellers located in the marketplace's own country —
+    // otherwise GB searches return US-seller listings whose ebay.co.uk links
+    // redirect to ebay.com, and their prices don't reflect the local market.
+    filter: `buyingOptions:{FIXED_PRICE},itemLocationCountry:${marketplace === "EBAY_GB" ? "GB" : "US"}`,
   });
   const resp = await fetch(
     `${api}/buy/browse/v1/item_summary/search?${params.toString()}`,

@@ -7,3 +7,8 @@ description: eBay OAuth/keyset gotchas hit while building the valuation feature 
 - **Credential confusion is common:** `EBAY_CLIENT_ID` = App ID (starts with the username, e.g. `name-App-PRD-...`); `EBAY_CLIENT_SECRET` = Cert ID (starts `PRD-`). User once pasted the Cert ID into both — detectable safely by comparing the two env vars for equality without printing them.
 - **Why:** these two failure modes both surface as identical 401s from the token endpoint; check keyset activation and value-equality first before suspecting code.
 - Testing authed API routes without a real login: create a temp Supabase user with the service-role admin API, signInWithPassword for a token, delete the user after. Script must run from a dir with `@supabase/supabase-js` resolvable (api-server).
+
+## GB listing links redirecting to ebay.com
+Browse API GB-marketplace searches return international (US-seller) listings; their ebay.co.uk itemWebUrl redirects to ebay.com when opened. Rewriting the domain is not enough.
+**Why:** eBay sends visitors to the listing's home site, ignoring the URL's TLD.
+**How to apply:** add `itemLocationCountry:GB` (or `:US`) to the Browse `filter` param so each marketplace search only returns locally-listed items. Remember stored snapshots keep old results until each pin's market value is refreshed.

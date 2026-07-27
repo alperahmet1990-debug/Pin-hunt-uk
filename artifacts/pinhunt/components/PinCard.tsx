@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { CollectionBadge } from './CollectionBadge';
@@ -27,13 +28,36 @@ interface PinCardProps {
   pin: CataloguePin;
   onPress: () => void;
   mode?: 'grid' | 'list';
+  /** When set, shows a quick-add button that opens the QuickAddSheet. */
+  onQuickAdd?: () => void;
 }
 
-export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
+export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProps) {
   const colors = useColors();
   const { getEntry } = useCollection();
   const entry = getEntry(pin.id);
   const status = entry?.status ?? 'none';
+  const added = status !== 'none';
+
+  const quickAddButton = onQuickAdd ? (
+    <TouchableOpacity
+      onPress={e => {
+        // Keep the tap from also triggering the card's navigation press.
+        e.stopPropagation?.();
+        onQuickAdd();
+      }}
+      hitSlop={8}
+      activeOpacity={0.8}
+      accessibilityRole="button"
+      accessibilityLabel={added ? `Update ${pin.title} in collection` : `Quick add ${pin.title}`}
+      style={[
+        styles.quickAddBtn,
+        { backgroundColor: added ? colors.owned : colors.primary },
+      ]}
+    >
+      <Feather name={added ? 'check' : 'plus'} size={16} color="#fff" />
+    </TouchableOpacity>
+  ) : null;
   // Latest saved eBay value (batched, read-only) — falls back to the
   // catalogue estimate when no eBay value has been checked yet.
   const latest = useLatestMarketValue(pin.id);
@@ -82,6 +106,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
               {priceLabel}
             </Text>
             {status !== 'none' && <CollectionBadge status={status} size="sm" />}
+            {quickAddButton}
           </View>
         </View>
         {pin.limitedEditionSize ? (
@@ -143,6 +168,7 @@ export function PinCard({ pin, onPress, mode = 'grid' }: PinCardProps) {
             {priceLabel}
           </Text>
           {status !== 'none' && <CollectionBadge status={status} size="sm" />}
+          {quickAddButton}
         </View>
       </View>
     </TouchableOpacity>
@@ -269,5 +295,13 @@ const styles = StyleSheet.create({
     fontSize: 9,
     fontFamily: 'Inter_700Bold',
     color: '#fff',
+  },
+  quickAddBtn: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 6,
   },
 });

@@ -17,7 +17,9 @@ import { PinCard } from '@/components/PinCard';
 import { SearchBar } from '@/components/SearchBar';
 import { FilterBar, StatusFilter } from '@/components/FilterBar';
 import { EmptyState } from '@/components/EmptyState';
+import { QuickAddSheet } from '@/components/QuickAddSheet';
 import type { Brand } from '@/types/pin';
+import type { CataloguePin } from '@workspace/pin-repository';
 
 type ViewMode = 'grid' | 'list';
 
@@ -29,6 +31,7 @@ export default function CatalogueScreen() {
 
   const { pins } = usePinCatalogue();
   const [query, setQuery] = useState('');
+  const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [brand, setBrand] = useState<Brand | 'All'>('All');
   const [status, setStatus] = useState<StatusFilter>('any');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
@@ -131,10 +134,13 @@ export default function CatalogueScreen() {
               onPress={() =>
                 router.push({ pathname: '/pin/[id]', params: { id: item.id } })
               }
+              onQuickAdd={() => setQuickAddPin(item)}
             />
           )}
         />
       )}
+
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
     </View>
   );
 }

@@ -21,6 +21,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
+import { QuickAddSheet } from '@/components/QuickAddSheet';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── API ─────────────────────────────────────────────────────────────────────
@@ -96,6 +97,7 @@ export default function ScanScreen() {
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
   const [selectedMatch, setSelectedMatch] = useState<CataloguePin | null>(null);
+  const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
@@ -365,6 +367,14 @@ export default function ScanScreen() {
                   <Text style={[styles.confirmedStatus, { color: colors.owned }]}>✓ Added to Owned</Text>
                 </View>
               </View>
+              <TouchableOpacity
+                onPress={() => setQuickAddPin(selectedMatch)}
+                style={[styles.boardsBtn, { borderColor: colors.border, borderRadius: colors.radius, backgroundColor: colors.card }]}
+                activeOpacity={0.8}
+              >
+                <Feather name="grid" size={15} color={colors.primary} />
+                <Text style={[styles.boardsBtnLabel, { color: colors.primary }]}>Add to a Board / Change Status</Text>
+              </TouchableOpacity>
               <View style={styles.confirmedActions}>
                 <TouchableOpacity
                   onPress={() => router.push({ pathname: '/pin/[id]', params: { id: selectedMatch.id } })}
@@ -441,6 +451,8 @@ export default function ScanScreen() {
         )}
 
       </ScrollView>
+
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
     </View>
   );
 }
@@ -558,6 +570,16 @@ const styles = StyleSheet.create({
   confirmedCardBrand: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   confirmedStatus: { fontSize: 13, fontFamily: 'Inter_600SemiBold', marginTop: 4 },
   confirmedActions: { flexDirection: 'row', gap: 12 },
+  boardsBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    borderWidth: 1,
+    paddingVertical: 12,
+    marginBottom: 12,
+  },
+  boardsBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   // Matches
   matchesSection: { marginTop: 20, paddingHorizontal: 16, gap: 10 },
   matchesTitle: { fontSize: 18, fontFamily: 'Inter_700Bold' },

@@ -15,6 +15,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinCard } from '@/components/PinCard';
 import { EmptyState } from '@/components/EmptyState';
+import { QuickAddSheet } from '@/components/QuickAddSheet';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 type PinFilter = 'all' | 'owned' | 'missing';
@@ -36,6 +37,8 @@ export default function SetDetailScreen() {
     () => catalogue.filter(p => p.collection === collectionParam),
     [catalogue, collectionParam],
   );
+
+  const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
 
   const ownedIds = useMemo(
     () => new Set(Object.values(userCollection).filter(e => e.status === 'owned').map(e => e.pinId)),
@@ -187,6 +190,7 @@ export default function SetDetailScreen() {
                     onPress={() =>
                       router.push({ pathname: '/pin/[id]', params: { id: item.id } })
                     }
+                    onQuickAdd={() => setQuickAddPin(item)}
                   />
                   {isMissing && (
                     <View
@@ -206,6 +210,8 @@ export default function SetDetailScreen() {
             }}
           />
         )}
+
+        <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
       </View>
     </>
   );

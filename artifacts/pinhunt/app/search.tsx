@@ -24,6 +24,8 @@ import { Feather } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useColors } from '@/hooks/useColors';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { useCollection } from '@/context/CollectionContext';
+import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { getPinImageSource } from '@/utils/pinImage';
 import type { CataloguePin } from '@workspace/pin-repository';
 
@@ -35,8 +37,10 @@ export default function SearchScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { pins, repository } = usePinCatalogue();
+  const { getEntry } = useCollection();
 
   const [query, setQuery] = useState('');
+  const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [results, setResults] = useState<CataloguePin[]>([]);
   const [searching, setSearching] = useState(false);
   const [recents, setRecents] = useState<string[]>([]);
@@ -256,13 +260,31 @@ export default function SearchScreen() {
                       {pin.brand} · {pin.collection}
                     </Text>
                   </View>
-                  <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+                  <TouchableOpacity
+                    onPress={e => { e.stopPropagation?.(); saveRecent(query); setQuickAddPin(pin); }}
+                    hitSlop={8}
+                    activeOpacity={0.8}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Quick add ${pin.title}`}
+                    style={[
+                      styles.quickAddBtn,
+                      { backgroundColor: getEntry(pin.id)?.status && getEntry(pin.id)!.status !== 'none' ? colors.owned : colors.primary },
+                    ]}
+                  >
+                    <Feather
+                      name={getEntry(pin.id)?.status && getEntry(pin.id)!.status !== 'none' ? 'check' : 'plus'}
+                      size={15}
+                      color="#fff"
+                    />
+                  </TouchableOpacity>
                 </TouchableOpacity>
               ))
             )}
           </View>
         )}
       </ScrollView>
+
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
     </View>
   );
 }
@@ -329,6 +351,13 @@ const styles = StyleSheet.create({
   },
   resultImage: { width: 44, height: 44, borderRadius: 8 },
   resultInfo: { flex: 1 },
+  quickAddBtn: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   resultTitle: { fontSize: 15, fontWeight: '600' },
   resultMeta: { fontSize: 13, marginTop: 2 },
 });

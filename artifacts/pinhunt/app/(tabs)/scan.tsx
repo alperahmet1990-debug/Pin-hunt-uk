@@ -21,7 +21,6 @@ import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
-import { QuickAddSheet } from '@/components/QuickAddSheet';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── API ─────────────────────────────────────────────────────────────────────
@@ -53,7 +52,7 @@ async function identifyPin(
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-type ScanState = 'idle' | 'captured' | 'identifying' | 'results' | 'confirmed';
+type ScanState = 'idle' | 'captured' | 'identifying' | 'results';
 
 interface CapturedImage {
   uri: string;
@@ -89,15 +88,13 @@ export default function ScanScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { setStatus, markViewed } = useCollection();
+  const { markViewed } = useCollection();
   const { pins, repository } = usePinCatalogue();
   const { session } = useAuth();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
-  const [selectedMatch, setSelectedMatch] = useState<CataloguePin | null>(null);
-  const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
@@ -208,17 +205,14 @@ export default function ScanScreen() {
   // ── Confirm match ─────────────────────────────────────────────────────────────
   const handleSelectMatch = (match: Match) => {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    setSelectedMatch(match.pin);
-    setStatus(match.pin.id, 'owned');
     markViewed(match.pin.id);
-    setScanState('confirmed');
+    router.push({ pathname: '/pin/[id]', params: { id: match.pin.id } });
   };
 
   const handleReset = () => {
     setScanState('idle');
     setCaptured(null);
     setMatches([]);
-    setSelectedMatch(null);
     setErrorMsg(null);
   };
 
@@ -266,7 +260,7 @@ export default function ScanScreen() {
               </View>
             )}
 
-            {captured && scanState !== 'idle' && scanState !== 'confirmed' && (
+            {captured && scanState !== 'idle' && (
               <Image source={{ uri: captured.uri }} style={styles.capturedImage} />
             )}
 
@@ -275,15 +269,6 @@ export default function ScanScreen() {
                 <View style={[styles.scanLine, { backgroundColor: colors.primary }]} />
                 <ActivityIndicator color="#fff" size="large" />
                 <Text style={styles.overlayText}>Analysing with AI…</Text>
-              </View>
-            )}
-
-            {scanState === 'confirmed' && selectedMatch && (
-              <View style={styles.overlay}>
-                <View style={[styles.confirmedIcon, { backgroundColor: colors.owned }]}>
-                  <Feather name="check" size={32} color="#fff" />
-                </View>
-                <Text style={styles.overlayText}>Added to Collection!</Text>
               </View>
             )}
 
@@ -357,42 +342,6 @@ export default function ScanScreen() {
             </View>
           )}
 
-          {scanState === 'confirmed' && selectedMatch && (
-            <View style={styles.confirmedBlock}>
-              <View style={[styles.confirmedCard, { backgroundColor: colors.card, borderRadius: colors.radius, borderColor: colors.border }]}>
-                <Image source={getPinImageSource(selectedMatch)} style={styles.confirmedCardImage} />
-                <View style={styles.confirmedCardInfo}>
-                  <Text style={[styles.confirmedCardTitle, { color: colors.foreground }]}>{selectedMatch.title}</Text>
-                  <Text style={[styles.confirmedCardBrand, { color: colors.mutedForeground }]}>{selectedMatch.brand}</Text>
-                  <Text style={[styles.confirmedStatus, { color: colors.owned }]}>✓ Added to Owned</Text>
-                </View>
-              </View>
-              <TouchableOpacity
-                onPress={() => setQuickAddPin(selectedMatch)}
-                style={[styles.boardsBtn, { borderColor: colors.border, borderRadius: colors.radius, backgroundColor: colors.card }]}
-                activeOpacity={0.8}
-              >
-                <Feather name="grid" size={15} color={colors.primary} />
-                <Text style={[styles.boardsBtnLabel, { color: colors.primary }]}>Add to a Board / Change Status</Text>
-              </TouchableOpacity>
-              <View style={styles.confirmedActions}>
-                <TouchableOpacity
-                  onPress={() => router.push({ pathname: '/pin/[id]', params: { id: selectedMatch.id } })}
-                  style={[styles.secondaryBtn, { flex: 1, borderColor: colors.border, borderRadius: colors.radius, backgroundColor: colors.card }]}
-                  activeOpacity={0.8}
-                >
-                  <Text style={[styles.secondaryBtnLabel, { color: colors.foreground }]}>View Pin</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={handleReset}
-                  style={[styles.identifyBtn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
-                  activeOpacity={0.85}
-                >
-                  <Text style={[styles.primaryBtnLabel, { color: colors.primaryForeground }]}>Scan Another</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          )}
         </View>
 
         {/* ── Match results ── */}
@@ -400,7 +349,7 @@ export default function ScanScreen() {
           <View style={styles.matchesSection}>
             <Text style={[styles.matchesTitle, { color: colors.foreground }]}>Possible Matches</Text>
             <Text style={[styles.matchesSub, { color: colors.mutedForeground }]}>
-              Tap the correct pin to add it to your collection
+              Tap the correct pin to see its details and value
             </Text>
 
             {matches.map((match, i) => (
@@ -452,7 +401,6 @@ export default function ScanScreen() {
 
       </ScrollView>
 
-      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
     </View>
   );
 }

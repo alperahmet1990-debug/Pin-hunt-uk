@@ -176,6 +176,9 @@ router.post('/geocode/clear', async (req: Request, res: Response) => {
       approx_lat: null,
       approx_lng: null,
       postcode: null,
+      // With no location stored, Nearby discovery cannot work — turn the
+      // toggle off so the client doesn't show a misleading ON state.
+      nearby_discovery_enabled: false,
       updated_at: new Date().toISOString(),
     })
     .eq('id', user.id);

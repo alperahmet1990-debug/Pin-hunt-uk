@@ -632,6 +632,10 @@ export interface Database {
           total_ratings: number;
         }>;
       };
+      set_user_pin_status: {
+        Args: { p_pinhunt_id: string; p_status: string };
+        Returns: undefined;
+      };
       get_potential_trades: {
         Args: { p_viewer_id: string; p_collector_id: string };
         Returns: Array<{

@@ -160,7 +160,9 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
         for (const row of data as any[]) {
           const pinId = row.pins?.pinhunt_id;
           const status = row.status as string;
-          if (!pinId || status === 'traded') continue;
+          // Only accept statuses the app understands; skip anything else
+          // (e.g. legacy values like 'traded' that may linger in old rows).
+          if (!pinId || !['owned', 'wanted', 'for_trade'].includes(status)) continue;
           serverIds.add(pinId);
           next[pinId] = {
             pinId,

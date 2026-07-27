@@ -250,6 +250,10 @@ export default function EditProfileScreen() {
               setGeocodingError(err);
             } else {
               setPostcode('');
+              // The server also disables Nearby discovery when the location is
+              // cleared — mirror that locally so the toggle turns off (and a
+              // later Save doesn't re-enable it).
+              setNearbyDiscovery(false);
               await refreshProfile();
             }
             setRemovingLocation(false);

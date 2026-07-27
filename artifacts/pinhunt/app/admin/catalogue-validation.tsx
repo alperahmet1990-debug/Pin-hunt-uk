@@ -691,6 +691,9 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
             <SmallBtn label="Edit record" icon="edit-2" color={colors.primary} onPress={onEdit} disabled={busy} colors={colors} />
             {!reviewed && (
               <>
+                {suggestions.length === 0 && (
+                  <SmallBtn label="Confirm correct" icon="check-circle" color="#16a34a" onPress={() => onDecision('approve')} disabled={busy} colors={colors} />
+                )}
                 <SmallBtn label="Reject" icon="x" color="#dc2626" onPress={() => onDecision('reject')} disabled={busy} colors={colors} />
                 <SmallBtn label="Can't verify" icon="help-circle" color="#6b7280" onPress={() => onDecision('unable_to_verify')} disabled={busy} colors={colors} />
                 {result.suspected_duplicate_pin_id && (

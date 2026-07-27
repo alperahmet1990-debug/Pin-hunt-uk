@@ -25,7 +25,7 @@ import {
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
@@ -75,6 +75,7 @@ interface ValidationFlag { code: string; message: string }
 
 interface ValidationResult {
   id: string;
+  pin_id: string;
   pinhunt_id: string;
   validation_status: ValidationStatus;
   confidence_score: number | null;
@@ -126,6 +127,7 @@ const SUGGESTION_FIELDS: Array<{ key: string; label: string; get: (r: Validation
 
 export default function CatalogueValidationScreen() {
   const colors = useColors();
+  const router = useRouter();
   const insets = useSafeAreaInsets();
   const { session } = useAuth();
   const token = session?.access_token;
@@ -426,6 +428,7 @@ export default function CatalogueValidationScreen() {
             onApprovePicked={(fields) => confirmApprove(item, fields)}
             onDecision={(action) => sendDecision(item, action)}
             onRevalidate={() => revalidate(item)}
+            onEdit={() => router.push({ pathname: '/admin/pin/[id]' as any, params: { id: item.pin_id } })}
           />
         )}
       />
@@ -459,7 +462,7 @@ function SummaryRow({ label, value, color, colors }: { label: string; value: num
   );
 }
 
-function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, picked, onTogglePick, onApprovePicked, onDecision, onRevalidate }: {
+function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, picked, onTogglePick, onApprovePicked, onDecision, onRevalidate, onEdit }: {
   result: ValidationResult;
   colors: ReturnType<typeof useColors>;
   expanded: boolean;
@@ -471,6 +474,7 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
   onApprovePicked: (fields: string[]) => void;
   onDecision: (action: string) => void;
   onRevalidate: () => void;
+  onEdit: () => void;
 }) {
   const meta = STATUS_META[result.validation_status];
   const snap = result.pin_snapshot ?? {};
@@ -619,16 +623,19 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
           )}
 
           {/* Decision buttons */}
-          {!reviewed && (
-            <View style={styles.decisionRow}>
-              <SmallBtn label="Reject" icon="x" color="#dc2626" onPress={() => onDecision('reject')} disabled={busy} colors={colors} />
-              <SmallBtn label="Can't verify" icon="help-circle" color="#6b7280" onPress={() => onDecision('unable_to_verify')} disabled={busy} colors={colors} />
-              {result.suspected_duplicate_pin_id && (
-                <SmallBtn label="Confirm duplicate" icon="copy" color="#d97706" onPress={() => onDecision('mark_duplicate')} disabled={busy} colors={colors} />
-              )}
-              <SmallBtn label="Re-check" icon="refresh-cw" color={colors.primary} onPress={onRevalidate} disabled={busy} colors={colors} />
-            </View>
-          )}
+          <View style={styles.decisionRow}>
+            <SmallBtn label="Edit record" icon="edit-2" color={colors.primary} onPress={onEdit} disabled={busy} colors={colors} />
+            {!reviewed && (
+              <>
+                <SmallBtn label="Reject" icon="x" color="#dc2626" onPress={() => onDecision('reject')} disabled={busy} colors={colors} />
+                <SmallBtn label="Can't verify" icon="help-circle" color="#6b7280" onPress={() => onDecision('unable_to_verify')} disabled={busy} colors={colors} />
+                {result.suspected_duplicate_pin_id && (
+                  <SmallBtn label="Confirm duplicate" icon="copy" color="#d97706" onPress={() => onDecision('mark_duplicate')} disabled={busy} colors={colors} />
+                )}
+                <SmallBtn label="Re-check" icon="refresh-cw" color={colors.primary} onPress={onRevalidate} disabled={busy} colors={colors} />
+              </>
+            )}
+          </View>
         </View>
       )}
     </TouchableOpacity>

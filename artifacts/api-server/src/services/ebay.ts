@@ -19,6 +19,8 @@ export interface EbayListing {
   deliveryPrice?: number;
   currency?: string;
   condition?: string;
+  /** Seller item location country code, when eBay reports it. */
+  sellerLocation?: string;
 }
 
 function getEnvironment(): "production" | "sandbox" {
@@ -126,6 +128,7 @@ export async function searchListings(
       image?: { imageUrl?: string };
       price?: { value?: string; currency?: string };
       condition?: string;
+      itemLocation?: { country?: string };
       shippingOptions?: Array<{
         shippingCost?: { value?: string; currency?: string };
       }>;
@@ -150,6 +153,7 @@ export async function searchListings(
       deliveryPrice: shippingValues.length > 0 ? Math.min(...shippingValues) : undefined,
       currency: item.price?.currency,
       condition: item.condition,
+      sellerLocation: item.itemLocation?.country,
     };
   });
 }

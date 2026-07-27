@@ -7,6 +7,7 @@ import catalogueImportRouter from "./catalogue-import";
 import marketValueRouter from "./market-value";
 import ebayDeletionRouter from "./ebay-deletion";
 import ebayImageDryRunRouter from "./ebay-image-dryrun";
+import catalogueValidationRouter from "./catalogue-validation";
 
 const router: IRouter = Router();
 
@@ -18,5 +19,6 @@ router.use(catalogueImportRouter);
 router.use(marketValueRouter);
 router.use(ebayDeletionRouter);
 router.use(ebayImageDryRunRouter);
+router.use(catalogueValidationRouter);
 
 export default router;

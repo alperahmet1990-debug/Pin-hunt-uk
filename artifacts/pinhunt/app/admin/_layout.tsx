@@ -41,6 +41,7 @@ export default function AdminLayout() {
       <Stack.Screen name="catalogue"    options={{ title: 'Catalogue' }} />
       <Stack.Screen name="pin/[id]"     options={{ title: 'Pin Editor' }} />
       <Stack.Screen name="community-moderation" options={{ title: 'Community Moderation' }} />
+      <Stack.Screen name="catalogue-validation" options={{ title: 'Catalogue Validation' }} />
     </Stack>
   );
 }

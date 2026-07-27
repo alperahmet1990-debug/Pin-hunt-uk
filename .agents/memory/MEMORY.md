@@ -7,3 +7,4 @@
 - [PinHunt catalogue images](pinhunt-images.md) — no real images anywhere yet (all placeholder); stale needs_*_image flags; eBay match-scoring lessons (series tokens, Buy It Now only)
 - [AI model quirks](ai-model-quirks.md) — vision calls need ≥1024 completion tokens or content is silently empty; sibling pins need image-based comparison
 - [Expo web photo uploads](expo-web-uploads.md) — FormData uploads 0 bytes and image-manipulator crashes on web; use Blob + canvas path
+- [Catalogue validation via eBay](catalogue-validation.md) — suggestions-only pattern, atomic apply+audit RPC, single-run DB lock, asking-price wording rules

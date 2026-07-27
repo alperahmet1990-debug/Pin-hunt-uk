@@ -178,6 +178,13 @@ export default function AdminIndexScreen() {
           colors={colors}
         />
         <ActionCard
+          icon="check-square"
+          title="Catalogue Validation"
+          description="Check catalogue records against eBay listings and review suggested corrections. Nothing changes without your approval."
+          onPress={() => router.push('/admin/catalogue-validation' as any)}
+          colors={colors}
+        />
+        <ActionCard
           icon="plus-circle"
           title="Add New Pin"
           description="Create a new catalogue entry directly."

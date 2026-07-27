@@ -1,0 +1,414 @@
+I want you to build an eBay catalogue validation tool for the existing PinHunt pin database.
+
+The purpose is to identify errors in the spreadsheet data we imported, including incorrect pin names, characters, years, edition sizes, collections, duplicates and speculative records.
+
+Do not automatically overwrite the existing pin catalogue. All eBay findings must be stored as suggestions and reviewed by an admin before any changes are applied.
+
+Existing setup
+
+* The app uses Supabase.
+* The pin catalogue has already been imported from a spreadsheet.
+* eBay API credentials are already configured.
+* Use the official eBay Browse API.
+* Do not scrape eBay pages.
+* Use active eBay listings for validation.
+* Do not claim that active listing prices are sold prices.
+
+Phase 1: 50-pin test
+
+Start with a dry run of 50 pins.
+
+Select a varied sample containing:
+
+* Disney Parks pins
+* Disneyland Paris pins
+* Disney Store pins
+* Limited Edition pins
+* Limited Release pins
+* Mystery collection pins
+* Loungefly pins
+* Artland pins
+* Pink a la Mode pins
+* Records with incomplete information
+* Records likely to be speculative or inaccurate
+
+Make the batch size configurable so we can later process larger batches.
+
+Search query generation
+
+For each pin, build a focused eBay search query using the most reliable available fields:
+
+* Pin name
+* Character
+* Collection or series
+* Release year
+* Edition size
+* Release location
+* Brand or manufacturer
+* SKU or product ID, where present
+
+Do not include blank, uncertain or obviously generic fields.
+
+Generate several search variations where useful. For example:
+
+1. Exact pin name
+2. Character + collection + year
+3. Character + edition size + Disney pin
+4. SKU or product ID
+5. Shortened title with unnecessary words removed
+
+Avoid overly long searches that return no results.
+
+Filters and exclusions
+
+Try to exclude results that appear to be:
+
+* Pin lots
+* Bundles
+* Fantasy pins
+* Custom pins
+* Fan-made pins
+* Scrappers
+* Counterfeits
+* Buttons
+* Badges that are not trading pins
+* Brooches
+* Keyrings
+* Magnets
+* Stickers
+* Posters
+* Digital products
+* Empty boxes
+* Replacement cards
+* Backing cards sold without a pin
+
+Do not reject a result solely because the seller mentions authenticity concerns. Instead, lower its confidence and flag it for review.
+
+Candidate matching
+
+Retrieve the top matching listings for each catalogue record.
+
+Keep the best 3 candidates for admin review.
+
+Compare each eBay candidate against the existing record using:
+
+* Pin-name similarity
+* Character match
+* Collection or series match
+* Year match
+* Edition size match
+* Limited Edition or Limited Release match
+* Release-location match
+* Manufacturer match
+* SKU or product-ID match
+* Image similarity, if technically available
+* Agreement across multiple independent listings
+
+Do not assume the first eBay result is correct.
+
+Confidence scoring
+
+Create a confidence score from 0 to 100.
+
+Use approximately this weighting:
+
+* Strong pin-name similarity: up to 25 points
+* Character match: up to 20 points
+* Collection or series match: up to 15 points
+* Edition size match: up to 15 points
+* Year match: up to 10 points
+* Release-location match: up to 5 points
+* Manufacturer match: up to 5 points
+* Multiple listings agreeing: up to 5 points
+
+Apply penalties such as:
+
+* Wrong character: minus 35
+* Conflicting edition size: minus 25
+* Conflicting year: minus 15
+* Fantasy or custom pin: minus 40
+* Pin lot or bundle: minus 25
+* Clearly different artwork: minus 40
+* Unrelated product type: minus 50
+
+Use these classifications:
+
+* 85–100: Strong match
+* 70–84: Probable match
+* 50–69: Needs admin review
+* Below 50: No reliable match
+
+A strong match should normally require agreement from at least two independent listings, unless there is an exact SKU or product-ID match.
+
+Detect likely spreadsheet errors
+
+Flag records where eBay evidence suggests:
+
+* Incorrect pin name
+* Incorrect character
+* Incorrect year
+* Incorrect edition size
+* Incorrect limited-edition status
+* Incorrect release location
+* Incorrect collection or series
+* Incorrect manufacturer
+* Possible duplicate catalogue record
+* Pin may not exist
+* Record may describe a set rather than an individual pin
+* Record may describe an individual pin rather than a full set
+* Record may be fantasy, custom or unofficial
+* Existing image may show a different pin
+* Existing title is too vague to identify reliably
+
+For every flag, provide a clear explanation.
+
+Example:
+
+“Existing record says LE 500, but four matching eBay listings consistently describe the pin as LE 1,000.”
+
+Do not state that eBay proves the correction. Use wording such as:
+
+“eBay evidence suggests…”
+
+Database changes
+
+Create a validation table if one does not already exist.
+
+Suggested structure:
+
+pin_ebay_validations
+
+* id
+* pin_id
+* validation_status
+* confidence_score
+* match_count
+* best_ebay_item_id
+* best_ebay_title
+* best_ebay_url
+* best_ebay_image_url
+* suggested_name
+* suggested_character
+* suggested_year
+* suggested_edition_size
+* suggested_edition_type
+* suggested_collection
+* suggested_release_location
+* suspected_duplicate_pin_id
+* validation_notes
+* validation_flags
+* raw_search_queries
+* raw_candidate_results
+* admin_status
+* reviewed_by
+* reviewed_at
+* created_at
+* updated_at
+
+Use JSONB for raw search queries, candidate results and validation flags where appropriate.
+
+Admin status values:
+
+* pending
+* approved
+* partially_approved
+* rejected
+* unable_to_verify
+
+Do not modify the original pin record until an admin approves a proposed change.
+
+Admin validation dashboard
+
+Create a protected admin page called:
+
+Catalogue Validation
+
+Show:
+
+* Number of pins checked
+* Strong matches
+* Probable matches
+* Needs review
+* No reliable matches
+* Suspected duplicates
+* Suspected incorrect records
+* API calls used
+* API errors
+
+For each pin, show the existing catalogue record on the left and the best eBay candidates on the right.
+
+Display:
+
+* Existing pin image
+* Existing title
+* Existing metadata
+* Confidence score
+* Validation classification
+* Detected conflicts
+* Suggested corrections
+* eBay candidate images
+* eBay titles
+* Asking prices
+* Seller location
+* Listing links
+* Number of matching independent listings
+
+Clearly label prices as:
+
+Current eBay asking price
+
+Do not label them as value, sold price or market value.
+
+Admin actions
+
+Provide these actions:
+
+* Approve all suggested changes
+* Approve selected fields only
+* Reject suggestion
+* Mark as unable to verify
+* Edit record manually
+* Approve image reference only
+* Keep existing image
+* Mark as duplicate
+* Merge duplicate records
+* Re-run validation
+* Open listing on eBay
+
+When approving selected fields, show checkboxes for each proposed field.
+
+Before applying changes, show a confirmation screen listing exactly what will change.
+
+Audit trail
+
+Create an audit log for every catalogue change.
+
+Record:
+
+* Pin ID
+* Previous value
+* New value
+* Changed field
+* Validation record
+* Admin user
+* Date and time
+* Reason for change
+
+Changes must be reversible.
+
+Duplicate detection
+
+Use both catalogue data and eBay evidence to identify likely duplicates.
+
+Compare:
+
+* Similar names
+* Same character
+* Same year
+* Same edition size
+* Same collection
+* Same SKU
+* Similar or identical images
+
+Do not automatically merge duplicates.
+
+Show suspected duplicate records side by side and let the admin choose:
+
+* Keep both
+* Merge
+* Mark as variants
+* Mark as set/member relationship
+* Ignore duplicate warning
+
+Image handling
+
+Use eBay images only as temporary validation references.
+
+Do not automatically download or permanently copy eBay seller images into Supabase storage.
+
+Store:
+
+* eBay item ID
+* Image URL
+* Listing URL
+* Retrieval date
+
+The admin may approve an image as a temporary catalogue reference, but it must remain linked to its eBay source.
+
+Do not remove an existing catalogue image automatically.
+
+API reliability
+
+Add:
+
+* Rate-limit handling
+* Retries with exponential backoff
+* Daily API call tracking
+* Logging for failed searches
+* Resume support if a batch stops
+* Configurable batch size
+* Ability to pause a batch
+* Ability to re-run only failed records
+* Caching so the same query is not repeatedly sent within a short period
+
+Do not exceed the eBay API allowance.
+
+Search-quality safeguards
+
+If a record is too vague, do not force a match.
+
+Examples:
+
+* “Mickey pin”
+* “Disney Princess”
+* “Stitch 2025”
+
+Mark these as insufficient data unless multiple fields or an image provide a reliable match.
+
+A pin receiving no eBay results should not automatically be marked incorrect. Use:
+
+“No reliable eBay evidence found.”
+
+Reporting
+
+At the end of the 50-pin dry run, create a report showing:
+
+* Total checked
+* Strong matches
+* Probable matches
+* Admin-review records
+* No-match records
+* Suspected spreadsheet errors
+* Suspected duplicates
+* Fields most commonly found to be wrong
+* Searches that produced poor results
+* API calls used
+* Any technical failures
+
+Also provide a downloadable CSV containing:
+
+* Original pin ID
+* Original data
+* Confidence score
+* Validation result
+* Suggested corrections
+* Validation notes
+* Best eBay listing URL
+* Admin status
+
+Important rules
+
+* Do not overwrite catalogue data automatically.
+* Do not scrape eBay.
+* Do not claim active listings are sold sales.
+* Do not treat seller information as authoritative.
+* Do not permanently copy images by default.
+* Do not delete catalogue records.
+* Do not merge records automatically.
+* Every proposed change must be reviewable.
+* Every approved change must be logged.
+* Existing app functionality must continue working.
+
+First inspect the current database schema and existing eBay integration. Reuse existing tables, API services and authentication where sensible rather than creating duplicate systems.
+
+Implement the 50-pin dry run first. Once complete, show me the validation dashboard and results before expanding the batch size.

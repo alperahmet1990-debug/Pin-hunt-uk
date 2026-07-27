@@ -600,6 +600,10 @@ export interface Database {
       };
     };
     Functions: {
+      set_user_pin_status: {
+        Args: { p_pinhunt_id: string; p_status: string };
+        Returns: undefined;
+      };
       is_admin: {
         Args: Record<string, never>;
         Returns: boolean;

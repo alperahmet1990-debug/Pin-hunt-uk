@@ -1030,11 +1030,19 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   // ── Trade ratings & for-trade discovery ─────────────────────────────────────
 
   async getUsersWithPinForTrade(pinId: string): Promise<TraderProfile[]> {
+    // 0. Callers pass the public pinhunt_id; user_pins.pin_id is the internal UUID.
+    const { data: pinRow, error: pinRowErr } = await this.client
+      .from('pins')
+      .select('id')
+      .eq('pinhunt_id', pinId)
+      .maybeSingle();
+    if (pinRowErr || !pinRow) return [];
+
     // 1. Get user_ids of people with this pin for_trade
     const { data: pinData, error: pinErr } = await this.client
       .from('user_pins')
       .select('user_id')
-      .eq('pin_id', pinId)
+      .eq('pin_id', (pinRow as { id: string }).id)
       .eq('status', 'for_trade');
 
     if (pinErr || !pinData || pinData.length === 0) return [];

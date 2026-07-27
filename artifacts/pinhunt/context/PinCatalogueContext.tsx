@@ -55,6 +55,12 @@ interface PinCatalogueContextValue {
    * owns always render even when they're not in the first catalogue page.
    */
   ensurePins(pinhuntIds: string[]): Promise<void>;
+  /**
+   * Ensure every pin of the named collections/sets is loaded, so set
+   * completion totals and missing-pin slots are computed against the full
+   * set rather than whatever slice happens to be cached.
+   */
+  ensureCollections(collectionNames: string[]): Promise<void>;
 }
 
 const PinCatalogueContext = createContext<PinCatalogueContextValue | null>(null);
@@ -117,7 +123,14 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
     setLoading(true);
     try {
       const data = await repository.searchPins('', { limit: 500 });
-      setPins(data);
+      // Merge rather than replace: pins pulled in via ensurePins (e.g. the
+      // user's collection) may have landed while this request was in flight,
+      // and replacing would silently drop them.
+      setPins(current => {
+        const inData = new Set(data.map(p => p.id));
+        const keep = current.filter(p => !inData.has(p.id));
+        return keep.length > 0 ? [...data, ...keep] : data;
+      });
     } catch (err) {
       setError(err instanceof Error ? err : new Error(String(err)));
     } finally {
@@ -157,6 +170,29 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
     }
   }, [repository]);
 
+  const requestedCollectionsRef = useRef<Set<string>>(new Set());
+
+  const ensureCollections = useCallback(async (collectionNames: string[]) => {
+    if (!repository || collectionNames.length === 0) return;
+    const missing = collectionNames.filter(n => !requestedCollectionsRef.current.has(n));
+    if (missing.length === 0) return;
+    missing.forEach(n => requestedCollectionsRef.current.add(n));
+    try {
+      const results = await Promise.all(missing.map(n => repository.getPinsBySeries(n)));
+      const fetched = results.flat();
+      if (fetched.length > 0) {
+        setPins(current => {
+          const existing = new Set(current.map(p => p.id));
+          const additions = fetched.filter(p => !existing.has(p.id));
+          return additions.length > 0 ? [...current, ...additions] : current;
+        });
+      }
+    } catch {
+      // Allow a retry on next call.
+      missing.forEach(n => requestedCollectionsRef.current.delete(n));
+    }
+  }, [repository]);
+
   // Ref mirror of pins so ensurePins reads fresh state without re-creating.
   const pinsRef = useRef<CataloguePin[]>([]);
   useEffect(() => { pinsRef.current = pins; }, [pins]);
@@ -168,8 +204,8 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
   );
 
   const value = useMemo<PinCatalogueContextValue>(
-    () => ({ pins, loading, error, newReleases, series, repository, refresh: fetchCatalogue, ensurePins }),
-    [pins, loading, error, newReleases, series, repository, fetchCatalogue, ensurePins],
+    () => ({ pins, loading, error, newReleases, series, repository, refresh: fetchCatalogue, ensurePins, ensureCollections }),
+    [pins, loading, error, newReleases, series, repository, fetchCatalogue, ensurePins, ensureCollections],
   );
 
   return (

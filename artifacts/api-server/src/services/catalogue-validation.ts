@@ -844,6 +844,65 @@ export async function applyValidationDecision(args: DecisionArgs): Promise<{ cha
   return { changedFields };
 }
 
+/**
+ * Apply an eBay candidate's image to the catalogue pin. Admin picks a specific
+ * listing from the stored candidates; the pin image + audit row commit
+ * atomically. Overwrites an existing image only when the admin confirms
+ * (the UI warns first); the previous URL is preserved in the audit trail.
+ */
+export async function applyValidationImage(args: {
+  validationId: string;
+  itemId: string;
+  adminId: string;
+}): Promise<{ imageUrl: string }> {
+  const sb = getServiceClient();
+  const { data: v, error } = await sb
+    .from("pin_ebay_validations")
+    .select("id, pin_id, pinhunt_id, raw_candidate_results")
+    .eq("id", args.validationId)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  if (!v) throw Object.assign(new Error("Validation record not found"), { status: 404 });
+
+  const candidates = (v.raw_candidate_results ?? []) as Array<Record<string, unknown>>;
+  const cand = candidates.find(c => c.itemId === args.itemId);
+  if (!cand || typeof cand.imageUrl !== "string" || !cand.imageUrl) {
+    throw Object.assign(new Error("That listing has no usable image"), { status: 400 });
+  }
+  // eBay serves the same image at multiple sizes; request the 1600px version.
+  const hiResUrl = cand.imageUrl.replace(/\/s-l\d+(\.\w+)$/, "/s-l1600$1");
+
+  const { data: pinRow, error: pinErr } = await sb
+    .from("pins").select("id, image_url").eq("id", v.pin_id).single();
+  if (pinErr || !pinRow) throw new Error(`Pin load failed: ${pinErr?.message}`);
+
+  const { error: rpcErr } = await sb.rpc("apply_validation_changes", {
+    p_pin_id: v.pin_id,
+    p_patch: { image_url: hiResUrl },
+    p_audit: [{
+      validation_id: v.id,
+      changed_field: "image_url",
+      previous_value: pinRow.image_url ?? null,
+      new_value: hiResUrl,
+      reason: `Image taken from eBay listing: ${cand.url ?? cand.itemId}`,
+      changed_by: args.adminId,
+    }],
+  });
+  if (rpcErr) throw new Error(`Applying image failed: ${rpcErr.message}`);
+
+  // Provenance record so eBay-sourced images are identifiable later.
+  await sb.from("pin_images").insert({
+    pin_id: v.pin_id,
+    image_url: hiResUrl,
+    image_type: "front",
+    is_primary: true,
+    description: `Image from eBay listing via catalogue validation: ${cand.url ?? cand.itemId}`,
+  });
+
+  logger.info({ pin: v.pinhunt_id, itemId: args.itemId }, "validation candidate image applied");
+  return { imageUrl: hiResUrl };
+}
+
 /** Re-run validation for a single record (in place). */
 export async function revalidateOne(validationId: string): Promise<void> {
   const sb = getServiceClient();

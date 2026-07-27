@@ -284,6 +284,41 @@ export default function CatalogueValidationScreen() {
     );
   }, [sendDecision]);
 
+  const applyImage = useCallback((result: ValidationResult, cand: Candidate) => {
+    const hasImage = !!result.pin_snapshot?.imageUrl;
+    Alert.alert(
+      hasImage ? 'Replace catalogue image?' : 'Use this image?',
+      hasImage
+        ? 'This pin already has an image. It will be replaced with the one from this eBay listing. The change is logged and reversible.'
+        : 'The image from this eBay listing will become the catalogue photo for this pin.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: hasImage ? 'Replace' : 'Use image',
+          onPress: async () => {
+            setBusyId(result.id);
+            try {
+              const resp = await fetch(`${API_BASE}/catalogue/validation/results/${result.id}/apply-image`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', ...authHeaders() },
+                body: JSON.stringify({ itemId: cand.itemId }),
+              });
+              const data = (await resp.json()) as { imageUrl?: string; error?: string };
+              if (!resp.ok || !data.imageUrl) throw new Error(data.error ?? `HTTP ${resp.status}`);
+              setResults(prev => prev.map(r => (r.id === result.id
+                ? { ...r, pin_snapshot: { ...r.pin_snapshot, imageUrl: data.imageUrl! } }
+                : r)));
+            } catch (e) {
+              Alert.alert('Could not apply image', e instanceof Error ? e.message : 'Unknown error');
+            } finally {
+              setBusyId(null);
+            }
+          },
+        },
+      ],
+    );
+  }, [authHeaders]);
+
   const revalidate = useCallback(async (result: ValidationResult) => {
     setBusyId(result.id);
     try {
@@ -493,6 +528,7 @@ export default function CatalogueValidationScreen() {
             onDecision={(action) => sendDecision(item, action)}
             onRevalidate={() => revalidate(item)}
             onEdit={() => router.push({ pathname: '/admin/pin/[id]' as any, params: { id: item.pin_id } })}
+            onApplyImage={(cand) => applyImage(item, cand)}
           />
         )}
       />
@@ -526,7 +562,7 @@ function SummaryRow({ label, value, color, colors }: { label: string; value: num
   );
 }
 
-function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, picked, onTogglePick, onApprovePicked, onDecision, onRevalidate, onEdit }: {
+function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, picked, onTogglePick, onApprovePicked, onDecision, onRevalidate, onEdit, onApplyImage }: {
   result: ValidationResult;
   colors: ReturnType<typeof useColors>;
   expanded: boolean;
@@ -539,6 +575,7 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
   onDecision: (action: string) => void;
   onRevalidate: () => void;
   onEdit: () => void;
+  onApplyImage: (cand: Candidate) => void;
 }) {
   const meta = STATUS_META[result.validation_status];
   const snap = result.pin_snapshot ?? {};
@@ -642,12 +679,24 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
                       {c.askingPrice != null ? ` · asking ${c.currency === 'USD' ? '$' : '£'}${c.askingPrice}` : ''}
                       {c.sellerLocation ? ` · ${c.sellerLocation}` : ''}
                     </Text>
-                    {c.url && (
-                      <TouchableOpacity style={styles.linkRow} onPress={() => Linking.openURL(c.url!)}>
-                        <Feather name="external-link" size={12} color={colors.primary} />
-                        <Text style={[styles.linkText, { color: colors.primary, fontSize: 12 }]}>Open listing</Text>
-                      </TouchableOpacity>
-                    )}
+                    <View style={styles.candActions}>
+                      {c.url && (
+                        <TouchableOpacity style={styles.linkRow} onPress={() => Linking.openURL(c.url!)}>
+                          <Feather name="external-link" size={12} color={colors.primary} />
+                          <Text style={[styles.linkText, { color: colors.primary, fontSize: 12 }]}>Open listing</Text>
+                        </TouchableOpacity>
+                      )}
+                      {c.imageUrl && (
+                        <TouchableOpacity
+                          style={styles.linkRow}
+                          disabled={busy}
+                          onPress={() => onApplyImage(c)}
+                        >
+                          <Feather name="image" size={12} color="#16a34a" />
+                          <Text style={[styles.linkText, { color: '#16a34a', fontSize: 12 }]}>Use this image</Text>
+                        </TouchableOpacity>
+                      )}
+                    </View>
                   </View>
                 </View>
               ))}
@@ -772,6 +821,7 @@ const styles = StyleSheet.create({
   candMeta: { fontSize: 11.5, marginTop: 2 },
   priceNote: { fontSize: 11, fontStyle: 'italic', marginTop: 2 },
   linkRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 3 },
+  candActions: { flexDirection: 'row', gap: 14 },
   linkText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   fieldRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 5 },
   fieldText: { fontSize: 13, flex: 1 },

@@ -28,6 +28,8 @@ BEGIN
     edition_type = COALESCE(p_patch->>'edition_type', edition_type),
     collection = COALESCE(p_patch->>'collection', collection),
     origin = COALESCE(p_patch->>'origin', origin),
+    image_url = COALESCE(p_patch->>'image_url', image_url),
+    needs_front_image = CASE WHEN p_patch ? 'image_url' THEN false ELSE needs_front_image END,
     catalogue_updated_at = now(),
     updated_at = now()
   WHERE id = p_pin_id;

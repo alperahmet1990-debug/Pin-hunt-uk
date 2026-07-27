@@ -26,6 +26,7 @@ import {
   getValidationResults,
   buildValidationCsv,
   applyValidationDecision,
+  applyValidationImage,
   revalidateOne,
 } from "../services/catalogue-validation";
 
@@ -164,6 +165,29 @@ router.post(
     } catch (e) {
       const status = (e as { status?: number }).status ?? 500;
       res.status(status).json({ error: e instanceof Error ? e.message : "Decision failed" });
+    }
+  },
+);
+
+router.post(
+  "/catalogue/validation/results/:validationId/apply-image",
+  requireAdmin,
+  async (req: AdminRequest, res: Response) => {
+    try {
+      const body = req.body as { itemId?: unknown };
+      if (typeof body.itemId !== "string" || !body.itemId) {
+        res.status(400).json({ error: "itemId is required" });
+        return;
+      }
+      const result = await applyValidationImage({
+        validationId: String(req.params.validationId),
+        itemId: body.itemId,
+        adminId: req.adminId!,
+      });
+      res.json(result);
+    } catch (e) {
+      const status = (e as { status?: number }).status ?? 500;
+      res.status(status).json({ error: e instanceof Error ? e.message : "Applying image failed" });
     }
   },
 );

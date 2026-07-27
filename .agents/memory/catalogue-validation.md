@@ -8,4 +8,5 @@ description: How the eBay-evidence validation of pin records works and its safet
 - Vague records ("Mickey pin") are marked `insufficient_data` and never searched — forcing matches on generic names creates false corrections.
 - A strong match (85+) requires ≥2 independent agreeing listings unless there's an exact SKU hit; suggestions (year/LE size) require ≥2 listings agreeing.
 - Always label eBay prices as *current asking prices* in UI and notes — never value or sold price.
+- Re-imports protect admin-corrected fields: columns with `pin_change_audit` rows keep their DB value over the spreadsheet value, unless the import request passes `overwriteProtectedFields: true`. Protection loading fails closed — an audit-read failure aborts the import.
 - Pin selection round-robins across brand/origin/edition buckets plus "incomplete" and "speculative" buckets, and skips pins with any existing validation row, so successive runs extend coverage.

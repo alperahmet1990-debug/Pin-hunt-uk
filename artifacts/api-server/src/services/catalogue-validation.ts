@@ -891,13 +891,21 @@ export async function applyValidationImage(args: {
   if (rpcErr) throw new Error(`Applying image failed: ${rpcErr.message}`);
 
   // Provenance record so eBay-sourced images are identifiable later.
-  await sb.from("pin_images").insert({
+  const { error: provErr } = await sb.from("pin_images").insert({
     pin_id: v.pin_id,
     image_url: hiResUrl,
     image_type: "front",
     is_primary: true,
     description: `Image from eBay listing via catalogue validation: ${cand.url ?? cand.itemId}`,
   });
+  if (provErr) {
+    // The image + audit row already committed atomically; surface the
+    // provenance failure loudly instead of pretending everything succeeded.
+    throw Object.assign(
+      new Error(`Image was applied, but recording its provenance failed: ${provErr.message}`),
+      { status: 500 },
+    );
+  }
 
   logger.info({ pin: v.pinhunt_id, itemId: args.itemId }, "validation candidate image applied");
   return { imageUrl: hiResUrl };

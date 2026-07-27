@@ -414,6 +414,61 @@ function parseWorkbook(buffer: Buffer, sheetName?: string): {
   return { sheetNames, selectedSheet: selected, headers: rawHeaders, canonicalHeaders, rawRows: dataRows, totalRows: dataRows.length };
 }
 
+// ─── Admin-corrected field protection ─────────────────────────────────────────
+//
+// Fields fixed by an admin (via catalogue validation or the pin editor) have
+// rows in pin_change_audit. A re-import from an older spreadsheet must not
+// silently undo those corrections, so for these columns the existing database
+// value wins over the spreadsheet value.
+const PROTECTED_AUDIT_COLUMNS = new Set([
+  "title", "collection", "release_year", "limited_edition_size",
+  "edition_type", "origin", "image_url", "back_image_url",
+]);
+
+async function loadAdminCorrectedFields(
+  db: SupabaseClient,
+  pinIds: string[],
+): Promise<Map<string, Set<string>>> {
+  const map = new Map<string, Set<string>>();
+  if (pinIds.length === 0) return map;
+  // Chunk to stay under URL limits on large imports.
+  for (let i = 0; i < pinIds.length; i += 500) {
+    const { data, error } = await db
+      .from("pin_change_audit")
+      .select("pin_id, changed_field")
+      .in("pin_id", pinIds.slice(i, i + 500));
+    // Fail closed: if we can't read the audit trail we must not import
+    // blind, or admin corrections could be silently overwritten.
+    if (error) throw new Error(`Could not load admin-correction history: ${error.message}`);
+    for (const r of (data ?? []) as Array<{ pin_id: string; changed_field: string }>) {
+      if (!PROTECTED_AUDIT_COLUMNS.has(r.changed_field)) continue;
+      const set = map.get(r.pin_id) ?? new Set<string>();
+      set.add(r.changed_field);
+      map.set(r.pin_id, set);
+    }
+  }
+  return map;
+}
+
+/** Keep admin-corrected values on a re-import; recompute image flags if needed. */
+function applyProtectedOverrides(
+  record: Record<string, unknown>,
+  existing: Record<string, unknown>,
+  protectedFields: Set<string> | undefined,
+): string[] {
+  if (!protectedFields || protectedFields.size === 0) return [];
+  const kept: string[] = [];
+  for (const col of protectedFields) {
+    if (!(col in record)) continue;
+    if (String(record[col] ?? "") === String(existing[col] ?? "")) continue;
+    record[col] = existing[col];
+    kept.push(col);
+  }
+  if (kept.includes("image_url")) record.needs_front_image = !existing.image_url;
+  if (kept.includes("back_image_url")) record.needs_back_image = !existing.back_image_url;
+  return kept;
+}
+
 // ─── Core import processor (shared by real import and reprocess-row) ──────────
 
 async function upsertSingleRow(
@@ -454,6 +509,8 @@ async function upsertSingleRow(
       import_batch_id: batchId, catalogue_source: "pinhunt_import",
       catalogue_updated_at: now,
     };
+    const protectedMap = await loadAdminCorrectedFields(db, [existing.id as string]);
+    applyProtectedOverrides(pinRecord, existing, protectedMap.get(existing.id as string));
   } else {
     pinRecord = {
       pinhunt_id: row.pinhuntId,
@@ -525,6 +582,7 @@ async function runImportJob(
     missingBackImage: number;
   },
   existingMap: Map<string, Record<string, unknown>>,
+  options: { overwriteProtectedFields?: boolean } = {},
 ): Promise<void> {
   // Pre-load all categories + characters
   const allCategoryNames = new Set<string>();
@@ -554,6 +612,16 @@ async function runImportJob(
 
   let insertedRows = 0, updatedRows = 0, skippedRows = 0;
   const rowSnapshots: Record<string, unknown> = {};
+
+  // Admin-corrected fields (validation approvals, image picks, manual edits)
+  // survive re-imports: the DB value wins for those columns.
+  // An explicit overwriteProtectedFields flag lets an admin intentionally
+  // push spreadsheet values over previous corrections.
+  const existingIds = [...existingMap.values()].map(p => p.id as string).filter(Boolean);
+  const protectedMap = options.overwriteProtectedFields
+    ? new Map<string, Set<string>>()
+    : await loadAdminCorrectedFields(db, existingIds);
+  let protectedFieldCount = 0;
 
   // Save snapshots for rollback
   validRows.forEach(r => {
@@ -616,7 +684,7 @@ async function runImportJob(
         const targetVerStatus = existing.verification_status === "verified" ? "verified" : r.verificationStatus;
         const targetSeed = existing.verification_status === "verified" ? false : r.isSeedRecord;
         const targetReview = existing.verification_status === "verified" ? false : r.needsReview;
-        return {
+        const record: Record<string, unknown> = {
           pinhunt_id: r.pinhuntId,
           title: r.title, brand: r.brand, collection: r.collection,
           release_year: r.releaseYear, release_date: r.releaseDate,
@@ -636,6 +704,10 @@ async function runImportJob(
           import_batch_id: batchId, catalogue_source: "pinhunt_import",
           catalogue_updated_at: now,
         };
+        protectedFieldCount += applyProtectedOverrides(
+          record, existing, protectedMap.get(existing.id as string),
+        ).length;
+        return record;
       } else {
         insertedRows++;
         return {
@@ -711,6 +783,12 @@ async function runImportJob(
   }
 
   // Finalize
+  if (protectedFieldCount > 0) {
+    allErrors.push({
+      rowNum: 0, pinhuntId: null, title: null, result: "warning",
+      message: `${protectedFieldCount} admin-corrected field value(s) were kept from the database instead of the spreadsheet (validation approvals, image picks, and manual edits are protected on re-import).`,
+    });
+  }
   const errorReport = allErrors.slice(0, 1000);
   await db.from("import_batches").update({
     status: "completed",
@@ -753,8 +831,11 @@ router.post("/admin/catalogue-import/preview", requireAdmin, async (req: Request
 router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
   const {
     fileBase64, filename = "upload.xlsx", sheetName,
-    dryRun = false, force = false,
-  } = req.body as { fileBase64: string; filename?: string; sheetName?: string; dryRun?: boolean; force?: boolean };
+    dryRun = false, force = false, overwriteProtectedFields = false,
+  } = req.body as {
+    fileBase64: string; filename?: string; sheetName?: string;
+    dryRun?: boolean; force?: boolean; overwriteProtectedFields?: boolean;
+  };
 
   if (!fileBase64) { res.status(400).json({ error: "fileBase64 is required" }); return; }
 
@@ -877,7 +958,7 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
   // Continue processing in the background (Node.js event loop continues after response)
   setImmediate(async () => {
     try {
-      await runImportJob(db, batchId, validRows, allErrors, summary, existingMap);
+      await runImportJob(db, batchId, validRows, allErrors, summary, existingMap, { overwriteProtectedFields });
     } catch (err) {
       console.error(`[import job ${batchId}] fatal error:`, err);
       await db.from("import_batches").update({
@@ -983,7 +1064,7 @@ router.post("/admin/catalogue-import/batches/:batchId/reprocess-row", requireAdm
   // Check if pin already exists (for snapshot preservation)
   const { data: existingPin } = row.pinhuntId.startsWith("PHUK-NOID-")
     ? { data: null }
-    : await db.from("pins").select("id, pinhunt_id, verification_status, image_url, back_image_url").eq("pinhunt_id", row.pinhuntId).maybeSingle();
+    : await db.from("pins").select("id, pinhunt_id, verification_status, title, collection, release_year, limited_edition_size, edition_type, origin, image_url, back_image_url").eq("pinhunt_id", row.pinhuntId).maybeSingle();
 
   const existingMap = new Map<string, Record<string, unknown>>(
     existingPin ? [[row.pinhuntId, existingPin as Record<string, unknown>]] : [],

@@ -824,39 +824,6 @@ export default function CollectionScreen() {
               )}
             </View>
 
-            {/* In Search Of row (always shown for context) */}
-            {wantedPins.length > 0 && (
-              <View style={s.tradeSection}>
-                <SectionHeader
-                  title="In Search Of"
-                  subtitle={`${wantedPins.length} ${
-                    wantedPins.length === 1 ? 'pin' : 'pins'
-                  } you're looking for`}
-                  colors={colors}
-                  onPress={() => setTradeFilter('iso')}
-                />
-                <ScrollView
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  contentContainerStyle={s.isoRow}
-                >
-                  {wantedPins.map(p => (
-                    <TouchableOpacity
-                      key={p.id}
-                      activeOpacity={0.85}
-                      onPress={() => goPin(p.id)}
-                      style={[s.isoTile, { backgroundColor: colors.wanted + '18', borderColor: colors.wanted }]}
-                    >
-                      <View style={[s.isoBadge, { backgroundColor: colors.wanted }]}>
-                        <Feather name="bookmark" size={14} color="#FFFFFF" />
-                      </View>
-                      <Image source={getPinImageSource(p)} style={s.isoImg} />
-                    </TouchableOpacity>
-                  ))}
-                </ScrollView>
-              </View>
-            )}
-
             {/* Share CTA */}
             <View style={s.tradeSection}>
               <LinearGradient
@@ -1248,31 +1215,6 @@ const s = StyleSheet.create({
     alignItems: 'center',
   },
   photoTagText: { fontSize: 8, fontFamily: 'Inter_700Bold', letterSpacing: 1 },
-
-  // ISO row
-  isoRow: { gap: 12, paddingRight: 20, paddingVertical: 4 },
-  isoTile: {
-    width: 116,
-    height: 116,
-    borderRadius: 28,
-    borderWidth: 3,
-    padding: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  isoBadge: {
-    position: 'absolute',
-    top: -8,
-    right: -8,
-    width: 34,
-    height: 34,
-    borderRadius: 17,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 3,
-    borderColor: '#FFFFFF',
-  },
-  isoImg: { width: '100%', height: '100%', resizeMode: 'contain' },
 
   // CTA
   ctaCard: {

@@ -12,5 +12,8 @@ export const modules: ModuleMap = {
   "./components/mockups/collection-r2/Binder.tsx": () => import("../components/mockups/collection-r2/Binder.tsx"),
   "./components/mockups/collection-r2/SetShelves.tsx": () => import("../components/mockups/collection-r2/SetShelves.tsx"),
   "./components/mockups/collection-r2/Showcase.tsx": () => import("../components/mockups/collection-r2/Showcase.tsx"),
+  "./components/mockups/collection-r2/StyleHeritage.tsx": () => import("../components/mockups/collection-r2/StyleHeritage.tsx"),
+  "./components/mockups/collection-r2/StyleNight.tsx": () => import("../components/mockups/collection-r2/StyleNight.tsx"),
+  "./components/mockups/collection-r2/StylePop.tsx": () => import("../components/mockups/collection-r2/StylePop.tsx"),
   "./components/mockups/collection-r2/Unified.tsx": () => import("../components/mockups/collection-r2/Unified.tsx")
 };

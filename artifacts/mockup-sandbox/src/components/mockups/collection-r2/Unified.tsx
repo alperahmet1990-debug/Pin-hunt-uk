@@ -51,7 +51,7 @@ export function Unified() {
                   : "text-slate-500 hover:text-slate-700"
               )}
             >
-              Organise
+              My Portfolio
             </button>
             <button
               onClick={() => setMode('trade')}
@@ -62,7 +62,7 @@ export function Unified() {
                   : "text-slate-500 hover:text-slate-700"
               )}
             >
-              Trade
+              My Showcase
             </button>
           </div>
         </div>

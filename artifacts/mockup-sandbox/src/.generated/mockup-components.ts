@@ -6,10 +6,11 @@ export const modules: ModuleMap = {
   "./components/mockups/collection-page/Gallery.tsx": () => import("../components/mockups/collection-page/Gallery.tsx"),
   "./components/mockups/collection-page/QuestProgress.tsx": () => import("../components/mockups/collection-page/QuestProgress.tsx"),
   "./components/mockups/collection-page/TrophyCase.tsx": () => import("../components/mockups/collection-page/TrophyCase.tsx"),
+  "./components/mockups/pinhunt-style/CabinetStyle.tsx": () => import("../components/mockups/pinhunt-style/CabinetStyle.tsx"),
+  "./components/mockups/pinhunt-style/ElectricStyle.tsx": () => import("../components/mockups/pinhunt-style/ElectricStyle.tsx"),
+  "./components/mockups/pinhunt-style/GoldenStyle.tsx": () => import("../components/mockups/pinhunt-style/GoldenStyle.tsx"),
   "./components/mockups/collection-r2/Binder.tsx": () => import("../components/mockups/collection-r2/Binder.tsx"),
   "./components/mockups/collection-r2/SetShelves.tsx": () => import("../components/mockups/collection-r2/SetShelves.tsx"),
   "./components/mockups/collection-r2/Showcase.tsx": () => import("../components/mockups/collection-r2/Showcase.tsx"),
-  "./components/mockups/pinhunt-style/CabinetStyle.tsx": () => import("../components/mockups/pinhunt-style/CabinetStyle.tsx"),
-  "./components/mockups/pinhunt-style/ElectricStyle.tsx": () => import("../components/mockups/pinhunt-style/ElectricStyle.tsx"),
-  "./components/mockups/pinhunt-style/GoldenStyle.tsx": () => import("../components/mockups/pinhunt-style/GoldenStyle.tsx")
+  "./components/mockups/collection-r2/Unified.tsx": () => import("../components/mockups/collection-r2/Unified.tsx")
 };

@@ -437,13 +437,16 @@ export default function PostDetailScreen() {
     setSharing(true);
     recordShareClick(post);
     try {
+      // Copy the full post text first — Facebook's composer often arrives
+      // empty, so the user can paste straight into their group.
+      await Clipboard.setStringAsync(buildShareText(post)).catch(() => {});
       const outcome = await sharePostNative(post);
       if (outcome === 'fallback') {
         setShowShareFallback(true);
       } else if (outcome === 'shared') {
         Alert.alert(
           'Tip',
-          'In Facebook, choose "Share to a Group" and select your pin-trading group.',
+          'Your post text is copied to the clipboard. In Facebook, tap the audience selector to pick your pin-trading group, then paste the text if the box is empty.',
         );
       }
     } finally {

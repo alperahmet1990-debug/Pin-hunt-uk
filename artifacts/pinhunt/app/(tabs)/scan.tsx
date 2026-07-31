@@ -29,11 +29,23 @@ const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
   ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
   : 'http://localhost:8080/api';
 
+/** What the scan understood from the photo (AI description + Google Vision). */
+interface ImageInsights {
+  characters: string[];
+  keywords: string[];
+  textOnPin: string | null;
+  logos: string[];
+  webGuesses: string[];
+}
+
 async function identifyPin(
   imageBase64: string,
   mimeType: string,
   accessToken?: string,
-): Promise<Array<{ pinId: string; confidence: number; reasoning: string }>> {
+): Promise<{
+  matches: Array<{ pinId: string; confidence: number; reasoning: string }>;
+  imageInsights: ImageInsights | null;
+}> {
   const res = await fetch(`${API_BASE}/scan/identify`, {
     method: 'POST',
     headers: {
@@ -46,8 +58,11 @@ async function identifyPin(
     const err = await res.json().catch(() => ({}));
     throw new Error((err as { error?: string }).error ?? 'Identification failed');
   }
-  const data = await res.json() as { matches: Array<{ pinId: string; confidence: number; reasoning: string }> };
-  return data.matches;
+  const data = await res.json() as {
+    matches: Array<{ pinId: string; confidence: number; reasoning: string }>;
+    imageInsights?: ImageInsights;
+  };
+  return { matches: data.matches, imageInsights: data.imageInsights ?? null };
 }
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -95,6 +110,7 @@ export default function ScanScreen() {
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
+  const [insights, setInsights] = useState<ImageInsights | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
@@ -166,7 +182,12 @@ export default function ScanScreen() {
     setScanState('identifying');
 
     try {
-      const rawMatches = await identifyPin(captured.base64, captured.mimeType, session?.access_token);
+      const { matches: rawMatches, imageInsights } = await identifyPin(
+        captured.base64,
+        captured.mimeType,
+        session?.access_token,
+      );
+      setInsights(imageInsights);
 
       // The cached list only holds part of the catalogue — fetch any matched
       // pin that isn't cached directly from the repository.
@@ -213,6 +234,7 @@ export default function ScanScreen() {
     setScanState('idle');
     setCaptured(null);
     setMatches([]);
+    setInsights(null);
     setErrorMsg(null);
   };
 
@@ -347,6 +369,68 @@ export default function ScanScreen() {
         {/* ── Match results ── */}
         {scanState === 'results' && (
           <View style={styles.matchesSection}>
+            {/* ── What the scan understood from the photo ── */}
+            {insights &&
+              (insights.textOnPin ||
+                insights.characters.length > 0 ||
+                insights.keywords.length > 0 ||
+                insights.logos.length > 0 ||
+                insights.webGuesses.length > 0) && (
+              <View
+                style={[
+                  styles.insightsCard,
+                  { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+                ]}
+              >
+                <View style={styles.insightsHeader}>
+                  <Feather name="eye" size={14} color={colors.primary} />
+                  <Text style={[styles.insightsTitle, { color: colors.foreground }]}>
+                    What we saw in your photo
+                  </Text>
+                </View>
+                {insights.textOnPin ? (
+                  <View style={styles.insightRow}>
+                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Text on pin</Text>
+                    <Text style={[styles.insightValue, { color: colors.foreground }]} numberOfLines={3}>
+                      “{insights.textOnPin}”
+                    </Text>
+                  </View>
+                ) : null}
+                {insights.characters.length > 0 && (
+                  <View style={styles.insightRow}>
+                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Characters</Text>
+                    <Text style={[styles.insightValue, { color: colors.foreground }]}>
+                      {insights.characters.join(', ')}
+                    </Text>
+                  </View>
+                )}
+                {insights.logos.length > 0 && (
+                  <View style={styles.insightRow}>
+                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Logos</Text>
+                    <Text style={[styles.insightValue, { color: colors.foreground }]}>
+                      {insights.logos.join(', ')}
+                    </Text>
+                  </View>
+                )}
+                {insights.keywords.length > 0 && (
+                  <View style={styles.insightRow}>
+                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Looks like</Text>
+                    <Text style={[styles.insightValue, { color: colors.foreground }]} numberOfLines={2}>
+                      {insights.keywords.join(', ')}
+                    </Text>
+                  </View>
+                )}
+                {insights.webGuesses.length > 0 && (
+                  <View style={styles.insightRow}>
+                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Web matches</Text>
+                    <Text style={[styles.insightValue, { color: colors.foreground }]} numberOfLines={2}>
+                      {insights.webGuesses.join(', ')}
+                    </Text>
+                  </View>
+                )}
+              </View>
+            )}
+
             <Text style={[styles.matchesTitle, { color: colors.foreground }]}>Possible Matches</Text>
             <Text style={[styles.matchesSub, { color: colors.mutedForeground }]}>
               Tap the correct pin to see its details and value
@@ -528,6 +612,13 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   boardsBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  // Insights ("what we saw")
+  insightsCard: { borderWidth: 1, padding: 12, gap: 8, marginBottom: 4 },
+  insightsHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  insightsTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  insightRow: { flexDirection: 'row', gap: 8 },
+  insightLabel: { fontSize: 12, fontFamily: 'Inter_500Medium', width: 82 },
+  insightValue: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 },
   // Matches
   matchesSection: { marginTop: 20, paddingHorizontal: 16, gap: 10 },
   matchesTitle: { fontSize: 18, fontFamily: 'Inter_700Bold' },

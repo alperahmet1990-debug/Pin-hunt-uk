@@ -105,6 +105,47 @@ interface ScanMatch {
   reasoning: string;
 }
 
+/** User-facing summary of what the scan understood from the photo. */
+interface ImageInsights {
+  /** Characters the AI thinks are on/represented by the pin. */
+  characters: string[];
+  /** Descriptive keywords from the AI (object type, series guesses). */
+  keywords: string[];
+  /** Exact text Google Vision read off the pin (OCR), if any. */
+  textOnPin: string | null;
+  /** Logos Google Vision recognised (e.g. Disney, Loungefly). */
+  logos: string[];
+  /** Google Vision web-detection guesses (best-guess labels + entities). */
+  webGuesses: string[];
+}
+
+function buildImageInsights(
+  description: { characters: string[]; keywords: string[] },
+  signals: VisionSignals | null,
+): ImageInsights {
+  const dedupe = (arr: string[]) => {
+    const seen = new Set<string>();
+    return arr.filter((s) => {
+      const k = s.trim().toLowerCase();
+      if (!k || seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+  };
+  return {
+    characters: dedupe(description.characters).slice(0, 4),
+    keywords: dedupe(description.keywords).slice(0, 8),
+    textOnPin: signals?.ocrText
+      ? signals.ocrText.replace(/\s+/g, " ").trim().slice(0, 200) || null
+      : null,
+    logos: dedupe(signals?.logos ?? []).slice(0, 4),
+    webGuesses: dedupe([
+      ...(signals?.bestGuessLabels ?? []),
+      ...(signals?.webEntities ?? []),
+    ]).slice(0, 6),
+  };
+}
+
 /** Require a valid signed-in Supabase user (Bearer token). */
 async function requireUser(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers.authorization ?? "";
@@ -420,7 +461,10 @@ Give a confidence above 85 only when a reference image visually confirms the mat
       }
     }
 
-    res.json({ matches: matches.slice(0, 3) });
+    res.json({
+      matches: matches.slice(0, 3),
+      imageInsights: buildImageInsights(description, visionSignals),
+    });
   } catch (err) {
     console.error("[scan] Vision analysis error:", err);
     res.status(500).json({ error: "Vision analysis failed. Please try again." });

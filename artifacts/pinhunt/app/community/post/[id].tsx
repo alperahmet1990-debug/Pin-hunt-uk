@@ -432,26 +432,56 @@ export default function PostDetailScreen() {
   const [showShareFallback, setShowShareFallback] = useState(false);
   const [sharing, setSharing] = useState(false);
 
-  const handleShare = async () => {
+  /** Copy the formatted post, then open Facebook so the user can paste into their group. */
+  const shareToGroup = async () => {
+    if (!post) return;
+    recordShareClick(post);
+    await Clipboard.setStringAsync(buildShareText(post)).catch(() => {});
+    Alert.alert(
+      'Post copied',
+      'Your post text and link are on the clipboard. In Facebook, open your pin-trading group, start a new post and paste.',
+      [
+        {
+          text: 'Open Facebook',
+          onPress: async () => {
+            // Try the Facebook app's groups tab first, fall back to the website.
+            const opened = await Linking.openURL('fb://groups').then(() => true).catch(() => false);
+            if (!opened) Linking.openURL('https://www.facebook.com/groups/').catch(() => {});
+          },
+        },
+        { text: 'Done', style: 'cancel' },
+      ],
+    );
+  };
+
+  /** System share sheet (posts to your own Facebook profile, WhatsApp, etc.). */
+  const shareViaSheet = async () => {
     if (!post || sharing) return;
     setSharing(true);
     recordShareClick(post);
     try {
-      // Copy the full post text first — Facebook's composer often arrives
-      // empty, so the user can paste straight into their group.
+      // Copy the full post text too — Facebook's composer often arrives empty.
       await Clipboard.setStringAsync(buildShareText(post)).catch(() => {});
       const outcome = await sharePostNative(post);
-      if (outcome === 'fallback') {
-        setShowShareFallback(true);
-      } else if (outcome === 'shared') {
-        Alert.alert(
-          'Tip',
-          'Your post text is copied to the clipboard. In Facebook, tap the audience selector to pick your pin-trading group, then paste the text if the box is empty.',
-        );
-      }
+      if (outcome === 'fallback') setShowShareFallback(true);
     } finally {
       setSharing(false);
     }
+  };
+
+  const handleShare = () => {
+    if (!post || sharing) return;
+    if (Platform.OS === 'web') {
+      // Web: Alert option lists aren't supported, go straight to the share
+      // sheet and fall back to the options modal.
+      shareViaSheet();
+      return;
+    }
+    Alert.alert('Share this post', 'Facebook only allows group posts from inside its own app, so for a group we copy your post ready to paste.', [
+      { text: 'Post in a Facebook group', onPress: shareToGroup },
+      { text: 'Share elsewhere (share sheet)', onPress: shareViaSheet },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
   };
 
   const copyToClipboard = async (value: string, label: string) => {

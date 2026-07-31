@@ -11,3 +11,4 @@
 - [Catalogue validation via eBay](catalogue-validation.md) — suggestions-only pattern, atomic apply+audit RPC, single-run DB lock, asking-price wording rules
 - [Trusted catalogue lifecycle](trusted-catalogue.md) — catalogue_status/is_searchable flags, owner-visible archives, guarded set_user_pin_status, reusable importer, tokenised search
 - [Unread DM badges](unread-messages.md) — lightweight counts RPC (never poll full conversations), focus-gated mark-read, web URL-restore testing pitfall
+- [Public shareable posts](public-share-posts.md) — slug-gated public pages via service role, sharp share cards, SSRF allowlist, atomic share tracking

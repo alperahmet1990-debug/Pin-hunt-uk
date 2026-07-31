@@ -466,6 +466,13 @@ export interface Database {
           body: string;
           photos: Json;
           linked_pin_id: string | null;
+          public_slug: string;
+          share_image_url: string | null;
+          facebook_share_clicked_at: string | null;
+          share_count: number;
+          price_text: string | null;
+          looking_for: string | null;
+          location_text: string | null;
           created_at: string;
           updated_at: string;
         };
@@ -476,6 +483,13 @@ export interface Database {
           body: string;
           photos?: Json;
           linked_pin_id?: string | null;
+          public_slug?: string;
+          share_image_url?: string | null;
+          facebook_share_clicked_at?: string | null;
+          share_count?: number;
+          price_text?: string | null;
+          looking_for?: string | null;
+          location_text?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -484,6 +498,12 @@ export interface Database {
           body?: string;
           photos?: Json;
           linked_pin_id?: string | null;
+          share_image_url?: string | null;
+          facebook_share_clicked_at?: string | null;
+          share_count?: number;
+          price_text?: string | null;
+          looking_for?: string | null;
+          location_text?: string | null;
           updated_at?: string;
         };
         Relationships: [

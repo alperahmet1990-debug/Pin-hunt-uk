@@ -1,0 +1,180 @@
+Please add a lightweight Share Community Post to Facebook feature to PinHunt.
+
+Objective
+
+A user should be able to create an FT, FS or ISO community post in PinHunt and then share it to a Facebook pin-trading group with as few steps as possible.
+
+Do not build a direct Facebook Groups API integration. Use the device’s native share functionality.
+
+Community post creation
+
+Keep the post form simple:
+
+* Post type:
+    * For Trade
+    * For Sale
+    * In Search Of
+* One or more pin photos
+* Short description
+* Optional asking price or trade value
+* Optional “Looking for” text
+* Optional location/postage information
+* Link selected pins from the PinHunt catalogue where available
+
+After publishing, create a public, shareable PinHunt post URL.
+
+The public page must work for people who are not logged in and show:
+
+* Main image
+* Post type
+* Description
+* Pin names and characters
+* Price or trade value where applicable
+* What the user is looking for
+* General location only
+* A button to open PinHunt or sign in to contact the user
+
+Do not expose private profile or contact information.
+
+Share button
+
+Add a prominent button on the published post:
+
+Share to Facebook
+
+When tapped:
+
+1. Generate a Facebook-friendly share image.
+2. Generate short suggested post text.
+3. Open the device’s native share sheet.
+4. Share:
+    * The generated image
+    * The suggested text where supported
+    * The public PinHunt post URL
+
+On iPhone, use the Web Share API where available:
+
+navigator.share({
+  title,
+  text,
+  url,
+  files
+});
+
+Check support for file sharing before including the image:
+
+navigator.canShare({ files });
+
+If image-file sharing is not supported, share the text and public URL instead.
+
+Suggested Facebook text
+
+Generate text in this format:
+
+FOR TRADE – Enchanted Doors Jafar & Iago
+LE 2500
+Looking for: Stitch, Villains or Disneyland Paris pins
+UK postage available
+View the pins or make an offer on PinHunt:
+[PUBLIC POST URL]
+
+Adapt the heading for:
+
+* FOR SALE
+* FOR TRADE
+* IN SEARCH OF
+
+The text should be editable or easy to copy before sharing.
+
+Facebook group flow
+
+PinHunt cannot automatically select a Facebook group.
+
+After opening the native share sheet, show a short tip:
+
+In Facebook, choose “Share to a Group” and select your pin-trading group.
+
+Do not require the user to connect their Facebook account to PinHunt.
+
+Share image
+
+Create one simple branded image card using the uploaded post image.
+
+It should include:
+
+* Main pin photo
+* FT, FS or ISO label
+* PinHunt branding
+* Pin name or short description
+* Optional value
+* A small “View on PinHunt” footer
+
+Do not add a QR code in the first version unless it is very easy using the existing stack.
+
+The image should be suitable for Facebook:
+
+* Square format, approximately 1080 × 1080
+* Clear readable text
+* No private user details
+
+Generate it on demand or when the post is first published. Avoid generating a new image every time the share button is pressed.
+
+Fallback behaviour
+
+If native sharing is unavailable, show:
+
+* Copy Facebook Post
+* Download Share Image
+* Copy PinHunt Link
+* Open Facebook
+
+The copy action should copy the formatted text and public URL.
+
+Tracking
+
+Add these fields to the community post if suitable:
+
+* public_slug
+* share_image_url
+* facebook_share_clicked_at
+* share_count
+
+Do not claim that the post was successfully published to Facebook. We can only record that the user opened the sharing flow.
+
+Security
+
+* Public links must use an unguessable or safe public slug.
+* Do not expose email address, exact address or private messages.
+* Only the post owner can edit or delete the post.
+* Existing Supabase RLS policies must remain secure.
+* Deleted or hidden posts should no longer be publicly accessible.
+
+Scope
+
+Keep this as a small feature.
+
+Do not build:
+
+* Facebook login
+* Automatic Facebook group posting
+* Facebook group searching
+* Comment importing
+* Facebook message syncing
+* Scheduled posting
+* Multiple graphic templates
+* Advanced referral analytics
+
+Completion checks
+
+Confirm that:
+
+1. A user can create and publish an FT, FS or ISO post.
+2. The post has a public PinHunt URL.
+3. The public URL works when logged out.
+4. The Share to Facebook button opens the native share sheet on iPhone.
+5. The image, text and link are included where supported.
+6. The fallback copy and download actions work.
+7. No private account information is exposed.
+8. TypeScript, linting and production build checks pass.
+
+At the end, explain which files and database fields were added and give me the test URL for one sample post.

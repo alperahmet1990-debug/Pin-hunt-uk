@@ -588,6 +588,17 @@ export interface CommunityPost {
   /** Joined catalogue pin when fetched with pin data. */
   linkedPin?: Pick<CataloguePin, 'id' | 'title' | 'brand' | 'imageUrl'>;
   commentCount?: number;
+  /** Unguessable slug for the public share page (served by the API). */
+  publicSlug?: string;
+  /** Cached generated share-card image URL. */
+  shareImageUrl?: string;
+  shareCount?: number;
+  /** Optional asking price or trade value, free text (e.g. "£25 posted"). */
+  priceText?: string;
+  /** Optional "looking for" text for trade/ISO posts. */
+  lookingFor?: string;
+  /** Optional general location / postage info (e.g. "UK postage available"). */
+  locationText?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -597,6 +608,9 @@ export interface CreateCommunityPostInput {
   body: string;
   photos?: string[];
   linkedPinId?: string;
+  priceText?: string;
+  lookingFor?: string;
+  locationText?: string;
 }
 
 export interface UpdateCommunityPostInput {

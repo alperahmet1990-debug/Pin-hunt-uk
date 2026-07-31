@@ -1212,6 +1212,12 @@ class SupabaseUserPinRepository implements IUserPinRepository {
           }
         : undefined,
       commentCount: (row.comment_count as number | null) ?? undefined,
+      publicSlug: (row.public_slug as string | null) ?? undefined,
+      shareImageUrl: (row.share_image_url as string | null) ?? undefined,
+      shareCount: (row.share_count as number | null) ?? undefined,
+      priceText: (row.price_text as string | null) ?? undefined,
+      lookingFor: (row.looking_for as string | null) ?? undefined,
+      locationText: (row.location_text as string | null) ?? undefined,
       createdAt: row.created_at as string,
       updatedAt: row.updated_at as string,
     };
@@ -1280,6 +1286,9 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         body: input.body,
         photos: input.photos ?? [],
         linked_pin_id: linkedPinUuid,
+        price_text: input.priceText ?? null,
+        looking_for: input.lookingFor ?? null,
+        location_text: input.locationText ?? null,
       })
       .select(`
         *,

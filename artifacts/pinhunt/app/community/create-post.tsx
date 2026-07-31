@@ -56,6 +56,9 @@ export default function CreatePostScreen() {
   const [pinSearch,   setPinSearch]   = useState('');
   const [showPins,    setShowPins]    = useState(false);
   const [saving,      setSaving]      = useState(false);
+  const [priceText,    setPriceText]    = useState('');
+  const [lookingFor,   setLookingFor]   = useState('');
+  const [locationText, setLocationText] = useState('');
   const [localPhotos, setLocalPhotos] = useState<string[]>([]);   // local file URIs
   const [uploadProgress, setUploadProgress] = useState('');
 
@@ -128,11 +131,15 @@ export default function CreatePostScreen() {
         setUploadProgress('');
       }
 
+      const tradeDetails = ['for_trade', 'for_sale', 'in_search_of'].includes(postType);
       const post = await repo.createCommunityPost(userId, {
         postType,
         body: body.trim(),
         photos: photoUrls,
         linkedPinId,
+        priceText: tradeDetails && priceText.trim() ? priceText.trim() : undefined,
+        lookingFor: tradeDetails && lookingFor.trim() ? lookingFor.trim() : undefined,
+        locationText: tradeDetails && locationText.trim() ? locationText.trim() : undefined,
       });
 
       // Navigate first, then surface any photo failures so the user can see the post was saved.
@@ -222,6 +229,41 @@ export default function CreatePostScreen() {
           <Text style={[styles.charCount, { color: colors.mutedForeground }]}>
             {body.length} / 2000
           </Text>
+
+          {/* Trade / sale details (FT, FS, ISO only) */}
+          {['for_trade', 'for_sale', 'in_search_of'].includes(postType) && (
+            <>
+              <Text style={[styles.label, { color: colors.mutedForeground }]}>
+                {postType === 'for_sale' ? 'ASKING PRICE (OPTIONAL)' : 'TRADE VALUE (OPTIONAL)'}
+              </Text>
+              <TextInput
+                value={priceText}
+                onChangeText={setPriceText}
+                placeholder={postType === 'for_sale' ? 'e.g. £25 posted' : 'e.g. LE 2500, worth two pins'}
+                placeholderTextColor={colors.mutedForeground + '88'}
+                maxLength={80}
+                style={[styles.detailInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card, borderRadius: colors.radius }]}
+              />
+              <Text style={[styles.label, { color: colors.mutedForeground }]}>LOOKING FOR (OPTIONAL)</Text>
+              <TextInput
+                value={lookingFor}
+                onChangeText={setLookingFor}
+                placeholder="e.g. Stitch, Villains or Disneyland Paris pins"
+                placeholderTextColor={colors.mutedForeground + '88'}
+                maxLength={300}
+                style={[styles.detailInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card, borderRadius: colors.radius }]}
+              />
+              <Text style={[styles.label, { color: colors.mutedForeground }]}>LOCATION / POSTAGE (OPTIONAL)</Text>
+              <TextInput
+                value={locationText}
+                onChangeText={setLocationText}
+                placeholder="e.g. UK postage available"
+                placeholderTextColor={colors.mutedForeground + '88'}
+                maxLength={120}
+                style={[styles.detailInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card, borderRadius: colors.radius }]}
+              />
+            </>
+          )}
 
           {/* Photos */}
           <Text style={[styles.label, { color: colors.mutedForeground }]}>
@@ -386,6 +428,14 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   charCount: { fontSize: 11, fontFamily: 'Inter_400Regular', textAlign: 'right', marginTop: -6 },
+
+  detailInput: {
+    borderWidth: 1,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    fontSize: 14,
+    fontFamily: 'Inter_400Regular',
+  },
 
   // Photo grid
   photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },

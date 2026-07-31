@@ -68,6 +68,7 @@ export type {
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────
 export type { PinRepository } from './repository';
+export type { PinSetSummary } from './types';
 export { PinRepositoryError } from './repository';
 export type { PinRepositoryErrorCode } from './repository';
 

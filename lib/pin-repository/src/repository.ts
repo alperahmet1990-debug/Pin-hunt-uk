@@ -1,4 +1,5 @@
 import type {
+  PinSetSummary,
   CataloguePin,
   CreatePinInput,
   MissingImageCounts,
@@ -39,6 +40,13 @@ export interface PinRepository {
 
   /** All accessible pins belonging to a named series / collection. */
   getPinsBySeries(series: string): Promise<CataloguePin[]>;
+
+  /**
+   * Validated set summaries from the trusted catalogue (pin_sets table).
+   * Used to show expected totals for ongoing sets, e.g. "7 of 12 released".
+   * Returns [] when the table is empty or unavailable.
+   */
+  getSetSummaries(): Promise<PinSetSummary[]>;
 
   /** Fetch multiple pins by their PinHunt IDs (order not guaranteed). */
   getPinsByIds(pinhuntIds: string[]): Promise<CataloguePin[]>;

@@ -188,8 +188,16 @@ export default function PinDetailScreen() {
           <View style={styles.titleRow}>
             <View style={styles.titleBlock}>
               <Text style={[styles.title, { color: colors.foreground }]}>{pin.title}</Text>
-              <View style={[styles.brandChip, { backgroundColor: colors.accent }]}>
-                <Text style={styles.brandChipLabel}>{pin.brand}</Text>
+              <View style={styles.chipRow}>
+                <View style={[styles.brandChip, { backgroundColor: colors.accent }]}>
+                  <Text style={styles.brandChipLabel}>{pin.brand}</Text>
+                </View>
+                {pin.catalogueStatus === 'trusted' && (
+                  <View style={[styles.verifiedChip, { backgroundColor: colors.owned + '16', borderColor: colors.owned + '50' }]}>
+                    <Feather name="check-circle" size={11} color={colors.owned} />
+                    <Text style={[styles.verifiedChipLabel, { color: colors.owned }]}>Verified catalogue pin</Text>
+                  </View>
+                )}
               </View>
             </View>
             {pin.isNewRelease && (
@@ -802,6 +810,17 @@ const styles = StyleSheet.create({
   titleBlock: { flex: 1, gap: 6 },
   title: { fontSize: 22, fontFamily: 'Inter_700Bold', lineHeight: 28 },
   brandChip: { alignSelf: 'flex-start', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 3 },
+  chipRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
+  verifiedChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+  },
+  verifiedChipLabel: { fontSize: 10, fontFamily: 'Inter_600SemiBold' },
   brandChipLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#fff' },
   newChip: { borderRadius: 6, paddingHorizontal: 8, paddingVertical: 4, alignSelf: 'flex-start', marginTop: 2 },
   newChipLabel: { fontSize: 10, fontFamily: 'Inter_700Bold', color: '#fff' },

@@ -62,9 +62,42 @@ export interface CataloguePin {
   allCharacters?: string;
   characterConfidence?: string;
   characterReviewStatus?: string;
+  /** Trusted-catalogue lifecycle: 'trusted' | 'active' | 'archived'. */
+  catalogueStatus?: string;
+  /** Whether the pin appears in normal user search. */
+  isSearchable?: boolean;
+  /** Normalised series/set name used for set grouping. */
+  normalisedSeries?: string;
+  /** Semicolon-separated search aliases from the trusted catalogue. */
+  searchAliases?: string;
+  /** Internal validation tier from the trusted catalogue (not user-facing). */
+  validationTier?: string;
+  /** Main subject for non-character pins (e.g. attraction, food). */
+  mainSubject?: string;
   createdAt?: string;
   updatedAt?: string;
   catalogueUpdatedAt?: string;
+}
+
+/** A validated set/collection record from the trusted catalogue (pin_sets). */
+export interface PinSetSummary {
+  id: string;
+  /** Normalised series key, e.g. "Disney Mystery Pins | 2026 | …". */
+  normalisedSeries: string;
+  /** Display set name — matches CataloguePin.collection. */
+  setName: string;
+  collectionName?: string;
+  programme?: string;
+  releaseYear?: number;
+  scope?: string;
+  collectionType?: string;
+  /** Total pins the set will contain when complete. */
+  expectedPinCount?: number;
+  /** Pins released (imported) so far. */
+  releasedPinCount: number;
+  isComplete: boolean;
+  sourceUrl?: string;
+  validationStatus?: string;
 }
 
 // ─── Query types ──────────────────────────────────────────────────────────────

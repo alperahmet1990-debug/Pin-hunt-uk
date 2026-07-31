@@ -191,6 +191,15 @@ export default function SearchScreen() {
       >
         {showIdle ? (
           <>
+            {/* ── Beta catalogue note ── */}
+            <View style={styles.betaNote}>
+              <Feather name="info" size={12} color={colors.mutedForeground} />
+              <Text style={[styles.betaNoteText, { color: colors.mutedForeground }]}>
+                PinHunt's catalogue is currently a curated beta collection. More pins will be
+                added as catalogue integrations and community validation become available.
+              </Text>
+            </View>
+
             {/* ── Recent searches ── */}
             {recents.length > 0 && (
               <View style={styles.section}>
@@ -312,6 +321,14 @@ const styles = StyleSheet.create({
   input: { flex: 1, fontSize: 15, paddingVertical: 0 },
   body: { flex: 1 },
   section: { paddingHorizontal: 16, paddingTop: 16 },
+  betaNote: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 6,
+    paddingHorizontal: 16,
+    paddingTop: 12,
+  },
+  betaNoteText: { flex: 1, fontSize: 11, fontFamily: 'Inter_500Medium', lineHeight: 16 },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   FlatList,
   Platform,
@@ -16,7 +16,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinCard } from '@/components/PinCard';
 import { EmptyState } from '@/components/EmptyState';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
-import type { CataloguePin } from '@workspace/pin-repository';
+import type { CataloguePin, PinSetSummary } from '@workspace/pin-repository';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
@@ -26,9 +26,24 @@ export default function SetDetailScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection: userCollection, getEntry } = useCollection();
-  const { pins: catalogue } = usePinCatalogue();
+  const { pins: catalogue, repository } = usePinCatalogue();
 
   const [filter, setFilter] = useState<PinFilter>('all');
+
+  // Validated set summary (expected totals for ongoing sets, e.g. monthly series)
+  const [setSummary, setSetSummary] = useState<PinSetSummary | null>(null);
+  useEffect(() => {
+    if (!repository || !collectionParam) return;
+    let cancelled = false;
+    repository
+      .getSetSummaries()
+      .then(sets => {
+        if (cancelled) return;
+        setSetSummary(sets.find(s => s.setName === collectionParam) ?? null);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repository, collectionParam]);
 
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
 
@@ -102,6 +117,12 @@ export default function SetDetailScreen() {
               <Text style={[styles.completionText, { color: colors.mutedForeground }]}>
                 {ownedCount} of {total} pins owned · {pct}% complete
               </Text>
+              {setSummary?.expectedPinCount != null &&
+                setSummary.expectedPinCount > setSummary.releasedPinCount && (
+                  <Text style={[styles.completionText, { color: colors.mutedForeground }]}>
+                    Ongoing set — {setSummary.releasedPinCount} of {setSummary.expectedPinCount} pins released so far
+                  </Text>
+                )}
             </View>
             {isComplete && (
               <View style={[styles.completeBadge, { backgroundColor: colors.owned + '20' }]}>

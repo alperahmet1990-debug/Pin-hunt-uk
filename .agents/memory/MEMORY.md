@@ -9,4 +9,5 @@
 - [Expo web photo uploads](expo-web-uploads.md) — FormData uploads 0 bytes and image-manipulator crashes on web; use Blob + canvas path
 - [Collection cloud sync](collection-sync.md) — user_pins sync pattern, catalogue-slice merge races, pinhunt_id vs UUID, set-total pitfalls
 - [Catalogue validation via eBay](catalogue-validation.md) — suggestions-only pattern, atomic apply+audit RPC, single-run DB lock, asking-price wording rules
+- [Trusted catalogue lifecycle](trusted-catalogue.md) — catalogue_status/is_searchable flags, owner-visible archives, guarded set_user_pin_status, reusable importer, tokenised search
 - [Unread DM badges](unread-messages.md) — lightweight counts RPC (never poll full conversations), focus-gated mark-read, web URL-restore testing pitfall

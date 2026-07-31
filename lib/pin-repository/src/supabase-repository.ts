@@ -9,6 +9,7 @@ import type {
   MissingImageCounts,
   PinFilters,
   PinMatch,
+  PinSetSummary,
   PinVerificationStatus,
   SubmitMissingPinInput,
   UpdatePinInput,
@@ -55,6 +56,12 @@ interface PinRow {
   all_characters: string | null;
   character_confidence: string | null;
   character_review_status: string | null;
+  catalogue_status: string | null;
+  is_searchable: boolean | null;
+  normalised_series: string | null;
+  search_aliases: string | null;
+  validation_tier: string | null;
+  main_subject: string | null;
   created_at: string;
   updated_at: string;
   // Joined via PostgREST resource embedding
@@ -104,6 +111,12 @@ function rowToPin(row: PinRow): CataloguePin {
     allCharacters: row.all_characters ?? undefined,
     characterConfidence: row.character_confidence ?? undefined,
     characterReviewStatus: row.character_review_status ?? undefined,
+    catalogueStatus: row.catalogue_status ?? undefined,
+    isSearchable: row.is_searchable ?? undefined,
+    normalisedSeries: row.normalised_series ?? undefined,
+    searchAliases: row.search_aliases ?? undefined,
+    validationTier: row.validation_tier ?? undefined,
+    mainSubject: row.main_subject ?? undefined,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
     catalogueUpdatedAt: row.catalogue_updated_at ?? undefined,
@@ -270,12 +283,17 @@ class SupabasePinRepository implements PinRepository {
       q = q.in('id', [...new Set(pcRows.map(r => r.pin_id))]);
     }
 
-    // Full-text search across title, brand, collection and character fields
+    // Full-text search across title, brand, collection, character, alias and
+    // subject fields. Multi-word queries are tokenised: every word must match
+    // at least one field (chained .or() calls AND together), so e.g.
+    // "2026 mystery" finds pins where "2026" and "mystery" match different fields.
     if (query.trim()) {
-      const safe = query.trim().replace(/[,().]/g, ' ').trim();
-      q = q.or(
-        `title.ilike.%${safe}%,brand.ilike.%${safe}%,collection.ilike.%${safe}%,main_character.ilike.%${safe}%,all_characters.ilike.%${safe}%`,
-      );
+      const tokens = query.trim().replace(/[,().]/g, ' ').split(/\s+/).filter(Boolean);
+      for (const token of tokens) {
+        q = q.or(
+          `title.ilike.%${token}%,brand.ilike.%${token}%,collection.ilike.%${token}%,main_character.ilike.%${token}%,all_characters.ilike.%${token}%,search_aliases.ilike.%${token}%,normalised_series.ilike.%${token}%,main_subject.ilike.%${token}%,release_scope.ilike.%${token}%`,
+        );
+      }
     }
 
     if (filters.limit) q = q.limit(filters.limit);
@@ -323,6 +341,40 @@ class SupabasePinRepository implements PinRepository {
       out.push(...(data as unknown as PinRow[]).map(rowToPin));
     }
     return out;
+  }
+
+  // ── getSetSummaries ────────────────────────────────────────────────────
+
+  async getSetSummaries(): Promise<PinSetSummary[]> {
+    const { data, error } = await this.client
+      .from('pin_sets' as never)
+      .select('*')
+      .order('set_name');
+
+    if (error) return []; // table may not exist yet — sets are optional metadata
+    type SetRow = {
+      id: string; normalised_series: string; set_name: string;
+      collection_name: string | null; programme: string | null;
+      release_year: number | null; scope: string | null;
+      collection_type: string | null; expected_pin_count: number | null;
+      released_pin_count: number; is_complete: boolean;
+      source_url: string | null; validation_status: string | null;
+    };
+    return ((data ?? []) as unknown as SetRow[]).map((r) => ({
+      id: r.id,
+      normalisedSeries: r.normalised_series,
+      setName: r.set_name,
+      collectionName: r.collection_name ?? undefined,
+      programme: r.programme ?? undefined,
+      releaseYear: r.release_year ?? undefined,
+      scope: r.scope ?? undefined,
+      collectionType: r.collection_type ?? undefined,
+      expectedPinCount: r.expected_pin_count ?? undefined,
+      releasedPinCount: r.released_pin_count,
+      isComplete: r.is_complete,
+      sourceUrl: r.source_url ?? undefined,
+      validationStatus: r.validation_status ?? undefined,
+    }));
   }
 
   // ── getPinsBySeries ────────────────────────────────────────────────────

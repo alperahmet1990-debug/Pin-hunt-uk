@@ -6,3 +6,8 @@ description: Where pin images actually live (nowhere yet), placeholder behaviour
 - `needs_front_image`/`needs_back_image` flags are stale: false everywhere despite null URLs. Anything selecting "pins missing images" must filter on the actual `image_url` field, not the flags.
 - eBay image dry-run infra (report-only): `ebay_image_dry_run_runs`/`_results` tables (migration 017), service `ebay-image-dryrun.ts`, admin endpoint `POST /api/catalogue/ebay-image-dry-run`, report screen `app/admin/ebay-image-dryrun.tsx`.
 - **eBay match-scoring lesson:** many pins have generic names ("Hatbox Ghost") shared across many series — name overlap alone matches wrong pins. Require series/edition discriminator tokens (from `collection` + `edition_type`, minus generic words) when the pin name is ≤3 tokens; reject conflicting LE sizes outright. Also filter Browse API to `buyingOptions:{FIXED_PRICE}` — auction listings report current bid and skew valuations low. Sold-price data needs the restricted Marketplace Insights API.
+
+## Catalogue image audit (July 2026)
+- AI vision audit of trusted-pin photos works well: send image_url + title/collection, ask for JSON {match, confidence, actualSubject}, ≥1536 completion tokens. Found 4/25 wrong images (duplicated + swapped eBay photos in the Windows of Attraction set).
+- **Why:** eBay backfill can assign the same or a neighbouring listing's photo to multiple sibling pins; verify photos against the pin title before trusting them.
+- Wrong images were nulled + needs_front_image reset; Railroad pin (PHUK-00000070) got its real train photo.

@@ -12,9 +12,9 @@ const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
   ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
   : 'http://localhost:8080/api';
 
-/** Any community post with a public slug can be shared. */
-export function isShareablePost(post: CommunityPost): boolean {
-  return !!post.publicSlug;
+/** Only the post's author can share it, and it needs a public slug. */
+export function isShareablePost(post: CommunityPost, viewerId?: string | null): boolean {
+  return !!post.publicSlug && !!viewerId && post.authorId === viewerId;
 }
 
 export function getPublicPostUrl(post: CommunityPost): string {

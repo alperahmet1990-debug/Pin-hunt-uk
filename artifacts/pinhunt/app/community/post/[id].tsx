@@ -633,7 +633,7 @@ export default function PostDetailScreen() {
               </View>
             )}
             {/* Share to Facebook */}
-            {isShareablePost(post) && (
+            {isShareablePost(post, userId) && (
               <TouchableOpacity
                 onPress={handleShare}
                 disabled={sharing}

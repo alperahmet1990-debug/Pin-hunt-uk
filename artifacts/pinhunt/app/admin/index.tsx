@@ -185,6 +185,13 @@ export default function AdminIndexScreen() {
           colors={colors}
         />
         <ActionCard
+          icon="eye"
+          title="Vision Test"
+          description="Proof of concept — upload a pin photo and see raw Google Cloud Vision results."
+          onPress={() => router.push('/admin/vision-test' as any)}
+          colors={colors}
+        />
+        <ActionCard
           icon="plus-circle"
           title="Add New Pin"
           description="Create a new catalogue entry directly."

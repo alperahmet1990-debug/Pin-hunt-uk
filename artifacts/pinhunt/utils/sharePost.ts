@@ -12,10 +12,9 @@ const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
   ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
   : 'http://localhost:8080/api';
 
-export const SHAREABLE_TYPES = ['for_trade', 'for_sale', 'in_search_of'] as const;
-
+/** Any community post with a public slug can be shared. */
 export function isShareablePost(post: CommunityPost): boolean {
-  return (SHAREABLE_TYPES as readonly string[]).includes(post.postType) && !!post.publicSlug;
+  return !!post.publicSlug;
 }
 
 export function getPublicPostUrl(post: CommunityPost): string {
@@ -30,6 +29,8 @@ const HEADING: Record<string, string> = {
   for_trade: 'FOR TRADE',
   for_sale: 'FOR SALE',
   in_search_of: 'IN SEARCH OF',
+  new_pickup: 'NEW PICKUP',
+  discussion: 'FROM THE PINHUNT COMMUNITY',
 };
 
 /** Facebook-friendly suggested post text. */
@@ -40,7 +41,11 @@ export function buildShareText(post: CommunityPost): string {
   if (post.priceText) lines.push(post.priceText);
   if (post.lookingFor) lines.push(`Looking for: ${post.lookingFor}`);
   if (post.locationText) lines.push(post.locationText);
-  lines.push('View the pins or make an offer on PinHunt:');
+  lines.push(
+    post.postType === 'for_trade' || post.postType === 'for_sale' || post.postType === 'in_search_of'
+      ? 'View the pins or make an offer on PinHunt:'
+      : 'See the full post on PinHunt:',
+  );
   lines.push(getPublicPostUrl(post));
   return lines.join('\n');
 }

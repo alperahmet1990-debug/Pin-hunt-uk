@@ -1,0 +1,317 @@
+Please tidy the PinHunt database and replace the current speculative pin catalogue with the attached trusted test catalogue:
+
+File: PinHunt_UK_Trusted_Test_Catalogue.xlsx
+
+The workbook’s Master Catalogue tab is the only tab that should be imported as pin records. It contains approximately 182 trusted, source-backed individual pins across 18 validated sets.
+
+Objective
+
+Create a clean, reliable beta catalogue for testing PinHunt while we wait for the Pin & Pop integration.
+
+The app should use only the trusted catalogue for:
+
+* Pin search
+* Character search and filtering
+* Set browsing
+* Collection completion
+* Adding pins to a user’s collection
+* Trade listings
+* Pin scanning and recognition candidates
+* Pin detail pages
+
+Do not import the old speculative 13,000-row catalogue into normal app use.
+
+Important safety requirements
+
+Before making any destructive database changes:
+
+1. Create a database backup or export of the current pin-related tables.
+2. Report the current number of:
+    * Pin records
+    * Sets/collections
+    * User collection records
+    * Trade/listing records
+    * Scan history records
+3. Do not delete users, profiles, messages, trades, collection ownership, favourites, scan history or community content.
+4. Preserve all existing relationships to user-owned pins wherever possible.
+5. Use a database transaction or reversible migration.
+6. Run a dry-run report before applying the final import.
+
+Database cleanup
+
+Review the current Supabase schema and identify the tables used for:
+
+* Pins
+* Pin sets or collections
+* Characters
+* Pin-to-character relationships
+* User collections
+* Trades/listings
+* Favourites or wishlists
+* Scan attempts
+* Images
+* Pricing data
+
+Do not create duplicate tables if suitable tables already exist.
+
+Remove or deactivate speculative catalogue records from normal app use. Prefer soft deletion or an archive flag rather than permanent deletion.
+
+Suitable fields could include:
+
+* catalogue_status
+* is_active
+* is_searchable
+* validation_status
+* archived_at
+
+Old speculative records should be marked approximately as:
+
+* catalogue_status = archived
+* is_active = false
+* is_searchable = false
+
+They must not appear in user search, set completion, trade selection or AI recognition candidates.
+
+Trusted catalogue import
+
+Import only the rows from the workbook’s Master Catalogue tab where:
+
+* Catalogue status = Trusted test record
+* Safe for app search = Yes
+* Import action = UPSERT
+
+Use pinhunt_id as the stable external identifier.
+
+The import must be idempotent. Running it twice must update existing records rather than create duplicates.
+
+Use an upsert based on:
+
+1. pinhunt_id
+2. Pin & Pop external ID where available
+3. A fallback normalised identity using pin name, series and release year
+
+Do not rely only on pin name because different pins can share similar names.
+
+Field mapping
+
+Map the spreadsheet fields into the database, including:
+
+* pinhunt_id
+* Pin name
+* Brand
+* Series
+* Characters
+* Main character
+* All characters
+* Main subject
+* Subject type
+* Release year
+* Release date
+* Edition size
+* Edition type
+* Original price
+* Currency
+* External IDs
+* Categories
+* Park / retailer
+* Programme
+* Collection name
+* Release wave
+* Release scope
+* Collection type
+* Normalised series name
+* Search aliases
+* Expected pin count
+* Set count check
+* Front image URL
+* Back image URL
+* Source URL
+* Validation source 2
+* Validation tier
+* Validation notes
+* Validated date
+* Catalogue status
+* Safe for app search
+* Confidence basis
+
+Store multiple characters in a structured format.
+
+Use either:
+
+* A proper characters table with a junction table, or
+* A text array/JSON field if that better matches the existing architecture
+
+Do not store Jafar; Iago as one character.
+
+For example:
+
+* Main character: Jafar
+* All characters: ["Jafar", "Iago"]
+
+Normalise whitespace and remove duplicate character names.
+
+Sets and collections
+
+Create or update a set/collection record for every distinct Normalised series name.
+
+Use the spreadsheet’s Set Summary tab as a reference for validating the import, but do not import its rows as individual pins.
+
+Each set should support:
+
+* Set name
+* Collection name
+* Programme
+* Year
+* Scope
+* Expected total pin count
+* Released-to-date pin count
+* Whether the set is complete or ongoing
+* Source links
+* Validation status
+
+For ongoing monthly series such as Enchanted Doors and Windows of Attraction:
+
+* Keep expected_pin_count = 12
+* Keep the current released row count separately
+* Do not create blank future-month pin records
+* Show progress such as 7 of 12 currently released
+
+Character search
+
+Ensure every trusted pin is searchable by:
+
+* Pin name
+* Main character
+* Any character in all_characters
+* Main subject
+* Series
+* Collection
+* Search aliases
+* Park or release scope
+* Year
+
+Examples:
+
+* Searching Iago should return the January Enchanted Doors pin.
+* Searching Stitch should return all trusted Stitch pins across different sets.
+* Searching Enchanted Doors should return all seven currently imported releases.
+* Searching 2026 mystery should return relevant 2026 mystery pins.
+
+Existing user data
+
+Where an existing user collection, wishlist, trade or listing references an old speculative pin:
+
+1. Try to match it to a trusted record using:
+    * pinhunt_id
+    * External ID
+    * Normalised pin name
+    * Series
+    * Character
+    * Release year
+2. Repoint the relationship only where the match is highly confident.
+3. Do not automatically merge ambiguous matches.
+4. Put ambiguous records into an admin review queue.
+5. Do not lose user quantities, notes, trade status or ownership dates.
+
+Provide a migration report showing:
+
+* Automatically matched records
+* Unmatched user-linked records
+* Ambiguous matches
+* Archived catalogue records
+* Trusted records imported
+* Duplicate records prevented
+
+Images
+
+Do not invent or scrape new images during this task.
+
+Keep any trusted existing image URLs that are already present.
+
+If a trusted record has no image:
+
+* Use the existing app placeholder
+* Mark the image status as missing
+* Keep the pin searchable
+* Allow the admin workflow to add an image later
+
+Do not use images from archived speculative records unless the match is confirmed.
+
+App behaviour
+
+Update the app so normal users only see trusted and searchable records.
+
+Admin users should still be able to access:
+
+* Archived catalogue records
+* Unmatched user-linked records
+* Records awaiting validation
+* Missing-image records
+* Ambiguous migration matches
+
+Add a visible beta message where appropriate:
+
+PinHunt’s catalogue is currently a curated beta collection. More pins will be added as catalogue integrations and community validation become available.
+
+Do not make this message intrusive.
+
+Validation badges
+
+Trusted imported pins should display a subtle status such as:
+
+* Verified catalogue pin
+* Source checked
+
+Do not show internal labels such as Gold – Web checked directly to users.
+
+Internally retain the exact spreadsheet validation tier.
+
+Import tooling
+
+Create a reusable admin import script or protected admin action that:
+
+1. Accepts an .xlsx or converted .csv file.
+2. Validates required columns.
+3. Shows a dry-run summary.
+4. Detects duplicate IDs and conflicting records.
+5. Imports sets first.
+6. Imports pins second.
+7. Imports character relationships.
+8. Reports failures without stopping the entire batch.
+9. Produces an exportable import log.
+
+Do not expose this import function to normal users.
+
+Required checks after import
+
+Verify that:
+
+* The number of active trusted pins matches the workbook.
+* The number of imported sets matches the workbook’s Set Summary.
+* Every trusted pin belongs to a set.
+* Every character-led pin has a main character.
+* Every trusted pin has either a main character or a valid main subject.
+* No archived speculative pins appear in normal search.
+* No duplicate pinhunt_id values exist.
+* No duplicate Pin & Pop IDs exist.
+* Set progress counts are correct.
+* User-linked records have not been lost.
+* Supabase RLS policies remain secure.
+* TypeScript, linting and build checks pass.
+
+Final response
+
+When complete, give me:
+
+1. The backup location or migration rollback method.
+2. The database migration files created.
+3. The import script or admin workflow created.
+4. Counts before and after cleanup.
+5. Number of trusted pins imported.
+6. Number of sets created or updated.
+7. Number of old records archived.
+8. Number of user-linked records remapped.
+9. Any ambiguous or unresolved records.
+10. Confirmation that the application builds and the trusted pins appear correctly in search and set pages.
+
+Do not add unrelated features or redesign the whole application during this task.

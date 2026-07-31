@@ -6,6 +6,11 @@ import {
   type CataloguePin,
   type PinRepository,
 } from "@workspace/pin-repository";
+import {
+  getVisionSignals,
+  visionSearchTerms,
+  type VisionSignals,
+} from "../services/google-vision";
 
 const router: IRouter = Router();
 
@@ -48,10 +53,13 @@ function buildCatalogueText(pins: CataloguePin[]): string {
  * first describe the pin (stage 1), then search the catalogue by the
  * characters and keywords seen, and only rank those candidates (stage 2).
  */
-async function findCandidates(description: {
-  characters: string[];
-  keywords: string[];
-}): Promise<CataloguePin[]> {
+async function findCandidates(
+  description: {
+    characters: string[];
+    keywords: string[];
+  },
+  visionTerms: string[] = [],
+): Promise<CataloguePin[]> {
   if (!repository) {
     console.warn("[scan] Supabase not configured.");
     return [];
@@ -69,7 +77,13 @@ async function findCandidates(description: {
     if (byId.size >= 350) break;
   }
   // Character names + keywords against title/brand/collection.
-  for (const term of [...description.characters, ...description.keywords].slice(0, 8)) {
+  // Vision-derived terms (OCR text, web entities) go right after the AI
+  // keywords — text read off the pin is a strong catalogue signal.
+  for (const term of [
+    ...description.characters,
+    ...description.keywords,
+    ...visionTerms,
+  ].slice(0, 14)) {
     if (byId.size >= 350) break;
     if (term.trim().length < 3) continue;
     try {
@@ -149,6 +163,11 @@ router.post("/scan/identify", requireUser, async (req, res) => {
 
   try {
     // ── Stage 1: describe the pin in the photo ──
+    // Google Vision (OCR + web detection) runs in parallel with the AI
+    // describe call — it adds no latency and is entirely best-effort.
+    const visionPromise: Promise<VisionSignals | null> = getVisionSignals(imageBase64).catch(
+      () => null,
+    );
     const describeResp = await openai.chat.completions.create({
       model: "gpt-5.6-luna",
       max_completion_tokens: 2048,
@@ -186,12 +205,23 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       };
     } catch { /* fall through with empty description */ }
     console.log("[scan] stage-1 description:", JSON.stringify(description));
+
+    const visionSignals = await visionPromise;
+    const visionTerms = visionSignals ? visionSearchTerms(visionSignals) : [];
+    if (visionSignals) {
+      console.log("[scan] vision signals:", JSON.stringify({
+        ocrLines: visionSignals.ocrLines,
+        bestGuessLabels: visionSignals.bestGuessLabels,
+        webEntities: visionSignals.webEntities,
+        logos: visionSignals.logos,
+      }));
+    }
     if (description.characters.length === 0 && description.keywords.length === 0) {
       console.log("[scan] stage-1 raw content:", JSON.stringify(describeResp.choices[0]?.message?.content ?? null), "finish:", describeResp.choices[0]?.finish_reason);
     }
 
     // ── Stage 2: search the full catalogue for candidates, then rank ──
-    const catalogue = await findCandidates(description);
+    const catalogue = await findCandidates(description, visionTerms);
     if (catalogue.length === 0) {
       res.status(503).json({
         error: "Pin catalogue is empty. Connect Supabase and seed the database first.",
@@ -199,6 +229,24 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       return;
     }
     const catalogueText = buildCatalogueText(catalogue);
+
+    // Vision hints for the ranking prompt: real text read off the pin plus
+    // web-detection guesses. Kept short so the prompt stays bounded.
+    const visionHintLines: string[] = [];
+    if (visionSignals?.ocrText) {
+      visionHintLines.push(`Text read off the pin by OCR: "${visionSignals.ocrText.replace(/\s+/g, " ").slice(0, 200)}"`);
+    }
+    const webGuesses = [
+      ...(visionSignals?.bestGuessLabels ?? []),
+      ...(visionSignals?.webEntities ?? []),
+      ...(visionSignals?.logos ?? []),
+    ].slice(0, 8);
+    if (webGuesses.length > 0) {
+      visionHintLines.push(`Web image search suggests: ${webGuesses.join(", ")}`);
+    }
+    const visionHintText = visionHintLines.length > 0
+      ? `\n\nADDITIONAL SIGNALS from image analysis (use as strong hints, especially any text that matches a pin title or edition):\n${visionHintLines.join("\n")}`
+      : "";
 
     const response = await openai.chat.completions.create({
       model: "gpt-5.6-luna",
@@ -211,7 +259,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
 You will be shown a photo of a Disney enamel pin. Your job is to identify it from the catalogue below and return the top 5 most likely matches.
 
 PIN CATALOGUE:
-${catalogueText}
+${catalogueText}${visionHintText}
 
 Respond with ONLY a valid JSON array of exactly 5 objects, no markdown, no explanation outside the JSON:
 [

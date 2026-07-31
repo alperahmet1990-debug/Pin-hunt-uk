@@ -27,16 +27,6 @@ import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import { useProfile } from '@/context/ProfileContext';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
-import * as Clipboard from 'expo-clipboard';
-import {
-  buildShareText,
-  getPublicPostUrl,
-  getShareImageUrl,
-  isShareablePost,
-  recordShareClick,
-  sharePostNative,
-} from '@/utils/sharePost';
-import * as Linking from 'expo-linking';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -429,66 +419,6 @@ export default function PostDetailScreen() {
     ]);
   };
 
-  const [showShareFallback, setShowShareFallback] = useState(false);
-  const [sharing, setSharing] = useState(false);
-
-  /** Copy the formatted post, then open Facebook so the user can paste into their group. */
-  const shareToGroup = async () => {
-    if (!post) return;
-    recordShareClick(post);
-    await Clipboard.setStringAsync(buildShareText(post)).catch(() => {});
-    Alert.alert(
-      'Post copied',
-      'Your post text and link are on the clipboard. In Facebook, open your pin-trading group, start a new post and paste.',
-      [
-        {
-          text: 'Open Facebook',
-          onPress: async () => {
-            // Try the Facebook app's groups tab first, fall back to the website.
-            const opened = await Linking.openURL('fb://groups').then(() => true).catch(() => false);
-            if (!opened) Linking.openURL('https://www.facebook.com/groups/').catch(() => {});
-          },
-        },
-        { text: 'Done', style: 'cancel' },
-      ],
-    );
-  };
-
-  /** System share sheet (posts to your own Facebook profile, WhatsApp, etc.). */
-  const shareViaSheet = async () => {
-    if (!post || sharing) return;
-    setSharing(true);
-    recordShareClick(post);
-    try {
-      // Copy the full post text too — Facebook's composer often arrives empty.
-      await Clipboard.setStringAsync(buildShareText(post)).catch(() => {});
-      const outcome = await sharePostNative(post);
-      if (outcome === 'fallback') setShowShareFallback(true);
-    } finally {
-      setSharing(false);
-    }
-  };
-
-  const handleShare = () => {
-    if (!post || sharing) return;
-    if (Platform.OS === 'web') {
-      // Web: Alert option lists aren't supported, go straight to the share
-      // sheet and fall back to the options modal.
-      shareViaSheet();
-      return;
-    }
-    Alert.alert('Share this post', 'Facebook only allows group posts from inside its own app, so for a group we copy your post ready to paste.', [
-      { text: 'Post in a Facebook group', onPress: shareToGroup },
-      { text: 'Share elsewhere (share sheet)', onPress: shareViaSheet },
-      { text: 'Cancel', style: 'cancel' },
-    ]);
-  };
-
-  const copyToClipboard = async (value: string, label: string) => {
-    await Clipboard.setStringAsync(value);
-    Alert.alert('Copied', `${label} copied to clipboard.`);
-  };
-
   const handleMessage = () => {
     if (!userId) { Alert.alert('Sign in to message'); return; }
     if (!post) return;
@@ -665,59 +595,7 @@ export default function PostDetailScreen() {
                 </View>
               </View>
             )}
-            {/* Share to Facebook */}
-            {isShareablePost(post, userId) && (
-              <TouchableOpacity
-                onPress={handleShare}
-                disabled={sharing}
-                activeOpacity={0.85}
-                style={[styles.shareBtn, { backgroundColor: '#1877F2', borderRadius: colors.radius }]}
-              >
-                {sharing
-                  ? <ActivityIndicator color="#fff" size="small" />
-                  : <Feather name="share-2" size={16} color="#fff" />
-                }
-                <Text style={styles.shareBtnLabel}>Share to Facebook</Text>
-              </TouchableOpacity>
-            )}
           </View>
-
-          {/* Share fallback options */}
-          {showShareFallback && post && (
-            <Modal transparent animationType="fade" onRequestClose={() => setShowShareFallback(false)}>
-              <TouchableOpacity
-                style={styles.shareModalBackdrop}
-                activeOpacity={1}
-                onPress={() => setShowShareFallback(false)}
-              >
-                <View style={[styles.shareModalCard, { backgroundColor: colors.card, borderRadius: colors.radius }]}>
-                  <Text style={[styles.shareModalTitle, { color: colors.foreground }]}>Share this post</Text>
-                  <Text style={[styles.shareModalHint, { color: colors.mutedForeground }]}>
-                    Copy the post, then in Facebook choose "Share to a Group" and select your pin-trading group.
-                  </Text>
-                  {[
-                    { icon: 'copy' as const, label: 'Copy Facebook Post', onPress: () => copyToClipboard(buildShareText(post), 'Post text') },
-                    { icon: 'image' as const, label: 'Download Share Image', onPress: () => Linking.openURL(getShareImageUrl(post)) },
-                    { icon: 'link' as const, label: 'Copy PinHunt Link', onPress: () => copyToClipboard(getPublicPostUrl(post), 'Link') },
-                    { icon: 'facebook' as const, label: 'Open Facebook', onPress: () => Linking.openURL('https://www.facebook.com') },
-                  ].map(opt => (
-                    <TouchableOpacity
-                      key={opt.label}
-                      onPress={opt.onPress}
-                      style={[styles.shareModalRow, { borderBottomColor: colors.border }]}
-                      activeOpacity={0.75}
-                    >
-                      <Feather name={opt.icon} size={16} color={colors.primary} />
-                      <Text style={[styles.shareModalRowLabel, { color: colors.foreground }]}>{opt.label}</Text>
-                    </TouchableOpacity>
-                  ))}
-                  <TouchableOpacity onPress={() => setShowShareFallback(false)} style={styles.shareModalClose}>
-                    <Text style={[styles.shareModalCloseLabel, { color: colors.mutedForeground }]}>Close</Text>
-                  </TouchableOpacity>
-                </View>
-              </TouchableOpacity>
-            </Modal>
-          )}
 
           {/* Comments section */}
           <View style={[styles.commentsSection, { borderTopColor: colors.border }]}>
@@ -876,27 +754,6 @@ const styles = StyleSheet.create({
 
   detailRows: { marginTop: 10, gap: 4 },
   detailRow: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
-
-  shareBtn: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 8, paddingVertical: 13, marginTop: 14,
-  },
-  shareBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: '#fff' },
-
-  shareModalBackdrop: {
-    flex: 1, backgroundColor: 'rgba(0,0,0,0.45)',
-    alignItems: 'center', justifyContent: 'center', padding: 24,
-  },
-  shareModalCard: { width: '100%', maxWidth: 380, padding: 20 },
-  shareModalTitle: { fontSize: 17, fontFamily: 'Inter_600SemiBold' },
-  shareModalHint: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, marginTop: 6, marginBottom: 10 },
-  shareModalRow: {
-    flexDirection: 'row', alignItems: 'center', gap: 10,
-    paddingVertical: 13, borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  shareModalRowLabel: { fontSize: 14, fontFamily: 'Inter_500Medium' },
-  shareModalClose: { alignItems: 'center', paddingTop: 14 },
-  shareModalCloseLabel: { fontSize: 14, fontFamily: 'Inter_500Medium' },
 
   commentsSection: { padding: 16, gap: 0, borderTopWidth: StyleSheet.hairlineWidth },
   commentsHeading: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginBottom: 12 },

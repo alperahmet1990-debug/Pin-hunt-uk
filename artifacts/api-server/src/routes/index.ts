@@ -9,7 +9,6 @@ import ebayDeletionRouter from "./ebay-deletion";
 import ebayImageDryRunRouter from "./ebay-image-dryrun";
 import catalogueValidationRouter from "./catalogue-validation";
 import visionTestRouter from "./vision-test";
-import publicPostRouter from "./public-post";
 
 const router: IRouter = Router();
 
@@ -23,6 +22,5 @@ router.use(ebayDeletionRouter);
 router.use(ebayImageDryRunRouter);
 router.use(catalogueValidationRouter);
 router.use(visionTestRouter);
-router.use(publicPostRouter);
 
 export default router;

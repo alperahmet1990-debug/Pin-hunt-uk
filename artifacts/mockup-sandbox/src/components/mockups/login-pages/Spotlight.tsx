@@ -42,25 +42,25 @@ export function Spotlight() {
   };
 
   return (
-    <div className="h-screen w-full bg-vault text-vault-foreground overflow-hidden relative flex items-center justify-center">
+    <div className="h-screen w-full bg-vault text-vault-foreground overflow-hidden relative flex flex-col items-center justify-center">
       {/* Atmospheric background */}
       <div className="absolute inset-0 bg-gradient-radial from-vault-glow/5 via-transparent to-transparent" />
       <div className="absolute inset-0 noise" />
-      
-      {/* Hero pin image - top third */}
-      <div className="absolute top-0 left-0 right-0 h-[40%] flex items-center justify-center overflow-hidden">
-        <div className="relative w-48 h-48 glint-container">
-          <img 
-            src="/__mockup/images/hero-pin.jpg" 
-            alt="" 
+
+      {/* Hero pin image */}
+      <div className="relative z-10 mb-6 glint-container">
+        <div className="relative w-36 h-36">
+          <img
+            src="/__mockup/images/hero-pin.jpg"
+            alt=""
             className="w-full h-full object-cover rounded-full shadow-pin"
           />
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 via-transparent to-transparent glint" />
         </div>
       </div>
 
-      {/* Login form - lower two-thirds */}
-      <div className="relative z-10 w-full max-w-sm px-8 mt-32">
+      {/* Login form */}
+      <div className="relative z-10 w-full max-w-sm px-8">
         <div className="text-center mb-10 fade-in">
           <h1 className="font-display text-5xl tracking-tight text-accent mb-2 drop-shadow-glow">
             PinHunt

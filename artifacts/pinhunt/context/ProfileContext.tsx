@@ -4,7 +4,7 @@
  * Loads the profile on sign-in, exposes profile operations to screens.
  * Screens must never call Supabase directly — use this context.
  */
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import {
   createSupabaseUserRepository,
   type IUserPinRepository,
@@ -38,6 +38,8 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const { session } = useAuth();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
+  const profileRequestId = useRef(0);
 
   const userRepo: IUserPinRepository | null = useMemo(() => {
     if (!isSupabaseConfigured) return null;
@@ -49,21 +51,30 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
 
   const loadProfile = useCallback(async (id: string) => {
     if (!userRepo) return;
+    const requestId = ++profileRequestId.current;
     setLoading(true);
+    setLoadedUserId(null);
     try {
       const p = await userRepo.getMyProfile(id);
-      setProfile(p);
+      if (profileRequestId.current === requestId) setProfile(p);
     } catch (err) {
       console.error('[ProfileContext] loadProfile error:', err);
-      setProfile(null);
+      if (profileRequestId.current === requestId) setProfile(null);
     } finally {
-      setLoading(false);
+      if (profileRequestId.current === requestId) {
+        setLoadedUserId(id);
+        setLoading(false);
+      }
     }
   }, [userRepo]);
 
   useEffect(() => {
     if (!userId) {
+      // Invalidate an in-flight request so a previous user's profile cannot
+      // be written back after sign-out or an account switch.
+      profileRequestId.current += 1;
       setProfile(null);
+      setLoadedUserId(null);
       setLoading(false);
       return;
     }
@@ -96,13 +107,18 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     return userRepo.checkUsernameAvailable(username, userId ?? undefined);
   }, [userRepo, userId]);
 
-  const needsUsername = session !== null && !loading && !profile?.username;
+  // A session update renders before the effect above starts loading its
+  // profile. Treat that small window as loading rather than briefly deciding
+  // the new user needs to complete their profile.
+  const profileIsCurrent = userId !== null && loadedUserId === userId;
+  const effectiveLoading = loading || (userId !== null && !profileIsCurrent);
+  const needsUsername = session !== null && profileIsCurrent && !loading && !profile?.username;
 
   return (
     <ProfileContext.Provider
       value={{
         profile,
-        loading,
+        loading: effectiveLoading,
         needsUsername,
         refreshProfile,
         updateMyProfile,

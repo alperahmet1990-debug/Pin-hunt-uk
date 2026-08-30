@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
@@ -36,6 +36,7 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
   const { needsUsername, loading: profileLoading } = useProfile();
   const segments = useSegments();
   const router = useRouter();
+  const pendingRedirect = useRef<string | null>(null);
 
   const loading = authLoading || profileLoading;
 
@@ -44,24 +45,34 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
 
     const inAuthGroup = segments[0] === '(auth)';
     const inCompleteProfile = segments[0] === 'complete-profile';
-    const inTabs = segments[0] === '(tabs)';
+    let target: '/(auth)/login' | '/complete-profile' | '/(tabs)' | null = null;
 
     if (!session && !inAuthGroup) {
       // Not signed in — send to login
-      router.replace('/(auth)/login');
+      target = '/(auth)/login';
     } else if (session && inAuthGroup) {
       // Just signed in — check if profile is complete
-      if (needsUsername) {
-        router.replace('/complete-profile');
-      } else {
-        router.replace('/(tabs)');
-      }
+      target = needsUsername ? '/complete-profile' : '/(tabs)';
     } else if (session && needsUsername && !inCompleteProfile) {
       // Signed in but no username yet — must complete profile
-      router.replace('/complete-profile');
+      target = '/complete-profile';
     } else if (session && !needsUsername && inCompleteProfile) {
       // Profile now complete — move into the app
-      router.replace('/(tabs)');
+      target = '/(tabs)';
+    }
+
+    if (!target) {
+      pendingRedirect.current = null;
+      return;
+    }
+
+    // Auth and profile state can update more than once before the route's
+    // segments catch up. Avoid dispatching the same REPLACE action twice:
+    // the duplicate would reach the newly-mounted child navigator and show a
+    // development warning even though the first redirect succeeded.
+    if (pendingRedirect.current !== target) {
+      pendingRedirect.current = target;
+      router.replace(target);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session, loading, needsUsername, segments]);

@@ -55,7 +55,7 @@ export default function BoardDetailScreen() {
   if (!board) {
     return (
       <View style={[styles.notFound, { backgroundColor: colors.background }]}>
-        <Text style={[styles.notFoundText, { color: colors.foreground }]}>Board not found.</Text>
+        <Text style={[styles.notFoundText, { color: colors.foreground }]}>Collection not found.</Text>
         <TouchableOpacity onPress={() => router.back()}>
           <Text style={[{ color: colors.primary, fontFamily: 'Inter_500Medium', fontSize: 14 }]}>
             Go Back
@@ -67,7 +67,7 @@ export default function BoardDetailScreen() {
 
   const handleDeleteBoard = () => {
     Alert.alert(
-      'Delete Board',
+      'Delete Collection',
       `Delete "${board.name}"? Your pins won't be removed from your collection.`,
       [
         { text: 'Cancel', style: 'cancel' },
@@ -92,7 +92,7 @@ export default function BoardDetailScreen() {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     Alert.alert(
       'Remove Pin',
-      `Remove "${pin.title}" from this board?`,
+      `Remove "${pin.title}" from this collection?`,
       [
         { text: 'Cancel', style: 'cancel' },
         { text: 'Remove', style: 'destructive', onPress: () => removePinFromBoard(board.id, pin.id) },
@@ -156,10 +156,10 @@ export default function BoardDetailScreen() {
         {boardPins.length === 0 ? (
           <EmptyState
             icon="grid"
-            title="No pins in this board yet"
+            title="No pins in this collection yet"
             subtitle={
               board.isCustom
-                ? 'Tap Add Pins to add owned pins to this board.'
+                ? 'Tap Add Pins to add owned pins to this collection.'
                 : 'Add pins from this collection to your Owned list and they will appear here automatically.'
             }
             actionLabel={board.isCustom ? 'Add Pins' : undefined}
@@ -216,7 +216,7 @@ export default function BoardDetailScreen() {
                       }}
                       activeOpacity={0.8}
                       accessibilityLabel={
-                        board.thumbnailPinId === item.id ? 'Remove as board cover' : 'Set as board cover'
+                        board.thumbnailPinId === item.id ? 'Remove as collection cover' : 'Set as collection cover'
                       }
                     >
                       <Feather name="image" size={13} color="#fff" />
@@ -238,7 +238,7 @@ export default function BoardDetailScreen() {
       >
         <View style={[styles.modalRoot, { backgroundColor: colors.background }]}>
           <View style={[styles.modalHeader, { borderBottomColor: colors.border, backgroundColor: colors.card }]}>
-            <Text style={[styles.modalTitle, { color: colors.foreground }]}>Add Pins to Board</Text>
+            <Text style={[styles.modalTitle, { color: colors.foreground }]}>Add Pins to Collection</Text>
             <TouchableOpacity onPress={() => setAddModalVisible(false)} activeOpacity={0.7}>
               <Feather name="x" size={22} color={colors.foreground} />
             </TouchableOpacity>
@@ -248,7 +248,7 @@ export default function BoardDetailScreen() {
             <EmptyState
               icon="check-circle"
               title="All owned pins added"
-              subtitle="Every pin in your Owned collection is already in this board."
+              subtitle="Every owned pin is already in this collection."
               actionLabel="Close"
               onAction={() => setAddModalVisible(false)}
             />

@@ -14,7 +14,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import Svg, { Circle } from 'react-native-svg';
 import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
@@ -28,7 +27,8 @@ type Colors = ReturnType<typeof useColors>;
 // ─── Mode ───────────────────────────────────────────────────────────────────
 
 type Mode = 'organise' | 'trade';
-type TradeFilter = 'for_trade' | 'duplicates' | 'iso';
+type TradeFilter = 'for_trade' | 'iso';
+type BrowseSection = 'overview' | 'collections' | 'sets' | 'characters' | 'recent';
 
 // ─── Derived set shape ────────────────────────────────────────────────────────
 
@@ -41,42 +41,6 @@ interface SetInfo {
   /** Owned pins first, then the pins still missing. */
   ownedPins: CataloguePin[];
   missingPins: CataloguePin[];
-}
-
-// ─── Progress ring ─────────────────────────────────────────────────────────
-
-function ProgressRing({
-  pct,
-  size,
-  stroke,
-  track,
-  color,
-}: {
-  pct: number;
-  size: number;
-  stroke: number;
-  track: string;
-  color: string;
-}) {
-  const r = (size - stroke) / 2;
-  const c = 2 * Math.PI * r;
-  return (
-    <Svg width={size} height={size}>
-      <Circle cx={size / 2} cy={size / 2} r={r} stroke={track} strokeWidth={stroke} fill="none" />
-      <Circle
-        cx={size / 2}
-        cy={size / 2}
-        r={r}
-        stroke={color}
-        strokeWidth={stroke}
-        fill="none"
-        strokeDasharray={`${c}`}
-        strokeDashoffset={c * (1 - pct / 100)}
-        strokeLinecap="round"
-        transform={`rotate(-90 ${size / 2} ${size / 2})`}
-      />
-    </Svg>
-  );
 }
 
 // ─── Small pin tile used across shelves ───────────────────────────────────────
@@ -202,6 +166,9 @@ export default function CollectionScreen() {
 
   const [mode, setMode] = useState<Mode>('organise');
   const [tradeFilter, setTradeFilter] = useState<TradeFilter>('for_trade');
+  const [browseSection, setBrowseSection] = useState<BrowseSection>('overview');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [metadataFilter, setMetadataFilter] = useState<string | null>(null);
   const [createModalVisible, setCreateModalVisible] = useState(false);
   const [newBoardName, setNewBoardName] = useState('');
   const nameInputRef = useRef<TextInput>(null);
@@ -211,7 +178,11 @@ export default function CollectionScreen() {
 
   // ── Status id sets ─────────────────────────────────────────────────────────
   const ownedIds = useMemo(
-    () => new Set(Object.values(collection).filter(e => e.status === 'owned').map(e => e.pinId)),
+    () => new Set(
+      Object.values(collection)
+        .filter(e => e.status === 'owned' || e.status === 'for_trade')
+        .map(e => e.pinId),
+    ),
     [collection],
   );
   const forTradeIds = useMemo(
@@ -273,30 +244,79 @@ export default function CollectionScreen() {
     return catalogue.filter(p => ids.includes(p.id));
   }, [officialSets, catalogue]);
 
-  // Hero: the set closest to completion (owned but not finished)
-  const heroSet = useMemo(() => {
-    const candidates = setSections
-      .filter(s => s.ownedCount > 0 && s.ownedCount < s.totalInCatalogue)
-      .sort(
-        (a, b) => b.ownedCount / b.totalInCatalogue - a.ownedCount / a.totalInCatalogue,
-      );
-    return candidates[0] ?? null;
-  }, [setSections]);
-
   // ── Trade-mode data ──────────────────────────────────────────────────────────
   const forTradePins = useMemo(() => catalogue.filter(p => forTradeIds.has(p.id)), [catalogue, forTradeIds]);
   const wantedPins = useMemo(() => catalogue.filter(p => wantedIds.has(p.id)), [catalogue, wantedIds]);
 
-  // Duplicates: the app has no quantity tracking yet, so this is genuinely 0.
-  // TODO: back with real quantity data once the collection model tracks counts.
-  const duplicateCount = 0;
-  const duplicatePins = useMemo<CataloguePin[]>(() => [], []);
-
   const tradeVisiblePins = useMemo(() => {
     if (tradeFilter === 'for_trade') return forTradePins;
-    if (tradeFilter === 'iso') return wantedPins;
-    return duplicatePins;
-  }, [tradeFilter, forTradePins, wantedPins, duplicatePins]);
+    return wantedPins;
+  }, [tradeFilter, forTradePins, wantedPins]);
+
+  const ownedPins = useMemo(
+    () => catalogue.filter(pin => ownedIds.has(pin.id)),
+    [catalogue, ownedIds],
+  );
+
+  const characterGroups = useMemo(() => {
+    const countsByCharacter = new Map<string, number>();
+    for (const pin of ownedPins) {
+      const names = pin.characters.length > 0
+        ? pin.characters
+        : pin.allCharacters?.split(';').map(name => name.trim()).filter(Boolean) ?? [];
+      for (const name of names) {
+        countsByCharacter.set(name, (countsByCharacter.get(name) ?? 0) + 1);
+      }
+    }
+    return [...countsByCharacter.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 20);
+  }, [ownedPins]);
+
+  const recentlyAddedPins = useMemo(() => {
+    return Object.values(collection)
+      .filter(entry => entry.status === 'owned' || entry.status === 'for_trade')
+      .sort((a, b) => b.dateAdded.localeCompare(a.dateAdded))
+      .map(entry => catalogue.find(pin => pin.id === entry.pinId))
+      .filter((pin): pin is CataloguePin => Boolean(pin))
+      .slice(0, 12);
+  }, [collection, catalogue]);
+
+  const filteredOwnedPins = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    return ownedPins.filter(pin => {
+      const year = String(pin.releaseYear ?? pin.releaseDate?.slice(0, 4) ?? '');
+      const edition = pin.edition ?? (pin.limitedEditionSize ? 'Limited Edition' : '');
+      const metadata = [
+        pin.title,
+        pin.collection,
+        pin.brand,
+        pin.origin,
+        pin.retailer,
+        pin.manufacturer,
+        year,
+        edition,
+        ...pin.characters,
+        pin.allCharacters,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+      return (!query || metadata.includes(query)) &&
+        (!metadataFilter || metadata.includes(metadataFilter.toLowerCase()));
+    });
+  }, [ownedPins, searchQuery, metadataFilter]);
+
+  const searchFilters = useMemo(() => {
+    const values = new Set<string>();
+    for (const pin of ownedPins) {
+      if (pin.brand) values.add(pin.brand);
+      if (pin.origin) values.add(pin.origin);
+      if (pin.releaseYear) values.add(String(pin.releaseYear));
+      if (pin.edition) values.add(pin.edition);
+    }
+    return [...values].slice(0, 12);
+  }, [ownedPins]);
 
   // ── Handlers ──────────────────────────────────────────────────────────────────
   const goPin = (id: string) => router.push({ pathname: '/pin/[id]', params: { id } });
@@ -307,7 +327,6 @@ export default function CollectionScreen() {
       params: { collection: collectionName },
     });
   const goBoard = (id: string) => router.push({ pathname: '/board/[id]', params: { id } });
-  const goSearch = () => router.push('/search');
   const goScan = () => router.push('/(tabs)/scan');
   const shareTradeList = () => {
     // Trading & discovery live on the Community tab.
@@ -382,43 +401,6 @@ export default function CollectionScreen() {
   // ── Empty portfolio ──────────────────────────────────────────────────────────
   const portfolioEmpty = ownedIds.size === 0 && setSections.length === 0 && singlePins.length === 0;
 
-  // ── Trade stat tiles ─────────────────────────────────────────────────────────
-  const statTiles: Array<{
-    key: TradeFilter;
-    label: string;
-    value: number;
-    color: string;
-    bg: string;
-    icon: keyof typeof Feather.glyphMap;
-    wide?: boolean;
-  }> = [
-    {
-      key: 'for_trade',
-      label: 'For Trade',
-      value: counts.forTrade,
-      color: colors.forTrade,
-      bg: colors.forTrade + '1F',
-      icon: 'repeat',
-    },
-    {
-      key: 'duplicates',
-      label: 'Duplicates',
-      value: duplicateCount,
-      color: colors.accent,
-      bg: colors.accent + '1F',
-      icon: 'copy',
-    },
-    {
-      key: 'iso',
-      label: 'In Search Of (ISO)',
-      value: counts.wanted,
-      color: colors.wanted,
-      bg: colors.wanted + '1F',
-      icon: 'bookmark',
-      wide: true,
-    },
-  ];
-
   return (
     <View style={[s.root, { backgroundColor: colors.background }]}>
       {/* ── Header ── */}
@@ -427,23 +409,36 @@ export default function CollectionScreen() {
           <View style={{ flex: 1 }}>
             <Text style={[s.headerTitle, { color: colors.foreground }]}>My Collection</Text>
             <Text style={[s.headerSub, { color: colors.mutedForeground }]}>
-              {counts.owned} owned • {counts.wanted} ISO • {counts.forTrade} trade
+              {ownedIds.size} owned • {counts.forTrade} for trade • {counts.wanted} ISO
             </Text>
           </View>
-          <TouchableOpacity
-            onPress={goSearch}
-            activeOpacity={0.8}
-            style={[s.searchBtn, { backgroundColor: colors.secondary }]}
-          >
-            <Feather name="search" size={20} color={colors.primary} />
-          </TouchableOpacity>
+        </View>
+
+        <View style={[s.collectionSearch, { backgroundColor: colors.background, borderColor: colors.border }]}>
+          <Feather name="search" size={18} color={colors.mutedForeground} />
+          <TextInput
+            value={searchQuery}
+            onChangeText={value => {
+              setSearchQuery(value);
+              if (value) setBrowseSection('overview');
+            }}
+            placeholder="Search my collection"
+            placeholderTextColor={colors.mutedForeground}
+            style={[s.collectionSearchInput, { color: colors.foreground }]}
+            returnKeyType="search"
+          />
+          {searchQuery ? (
+            <TouchableOpacity onPress={() => setSearchQuery('')} hitSlop={10}>
+              <Feather name="x-circle" size={18} color={colors.mutedForeground} />
+            </TouchableOpacity>
+          ) : null}
         </View>
 
         {/* ── Mode switch ── */}
         <View style={[s.switch, { backgroundColor: colors.secondary }]}>
           {(['organise', 'trade'] as const).map(m => {
             const active = mode === m;
-            const label = m === 'organise' ? 'My Portfolio' : 'My Showcase';
+            const label = m === 'organise' ? 'Collection' : 'Trading';
             if (active) {
               return (
                 <LinearGradient
@@ -484,7 +479,105 @@ export default function CollectionScreen() {
       >
         {mode === 'organise' ? (
           <>
-            {portfolioEmpty ? (
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={s.browseTabs}
+            >
+              {([
+                ['overview', 'Overview', 'grid'],
+                ['collections', 'My Collections', 'folder'],
+                ['sets', 'Sets', 'layers'],
+                ['characters', 'Characters', 'users'],
+                ['recent', 'Recently Added', 'clock'],
+              ] as const).map(([key, label, icon]) => {
+                const active = browseSection === key && !searchQuery;
+                return (
+                  <TouchableOpacity
+                    key={key}
+                    onPress={() => {
+                      setSearchQuery('');
+                      setMetadataFilter(null);
+                      setBrowseSection(key);
+                    }}
+                    style={[
+                      s.browseTab,
+                      {
+                        backgroundColor: active ? colors.primary : colors.card,
+                        borderColor: active ? colors.primary : colors.border,
+                      },
+                    ]}
+                  >
+                    <Feather name={icon} size={14} color={active ? colors.primaryForeground : colors.mutedForeground} />
+                    <Text style={[s.browseTabLabel, { color: active ? colors.primaryForeground : colors.foreground }]}>
+                      {label}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </ScrollView>
+
+            {searchQuery ? (
+              <View style={s.searchResults}>
+                <SectionHeader
+                  title="Search results"
+                  subtitle={`${filteredOwnedPins.length} ${filteredOwnedPins.length === 1 ? 'pin' : 'pins'} in your collection`}
+                  colors={colors}
+                  chevron={false}
+                />
+                {searchFilters.length > 0 && (
+                  <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.filterRow}>
+                    {searchFilters.map(filter => {
+                      const active = metadataFilter === filter;
+                      return (
+                        <TouchableOpacity
+                          key={filter}
+                          onPress={() => setMetadataFilter(active ? null : filter)}
+                          style={[
+                            s.filterChip,
+                            {
+                              backgroundColor: active ? colors.primary + '18' : colors.card,
+                              borderColor: active ? colors.primary : colors.border,
+                            },
+                          ]}
+                        >
+                          <Text style={[s.filterChipText, { color: active ? colors.primary : colors.mutedForeground }]}>
+                            {filter}
+                          </Text>
+                        </TouchableOpacity>
+                      );
+                    })}
+                  </ScrollView>
+                )}
+                {filteredOwnedPins.length > 0 ? (
+                  <View style={s.compactPinGrid}>
+                    {filteredOwnedPins.map(pin => (
+                      <TouchableOpacity
+                        key={pin.id}
+                        onPress={() => goPin(pin.id)}
+                        style={[s.searchPinRow, { backgroundColor: colors.card, borderColor: colors.border }]}
+                      >
+                        <Image source={getPinImageSource(pin)} style={s.searchPinImage} />
+                        <View style={{ flex: 1 }}>
+                          <Text style={[s.searchPinTitle, { color: colors.foreground }]} numberOfLines={2}>{pin.title}</Text>
+                          <Text style={[s.searchPinMeta, { color: colors.mutedForeground }]} numberOfLines={1}>
+                            {[pin.collection, pin.brand, pin.releaseYear].filter(Boolean).join(' • ')}
+                          </Text>
+                        </View>
+                        <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
+                      </TouchableOpacity>
+                    ))}
+                  </View>
+                ) : (
+                  <View style={[s.tradeEmpty, { backgroundColor: colors.card, borderColor: colors.border }]}>
+                    <Feather name="search" size={24} color={colors.mutedForeground} />
+                    <Text style={[s.tradeEmptyText, { color: colors.mutedForeground }]}>
+                      No owned pins match that search and filter.
+                    </Text>
+                  </View>
+                )}
+              </View>
+            ) : portfolioEmpty ? (
               <View style={s.emptyWrap}>
                 <View style={[s.emptyIcon, { backgroundColor: colors.secondary }]}>
                   <Feather name="grid" size={30} color={colors.primary} />
@@ -519,13 +612,14 @@ export default function CollectionScreen() {
               </View>
             ) : (
               <>
-                {/* ── My Boards (top) ── */}
-                <View style={[s.shelf, { paddingTop: 20 }]}>
+                {/* ── My Collections (existing Boards data) ── */}
+                {(browseSection === 'overview' || browseSection === 'collections') && (
+                <View style={[s.shelf, { paddingTop: browseSection === 'overview' ? 10 : 20 }]}>
                   <SectionHeader
-                    title="My Boards"
+                    title="My Collections"
                     subtitle={
                       customBoards.length > 0
-                        ? `${customBoards.length} custom ${customBoards.length === 1 ? 'board' : 'boards'}`
+                        ? `${customBoards.length} custom ${customBoards.length === 1 ? 'collection' : 'collections'}`
                         : 'Organise pins your way'
                     }
                     colors={colors}
@@ -582,91 +676,75 @@ export default function CollectionScreen() {
                       <View style={[s.boardTileEmpty, { backgroundColor: colors.secondary }]}>
                         <Feather name="plus" size={22} color={colors.primary} />
                       </View>
-                      <Text style={[s.boardTileName, { color: colors.primary }]}>New Board</Text>
+                      <Text style={[s.boardTileName, { color: colors.primary }]}>New Collection</Text>
                       <Text style={[s.boardTileCount, { color: colors.mutedForeground }]}> </Text>
                     </TouchableOpacity>
                   </ScrollView>
                 </View>
+                )}
 
-                {/* ── Hero: Nearly Complete ── */}
-                {heroSet && (
-                  <View style={s.heroWrap}>
-                    <View style={s.heroLabelRow}>
-                      <Feather name="target" size={15} color={colors.primary} />
-                      <Text style={[s.heroLabel, { color: colors.primary }]}>NEARLY COMPLETE</Text>
-                    </View>
-                    <TouchableOpacity activeOpacity={0.9} onPress={() => goSet(heroSet.collectionName)}>
-                      <LinearGradient
-                        colors={[colors.primaryGradientStart, colors.primaryGradientEnd]}
-                        start={{ x: 0, y: 0 }}
-                        end={{ x: 1, y: 1 }}
-                        style={s.heroCard}
-                      >
-                        <View style={s.heroTopRow}>
-                          <View style={{ flex: 1, paddingRight: 12 }}>
-                            <Text style={s.heroSetName} numberOfLines={2}>
-                              {heroSet.collectionName}
-                            </Text>
-                            <Text style={s.heroSetSub}>
-                              {heroSet.ownedCount} of {heroSet.totalInCatalogue} pins collected
-                            </Text>
-                          </View>
-                          <View style={s.heroRing}>
-                            <ProgressRing
-                              pct={Math.round((heroSet.ownedCount / heroSet.totalInCatalogue) * 100)}
-                              size={54}
-                              stroke={5}
-                              track="rgba(255,255,255,0.3)"
-                              color="#FFFFFF"
-                            />
-                            <View style={s.heroRingLabel}>
-                              <Text style={s.heroRingPct}>
-                                {Math.round((heroSet.ownedCount / heroSet.totalInCatalogue) * 100)}%
-                              </Text>
-                            </View>
-                          </View>
-                        </View>
-                        <ScrollView
-                          horizontal
-                          showsHorizontalScrollIndicator={false}
-                          contentContainerStyle={s.heroPinRow}
-                        >
-                          {heroSet.ownedPins.map(p => (
-                            <TouchableOpacity
-                              key={p.id}
-                              activeOpacity={0.85}
-                              onPress={() => goPin(p.id)}
-                              style={s.heroPin}
-                            >
-                              <Image source={getPinImageSource(p)} style={s.heroPinImg} />
-                            </TouchableOpacity>
-                          ))}
-                          {heroSet.missingPins.slice(0, 4).map(p => (
-                            <TouchableOpacity
-                              key={p.id}
-                              activeOpacity={0.7}
-                              onPress={() => goPin(p.id)}
-                              style={s.heroGhost}
-                            >
-                              <Text style={s.heroGhostMark}>?</Text>
-                              <Text style={s.heroGhostLabel}>ISO</Text>
-                            </TouchableOpacity>
-                          ))}
-                        </ScrollView>
-                      </LinearGradient>
-                    </TouchableOpacity>
+                {browseSection === 'overview' && forTradePins.length > 0 && (
+                  <View style={s.shelf}>
+                    <SectionHeader
+                      title="For Trade"
+                      subtitle={`${forTradePins.length} ${forTradePins.length === 1 ? 'pin' : 'pins'}`}
+                      colors={colors}
+                      onPress={() => {
+                        setTradeFilter('for_trade');
+                        switchMode('trade');
+                      }}
+                    />
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.shelfRow}>
+                      {forTradePins.slice(0, 8).map(pin => (
+                        <PinTile key={pin.id} pin={pin} colors={colors} onPress={() => goPin(pin.id)} badge="trade" />
+                      ))}
+                    </ScrollView>
                   </View>
                 )}
 
-                {/* ── Set shelves ── */}
-                {setSections.map(renderShelf)}
+                {/* ── Compact set progress rows ── */}
+                {(browseSection === 'overview' || browseSection === 'sets') && (
+                  <View>
+                    <View style={s.setsHeading}>
+                      <Text style={[s.sectionTitle, { color: colors.foreground }]}>Sets in Progress</Text>
+                      <Text style={[s.sectionSub, { color: colors.mutedForeground }]}>
+                        {setSections.length} {setSections.length === 1 ? 'set' : 'sets'}
+                      </Text>
+                    </View>
+                    {setSections.map(renderShelf)}
+                  </View>
+                )}
 
-                {/* ── Singles ── */}
-                {singlePins.length > 0 && (
+                {browseSection === 'characters' && (
+                  <View style={s.searchResults}>
+                    <SectionHeader title="Characters" subtitle="Browse your owned pins" colors={colors} chevron={false} />
+                    <View style={s.characterGrid}>
+                      {characterGroups.map(([name, count]) => (
+                        <TouchableOpacity
+                          key={name}
+                          onPress={() => {
+                            setSearchQuery(name);
+                            setMetadataFilter(null);
+                          }}
+                          style={[s.characterRow, { backgroundColor: colors.card, borderColor: colors.border }]}
+                        >
+                          <View style={[s.characterIcon, { backgroundColor: colors.secondary }]}>
+                            <Feather name="user" size={16} color={colors.primary} />
+                          </View>
+                          <Text style={[s.characterName, { color: colors.foreground }]} numberOfLines={1}>{name}</Text>
+                          <Text style={[s.characterCount, { color: colors.mutedForeground }]}>{count}</Text>
+                        </TouchableOpacity>
+                      ))}
+                    </View>
+                  </View>
+                )}
+
+                {/* ── Recently added ── */}
+                {(browseSection === 'recent' || (browseSection === 'overview' && recentlyAddedPins.length > 0)) && (
                   <View style={s.shelf}>
                     <SectionHeader
-                      title="Singles"
-                      subtitle={`${singlePins.length} loose ${singlePins.length === 1 ? 'pin' : 'pins'}`}
+                      title="Recently Added"
+                      subtitle={`${recentlyAddedPins.length} recent ${recentlyAddedPins.length === 1 ? 'pin' : 'pins'}`}
                       colors={colors}
                       chevron={false}
                     />
@@ -675,7 +753,7 @@ export default function CollectionScreen() {
                       showsHorizontalScrollIndicator={false}
                       contentContainerStyle={s.shelfRow}
                     >
-                      {singlePins.map(p => (
+                      {recentlyAddedPins.map(p => (
                         <PinTile
                           key={p.id}
                           pin={p}
@@ -694,41 +772,31 @@ export default function CollectionScreen() {
           <>
             {/* ── TRADE MODE ── */}
             <View style={s.tradeHead}>
-              <View style={s.tradeBigRow}>
-                <Text style={[s.tradeBigNum, { color: colors.foreground }]}>{counts.forTrade}</Text>
-                <Text style={[s.tradeBigLabel, { color: colors.mutedForeground }]}>pins for trade</Text>
-              </View>
-
-              {/* Stat tiles as filters */}
-              <View style={s.statGrid}>
-                {statTiles.map(t => {
-                  const active = tradeFilter === t.key;
+              <Text style={[s.tradingIntro, { color: colors.mutedForeground }]}>
+                Pins you own and have marked for trading, alongside the pins you are looking for.
+              </Text>
+              <View style={[s.tradeSwitch, { backgroundColor: colors.secondary }]}>
+                {([
+                  ['for_trade', `For Trade  ${counts.forTrade}`, 'repeat', colors.forTrade],
+                  ['iso', `Wishlist / ISO  ${counts.wanted}`, 'bookmark', colors.wanted],
+                ] as const).map(([key, label, icon, tint]) => {
+                  const active = tradeFilter === key;
                   return (
                     <TouchableOpacity
-                      key={t.key}
-                      activeOpacity={0.85}
+                      key={key}
                       onPress={() => {
                         Haptics.selectionAsync();
-                        setTradeFilter(t.key);
+                        setTradeFilter(key);
                       }}
                       style={[
-                        s.statTile,
-                        t.wide && s.statTileWide,
-                        {
-                          backgroundColor: t.bg,
-                          borderColor: t.color,
-                          borderWidth: active ? 3 : 2,
-                          opacity: active ? 1 : 0.65,
-                        },
+                        s.tradeSwitchButton,
+                        { backgroundColor: active ? colors.card : 'transparent' },
                       ]}
                     >
-                      <View style={s.statTileTop}>
-                        <View style={[s.statIcon, { backgroundColor: colors.card, borderColor: t.color }]}>
-                          <Feather name={t.icon} size={16} color={t.color} />
-                        </View>
-                        <Text style={[s.statValue, { color: t.color }]}>{t.value}</Text>
-                      </View>
-                      <Text style={[s.statLabel, { color: t.color }]}>{t.label.toUpperCase()}</Text>
+                      <Feather name={icon} size={15} color={active ? tint : colors.mutedForeground} />
+                      <Text style={[s.tradeSwitchLabel, { color: active ? colors.foreground : colors.mutedForeground }]}>
+                        {label}
+                      </Text>
                     </TouchableOpacity>
                   );
                 })}
@@ -740,10 +808,8 @@ export default function CollectionScreen() {
               <SectionHeader
                 title={
                   tradeFilter === 'for_trade'
-                    ? 'Your Trade Pile'
-                    : tradeFilter === 'iso'
-                      ? 'In Search Of'
-                      : 'Duplicates'
+                    ? 'For Trade pins'
+                    : 'Wishlist / ISO'
                 }
                 subtitle={`${tradeVisiblePins.length} ${
                   tradeVisiblePins.length === 1 ? 'pin' : 'pins'
@@ -753,18 +819,14 @@ export default function CollectionScreen() {
               {tradeVisiblePins.length === 0 ? (
                 <View style={[s.tradeEmpty, { backgroundColor: colors.card, borderColor: colors.border }]}>
                   <Feather
-                    name={
-                      tradeFilter === 'for_trade' ? 'repeat' : tradeFilter === 'iso' ? 'bookmark' : 'copy'
-                    }
+                    name={tradeFilter === 'for_trade' ? 'repeat' : 'bookmark'}
                     size={24}
                     color={colors.mutedForeground}
                   />
                   <Text style={[s.tradeEmptyText, { color: colors.mutedForeground }]}>
                     {tradeFilter === 'for_trade'
                       ? 'Mark pins as For Trade to build your trade pile.'
-                      : tradeFilter === 'iso'
-                        ? "Mark pins as ISO to track what you're hunting."
-                        : 'Duplicate tracking arrives once quantities are supported.'}
+                      : "Mark pins as ISO to track what you're hunting."}
                   </Text>
                 </View>
               ) : (
@@ -781,9 +843,7 @@ export default function CollectionScreen() {
                           borderColor:
                             tradeFilter === 'iso'
                               ? colors.wanted
-                              : tradeFilter === 'duplicates'
-                                ? colors.accent
-                                : colors.forTrade,
+                              : colors.forTrade,
                         },
                       ]}
                     >
@@ -796,9 +856,7 @@ export default function CollectionScreen() {
                             borderColor:
                               tradeFilter === 'iso'
                                 ? colors.wanted + '40'
-                                : tradeFilter === 'duplicates'
-                                  ? colors.accent + '40'
-                                  : colors.forTrade + '40',
+                                : colors.forTrade + '40',
                           },
                         ]}
                       >
@@ -809,13 +867,11 @@ export default function CollectionScreen() {
                               color:
                                 tradeFilter === 'iso'
                                   ? colors.wanted
-                                  : tradeFilter === 'duplicates'
-                                    ? colors.accent
-                                    : colors.forTrade,
+                                  : colors.forTrade,
                             },
                           ]}
                         >
-                          {tradeFilter === 'iso' ? 'ISO' : tradeFilter === 'duplicates' ? 'DUPE' : 'FOR TRADE'}
+                          {tradeFilter === 'iso' ? 'ISO' : 'FOR TRADE'}
                         </Text>
                       </View>
                     </TouchableOpacity>
@@ -887,15 +943,15 @@ export default function CollectionScreen() {
             activeOpacity={1}
             style={[s.createModal, { backgroundColor: colors.card, borderRadius: colors.radius, borderColor: colors.border }]}
           >
-            <Text style={[s.createModalTitle, { color: colors.foreground }]}>New Board</Text>
+            <Text style={[s.createModalTitle, { color: colors.foreground }]}>New Collection</Text>
             <Text style={[s.createModalSub, { color: colors.mutedForeground }]}>
-              Give your board a name, such as "2026 Wave A Hidden Mickeys" or "Tiana Collection".
+              Give your collection a name, such as "2026 Wave A Hidden Mickeys" or "Tiana Collection".
             </Text>
             <TextInput
               ref={nameInputRef}
               value={newBoardName}
               onChangeText={setNewBoardName}
-              placeholder="Board name…"
+              placeholder="Collection name…"
               placeholderTextColor={colors.mutedForeground}
               style={[
                 s.createInput,
@@ -960,6 +1016,22 @@ const s = StyleSheet.create({
   headerRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 16 },
   headerTitle: { fontSize: 24, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
   headerSub: { fontSize: 13, fontFamily: 'Inter_600SemiBold', marginTop: 2 },
+  collectionSearch: {
+    minHeight: 48,
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingHorizontal: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    marginBottom: 14,
+  },
+  collectionSearchInput: {
+    flex: 1,
+    fontSize: 15,
+    fontFamily: 'Inter_500Medium',
+    paddingVertical: 10,
+  },
   searchBtn: {
     width: 44,
     height: 44,
@@ -976,6 +1048,60 @@ const s = StyleSheet.create({
   switchPill: { flex: 1, borderRadius: 24 },
   switchTap: { paddingVertical: 12, alignItems: 'center', justifyContent: 'center' },
   switchLabel: { fontSize: 14, fontFamily: 'Inter_700Bold' },
+  browseTabs: { gap: 8, paddingHorizontal: 20, paddingVertical: 14 },
+  browseTab: {
+    height: 36,
+    borderRadius: 18,
+    borderWidth: 1,
+    paddingHorizontal: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  browseTabLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+
+  searchResults: { paddingHorizontal: 20, paddingTop: 10 },
+  filterRow: { gap: 8, paddingBottom: 14 },
+  filterChip: {
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingHorizontal: 11,
+    paddingVertical: 7,
+  },
+  filterChipText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  compactPinGrid: { gap: 8 },
+  searchPinRow: {
+    minHeight: 72,
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  searchPinImage: { width: 54, height: 54, borderRadius: 12, resizeMode: 'cover' },
+  searchPinTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold', lineHeight: 18 },
+  searchPinMeta: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 3 },
+  setsHeading: { paddingHorizontal: 20, paddingTop: 24 },
+  characterGrid: { gap: 8 },
+  characterRow: {
+    minHeight: 54,
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingHorizontal: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  characterIcon: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  characterName: { flex: 1, fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  characterCount: { fontSize: 13, fontFamily: 'Inter_700Bold' },
 
   // Board tiles
   boardTile: {
@@ -1156,6 +1282,19 @@ const s = StyleSheet.create({
 
   // Trade head
   tradeHead: { paddingHorizontal: 20, paddingTop: 24 },
+  tradingIntro: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 19, marginBottom: 16 },
+  tradeSwitch: { flexDirection: 'row', borderRadius: 18, padding: 4, gap: 4 },
+  tradeSwitchButton: {
+    flex: 1,
+    minHeight: 42,
+    borderRadius: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 7,
+    paddingHorizontal: 8,
+  },
+  tradeSwitchLabel: { fontSize: 12, fontFamily: 'Inter_700Bold' },
   tradeBigRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 8, marginBottom: 22 },
   tradeBigNum: { fontSize: 58, fontFamily: 'Inter_700Bold', letterSpacing: -2, lineHeight: 60 },
   tradeBigLabel: { fontSize: 17, fontFamily: 'Inter_600SemiBold', marginBottom: 8 },

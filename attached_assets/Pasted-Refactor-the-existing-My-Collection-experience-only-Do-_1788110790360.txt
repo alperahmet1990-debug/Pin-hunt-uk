@@ -1,0 +1,114 @@
+Refactor the existing My Collection experience only. Do not redesign the wider app, change global navigation/styling, rebuild working backend logic, or create duplicate components where existing ones can be reused. Inspect the current Collection-related components, routes, data models and queries first, then make the smallest set of changes needed.
+
+Replace the current My Portfolio / My Showcase split with one simplified My Collection experience.
+
+The Collection landing page should include:
+
+* Header: My Collection
+* Small summary: total owned pins, number for trade, wishlist/ISO count
+* Prominent Search my collection field
+* My Collections section — rename/reuse the existing Boards functionality rather than rebuilding it
+* Sets in Progress — compact cards/rows showing set name, collected/total, percentage/progress and small pin previews
+* For Trade — compact preview of pins marked for trade with a See all action
+* Keep the existing floating + button
+
+Do not create an “All Pins” scrolling gallery as the default view.
+
+Use this primary structure:
+
+Collection | Trading
+
+Under Collection, users should be able to browse through:
+
+* Search
+* My Collections
+* Sets
+* Characters
+* Recently Added
+
+Reuse existing catalogue metadata and filtering logic wherever available. Do not build a new metadata system.
+
+Rename Boards to Collections throughout this experience. Preserve the existing board functionality/data. Avoid database/schema changes unless absolutely necessary.
+
+Make Search the fastest way to locate owned pins. Search only the current user’s collection and support existing metadata where available:
+
+* Character
+* Set
+* Park/location
+* Year
+* Edition type
+* Brand
+
+Add simple filter chips using existing filtering/query logic. Do not build AI or natural-language search.
+
+For Sets, reuse the current set-progress functionality but simplify the design. Remove the oversized “Nearly Complete” promotional card. Each set should show:
+
+* Set name
+* Collected / total
+* Percentage/progress
+* Owned pins in colour
+* Missing pins visually muted/grey
+
+Opening a set should show the complete set and, using existing functionality where available:
+
+* Owned vs missing pins
+* Add missing pin to Wishlist/ISO
+* Find a trade for a missing pin
+* Identify duplicates where quantity > 1
+
+Do not build new achievement infrastructure in this task.
+
+Replace the current Showcase dashboard with a simpler Trading view containing:
+
+* Total pins For Trade
+* For Trade pins
+* Wishlist / ISO
+* Existing trade-match information where already implemented
+* Existing Share Trade List / Share ISO functionality where already implemented
+
+Remove duplicate statistic cards where the same count is displayed multiple times.
+
+Treat For Trade as a state of an owned pin, not a separate conceptual collection.
+
+Treat Duplicates as quantity rather than a primary navigation section. Show ×2, ×3, etc. where appropriate. Duplicates can remain available as a filter but should not have a large dashboard card.
+
+Keep deeper functionality in the existing Pin Detail experience rather than cluttering Collection screens. Ensure Pin Detail clearly exposes existing data/actions for:
+
+* Quantity owned
+* Mark/unmark For Trade
+* Wishlist/ISO state where relevant
+* PinHunt estimated value if available
+* Set by Collector value if available
+* Set membership/progress
+* Trade-match action where available
+
+Do not fully redesign Pin Detail.
+
+Keep the floating + button and reuse existing add flows. Where already supported, offer:
+
+* Scan a Pin
+* Search Catalogue
+* Add from a Set
+
+Do not build new scanning infrastructure.
+
+UX priorities:
+
+1. Find a pin quickly
+2. Browse logical collections and sets
+3. Understand collection progress
+4. Move naturally into trading
+
+Reduce visual clutter and avoid large dashboard statistic cards. Keep pin imagery prominent. Preserve the existing PinHunt design language, colours, typography, bottom navigation and mobile behaviour.
+
+Important cost/token constraints:
+
+* Do not rebuild from scratch
+* Do not create mock/demo data
+* Do not modify unrelated pages
+* Do not rename database tables unless essential
+* Reuse existing components, hooks, routes, queries and data models first
+* Prefer moving, simplifying and relabelling existing UI over generating new architecture
+* Do not produce a long design document or multiple alternatives
+
+Before coding, briefly identify the existing Collection components that can be reused. Then implement directly. After implementation, run only the relevant checks for the modified area and fix only errors introduced by this change.

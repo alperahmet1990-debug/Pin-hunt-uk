@@ -1,0 +1,392 @@
+Make a small, focused correction to the new My Collection experience. Do not redesign or rebuild Collection from scratch. Reuse the components, data and styling already created in the previous Collection redesign.
+
+The goal is to combine the best of the Pin Trading App pattern for personal organisation with the Pin Vault pattern for set collecting.
+
+Keep this architecture:
+
+Collection | Traders | ISO
+
+Use Collection singular for the top tab.
+
+Inside Collection, use a second-level navigation:
+
+All Pins | Boards | Sets
+
+This should replace the current horizontally scrolling Group By chips.
+
+Do not show Character, Location, Year, Brand, Series etc. as permanent top-level chips.
+
+ALL PINS
+
+Default view when Collection opens.
+
+Show every owned pin in the existing image-first pin grid.
+
+Keep:
+
+* current pin card design
+* Search
+* ●	Add
+* one lightweight Filter/Sort control
+
+All Pins must ALWAYS remain selectable.
+
+The user must be able to navigate:
+
+All Pins → Boards → Sets → All Pins
+
+repeatedly without reloading or leaving the page.
+
+Do not treat All Pins as an invisible/default state that disappears after another view is selected.
+
+BOARDS
+
+Boards are user-created ways to organise pins.
+
+Reuse the existing Boards/custom Collections functionality and data.
+
+Use the term:
+
+Boards
+
+not “My Collections” inside this area.
+
+Examples:
+
+* Favourite Pins
+* Winnie the Pooh
+* Halloween
+* Disneyland Paris 2026
+* Never Trade
+* Main Pin Board
+
+A pin should be able to appear in multiple Boards without creating duplicate ownership records.
+
+Boards should appear as a visual grid using existing board/collection card components where possible.
+
+Each Board card should show:
+
+* representative pin previews
+* board name
+* pin count
+
+Opening a Board should show its pins using the existing pin grid.
+
+Provide clear navigation back to Boards.
+
+Make Create Board easy to find from the Add action and/or Boards view.
+
+SETS
+
+Sets are different from Boards.
+
+Boards = created and organised by the collector.
+
+Sets = official/catalogue-driven groups organised by PinHunt.
+
+Reuse the existing catalogue set data, set progress logic and Set Detail functionality.
+
+The Sets view should show sets the collector has explicitly chosen to track.
+
+Suggested structure:
+
+My Sets
+
+Optional lightweight filter:
+In Progress | Completed
+
+Each set card should show:
+
+* set name
+* useful representative pin previews
+* owned / total count
+* completion %
+* completed state where appropriate
+
+Example:
+
+Wishables Shimmer 2026
+12 / 16 · 75%
+
+Ducks of Disney 2025
+16 / 16 · Complete ✓
+
+Do not make this look like a dashboard.
+
+Keep imagery prominent.
+
+TRACKING A SET
+
+Users must have an obvious way to add/track an official set.
+
+Use:
+
++ Add → Track a Set
+
+Track a Set should open the existing catalogue/set search where possible.
+
+Example:
+
+Search sets…
+
+Wishables Shimmer 2026
+Ducks of Disney 2025
+Princess Pastries 2024
+
+Selecting a set should allow:
+
+Track Set
+
+Once tracked, calculate current completion automatically from the user’s existing owned pins.
+
+For example, if the user already owns 7 pins from a 16-pin set, tracking it should immediately show:
+
+7 / 16
+
+Do not require the user to add those pins again.
+
+Future owned pins from that set should automatically update progress.
+
+Do not automatically track every set merely because the user owns one pin from it.
+
+Owning a pin from a set and actively tracking a set are separate concepts.
+
+If a small schema change is genuinely required for tracked sets, keep it minimal and reuse existing set/catalogue IDs.
+
+SET DETAIL
+
+Opening a set should reuse the existing Set Detail experience and show the full official set.
+
+Desired behaviour:
+
+* owned pins = full colour
+* missing pins = muted/greyed
+* duplicate ownership = quantity indicator such as ×2
+* ISO missing pins = subtle ISO indicator
+* set completion %
+* collected / total count
+
+For a missing pin support existing actions such as:
+
+* Add to ISO
+* Find Trade
+
+For an owned pin:
+
+* open existing Pin Detail
+
+Preserve any existing set completion animation/achievement functionality.
+
+FILTER / SORT
+
+Move metadata such as:
+
+* Character
+* Set / Series
+* Park / Location
+* Year
+* Brand
+* Edition type
+
+behind ONE lightweight Filter control.
+
+Do not display these as a horizontally scrolling chip carousel.
+
+Tapping Filter should use an existing mobile bottom sheet/modal component where possible.
+
+Example:
+
+Filter Pins
+
+Character
+Set / Series
+Park / Location
+Year
+Brand
+Edition type
+
+Sort By
+
+Recently added
+Name
+Release date
+Estimated value
+
+Only show options supported by existing catalogue data.
+
+Allow useful combinations where existing filtering makes this easy.
+
+If filters are active, show them subtly near the results, for example:
+
+Stitch ×   2026 ×
+
+Do not clutter the top of the screen.
+
+SEARCH
+
+Keep Search visible.
+
+In All Pins, search owned pins.
+
+In Boards, search Boards and/or pins within Boards where the existing implementation supports it cleanly.
+
+In Sets, search tracked sets.
+
+Reuse existing search logic.
+
+Do not build AI or natural-language search.
+
+TRADERS
+
+Keep the current Traders tab.
+
+Do not redesign it in this task.
+
+It should remain the simple grid of pins marked For Trade with existing:
+
+* search
+* filter/sort
+* pin detail
+* sharing
+* valuation indicators where already implemented
+
+ISO
+
+Keep the current ISO tab.
+
+Do not redesign it in this task.
+
+It should remain the simple grid of wanted pins with existing:
+
+* search
+* filter/sort
+* pin detail
+* sharing
+* match indicators where already implemented
+
+ADD ACTION
+
+Use one clear Add action.
+
+From Collection, the menu should be:
+
+Add Pin
+Track a Set
+Create Board
+
+Reuse existing flows where possible.
+
+Do not build new scanning or catalogue infrastructure.
+
+VISUAL DIRECTION
+
+Keep the current visual direction from the latest redesign.
+
+The existing pin grid/card styling is good and should be retained.
+
+Preserve:
+
+* warm off-white / neutral background
+* restrained PinHunt orange/gold accent
+* dark charcoal text
+* image-first cards
+* compact mobile layout
+
+Do not redesign the pin cards.
+
+Do not add:
+
+* large dashboard cards
+* promotional banners
+* giant stats
+* extra navigation layers
+* horizontally scrolling metadata chip rows
+
+The top of the screen should feel calm and obvious.
+
+Target hierarchy:
+
+My Collection
+
+24 owned · 3 traders · 4 ISO
+
+Collection | Traders | ISO
+
+[ Search my pins                    ] [+ Add]
+
+All Pins     Boards     Sets              Filter
+
+CONTENT
+
+TERMINOLOGY
+
+Use this terminology consistently:
+
+Collection = overall owned-pin area
+All Pins = every pin owned
+Boards = collector-created organisation
+Sets = official catalogue-driven sets the user chooses to track
+Traders = owned pins available for trade
+ISO = pins the collector wants
+
+Character, year, location, brand and series are filters/search metadata, not primary navigation.
+
+IMPLEMENTATION / TOKEN EFFICIENCY
+
+This should be a small refactor of the Collection navigation and state, not another rebuild.
+
+Before coding, inspect the components created in the previous Collection redesign and reuse them.
+
+Reuse:
+
+* current pin grid
+* pin cards
+* board/custom collection data
+* set data
+* set progress logic
+* set detail
+* search
+* filters
+* trader state
+* ISO state
+* catalogue metadata
+* existing Add Pin flow
+
+Do not:
+
+* rebuild pin cards
+* rebuild Pin Detail
+* rebuild Traders
+* rebuild ISO
+* change unrelated pages
+* create mock/demo data
+* duplicate Board or Set systems
+* make broad backend/schema changes
+* generate a long design document
+
+Implement directly.
+
+Only make schema changes if genuinely required to persist explicit tracked set state.
+
+ACCEPTANCE TESTS
+
+Confirm all of the following work:
+
+1. Collection opens on All Pins.
+2. All Pins always remains selectable.
+3. User can switch freely between All Pins | Boards | Sets without reload.
+4. Boards shows user-created Boards.
+5. User can create a Board.
+6. User can open a Board and see its pins.
+7. Sets shows explicitly tracked official sets.
+8. User can search for and Track a Set.
+9. Tracking a set immediately calculates ownership from existing Collection data.
+10. Adding/removing owned pins updates set progress correctly.
+11. No horizontal Character/Location/Year/Brand/etc. chip carousel remains.
+12. Those metadata options remain available through Filter.
+13. Traders continues to work.
+14. ISO continues to work.
+15. Search and Add continue to work.
+16. No unrelated areas of the app are changed.
+
+Treat this as a correction to the current implementation, not a new Collection redesign.

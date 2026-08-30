@@ -56,7 +56,11 @@ export default function SetDetailScreen() {
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
 
   const ownedIds = useMemo(
-    () => new Set(Object.values(userCollection).filter(e => e.status === 'owned').map(e => e.pinId)),
+    () => new Set(
+      Object.values(userCollection)
+        .filter(e => e.status === 'owned' || e.status === 'for_trade')
+        .map(e => e.pinId),
+    ),
     [userCollection],
   );
 

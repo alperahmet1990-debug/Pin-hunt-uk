@@ -1,0 +1,453 @@
+Redesign the existing My Collection experience into a simpler, collector-first V1 experience. This is an important UX overhaul, so prioritize quality, but keep implementation efficient by reusing existing Collection, pin grid, search, filter, set, trader, ISO, pin detail and catalogue components wherever possible.
+
+Do not redesign unrelated areas of the app.
+
+The goal is to make My Collection immediately understandable, fast to browse, visually polished, and scalable whether a user owns 20 pins or 2,000 pins.
+
+Replace the current Collection landing experience with:
+
+My Collection
+
+Small summary:
+
+* total owned
+* total trader pins
+* total ISO/wishlist pins
+
+Primary tabs:
+
+Collections | Traders | ISO
+
+Remove the current Collection | Trading toggle.
+
+Do not show separate homepage sections for For Trade, Sets in Progress, Recently Added or dashboard-style cards.
+
+The experience should feel like a clean digital collector library.
+
+COLLECTIONS TAB
+
+Default to Collections.
+
+At the top show lightweight controls:
+
+* Search
+* Group By
+* Add
+
+Then show a visual grid of collections/groups.
+
+Each collection card should contain:
+
+* representative pin image previews
+* collection/group name
+* number of pins
+* progress only where relevant
+
+Examples:
+
+Winnie the Pooh
+28 pins
+
+Stitch
+22 pins
+
+Disneyland Paris
+17 pins
+
+Hidden Disney Wave A
+6 / 7 · 86%
+
+Keep cards compact and image-first. Avoid large dashboard cards or excessive explanatory text.
+
+GROUP BY
+
+Add a Group By control powered by existing catalogue metadata.
+
+Where supported, allow:
+
+* My Collections
+* Character
+* Set
+* Series
+* Location / Park
+* Year
+* Brand
+
+Do not create a new metadata system.
+
+Examples:
+
+Group By → Character
+
+Stitch — 32
+Winnie the Pooh — 28
+Mickey Mouse — 24
+
+Group By → Location
+
+WDW — 134
+Disneyland Paris — 78
+Disneyland Resort — 42
+
+Group By → Set
+
+Wishables Shimmer — 12 / 16
+Magical Moments — 6 / 7
+Hidden Disney — 4 / 7
+
+Opening any group should display the relevant pins in a clean image-first grid.
+
+MY COLLECTIONS
+
+Preserve the existing Board/custom collection functionality where possible.
+
+Rename Boards to Collections throughout this experience.
+
+Users should still be able to create custom collections such as:
+
+* Favourite Pins
+* Halloween
+* Paris Traders
+* Never Trade
+* Winnie the Pooh Board
+
+Do not require users to manually organise everything. Automatic grouping should come from existing catalogue metadata.
+
+SETS
+
+Do not keep a separate Sets in Progress feed on the Collection homepage.
+
+Sets should naturally appear through:
+
+Group By → Set
+
+Set cards should show:
+
+* set name
+* collected / total
+* completion percentage
+* visual pin previews
+* completed state where relevant
+
+Opening a set should show:
+
+* full set grid
+* owned pins in colour
+* missing pins visually muted/greyed
+* quantity where duplicates exist
+* add missing pin to ISO/wishlist
+* existing Find Trade functionality where available
+* completion progress
+
+Do not automatically imply the user is actively collecting every set simply because they own one pin from it.
+
+Where practical, support an optional Track Set state using existing data. Keep any schema change minimal.
+
+Add an obvious Add / Track Set action from the Set grouping experience.
+
+TRADERS TAB
+
+Keep Traders extremely simple.
+
+Show:
+
+X Trader Pins
+
+Optionally show total estimated trader value if existing valuation data is already available and reliable.
+
+Then:
+
+* Search
+* Filter
+* Sort
+* pin grid
+
+Each trader pin card should primarily show the pin image.
+
+Where valuation data exists, show a small estimated value badge without making the screen feel financial.
+
+Support:
+
+* tap pin → existing Pin Detail
+* add/remove For Trade using existing logic
+* multi-select where useful
+* Share Traders / Share Trade List using existing sharing functionality
+
+Do not create a separate Traders dashboard.
+
+ISO TAB
+
+Mirror Traders for consistency.
+
+Show:
+
+X ISO Pins
+
+Then:
+
+* Search
+* Filter
+* Sort
+* pin grid
+
+Support:
+
+* tap pin → Pin Detail
+* add/remove ISO
+* Share ISO using existing functionality
+* existing trade-match indicators where available
+
+If existing matching data exists, a subtle line such as:
+
+✨ 4 potential matches
+
+is sufficient.
+
+Do not turn ISO into a trade-matching dashboard.
+
+SEARCH
+
+Search should be prominent and contextual.
+
+Within Collections, search the user’s owned collection.
+
+Within Traders, search trader pins only.
+
+Within ISO, search ISO pins only.
+
+Reuse existing search logic and catalogue metadata where possible.
+
+Support existing fields such as:
+
+* pin name
+* character
+* set/series
+* location
+* year
+* brand
+* edition type
+
+Do not build AI or natural-language search.
+
+FILTER / SORT
+
+Reuse existing infrastructure.
+
+Useful options may include:
+
+* pin name
+* character
+* series/set
+* release date
+* estimated value
+* location
+* edition type
+
+Do not introduce filters that the current data cannot support cleanly.
+
+ADD
+
+Use one clear Add action.
+
+From Collections:
+
++ Add
+
+Options:
+
+* Add Pin
+* Add / Track Set
+* Create Collection
+
+Reuse existing scan/search/add-pin flows.
+
+Do not build new scanning infrastructure.
+
+Within Traders or ISO, Add should preferably allow selection using existing collection/catalogue selectors.
+
+PIN DETAIL
+
+Keep deeper information in the existing Pin Detail experience rather than cluttering Collection screens.
+
+Pin Detail should remain the place for:
+
+* ownership quantity
+* For Trade state
+* ISO state
+* estimated value
+* Set by Collector value where available
+* set membership
+* catalogue metadata
+* trade actions
+
+Reuse the existing Pin Detail component and only make minor changes where required.
+
+VISUAL DESIGN SYSTEM
+
+Refine the Collection UI so it feels premium, modern, warm and collector-focused.
+
+The target feeling is:
+
+Premium digital pin case / collector catalogue
+
+Preserve the existing PinHunt identity, but reduce the amount of strong orange/yellow used across large surfaces.
+
+Use:
+
+* predominantly warm off-white / very light neutral backgrounds
+* dark charcoal text rather than pure black
+* PinHunt orange/gold mainly as an accent for selected states, progress and important actions
+* subtle warm neutral borders/backgrounds for separation
+
+The pin artwork should provide most of the colour on screen.
+
+Avoid large orange gradient blocks.
+
+CARDS
+
+Collection and pin cards should use:
+
+* soft rounded corners
+* minimal borders
+* subtle elevation/shadow only where helpful
+* consistent image sizing
+* generous but efficient internal spacing
+
+Avoid excessive nested cards.
+
+Prefer spacing and subtle dividers over putting every element inside another container.
+
+Pin imagery should remain the strongest visual element.
+
+BUTTONS & TOUCH TARGETS
+
+Use a consistent hierarchy:
+
+Primary actions
+
+* filled PinHunt orange/gold
+* use sparingly
+
+Secondary actions
+
+* light neutral surface
+* subtle border
+
+Tertiary actions
+
+* text/icon only where appropriate
+
+Avoid multiple competing primary buttons.
+
+All interactive controls should have comfortable mobile touch targets of approximately 44px minimum.
+
+Keep buttons compact rather than oversized unless the action genuinely needs prominence.
+
+Use consistent icon sizing and padding.
+
+SPACING & DENSITY
+
+Use a consistent spacing system.
+
+The interface should feel spacious but should not waste valuable mobile screen space.
+
+Prioritise showing useful pin imagery over decorative UI.
+
+Reduce:
+
+* oversized headers
+* excessive vertical gaps
+* large promotional blocks
+* unnecessary explanatory copy
+
+A normal iPhone screen should display a meaningful amount of collection content while remaining easy to scan.
+
+TABS & UTILITY CONTROLS
+
+Collections | Traders | ISO should be visually lightweight.
+
+Use the PinHunt accent to indicate the selected tab, but avoid another large orange pill/gradient occupying excessive space.
+
+Search, Group By, Filter and Sort should look like lightweight utility controls, not major CTA buttons.
+
+TEXTURE & PERSONALITY
+
+Do not make the interface completely flat or clinical.
+
+Retain a subtle sense of collecting, discovery and magic without using copyrighted Disney visual assets.
+
+If texture is used, keep it extremely subtle, such as a faint warm paper/display-board feel on selected collection surfaces.
+
+Do not use strong textures behind pin grids.
+
+Avoid:
+
+* glassmorphism
+* excessive gradients
+* neon effects
+* heavy decorative backgrounds
+
+CONSISTENCY
+
+Reuse existing design tokens where appropriate.
+
+If Collection currently has inconsistent:
+
+* spacing
+* button heights
+* border radii
+* card treatments
+* icon sizing
+
+consolidate these into the existing design system rather than adding one-off styles.
+
+Do not globally restyle unrelated screens in this task.
+
+UX PRINCIPLE
+
+The mental model should be extremely simple:
+
+Collections = how I browse what I own
+Traders = what I’m willing to trade
+ISO = what I’m looking for
+
+Everything else sits underneath these concepts.
+
+IMPLEMENTATION / TOKEN EFFICIENCY
+
+This is a Collection-only redesign.
+
+Before coding, inspect the existing Collection-related components and identify what can be reused.
+
+Reuse existing:
+
+* pin grids/cards
+* Boards/Collections data
+* set progress logic
+* search
+* filters
+* catalogue metadata
+* trader state
+* ISO state
+* valuation data
+* Pin Detail
+* sharing
+* add-pin flows
+
+Do not rebuild working backend functionality unless necessary.
+
+Do not modify unrelated pages.
+
+Do not create mock/demo data.
+
+Avoid schema migrations unless genuinely required.
+
+Prefer refactoring and reorganising existing components over creating duplicate systems.
+
+Do not produce a long design document or multiple alternatives.
+
+Implement the redesigned experience directly.
+
+After implementation, run only the relevant checks for the Collection area and fix issues introduced by this work.
+
+Treat this as the final V1 My Collection architecture, not another temporary iteration.

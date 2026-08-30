@@ -4,7 +4,7 @@
  */
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ActivityIndicator, Alert, Image, KeyboardAvoidingView, Modal, Platform,
+  ActivityIndicator, Alert, Image, InteractionManager, KeyboardAvoidingView, Modal, Platform,
   ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
@@ -84,6 +84,7 @@ export default function ChatScreen() {
   const [loading, setLoading] = useState(true); const [error, setError] = useState<string | null>(null);
   const [msgText, setMsgText] = useState(''); const [sending, setSending] = useState(false);
   const [attachmentMenuOpen, setAttachmentMenuOpen] = useState(false);
+  const [photoPickerPending, setPhotoPickerPending] = useState(false);
   const [tradeConfirmOpen, setTradeConfirmOpen] = useState(false);
   const [pinPickerOpen, setPinPickerOpen] = useState(false); const [selectedPinIds, setSelectedPinIds] = useState<string[]>([]);
   const [pinSearch, setPinSearch] = useState('');
@@ -156,19 +157,21 @@ export default function ChatScreen() {
 
   const choosePhoto = async () => {
     if (!userId) return;
-    const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!permission.granted) {
-      Alert.alert('Photo permission needed', 'Allow access to select photos.');
-      return;
-    }
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images'],
-      allowsMultipleSelection: true,
-      selectionLimit: 6,
-      quality: 1,
-    });
-    if (result.canceled) return;
     try {
+      if (Platform.OS !== 'web') {
+        const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (!permission.granted) {
+          Alert.alert('Photo permission needed', 'Allow access to select photos.');
+          return;
+        }
+      }
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ['images'],
+        allowsMultipleSelection: true,
+        selectionLimit: 6,
+        quality: 1,
+      });
+      if (result.canceled) return;
       setSending(true);
       const urls = await Promise.all(
         result.assets.map((asset, index) => uploadCommunityPhoto(userId, asset.uri, index)),
@@ -178,6 +181,38 @@ export default function ChatScreen() {
       Alert.alert('Photo upload failed', e instanceof Error ? e.message : 'Please try again.');
     } finally {
       setSending(false);
+    }
+  };
+
+  useEffect(() => {
+    if (Platform.OS !== 'android' || attachmentMenuOpen || !photoPickerPending) return;
+    let cancelled = false;
+    const task = InteractionManager.runAfterInteractions(() => {
+      requestAnimationFrame(() => {
+        if (cancelled) return;
+        setPhotoPickerPending(false);
+        void choosePhoto();
+      });
+    });
+    return () => {
+      cancelled = true;
+      task.cancel();
+    };
+  }, [attachmentMenuOpen, photoPickerPending, userId]);
+
+  const closeAttachmentMenu = () => {
+    setPhotoPickerPending(false);
+    setAttachmentMenuOpen(false);
+  };
+
+  const openPhotoPicker = () => {
+    setAttachmentMenuOpen(false);
+    if (Platform.OS === 'web') {
+      // Web requires the file input to open directly from the user's click.
+      void choosePhoto();
+    } else {
+      // Native pickers cannot reliably present while the RN Modal is dismissing.
+      setPhotoPickerPending(true);
     }
   };
 
@@ -358,28 +393,31 @@ export default function ChatScreen() {
       </Modal>
       <Modal
         visible={attachmentMenuOpen}
-        animationType="fade"
+        animationType={Platform.OS === 'android' ? 'none' : 'fade'}
         transparent
-        onRequestClose={() => setAttachmentMenuOpen(false)}
+        onRequestClose={closeAttachmentMenu}
+        onDismiss={() => {
+          if (Platform.OS !== 'ios' || !photoPickerPending) return;
+          setPhotoPickerPending(false);
+          void choosePhoto();
+        }}
       >
-        <TouchableOpacity
-          activeOpacity={1}
-          style={styles.modalShade}
-          onPress={() => setAttachmentMenuOpen(false)}
-        >
+        <View style={styles.modalShade}>
+          <TouchableOpacity
+            activeOpacity={1}
+            style={StyleSheet.absoluteFill}
+            onPress={closeAttachmentMenu}
+          />
           <View style={[styles.attachmentSheet, { backgroundColor: colors.background }]}>
             <View style={styles.pickerHeader}>
               <Text style={[styles.pickerTitle, { color: colors.foreground }]}>Add to conversation</Text>
-              <TouchableOpacity onPress={() => setAttachmentMenuOpen(false)}>
+              <TouchableOpacity onPress={closeAttachmentMenu}>
                 <Feather name="x" size={22} color={colors.foreground} />
               </TouchableOpacity>
             </View>
             <TouchableOpacity
               style={[styles.attachmentOption, { borderColor: colors.border }]}
-              onPress={() => {
-                setAttachmentMenuOpen(false);
-                void choosePhoto();
-              }}
+              onPress={openPhotoPicker}
             >
               <View style={[styles.attachmentIcon, { backgroundColor: colors.secondary }]}>
                 <Feather name="image" size={20} color={colors.primary} />
@@ -411,7 +449,7 @@ export default function ChatScreen() {
               <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
             </TouchableOpacity>
           </View>
-        </TouchableOpacity>
+        </View>
       </Modal>
       <Modal visible={pinPickerOpen} animationType="slide" transparent onRequestClose={() => setPinPickerOpen(false)}>
         <View style={styles.modalShade}>

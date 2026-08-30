@@ -159,14 +159,14 @@ export function QuickAddSheet({ pin, onClose }: QuickAddSheetProps) {
             })}
           </View>
 
-          {/* Boards */}
+          {/* Collections */}
           <Text style={[styles.boardsHeading, { color: colors.mutedForeground }]}>
-            Boards
+            Collections
           </Text>
           <ScrollView style={styles.boardList} showsVerticalScrollIndicator={false}>
             {customBoards.length === 0 && !creatingBoard && (
               <Text style={[styles.emptyBoards, { color: colors.mutedForeground }]}>
-                No boards yet — create one below.
+                No collections yet — create one below.
               </Text>
             )}
             {customBoards.map(board => {
@@ -204,7 +204,7 @@ export function QuickAddSheet({ pin, onClose }: QuickAddSheetProps) {
                 <TextInput
                   value={newBoardName}
                   onChangeText={setNewBoardName}
-                  placeholder="Board name…"
+                  placeholder="Collection name…"
                   placeholderTextColor={colors.mutedForeground}
                   style={[
                     styles.newBoardInput,
@@ -240,7 +240,7 @@ export function QuickAddSheet({ pin, onClose }: QuickAddSheetProps) {
                 style={styles.newBoardTrigger}
               >
                 <Feather name="plus-circle" size={17} color={colors.primary} />
-                <Text style={[styles.newBoardTriggerLabel, { color: colors.primary }]}>New Board</Text>
+                <Text style={[styles.newBoardTriggerLabel, { color: colors.primary }]}>New Collection</Text>
               </TouchableOpacity>
             )}
           </ScrollView>

@@ -12,3 +12,5 @@
 - [Trusted catalogue lifecycle](trusted-catalogue.md) — catalogue_status/is_searchable flags, owner-visible archives, guarded set_user_pin_status, reusable importer, tokenised search
 - [Unread DM badges](unread-messages.md) — lightweight counts RPC (never poll full conversations), focus-gated mark-read, web URL-restore testing pitfall
 - [Expo web action confirmations](expo-web-action-confirmations.md) — native alert buttons may display but not run callbacks on web; use in-app confirmation UI for important actions
+- [Expo Router tab context](expo-router-tab-context.md) — switching tabs is not a contextual push; use stack routes when an action must return to its originating tab
+- [Expo native picker presentation](expo-native-picker-presentation.md) — dismiss RN modals before system pickers, and keep sheet actions outside tappable backdrop ancestry

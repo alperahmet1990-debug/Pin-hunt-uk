@@ -9,6 +9,7 @@ import React, {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { useAuth } from '@/context/AuthContext';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
 
@@ -27,7 +28,20 @@ interface BoardsContextValue {
 
 const BoardsContext = createContext<BoardsContextValue | null>(null);
 
-const STORAGE_KEY = '@pinhunt_boards_v1';
+const LEGACY_STORAGE_KEY = '@pinhunt_boards_v1';
+const STORAGE_KEY_PREFIX = '@pinhunt_boards_v2';
+
+interface LegacyBoardClaim {
+  version: 2;
+  claimedBy: string;
+  boards: Board[];
+}
+
+function isLegacyBoardClaim(value: unknown): value is LegacyBoardClaim {
+  if (!value || typeof value !== 'object') return false;
+  const claim = value as Partial<LegacyBoardClaim>;
+  return claim.version === 2 && typeof claim.claimedBy === 'string' && Array.isArray(claim.boards);
+}
 
 function makeId() {
   return 'board_' + Date.now().toString() + Math.random().toString(36).slice(2, 7);
@@ -36,19 +50,65 @@ function makeId() {
 export function BoardsProvider({ children }: { children: React.ReactNode }) {
   const { collection } = useCollection();
   const { pins } = usePinCatalogue();
+  const { user } = useAuth();
   const [customBoards, setCustomBoards] = useState<Board[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const storageKey = `${STORAGE_KEY_PREFIX}:${user?.id ?? 'guest'}`;
 
   useEffect(() => {
-    AsyncStorage.getItem(STORAGE_KEY).then(data => {
-      if (data) setCustomBoards(JSON.parse(data));
-      setLoaded(true);
-    });
-  }, []);
+    let cancelled = false;
+    setLoaded(false);
+    setCustomBoards([]);
+
+    const loadBoards = async () => {
+      try {
+        let data = await AsyncStorage.getItem(storageKey);
+
+        // The old cache was not account-scoped. The first authenticated user
+        // on this installation claims it once. The claim envelope retains the
+        // data and owner if the app closes mid-migration, so only that same
+        // account can resume without exposing or losing existing Boards.
+        if (!data && user?.id) {
+          const legacyData = await AsyncStorage.getItem(LEGACY_STORAGE_KEY);
+          if (legacyData) {
+            const parsedLegacy: unknown = JSON.parse(legacyData);
+            let boardsToMigrate: Board[] | null = null;
+
+            if (Array.isArray(parsedLegacy)) {
+              boardsToMigrate = parsedLegacy;
+              const claim: LegacyBoardClaim = {
+                version: 2,
+                claimedBy: user.id,
+                boards: boardsToMigrate,
+              };
+              await AsyncStorage.setItem(LEGACY_STORAGE_KEY, JSON.stringify(claim));
+            } else if (isLegacyBoardClaim(parsedLegacy) && parsedLegacy.claimedBy === user.id) {
+              boardsToMigrate = parsedLegacy.boards;
+            }
+
+            if (boardsToMigrate) {
+              data = JSON.stringify(boardsToMigrate);
+              await AsyncStorage.setItem(storageKey, data);
+              await AsyncStorage.removeItem(LEGACY_STORAGE_KEY);
+            }
+          }
+        }
+
+        if (!cancelled) setCustomBoards(data ? JSON.parse(data) : []);
+      } catch {
+        // A corrupt local cache must not prevent boards from opening.
+        if (!cancelled) setCustomBoards([]);
+      }
+      if (!cancelled) setLoaded(true);
+    };
+
+    void loadBoards();
+    return () => { cancelled = true; };
+  }, [storageKey, user?.id]);
 
   const persist = useCallback((boards: Board[]) => {
-    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(boards));
-  }, []);
+    AsyncStorage.setItem(storageKey, JSON.stringify(boards));
+  }, [storageKey]);
 
   // Auto-suggested boards: one per unique collection among owned pins
   const suggestedBoards = useMemo<Board[]>(() => {
@@ -101,6 +161,11 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
   }, [persist]);
 
   const addPinToBoard = useCallback((boardId: string, pinId: string) => {
+    // A board organises pins the collector has. Keeping only pin IDs in a
+    // board (rather than creating another user_pin) preserves ownership while
+    // allowing the same owned pin to appear on several boards.
+    const entry = collection[pinId];
+    if (!entry || (entry.status !== 'owned' && entry.status !== 'for_trade')) return;
     setCustomBoards(prev => {
       const next = prev.map(b =>
         b.id === boardId && !b.pinIds.includes(pinId)
@@ -110,7 +175,7 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
       persist(next);
       return next;
     });
-  }, [persist]);
+  }, [collection, persist]);
 
   const removePinFromBoard = useCallback((boardId: string, pinId: string) => {
     setCustomBoards(prev => {
@@ -157,8 +222,16 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
           p => p.collection === board.suggestedCollection && ownedIds.has(p.id),
         );
       }
-      // Custom: pins in pinIds order
+      // Custom boards contain only pins the collector still owns. Old local
+      // references are retained so a temporarily removed pin can be restored,
+      // but never appear as ownership on a board.
+      const ownedIds = new Set(
+        Object.values(collection)
+          .filter(e => e.status === 'owned' || e.status === 'for_trade')
+          .map(e => e.pinId),
+      );
       return board.pinIds
+        .filter(id => ownedIds.has(id))
         .map(id => pins.find(p => p.id === id))
         .filter((p): p is CataloguePin => p !== undefined);
     },

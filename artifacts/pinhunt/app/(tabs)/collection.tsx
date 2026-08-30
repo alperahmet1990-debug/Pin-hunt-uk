@@ -20,27 +20,26 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { useAuth } from '@/context/AuthContext';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
 import { EmptyState } from '@/components/EmptyState';
-import type { CataloguePin, PinSetSummary } from '@workspace/pin-repository';
+import {
+  createSupabaseUserRepository,
+  type CataloguePin,
+  type IUserPinRepository,
+  type PinSetSummary,
+} from '@workspace/pin-repository';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const GRID_CARD_WIDTH = (SCREEN_WIDTH - 16 * 2 - 12) / 2;
 
 type Tab = 'collections' | 'traders' | 'iso';
-type GroupBy = 'my_collections' | 'set' | 'series' | 'character' | 'location' | 'year' | 'brand';
-
-const GROUP_BY_OPTIONS: { id: GroupBy; label: string }[] = [
-  { id: 'my_collections', label: 'My Collections' },
-  { id: 'set', label: 'Set' },
-  { id: 'series', label: 'Series' },
-  { id: 'character', label: 'Character' },
-  { id: 'location', label: 'Location' },
-  { id: 'year', label: 'Year' },
-  { id: 'brand', label: 'Brand' },
-];
-
+type CollectionView = 'all' | 'boards' | 'sets';
+type SetProgressFilter = 'all' | 'progress' | 'complete';
+type MetadataFilterKey = 'character' | 'series' | 'location' | 'year' | 'brand' | 'edition';
+type MetadataFilters = Partial<Record<MetadataFilterKey, string>>;
 interface GroupData {
   isGroup: true;
   id: string;
@@ -49,6 +48,7 @@ interface GroupData {
   pins: CataloguePin[];
   isBoard?: boolean;
   isSet?: boolean;
+  setId?: string;
   progress?: number;
   complete?: boolean;
 }
@@ -88,7 +88,11 @@ function processPins(pins: CataloguePin[], filter: PinFilterType, sort: PinSortT
 
   res = res.sort((a, b) => {
     if (sort === 'name') return (a.title || '').localeCompare(b.title || '');
-    if (sort === 'year') return (b.releaseYear || 0) - (a.releaseYear || 0);
+    if (sort === 'year') {
+      const releaseA = a.releaseDate || a.releaseYear?.toString() || '';
+      const releaseB = b.releaseDate || b.releaseYear?.toString() || '';
+      return releaseB.localeCompare(releaseA);
+    }
     if (sort === 'value') return (b.estimatedValueGBP || 0) - (a.estimatedValueGBP || 0);
     const dateA = collectionMap[a.id]?.dateAdded || '';
     const dateB = collectionMap[b.id]?.dateAdded || '';
@@ -101,15 +105,18 @@ export default function CollectionScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const { user } = useAuth();
   const { collection, counts } = useCollection();
   const { pins: catalogue, ensureCollections, repository } = usePinCatalogue();
   const { customBoards, createBoard, getBoardPins } = useBoards();
 
   const [activeTab, setActiveTab] = useState<Tab>('collections');
-  const [groupBy, setGroupBy] = useState<GroupBy>('character');
+  const [collectionView, setCollectionView] = useState<CollectionView>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
-  const [expandedGroupTitle, setExpandedGroupTitle] = useState('');
+  const [pinFilters, setPinFilters] = useState<MetadataFilters>({});
+  const [allPinsSort, setAllPinsSort] = useState<PinSortType>('recent');
+  const [allPinsFilterVisible, setAllPinsFilterVisible] = useState(false);
+  const [setProgressFilter, setSetProgressFilter] = useState<SetProgressFilter>('all');
 
   const [traderFilter, setTraderFilter] = useState<PinFilterType>('all');
   const [traderSort, setTraderSort] = useState<PinSortType>('recent');
@@ -121,11 +128,20 @@ export default function CollectionScreen() {
   const [setPickerVisible, setSetPickerVisible] = useState(false);
   const [setPickerQuery, setSetPickerQuery] = useState('');
   const [setSummaries, setSetSummaries] = useState<PinSetSummary[]>([]);
+  const [trackedSetIds, setTrackedSetIds] = useState<Set<string>>(new Set());
+  const [trackingSetId, setTrackingSetId] = useState<string | null>(null);
+  const [trackError, setTrackError] = useState('');
   const [createBoardVisible, setCreateBoardVisible] = useState(false);
   const [newBoardName, setNewBoardName] = useState('');
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 40) : insets.top;
   const botPad = Platform.OS === 'web' ? 120 : insets.bottom + 120;
+  const userRepo = useMemo(
+    () => isSupabaseConfigured
+      ? createSupabaseUserRepository(supabase as any) as IUserPinRepository
+      : null,
+    [],
+  );
 
   const ownedIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'owned' || e.status === 'for_trade').map(e => e.pinId)), [collection]);
   const forTradeIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'for_trade').map(e => e.pinId)), [collection]);
@@ -140,7 +156,7 @@ export default function CollectionScreen() {
   }, [catalogue, ownedIds, ensureCollections]);
 
   useEffect(() => {
-    if (!setPickerVisible || !repository || setSummaries.length > 0) return;
+    if (!repository) return;
     let cancelled = false;
     repository.getSetSummaries()
       .then(summaries => {
@@ -152,88 +168,86 @@ export default function CollectionScreen() {
     return () => {
       cancelled = true;
     };
-  }, [repository, setPickerVisible, setSummaries.length]);
+  }, [repository]);
+
+  useEffect(() => {
+    if (!userRepo || !user?.id) {
+      setTrackedSetIds(new Set());
+      return;
+    }
+    let cancelled = false;
+    // Tracking is private state. Do not leave a previous account's set cards
+    // visible while this account's RLS-scoped request is in flight.
+    setTrackedSetIds(new Set());
+    setTrackError('');
+    userRepo.getTrackedSetIds(user.id)
+      .then(ids => {
+        if (!cancelled) setTrackedSetIds(new Set(ids));
+      })
+      .catch(() => {
+        if (!cancelled) setTrackError('Unable to load tracked sets.');
+      });
+    return () => { cancelled = true; };
+  }, [userRepo, user?.id]);
+
+  useEffect(() => {
+    const names = setSummaries
+      .filter(summary => trackedSetIds.has(summary.id))
+      .map(summary => summary.setName);
+    if (names.length > 0) void ensureCollections(names);
+  }, [setSummaries, trackedSetIds, ensureCollections]);
 
   const ownedPins = useMemo(() => catalogue.filter(pin => ownedIds.has(pin.id)), [catalogue, ownedIds]);
   const forTradePins = useMemo(() => catalogue.filter(pin => forTradeIds.has(pin.id)), [catalogue, forTradeIds]);
   const wantedPins = useMemo(() => catalogue.filter(pin => wantedIds.has(pin.id)), [catalogue, wantedIds]);
 
-  const officialSets = useMemo(() => {
-    const byCollection = new Map<string, CataloguePin[]>();
-    for (const pin of catalogue) {
-      if (!pin.collection) continue;
-      const list = byCollection.get(pin.collection) ?? [];
-      list.push(pin);
-      byCollection.set(pin.collection, list);
-    }
-    return Array.from(byCollection.entries())
-      .filter(([, pins]) => pins.some(p => ownedIds.has(p.id)))
-      .map(([collectionName, pins]) => {
-        const ownedCount = pins.filter(p => ownedIds.has(p.id)).length;
-        return {
-          collectionName,
-          pins: pins.filter(p => ownedIds.has(p.id)),
-          totalInCatalogue: pins.length,
-          ownedCount,
-        };
-      })
-      .sort((a, b) => b.ownedCount - a.ownedCount);
-  }, [catalogue, ownedIds]);
-
-  const groups = useMemo<GroupData[]>(() => {
-    if (groupBy === 'my_collections') {
-      return customBoards.map(b => {
+  const boardGroups = useMemo<GroupData[]>(() => {
+    const query = searchQuery.trim().toLowerCase();
+    return customBoards
+      .map(b => {
         const pins = getBoardPins(b);
         return {
-          isGroup: true,
+          isGroup: true as const,
           id: b.id,
           title: b.name,
           subtitle: `${pins.length} pin${pins.length === 1 ? '' : 's'}`,
           pins,
           isBoard: true,
         };
-      });
-    }
-    if (groupBy === 'set') {
-      return officialSets.map(s => ({
-        isGroup: true,
-        id: s.collectionName,
-        title: s.collectionName,
-        subtitle: `${s.ownedCount} / ${s.totalInCatalogue} · ${Math.round((s.ownedCount / s.totalInCatalogue) * 100)}%`,
-        pins: s.pins,
-        isSet: true,
-        progress: s.totalInCatalogue > 0 ? s.ownedCount / s.totalInCatalogue : 0,
-        complete: s.ownedCount === s.totalInCatalogue && s.totalInCatalogue > 0,
-      }));
-    }
+      })
+      .filter(group => !query || group.title.toLowerCase().includes(query) || group.pins.some(pin => pinMatchesSearch(pin, query)));
+  }, [customBoards, getBoardPins, searchQuery]);
 
-    const map = new Map<string, CataloguePin[]>();
-    for (const pin of ownedPins) {
-      let keys: string[] = [];
-      if (groupBy === 'series') keys = [pin.normalisedSeries || pin.collection || 'Unknown'];
-      else if (groupBy === 'character') {
-        keys = pin.characters.length ? pin.characters : pin.allCharacters?.split(';').map(s => s.trim()).filter(Boolean) || ['Unknown'];
-      } else if (groupBy === 'location') keys = [pin.origin || 'Unknown'];
-      else if (groupBy === 'year') keys = [pin.releaseYear?.toString() || pin.releaseDate?.slice(0, 4) || 'Unknown'];
-      else if (groupBy === 'brand') keys = [pin.brand || 'Unknown'];
-
-      if (keys.length === 0) keys = ['Unknown'];
-      for (const k of keys) {
-        if (!map.has(k)) map.set(k, []);
-        map.get(k)!.push(pin);
-      }
-    }
-
-    return Array.from(map.entries())
-      .map(([k, pins]) => ({
+  const setGroups = useMemo<GroupData[]>(() => {
+    const query = searchQuery.trim().toLowerCase();
+    return setSummaries
+      .filter(summary => trackedSetIds.has(summary.id))
+      .map(summary => {
+        const pins = catalogue.filter(pin => pin.collection === summary.setName);
+        const ownedCount = pins.filter(pin => ownedIds.has(pin.id)).length;
+        // Use the same catalogue membership that Set Detail renders. The
+        // summary's release count is useful metadata, but may include pins
+        // not currently available to the client and would make the two
+        // progress displays disagree.
+        const total = pins.length;
+        const complete = total > 0 && ownedCount >= total;
+        return {
         isGroup: true as const,
-        id: k,
-        title: k,
+        id: summary.id,
+        setId: summary.id,
+        title: summary.setName,
+        subtitle: complete ? `${ownedCount} / ${total} · Complete ✓` : `${ownedCount} / ${total} · ${total ? Math.round((ownedCount / total) * 100) : 0}%`,
         pins,
-        subtitle: `${pins.length} pin${pins.length === 1 ? '' : 's'}`,
-      }))
-      .sort((a, b) => b.pins.length - a.pins.length || a.title.localeCompare(b.title));
-  }, [groupBy, customBoards, officialSets, ownedPins, getBoardPins]);
+        isSet: true,
+        progress: total > 0 ? Math.min(ownedCount / total, 1) : 0,
+        complete,
+      };
+      })
+      .filter(group =>
+        (!query || group.title.toLowerCase().includes(query)) &&
+        (setProgressFilter === 'all' || (setProgressFilter === 'complete' ? group.complete : !group.complete)),
+      );
+  }, [setSummaries, trackedSetIds, catalogue, ownedIds, searchQuery, setProgressFilter]);
 
   const visibleSetSummaries = useMemo(() => {
     const query = setPickerQuery.trim().toLowerCase();
@@ -255,10 +269,38 @@ export default function CollectionScreen() {
       .slice(0, 100);
   }, [setPickerQuery, setSummaries]);
 
+  const metadataOptions = useMemo<Record<MetadataFilterKey, string[]>>(() => {
+    const values: Record<MetadataFilterKey, Set<string>> = {
+      character: new Set(), series: new Set(), location: new Set(),
+      year: new Set(), brand: new Set(), edition: new Set(),
+    };
+    ownedPins.forEach(pin => {
+      (pin.characters.length ? pin.characters : (pin.allCharacters?.split(';') ?? [])).map(v => v.trim()).filter(Boolean).forEach(v => values.character.add(v));
+      if (pin.normalisedSeries || pin.collection) values.series.add(pin.normalisedSeries || pin.collection);
+      if (pin.origin) values.location.add(pin.origin);
+      const year = pin.releaseYear?.toString() || pin.releaseDate?.slice(0, 4);
+      if (year) values.year.add(year);
+      if (pin.brand) values.brand.add(pin.brand);
+      if (pin.edition) values.edition.add(pin.edition);
+    });
+    return Object.fromEntries(Object.entries(values).map(([key, value]) => [key, [...value].sort()])) as Record<MetadataFilterKey, string[]>;
+  }, [ownedPins]);
+
   const filteredOwnedPins = useMemo(() => {
-    if (!searchQuery) return ownedPins;
-    return ownedPins.filter(p => pinMatchesSearch(p, searchQuery));
-  }, [ownedPins, searchQuery]);
+    const matchesFilter = (pin: CataloguePin, key: MetadataFilterKey, value: string) => {
+      if (key === 'character') return [...pin.characters, ...(pin.allCharacters?.split(';').map(v => v.trim()) ?? [])].includes(value);
+      if (key === 'series') return (pin.normalisedSeries || pin.collection) === value;
+      if (key === 'location') return pin.origin === value;
+      if (key === 'year') return (pin.releaseYear?.toString() || pin.releaseDate?.slice(0, 4)) === value;
+      if (key === 'brand') return pin.brand === value;
+      return pin.edition === value;
+    };
+    const filtered = ownedPins.filter(pin =>
+      pinMatchesSearch(pin, searchQuery) &&
+      Object.entries(pinFilters).every(([key, value]) => !value || matchesFilter(pin, key as MetadataFilterKey, value)),
+    );
+    return processPins(filtered, 'all', allPinsSort, '', collection);
+  }, [ownedPins, searchQuery, pinFilters, allPinsSort, collection]);
 
   const filteredTraderPins = useMemo(() => {
     return processPins(forTradePins, traderFilter, traderSort, searchQuery, collection);
@@ -270,24 +312,21 @@ export default function CollectionScreen() {
 
   const gridData = useMemo(() => {
     if (activeTab === 'collections') {
-      if (searchQuery) return filteredOwnedPins;
-      if (expandedGroup) return groups.find(g => g.id === expandedGroup)?.pins || [];
-      return groups;
+      if (collectionView === 'all') return filteredOwnedPins;
+      if (collectionView === 'boards') return boardGroups;
+      return setGroups;
     }
     if (activeTab === 'traders') return filteredTraderPins;
     if (activeTab === 'iso') return filteredIsoPins;
     return [];
-  }, [activeTab, searchQuery, expandedGroup, groups, filteredOwnedPins, filteredTraderPins, filteredIsoPins]);
+  }, [activeTab, collectionView, filteredOwnedPins, boardGroups, setGroups, filteredTraderPins, filteredIsoPins]);
 
   const handleGroupPress = (item: GroupData) => {
     if (item.isBoard) {
       router.push({ pathname: '/board/[id]', params: { id: item.id } });
     } else if (item.isSet) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      router.push({ pathname: '/set/[collection]' as any, params: { collection: item.id } });
-    } else {
-      setExpandedGroup(item.id);
-      setExpandedGroupTitle(item.title);
+      router.push({ pathname: '/set/[collection]' as any, params: { collection: item.title } });
     }
   };
 
@@ -301,15 +340,47 @@ export default function CollectionScreen() {
     router.push({ pathname: '/board/[id]', params: { id: board.id } });
   };
 
-  const openSet = async (setName: string) => {
-    setSetPickerVisible(false);
-    setSetPickerQuery('');
-    await ensureCollections([setName]);
-    router.push({
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      pathname: '/set/[collection]' as any,
-      params: { collection: setName },
+  const trackSet = async (summary: PinSetSummary) => {
+    if (trackedSetIds.has(summary.id)) return;
+    if (!userRepo || !user?.id) {
+      setTrackError('Sign in to track a set.');
+      return;
+    }
+    setTrackingSetId(summary.id);
+    setTrackError('');
+    setTrackedSetIds(current => new Set(current).add(summary.id));
+    try {
+      await userRepo.trackSet(user.id, summary.id);
+      setSetPickerVisible(false);
+      setSetPickerQuery('');
+      setCollectionView('sets');
+      setSearchQuery('');
+      void ensureCollections([summary.setName]);
+    } catch {
+      setTrackedSetIds(current => {
+        const next = new Set(current);
+        next.delete(summary.id);
+        return next;
+      });
+      setTrackError('Unable to track this set. Please try again.');
+    } finally {
+      setTrackingSetId(null);
+    }
+  };
+
+  const untrackSet = async (setId: string) => {
+    if (!userRepo || !user?.id) return;
+    setTrackedSetIds(current => {
+      const next = new Set(current);
+      next.delete(setId);
+      return next;
     });
+    try {
+      await userRepo.untrackSet(user.id, setId);
+    } catch {
+      setTrackedSetIds(current => new Set(current).add(setId));
+      setTrackError('Unable to stop tracking this set.');
+    }
   };
 
   const renderHeader = () => (
@@ -323,14 +394,13 @@ export default function CollectionScreen() {
       <View style={[s.tabsRow, { borderBottomColor: colors.border }]}>
         {(['collections', 'traders', 'iso'] as const).map(tab => {
           const active = activeTab === tab;
-          const label = tab === 'collections' ? 'Collections' : tab === 'traders' ? 'Traders' : 'ISO';
+          const label = tab === 'collections' ? 'Collection' : tab === 'traders' ? 'Traders' : 'ISO';
           return (
             <TouchableOpacity
               key={tab}
               onPress={() => {
                 if (Platform.OS !== 'web') Haptics.selectionAsync();
                 setActiveTab(tab);
-                setExpandedGroup(null);
                 setSearchQuery('');
               }}
               style={[s.tab, active && { borderBottomColor: colors.primary }]}
@@ -343,7 +413,7 @@ export default function CollectionScreen() {
         })}
       </View>
 
-      {activeTab === 'collections' && !expandedGroup && (
+      {activeTab === 'collections' && (
         <View style={s.tabHeader}>
           <View style={s.controlsRow}>
             <View style={[s.searchBox, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
@@ -351,7 +421,7 @@ export default function CollectionScreen() {
               <TextInput
                 value={searchQuery}
                 onChangeText={setSearchQuery}
-                placeholder="Search collection"
+                placeholder={collectionView === 'all' ? 'Search my pins' : collectionView === 'boards' ? 'Search boards' : 'Search tracked sets'}
                 placeholderTextColor={colors.mutedForeground}
                 style={[s.searchInput, { color: colors.foreground }]}
                 returnKeyType="search"
@@ -367,38 +437,73 @@ export default function CollectionScreen() {
               <Text style={s.addBtnText}>Add</Text>
             </TouchableOpacity>
           </View>
-          {!searchQuery && (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.groupByScroll}>
-              <Text style={[s.groupByLabel, { color: colors.mutedForeground }]}>Group By:</Text>
-              {GROUP_BY_OPTIONS.map(opt => {
-                const active = groupBy === opt.id;
+          <View style={[s.collectionNavRow, { borderBottomColor: colors.border }]}>
+            <View style={s.collectionNavTabs}>
+              {([
+                { id: 'all', label: 'All Pins' },
+                { id: 'boards', label: 'Boards' },
+                { id: 'sets', label: 'Sets' },
+              ] as const).map(opt => {
+                const active = collectionView === opt.id;
                 return (
                   <TouchableOpacity
                     key={opt.id}
                     onPress={() => {
                       if (Platform.OS !== 'web') Haptics.selectionAsync();
-                      setGroupBy(opt.id);
+                      setCollectionView(opt.id);
+                      setSearchQuery('');
                     }}
-                    style={[s.groupChip, {
-                      backgroundColor: active ? colors.primary + '15' : colors.card,
-                      borderColor: active ? colors.primary : colors.border
-                    }]}
+                    style={[s.collectionNavTab, active && { borderBottomColor: colors.primary }]}
                   >
-                    <Text style={[s.groupChipText, { color: active ? colors.primary : colors.mutedForeground }]}>{opt.label}</Text>
+                    <Text style={[s.collectionNavText, { color: active ? colors.foreground : colors.mutedForeground }]}>{opt.label}</Text>
                   </TouchableOpacity>
                 );
               })}
-            </ScrollView>
+            </View>
+            {collectionView === 'all' && (
+              <TouchableOpacity
+                style={s.filterTextBtn}
+                onPress={() => setAllPinsFilterVisible(true)}
+              >
+                <Feather name="sliders" size={15} color={Object.keys(pinFilters).length || allPinsSort !== 'recent' ? colors.primary : colors.mutedForeground} />
+                <Text style={[s.filterText, { color: Object.keys(pinFilters).length || allPinsSort !== 'recent' ? colors.primary : colors.mutedForeground }]}>Filter</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+          {collectionView === 'all' && Object.keys(pinFilters).length > 0 && (
+            <View style={s.activeFilters}>
+              {Object.entries(pinFilters).map(([key, value]) => (
+                <TouchableOpacity
+                  key={key}
+                  onPress={() => setPinFilters(current => {
+                    const next = { ...current };
+                    delete next[key as MetadataFilterKey];
+                    return next;
+                  })}
+                  style={[s.activeFilterChip, { backgroundColor: colors.primary + '12' }]}
+                >
+                  <Text style={[s.activeFilterText, { color: colors.primary }]} numberOfLines={1}>{value}</Text>
+                  <Feather name="x" size={12} color={colors.primary} />
+                </TouchableOpacity>
+              ))}
+            </View>
           )}
-        </View>
-      )}
-
-      {activeTab === 'collections' && expandedGroup && (
-        <View style={s.expandedHeader}>
-          <TouchableOpacity onPress={() => setExpandedGroup(null)} style={s.backBtn}>
-            <Feather name="chevron-left" size={20} color={colors.foreground} />
-            <Text style={[s.backBtnText, { color: colors.foreground }]}>{expandedGroupTitle}</Text>
-          </TouchableOpacity>
+          {collectionView === 'sets' && (
+            <View style={s.setFilterRow}>
+              {(['all', 'progress', 'complete'] as const).map(filter => (
+                <TouchableOpacity
+                  key={filter}
+                  onPress={() => setSetProgressFilter(filter)}
+                  style={[s.smallChip, { backgroundColor: setProgressFilter === filter ? colors.primary + '15' : colors.secondary }]}
+                >
+                  <Text style={[s.smallChipText, { color: setProgressFilter === filter ? colors.primary : colors.mutedForeground }]}>
+                    {filter === 'all' ? 'All' : filter === 'progress' ? 'In Progress' : 'Completed'}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          {trackError ? <Text style={[s.inlineError, { color: colors.destructive }]}>{trackError}</Text> : null}
         </View>
       )}
 
@@ -472,8 +577,10 @@ export default function CollectionScreen() {
 
   const renderEmpty = () => {
     if (activeTab === 'collections') {
-      if (searchQuery) return <EmptyState icon="search" title="No pins found" subtitle="Try a different search term." />;
-      if (groupBy === 'my_collections' && groups.length === 0) return <EmptyState icon="folder" title="No collections yet" subtitle="Create a collection to organise your pins." actionLabel="Create Collection" onAction={() => setCreateBoardVisible(true)} />;
+      if (searchQuery) return <EmptyState icon="search" title="No results found" subtitle="Try a different search term." />;
+      if (collectionView === 'boards') return <EmptyState icon="folder" title="No boards yet" subtitle="Create a board to organise your pins." actionLabel="Create Board" onAction={() => setCreateBoardVisible(true)} />;
+      if (collectionView === 'sets') return <EmptyState icon="bookmark" title={setProgressFilter === 'all' ? 'No tracked sets yet' : 'No sets found'} subtitle={setProgressFilter === 'all' ? 'Choose an official set to follow your progress.' : 'Try another progress filter.'} actionLabel={setProgressFilter === 'all' ? 'Track a Set' : undefined} onAction={setProgressFilter === 'all' ? () => setSetPickerVisible(true) : undefined} />;
+      if (Object.keys(pinFilters).length > 0) return <EmptyState icon="search" title="No pins found" subtitle="Try changing your filters." />;
       return <EmptyState icon="grid" title="Your collection is empty" subtitle="Scan a pin or search the catalogue to start." actionLabel="Scan a Pin" onAction={() => router.push('/(tabs)/scan')} />;
     }
     if (activeTab === 'traders') {
@@ -528,6 +635,19 @@ export default function CollectionScreen() {
                       <View style={[s.groupProgressFill, { width: `${Math.max(group.progress * 100, 2)}%`, backgroundColor: group.complete ? colors.owned : colors.primary }]} />
                     </View>
                   )}
+                  {group.isSet && group.setId && (
+                    <TouchableOpacity
+                      accessibilityLabel={`Stop tracking ${group.title}`}
+                      hitSlop={10}
+                      onPress={event => {
+                        event.stopPropagation();
+                        void untrackSet(group.setId!);
+                      }}
+                      style={[s.untrackBtn, { backgroundColor: colors.primary + '12' }]}
+                    >
+                      <Feather name="bookmark" size={14} color={colors.primary} />
+                    </TouchableOpacity>
+                  )}
                 </View>
               </TouchableOpacity>
             );
@@ -566,11 +686,11 @@ export default function CollectionScreen() {
               }}
             >
               <Feather name="layers" size={20} color={colors.foreground} />
-              <Text style={[s.addMenuText, { color: colors.foreground }]}>Add / Track Set</Text>
+              <Text style={[s.addMenuText, { color: colors.foreground }]}>Track a Set</Text>
             </TouchableOpacity>
             <TouchableOpacity style={s.addMenuItem} onPress={() => { setAddModalVisible(false); setCreateBoardVisible(true); }}>
               <Feather name="folder-plus" size={20} color={colors.foreground} />
-              <Text style={[s.addMenuText, { color: colors.foreground }]}>Create Collection</Text>
+              <Text style={[s.addMenuText, { color: colors.foreground }]}>Create Board</Text>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
@@ -582,9 +702,9 @@ export default function CollectionScreen() {
           <View style={[s.setPickerModal, { backgroundColor: colors.card, borderColor: colors.border }]}>
             <View style={s.setPickerHeader}>
               <View style={{ flex: 1 }}>
-                <Text style={[s.modalTitle, { color: colors.foreground, marginBottom: 2 }]}>Add / Track Set</Text>
+                <Text style={[s.modalTitle, { color: colors.foreground, marginBottom: 2 }]}>Track a Set</Text>
                 <Text style={[s.setPickerSub, { color: colors.mutedForeground }]}>
-                  Open a catalogue set to view progress and add missing pins to ISO.
+                  Choose an official catalogue set to follow your progress.
                 </Text>
               </View>
               <TouchableOpacity onPress={() => setSetPickerVisible(false)} style={s.closeBtn}>
@@ -602,6 +722,7 @@ export default function CollectionScreen() {
                 returnKeyType="search"
               />
             </View>
+            {trackError ? <Text style={[s.pickerError, { color: colors.destructive }]}>{trackError}</Text> : null}
             <FlatList
               data={visibleSetSummaries}
               keyExtractor={summary => summary.id}
@@ -615,7 +736,8 @@ export default function CollectionScreen() {
               }
               renderItem={({ item }) => (
                 <TouchableOpacity
-                  onPress={() => void openSet(item.setName)}
+                  onPress={() => void trackSet(item)}
+                  disabled={trackedSetIds.has(item.id) || trackingSetId === item.id}
                   style={[s.setPickerRow, { borderBottomColor: colors.border }]}
                 >
                   <View style={{ flex: 1 }}>
@@ -625,11 +747,19 @@ export default function CollectionScreen() {
                     <Text style={[s.setPickerMeta, { color: colors.mutedForeground }]} numberOfLines={1}>
                       {[
                         item.releaseYear,
-                        `${item.releasedPinCount}${item.expectedPinCount ? ` / ${item.expectedPinCount}` : ''} pins`,
+                        item.expectedPinCount
+                          ? `${item.releasedPinCount} of ${item.expectedPinCount} released`
+                          : `${item.releasedPinCount} pins released`,
                       ].filter(Boolean).join(' · ')}
                     </Text>
                   </View>
-                  <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
+                  {trackedSetIds.has(item.id) ? (
+                    <Text style={[s.trackedLabel, { color: colors.primary }]}>Tracked</Text>
+                  ) : trackingSetId === item.id ? (
+                    <Text style={[s.trackedLabel, { color: colors.mutedForeground }]}>Tracking…</Text>
+                  ) : (
+                    <Feather name="plus-circle" size={18} color={colors.primary} />
+                  )}
                 </TouchableOpacity>
               )}
             />
@@ -641,11 +771,11 @@ export default function CollectionScreen() {
       <Modal visible={createBoardVisible} transparent animationType="fade" onRequestClose={() => setCreateBoardVisible(false)}>
         <View style={s.modalBackdropCenter}>
           <View style={[s.createBoardModal, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <Text style={[s.modalTitle, { color: colors.foreground }]}>New Collection</Text>
+            <Text style={[s.modalTitle, { color: colors.foreground }]}>New Board</Text>
             <TextInput
               value={newBoardName}
               onChangeText={setNewBoardName}
-              placeholder="Collection Name"
+              placeholder="Board name"
               placeholderTextColor={colors.mutedForeground}
               style={[s.modalInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.background }]}
               autoFocus
@@ -660,6 +790,91 @@ export default function CollectionScreen() {
                 <Text style={[s.modalBtnText, { color: newBoardName.trim() ? '#fff' : colors.mutedForeground }]}>Create</Text>
               </TouchableOpacity>
             </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* All Pins metadata filter and sort */}
+      <Modal visible={allPinsFilterVisible} transparent animationType="slide" onRequestClose={() => setAllPinsFilterVisible(false)}>
+        <View style={s.modalBackdrop}>
+          <View style={[s.filterSheet, { backgroundColor: colors.card, borderColor: colors.border }]}>
+            <View style={s.filterSheetHeader}>
+              <Text style={[s.modalTitle, { color: colors.foreground, marginBottom: 0 }]}>Filter Pins</Text>
+              <View style={s.filterHeaderActions}>
+                {(Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent') && (
+                  <TouchableOpacity onPress={() => { setPinFilters({}); setAllPinsSort('recent'); }}>
+                    <Text style={[s.clearText, { color: colors.primary }]}>Clear</Text>
+                  </TouchableOpacity>
+                )}
+                <TouchableOpacity onPress={() => setAllPinsFilterVisible(false)} style={s.closeBtn}>
+                  <Feather name="x" size={20} color={colors.foreground} />
+                </TouchableOpacity>
+              </View>
+            </View>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.filterScrollContent}>
+              {([
+                ['character', 'Character'],
+                ['series', 'Set / Series'],
+                ['location', 'Park / Location'],
+                ['year', 'Year'],
+                ['brand', 'Brand'],
+                ['edition', 'Edition'],
+              ] as const).map(([key, label]) => {
+                const options = metadataOptions[key];
+                if (options.length === 0) return null;
+                return (
+                  <View key={key} style={s.filterSection}>
+                    <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground }]}>{label}</Text>
+                    <View style={s.sheetRowWrap}>
+                      {options.map(option => {
+                        const active = pinFilters[key] === option;
+                        return (
+                          <TouchableOpacity
+                            key={option}
+                            onPress={() => setPinFilters(current => {
+                              const next = { ...current };
+                              if (active) delete next[key];
+                              else next[key] = option;
+                              return next;
+                            })}
+                            style={[s.compactChip, {
+                              backgroundColor: active ? colors.primary + '15' : colors.secondary,
+                              borderColor: active ? colors.primary : 'transparent',
+                            }]}
+                          >
+                            <Text style={[s.compactChipText, { color: active ? colors.primary : colors.foreground }]}>{option}</Text>
+                          </TouchableOpacity>
+                        );
+                      })}
+                    </View>
+                  </View>
+                );
+              })}
+              <View style={s.filterSection}>
+                <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground }]}>Sort by</Text>
+                <View style={s.sheetRowWrap}>
+                  {(['recent', 'name', 'year', 'value'] as const).map(option => {
+                    const active = allPinsSort === option;
+                    const label = option === 'recent' ? 'Recently Added' : option === 'name' ? 'Name' : option === 'year' ? 'Release date' : 'Estimated value';
+                    return (
+                      <TouchableOpacity
+                        key={option}
+                        onPress={() => setAllPinsSort(option)}
+                        style={[s.compactChip, {
+                          backgroundColor: active ? colors.primary + '15' : colors.secondary,
+                          borderColor: active ? colors.primary : 'transparent',
+                        }]}
+                      >
+                        <Text style={[s.compactChipText, { color: active ? colors.primary : colors.foreground }]}>{label}</Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+              </View>
+            </ScrollView>
+            <TouchableOpacity style={[s.applyBtn, { backgroundColor: colors.primary }]} onPress={() => setAllPinsFilterVisible(false)}>
+              <Text style={s.applyBtnText}>Show {filteredOwnedPins.length} pin{filteredOwnedPins.length === 1 ? '' : 's'}</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
@@ -747,13 +962,19 @@ const s = StyleSheet.create({
   addBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, height: 44, borderRadius: 10 },
   addBtnText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   utilBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 10, borderWidth: StyleSheet.hairlineWidth },
-  groupByScroll: { paddingHorizontal: 16, alignItems: 'center', gap: 8, paddingBottom: 8 },
-  groupByLabel: { fontSize: 13, fontFamily: 'Inter_500Medium', marginRight: 4 },
-  groupChip: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 16, borderRadius: 22, borderWidth: 1 },
-  groupChipText: { fontSize: 13, fontFamily: 'Inter_500Medium' },
-  expandedHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 8, marginBottom: 8 },
-  backBtn: { minHeight: 44, justifyContent: 'center', flexDirection: 'row', alignItems: 'center', gap: 6 },
-  backBtnText: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  collectionNavRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, borderBottomWidth: StyleSheet.hairlineWidth },
+  collectionNavTabs: { flexDirection: 'row', alignItems: 'center', gap: 20 },
+  collectionNavTab: { minHeight: 42, justifyContent: 'center', borderBottomWidth: 2, borderBottomColor: 'transparent' },
+  collectionNavText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  filterTextBtn: { minHeight: 42, flexDirection: 'row', alignItems: 'center', gap: 5 },
+  filterText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  activeFilters: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, paddingHorizontal: 16, paddingTop: 9 },
+  activeFilterChip: { maxWidth: 150, flexDirection: 'row', alignItems: 'center', gap: 4, borderRadius: 14, paddingHorizontal: 9, paddingVertical: 5 },
+  activeFilterText: { flexShrink: 1, fontSize: 11, fontFamily: 'Inter_500Medium' },
+  setFilterRow: { flexDirection: 'row', gap: 7, paddingHorizontal: 16, paddingTop: 9 },
+  smallChip: { paddingHorizontal: 11, paddingVertical: 6, borderRadius: 14 },
+  smallChipText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  inlineError: { paddingHorizontal: 16, paddingTop: 8, fontSize: 12, fontFamily: 'Inter_500Medium' },
   flatListContent: { paddingHorizontal: 16 },
   gridRow: { gap: 12, justifyContent: 'flex-start' },
   gridItemWrap: { width: GRID_CARD_WIDTH, marginBottom: 12 },
@@ -763,11 +984,12 @@ const s = StyleSheet.create({
   groupPreviewSingle: { width: '100%', height: '100%', resizeMode: 'cover' },
   groupPreviewGrid: { flexDirection: 'row', flexWrap: 'wrap', width: '100%', height: '100%' },
   groupPreviewSmall: { width: '50%', height: '50%', resizeMode: 'cover', borderWidth: 0.5 },
-  groupCardBottom: { padding: 10 },
+  groupCardBottom: { padding: 10, position: 'relative' },
   groupCardTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold', marginBottom: 2 },
   groupCardSub: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   groupProgressTrack: { height: 4, borderRadius: 2, marginTop: 8, overflow: 'hidden' },
   groupProgressFill: { height: '100%', borderRadius: 2 },
+  untrackBtn: { position: 'absolute', right: 8, top: 8, width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center' },
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'flex-end' },
   modalBackdropCenter: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center' },
   addMenuSheet: { borderTopLeftRadius: 20, borderTopRightRadius: 20, paddingBottom: 34, borderTopWidth: StyleSheet.hairlineWidth },
@@ -784,8 +1006,10 @@ const s = StyleSheet.create({
   setPickerRow: { minHeight: 58, paddingVertical: 10, flexDirection: 'row', alignItems: 'center', gap: 10, borderBottomWidth: StyleSheet.hairlineWidth },
   setPickerName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   setPickerMeta: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 3 },
+  trackedLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   setPickerEmpty: { minHeight: 120, alignItems: 'center', justifyContent: 'center' },
   setPickerEmptyText: { fontSize: 13, fontFamily: 'Inter_400Regular', textAlign: 'center' },
+  pickerError: { fontSize: 12, fontFamily: 'Inter_500Medium', marginBottom: 6 },
   modalTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold', marginBottom: 16 },
   modalInput: { height: 44, borderWidth: 1, borderRadius: 8, paddingHorizontal: 12, fontSize: 15, fontFamily: 'Inter_400Regular', marginBottom: 20 },
   modalActions: { flexDirection: 'row', justifyContent: 'flex-end', gap: 12 },
@@ -798,4 +1022,14 @@ const s = StyleSheet.create({
   sheetRowWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   sheetChip: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 16, borderRadius: 22, borderWidth: 1 },
   sheetChipText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
+  filterSheet: { maxHeight: '88%', borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: 16, borderTopWidth: StyleSheet.hairlineWidth },
+  filterSheetHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
+  filterHeaderActions: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  clearText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  filterScrollContent: { paddingBottom: 12 },
+  filterSection: { marginTop: 14 },
+  compactChip: { minHeight: 34, justifyContent: 'center', paddingHorizontal: 12, borderRadius: 17, borderWidth: 1 },
+  compactChipText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
+  applyBtn: { minHeight: 46, borderRadius: 10, alignItems: 'center', justifyContent: 'center', marginTop: 6 },
+  applyBtnText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

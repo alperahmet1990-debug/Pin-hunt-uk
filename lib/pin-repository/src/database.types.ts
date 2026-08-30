@@ -275,6 +275,15 @@ export interface Database {
           { foreignKeyName: 'user_pins_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
         ];
       };
+      user_tracked_sets: {
+        Row: { user_id: string; set_id: string; created_at: string };
+        Insert: { user_id: string; set_id: string; created_at?: string };
+        Update: Record<string, never>;
+        Relationships: [
+          { foreignKeyName: 'user_tracked_sets_user_id_fkey'; columns: ['user_id']; referencedRelation: 'users'; referencedColumns: ['id'] },
+          { foreignKeyName: 'user_tracked_sets_set_id_fkey'; columns: ['set_id']; referencedRelation: 'pin_sets'; referencedColumns: ['id'] }
+        ];
+      };
       user_pin_images: {
         Row: { id: string; user_id: string; user_pin_id: string; storage_path: string; is_primary: boolean; created_at: string };
         Insert: { id?: string; user_id: string; user_pin_id: string; storage_path: string; is_primary?: boolean; created_at?: string };

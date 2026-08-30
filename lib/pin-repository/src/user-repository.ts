@@ -116,6 +116,15 @@ export interface IUserPinRepository {
    */
   removeUserPin(userPinId: string): Promise<void>;
 
+  /** Set IDs the user has explicitly chosen to track. */
+  getTrackedSetIds(userId: string): Promise<string[]>;
+
+  /** Begin tracking an official catalogue set. */
+  trackSet(userId: string, setId: string): Promise<void>;
+
+  /** Stop tracking an official catalogue set. */
+  untrackSet(userId: string, setId: string): Promise<void>;
+
   // ── Trades ───────────────────────────────────────────────────────────────
 
   /** All trades where the user is initiator or recipient. */

@@ -489,6 +489,35 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (error) throw new Error(error.message);
   }
 
+  async getTrackedSetIds(userId: string): Promise<string[]> {
+    const { data, error } = await this.client
+      .from('user_tracked_sets')
+      .select('set_id')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+    return (data as Array<{ set_id: string }>).map(row => row.set_id);
+  }
+
+  async trackSet(userId: string, setId: string): Promise<void> {
+    const { error } = await this.client
+      .from('user_tracked_sets')
+      .upsert({ user_id: userId, set_id: setId }, { onConflict: 'user_id,set_id' });
+
+    if (error) throw new Error(error.message);
+  }
+
+  async untrackSet(userId: string, setId: string): Promise<void> {
+    const { error } = await this.client
+      .from('user_tracked_sets')
+      .delete()
+      .eq('user_id', userId)
+      .eq('set_id', setId);
+
+    if (error) throw new Error(error.message);
+  }
+
   // ── Trades ────────────────────────────────────────────────────────────
 
   async getUserTrades(userId: string): Promise<Trade[]> {

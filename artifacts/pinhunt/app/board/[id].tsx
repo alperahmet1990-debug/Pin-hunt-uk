@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react';
 import {
-  Alert,
   FlatList,
   Image,
   Modal,
@@ -34,6 +33,8 @@ export default function BoardDetailScreen() {
 
   const [addModalVisible, setAddModalVisible] = useState(false);
   const [editMode, setEditMode] = useState(false);
+  const [deleteConfirmVisible, setDeleteConfirmVisible] = useState(false);
+  const [pinToRemove, setPinToRemove] = useState<CataloguePin | null>(null);
 
   const board = getBoardById(id ?? '');
   const boardPins = board ? getBoardPins(board) : [];
@@ -46,16 +47,16 @@ export default function BoardDetailScreen() {
     const boardPinIds = new Set(board.pinIds);
     const ownedIds = new Set(
       Object.values(collection)
-        .filter(e => e.status === 'owned')
+        .filter(e => e.status === 'owned' || e.status === 'for_trade')
         .map(e => e.pinId),
     );
     return catalogue.filter(p => ownedIds.has(p.id) && !boardPinIds.has(p.id));
-  }, [board, collection]);
+  }, [board, collection, catalogue]);
 
   if (!board) {
     return (
       <View style={[styles.notFound, { backgroundColor: colors.background }]}>
-        <Text style={[styles.notFoundText, { color: colors.foreground }]}>Collection not found.</Text>
+        <Text style={[styles.notFoundText, { color: colors.foreground }]}>Board not found.</Text>
         <TouchableOpacity onPress={() => router.back()}>
           <Text style={[{ color: colors.primary, fontFamily: 'Inter_500Medium', fontSize: 14 }]}>
             Go Back
@@ -66,21 +67,7 @@ export default function BoardDetailScreen() {
   }
 
   const handleDeleteBoard = () => {
-    Alert.alert(
-      'Delete Collection',
-      `Delete "${board.name}"? Your pins won't be removed from your collection.`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Delete',
-          style: 'destructive',
-          onPress: () => {
-            deleteBoard(board.id);
-            router.back();
-          },
-        },
-      ],
-    );
+    setDeleteConfirmVisible(true);
   };
 
   const handleAddPin = (pin: CataloguePin) => {
@@ -90,14 +77,7 @@ export default function BoardDetailScreen() {
 
   const handleRemovePin = (pin: CataloguePin) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    Alert.alert(
-      'Remove Pin',
-      `Remove "${pin.title}" from this collection?`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Remove', style: 'destructive', onPress: () => removePinFromBoard(board.id, pin.id) },
-      ],
-    );
+    setPinToRemove(pin);
   };
 
   return (
@@ -156,11 +136,11 @@ export default function BoardDetailScreen() {
         {boardPins.length === 0 ? (
           <EmptyState
             icon="grid"
-            title="No pins in this collection yet"
+            title="No pins on this board yet"
             subtitle={
               board.isCustom
-                ? 'Tap Add Pins to add owned pins to this collection.'
-                : 'Add pins from this collection to your Owned list and they will appear here automatically.'
+                ? 'Tap Add Pins to add owned pins to this board.'
+                : 'Add pins from this set to your Owned list and they will appear here automatically.'
             }
             actionLabel={board.isCustom ? 'Add Pins' : undefined}
             onAction={board.isCustom ? () => setAddModalVisible(true) : undefined}
@@ -216,7 +196,7 @@ export default function BoardDetailScreen() {
                       }}
                       activeOpacity={0.8}
                       accessibilityLabel={
-                        board.thumbnailPinId === item.id ? 'Remove as collection cover' : 'Set as collection cover'
+                            board.thumbnailPinId === item.id ? 'Remove as board cover' : 'Set as board cover'
                       }
                     >
                       <Feather name="image" size={13} color="#fff" />
@@ -238,7 +218,7 @@ export default function BoardDetailScreen() {
       >
         <View style={[styles.modalRoot, { backgroundColor: colors.background }]}>
           <View style={[styles.modalHeader, { borderBottomColor: colors.border, backgroundColor: colors.card }]}>
-            <Text style={[styles.modalTitle, { color: colors.foreground }]}>Add Pins to Collection</Text>
+            <Text style={[styles.modalTitle, { color: colors.foreground }]}>Add Pins to Board</Text>
             <TouchableOpacity onPress={() => setAddModalVisible(false)} activeOpacity={0.7}>
               <Feather name="x" size={22} color={colors.foreground} />
             </TouchableOpacity>
@@ -248,7 +228,7 @@ export default function BoardDetailScreen() {
             <EmptyState
               icon="check-circle"
               title="All owned pins added"
-              subtitle="Every owned pin is already in this collection."
+              subtitle="Every owned pin is already on this board."
               actionLabel="Close"
               onAction={() => setAddModalVisible(false)}
             />
@@ -280,6 +260,56 @@ export default function BoardDetailScreen() {
               )}
             />
           )}
+        </View>
+      </Modal>
+
+      <Modal
+        visible={deleteConfirmVisible || pinToRemove !== null}
+        transparent
+        animationType="fade"
+        onRequestClose={() => {
+          setDeleteConfirmVisible(false);
+          setPinToRemove(null);
+        }}
+      >
+        <View style={styles.confirmBackdrop}>
+          <View style={[styles.confirmCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+            <Text style={[styles.confirmTitle, { color: colors.foreground }]}>
+              {deleteConfirmVisible ? 'Delete Board?' : 'Remove Pin?'}
+            </Text>
+            <Text style={[styles.confirmBody, { color: colors.mutedForeground }]}>
+              {deleteConfirmVisible
+                ? `Delete "${board.name}"? Your pins won't be removed from your Collection.`
+                : `Remove "${pinToRemove?.title ?? 'this pin'}" from this Board?`}
+            </Text>
+            <View style={styles.confirmActions}>
+              <TouchableOpacity
+                onPress={() => {
+                  setDeleteConfirmVisible(false);
+                  setPinToRemove(null);
+                }}
+                style={[styles.confirmButton, { backgroundColor: colors.secondary }]}
+              >
+                <Text style={[styles.confirmButtonText, { color: colors.foreground }]}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  if (deleteConfirmVisible) {
+                    deleteBoard(board.id);
+                    router.back();
+                  } else if (pinToRemove) {
+                    removePinFromBoard(board.id, pinToRemove.id);
+                    setPinToRemove(null);
+                  }
+                }}
+                style={[styles.confirmButton, { backgroundColor: colors.destructive }]}
+              >
+                <Text style={[styles.confirmButtonText, { color: '#fff' }]}>
+                  {deleteConfirmVisible ? 'Delete' : 'Remove'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </Modal>
     </>
@@ -391,4 +421,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  confirmBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.42)', alignItems: 'center', justifyContent: 'center', padding: 24 },
+  confirmCard: { width: '100%', maxWidth: 380, borderRadius: 16, borderWidth: StyleSheet.hairlineWidth, padding: 20 },
+  confirmTitle: { fontSize: 18, fontFamily: 'Inter_700Bold', marginBottom: 8 },
+  confirmBody: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20, marginBottom: 20 },
+  confirmActions: { flexDirection: 'row', justifyContent: 'flex-end', gap: 10 },
+  confirmButton: { minHeight: 44, minWidth: 92, alignItems: 'center', justifyContent: 'center', borderRadius: 10, paddingHorizontal: 16 },
+  confirmButtonText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

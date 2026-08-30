@@ -32,6 +32,7 @@ import type {
   Profile,
   PublicProfile,
   SearchCollectorsInput,
+  SendConversationMessageInput,
   StartConversationInput,
   CreateTradeRatingInput,
   Trade,
@@ -184,6 +185,22 @@ function rowToExternalSaleListing(row: Record<string, unknown>): ExternalSaleLis
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
+}
+
+/** Structured messages retain a readable preview for existing conversation UIs. */
+function conversationMessageBody(row: Record<string, unknown>): string {
+  const body = (row.body as string | null) ?? '';
+  if (body.trim()) return body;
+  const type = row.message_type as string | null;
+  if (type === 'pin_share') {
+    const count = Array.isArray(row.pin_ids) ? row.pin_ids.length : 0;
+    return count === 1 ? 'Shared a pin' : `Shared ${count || 'some'} pins`;
+  }
+  if (type === 'photo') {
+    const count = Array.isArray(row.photo_urls) ? row.photo_urls.length : 0;
+    return count === 1 ? 'Shared a photo' : `Shared ${count || 'some'} photos`;
+  }
+  return 'Message';
 }
 
 function rowToTrade(row: Record<string, unknown>): Trade {
@@ -1624,6 +1641,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       participantBId: row.participant_b_id as string,
       contextPostId: (row.context_post_id as string | null) ?? undefined,
       contextPinId: (row.context_pin_id as string | null) ?? undefined,
+      tradeId: (row.trade_id as string | null) ?? undefined,
       lastMessageAt: (row.last_message_at as string | null) ?? undefined,
       createdAt: row.created_at as string,
       otherParticipant: otherProfileRow
@@ -1644,7 +1662,11 @@ class SupabaseUserPinRepository implements IUserPinRepository {
             id: lastMsgRow.id as string,
             conversationId: lastMsgRow.conversation_id as string,
             senderId: lastMsgRow.sender_id as string,
-            body: lastMsgRow.body as string,
+            body: conversationMessageBody(lastMsgRow),
+            messageType: (lastMsgRow.message_type as ConversationMessage['messageType']) ?? 'text',
+            pinIds: (lastMsgRow.pin_ids as string[] | null) ?? [],
+            forTradePinIds: (lastMsgRow.for_trade_pin_ids as string[] | null) ?? [],
+            photoUrls: (lastMsgRow.photo_urls as string[] | null) ?? [],
             createdAt: lastMsgRow.created_at as string,
           }
         : undefined,
@@ -1819,16 +1841,41 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       id: r.id as string,
       conversationId: r.conversation_id as string,
       senderId: r.sender_id as string,
-      body: r.body as string,
+      body: conversationMessageBody(r),
+      messageType: (r.message_type as ConversationMessage['messageType']) ?? 'text',
+      pinIds: (r.pin_ids as string[] | null) ?? [],
+      forTradePinIds: (r.for_trade_pin_ids as string[] | null) ?? [],
+      photoUrls: (r.photo_urls as string[] | null) ?? [],
       createdAt: r.created_at as string,
     }));
   }
 
-  async sendConversationMessage(conversationId: string, senderId: string, body: string): Promise<ConversationMessage> {
+  async sendConversationMessage(
+    conversationId: string,
+    senderId: string,
+    body: string,
+    input: SendConversationMessageInput = {},
+  ): Promise<ConversationMessage> {
+    const messageType = input.messageType ?? 'text';
+    const storedBody = body.trim() || (
+      messageType === 'pin_share'
+        ? (input.pinIds?.length === 1 ? 'Shared a pin' : `Shared ${input.pinIds?.length ?? 0} pins`)
+        : messageType === 'photo'
+          ? (input.photoUrls?.length === 1 ? 'Shared a photo' : `Shared ${input.photoUrls?.length ?? 0} photos`)
+          : 'Message'
+    );
     const { data, error } = await this.client
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .from('conversation_messages')
-      .insert({ conversation_id: conversationId, sender_id: senderId, body })
+      .insert({
+        conversation_id: conversationId,
+        sender_id: senderId,
+        body: storedBody,
+        message_type: messageType,
+        pin_ids: input.pinIds ?? [],
+        for_trade_pin_ids: input.forTradePinIds ?? [],
+        photo_urls: input.photoUrls ?? [],
+      })
       .select()
       .single();
 
@@ -1838,9 +1885,21 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       id: r.id as string,
       conversationId: r.conversation_id as string,
       senderId: r.sender_id as string,
-      body: r.body as string,
+      body: conversationMessageBody(r),
+      messageType: (r.message_type as ConversationMessage['messageType']) ?? 'text',
+      pinIds: (r.pin_ids as string[] | null) ?? [],
+      forTradePinIds: (r.for_trade_pin_ids as string[] | null) ?? [],
+      photoUrls: (r.photo_urls as string[] | null) ?? [],
       createdAt: r.created_at as string,
     };
+  }
+
+  async linkConversationTrade(conversationId: string, tradeId: string): Promise<void> {
+    const { error } = await this.client.rpc('link_conversation_trade', {
+      p_conversation_id: conversationId,
+      p_trade_id: tradeId,
+    });
+    if (error) throw new Error(error.message);
   }
 }
 

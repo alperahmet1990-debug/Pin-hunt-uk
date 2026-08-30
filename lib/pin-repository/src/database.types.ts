@@ -541,6 +541,7 @@ export interface Database {
           participant_b_id: string;
           context_post_id: string | null;
           context_pin_id: string | null;
+          trade_id: string | null;
           last_message_at: string | null;
           a_last_read_at: string | null;
           b_last_read_at: string | null;
@@ -552,6 +553,7 @@ export interface Database {
           participant_b_id: string;
           context_post_id?: string | null;
           context_pin_id?: string | null;
+          trade_id?: string | null;
           last_message_at?: string | null;
           created_at?: string;
         };
@@ -559,10 +561,12 @@ export interface Database {
           last_message_at?: string | null;
           a_last_read_at?: string | null;
           b_last_read_at?: string | null;
+          trade_id?: string | null;
         };
         Relationships: [
           { foreignKeyName: 'conversations_participant_a_id_fkey'; columns: ['participant_a_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] },
-          { foreignKeyName: 'conversations_participant_b_id_fkey'; columns: ['participant_b_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] }
+          { foreignKeyName: 'conversations_participant_b_id_fkey'; columns: ['participant_b_id']; referencedRelation: 'profiles'; referencedColumns: ['id'] },
+          { foreignKeyName: 'conversations_trade_id_fkey'; columns: ['trade_id']; referencedRelation: 'trades'; referencedColumns: ['id'] }
         ];
       };
       conversation_messages: {
@@ -571,6 +575,10 @@ export interface Database {
           conversation_id: string;
           sender_id: string;
           body: string;
+          message_type: string;
+          pin_ids: Json;
+          for_trade_pin_ids: Json;
+          photo_urls: Json;
           created_at: string;
         };
         Insert: {
@@ -578,10 +586,18 @@ export interface Database {
           conversation_id: string;
           sender_id: string;
           body: string;
+          message_type?: string;
+          pin_ids?: Json;
+          for_trade_pin_ids?: Json;
+          photo_urls?: Json;
           created_at?: string;
         };
         Update: {
           body?: string;
+          message_type?: string;
+          pin_ids?: Json;
+          for_trade_pin_ids?: Json;
+          photo_urls?: Json;
         };
         Relationships: [
           { foreignKeyName: 'conversation_messages_conversation_id_fkey'; columns: ['conversation_id']; referencedRelation: 'conversations'; referencedColumns: ['id'] },
@@ -624,6 +640,10 @@ export interface Database {
       };
     };
     Functions: {
+      link_conversation_trade: {
+        Args: { p_conversation_id: string; p_trade_id: string };
+        Returns: undefined;
+      };
       mark_conversation_read: {
         Args: { p_conversation_id: string };
         Returns: undefined;

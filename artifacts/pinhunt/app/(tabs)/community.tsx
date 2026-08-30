@@ -35,11 +35,10 @@ const CARD_INNER_WIDTH = SCREEN_WIDTH - 24 - 28;
 
 const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; emoji: string }> = [
   { key: 'all',          label: 'All',       emoji: '✨' },
-  { key: 'in_search_of', label: 'ISO',       emoji: '🔍' },
   { key: 'for_trade',    label: 'Trade',     emoji: '🔄' },
-  { key: 'for_sale',     label: 'For Sale',  emoji: '🏷️' },
-  { key: 'new_pickup',   label: 'Pickup',    emoji: '📦' },
-  { key: 'discussion',   label: 'Chat',      emoji: '💬' },
+  { key: 'in_search_of', label: 'ISO',       emoji: '🔍' },
+  { key: 'discussion',   label: 'Discussion', emoji: '💬' },
+  { key: 'new_pickup',   label: 'Events',    emoji: '📦' },
 ];
 
 const TYPE_COLOR: Record<CommunityPostType | 'all', string> = {
@@ -55,7 +54,7 @@ const TYPE_LABEL: Record<CommunityPostType, string> = {
   in_search_of: 'In Search Of',
   for_trade:    'For Trade',
   for_sale:     'For Sale',
-  new_pickup:   'New Pickup',
+  new_pickup:   'Event',
   discussion:   'Discussion',
 };
 
@@ -99,7 +98,7 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
       <View style={[styles.photoGridRow, { gap }]}>
         {photos.slice(0, 2).map((uri, i) => (
           <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9}>
-            <Image source={{ uri }} style={{ width: cellW, height: 140, borderRadius: 6 }} />
+            <Image source={{ uri }} style={{ width: cellW, height: 160, borderRadius: 6 }} />
           </TouchableOpacity>
         ))}
       </View>
@@ -112,12 +111,12 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
     return (
       <View style={[styles.photoGridRow, { gap }]}>
         <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9}>
-          <Image source={{ uri: photos[0] }} style={{ width: leftW, height: 180, borderRadius: 6 }} />
+          <Image source={{ uri: photos[0] }} style={{ width: leftW, height: 210, borderRadius: 6 }} />
         </TouchableOpacity>
         <View style={{ gap, flexDirection: 'column' }}>
           {photos.slice(1, 3).map((uri, i) => (
             <TouchableOpacity key={i} onPress={() => onPress(i + 1)} activeOpacity={0.9}>
-              <Image source={{ uri }} style={{ width: rightW, height: (180 - gap) / 2, borderRadius: 6 }} />
+              <Image source={{ uri }} style={{ width: rightW, height: (210 - gap) / 2, borderRadius: 6 }} />
             </TouchableOpacity>
           ))}
         </View>
@@ -127,7 +126,7 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
 
   // 4+ photos — 2×2 grid, last cell shows "+N more" overlay
   const cellW = (CARD_INNER_WIDTH - gap) / 2;
-  const cellH = 130;
+  const cellH = 150;
   const extra = count - 4;
 
   return (
@@ -425,44 +424,43 @@ export default function CommunityScreen() {
                 if (!userId) { Alert.alert('Sign in to post'); return; }
                 router.push('/community/create-post' as any);
               }}
-              style={[styles.headerIconBtn, { backgroundColor: colors.primary }]}
+              style={[styles.headerPostBtn, { backgroundColor: colors.primary }]}
               activeOpacity={0.85}
             >
-              <Feather name="plus" size={20} color="#fff" />
+              <Feather name="plus" size={17} color="#fff" />
+              <Text style={styles.headerPostLabel}>Post</Text>
             </TouchableOpacity>
           </View>
         </View>
 
-        {/* Collectors Nearby banner */}
-        <TouchableOpacity
-          onPress={() => router.push('/nearby')}
-          activeOpacity={0.85}
-          style={[styles.nearbyBanner, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
-        >
-          <View style={[styles.nearbyIconWrap, { backgroundColor: 'rgba(255,255,255,0.18)' }]}>
-            <Feather name="map-pin" size={18} color="#fff" />
-          </View>
-          <Text style={styles.nearbyBannerLabel}>Collectors Nearby</Text>
-          <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.7)" style={{ marginLeft: 'auto' }} />
-        </TouchableOpacity>
-
         {/* Category chips */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.chips}
-        >
-          {POST_TYPES.map(pt => (
-            <Chip
-              key={pt.key}
-              label={pt.label}
-              emoji={pt.emoji}
-              color={TYPE_COLOR[pt.key]}
-              active={filter === pt.key}
-              onPress={() => handleFilterChange(pt.key)}
-            />
-          ))}
-        </ScrollView>
+        <View style={styles.filterRow}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.chips}
+            style={{ flex: 1 }}
+          >
+            {POST_TYPES.map(pt => (
+              <Chip
+                key={pt.key}
+                label={pt.label}
+                emoji={pt.emoji}
+                color={TYPE_COLOR[pt.key]}
+                active={filter === pt.key}
+                onPress={() => handleFilterChange(pt.key)}
+              />
+            ))}
+          </ScrollView>
+          <TouchableOpacity
+            onPress={() => router.push('/nearby')}
+            activeOpacity={0.75}
+            style={[styles.nearbyAction, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: colors.radius }]}
+          >
+            <Feather name="map-pin" size={13} color={colors.mutedForeground} />
+            <Text style={[styles.nearbyActionLabel, { color: colors.mutedForeground }]}>Nearby</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <View style={{ flex: 1 }}>
@@ -567,6 +565,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   mailBadgeText: { color: '#fff', fontSize: 10, fontFamily: 'Inter_700Bold' },
+  headerPostBtn: {
+    height: 38,
+    borderRadius: 19,
+    paddingHorizontal: 13,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 5,
+  },
+  headerPostLabel: { color: '#fff', fontSize: 13, fontFamily: 'Inter_700Bold' },
   root: { flex: 1 },
 
   header: {
@@ -588,18 +596,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 
-  nearbyBanner: {
+  filterRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
+    gap: 8,
   },
-  nearbyIconWrap: {
-    width: 32, height: 32, borderRadius: 8,
-    alignItems: 'center', justifyContent: 'center',
+  nearbyAction: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    paddingHorizontal: 9, paddingVertical: 7, borderWidth: 1,
   },
-  nearbyBannerLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold', color: '#fff' },
+  nearbyActionLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
 
   chips: { gap: 7, paddingVertical: 2, paddingRight: 4 },
   chip: {
@@ -656,7 +662,7 @@ const styles = StyleSheet.create({
 
   // Photo grid helpers
   photoGridRow: { flexDirection: 'row' },
-  photoGrid1: { width: '100%', height: 200, borderRadius: 8, overflow: 'hidden' },
+  photoGrid1: { width: '100%', height: 220, borderRadius: 8, overflow: 'hidden' },
   photoGrid1Image: { width: '100%', height: '100%', resizeMode: 'cover' },
   moreOverlay: {
     position: 'absolute', top: 0, left: 0,

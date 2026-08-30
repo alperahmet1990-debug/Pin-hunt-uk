@@ -25,14 +25,13 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import type { CommunityPostType } from '@workspace/pin-repository';
 
-const MAX_PHOTOS = 3;
+const MAX_PHOTOS = 6;
 
 const POST_TYPES: Array<{ key: CommunityPostType; label: string; emoji: string; hint: string }> = [
-  { key: 'in_search_of', label: 'In Search Of', emoji: '🔍', hint: 'Looking for a specific pin' },
-  { key: 'for_trade',    label: 'For Trade',    emoji: '🔄', hint: 'Offering a pin to swap' },
-  { key: 'for_sale',     label: 'For Sale',     emoji: '🏷️', hint: 'Selling a pin' },
-  { key: 'new_pickup',   label: 'New Pickup',   emoji: '📦', hint: 'Show off a recent find' },
+  { key: 'for_trade',    label: 'Trade',        emoji: '🔄', hint: 'Offering pins to swap' },
+  { key: 'in_search_of', label: 'ISO',          emoji: '🔍', hint: 'Looking for specific pins' },
   { key: 'discussion',   label: 'Discussion',   emoji: '💬', hint: 'General chat' },
+  { key: 'new_pickup',   label: 'Event',        emoji: '📦', hint: 'Share an upcoming event' },
 ];
 
 const TYPE_COLOR: Record<CommunityPostType, string> = {

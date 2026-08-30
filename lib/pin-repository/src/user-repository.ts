@@ -24,6 +24,7 @@ import type {
   ReportedComment,
   PotentialTradePin,
   StartConversationInput,
+  SendConversationMessageInput,
   TraderProfile,
   TradeRating,
   TraderRatingSummary,
@@ -364,5 +365,8 @@ export interface IUserPinRepository {
   getConversationMessages(conversationId: string): Promise<ConversationMessage[]>;
 
   /** Send a message in an existing conversation. */
-  sendConversationMessage(conversationId: string, senderId: string, body: string): Promise<ConversationMessage>;
+  sendConversationMessage(conversationId: string, senderId: string, body: string, input?: SendConversationMessageInput): Promise<ConversationMessage>;
+
+  /** Link an agreed trade to a conversation. */
+  linkConversationTrade(conversationId: string, tradeId: string): Promise<void>;
 }

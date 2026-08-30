@@ -1,0 +1,137 @@
+Refactor the existing Community + Messaging experience only. Keep this task focused and token-efficient: reuse the current Community feed, post cards, messaging, image upload, collection selectors, comments, notifications and trade data wherever possible. Do not redesign the wider app or rebuild working backend systems.
+
+The goal is to make Community easier to browse and make messaging slightly better than Facebook for arranging casual pin trades, without turning trading into a formal transaction flow.
+
+Community tidy-up
+
+Keep the existing Community feed concept.
+
+Use simple filters:
+All | Trade | ISO | Discussion | Events
+
+Reduce the prominence of Collectors Nearby. Replace the large banner with a smaller secondary action so collector posts are the main focus.
+
+Improve post presentation using existing components:
+
+* Make images more prominent
+* Properly support multiple images per post using existing upload/storage logic
+* Use a simple swipeable gallery or compact grid with +3, +4, etc. for extra images
+* Keep author, caption, timestamp, comments and existing interactions
+* Preserve a familiar Facebook-style browsing experience
+
+The intended behaviour is that a collector can quickly upload several photos of a full trader board, add a caption and post.
+
+Keep creating a post very simple:
+
+Trade | ISO | Discussion | Event
+
+Then:
+
+* text/caption
+* multiple photos
+* optional existing PinHunt pin attachments
+
+Do not require users to catalogue pins before posting.
+
+Messaging tidy-up
+
+Keep normal messaging as the core experience. Do not create a formal proposal/counter-offer workflow.
+
+When someone messages from a Community Trade post, retain the originating post context in the conversation where easy to do using existing data.
+
+Strengthen the chat composer with one simple PinHunt-specific capability:
+
++ Add
+
+Options:
+
+* Photo
+* Add Pin
+
+For Add Pin, allow the user to select pins from their existing PinHunt collection.
+
+Prefer showing:
+
+* For Trade pins first
+* then other owned pins
+
+Support multi-select so a collector can send several possible traders into the conversation at once.
+
+Reuse existing Collection/pin-selection components rather than building a new selector.
+
+A pin shared in chat should appear as a compact visual card containing:
+
+* Pin image
+* Pin name
+* Small For Trade indicator if applicable
+* Tap opens the existing Pin Detail experience
+
+Do not add valuation comparisons or formal trade offers into chat.
+
+The intended conversation should remain natural, for example:
+
+Collector A:
+“I’m interested in your Pooh pin.”
+
+Collector B:
+“Sure, what traders do you have?”
+
+Collector A sends 3 pins from their collection directly into chat.
+
+Collector B continues the conversation normally.
+
+Users must also still be able to send normal photos of their trader boards.
+
+Lightweight trade agreement
+
+Add a simple Mark Trade Agreed action to trade-related conversations.
+
+Do not build a proposal builder.
+
+When selected, show a lightweight confirmation.
+
+Where easy using existing chat data, optionally allow users to select which previously shared pins are part of the trade, but make this optional and allow Skip.
+
+Once confirmed, show a small in-chat status card such as:
+
+Trade agreed ✓
+
+Arrange delivery when ready
+
+Reuse existing trade/shipping status functionality if already present.
+
+Do not build InPost or Royal Mail integrations in this task.
+
+The purpose of the agreed state is only to:
+
+* create/use the existing trade record
+* support trade history
+* support existing Trade Circle logic
+* provide a place for future postage/tracking actions
+
+Do not add formal Accept / Counter / Decline proposal states.
+
+UX principle
+
+Keep the behaviour close to how collectors already trade through Facebook:
+
+Browse board photos → message → discuss traders → send photos or PinHunt pins → agree casually → mark trade agreed → arrange postage
+
+PinHunt should improve the experience by making collection pins easy to share in chat and keeping the trade context together, not by making negotiation transactional.
+
+Cost/token constraints
+
+* Do not rebuild Community
+* Do not rebuild messaging
+* Do not build a new trade engine
+* Do not create mock/demo data
+* Avoid schema migrations unless genuinely essential
+* Do not modify unrelated pages
+* Reuse existing post, gallery, chat, collection selector, pin card, trade, notification and shipping components first
+* Prefer small UI changes and existing logic
+* Do not implement AI/image recognition
+* Do not add ratings/reviews
+* Do not produce a long design document or multiple alternatives
+* Make the minimum code changes necessary
+
+Before coding, briefly identify the existing components that can be reused, then implement directly. Run only the relevant checks for Community and Messaging and fix only issues introduced by this change.

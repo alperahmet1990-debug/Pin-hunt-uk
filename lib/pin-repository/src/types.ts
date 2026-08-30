@@ -670,6 +670,8 @@ export interface Conversation {
   participantBId: string;
   contextPostId?: string;
   contextPinId?: string;
+  /** Trade agreed in this conversation, when applicable. */
+  tradeId?: string;
   lastMessageAt?: string;
   createdAt: string;
   /** Joined profile of the other participant (relative to current user). */
@@ -684,7 +686,20 @@ export interface ConversationMessage {
   conversationId: string;
   senderId: string;
   body: string;
+  messageType: 'text' | 'pin_share' | 'photo';
+  /** PinHunt IDs shared together in a pin-share message. */
+  pinIds: string[];
+  /** IDs that the sender had marked For Trade when sharing the message. */
+  forTradePinIds: string[];
+  photoUrls: string[];
   createdAt: string;
+}
+
+export interface SendConversationMessageInput {
+  messageType?: ConversationMessage['messageType'];
+  pinIds?: string[];
+  forTradePinIds?: string[];
+  photoUrls?: string[];
 }
 
 export interface StartConversationInput {

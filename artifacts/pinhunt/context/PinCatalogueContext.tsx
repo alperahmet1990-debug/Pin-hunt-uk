@@ -170,27 +170,34 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
     }
   }, [repository]);
 
-  const requestedCollectionsRef = useRef<Set<string>>(new Set());
+  const loadedCollectionsRef = useRef<Set<string>>(new Set());
+  const collectionRequestsRef = useRef<Map<string, Promise<void>>>(new Map());
 
   const ensureCollections = useCallback(async (collectionNames: string[]) => {
     if (!repository || collectionNames.length === 0) return;
-    const missing = collectionNames.filter(n => !requestedCollectionsRef.current.has(n));
-    if (missing.length === 0) return;
-    missing.forEach(n => requestedCollectionsRef.current.add(n));
-    try {
-      const results = await Promise.all(missing.map(n => repository.getPinsBySeries(n)));
-      const fetched = results.flat();
-      if (fetched.length > 0) {
-        setPins(current => {
-          const existing = new Set(current.map(p => p.id));
-          const additions = fetched.filter(p => !existing.has(p.id));
-          return additions.length > 0 ? [...current, ...additions] : current;
+    const names = [...new Set(collectionNames.filter(Boolean))];
+    await Promise.all(names.map(name => {
+      if (loadedCollectionsRef.current.has(name)) return Promise.resolve();
+      const existingRequest = collectionRequestsRef.current.get(name);
+      if (existingRequest) return existingRequest;
+
+      const request = repository.getPinsBySeries(name)
+        .then(fetched => {
+          if (fetched.length === 0) return;
+          setPins(current => {
+            const existing = new Set(current.map(p => p.id));
+            const additions = fetched.filter(p => !existing.has(p.id));
+            return additions.length > 0 ? [...current, ...additions] : current;
+          });
+          loadedCollectionsRef.current.add(name);
+        })
+        .finally(() => {
+          collectionRequestsRef.current.delete(name);
         });
-      }
-    } catch {
-      // Allow a retry on next call.
-      missing.forEach(n => requestedCollectionsRef.current.delete(n));
-    }
+
+      collectionRequestsRef.current.set(name, request);
+      return request;
+    }));
   }, [repository]);
 
   // Ref mirror of pins so ensurePins reads fresh state without re-creating.

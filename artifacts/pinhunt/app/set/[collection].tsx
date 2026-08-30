@@ -26,9 +26,25 @@ export default function SetDetailScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection: userCollection, getEntry } = useCollection();
-  const { pins: catalogue, repository } = usePinCatalogue();
+  const { pins: catalogue, repository, ensureCollections } = usePinCatalogue();
 
   const [filter, setFilter] = useState<PinFilter>('all');
+  const [setLoading, setSetLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    setSetLoading(true);
+    if (!collectionParam) {
+      setSetLoading(false);
+      return;
+    }
+    ensureCollections([collectionParam])
+      .catch(() => {})
+      .finally(() => {
+        if (!cancelled) setSetLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, [collectionParam, ensureCollections]);
 
   // Validated set summary (expected totals for ongoing sets, e.g. monthly series)
   const [setSummary, setSetSummary] = useState<PinSetSummary | null>(null);
@@ -78,6 +94,15 @@ export default function SetDetailScreen() {
   const ownedCount = ownedPins.length;
   const pct = total > 0 ? Math.round((ownedCount / total) * 100) : 0;
   const isComplete = ownedCount === total && total > 0;
+
+  if (setLoading) {
+    return (
+      <>
+        <Stack.Screen options={{ title: collectionParam ?? 'Set' }} />
+        <View style={[styles.root, { backgroundColor: colors.background }]} />
+      </>
+    );
+  }
 
   if (setPins.length === 0) {
     return (

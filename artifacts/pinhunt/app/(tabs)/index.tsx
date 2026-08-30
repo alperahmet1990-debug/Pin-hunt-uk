@@ -1,20 +1,5 @@
-/**
- * Discover screen — home page of PinHunt.
- *
- * Layout (top → bottom):
- *   1. Header — greeting (avatar + Hi, name) left, PinHunt logo right
- *   2. Search bar — full-width, below header
- *   3. Inline search results (floats below bar when active)
- *   4. Scan a Pin — Disney-Parks-style hero gradient card
- *   5. New to the Catalogue — horizontal strip of new releases
- *   6. Browse by Brand — colourful 2-column grid cards
- *   7. Browse by Collection — horizontal pill strip
- *   8. Recently Viewed — horizontal strip (shown only when populated)
- */
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import {
-  FlatList,
-  Image,
   Platform,
   ScrollView,
   StyleSheet,
@@ -25,695 +10,435 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
-import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useProfile } from '@/context/ProfileContext';
-import { getPinImageSource } from '@/utils/pinImage';
-import { SectionHeader } from '@/components/SectionHeader';
+import { useUnreadMessages } from '@/context/UnreadMessagesContext';
+import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
+import { useAuth } from '@/context/AuthContext';
+import { useCommunity } from '@/hooks/useCommunity';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { Avatar } from '@/components/Avatar';
-import type { CataloguePin } from '@workspace/pin-repository';
+import type { PinSetSummary, CommunityPost } from '@workspace/pin-repository';
 
-// ─── Brand definitions ────────────────────────────────────────────────────────
-
-const BRAND_CARDS = [
-  {
-    key: 'Disney Parks',
-    label: 'Disney Parks',
-    subtitle: 'Official park exclusives',
-    gradientStart: '#1B4FA8',
-    gradientEnd: '#0D2D6E',
-    icon: 'star' as const,
-  },
-  {
-    key: 'Loungefly',
-    label: 'Loungefly',
-    subtitle: 'Fashion-forward designs',
-    gradientStart: '#C0457A',
-    gradientEnd: '#7A1A4A',
-    icon: 'heart' as const,
-  },
-  {
-    key: 'BoxLunch',
-    label: 'BoxLunch',
-    subtitle: 'Pop-culture favourites',
-    gradientStart: '#1A8A50',
-    gradientEnd: '#0D5530',
-    icon: 'gift' as const,
-  },
-] as const;
-
-// ─── Colourful brand grid card ────────────────────────────────────────────────
-
-function BrandCard({
-  brand,
-  count,
-  onPress,
-}: {
-  brand: (typeof BRAND_CARDS)[number];
-  count: number;
-  onPress: () => void;
-}) {
-  return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.88} style={styles.brandCard}>
-      <LinearGradient
-        colors={[brand.gradientStart, brand.gradientEnd]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={styles.brandGradient}
-      >
-        <View style={styles.brandIconDecor} pointerEvents="none">
-          <Feather name={brand.icon} size={64} color="rgba(255,255,255,0.12)" />
-        </View>
-        <View style={styles.brandContent}>
-          <View style={[styles.brandIconBadge, { backgroundColor: 'rgba(255,255,255,0.18)' }]}>
-            <Feather name={brand.icon} size={18} color="#FFFFFF" />
-          </View>
-          <Text style={styles.brandLabel}>{brand.label}</Text>
-          <Text style={styles.brandSubtitle}>{brand.subtitle}</Text>
-          {count > 0 && (
-            <Text style={styles.brandCount}>{count} pin{count !== 1 ? 's' : ''}</Text>
-          )}
-        </View>
-      </LinearGradient>
-    </TouchableOpacity>
-  );
+function timeAgo(dateString: string) {
+  const diff = Date.now() - new Date(dateString).getTime();
+  const minutes = Math.floor(diff / 60000);
+  if (minutes < 1) return 'Just now';
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
 }
-
-// ─── Small horizontally-scrolling pin card ────────────────────────────────────
-
-function SmallPinCard({ pin, onPress }: { pin: CataloguePin; onPress: () => void }) {
-  const colors = useColors();
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      activeOpacity={0.85}
-      style={[
-        styles.smallCard,
-        { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-      ]}
-    >
-      <Image source={getPinImageSource(pin)} style={styles.smallImage} />
-      <View style={styles.smallInfo}>
-        <Text style={[styles.smallTitle, { color: colors.foreground }]} numberOfLines={2}>
-          {pin.title}
-        </Text>
-        <Text style={[styles.smallBrand, { color: colors.mutedForeground }]} numberOfLines={1}>
-          {pin.brand}
-        </Text>
-      </View>
-    </TouchableOpacity>
-  );
-}
-
-// ─── New-release card ─────────────────────────────────────────────────────────
-
-function NewReleaseCard({ pin, onPress }: { pin: CataloguePin; onPress: () => void }) {
-  const colors = useColors();
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      activeOpacity={0.85}
-      style={[
-        styles.newCard,
-        { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-      ]}
-    >
-      <Image source={getPinImageSource(pin)} style={styles.newImage} />
-      <View style={styles.newInfo}>
-        <Text style={[styles.newTitle, { color: colors.foreground }]} numberOfLines={2}>
-          {pin.title}
-        </Text>
-        <Text style={[styles.newBrand, { color: colors.mutedForeground }]}>{pin.brand}</Text>
-        <Text style={[styles.newPrice, { color: colors.gold }]}>
-          Est. £{pin.estimatedValueGBP ?? '—'}
-        </Text>
-      </View>
-    </TouchableOpacity>
-  );
-}
-
-// ─── Collection pill ──────────────────────────────────────────────────────────
-
-function CollectionPill({ name, count, onPress }: { name: string; count: number; onPress: () => void }) {
-  const colors = useColors();
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      activeOpacity={0.85}
-      style={[
-        styles.collectionPill,
-        { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: colors.radius },
-      ]}
-    >
-      <Text style={[styles.collectionPillName, { color: colors.foreground }]} numberOfLines={1}>
-        {name}
-      </Text>
-      <Text style={[styles.collectionPillCount, { color: colors.mutedForeground }]}>{count}</Text>
-    </TouchableOpacity>
-  );
-}
-
-// ─── Inline search results panel ─────────────────────────────────────────────
-
-function SearchResults({
-  query,
-  pins,
-  onPinPress,
-}: {
-  query: string;
-  pins: CataloguePin[];
-  onPinPress: (id: string) => void;
-}) {
-  const colors = useColors();
-  const results = useMemo(() => {
-    if (!query.trim()) return [];
-    const q = query.toLowerCase();
-    return pins
-      .filter(
-        p =>
-          p.title.toLowerCase().includes(q) ||
-          p.characters.some(c => c.toLowerCase().includes(q)) ||
-          p.collection.toLowerCase().includes(q) ||
-          p.brand.toLowerCase().includes(q),
-      )
-      .slice(0, 20);
-  }, [query, pins]);
-
-  if (!query.trim()) return null;
-
-  return (
-    <View
-      style={[
-        styles.searchResults,
-        { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-      ]}
-    >
-      <View style={styles.searchResultsHeader}>
-        <Text style={[styles.searchResultsCount, { color: colors.mutedForeground }]}>
-          {results.length === 0
-            ? 'No pins found'
-            : `${results.length} result${results.length !== 1 ? 's' : ''}`}
-        </Text>
-        {results.length > 0 && (
-          <TouchableOpacity onPress={() => onPinPress('__catalogue')} activeOpacity={0.7}>
-            <Text style={[styles.searchResultsViewAll, { color: colors.primary }]}>
-              View all in Catalogue
-            </Text>
-          </TouchableOpacity>
-        )}
-      </View>
-      {results.map(pin => (
-        <TouchableOpacity
-          key={pin.id}
-          onPress={() => onPinPress(pin.id)}
-          activeOpacity={0.8}
-          style={[styles.searchResultRow, { borderTopColor: colors.border }]}
-        >
-          <Image source={getPinImageSource(pin)} style={styles.searchResultImage} />
-          <View style={styles.searchResultInfo}>
-            <Text style={[styles.searchResultTitle, { color: colors.foreground }]} numberOfLines={1}>
-              {pin.title}
-            </Text>
-            <Text style={[styles.searchResultMeta, { color: colors.mutedForeground }]}>
-              {pin.brand} · {pin.collection}
-            </Text>
-          </View>
-          <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
-        </TouchableOpacity>
-      ))}
-      {results.length === 0 && (
-        <View style={styles.noResultsRow}>
-          <Feather name="search" size={16} color={colors.mutedForeground} />
-          <Text style={[styles.noResultsText, { color: colors.mutedForeground }]}>
-            Try different keywords or browse the full catalogue
-          </Text>
-        </View>
-      )}
-    </View>
-  );
-}
-
-// ─── Screen ───────────────────────────────────────────────────────────────────
 
 export default function DiscoverScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { recentlyViewed } = useCollection();
-  const { pins, newReleases } = usePinCatalogue();
+
   const { profile } = useProfile();
+  const { user } = useAuth();
+  const { collection } = useCollection();
+  const { totalUnread } = useUnreadMessages();
+  const { unseenCount } = useSubmissionNotifications();
+  const { repo: userRepo } = useCommunity();
+  const { repository: catRepo, pins, ensureCollections } = usePinCatalogue();
+
+  const [feed, setFeed] = useState<CommunityPost[]>([]);
+  const [activeSet, setActiveSet] = useState<PinSetSummary | null>(null);
+  const [activeSetOwnerId, setActiveSetOwnerId] = useState<string | null>(null);
+  const [activeSetLoading, setActiveSetLoading] = useState(false);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
 
-  // Greeting — first name or username
   const firstName = profile?.displayName?.split(' ')[0] ?? profile?.username ?? null;
 
-  // Derive recently-viewed CataloguePin objects
-  const recentPins = useMemo(
-    () =>
-      recentlyViewed
-        .map(id => pins.find(p => p.id === id))
-        .filter((p): p is CataloguePin => p !== undefined)
-        .slice(0, 10),
-    [recentlyViewed, pins],
-  );
+  useEffect(() => {
+    let cancelled = false;
+    setFeed([]);
+    if (!userRepo) return () => { cancelled = true; };
+    userRepo.getCommunityFeed({ postType: 'new_pickup', limit: 2 }).then(posts => {
+      if (!cancelled) setFeed(posts);
+    }).catch(() => {});
+    return () => { cancelled = true; };
+  }, [userRepo]);
 
-  // Count pins per brand
-  const brandCounts = useMemo(() => {
-    const map = new Map<string, number>();
-    for (const pin of pins) {
-      map.set(pin.brand, (map.get(pin.brand) ?? 0) + 1);
-    }
-    return map;
-  }, [pins]);
+  useEffect(() => {
+    let cancelled = false;
+    setActiveSet(null);
+    setActiveSetOwnerId(null);
+    setActiveSetLoading(false);
+    if (!catRepo || !user?.id) return () => { cancelled = true; };
 
-  // Derive unique collections with counts (top 12)
-  const collections = useMemo(() => {
-    const map = new Map<string, number>();
-    for (const pin of pins) {
-      if (pin.collection) {
-        map.set(pin.collection, (map.get(pin.collection) ?? 0) + 1);
+    const ownedEntries = Object.values(collection)
+      .filter(entry => entry.status === 'owned' || entry.status === 'for_trade')
+      .sort((a, b) => b.dateAdded.localeCompare(a.dateAdded));
+
+    if (ownedEntries.length === 0) return () => { cancelled = true; };
+
+    Promise.all([
+      catRepo.getPinsByIds(ownedEntries.map(entry => entry.pinId)),
+      catRepo.getSetSummaries(),
+    ]).then(([ownedPins, summaries]) => {
+      if (cancelled) return;
+      const pinsById = new Map(ownedPins.map(pin => [pin.id, pin]));
+      const summaryByName = new Map(summaries.map(summary => [summary.setName, summary]));
+      const automaticSet = ownedEntries
+        .map(entry => pinsById.get(entry.pinId)?.collection)
+        .filter((name): name is string => Boolean(name))
+        .map(name => summaryByName.get(name))
+        .find((summary): summary is PinSetSummary => Boolean(summary));
+
+      if (automaticSet) {
+        setActiveSet(automaticSet);
+        setActiveSetOwnerId(user.id);
+        setActiveSetLoading(true);
+        ensureCollections([automaticSet.setName])
+          .catch(() => {})
+          .finally(() => {
+            if (!cancelled) setActiveSetLoading(false);
+          });
       }
+    }).catch(() => {});
+    return () => { cancelled = true; };
+  }, [catRepo, user?.id, collection, ensureCollections]);
+
+  const ownedCount = Object.values(collection).filter(e => e.status === 'owned' || e.status === 'for_trade').length;
+  const forTradeCount = Object.values(collection).filter(e => e.status === 'for_trade').length;
+  const isoCount = Object.values(collection).filter(e => e.status === 'wanted').length;
+
+  const forYouItems = useMemo(() => {
+    const items = [];
+    if (totalUnread > 0) {
+      items.push({
+        id: 'messages',
+        icon: 'message-circle' as const,
+        title: 'New messages',
+        subtitle: `${totalUnread} unread message${totalUnread === 1 ? '' : 's'}`,
+        onPress: () => router.push('/community/conversations'),
+        color: colors.primary,
+      });
     }
-    return Array.from(map.entries())
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 12)
-      .map(([name, count]) => ({ name, count }));
-  }, [pins]);
+    if (unseenCount > 0) {
+      items.push({
+        id: 'submissions',
+        icon: 'bell' as const,
+        title: 'Submission update',
+        subtitle: `${unseenCount} unseen update${unseenCount === 1 ? '' : 's'}`,
+        onPress: () => router.push('/my-submissions'),
+        color: colors.gold,
+      });
+    }
+    return items.slice(0, 3);
+  }, [totalUnread, unseenCount, router, colors.primary, colors.gold]);
+
+  const visibleActiveSet = activeSetOwnerId === user?.id ? activeSet : null;
+
+  const setProgress = useMemo(() => {
+    if (!visibleActiveSet) return null;
+    const setPins = pins.filter(p => p.collection === visibleActiveSet.setName);
+    const total = setPins.length;
+    const owned = setPins.filter(p => {
+      const e = collection[p.id];
+      return e && (e.status === 'owned' || e.status === 'for_trade');
+    }).length;
+    return { owned, total };
+  }, [visibleActiveSet, pins, collection]);
+
+  if (!user) {
+    return <View style={[styles.root, { backgroundColor: colors.background }]} />;
+  }
 
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
-
-      {/* ── Sticky header: greeting only ── */}
-      <View style={[styles.stickyHeader, { paddingTop: topPad + 8, backgroundColor: colors.background }]}>
-        <View style={styles.greetingRow}>
-          <TouchableOpacity
-            onPress={() => router.push('/edit-profile')}
-            activeOpacity={0.8}
-            style={styles.greetingLeft}
-          >
-            <Avatar
-              uri={profile?.avatarUrl ?? null}
-              name={profile?.username ?? '?'}
-              size={38}
-            />
-            <View style={styles.greetingText}>
-              <Text style={[styles.greetingName, { color: colors.foreground }]} numberOfLines={1}>
-                {firstName ? `Hi, ${firstName}!` : 'Hi there!'}
-              </Text>
-              <Text style={[styles.greetingHi, { color: colors.mutedForeground }]}>
-                Welcome back
-              </Text>
-            </View>
-          </TouchableOpacity>
-
-          <View style={styles.logoArea}>
-            <Text style={[styles.logoText, { color: colors.primary }]}>PinHunt</Text>
-          </View>
-        </View>
-      </View>
-
-      {/* ── Scrollable content ── */}
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: botPad }}
-        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad, paddingHorizontal: 16 }}
       >
-        {/* ── Scan CTA — Disney Parks card style ── */}
-        <TouchableOpacity
-          onPress={() => router.push('/(tabs)/scan')}
-          activeOpacity={0.88}
-          style={[styles.scanCard, { borderRadius: 20, marginHorizontal: 16, marginTop: 16, marginBottom: 16 }]}
-        >
-          <LinearGradient
-            colors={['#F97316', '#C2410C']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.scanGradient}
-          >
-            {/* Large decorative camera in corner */}
-            <View style={styles.scanDecorIcon} pointerEvents="none">
-              <Feather name="camera" size={90} color="rgba(255,255,255,0.08)" />
-            </View>
-
-            {/* Content */}
-            <View style={styles.scanContent}>
-              <View style={styles.scanIconBadge}>
-                <Feather name="camera" size={22} color="#FFFFFF" />
-              </View>
-              <Text style={styles.scanTitle}>Scan a Pin</Text>
-              <Text style={styles.scanSubtitle}>
-                Point your camera at any Disney pin for instant AI identification
-              </Text>
-              <View style={styles.scanCta}>
-                <Text style={styles.scanCtaText}>Identify now</Text>
-                <Feather name="arrow-right" size={14} color="#FFFFFF" />
-              </View>
-            </View>
-          </LinearGradient>
-        </TouchableOpacity>
-
-        {/* ── New to the Catalogue ── */}
-        {newReleases.length > 0 && (
-          <View style={styles.section}>
-            <SectionHeader
-              title="New to the Catalogue"
-              actionLabel="See All"
-              onAction={() => router.push('/catalogue')}
-            />
-            <FlatList
-              data={newReleases}
-              keyExtractor={p => p.id}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.hList}
-              renderItem={({ item }) => (
-                <NewReleaseCard
-                  pin={item}
-                  onPress={() => router.push({ pathname: '/pin/[id]', params: { id: item.id } })}
-                />
+        {/* HEADER */}
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => router.push('/edit-profile')} activeOpacity={0.8} style={styles.headerLeft}>
+            <Avatar uri={profile?.avatarUrl ?? null} name={profile?.username ?? '?'} size={44} />
+            <Text style={[styles.greeting, { color: colors.foreground }]}>
+              {firstName ? `Hi, ${firstName} 👋` : 'Hi there 👋'}
+            </Text>
+          </TouchableOpacity>
+          <View style={styles.headerRight}>
+            <TouchableOpacity onPress={() => router.push('/community/conversations')} style={[styles.iconBtn, { backgroundColor: colors.card, borderColor: colors.border }]}>
+              <Feather name="message-square" size={20} color={colors.foreground} />
+              {totalUnread > 0 && (
+                <View style={[styles.badge, { backgroundColor: colors.primary, borderColor: colors.background }]}>
+                  <Text style={[styles.badgeText, { color: colors.primaryForeground }]}>{totalUnread > 9 ? '9+' : totalUnread}</Text>
+                </View>
               )}
-            />
-          </View>
-        )}
-
-        {/* ── Browse by Brand ── */}
-        <View style={styles.section}>
-          <SectionHeader
-            title="Browse by Brand"
-            actionLabel="Full Catalogue"
-            onAction={() => router.push('/catalogue')}
-          />
-          <View style={styles.brandGrid}>
-            {BRAND_CARDS.map(brand => (
-              <BrandCard
-                key={brand.key}
-                brand={brand}
-                count={brandCounts.get(brand.key) ?? 0}
-                onPress={() => router.push('/catalogue')}
-              />
-            ))}
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push('/my-submissions')} style={[styles.iconBtn, { backgroundColor: colors.card, borderColor: colors.border }]}>
+              <Feather name="bell" size={20} color={colors.foreground} />
+              {unseenCount > 0 && (
+                <View style={[styles.badge, { backgroundColor: colors.primary, borderColor: colors.background }]}>
+                  <Text style={[styles.badgeText, { color: colors.primaryForeground }]}>{unseenCount > 9 ? '9+' : unseenCount}</Text>
+                </View>
+              )}
+            </TouchableOpacity>
           </View>
         </View>
 
-        {/* ── Browse by Collection ── */}
-        {collections.length > 0 && (
+        {/* COLLECTION SNAPSHOT */}
+        <View style={styles.snapshot}>
+          <TouchableOpacity onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })} activeOpacity={0.7}>
+            <Text style={[styles.snapshotText, { color: colors.mutedForeground }]}>
+              <Text style={{ color: colors.foreground, fontFamily: 'Inter_600SemiBold' }}>{ownedCount}</Text> pins
+            </Text>
+          </TouchableOpacity>
+          <Text style={[styles.snapshotDot, { color: colors.border }]}>·</Text>
+          <TouchableOpacity onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'traders' } })} activeOpacity={0.7}>
+            <Text style={[styles.snapshotText, { color: colors.mutedForeground }]}>
+              <Text style={{ color: colors.foreground, fontFamily: 'Inter_600SemiBold' }}>{forTradeCount}</Text> traders
+            </Text>
+          </TouchableOpacity>
+          <Text style={[styles.snapshotDot, { color: colors.border }]}>·</Text>
+          <TouchableOpacity onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'iso' } })} activeOpacity={0.7}>
+            <Text style={[styles.snapshotText, { color: colors.mutedForeground }]}>
+              <Text style={{ color: colors.foreground, fontFamily: 'Inter_600SemiBold' }}>{isoCount}</Text> ISO
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* QUICK ACTIONS */}
+        <View style={styles.actionsRow}>
+          <TouchableOpacity onPress={() => router.push('/(tabs)/scan')} activeOpacity={0.85} style={[styles.actionBtn, { backgroundColor: colors.card, borderColor: colors.border }]}>
+            <View style={[styles.actionIcon, { backgroundColor: colors.primary + '15' }]}>
+              <Feather name="camera" size={18} color={colors.primary} />
+            </View>
+            <Text style={[styles.actionText, { color: colors.foreground }]}>Scan Pin</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/search')} activeOpacity={0.85} style={[styles.actionBtn, { backgroundColor: colors.card, borderColor: colors.border }]}>
+            <View style={[styles.actionIcon, { backgroundColor: colors.primary + '15' }]}>
+              <Feather name="plus" size={18} color={colors.primary} />
+            </View>
+            <Text style={[styles.actionText, { color: colors.foreground }]}>Add Pin</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* FOR YOU */}
+        {forYouItems.length > 0 && (
           <View style={styles.section}>
-            <SectionHeader
-              title="Browse by Collection"
-              actionLabel={`${collections.length} sets`}
-              onAction={() => router.push('/catalogue')}
-            />
-            <FlatList
-              data={collections}
-              keyExtractor={c => c.name}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.hList}
-              renderItem={({ item }) => (
-                <CollectionPill
-                  name={item.name}
-                  count={item.count}
-                  onPress={() => router.push('/catalogue')}
-                />
-              )}
-            />
+            <Text style={[styles.sectionTitle, { color: colors.foreground }]}>For You</Text>
+            <View style={styles.sectionContent}>
+              {forYouItems.map((item) => (
+                <TouchableOpacity key={item.id} onPress={item.onPress} activeOpacity={0.8} style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}>
+                  <View style={[styles.cardIcon, { backgroundColor: item.color + '15' }]}>
+                    <Feather name={item.icon} size={16} color={item.color} />
+                  </View>
+                  <View style={styles.cardTextCol}>
+                    <Text style={[styles.cardTitle, { color: colors.foreground }]}>{item.title}</Text>
+                    <Text style={[styles.cardSubtitle, { color: colors.mutedForeground }]}>{item.subtitle}</Text>
+                  </View>
+                  <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         )}
 
-        {/* ── Recently Viewed ── */}
-        {recentPins.length > 0 && (
+        {/* WHAT'S HAPPENING */}
+        {feed.length > 0 && (
           <View style={styles.section}>
-            <SectionHeader
-              title="Recently Viewed"
-              actionLabel="See All"
-              onAction={() => router.push('/(tabs)/collection')}
-            />
-            <FlatList
-              data={recentPins}
-              keyExtractor={p => p.id}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.hList}
-              renderItem={({ item }) => (
-                <SmallPinCard
-                  pin={item}
-                  onPress={() => router.push({ pathname: '/pin/[id]', params: { id: item.id } })}
-                />
-              )}
-            />
+            <Text style={[styles.sectionTitle, { color: colors.foreground }]}>What’s Happening</Text>
+            <View style={styles.sectionContent}>
+              {feed.map((post) => (
+                <TouchableOpacity key={post.id} onPress={() => router.push({ pathname: '/community/post/[id]', params: { id: post.id } })} activeOpacity={0.8} style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}>
+                  <View style={[styles.cardIcon, { backgroundColor: colors.secondary }]}>
+                    <Feather name={post.postType === 'for_trade' ? 'repeat' : post.postType === 'in_search_of' ? 'bookmark' : 'message-square'} size={16} color={colors.foreground} />
+                  </View>
+                  <View style={styles.cardTextCol}>
+                    <Text style={[styles.cardSubtitle, { color: colors.mutedForeground, fontSize: 11, marginBottom: 2 }]}>
+                      {post.authorProfile?.displayName || post.authorProfile?.username || 'Unknown'} · {timeAgo(post.createdAt)}
+                    </Text>
+                    <Text style={[styles.cardTitle, { color: colors.foreground }]} numberOfLines={2}>
+                      {post.body}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         )}
+
+        {/* CONTINUE COLLECTING */}
+        {visibleActiveSet && !activeSetLoading && setProgress && setProgress.total > 0 && (
+          <View style={styles.section}>
+            <Text style={[styles.sectionTitle, { color: colors.foreground }]}>Continue Collecting</Text>
+            <TouchableOpacity onPress={() => router.push({ pathname: '/set/[collection]', params: { collection: visibleActiveSet.setName } })} activeOpacity={0.8} style={[styles.setCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+              <View style={styles.setTextCol}>
+                <Text style={[styles.cardTitle, { color: colors.foreground, fontSize: 16 }]} numberOfLines={1}>{visibleActiveSet.setName}</Text>
+                <Text style={[styles.cardSubtitle, { color: colors.mutedForeground, marginTop: 4 }]}>
+                  {setProgress.owned} / {setProgress.total} collected
+                </Text>
+              </View>
+              {setProgress.total > 0 && (
+                <View style={[styles.progressRing, { backgroundColor: colors.primary + '15' }]}>
+                  <Text style={{ fontSize: 13, fontFamily: 'Inter_600SemiBold', color: colors.primary }}>
+                    {Math.round((setProgress.owned / setProgress.total) * 100)}%
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
+        )}
+
       </ScrollView>
     </View>
   );
 }
 
-// ─── Styles ───────────────────────────────────────────────────────────────────
-
 const styles = StyleSheet.create({
   root: { flex: 1 },
-
-  // ── Sticky header ──
-  stickyHeader: {
-    paddingHorizontal: 16,
-    paddingBottom: 10,
-    gap: 10,
-  },
-
-  // Greeting row
-  greetingRow: {
+  header: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
   },
-  greetingLeft: {
+  headerLeft: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 12,
     flex: 1,
   },
-  greetingText: {
-    gap: 1,
-    flex: 1,
-  },
-  greetingHi: {
-    fontSize: 11,
-    fontFamily: 'Inter_400Regular',
-    letterSpacing: 0.2,
-  },
-  greetingName: {
-    fontSize: 17,
+  greeting: {
+    fontSize: 20,
     fontFamily: 'Inter_700Bold',
-    letterSpacing: -0.3,
+    letterSpacing: -0.4,
   },
-  logoArea: {
-    paddingLeft: 12,
+  headerRight: {
+    flexDirection: 'row',
+    gap: 8,
   },
-  logoText: {
-    fontSize: 18,
-    fontFamily: 'Inter_700Bold',
-    letterSpacing: -0.5,
-  },
-
-  // Search
-  searchWrap: {
+  iconBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
     position: 'relative',
   },
-  searchResults: {
+  badge: {
     position: 'absolute',
-    top: '100%',
-    left: 0,
-    right: 0,
-    marginTop: 4,
-    borderWidth: 1,
-    overflow: 'hidden',
-    zIndex: 20,
-    // Shadow
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.12,
-    shadowRadius: 12,
-    elevation: 8,
-  },
-  searchResultsHeader: {
-    flexDirection: 'row',
+    top: -2,
+    right: -2,
+    minWidth: 18,
+    height: 18,
+    borderRadius: 9,
     alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    justifyContent: 'center',
+    paddingHorizontal: 4,
+    borderWidth: 2,
   },
-  searchResultsCount: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  searchResultsViewAll: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  searchResultRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 10,
-    gap: 10,
-    borderTopWidth: StyleSheet.hairlineWidth,
+  badgeText: {
+    fontSize: 10,
+    fontFamily: 'Inter_700Bold',
   },
-  searchResultImage: { width: 44, height: 44, borderRadius: 6, resizeMode: 'cover' },
-  searchResultInfo: { flex: 1 },
-  searchResultTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  searchResultMeta: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 1 },
-  noResultsRow: {
+  snapshot: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    padding: 12,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    marginBottom: 24,
+    paddingLeft: 2,
   },
-  noResultsText: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
-
-  // ── Scan CTA — Disney Parks card ──
-  scanCard: {
-    overflow: 'hidden',
-    // Shadow
-    shadowColor: '#C2410C',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.35,
-    shadowRadius: 16,
-    elevation: 10,
-  },
-  scanGradient: {
-    minHeight: 160,
-    padding: 24,
-    justifyContent: 'flex-end',
-    overflow: 'hidden',
-  },
-  scanDecorIcon: {
-    position: 'absolute',
-    top: -10,
-    right: -10,
-  },
-  scanContent: {
-    gap: 6,
-  },
-  scanIconBadge: {
-    width: 42,
-    height: 42,
-    borderRadius: 13,
-    backgroundColor: 'rgba(255,255,255,0.18)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 4,
-  },
-  scanTitle: {
-    fontSize: 22,
-    fontFamily: 'Inter_700Bold',
-    color: '#FFFFFF',
-    letterSpacing: -0.4,
-  },
-  scanSubtitle: {
-    fontSize: 13,
+  snapshotText: {
+    fontSize: 14,
     fontFamily: 'Inter_400Regular',
-    color: 'rgba(255,255,255,0.75)',
-    lineHeight: 18,
   },
-  scanCta: {
+  snapshotDot: {
+    fontSize: 14,
+  },
+  actionsRow: {
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 32,
+  },
+  actionBtn: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
-    marginTop: 6,
-  },
-  scanCtaText: {
-    fontSize: 13,
-    fontFamily: 'Inter_600SemiBold',
-    color: 'rgba(255,255,255,0.9)',
-  },
-
-  // Sections
-  section: { marginBottom: 28 },
-  hList: { paddingHorizontal: 16, gap: 12 },
-
-  // Brand grid — two columns
-  brandGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    paddingHorizontal: 16,
-    gap: 12,
-  },
-  brandCard: {
-    flexBasis: '47%',
-    flexGrow: 1,
+    padding: 12,
     borderRadius: 16,
-    overflow: 'hidden',
-    minHeight: 130,
+    borderWidth: 1,
+    gap: 10,
   },
-  brandGradient: {
-    flex: 1,
-    padding: 16,
-    minHeight: 130,
-    justifyContent: 'flex-end',
-    overflow: 'hidden',
-  },
-  brandIconDecor: {
-    position: 'absolute',
-    top: -8,
-    right: -8,
-  },
-  brandContent: { gap: 4 },
-  brandIconBadge: {
-    width: 34,
-    height: 34,
+  actionIcon: {
+    width: 32,
+    height: 32,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 6,
   },
-  brandLabel: {
+  actionText: {
     fontSize: 15,
-    fontFamily: 'Inter_700Bold',
-    color: '#FFFFFF',
+    fontFamily: 'Inter_600SemiBold',
     letterSpacing: -0.2,
   },
-  brandSubtitle: {
-    fontSize: 11,
-    fontFamily: 'Inter_400Regular',
-    color: 'rgba(255,255,255,0.75)',
+  section: {
+    marginBottom: 28,
   },
-  brandCount: {
-    fontSize: 11,
+  sectionTitle: {
+    fontSize: 13,
     fontFamily: 'Inter_600SemiBold',
-    color: 'rgba(255,255,255,0.6)',
-    marginTop: 2,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginBottom: 12,
+    opacity: 0.8,
   },
-
-  // Collection pills
-  collectionPill: {
+  sectionContent: {
+    gap: 10,
+  },
+  card: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 9,
-    paddingHorizontal: 14,
-    gap: 8,
+    padding: 14,
+    borderRadius: 16,
+    borderWidth: 1,
+    gap: 12,
+  },
+  cardIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cardTextCol: {
+    flex: 1,
+  },
+  cardTitle: {
+    fontSize: 15,
+    fontFamily: 'Inter_600SemiBold',
+    letterSpacing: -0.2,
+  },
+  cardSubtitle: {
+    fontSize: 13,
+    fontFamily: 'Inter_400Regular',
+    marginTop: 2,
+  },
+  setCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    borderRadius: 16,
     borderWidth: 1,
   },
-  collectionPillName: { fontSize: 13, fontFamily: 'Inter_600SemiBold', maxWidth: 180 },
-  collectionPillCount: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-
-  // Small recently-viewed card
-  smallCard: {
-    width: 120,
-    overflow: 'hidden',
-    borderWidth: 1,
+  setTextCol: {
+    flex: 1,
   },
-  smallImage: { width: 120, height: 100, resizeMode: 'cover' },
-  smallInfo: { padding: 8, gap: 2 },
-  smallTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', lineHeight: 14 },
-  smallBrand: { fontSize: 10, fontFamily: 'Inter_400Regular' },
-
-  // New-release card
-  newCard: {
-    width: 160,
-    overflow: 'hidden',
-    borderWidth: 1,
+  progressRing: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  newImage: { width: 160, height: 130, resizeMode: 'cover' },
-  newInfo: { padding: 10, gap: 4 },
-  newTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', lineHeight: 17 },
-  newBrand: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  newPrice: { fontSize: 13, fontFamily: 'Inter_700Bold' },
 });

@@ -67,6 +67,8 @@ export function SubmissionNotificationsProvider({
 
   const [unseenIds, setUnseenIds] = useState<Set<string>>(new Set());
   const submissionsRef = useRef<PinSubmission[]>([]);
+  const currentUserIdRef = useRef(userId);
+  currentUserIdRef.current = userId;
 
   const storageKey = userId ? `pinhunt_sub_seen_${userId}` : null;
 
@@ -99,13 +101,17 @@ export function SubmissionNotificationsProvider({
   // ── Fetch + refresh ─────────────────────────────────────────────────────────
   const refresh = useCallback(async () => {
     if (!userId || !isSupabaseConfigured) return;
+    const requestedUserId = userId;
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const repo = createSupabaseUserRepository(supabase as any);
       const submissions = await repo.getMyPinSubmissions(userId);
+      if (currentUserIdRef.current !== requestedUserId) return;
       submissionsRef.current = submissions;
       const unseen = await computeUnseen(submissions);
-      setUnseenIds(unseen);
+      if (currentUserIdRef.current === requestedUserId) {
+        setUnseenIds(unseen);
+      }
     } catch {
       // Silently ignore — this is non-critical
     }
@@ -131,11 +137,10 @@ export function SubmissionNotificationsProvider({
 
   // ── Fetch on mount + auth change ────────────────────────────────────────────
   useEffect(() => {
+    setUnseenIds(new Set());
+    submissionsRef.current = [];
     if (userId) {
       refresh();
-    } else {
-      setUnseenIds(new Set());
-      submissionsRef.current = [];
     }
   }, [userId, refresh]);
 
@@ -154,6 +159,7 @@ export function SubmissionNotificationsProvider({
           filter: `submitted_by=eq.${userId}`,
         },
         async (payload) => {
+          if (currentUserIdRef.current !== userId) return;
           const row = payload.new as { id?: string; status?: PinSubmissionStatus };
           if (!row?.id || !row?.status) return;
 
@@ -165,7 +171,9 @@ export function SubmissionNotificationsProvider({
               s.id === row.id ? { ...s, status: row.status as PinSubmissionStatus } : s,
             );
             const unseen = await computeUnseen(submissionsRef.current);
-            setUnseenIds(unseen);
+            if (currentUserIdRef.current === userId) {
+              setUnseenIds(unseen);
+            }
           } else {
             // Unknown submission (e.g. created on another device) — fall back
             // to a full refresh.

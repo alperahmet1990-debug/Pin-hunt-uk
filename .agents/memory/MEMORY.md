@@ -14,3 +14,4 @@
 - [Expo web action confirmations](expo-web-action-confirmations.md) — native alert buttons may display but not run callbacks on web; use in-app confirmation UI for important actions
 - [Expo Router tab context](expo-router-tab-context.md) — switching tabs is not a contextual push; use stack routes when an action must return to its originating tab
 - [Expo native picker presentation](expo-native-picker-presentation.md) — dismiss RN modals before system pickers, and keep sheet actions outside tappable backdrop ancestry
+- [Final V1 Collection architecture](final-v1-collection.md) — Boards-first single-row navigation; catalogue Sets derive automatically, never through manual tracking

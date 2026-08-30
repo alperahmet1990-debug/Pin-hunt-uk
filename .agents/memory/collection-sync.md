@@ -11,3 +11,4 @@ description: How the user collection syncs between AsyncStorage and Supabase use
 - **Pitfall — set totals:** set completion/ghost slots must not be computed from the slice; the Collection screen calls `ensureCollections(names)` (fetch full sets by `collection` name) or every partially-loaded set looks "complete".
 - `user_pins.pin_id` is the internal UUID; app pin ids are `pins.pinhunt_id`. Any query taking an app pin id must resolve the UUID first (a raw `.eq('pin_id', pinhuntId)` 400s with invalid-uuid).
 - Expo web testing quirk: `window.scrollY` is always 0 — ScrollView scrolls an inner div; measure that div's scrollTop instead.
+- Pending collection writes must be persisted with their owning user ID and ignored/cleared when the active account differs; late RPC callbacks must also verify the captured user before mutating the queue.

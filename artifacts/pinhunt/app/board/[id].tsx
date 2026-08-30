@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import {
   FlatList,
   Image,
@@ -6,6 +6,7 @@ import {
   Platform,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -27,17 +28,25 @@ export default function BoardDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { getBoardById, getBoardPins, addPinToBoard, removePinFromBoard, deleteBoard, setBoardThumbnail } = useBoards();
+  const { getBoardById, getBoardPins, addPinToBoard, removePinFromBoard, deleteBoard, setBoardThumbnail, renameBoard } = useBoards();
   const { pins: catalogue } = usePinCatalogue();
   const { collection } = useCollection();
 
   const [addModalVisible, setAddModalVisible] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [deleteConfirmVisible, setDeleteConfirmVisible] = useState(false);
+  const [renameVisible, setRenameVisible] = useState(false);
+  const [newName, setNewName] = useState('');
   const [pinToRemove, setPinToRemove] = useState<CataloguePin | null>(null);
 
   const board = getBoardById(id ?? '');
   const boardPins = board ? getBoardPins(board) : [];
+
+  useEffect(() => {
+    if (board && !renameVisible) {
+      setNewName(board.name);
+    }
+  }, [board, renameVisible]);
 
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
 
@@ -94,9 +103,14 @@ export default function BoardDetailScreen() {
                   activeOpacity={0.7}
                 >
                   <Text style={[styles.headerBtnText, { color: editMode ? colors.destructive : colors.primary }]}>
-                    {editMode ? 'Done' : 'Edit'}
+                    {editMode ? 'Done' : 'Edit Pins'}
                   </Text>
                 </TouchableOpacity>
+                {!editMode && (
+                  <TouchableOpacity onPress={() => setRenameVisible(true)} style={styles.headerBtn} activeOpacity={0.7}>
+                    <Feather name="edit-2" size={18} color={colors.foreground} />
+                  </TouchableOpacity>
+                )}
                 <TouchableOpacity onPress={handleDeleteBoard} style={styles.headerBtn} activeOpacity={0.7}>
                   <Feather name="trash-2" size={18} color={colors.destructive} />
                 </TouchableOpacity>
@@ -219,7 +233,7 @@ export default function BoardDetailScreen() {
         <View style={[styles.modalRoot, { backgroundColor: colors.background }]}>
           <View style={[styles.modalHeader, { borderBottomColor: colors.border, backgroundColor: colors.card }]}>
             <Text style={[styles.modalTitle, { color: colors.foreground }]}>Add Pins to Board</Text>
-            <TouchableOpacity onPress={() => setAddModalVisible(false)} activeOpacity={0.7}>
+            <TouchableOpacity onPress={() => setAddModalVisible(false)} activeOpacity={0.7} style={styles.modalCloseBtn}>
               <Feather name="x" size={22} color={colors.foreground} />
             </TouchableOpacity>
           </View>
@@ -260,6 +274,54 @@ export default function BoardDetailScreen() {
               )}
             />
           )}
+        </View>
+      </Modal>
+
+      <Modal
+        visible={renameVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setRenameVisible(false)}
+      >
+        <View style={styles.confirmBackdrop}>
+          <View style={[styles.confirmCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+            <Text style={[styles.confirmTitle, { color: colors.foreground }]}>Rename Board</Text>
+            <TextInput
+              style={[styles.renameInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.background }]}
+              value={newName}
+              onChangeText={setNewName}
+              placeholder="Board name"
+              placeholderTextColor={colors.mutedForeground}
+              autoFocus
+              returnKeyType="done"
+              onSubmitEditing={() => {
+                if (newName.trim()) {
+                  renameBoard(board.id, newName);
+                  setRenameVisible(false);
+                }
+              }}
+            />
+            <View style={styles.confirmActions}>
+              <TouchableOpacity
+                onPress={() => setRenameVisible(false)}
+                style={[styles.confirmButton, { backgroundColor: colors.secondary }]}
+              >
+                <Text style={[styles.confirmButtonText, { color: colors.foreground }]}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  if (newName.trim()) {
+                    renameBoard(board.id, newName);
+                    setRenameVisible(false);
+                  }
+                }}
+                style={[styles.confirmButton, { backgroundColor: colors.primary, opacity: newName.trim() ? 1 : 0.5 }]}
+                disabled={!newName.trim()}
+              >
+                <Text style={[styles.confirmButtonText, { color: colors.primaryForeground }]}>Save</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </Modal>
 
@@ -321,7 +383,7 @@ const styles = StyleSheet.create({
   notFound: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
   notFoundText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   headerActions: { flexDirection: 'row', alignItems: 'center', gap: 12, marginRight: 4 },
-  headerBtn: { padding: 4 },
+  headerBtn: { minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 6 },
   headerBtnText: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   metaBar: {
     flexDirection: 'row',
@@ -348,7 +410,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 6,
     paddingHorizontal: 14,
-    paddingVertical: 8,
+    minHeight: 44,
   },
   addBtnText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   grid: { paddingTop: 12, paddingHorizontal: 16 },
@@ -362,9 +424,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 6,
     right: 6,
-    width: 26,
-    height: 26,
-    borderRadius: 13,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -372,9 +434,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 6,
     left: 6,
-    width: 26,
-    height: 26,
-    borderRadius: 13,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -400,6 +462,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
+  modalCloseBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   modalTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' },
   addRow: {
     flexDirection: 'row',
@@ -425,6 +488,7 @@ const styles = StyleSheet.create({
   confirmCard: { width: '100%', maxWidth: 380, borderRadius: 16, borderWidth: StyleSheet.hairlineWidth, padding: 20 },
   confirmTitle: { fontSize: 18, fontFamily: 'Inter_700Bold', marginBottom: 8 },
   confirmBody: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20, marginBottom: 20 },
+  renameInput: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 12, height: 44, fontSize: 15, fontFamily: 'Inter_500Medium', marginBottom: 20 },
   confirmActions: { flexDirection: 'row', justifyContent: 'flex-end', gap: 10 },
   confirmButton: { minHeight: 44, minWidth: 92, alignItems: 'center', justifyContent: 'center', borderRadius: 10, paddingHorizontal: 16 },
   confirmButtonText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },

@@ -1,0 +1,221 @@
+Simplify the existing PinHunt Home / landing page into a lightweight glance-and-go screen.
+
+Do not rebuild the app or redesign unrelated pages. Reuse existing Home, messaging, notifications, collection stats, scan/add-pin flows, set progress and community/event components wherever possible.
+
+The goal is that a user can understand the page and decide where to go within a few seconds.
+
+Use this structure:
+
+HEADER
+
+Show:
+
+* user avatar
+* simple greeting, e.g. Hi, Alper 👋
+* Messages icon
+* Notifications icon
+
+Messages and Notifications should show real unread badges where existing data supports it.
+
+Do not create large message/notification cards just for navigation.
+
+COLLECTION SNAPSHOT
+
+Directly below the greeting show one compact line:
+
+24 pins · 3 traders · 4 ISO
+
+Each count should be tappable:
+
+* Pins → Collection → All Pins
+* Traders → Collection → Traders
+* ISO → Collection → ISO
+
+Do not use large stat cards.
+
+QUICK ACTIONS
+
+Show only two clear actions:
+
+Scan Pin
+Add Pin
+
+Keep these compact and mobile-friendly.
+
+Reuse existing scan and add-pin functionality.
+
+Remove the current oversized Scan a Pin promotional/banner block.
+
+FOR YOU
+
+Add a small dynamic For You area.
+
+Only show items that are genuinely useful/actionable.
+
+Examples:
+
+* new trade message
+* ISO/trade match
+* trade status update
+* delivery confirmation needed
+* other existing relevant collector activity
+
+Show a maximum of around 1–3 items.
+
+If there is nothing useful to show, hide this section completely.
+
+Do not show zero-count placeholders.
+
+Tapping each item should route to the relevant existing feature.
+
+WHAT’S HAPPENING
+
+Add one compact reusable section called:
+
+What’s Happening
+
+This is PinHunt’s small editorial/event area.
+
+Show a maximum of 1–2 current items.
+
+Support future content types such as:
+
+* PinHunt announcement
+* upcoming pin event
+* important pin drop/release
+* PinHunt feature update
+* community challenge
+* guide/article
+
+Do not build a full CMS in this task.
+
+Reuse existing Community/Event data if available.
+
+If there is no existing suitable content model, create only the smallest reusable data/component structure needed so this can be expanded later.
+
+Where practical, design these items so they could also appear in the Community feed later instead of creating a completely separate content system.
+
+Include a subtle See all only if there is an existing sensible destination.
+
+CONTINUE COLLECTING
+
+Show one compact personalised set card:
+
+Continue Collecting
+
+Example:
+
+Wishables Shimmer 2026
+12 / 16 collected
+
+Choose one sensible tracked set using existing data, such as:
+
+* most recently interacted with, or
+* closest to completion
+
+Tap → existing Set Detail.
+
+If the user is not tracking any sets, hide the section rather than showing an empty card.
+
+Do not add a full sets carousel.
+
+REMOVE FROM HOME
+
+Move/remove the current catalogue-heavy Home content such as:
+
+* Browse by Brand
+* Browse by Collection
+* Full Catalogue
+* large Recently Viewed sections
+* oversized Scan banner
+* excessive quick-action cards
+
+Do not delete the underlying functionality.
+
+These discovery/catalogue experiences should remain accessible from the existing Find/Discover area.
+
+TARGET HOME HIERARCHY
+
+The page should approximately feel like:
+
+Hi, Alper 👋                         💬²   🔔³
+
+24 pins · 3 traders · 4 ISO
+
+[ Scan Pin ]     [ Add Pin ]
+
+For You
+1–3 useful items only
+
+What’s Happening
+1–2 PinHunt/event items only
+
+Continue Collecting
+one tracked set
+
+Bottom navigation
+
+The screen should remain short, calm and easy to scan.
+
+VISUAL STYLE
+
+Keep the current PinHunt visual language:
+
+* warm light/neutral background
+* restrained orange/gold accents
+* dark charcoal text
+* compact rounded cards
+* good mobile touch targets
+* subtle borders/shadows only where needed
+
+Do not add:
+
+* giant dashboard cards
+* large promotional banners
+* excessive gradients
+* multiple horizontal carousels
+* long text blocks
+* duplicated navigation
+
+Home should feel like an entry point, not a destination.
+
+IMPORTANT UX PRINCIPLE
+
+Home should answer:
+
+What needs my attention, and what do I want to do next?
+
+It should not try to expose every PinHunt feature.
+
+TOKEN / IMPLEMENTATION EFFICIENCY
+
+Before coding, inspect the existing Home components and reuse as much as possible.
+
+Reuse existing:
+
+* user/profile data
+* unread messages
+* notifications
+* collection counts
+* scan flow
+* Add Pin flow
+* trade/match activity
+* tracked sets
+* event/community content
+
+Do not:
+
+* rebuild existing systems
+* make broad schema changes
+* redesign Community, Collection, Find or Profile
+* create demo/mock data
+* build a CMS
+* create a long design document
+
+Implement directly.
+
+Only make minimal backend/schema changes if genuinely required for the small What’s Happening content block.
+
+Run only checks relevant to the Home changes.
+
+Treat this as a simplification/refactor of the existing Home page, not a new feature-heavy dashboard.

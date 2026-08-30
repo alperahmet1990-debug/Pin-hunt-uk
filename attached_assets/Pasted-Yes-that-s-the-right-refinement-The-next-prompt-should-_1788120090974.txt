@@ -1,0 +1,144 @@
+Yes — that’s the right refinement.
+
+The next prompt should not ask Replit to rebuild Home yet. It should ask it to inspect the current Home, use the two screenshots as design references, and give you a few concise directions first. Then you pick one before it spends tokens implementing.
+
+Use this:
+
+HOME PAGE DESIGN OPTIONS ONLY — DO NOT IMPLEMENT YET
+We have already simplified the current PinHunt landing page, so do NOT rebuild it yet.
+I want the existing bottom-nav destination currently called:
+Discover
+to become:
+Home
+with a simple Home/house icon.
+The final bottom navigation should be:
+Home | Community | Find | Collection | Profile
+Do not create a duplicate route. The existing landing route becomes Home.
+==================================================
+DESIGN TASK
+==================================================
+Before making any further Home changes, inspect the CURRENT PinHunt Home implementation and give me THREE concise design directions for how to visually improve it.
+DO NOT IMPLEMENT ANY OF THEM YET.
+I will choose one first.
+The current Home is too plain and visually flat.
+I want it to feel much closer in quality and familiarity to the two reference apps I have already shown:
+1. Pin Trading App
+2. Pin Vault
+Use those screenshots as visual/UX references.
+Do NOT copy their branding or exact layouts.
+Instead, analyse what makes those screens work and apply the strongest ideas to PinHunt.
+==================================================
+REFERENCE 1 — PIN TRADING APP
+==================================================
+Take particular inspiration from:
+- clear visual hierarchy
+- immediately understandable layout
+- compact stats
+- obvious actions
+- useful shortcuts
+- strong spacing
+- information density that feels intentional
+- collector-focused rather than dashboard-like
+- very little wasted space
+This should be the PRIMARY structural inspiration.
+==================================================
+REFERENCE 2 — PIN VAULT
+==================================================
+Take inspiration from:
+- warmth
+- stronger visual personality
+- collectible feel
+- softer surfaces
+- more playful/premium presentation
+- collection/set progress feeling rewarding
+Use this more for mood/personality than for structure.
+==================================================
+PINHUNT DIRECTION
+==================================================
+The final PinHunt Home should combine:
+**Pin Trading App clarity**
++
+**Pin Vault warmth/collectability**
++
+**PinHunt orange/gold identity and trading focus**
+Target feeling:
+**premium modern collector app**
+**warm**
+**clear**
+**image-led**
+**slightly magical**
+**not childish**
+**not corporate**
+**not empty**
+==================================================
+HOME PURPOSE
+==================================================
+Home should remain a quick “glance and go” page.
+It should help the user quickly understand:
+- what needs their attention
+- where to go next
+- what is happening in PinHunt
+- what they are currently collecting
+Do not turn it back into catalogue browsing.
+Do not bring back:
+- Browse by Brand
+- Browse by Collection
+- Full Catalogue
+- large Recently Viewed grids
+- large pin catalogue sections
+Those belong under Find.
+==================================================
+FUNCTIONAL CONTENT TO WORK WITH
+==================================================
+Base all three design options around roughly these existing Home elements:
+- greeting / avatar
+- Messages
+- Notifications
+- compact collection stats
+- one main Find-a-Pin action
+- shortcuts to My Collection / Find Trades / Community
+- For You activity
+- What's Happening / PinHunt announcements / events
+- Continue Collecting / set progress
+Do not invent lots of additional homepage features.
+==================================================
+IMPORTANT ACTION CHANGE
+==================================================
+Do not keep separate:
+Scan Pin
+Add Pin
+as competing Home actions.
+Use one primary concept:
+**Find a Pin**
+Supporting idea:
+**Scan or search the catalogue**
+This should route into the existing Find experience.
+==================================================
+DESIGN OPTIONS FORMAT
+==================================================
+Give me THREE options only.
+For each option provide:
+1. A short name
+2. A concise description
+3. Rough top-to-bottom hierarchy
+4. Visual/theme direction
+5. What it borrows from Pin Trading App
+6. What it borrows from Pin Vault
+7. Why it could work well for PinHunt
+8. Main trade-off
+Keep each option short.
+Do not produce long design documents.
+Do not write code.
+Do not modify files.
+Do not create components.
+Do not implement anything yet.
+==================================================
+TOKEN DISCIPLINE
+==================================================
+This step is intentionally design-only so we do not spend tokens repeatedly rebuilding the Home page.
+Inspect the current Home implementation and the supplied reference screenshots.
+Recommend the three strongest directions only.
+After presenting the options, STOP and wait for my selection.
+Once I choose one, we will implement ONLY that direction.
+
+That’s the better move here: use Pin Trading App as the structural benchmark and Pin Vault as the personality benchmark, then let Replit show you three ways to combine them before touching code.

@@ -32,15 +32,20 @@ export function UnreadMessagesProvider({ children }: { children: React.ReactNode
   const { repo, userId } = useCommunity();
   const [unreadByConversation, setUnreadByConversation] = useState<Record<string, number>>({});
   const inFlight = useRef(false);
+  const currentUserIdRef = useRef(userId);
+  currentUserIdRef.current = userId;
 
   const refresh = useCallback(async () => {
     if (!repo || !userId || inFlight.current) return;
+    const requestedUserId = userId;
     inFlight.current = true;
     try {
       // Lightweight RPC — returns only per-conversation counts, so polling
       // stays cheap no matter how many messages exist.
       const map = await repo.getConversationUnreadCounts();
-      setUnreadByConversation(map);
+      if (currentUserIdRef.current === requestedUserId) {
+        setUnreadByConversation(map);
+      }
     } catch {
       // Non-fatal — keep the previous counts; next poll retries.
     } finally {
@@ -65,8 +70,9 @@ export function UnreadMessagesProvider({ children }: { children: React.ReactNode
   }, [repo]);
 
   useEffect(() => {
+    setUnreadByConversation({});
+    inFlight.current = false;
     if (!userId) {
-      setUnreadByConversation({});
       return;
     }
     refresh();

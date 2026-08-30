@@ -36,11 +36,13 @@ const OWNER_KEY = '@pinhunt_collection_owner_v1';
 const PENDING_KEY = '@pinhunt_collection_pending_v1';
 
 type PendingPushes = Record<string, CollectionStatus>;
+type PendingEnvelope = { ownerId: string; pushes: PendingPushes };
 
 export function CollectionProvider({ children }: { children: React.ReactNode }) {
   const [collection, setCollection] = useState<CollectionMap>({});
   const [recentlyViewed, setRecentlyViewed] = useState<string[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [collectionOwnerId, setCollectionOwnerId] = useState<string | null>(null);
   const { ensurePins } = usePinCatalogue();
   const { user } = useAuth();
 
@@ -57,34 +59,44 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     Promise.all([
       AsyncStorage.getItem(STORAGE_KEY),
       AsyncStorage.getItem(VIEWED_KEY),
-    ]).then(([colData, viewData]) => {
+      AsyncStorage.getItem(OWNER_KEY),
+    ]).then(([colData, viewData, ownerId]) => {
       if (colData) setCollection(JSON.parse(colData));
       if (viewData) setRecentlyViewed(JSON.parse(viewData));
+      setCollectionOwnerId(ownerId);
       setLoaded(true);
     });
   }, []);
 
   const userId = user?.id;
+  const currentUserIdRef = useRef(userId);
+  currentUserIdRef.current = userId;
 
   // ── Push helpers ────────────────────────────────────────────────────────────
   // Failed pushes are queued (per pin, last-write-wins) and retried after the
   // next successful pull or the next status change while signed in.
   const pendingRef = useRef<PendingPushes>({});
-
-  useEffect(() => {
-    AsyncStorage.getItem(PENDING_KEY).then(raw => {
-      if (raw) pendingRef.current = { ...JSON.parse(raw), ...pendingRef.current };
-    });
-  }, []);
+  const pendingOwnerRef = useRef<string | null>(null);
 
   const persistPending = () => {
-    AsyncStorage.setItem(PENDING_KEY, JSON.stringify(pendingRef.current));
+    if (!pendingOwnerRef.current) {
+      AsyncStorage.removeItem(PENDING_KEY);
+      return;
+    }
+    const envelope: PendingEnvelope = {
+      ownerId: pendingOwnerRef.current,
+      pushes: pendingRef.current,
+    };
+    AsyncStorage.setItem(PENDING_KEY, JSON.stringify(envelope));
   };
 
   const pushStatus = useCallback((pinId: string, status: CollectionStatus) => {
+    const requestUserId = userId;
+    if (!requestUserId || pendingOwnerRef.current !== requestUserId) return;
     supabase
       .rpc('set_user_pin_status', { p_pinhunt_id: pinId, p_status: status })
       .then(({ error }) => {
+        if (currentUserIdRef.current !== requestUserId || pendingOwnerRef.current !== requestUserId) return;
         if (error) {
           console.warn('[collection] sync push failed:', error.message);
           pendingRef.current[pinId] = status;
@@ -93,13 +105,14 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
         }
         persistPending();
       });
-  }, []);
+  }, [userId]);
 
   const flushPending = useCallback(() => {
+    if (!userId || pendingOwnerRef.current !== userId) return;
     for (const [pinId, status] of Object.entries(pendingRef.current)) {
       pushStatus(pinId, status);
     }
-  }, [pushStatus]);
+  }, [pushStatus, userId]);
 
   // ── Pull & reconcile ────────────────────────────────────────────────────────
   // Pull the signed-in user's collection from Supabase. For a returning user
@@ -117,10 +130,12 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
       // Signed out: if the local collection belonged to a synced account,
       // clear it so the next user (or guest) doesn't inherit it.
       pulledForUserRef.current = null;
+      pendingRef.current = {};
+      pendingOwnerRef.current = null;
       AsyncStorage.getItem(OWNER_KEY).then(owner => {
         if (!owner) return;
-        pendingRef.current = {};
         setCollection({});
+        setCollectionOwnerId(null);
         AsyncStorage.multiRemove([STORAGE_KEY, OWNER_KEY, PENDING_KEY]);
       });
       return;
@@ -131,12 +146,35 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     let retryTimer: ReturnType<typeof setTimeout> | null = null;
 
     const attempt = async (triesLeft: number) => {
-      const owner = await AsyncStorage.getItem(OWNER_KEY);
+      const [owner, rawPending] = await Promise.all([
+        AsyncStorage.getItem(OWNER_KEY),
+        AsyncStorage.getItem(PENDING_KEY),
+      ]);
       if (cancelled) return;
       const returningUser = owner === user.id;
+      pendingRef.current = {};
+      pendingOwnerRef.current = user.id;
+      if (returningUser && rawPending) {
+        try {
+          const parsed = JSON.parse(rawPending) as unknown;
+          if (
+            typeof parsed === 'object' &&
+            parsed !== null &&
+            'ownerId' in parsed &&
+            'pushes' in parsed
+          ) {
+            const envelope = parsed as PendingEnvelope;
+            if (envelope.ownerId === user.id) pendingRef.current = envelope.pushes;
+          } else {
+            // Legacy queues are safe only when OWNER_KEY matches this user.
+            pendingRef.current = parsed as PendingPushes;
+          }
+        } catch {
+          pendingRef.current = {};
+        }
+      }
       if (owner && owner !== user.id) {
         // A different account's data is on this device — clear it.
-        pendingRef.current = {};
         setCollection({});
         await AsyncStorage.multiRemove([STORAGE_KEY, PENDING_KEY]);
       }
@@ -154,6 +192,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
 
       pulledForUserRef.current = user.id;
       AsyncStorage.setItem(OWNER_KEY, user.id);
+      setCollectionOwnerId(user.id);
       setCollection(prev => {
         const next: CollectionMap = {};
         const serverIds = new Set<string>();
@@ -197,6 +236,10 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
 
   const setStatus = useCallback((pinId: string, status: CollectionStatus) => {
     if (userId && isSupabaseConfigured) {
+      if (pendingOwnerRef.current !== userId) {
+        pendingRef.current = {};
+        pendingOwnerRef.current = userId;
+      }
       pushStatus(pinId, status);
       // Piggyback: retry anything that failed earlier.
       for (const [pid, st] of Object.entries(pendingRef.current)) {
@@ -235,9 +278,12 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     });
   }, []);
 
+  const visibleCollection =
+    collectionOwnerId && collectionOwnerId !== userId ? {} : collection;
+
   const getEntry = useCallback(
-    (pinId: string) => collection[pinId],
-    [collection],
+    (pinId: string) => visibleCollection[pinId],
+    [visibleCollection],
   );
 
   const markViewed = useCallback((pinId: string) => {
@@ -248,7 +294,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     });
   }, []);
 
-  const entries = Object.values(collection);
+  const entries = Object.values(visibleCollection);
   const counts = {
     owned: entries.filter(e => e.status === 'owned').length,
     wanted: entries.filter(e => e.status === 'wanted').length,
@@ -263,7 +309,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
   return (
     <CollectionContext.Provider
       value={{
-        collection,
+        collection: visibleCollection,
         setStatus,
         setNotes,
         getEntry,

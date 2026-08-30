@@ -1,0 +1,518 @@
+FINAL V1 HOME PAGE CLEANUP + DESIGN OPTIONS
+
+Refine the existing PinHunt landing page into the final V1 **Home** experience.
+
+This should be the LAST significant Home redesign before launch.
+
+Be conscious of token/implementation cost, but do not underinvest in polish.
+
+The current Home is too sparse, visually flat and not useful enough. We want it to be simple and fast to scan, but still feel like a polished collector app with personality.
+
+IMPORTANT:
+Before coding, inspect the existing Home implementation and reuse:
+- profile/greeting
+- unread messages
+- notifications
+- collection counts
+- Find/scan flow
+- Collection routing
+- trade matching
+- Community
+- set progress
+- event/post content
+- existing design tokens/components
+
+Do not rebuild working backend systems.
+
+==================================================
+STEP 1 — DESIGN OPTIONS FIRST
+==================================================
+
+Before implementing the Home redesign, give me THREE concise visual/UX directions for the SAME information architecture below.
+
+Do not produce three full builds.
+
+Each option should contain only:
+- a short name
+- 2–3 sentence design description
+- rough visual hierarchy
+- what makes it feel distinctive
+- any important trade-offs
+
+Keep the options concise.
+
+Use these influences:
+
+Pin Trading App:
+- very clear hierarchy
+- familiar collector UX
+- good balance of stats, actions and content
+- minimal learning curve
+
+Pin Vault:
+- warmer/more collectible feel
+- stronger visual personality
+- set progress feels engaging
+
+PinHunt:
+- warm orange/gold identity
+- trading-first differentiation
+- premium digital collector feel
+
+Do NOT visually copy either competitor.
+
+After showing me the three directions, STOP and wait for my choice.
+
+Do not implement until I select one.
+
+This is specifically to avoid spending tokens rebuilding multiple versions.
+
+==================================================
+FINAL INFORMATION ARCHITECTURE
+==================================================
+
+Whichever visual option is selected, keep this Home structure:
+
+1. Personal header
+2. Compact collection snapshot
+3. One strong primary action
+4. Three quick actions
+5. For You
+6. What's Happening
+7. Continue Collecting
+
+Keep the page short and glanceable.
+
+Home is an entry point, not a destination users should spend a long time browsing.
+
+==================================================
+1. PERSONAL HEADER
+==================================================
+
+Show:
+
+- profile avatar
+- greeting, e.g. **Hi, Alper 👋**
+- subtle time-based secondary text such as Good evening
+- Messages icon
+- Notifications icon
+
+Messages and Notifications should display REAL unread badges where existing data supports it.
+
+Both icons need approximately 44px touch targets.
+
+Do not create separate large navigation cards for Messages/Notifications.
+
+==================================================
+2. COLLECTION SNAPSHOT
+==================================================
+
+Show a lightweight row such as:
+
+**24 Pins     3 Traders     4 ISO**
+
+Each item should be tappable.
+
+Pins:
+→ Collection / Boards
+
+Traders:
+→ Collection / Traders
+
+ISO:
+→ Collection / ISO
+
+Do not use giant stat cards.
+
+Keep this visually strong enough to scan but secondary to the main action.
+
+==================================================
+3. ONE PRIMARY ACTION
+==================================================
+
+Remove the separate:
+
+Scan Pin
+Add Pin
+
+actions from Home.
+
+They are too similar and create unnecessary choice.
+
+Replace them with one stronger primary action:
+
+**Find a Pin**
+
+Supporting text:
+
+**Scan a pin or search the catalogue**
+
+Tap → existing Find experience.
+
+The Find experience should remain responsible for:
+- scan/photo identification
+- catalogue search
+- discovering pins
+- adding pins through existing flows
+
+Do not rebuild Find.
+
+The Find a Pin surface can carry more PinHunt personality than the rest of the page.
+
+==================================================
+4. QUICK ACTIONS
+==================================================
+
+Provide exactly three compact shortcuts:
+
+**My Collection**
+**Find Trades**
+**Community**
+
+These should be visually distinct but compact.
+
+Use:
+- simple icon
+- clear label
+- comfortable tap area
+
+Do not turn these into huge cards.
+
+Do not add more permanent quick actions.
+
+==================================================
+5. FOR YOU
+==================================================
+
+Add a dynamic personalised section:
+
+**For You**
+
+Only show genuinely actionable personal items.
+
+Possible examples:
+- new messages
+- ISO matches
+- potential trade matches
+- trade status updates
+- delivery confirmation needed
+
+Maximum around 1–3 items.
+
+Examples:
+
+**2 new messages**
+Continue conversations →
+
+**3 ISO matches**
+See potential trades →
+
+**Trade delivered**
+Confirm receipt →
+
+Do NOT populate this section with random Community posts.
+
+Do NOT show stale posts.
+
+Do NOT show zero-value placeholders.
+
+If there is nothing useful, hide the section completely.
+
+==================================================
+6. WHAT'S HAPPENING
+==================================================
+
+Add a compact editorial/event surface:
+
+**What's Happening**
+
+This is for CURRENT PinHunt-curated content, not arbitrary community feed posts.
+
+Possible content types:
+- upcoming pin event
+- PinHunt feature announcement
+- important pin release/drop
+- guide/article
+- community challenge
+- PinHunt update
+
+Show a maximum of 1–2 items.
+
+Prefer one visually strong card rather than multiple bland white rows.
+
+Example:
+
+**UK PIN TRADING EVENT**
+London Pin Trading Day
+12 September
+→
+
+or
+
+**NEW ON PINHUNT**
+Share your Traders directly
+→
+
+Do not surface a random 35-day-old user post just because content exists.
+
+If there is no relevant current content, hide the section.
+
+Do not build a full CMS.
+
+Reuse existing Event/Community structures where sensible.
+
+If no clean structure exists, create only the smallest reusable content model necessary.
+
+==================================================
+7. CONTINUE COLLECTING
+==================================================
+
+Add a visual personalised section:
+
+**Continue Collecting**
+
+Show ONE recognised catalogue set.
+
+Prefer:
+- most recently interacted with, OR
+- closest to completion
+
+Use real pin/set imagery where available.
+
+Example:
+
+[pin] [pin] [pin] [missing]
+
+**Wishables Shimmer 2026**
+12 / 16 collected · 75%
+
+Tap → existing Set Detail.
+
+Use the Collection logic where Sets are automatically recognised when users own pins belonging to that set.
+
+Do not require manual Track Set.
+
+If there is no relevant set, hide the section.
+
+Do not create a full carousel.
+
+==================================================
+REMOVE FROM HOME
+==================================================
+
+Remove catalogue-heavy content that belongs elsewhere:
+
+- Browse by Brand
+- Browse by Collection
+- Full Catalogue
+- large Recently Viewed sections
+- giant Scan banner
+- duplicate Scan/Add actions
+
+Do not remove the underlying features.
+
+Those belong under Find.
+
+==================================================
+BOTTOM NAVIGATION — RENAME DISCOVER TO HOME
+==================================================
+
+Rename the existing bottom-navigation item:
+
+**Discover → Home**
+
+Replace the current compass/discover icon with a simple Home/house icon.
+
+Do not create a duplicate Home route.
+
+The existing landing route becomes the Home destination.
+
+Final bottom navigation:
+
+**Home | Community | Find | Collection | Profile**
+
+Use this meaning:
+
+Home
+= personalised glance-and-go landing page
+
+Community
+= collectors/posts/discussion
+
+Find
+= scan, search and discover pins
+
+Collection
+= Boards, Sets, Traders and ISO
+
+Profile
+= account, trust, trade history and settings
+
+Only rename the navigation destination.
+
+Do not globally remove legitimate uses of the word "discover".
+
+==================================================
+VISUAL / THEME GOAL
+==================================================
+
+Target:
+
+**premium modern collector app**
+**warm**
+**playful without being childish**
+**slightly magical without copying Disney**
+**image-led**
+**clear and familiar**
+
+The current Home looks too white/flat because every surface has similar visual weight.
+
+Use stronger hierarchy.
+
+PinHunt should feel more visually alive without becoming busy.
+
+Use:
+- warm cream/off-white background
+- dark charcoal text
+- PinHunt orange/gold primary accent
+- subtle supporting accent colours
+- soft warm borders
+- rounded cards
+- subtle elevation
+- occasional restrained gradient where it adds hierarchy
+- actual pin imagery wherever appropriate
+
+Avoid:
+- corporate SaaS dashboard look
+- endless white cards
+- excessive orange everywhere
+- neon colours
+- glassmorphism
+- heavy gradients
+- childish cartoon styling
+- copyrighted Disney visual assets
+
+If using subtle texture/pattern, keep it original and extremely light.
+
+==================================================
+TOUCH TARGETS
+==================================================
+
+Review all Home interactions.
+
+Minimum practical touch target:
+
+**approximately 44px × 44px**
+
+This applies to:
+- messages
+- notifications
+- stat links
+- Find a Pin
+- quick actions
+- For You items
+- What's Happening cards
+- Continue Collecting
+
+Visible icons can be smaller.
+
+Increase clickable area with padding.
+
+No precision tapping.
+
+==================================================
+SPACING / DENSITY
+==================================================
+
+Home should feel richer than the current version without becoming long.
+
+Avoid excessive empty vertical space.
+
+Aim for a normal iPhone to show:
+- greeting/header
+- stats
+- Find a Pin
+- quick actions
+- at least the beginning of personalised content
+
+without lots of scrolling.
+
+Use consistent spacing tokens.
+
+==================================================
+IMPORTANT BEHAVIOUR
+==================================================
+
+Home should be dynamic.
+
+Hide sections when there is nothing useful to show.
+
+Do not show:
+- 0 matches
+- 0 messages
+- empty set cards
+- stale arbitrary posts
+
+Use real existing data wherever possible.
+
+==================================================
+TOKEN / IMPLEMENTATION DISCIPLINE
+==================================================
+
+This is intended to be the final major Home pass.
+
+Do not:
+- rebuild Find
+- rebuild Collection
+- rebuild Community
+- rebuild Messages
+- rebuild Notifications
+- rebuild Set Detail
+- rebuild trade matching
+- redesign unrelated screens
+- create mock/demo data
+- generate lots of alternative components
+- build a full CMS
+- make broad schema changes
+
+Reuse existing components/data.
+
+Only make minimal changes genuinely required.
+
+IMPORTANT:
+
+First give me the THREE concise design directions described above.
+
+Wait for my choice.
+
+Then implement ONLY the selected direction.
+
+After implementation, run only relevant checks for Home/navigation changes.
+
+==================================================
+FINAL SUCCESS CRITERIA
+==================================================
+
+The final Home should feel:
+
+- more polished than the current version
+- more visually engaging
+- clearly PinHunt
+- immediately understandable
+- useful within a few seconds
+- collector-focused
+- not overloaded
+
+The hierarchy should remain:
+
+Header
+→ Collection snapshot
+→ Find a Pin
+→ Quick actions
+→ For You
+→ What's Happening
+→ Continue Collecting
+
+Prioritise:
+
+**clarity + collector personality + usefulness + familiarity**

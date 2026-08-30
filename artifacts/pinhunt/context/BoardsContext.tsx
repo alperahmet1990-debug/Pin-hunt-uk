@@ -22,6 +22,7 @@ interface BoardsContextValue {
   addPinToBoard: (boardId: string, pinId: string) => void;
   removePinFromBoard: (boardId: string, pinId: string) => void;
   setBoardThumbnail: (boardId: string, pinId: string | undefined) => void;
+  renameBoard: (boardId: string, newName: string) => void;
   getBoardById: (boardId: string) => Board | undefined;
   getBoardPins: (board: Board) => CataloguePin[];
 }
@@ -204,6 +205,16 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
     });
   }, [persist]);
 
+  const renameBoard = useCallback((boardId: string, newName: string) => {
+    setCustomBoards(prev => {
+      const next = prev.map(b =>
+        b.id === boardId ? { ...b, name: newName.trim() } : b,
+      );
+      persist(next);
+      return next;
+    });
+  }, [persist]);
+
   const getBoardById = useCallback(
     (boardId: string) => allBoards.find(b => b.id === boardId),
     [allBoards],
@@ -251,6 +262,7 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
         addPinToBoard,
         removePinFromBoard,
         setBoardThumbnail,
+        renameBoard,
         getBoardById,
         getBoardPins,
       }}

@@ -1,0 +1,612 @@
+FINAL V1 MY COLLECTION REBUILD
+
+Rebuild/refactor the existing PinHunt My Collection UI into the final V1 experience.
+
+This is intended to be the LAST significant Collection UI rebuild before launch, so prioritise getting the interaction model, usability and polish right.
+
+However, be very conscious of tokens and implementation cost.
+
+FIRST inspect the existing Collection implementation and REUSE working components, backend logic, Boards, catalogue sets, pin grids, Traders, ISO, search, valuation and Pin Detail.
+
+Do not rebuild working systems unnecessarily.
+
+==================================================
+CORE UX REFERENCE
+==================================================
+
+Use the simple, familiar interaction pattern of leading pin-collection apps as the structural inspiration:
+
+- one obvious Collection screen
+- one row of primary collection categories
+- image-first Boards
+- very little UI before content
+- simple stats
+- search/add immediately accessible
+
+Do NOT visually copy another app.
+
+Keep PinHunt's own brand, colours, typography and visual identity.
+
+PinHunt's key improvement should be combining:
+
+1. simple collector-created Boards
+2. intelligent catalogue-driven Sets
+3. Traders
+4. ISO
+
+The experience must remain usable for collectors with 20 pins or 2,000+ pins.
+
+==================================================
+FINAL NAVIGATION
+==================================================
+
+Remove the current multi-layer navigation:
+
+Collection | Traders | ISO
+
+followed by:
+
+All Pins | Boards | Sets
+
+Do NOT replace it with another nested navigation structure.
+
+Instead use ONE primary tab row:
+
+**Boards | Sets | Traders | ISO**
+
+Default = **Boards**
+
+This is the only permanent category navigation required on My Collection.
+
+Do NOT include All Pins as a primary tab.
+
+Do NOT land users on a giant grid containing every pin they own.
+
+Do NOT automatically create an "All Pins" Board.
+
+If users need to access every owned pin, make **View All Owned Pins** a secondary utility accessible through search/filter/overflow.
+
+==================================================
+PAGE HEADER
+==================================================
+
+Use a simple header:
+
+**My Collection**                         Search   Add
+
+Search and Add can be compact icons/buttons but MUST have large accessible touch targets.
+
+Avoid a large search bar permanently consuming vertical space if an icon-triggered search experience already exists or can reuse the existing search component cleanly.
+
+Directly underneath:
+
+**Boards | Sets | Traders | ISO**
+
+Then show contextual statistics for the selected tab.
+
+Example Boards:
+
+24 Pins        6 Boards        £420
+Owned                         Est. Value
+
+Example Sets:
+
+24 Pins        6 Sets          2 Complete
+
+Example Traders:
+
+8 Traders                     £145 Est. Value
+
+Example ISO:
+
+12 ISO                        4 Matches
+
+Keep these statistics lightweight.
+
+Do not place each statistic inside a large dashboard card.
+
+==================================================
+BOARDS — DEFAULT EXPERIENCE
+==================================================
+
+Boards is the default My Collection experience.
+
+Boards are collector-created organisation.
+
+Examples:
+
+Disney Traders
+Winnie the Pooh
+Stitch
+Halloween
+Favourite Pins
+Disneyland Paris
+Never Trade
+Main Pin Board
+
+Display Boards using a compact image-first grid.
+
+Each Board should visually preview approximately 4 pins where enough pins exist.
+
+Think of a simple 2x2 pin preview within the Board card.
+
+Below the preview show:
+
+Board Name
+
+X Pins | £Estimated Value
+
+Only show estimated value if existing valuation data makes this straightforward.
+
+Keep cards compact enough to comfortably show two Boards across on normal mobile screens.
+
+Tapping anywhere on the Board card should open it.
+
+Do NOT require users to precisely tap the Board name or another tiny control.
+
+Inside a Board, show its pins using the existing pin grid.
+
+Support existing Board management:
+
+- Create Board
+- Rename
+- Add pins
+- Remove pins
+- Delete
+- Open
+
+A pin can belong to multiple Boards without duplicating the underlying ownership record.
+
+Reuse existing Board/custom Collection functionality.
+
+==================================================
+SETS — AUTOMATIC PINHUNT ORGANISATION
+==================================================
+
+Sets are NOT manually-created Boards.
+
+Sets are automatically organised by PinHunt using catalogue metadata.
+
+If a collector owns ANY pin belonging to a recognised official catalogue Set, that Set should automatically appear under Sets.
+
+NO manual "Track Set" step is required.
+
+Example:
+
+Collector adds one Princess Pastries 2024 pin.
+
+Catalogue says it belongs to an 8-pin set.
+
+Sets automatically shows:
+
+Princess Pastries 2024
+1 / 8 collected
+
+Add another:
+
+2 / 8
+
+Remove one:
+
+1 / 8
+
+Progress must derive dynamically from actual ownership + catalogue set membership.
+
+Do not create duplicate/manual progress records that can become inconsistent.
+
+==================================================
+SETS SCREEN
+==================================================
+
+Display Sets using similarly compact, visual cards so moving between Boards and Sets feels consistent.
+
+Each Set card should show:
+
+- representative pin previews/set image
+- Set name
+- owned / total
+- completion percentage or simple progress
+- Complete ✓ when finished
+
+Example:
+
+Wishables Shimmer 2026
+12 / 16 · 75%
+
+Ducks of Disney 2025
+16 / 16 · Complete ✓
+
+Do NOT permanently display another navigation row:
+
+All | In Progress | Completed
+
+This creates too many controls.
+
+Instead show all relevant Sets by default.
+
+Put:
+
+- In Progress
+- Completed
+- Completion %
+- Name/year sorting
+
+inside ONE Filter/Sort control.
+
+Optionally provide a subtle Browse Sets action for discovering catalogue sets the collector hasn't started.
+
+Do not require tracking.
+
+==================================================
+SET DETAIL
+==================================================
+
+Opening a Set should show the COMPLETE official set.
+
+Reuse the existing Set Detail functionality.
+
+Owned pins:
+full colour
+
+Missing pins:
+muted/greyed
+
+Duplicates:
+×2 etc.
+
+ISO:
+subtle indicator
+
+Header:
+
+Set Name
+12 / 16 collected
+75%
+
+Missing pin actions should reuse:
+
+Add to ISO
+Find Trade
+
+Owned pin:
+
+Open existing Pin Detail.
+
+Preserve existing set completion celebrations/achievements where already implemented.
+
+==================================================
+TRADERS
+==================================================
+
+Traders is a primary tab beside Boards and Sets.
+
+It represents owned pins marked For Trade.
+
+Keep it simple:
+
+contextual stats
+Search
+Filter/Sort
+Share Traders
+pin grid
+
+Do not create another nested Traders navigation.
+
+Reuse existing trader state, pin cards, valuation and sharing.
+
+Tap pin → Pin Detail.
+
+==================================================
+ISO
+==================================================
+
+ISO is the fourth primary tab.
+
+Keep it simple:
+
+contextual stats
+Search
+Filter/Sort
+Share ISO
+pin grid
+
+If existing matching data is available, show a subtle:
+
+✨ X Matches
+
+Do not create an ISO dashboard.
+
+Tap pin → Pin Detail.
+
+==================================================
+SEARCH
+==================================================
+
+Search is important but should not permanently consume excessive screen space.
+
+Use a clear Search icon/action in the header.
+
+When activated, search the relevant Collection context.
+
+For Boards/owned collection search, support existing metadata where available:
+
+- Pin name
+- Character
+- Set/Series
+- Location/Park
+- Year
+- Brand
+- Edition type
+
+Search results can show individual pins using the existing pin grid.
+
+This provides a natural way to find an individual pin without making All Pins the landing experience.
+
+Do not build AI search.
+
+==================================================
+FILTER / SORT
+==================================================
+
+Use ONE compact Filter/Sort mechanism.
+
+Do NOT restore horizontally scrolling metadata chips.
+
+Do NOT create multiple rows of tiny filter pills.
+
+Use a bottom sheet/menu.
+
+Where relevant support:
+
+Filter:
+- Character
+- Set / Series
+- Location/Park
+- Year
+- Brand
+- Edition
+- Duplicates
+- In Progress / Completed when viewing Sets
+
+Sort:
+- Default
+- Recently Added
+- Name
+- Release Date
+- Estimated Value
+- Completion % for Sets
+
+Only show options relevant to the currently selected tab.
+
+==================================================
+ADD
+==================================================
+
+Keep one obvious Add action in the header.
+
+Use existing Add Pin functionality.
+
+Menu:
+
+Add Pin
+Create Board
+
+Do not require Track Set because Sets are automatic.
+
+If existing Add Pin already opens Scan/Search choices, reuse that flow.
+
+==================================================
+TOUCH TARGETS / MOBILE USABILITY — IMPORTANT
+==================================================
+
+The current Collection UI contains several controls that are physically too small and difficult to tap.
+
+Review ALL interactive controls on the Collection experience.
+
+Every interactive control should have a minimum practical touch target of approximately:
+
+**44px × 44px**
+
+This includes:
+
+- Search
+- Add
+- tabs
+- grid/list toggle
+- Filter/Sort
+- back buttons
+- overflow menus
+- Board actions
+- Set actions
+- pin actions
+
+The visible icon itself can remain approximately 20–24px where visually appropriate.
+
+The TOUCHABLE AREA should be at least ~44px.
+
+Do not make every control visually huge.
+
+Use invisible padding/hit areas around compact icons where appropriate.
+
+Tabs such as:
+
+Boards | Sets | Traders | ISO
+
+should each have generous horizontal and vertical tap areas.
+
+The user should never need precision tapping.
+
+Avoid tiny pills such as the current:
+
+All | In Progress | Completed
+
+row.
+
+Avoid placing multiple tiny controls immediately beside each other without adequate spacing.
+
+Make the entire Board/Set/pin card tappable where appropriate instead of requiring users to hit text or a small icon.
+
+==================================================
+VERTICAL SPACE
+==================================================
+
+Reduce the amount of UI users must pass before seeing their collection.
+
+Aim for:
+
+My Collection + Search/Add
+
+Boards | Sets | Traders | ISO
+
+Contextual stats
+
+Small view/sort controls if required
+
+CONTENT
+
+Do not add another navigation row underneath.
+
+On a normal iPhone, users should see meaningful Board/Set content without needing to scroll past lots of controls first.
+
+==================================================
+VISUAL DIRECTION
+==================================================
+
+Retain PinHunt's current visual direction:
+
+- warm off-white/light neutral background
+- restrained orange/gold accent
+- charcoal text
+- subtle borders
+- soft rounded corners
+- minimal shadows
+- strong pin imagery
+
+Target:
+
+**Premium digital pin case / collector catalogue**
+
+Do not visually copy competitor branding.
+
+Avoid:
+
+- oversized orange areas
+- giant cards
+- excessive gradients
+- tiny controls
+- nested cards
+- horizontal filter carousels
+- excessive navigation
+- dashboard complexity
+
+Pin artwork should provide most of the visual colour.
+
+==================================================
+DATA MODEL
+==================================================
+
+Maintain one clean ownership model.
+
+A pin can be:
+
+Owned
+Quantity ×2
+In Board A
+In Board B
+Automatically part of catalogue Set X
+For Trade
+
+without duplicating the underlying ownership record.
+
+Sets derive from catalogue membership + ownership.
+
+Boards reference owned pins.
+
+Traders derives from For Trade state.
+
+ISO uses existing wanted-pin state.
+
+Do not duplicate these systems.
+
+==================================================
+TOKEN / IMPLEMENTATION DISCIPLINE
+==================================================
+
+This is intended to be the final V1 Collection rebuild.
+
+FIRST inspect the existing implementation.
+
+Reuse:
+
+- recent Collection UI components
+- Board system
+- catalogue Sets
+- set progress
+- Set Detail
+- pin cards
+- pin grids
+- ownership data
+- search
+- filters
+- Traders
+- ISO
+- valuation
+- Pin Detail
+- sharing
+- Add Pin
+- completion achievements
+
+Prefer rearranging/refactoring existing components over replacing them.
+
+Do NOT:
+
+- redesign unrelated pages
+- rebuild backend services that work
+- rebuild Pin Detail
+- create another Board system
+- create another Set system
+- create manual set tracking
+- add mock data
+- make broad schema changes
+- create unnecessary tables
+- produce a long design document
+- spend time creating multiple alternative designs
+
+Implement directly.
+
+==================================================
+FINAL ACCEPTANCE TESTS
+==================================================
+
+Verify:
+
+1. My Collection opens on Boards.
+2. Primary navigation is ONE row: Boards | Sets | Traders | ISO.
+3. No All Pins primary tab exists.
+4. No secondary Collection/Boards/Sets navigation row exists.
+5. Boards use compact visual pin previews.
+6. Boards are fully tappable.
+7. Existing Board management works.
+8. Sets automatically appear based on owned catalogue pins.
+9. No Track Set step is required.
+10. Set progress updates when ownership changes.
+11. Completed sets display correctly.
+12. Set Detail shows owned and missing pins.
+13. Traders works.
+14. ISO works.
+15. Search works.
+16. Filter/Sort uses one consolidated control.
+17. No horizontal metadata chip carousel exists.
+18. No tiny All/In Progress/Completed pill row exists.
+19. All important interactive elements have approximately 44px minimum touch targets.
+20. There are no precision-tap controls.
+21. Add Pin works.
+22. Create Board works.
+23. Pin Detail remains intact.
+24. No unrelated app areas are changed.
+25. Navigation works repeatedly without reload/state bugs.
+
+Treat this as the final V1 My Collection architecture.
+
+Prioritise:
+**familiarity, simplicity, large reliable touch targets, visual pin browsing and minimal navigation.**

@@ -117,36 +117,33 @@ export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
   );
 }
 
-const CARD_WIDTH = 150;
-const THUMB_SIZE = CARD_WIDTH;
-
 const styles = StyleSheet.create({
   // Vertical card
   card: {
-    width: CARD_WIDTH,
+    width: '100%',
     overflow: 'hidden',
     borderWidth: 1,
   },
   emptyThumb: {
-    width: THUMB_SIZE,
-    height: THUMB_SIZE,
+    width: '100%',
+    aspectRatio: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   singleThumb: {
-    width: THUMB_SIZE,
-    height: THUMB_SIZE,
+    width: '100%',
+    aspectRatio: 1,
     resizeMode: 'cover',
   },
   thumbGrid: {
-    width: THUMB_SIZE,
-    height: THUMB_SIZE,
+    width: '100%',
+    aspectRatio: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
   thumbCell: {
-    width: THUMB_SIZE / 2,
-    height: THUMB_SIZE / 2,
+    width: '50%',
+    height: '50%',
     overflow: 'hidden',
   },
   thumbCellImage: {

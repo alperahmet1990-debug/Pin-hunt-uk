@@ -168,11 +168,11 @@ export default function PinDetailScreen() {
             source={getPinImageSource(pin)}
             style={styles.mainImage}
           />
-          {pin.limitedEditionSize && (
+          {pin.limitedEditionSize != null && pin.limitedEditionSize > 0 ? (
             <View style={[styles.leBadge, { backgroundColor: colors.gold }]}>
               <Text style={styles.leLabel}>LE {pin.limitedEditionSize.toLocaleString()}</Text>
             </View>
-          )}
+          ) : null}
         </View>
 
         {/* ── About this Pin (directly under image) ── */}

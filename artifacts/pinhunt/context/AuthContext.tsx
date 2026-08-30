@@ -18,6 +18,39 @@ const NOT_CONFIGURED =
   'Supabase is not set up yet. Add EXPO_PUBLIC_SUPABASE_URL and ' +
   'EXPO_PUBLIC_SUPABASE_ANON_KEY to Replit Secrets, then restart the app.';
 
+function safeAuthError(
+  error: unknown,
+  fallback: string,
+): string {
+  const message =
+    typeof error === 'string'
+      ? error
+      : error instanceof Error
+        ? error.message
+        : '';
+  const normalized = message.toLowerCase();
+
+  if (normalized.includes('invalid login credentials')) {
+    return 'Incorrect email or password.';
+  }
+  if (normalized.includes('email not confirmed')) {
+    return 'Please confirm your email before signing in.';
+  }
+  if (normalized.includes('user already registered')) {
+    return 'An account with this email already exists.';
+  }
+  if (normalized.includes('password should be at least')) {
+    return 'Your password must be at least 6 characters.';
+  }
+  if (normalized.includes('rate limit') || normalized.includes('too many requests')) {
+    return 'Too many attempts. Please wait a moment and try again.';
+  }
+
+  // Never show raw HTTP responses, JSON payloads, headers, cookies, or proxy
+  // errors in the UI. These can be very long and may contain sensitive data.
+  return fallback;
+}
+
 // ─── Context shape ────────────────────────────────────────────────────────────
 interface AuthContextValue {
   session: Session | null;
@@ -67,9 +100,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!isSupabaseConfigured) return { error: NOT_CONFIGURED };
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
-      return { error: error?.message ?? null };
+      return {
+        error: error
+          ? safeAuthError(error, 'Unable to sign in right now. Please try again shortly.')
+          : null,
+      };
     } catch (err) {
-      return { error: err instanceof Error ? err.message : 'Sign-in failed. Please try again.' };
+      return {
+        error: safeAuthError(err, 'Unable to sign in right now. Please try again shortly.'),
+      };
     }
   };
 
@@ -83,14 +122,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           data: { display_name: displayName?.trim() || email },
         },
       });
-      if (error) return { error: error.message, needsEmailConfirmation: false };
+      if (error) {
+        return {
+          error: safeAuthError(error, 'Unable to create your account right now. Please try again shortly.'),
+          needsEmailConfirmation: false,
+        };
+      }
       // session is null when Supabase requires email confirmation before login.
       // session is set immediately when "Confirm email" is disabled in the dashboard.
       const needsEmailConfirmation = !data.session;
       return { error: null, needsEmailConfirmation };
     } catch (err) {
       return {
-        error: err instanceof Error ? err.message : 'Sign-up failed. Please try again.',
+        error: safeAuthError(err, 'Unable to create your account right now. Please try again shortly.'),
         needsEmailConfirmation: false,
       };
     }

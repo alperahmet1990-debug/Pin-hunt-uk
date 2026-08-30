@@ -224,6 +224,8 @@ export interface UserPin {
   pinhuntId: string;
   pin?: CataloguePin;
   status: UserPinStatus;
+  /** Number of copies represented by this single ownership row. */
+  quantity: number;
   acquiredDate?: string;
   purchasePriceGBP?: number;
   currentValueGBP?: number;
@@ -237,6 +239,7 @@ export interface UserPin {
 export interface AddUserPinInput {
   pinId: string;
   status: UserPinStatus;
+  quantity?: number;
   acquiredDate?: string;
   purchasePriceGBP?: number;
   notes?: string;
@@ -246,6 +249,7 @@ export interface AddUserPinInput {
 
 export interface UpdateUserPinInput {
   status?: UserPinStatus;
+  quantity?: number;
   acquiredDate?: string;
   purchasePriceGBP?: number;
   currentValueGBP?: number;

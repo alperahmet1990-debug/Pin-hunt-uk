@@ -47,7 +47,7 @@ export function QuickAddSheet({ pin, onClose }: QuickAddSheetProps) {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { getEntry, setStatus } = useCollection();
+  const { getEntry, setStatus, adjustQuantity } = useCollection();
   const { customBoards, createBoard, addPinToBoard, removePinFromBoard } = useBoards();
 
   const [creatingBoard, setCreatingBoard] = useState(false);
@@ -158,6 +158,37 @@ export function QuickAddSheet({ pin, onClose }: QuickAddSheetProps) {
               );
             })}
           </View>
+
+          {(currentStatus === 'owned' || currentStatus === 'for_trade') && (
+            <View style={[styles.quantityRow, { borderColor: colors.border }]}>
+              <View style={styles.quantityCopy}>
+                <Text style={[styles.quantityTitle, { color: colors.foreground }]}>Copies</Text>
+                <Text style={[styles.quantityHint, { color: colors.mutedForeground }]}>
+                  How many of this pin you have
+                </Text>
+              </View>
+              <View style={styles.quantityControls}>
+                <TouchableOpacity
+                  onPress={() => pin && adjustQuantity(pin.id, -1)}
+                  disabled={(entry?.quantity ?? 1) <= 1}
+                  accessibilityLabel="Decrease quantity"
+                  style={[styles.quantityButton, { backgroundColor: colors.secondary }]}
+                >
+                  <Feather name="minus" size={16} color={(entry?.quantity ?? 1) <= 1 ? colors.mutedForeground : colors.foreground} />
+                </TouchableOpacity>
+                <Text style={[styles.quantityValue, { color: colors.foreground }]}>
+                  {entry?.quantity ?? 1}
+                </Text>
+                <TouchableOpacity
+                  onPress={() => pin && adjustQuantity(pin.id, 1)}
+                  accessibilityLabel="Increase quantity"
+                  style={[styles.quantityButton, { backgroundColor: colors.secondary }]}
+                >
+                  <Feather name="plus" size={16} color={colors.foreground} />
+                </TouchableOpacity>
+              </View>
+            </View>
+          )}
 
           {/* Boards */}
           <Text style={[styles.boardsHeading, { color: colors.mutedForeground }]}>
@@ -308,6 +339,21 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
   },
   statusLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  quantityRow: {
+    minHeight: 58,
+    marginBottom: 16,
+    paddingVertical: 8,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  quantityCopy: { flex: 1 },
+  quantityTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  quantityHint: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  quantityControls: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  quantityButton: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
+  quantityValue: { minWidth: 20, textAlign: 'center', fontSize: 16, fontFamily: 'Inter_700Bold' },
   boardsHeading: {
     fontSize: 11,
     fontFamily: 'Inter_600SemiBold',

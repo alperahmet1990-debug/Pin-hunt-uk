@@ -83,6 +83,7 @@ function rowToUserPin(row: Record<string, unknown>): UserPin {
     pinhuntId: pin?.id ?? '',
     pin,
     status: row.status as UserPin['status'],
+    quantity: (row.quantity as number | null) ?? 1,
     acquiredDate: (row.acquired_date as string | null) ?? undefined,
     purchasePriceGBP: (row.purchase_price_gbp as number | null) ?? undefined,
     currentValueGBP: (row.current_value_gbp as number | null) ?? undefined,
@@ -439,6 +440,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         user_id: userId,
         pin_id: (pinRow as { id: string }).id,
         status: input.status,
+        quantity: input.quantity ?? 1,
         acquired_date: input.acquiredDate ?? null,
         purchase_price_gbp: input.purchasePriceGBP ?? null,
         notes: input.notes ?? null,
@@ -461,6 +463,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async updateUserPin(userPinId: string, input: UpdateUserPinInput): Promise<UserPin> {
     const updates: Record<string, unknown> = {};
     if (input.status !== undefined) updates.status = input.status;
+    if (input.quantity !== undefined) updates.quantity = input.quantity;
     if (input.acquiredDate !== undefined) updates.acquired_date = input.acquiredDate;
     if (input.purchasePriceGBP !== undefined) updates.purchase_price_gbp = input.purchasePriceGBP;
     if (input.currentValueGBP !== undefined) updates.current_value_gbp = input.currentValueGBP;

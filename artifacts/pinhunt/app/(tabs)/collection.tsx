@@ -570,6 +570,13 @@ export default function CollectionScreen() {
           return (
             <View style={s.gridItemWrap}>
               <PinCard pin={pin} mode="grid" onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })} />
+              {(collection[pin.id]?.quantity ?? 1) > 1 && (
+                <View style={[s.quantityBadge, { backgroundColor: colors.foreground }]}>
+                  <Text style={[s.quantityBadgeText, { color: colors.background }]}>
+                    ×{collection[pin.id].quantity}
+                  </Text>
+                </View>
+              )}
             </View>
           );
         }}
@@ -850,7 +857,9 @@ const s = StyleSheet.create({
   utilBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 10, borderWidth: StyleSheet.hairlineWidth },
   flatListContent: { paddingHorizontal: 16 },
   gridRow: { gap: 12, justifyContent: 'flex-start' },
-  gridItemWrap: { width: GRID_CARD_WIDTH, marginBottom: 12 },
+  gridItemWrap: { width: GRID_CARD_WIDTH, marginBottom: 12, position: 'relative' },
+  quantityBadge: { position: 'absolute', top: 8, right: 8, minWidth: 28, height: 22, borderRadius: 11, paddingHorizontal: 7, alignItems: 'center', justifyContent: 'center' },
+  quantityBadgeText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
   groupCard: { width: GRID_CARD_WIDTH, borderRadius: 12, borderWidth: StyleSheet.hairlineWidth, overflow: 'hidden', marginBottom: 12 },
   groupPreviewArea: { height: GRID_CARD_WIDTH * 0.8 },
   groupEmpty: { flex: 1, alignItems: 'center', justifyContent: 'center' },

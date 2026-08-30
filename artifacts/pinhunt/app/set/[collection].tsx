@@ -242,6 +242,13 @@ export default function SetDetailScreen() {
                     }
                     onQuickAdd={() => setQuickAddPin(item)}
                   />
+                  {!isMissing && (getEntry(item.id)?.quantity ?? 1) > 1 && (
+                    <View style={[styles.quantityBadge, { backgroundColor: colors.foreground }]}>
+                      <Text style={[styles.quantityBadgeLabel, { color: colors.background }]}>
+                        ×{getEntry(item.id)?.quantity}
+                      </Text>
+                    </View>
+                  )}
                   {isMissing && (
                     <View
                       style={[
@@ -341,6 +348,18 @@ const styles = StyleSheet.create({
   grid: { paddingTop: 12, paddingHorizontal: 16 },
   gridRow: { gap: 12, justifyContent: 'space-between' },
   pinWrap: { flex: 1, position: 'relative' },
+  quantityBadge: {
+    position: 'absolute',
+    top: 8,
+    right: 8,
+    minWidth: 28,
+    height: 22,
+    borderRadius: 11,
+    paddingHorizontal: 7,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  quantityBadgeLabel: { fontSize: 11, fontFamily: 'Inter_700Bold' },
   pinMissing: { opacity: 0.55 },
   missingOverlay: {
     ...StyleSheet.absoluteFillObject,

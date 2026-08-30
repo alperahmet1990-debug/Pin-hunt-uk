@@ -267,9 +267,9 @@ export interface Database {
         ];
       };
       user_pins: {
-        Row: { id: string; user_id: string; pin_id: string; status: 'owned' | 'wanted' | 'for_trade' | 'traded'; acquired_date: string | null; purchase_price_gbp: number | null; current_value_gbp: number | null; notes: string | null; condition: 'mint' | 'near_mint' | 'good' | 'fair' | 'poor' | null; is_favourite: boolean; created_at: string; updated_at: string };
-        Insert: { id?: string; user_id: string; pin_id: string; status: 'owned' | 'wanted' | 'for_trade' | 'traded'; acquired_date?: string | null; purchase_price_gbp?: number | null; current_value_gbp?: number | null; notes?: string | null; condition?: 'mint' | 'near_mint' | 'good' | 'fair' | 'poor' | null; is_favourite?: boolean; created_at?: string; updated_at?: string };
-        Update: { status?: 'owned' | 'wanted' | 'for_trade' | 'traded'; acquired_date?: string | null; purchase_price_gbp?: number | null; current_value_gbp?: number | null; notes?: string | null; condition?: 'mint' | 'near_mint' | 'good' | 'fair' | 'poor' | null; is_favourite?: boolean; updated_at?: string };
+        Row: { id: string; user_id: string; pin_id: string; status: 'owned' | 'wanted' | 'for_trade' | 'traded'; quantity: number; acquired_date: string | null; purchase_price_gbp: number | null; current_value_gbp: number | null; notes: string | null; condition: 'mint' | 'near_mint' | 'good' | 'fair' | 'poor' | null; is_favourite: boolean; created_at: string; updated_at: string };
+        Insert: { id?: string; user_id: string; pin_id: string; status: 'owned' | 'wanted' | 'for_trade' | 'traded'; quantity?: number; acquired_date?: string | null; purchase_price_gbp?: number | null; current_value_gbp?: number | null; notes?: string | null; condition?: 'mint' | 'near_mint' | 'good' | 'fair' | 'poor' | null; is_favourite?: boolean; created_at?: string; updated_at?: string };
+        Update: { status?: 'owned' | 'wanted' | 'for_trade' | 'traded'; quantity?: number; acquired_date?: string | null; purchase_price_gbp?: number | null; current_value_gbp?: number | null; notes?: string | null; condition?: 'mint' | 'near_mint' | 'good' | 'fair' | 'poor' | null; is_favourite?: boolean; updated_at?: string };
         Relationships: [
           { foreignKeyName: 'user_pins_user_id_fkey'; columns: ['user_id']; referencedRelation: 'users'; referencedColumns: ['id'] },
           { foreignKeyName: 'user_pins_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
@@ -662,7 +662,7 @@ export interface Database {
         Returns: { conversation_id: string; unread_count: number }[];
       };
       set_user_pin_status: {
-        Args: { p_pinhunt_id: string; p_status: string };
+        Args: { p_pinhunt_id: string; p_status: string; p_quantity?: number };
         Returns: undefined;
       };
       is_admin: {

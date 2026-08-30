@@ -143,6 +143,7 @@ function rowToPublicProfile(row: Record<string, unknown>): PublicProfile {
     openToLocalTrades: (row.open_to_local_trades as boolean) ?? false,
     openToPostalTrades: (row.open_to_postal_trades as boolean) ?? false,
     happyToTravel: (row.happy_to_travel as boolean) ?? false,
+    isAdmin: (row.is_admin as boolean) ?? false,
   };
 }
 
@@ -1250,6 +1251,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
             openToLocalTrades: (authorRow.open_to_local_trades as boolean) ?? false,
             openToPostalTrades: (authorRow.open_to_postal_trades as boolean) ?? false,
             happyToTravel: (authorRow.happy_to_travel as boolean) ?? false,
+            isAdmin: (authorRow.is_admin as boolean) ?? false,
           }
         : undefined,
       linkedPin: pinRow
@@ -1278,7 +1280,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .from('community_posts')
       .select(`
         *,
-        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled, is_admin),
         pins(pinhunt_id, title, brand, image_url)
       `)
       .order('created_at', { ascending: false });
@@ -1303,7 +1305,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .from('community_posts')
       .select(`
         *,
-        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled, is_admin),
         pins(pinhunt_id, title, brand, image_url)
       `)
       .eq('id', postId)
@@ -1341,7 +1343,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       })
       .select(`
         *,
-        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled, is_admin),
         pins(pinhunt_id, title, brand, image_url)
       `)
       .single();
@@ -1377,7 +1379,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .eq('id', postId)
       .select(`
         *,
-        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled),
+        profiles(id, username, display_name, avatar_url, trading_region, international_trading_enabled, is_admin),
         pins(pinhunt_id, title, brand, image_url)
       `)
       .single();

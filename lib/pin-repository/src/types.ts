@@ -339,6 +339,8 @@ export interface PublicProfile {
   openToLocalTrades: boolean;
   openToPostalTrades: boolean;
   happyToTravel: boolean;
+  /** Display-only official attribution for community content. */
+  isAdmin?: boolean;
 }
 
 export interface SearchCollectorsInput {

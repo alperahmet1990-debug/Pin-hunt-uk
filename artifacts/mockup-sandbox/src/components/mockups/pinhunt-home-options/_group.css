@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.pinhunt-home {
+  --ph-background: #fff8ee;
+  --ph-foreground: #2d1800;
+  --ph-card: #ffffff;
+  --ph-primary: #e07800;
+  --ph-secondary: #fff0d0;
+  --ph-muted-foreground: #b08040;
+  --ph-border: #f0e0c0;
+  --ph-gold: #e07800;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: var(--ph-background);
+  color: var(--ph-foreground);
+}
+
+.pinhunt-home,
+.pinhunt-home * {
+  box-sizing: border-box;
+}
+
+.pinhunt-home button {
+  font: inherit;
+}
+
+.pinhunt-home__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.pinhunt-home__scroll {
+  scrollbar-width: none;
+}

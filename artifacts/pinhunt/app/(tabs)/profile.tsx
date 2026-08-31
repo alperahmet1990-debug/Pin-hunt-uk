@@ -31,26 +31,26 @@ interface SettingsRowProps {
 
 function SettingsRow({ icon, label, value, onPress, destructive, last, badge }: SettingsRowProps) {
   const colors = useColors();
-  const fg = destructive ? colors.destructive : colors.foreground;
+  const fg = destructive ? colors.destructive : colors.homeInk;
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
-      style={[styles.row, !last && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border }]}
+      style={[styles.row, !last && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.homeLine }]}
     >
-      <View style={[styles.rowIcon, { backgroundColor: destructive ? colors.destructive + '18' : colors.secondary, borderRadius: 8 }]}>
+      <View style={[styles.rowIcon, { backgroundColor: destructive ? colors.destructive + '18' : colors.homeAqua, borderRadius: 8 }]}>
         <Feather name={icon} size={16} color={fg} />
       </View>
       <Text style={[styles.rowLabel, { color: fg }]}>{label}</Text>
       {badge != null && badge > 0 ? (
-        <View style={styles.badgePill}>
-          <Text style={styles.badgePillText}>{badge}</Text>
+        <View style={[styles.badgePill, { backgroundColor: colors.homeCoralDeep }]}>
+          <Text style={[styles.badgePillText, { color: colors.homeSurface }]}>{badge}</Text>
         </View>
       ) : null}
       {value ? (
-        <Text style={[styles.rowValue, { color: colors.mutedForeground }]}>{value}</Text>
+        <Text style={[styles.rowValue, { color: colors.homeMuted }]}>{value}</Text>
       ) : null}
-      <Feather name="chevron-right" size={16} color={destructive ? colors.destructive + '88' : colors.mutedForeground} />
+      <Feather name="chevron-right" size={16} color={destructive ? colors.destructive + '88' : colors.homeMuted} />
     </TouchableOpacity>
   );
 }
@@ -59,8 +59,8 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   const colors = useColors();
   return (
     <View style={styles.section}>
-      <Text style={[styles.sectionTitle, { color: colors.mutedForeground }]}>{title.toUpperCase()}</Text>
-      <View style={[styles.sectionCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 14 }]}>
+      <Text style={[styles.sectionTitle, { color: colors.homeMuted }]}>{title.toUpperCase()}</Text>
+      <View style={[styles.sectionCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 14 }]}>
         {children}
       </View>
     </View>
@@ -84,9 +84,9 @@ function LocationStatusBanner({ hasLocationSet, nearbyEnabled, radiusMiles, onPr
   // not set = neither flag
 
   const iconName: keyof typeof Feather.glyphMap = active ? 'map-pin' : setOnly ? 'map-pin' : 'map-pin';
-  const iconColor  = active ? colors.owned : setOnly ? '#F59E0B' : colors.mutedForeground;
-  const borderColor = active ? colors.owned + '40' : setOnly ? '#F59E0B40' : colors.border;
-  const bgColor    = active ? colors.owned + '12' : setOnly ? '#F59E0B12' : colors.secondary;
+  const iconColor  = active ? colors.owned : setOnly ? '#F59E0B' : colors.homeMuted;
+  const borderColor = active ? colors.owned + '40' : setOnly ? '#F59E0B40' : colors.homeLine;
+  const bgColor    = active ? colors.owned + '12' : setOnly ? '#F59E0B12' : colors.homeAqua;
 
   const headline = active
     ? `Discoverable · Within ${radiusMiles} miles`
@@ -114,9 +114,9 @@ function LocationStatusBanner({ hasLocationSet, nearbyEnabled, radiusMiles, onPr
       </View>
       <View style={styles.locationText}>
         <Text style={[styles.locationHeadline, { color: iconColor }]}>{headline}</Text>
-        <Text style={[styles.locationDetail, { color: colors.mutedForeground }]}>{detail}</Text>
+        <Text style={[styles.locationDetail, { color: colors.homeMuted }]}>{detail}</Text>
       </View>
-      <Feather name="chevron-right" size={14} color={colors.mutedForeground} />
+      <Feather name="chevron-right" size={14} color={colors.homeMuted} />
     </TouchableOpacity>
   );
 }
@@ -147,40 +147,40 @@ export default function ProfileScreen() {
   const joinYear = profile?.createdAt ? new Date(profile.createdAt).getFullYear() : null;
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad }}
       >
         {loading ? (
           <View style={{ flex: 1, alignItems: 'center', paddingTop: 60 }}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : (
           <>
             {/* Profile card */}
-            <View style={[styles.profileCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 16, marginHorizontal: 16 }]}>
+            <View style={[styles.profileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 16, marginHorizontal: 16 }]}>
               <Avatar uri={profile?.avatarUrl} name={nameForInitials} size={80} />
 
-              <Text style={[styles.displayName, { color: colors.foreground }]}>
+              <Text style={[styles.displayName, { color: colors.homeInk }]}>
                 {profile?.username ? `@${profile.username}` : 'Your Profile'}
               </Text>
 
               {profile?.tradingRegion && (
                 <View style={styles.regionRow}>
-                  <Feather name="map-pin" size={12} color={colors.mutedForeground} />
-                  <Text style={[styles.region, { color: colors.mutedForeground }]}>{profile.tradingRegion}</Text>
+                  <Feather name="map-pin" size={12} color={colors.homeMuted} />
+                  <Text style={[styles.region, { color: colors.homeMuted }]}>{profile.tradingRegion}</Text>
                 </View>
               )}
 
               {profile?.bio ? (
-                <Text style={[styles.bio, { color: colors.mutedForeground }]} numberOfLines={2}>
+                <Text style={[styles.bio, { color: colors.homeMuted }]} numberOfLines={2}>
                   {profile.bio}
                 </Text>
               ) : null}
 
               {joinYear && (
-                <Text style={[styles.memberSince, { color: colors.mutedForeground }]}>
+                <Text style={[styles.memberSince, { color: colors.homeMuted }]}>
                   Member since {joinYear}
                 </Text>
               )}
@@ -261,7 +261,7 @@ export default function ProfileScreen() {
             </Section>
 
             <View style={styles.footer}>
-              <Text style={[styles.footerText, { color: colors.mutedForeground }]}>
+              <Text style={[styles.footerText, { color: colors.homeMuted }]}>
                 PinHunt UK · v0.1
               </Text>
             </View>

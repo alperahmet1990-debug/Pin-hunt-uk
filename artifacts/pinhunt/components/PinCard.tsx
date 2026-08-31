@@ -30,14 +30,42 @@ interface PinCardProps {
   mode?: 'grid' | 'list';
   /** When set, shows a quick-add button that opens the QuickAddSheet. */
   onQuickAdd?: () => void;
+  /** Renders with Sea Glass & Coral tokens instead of the app-wide Golden Era palette (see QuickAddSheet for the same pattern). */
+  seaGlass?: boolean;
 }
 
-export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProps) {
+export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = false }: PinCardProps) {
   const colors = useColors();
   const { getEntry } = useCollection();
   const entry = getEntry(pin.id);
   const status = entry?.status ?? 'none';
   const added = status !== 'none';
+
+  const t = seaGlass
+    ? {
+        card: colors.homeSurface,
+        border: colors.homeLine,
+        fg: colors.homeInk,
+        muted: colors.homeMuted,
+        primary: colors.homeCoral,
+        primaryFg: colors.homeSurface,
+        accent: colors.homeTeal,
+        gold: colors.homeSandInk,
+        shadow: colors.homeShadow,
+        radius: 18,
+      }
+    : {
+        card: colors.card,
+        border: colors.border,
+        fg: colors.foreground,
+        muted: colors.mutedForeground,
+        primary: colors.primary,
+        primaryFg: '#fff',
+        accent: colors.accent,
+        gold: colors.gold,
+        shadow: colors.primary,
+        radius: colors.radius,
+      };
 
   const quickAddButton = onQuickAdd ? (
     <TouchableOpacity
@@ -52,10 +80,10 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
       accessibilityLabel={added ? `Update ${pin.title} in collection` : `Quick add ${pin.title}`}
       style={[
         styles.quickAddBtn,
-        { backgroundColor: added ? colors.owned : colors.primary },
+        { backgroundColor: added ? colors.owned : t.primary },
       ]}
     >
-      <Feather name={added ? 'check' : 'plus'} size={16} color="#fff" />
+      <Feather name={added ? 'check' : 'plus'} size={16} color={t.primaryFg} />
     </TouchableOpacity>
   ) : null;
   // Latest saved eBay value (batched, read-only) — falls back to the
@@ -73,17 +101,17 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
         style={[
           styles.listCard,
           {
-            backgroundColor: colors.card,
-            borderRadius: colors.radius,
-            borderColor: colors.border,
-            shadowColor: colors.primary,
+            backgroundColor: t.card,
+            borderRadius: t.radius,
+            borderColor: t.border,
+            shadowColor: t.shadow,
           },
         ]}
       >
         <Image source={getPinImageSource(pin)} style={styles.listImage} />
         <View style={styles.listInfo}>
           <Text
-            style={[styles.listTitle, { color: colors.foreground }]}
+            style={[styles.listTitle, { color: t.fg }]}
             numberOfLines={2}
           >
             {pin.title}
@@ -91,18 +119,18 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
           <View
             style={[
               styles.brandBadge,
-              { backgroundColor: BRAND_COLORS[pin.brand] ?? colors.accent, borderRadius: 4 },
+              { backgroundColor: BRAND_COLORS[pin.brand] ?? t.accent, borderRadius: 4 },
             ]}
           >
             <Text style={styles.brandLabel} numberOfLines={1}>
               {pin.brand}
             </Text>
           </View>
-          <Text style={[styles.listMeta, { color: colors.mutedForeground }]} numberOfLines={1}>
+          <Text style={[styles.listMeta, { color: t.muted }]} numberOfLines={1}>
             {pin.collection}
           </Text>
           <View style={styles.listFooter}>
-            <Text style={[styles.listPrice, { color: colors.gold }]}>
+            <Text style={[styles.listPrice, { color: t.gold }]}>
               {priceLabel}
             </Text>
             {status !== 'none' && <CollectionBadge status={status} size="sm" />}
@@ -110,7 +138,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
           </View>
         </View>
         {pin.limitedEditionSize ? (
-          <View style={[styles.leBadge, { backgroundColor: colors.gold }]}>
+          <View style={[styles.leBadge, { backgroundColor: t.gold }]}>
             <Text style={styles.leLabel}>LE {pin.limitedEditionSize.toLocaleString()}</Text>
           </View>
         ) : null}
@@ -125,10 +153,10 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
       style={[
         styles.gridCard,
         {
-          backgroundColor: colors.card,
-          borderRadius: colors.radius,
-          borderColor: colors.border,
-          shadowColor: colors.primary,
+          backgroundColor: t.card,
+          borderRadius: t.radius,
+          borderColor: t.border,
+          shadowColor: t.shadow,
           width: GRID_CARD_WIDTH,
         },
       ]}
@@ -136,19 +164,19 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
       <View style={styles.imageWrap}>
         <Image source={getPinImageSource(pin)} style={styles.gridImage} />
         {pin.limitedEditionSize ? (
-          <View style={[styles.leBadge, { backgroundColor: colors.gold }]}>
+          <View style={[styles.leBadge, { backgroundColor: t.gold }]}>
             <Text style={styles.leLabel}>LE</Text>
           </View>
         ) : null}
         {pin.isNewRelease ? (
-          <View style={[styles.newBadge, { backgroundColor: colors.primary }]}>
+          <View style={[styles.newBadge, { backgroundColor: t.primary }]}>
             <Text style={styles.newLabel}>NEW</Text>
           </View>
         ) : null}
       </View>
       <View style={styles.gridInfo}>
         <Text
-          style={[styles.gridTitle, { color: colors.foreground }]}
+          style={[styles.gridTitle, { color: t.fg }]}
           numberOfLines={2}
         >
           {pin.title}
@@ -156,7 +184,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
         <View
           style={[
             styles.brandBadge,
-            { backgroundColor: BRAND_COLORS[pin.brand] ?? colors.accent, borderRadius: 4 },
+            { backgroundColor: BRAND_COLORS[pin.brand] ?? t.accent, borderRadius: 4 },
           ]}
         >
           <Text style={styles.brandLabel} numberOfLines={1}>
@@ -164,7 +192,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProp
           </Text>
         </View>
         <View style={styles.gridFooter}>
-          <Text style={[styles.gridPrice, { color: colors.gold }]}>
+          <Text style={[styles.gridPrice, { color: t.gold }]}>
             {priceLabel}
           </Text>
           {status !== 'none' && <CollectionBadge status={status} size="sm" />}

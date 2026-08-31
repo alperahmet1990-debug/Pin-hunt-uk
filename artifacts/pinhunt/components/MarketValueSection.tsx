@@ -11,6 +11,7 @@ import {
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
+import { radius as themeRadius, spacing } from '@/constants/theme';
 
 import { API_BASE } from '@/lib/apiBase';
 
@@ -82,7 +83,13 @@ function formatUpdated(iso: string): string {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export function MarketValueSection({ pinId }: { pinId: string }) {
+interface MarketValueSectionProps {
+  pinId: string;
+  /** When true, renders without its own outer card chrome so it can nest inside ValueDisplay's single card. */
+  embedded?: boolean;
+}
+
+export function MarketValueSection({ pinId, embedded = false }: MarketValueSectionProps) {
   const colors = useColors();
   const { session } = useAuth();
   const [loading, setLoading] = useState(true);
@@ -132,7 +139,9 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
 
   const cardStyle = [
     styles.card,
-    { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+    embedded
+      ? styles.cardEmbedded
+      : { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: themeRadius.lg, borderWidth: 1 },
   ];
 
   // ── Checking value ──
@@ -140,8 +149,8 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
     return (
       <View style={cardStyle}>
         <View style={styles.checkingRow}>
-          <ActivityIndicator size="small" color={colors.primary} />
-          <Text style={[styles.subText, { color: colors.mutedForeground }]}>Checking value…</Text>
+          <ActivityIndicator size="small" color={colors.homeCoral} />
+          <Text style={[styles.subText, { color: colors.homeMuted }]}>Checking value…</Text>
         </View>
       </View>
     );
@@ -155,7 +164,7 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
   if (estimates.length === 0) {
     return (
       <View style={cardStyle}>
-        <Text style={[styles.explain, { color: colors.mutedForeground }]}>
+        <Text style={[styles.explain, { color: colors.homeMuted }]}>
           Based on comparable active eBay listings. Actual sale and trade values may vary.
         </Text>
         {errorMsg && <Text style={[styles.errorText, { color: colors.destructive }]}>{errorMsg}</Text>}
@@ -163,14 +172,14 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
           onPress={refresh}
           disabled={refreshing}
           activeOpacity={0.85}
-          style={[styles.checkBtn, { backgroundColor: colors.primary, borderRadius: colors.radius - 2 }]}
+          style={[styles.checkBtn, { backgroundColor: colors.homeCoral, borderRadius: themeRadius.md }]}
         >
           {refreshing ? (
-            <ActivityIndicator size="small" color={colors.primaryForeground} />
+            <ActivityIndicator size="small" color={colors.homeSurface} />
           ) : (
-            <Feather name="search" size={15} color={colors.primaryForeground} />
+            <Feather name="search" size={15} color={colors.homeSurface} />
           )}
-          <Text style={[styles.checkBtnLabel, { color: colors.primaryForeground }]}>
+          <Text style={[styles.checkBtnLabel, { color: colors.homeSurface }]}>
             {refreshing ? 'Checking eBay…' : 'Check eBay value'}
           </Text>
         </TouchableOpacity>
@@ -184,52 +193,54 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
 
   return (
     <View style={cardStyle}>
-      <Text style={[styles.explain, { color: colors.mutedForeground }]}>
+      <Text style={[styles.explain, { color: colors.homeMuted }]}>
         Estimated current eBay market value, based on comparable active eBay listings. Actual sale
         and trade values may vary.
       </Text>
 
-      {(['EBAY_GB', 'EBAY_US'] as Marketplace[]).map(m => {
-        const est = estimates.find(e => e.marketplace === m);
-        if (!est) return null;
-        const meta = MARKET_META[m];
-        return (
-          <View key={m} style={[styles.marketBlock, { borderTopColor: colors.border }]}>
-            <View style={styles.marketHeader}>
-              <Text style={[styles.marketLabel, { color: colors.foreground }]}>{meta.label}</Text>
-              <Text style={[styles.metaText, { color: colors.mutedForeground }]}>
-                {CONFIDENCE_LABEL[est.confidence]}
-              </Text>
-            </View>
-            {est.estimatedMid != null ? (
-              <>
-                <Text style={[styles.typical, { color: colors.foreground }]}>
-                  Typical value: {formatMoney(est.estimatedMid, meta.locale, est.currency)}
+      <View style={styles.marketGrid}>
+        {(['EBAY_GB', 'EBAY_US'] as Marketplace[]).map(m => {
+          const est = estimates.find(e => e.marketplace === m);
+          if (!est) return null;
+          const meta = MARKET_META[m];
+          return (
+            <View key={m} style={[styles.marketBlock, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+              <View style={styles.marketHeader}>
+                <Text style={[styles.marketLabel, { color: colors.homeTeal }]}>{meta.label}</Text>
+                <Text style={[styles.metaText, { color: colors.homeMuted }]}>
+                  {CONFIDENCE_LABEL[est.confidence]}
                 </Text>
-                {est.estimatedLow != null && est.estimatedHigh != null && (
-                  <Text style={[styles.subText, { color: colors.mutedForeground }]}>
-                    Estimated range: {formatMoney(est.estimatedLow, meta.locale, est.currency)}–
-                    {formatMoney(est.estimatedHigh, meta.locale, est.currency)}
+              </View>
+              {est.estimatedMid != null ? (
+                <>
+                  <Text style={[styles.typical, { color: colors.homeInk }]}>
+                    {formatMoney(est.estimatedMid, meta.locale, est.currency)}
                   </Text>
-                )}
-                <Text style={[styles.subText, { color: colors.mutedForeground }]}>
-                  {est.comparableCount} comparable {est.comparableCount === 1 ? 'listing' : 'listings'} ·{' '}
-                  {formatUpdated(est.calculatedAt)}
+                  {est.estimatedLow != null && est.estimatedHigh != null && (
+                    <Text style={[styles.subText, { color: colors.homeMuted }]}>
+                      {formatMoney(est.estimatedLow, meta.locale, est.currency)}–
+                      {formatMoney(est.estimatedHigh, meta.locale, est.currency)}
+                    </Text>
+                  )}
+                  <Text style={[styles.subText, { color: colors.homeMuted }]}>
+                    {est.comparableCount} comparable {est.comparableCount === 1 ? 'listing' : 'listings'} ·{' '}
+                    {formatUpdated(est.calculatedAt)}
+                  </Text>
+                </>
+              ) : (
+                <Text style={[styles.subText, { color: colors.homeMuted }]}>
+                  Not enough comparable eBay listings to estimate a value.
                 </Text>
-              </>
-            ) : (
-              <Text style={[styles.subText, { color: colors.mutedForeground }]}>
-                Not enough comparable eBay listings to estimate a value.
-              </Text>
-            )}
-          </View>
-        );
-      })}
+              )}
+            </View>
+          );
+        })}
+      </View>
 
       {anyStale && (
-        <View style={[styles.staleBanner, { backgroundColor: colors.secondary }]}>
-          <Feather name="clock" size={12} color={colors.secondaryForeground} />
-          <Text style={[styles.staleText, { color: colors.secondaryForeground }]}>
+        <View style={[styles.staleBanner, { backgroundColor: colors.homeWarmSurface }]}>
+          <Feather name="clock" size={12} color={colors.homeSandInk} />
+          <Text style={[styles.staleText, { color: colors.homeSandInk }]}>
             This value is out of date — showing the last known estimate.
           </Text>
         </View>
@@ -240,14 +251,14 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
         onPress={refresh}
         disabled={refreshing}
         activeOpacity={0.8}
-        style={[styles.refreshBtn, { borderColor: colors.border, borderRadius: colors.radius - 2 }]}
+        style={[styles.refreshBtn, { borderColor: colors.homeLine, borderRadius: themeRadius.md }]}
       >
         {refreshing ? (
-          <ActivityIndicator size="small" color={colors.primary} />
+          <ActivityIndicator size="small" color={colors.homeCoral} />
         ) : (
-          <Feather name="refresh-cw" size={13} color={colors.primary} />
+          <Feather name="refresh-cw" size={13} color={colors.homeCoral} />
         )}
-        <Text style={[styles.refreshLabel, { color: colors.primary }]}>
+        <Text style={[styles.refreshLabel, { color: colors.homeCoral }]}>
           {refreshing ? 'Refreshing…' : 'Refresh eBay value'}
         </Text>
       </TouchableOpacity>
@@ -259,13 +270,13 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
             activeOpacity={0.75}
             style={styles.expandToggle}
           >
-            <Text style={[styles.expandLabel, { color: colors.accent }]}>
+            <Text style={[styles.expandLabel, { color: colors.homeTeal }]}>
               View comparable eBay listings
             </Text>
             <Feather
               name={expanded ? 'chevron-up' : 'chevron-down'}
               size={15}
-              color={colors.accent}
+              color={colors.homeTeal}
             />
           </TouchableOpacity>
 
@@ -276,7 +287,7 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
               const meta = MARKET_META[m];
               return (
                 <View key={`comp-${m}`} style={{ marginTop: 8 }}>
-                  <Text style={[styles.compGroupLabel, { color: colors.mutedForeground }]}>
+                  <Text style={[styles.compGroupLabel, { color: colors.homeMuted }]}>
                     {meta.label} · eBay listings
                   </Text>
                   {items.map(item => (
@@ -284,29 +295,29 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
                       key={item.ebayItemId}
                       activeOpacity={0.8}
                       onPress={() => item.itemUrl && Linking.openURL(item.itemUrl)}
-                      style={[styles.compRow, { borderColor: colors.border }]}
+                      style={[styles.compRow, { borderColor: colors.homeLine }]}
                     >
                       {item.imageUrl ? (
                         <Image source={{ uri: item.imageUrl }} style={styles.compImage} />
                       ) : (
-                        <View style={[styles.compImage, { backgroundColor: colors.secondary }]} />
+                        <View style={[styles.compImage, { backgroundColor: colors.homeAqua }]} />
                       )}
                       <View style={{ flex: 1, gap: 2 }}>
                         <Text
-                          style={[styles.compTitle, { color: colors.foreground }]}
+                          style={[styles.compTitle, { color: colors.homeInk }]}
                           numberOfLines={2}
                         >
                           {item.title}
                         </Text>
-                        <Text style={[styles.compMeta, { color: colors.mutedForeground }]}>
+                        <Text style={[styles.compMeta, { color: colors.homeMuted }]}>
                           {item.itemPrice != null &&
                             formatMoney(item.itemPrice, meta.locale, item.currency ?? meta.currency)}
                         </Text>
-                        <Text style={[styles.compMeta, { color: colors.mutedForeground }]}>
+                        <Text style={[styles.compMeta, { color: colors.homeMuted }]}>
                           {item.condition ?? 'Condition not stated'} · External eBay listing
                         </Text>
                       </View>
-                      <Feather name="external-link" size={14} color={colors.mutedForeground} />
+                      <Feather name="external-link" size={14} color={colors.homeMuted} />
                     </TouchableOpacity>
                   ))}
                 </View>
@@ -319,7 +330,8 @@ export function MarketValueSection({ pinId }: { pinId: string }) {
 }
 
 const styles = StyleSheet.create({
-  card: { borderWidth: 1, padding: 14, gap: 10 },
+  card: { padding: 14, gap: spacing.md },
+  cardEmbedded: { padding: 0, gap: spacing.md },
   checkingRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   explain: { fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 },
   checkBtn: {
@@ -330,11 +342,12 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   checkBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  marketBlock: { borderTopWidth: StyleSheet.hairlineWidth, paddingTop: 10, gap: 3 },
-  marketHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  marketLabel: { fontSize: 13, fontFamily: 'Inter_700Bold', letterSpacing: 0.5 },
-  metaText: { fontSize: 11, fontFamily: 'Inter_500Medium' },
-  typical: { fontSize: 17, fontFamily: 'Inter_700Bold' },
+  marketGrid: { flexDirection: 'row', gap: spacing.sm },
+  marketBlock: { flex: 1, borderWidth: 1, borderRadius: themeRadius.md, padding: spacing.md, gap: 3 },
+  marketHeader: { gap: 2 },
+  marketLabel: { fontSize: 11, fontFamily: 'Inter_700Bold', letterSpacing: 0.8, textTransform: 'uppercase' },
+  metaText: { fontSize: 10.5, fontFamily: 'Inter_500Medium' },
+  typical: { fontSize: 17, fontFamily: 'Inter_700Bold', marginTop: 2 },
   subText: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   staleBanner: {
     flexDirection: 'row',

@@ -16,11 +16,17 @@ interface BoardCardProps {
   board: Board;
   pins: CataloguePin[];
   onPress: () => void;
+  /** Renders with Sea Glass & Coral tokens instead of the app-wide Golden Era palette (see QuickAddSheet for the same pattern). */
+  seaGlass?: boolean;
 }
 
-export function BoardCard({ board, pins, onPress }: BoardCardProps) {
+export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardProps) {
   const colors = useColors();
   const thumbs = pins.slice(0, 4);
+
+  const t = seaGlass
+    ? { card: colors.homeSurface, border: colors.homeLine, fg: colors.homeInk, muted: colors.homeMuted, thumbBg: colors.homeAqua, accent: colors.homeTeal, radius: 18 }
+    : { card: colors.card, border: colors.border, fg: colors.foreground, muted: colors.mutedForeground, thumbBg: colors.muted, accent: colors.accent, radius: colors.radius };
 
   return (
     <TouchableOpacity
@@ -29,43 +35,43 @@ export function BoardCard({ board, pins, onPress }: BoardCardProps) {
       style={[
         styles.card,
         {
-          backgroundColor: colors.card,
-          borderColor: colors.border,
-          borderRadius: colors.radius,
+          backgroundColor: t.card,
+          borderColor: t.border,
+          borderRadius: t.radius,
         },
       ]}
     >
-      {/* Thumbnail grid */}
-      {thumbs.length === 0 ? (
-        <View style={[styles.emptyThumb, { backgroundColor: colors.muted }]}>
-          <Feather name="grid" size={24} color={colors.mutedForeground} />
-        </View>
-      ) : thumbs.length === 1 ? (
-        <Image source={getPinImageSource(thumbs[0])} style={styles.singleThumb} />
-      ) : (
-        <View style={styles.thumbGrid}>
-          {[0, 1, 2, 3].map(i => (
-            <View key={i} style={[styles.thumbCell, { backgroundColor: colors.muted }]}>
-              {thumbs[i] ? (
-                <Image source={getPinImageSource(thumbs[i]!)} style={styles.thumbCellImage} />
-              ) : null}
-            </View>
-          ))}
-        </View>
-      )}
+      {/* Thumbnail mosaic — always a consistent 2×2 grid, never one giant cover crop */}
+      <View style={[styles.mosaicWrap, { backgroundColor: t.card }]}>
+        {thumbs.length === 0 ? (
+          <View style={[styles.emptyThumb, { backgroundColor: t.thumbBg }]}>
+            <Feather name="grid" size={22} color={t.muted} />
+          </View>
+        ) : (
+          <View style={styles.thumbGrid}>
+            {[0, 1, 2, 3].map(i => (
+              <View key={i} style={[styles.thumbCell, { backgroundColor: t.thumbBg, borderColor: t.card }]}>
+                {thumbs[i] ? (
+                  <Image source={getPinImageSource(thumbs[i]!)} style={styles.thumbCellImage} resizeMode="contain" />
+                ) : null}
+              </View>
+            ))}
+          </View>
+        )}
+      </View>
 
       {/* Info */}
       <View style={styles.info}>
-        <Text style={[styles.name, { color: colors.foreground }]} numberOfLines={2}>
+        <Text style={[styles.name, { color: t.fg }]} numberOfLines={2}>
           {board.name}
         </Text>
         <View style={styles.meta}>
-          <Text style={[styles.count, { color: colors.mutedForeground }]}>
+          <Text style={[styles.count, { color: t.muted }]}>
             {pins.length} {pins.length === 1 ? 'pin' : 'pins'}
           </Text>
           {!board.isCustom && (
-            <View style={[styles.suggestedBadge, { backgroundColor: colors.accent + '22' }]}>
-              <Text style={[styles.suggestedLabel, { color: colors.accent }]}>Suggested</Text>
+            <View style={[styles.suggestedBadge, { backgroundColor: t.accent + '22' }]}>
+              <Text style={[styles.suggestedLabel, { color: t.accent }]}>Suggested</Text>
             </View>
           )}
         </View>
@@ -124,32 +130,37 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderWidth: 1,
   },
-  emptyThumb: {
+  mosaicWrap: {
     width: '100%',
     aspectRatio: 1,
+    padding: 6,
+  },
+  emptyThumb: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  singleThumb: {
-    width: '100%',
-    aspectRatio: 1,
-    resizeMode: 'cover',
-  },
   thumbGrid: {
     width: '100%',
-    aspectRatio: 1,
+    height: '100%',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    borderRadius: 12,
+    overflow: 'hidden',
   },
   thumbCell: {
     width: '50%',
     height: '50%',
-    overflow: 'hidden',
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 4,
   },
   thumbCellImage: {
     width: '100%',
     height: '100%',
-    resizeMode: 'cover',
   },
   info: {
     padding: 10,

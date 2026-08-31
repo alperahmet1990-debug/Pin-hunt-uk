@@ -33,21 +33,23 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 // Card has 12px margin on each side + 14px internal padding each side
 const CARD_INNER_WIDTH = SCREEN_WIDTH - 24 - 28;
 
-const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; emoji: string }> = [
-  { key: 'all',          label: 'All',       emoji: '✨' },
-  { key: 'for_trade',    label: 'Trade',     emoji: '🔄' },
-  { key: 'in_search_of', label: 'ISO',       emoji: '🔍' },
-  { key: 'discussion',   label: 'Discussion', emoji: '💬' },
-  { key: 'new_pickup',   label: 'Events',    emoji: '📦' },
+const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; icon: keyof typeof Feather.glyphMap }> = [
+  { key: 'all',          label: 'All',    icon: 'compass' },
+  { key: 'for_trade',    label: 'Trade',  icon: 'repeat' },
+  { key: 'in_search_of', label: 'ISO',    icon: 'search' },
+  { key: 'discussion',   label: 'Chat',   icon: 'message-circle' },
+  { key: 'new_pickup',   label: 'Events', icon: 'calendar' },
 ];
 
+// Sea Glass & Coral equivalents (kept as literals — used both here and inside
+// PostCard, and needs to stay visually distinct per category, not theme-adaptive).
 const TYPE_COLOR: Record<CommunityPostType | 'all', string> = {
-  all:          '#6366F1',
-  in_search_of: '#F59E0B',
-  for_trade:    '#3B82F6',
-  for_sale:     '#16A34A',
-  new_pickup:   '#8B5CF6',
-  discussion:   '#64748B',
+  all:          '#3C7778', // homeTealSoft
+  in_search_of: '#84601F', // homeSandInk
+  for_trade:    '#E86D61', // homeCoral
+  for_sale:     '#2D9E6B', // owned green
+  new_pickup:   '#A83F3D', // homeCoralDeep
+  discussion:   '#58777A', // homeMuted
 };
 
 const TYPE_LABEL: Record<CommunityPostType, string> = {
@@ -156,8 +158,8 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
 
 // ─── Category chip ────────────────────────────────────────────────────────────
 
-function Chip({ label, emoji, color, active, onPress }: {
-  label: string; emoji: string; color: string; active: boolean; onPress(): void;
+function Chip({ label, icon, color, active, onPress }: {
+  label: string; icon: keyof typeof Feather.glyphMap; color: string; active: boolean; onPress(): void;
 }) {
   const colors = useColors();
   return (
@@ -167,13 +169,13 @@ function Chip({ label, emoji, color, active, onPress }: {
       style={[
         styles.chip,
         {
-          backgroundColor: active ? color : colors.secondary,
-          borderColor: active ? color : colors.border,
+          backgroundColor: active ? color : colors.homeAqua,
+          borderColor: active ? color : colors.homeLine,
         },
       ]}
     >
-      <Text style={styles.chipEmoji}>{emoji}</Text>
-      <Text style={[styles.chipLabel, { color: active ? '#fff' : colors.mutedForeground }]}>
+      <Feather name={icon} size={12} color={active ? '#fff' : color} />
+      <Text numberOfLines={1} style={[styles.chipLabel, { color: active ? '#fff' : colors.homeMuted }]}>
         {label}
       </Text>
     </TouchableOpacity>
@@ -196,7 +198,7 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
-      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+      style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 }]}
     >
       {/* Header row */}
       <View style={styles.cardHeader}>
@@ -205,8 +207,8 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
         </View>
         <View style={styles.cardMeta}>
           <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={22} />
-          <Text style={[styles.cardAuthor, { color: colors.foreground }]}>@{authorName}</Text>
-          <Text style={[styles.cardTime, { color: colors.mutedForeground }]}>
+          <Text style={[styles.cardAuthor, { color: colors.homeInk }]}>@{authorName}</Text>
+          <Text style={[styles.cardTime, { color: colors.homeMuted }]}>
             {timeAgo(post.createdAt)}
             {wasEdited(post.createdAt, post.updatedAt) ? ' · Edited' : ''}
           </Text>
@@ -214,7 +216,7 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
       </View>
 
       {/* Body */}
-      <Text style={[styles.cardBody, { color: colors.foreground }]} numberOfLines={photos.length > 0 ? 2 : 4}>
+      <Text style={[styles.cardBody, { color: colors.homeInk }]} numberOfLines={photos.length > 0 ? 2 : 4}>
         {post.body}
       </Text>
 
@@ -225,12 +227,12 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
 
       {/* Linked pin */}
       {post.linkedPin && (
-        <View style={[styles.pinChip, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
+        <View style={[styles.pinChip, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
           {post.linkedPin.imageUrl
             ? <Image source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
-            : <Feather name="tag" size={12} color={colors.mutedForeground} />
+            : <Feather name="tag" size={12} color={colors.homeMuted} />
           }
-          <Text style={[styles.pinChipLabel, { color: colors.mutedForeground }]} numberOfLines={1}>
+          <Text style={[styles.pinChipLabel, { color: colors.homeMuted }]} numberOfLines={1}>
             {post.linkedPin.title}
           </Text>
         </View>
@@ -238,11 +240,11 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
 
       {/* Footer */}
       <View style={styles.cardFooter}>
-        <Feather name="message-circle" size={13} color={colors.mutedForeground} />
-        <Text style={[styles.cardCommentCount, { color: colors.mutedForeground }]}>
+        <Feather name="message-circle" size={13} color={colors.homeMuted} />
+        <Text style={[styles.cardCommentCount, { color: colors.homeMuted }]}>
           {post.commentCount ?? 0} comment{post.commentCount !== 1 ? 's' : ''}
         </Text>
-        <Feather name="chevron-right" size={14} color={colors.mutedForeground} style={{ marginLeft: 'auto' }} />
+        <Feather name="chevron-right" size={14} color={colors.homeMuted} style={{ marginLeft: 'auto' }} />
       </View>
     </TouchableOpacity>
   );
@@ -265,6 +267,14 @@ export default function CommunityScreen() {
   const [newPostCount, setNewPostCount] = useState(0);
   const scrollRef               = useRef<ScrollView>(null);
   const scrollOffsetRef         = useRef(0);
+  // Unique per-mount suffix for this screen's realtime channel topics.
+  // supabase-js reuses an existing channel object when `.channel()` is
+  // called again with a topic that's still present (even mid-unsubscribe),
+  // and calling `.on()` on that reused channel throws once it has joined.
+  // A fixed topic name can collide with a not-yet-torn-down channel from a
+  // previous mount of this screen (tab remount, Fast Refresh, etc.); a
+  // unique-per-mount topic makes that collision impossible.
+  const instanceIdRef           = useRef(`${Date.now()}_${Math.random().toString(36).slice(2, 8)}`);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -295,6 +305,13 @@ export default function CommunityScreen() {
   const loadRef = useRef(load);
   useEffect(() => { loadRef.current = load; }, [load]);
 
+  // Same for `filter`: the insert-subscription handler below only reads it
+  // to decide whether to prepend a new post, so it must not force that
+  // effect to tear down and resubscribe on every filter chip change (see
+  // note at that effect for why that resubscribe is unsafe).
+  const filterRef = useRef(filter);
+  useEffect(() => { filterRef.current = filter; }, [filter]);
+
   // Realtime sockets are suspended while the app is backgrounded, so events
   // sent during that window are lost. Run one catch-up fetch whenever the app
   // returns to the foreground (no polling).
@@ -306,18 +323,25 @@ export default function CommunityScreen() {
   }, []);
 
   // ── Realtime: prepend new posts as they arrive ─────────────────────────────
+  // Deliberately depends only on `repo`, not `filter` — `supabase.channel()`
+  // reuses an existing channel object for the same topic name while it's
+  // still mid-unsubscribe, and calling `.on()` on that (still joined/joining)
+  // reused channel throws "cannot add `postgres_changes` callbacks ... after
+  // `subscribe()`". Tearing this down and recreating it on every filter
+  // change hit that race in practice; reading the filter from a ref avoids
+  // needing to resubscribe at all.
   useEffect(() => {
     if (!repo || !isSupabaseConfigured) return;
 
     const channel = supabase
-      .channel('community_posts_inserts')
+      .channel(`community_posts_inserts_${instanceIdRef.current}`)
       .on(
         'postgres_changes',
         { event: 'INSERT', schema: 'public', table: 'community_posts' },
         async (payload) => {
           const newRow = payload.new as { id: string; post_type: string };
           // Only prepend if it matches the active filter (or filter is 'all')
-          if (filter !== 'all' && newRow.post_type !== filter) return;
+          if (filterRef.current !== 'all' && newRow.post_type !== filterRef.current) return;
           try {
             const fullPost = await repo.getCommunityPost(newRow.id);
             if (!fullPost) return;
@@ -345,14 +369,14 @@ export default function CommunityScreen() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [repo, filter]);
+  }, [repo]);
 
   // ── Realtime: bump comment counts on cards as comments arrive ──────────────
   useEffect(() => {
     if (!isSupabaseConfigured) return;
 
     const channel = supabase
-      .channel('post_comments_inserts')
+      .channel(`post_comments_inserts_${instanceIdRef.current}`)
       .on(
         'postgres_changes',
         { event: 'INSERT', schema: 'public', table: 'post_comments' },
@@ -401,20 +425,27 @@ export default function CommunityScreen() {
   };
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       {/* Fixed header */}
-      <View style={[styles.header, { paddingTop: topPad + 8, backgroundColor: colors.background, borderBottomColor: colors.border }]}>
+      <View style={[styles.header, { paddingTop: topPad + 8, backgroundColor: colors.homeBackground, borderBottomColor: colors.homeLine }]}>
         <View style={styles.titleRow}>
-          <Text style={[styles.title, { color: colors.foreground }]}>Community</Text>
+          <Text style={[styles.title, { color: colors.homeInk }]}>Community</Text>
           <View style={styles.headerActions}>
             <TouchableOpacity
-              onPress={() => router.push('/community/conversations' as any)}
-              style={[styles.headerIconBtn, { backgroundColor: colors.secondary, borderColor: colors.border }]}
+              onPress={() => router.push('/nearby')}
+              style={[styles.headerIconBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
               activeOpacity={0.75}
             >
-              <Feather name="mail" size={18} color={colors.foreground} />
+              <Feather name="map-pin" size={17} color={colors.homeInk} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push('/community/conversations' as any)}
+              style={[styles.headerIconBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+              activeOpacity={0.75}
+            >
+              <Feather name="mail" size={18} color={colors.homeInk} />
               {totalUnread > 0 && (
-                <View style={styles.mailBadge}>
+                <View style={[styles.mailBadge, { backgroundColor: colors.homeCoralDeep }]}>
                   <Text style={styles.mailBadgeText}>{totalUnread > 9 ? '9+' : totalUnread}</Text>
                 </View>
               )}
@@ -424,7 +455,7 @@ export default function CommunityScreen() {
                 if (!userId) { Alert.alert('Sign in to post'); return; }
                 router.push('/community/create-post' as any);
               }}
-              style={[styles.headerPostBtn, { backgroundColor: colors.primary }]}
+              style={[styles.headerPostBtn, { backgroundColor: colors.homeCoral }]}
               activeOpacity={0.85}
             >
               <Feather name="plus" size={17} color="#fff" />
@@ -433,33 +464,18 @@ export default function CommunityScreen() {
           </View>
         </View>
 
-        {/* Category chips */}
-        <View style={styles.filterRow}>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.chips}
-            style={{ flex: 1 }}
-          >
-            {POST_TYPES.map(pt => (
-              <Chip
-                key={pt.key}
-                label={pt.label}
-                emoji={pt.emoji}
-                color={TYPE_COLOR[pt.key]}
-                active={filter === pt.key}
-                onPress={() => handleFilterChange(pt.key)}
-              />
-            ))}
-          </ScrollView>
-          <TouchableOpacity
-            onPress={() => router.push('/nearby')}
-            activeOpacity={0.75}
-            style={[styles.nearbyAction, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: colors.radius }]}
-          >
-            <Feather name="map-pin" size={13} color={colors.mutedForeground} />
-            <Text style={[styles.nearbyActionLabel, { color: colors.mutedForeground }]}>Nearby</Text>
-          </TouchableOpacity>
+        {/* Category chips — wraps instead of scrolling so nothing is ever hidden off-screen */}
+        <View style={styles.chips}>
+          {POST_TYPES.map(pt => (
+            <Chip
+              key={pt.key}
+              label={pt.label}
+              icon={pt.icon}
+              color={TYPE_COLOR[pt.key]}
+              active={filter === pt.key}
+              onPress={() => handleFilterChange(pt.key)}
+            />
+          ))}
         </View>
       </View>
 
@@ -470,7 +486,7 @@ export default function CommunityScreen() {
           <TouchableOpacity
             onPress={handleNewPostsPress}
             activeOpacity={0.85}
-            style={[styles.newPostsBanner, { backgroundColor: colors.primary }]}
+            style={[styles.newPostsBanner, { backgroundColor: colors.homeCoral }]}
           >
             <Feather name="arrow-up" size={13} color="#fff" />
             <Text style={styles.newPostsLabel}>
@@ -496,26 +512,26 @@ export default function CommunityScreen() {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={() => load(true)}
-            tintColor={colors.primary}
+            tintColor={colors.homeCoral}
           />
         }
       >
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
             <TouchableOpacity onPress={() => load()} style={{ padding: 8 }}>
-              <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
+              <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
         ) : posts.length === 0 ? (
           <View style={styles.empty}>
-            <Feather name="rss" size={40} color={colors.mutedForeground} />
-            <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No posts yet</Text>
-            <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+            <Feather name="rss" size={40} color={colors.homeMuted} />
+            <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No posts yet</Text>
+            <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
               {filter === 'all'
                 ? 'Be the first to post in the community!'
                 : `No ${TYPE_LABEL[filter as CommunityPostType]} posts yet.`}
@@ -525,7 +541,7 @@ export default function CommunityScreen() {
                 if (!userId) { Alert.alert('Sign in to post'); return; }
                 router.push('/community/create-post' as any);
               }}
-              style={[styles.emptyBtn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
+              style={[styles.emptyBtn, { backgroundColor: colors.homeCoral, borderRadius: 18 }]}
               activeOpacity={0.85}
             >
               <Feather name="plus" size={14} color="#fff" />
@@ -596,29 +612,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 
-  filterRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  nearbyAction: {
-    flexDirection: 'row', alignItems: 'center', gap: 4,
-    paddingHorizontal: 9, paddingVertical: 7, borderWidth: 1,
-  },
-  nearbyActionLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-
-  chips: { gap: 7, paddingVertical: 2, paddingRight: 4 },
+  chips: { flexDirection: 'row', gap: 6, paddingVertical: 4 },
   chip: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: 4,
-    paddingHorizontal: 11,
-    paddingVertical: 7,
-    borderRadius: 20,
+    paddingHorizontal: 4,
+    height: 34,
+    borderRadius: 17,
     borderWidth: 1,
   },
-  chipEmoji: { fontSize: 13 },
-  chipLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  chipLabel: { fontSize: 11.5, fontFamily: 'Inter_600SemiBold' },
 
   feed: { flex: 1 },
 

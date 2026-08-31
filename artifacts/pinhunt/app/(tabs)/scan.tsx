@@ -78,13 +78,14 @@ interface Match {
 
 // ─── Corner marker ────────────────────────────────────────────────────────────
 
-function CornerMarker({ corner }: { corner: 'tl' | 'tr' | 'bl' | 'br' }) {
+function CornerMarker({ corner, color }: { corner: 'tl' | 'tr' | 'bl' | 'br'; color: string }) {
   const isRight = corner === 'tr' || corner === 'br';
   const isBottom = corner === 'bl' || corner === 'br';
   return (
     <View
       style={[
         styles.corner,
+        { borderColor: color },
         isRight ? styles.cornerRight : styles.cornerLeft,
         isBottom ? styles.cornerBottom : styles.cornerTop,
       ]}
@@ -236,7 +237,7 @@ export default function ScanScreen() {
   const confidenceColor = (score: number) => {
     if (score >= 75) return colors.owned;
     if (score >= 50) return colors.wanted;
-    return colors.mutedForeground;
+    return colors.homeMuted;
   };
 
   const confidenceLabel = (score: number) => {
@@ -246,15 +247,15 @@ export default function ScanScreen() {
   };
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad, flexGrow: 1 }}
       >
         {/* ── Header ── */}
         <View style={styles.headerRow}>
-          <Text style={[styles.headerTitle, { color: colors.foreground }]}>Find a Pin</Text>
-          <Text style={[styles.headerSub, { color: colors.mutedForeground }]}>
+          <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Find a Pin</Text>
+          <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
             Search by name or scan with your camera
           </Text>
         </View>
@@ -264,7 +265,7 @@ export default function ScanScreen() {
           <Animated.View
             style={[
               styles.viewfinder,
-              { backgroundColor: '#0a0a18', borderRadius: colors.radius, opacity: shutterAnim },
+              { backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
             ]}
           >
             {scanState === 'idle' && (
@@ -283,16 +284,16 @@ export default function ScanScreen() {
 
             {scanState === 'identifying' && (
               <View style={styles.overlay}>
-                <View style={[styles.scanLine, { backgroundColor: colors.primary }]} />
+                <View style={[styles.scanLine, { backgroundColor: colors.homeCoral }]} />
                 <ActivityIndicator color="#fff" size="large" />
                 <Text style={styles.overlayText}>Analysing with AI…</Text>
               </View>
             )}
 
-            <CornerMarker corner="tl" />
-            <CornerMarker corner="tr" />
-            <CornerMarker corner="bl" />
-            <CornerMarker corner="br" />
+            <CornerMarker corner="tl" color={colors.homeSand} />
+            <CornerMarker corner="tr" color={colors.homeSand} />
+            <CornerMarker corner="bl" color={colors.homeSand} />
+            <CornerMarker corner="br" color={colors.homeSand} />
           </Animated.View>
         </View>
 
@@ -309,22 +310,22 @@ export default function ScanScreen() {
           {scanState === 'idle' && (
             <>
               <TouchableOpacity
-                style={[styles.primaryBtn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
+                style={[styles.primaryBtn, { backgroundColor: colors.homeCoral, borderRadius: 18 }]}
                 onPress={handleOpenCamera}
                 activeOpacity={0.85}
               >
-                <Feather name={Platform.OS === 'web' ? 'image' : 'camera'} size={20} color={colors.primaryForeground} />
-                <Text style={[styles.primaryBtnLabel, { color: colors.primaryForeground }]}>
+                <Feather name={Platform.OS === 'web' ? 'image' : 'camera'} size={20} color={colors.homeSurface} />
+                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>
                   {Platform.OS === 'web' ? 'Choose Photo' : 'Scan'}
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[styles.primaryBtn, { backgroundColor: colors.accent, borderRadius: colors.radius }]}
+                style={[styles.primaryBtn, { backgroundColor: colors.homeTeal, borderRadius: 18 }]}
                 onPress={() => router.push('/search')}
                 activeOpacity={0.85}
               >
-                <Feather name="search" size={20} color={colors.accentForeground} />
-                <Text style={[styles.primaryBtnLabel, { color: colors.accentForeground }]}>Manually Search</Text>
+                <Feather name="search" size={20} color={colors.homeSurface} />
+                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>Manually Search</Text>
               </TouchableOpacity>
             </>
           )}
@@ -332,28 +333,28 @@ export default function ScanScreen() {
           {scanState === 'captured' && (
             <View style={styles.captureRow}>
               <TouchableOpacity
-                style={[styles.secondaryBtn, { borderColor: colors.border, borderRadius: colors.radius, backgroundColor: colors.card }]}
+                style={[styles.secondaryBtn, { borderColor: colors.homeLine, borderRadius: 18, backgroundColor: colors.homeSurface }]}
                 onPress={handleOpenCamera}
                 activeOpacity={0.85}
               >
-                <Feather name="refresh-cw" size={16} color={colors.foreground} />
-                <Text style={[styles.secondaryBtnLabel, { color: colors.foreground }]}>Retake</Text>
+                <Feather name="refresh-cw" size={16} color={colors.homeInk} />
+                <Text style={[styles.secondaryBtnLabel, { color: colors.homeInk }]}>Retake</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[styles.identifyBtn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
+                style={[styles.identifyBtn, { backgroundColor: colors.homeCoral, borderRadius: 18 }]}
                 onPress={handleIdentify}
                 activeOpacity={0.85}
               >
-                <Feather name="cpu" size={20} color={colors.primaryForeground} />
-                <Text style={[styles.primaryBtnLabel, { color: colors.primaryForeground }]}>Identify Pin</Text>
+                <Feather name="cpu" size={20} color={colors.homeSurface} />
+                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>Identify Pin</Text>
               </TouchableOpacity>
             </View>
           )}
 
           {scanState === 'identifying' && (
-            <View style={[styles.loadingRow, { backgroundColor: colors.card, borderRadius: colors.radius, borderColor: colors.border }]}>
-              <ActivityIndicator color={colors.primary} />
-              <Text style={[styles.loadingText, { color: colors.mutedForeground }]}>
+            <View style={[styles.loadingRow, { backgroundColor: colors.homeSurface, borderRadius: 18, borderColor: colors.homeLine }]}>
+              <ActivityIndicator color={colors.homeCoral} />
+              <Text style={[styles.loadingText, { color: colors.homeMuted }]}>
                 Searching pin database…
               </Text>
             </View>
@@ -374,51 +375,51 @@ export default function ScanScreen() {
               <View
                 style={[
                   styles.insightsCard,
-                  { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+                  { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 },
                 ]}
               >
                 <View style={styles.insightsHeader}>
-                  <Feather name="eye" size={14} color={colors.primary} />
-                  <Text style={[styles.insightsTitle, { color: colors.foreground }]}>
+                  <Feather name="eye" size={14} color={colors.homeCoral} />
+                  <Text style={[styles.insightsTitle, { color: colors.homeInk }]}>
                     What we saw in your photo
                   </Text>
                 </View>
                 {insights.textOnPin ? (
                   <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Text on pin</Text>
-                    <Text style={[styles.insightValue, { color: colors.foreground }]} numberOfLines={3}>
+                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Text on pin</Text>
+                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={3}>
                       “{insights.textOnPin}”
                     </Text>
                   </View>
                 ) : null}
                 {insights.characters.length > 0 && (
                   <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Characters</Text>
-                    <Text style={[styles.insightValue, { color: colors.foreground }]}>
+                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Characters</Text>
+                    <Text style={[styles.insightValue, { color: colors.homeInk }]}>
                       {insights.characters.join(', ')}
                     </Text>
                   </View>
                 )}
                 {insights.logos.length > 0 && (
                   <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Logos</Text>
-                    <Text style={[styles.insightValue, { color: colors.foreground }]}>
+                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Logos</Text>
+                    <Text style={[styles.insightValue, { color: colors.homeInk }]}>
                       {insights.logos.join(', ')}
                     </Text>
                   </View>
                 )}
                 {insights.keywords.length > 0 && (
                   <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Looks like</Text>
-                    <Text style={[styles.insightValue, { color: colors.foreground }]} numberOfLines={2}>
+                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Looks like</Text>
+                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={2}>
                       {insights.keywords.join(', ')}
                     </Text>
                   </View>
                 )}
                 {insights.webGuesses.length > 0 && (
                   <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.mutedForeground }]}>Web matches</Text>
-                    <Text style={[styles.insightValue, { color: colors.foreground }]} numberOfLines={2}>
+                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Web matches</Text>
+                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={2}>
                       {insights.webGuesses.join(', ')}
                     </Text>
                   </View>
@@ -426,8 +427,8 @@ export default function ScanScreen() {
               </View>
             )}
 
-            <Text style={[styles.matchesTitle, { color: colors.foreground }]}>Possible Matches</Text>
-            <Text style={[styles.matchesSub, { color: colors.mutedForeground }]}>
+            <Text style={[styles.matchesTitle, { color: colors.homeInk }]}>Possible Matches</Text>
+            <Text style={[styles.matchesSub, { color: colors.homeMuted }]}>
               Tap the correct pin to see its details and value
             </Text>
 
@@ -438,23 +439,23 @@ export default function ScanScreen() {
                 activeOpacity={0.85}
                 style={[
                   styles.matchCard,
-                  { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+                  { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 },
                 ]}
               >
                 <View style={styles.matchRankWrap}>
-                  <Text style={[styles.matchRank, { color: colors.mutedForeground }]}>#{i + 1}</Text>
+                  <Text style={[styles.matchRank, { color: colors.homeMuted }]}>#{i + 1}</Text>
                 </View>
                 <Image source={getPinImageSource(match.pin)} style={styles.matchImage} />
                 <View style={styles.matchInfo}>
-                  <Text style={[styles.matchTitle, { color: colors.foreground }]} numberOfLines={2}>
+                  <Text style={[styles.matchTitle, { color: colors.homeInk }]} numberOfLines={2}>
                     {match.pin.title}
                   </Text>
-                  <Text style={[styles.matchBrand, { color: colors.mutedForeground }]}>{match.pin.brand}</Text>
-                  <Text style={[styles.matchCollection, { color: colors.mutedForeground }]} numberOfLines={1}>
+                  <Text style={[styles.matchBrand, { color: colors.homeMuted }]}>{match.pin.brand}</Text>
+                  <Text style={[styles.matchCollection, { color: colors.homeMuted }]} numberOfLines={1}>
                     {match.pin.collection}
                   </Text>
                   {match.reasoning ? (
-                    <Text style={[styles.matchReasoning, { color: colors.mutedForeground }]} numberOfLines={2}>
+                    <Text style={[styles.matchReasoning, { color: colors.homeMuted }]} numberOfLines={2}>
                       {match.reasoning}
                     </Text>
                   ) : null}
@@ -471,7 +472,7 @@ export default function ScanScreen() {
             ))}
 
             <TouchableOpacity onPress={handleReset} style={styles.noneMatch} activeOpacity={0.7}>
-              <Text style={[styles.noneMatchText, { color: colors.mutedForeground }]}>
+              <Text style={[styles.noneMatchText, { color: colors.homeMuted }]}>
                 None of these — try again
               </Text>
             </TouchableOpacity>
@@ -531,7 +532,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   // Corner markers
-  corner: { position: 'absolute', width: 24, height: 24, borderColor: '#C4933A', borderWidth: 3 },
+  corner: { position: 'absolute', width: 24, height: 24, borderWidth: 3 },
   cornerTop: { top: 12, borderBottomWidth: 0 },
   cornerBottom: { bottom: 12, borderTopWidth: 0 },
   cornerLeft: { left: 12, borderRightWidth: 0 },
@@ -544,7 +545,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginBottom: 12,
     padding: 12,
-    borderRadius: 10,
+    borderRadius: 14,
     borderWidth: 1,
   },
   errorText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },

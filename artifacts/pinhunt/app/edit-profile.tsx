@@ -30,9 +30,7 @@ import type { ProfileVisibility } from '@workspace/pin-repository';
 
 // ─── Geocoding API ────────────────────────────────────────────────────────────
 
-const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
-  : 'http://localhost:8080/api';
+import { API_BASE } from '@/lib/apiBase';
 
 /**
  * Calls the server-side geocode endpoint.

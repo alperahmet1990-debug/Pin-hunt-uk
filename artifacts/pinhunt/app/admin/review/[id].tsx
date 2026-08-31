@@ -24,9 +24,7 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
 import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
-const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
-  : 'http://localhost:8080/api';
+import { API_BASE } from '@/lib/apiBase';
 
 /** Lifetime of signed image URLs (seconds). */
 const SIGNED_URL_TTL_SECONDS = 3600;

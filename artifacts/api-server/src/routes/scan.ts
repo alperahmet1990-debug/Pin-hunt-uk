@@ -174,6 +174,12 @@ const SCAN_COOLDOWN_MS = 5_000;
 const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image
 const lastScanAt = new Map<string, number>();
 
+// Vision-capable OpenAI model used for all 3 scan stages. Configurable so
+// the tier can change without a redeploy; gpt-5.6-luna is OpenAI's current
+// "efficient, high-volume workloads" tier — a real, current model, not a
+// placeholder.
+const SCAN_MODEL = process.env.OPENAI_SCAN_MODEL ?? "gpt-5.6-luna";
+
 router.post("/scan/identify", requireUser, async (req, res) => {
   if (!isAiConfigured()) {
     res.status(503).json({ error: "Scan/Identify is not configured on this server yet." });
@@ -218,7 +224,7 @@ router.post("/scan/identify", requireUser, async (req, res) => {
       () => null,
     );
     const describeResp = await openai.chat.completions.create({
-      model: "gpt-5.6-luna",
+      model: SCAN_MODEL,
       max_completion_tokens: 2048,
       messages: [
         {
@@ -298,7 +304,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       : "";
 
     const response = await openai.chat.completions.create({
-      model: "gpt-5.6-luna",
+      model: SCAN_MODEL,
       max_completion_tokens: 1024,
       messages: [
         {
@@ -432,7 +438,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
           .join("\n");
 
         const verifyResp = await openai.chat.completions.create({
-          model: "gpt-5.6-luna",
+          model: SCAN_MODEL,
           max_completion_tokens: 1024,
           messages: [
             {

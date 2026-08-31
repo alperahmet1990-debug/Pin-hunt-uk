@@ -27,9 +27,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 
-const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
-  : 'http://localhost:8080/api';
+import { API_BASE } from '@/lib/apiBase';
 
 // ─── Types (mirror api-server dry-run service) ───────────────────────────────
 

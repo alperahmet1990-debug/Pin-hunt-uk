@@ -1,20 +1,20 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
+  Dimensions,
   Image,
   Linking,
-  Modal,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
@@ -22,23 +22,17 @@ import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { getPinImageSource } from '@/utils/pinImage';
-import { PinCard } from '@/components/PinCard';
-import { MarketValueSection } from '@/components/MarketValueSection';
+import { QuickAddSheet } from '@/components/QuickAddSheet';
+import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
+import type { PrimaryActionBarAction } from '@/components/ui';
+import { radius, spacing } from '@/constants/theme';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
-import type { CollectionStatus } from '@/types/pin';
 import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repository';
 
-// ─── Status config ────────────────────────────────────────────────────────────
-
-const STATUS_CONFIG: Array<{
-  status: CollectionStatus;
-  label: string;
-  icon: keyof typeof Feather.glyphMap;
-}> = [
-  { status: 'owned', label: 'Owned', icon: 'check-circle' },
-  { status: 'wanted', label: 'ISO', icon: 'bookmark' },
-  { status: 'for_trade', label: 'For Trade', icon: 'repeat' },
-];
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const HERO_HEIGHT = Math.min(SCREEN_WIDTH * 1.05, 440);
+const IMAGE_CARD = SCREEN_WIDTH - 40;
+const SET_TILE = 78;
 
 // ─── Main screen ──────────────────────────────────────────────────────────────
 
@@ -47,8 +41,8 @@ export default function PinDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { getEntry, setStatus, markViewed } = useCollection();
-  const { allBoards, customBoards, createBoard, addPinToBoard, removePinFromBoard } = useBoards();
+  const { collection, getEntry, markViewed } = useCollection();
+  const { allBoards } = useBoards();
   const { pins, repository } = usePinCatalogue();
 
   const { repo: marketplaceRepo } = useMarketplace();
@@ -72,13 +66,11 @@ export default function PinDetailScreen() {
 
   const pin = cachedPin ?? fetchedPin ?? undefined;
   const entry = pin ? getEntry(pin.id) : undefined;
-  const [boardModalVisible, setBoardModalVisible] = useState(false);
-  const [newBoardName, setNewBoardName] = useState('');
-  const [creatingBoard, setCreatingBoard] = useState(false);
+  const [manageSheetPin, setManageSheetPin] = useState<CataloguePin | null>(null);
   const [marketplaceListings, setMarketplaceListings] = useState<ExternalSaleListing[]>([]);
   const [traderCount, setTraderCount] = useState(0);
-
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
+  const [activeImage, setActiveImage] = useState(0);
+  const [marketplaceExpanded, setMarketplaceExpanded] = useState(false);
 
   useEffect(() => {
     if (pin) markViewed(pin.id);
@@ -99,35 +91,38 @@ export default function PinDetailScreen() {
   }, [pin?.id, marketplaceRepo]);
 
   if (!pin) {
-    if (pinLoading) {
-      return (
-        <View style={[styles.notFound, { backgroundColor: colors.background }]}>
-          <ActivityIndicator color={colors.primary} />
-        </View>
-      );
-    }
     return (
-      <View style={[styles.notFound, { backgroundColor: colors.background }]}>
-        <Text style={[styles.notFoundText, { color: colors.foreground }]}>Pin not found.</Text>
-        <TouchableOpacity onPress={() => router.back()}>
-          <Text style={[styles.backLink, { color: colors.primary }]}>Go Back</Text>
-        </TouchableOpacity>
-      </View>
+      <ScreenContainer>
+        <Stack.Screen options={{ title: 'Pin Detail' }} />
+        <View style={styles.notFound}>
+          {pinLoading ? (
+            <ActivityIndicator color={colors.homeCoral} />
+          ) : (
+            <>
+              <Text style={[styles.notFoundText, { color: colors.homeInk }]}>Pin not found.</Text>
+              <TouchableOpacity onPress={() => router.back()}>
+                <Text style={[styles.backLink, { color: colors.homeCoral }]}>Go Back</Text>
+              </TouchableOpacity>
+            </>
+          )}
+        </View>
+      </ScreenContainer>
     );
   }
 
   const currentStatus = entry?.status ?? 'none';
-
-  const handleStatusPress = (s: CollectionStatus) => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setStatus(pin.id, currentStatus === s ? 'none' : s);
-  };
-
-  const statusColor = (s: CollectionStatus) =>
-    s === 'owned' ? colors.owned : s === 'wanted' ? colors.wanted : colors.forTrade;
+  const quantity = entry?.quantity ?? 1;
+  // Owned and For Trade are mutually exclusive in the current data model (one
+  // status + one quantity per pin) — see the data-model note in the final report.
+  const ownedQty = currentStatus === 'owned' ? quantity : 0;
+  const tradeQty = currentStatus === 'for_trade' ? quantity : 0;
 
   // Pins in the same collection, excluding current
   const setmates = pins.filter(p => p.collection === pin.collection && p.id !== pin.id);
+  const setTotal = pin.collection ? setmates.length + 1 : 0;
+  const setOwnedCount =
+    setmates.filter(p => ['owned', 'for_trade'].includes(collection[p.id]?.status ?? '')).length +
+    (currentStatus === 'owned' || currentStatus === 'for_trade' ? 1 : 0);
 
   // Boards that already contain this pin
   const pinBoardIds = useMemo(
@@ -135,628 +130,327 @@ export default function PinDetailScreen() {
     [allBoards, pin.id],
   );
 
-  const handleToggleBoard = (boardId: string) => {
-    Haptics.selectionAsync();
-    if (pinBoardIds.has(boardId)) {
-      removePinFromBoard(boardId, pin.id);
-    } else {
-      addPinToBoard(boardId, pin.id);
-    }
+  const images = [getPinImageSource(pin), ...(pin.backImageUrl ? [{ uri: pin.backImageUrl }] : [])];
+
+  const openManageSheet = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    setManageSheetPin(pin);
   };
 
-  const handleCreateAndAdd = () => {
-    const trimmed = newBoardName.trim();
-    if (!trimmed) return;
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    const board = createBoard(trimmed);
-    addPinToBoard(board.id, pin.id);
-    setNewBoardName('');
-    setCreatingBoard(false);
-  };
+  const primaryActions: PrimaryActionBarAction[] = [
+    {
+      key: 'trades',
+      label: 'Find Trades',
+      icon: 'compass',
+      variant: 'primary',
+      onPress: () => router.push({ pathname: '/traders/[pinId]', params: { pinId: pin.id } }),
+    },
+  ];
+
+  const topInset = Platform.OS === 'web' ? Math.max(insets.top, 24) : insets.top;
+
+  const manageIcon: React.ComponentProps<typeof Feather>['name'] =
+    currentStatus === 'none' ? 'plus'
+      : currentStatus === 'owned' ? 'check-circle'
+      : currentStatus === 'for_trade' ? 'repeat'
+      : 'bookmark';
+  const manageTone =
+    currentStatus === 'owned' ? colors.owned
+      : currentStatus === 'for_trade' ? colors.forTrade
+      : currentStatus === 'wanted' ? colors.wanted
+      : colors.homeCoral;
 
   return (
-    <>
-      <Stack.Screen options={{ title: pin.title }} />
-      <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: botPad }}
-      >
-        {/* ── Hero Image ── */}
-        <View style={styles.imageWrap}>
-          <Image
-            source={getPinImageSource(pin)}
-            style={styles.mainImage}
-          />
-          {pin.limitedEditionSize != null && pin.limitedEditionSize > 0 ? (
-            <View style={[styles.leBadge, { backgroundColor: colors.gold }]}>
-              <Text style={styles.leLabel}>LE {pin.limitedEditionSize.toLocaleString()}</Text>
-            </View>
-          ) : null}
-        </View>
+    <ScreenContainer edges={{ top: false, bottom: false }}>
+      <Stack.Screen options={{ headerShown: false }} />
 
-        {/* ── About this Pin (directly under image) ── */}
-        {pin.description ? (
-          <View style={[styles.aboutBanner, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
-            <Text style={[styles.aboutTitle, { color: colors.foreground }]}>About this Pin</Text>
-            <Text style={[styles.aboutText, { color: colors.mutedForeground }]}>{pin.description}</Text>
-          </View>
-        ) : null}
+      <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+        {/* ── 1. Image-dominant hero ── */}
+        <LinearGradient
+          colors={[colors.homeCoralDeep, colors.homeCoral, colors.homeSand]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={[styles.hero, { height: HERO_HEIGHT }]}
+        >
+          <TouchableOpacity
+            accessibilityLabel="Go back"
+            onPress={() => router.back()}
+            activeOpacity={0.85}
+            style={[styles.backBtn, { top: topInset + 10, backgroundColor: colors.homeSurface + 'E6' }]}
+          >
+            <Feather name="chevron-left" size={20} color={colors.homeInk} />
+          </TouchableOpacity>
+
+          {pin.limitedEditionSize != null && pin.limitedEditionSize > 0 && (
+            <View style={[styles.leBadgeWrap, { top: topInset + 10 }]}>
+              <Chip variant="solid" tone="sand" size="sm" icon="star" label={`LE ${pin.limitedEditionSize.toLocaleString()}`} />
+            </View>
+          )}
+
+          {images.length > 1 ? (
+            <>
+              <ScrollView
+                horizontal
+                pagingEnabled
+                showsHorizontalScrollIndicator={false}
+                onMomentumScrollEnd={e => setActiveImage(Math.round(e.nativeEvent.contentOffset.x / IMAGE_CARD))}
+                style={{ width: IMAGE_CARD, flexGrow: 0 }}
+              >
+                {images.map((src, i) => (
+                  <View key={i} style={[styles.imagePage, { width: IMAGE_CARD, height: IMAGE_CARD }]}>
+                    <Image source={src} style={[styles.image, { shadowColor: colors.homeShadow }]} resizeMode="contain" />
+                  </View>
+                ))}
+              </ScrollView>
+              <View style={styles.dots}>
+                {images.map((_, i) => (
+                  <View
+                    key={i}
+                    style={[styles.dot, { backgroundColor: i === activeImage ? colors.homeSurface : colors.homeSurface + '60' }]}
+                  />
+                ))}
+              </View>
+            </>
+          ) : (
+            <Image
+              source={images[0]}
+              style={[styles.image, { width: IMAGE_CARD, height: IMAGE_CARD, shadowColor: colors.homeShadow }]}
+              resizeMode="contain"
+            />
+          )}
+        </LinearGradient>
 
         <View style={styles.content}>
-          {/* ── Title & Brand ── */}
-          <View style={styles.titleRow}>
-            <View style={styles.titleBlock}>
-              <Text style={[styles.title, { color: colors.foreground }]}>{pin.title}</Text>
-              <View style={styles.chipRow}>
-                <View style={[styles.brandChip, { backgroundColor: colors.accent }]}>
-                  <Text style={styles.brandChipLabel}>{pin.brand}</Text>
-                </View>
-                {pin.catalogueStatus === 'trusted' && (
-                  <View style={[styles.verifiedChip, { backgroundColor: colors.owned + '16', borderColor: colors.owned + '50' }]}>
-                    <Feather name="check-circle" size={11} color={colors.owned} />
-                    <Text style={[styles.verifiedChipLabel, { color: colors.owned }]}>Verified catalogue pin</Text>
-                  </View>
-                )}
-              </View>
+          {/* ── 2. Title / series ── */}
+          <View style={styles.titleBlock}>
+            <View style={styles.titleRow}>
+              <Text style={[styles.title, { color: colors.homeInk }]}>{pin.title}</Text>
+              {pin.catalogueStatus === 'trusted' && (
+                <Feather name="check-circle" size={15} color={colors.owned} style={styles.verifiedIcon} />
+              )}
             </View>
-            {pin.isNewRelease && (
-              <View style={[styles.newChip, { backgroundColor: colors.primary }]}>
-                <Text style={styles.newChipLabel}>NEW</Text>
-              </View>
+            {(pin.collection || pin.brand) && (
+              <Text style={[styles.subtitle, { color: colors.homeMuted }]}>{pin.collection || pin.brand}</Text>
             )}
           </View>
 
-          {/* ── Seed record notice ── */}
           {pin.isSeedRecord && (
-            <View style={[styles.seedBanner, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B' }]}>
-              <Feather name="alert-circle" size={13} color="#92400E" />
-              <Text style={[styles.seedBannerText, { color: '#92400E' }]}>
+            <View style={[styles.seedBanner, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeWarmLine }]}>
+              <Feather name="alert-circle" size={13} color={colors.homeSandInk} />
+              <Text style={[styles.seedBannerText, { color: colors.homeSandInk }]}>
                 Community verification needed — details may be incomplete
               </Text>
             </View>
           )}
 
-          {/* ── Inventory Status Buttons ── */}
-          <View style={styles.statusRow}>
-            {STATUS_CONFIG.map(cfg => {
-              const isActive = currentStatus === cfg.status;
-              const bg = isActive ? statusColor(cfg.status) : colors.secondary;
-              const fg = isActive ? '#fff' : colors.mutedForeground;
-              return (
-                <TouchableOpacity
-                  key={cfg.status}
-                  onPress={() => handleStatusPress(cfg.status)}
-                  activeOpacity={0.8}
-                  style={[
-                    styles.statusBtn,
-                    {
-                      backgroundColor: bg,
-                      borderRadius: colors.radius - 2,
-                      borderColor: isActive ? 'transparent' : colors.border,
-                    },
-                  ]}
-                >
-                  <Feather name={cfg.icon} size={16} color={fg} />
-                  <Text style={[styles.statusBtnLabel, { color: fg }]}>{cfg.label}</Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
+          {pin.description ? (
+            <Text style={[styles.description, { color: colors.homeMuted }]}>{pin.description}</Text>
+          ) : null}
 
-          {/* ── Add to Board / Collection ── */}
-          <TouchableOpacity
-            onPress={() => {
-              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-              setBoardModalVisible(true);
-            }}
-            activeOpacity={0.85}
-            style={[
-              styles.addBoardBtn,
-              {
-                backgroundColor: colors.card,
-                borderColor: colors.border,
-                borderRadius: colors.radius - 2,
-              },
-            ]}
-          >
-            <Feather name="grid" size={16} color={colors.primary} />
-            <Text style={[styles.addBoardLabel, { color: colors.primary }]}>
-              Add to Collection
-              {pinBoardIds.size > 0 && (
-                <Text style={{ color: colors.mutedForeground }}>
-                  {` · ${pinBoardIds.size} board${pinBoardIds.size !== 1 ? 's' : ''}`}
-                </Text>
-              )}
-            </Text>
-            <Feather name="chevron-right" size={16} color={colors.mutedForeground} style={styles.addBoardChevron} />
-          </TouchableOpacity>
-
-          {/* ── Identity / Catalogue Metadata ── */}
-          <View
-            style={[
-              styles.metaCard,
-              { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-            ]}
-          >
-            <MetaRow label="Series / Set" value={pin.collection} colors={colors} />
-            {pin.characters.length > 0 && (
-              <MetaRow label="Characters" value={pin.characters.join(', ')} colors={colors} />
-            )}
-            {pin.origin ? (
-              <MetaRow label="Release Location" value={pin.origin} colors={colors} />
-            ) : null}
-            {pin.edition ? (
-              <MetaRow label="Edition Type" value={pin.edition} colors={colors} />
-            ) : null}
-            {pin.releaseDate ? (
-              <MetaRow label="Release Date" value={formatDate(pin.releaseDate)} colors={colors} />
-            ) : pin.releaseYear ? (
-              <MetaRow label="Release Year" value={String(pin.releaseYear)} colors={colors} />
-            ) : null}
-            {pin.retailPriceGBP != null ? (
-              <MetaRow label="Retail Price" value={`£${pin.retailPriceGBP.toFixed(2)}`} colors={colors} />
-            ) : null}
-            {pin.externalIdentifiers?.pinpicsId ? (
-              <MetaRow label="Pinpics ID" value={pin.externalIdentifiers.pinpicsId} colors={colors} />
-            ) : null}
-            {pin.externalIdentifiers?.sku ? (
-              <MetaRow label="SKU / Ref" value={pin.externalIdentifiers.sku} colors={colors} />
-            ) : null}
-            {pin.limitedEditionSize ? (
-              <MetaRow label="Edition Size" value={pin.limitedEditionSize.toLocaleString()} colors={colors} last />
-            ) : (
-              <MetaRow label="Edition Size" value="Open Edition" colors={colors} last />
-            )}
-          </View>
-
-          {/* ── Valuation ── */}
-          <View>
-            <SectionTitle title="Market Valuation" colors={colors} />
-            {pin.estimatedValueGBP != null ? (
-              <View
-                style={[
-                  styles.valueCard,
-                  { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-                ]}
-              >
-                <View style={styles.valueMain}>
-                  <Text style={[styles.valueAmount, { color: colors.foreground }]}>
-                    £{pin.estimatedValueGBP.toFixed(2)}
-                  </Text>
-                  <Text style={[styles.valueLabel, { color: colors.mutedForeground }]}>
-                    catalogue estimate · GBP
-                  </Text>
-                </View>
-                <View style={[styles.valueDivider, { backgroundColor: colors.border }]} />
-                <View style={[styles.valueNote, { gap: 6 }]}>
-                  <Feather name="info" size={12} color={colors.mutedForeground} />
-                  <Text style={[styles.valueDisclaimer, { color: colors.mutedForeground }]}>
-                    This is a catalogue estimate, not a live market price. Actual sale prices vary with condition, seller, and demand.
-                  </Text>
-                </View>
-              </View>
-            ) : (
-              <View
-                style={[
-                  styles.valuationEmpty,
-                  { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
-                ]}
-              >
-                <Feather name="bar-chart-2" size={24} color={colors.mutedForeground} />
-                <Text style={[styles.valuationEmptyTitle, { color: colors.foreground }]}>
-                  Market data not available yet
-                </Text>
-                <Text style={[styles.valuationEmptyText, { color: colors.mutedForeground }]}>
-                  We don't have pricing data for this pin yet. Check eBay, Vinted, or PinPics for recent sales.
-                </Text>
-              </View>
-            )}
-          </View>
-
-          {/* ── eBay market value ── */}
-          <View>
-            <SectionTitle title="Estimated Market Value" colors={colors} />
-            <MarketValueSection pinId={pin.id} />
-          </View>
-
-          {/* ── Pins in this Set ── */}
-          {setmates.length > 0 && (
-            <View>
-              <SectionTitle
-                title={`More from ${pin.collection}`}
-                subtitle={`${setmates.length} other ${setmates.length === 1 ? 'pin' : 'pins'} in this set`}
-                colors={colors}
-                actionLabel="View Set"
-                onAction={() =>
-                  router.push({
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    pathname: '/set/[collection]' as any,
-                    params: { collection: pin.collection },
-                  })
-                }
-              />
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.setmatesScroll}
-              >
-                {setmates.slice(0, 10).map(p => (
-                  <View key={p.id} style={styles.setmateCard}>
-                    <PinCard
-                      pin={p}
-                      mode="grid"
-                      onPress={() =>
-                        router.push({ pathname: '/pin/[id]', params: { id: p.id } })
-                      }
-                    />
-                  </View>
-                ))}
-              </ScrollView>
-            </View>
-          )}
-
-          {/* ── Community Availability ── */}
-          <View>
-            <SectionTitle
-              title="Community"
-              colors={colors}
-            />
-            <View
+          {/* ── 3. Collection management ── */}
+          <View style={styles.collectionSection}>
+            <TouchableOpacity
+              onPress={openManageSheet}
+              activeOpacity={0.88}
               style={[
-                styles.communityCard,
-                { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+                styles.manageBtn,
+                currentStatus === 'none'
+                  ? { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }
+                  : { backgroundColor: colors.homeSurface, borderWidth: 1, borderColor: colors.homeLine },
               ]}
             >
-              {/* For Trade count */}
+              <Feather name={manageIcon} size={17} color={currentStatus === 'none' ? colors.homeSurface : manageTone} />
+              <Text style={[styles.manageBtnLabel, { color: currentStatus === 'none' ? colors.homeSurface : colors.homeInk }]}>
+                {currentStatus === 'none' ? 'Add to Collection' : 'Manage Collection'}
+              </Text>
+              <Feather name="chevron-right" size={16} color={currentStatus === 'none' ? colors.homeSurface : colors.homeMuted} />
+            </TouchableOpacity>
+
+            <View style={styles.collectionCounters}>
+              <TouchableOpacity onPress={openManageSheet} activeOpacity={0.85} style={[styles.counterPill, { backgroundColor: colors.homeAqua }]}>
+                <Text style={[styles.counterLabel, { color: colors.homeMuted }]}>In Collection</Text>
+                <Text style={[styles.counterValue, { color: colors.homeInk }]}>{ownedQty}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={openManageSheet} activeOpacity={0.85} style={[styles.counterPill, { backgroundColor: colors.homeAqua }]}>
+                <Text style={[styles.counterLabel, { color: colors.homeMuted }]}>For Trade</Text>
+                <Text style={[styles.counterValue, { color: colors.homeInk }]}>{tradeQty}</Text>
+              </TouchableOpacity>
+            </View>
+
+            {(currentStatus === 'wanted' || pinBoardIds.size > 0) && (
+              <View style={styles.collectionHints}>
+                {currentStatus === 'wanted' && (
+                  <View style={[styles.isoPill, { backgroundColor: colors.wanted + '18' }]}>
+                    <Feather name="bookmark" size={10} color={colors.wanted} />
+                    <Text style={[styles.isoPillLabel, { color: colors.wanted }]}>On your ISO list</Text>
+                  </View>
+                )}
+                {pinBoardIds.size > 0 && (
+                  <Text style={[styles.boardHint, { color: colors.homeMuted }]}>
+                    In {pinBoardIds.size} board{pinBoardIds.size !== 1 ? 's' : ''}
+                  </Text>
+                )}
+              </View>
+            )}
+          </View>
+
+          {/* ── 4. Details ── */}
+          <View style={[styles.detailsCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <Text style={[styles.detailsHeading, { color: colors.homeMuted }]}>DETAILS</Text>
+            <View>
+              {pin.characters.length > 0 && <MetaRow label="Characters" value={pin.characters.join(', ')} />}
+              {pin.origin ? <MetaRow label="Release Location" value={pin.origin} /> : null}
+              {pin.edition ? <MetaRow label="Edition Type" value={pin.edition} /> : null}
+              {pin.releaseDate ? <MetaRow label="Release Date" value={formatDate(pin.releaseDate)} /> : pin.releaseYear ? <MetaRow label="Release Year" value={String(pin.releaseYear)} /> : null}
+              {pin.retailPriceGBP != null ? <MetaRow label="Retail Price" value={`£${pin.retailPriceGBP.toFixed(2)}`} /> : null}
+              {pin.externalIdentifiers?.pinpicsId ? <MetaRow label="Pinpics ID" value={pin.externalIdentifiers.pinpicsId} /> : null}
+              {pin.externalIdentifiers?.sku ? <MetaRow label="SKU / Ref" value={pin.externalIdentifiers.sku} /> : null}
+              <MetaRow
+                label="Edition Size"
+                value={pin.limitedEditionSize ? pin.limitedEditionSize.toLocaleString() : 'Open Edition'}
+                last
+              />
+            </View>
+          </View>
+
+          {/* ── 5. Value ── */}
+          <ValueDisplay pinId={pin.id} catalogueEstimateGBP={pin.estimatedValueGBP ?? null} />
+
+          {/* ── 6. Trading content — can I find another collector for this pin? ── */}
+          <View>
+            <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>TRADING</Text>
+            <View style={[styles.tradingCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
               <TouchableOpacity
                 onPress={() => router.push({ pathname: '/traders/[pinId]', params: { pinId: pin.id } })}
                 activeOpacity={0.85}
-                style={[styles.communityRow, { borderBottomColor: colors.border }]}
+                style={[styles.tradingRow, { borderBottomColor: colors.homeLine }]}
               >
-                <View style={[styles.communityIconWrap, { backgroundColor: colors.forTrade + '20' }]}>
-                  <Feather name="repeat" size={16} color={colors.forTrade} />
+                <View style={[styles.tradingIcon, { backgroundColor: colors.forTrade + '20' }]}>
+                  <Feather name="repeat" size={15} color={colors.forTrade} />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <Text style={[styles.communityLabel, { color: colors.foreground }]}>For Trade</Text>
-                  <Text style={[styles.communityMeta, { color: colors.mutedForeground }]}>
-                    {traderCount > 0
-                      ? `${traderCount} collector${traderCount !== 1 ? 's' : ''} offering this`
-                      : 'No traders yet — be the first'}
+                  <Text style={[styles.tradingLabel, { color: colors.homeInk }]}>Other Collectors</Text>
+                  <Text style={[styles.tradingMeta, { color: colors.homeMuted }]}>
+                    {traderCount > 0 ? `${traderCount} collector${traderCount !== 1 ? 's' : ''} offering this for trade` : 'No traders yet — be the first'}
                   </Text>
                 </View>
-                <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+                <Feather name="chevron-right" size={15} color={colors.homeMuted} />
               </TouchableOpacity>
 
-              {/* Marketplace listings count */}
-              <View style={styles.communityRowLast}>
-                <View style={[styles.communityIconWrap, { backgroundColor: colors.primary + '20' }]}>
-                  <Feather name="tag" size={16} color={colors.primary} />
+              <TouchableOpacity
+                onPress={() => setMarketplaceExpanded(e => !e)}
+                activeOpacity={0.85}
+                style={styles.tradingRowLast}
+              >
+                <View style={[styles.tradingIcon, { backgroundColor: colors.homeCoral + '20' }]}>
+                  <Feather name="tag" size={15} color={colors.homeCoral} />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <Text style={[styles.communityLabel, { color: colors.foreground }]}>For Sale</Text>
-                  <Text style={[styles.communityMeta, { color: colors.mutedForeground }]}>
-                    {marketplaceListings.length > 0
-                      ? `${marketplaceListings.length} active listing${marketplaceListings.length !== 1 ? 's' : ''}`
-                      : 'No listings yet'}
+                  <Text style={[styles.tradingLabel, { color: colors.homeInk }]}>For Sale</Text>
+                  <Text style={[styles.tradingMeta, { color: colors.homeMuted }]}>
+                    {marketplaceListings.length > 0 ? `${marketplaceListings.length} active listing${marketplaceListings.length !== 1 ? 's' : ''}` : 'No listings yet'}
                   </Text>
                 </View>
-              </View>
-            </View>
-          </View>
+                <Feather name={marketplaceExpanded ? 'chevron-up' : 'chevron-down'} size={15} color={colors.homeMuted} />
+              </TouchableOpacity>
 
-          {/* ── Marketplace Listings ── */}
-          {(marketplaceListings.length > 0 || currentStatus === 'for_trade') && (
-            <View>
-              <SectionTitle
-                title="Marketplace Listings"
-                subtitle={
-                  marketplaceListings.length > 0
-                    ? `${marketplaceListings.length} active listing${marketplaceListings.length !== 1 ? 's' : ''}`
-                    : 'No active listings'
-                }
-                colors={colors}
-              />
+              {marketplaceExpanded && (
+                <View style={[styles.marketplacePanel, { borderTopColor: colors.homeLine }]}>
+                  <View style={[styles.mktWarning, { backgroundColor: colors.homeWarmSurface }]}>
+                    <Feather name="shield" size={12} color={colors.homeSandInk} />
+                    <Text style={[styles.mktWarningText, { color: colors.homeSandInk }]}>
+                      Complete payment only through the marketplace&apos;s official checkout.
+                    </Text>
+                  </View>
 
-              {/* Safety notice */}
-              <View style={[styles.mktWarning, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B' }]}>
-                <Feather name="shield" size={12} color="#92400E" />
-                <Text style={styles.mktWarningText}>
-                  Complete payment only through the marketplace's official checkout. Payments arranged outside the marketplace may not be protected.
-                </Text>
-              </View>
-
-              {marketplaceListings.length === 0 ? (
-                <View style={[styles.mktEmpty, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-                  <Text style={[styles.mktEmptyText, { color: colors.mutedForeground }]}>
-                    No pins listed for sale here yet.
-                  </Text>
-                  {currentStatus === 'for_trade' && (
-                    <TouchableOpacity
-                      onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
-                      activeOpacity={0.85}
-                      style={[styles.mktSellBtn, { backgroundColor: colors.primary, borderRadius: colors.radius - 2 }]}
-                    >
-                      <Feather name="tag" size={14} color="#fff" />
-                      <Text style={styles.mktSellBtnLabel}>List this pin for sale</Text>
-                    </TouchableOpacity>
-                  )}
-                </View>
-              ) : (
-                <View style={[styles.mktCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-                  {marketplaceListings.map((listing, idx) => {
+                  {marketplaceListings.map(listing => {
                     const pcfg = PLATFORM_CONFIG[listing.platform];
                     const currSym = CURRENCY_SYMBOLS[(listing.currency as keyof typeof CURRENCY_SYMBOLS)] ?? listing.currency ?? '';
                     return (
-                      <View
-                        key={listing.id}
-                        style={[
-                          styles.mktRow,
-                          { borderBottomColor: colors.border },
-                          idx === marketplaceListings.length - 1 && styles.mktRowLast,
-                        ]}
-                      >
-                        {/* Platform badge */}
+                      <View key={listing.id} style={[styles.mktRow, { borderColor: colors.homeLine }]}>
                         <View style={[styles.mktPlatformBadge, { backgroundColor: pcfg.color + '18' }]}>
-                          <Feather name={pcfg.icon as keyof typeof Feather.glyphMap} size={13} color={pcfg.color} />
+                          <Feather name={pcfg.icon as keyof typeof Feather.glyphMap} size={12} color={pcfg.color} />
                           <Text style={[styles.mktPlatformLabel, { color: pcfg.color }]}>{pcfg.label}</Text>
                         </View>
-
-                        {/* Seller + price */}
                         <View style={styles.mktMeta}>
-                          {listing.sellerUsername && (
-                            <Text style={[styles.mktSeller, { color: colors.mutedForeground }]}>
-                              @{listing.sellerUsername}
-                            </Text>
-                          )}
-                          {listing.askingPrice != null && (
-                            <Text style={[styles.mktPrice, { color: colors.foreground }]}>
-                              {currSym}{listing.askingPrice.toFixed(2)}
-                            </Text>
-                          )}
+                          {listing.sellerUsername && <Text style={[styles.mktSeller, { color: colors.homeMuted }]}>@{listing.sellerUsername}</Text>}
+                          {listing.askingPrice != null && <Text style={[styles.mktPrice, { color: colors.homeInk }]}>{currSym}{listing.askingPrice.toFixed(2)}</Text>}
                         </View>
-
-                        {/* View button */}
                         <TouchableOpacity
                           onPress={() => Linking.openURL(listing.listingUrl)}
                           activeOpacity={0.75}
-                          style={[styles.mktViewBtn, { backgroundColor: colors.primary + '18', borderColor: colors.primary + '40' }]}
+                          style={[styles.mktViewBtn, { borderColor: colors.homeCoral + '40' }]}
                         >
-                          <Text style={[styles.mktViewBtnLabel, { color: colors.primary }]}>View</Text>
-                          <Feather name="external-link" size={10} color={colors.primary} />
+                          <Text style={[styles.mktViewBtnLabel, { color: colors.homeCoral }]}>View</Text>
                         </TouchableOpacity>
                       </View>
                     );
                   })}
 
-                  {/* List your own */}
                   {currentStatus === 'for_trade' && (
                     <TouchableOpacity
                       onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
                       activeOpacity={0.8}
-                      style={[styles.mktAddRow, { borderTopColor: colors.border }]}
+                      style={styles.mktAddRow}
                     >
-                      <Feather name="plus" size={14} color={colors.primary} />
-                      <Text style={[styles.mktAddLabel, { color: colors.primary }]}>Add your listing</Text>
+                      <Feather name="plus" size={13} color={colors.homeCoral} />
+                      <Text style={[styles.mktAddLabel, { color: colors.homeCoral }]}>
+                        {marketplaceListings.length > 0 ? 'Add your listing' : 'List this pin for sale'}
+                      </Text>
                     </TouchableOpacity>
                   )}
                 </View>
               )}
             </View>
+          </View>
+
+          {/* ── 7. Set / collection progress + other pins — ONE combined section ── */}
+          {setTotal > 1 && (
+            <View>
+              <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>MORE FROM THIS SET</Text>
+              <View style={[styles.setCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                <View style={styles.setHeadRow}>
+                  <Text numberOfLines={1} style={[styles.setName, { color: colors.homeInk }]}>{pin.collection}</Text>
+                  <Text style={[styles.setCount, { color: colors.homeCoralDeep }]}>{setOwnedCount}/{setTotal}</Text>
+                </View>
+                <SetProgressBar
+                  progress={setOwnedCount / setTotal}
+                  trackColor={colors.homeLine}
+                  fillColor={colors.homeCoral}
+                />
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.setTiles}>
+                  {setmates.slice(0, 12).map(p => (
+                    <CompactPinTile
+                      key={p.id}
+                      pin={p}
+                      size={SET_TILE}
+                      owned={['owned', 'for_trade'].includes(collection[p.id]?.status ?? '')}
+                      onPress={() => router.push({ pathname: '/pin/[id]', params: { id: p.id } })}
+                    />
+                  ))}
+                </ScrollView>
+                <TouchableOpacity
+                  onPress={() => router.push({ pathname: '/set/[collection]', params: { collection: pin.collection } })}
+                  activeOpacity={0.8}
+                  style={styles.seeAllRow}
+                >
+                  <Text style={[styles.seeAllLabel, { color: colors.homeCoralDeep }]}>See all {setTotal}</Text>
+                  <Feather name="chevron-right" size={15} color={colors.homeCoralDeep} />
+                </TouchableOpacity>
+              </View>
+            </View>
           )}
         </View>
       </ScrollView>
 
-      {/* ── Add to Board Modal ── */}
-      <Modal
-        visible={boardModalVisible}
-        animationType="slide"
-        transparent
-        onRequestClose={() => setBoardModalVisible(false)}
-      >
-        <TouchableOpacity
-          style={styles.modalOverlay}
-          activeOpacity={1}
-          onPress={() => {
-            setBoardModalVisible(false);
-            setCreatingBoard(false);
-            setNewBoardName('');
-          }}
-        />
-        <View
-          style={[
-            styles.modalSheet,
-            {
-              backgroundColor: colors.background,
-              borderTopColor: colors.border,
-              paddingBottom: insets.bottom + 16,
-            },
-          ]}
-        >
-          {/* Handle */}
-          <View style={[styles.modalHandle, { backgroundColor: colors.border }]} />
+      <PrimaryActionBar actions={primaryActions} />
 
-          <Text style={[styles.modalTitle, { color: colors.foreground }]}>Add to Collection</Text>
-          <Text style={[styles.modalSubtitle, { color: colors.mutedForeground }]}>
-            {pin.title}
-          </Text>
-
-          <ScrollView style={styles.modalList} showsVerticalScrollIndicator={false}>
-            {allBoards.length === 0 && !creatingBoard && (
-              <Text style={[styles.emptyBoards, { color: colors.mutedForeground }]}>
-                No boards yet. Create one below.
-              </Text>
-            )}
-            {allBoards.map(board => {
-              const isIn = pinBoardIds.has(board.id);
-              return (
-                <TouchableOpacity
-                  key={board.id}
-                  onPress={() => handleToggleBoard(board.id)}
-                  activeOpacity={0.75}
-                  style={[
-                    styles.boardRow,
-                    { borderBottomColor: colors.border },
-                  ]}
-                >
-                  <View
-                    style={[
-                      styles.boardCheck,
-                      {
-                        backgroundColor: isIn ? colors.primary : 'transparent',
-                        borderColor: isIn ? colors.primary : colors.border,
-                      },
-                    ]}
-                  >
-                    {isIn && <Feather name="check" size={13} color="#fff" />}
-                  </View>
-                  <View style={styles.boardRowInfo}>
-                    <Text style={[styles.boardRowName, { color: colors.foreground }]}>{board.name}</Text>
-                    <Text style={[styles.boardRowMeta, { color: colors.mutedForeground }]}>
-                      {board.isCustom ? 'Custom board' : 'Official set'} · {board.pinIds.length} pin{board.pinIds.length !== 1 ? 's' : ''}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
-
-            {/* New board form */}
-            {creatingBoard ? (
-              <View style={[styles.newBoardForm, { borderTopColor: colors.border }]}>
-                <TextInput
-                  value={newBoardName}
-                  onChangeText={setNewBoardName}
-                  placeholder="Board name…"
-                  placeholderTextColor={colors.mutedForeground}
-                  style={[
-                    styles.newBoardInput,
-                    { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card },
-                  ]}
-                  autoFocus
-                  returnKeyType="done"
-                  onSubmitEditing={handleCreateAndAdd}
-                />
-                <View style={styles.newBoardActions}>
-                  <TouchableOpacity
-                    onPress={() => {
-                      setCreatingBoard(false);
-                      setNewBoardName('');
-                    }}
-                    style={[styles.newBoardCancel, { borderColor: colors.border }]}
-                    activeOpacity={0.75}
-                  >
-                    <Text style={[styles.newBoardCancelLabel, { color: colors.mutedForeground }]}>
-                      Cancel
-                    </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={handleCreateAndAdd}
-                    style={[
-                      styles.newBoardCreate,
-                      { backgroundColor: newBoardName.trim() ? colors.primary : colors.secondary },
-                    ]}
-                    activeOpacity={0.85}
-                    disabled={!newBoardName.trim()}
-                  >
-                    <Text
-                      style={[
-                        styles.newBoardCreateLabel,
-                        { color: newBoardName.trim() ? colors.primaryForeground : colors.mutedForeground },
-                      ]}
-                    >
-                      Create & Add
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            ) : (
-              <TouchableOpacity
-                onPress={() => setCreatingBoard(true)}
-                activeOpacity={0.8}
-                style={[styles.newBoardTrigger, { borderTopColor: colors.border }]}
-              >
-                <Feather name="plus-circle" size={18} color={colors.primary} />
-                <Text style={[styles.newBoardTriggerLabel, { color: colors.primary }]}>
-                  New Board
-                </Text>
-              </TouchableOpacity>
-            )}
-          </ScrollView>
-
-          <TouchableOpacity
-            onPress={() => {
-              setBoardModalVisible(false);
-              setCreatingBoard(false);
-              setNewBoardName('');
-            }}
-            style={[styles.modalDone, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
-            activeOpacity={0.85}
-          >
-            <Text style={[styles.modalDoneLabel, { color: colors.primaryForeground }]}>Done</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal>
-    </>
+      <QuickAddSheet pin={manageSheetPin} onClose={() => setManageSheetPin(null)} seaGlass />
+    </ScreenContainer>
   );
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
-
-type ColorsType = ReturnType<typeof import('@/hooks/useColors').useColors>;
-
-function MetaRow({
-  label,
-  value,
-  colors,
-  last,
-}: {
-  label: string;
-  value: string;
-  colors: ColorsType;
-  last?: boolean;
-}) {
-  return (
-    <View
-      style={[
-        metaStyles.row,
-        !last && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border },
-      ]}
-    >
-      <Text style={[metaStyles.label, { color: colors.mutedForeground }]}>{label}</Text>
-      <Text style={[metaStyles.value, { color: colors.foreground }]}>{value}</Text>
-    </View>
-  );
-}
-
-function SectionTitle({
-  title,
-  subtitle,
-  colors,
-  actionLabel,
-  onAction,
-}: {
-  title: string;
-  subtitle?: string;
-  colors: ColorsType;
-  actionLabel?: string;
-  onAction?: () => void;
-}) {
-  return (
-    <View style={[styles.sectionTitleWrap, actionLabel ? { flexDirection: 'row', alignItems: 'center' } : {}]}>
-      <View style={{ flex: 1, gap: 2 }}>
-        <Text style={[styles.sectionTitle, { color: colors.foreground }]}>{title}</Text>
-        {subtitle && (
-          <Text style={[styles.sectionSubtitle, { color: colors.mutedForeground }]}>{subtitle}</Text>
-        )}
-      </View>
-      {actionLabel && onAction && (
-        <TouchableOpacity onPress={onAction} activeOpacity={0.7}>
-          <Text style={[styles.sectionAction, { color: colors.primary }]}>{actionLabel}</Text>
-        </TouchableOpacity>
-      )}
-    </View>
-  );
-}
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
@@ -765,305 +459,99 @@ function formatDate(dateStr: string) {
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
-const metaStyles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    paddingVertical: 11,
-    paddingHorizontal: 14,
-    gap: 12,
-  },
-  label: { fontSize: 13, fontFamily: 'Inter_500Medium', flex: 1 },
-  value: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 2, textAlign: 'right' },
-});
-
 const styles = StyleSheet.create({
-  root: { flex: 1 },
   notFound: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
   notFoundText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   backLink: { fontSize: 14, fontFamily: 'Inter_500Medium' },
-  // Image
-  imageWrap: { position: 'relative' },
-  mainImage: { width: '100%', height: 300, resizeMode: 'cover' },
-  leBadge: {
+  scroll: { flex: 1 },
+  scrollContent: { paddingBottom: spacing.xxxl },
+  // Hero
+  hero: { width: '100%', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  backBtn: {
     position: 'absolute',
-    top: 12,
-    left: 12,
-    borderRadius: 6,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-  },
-  leLabel: { fontSize: 11, fontFamily: 'Inter_700Bold', color: '#1C1C2E' },
-  // About banner (under image)
-  aboutBanner: {
-    paddingHorizontal: 16,
-    paddingVertical: 14,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    gap: 6,
-  },
-  aboutTitle: { fontSize: 15, fontFamily: 'Inter_700Bold' },
-  aboutText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
-  // Layout
-  content: { padding: 16, gap: 18 },
-  titleRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 10 },
-  titleBlock: { flex: 1, gap: 6 },
-  title: { fontSize: 22, fontFamily: 'Inter_700Bold', lineHeight: 28 },
-  brandChip: { alignSelf: 'flex-start', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 3 },
-  chipRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
-  verifiedChip: {
-    flexDirection: 'row',
+    left: spacing.lg,
+    width: 38,
+    height: 38,
+    borderRadius: 19,
     alignItems: 'center',
-    gap: 4,
-    borderRadius: 6,
-    borderWidth: 1,
-    paddingHorizontal: 7,
-    paddingVertical: 3,
+    justifyContent: 'center',
+    zIndex: 2,
   },
-  verifiedChipLabel: { fontSize: 10, fontFamily: 'Inter_600SemiBold' },
-  brandChipLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#fff' },
-  newChip: { borderRadius: 6, paddingHorizontal: 8, paddingVertical: 4, alignSelf: 'flex-start', marginTop: 2 },
-  newChipLabel: { fontSize: 10, fontFamily: 'Inter_700Bold', color: '#fff' },
-  seedBanner: { flexDirection: 'row', alignItems: 'center', gap: 6, borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 7 },
+  leBadgeWrap: { position: 'absolute', right: spacing.lg, zIndex: 2 },
+  imagePage: { alignItems: 'center', justifyContent: 'center' },
+  image: {
+    borderRadius: radius.xl,
+    shadowOpacity: 0.2,
+    shadowRadius: 14,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 5,
+  },
+  dots: { flexDirection: 'row', gap: 6, marginTop: spacing.md },
+  dot: { width: 6, height: 6, borderRadius: 3 },
+  // Content
+  content: { padding: spacing.lg, gap: spacing.lg },
+  titleBlock: { gap: 4 },
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  title: { fontSize: 24, lineHeight: 29, fontFamily: 'Inter_700Bold', letterSpacing: -0.5, flexShrink: 1 },
+  verifiedIcon: { marginTop: 2 },
+  subtitle: { fontSize: 14, fontFamily: 'Inter_500Medium' },
+  seedBanner: { flexDirection: 'row', alignItems: 'center', gap: 6, borderWidth: 1, borderRadius: radius.sm, paddingHorizontal: 10, paddingVertical: 7 },
   seedBannerText: { fontSize: 12, fontFamily: 'Inter_500Medium', flex: 1, lineHeight: 17 },
-  // Status
-  statusRow: { flexDirection: 'row', gap: 8 },
-  statusBtn: {
-    flex: 1,
+  description: { fontSize: 13.5, fontFamily: 'Inter_400Regular', lineHeight: 20 },
+  // Collection management
+  collectionSection: { gap: spacing.sm },
+  manageBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 10,
-    gap: 6,
-    borderWidth: 1,
+    gap: spacing.sm,
+    height: 50,
+    borderRadius: radius.lg,
+    paddingHorizontal: spacing.lg,
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 5 },
+    elevation: 3,
   },
-  statusBtnLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  // Add to Board
-  addBoardBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-    borderWidth: 1,
-  },
-  addBoardLabel: { flex: 1, fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  addBoardChevron: { marginLeft: 'auto' },
-  // Metadata card
-  metaCard: { borderWidth: 1, overflow: 'hidden' },
-  // Section title
-  sectionTitleWrap: { gap: 2, marginBottom: 10 },
-  sectionTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' },
-  sectionSubtitle: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  sectionAction: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  // Valuation card
-  valueCard: {
-    borderWidth: 1,
-    overflow: 'hidden',
-    padding: 16,
-    gap: 12,
-  },
-  valueMain: { alignItems: 'center', gap: 4 },
-  valueAmount: { fontSize: 32, fontFamily: 'Inter_700Bold' },
-  valueLabel: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  valueDivider: { height: StyleSheet.hairlineWidth },
-  valueNote: { flexDirection: 'row', alignItems: 'flex-start' },
-  valueDisclaimer: { flex: 1, fontSize: 11, fontFamily: 'Inter_400Regular', lineHeight: 15 },
-  // Valuation empty state
-  valuationEmpty: {
-    borderWidth: 1,
-    padding: 20,
-    alignItems: 'center',
-    gap: 8,
-  },
-  valuationEmptyTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
-  valuationEmptyText: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, textAlign: 'center' },
-  // Community card
-  communityCard: { borderWidth: 1, overflow: 'hidden' },
-  communityRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 14,
-    gap: 12,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  communityRowLast: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 14,
-    gap: 12,
-  },
-  communityIconWrap: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  communityLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  communityMeta: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
-  // Pins in this set
-  setmatesScroll: { gap: 12, paddingRight: 4 },
-  setmateCard: { width: 155 },
-  // Marketplace listings section
-  mktWarning: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: 7,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderWidth: 1,
-    borderRadius: 8,
-    marginBottom: 10,
-  },
-  mktWarningText: {
-    flex: 1,
-    fontSize: 11,
-    fontFamily: 'Inter_400Regular',
-    color: '#92400E',
-    lineHeight: 15,
-  },
-  mktEmpty: {
-    borderWidth: 1,
-    padding: 16,
-    alignItems: 'center',
-    gap: 12,
-  },
-  mktEmptyText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
-  mktSellBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-  },
-  mktSellBtnLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold', color: '#fff' },
-  mktCard: { borderWidth: 1, overflow: 'hidden' },
-  mktRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    gap: 10,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  mktRowLast: { borderBottomWidth: 0 },
-  mktPlatformBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    paddingHorizontal: 7,
-    paddingVertical: 4,
-    borderRadius: 6,
-  },
+  manageBtnLabel: { flex: 1, fontSize: 15, fontFamily: 'Inter_700Bold' },
+  collectionCounters: { flexDirection: 'row', gap: spacing.sm },
+  counterPill: { flex: 1, borderRadius: radius.md, paddingVertical: spacing.sm, paddingHorizontal: spacing.md, flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' },
+  counterLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  counterValue: { fontSize: 15, fontFamily: 'Inter_700Bold' },
+  collectionHints: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flexWrap: 'wrap' },
+  isoPill: { flexDirection: 'row', alignItems: 'center', gap: 4, borderRadius: radius.pill, paddingHorizontal: spacing.sm, paddingVertical: 3 },
+  isoPillLabel: { fontSize: 10.5, fontFamily: 'Inter_700Bold' },
+  boardHint: { fontSize: 11.5, fontFamily: 'Inter_500Medium' },
+  // Section label
+  sectionLabel: { fontSize: 10.5, fontFamily: 'Inter_700Bold', letterSpacing: 1, marginBottom: spacing.sm },
+  // Details (always visible)
+  detailsCard: { borderWidth: 1, borderRadius: radius.lg, padding: spacing.md },
+  detailsHeading: { fontSize: 10.5, fontFamily: 'Inter_700Bold', letterSpacing: 1, marginBottom: 2 },
+  // Trading
+  tradingCard: { borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
+  tradingRow: { flexDirection: 'row', alignItems: 'center', padding: spacing.md, gap: spacing.md, borderBottomWidth: StyleSheet.hairlineWidth },
+  tradingRowLast: { flexDirection: 'row', alignItems: 'center', padding: spacing.md, gap: spacing.md },
+  tradingIcon: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center' },
+  tradingLabel: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
+  tradingMeta: { fontSize: 11.5, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  marketplacePanel: { borderTopWidth: StyleSheet.hairlineWidth, padding: spacing.md, gap: spacing.sm },
+  mktWarning: { flexDirection: 'row', alignItems: 'flex-start', gap: 6, borderRadius: radius.sm, paddingHorizontal: 10, paddingVertical: 8 },
+  mktWarningText: { flex: 1, fontSize: 11, fontFamily: 'Inter_400Regular', lineHeight: 15 },
+  mktRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, borderWidth: 1, borderRadius: radius.sm, padding: spacing.sm },
+  mktPlatformBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 7, paddingVertical: 4, borderRadius: 6 },
   mktPlatformLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   mktMeta: { flex: 1, gap: 2 },
   mktSeller: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  mktPrice: { fontSize: 15, fontFamily: 'Inter_700Bold' },
-  mktViewBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
-    borderWidth: 1,
-  },
+  mktPrice: { fontSize: 14, fontFamily: 'Inter_700Bold' },
+  mktViewBtn: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 6, borderWidth: 1 },
   mktViewBtnLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
-  mktAddRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-    padding: 12,
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
+  mktAddRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingTop: 4 },
   mktAddLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  // Modal
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.4)',
-  },
-  modalSheet: {
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    paddingTop: 8,
-    paddingHorizontal: 16,
-    maxHeight: '80%',
-  },
-  modalHandle: {
-    width: 36,
-    height: 4,
-    borderRadius: 2,
-    alignSelf: 'center',
-    marginBottom: 14,
-  },
-  modalTitle: { fontSize: 18, fontFamily: 'Inter_700Bold', marginBottom: 2 },
-  modalSubtitle: { fontSize: 13, fontFamily: 'Inter_400Regular', marginBottom: 14 },
-  modalList: { maxHeight: 340 },
-  emptyBoards: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', paddingVertical: 20 },
-  boardRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-    paddingVertical: 13,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  boardCheck: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    borderWidth: 1.5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  boardRowInfo: { flex: 1, gap: 2 },
-  boardRowName: { fontSize: 15, fontFamily: 'Inter_500Medium' },
-  boardRowMeta: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  newBoardTrigger: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-    paddingVertical: 14,
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
-  newBoardTriggerLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
-  newBoardForm: {
-    paddingTop: 14,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    gap: 10,
-  },
-  newBoardInput: {
-    height: 44,
-    borderWidth: 1,
-    borderRadius: 10,
-    paddingHorizontal: 12,
-    fontSize: 15,
-    fontFamily: 'Inter_400Regular',
-  },
-  newBoardActions: { flexDirection: 'row', gap: 10 },
-  newBoardCancel: {
-    flex: 1,
-    height: 42,
-    borderRadius: 10,
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  newBoardCancelLabel: { fontSize: 14, fontFamily: 'Inter_500Medium' },
-  newBoardCreate: {
-    flex: 2,
-    height: 42,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  newBoardCreateLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  modalDone: {
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 12,
-  },
-  modalDoneLabel: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  // Set section
+  setCard: { borderWidth: 1, borderRadius: radius.lg, padding: spacing.md },
+  setHeadRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: spacing.sm, gap: spacing.sm },
+  setName: { flex: 1, fontSize: 14, fontFamily: 'Inter_700Bold' },
+  setCount: { fontSize: 14, fontFamily: 'Inter_700Bold' },
+  setTiles: { gap: spacing.md, paddingTop: spacing.md, paddingRight: spacing.xs },
+  seeAllRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: spacing.md, paddingTop: spacing.sm },
+  seeAllLabel: { fontSize: 13, fontFamily: 'Inter_700Bold' },
 });

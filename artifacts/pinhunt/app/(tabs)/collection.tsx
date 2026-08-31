@@ -24,6 +24,8 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
 import { BoardCard } from '@/components/BoardCard';
 import { EmptyState } from '@/components/EmptyState';
+import { SegmentedControl } from '@/components/ui';
+import type { SegmentedControlOption } from '@/components/ui';
 import {
   type CataloguePin,
   type PinSetSummary,
@@ -33,6 +35,12 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const GRID_CARD_WIDTH = (SCREEN_WIDTH - 16 * 2 - 12) / 2;
 
 type Tab = 'boards' | 'sets' | 'traders' | 'iso';
+const TAB_OPTIONS: SegmentedControlOption<Tab>[] = [
+  { value: 'boards', label: 'Boards', icon: 'grid', tone: 'coral' },
+  { value: 'sets', label: 'Sets', icon: 'package', tone: 'coral' },
+  { value: 'traders', label: 'Traders', icon: 'repeat', tone: 'coral' },
+  { value: 'iso', label: 'ISO', icon: 'bookmark', tone: 'coral' },
+];
 type SetProgressFilter = 'all' | 'progress' | 'complete';
 type MetadataFilterKey = 'character' | 'series' | 'location' | 'year' | 'brand' | 'edition';
 type MetadataFilters = Partial<Record<MetadataFilterKey, string>>;
@@ -324,93 +332,83 @@ export default function CollectionScreen() {
     <View style={s.headerContent}>
       {/* Page Header */}
       <View style={s.pageHeader}>
-        <Text style={[s.pageTitle, { color: colors.foreground }]}>My Collection</Text>
+        <Text style={[s.pageTitle, { color: colors.homeInk }]}>My Collection</Text>
         <View style={s.headerActions}>
           <TouchableOpacity
-            style={[s.headerBtn, searchActive && { backgroundColor: colors.primary + '15' }]}
+            style={[s.headerBtn, searchActive && { backgroundColor: colors.homeCoral + '15' }]}
             onPress={() => {
               setSearchActive(!searchActive);
               if (searchActive) setSearchQuery('');
             }}
           >
-            <Feather name="search" size={24} color={searchActive ? colors.primary : colors.foreground} />
+            <Feather name="search" size={24} color={searchActive ? colors.homeCoral : colors.homeInk} />
           </TouchableOpacity>
           <TouchableOpacity style={s.headerBtn} onPress={() => setAddModalVisible(true)}>
-            <Feather name="plus" size={24} color={colors.foreground} />
+            <Feather name="plus" size={24} color={colors.homeInk} />
           </TouchableOpacity>
         </View>
       </View>
 
-      <View style={[s.tabsRow, { borderBottomColor: colors.border }]}>
-        {(['boards', 'sets', 'traders', 'iso'] as const).map(tab => {
-          const active = activeTab === tab;
-          const label = tab === 'boards' ? 'Boards' : tab === 'sets' ? 'Sets' : tab === 'traders' ? 'Traders' : 'ISO';
-          return (
-            <TouchableOpacity
-              key={tab}
-              onPress={() => {
-                if (Platform.OS !== 'web') Haptics.selectionAsync();
-                setActiveTab(tab);
-                setSearchQuery('');
-                setSearchActive(false);
-              }}
-              style={[s.tab, active && { borderBottomColor: colors.primary }]}
-            >
-              <Text style={[s.tabText, { color: active ? colors.foreground : colors.mutedForeground, fontFamily: active ? 'Inter_600SemiBold' : 'Inter_500Medium' }]}>
-                {label}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
+      <View style={s.tabsRow}>
+        <SegmentedControl
+          options={TAB_OPTIONS}
+          value={activeTab}
+          onChange={tab => {
+            if (Platform.OS !== 'web') Haptics.selectionAsync();
+            setActiveTab(tab);
+            setSearchQuery('');
+            setSearchActive(false);
+          }}
+        />
       </View>
 
       {/* Contextual Stats & Search */}
       <View style={s.contextualArea}>
         {activeTab === 'boards' && (
           <View style={s.statsRow}>
-            <Text style={[s.statText, { color: colors.foreground }]}>
-              {ownedIds.size} <Text style={{ color: colors.mutedForeground }}>Owned</Text>
+            <Text style={[s.statText, { color: colors.homeInk }]}>
+              {ownedIds.size} <Text style={{ color: colors.homeMuted }}>Owned</Text>
             </Text>
-            <Text style={[s.statText, { color: colors.foreground }]}>
-              {customBoards.length} <Text style={{ color: colors.mutedForeground }}>Boards</Text>
+            <Text style={[s.statText, { color: colors.homeInk }]}>
+              {customBoards.length} <Text style={{ color: colors.homeMuted }}>Boards</Text>
             </Text>
           </View>
         )}
         {activeTab === 'sets' && (
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
             <View style={{ flexDirection: 'row', gap: 16 }}>
-              <Text style={[s.statText, { color: colors.foreground }]}>
-                {ownedIds.size} <Text style={{ color: colors.mutedForeground }}>Pins</Text>
+              <Text style={[s.statText, { color: colors.homeInk }]}>
+                {ownedIds.size} <Text style={{ color: colors.homeMuted }}>Pins</Text>
               </Text>
-              <Text style={[s.statText, { color: colors.foreground }]}>
-                {automaticSetGroups.length} <Text style={{ color: colors.mutedForeground }}>Sets</Text>
+              <Text style={[s.statText, { color: colors.homeInk }]}>
+                {automaticSetGroups.length} <Text style={{ color: colors.homeMuted }}>Sets</Text>
               </Text>
-              <Text style={[s.statText, { color: colors.foreground }]}>
-                {automaticSetGroups.filter(g => g.complete).length} <Text style={{ color: colors.mutedForeground }}>Complete</Text>
+              <Text style={[s.statText, { color: colors.homeInk }]}>
+                {automaticSetGroups.filter(g => g.complete).length} <Text style={{ color: colors.homeMuted }}>Complete</Text>
               </Text>
             </View>
             {!searchActive && (
               <TouchableOpacity onPress={() => setFilterSheetTab('sets')} style={s.iconStatBtn}>
-                <Feather name="sliders" size={16} color={colors.foreground} />
-                <Text style={[s.iconStatBtnText, { color: colors.foreground }]}>Sort</Text>
+                <Feather name="sliders" size={16} color={colors.homeInk} />
+                <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
               </TouchableOpacity>
             )}
           </View>
         )}
         {activeTab === 'traders' && (
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
-            <Text style={[s.statText, { color: colors.foreground }]}>
-              {forTradePins.length} <Text style={{ color: colors.mutedForeground }}>Traders</Text>
+            <Text style={[s.statText, { color: colors.homeInk }]}>
+              {forTradePins.length} <Text style={{ color: colors.homeMuted }}>Traders</Text>
             </Text>
             <View style={{ flexDirection: 'row', gap: 12 }}>
               <TouchableOpacity onPress={() => router.push('/(tabs)/community')} style={s.iconStatBtn}>
-                <Feather name="share" size={16} color={colors.primary} />
-                <Text style={[s.iconStatBtnText, { color: colors.primary }]}>Share</Text>
+                <Feather name="share" size={16} color={colors.homeCoral} />
+                <Text style={[s.iconStatBtnText, { color: colors.homeCoral }]}>Share</Text>
               </TouchableOpacity>
               {!searchActive && (
                 <TouchableOpacity onPress={() => setFilterSheetTab('traders')} style={s.iconStatBtn}>
-                  <Feather name="sliders" size={16} color={colors.foreground} />
-                  <Text style={[s.iconStatBtnText, { color: colors.foreground }]}>Sort</Text>
+                  <Feather name="sliders" size={16} color={colors.homeInk} />
+                  <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
                 </TouchableOpacity>
               )}
             </View>
@@ -418,18 +416,18 @@ export default function CollectionScreen() {
         )}
         {activeTab === 'iso' && (
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
-            <Text style={[s.statText, { color: colors.foreground }]}>
-              {wantedPins.length} <Text style={{ color: colors.mutedForeground }}>ISO</Text>
+            <Text style={[s.statText, { color: colors.homeInk }]}>
+              {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
             </Text>
             <View style={{ flexDirection: 'row', gap: 12 }}>
               <TouchableOpacity onPress={() => router.push('/(tabs)/community')} style={s.iconStatBtn}>
-                <Feather name="share" size={16} color={colors.primary} />
-                <Text style={[s.iconStatBtnText, { color: colors.primary }]}>Share</Text>
+                <Feather name="share" size={16} color={colors.homeCoral} />
+                <Text style={[s.iconStatBtnText, { color: colors.homeCoral }]}>Share</Text>
               </TouchableOpacity>
               {!searchActive && (
                 <TouchableOpacity onPress={() => setFilterSheetTab('iso')} style={s.iconStatBtn}>
-                  <Feather name="sliders" size={16} color={colors.foreground} />
-                  <Text style={[s.iconStatBtnText, { color: colors.foreground }]}>Sort</Text>
+                  <Feather name="sliders" size={16} color={colors.homeInk} />
+                  <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
                 </TouchableOpacity>
               )}
             </View>
@@ -438,37 +436,37 @@ export default function CollectionScreen() {
 
         {searchActive && (
           <View style={s.controlsRow}>
-            <View style={[s.searchBox, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
-              <Feather name="search" size={16} color={colors.mutedForeground} />
+            <View style={[s.searchBox, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+              <Feather name="search" size={16} color={colors.homeMuted} />
               <TextInput
                 value={searchQuery}
                 onChangeText={setSearchQuery}
                 placeholder={activeTab === 'boards' ? 'Search boards & pins' : `Search ${activeTab}`}
-                placeholderTextColor={colors.mutedForeground}
-                style={[s.searchInput, { color: colors.foreground }]}
+                placeholderTextColor={colors.homeMuted}
+                style={[s.searchInput, { color: colors.homeInk }]}
                 returnKeyType="search"
                 autoFocus
               />
               {searchQuery ? (
                 <TouchableOpacity onPress={() => setSearchQuery('')} hitSlop={10}>
-                  <Feather name="x-circle" size={16} color={colors.mutedForeground} />
+                  <Feather name="x-circle" size={16} color={colors.homeMuted} />
                 </TouchableOpacity>
               ) : null}
             </View>
             {(activeTab !== 'boards' || boardPinFallbackActive) && (
               <TouchableOpacity
                 style={[s.utilBtn, {
-                  backgroundColor: colors.card,
+                  backgroundColor: colors.homeSurface,
                   borderColor: activeTab === 'boards' && (Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent')
-                    ? colors.primary
-                    : colors.border,
+                    ? colors.homeCoral
+                    : colors.homeLine,
                 }]}
                 onPress={() => {
                   if (activeTab === 'boards') setAllPinsFilterVisible(true);
                   else setFilterSheetTab(activeTab);
                 }}
               >
-                <Feather name="sliders" size={18} color={activeTab === 'boards' && (Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent') ? colors.primary : colors.foreground} />
+                <Feather name="sliders" size={18} color={activeTab === 'boards' && (Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent') ? colors.homeCoral : colors.homeInk} />
               </TouchableOpacity>
             )}
           </View>
@@ -476,8 +474,8 @@ export default function CollectionScreen() {
 
         {/* If searching pins in Boards view, allow viewing all owned pins */}
         {boardPinFallbackActive && filteredOwnedPins.length > 0 && (
-          <View style={[s.secondarySearchResult, { backgroundColor: colors.card }]}>
-            <Text style={[s.secondarySearchText, { color: colors.mutedForeground }]}>
+          <View style={[s.secondarySearchResult, { backgroundColor: colors.homeSurface }]}>
+            <Text style={[s.secondarySearchText, { color: colors.homeMuted }]}>
               View All Owned Pins · {filteredOwnedPins.length} result{filteredOwnedPins.length === 1 ? '' : 's'}
             </Text>
           </View>
@@ -507,7 +505,7 @@ export default function CollectionScreen() {
   };
 
   return (
-    <View style={[s.root, { backgroundColor: colors.background, paddingTop: topPad }]}>
+    <View style={[s.root, { backgroundColor: colors.homeBackground, paddingTop: topPad }]}>
       <FlatList<CataloguePin | GroupData>
         data={gridData}
         keyExtractor={item => ('isGroup' in item ? item.id : item.id)}
@@ -530,6 +528,7 @@ export default function CollectionScreen() {
                     board={{ id: group.id, name: group.title, pinIds: group.pins.map(p => p.id), createdAt: '', isCustom: true }}
                     pins={group.pins}
                     onPress={() => handleGroupPress(group)}
+                    seaGlass
                   />
                 </View>
               );
@@ -538,28 +537,28 @@ export default function CollectionScreen() {
             // Sets use the visual group card
             const preview = group.pins.slice(0, 4);
             return (
-              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} style={[s.groupCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
-                <View style={[s.groupPreviewArea, { backgroundColor: colors.secondary }]}>
+              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} style={[s.groupCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                <View style={[s.groupPreviewArea, { backgroundColor: colors.homeAqua }]}>
                   {preview.length === 0 ? (
                     <View style={s.groupEmpty}>
-                      <Feather name="folder" size={24} color={colors.mutedForeground} />
+                      <Feather name="folder" size={24} color={colors.homeMuted} />
                     </View>
                   ) : preview.length === 1 ? (
                     <Image source={getPinImageSource(preview[0])} style={s.groupPreviewSingle} />
                   ) : (
                     <View style={s.groupPreviewGrid}>
                       {preview.map(p => (
-                        <Image key={p.id} source={getPinImageSource(p)} style={[s.groupPreviewSmall, { borderColor: colors.card }]} />
+                        <Image key={p.id} source={getPinImageSource(p)} style={[s.groupPreviewSmall, { borderColor: colors.homeSurface }]} />
                       ))}
                     </View>
                   )}
                 </View>
                 <View style={s.groupCardBottom}>
-                  <Text style={[s.groupCardTitle, { color: colors.foreground }]} numberOfLines={1}>{group.title}</Text>
-                  <Text style={[s.groupCardSub, { color: colors.mutedForeground }]} numberOfLines={1}>{group.subtitle}</Text>
+                  <Text style={[s.groupCardTitle, { color: colors.homeInk }]} numberOfLines={1}>{group.title}</Text>
+                  <Text style={[s.groupCardSub, { color: colors.homeMuted }]} numberOfLines={1}>{group.subtitle}</Text>
                   {group.progress !== undefined && (
-                    <View style={[s.groupProgressTrack, { backgroundColor: colors.secondary }]}>
-                      <View style={[s.groupProgressFill, { width: `${Math.max(group.progress * 100, 2)}%`, backgroundColor: group.complete ? colors.owned : colors.primary }]} />
+                    <View style={[s.groupProgressTrack, { backgroundColor: colors.homeAqua }]}>
+                      <View style={[s.groupProgressFill, { width: `${Math.max(group.progress * 100, 2)}%`, backgroundColor: group.complete ? colors.owned : colors.homeCoral }]} />
                     </View>
                   )}
                 </View>
@@ -569,10 +568,10 @@ export default function CollectionScreen() {
           const pin = item as CataloguePin;
           return (
             <View style={s.gridItemWrap}>
-              <PinCard pin={pin} mode="grid" onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })} />
+              <PinCard pin={pin} mode="grid" onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })} seaGlass />
               {(collection[pin.id]?.quantity ?? 1) > 1 && (
-                <View style={[s.quantityBadge, { backgroundColor: colors.foreground }]}>
-                  <Text style={[s.quantityBadgeText, { color: colors.background }]}>
+                <View style={[s.quantityBadge, { backgroundColor: colors.homeInk }]}>
+                  <Text style={[s.quantityBadgeText, { color: colors.homeBackground }]}>
                     ×{collection[pin.id].quantity}
                   </Text>
                 </View>
@@ -585,23 +584,23 @@ export default function CollectionScreen() {
       {/* Add Menu Modal */}
       <Modal visible={addModalVisible} transparent animationType="fade" onRequestClose={() => setAddModalVisible(false)}>
         <TouchableOpacity style={s.modalBackdrop} activeOpacity={1} onPress={() => setAddModalVisible(false)}>
-          <View style={[s.addMenuSheet, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <View style={[s.addMenuSheet, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <View style={s.addMenuHeader}>
-              <Text style={[s.addMenuTitle, { color: colors.foreground }]}>Add to Collection</Text>
+              <Text style={[s.addMenuTitle, { color: colors.homeInk }]}>Add to Collection</Text>
             </View>
             <TouchableOpacity
-              style={[s.addMenuItem, { borderBottomColor: colors.border }]}
+              style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
               onPress={() => {
                 setAddModalVisible(false);
                 router.push('/search');
               }}
             >
-              <Feather name="search" size={24} color={colors.foreground} />
-              <Text style={[s.addMenuText, { color: colors.foreground }]}>Add Pin</Text>
+              <Feather name="search" size={24} color={colors.homeInk} />
+              <Text style={[s.addMenuText, { color: colors.homeInk }]}>Add Pin</Text>
             </TouchableOpacity>
             <TouchableOpacity style={s.addMenuItem} onPress={() => { setAddModalVisible(false); setCreateBoardVisible(true); }}>
-              <Feather name="folder-plus" size={24} color={colors.foreground} />
-              <Text style={[s.addMenuText, { color: colors.foreground }]}>Create Board</Text>
+              <Feather name="folder-plus" size={24} color={colors.homeInk} />
+              <Text style={[s.addMenuText, { color: colors.homeInk }]}>Create Board</Text>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
@@ -610,24 +609,24 @@ export default function CollectionScreen() {
       {/* Create Board Modal */}
       <Modal visible={createBoardVisible} transparent animationType="fade" onRequestClose={() => setCreateBoardVisible(false)}>
         <View style={s.modalBackdropCenter}>
-          <View style={[s.createBoardModal, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <Text style={[s.modalTitle, { color: colors.foreground }]}>New Board</Text>
+          <View style={[s.createBoardModal, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <Text style={[s.modalTitle, { color: colors.homeInk }]}>New Board</Text>
             <TextInput
               value={newBoardName}
               onChangeText={setNewBoardName}
               placeholder="Board name"
-              placeholderTextColor={colors.mutedForeground}
-              style={[s.modalInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.background }]}
+              placeholderTextColor={colors.homeMuted}
+              style={[s.modalInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
               autoFocus
               returnKeyType="done"
               onSubmitEditing={handleCreateBoard}
             />
             <View style={s.modalActions}>
               <TouchableOpacity onPress={() => setCreateBoardVisible(false)} style={s.modalBtn}>
-                <Text style={[s.modalBtnText, { color: colors.mutedForeground }]}>Cancel</Text>
+                <Text style={[s.modalBtnText, { color: colors.homeMuted }]}>Cancel</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={handleCreateBoard} disabled={!newBoardName.trim()} style={[s.modalBtn, s.modalBtnPrimary, { backgroundColor: newBoardName.trim() ? colors.primary : colors.secondary }]}>
-                <Text style={[s.modalBtnText, { color: newBoardName.trim() ? '#fff' : colors.mutedForeground }]}>Create</Text>
+              <TouchableOpacity onPress={handleCreateBoard} disabled={!newBoardName.trim()} style={[s.modalBtn, s.modalBtnPrimary, { backgroundColor: newBoardName.trim() ? colors.homeCoral : colors.homeAqua }]}>
+                <Text style={[s.modalBtnText, { color: newBoardName.trim() ? colors.homeSurface : colors.homeMuted }]}>Create</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -637,17 +636,17 @@ export default function CollectionScreen() {
       {/* Secondary owned-pin metadata filter and sort */}
       <Modal visible={allPinsFilterVisible} transparent animationType="slide" onRequestClose={() => setAllPinsFilterVisible(false)}>
         <View style={s.modalBackdrop}>
-          <View style={[s.filterSheet, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <View style={[s.filterSheet, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <View style={s.filterSheetHeader}>
-              <Text style={[s.modalTitle, { color: colors.foreground, marginBottom: 0 }]}>Filter Pins</Text>
+              <Text style={[s.modalTitle, { color: colors.homeInk, marginBottom: 0 }]}>Filter Pins</Text>
               <View style={s.filterHeaderActions}>
                 {(Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent') && (
                   <TouchableOpacity onPress={() => { setPinFilters({}); setAllPinsSort('recent'); }} style={s.clearBtn}>
-                    <Text style={[s.clearText, { color: colors.primary }]}>Clear</Text>
+                    <Text style={[s.clearText, { color: colors.homeCoral }]}>Clear</Text>
                   </TouchableOpacity>
                 )}
                 <TouchableOpacity onPress={() => setAllPinsFilterVisible(false)} style={s.closeBtn}>
-                  <Feather name="x" size={20} color={colors.foreground} />
+                  <Feather name="x" size={20} color={colors.homeInk} />
                 </TouchableOpacity>
               </View>
             </View>
@@ -664,7 +663,7 @@ export default function CollectionScreen() {
                 if (options.length === 0) return null;
                 return (
                   <View key={key} style={s.filterSection}>
-                    <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground }]}>{label}</Text>
+                    <Text style={[s.sheetSectionTitle, { color: colors.homeMuted }]}>{label}</Text>
                     <View style={s.sheetRowWrap}>
                       {options.map(option => {
                         const active = pinFilters[key] === option;
@@ -678,11 +677,11 @@ export default function CollectionScreen() {
                               return next;
                             })}
                             style={[s.compactChip, {
-                              backgroundColor: active ? colors.primary + '15' : colors.secondary,
-                              borderColor: active ? colors.primary : 'transparent',
+                              backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
+                              borderColor: active ? colors.homeCoral : 'transparent',
                             }]}
                           >
-                            <Text style={[s.compactChipText, { color: active ? colors.primary : colors.foreground }]}>{option}</Text>
+                            <Text style={[s.compactChipText, { color: active ? colors.homeCoral : colors.homeInk }]}>{option}</Text>
                           </TouchableOpacity>
                         );
                       })}
@@ -691,7 +690,7 @@ export default function CollectionScreen() {
                 );
               })}
               <View style={s.filterSection}>
-                <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground }]}>Sort by</Text>
+                <Text style={[s.sheetSectionTitle, { color: colors.homeMuted }]}>Sort by</Text>
                 <View style={s.sheetRowWrap}>
                   {(['recent', 'name', 'year', 'value'] as const).map(option => {
                     const active = allPinsSort === option;
@@ -701,19 +700,19 @@ export default function CollectionScreen() {
                         key={option}
                         onPress={() => setAllPinsSort(option)}
                         style={[s.compactChip, {
-                          backgroundColor: active ? colors.primary + '15' : colors.secondary,
-                          borderColor: active ? colors.primary : 'transparent',
+                          backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
+                          borderColor: active ? colors.homeCoral : 'transparent',
                         }]}
                       >
-                        <Text style={[s.compactChipText, { color: active ? colors.primary : colors.foreground }]}>{label}</Text>
+                        <Text style={[s.compactChipText, { color: active ? colors.homeCoral : colors.homeInk }]}>{label}</Text>
                       </TouchableOpacity>
                     );
                   })}
                 </View>
               </View>
             </ScrollView>
-            <TouchableOpacity style={[s.applyBtn, { backgroundColor: colors.primary }]} onPress={() => setAllPinsFilterVisible(false)}>
-              <Text style={s.applyBtnText}>Show {filteredOwnedPins.length} pin{filteredOwnedPins.length === 1 ? '' : 's'}</Text>
+            <TouchableOpacity style={[s.applyBtn, { backgroundColor: colors.homeCoral }]} onPress={() => setAllPinsFilterVisible(false)}>
+              <Text style={[s.applyBtnText, { color: colors.homeSurface }]}>Show {filteredOwnedPins.length} pin{filteredOwnedPins.length === 1 ? '' : 's'}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -722,9 +721,9 @@ export default function CollectionScreen() {
       {/* Filter / Sort Modal */}
       <Modal visible={filterSheetTab !== null} transparent animationType="fade" onRequestClose={() => setFilterSheetTab(null)}>
         <TouchableOpacity style={s.modalBackdrop} activeOpacity={1} onPress={() => setFilterSheetTab(null)}>
-          <TouchableOpacity activeOpacity={1} style={[s.addMenuSheet, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <TouchableOpacity activeOpacity={1} style={[s.addMenuSheet, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <View style={s.addMenuHeader}>
-              <Text style={[s.addMenuTitle, { color: colors.foreground }]}>
+              <Text style={[s.addMenuTitle, { color: colors.homeInk }]}>
                 {filterSheetTab === 'traders' ? 'Traders' : filterSheetTab === 'iso' ? 'ISO' : filterSheetTab === 'sets' ? 'Sets' : 'Pins'} View Options
               </Text>
             </View>
@@ -732,7 +731,7 @@ export default function CollectionScreen() {
             <View style={s.sheetContent}>
               {filterSheetTab === 'sets' ? (
                 <>
-                  <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground }]}>Filter by Progress</Text>
+                  <Text style={[s.sheetSectionTitle, { color: colors.homeMuted }]}>Filter by Progress</Text>
                   <View style={s.sheetRow}>
                     {(['all', 'progress', 'complete'] as const).map(f => {
                       const active = setProgressFilter === f;
@@ -741,18 +740,18 @@ export default function CollectionScreen() {
                         <TouchableOpacity
                           key={f}
                           style={[s.sheetChip, {
-                            backgroundColor: active ? colors.primary + '15' : colors.secondary,
-                            borderColor: active ? colors.primary : 'transparent'
+                            backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
+                            borderColor: active ? colors.homeCoral : 'transparent'
                           }]}
                           onPress={() => setSetProgressFilter(f)}
                         >
-                          <Text style={[s.sheetChipText, { color: active ? colors.primary : colors.foreground }]}>{label}</Text>
+                          <Text style={[s.sheetChipText, { color: active ? colors.homeCoral : colors.homeInk }]}>{label}</Text>
                         </TouchableOpacity>
                       );
                     })}
                   </View>
 
-                  <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground, marginTop: 20 }]}>Sort by</Text>
+                  <Text style={[s.sheetSectionTitle, { color: colors.homeMuted, marginTop: 20 }]}>Sort by</Text>
                   <View style={s.sheetRowWrap}>
                     {(['completion', 'name', 'year'] as const).map(sOpt => {
                       const active = setsSort === sOpt;
@@ -761,12 +760,12 @@ export default function CollectionScreen() {
                         <TouchableOpacity
                           key={sOpt}
                           style={[s.sheetChip, {
-                            backgroundColor: active ? colors.primary + '15' : colors.secondary,
-                            borderColor: active ? colors.primary : 'transparent'
+                            backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
+                            borderColor: active ? colors.homeCoral : 'transparent'
                           }]}
                           onPress={() => setSetsSort(sOpt)}
                         >
-                          <Text style={[s.sheetChipText, { color: active ? colors.primary : colors.foreground }]}>{label}</Text>
+                          <Text style={[s.sheetChipText, { color: active ? colors.homeCoral : colors.homeInk }]}>{label}</Text>
                         </TouchableOpacity>
                       );
                     })}
@@ -774,7 +773,7 @@ export default function CollectionScreen() {
                 </>
               ) : (
                 <>
-                  <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground }]}>Filter by Edition</Text>
+                  <Text style={[s.sheetSectionTitle, { color: colors.homeMuted }]}>Filter by Edition</Text>
                   <View style={s.sheetRow}>
                     {(['all', 'le', 'open'] as const).map(f => {
                       const active = filterSheetTab === 'traders' ? traderFilter === f : isoFilter === f;
@@ -783,21 +782,21 @@ export default function CollectionScreen() {
                         <TouchableOpacity
                           key={f}
                           style={[s.sheetChip, {
-                            backgroundColor: active ? colors.primary + '15' : colors.secondary,
-                            borderColor: active ? colors.primary : 'transparent'
+                            backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
+                            borderColor: active ? colors.homeCoral : 'transparent'
                           }]}
                           onPress={() => {
                             if (filterSheetTab === 'traders') setTraderFilter(f);
                             else setIsoFilter(f);
                           }}
                         >
-                          <Text style={[s.sheetChipText, { color: active ? colors.primary : colors.foreground }]}>{label}</Text>
+                          <Text style={[s.sheetChipText, { color: active ? colors.homeCoral : colors.homeInk }]}>{label}</Text>
                         </TouchableOpacity>
                       );
                     })}
                   </View>
 
-                  <Text style={[s.sheetSectionTitle, { color: colors.mutedForeground, marginTop: 20 }]}>Sort by</Text>
+                  <Text style={[s.sheetSectionTitle, { color: colors.homeMuted, marginTop: 20 }]}>Sort by</Text>
                   <View style={s.sheetRowWrap}>
                     {(['recent', 'name', 'year', 'value'] as const).map(sOpt => {
                       const active = filterSheetTab === 'traders' ? traderSort === sOpt : isoSort === sOpt;
@@ -806,15 +805,15 @@ export default function CollectionScreen() {
                         <TouchableOpacity
                           key={sOpt}
                           style={[s.sheetChip, {
-                            backgroundColor: active ? colors.primary + '15' : colors.secondary,
-                            borderColor: active ? colors.primary : 'transparent'
+                            backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
+                            borderColor: active ? colors.homeCoral : 'transparent'
                           }]}
                           onPress={() => {
                             if (filterSheetTab === 'traders') setTraderSort(sOpt);
                             else setIsoSort(sOpt);
                           }}
                         >
-                          <Text style={[s.sheetChipText, { color: active ? colors.primary : colors.foreground }]}>{label}</Text>
+                          <Text style={[s.sheetChipText, { color: active ? colors.homeCoral : colors.homeInk }]}>{label}</Text>
                         </TouchableOpacity>
                       );
                     })}
@@ -841,7 +840,7 @@ const s = StyleSheet.create({
   statText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   secondarySearchResult: { marginHorizontal: 16, padding: 12, borderRadius: 8, marginTop: 4, marginBottom: 8 },
   secondarySearchText: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
-  tabsRow: { flexDirection: 'row', paddingHorizontal: 16, borderBottomWidth: StyleSheet.hairlineWidth, marginBottom: 12 },
+  tabsRow: { paddingHorizontal: 16, marginBottom: 14 },
   tab: { flex: 1, alignItems: 'center', paddingVertical: 12, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   tabText: { fontSize: 15 },
   tabHeader: { paddingBottom: 4 },
@@ -850,17 +849,17 @@ const s = StyleSheet.create({
   iconStatBtn: { minHeight: 44, justifyContent: 'center', flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, borderRadius: 8, backgroundColor: 'transparent' },
   iconStatBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   controlsRow: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, marginBottom: 12 },
-  searchBox: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, height: 44, borderRadius: 10, borderWidth: StyleSheet.hairlineWidth },
+  searchBox: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, height: 44, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
   searchInput: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular', height: '100%' },
-  addBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, height: 44, borderRadius: 10 },
+  addBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, height: 44, borderRadius: 14 },
   addBtnText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  utilBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 10, borderWidth: StyleSheet.hairlineWidth },
+  utilBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
   flatListContent: { paddingHorizontal: 16 },
   gridRow: { gap: 12, justifyContent: 'flex-start' },
   gridItemWrap: { width: GRID_CARD_WIDTH, marginBottom: 12, position: 'relative' },
   quantityBadge: { position: 'absolute', top: 8, right: 8, minWidth: 28, height: 22, borderRadius: 11, paddingHorizontal: 7, alignItems: 'center', justifyContent: 'center' },
   quantityBadgeText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
-  groupCard: { width: GRID_CARD_WIDTH, borderRadius: 12, borderWidth: StyleSheet.hairlineWidth, overflow: 'hidden', marginBottom: 12 },
+  groupCard: { width: GRID_CARD_WIDTH, borderRadius: 18, borderWidth: StyleSheet.hairlineWidth, overflow: 'hidden', marginBottom: 12 },
   groupPreviewArea: { height: GRID_CARD_WIDTH * 0.8 },
   groupEmpty: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   groupPreviewSingle: { width: '100%', height: '100%', resizeMode: 'cover' },
@@ -881,9 +880,9 @@ const s = StyleSheet.create({
   createBoardModal: { margin: 24, alignSelf: 'stretch', borderRadius: 16, padding: 20, borderWidth: StyleSheet.hairlineWidth },
   closeBtn: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   modalTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold', marginBottom: 16 },
-  modalInput: { height: 44, borderWidth: 1, borderRadius: 8, paddingHorizontal: 12, fontSize: 15, fontFamily: 'Inter_400Regular', marginBottom: 20 },
+  modalInput: { height: 44, borderWidth: 1, borderRadius: 12, paddingHorizontal: 12, fontSize: 15, fontFamily: 'Inter_400Regular', marginBottom: 20 },
   modalActions: { flexDirection: 'row', justifyContent: 'flex-end', gap: 12 },
-  modalBtn: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 16, borderRadius: 8 },
+  modalBtn: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 16, borderRadius: 12 },
   modalBtnPrimary: { paddingHorizontal: 20 },
   modalBtnText: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   sheetContent: { padding: 16 },
@@ -901,6 +900,6 @@ const s = StyleSheet.create({
   filterSection: { marginTop: 14 },
   compactChip: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 12, borderRadius: 22, borderWidth: 1 },
   compactChipText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
-  applyBtn: { minHeight: 46, borderRadius: 10, alignItems: 'center', justifyContent: 'center', marginTop: 6 },
+  applyBtn: { minHeight: 46, borderRadius: 14, alignItems: 'center', justifyContent: 'center', marginTop: 6 },
   applyBtnText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

@@ -255,11 +255,21 @@ export default function SetDetailScreen() {
                         styles.missingOverlay,
                         { borderRadius: colors.radius },
                       ]}
-                      pointerEvents="none"
+                      pointerEvents="box-none"
                     >
-                      <View style={[styles.missingBadge, { backgroundColor: colors.destructive }]}>
+                      <View style={[styles.missingBadge, { backgroundColor: colors.destructive }]} pointerEvents="none">
                         <Text style={styles.missingBadgeLabel}>Missing</Text>
                       </View>
+                      <TouchableOpacity
+                        onPress={() =>
+                          router.push({ pathname: '/traders/[pinId]', params: { pinId: item.id } })
+                        }
+                        activeOpacity={0.85}
+                        style={[styles.findTradesBtn, { backgroundColor: colors.forTrade }]}
+                      >
+                        <Feather name="repeat" size={11} color="#fff" />
+                        <Text style={styles.findTradesBtnLabel}>Find Trades</Text>
+                      </TouchableOpacity>
                     </View>
                   )}
                 </View>
@@ -373,6 +383,22 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
   },
   missingBadgeLabel: {
+    fontSize: 9,
+    fontFamily: 'Inter_700Bold',
+    color: '#fff',
+  },
+  findTradesBtn: {
+    position: 'absolute',
+    bottom: 8,
+    right: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+    borderRadius: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+  },
+  findTradesBtnLabel: {
     fontSize: 9,
     fontFamily: 'Inter_700Bold',
     color: '#fff',

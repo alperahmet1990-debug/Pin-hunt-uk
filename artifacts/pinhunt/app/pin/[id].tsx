@@ -445,16 +445,17 @@ export default function PinDetailScreen() {
             </View>
           </View>
 
-          {/* ── Marketplace Listings ── */}
-          {(marketplaceListings.length > 0 || currentStatus === 'for_trade') && (
+          {/* ── Marketplace Listings ──
+              De-emphasised for V1: trading is the primary action for a
+              for_trade pin, so this section no longer prompts an empty
+              "list it for sale" state, and the create-listing entry points
+              have moved to Profile → My Listings. It still shows existing
+              listings (if any) as read-only pricing context. */}
+          {marketplaceListings.length > 0 && (
             <View>
               <SectionTitle
                 title="Marketplace Listings"
-                subtitle={
-                  marketplaceListings.length > 0
-                    ? `${marketplaceListings.length} active listing${marketplaceListings.length !== 1 ? 's' : ''}`
-                    : 'No active listings'
-                }
+                subtitle={`${marketplaceListings.length} active listing${marketplaceListings.length !== 1 ? 's' : ''}`}
                 colors={colors}
               />
 
@@ -466,83 +467,67 @@ export default function PinDetailScreen() {
                 </Text>
               </View>
 
-              {marketplaceListings.length === 0 ? (
-                <View style={[styles.mktEmpty, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-                  <Text style={[styles.mktEmptyText, { color: colors.mutedForeground }]}>
-                    No pins listed for sale here yet.
-                  </Text>
-                  {currentStatus === 'for_trade' && (
-                    <TouchableOpacity
-                      onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
-                      activeOpacity={0.85}
-                      style={[styles.mktSellBtn, { backgroundColor: colors.primary, borderRadius: colors.radius - 2 }]}
+              <View style={[styles.mktCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
+                {marketplaceListings.map((listing, idx) => {
+                  const pcfg = PLATFORM_CONFIG[listing.platform];
+                  const currSym = CURRENCY_SYMBOLS[(listing.currency as keyof typeof CURRENCY_SYMBOLS)] ?? listing.currency ?? '';
+                  return (
+                    <View
+                      key={listing.id}
+                      style={[
+                        styles.mktRow,
+                        { borderBottomColor: colors.border },
+                        idx === marketplaceListings.length - 1 && styles.mktRowLast,
+                      ]}
                     >
-                      <Feather name="tag" size={14} color="#fff" />
-                      <Text style={styles.mktSellBtnLabel}>List this pin for sale</Text>
-                    </TouchableOpacity>
-                  )}
-                </View>
-              ) : (
-                <View style={[styles.mktCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-                  {marketplaceListings.map((listing, idx) => {
-                    const pcfg = PLATFORM_CONFIG[listing.platform];
-                    const currSym = CURRENCY_SYMBOLS[(listing.currency as keyof typeof CURRENCY_SYMBOLS)] ?? listing.currency ?? '';
-                    return (
-                      <View
-                        key={listing.id}
-                        style={[
-                          styles.mktRow,
-                          { borderBottomColor: colors.border },
-                          idx === marketplaceListings.length - 1 && styles.mktRowLast,
-                        ]}
-                      >
-                        {/* Platform badge */}
-                        <View style={[styles.mktPlatformBadge, { backgroundColor: pcfg.color + '18' }]}>
-                          <Feather name={pcfg.icon as keyof typeof Feather.glyphMap} size={13} color={pcfg.color} />
-                          <Text style={[styles.mktPlatformLabel, { color: pcfg.color }]}>{pcfg.label}</Text>
-                        </View>
-
-                        {/* Seller + price */}
-                        <View style={styles.mktMeta}>
-                          {listing.sellerUsername && (
-                            <Text style={[styles.mktSeller, { color: colors.mutedForeground }]}>
-                              @{listing.sellerUsername}
-                            </Text>
-                          )}
-                          {listing.askingPrice != null && (
-                            <Text style={[styles.mktPrice, { color: colors.foreground }]}>
-                              {currSym}{listing.askingPrice.toFixed(2)}
-                            </Text>
-                          )}
-                        </View>
-
-                        {/* View button */}
-                        <TouchableOpacity
-                          onPress={() => Linking.openURL(listing.listingUrl)}
-                          activeOpacity={0.75}
-                          style={[styles.mktViewBtn, { backgroundColor: colors.primary + '18', borderColor: colors.primary + '40' }]}
-                        >
-                          <Text style={[styles.mktViewBtnLabel, { color: colors.primary }]}>View</Text>
-                          <Feather name="external-link" size={10} color={colors.primary} />
-                        </TouchableOpacity>
+                      {/* Platform badge */}
+                      <View style={[styles.mktPlatformBadge, { backgroundColor: pcfg.color + '18' }]}>
+                        <Feather name={pcfg.icon as keyof typeof Feather.glyphMap} size={13} color={pcfg.color} />
+                        <Text style={[styles.mktPlatformLabel, { color: pcfg.color }]}>{pcfg.label}</Text>
                       </View>
-                    );
-                  })}
 
-                  {/* List your own */}
-                  {currentStatus === 'for_trade' && (
-                    <TouchableOpacity
-                      onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
-                      activeOpacity={0.8}
-                      style={[styles.mktAddRow, { borderTopColor: colors.border }]}
-                    >
-                      <Feather name="plus" size={14} color={colors.primary} />
-                      <Text style={[styles.mktAddLabel, { color: colors.primary }]}>Add your listing</Text>
-                    </TouchableOpacity>
-                  )}
-                </View>
-              )}
+                      {/* Seller + price */}
+                      <View style={styles.mktMeta}>
+                        {listing.sellerUsername && (
+                          <Text style={[styles.mktSeller, { color: colors.mutedForeground }]}>
+                            @{listing.sellerUsername}
+                          </Text>
+                        )}
+                        {listing.askingPrice != null && (
+                          <Text style={[styles.mktPrice, { color: colors.foreground }]}>
+                            {currSym}{listing.askingPrice.toFixed(2)}
+                          </Text>
+                        )}
+                      </View>
+
+                      {/* View button */}
+                      <TouchableOpacity
+                        onPress={() => Linking.openURL(listing.listingUrl)}
+                        activeOpacity={0.75}
+                        style={[styles.mktViewBtn, { backgroundColor: colors.primary + '18', borderColor: colors.primary + '40' }]}
+                      >
+                        <Text style={[styles.mktViewBtnLabel, { color: colors.primary }]}>View</Text>
+                        <Feather name="external-link" size={10} color={colors.primary} />
+                      </TouchableOpacity>
+                    </View>
+                  );
+                })}
+              </View>
             </View>
+          )}
+
+          {/* Selling is secondary to trading for V1 — a small, muted link
+              rather than a prominent CTA. Still fully functional. */}
+          {currentStatus === 'for_trade' && (
+            <TouchableOpacity
+              onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
+              activeOpacity={0.7}
+              style={styles.sellSecondaryLink}
+            >
+              <Text style={[styles.sellSecondaryLinkText, { color: colors.mutedForeground }]}>
+                Prefer to sell instead? List this pin for sale
+              </Text>
+            </TouchableOpacity>
           )}
         </View>
       </ScrollView>
@@ -930,6 +915,8 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   mktEmptyText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
+  sellSecondaryLink: { alignItems: 'center', paddingVertical: 16 },
+  sellSecondaryLinkText: { fontSize: 12.5, fontFamily: 'Inter_400Regular' },
   mktSellBtn: {
     flexDirection: 'row',
     alignItems: 'center',

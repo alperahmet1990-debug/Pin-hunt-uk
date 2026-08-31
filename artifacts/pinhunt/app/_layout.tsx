@@ -90,6 +90,7 @@ function RootLayoutNav() {
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="complete-profile" options={{ headerShown: false }} />
       <Stack.Screen name="search" options={{ headerShown: false, animation: 'fade' }} />
+      <Stack.Screen name="profile" options={{ title: 'Profile' }} />
       <Stack.Screen name="edit-profile" options={{ title: 'Edit Profile' }} />
       <Stack.Screen name="find-collectors" options={{ title: 'Find Collectors' }} />
       <Stack.Screen name="collector/[username]" options={{ title: 'Collector' }} />
@@ -102,7 +103,7 @@ function RootLayoutNav() {
       <Stack.Screen name="submission/[id]" options={{ title: 'Submission' }} />
       <Stack.Screen name="edit-submission/[id]" options={{ title: 'Edit Submission' }} />
       <Stack.Screen name="catalogue" options={{ title: 'Pin Catalogue' }} />
-      <Stack.Screen name="traders/[pinId]" options={{ title: 'Traders' }} />
+      <Stack.Screen name="traders/[pinId]" options={{ title: "Who's Trading This" }} />
       <Stack.Screen name="trade/[id]" options={{ title: 'Trade' }} />
       {/* Collectors Nearby (task #5) */}
       <Stack.Screen name="nearby" options={{ title: 'Collectors Nearby' }} />

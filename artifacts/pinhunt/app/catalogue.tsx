@@ -103,17 +103,28 @@ export default function CatalogueScreen() {
       </View>
 
       {filtered.length === 0 ? (
-        <EmptyState
-          icon="search"
-          title="No pins found"
-          subtitle="Try adjusting your search or filters."
-          actionLabel="Clear Filters"
-          onAction={() => {
-            setQuery('');
-            setBrand('All');
-            setStatus('any');
-          }}
-        />
+        <View>
+          <EmptyState
+            icon="search"
+            title="No pins found"
+            subtitle="Try adjusting your search or filters."
+            actionLabel="Clear Filters"
+            onAction={() => {
+              setQuery('');
+              setBrand('All');
+              setStatus('any');
+            }}
+          />
+          <TouchableOpacity
+            onPress={() => router.push('/add-pin')}
+            activeOpacity={0.7}
+            style={styles.addPinLink}
+          >
+            <Text style={[styles.addPinLinkText, { color: colors.primary }]}>
+              Can't find your pin? Add it
+            </Text>
+          </TouchableOpacity>
+        </View>
       ) : (
         <FlatList
           key={viewMode}
@@ -147,6 +158,8 @@ export default function CatalogueScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
+  addPinLink: { alignItems: 'center', paddingBottom: 32, marginTop: -12 },
+  addPinLinkText: { fontSize: 13, fontFamily: 'Inter_500Medium' },
   headerBar: {
     borderBottomWidth: StyleSheet.hairlineWidth,
     paddingBottom: 4,

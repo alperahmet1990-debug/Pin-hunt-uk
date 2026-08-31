@@ -258,10 +258,20 @@ export default function ScanScreen() {
       >
         {/* ── Header ── */}
         <View style={styles.headerRow}>
-          <Text style={[styles.headerTitle, { color: colors.foreground }]}>Find a Pin</Text>
-          <Text style={[styles.headerSub, { color: colors.mutedForeground }]}>
-            Search by name or scan with your camera
-          </Text>
+          <View style={{ flex: 1 }}>
+            <Text style={[styles.headerTitle, { color: colors.foreground }]}>Find a Pin</Text>
+            <Text style={[styles.headerSub, { color: colors.mutedForeground }]}>
+              Search by name or scan with your camera
+            </Text>
+          </View>
+          <TouchableOpacity
+            accessibilityLabel="My Pin Submissions"
+            onPress={() => router.push('/my-submissions')}
+            style={[styles.submissionsBtn, { backgroundColor: colors.card, borderColor: colors.border }]}
+            activeOpacity={0.8}
+          >
+            <Feather name="upload" size={16} color={colors.foreground} />
+          </TouchableOpacity>
         </View>
 
         {/* ── Viewfinder ── */}
@@ -330,6 +340,23 @@ export default function ScanScreen() {
               >
                 <Feather name="search" size={20} color={colors.accentForeground} />
                 <Text style={[styles.primaryBtnLabel, { color: colors.accentForeground }]}>Manually Search</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.primaryBtn, { backgroundColor: colors.secondary, borderRadius: colors.radius }]}
+                onPress={() => router.push('/catalogue')}
+                activeOpacity={0.85}
+              >
+                <Feather name="grid" size={20} color={colors.secondaryForeground} />
+                <Text style={[styles.primaryBtnLabel, { color: colors.secondaryForeground }]}>Browse Catalogue</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => router.push('/add-pin')}
+                activeOpacity={0.7}
+                style={styles.noneMatch}
+              >
+                <Text style={[styles.noneMatchText, { color: colors.mutedForeground }]}>
+                  Can't find your pin? Add it
+                </Text>
               </TouchableOpacity>
             </>
           )}
@@ -480,6 +507,11 @@ export default function ScanScreen() {
                 None of these — try again
               </Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push('/add-pin')} style={styles.noneMatch} activeOpacity={0.7}>
+              <Text style={[styles.noneMatchText, { color: colors.primary }]}>
+                Can't find your pin? Add it
+              </Text>
+            </TouchableOpacity>
           </View>
         )}
 
@@ -493,9 +525,17 @@ export default function ScanScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  headerRow: { paddingHorizontal: 16, marginBottom: 12 },
+  headerRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 10, paddingHorizontal: 16, marginBottom: 12 },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
   headerSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  submissionsBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   // Search
   // Or divider
   // Viewfinder

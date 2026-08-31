@@ -344,7 +344,7 @@ export default function CollectionScreen() {
       <View style={[s.tabsRow, { borderBottomColor: colors.border }]}>
         {(['boards', 'sets', 'traders', 'iso'] as const).map(tab => {
           const active = activeTab === tab;
-          const label = tab === 'boards' ? 'Boards' : tab === 'sets' ? 'Sets' : tab === 'traders' ? 'Traders' : 'ISO';
+          const label = tab === 'boards' ? 'Boards' : tab === 'sets' ? 'Sets' : tab === 'traders' ? 'For Trade' : 'ISO';
           return (
             <TouchableOpacity
               key={tab}
@@ -400,7 +400,7 @@ export default function CollectionScreen() {
         {activeTab === 'traders' && (
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
             <Text style={[s.statText, { color: colors.foreground }]}>
-              {forTradePins.length} <Text style={{ color: colors.mutedForeground }}>Traders</Text>
+              {forTradePins.length} <Text style={{ color: colors.mutedForeground }}>For Trade</Text>
             </Text>
             <View style={{ flexDirection: 'row', gap: 12 }}>
               <TouchableOpacity onPress={() => router.push('/(tabs)/community')} style={s.iconStatBtn}>
@@ -725,7 +725,7 @@ export default function CollectionScreen() {
           <TouchableOpacity activeOpacity={1} style={[s.addMenuSheet, { backgroundColor: colors.card, borderColor: colors.border }]}>
             <View style={s.addMenuHeader}>
               <Text style={[s.addMenuTitle, { color: colors.foreground }]}>
-                {filterSheetTab === 'traders' ? 'Traders' : filterSheetTab === 'iso' ? 'ISO' : filterSheetTab === 'sets' ? 'Sets' : 'Pins'} View Options
+                {filterSheetTab === 'traders' ? 'For Trade' : filterSheetTab === 'iso' ? 'ISO' : filterSheetTab === 'sets' ? 'Sets' : 'Pins'} View Options
               </Text>
             </View>
 

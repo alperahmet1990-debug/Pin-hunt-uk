@@ -7,7 +7,6 @@ import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { Tabs } from 'expo-router';
 import { Badge, Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
 import { SymbolView } from 'expo-symbols';
-import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { Text } from 'react-native';
 
@@ -41,42 +40,24 @@ function NativeTabLayout() {
         <Icon sf={{ default: 'house', selected: 'house.fill' }} />
         <Label>Home</Label>
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="community">
-        <Icon sf={{ default: 'bubble.left.and.bubble.right', selected: 'bubble.left.and.bubble.right.fill' }} />
-        <Label>Community</Label>
-        {totalUnread > 0 && <Badge>{totalUnread > 9 ? '9+' : String(totalUnread)}</Badge>}
-      </NativeTabs.Trigger>
       <NativeTabs.Trigger name="scan">
         <Icon sf={{ default: 'magnifyingglass', selected: 'magnifyingglass' }} />
         <Label>Find</Label>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="trades">
+        <Icon sf={{ default: 'arrow.left.arrow.right', selected: 'arrow.left.arrow.right' }} />
+        <Label>Trades</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="collection">
         <Icon sf={{ default: 'heart', selected: 'heart.fill' }} />
         <Label>Collection</Label>
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="profile">
-        <Icon sf={{ default: 'person', selected: 'person.fill' }} />
-        <Label>Profile</Label>
+      <NativeTabs.Trigger name="community">
+        <Icon sf={{ default: 'bubble.left.and.bubble.right', selected: 'bubble.left.and.bubble.right.fill' }} />
+        <Label>Community</Label>
+        {totalUnread > 0 && <Badge>{totalUnread > 9 ? '9+' : String(totalUnread)}</Badge>}
       </NativeTabs.Trigger>
     </NativeTabs>
-  );
-}
-
-// ─── Profile tab icon with optional badge dot ─────────────────────────────────
-
-function ProfileTabIcon({ color, hasBadge }: { color: string; hasBadge: boolean }) {
-  const isIOS = Platform.OS === 'ios';
-  return (
-    <View>
-      {isIOS ? (
-        <SymbolView name="person" tintColor={color} size={24} />
-      ) : (
-        <Feather name="user" size={22} color={color} />
-      )}
-      {hasBadge && (
-        <View style={styles.badgeDot} />
-      )}
-    </View>
   );
 }
 
@@ -88,7 +69,6 @@ function ClassicTabLayout() {
   const isDark = colorScheme === 'dark';
   const isIOS = Platform.OS === 'ios';
   const isWeb = Platform.OS === 'web';
-  const { unseenCount } = useSubmissionNotifications();
   const { totalUnread } = useUnreadMessages();
 
   return (
@@ -131,15 +111,6 @@ function ClassicTabLayout() {
         }}
       />
 
-      {/* Community */}
-      <Tabs.Screen
-        name="community"
-        options={{
-          title: 'Community',
-          tabBarIcon: ({ color }) => <CommunityTabIcon color={color} count={totalUnread} />,
-        }}
-      />
-
       {/* Find */}
       <Tabs.Screen
         name="scan"
@@ -148,6 +119,17 @@ function ClassicTabLayout() {
           tabBarIcon: ({ color }) => isIOS
             ? <SymbolView name="magnifyingglass" tintColor={color} size={24} />
             : <Feather name="search" size={22} color={color} />,
+        }}
+      />
+
+      {/* Trades */}
+      <Tabs.Screen
+        name="trades"
+        options={{
+          title: 'Trades',
+          tabBarIcon: ({ color }) => isIOS
+            ? <SymbolView name="arrow.left.arrow.right" tintColor={color} size={22} />
+            : <Feather name="repeat" size={22} color={color} />,
         }}
       />
 
@@ -165,14 +147,12 @@ function ClassicTabLayout() {
         }}
       />
 
-      {/* Profile */}
+      {/* Community */}
       <Tabs.Screen
-        name="profile"
+        name="community"
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => (
-            <ProfileTabIcon color={color} hasBadge={unseenCount > 0} />
-          ),
+          title: 'Community',
+          tabBarIcon: ({ color }) => <CommunityTabIcon color={color} count={totalUnread} />,
         }}
       />
 
@@ -203,13 +183,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   countBadgeText: { color: '#fff', fontSize: 10, fontFamily: 'Inter_700Bold' },
-  badgeDot: {
-    position: 'absolute',
-    top: -2,
-    right: -4,
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: '#EF4444',
-  },
 });

@@ -1,6 +1,6 @@
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient } from "@supabase/supabase-js";
-import { openai } from "@workspace/integrations-openai-ai-server";
+import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import {
   createSupabasePinRepository,
   type CataloguePin,
@@ -175,6 +175,11 @@ const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image
 const lastScanAt = new Map<string, number>();
 
 router.post("/scan/identify", requireUser, async (req, res) => {
+  if (!isAiConfigured()) {
+    res.status(503).json({ error: "Scan/Identify is not configured on this server yet." });
+    return;
+  }
+
   const { imageBase64, mimeType = "image/jpeg" } = req.body as {
     imageBase64: string;
     mimeType?: string;
@@ -203,6 +208,9 @@ router.post("/scan/identify", requireUser, async (req, res) => {
   }
 
   try {
+    // isAiConfigured() was already checked above, so this won't throw here.
+    const openai = getOpenAIClient();
+
     // ── Stage 1: describe the pin in the photo ──
     // Google Vision (OCR + web detection) runs in parallel with the AI
     // describe call — it adds no latency and is entirely best-effort.

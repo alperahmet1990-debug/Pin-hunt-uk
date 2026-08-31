@@ -15,7 +15,6 @@ import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
-import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
@@ -122,6 +121,11 @@ function LocationStatusBanner({ hasLocationSet, nearbyEnabled, radiusMiles, onPr
 }
 
 // ─── Screen ───────────────────────────────────────────────────────────────────
+//
+// Reached by tapping the avatar on Home. Previously a tab-bar root; now a
+// pushed Stack screen (registered in app/_layout.tsx) so it gets a proper
+// native header + back button like every other detail screen, instead of
+// living inside the tab navigator with no way back except the tab bar.
 
 export default function ProfileScreen() {
   const colors = useColors();
@@ -129,20 +133,13 @@ export default function ProfileScreen() {
   const router = useRouter();
   const { profile, loading } = useProfile();
   const { signOut } = useAuth();
-  const { unseenCount } = useSubmissionNotifications();
   const isAdmin = profile?.isAdmin === true;
 
-  const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+  const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
   // Avatar initials from display name, username, or email
   const { user } = useAuth();
   const nameForInitials = profile?.username || user?.email || '?';
-  const avatarInitials = nameForInitials
-    .split(/[\s@]/)
-    .map((n: string) => n[0]?.toUpperCase() ?? '')
-    .join('')
-    .slice(0, 2);
 
   const joinYear = profile?.createdAt ? new Date(profile.createdAt).getFullYear() : null;
 
@@ -150,7 +147,7 @@ export default function ProfileScreen() {
     <View style={[styles.root, { backgroundColor: colors.background }]}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad }}
+        contentContainerStyle={{ paddingTop: 16, paddingBottom: botPad }}
       >
         {loading ? (
           <View style={{ flex: 1, alignItems: 'center', paddingTop: 60 }}>
@@ -207,20 +204,9 @@ export default function ProfileScreen() {
                 onPress={() => router.push('/edit-profile')}
               />
               <SettingsRow
-                icon="users"
-                label="Find Collectors"
-                onPress={() => router.push('/find-collectors')}
-              />
-              <SettingsRow
                 icon="shopping-bag"
                 label="My Marketplace Listings"
                 onPress={() => router.push('/my-listings')}
-              />
-              <SettingsRow
-                icon="upload"
-                label="My Pin Submissions"
-                onPress={() => router.push('/my-submissions')}
-                badge={unseenCount}
                 last
               />
             </Section>

@@ -18,7 +18,7 @@ export default function AdminLayout() {
   useEffect(() => {
     if (loading) return;
     if (!session || !profile?.isAdmin) {
-      router.replace('/(tabs)/profile');
+      router.replace('/profile');
     }
   }, [loading, session, profile, router]);
 

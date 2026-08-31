@@ -138,7 +138,7 @@ export default function HomeScreen() {
   return <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[styles.scroll, { paddingTop: topPad + 12, paddingBottom: bottomPad }]}>
       <View style={styles.header}>
-        <TouchableOpacity accessibilityLabel="Open profile" onPress={() => router.push('/edit-profile')} style={styles.headerLeft}>
+        <TouchableOpacity accessibilityLabel="Open profile" onPress={() => router.push('/profile')} style={styles.headerLeft}>
           <Avatar uri={profile?.avatarUrl ?? null} name={profile?.username ?? '?'} size={42} />
           <View><Text style={[styles.welcome, { color: colors.homeMuted }]}>{greeting()}</Text><Text style={[styles.name, { color: colors.homeInk }]}>{firstName ? `Hi, ${firstName}` : 'Hi there'}</Text></View>
         </TouchableOpacity>
@@ -162,7 +162,7 @@ export default function HomeScreen() {
       </TouchableOpacity>
       <View style={styles.shortcuts}>
         <Shortcut icon="heart" label={'My\nCollection'} tone={colors.homeCoralDeep} onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })} colors={colors} />
-        <Shortcut icon="compass" label={'Find\nTrades'} tone={colors.homeSandInk} onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'traders' } })} colors={colors} />
+        <Shortcut icon="compass" label={'Find\nTrades'} tone={colors.homeSandInk} onPress={() => router.push('/(tabs)/trades')} colors={colors} />
         <Shortcut icon="users" label="Community" tone={colors.homeTealSoft} onPress={() => router.push('/(tabs)/community')} colors={colors} />
       </View>
       {(officialPost || forYou.length > 0) && <Section title="For You" colors={colors}>

@@ -165,7 +165,7 @@ export default function TradersScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: pin ? `Traders — ${pin.title}` : 'Traders' }} />
+      <Stack.Screen options={{ title: pin ? `Who's Trading — ${pin.title}` : "Who's Trading This" }} />
       <ScrollView
         style={[styles.root, { backgroundColor: colors.background }]}
         contentContainerStyle={{ padding: 16, paddingBottom: botPad }}

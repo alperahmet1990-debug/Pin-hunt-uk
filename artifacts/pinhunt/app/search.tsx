@@ -250,9 +250,16 @@ export default function SearchScreen() {
                 <Text style={[styles.stateText, { color: colors.mutedForeground }]}>Searching…</Text>
               </View>
             ) : results.length === 0 ? (
-              <View style={styles.stateRow}>
-                <Feather name="search" size={15} color={colors.mutedForeground} />
-                <Text style={[styles.stateText, { color: colors.mutedForeground }]}>No pins found</Text>
+              <View style={styles.noResultsBlock}>
+                <View style={styles.stateRow}>
+                  <Feather name="search" size={15} color={colors.mutedForeground} />
+                  <Text style={[styles.stateText, { color: colors.mutedForeground }]}>No pins found</Text>
+                </View>
+                <TouchableOpacity onPress={() => router.push('/add-pin')} activeOpacity={0.7}>
+                  <Text style={[styles.addPinLink, { color: colors.primary }]}>
+                    Can't find your pin? Add it
+                  </Text>
+                </TouchableOpacity>
               </View>
             ) : (
               results.map(pin => (
@@ -359,6 +366,8 @@ const styles = StyleSheet.create({
   popularImage: { width: '100%', height: '100%' },
   stateRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 16 },
   stateText: { fontSize: 14 },
+  noResultsBlock: { alignItems: 'center', gap: 4 },
+  addPinLink: { fontSize: 13, fontFamily: 'Inter_500Medium', paddingVertical: 8 },
   resultRow: {
     flexDirection: 'row',
     alignItems: 'center',

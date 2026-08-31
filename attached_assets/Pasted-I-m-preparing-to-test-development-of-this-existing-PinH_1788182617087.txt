@@ -1,0 +1,70 @@
+I’m preparing to test development of this existing PinHunt project using Claude Code, while keeping this Replit project intact as a fallback.
+
+Before I do that, I need you to perform a full GitHub handover/readiness audit.
+
+IMPORTANT:
+
+* Do NOT redesign, refactor, optimise, or change any application functionality.
+* Do NOT change the database schema.
+* Do NOT change Supabase configuration or RLS.
+* Do NOT rotate or expose any API keys/secrets.
+* Do NOT commit .env files, service account JSON files, API keys, passwords, tokens, certificates, or other secrets to GitHub.
+* The goal is only to make sure the GitHub repository contains the complete current codebase needed to continue development elsewhere.
+
+Please do the following:
+
+1. Compare the current Replit workspace with the connected GitHub repository.
+2. Identify:
+    * any modified files that have not been committed
+    * any untracked files
+    * any committed changes that have not been pushed
+    * any files required for the app to run that exist in Replit but are missing from GitHub
+    * any Replit-specific files or configuration that Claude/local development would need to know about
+3. Check that the following are represented correctly in GitHub where appropriate:
+    * application source code
+    * Expo / React Native configuration
+    * package.json and lockfile
+    * TypeScript configuration
+    * Supabase client/configuration code
+    * database migration files, if we currently use them
+    * assets/images/fonts that are part of the app
+    * scripts/utilities
+    * API integration code
+    * Google Vision integration code
+    * eBay integration code
+    * Pin & Pop integration work completed so far
+    * any configuration templates or example environment files
+4. Check .gitignore carefully and confirm that sensitive information is NOT being committed.
+5. Give me a list of every environment variable / secret the project currently expects, using VARIABLE NAMES ONLY.
+
+For example:
+
+EXPO_PUBLIC_SUPABASE_URL
+EXPO_PUBLIC_SUPABASE_ANON_KEY
+
+Do NOT display the actual values.
+
+For each variable, tell me briefly what part of PinHunt uses it.
+
+6. Tell me whether any important configuration currently exists only inside Replit Secrets or Replit configuration and would therefore need to be recreated when running the project locally.
+7. Check whether there are any dependencies on Replit-specific functionality that would prevent the project from being run normally outside Replit.
+8. Run the normal project checks/build/type checks that are safe to run without changing functionality, and report any existing errors separately. Do not attempt broad fixes.
+9. If there are legitimate code/configuration files that should be in GitHub but are currently uncommitted or unpushed, commit and push them.
+
+Before doing so, double-check that no secrets are included.
+
+Use a commit message such as:
+
+“chore: sync current PinHunt codebase before local development test”
+
+10. Once complete, report back with:
+
+A. Current Git branch
+B. Latest Git commit hash
+C. Confirmation that local workspace and GitHub are synchronised, or explain anything that intentionally remains Replit-only
+D. List of environment variable NAMES required locally
+E. Any Replit-specific dependencies/configuration
+F. Any existing build/type/test errors
+G. Whether you believe a fresh clone of this GitHub repository should contain the complete PinHunt application code needed to run it locally
+
+Do not make any other changes to PinHunt.

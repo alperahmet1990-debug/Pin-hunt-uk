@@ -21,13 +21,8 @@ import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
+import { API_BASE } from '@/lib/apiBase';
 import type { CataloguePin } from '@workspace/pin-repository';
-
-// ─── API ─────────────────────────────────────────────────────────────────────
-
-const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
-  : 'http://localhost:8080/api';
 
 /** What the scan understood from the photo (AI description + Google Vision). */
 interface ImageInsights {

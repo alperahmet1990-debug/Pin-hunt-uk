@@ -31,9 +31,7 @@ import * as Sharing from 'expo-sharing';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 
-const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
-  : 'http://localhost:8080/api';
+import { API_BASE } from '@/lib/apiBase';
 
 const POLL_INTERVAL_MS = 2000;
 const BATCH_LIST_POLL_MS = 3000;

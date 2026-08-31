@@ -8,9 +8,7 @@
  */
 import { useEffect, useState } from 'react';
 
-const API_BASE = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`
-  : 'http://localhost:8080/api';
+import { API_BASE } from '@/lib/apiBase';
 
 export interface LatestValue {
   marketplace: 'EBAY_GB' | 'EBAY_US';

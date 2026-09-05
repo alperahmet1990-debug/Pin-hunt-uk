@@ -114,7 +114,7 @@ export default function CollectionScreen() {
   const { pins: catalogue, ensurePins, ensureCollections, repository } = usePinCatalogue();
   const { customBoards, createBoard, getBoardPins } = useBoards();
 
-  const [activeTab, setActiveTab] = useState<Tab>('boards');
+  const [activeTab, setActiveTab] = useState<Tab>('sets');
   const [searchActive, setSearchActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [pinFilters, setPinFilters] = useState<MetadataFilters>({});

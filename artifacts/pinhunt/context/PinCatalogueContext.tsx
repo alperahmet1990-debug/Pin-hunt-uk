@@ -122,7 +122,11 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
 
     setLoading(true);
     try {
-      const data = await repository.searchPins('', { limit: 500 });
+      const rawData = await repository.searchPins('', { limit: 500 });
+      // Admin accounts bypass pins_public_read RLS, so this can otherwise
+      // include archived/legacy-V1 rows alongside the active catalogue —
+      // filter to what a normal (non-admin) user would actually see.
+      const data = rawData.filter(p => p.isSearchable !== false && p.catalogueStatus !== 'archived');
       // Merge rather than replace: pins pulled in via ensurePins (e.g. the
       // user's collection) may have landed while this request was in flight,
       // and replacing would silently drop them.

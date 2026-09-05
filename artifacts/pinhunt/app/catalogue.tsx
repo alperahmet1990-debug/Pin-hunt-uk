@@ -57,7 +57,7 @@ export default function CatalogueScreen() {
       }
       return true;
     });
-  }, [query, brand, status, getEntry]);
+  }, [pins, query, brand, status, getEntry]);
 
   const numCols = viewMode === 'grid' ? 2 : 1;
 

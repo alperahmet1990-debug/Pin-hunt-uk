@@ -94,14 +94,14 @@ function ClassicTabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.mutedForeground,
+        tabBarActiveTintColor: colors.homeCoral,
+        tabBarInactiveTintColor: colors.homeMuted,
         headerShown: false,
         tabBarStyle: {
           position: 'absolute',
-          backgroundColor: isIOS ? 'transparent' : colors.background,
+          backgroundColor: isIOS ? 'transparent' : colors.homeSurface,
           borderTopWidth: isWeb ? 1 : 0,
-          borderTopColor: colors.border,
+          borderTopColor: colors.homeLine,
           elevation: 0,
           height: isWeb ? 84 : undefined,
         },
@@ -113,7 +113,7 @@ function ClassicTabLayout() {
               style={StyleSheet.absoluteFill}
             />
           ) : isWeb ? (
-            <View style={[StyleSheet.absoluteFill, { backgroundColor: colors.card }]} />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: colors.homeSurface }]} />
           ) : null,
       }}
     >

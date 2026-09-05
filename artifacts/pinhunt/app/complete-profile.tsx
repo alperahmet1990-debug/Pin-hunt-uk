@@ -20,6 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
+import { radius, spacing } from '@/constants/theme';
 
 // ─── Validation ───────────────────────────────────────────────────────────────
 
@@ -115,23 +116,23 @@ export default function CompleteProfileScreen() {
     !saving;
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <ScrollView
-          contentContainerStyle={{ paddingTop: insets.top + 32, paddingBottom: insets.bottom + 32, paddingHorizontal: 24 }}
+          contentContainerStyle={{ paddingTop: insets.top + spacing.xxxl, paddingBottom: insets.bottom + spacing.xxxl, paddingHorizontal: spacing.xxl }}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
           {/* Header */}
           <View style={styles.header}>
-            <View style={[styles.iconCircle, { backgroundColor: colors.primary + '22' }]}>
-              <Feather name="user" size={28} color={colors.primary} />
+            <View style={[styles.iconCircle, { backgroundColor: colors.homeCoral + '22' }]}>
+              <Feather name="user" size={28} color={colors.homeCoral} />
             </View>
-            <Text style={[styles.title, { color: colors.foreground }]}>Complete Your Profile</Text>
-            <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
+            <Text style={[styles.title, { color: colors.homeInk }]}>Complete Your Profile</Text>
+            <Text style={[styles.subtitle, { color: colors.homeMuted }]}>
               Set up your collector identity before you dive in.
             </Text>
           </View>
@@ -139,19 +140,19 @@ export default function CompleteProfileScreen() {
           {/* Form */}
           <View style={styles.form}>
             <Field label="Username *" hint="3–20 characters · Letters, numbers, _ and . only · This will be your public name on PinHunt">
-              <View style={[styles.inputRow, { borderColor: usernameError ? colors.destructive : colors.border, backgroundColor: colors.card }]}>
-                <Text style={[styles.atSign, { color: colors.mutedForeground }]}>@</Text>
+              <View style={[styles.inputRow, { borderColor: usernameError ? colors.destructive : colors.homeLine, backgroundColor: colors.homeSurface }]}>
+                <Text style={[styles.atSign, { color: colors.homeMuted }]}>@</Text>
                 <TextInput
-                  style={[styles.input, styles.inputFlex, { color: colors.foreground }]}
+                  style={[styles.input, styles.inputFlex, { color: colors.homeInk }]}
                   value={username}
                   onChangeText={handleUsernameChange}
                   placeholder="yourname"
-                  placeholderTextColor={colors.mutedForeground}
+                  placeholderTextColor={colors.homeMuted}
                   autoCapitalize="none"
                   autoCorrect={false}
                   maxLength={20}
                 />
-                {checkingUsername && <ActivityIndicator size="small" color={colors.mutedForeground} />}
+                {checkingUsername && <ActivityIndicator size="small" color={colors.homeMuted} />}
                 {!checkingUsername && usernameAvailable === true && (
                   <Feather name="check-circle" size={16} color={colors.owned} />
                 )}
@@ -164,11 +165,11 @@ export default function CompleteProfileScreen() {
 
             <Field label="Bio" hint="Tell other collectors about yourself.">
               <TextInput
-                style={[styles.input, styles.inputBlock, styles.inputMultiline, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+                style={[styles.input, styles.inputBlock, styles.inputMultiline, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
                 value={bio}
                 onChangeText={setBio}
                 placeholder="Disney pin collector since…"
-                placeholderTextColor={colors.mutedForeground}
+                placeholderTextColor={colors.homeMuted}
                 multiline
                 numberOfLines={3}
                 maxLength={200}
@@ -177,11 +178,11 @@ export default function CompleteProfileScreen() {
 
             <Field label="Trading Region" hint="Helps collectors find local trades.">
               <TextInput
-                style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+                style={[styles.input, styles.inputBlock, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
                 value={tradingRegion}
                 onChangeText={setTradingRegion}
                 placeholder="e.g. London, UK"
-                placeholderTextColor={colors.mutedForeground}
+                placeholderTextColor={colors.homeMuted}
                 maxLength={60}
               />
             </Field>
@@ -193,15 +194,15 @@ export default function CompleteProfileScreen() {
             )}
 
             <TouchableOpacity
-              style={[styles.saveBtn, { backgroundColor: canSave ? colors.primary : colors.muted }]}
+              style={[styles.saveBtn, { backgroundColor: canSave ? colors.homeCoral : colors.homeAqua, shadowColor: colors.homeShadow }]}
               onPress={handleSave}
               disabled={!canSave}
               activeOpacity={0.8}
             >
               {saving ? (
-                <ActivityIndicator color="#fff" />
+                <ActivityIndicator color={colors.homeSurface} />
               ) : (
-                <Text style={styles.saveBtnText}>Continue</Text>
+                <Text style={[styles.saveBtnText, { color: colors.homeSurface }]}>Continue</Text>
               )}
             </TouchableOpacity>
           </View>
@@ -217,21 +218,21 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
   const colors = useColors();
   return (
     <View style={styles.fieldWrapper}>
-      <Text style={[styles.label, { color: colors.foreground }]}>{label}</Text>
+      <Text style={[styles.label, { color: colors.homeInk }]}>{label}</Text>
       {children}
-      {hint && <Text style={[styles.hint, { color: colors.mutedForeground }]}>{hint}</Text>}
+      {hint && <Text style={[styles.hint, { color: colors.homeMuted }]}>{hint}</Text>}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  header: { alignItems: 'center', marginBottom: 32, gap: 12 },
+  header: { alignItems: 'center', marginBottom: spacing.xxxl, gap: spacing.md },
   iconCircle: { width: 64, height: 64, borderRadius: 32, alignItems: 'center', justifyContent: 'center' },
   title: { fontSize: 24, fontFamily: 'Inter_700Bold', textAlign: 'center' },
   subtitle: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20 },
-  form: { gap: 20 },
-  fieldWrapper: { gap: 6 },
+  form: { gap: spacing.xxl - 4 },
+  fieldWrapper: { gap: spacing.sm - 2 },
   label: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   hint: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   fieldError: { fontSize: 12, fontFamily: 'Inter_400Regular' },
@@ -239,26 +240,29 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 12,
-    gap: 8,
+    borderRadius: radius.sm,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.md,
+    gap: spacing.sm,
   },
   atSign: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   input: {
     fontSize: 16,
     fontFamily: 'Inter_400Regular',
-    borderRadius: 10,
+    borderRadius: radius.sm,
   },
   inputFlex: { flex: 1 },
   inputBlock: {
     borderWidth: 1,
-    paddingHorizontal: 12,
-    paddingVertical: 12,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.md,
   },
   inputMultiline: { minHeight: 80, textAlignVertical: 'top' },
-  errorBox: { borderWidth: 1, borderRadius: 10, padding: 12 },
+  errorBox: { borderWidth: 1, borderRadius: radius.sm, padding: spacing.md },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
-  saveBtn: { borderRadius: 12, paddingVertical: 16, alignItems: 'center', marginTop: 8 },
-  saveBtnText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  saveBtn: {
+    borderRadius: radius.md, paddingVertical: spacing.lg, alignItems: 'center', marginTop: spacing.xs,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
+  },
+  saveBtnText: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
 });

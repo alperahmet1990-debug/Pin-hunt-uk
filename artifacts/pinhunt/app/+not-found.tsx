@@ -8,13 +8,13 @@ export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={[styles.title, { color: colors.foreground }]}>
+      <View style={[styles.container, { backgroundColor: colors.homeBackground }]}>
+        <Text style={[styles.title, { color: colors.homeInk }]}>
           This screen doesn&apos;t exist.
         </Text>
 
         <Link href="/" style={styles.link}>
-          <Text style={[styles.linkText, { color: colors.primary }]}>
+          <Text style={[styles.linkText, { color: colors.homeCoral }]}>
             Go to home screen!
           </Text>
         </Link>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Inter_700Bold',
   },
   link: {
     marginTop: 15,

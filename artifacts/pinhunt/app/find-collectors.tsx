@@ -19,6 +19,8 @@ import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { Avatar } from '@/components/Avatar';
+import { radius, spacing } from '@/constants/theme';
 import type { PublicProfile } from '@workspace/pin-repository';
 
 /** Trade-match counts for a collector relative to the current user. */
@@ -37,15 +39,6 @@ function matchLabel(m: MatchCounts | undefined): string | null {
   return null;
 }
 
-function initials(profile: PublicProfile): string {
-  const name = profile.username;
-  return name
-    .split(' ')
-    .map(n => n[0]?.toUpperCase() ?? '')
-    .join('')
-    .slice(0, 2);
-}
-
 // ─── Collector card ───────────────────────────────────────────────────────────
 
 function CollectorCard({ item, match, onPress }: {
@@ -55,35 +48,33 @@ function CollectorCard({ item, match, onPress }: {
   const label = matchLabel(match);
   return (
     <TouchableOpacity
-      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
+      style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
       onPress={onPress}
       activeOpacity={0.75}
     >
-      <View style={[styles.avatar, { backgroundColor: colors.primary }]}>
-        <Text style={styles.avatarText}>{initials(item)}</Text>
-      </View>
+      <Avatar uri={item.avatarUrl} name={item.username} size={44} />
       <View style={{ flex: 1, gap: 2 }}>
-        <Text style={[styles.username, { color: colors.foreground }]}>@{item.username}</Text>
+        <Text style={[styles.username, { color: colors.homeInk }]}>@{item.username}</Text>
         {item.tradingRegion ? (
           <View style={styles.regionRow}>
-            <Feather name="map-pin" size={11} color={colors.mutedForeground} />
-            <Text style={[styles.region, { color: colors.mutedForeground }]}>{item.tradingRegion}</Text>
+            <Feather name="map-pin" size={11} color={colors.homeMuted} />
+            <Text style={[styles.region, { color: colors.homeMuted }]}>{item.tradingRegion}</Text>
           </View>
         ) : null}
         {label ? (
           <View style={styles.regionRow}>
-            <Feather name="repeat" size={11} color={colors.primary} />
-            <Text style={[styles.matchText, { color: colors.primary }]} numberOfLines={1}>{label}</Text>
+            <Feather name="repeat" size={11} color={colors.homeCoral} />
+            <Text style={[styles.matchText, { color: colors.homeCoral }]} numberOfLines={1}>{label}</Text>
           </View>
         ) : null}
       </View>
       {item.internationalTradingEnabled && (
-        <View style={[styles.badge, { backgroundColor: colors.primary + '22' }]}>
-          <Feather name="globe" size={11} color={colors.primary} />
-          <Text style={[styles.badgeText, { color: colors.primary }]}>Intl</Text>
+        <View style={[styles.badge, { backgroundColor: colors.homeCoral + '22' }]}>
+          <Feather name="globe" size={11} color={colors.homeCoral} />
+          <Text style={[styles.badgeText, { color: colors.homeCoral }]}>Intl</Text>
         </View>
       )}
-      <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+      <Feather name="chevron-right" size={16} color={colors.homeMuted} />
     </TouchableOpacity>
   );
 }
@@ -154,41 +145,41 @@ export default function FindCollectorsScreen() {
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       {/* Search inputs */}
-      <View style={[styles.searchArea, { paddingTop: topPad + 8, backgroundColor: colors.background, borderBottomColor: colors.border }]}>
-        <View style={[styles.searchBar, { backgroundColor: colors.card, borderColor: colors.border }]}>
-          <Feather name="search" size={16} color={colors.mutedForeground} />
+      <View style={[styles.searchArea, { paddingTop: topPad + spacing.sm, backgroundColor: colors.homeBackground, borderBottomColor: colors.homeLine }]}>
+        <View style={[styles.searchBar, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+          <Feather name="search" size={16} color={colors.homeMuted} />
           <TextInput
-            style={[styles.searchInput, { color: colors.foreground }]}
+            style={[styles.searchInput, { color: colors.homeInk }]}
             value={query}
             onChangeText={handleQueryChange}
             placeholder="Search by username or name…"
-            placeholderTextColor={colors.mutedForeground}
+            placeholderTextColor={colors.homeMuted}
             autoCapitalize="none"
             autoCorrect={false}
             returnKeyType="search"
           />
           {query.length > 0 && (
             <TouchableOpacity onPress={() => handleQueryChange('')} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-              <Feather name="x" size={16} color={colors.mutedForeground} />
+              <Feather name="x" size={16} color={colors.homeMuted} />
             </TouchableOpacity>
           )}
         </View>
 
-        <View style={[styles.regionBar, { backgroundColor: colors.card, borderColor: colors.border }]}>
-          <Feather name="map-pin" size={14} color={colors.mutedForeground} />
+        <View style={[styles.regionBar, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+          <Feather name="map-pin" size={14} color={colors.homeMuted} />
           <TextInput
-            style={[styles.searchInput, { color: colors.foreground }]}
+            style={[styles.searchInput, { color: colors.homeInk }]}
             value={region}
             onChangeText={handleRegionChange}
             placeholder="Filter by region (optional)"
-            placeholderTextColor={colors.mutedForeground}
+            placeholderTextColor={colors.homeMuted}
             returnKeyType="search"
           />
           {region.length > 0 && (
             <TouchableOpacity onPress={() => handleRegionChange('')} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-              <Feather name="x" size={16} color={colors.mutedForeground} />
+              <Feather name="x" size={16} color={colors.homeMuted} />
             </TouchableOpacity>
           )}
         </View>
@@ -197,7 +188,7 @@ export default function FindCollectorsScreen() {
       {/* Results */}
       {loading ? (
         <View style={styles.centred}>
-          <ActivityIndicator color={colors.primary} />
+          <ActivityIndicator color={colors.homeCoral} />
         </View>
       ) : (
         <FlatList
@@ -210,20 +201,20 @@ export default function FindCollectorsScreen() {
               onPress={() => router.push(`/collector/${item.username}`)}
             />
           )}
-          contentContainerStyle={{ paddingHorizontal: 16, paddingTop: 12, paddingBottom: insets.bottom + 24 }}
-          ItemSeparatorComponent={() => <View style={{ height: 8 }} />}
+          contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }}
+          ItemSeparatorComponent={() => <View style={{ height: spacing.sm }} />}
           ListEmptyComponent={
             searched ? (
               <View style={styles.centred}>
-                <Feather name="users" size={36} color={colors.mutedForeground} />
-                <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No collectors found</Text>
-                <Text style={[styles.emptyText, { color: colors.mutedForeground }]}>Try a different search term or region.</Text>
+                <Feather name="users" size={36} color={colors.homeMuted} />
+                <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No collectors found</Text>
+                <Text style={[styles.emptyText, { color: colors.homeMuted }]}>Try a different search term or region.</Text>
               </View>
             ) : (
               <View style={styles.centred}>
-                <Feather name="search" size={36} color={colors.mutedForeground} />
-                <Text style={[styles.emptyTitle, { color: colors.foreground }]}>Find Collectors</Text>
-                <Text style={[styles.emptyText, { color: colors.mutedForeground }]}>Search by username, name, or trading region.</Text>
+                <Feather name="search" size={36} color={colors.homeMuted} />
+                <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>Find Collectors</Text>
+                <Text style={[styles.emptyText, { color: colors.homeMuted }]}>Search by username, name, or trading region.</Text>
               </View>
             )
           }
@@ -236,48 +227,39 @@ export default function FindCollectorsScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1 },
   searchArea: {
-    paddingHorizontal: 16,
-    paddingBottom: 12,
-    gap: 8,
+    paddingHorizontal: spacing.lg,
+    paddingBottom: spacing.md,
+    gap: spacing.sm,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    gap: 8,
+    borderRadius: radius.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm + 2,
+    gap: spacing.sm,
   },
   regionBar: {
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    gap: 8,
+    borderRadius: radius.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm + 2,
+    gap: spacing.sm,
   },
   searchInput: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular' },
   card: {
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderRadius: 14,
-    padding: 14,
-    gap: 12,
+    borderRadius: radius.lg,
+    padding: spacing.lg - 2,
+    gap: spacing.md,
   },
-  avatar: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  avatarText: { fontSize: 16, fontFamily: 'Inter_700Bold', color: '#fff' },
   username: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
-  displayName: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   regionRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 2 },
   region: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   matchText: { flex: 1, fontSize: 12, fontFamily: 'Inter_600SemiBold' },
@@ -290,7 +272,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   badgeText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
-  centred: { flex: 1, alignItems: 'center', paddingTop: 60, gap: 12 },
-  emptyTitle: { fontSize: 16, fontFamily: 'Inter_600SemiBold', marginTop: 8 },
+  centred: { flex: 1, alignItems: 'center', paddingTop: 60, gap: spacing.md },
+  emptyTitle: { fontSize: 16, fontFamily: 'Inter_600SemiBold', marginTop: spacing.sm },
   emptyText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20 },
 });

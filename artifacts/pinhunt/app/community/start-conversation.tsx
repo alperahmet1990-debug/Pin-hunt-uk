@@ -23,6 +23,8 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
+import { Avatar } from '@/components/Avatar';
+import { radius, spacing } from '@/constants/theme';
 
 export default function StartConversationScreen() {
   const params = useLocalSearchParams<{
@@ -77,7 +79,7 @@ export default function StartConversationScreen() {
     <>
       <Stack.Screen options={{ title: `Message @${recipientName}` }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -86,49 +88,44 @@ export default function StartConversationScreen() {
           showsVerticalScrollIndicator={false}
         >
           {/* Recipient card */}
-          <View style={[styles.recipientCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-            <View style={[styles.avatar, { backgroundColor: colors.primary }]}>
-              <Text style={styles.avatarText}>
-                {(recipientName[0] ?? '?').toUpperCase()}
-              </Text>
-            </View>
+          <View style={[styles.recipientCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <Avatar uri={null} name={recipientName} size={44} />
             <View>
-              <Text style={[styles.recipientLabel, { color: colors.mutedForeground }]}>Sending to</Text>
-              <Text style={[styles.recipientName, { color: colors.foreground }]}>@{recipientName}</Text>
+              <Text style={[styles.recipientLabel, { color: colors.homeMuted }]}>Sending to</Text>
+              <Text style={[styles.recipientName, { color: colors.homeInk }]}>@{recipientName}</Text>
             </View>
           </View>
 
           {/* Context reference */}
           {hasContext && contextLabel && (
-            <View style={[styles.contextBanner, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: colors.radius }]}>
-              <Feather name="link" size={13} color={colors.mutedForeground} />
-              <Text style={[styles.contextLabel, { color: colors.mutedForeground }]} numberOfLines={2}>
+            <View style={[styles.contextBanner, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+              <Feather name="link" size={13} color={colors.homeMuted} />
+              <Text style={[styles.contextLabel, { color: colors.homeMuted }]} numberOfLines={2}>
                 {contextLabel}
               </Text>
             </View>
           )}
 
           {/* Message input */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>YOUR MESSAGE</Text>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>YOUR MESSAGE</Text>
           <TextInput
             value={message}
             onChangeText={setMessage}
             placeholder="Hi! I saw your post and…"
-            placeholderTextColor={colors.mutedForeground + '88'}
+            placeholderTextColor={colors.homeMuted}
             multiline
             maxLength={2000}
             autoFocus
             style={[
               styles.input,
               {
-                color: colors.foreground,
-                borderColor: colors.border,
-                backgroundColor: colors.card,
-                borderRadius: colors.radius,
+                color: colors.homeInk,
+                borderColor: colors.homeLine,
+                backgroundColor: colors.homeSurface,
               },
             ]}
           />
-          <Text style={[styles.charCount, { color: colors.mutedForeground }]}>
+          <Text style={[styles.charCount, { color: colors.homeMuted }]}>
             {message.length} / 2000
           </Text>
 
@@ -140,17 +137,17 @@ export default function StartConversationScreen() {
             style={[
               styles.sendBtn,
               {
-                backgroundColor: message.trim() ? colors.primary : colors.secondary,
-                borderRadius: colors.radius,
+                backgroundColor: message.trim() ? colors.homeCoral : colors.homeAqua,
+                shadowColor: colors.homeShadow,
               },
             ]}
           >
             {saving
-              ? <ActivityIndicator color="#fff" size="small" />
+              ? <ActivityIndicator color={colors.homeSurface} size="small" />
               : (
                 <>
-                  <Feather name="send" size={16} color={message.trim() ? '#fff' : colors.mutedForeground} />
-                  <Text style={[styles.sendLabel, { color: message.trim() ? '#fff' : colors.mutedForeground }]}>
+                  <Feather name="send" size={16} color={message.trim() ? colors.homeSurface : colors.homeMuted} />
+                  <Text style={[styles.sendLabel, { color: message.trim() ? colors.homeSurface : colors.homeMuted }]}>
                     Send Message
                   </Text>
                 </>
@@ -164,28 +161,23 @@ export default function StartConversationScreen() {
 }
 
 const styles = StyleSheet.create({
-  scroll: { padding: 16, gap: 12 },
+  scroll: { padding: spacing.lg, gap: spacing.md },
   recipientCard: {
-    flexDirection: 'row', alignItems: 'center', gap: 12,
-    padding: 14, borderWidth: 1,
+    flexDirection: 'row', alignItems: 'center', gap: spacing.md,
+    padding: spacing.lg - 2, borderWidth: 1, borderRadius: radius.lg,
   },
-  avatar: {
-    width: 44, height: 44, borderRadius: 22,
-    alignItems: 'center', justifyContent: 'center',
-  },
-  avatarText: { color: '#fff', fontSize: 18, fontFamily: 'Inter_700Bold' },
   recipientLabel: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   recipientName: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
 
   contextBanner: {
-    flexDirection: 'row', alignItems: 'flex-start', gap: 8,
-    padding: 10, borderWidth: 1,
+    flexDirection: 'row', alignItems: 'flex-start', gap: spacing.sm,
+    padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.lg,
   },
   contextLabel: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
 
   label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8 },
   input: {
-    borderWidth: 1, padding: 12,
+    borderWidth: 1, padding: spacing.md, borderRadius: radius.lg,
     fontSize: 15, fontFamily: 'Inter_400Regular',
     minHeight: 140, textAlignVertical: 'top', lineHeight: 22,
   },
@@ -193,7 +185,8 @@ const styles = StyleSheet.create({
 
   sendBtn: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 8, paddingVertical: 14, marginTop: 8,
+    gap: spacing.sm, paddingVertical: spacing.md + 2, marginTop: spacing.sm, borderRadius: radius.lg,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
   },
   sendLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 });

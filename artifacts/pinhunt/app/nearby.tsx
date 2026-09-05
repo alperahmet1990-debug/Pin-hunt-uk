@@ -22,6 +22,7 @@ import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { radius, spacing } from '@/constants/theme';
 import type { NearbyCollector } from '@workspace/pin-repository';
 
 type SortMode = 'match' | 'nearest' | 'recent';
@@ -53,7 +54,6 @@ function CollectorCard({ item, onPress, onMessage }: {
   item: NearbyCollector; onPress(): void; onMessage(): void;
 }) {
   const colors = useColors();
-  const initials = item.username.slice(0, 2).toUpperCase();
   const summary = matchSummary(item);
   const areaLabel = [item.town, item.county].filter(Boolean).join(', ') || 'Near you';
 
@@ -67,7 +67,7 @@ function CollectorCard({ item, onPress, onMessage }: {
       activeOpacity={0.8}
       style={[
         styles.card,
-        { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius },
+        { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg },
       ]}
     >
       {/* Header row */}
@@ -75,64 +75,64 @@ function CollectorCard({ item, onPress, onMessage }: {
         <Avatar uri={item.avatarUrl} name={item.username} size={48} />
 
         <View style={styles.cardInfo}>
-          <Text style={[styles.cardUsername, { color: colors.foreground }]}>
+          <Text style={[styles.cardUsername, { color: colors.homeInk }]}>
             @{item.username}
           </Text>
           <View style={styles.metaRow}>
-            <Feather name="map-pin" size={11} color={colors.mutedForeground} />
-            <Text style={[styles.metaText, { color: colors.mutedForeground }]}>{areaLabel}</Text>
+            <Feather name="map-pin" size={11} color={colors.homeMuted} />
+            <Text style={[styles.metaText, { color: colors.homeMuted }]}>{areaLabel}</Text>
           </View>
-          <Text style={[styles.distanceBand, { color: colors.primary }]}>
+          <Text style={[styles.distanceBand, { color: colors.homeCoral }]}>
             {item.distanceBand}
           </Text>
         </View>
 
         {isRecentlyActive && (
-          <View style={[styles.activeDot, { backgroundColor: '#22C55E' }]} />
+          <View style={[styles.activeDot, { backgroundColor: colors.owned }]} />
         )}
       </View>
 
       {/* Trade preference badges */}
       <View style={styles.badgeRow}>
         {item.openToLocalTrades && (
-          <View style={[styles.badge, { backgroundColor: colors.primary + '18' }]}>
-            <Feather name="map-pin" size={10} color={colors.primary} />
-            <Text style={[styles.badgeText, { color: colors.primary }]}>Local trades</Text>
+          <View style={[styles.badge, { backgroundColor: colors.homeCoral + '18' }]}>
+            <Feather name="map-pin" size={10} color={colors.homeCoral} />
+            <Text style={[styles.badgeText, { color: colors.homeCoral }]}>Local trades</Text>
           </View>
         )}
         {item.openToPostalTrades && (
-          <View style={[styles.badge, { backgroundColor: colors.secondary }]}>
-            <Feather name="package" size={10} color={colors.mutedForeground} />
-            <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>Postal</Text>
+          <View style={[styles.badge, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="package" size={10} color={colors.homeMuted} />
+            <Text style={[styles.badgeText, { color: colors.homeMuted }]}>Postal</Text>
           </View>
         )}
         {item.happyToTravel && (
-          <View style={[styles.badge, { backgroundColor: colors.secondary }]}>
-            <Feather name="navigation" size={10} color={colors.mutedForeground} />
-            <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>Happy to travel</Text>
+          <View style={[styles.badge, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="navigation" size={10} color={colors.homeMuted} />
+            <Text style={[styles.badgeText, { color: colors.homeMuted }]}>Happy to travel</Text>
           </View>
         )}
       </View>
 
       {/* Pin counts */}
-      <View style={[styles.pinCounts, { borderTopColor: colors.border }]}>
+      <View style={[styles.pinCounts, { borderTopColor: colors.homeLine }]}>
         <View style={styles.pinCountItem}>
           <Text style={[styles.pinCountNum, { color: colors.forTrade }]}>{item.forTradeCount}</Text>
-          <Text style={[styles.pinCountLabel, { color: colors.mutedForeground }]}>For Trade</Text>
+          <Text style={[styles.pinCountLabel, { color: colors.homeMuted }]}>For Trade</Text>
         </View>
-        <View style={[styles.pinCountDivider, { backgroundColor: colors.border }]} />
+        <View style={[styles.pinCountDivider, { backgroundColor: colors.homeLine }]} />
         <View style={styles.pinCountItem}>
           <Text style={[styles.pinCountNum, { color: colors.wanted }]}>{item.wantedCount}</Text>
-          <Text style={[styles.pinCountLabel, { color: colors.mutedForeground }]}>ISO</Text>
+          <Text style={[styles.pinCountLabel, { color: colors.homeMuted }]}>ISO</Text>
         </View>
         {item.totalRatings > 0 && (
           <>
-            <View style={[styles.pinCountDivider, { backgroundColor: colors.border }]} />
+            <View style={[styles.pinCountDivider, { backgroundColor: colors.homeLine }]} />
             <View style={styles.pinCountItem}>
               <Text style={[styles.pinCountNum, { color: colors.owned }]}>
                 {Math.round((item.positiveRatings / item.totalRatings) * 100)}%
               </Text>
-              <Text style={[styles.pinCountLabel, { color: colors.mutedForeground }]}>Positive</Text>
+              <Text style={[styles.pinCountLabel, { color: colors.homeMuted }]}>Positive</Text>
             </View>
           </>
         )}
@@ -140,23 +140,23 @@ function CollectorCard({ item, onPress, onMessage }: {
 
       {/* Trade match summary */}
       {summary && (
-        <View style={[styles.matchRow, { backgroundColor: colors.primary + '10', borderRadius: 8 }]}>
-          <Feather name="repeat" size={12} color={colors.primary} />
-          <Text style={[styles.matchText, { color: colors.primary }]}>{summary}</Text>
+        <View style={[styles.matchRow, { backgroundColor: colors.homeCoral + '10' }]}>
+          <Feather name="repeat" size={12} color={colors.homeCoral} />
+          <Text style={[styles.matchText, { color: colors.homeCoral }]}>{summary}</Text>
         </View>
       )}
 
       {/* Footer actions */}
-      <View style={[styles.cardFooter, { borderTopColor: colors.border }]}>
+      <View style={[styles.cardFooter, { borderTopColor: colors.homeLine }]}>
         <TouchableOpacity
           onPress={onMessage}
           activeOpacity={0.85}
-          style={[styles.messageBtn, { backgroundColor: colors.primary }]}
+          style={[styles.messageBtn, { backgroundColor: colors.homeCoral }]}
         >
-          <Feather name="mail" size={13} color="#fff" />
-          <Text style={styles.messageBtnLabel}>Message</Text>
+          <Feather name="mail" size={13} color={colors.homeSurface} />
+          <Text style={[styles.messageBtnLabel, { color: colors.homeSurface }]}>Message</Text>
         </TouchableOpacity>
-        <Text style={[styles.viewProfile, { color: colors.primary }]}>View profile →</Text>
+        <Text style={[styles.viewProfile, { color: colors.homeCoral }]}>View profile →</Text>
       </View>
     </TouchableOpacity>
   );
@@ -175,12 +175,12 @@ function Pill({
       style={[
         styles.pill,
         {
-          backgroundColor: active ? colors.primary : colors.secondary,
-          borderColor: active ? colors.primary : colors.border,
+          backgroundColor: active ? colors.homeCoral : colors.homeAqua,
+          borderColor: active ? colors.homeCoral : colors.homeLine,
         },
       ]}
     >
-      <Text style={[styles.pillText, { color: active ? '#fff' : colors.foreground }]}>
+      <Text style={[styles.pillText, { color: active ? colors.homeSurface : colors.homeInk }]}>
         {label}
       </Text>
     </TouchableOpacity>
@@ -250,24 +250,24 @@ export default function NearbyScreen() {
 
   if (!discoveryEnabled) {
     return (
-      <View style={[styles.root, { backgroundColor: colors.background }]}>
-        <View style={[styles.headerBar, { paddingTop: topPad + 12, backgroundColor: colors.card, borderBottomColor: colors.border }]}>
-          <Text style={[styles.headerTitle, { color: colors.foreground }]}>Collectors Nearby</Text>
+      <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
+        <View style={[styles.headerBar, { paddingTop: topPad + spacing.md, backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
+          <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Collectors Nearby</Text>
         </View>
         <View style={styles.centred}>
-          <View style={[styles.emptyIcon, { backgroundColor: colors.secondary }]}>
-            <Feather name="map-pin" size={32} color={colors.primary} />
+          <View style={[styles.emptyIcon, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="map-pin" size={32} color={colors.homeCoral} />
           </View>
-          <Text style={[styles.emptyTitle, { color: colors.foreground }]}>Enable discovery first</Text>
-          <Text style={[styles.emptyBody, { color: colors.mutedForeground }]}>
+          <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>Enable discovery first</Text>
+          <Text style={[styles.emptyBody, { color: colors.homeMuted }]}>
             Add your town or city in Profile Settings, then turn on "Appear in Collectors Nearby" to start finding collectors near you.
           </Text>
           <TouchableOpacity
             onPress={() => router.push('/edit-profile')}
-            style={[styles.ctaBtn, { backgroundColor: colors.primary }]}
+            style={[styles.ctaBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
             activeOpacity={0.85}
           >
-            <Text style={styles.ctaBtnText}>Go to Profile Settings</Text>
+            <Text style={[styles.ctaBtnText, { color: colors.homeSurface }]}>Go to Profile Settings</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -277,17 +277,17 @@ export default function NearbyScreen() {
   // ── Main screen ───────────────────────────────────────────────────────────────
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       {/* Header */}
-      <View style={[styles.headerBar, { paddingTop: topPad + 12, backgroundColor: colors.card, borderBottomColor: colors.border }]}>
-        <Text style={[styles.headerTitle, { color: colors.foreground }]}>Collectors Nearby</Text>
-        <Text style={[styles.headerSub, { color: colors.mutedForeground }]}>
+      <View style={[styles.headerBar, { paddingTop: topPad + spacing.md, backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
+        <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Collectors Nearby</Text>
+        <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
           Your exact location is never shown to other collectors
         </Text>
 
         {/* Radius filter */}
         <View style={styles.filterRow}>
-          <Text style={[styles.filterLabel, { color: colors.mutedForeground }]}>Radius</Text>
+          <Text style={[styles.filterLabel, { color: colors.homeMuted }]}>Radius</Text>
           <View style={styles.pills}>
             {RADIUS_OPTIONS.map(r => (
               <Pill key={r} active={radius === r} label={`${r}mi`} onPress={() => setRadius(r)} />
@@ -297,7 +297,7 @@ export default function NearbyScreen() {
 
         {/* Trade filter */}
         <View style={styles.filterRow}>
-          <Text style={[styles.filterLabel, { color: colors.mutedForeground }]}>Trades</Text>
+          <Text style={[styles.filterLabel, { color: colors.homeMuted }]}>Trades</Text>
           <View style={styles.pills}>
             <Pill active={tradeFilter === 'any'} label="Any" onPress={() => setTradeFilter('any')} />
             <Pill active={tradeFilter === 'local'} label="Local" onPress={() => setTradeFilter('local')} />
@@ -307,7 +307,7 @@ export default function NearbyScreen() {
 
         {/* Sort */}
         <View style={styles.filterRow}>
-          <Text style={[styles.filterLabel, { color: colors.mutedForeground }]}>Sort</Text>
+          <Text style={[styles.filterLabel, { color: colors.homeMuted }]}>Sort</Text>
           <View style={styles.pills}>
             <Pill active={sortBy === 'match'} label="Best match" onPress={() => setSortBy('match')} />
             <Pill active={sortBy === 'nearest'} label="Nearest" onPress={() => setSortBy('nearest')} />
@@ -319,27 +319,27 @@ export default function NearbyScreen() {
       {/* Results */}
       {loading ? (
         <View style={styles.centred}>
-          <ActivityIndicator color={colors.primary} size="large" />
-          <Text style={[styles.emptyBody, { color: colors.mutedForeground, marginTop: 12 }]}>
+          <ActivityIndicator color={colors.homeCoral} size="large" />
+          <Text style={[styles.emptyBody, { color: colors.homeMuted, marginTop: spacing.md }]}>
             Finding collectors near you…
           </Text>
         </View>
       ) : error ? (
         <View style={styles.centred}>
           <Feather name="alert-circle" size={36} color={colors.destructive} />
-          <Text style={[styles.emptyTitle, { color: colors.foreground }]}>Something went wrong</Text>
-          <Text style={[styles.emptyBody, { color: colors.mutedForeground }]}>{error}</Text>
-          <TouchableOpacity onPress={load} style={[styles.ctaBtn, { backgroundColor: colors.primary }]} activeOpacity={0.85}>
-            <Text style={styles.ctaBtnText}>Try again</Text>
+          <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>Something went wrong</Text>
+          <Text style={[styles.emptyBody, { color: colors.homeMuted }]}>{error}</Text>
+          <TouchableOpacity onPress={load} style={[styles.ctaBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]} activeOpacity={0.85}>
+            <Text style={[styles.ctaBtnText, { color: colors.homeSurface }]}>Try again</Text>
           </TouchableOpacity>
         </View>
       ) : sorted.length === 0 ? (
         <View style={styles.centred}>
-          <View style={[styles.emptyIcon, { backgroundColor: colors.secondary }]}>
-            <Feather name="users" size={32} color={colors.mutedForeground} />
+          <View style={[styles.emptyIcon, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="users" size={32} color={colors.homeMuted} />
           </View>
-          <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No collectors found</Text>
-          <Text style={[styles.emptyBody, { color: colors.mutedForeground }]}>
+          <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No collectors found</Text>
+          <Text style={[styles.emptyBody, { color: colors.homeMuted }]}>
             {results.length === 0
               ? `No collectors have opted in within ${radius} miles yet. Try a larger radius or check back later.`
               : 'No collectors match your current filters. Try changing the trade type filter.'}
@@ -349,10 +349,10 @@ export default function NearbyScreen() {
         <FlatList
           data={sorted}
           keyExtractor={item => item.id}
-          contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 80, gap: 12 }}
+          contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxxl + spacing.xxl, gap: spacing.md }}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
-            <Text style={[styles.resultCount, { color: colors.mutedForeground }]}>
+            <Text style={[styles.resultCount, { color: colors.homeMuted }]}>
               {sorted.length} collector{sorted.length !== 1 ? 's' : ''} within {radius} miles
             </Text>
           }
@@ -379,20 +379,20 @@ const styles = StyleSheet.create({
 
   headerBar: {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingHorizontal: 16,
-    paddingBottom: 12,
-    gap: 8,
+    paddingHorizontal: spacing.lg,
+    paddingBottom: spacing.md,
+    gap: spacing.sm,
   },
   headerTitle: { fontSize: 26, fontFamily: 'Inter_700Bold' },
-  headerSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: 4 },
+  headerSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.xs },
 
-  filterRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  filterRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2 },
   filterLabel: { fontSize: 12, fontFamily: 'Inter_500Medium', width: 44 },
-  pills: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
+  pills: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs + 2 },
   pill: {
-    paddingHorizontal: 10,
+    paddingHorizontal: spacing.sm + 2,
     paddingVertical: 5,
-    borderRadius: 20,
+    borderRadius: radius.pill,
     borderWidth: 1,
   },
   pillText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
@@ -401,8 +401,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 32,
-    gap: 12,
+    paddingHorizontal: spacing.xxl,
+    gap: spacing.md,
   },
   emptyIcon: {
     width: 72,
@@ -410,39 +410,34 @@ const styles = StyleSheet.create({
     borderRadius: 36,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 4,
+    marginBottom: spacing.xs,
   },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
   emptyBody: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20 },
-  ctaBtn: { borderRadius: 12, paddingVertical: 14, paddingHorizontal: 24, marginTop: 4 },
-  ctaBtnText: { color: '#fff', fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  ctaBtn: {
+    borderRadius: radius.md, paddingVertical: spacing.lg - 2, paddingHorizontal: spacing.xxl, marginTop: spacing.xs,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
+  },
+  ctaBtnText: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 
-  resultCount: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: 4 },
+  resultCount: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.xs },
 
   // Card
   card: { borderWidth: 1, overflow: 'hidden' },
-  cardHeader: { flexDirection: 'row', alignItems: 'flex-start', padding: 14, gap: 12 },
-  avatar: {
-    width: 46,
-    height: 46,
-    borderRadius: 23,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  avatarText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_700Bold' },
+  cardHeader: { flexDirection: 'row', alignItems: 'flex-start', padding: spacing.md + 2, gap: spacing.md },
   cardInfo: { flex: 1, gap: 2 },
   cardUsername: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: 3 },
   metaText: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   distanceBand: { fontSize: 12, fontFamily: 'Inter_500Medium', marginTop: 1 },
-  activeDot: { width: 8, height: 8, borderRadius: 4, marginTop: 4 },
+  activeDot: { width: 8, height: 8, borderRadius: 4, marginTop: spacing.xs },
 
-  badgeRow: { flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 14, paddingBottom: 10, gap: 6 },
+  badgeRow: { flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: spacing.md + 2, paddingBottom: spacing.sm + 2, gap: spacing.xs + 2 },
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    paddingHorizontal: 8,
+    paddingHorizontal: spacing.sm,
     paddingVertical: 4,
     borderRadius: 12,
   },
@@ -451,8 +446,8 @@ const styles = StyleSheet.create({
   pinCounts: {
     flexDirection: 'row',
     borderTopWidth: StyleSheet.hairlineWidth,
-    paddingVertical: 10,
-    paddingHorizontal: 14,
+    paddingVertical: spacing.sm + 2,
+    paddingHorizontal: spacing.md + 2,
   },
   pinCountItem: { flex: 1, alignItems: 'center' },
   pinCountNum: { fontSize: 17, fontFamily: 'Inter_700Bold' },
@@ -462,17 +457,18 @@ const styles = StyleSheet.create({
   matchRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
-    marginHorizontal: 14,
-    marginBottom: 10,
-    padding: 10,
+    gap: spacing.xs + 2,
+    marginHorizontal: spacing.md + 2,
+    marginBottom: spacing.sm + 2,
+    padding: spacing.sm + 2,
+    borderRadius: radius.sm,
   },
   matchText: { flex: 1, fontSize: 12, fontFamily: 'Inter_500Medium', lineHeight: 16 },
 
   cardFooter: {
     borderTopWidth: StyleSheet.hairlineWidth,
-    paddingVertical: 10,
-    paddingHorizontal: 14,
+    paddingVertical: spacing.sm + 2,
+    paddingHorizontal: spacing.md + 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -481,10 +477,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    borderRadius: 8,
+    paddingHorizontal: spacing.md + 2,
+    paddingVertical: spacing.sm,
+    borderRadius: radius.sm - 2,
   },
-  messageBtnLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#fff' },
+  messageBtnLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   viewProfile: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
 });

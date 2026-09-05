@@ -23,6 +23,7 @@ import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
+import { radius, spacing } from '@/constants/theme';
 import type { CommunityPostType } from '@workspace/pin-repository';
 
 const MAX_PHOTOS = 6;
@@ -34,20 +35,21 @@ const POST_TYPES: Array<{ key: CommunityPostType; label: string; emoji: string; 
   { key: 'new_pickup',   label: 'Event',        emoji: '📦', hint: 'Share an upcoming event' },
 ];
 
-const TYPE_COLOR: Record<CommunityPostType, string> = {
-  in_search_of: '#F59E0B',
-  for_trade:    '#3B82F6',
-  for_sale:     '#16A34A',
-  new_pickup:   '#8B5CF6',
-  discussion:   '#64748B',
-};
-
 export default function CreatePostScreen() {
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
   const { repo, userId } = useCommunity();
   const { pins } = usePinCatalogue();
+
+  // Same category colours as the Community feed badges (constants/colors.ts home* tokens).
+  const TYPE_COLOR: Record<CommunityPostType, string> = {
+    in_search_of: colors.homeSandInk,
+    for_trade:    colors.homeCoral,
+    for_sale:     colors.owned,
+    new_pickup:   colors.homeCoralDeep,
+    discussion:   colors.homeMuted,
+  };
 
   const [postType,    setPostType]    = useState<CommunityPostType>('discussion');
   const [body,        setBody]        = useState('');
@@ -166,7 +168,7 @@ export default function CreatePostScreen() {
     <>
       <Stack.Screen options={{ title: 'New Post' }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -175,7 +177,7 @@ export default function CreatePostScreen() {
           showsVerticalScrollIndicator={false}
         >
           {/* Post type selector */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>POST TYPE</Text>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>POST TYPE</Text>
           <View style={styles.typeGrid}>
             {POST_TYPES.map(pt => {
               const active = postType === pt.key;
@@ -188,17 +190,17 @@ export default function CreatePostScreen() {
                   style={[
                     styles.typeBtn,
                     {
-                      backgroundColor: active ? color + '18' : colors.card,
-                      borderColor: active ? color : colors.border,
-                      borderRadius: colors.radius,
+                      backgroundColor: active ? color + '18' : colors.homeSurface,
+                      borderColor: active ? color : colors.homeLine,
+                      borderRadius: radius.lg,
                     },
                   ]}
                 >
                   <Text style={styles.typeEmoji}>{pt.emoji}</Text>
-                  <Text style={[styles.typeLabel, { color: active ? color : colors.foreground }]}>
+                  <Text style={[styles.typeLabel, { color: active ? color : colors.homeInk }]}>
                     {pt.label}
                   </Text>
-                  <Text style={[styles.typeHint, { color: active ? color + 'cc' : colors.mutedForeground }]}>
+                  <Text style={[styles.typeHint, { color: active ? color + 'cc' : colors.homeMuted }]}>
                     {pt.hint}
                   </Text>
                 </TouchableOpacity>
@@ -207,77 +209,77 @@ export default function CreatePostScreen() {
           </View>
 
           {/* Body */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>WHAT'S ON YOUR MIND?</Text>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>WHAT'S ON YOUR MIND?</Text>
           <TextInput
             value={body}
             onChangeText={setBody}
             placeholder="Share with the community…"
-            placeholderTextColor={colors.mutedForeground + '88'}
+            placeholderTextColor={colors.homeMuted}
             multiline
             maxLength={2000}
             style={[
               styles.bodyInput,
               {
-                color: colors.foreground,
-                borderColor: colors.border,
-                backgroundColor: colors.card,
-                borderRadius: colors.radius,
+                color: colors.homeInk,
+                borderColor: colors.homeLine,
+                backgroundColor: colors.homeSurface,
+                borderRadius: radius.lg,
               },
             ]}
           />
-          <Text style={[styles.charCount, { color: colors.mutedForeground }]}>
+          <Text style={[styles.charCount, { color: colors.homeMuted }]}>
             {body.length} / 2000
           </Text>
 
           {/* Trade / sale details (FT, FS, ISO only) */}
           {['for_trade', 'for_sale', 'in_search_of'].includes(postType) && (
             <>
-              <Text style={[styles.label, { color: colors.mutedForeground }]}>
+              <Text style={[styles.label, { color: colors.homeMuted }]}>
                 {postType === 'for_sale' ? 'ASKING PRICE (OPTIONAL)' : 'TRADE VALUE (OPTIONAL)'}
               </Text>
               <TextInput
                 value={priceText}
                 onChangeText={setPriceText}
                 placeholder={postType === 'for_sale' ? 'e.g. £25 posted' : 'e.g. LE 2500, worth two pins'}
-                placeholderTextColor={colors.mutedForeground + '88'}
+                placeholderTextColor={colors.homeMuted}
                 maxLength={80}
-                style={[styles.detailInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card, borderRadius: colors.radius }]}
+                style={[styles.detailInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface, borderRadius: radius.lg }]}
               />
-              <Text style={[styles.label, { color: colors.mutedForeground }]}>LOOKING FOR (OPTIONAL)</Text>
+              <Text style={[styles.label, { color: colors.homeMuted }]}>LOOKING FOR (OPTIONAL)</Text>
               <TextInput
                 value={lookingFor}
                 onChangeText={setLookingFor}
                 placeholder="e.g. Stitch, Villains or Disneyland Paris pins"
-                placeholderTextColor={colors.mutedForeground + '88'}
+                placeholderTextColor={colors.homeMuted}
                 maxLength={300}
-                style={[styles.detailInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card, borderRadius: colors.radius }]}
+                style={[styles.detailInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface, borderRadius: radius.lg }]}
               />
-              <Text style={[styles.label, { color: colors.mutedForeground }]}>LOCATION / POSTAGE (OPTIONAL)</Text>
+              <Text style={[styles.label, { color: colors.homeMuted }]}>LOCATION / POSTAGE (OPTIONAL)</Text>
               <TextInput
                 value={locationText}
                 onChangeText={setLocationText}
                 placeholder="e.g. UK postage available"
-                placeholderTextColor={colors.mutedForeground + '88'}
+                placeholderTextColor={colors.homeMuted}
                 maxLength={120}
-                style={[styles.detailInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card, borderRadius: colors.radius }]}
+                style={[styles.detailInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface, borderRadius: radius.lg }]}
               />
             </>
           )}
 
           {/* Photos */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>
             PHOTOS ({localPhotos.length}/{MAX_PHOTOS})
           </Text>
           <View style={styles.photoGrid}>
             {localPhotos.map((uri, idx) => (
-              <View key={uri + idx} style={[styles.photoCell, { borderRadius: colors.radius, borderColor: colors.border }]}>
+              <View key={uri + idx} style={[styles.photoCell, { borderRadius: radius.lg, borderColor: colors.homeLine }]}>
                 <Image source={{ uri }} style={styles.photoCellImage} />
                 <TouchableOpacity
                   onPress={() => handleRemovePhoto(idx)}
                   style={styles.photoRemoveBtn}
                   hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
                 >
-                  <Feather name="x" size={12} color="#fff" />
+                  <Feather name="x" size={12} color={colors.homeSurface} />
                 </TouchableOpacity>
               </View>
             ))}
@@ -288,27 +290,27 @@ export default function CreatePostScreen() {
                 style={[
                   styles.photoAddBtn,
                   {
-                    backgroundColor: colors.secondary,
-                    borderColor: colors.border,
-                    borderRadius: colors.radius,
+                    backgroundColor: colors.homeAqua,
+                    borderColor: colors.homeLine,
+                    borderRadius: radius.lg,
                   },
                 ]}
               >
-                <Feather name="camera" size={22} color={colors.mutedForeground} />
-                <Text style={[styles.photoAddLabel, { color: colors.mutedForeground }]}>Add photos</Text>
+                <Feather name="camera" size={22} color={colors.homeMuted} />
+                <Text style={[styles.photoAddLabel, { color: colors.homeMuted }]}>Add photos</Text>
               </TouchableOpacity>
             )}
           </View>
 
           {/* Link a pin */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>LINK A PIN (OPTIONAL)</Text>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>LINK A PIN (OPTIONAL)</Text>
           {selectedPin ? (
-            <View style={[styles.selectedPin, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
+            <View style={[styles.selectedPin, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}>
               <View style={{ flex: 1 }}>
-                <Text style={[styles.selectedPinName, { color: colors.foreground }]} numberOfLines={1}>
+                <Text style={[styles.selectedPinName, { color: colors.homeInk }]} numberOfLines={1}>
                   {selectedPin.title}
                 </Text>
-                <Text style={[styles.selectedPinSub, { color: colors.mutedForeground }]}>
+                <Text style={[styles.selectedPinSub, { color: colors.homeMuted }]}>
                   {selectedPin.collection}
                 </Text>
               </View>
@@ -316,41 +318,41 @@ export default function CreatePostScreen() {
                 onPress={() => { setLinkedPinId(undefined); setPinSearch(''); }}
                 hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
               >
-                <Feather name="x" size={16} color={colors.mutedForeground} />
+                <Feather name="x" size={16} color={colors.homeMuted} />
               </TouchableOpacity>
             </View>
           ) : (
             <>
-              <View style={[styles.pinSearchBar, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
-                <Feather name="search" size={15} color={colors.mutedForeground} />
+              <View style={[styles.pinSearchBar, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}>
+                <Feather name="search" size={15} color={colors.homeMuted} />
                 <TextInput
                   value={pinSearch}
                   onChangeText={v => { setPinSearch(v); setShowPins(v.length > 1); }}
                   placeholder="Search catalogue pins…"
-                  placeholderTextColor={colors.mutedForeground + '88'}
-                  style={[styles.pinSearchInput, { color: colors.foreground }]}
+                  placeholderTextColor={colors.homeMuted}
+                  style={[styles.pinSearchInput, { color: colors.homeInk }]}
                   autoCapitalize="none"
                   autoCorrect={false}
                 />
                 {pinSearch.length > 0 && (
                   <TouchableOpacity onPress={() => { setPinSearch(''); setShowPins(false); }}>
-                    <Feather name="x" size={14} color={colors.mutedForeground} />
+                    <Feather name="x" size={14} color={colors.homeMuted} />
                   </TouchableOpacity>
                 )}
               </View>
               {showPins && filteredPins.length > 0 && (
-                <View style={[styles.pinDropdown, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
+                <View style={[styles.pinDropdown, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}>
                   {filteredPins.map(p => (
                     <TouchableOpacity
                       key={p.id}
                       onPress={() => { setLinkedPinId(p.id); setShowPins(false); setPinSearch(''); }}
-                      style={[styles.pinDropdownItem, { borderBottomColor: colors.border }]}
+                      style={[styles.pinDropdownItem, { borderBottomColor: colors.homeLine }]}
                       activeOpacity={0.75}
                     >
-                      <Text style={[styles.pinDropdownName, { color: colors.foreground }]} numberOfLines={1}>
+                      <Text style={[styles.pinDropdownName, { color: colors.homeInk }]} numberOfLines={1}>
                         {p.title}
                       </Text>
-                      <Text style={[styles.pinDropdownSub, { color: colors.mutedForeground }]}>
+                      <Text style={[styles.pinDropdownSub, { color: colors.homeMuted }]}>
                         {p.collection} · {p.brand}
                       </Text>
                     </TouchableOpacity>
@@ -358,14 +360,14 @@ export default function CreatePostScreen() {
                 </View>
               )}
               {showPins && filteredPins.length === 0 && pinSearch.length > 1 && (
-                <Text style={[styles.noPins, { color: colors.mutedForeground }]}>No pins found.</Text>
+                <Text style={[styles.noPins, { color: colors.homeMuted }]}>No pins found.</Text>
               )}
             </>
           )}
 
           {/* Upload progress */}
           {uploadProgress ? (
-            <Text style={[styles.uploadProgress, { color: colors.mutedForeground }]}>
+            <Text style={[styles.uploadProgress, { color: colors.homeMuted }]}>
               {uploadProgress}
             </Text>
           ) : null}
@@ -378,17 +380,18 @@ export default function CreatePostScreen() {
             style={[
               styles.submitBtn,
               {
-                backgroundColor: body.trim() ? colors.primary : colors.secondary,
-                borderRadius: colors.radius,
+                backgroundColor: body.trim() ? colors.homeCoral : colors.homeAqua,
+                borderRadius: radius.lg,
+                shadowColor: colors.homeShadow,
               },
             ]}
           >
             {saving
-              ? <ActivityIndicator color="#fff" size="small" />
+              ? <ActivityIndicator color={colors.homeSurface} size="small" />
               : (
                 <>
-                  <Feather name="send" size={16} color={body.trim() ? '#fff' : colors.mutedForeground} />
-                  <Text style={[styles.submitLabel, { color: body.trim() ? '#fff' : colors.mutedForeground }]}>
+                  <Feather name="send" size={16} color={body.trim() ? colors.homeSurface : colors.homeMuted} />
+                  <Text style={[styles.submitLabel, { color: body.trim() ? colors.homeSurface : colors.homeMuted }]}>
                     Post to Community
                   </Text>
                 </>
@@ -404,13 +407,13 @@ export default function CreatePostScreen() {
 const PHOTO_CELL_SIZE = 96;
 
 const styles = StyleSheet.create({
-  scroll: { padding: 16, gap: 10 },
-  label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: 4, marginBottom: 4 },
+  scroll: { padding: spacing.lg, gap: spacing.sm + 2 },
+  label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: spacing.xs, marginBottom: spacing.xs },
 
-  typeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  typeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   typeBtn: {
     width: '48%',
-    padding: 12, borderWidth: 1.5, gap: 3,
+    padding: spacing.md, borderWidth: 1.5, gap: 3,
     flexGrow: 1,
   },
   typeEmoji: { fontSize: 20 },
@@ -419,7 +422,7 @@ const styles = StyleSheet.create({
 
   bodyInput: {
     borderWidth: 1,
-    padding: 12,
+    padding: spacing.md,
     fontSize: 15,
     fontFamily: 'Inter_400Regular',
     minHeight: 120,
@@ -430,14 +433,14 @@ const styles = StyleSheet.create({
 
   detailInput: {
     borderWidth: 1,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm + 2,
     fontSize: 14,
     fontFamily: 'Inter_400Regular',
   },
 
   // Photo grid
-  photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   photoCell: {
     width: PHOTO_CELL_SIZE,
     height: PHOTO_CELL_SIZE,
@@ -465,25 +468,25 @@ const styles = StyleSheet.create({
 
   uploadProgress: {
     fontSize: 12, fontFamily: 'Inter_400Regular',
-    textAlign: 'center', marginTop: 4,
+    textAlign: 'center', marginTop: spacing.xs,
   },
 
   selectedPin: {
     flexDirection: 'row', alignItems: 'center',
-    padding: 12, borderWidth: 1, gap: 10,
+    padding: spacing.md, borderWidth: 1, gap: spacing.sm + 2,
   },
   selectedPinName: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   selectedPinSub: { fontSize: 11, fontFamily: 'Inter_400Regular' },
 
   pinSearchBar: {
-    flexDirection: 'row', alignItems: 'center', gap: 8,
-    borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10,
+    flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
+    borderWidth: 1, paddingHorizontal: spacing.md, paddingVertical: spacing.sm + 2,
   },
   pinSearchInput: { flex: 1, fontSize: 14, fontFamily: 'Inter_400Regular' },
 
   pinDropdown: { borderWidth: 1, overflow: 'hidden' },
   pinDropdownItem: {
-    padding: 12, borderBottomWidth: StyleSheet.hairlineWidth,
+    padding: spacing.md, borderBottomWidth: StyleSheet.hairlineWidth,
   },
   pinDropdownName: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   pinDropdownSub: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 2 },
@@ -491,7 +494,8 @@ const styles = StyleSheet.create({
 
   submitBtn: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 8, paddingVertical: 14, marginTop: 8,
+    gap: spacing.sm, paddingVertical: spacing.md + 2, marginTop: spacing.xs,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
   },
   submitLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 });

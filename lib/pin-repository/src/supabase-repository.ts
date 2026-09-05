@@ -199,6 +199,18 @@ class SupabasePinRepository implements PinRepository {
     // when using the anon key — no need to duplicate that check here.
     let q = this.client.from('pins').select(SELECT_PINS);
 
+    // Archived pins (catalogue_status='archived' and/or archived_at set —
+    // retired legacy records, and catalogue-filler seed batches that were
+    // marked for retirement) must never surface in normal discovery. This
+    // is the single shared query path behind catalogue browse, search, and
+    // character/category lookups, so filtering here covers all of them.
+    // getPinById/getPinByPinhuntId/getPinsByIds intentionally do NOT apply
+    // this, so a pin already referenced by a collection/trade/post still
+    // resolves when loaded directly.
+    if (!filters.includeArchived) {
+      q = q.is('archived_at', null).or('catalogue_status.is.null,catalogue_status.neq.archived');
+    }
+
     // Explicit status filter (e.g. to list pending_review pins with service role)
     if (filters.status) {
       q = q.eq('status', filters.status);
@@ -384,6 +396,8 @@ class SupabasePinRepository implements PinRepository {
       .from('pins')
       .select(SELECT_PINS)
       .eq('collection', series)
+      .is('archived_at', null)
+      .or('catalogue_status.is.null,catalogue_status.neq.archived')
       .order('title');
 
     if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
@@ -422,6 +436,8 @@ class SupabasePinRepository implements PinRepository {
         .from('pins')
         .select(field)
         .not(field, 'is', null)
+        .is('archived_at', null)
+        .or('catalogue_status.is.null,catalogue_status.neq.archived')
         .order(field)
         .range(offset, offset + PAGE - 1);
 

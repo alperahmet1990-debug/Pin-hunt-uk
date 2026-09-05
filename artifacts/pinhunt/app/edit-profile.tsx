@@ -26,6 +26,7 @@ import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { Avatar } from '@/components/Avatar';
+import { radius, spacing } from '@/constants/theme';
 import type { ProfileVisibility } from '@workspace/pin-repository';
 
 // ─── Geocoding API ────────────────────────────────────────────────────────────
@@ -374,11 +375,11 @@ export default function EditProfileScreen() {
     geocodingStatus !== 'loading';
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <ScrollView
           ref={scrollRef}
-          contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 40, paddingHorizontal: 20 }}
+          contentContainerStyle={{ paddingTop: spacing.lg, paddingBottom: insets.bottom + spacing.xxxl + spacing.sm, paddingHorizontal: spacing.xl }}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
@@ -386,14 +387,14 @@ export default function EditProfileScreen() {
           <View style={styles.avatarSection}>
             <TouchableOpacity onPress={handlePickAvatar} activeOpacity={0.8} style={styles.avatarWrap}>
               <Avatar uri={avatarUrl} name={username || 'Me'} size={90} />
-              <View style={[styles.avatarEditBadge, { backgroundColor: colors.primary }]}>
+              <View style={[styles.avatarEditBadge, { backgroundColor: colors.homeCoral, borderColor: colors.homeBackground }]}>
                 {uploadingAvatar
-                  ? <ActivityIndicator size="small" color="#fff" />
-                  : <Feather name="camera" size={14} color="#fff" />
+                  ? <ActivityIndicator size="small" color={colors.homeSurface} />
+                  : <Feather name="camera" size={14} color={colors.homeSurface} />
                 }
               </View>
             </TouchableOpacity>
-            <Text style={[styles.avatarHint, { color: colors.mutedForeground }]}>
+            <Text style={[styles.avatarHint, { color: colors.homeMuted }]}>
               Tap to change photo
             </Text>
           </View>
@@ -402,19 +403,19 @@ export default function EditProfileScreen() {
           <SectionHeader title="Basic Info" />
 
           <Field label="Username *" error={usernameError}>
-            <View style={[styles.inputRow, { borderColor: usernameError ? colors.destructive : colors.border, backgroundColor: colors.card }]}>
-              <Text style={[styles.atSign, { color: colors.mutedForeground }]}>@</Text>
+            <View style={[styles.inputRow, { borderColor: usernameError ? colors.destructive : colors.homeLine, backgroundColor: colors.homeSurface }]}>
+              <Text style={[styles.atSign, { color: colors.homeMuted }]}>@</Text>
               <TextInput
-                style={[styles.input, styles.inputFlex, { color: colors.foreground }]}
+                style={[styles.input, styles.inputFlex, { color: colors.homeInk }]}
                 value={username}
                 onChangeText={handleUsernameChange}
                 placeholder="yourname"
-                placeholderTextColor={colors.mutedForeground}
+                placeholderTextColor={colors.homeMuted}
                 autoCapitalize="none"
                 autoCorrect={false}
                 maxLength={20}
               />
-              {checkingUsername && <ActivityIndicator size="small" color={colors.mutedForeground} />}
+              {checkingUsername && <ActivityIndicator size="small" color={colors.homeMuted} />}
               {!checkingUsername && usernameAvailable === true && (
                 <Feather name="check-circle" size={16} color={colors.owned} />
               )}
@@ -426,11 +427,11 @@ export default function EditProfileScreen() {
 
           <Field label="Bio">
             <TextInput
-              style={[styles.input, styles.inputBlock, styles.inputMultiline, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              style={[styles.input, styles.inputBlock, styles.inputMultiline, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
               value={bio}
               onChangeText={setBio}
               placeholder="Tell other collectors about yourself…"
-              placeholderTextColor={colors.mutedForeground}
+              placeholderTextColor={colors.homeMuted}
               multiline
               numberOfLines={3}
               maxLength={200}
@@ -439,11 +440,11 @@ export default function EditProfileScreen() {
 
           <Field label="Trading Region">
             <TextInput
-              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              style={[styles.input, styles.inputBlock, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
               value={tradingRegion}
               onChangeText={setTradingRegion}
               placeholder="e.g. London, UK"
-              placeholderTextColor={colors.mutedForeground}
+              placeholderTextColor={colors.homeMuted}
               maxLength={60}
             />
           </Field>
@@ -451,21 +452,21 @@ export default function EditProfileScreen() {
           {/* Trading Preferences */}
           <SectionHeader title="Trading Preferences" />
 
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <ToggleRow
               label="International Trading"
               description="Allow trades outside the UK"
               value={intlTrading}
               onValueChange={setIntlTrading}
             />
-            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
             <ToggleRow
               label="Allow Trade Requests"
               description="Let collectors send you trade requests"
               value={allowTradeReqs}
               onValueChange={setAllowTradeReqs}
             />
-            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
             <ToggleRow
               label="Allow Messages"
               description="Let other collectors message you"
@@ -493,9 +494,9 @@ export default function EditProfileScreen() {
                 : 'Enter your postcode so collectors nearby can discover you.'
             }
           >
-            <View style={[styles.inputRow, { borderColor: geocodingStatus === 'error' ? colors.destructive : colors.border, backgroundColor: colors.card }]}>
+            <View style={[styles.inputRow, { borderColor: geocodingStatus === 'error' ? colors.destructive : colors.homeLine, backgroundColor: colors.homeSurface }]}>
               <TextInput
-                style={[styles.input, styles.inputFlex, { color: colors.foreground }]}
+                style={[styles.input, styles.inputFlex, { color: colors.homeInk }]}
                 value={postcode}
                 onChangeText={(v) => {
                   setPostcode(v);
@@ -509,12 +510,12 @@ export default function EditProfileScreen() {
                     ? 'Location already set — enter postcode to update'
                     : 'e.g. WD17 1AB'
                 }
-                placeholderTextColor={colors.mutedForeground}
+                placeholderTextColor={colors.homeMuted}
                 autoCapitalize="characters"
                 autoCorrect={false}
                 maxLength={8}
               />
-              {geocodingStatus === 'loading' && <ActivityIndicator size="small" color={colors.mutedForeground} />}
+              {geocodingStatus === 'loading' && <ActivityIndicator size="small" color={colors.homeMuted} />}
               {geocodingStatus === 'success' && <Feather name="check-circle" size={16} color={colors.owned} />}
               {geocodingStatus === 'error' && <Feather name="x-circle" size={16} color={colors.destructive} />}
               {geocodingStatus === 'idle' && profile?.hasLocationSet && !postcode && (
@@ -547,59 +548,59 @@ export default function EditProfileScreen() {
 
           <Field label="Town / City">
             <TextInput
-              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              style={[styles.input, styles.inputBlock, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
               value={town}
               onChangeText={setTown}
               placeholder="e.g. Watford"
-              placeholderTextColor={colors.mutedForeground}
+              placeholderTextColor={colors.homeMuted}
               maxLength={60}
             />
           </Field>
 
           <Field label="County / Region">
             <TextInput
-              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              style={[styles.input, styles.inputBlock, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
               value={county}
               onChangeText={setCounty}
               placeholder="e.g. Hertfordshire"
-              placeholderTextColor={colors.mutedForeground}
+              placeholderTextColor={colors.homeMuted}
               maxLength={60}
             />
           </Field>
 
           <Field label="Country">
             <TextInput
-              style={[styles.input, styles.inputBlock, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.card }]}
+              style={[styles.input, styles.inputBlock, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
               value={country}
               onChangeText={setCountry}
               placeholder="e.g. England"
-              placeholderTextColor={colors.mutedForeground}
+              placeholderTextColor={colors.homeMuted}
               maxLength={60}
             />
           </Field>
 
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <ToggleRow
               label="Appear in Collectors Nearby"
               description="Let nearby collectors discover your profile"
               value={nearbyDiscovery}
               onValueChange={setNearbyDiscovery}
             />
-            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
             <ToggleRow
               label="Open to Local Trades"
               description="Happy to meet up and trade in person"
               value={openToLocal}
               onValueChange={setOpenToLocal}
             />
-            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
             <ToggleRow
               label="Open to Postal Trades"
               description="Happy to trade by post"
               value={openToPostal}
               onValueChange={setOpenToPostal}
             />
-            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
             <ToggleRow
               label="Happy to Travel"
               description="Willing to travel to meet collectors"
@@ -609,8 +610,8 @@ export default function EditProfileScreen() {
           </View>
 
           {nearbyDiscovery && (
-            <View style={{ marginTop: 12, gap: 8 }}>
-              <Text style={[styles.label, { color: colors.foreground }]}>Discovery Radius</Text>
+            <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
+              <Text style={[styles.label, { color: colors.homeInk }]}>Discovery Radius</Text>
               <View style={styles.radiusRow}>
                 {([10, 25, 50, 100] as const).map(r => (
                   <TouchableOpacity
@@ -619,13 +620,13 @@ export default function EditProfileScreen() {
                     style={[
                       styles.radiusPill,
                       {
-                        backgroundColor: preferredRadius === r ? colors.primary : colors.card,
-                        borderColor: preferredRadius === r ? colors.primary : colors.border,
+                        backgroundColor: preferredRadius === r ? colors.homeCoral : colors.homeSurface,
+                        borderColor: preferredRadius === r ? colors.homeCoral : colors.homeLine,
                       },
                     ]}
                     activeOpacity={0.75}
                   >
-                    <Text style={[styles.radiusPillText, { color: preferredRadius === r ? '#fff' : colors.foreground }]}>
+                    <Text style={[styles.radiusPillText, { color: preferredRadius === r ? colors.homeSurface : colors.homeInk }]}>
                       {r} mi
                     </Text>
                   </TouchableOpacity>
@@ -634,9 +635,9 @@ export default function EditProfileScreen() {
             </View>
           )}
 
-          <View style={[styles.privacyNote, { backgroundColor: colors.secondary, borderRadius: 10 }]}>
-            <Feather name="shield" size={14} color={colors.mutedForeground} />
-            <Text style={[styles.privacyNoteText, { color: colors.mutedForeground }]}>
+          <View style={[styles.privacyNote, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="shield" size={14} color={colors.homeMuted} />
+            <Text style={[styles.privacyNoteText, { color: colors.homeMuted }]}>
               Your exact location is never shared. Only your town and county are shown to other collectors — approximate distance is shown as a band (e.g. "Within 10 miles"), not a precise figure.
             </Text>
           </View>
@@ -644,7 +645,7 @@ export default function EditProfileScreen() {
           {/* Privacy */}
           <SectionHeader title="Privacy" />
 
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <VisibilityRow
               value={visibility}
               onChange={setVisibility}
@@ -659,15 +660,15 @@ export default function EditProfileScreen() {
           )}
 
           <TouchableOpacity
-            style={[styles.saveBtn, { backgroundColor: canSave ? colors.primary : colors.muted }]}
+            style={[styles.saveBtn, { backgroundColor: canSave ? colors.homeCoral : colors.homeAqua, shadowColor: colors.homeShadow }]}
             onPress={handleSave}
             disabled={!canSave}
             activeOpacity={0.8}
           >
             {saving ? (
-              <ActivityIndicator color="#fff" />
+              <ActivityIndicator color={colors.homeSurface} />
             ) : (
-              <Text style={styles.saveBtnText}>Save Changes</Text>
+              <Text style={[styles.saveBtnText, { color: colors.homeSurface }]}>Save Changes</Text>
             )}
           </TouchableOpacity>
         </ScrollView>
@@ -681,7 +682,7 @@ export default function EditProfileScreen() {
 function SectionHeader({ title }: { title: string }) {
   const colors = useColors();
   return (
-    <Text style={[styles.sectionHeader, { color: colors.mutedForeground }]}>{title.toUpperCase()}</Text>
+    <Text style={[styles.sectionHeader, { color: colors.homeMuted }]}>{title.toUpperCase()}</Text>
   );
 }
 
@@ -689,8 +690,8 @@ function Field({ label, hint, error, children }: { label: string; hint?: string;
   const colors = useColors();
   return (
     <View style={styles.fieldWrapper}>
-      <Text style={[styles.label, { color: colors.foreground }]}>{label}</Text>
-      {hint && <Text style={[styles.fieldHint, { color: colors.mutedForeground }]}>{hint}</Text>}
+      <Text style={[styles.label, { color: colors.homeInk }]}>{label}</Text>
+      {hint && <Text style={[styles.fieldHint, { color: colors.homeMuted }]}>{hint}</Text>}
       {children}
       {error && <Text style={[styles.fieldError, { color: colors.destructive }]}>{error}</Text>}
     </View>
@@ -707,14 +708,14 @@ function ToggleRow({ label, description, value, onValueChange }: {
   return (
     <View style={styles.toggleRow}>
       <View style={{ flex: 1 }}>
-        <Text style={[styles.toggleLabel, { color: colors.foreground }]}>{label}</Text>
-        <Text style={[styles.toggleDesc, { color: colors.mutedForeground }]}>{description}</Text>
+        <Text style={[styles.toggleLabel, { color: colors.homeInk }]}>{label}</Text>
+        <Text style={[styles.toggleDesc, { color: colors.homeMuted }]}>{description}</Text>
       </View>
       <Switch
         value={value}
         onValueChange={onValueChange}
-        trackColor={{ false: colors.muted, true: colors.primary }}
-        thumbColor="#fff"
+        trackColor={{ false: colors.homeAqua, true: colors.homeCoral }}
+        thumbColor={colors.homeSurface}
       />
     </View>
   );
@@ -731,16 +732,16 @@ function VisibilityRow({ value, onChange }: { value: ProfileVisibility; onChange
       {options.map((opt, i) => (
         <TouchableOpacity
           key={opt.key}
-          style={[styles.visibilityOption, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.border }]}
+          style={[styles.visibilityOption, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.homeLine }]}
           onPress={() => onChange(opt.key)}
           activeOpacity={0.7}
         >
           <View style={{ flex: 1 }}>
-            <Text style={[styles.toggleLabel, { color: colors.foreground }]}>{opt.label}</Text>
-            <Text style={[styles.toggleDesc, { color: colors.mutedForeground }]}>{opt.desc}</Text>
+            <Text style={[styles.toggleLabel, { color: colors.homeInk }]}>{opt.label}</Text>
+            <Text style={[styles.toggleDesc, { color: colors.homeMuted }]}>{opt.desc}</Text>
           </View>
-          <View style={[styles.radio, { borderColor: colors.primary }]}>
-            {value === opt.key && <View style={[styles.radioDot, { backgroundColor: colors.primary }]} />}
+          <View style={[styles.radio, { borderColor: colors.homeCoral }]}>
+            {value === opt.key && <View style={[styles.radioDot, { backgroundColor: colors.homeCoral }]} />}
           </View>
         </TouchableOpacity>
       ))}
@@ -750,8 +751,8 @@ function VisibilityRow({ value, onChange }: { value: ProfileVisibility; onChange
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  sectionHeader: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: 24, marginBottom: 8 },
-  fieldWrapper: { gap: 6, marginBottom: 16 },
+  sectionHeader: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: spacing.xxl, marginBottom: spacing.sm },
+  fieldWrapper: { gap: spacing.sm - 2, marginBottom: spacing.lg },
   label: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   fieldError: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   fieldHint: { fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 16, marginTop: -2 },
@@ -759,34 +760,37 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 12,
-    gap: 8,
+    borderRadius: radius.sm,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.md,
+    gap: spacing.sm,
   },
   atSign: { fontSize: 16, fontFamily: 'Inter_500Medium' },
-  input: { fontSize: 16, fontFamily: 'Inter_400Regular', borderRadius: 10 },
+  input: { fontSize: 16, fontFamily: 'Inter_400Regular', borderRadius: radius.sm },
   inputFlex: { flex: 1 },
-  inputBlock: { borderWidth: 1, paddingHorizontal: 12, paddingVertical: 12 },
+  inputBlock: { borderWidth: 1, paddingHorizontal: spacing.md, paddingVertical: spacing.md },
   inputMultiline: { minHeight: 80, textAlignVertical: 'top' },
-  card: { borderWidth: 1, borderRadius: 14, overflow: 'hidden' },
-  divider: { height: StyleSheet.hairlineWidth, marginHorizontal: 14 },
-  toggleRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 14, gap: 12 },
+  card: { borderWidth: 1, borderRadius: radius.md, overflow: 'hidden' },
+  divider: { height: StyleSheet.hairlineWidth, marginHorizontal: spacing.md + 2 },
+  toggleRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: spacing.md + 2, paddingVertical: spacing.md + 2, gap: spacing.md },
   toggleLabel: { fontSize: 15, fontFamily: 'Inter_500Medium' },
   toggleDesc: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
-  visibilityOption: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 14, gap: 12 },
+  visibilityOption: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: spacing.md + 2, paddingVertical: spacing.md + 2, gap: spacing.md },
   radio: { width: 20, height: 20, borderRadius: 10, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
   radioDot: { width: 10, height: 10, borderRadius: 5 },
-  errorBox: { borderWidth: 1, borderRadius: 10, padding: 12, marginBottom: 12 },
+  errorBox: { borderWidth: 1, borderRadius: radius.sm, padding: spacing.md, marginBottom: spacing.md },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
-  saveBtn: { borderRadius: 12, paddingVertical: 16, alignItems: 'center', marginTop: 8 },
-  saveBtnText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
-  radiusRow: { flexDirection: 'row', gap: 8 },
+  saveBtn: {
+    borderRadius: radius.md, paddingVertical: spacing.lg, alignItems: 'center', marginTop: spacing.xs,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
+  },
+  saveBtnText: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  radiusRow: { flexDirection: 'row', gap: spacing.sm },
   radiusPill: {
     flex: 1,
     alignItems: 'center',
-    paddingVertical: 10,
-    borderRadius: 10,
+    paddingVertical: spacing.sm + 2,
+    borderRadius: radius.sm,
     borderWidth: 1,
   },
   radiusPillText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
@@ -794,31 +798,32 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 6,
+    gap: spacing.xs + 2,
     borderWidth: 1,
-    borderRadius: 10,
-    paddingVertical: 10,
-    marginTop: 8,
+    borderRadius: radius.sm,
+    paddingVertical: spacing.sm + 2,
+    marginTop: spacing.sm,
   },
   removeLocationText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
   privacyNote: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    gap: 8,
-    padding: 12,
-    marginTop: 12,
-    marginBottom: 4,
+    gap: spacing.sm,
+    padding: spacing.md,
+    marginTop: spacing.md,
+    marginBottom: spacing.xs,
+    borderRadius: radius.sm,
   },
   privacyNoteText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 18 },
 
   // Avatar picker
-  avatarSection: { alignItems: 'center', paddingVertical: 20 },
+  avatarSection: { alignItems: 'center', paddingVertical: spacing.xl },
   avatarWrap: { position: 'relative' },
   avatarEditBadge: {
     position: 'absolute', bottom: 0, right: 0,
     width: 28, height: 28, borderRadius: 14,
     alignItems: 'center', justifyContent: 'center',
-    borderWidth: 2, borderColor: '#fff',
+    borderWidth: 2,
   },
-  avatarHint: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 8 },
+  avatarHint: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: spacing.sm },
 });

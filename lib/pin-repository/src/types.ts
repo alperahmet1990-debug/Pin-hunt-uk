@@ -124,6 +124,16 @@ export interface PinFilters {
   verificationStatus?: PinVerificationStatus;
   /** When true, returns only pins where needs_front_image OR needs_back_image is true. */
   needsAnyImage?: boolean;
+  /**
+   * By default, archived pins (catalogue_status='archived' or archived_at
+   * set — e.g. retired legacy records or catalogue-filler seed batches) are
+   * excluded from every listing/search query, since normal collector
+   * discovery must never surface them. Direct by-ID lookups are unaffected
+   * so existing collection/trade/post references keep resolving. Set this
+   * to true only for tooling that genuinely needs to see archived rows
+   * (e.g. admin catalogue management).
+   */
+  includeArchived?: boolean;
   limit?: number;
   offset?: number;
 }

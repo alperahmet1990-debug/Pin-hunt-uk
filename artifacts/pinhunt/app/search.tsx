@@ -27,10 +27,43 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useCollection } from '@/context/CollectionContext';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { getPinImageSource } from '@/utils/pinImage';
+import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 const RECENTS_KEY = 'recent_pin_searches';
 const MAX_RECENTS = 8;
+
+/**
+ * Ranks a pin's relevance to a search query so collector-intent matches
+ * (character metadata) outrank incidental text matches (e.g. "Mickey" only
+ * appearing inside "Mickey's of Glendale" as a brand/collection name).
+ * Lower is more relevant. Generic — works for any character name, not just
+ * specific examples.
+ */
+function matchRank(pin: CataloguePin, query: string): number {
+  const q = query.trim().toLowerCase();
+  if (!q) return 6;
+
+  // Tier 1 — character metadata match (junction-table characters, plus the
+  // enriched main/all-characters text columns for pins not yet linked in
+  // the junction table).
+  const charNames = pin.characters.map(c => c.toLowerCase());
+  const charText = `${pin.mainCharacter ?? ''};${pin.allCharacters ?? ''}`.toLowerCase();
+  if (charNames.some(c => c === q)) return 0;
+  if (charNames.some(c => c.startsWith(q)) || pin.mainCharacter?.toLowerCase().startsWith(q)) return 1;
+  if (charNames.some(c => c.includes(q)) || charText.includes(q)) return 2;
+
+  // Tier 2 — pin title match
+  const title = pin.title.toLowerCase();
+  if (title.startsWith(q)) return 3;
+  if (title.includes(q)) return 4;
+
+  // Tier 3 — set/series match
+  if (pin.collection.toLowerCase().includes(q)) return 5;
+
+  // Tier 4 — everything else (brand, aliases, subject, etc.)
+  return 6;
+}
 
 export default function SearchScreen() {
   const colors = useColors();
@@ -105,6 +138,7 @@ export default function SearchScreen() {
               p.collection.toLowerCase().includes(lower) ||
               p.brand.toLowerCase().includes(lower),
           )
+          .sort((a, b) => matchRank(a, q) - matchRank(b, q))
           .slice(0, 30),
       );
       return;
@@ -123,6 +157,10 @@ export default function SearchScreen() {
         for (const pin of [...textMatches, ...characterMatches]) {
           if (!seen.has(pin.id)) { seen.add(pin.id); merged.push(pin); }
         }
+        // Rank so character matches (collector intent) outrank incidental
+        // text matches, then slice — otherwise a relevant character pin
+        // could be pushed past the 30-result cap by noisy matches.
+        merged.sort((a, b) => matchRank(a, q) - matchRank(b, q));
         setResults(merged.slice(0, 30));
       } catch {
         if (mySeq === seq.current) setResults([]);
@@ -151,7 +189,7 @@ export default function SearchScreen() {
   const showIdle = !query.trim();
 
   return (
-    <View style={[styles.screen, { backgroundColor: colors.background, paddingTop: topPad }]}>
+    <View style={[styles.screen, { backgroundColor: colors.homeBackground, paddingTop: topPad }]}>
       {/* ── Header: back + search input ── */}
       <View style={styles.header}>
         <TouchableOpacity
@@ -160,16 +198,16 @@ export default function SearchScreen() {
           style={styles.backBtn}
           activeOpacity={0.7}
         >
-          <Feather name="chevron-left" size={24} color={colors.foreground} />
+          <Feather name="chevron-left" size={24} color={colors.homeInk} />
         </TouchableOpacity>
-        <View style={[styles.inputWrap, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: 999 }]}>
-          <Feather name="search" size={16} color={colors.mutedForeground} />
+        <View style={[styles.inputWrap, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine, borderRadius: radius.pill }]}>
+          <Feather name="search" size={16} color={colors.homeMuted} />
           <TextInput
             value={query}
             onChangeText={setQuery}
             placeholder="Search pins, characters, & more…"
-            placeholderTextColor={colors.mutedForeground}
-            style={[styles.input, { color: colors.foreground }]}
+            placeholderTextColor={colors.homeMuted}
+            style={[styles.input, { color: colors.homeInk }]}
             autoFocus
             autoCorrect={false}
             autoCapitalize="none"
@@ -178,7 +216,7 @@ export default function SearchScreen() {
           />
           {query.length > 0 && (
             <TouchableOpacity onPress={() => setQuery('')} hitSlop={8}>
-              <Feather name="x-circle" size={16} color={colors.mutedForeground} />
+              <Feather name="x-circle" size={16} color={colors.homeMuted} />
             </TouchableOpacity>
           )}
         </View>
@@ -187,14 +225,14 @@ export default function SearchScreen() {
       <ScrollView
         style={styles.body}
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ paddingBottom: insets.bottom + 24 }}
+        contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxl }}
       >
         {showIdle ? (
           <>
             {/* ── Beta catalogue note ── */}
             <View style={styles.betaNote}>
-              <Feather name="info" size={12} color={colors.mutedForeground} />
-              <Text style={[styles.betaNoteText, { color: colors.mutedForeground }]}>
+              <Feather name="info" size={12} color={colors.homeMuted} />
+              <Text style={[styles.betaNoteText, { color: colors.homeMuted }]}>
                 PinHunt's catalogue is currently a curated beta collection. More pins will be
                 added as catalogue integrations and community validation become available.
               </Text>
@@ -204,19 +242,19 @@ export default function SearchScreen() {
             {recents.length > 0 && (
               <View style={styles.section}>
                 <View style={styles.sectionHeader}>
-                  <Text style={[styles.sectionTitle, { color: colors.foreground }]}>Recent Searches</Text>
+                  <Text style={[styles.sectionTitle, { color: colors.homeInk }]}>Recent Searches</Text>
                   <TouchableOpacity onPress={clearRecents} hitSlop={8}>
-                    <Text style={[styles.clearAll, { color: colors.mutedForeground }]}>Clear all</Text>
+                    <Text style={[styles.clearAll, { color: colors.homeMuted }]}>Clear all</Text>
                   </TouchableOpacity>
                 </View>
                 {recents.map(term => (
                   <View key={term} style={styles.recentRow}>
                     <TouchableOpacity style={styles.recentTap} onPress={() => setQuery(term)} activeOpacity={0.7}>
-                      <Feather name="clock" size={15} color={colors.mutedForeground} />
-                      <Text style={[styles.recentText, { color: colors.foreground }]} numberOfLines={1}>{term}</Text>
+                      <Feather name="clock" size={15} color={colors.homeMuted} />
+                      <Text style={[styles.recentText, { color: colors.homeInk }]} numberOfLines={1}>{term}</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => removeRecent(term)} hitSlop={8} style={[styles.recentRemove, { backgroundColor: colors.secondary }]}>
-                      <Feather name="x" size={12} color={colors.mutedForeground} />
+                    <TouchableOpacity onPress={() => removeRecent(term)} hitSlop={8} style={[styles.recentRemove, { backgroundColor: colors.homeAqua }]}>
+                      <Feather name="x" size={12} color={colors.homeMuted} />
                     </TouchableOpacity>
                   </View>
                 ))}
@@ -226,12 +264,12 @@ export default function SearchScreen() {
             {/* ── Popular pins ── */}
             {popular.length > 0 && (
               <View style={styles.section}>
-                <Text style={[styles.sectionTitle, { color: colors.foreground }]}>Popular Pins</Text>
+                <Text style={[styles.sectionTitle, { color: colors.homeInk }]}>Popular Pins</Text>
                 <View style={styles.popularGrid}>
                   {popular.map(pin => (
                     <TouchableOpacity
                       key={pin.id}
-                      style={[styles.popularCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+                      style={[styles.popularCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
                       onPress={() => openPin(pin)}
                       activeOpacity={0.8}
                     >
@@ -246,13 +284,13 @@ export default function SearchScreen() {
           <View style={styles.section}>
             {searching && results.length === 0 ? (
               <View style={styles.stateRow}>
-                <ActivityIndicator size="small" color={colors.mutedForeground} />
-                <Text style={[styles.stateText, { color: colors.mutedForeground }]}>Searching…</Text>
+                <ActivityIndicator size="small" color={colors.homeMuted} />
+                <Text style={[styles.stateText, { color: colors.homeMuted }]}>Searching…</Text>
               </View>
             ) : results.length === 0 ? (
               <View style={styles.stateRow}>
-                <Feather name="search" size={15} color={colors.mutedForeground} />
-                <Text style={[styles.stateText, { color: colors.mutedForeground }]}>No pins found</Text>
+                <Feather name="search" size={15} color={colors.homeMuted} />
+                <Text style={[styles.stateText, { color: colors.homeMuted }]}>No pins found</Text>
               </View>
             ) : (
               results.map(pin => (
@@ -260,12 +298,12 @@ export default function SearchScreen() {
                   key={pin.id}
                   onPress={() => openPin(pin)}
                   activeOpacity={0.8}
-                  style={[styles.resultRow, { borderBottomColor: colors.border }]}
+                  style={[styles.resultRow, { borderBottomColor: colors.homeLine }]}
                 >
-                  <Image source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.secondary }]} />
+                  <Image source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.homeAqua }]} />
                   <View style={styles.resultInfo}>
-                    <Text style={[styles.resultTitle, { color: colors.foreground }]} numberOfLines={1}>{pin.title}</Text>
-                    <Text style={[styles.resultMeta, { color: colors.mutedForeground }]} numberOfLines={1}>
+                    <Text style={[styles.resultTitle, { color: colors.homeInk }]} numberOfLines={1}>{pin.title}</Text>
+                    <Text style={[styles.resultMeta, { color: colors.homeMuted }]} numberOfLines={1}>
                       {pin.brand} · {pin.collection}
                     </Text>
                   </View>
@@ -277,13 +315,13 @@ export default function SearchScreen() {
                     accessibilityLabel={`Quick add ${pin.title}`}
                     style={[
                       styles.quickAddBtn,
-                      { backgroundColor: getEntry(pin.id)?.status && getEntry(pin.id)!.status !== 'none' ? colors.owned : colors.primary },
+                      { backgroundColor: getEntry(pin.id)?.status && getEntry(pin.id)!.status !== 'none' ? colors.owned : colors.homeCoral },
                     ]}
                   >
                     <Feather
                       name={getEntry(pin.id)?.status && getEntry(pin.id)!.status !== 'none' ? 'check' : 'plus'}
                       size={15}
-                      color="#fff"
+                      color={colors.homeSurface}
                     />
                   </TouchableOpacity>
                 </TouchableOpacity>
@@ -293,7 +331,7 @@ export default function SearchScreen() {
         )}
       </ScrollView>
 
-      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
     </View>
   );
 }
@@ -303,43 +341,43 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 8,
-    paddingVertical: 8,
-    gap: 4,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.sm,
+    gap: spacing.xs,
   },
-  backBtn: { padding: 4 },
+  backBtn: { padding: spacing.xs },
   inputWrap: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    paddingHorizontal: 12,
+    paddingHorizontal: spacing.md,
     height: 40,
-    gap: 8,
-    marginRight: 8,
+    gap: spacing.sm,
+    marginRight: spacing.sm,
   },
-  input: { flex: 1, fontSize: 15, paddingVertical: 0 },
+  input: { flex: 1, fontSize: 15, paddingVertical: 0, fontFamily: 'Inter_400Regular' },
   body: { flex: 1 },
-  section: { paddingHorizontal: 16, paddingTop: 16 },
+  section: { paddingHorizontal: spacing.lg, paddingTop: spacing.lg },
   betaNote: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    gap: 6,
-    paddingHorizontal: 16,
-    paddingTop: 12,
+    gap: spacing.sm - 2,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.md,
   },
   betaNoteText: { flex: 1, fontSize: 11, fontFamily: 'Inter_500Medium', lineHeight: 16 },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 4,
+    marginBottom: spacing.xs,
   },
-  sectionTitle: { fontSize: 16, fontWeight: '700', marginBottom: 4 },
-  clearAll: { fontSize: 13, fontWeight: '500' },
-  recentRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10 },
-  recentTap: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 },
-  recentText: { fontSize: 15, flex: 1 },
+  sectionTitle: { fontSize: 16, fontFamily: 'Inter_700Bold', marginBottom: spacing.xs },
+  clearAll: { fontSize: 13, fontFamily: 'Inter_500Medium' },
+  recentRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: spacing.sm + 2 },
+  recentTap: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2 },
+  recentText: { fontSize: 15, flex: 1, fontFamily: 'Inter_400Regular' },
   recentRemove: {
     width: 22,
     height: 22,
@@ -347,26 +385,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  popularGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 8 },
+  popularGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm + 2, marginTop: spacing.sm },
   popularCard: {
     width: '30.5%',
     aspectRatio: 1,
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
+    padding: spacing.sm + 2,
   },
   popularImage: { width: '100%', height: '100%' },
-  stateRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 16 },
-  stateText: { fontSize: 14 },
+  stateRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.lg },
+  stateText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   resultRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
+    paddingVertical: spacing.sm + 2,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    gap: 12,
+    gap: spacing.md,
   },
-  resultImage: { width: 44, height: 44, borderRadius: 8 },
+  resultImage: { width: 44, height: 44, borderRadius: radius.sm - 2 },
   resultInfo: { flex: 1 },
   quickAddBtn: {
     width: 28,
@@ -375,6 +413,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  resultTitle: { fontSize: 15, fontWeight: '600' },
-  resultMeta: { fontSize: 13, marginTop: 2 },
+  resultTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  resultMeta: { fontSize: 13, marginTop: 2, fontFamily: 'Inter_400Regular' },
 });

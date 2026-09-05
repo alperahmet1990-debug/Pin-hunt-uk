@@ -22,6 +22,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { radius, spacing } from '@/constants/theme';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 
@@ -39,14 +40,16 @@ const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   needs_changes:  'Needs Changes',
 };
 
-const STATUS_COLOR: Record<PinSubmissionStatus, string> = {
-  draft:          '#6366F1',
-  submitted:      '#3B82F6',
-  under_review:   '#F59E0B',
-  approved:       '#16A34A',
-  rejected:       '#EF4444',
-  needs_changes:  '#F97316',
-};
+function statusColor(status: PinSubmissionStatus, colors: ReturnType<typeof useColors>): string {
+  switch (status) {
+    case 'draft': return colors.homeMuted;
+    case 'submitted': return colors.forTrade;
+    case 'under_review': return colors.homeSandInk;
+    case 'approved': return colors.owned;
+    case 'rejected': return colors.destructive;
+    case 'needs_changes': return colors.wanted;
+  }
+}
 
 function SubmissionCard({
   submission,
@@ -67,7 +70,7 @@ function SubmissionCard({
   isUnseen?: boolean;
   onImageError?: () => void;
 }) {
-  const statusColor = STATUS_COLOR[submission.status];
+  const sColor = statusColor(submission.status, colors);
   const canDelete   = submission.status === 'draft';
 
   return (
@@ -77,44 +80,44 @@ function SubmissionCard({
       style={[
         styles.card,
         {
-          backgroundColor: colors.card,
-          borderColor: isUnseen ? statusColor : colors.border,
-          borderRadius: colors.radius,
+          backgroundColor: colors.homeSurface,
+          borderColor: isUnseen ? sColor : colors.homeLine,
+          borderRadius: radius.lg,
           borderWidth: isUnseen ? 2 : 1,
         },
       ]}
     >
       {/* Thumbnail */}
-      <View style={[styles.thumb, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
+      <View style={[styles.thumb, { backgroundColor: colors.homeAqua, borderRadius: radius.sm - 2 }]}>
         {imageUrl ? (
           <Image source={{ uri: imageUrl }} style={styles.thumbImg} resizeMode="cover" onError={onImageError} />
         ) : (
-          <Feather name="image" size={24} color={colors.mutedForeground} />
+          <Feather name="image" size={24} color={colors.homeMuted} />
         )}
       </View>
 
       {/* Info */}
       <View style={styles.cardInfo}>
         <View style={styles.cardNameRow}>
-          <Text style={[styles.cardName, { color: colors.foreground, flex: 1 }]} numberOfLines={2}>
+          <Text style={[styles.cardName, { color: colors.homeInk, flex: 1 }]} numberOfLines={2}>
             {submission.proposedName}
           </Text>
           {isUnseen && (
-            <View style={[styles.newBadge, { backgroundColor: statusColor }]}>
-              <Text style={styles.newBadgeLabel}>NEW</Text>
+            <View style={[styles.newBadge, { backgroundColor: sColor }]}>
+              <Text style={[styles.newBadgeLabel, { color: colors.homeSurface }]}>NEW</Text>
             </View>
           )}
         </View>
-        <Text style={[styles.cardBrand, { color: colors.mutedForeground }]}>
+        <Text style={[styles.cardBrand, { color: colors.homeMuted }]}>
           {submission.brand}
         </Text>
         <View style={styles.cardMeta}>
-          <View style={[styles.statusBadge, { backgroundColor: statusColor + '18' }]}>
-            <Text style={[styles.statusLabel, { color: statusColor }]}>
+          <View style={[styles.statusBadge, { backgroundColor: sColor + '18' }]}>
+            <Text style={[styles.statusLabel, { color: sColor }]}>
               {STATUS_LABEL[submission.status]}
             </Text>
           </View>
-          <Text style={[styles.cardDate, { color: colors.mutedForeground }]}>
+          <Text style={[styles.cardDate, { color: colors.homeMuted }]}>
             {new Date(submission.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
           </Text>
         </View>
@@ -124,21 +127,21 @@ function SubmissionCard({
           <TouchableOpacity
             onPress={onCreditedPinPress}
             hitSlop={{ top: 6, bottom: 6 }}
-            style={[styles.creditedRow, { backgroundColor: '#16A34A14', borderRadius: 6 }]}
+            style={[styles.creditedRow, { backgroundColor: colors.owned + '14' }]}
           >
-            <Feather name="link" size={11} color="#16A34A" />
-            <Text style={styles.creditedRowText} numberOfLines={1}>
+            <Feather name="link" size={11} color={colors.owned} />
+            <Text style={[styles.creditedRowText, { color: colors.owned }]} numberOfLines={1}>
               Credited on {submission.approvedPinTitle ?? submission.approvedPinhuntId}
             </Text>
-            <Feather name="chevron-right" size={12} color="#16A34A" />
+            <Feather name="chevron-right" size={12} color={colors.owned} />
           </TouchableOpacity>
         )}
 
         {/* Reviewer notes */}
         {submission.reviewerNotes && (
-          <View style={[styles.reviewerNoteBox, { backgroundColor: colors.secondary, borderRadius: 6 }]}>
-            <Feather name="message-circle" size={11} color={colors.mutedForeground} />
-            <Text style={[styles.reviewerNote, { color: colors.mutedForeground }]} numberOfLines={2}>
+          <View style={[styles.reviewerNoteBox, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="message-circle" size={11} color={colors.homeMuted} />
+            <Text style={[styles.reviewerNote, { color: colors.homeMuted }]} numberOfLines={2}>
               {submission.reviewerNotes}
             </Text>
           </View>
@@ -147,7 +150,7 @@ function SubmissionCard({
 
       {/* Actions */}
       <View style={styles.cardActions}>
-        <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
+        <Feather name="chevron-right" size={18} color={colors.homeMuted} />
         {canDelete && onDelete && (
           <TouchableOpacity onPress={onDelete} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
             <Feather name="trash-2" size={16} color={colors.destructive} />
@@ -355,45 +358,45 @@ export default function MySubmissionsScreen() {
     <>
       <Stack.Screen options={{ title: 'My Submissions' }} />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
-        contentContainerStyle={{ paddingBottom: botPad, paddingTop: 16, paddingHorizontal: 16 }}
+        style={[styles.root, { backgroundColor: colors.homeBackground }]}
+        contentContainerStyle={{ paddingBottom: botPad, paddingTop: spacing.lg, paddingHorizontal: spacing.lg }}
         showsVerticalScrollIndicator={false}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.primary} />
+          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.homeCoral} />
         }
       >
         {/* Add button */}
         <TouchableOpacity
           onPress={() => router.push('/add-pin')}
           activeOpacity={0.85}
-          style={[styles.addBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+          style={[styles.addBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
         >
-          <Feather name="plus" size={16} color="#fff" />
-          <Text style={styles.addBtnLabel}>Add a New Pin</Text>
+          <Feather name="plus" size={16} color={colors.homeSurface} />
+          <Text style={[styles.addBtnLabel, { color: colors.homeSurface }]}>Add a New Pin</Text>
         </TouchableOpacity>
 
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
-            <TouchableOpacity onPress={() => load()} style={{ padding: 8 }}>
-              <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
+            <TouchableOpacity onPress={() => load()} style={{ padding: spacing.sm }}>
+              <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
         ) : submissions.length === 0 ? (
           <View style={styles.empty}>
-            <Feather name="inbox" size={40} color={colors.mutedForeground} />
-            <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No submissions yet</Text>
-            <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+            <Feather name="inbox" size={40} color={colors.homeMuted} />
+            <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No submissions yet</Text>
+            <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
               Found a pin that's not in the catalogue? Tap "Add a New Pin" above to contribute.
             </Text>
           </View>
         ) : (
           <>
-            <Text style={[styles.countLabel, { color: colors.mutedForeground }]}>
+            <Text style={[styles.countLabel, { color: colors.homeMuted }]}>
               {submissions.length} submission{submissions.length !== 1 ? 's' : ''}
             </Text>
             {submissions.map(s => (
@@ -422,33 +425,36 @@ export default function MySubmissionsScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  center: { flex: 1, alignItems: 'center', paddingTop: 60, gap: 12 },
-  addBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 13, marginBottom: 16 },
-  addBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: '#fff' },
-  countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: 10 },
-  empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
+  center: { flex: 1, alignItems: 'center', paddingTop: 60, gap: spacing.md },
+  addBtn: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm, paddingVertical: spacing.md + 1, marginBottom: spacing.lg,
+    borderRadius: radius.md, shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
+  },
+  addBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.sm + 2 },
+  empty: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
   card: {
     flexDirection: 'row', alignItems: 'flex-start',
-    padding: 12, marginBottom: 12, gap: 12,
+    padding: spacing.md, marginBottom: spacing.md, gap: spacing.md,
   },
   thumb: { width: 70, height: 70, alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 },
   thumbImg: { width: 70, height: 70 },
-  cardInfo: { flex: 1, gap: 4 },
-  cardNameRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 6 },
+  cardInfo: { flex: 1, gap: spacing.xs },
+  cardNameRow: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.xs + 2 },
   cardName: { fontSize: 14, fontFamily: 'Inter_600SemiBold', lineHeight: 19 },
   newBadge: { paddingHorizontal: 5, paddingVertical: 2, borderRadius: 4, alignSelf: 'flex-start', marginTop: 2 },
-  newBadgeLabel: { fontSize: 9, fontFamily: 'Inter_700Bold', color: '#fff', letterSpacing: 0.5 },
+  newBadgeLabel: { fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: 0.5 },
   cardBrand: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  cardMeta: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
-  statusBadge: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 6 },
+  cardMeta: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flexWrap: 'wrap' },
+  statusBadge: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: radius.sm - 4 },
   statusLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   cardDate: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  creditedRow: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 7, paddingVertical: 6, marginTop: 2 },
-  creditedRowText: { flex: 1, fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#16A34A' },
-  reviewerNoteBox: { flexDirection: 'row', alignItems: 'flex-start', gap: 5, padding: 7, marginTop: 2 },
+  creditedRow: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 7, paddingVertical: spacing.sm - 2, marginTop: 2, borderRadius: 6 },
+  creditedRowText: { flex: 1, fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  reviewerNoteBox: { flexDirection: 'row', alignItems: 'flex-start', gap: 5, padding: 7, marginTop: 2, borderRadius: 6 },
   reviewerNote: { flex: 1, fontSize: 11, fontFamily: 'Inter_400Regular', lineHeight: 15 },
-  cardActions: { gap: 12, alignItems: 'center', justifyContent: 'space-between' },
+  cardActions: { gap: spacing.md, alignItems: 'center', justifyContent: 'space-between' },
 });

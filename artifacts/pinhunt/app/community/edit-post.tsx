@@ -24,6 +24,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
+import { radius, spacing } from '@/constants/theme';
 import type { CommunityPostType } from '@workspace/pin-repository';
 
 const MAX_PHOTOS = 6;
@@ -35,20 +36,21 @@ const POST_TYPES: Array<{ key: CommunityPostType; label: string; emoji: string; 
   { key: 'new_pickup',   label: 'Event',        emoji: '📦', hint: 'Share an upcoming event' },
 ];
 
-const TYPE_COLOR: Record<CommunityPostType, string> = {
-  in_search_of: '#F59E0B',
-  for_trade:    '#3B82F6',
-  for_sale:     '#16A34A',
-  new_pickup:   '#8B5CF6',
-  discussion:   '#64748B',
-};
-
 export default function EditPostScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
   const { repo, userId } = useCommunity();
+
+  // Same category colours as the Community feed badges (constants/colors.ts home* tokens).
+  const TYPE_COLOR: Record<CommunityPostType, string> = {
+    in_search_of: colors.homeSandInk,
+    for_trade:    colors.homeCoral,
+    for_sale:     colors.owned,
+    new_pickup:   colors.homeCoralDeep,
+    discussion:   colors.homeMuted,
+  };
 
   const [loading,     setLoading]     = useState(true);
   const [error,       setError]       = useState<string | null>(null);
@@ -159,8 +161,8 @@ export default function EditPostScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Edit Post' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
-          <ActivityIndicator color={colors.primary} />
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
+          <ActivityIndicator color={colors.homeCoral} />
         </View>
       </>
     );
@@ -170,7 +172,7 @@ export default function EditPostScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Edit Post' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
           <Text style={{ color: colors.destructive, fontFamily: 'Inter_500Medium' }}>{error}</Text>
         </View>
       </>
@@ -181,7 +183,7 @@ export default function EditPostScreen() {
     <>
       <Stack.Screen options={{ title: 'Edit Post' }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -190,7 +192,7 @@ export default function EditPostScreen() {
           showsVerticalScrollIndicator={false}
         >
           {/* Post type selector */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>POST TYPE</Text>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>POST TYPE</Text>
           <View style={styles.typeGrid}>
             {POST_TYPES.map(pt => {
               const active = postType === pt.key;
@@ -203,17 +205,17 @@ export default function EditPostScreen() {
                   style={[
                     styles.typeBtn,
                     {
-                      backgroundColor: active ? color + '18' : colors.card,
-                      borderColor: active ? color : colors.border,
-                      borderRadius: colors.radius,
+                      backgroundColor: active ? color + '18' : colors.homeSurface,
+                      borderColor: active ? color : colors.homeLine,
+                      borderRadius: radius.lg,
                     },
                   ]}
                 >
                   <Text style={styles.typeEmoji}>{pt.emoji}</Text>
-                  <Text style={[styles.typeLabel, { color: active ? color : colors.foreground }]}>
+                  <Text style={[styles.typeLabel, { color: active ? color : colors.homeInk }]}>
                     {pt.label}
                   </Text>
-                  <Text style={[styles.typeHint, { color: active ? color + 'cc' : colors.mutedForeground }]}>
+                  <Text style={[styles.typeHint, { color: active ? color + 'cc' : colors.homeMuted }]}>
                     {pt.hint}
                   </Text>
                 </TouchableOpacity>
@@ -222,57 +224,57 @@ export default function EditPostScreen() {
           </View>
 
           {/* Body */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>POST TEXT</Text>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>POST TEXT</Text>
           <TextInput
             value={body}
             onChangeText={setBody}
             placeholder="Share with the community…"
-            placeholderTextColor={colors.mutedForeground + '88'}
+            placeholderTextColor={colors.homeMuted}
             multiline
             maxLength={2000}
             style={[
               styles.bodyInput,
               {
-                color: colors.foreground,
-                borderColor: colors.border,
-                backgroundColor: colors.card,
-                borderRadius: colors.radius,
+                color: colors.homeInk,
+                borderColor: colors.homeLine,
+                backgroundColor: colors.homeSurface,
+                borderRadius: radius.lg,
               },
             ]}
           />
-          <Text style={[styles.charCount, { color: colors.mutedForeground }]}>
+          <Text style={[styles.charCount, { color: colors.homeMuted }]}>
             {body.length} / 2000
           </Text>
 
           {/* Photos */}
-          <Text style={[styles.label, { color: colors.mutedForeground }]}>
+          <Text style={[styles.label, { color: colors.homeMuted }]}>
             PHOTOS ({totalPhotos}/{MAX_PHOTOS})
           </Text>
           <View style={styles.photoGrid}>
             {existingPhotos.map((uri, idx) => (
-              <View key={uri} style={[styles.photoCell, { borderRadius: colors.radius, borderColor: colors.border }]}>
+              <View key={uri} style={[styles.photoCell, { borderRadius: radius.lg, borderColor: colors.homeLine }]}>
                 <Image source={{ uri }} style={styles.photoCellImage} />
                 <TouchableOpacity
                   onPress={() => setExistingPhotos(prev => prev.filter((_, i) => i !== idx))}
                   style={styles.photoRemoveBtn}
                   hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
                 >
-                  <Feather name="x" size={12} color="#fff" />
+                  <Feather name="x" size={12} color={colors.homeSurface} />
                 </TouchableOpacity>
               </View>
             ))}
             {newPhotos.map((uri, idx) => (
-              <View key={uri + idx} style={[styles.photoCell, { borderRadius: colors.radius, borderColor: colors.border }]}>
+              <View key={uri + idx} style={[styles.photoCell, { borderRadius: radius.lg, borderColor: colors.homeLine }]}>
                 <Image source={{ uri }} style={styles.photoCellImage} />
-                <View style={[styles.newBadge, { backgroundColor: colors.primary }]}>
-                  <Text style={styles.newBadgeText}>NEW</Text>
+                <View style={[styles.newBadge, { backgroundColor: colors.homeCoral }]}>
+                  <Text style={[styles.newBadgeText, { color: colors.homeSurface }]}>NEW</Text>
                 </View>
                 <TouchableOpacity
                   onPress={() => setNewPhotos(prev => prev.filter((_, i) => i !== idx))}
                   style={styles.photoRemoveBtn}
                   hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
                 >
-                  <Feather name="x" size={12} color="#fff" />
+                  <Feather name="x" size={12} color={colors.homeSurface} />
                 </TouchableOpacity>
               </View>
             ))}
@@ -283,21 +285,21 @@ export default function EditPostScreen() {
                 style={[
                   styles.photoAddBtn,
                   {
-                    backgroundColor: colors.secondary,
-                    borderColor: colors.border,
-                    borderRadius: colors.radius,
+                    backgroundColor: colors.homeAqua,
+                    borderColor: colors.homeLine,
+                    borderRadius: radius.lg,
                   },
                 ]}
               >
-                <Feather name="camera" size={22} color={colors.mutedForeground} />
-                <Text style={[styles.photoAddLabel, { color: colors.mutedForeground }]}>Add photos</Text>
+                <Feather name="camera" size={22} color={colors.homeMuted} />
+                <Text style={[styles.photoAddLabel, { color: colors.homeMuted }]}>Add photos</Text>
               </TouchableOpacity>
             )}
           </View>
 
           {/* Upload progress */}
           {uploadProgress ? (
-            <Text style={[styles.uploadProgress, { color: colors.mutedForeground }]}>
+            <Text style={[styles.uploadProgress, { color: colors.homeMuted }]}>
               {uploadProgress}
             </Text>
           ) : null}
@@ -310,17 +312,18 @@ export default function EditPostScreen() {
             style={[
               styles.submitBtn,
               {
-                backgroundColor: body.trim() ? colors.primary : colors.secondary,
-                borderRadius: colors.radius,
+                backgroundColor: body.trim() ? colors.homeCoral : colors.homeAqua,
+                borderRadius: radius.lg,
+                shadowColor: colors.homeShadow,
               },
             ]}
           >
             {saving
-              ? <ActivityIndicator color="#fff" size="small" />
+              ? <ActivityIndicator color={colors.homeSurface} size="small" />
               : (
                 <>
-                  <Feather name="check" size={16} color={body.trim() ? '#fff' : colors.mutedForeground} />
-                  <Text style={[styles.submitLabel, { color: body.trim() ? '#fff' : colors.mutedForeground }]}>
+                  <Feather name="check" size={16} color={body.trim() ? colors.homeSurface : colors.homeMuted} />
+                  <Text style={[styles.submitLabel, { color: body.trim() ? colors.homeSurface : colors.homeMuted }]}>
                     Save Changes
                   </Text>
                 </>
@@ -336,14 +339,14 @@ export default function EditPostScreen() {
 const PHOTO_CELL_SIZE = 96;
 
 const styles = StyleSheet.create({
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24 },
-  scroll: { padding: 16, gap: 10 },
-  label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: 4, marginBottom: 4 },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.xxl },
+  scroll: { padding: spacing.lg, gap: spacing.sm + 2 },
+  label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: spacing.xs, marginBottom: spacing.xs },
 
-  typeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  typeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   typeBtn: {
     width: '48%',
-    padding: 12, borderWidth: 1.5, gap: 3,
+    padding: spacing.md, borderWidth: 1.5, gap: 3,
     flexGrow: 1,
   },
   typeEmoji: { fontSize: 20 },
@@ -352,7 +355,7 @@ const styles = StyleSheet.create({
 
   bodyInput: {
     borderWidth: 1,
-    padding: 12,
+    padding: spacing.md,
     fontSize: 15,
     fontFamily: 'Inter_400Regular',
     minHeight: 120,
@@ -361,7 +364,7 @@ const styles = StyleSheet.create({
   },
   charCount: { fontSize: 11, fontFamily: 'Inter_400Regular', textAlign: 'right', marginTop: -6 },
 
-  photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   photoCell: {
     width: PHOTO_CELL_SIZE,
     height: PHOTO_CELL_SIZE,
@@ -381,7 +384,7 @@ const styles = StyleSheet.create({
     bottom: 4, left: 4,
     paddingHorizontal: 5, paddingVertical: 2, borderRadius: 4,
   },
-  newBadgeText: { fontSize: 8, fontFamily: 'Inter_600SemiBold', color: '#fff', letterSpacing: 0.5 },
+  newBadgeText: { fontSize: 8, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.5 },
   photoAddBtn: {
     width: PHOTO_CELL_SIZE,
     height: PHOTO_CELL_SIZE,
@@ -395,12 +398,13 @@ const styles = StyleSheet.create({
 
   uploadProgress: {
     fontSize: 12, fontFamily: 'Inter_400Regular',
-    textAlign: 'center', marginTop: 4,
+    textAlign: 'center', marginTop: spacing.xs,
   },
 
   submitBtn: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 8, paddingVertical: 14, marginTop: 8,
+    gap: spacing.sm, paddingVertical: spacing.md + 2, marginTop: spacing.xs,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
   },
   submitLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 });

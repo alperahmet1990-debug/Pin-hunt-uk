@@ -23,6 +23,7 @@ import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
 import { pickSubmissionImage } from '@/utils/submissionImage';
+import { radius, spacing } from '@/constants/theme';
 import type { EditionType, PinSubmission } from '@workspace/pin-repository';
 
 const EDITION_TYPES: { value: EditionType; label: string }[] = [
@@ -225,22 +226,22 @@ export default function EditSubmissionScreen() {
         value={value}
         onChangeText={v => { onChange(v); if (opts?.errKey) setFieldErrors(e => ({ ...e, [opts.errKey!]: undefined as unknown as string })); }}
         placeholder={placeholder}
-        placeholderTextColor={colors.mutedForeground + '88'}
+        placeholderTextColor={colors.homeMuted}
         keyboardType={opts?.keyboardType ?? 'default'}
         multiline={opts?.multiline}
         style={[
           styles.input,
           opts?.multiline && { height: 80, textAlignVertical: 'top' },
           {
-            color: colors.foreground,
-            borderColor: opts?.errKey && fieldErrors[opts.errKey] ? '#EF4444' : colors.border,
-            backgroundColor: colors.card,
-            borderRadius: 10,
+            color: colors.homeInk,
+            borderColor: opts?.errKey && fieldErrors[opts.errKey] ? colors.destructive : colors.homeLine,
+            backgroundColor: colors.homeSurface,
+            borderRadius: radius.sm,
           },
         ]}
       />
       {opts?.errKey && fieldErrors[opts.errKey] && (
-        <Text style={styles.fieldError}>{fieldErrors[opts.errKey]}</Text>
+        <Text style={[styles.fieldError, { color: colors.destructive }]}>{fieldErrors[opts.errKey]}</Text>
       )}
     </>
   );
@@ -249,8 +250,8 @@ export default function EditSubmissionScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Edit Submission' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
-          <ActivityIndicator color={colors.primary} />
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
+          <ActivityIndicator color={colors.homeCoral} />
         </View>
       </>
     );
@@ -260,7 +261,7 @@ export default function EditSubmissionScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Edit Submission' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
           <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
         </View>
       </>
@@ -271,7 +272,7 @@ export default function EditSubmissionScreen() {
     <>
       <Stack.Screen options={{ title: submission?.status === 'needs_changes' ? 'Make Changes' : 'Edit Draft' }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -281,18 +282,18 @@ export default function EditSubmissionScreen() {
         >
           {/* Reviewer note */}
           {submission?.reviewerNotes && (
-            <View style={[styles.reviewerBox, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>
-              <Feather name="message-circle" size={14} color="#92400E" />
+            <View style={[styles.reviewerBox, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeWarmLine, borderRadius: radius.sm }]}>
+              <Feather name="message-circle" size={14} color={colors.homeSandInk} />
               <View style={{ flex: 1, gap: 2 }}>
-                <Text style={styles.reviewerTitle}>Reviewer note</Text>
-                <Text style={styles.reviewerText}>{submission.reviewerNotes}</Text>
+                <Text style={[styles.reviewerTitle, { color: colors.homeSandInk }]}>Reviewer note</Text>
+                <Text style={[styles.reviewerText, { color: colors.homeSandInk }]}>{submission.reviewerNotes}</Text>
               </View>
             </View>
           )}
 
           {/* Front photo */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>FRONT PHOTO</Text>
-          <View style={[styles.photoCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>FRONT PHOTO</Text>
+          <View style={[styles.photoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
             <Image
               source={{ uri: newFrontUri ?? frontUrl ?? undefined }}
               style={styles.thumbImg}
@@ -300,73 +301,73 @@ export default function EditSubmissionScreen() {
               onError={newFrontUri ? undefined : refreshImageUrls}
             />
             <View style={styles.photoActions}>
-              <TouchableOpacity onPress={() => pickFront('camera')} style={[styles.photoBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
-                <Feather name="camera" size={14} color={colors.foreground} />
-                <Text style={[styles.photoBtnLabel, { color: colors.foreground }]}>
+              <TouchableOpacity onPress={() => pickFront('camera')} style={[styles.photoBtn, { backgroundColor: colors.homeAqua, borderRadius: radius.sm - 2 }]}>
+                <Feather name="camera" size={14} color={colors.homeInk} />
+                <Text style={[styles.photoBtnLabel, { color: colors.homeInk }]}>
                   {Platform.OS === 'web' ? 'Replace' : 'Retake'}
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => pickFront('library')} style={[styles.photoBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
-                <Feather name="image" size={14} color={colors.foreground} />
-                <Text style={[styles.photoBtnLabel, { color: colors.foreground }]}>Library</Text>
+              <TouchableOpacity onPress={() => pickFront('library')} style={[styles.photoBtn, { backgroundColor: colors.homeAqua, borderRadius: radius.sm - 2 }]}>
+                <Feather name="image" size={14} color={colors.homeInk} />
+                <Text style={[styles.photoBtnLabel, { color: colors.homeInk }]}>Library</Text>
               </TouchableOpacity>
             </View>
           </View>
 
           {/* Back photo */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>BACK PHOTO (OPTIONAL)</Text>
-          <View style={[styles.photoCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>BACK PHOTO (OPTIONAL)</Text>
+          <View style={[styles.photoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
             {(newBackUri ?? backUrl) ? (
               <Image source={{ uri: newBackUri ?? backUrl ?? undefined }} style={styles.thumbImg} resizeMode="cover" onError={newBackUri ? undefined : refreshImageUrls} />
             ) : (
-              <View style={[styles.thumbPlaceholder, { backgroundColor: colors.secondary }]}>
-                <Feather name="image" size={24} color={colors.mutedForeground} />
+              <View style={[styles.thumbPlaceholder, { backgroundColor: colors.homeAqua }]}>
+                <Feather name="image" size={24} color={colors.homeMuted} />
               </View>
             )}
             <View style={styles.photoActions}>
-              <TouchableOpacity onPress={() => pickBack('camera')} style={[styles.photoBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
-                <Feather name="camera" size={14} color={colors.foreground} />
-                <Text style={[styles.photoBtnLabel, { color: colors.foreground }]}>
+              <TouchableOpacity onPress={() => pickBack('camera')} style={[styles.photoBtn, { backgroundColor: colors.homeAqua, borderRadius: radius.sm - 2 }]}>
+                <Feather name="camera" size={14} color={colors.homeInk} />
+                <Text style={[styles.photoBtnLabel, { color: colors.homeInk }]}>
                   {Platform.OS === 'web' ? 'Add/Replace' : 'Take Photo'}
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => pickBack('library')} style={[styles.photoBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
-                <Feather name="image" size={14} color={colors.foreground} />
-                <Text style={[styles.photoBtnLabel, { color: colors.foreground }]}>Library</Text>
+              <TouchableOpacity onPress={() => pickBack('library')} style={[styles.photoBtn, { backgroundColor: colors.homeAqua, borderRadius: radius.sm - 2 }]}>
+                <Feather name="image" size={14} color={colors.homeInk} />
+                <Text style={[styles.photoBtnLabel, { color: colors.homeInk }]}>Library</Text>
               </TouchableOpacity>
             </View>
           </View>
 
           {/* Fields */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>PIN DETAILS</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>PIN DETAILS</Text>
           <View style={styles.fields}>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Pin Name <Text style={{ color: '#EF4444' }}>*</Text></Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Pin Name <Text style={{ color: colors.destructive }}>*</Text></Text>
               {inp(proposedName, setProposedName, 'e.g. Mickey Mouse 50th Anniversary', { errKey: 'proposedName' })}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Brand / Source <Text style={{ color: '#EF4444' }}>*</Text></Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Brand / Source <Text style={{ color: colors.destructive }}>*</Text></Text>
               {inp(brand, setBrand, 'e.g. Disney Parks, Loungefly', { errKey: 'brand' })}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Characters (comma-separated)</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Characters (comma-separated)</Text>
               {inp(characterNames, setCharacterNames, 'e.g. Mickey, Minnie')}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Series or Collection</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Series or Collection</Text>
               {inp(seriesName, setSeriesName, 'e.g. Halloween 2023')}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Release Location</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Release Location</Text>
               {inp(releaseLocation, setReleaseLocation, 'e.g. Magic Kingdom')}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Release Year</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Release Year</Text>
               {inp(releaseYear, setReleaseYear, 'e.g. 2023', { keyboardType: 'numeric', errKey: 'releaseYear' })}
             </View>
 
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Edition Type</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Edition Type</Text>
               <View style={styles.editionGrid}>
                 {EDITION_TYPES.map(e => {
                   const active = editionType === e.value;
@@ -377,10 +378,10 @@ export default function EditSubmissionScreen() {
                       activeOpacity={0.8}
                       style={[
                         styles.editionBtn,
-                        { backgroundColor: active ? colors.primary + '18' : colors.card, borderColor: active ? colors.primary : colors.border, borderRadius: 8 },
+                        { backgroundColor: active ? colors.homeCoral + '18' : colors.homeSurface, borderColor: active ? colors.homeCoral : colors.homeLine, borderRadius: radius.sm - 2 },
                       ]}
                     >
-                      <Text style={[styles.editionBtnLabel, { color: active ? colors.primary : colors.mutedForeground }]}>{e.label}</Text>
+                      <Text style={[styles.editionBtnLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>{e.label}</Text>
                     </TouchableOpacity>
                   );
                 })}
@@ -388,43 +389,43 @@ export default function EditSubmissionScreen() {
             </View>
 
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Edition Size</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Edition Size</Text>
               {inp(editionSize, setEditionSize, 'e.g. 2500', { keyboardType: 'numeric', errKey: 'editionSize' })}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>FAC Number</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>FAC Number</Text>
               {inp(facNumber, setFacNumber, 'e.g. 24-FAC-12345')}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>SKU / Product Number</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>SKU / Product Number</Text>
               {inp(sku, setSku, 'e.g. 400041234567')}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Notes</Text>
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Notes</Text>
               {inp(notes, setNotes, 'Any additional details…', { multiline: true })}
             </View>
           </View>
 
           {/* Actions */}
           {saving ? (
-            <ActivityIndicator color={colors.primary} style={{ marginTop: 16 }} />
+            <ActivityIndicator color={colors.homeCoral} style={{ marginTop: spacing.lg }} />
           ) : (
             <View style={styles.actionRow}>
               <TouchableOpacity
                 onPress={() => handleSave(false)}
                 activeOpacity={0.85}
-                style={[styles.actionBtn, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}
+                style={[styles.actionBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}
               >
-                <Feather name="save" size={16} color={colors.foreground} />
-                <Text style={[styles.actionBtnLabel, { color: colors.foreground }]}>Save Draft</Text>
+                <Feather name="save" size={16} color={colors.homeInk} />
+                <Text style={[styles.actionBtnLabel, { color: colors.homeInk }]}>Save Draft</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => handleSave(true)}
                 activeOpacity={0.85}
-                style={[styles.actionBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+                style={[styles.actionBtn, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral, borderRadius: radius.md }]}
               >
-                <Feather name="send" size={16} color="#fff" />
-                <Text style={[styles.actionBtnLabel, { color: '#fff' }]}>Submit for Review</Text>
+                <Feather name="send" size={16} color={colors.homeSurface} />
+                <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>Submit for Review</Text>
               </TouchableOpacity>
             </View>
           )}
@@ -435,28 +436,28 @@ export default function EditSubmissionScreen() {
 }
 
 const styles = StyleSheet.create({
-  scroll: { padding: 16, gap: 12 },
+  scroll: { padding: spacing.lg, gap: spacing.md },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
-  reviewerBox: { flexDirection: 'row', gap: 10, padding: 12, borderWidth: 1, marginBottom: 4 },
-  reviewerTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#92400E' },
-  reviewerText: { fontSize: 13, fontFamily: 'Inter_400Regular', color: '#92400E', lineHeight: 18 },
-  sectionLabel: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: 4 },
-  photoCard: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 10, borderWidth: 1 },
-  thumbImg: { width: 72, height: 72, borderRadius: 8 },
-  thumbPlaceholder: { width: 72, height: 72, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
-  photoActions: { gap: 8 },
-  photoBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, paddingVertical: 7 },
+  reviewerBox: { flexDirection: 'row', gap: spacing.sm + 2, padding: spacing.md, borderWidth: 1, marginBottom: spacing.xs },
+  reviewerTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  reviewerText: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+  sectionLabel: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8, marginTop: spacing.xs },
+  photoCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, padding: spacing.sm + 2, borderWidth: 1 },
+  thumbImg: { width: 72, height: 72, borderRadius: radius.sm - 2 },
+  thumbPlaceholder: { width: 72, height: 72, borderRadius: radius.sm - 2, alignItems: 'center', justifyContent: 'center' },
+  photoActions: { gap: spacing.sm },
+  photoBtn: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs + 2, paddingHorizontal: spacing.sm + 2, paddingVertical: spacing.sm - 1 },
   photoBtnLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
-  fields: { gap: 10 },
-  field: { gap: 6 },
+  fields: { gap: spacing.sm + 2 },
+  field: { gap: spacing.xs + 2 },
   fieldLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.4 },
-  fieldError: { fontSize: 12, fontFamily: 'Inter_400Regular', color: '#EF4444' },
-  input: { borderWidth: 1, paddingHorizontal: 12, paddingVertical: 11, fontSize: 14, fontFamily: 'Inter_400Regular' },
-  editionGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  editionBtn: { paddingHorizontal: 12, paddingVertical: 8, borderWidth: 1 },
+  fieldError: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  input: { borderWidth: 1, paddingHorizontal: spacing.md, paddingVertical: spacing.sm + 3, fontSize: 14, fontFamily: 'Inter_400Regular' },
+  editionGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
+  editionBtn: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1 },
   editionBtnLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
-  actionRow: { flexDirection: 'row', gap: 10, marginTop: 8 },
-  actionBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 14, borderWidth: 1 },
+  actionRow: { flexDirection: 'row', gap: spacing.sm + 2, marginTop: spacing.sm },
+  actionBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm - 2, paddingVertical: spacing.lg - 2, borderWidth: 1 },
   actionBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

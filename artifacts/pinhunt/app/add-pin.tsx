@@ -34,6 +34,7 @@ import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { pickSubmissionImage, uploadLocalImageToStorage } from '@/utils/submissionImage';
+import { radius, spacing } from '@/constants/theme';
 import { createSupabasePinRepository } from '@workspace/pin-repository';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -74,21 +75,21 @@ function StepIndicator({ current, colors }: { current: number; colors: ReturnTyp
               <View style={[
                 styles.stepDot,
                 {
-                  borderColor: active || done ? colors.primary : colors.border,
-                  backgroundColor: done ? colors.primary : active ? colors.primary + '22' : 'transparent',
+                  borderColor: active || done ? colors.homeCoral : colors.homeLine,
+                  backgroundColor: done ? colors.homeCoral : active ? colors.homeCoral + '22' : 'transparent',
                 },
               ]}>
                 {done
-                  ? <Feather name="check" size={10} color="#fff" />
-                  : <Text style={[styles.stepNum, { color: active ? colors.primary : colors.mutedForeground }]}>{i + 1}</Text>
+                  ? <Feather name="check" size={10} color={colors.homeSurface} />
+                  : <Text style={[styles.stepNum, { color: active ? colors.homeCoral : colors.homeMuted }]}>{i + 1}</Text>
                 }
               </View>
-              <Text style={[styles.stepLabel, { color: active ? colors.primary : colors.mutedForeground }]}>
+              <Text style={[styles.stepLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>
                 {label}
               </Text>
             </View>
             {i < STEPS.length - 1 && (
-              <View style={[styles.stepLine, { backgroundColor: i < current ? colors.primary : colors.border }]} />
+              <View style={[styles.stepLine, { backgroundColor: i < current ? colors.homeCoral : colors.homeLine }]} />
             )}
           </React.Fragment>
         );
@@ -111,8 +112,8 @@ function PhotoStep({
 }) {
   return (
     <View style={styles.photoStep}>
-      <Text style={[styles.stepTitle, { color: colors.foreground }]}>{title}</Text>
-      <Text style={[styles.stepSub, { color: colors.mutedForeground }]}>{subtitle}</Text>
+      <Text style={[styles.stepTitle, { color: colors.homeInk }]}>{title}</Text>
+      <Text style={[styles.stepSub, { color: colors.homeMuted }]}>{subtitle}</Text>
 
       {uri ? (
         <View style={styles.previewWrap}>
@@ -120,18 +121,18 @@ function PhotoStep({
           <TouchableOpacity
             onPress={onCamera}
             activeOpacity={0.8}
-            style={[styles.retakeBtn, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 8 }]}
+            style={[styles.retakeBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
           >
-            <Feather name="refresh-cw" size={14} color={colors.foreground} />
-            <Text style={[styles.retakeBtnLabel, { color: colors.foreground }]}>
+            <Feather name="refresh-cw" size={14} color={colors.homeInk} />
+            <Text style={[styles.retakeBtnLabel, { color: colors.homeInk }]}>
               {Platform.OS === 'web' ? 'Replace' : 'Retake'}
             </Text>
           </TouchableOpacity>
         </View>
       ) : (
-        <View style={[styles.photoBox, { borderColor: colors.border, backgroundColor: colors.secondary, borderRadius: 16 }]}>
-          <Feather name="camera" size={40} color={colors.mutedForeground} />
-          <Text style={[styles.photoBoxHint, { color: colors.mutedForeground }]}>No photo yet</Text>
+        <View style={[styles.photoBox, { borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}>
+          <Feather name="camera" size={40} color={colors.homeMuted} />
+          <Text style={[styles.photoBoxHint, { color: colors.homeMuted }]}>No photo yet</Text>
         </View>
       )}
 
@@ -139,20 +140,20 @@ function PhotoStep({
         <TouchableOpacity
           onPress={onCamera}
           activeOpacity={0.85}
-          style={[styles.photoBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+          style={[styles.photoBtn, { backgroundColor: colors.homeCoral }]}
         >
-          <Feather name="camera" size={18} color="#fff" />
-          <Text style={styles.photoBtnLabel}>
+          <Feather name="camera" size={18} color={colors.homeSurface} />
+          <Text style={[styles.photoBtnLabel, { color: colors.homeSurface }]}>
             {Platform.OS === 'web' ? 'Choose from Library' : 'Take Photo'}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={onLibrary}
           activeOpacity={0.85}
-          style={[styles.photoBtn, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}
+          style={[styles.photoBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
         >
-          <Feather name="image" size={18} color={colors.foreground} />
-          <Text style={[styles.photoBtnLabel, { color: colors.foreground }]}>Choose from Library</Text>
+          <Feather name="image" size={18} color={colors.homeInk} />
+          <Text style={[styles.photoBtnLabel, { color: colors.homeInk }]}>Choose from Library</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -297,23 +298,23 @@ export default function AddPinScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Pin Added', headerBackVisible: false }} />
-        <View style={[styles.confirm, { backgroundColor: colors.background, paddingBottom: botPad }]}>
+        <View style={[styles.confirm, { backgroundColor: colors.homeBackground, paddingBottom: botPad }]}>
           {frontUri && (
             <Image source={{ uri: frontUri }} style={styles.confirmThumb} resizeMode="cover" />
           )}
-          <View style={[styles.confirmIcon, { backgroundColor: colors.primary + '18' }]}>
-            <Feather name="check-circle" size={48} color={colors.primary} />
+          <View style={[styles.confirmIcon, { backgroundColor: colors.homeCoral + '18' }]}>
+            <Feather name="check-circle" size={48} color={colors.homeCoral} />
           </View>
-          <Text style={[styles.confirmTitle, { color: colors.foreground }]}>Pin Added!</Text>
-          <Text style={[styles.confirmSub, { color: colors.mutedForeground }]}>
+          <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Pin Added!</Text>
+          <Text style={[styles.confirmSub, { color: colors.homeMuted }]}>
             "{proposedName}" has been added to the catalogue as a community submission and will appear in searches while awaiting verification.
           </Text>
           <TouchableOpacity
             onPress={() => router.back()}
             activeOpacity={0.85}
-            style={[styles.confirmBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+            style={[styles.confirmBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.md, shadowColor: colors.homeShadow }]}
           >
-            <Text style={styles.confirmBtnLabel}>Done</Text>
+            <Text style={[styles.confirmBtnLabel, { color: colors.homeSurface }]}>Done</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
@@ -327,7 +328,7 @@ export default function AddPinScreen() {
             activeOpacity={0.7}
             style={styles.confirmSecondary}
           >
-            <Text style={[styles.confirmSecondaryLabel, { color: colors.mutedForeground }]}>Add Another Pin</Text>
+            <Text style={[styles.confirmSecondaryLabel, { color: colors.homeMuted }]}>Add Another Pin</Text>
           </TouchableOpacity>
         </View>
       </>
@@ -349,22 +350,22 @@ export default function AddPinScreen() {
           if (opts?.errKey) setErrors(e => ({ ...e, [opts.errKey!]: undefined }));
         }}
         placeholder={placeholder}
-        placeholderTextColor={colors.mutedForeground + '88'}
+        placeholderTextColor={colors.homeMuted}
         keyboardType={opts?.keyboardType ?? 'default'}
         multiline={opts?.multiline}
         style={[
           styles.input,
           opts?.multiline && { height: 88, textAlignVertical: 'top' },
           {
-            color: colors.foreground,
-            borderColor: opts?.errKey && errors[opts.errKey] ? '#EF4444' : colors.border,
-            backgroundColor: colors.card,
-            borderRadius: 10,
+            color: colors.homeInk,
+            borderColor: opts?.errKey && errors[opts.errKey] ? colors.destructive : colors.homeLine,
+            backgroundColor: colors.homeSurface,
+            borderRadius: radius.sm,
           },
         ]}
       />
       {opts?.errKey && errors[opts.errKey] && (
-        <Text style={styles.fieldError}>{errors[opts.errKey]}</Text>
+        <Text style={[styles.fieldError, { color: colors.destructive }]}>{errors[opts.errKey]}</Text>
       )}
     </>
   );
@@ -373,10 +374,10 @@ export default function AddPinScreen() {
   const renderReview = () => (
     <View style={styles.reviewWrap}>
       {frontUri && (
-        <Image source={{ uri: frontUri }} style={[styles.reviewHero, { borderRadius: 12 }]} resizeMode="cover" />
+        <Image source={{ uri: frontUri }} style={[styles.reviewHero, { borderRadius: radius.md }]} resizeMode="cover" />
       )}
 
-      <View style={[styles.reviewCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 14 }]}>
+      <View style={[styles.reviewCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
         {([
           ['Pin Name',    proposedName],
           ['Brand',       brand],
@@ -395,25 +396,25 @@ export default function AddPinScreen() {
             key={label}
             style={[
               styles.reviewRow,
-              i < arr.length - 1 && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border },
+              i < arr.length - 1 && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.homeLine },
             ]}
           >
-            <Text style={[styles.reviewLabel, { color: colors.mutedForeground }]}>{label}</Text>
-            <Text style={[styles.reviewValue, { color: colors.foreground }]} numberOfLines={3}>{value}</Text>
+            <Text style={[styles.reviewLabel, { color: colors.homeMuted }]}>{label}</Text>
+            <Text style={[styles.reviewValue, { color: colors.homeInk }]} numberOfLines={3}>{value}</Text>
           </View>
         ))}
       </View>
 
       {saving ? (
-        <ActivityIndicator color={colors.primary} style={{ marginTop: 8 }} />
+        <ActivityIndicator color={colors.homeCoral} style={{ marginTop: spacing.sm }} />
       ) : (
         <TouchableOpacity
           onPress={handleSubmit}
           activeOpacity={0.85}
-          style={[styles.submitBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+          style={[styles.submitBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.md, shadowColor: colors.homeShadow }]}
         >
-          <Feather name="plus-circle" size={16} color="#fff" />
-          <Text style={styles.submitBtnLabel}>Add to Catalogue</Text>
+          <Feather name="plus-circle" size={16} color={colors.homeSurface} />
+          <Text style={[styles.submitBtnLabel, { color: colors.homeSurface }]}>Add to Catalogue</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -421,37 +422,37 @@ export default function AddPinScreen() {
 
   // ── Details form ────────────────────────────────────────────────────────────
   const renderDetails = () => (
-    <View style={{ gap: 14 }}>
+    <View style={{ gap: spacing.md + 2 }}>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>
-          Pin Name <Text style={{ color: '#EF4444' }}>*</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>
+          Pin Name <Text style={{ color: colors.destructive }}>*</Text>
         </Text>
         {inp(proposedName, setProposedName, 'e.g. Mickey Mouse 50th Anniversary', { errKey: 'proposedName' })}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>
-          Brand / Source <Text style={{ color: '#EF4444' }}>*</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>
+          Brand / Source <Text style={{ color: colors.destructive }}>*</Text>
         </Text>
         {inp(brand, setBrand, 'e.g. Disney Parks, Loungefly, WDW', { errKey: 'brand' })}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Characters (comma-separated)</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Characters (comma-separated)</Text>
         {inp(characterNames, setCharacterNames, 'e.g. Mickey, Minnie, Goofy')}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Series or Collection</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Series or Collection</Text>
         {inp(seriesName, setSeriesName, 'e.g. Halloween 2023, Haunted Mansion')}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Release Location</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Release Location</Text>
         {inp(releaseLocation, setReleaseLocation, 'e.g. Magic Kingdom, Disney Store UK')}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Release Year</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Release Year</Text>
         {inp(releaseYear, setReleaseYear, 'e.g. 2024', { keyboardType: 'numeric', errKey: 'releaseYear' })}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Edition Type</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Edition Type</Text>
         <View style={styles.editionGrid}>
           {EDITION_TYPES.map(e => {
             const active = editionType === e.value;
@@ -463,13 +464,12 @@ export default function AddPinScreen() {
                 style={[
                   styles.editionBtn,
                   {
-                    backgroundColor: active ? colors.primary + '18' : colors.card,
-                    borderColor: active ? colors.primary : colors.border,
-                    borderRadius: 8,
+                    backgroundColor: active ? colors.homeCoral + '18' : colors.homeSurface,
+                    borderColor: active ? colors.homeCoral : colors.homeLine,
                   },
                 ]}
               >
-                <Text style={[styles.editionBtnLabel, { color: active ? colors.primary : colors.mutedForeground }]}>
+                <Text style={[styles.editionBtnLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>
                   {e.label}
                 </Text>
               </TouchableOpacity>
@@ -478,19 +478,19 @@ export default function AddPinScreen() {
         </View>
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Edition Size</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Edition Size</Text>
         {inp(editionSize, setEditionSize, 'e.g. 2500', { keyboardType: 'numeric', errKey: 'editionSize' })}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>FAC Number</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>FAC Number</Text>
         {inp(facNumber, setFacNumber, 'e.g. 24-FAC-12345')}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>SKU / Product Number</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>SKU / Product Number</Text>
         {inp(sku, setSku, 'e.g. 400041234567')}
       </View>
       <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.mutedForeground }]}>Notes</Text>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Notes</Text>
         {inp(notes, setNotes, 'Any additional details…', { multiline: true })}
       </View>
     </View>
@@ -523,7 +523,7 @@ export default function AddPinScreen() {
     <>
       <Stack.Screen options={{ title: 'Add Pin' }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -542,10 +542,10 @@ export default function AddPinScreen() {
                 <TouchableOpacity
                   onPress={goBack}
                   activeOpacity={0.8}
-                  style={[styles.navBtn, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}
+                  style={[styles.navBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                 >
-                  <Feather name="arrow-left" size={16} color={colors.foreground} />
-                  <Text style={[styles.navBtnLabel, { color: colors.foreground }]}>Back</Text>
+                  <Feather name="arrow-left" size={16} color={colors.homeInk} />
+                  <Text style={[styles.navBtnLabel, { color: colors.homeInk }]}>Back</Text>
                 </TouchableOpacity>
               )}
               {/* Photo steps can be skipped */}
@@ -553,20 +553,20 @@ export default function AddPinScreen() {
                 <TouchableOpacity
                   onPress={goNext}
                   activeOpacity={0.8}
-                  style={[styles.navBtn, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}
+                  style={[styles.navBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                 >
-                  <Text style={[styles.navBtnLabel, { color: colors.mutedForeground }]}>Skip</Text>
+                  <Text style={[styles.navBtnLabel, { color: colors.homeMuted }]}>Skip</Text>
                 </TouchableOpacity>
               )}
               <TouchableOpacity
                 onPress={goNext}
                 activeOpacity={0.85}
-                style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.primary, borderRadius: 12 }]}
+                style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral }]}
               >
-                <Text style={[styles.navBtnLabel, { color: '#fff' }]}>
+                <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>
                   {step === 2 ? 'Review' : 'Next'}
                 </Text>
-                <Feather name="arrow-right" size={16} color="#fff" />
+                <Feather name="arrow-right" size={16} color={colors.homeSurface} />
               </TouchableOpacity>
             </View>
           )}
@@ -579,68 +579,68 @@ export default function AddPinScreen() {
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
-  scroll: { padding: 16, gap: 20 },
+  scroll: { padding: spacing.lg, gap: spacing.xl },
 
   // Step indicator
-  stepRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 4 },
-  stepItem: { alignItems: 'center', gap: 4 },
+  stepRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: spacing.xs },
+  stepItem: { alignItems: 'center', gap: spacing.xs },
   stepDot: {
     width: 24, height: 24, borderRadius: 12, borderWidth: 1.5,
     alignItems: 'center', justifyContent: 'center',
   },
   stepNum: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   stepLabel: { fontSize: 10, fontFamily: 'Inter_500Medium', maxWidth: 52, textAlign: 'center' },
-  stepLine: { flex: 1, height: 1.5, marginBottom: 16 },
+  stepLine: { flex: 1, height: 1.5, marginBottom: spacing.lg },
 
   // Photo step
-  photoStep: { gap: 18 },
+  photoStep: { gap: spacing.xl - 2 },
   stepTitle: { fontSize: 20, fontFamily: 'Inter_700Bold' },
   stepSub: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
   photoBox: {
     alignSelf: 'center', width: 260, height: 220,
     alignItems: 'center', justifyContent: 'center',
-    borderWidth: 2, borderStyle: 'dashed', gap: 12,
+    borderWidth: 2, borderStyle: 'dashed', gap: spacing.md, borderRadius: radius.xl,
   },
   photoBoxHint: { fontSize: 13, fontFamily: 'Inter_400Regular' },
-  previewWrap: { alignItems: 'center', gap: 10 },
-  preview: { width: '100%', height: 280, borderRadius: 12 },
+  previewWrap: { alignItems: 'center', gap: spacing.sm + 2 },
+  preview: { width: '100%', height: 280, borderRadius: radius.md },
   retakeBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    paddingHorizontal: 14, paddingVertical: 8, borderWidth: 1,
+    flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2,
+    paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm, borderWidth: 1, borderRadius: radius.sm - 2,
   },
   retakeBtnLabel: { fontSize: 13, fontFamily: 'Inter_500Medium' },
-  photoActions: { gap: 10 },
+  photoActions: { gap: spacing.sm + 2 },
   photoBtn: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 8, paddingVertical: 14, borderWidth: 1,
+    gap: spacing.sm, paddingVertical: spacing.lg - 2, borderWidth: 1, borderRadius: radius.md,
   },
-  photoBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: '#fff' },
+  photoBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 
   // Details
-  field: { gap: 7 },
+  field: { gap: spacing.xs + 3 },
   fieldLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.4 },
-  fieldError: { fontSize: 12, fontFamily: 'Inter_400Regular', color: '#EF4444' },
+  fieldError: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   input: {
-    borderWidth: 1, paddingHorizontal: 12, paddingVertical: 11,
+    borderWidth: 1, paddingHorizontal: spacing.md, paddingVertical: spacing.sm + 3,
     fontSize: 14, fontFamily: 'Inter_400Regular',
   },
-  editionGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  editionBtn: { paddingHorizontal: 12, paddingVertical: 8, borderWidth: 1 },
+  editionGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
+  editionBtn: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1, borderRadius: radius.sm - 2 },
   editionBtnLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
 
   // Review
-  reviewWrap: { gap: 16 },
+  reviewWrap: { gap: spacing.lg },
   reviewHero: { width: '100%', height: 200 },
   reviewCard: { borderWidth: 1, overflow: 'hidden' },
-  reviewRow: { flexDirection: 'row', paddingHorizontal: 14, paddingVertical: 10, gap: 12 },
+  reviewRow: { flexDirection: 'row', paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, gap: spacing.md },
   reviewLabel: { width: 90, fontSize: 12, fontFamily: 'Inter_400Regular', paddingTop: 1 },
   reviewValue: { flex: 1, fontSize: 13, fontFamily: 'Inter_500Medium' },
 
   // Nav
-  navRow: { flexDirection: 'row', gap: 10, marginTop: 4 },
+  navRow: { flexDirection: 'row', gap: spacing.sm + 2, marginTop: spacing.xs },
   navBtn: {
     flex: 1, flexDirection: 'row', alignItems: 'center',
-    justifyContent: 'center', gap: 6, paddingVertical: 14, borderWidth: 1,
+    justifyContent: 'center', gap: spacing.sm - 2, paddingVertical: spacing.lg - 2, borderWidth: 1, borderRadius: radius.md,
   },
   navBtnPrimary: { borderWidth: 0 },
   navBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
@@ -648,18 +648,19 @@ const styles = StyleSheet.create({
   // Submit
   submitBtn: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 8, paddingVertical: 15,
+    gap: spacing.sm, paddingVertical: spacing.lg - 1,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
   },
-  submitBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: '#fff' },
+  submitBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 
   // Confirmation
-  confirm: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32, gap: 16 },
-  confirmThumb: { width: 120, height: 120, borderRadius: 16, marginBottom: 4 },
+  confirm: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.xxl, gap: spacing.lg },
+  confirmThumb: { width: 120, height: 120, borderRadius: radius.xl, marginBottom: spacing.xs },
   confirmIcon: { width: 90, height: 90, borderRadius: 45, alignItems: 'center', justifyContent: 'center' },
   confirmTitle: { fontSize: 24, fontFamily: 'Inter_700Bold', textAlign: 'center' },
   confirmSub: { fontSize: 15, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 22, maxWidth: 320 },
-  confirmBtn: { width: '100%', paddingVertical: 14, alignItems: 'center' },
-  confirmBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: '#fff' },
-  confirmSecondary: { paddingVertical: 12 },
+  confirmBtn: { width: '100%', paddingVertical: spacing.lg - 2, alignItems: 'center' },
+  confirmBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  confirmSecondary: { paddingVertical: spacing.md },
   confirmSecondaryLabel: { fontSize: 14, fontFamily: 'Inter_400Regular' },
 });

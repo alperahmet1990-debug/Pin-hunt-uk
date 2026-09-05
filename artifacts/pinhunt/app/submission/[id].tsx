@@ -20,6 +20,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { radius, spacing } from '@/constants/theme';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
 const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
@@ -30,23 +31,26 @@ const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   rejected:      'Rejected',
   needs_changes: 'Needs Changes',
 };
-const STATUS_COLOR: Record<PinSubmissionStatus, string> = {
-  draft:         '#6366F1',
-  submitted:     '#3B82F6',
-  under_review:  '#F59E0B',
-  approved:      '#16A34A',
-  rejected:      '#EF4444',
-  needs_changes: '#F97316',
-};
+
+function statusColor(status: PinSubmissionStatus, colors: ReturnType<typeof useColors>): string {
+  switch (status) {
+    case 'draft': return colors.homeMuted;
+    case 'submitted': return colors.forTrade;
+    case 'under_review': return colors.homeSandInk;
+    case 'approved': return colors.owned;
+    case 'rejected': return colors.destructive;
+    case 'needs_changes': return colors.wanted;
+  }
+}
 
 function InfoRow({ label, value }: { label: string; value?: string | number | string[] }) {
   const colors = useColors();
   if (!value || (Array.isArray(value) && value.length === 0)) return null;
   const display = Array.isArray(value) ? value.join(', ') : String(value);
   return (
-    <View style={[styles.row, { borderBottomColor: colors.border }]}>
-      <Text style={[styles.rowLabel, { color: colors.mutedForeground }]}>{label}</Text>
-      <Text style={[styles.rowValue, { color: colors.foreground }]}>{display}</Text>
+    <View style={[styles.row, { borderBottomColor: colors.homeLine }]}>
+      <Text style={[styles.rowLabel, { color: colors.homeMuted }]}>{label}</Text>
+      <Text style={[styles.rowValue, { color: colors.homeInk }]}>{display}</Text>
     </View>
   );
 }
@@ -177,13 +181,13 @@ export default function SubmissionDetailScreen() {
     <>
       <Stack.Screen options={{ title: 'Submission' }} />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
+        style={[styles.root, { backgroundColor: colors.homeBackground }]}
         contentContainerStyle={{ paddingBottom: botPad }}
         showsVerticalScrollIndicator={false}
       >
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
@@ -195,15 +199,15 @@ export default function SubmissionDetailScreen() {
             {frontUrl ? (
               <Image source={{ uri: frontUrl }} style={styles.heroImage} resizeMode="contain" onError={refreshImageUrls} />
             ) : (
-              <View style={[styles.heroPlaceholder, { backgroundColor: colors.secondary }]}>
-                <Feather name="image" size={36} color={colors.mutedForeground} />
+              <View style={[styles.heroPlaceholder, { backgroundColor: colors.homeAqua }]}>
+                <Feather name="image" size={36} color={colors.homeMuted} />
               </View>
             )}
 
-            <View style={{ padding: 16, gap: 16 }}>
+            <View style={{ padding: spacing.lg, gap: spacing.lg }}>
               {/* Status banner */}
-              <View style={[styles.statusBanner, { backgroundColor: STATUS_COLOR[submission.status] + '18', borderColor: STATUS_COLOR[submission.status] + '44', borderRadius: 10 }]}>
-                <Text style={[styles.statusText, { color: STATUS_COLOR[submission.status] }]}>
+              <View style={[styles.statusBanner, { backgroundColor: statusColor(submission.status, colors) + '18', borderColor: statusColor(submission.status, colors) + '44', borderRadius: radius.sm }]}>
+                <Text style={[styles.statusText, { color: statusColor(submission.status, colors) }]}>
                   {STATUS_LABEL[submission.status]}
                 </Text>
               </View>
@@ -213,32 +217,32 @@ export default function SubmissionDetailScreen() {
                 <TouchableOpacity
                   onPress={() => router.push({ pathname: '/pin/[id]', params: { id: submission.approvedPinhuntId! } })}
                   activeOpacity={0.8}
-                  style={[styles.creditedBox, { backgroundColor: '#16A34A14', borderColor: '#16A34A44', borderRadius: 10 }]}
+                  style={[styles.creditedBox, { backgroundColor: colors.owned + '14', borderColor: colors.owned + '44', borderRadius: radius.sm }]}
                 >
-                  <Feather name="link" size={14} color="#16A34A" />
+                  <Feather name="link" size={14} color={colors.owned} />
                   <View style={{ flex: 1, gap: 2 }}>
-                    <Text style={styles.creditedTitle}>Credited on</Text>
-                    <Text style={styles.creditedText} numberOfLines={2}>
+                    <Text style={[styles.creditedTitle, { color: colors.owned }]}>Credited on</Text>
+                    <Text style={[styles.creditedText, { color: colors.owned }]} numberOfLines={2}>
                       {submission.approvedPinTitle ?? submission.approvedPinhuntId}
                     </Text>
                   </View>
-                  <Feather name="chevron-right" size={16} color="#16A34A" />
+                  <Feather name="chevron-right" size={16} color={colors.owned} />
                 </TouchableOpacity>
               )}
 
               {/* Reviewer notes */}
               {submission.reviewerNotes && (
-                <View style={[styles.reviewerBox, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>
-                  <Feather name="message-circle" size={14} color="#92400E" />
+                <View style={[styles.reviewerBox, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeWarmLine, borderRadius: radius.sm }]}>
+                  <Feather name="message-circle" size={14} color={colors.homeSandInk} />
                   <View style={{ flex: 1, gap: 2 }}>
-                    <Text style={styles.reviewerBoxTitle}>Reviewer note</Text>
-                    <Text style={styles.reviewerBoxText}>{submission.reviewerNotes}</Text>
+                    <Text style={[styles.reviewerBoxTitle, { color: colors.homeSandInk }]}>Reviewer note</Text>
+                    <Text style={[styles.reviewerBoxText, { color: colors.homeSandInk }]}>{submission.reviewerNotes}</Text>
                   </View>
                 </View>
               )}
 
               {/* Details card */}
-              <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 14 }]}>
+              <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
                 <InfoRow label="Pin Name"    value={submission.proposedName} />
                 <InfoRow label="Brand"       value={submission.brand} />
                 <InfoRow label="Characters"  value={submission.characterNames} />
@@ -250,9 +254,9 @@ export default function SubmissionDetailScreen() {
                 <InfoRow label="FAC #"       value={submission.facNumber} />
                 <InfoRow label="SKU"         value={submission.sku} />
                 <InfoRow label="Notes"       value={submission.notes} />
-                <View style={[styles.row, { borderBottomColor: colors.border }]}>
-                  <Text style={[styles.rowLabel, { color: colors.mutedForeground }]}>Submitted</Text>
-                  <Text style={[styles.rowValue, { color: colors.foreground }]}>
+                <View style={[styles.row, { borderBottomColor: colors.homeLine }]}>
+                  <Text style={[styles.rowLabel, { color: colors.homeMuted }]}>Submitted</Text>
+                  <Text style={[styles.rowValue, { color: colors.homeInk }]}>
                     {new Date(submission.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
                   </Text>
                 </View>
@@ -260,9 +264,9 @@ export default function SubmissionDetailScreen() {
 
               {/* Back image */}
               {backUrl && (
-                <View style={{ gap: 8 }}>
-                  <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>BACK OF PIN</Text>
-                  <Image source={{ uri: backUrl }} style={[styles.backImage, { borderRadius: 12 }]} resizeMode="contain" onError={refreshImageUrls} />
+                <View style={{ gap: spacing.sm }}>
+                  <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>BACK OF PIN</Text>
+                  <Image source={{ uri: backUrl }} style={[styles.backImage, { borderRadius: radius.md }]} resizeMode="contain" onError={refreshImageUrls} />
                 </View>
               )}
 
@@ -271,10 +275,10 @@ export default function SubmissionDetailScreen() {
                 <TouchableOpacity
                   onPress={() => router.push({ pathname: '/edit-submission/[id]', params: { id: submission.id } })}
                   activeOpacity={0.85}
-                  style={[styles.editBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+                  style={[styles.editBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.md, shadowColor: colors.homeShadow }]}
                 >
-                  <Feather name="edit-2" size={15} color="#fff" />
-                  <Text style={styles.editBtnLabel}>
+                  <Feather name="edit-2" size={15} color={colors.homeSurface} />
+                  <Text style={[styles.editBtnLabel, { color: colors.homeSurface }]}>
                     {submission.status === 'needs_changes' ? 'Make Changes & Resubmit' : 'Edit Draft'}
                   </Text>
                 </TouchableOpacity>
@@ -293,20 +297,23 @@ const styles = StyleSheet.create({
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   heroImage: { width: '100%', height: 300 },
   heroPlaceholder: { width: '100%', height: 240, alignItems: 'center', justifyContent: 'center' },
-  statusBanner: { padding: 12, borderWidth: 1, alignItems: 'center' },
+  statusBanner: { padding: spacing.md, borderWidth: 1, alignItems: 'center' },
   statusText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  reviewerBox: { flexDirection: 'row', gap: 10, padding: 12, borderWidth: 1 },
-  creditedBox: { flexDirection: 'row', alignItems: 'center', gap: 10, padding: 12, borderWidth: 1 },
-  creditedTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#16A34A' },
-  creditedText: { fontSize: 13, fontFamily: 'Inter_500Medium', color: '#166534', lineHeight: 18 },
-  reviewerBoxTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#92400E' },
-  reviewerBoxText: { fontSize: 13, fontFamily: 'Inter_400Regular', color: '#92400E', lineHeight: 18 },
+  reviewerBox: { flexDirection: 'row', gap: spacing.sm + 2, padding: spacing.md, borderWidth: 1 },
+  creditedBox: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2, padding: spacing.md, borderWidth: 1 },
+  creditedTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  creditedText: { fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18 },
+  reviewerBoxTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  reviewerBoxText: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
   card: { borderWidth: 1, overflow: 'hidden' },
-  row: { flexDirection: 'row', alignItems: 'flex-start', paddingHorizontal: 14, paddingVertical: 10, borderBottomWidth: StyleSheet.hairlineWidth, gap: 12 },
+  row: { flexDirection: 'row', alignItems: 'flex-start', paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, borderBottomWidth: StyleSheet.hairlineWidth, gap: spacing.md },
   rowLabel: { width: 90, fontSize: 12, fontFamily: 'Inter_400Regular', paddingTop: 1 },
   rowValue: { flex: 1, fontSize: 13, fontFamily: 'Inter_500Medium' },
   sectionLabel: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8 },
   backImage: { width: '100%', height: 240 },
-  editBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 14 },
-  editBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: '#fff' },
+  editBtn: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm, paddingVertical: spacing.lg - 2,
+    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
+  },
+  editBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 });

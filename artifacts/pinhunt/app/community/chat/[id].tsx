@@ -18,6 +18,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
+import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, CommunityPost, Conversation, ConversationMessage } from '@workspace/pin-repository';
 
 function previewBody(msg: ConversationMessage) {
@@ -34,36 +35,36 @@ function MessageBubble({ msg, isMe, colors, pins }: {
   const router = useRouter();
   return (
     <View style={[styles.bubbleRow, isMe && styles.bubbleRowMe]}>
-      <View style={[styles.bubble, { backgroundColor: isMe ? colors.primary : colors.card, borderColor: colors.border }, isMe && styles.bubbleMe]}>
+      <View style={[styles.bubble, { backgroundColor: isMe ? colors.homeCoral : colors.homeSurface, borderColor: colors.homeLine }, isMe && styles.bubbleMe]}>
         {msg.messageType === 'photo' && msg.photoUrls.length > 0 && (
           <View style={styles.photoGrid}>
-            {msg.photoUrls.map((url, index) => <Image key={`${url}-${index}`} source={{ uri: url }} style={styles.sharedPhoto} />)}
+            {msg.photoUrls.map((url, index) => <Image key={`${url}-${index}`} source={{ uri: url }} style={[styles.sharedPhoto, { backgroundColor: colors.homeLine }]} />)}
           </View>
         )}
         {msg.messageType === 'pin_share' && msg.pinIds.map(pinId => {
           const pin = pins.get(pinId);
           if (!pin) return (
-            <View key={pinId} style={[styles.pinCard, { backgroundColor: isMe ? 'rgba(255,255,255,0.14)' : colors.secondary }]}>
-              <Text style={{ color: isMe ? '#fff' : colors.foreground }}>Shared pin</Text>
+            <View key={pinId} style={[styles.pinCard, { backgroundColor: isMe ? colors.homeSurface + '24' : colors.homeAqua }]}>
+              <Text style={{ color: isMe ? colors.homeSurface : colors.homeInk }}>Shared pin</Text>
             </View>
           );
           const forTrade = msg.forTradePinIds.includes(pinId);
           return (
-            <TouchableOpacity key={pinId} onPress={() => router.push({ pathname: '/pin/[id]' as any, params: { id: pinId } })} style={[styles.pinCard, { backgroundColor: isMe ? 'rgba(255,255,255,0.14)' : colors.secondary }]} activeOpacity={0.8}>
+            <TouchableOpacity key={pinId} onPress={() => router.push({ pathname: '/pin/[id]' as any, params: { id: pinId } })} style={[styles.pinCard, { backgroundColor: isMe ? colors.homeSurface + '24' : colors.homeAqua }]} activeOpacity={0.8}>
               <Image source={getPinImageSource(pin)} style={styles.pinImage} />
               <View style={{ flex: 1 }}>
-                <Text numberOfLines={2} style={[styles.pinTitle, { color: isMe ? '#fff' : colors.foreground }]}>{pin.title}</Text>
-                {forTrade && <Text style={[styles.tradeTag, { color: isMe ? '#fff' : colors.primary }]}>FOR TRADE</Text>}
+                <Text numberOfLines={2} style={[styles.pinTitle, { color: isMe ? colors.homeSurface : colors.homeInk }]}>{pin.title}</Text>
+                {forTrade && <Text style={[styles.tradeTag, { color: isMe ? colors.homeSurface : colors.homeCoral }]}>FOR TRADE</Text>}
               </View>
             </TouchableOpacity>
           );
         })}
         {msg.messageType === 'text' && !!msg.body.trim() && (
-          <Text style={[styles.bubbleText, { color: isMe ? '#fff' : colors.foreground }]}>
+          <Text style={[styles.bubbleText, { color: isMe ? colors.homeSurface : colors.homeInk }]}>
             {previewBody(msg)}
           </Text>
         )}
-        <Text style={[styles.bubbleTime, { color: isMe ? 'rgba(255,255,255,0.6)' : colors.mutedForeground }]}>
+        <Text style={[styles.bubbleTime, { color: isMe ? colors.homeSurface + '99' : colors.homeMuted }]}>
           {new Date(msg.createdAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
         </Text>
       </View>
@@ -259,12 +260,12 @@ export default function ChatScreen() {
     <>
       <Stack.Screen options={{ title: otherName }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVerticalOffset={90}
       >
         {loading ? (
-          <View style={styles.center}><ActivityIndicator color={colors.primary} /></View>
+          <View style={styles.center}><ActivityIndicator color={colors.homeCoral} /></View>
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
@@ -274,32 +275,32 @@ export default function ChatScreen() {
             <ScrollView
               ref={scrollRef}
               style={styles.messageList}
-              contentContainerStyle={{ padding: 16, gap: 8, paddingBottom: 8 }}
+              contentContainerStyle={{ padding: spacing.lg, gap: spacing.sm, paddingBottom: spacing.sm }}
               showsVerticalScrollIndicator={false}
               onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}
             >
               {contextPost && (
-                <View style={[styles.contextBanner, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
-                  <Feather name="link" size={14} color={colors.mutedForeground} />
-                  <Text numberOfLines={2} style={[styles.contextText, { color: colors.mutedForeground }]}>
+                <View style={[styles.contextBanner, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+                  <Feather name="link" size={14} color={colors.homeMuted} />
+                  <Text numberOfLines={2} style={[styles.contextText, { color: colors.homeMuted }]}>
                     From post: {contextPost.body}
                   </Text>
                 </View>
               )}
               {tradeRelated && (conv?.tradeId ? (
-                <View style={[styles.agreedCard, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
-                  <Text style={[styles.agreedTitle, { color: colors.foreground }]}>Trade agreed ✓</Text>
-                  <Text style={[styles.contextText, { color: colors.mutedForeground }]}>Arrange delivery when ready.</Text>
+                <View style={[styles.agreedCard, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+                  <Text style={[styles.agreedTitle, { color: colors.homeInk }]}>Trade agreed ✓</Text>
+                  <Text style={[styles.contextText, { color: colors.homeMuted }]}>Arrange delivery when ready.</Text>
                 </View>
               ) : (
-                <TouchableOpacity onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.primary }]}>
-                  <Feather name="check-circle" size={16} color={colors.primary} />
-                  <Text style={[styles.agreeText, { color: colors.primary }]}>Mark Trade Agreed</Text>
+                <TouchableOpacity onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
+                  <Feather name="check-circle" size={16} color={colors.homeCoral} />
+                  <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Mark Trade Agreed</Text>
                 </TouchableOpacity>
               ))}
               {messages.length === 0 && (
                 <View style={styles.emptyMessages}>
-                  <Text style={[styles.emptyMsgText, { color: colors.mutedForeground }]}>
+                  <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>
                     No messages yet. Say hello!
                   </Text>
                 </View>
@@ -315,25 +316,25 @@ export default function ChatScreen() {
               ))}
             </ScrollView>
             <View style={[styles.inputBar, {
-              borderTopColor: colors.border,
-              backgroundColor: colors.background,
+              borderTopColor: colors.homeLine,
+              backgroundColor: colors.homeBackground,
               paddingBottom: botPad,
             }]}>
               <TouchableOpacity
                 onPress={() => setAttachmentMenuOpen(true)}
-                style={[styles.plusBtn, { backgroundColor: colors.secondary }]}
+                style={[styles.plusBtn, { backgroundColor: colors.homeAqua }]}
               >
-                <Feather name="plus" size={21} color={colors.foreground} />
+                <Feather name="plus" size={21} color={colors.homeInk} />
               </TouchableOpacity>
               <TextInput
                 value={msgText}
                 onChangeText={setMsgText}
                 placeholder="Type a message…"
-                placeholderTextColor={colors.mutedForeground + '88'}
+                placeholderTextColor={colors.homeMuted}
                 style={[styles.msgInput, {
-                  color: colors.foreground,
-                  borderColor: colors.border,
-                  backgroundColor: colors.secondary,
+                  color: colors.homeInk,
+                  borderColor: colors.homeLine,
+                  backgroundColor: colors.homeAqua,
                 }]}
                 multiline
                 maxLength={2000}
@@ -342,11 +343,11 @@ export default function ChatScreen() {
                 onPress={handleSend}
                 disabled={!msgText.trim() || sending}
                 style={[styles.sendBtn, {
-                  backgroundColor: msgText.trim() ? colors.primary : colors.secondary,
+                  backgroundColor: msgText.trim() ? colors.homeCoral : colors.homeAqua,
                 }]}
               >
-                {sending ? <ActivityIndicator color="#fff" size="small" /> : (
-                  <Feather name="send" size={16} color={msgText.trim() ? '#fff' : colors.mutedForeground} />
+                {sending ? <ActivityIndicator color={colors.homeSurface} size="small" /> : (
+                  <Feather name="send" size={16} color={msgText.trim() ? colors.homeSurface : colors.homeMuted} />
                 )}
               </TouchableOpacity>
             </View>
@@ -360,31 +361,31 @@ export default function ChatScreen() {
         onRequestClose={() => setTradeConfirmOpen(false)}
       >
         <View style={[styles.confirmShade]}>
-          <View style={[styles.confirmCard, { backgroundColor: colors.background }]}>
-            <View style={[styles.confirmIcon, { backgroundColor: colors.secondary }]}>
-              <Feather name="check-circle" size={28} color={colors.primary} />
+          <View style={[styles.confirmCard, { backgroundColor: colors.homeBackground }]}>
+            <View style={[styles.confirmIcon, { backgroundColor: colors.homeAqua }]}>
+              <Feather name="check-circle" size={28} color={colors.homeCoral} />
             </View>
-            <Text style={[styles.confirmTitle, { color: colors.foreground }]}>Mark trade agreed?</Text>
-            <Text style={[styles.confirmBody, { color: colors.mutedForeground }]}>
+            <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Mark trade agreed?</Text>
+            <Text style={[styles.confirmBody, { color: colors.homeMuted }]}>
               This records the agreement for trade history. You can arrange delivery together when ready.
             </Text>
             <View style={styles.confirmActions}>
               <TouchableOpacity
                 disabled={sending}
                 onPress={() => setTradeConfirmOpen(false)}
-                style={[styles.confirmButton, { backgroundColor: colors.secondary }]}
+                style={[styles.confirmButton, { backgroundColor: colors.homeAqua }]}
               >
-                <Text style={[styles.confirmButtonText, { color: colors.foreground }]}>Cancel</Text>
+                <Text style={[styles.confirmButtonText, { color: colors.homeInk }]}>Cancel</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 disabled={sending}
                 onPress={() => void agreeTrade()}
-                style={[styles.confirmButton, { backgroundColor: colors.primary }]}
+                style={[styles.confirmButton, { backgroundColor: colors.homeCoral }]}
               >
                 {sending ? (
-                  <ActivityIndicator size="small" color="#fff" />
+                  <ActivityIndicator size="small" color={colors.homeSurface} />
                 ) : (
-                  <Text style={[styles.confirmButtonText, { color: '#fff' }]}>Confirm</Text>
+                  <Text style={[styles.confirmButtonText, { color: colors.homeSurface }]}>Confirm</Text>
                 )}
               </TouchableOpacity>
             </View>
@@ -408,64 +409,64 @@ export default function ChatScreen() {
             style={StyleSheet.absoluteFill}
             onPress={closeAttachmentMenu}
           />
-          <View style={[styles.attachmentSheet, { backgroundColor: colors.background }]}>
+          <View style={[styles.attachmentSheet, { backgroundColor: colors.homeBackground }]}>
             <View style={styles.pickerHeader}>
-              <Text style={[styles.pickerTitle, { color: colors.foreground }]}>Add to conversation</Text>
+              <Text style={[styles.pickerTitle, { color: colors.homeInk }]}>Add to conversation</Text>
               <TouchableOpacity onPress={closeAttachmentMenu}>
-                <Feather name="x" size={22} color={colors.foreground} />
+                <Feather name="x" size={22} color={colors.homeInk} />
               </TouchableOpacity>
             </View>
             <TouchableOpacity
-              style={[styles.attachmentOption, { borderColor: colors.border }]}
+              style={[styles.attachmentOption, { borderColor: colors.homeLine }]}
               onPress={openPhotoPicker}
             >
-              <View style={[styles.attachmentIcon, { backgroundColor: colors.secondary }]}>
-                <Feather name="image" size={20} color={colors.primary} />
+              <View style={[styles.attachmentIcon, { backgroundColor: colors.homeAqua }]}>
+                <Feather name="image" size={20} color={colors.homeCoral} />
               </View>
               <View style={{ flex: 1 }}>
-                <Text style={[styles.attachmentTitle, { color: colors.foreground }]}>Photo</Text>
-                <Text style={[styles.attachmentSub, { color: colors.mutedForeground }]}>
+                <Text style={[styles.attachmentTitle, { color: colors.homeInk }]}>Photo</Text>
+                <Text style={[styles.attachmentSub, { color: colors.homeMuted }]}>
                   Share photos of your trader board
                 </Text>
               </View>
-              <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
+              <Feather name="chevron-right" size={18} color={colors.homeMuted} />
             </TouchableOpacity>
             <TouchableOpacity
-              style={[styles.attachmentOption, { borderColor: colors.border }]}
+              style={[styles.attachmentOption, { borderColor: colors.homeLine }]}
               onPress={() => {
                 setAttachmentMenuOpen(false);
                 setPinPickerOpen(true);
               }}
             >
-              <View style={[styles.attachmentIcon, { backgroundColor: colors.secondary }]}>
-                <Feather name="plus-square" size={20} color={colors.primary} />
+              <View style={[styles.attachmentIcon, { backgroundColor: colors.homeAqua }]}>
+                <Feather name="plus-square" size={20} color={colors.homeCoral} />
               </View>
               <View style={{ flex: 1 }}>
-                <Text style={[styles.attachmentTitle, { color: colors.foreground }]}>Add Pin</Text>
-                <Text style={[styles.attachmentSub, { color: colors.mutedForeground }]}>
+                <Text style={[styles.attachmentTitle, { color: colors.homeInk }]}>Add Pin</Text>
+                <Text style={[styles.attachmentSub, { color: colors.homeMuted }]}>
                   Choose from your PinHunt collection
                 </Text>
               </View>
-              <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
+              <Feather name="chevron-right" size={18} color={colors.homeMuted} />
             </TouchableOpacity>
           </View>
         </View>
       </Modal>
       <Modal visible={pinPickerOpen} animationType="slide" transparent onRequestClose={() => setPinPickerOpen(false)}>
         <View style={styles.modalShade}>
-          <View style={[styles.pinPicker, { backgroundColor: colors.background }]}>
+          <View style={[styles.pinPicker, { backgroundColor: colors.homeBackground }]}>
             <View style={styles.pickerHeader}>
-              <Text style={[styles.pickerTitle, { color: colors.foreground }]}>Share pins</Text>
+              <Text style={[styles.pickerTitle, { color: colors.homeInk }]}>Share pins</Text>
               <TouchableOpacity onPress={() => setPinPickerOpen(false)}>
-                <Feather name="x" size={22} color={colors.foreground} />
+                <Feather name="x" size={22} color={colors.homeInk} />
               </TouchableOpacity>
             </View>
             <TextInput
               value={pinSearch}
               onChangeText={setPinSearch}
               placeholder="Search your collection"
-              placeholderTextColor={colors.mutedForeground}
-              style={[styles.pinSearch, { color: colors.foreground, borderColor: colors.border }]}
+              placeholderTextColor={colors.homeMuted}
+              style={[styles.pinSearch, { color: colors.homeInk, borderColor: colors.homeLine }]}
             />
             <ScrollView>
               {shareablePins.map(pin => {
@@ -476,14 +477,14 @@ export default function ChatScreen() {
                     onPress={() => setSelectedPinIds(current => selected
                       ? current.filter(x => x !== pin.id)
                       : [...current, pin.id])}
-                    style={[styles.pickerRow, { borderBottomColor: colors.border }]}
+                    style={[styles.pickerRow, { borderBottomColor: colors.homeLine }]}
                   >
                     <Image source={getPinImageSource(pin)} style={styles.pickerImage} />
                     <View style={{ flex: 1 }}>
-                      <Text style={[styles.pinTitle, { color: colors.foreground }]}>{pin.title}</Text>
-                      {collection[pin.id]?.status === 'for_trade' && <Text style={[styles.tradeTag, { color: colors.primary }]}>FOR TRADE</Text>}
+                      <Text style={[styles.pinTitle, { color: colors.homeInk }]}>{pin.title}</Text>
+                      {collection[pin.id]?.status === 'for_trade' && <Text style={[styles.tradeTag, { color: colors.homeCoral }]}>FOR TRADE</Text>}
                     </View>
-                    <Feather name={selected ? 'check-square' : 'square'} size={21} color={selected ? colors.primary : colors.mutedForeground} />
+                    <Feather name={selected ? 'check-square' : 'square'} size={21} color={selected ? colors.homeCoral : colors.homeMuted} />
                   </TouchableOpacity>
                 );
               })}
@@ -492,10 +493,10 @@ export default function ChatScreen() {
               disabled={!selectedPinIds.length}
               onPress={sharePins}
               style={[styles.shareButton, {
-                backgroundColor: selectedPinIds.length ? colors.primary : colors.secondary,
+                backgroundColor: selectedPinIds.length ? colors.homeCoral : colors.homeAqua,
               }]}
             >
-              <Text style={styles.shareLabel}>
+              <Text style={[styles.shareLabel, { color: colors.homeSurface }]}>
                 Share {selectedPinIds.length || ''} Pin{selectedPinIds.length === 1 ? '' : 's'}
               </Text>
             </TouchableOpacity>
@@ -508,21 +509,21 @@ export default function ChatScreen() {
 
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' }, messageList: { flex: 1 }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
-  contextBanner: { flexDirection: 'row', gap: 8, padding: 10, borderWidth: 1, borderRadius: 10 }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: 11, borderWidth: 1, borderRadius: 10, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: 11, borderWidth: 1, borderRadius: 10 }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: 10, borderRadius: 16, borderWidth: 1, gap: 6 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: 8, backgroundColor: '#ddd' }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 7, borderRadius: 9 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
-  inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: 8, paddingHorizontal: 12, paddingTop: 10, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: 14, paddingVertical: 10, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
-  attachmentSheet: { borderTopLeftRadius: 18, borderTopRightRadius: 18, padding: 16, gap: 10 },
-  attachmentOption: { minHeight: 68, borderWidth: 1, borderRadius: 12, padding: 10, flexDirection: 'row', alignItems: 'center', gap: 11 },
-  attachmentIcon: { width: 42, height: 42, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+  contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
+  inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
+  attachmentSheet: { borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 },
+  attachmentOption: { minHeight: 68, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm + 2, flexDirection: 'row', alignItems: 'center', gap: 11 },
+  attachmentIcon: { width: 42, height: 42, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
   attachmentTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   attachmentSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
-  confirmShade: { flex: 1, backgroundColor: 'rgba(0,0,0,.45)', justifyContent: 'center', padding: 24 },
-  confirmCard: { borderRadius: 18, padding: 20, alignItems: 'center', gap: 10 },
+  confirmShade: { flex: 1, backgroundColor: 'rgba(0,0,0,.45)', justifyContent: 'center', padding: spacing.xxl },
+  confirmCard: { borderRadius: radius.lg, padding: spacing.xl, alignItems: 'center', gap: spacing.sm + 2 },
   confirmIcon: { width: 54, height: 54, borderRadius: 27, alignItems: 'center', justifyContent: 'center' },
   confirmTitle: { fontSize: 18, fontFamily: 'Inter_700Bold', textAlign: 'center' },
   confirmBody: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 19, textAlign: 'center' },
-  confirmActions: { flexDirection: 'row', gap: 10, alignSelf: 'stretch', marginTop: 6 },
-  confirmButton: { flex: 1, minHeight: 44, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+  confirmActions: { flexDirection: 'row', gap: spacing.sm + 2, alignSelf: 'stretch', marginTop: spacing.xs + 2 },
+  confirmButton: { flex: 1, minHeight: 44, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
   confirmButtonText: { fontSize: 14, fontFamily: 'Inter_700Bold' },
-  modalShade: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,.45)' }, pinPicker: { maxHeight: '78%', borderTopLeftRadius: 18, borderTopRightRadius: 18, padding: 16, gap: 10 }, pickerHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }, pickerTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' }, pinSearch: { borderWidth: 1, borderRadius: 9, paddingHorizontal: 11, paddingVertical: 9, fontSize: 14, fontFamily: 'Inter_400Regular' }, pickerRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, borderBottomWidth: StyleSheet.hairlineWidth }, pickerImage: { width: 48, height: 48, borderRadius: 7 }, shareButton: { alignItems: 'center', padding: 13, borderRadius: 10 }, shareLabel: { color: '#fff', fontFamily: 'Inter_600SemiBold' },
+  modalShade: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,.45)' }, pinPicker: { maxHeight: '78%', borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 }, pickerHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }, pickerTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' }, pinSearch: { borderWidth: 1, borderRadius: radius.sm - 1, paddingHorizontal: 11, paddingVertical: spacing.sm + 1, fontSize: 14, fontFamily: 'Inter_400Regular' }, pickerRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2, paddingVertical: spacing.sm + 2, borderBottomWidth: StyleSheet.hairlineWidth }, pickerImage: { width: 48, height: 48, borderRadius: 7 }, shareButton: { alignItems: 'center', padding: spacing.md + 1, borderRadius: radius.sm }, shareLabel: { fontFamily: 'Inter_600SemiBold' },
 });

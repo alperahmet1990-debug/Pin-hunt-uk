@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { radius, spacing } from '@/constants/theme';
 
 interface SearchBarProps {
   value: string;
@@ -30,19 +31,19 @@ export function SearchBar({
       style={[
         styles.container,
         {
-          backgroundColor: colors.secondary,
-          borderColor: colors.border,
-          borderRadius: colors.radius,
+          backgroundColor: colors.homeAqua,
+          borderColor: colors.homeLine,
+          borderRadius: radius.lg,
         },
       ]}
     >
-      <Feather name="search" size={16} color={colors.mutedForeground} style={styles.icon} />
+      <Feather name="search" size={16} color={colors.homeMuted} style={styles.icon} />
       <TextInput
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor={colors.mutedForeground}
-        style={[styles.input, { color: colors.foreground }]}
+        placeholderTextColor={colors.homeMuted}
+        style={[styles.input, { color: colors.homeInk }]}
         editable={editable}
         returnKeyType="search"
         autoCorrect={false}
@@ -67,13 +68,13 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
+    paddingHorizontal: spacing.md,
     height: 44,
     borderWidth: 1,
-    marginHorizontal: 16,
+    marginHorizontal: spacing.lg,
   },
   icon: {
-    marginRight: 8,
+    marginRight: spacing.sm,
   },
   input: {
     flex: 1,

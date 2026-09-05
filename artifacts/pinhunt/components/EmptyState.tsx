@@ -22,20 +22,20 @@ export function EmptyState({
 
   return (
     <View style={styles.container}>
-      <View style={[styles.iconWrap, { backgroundColor: colors.muted, borderRadius: colors.radius * 2 }]}>
-        <Feather name={icon} size={32} color={colors.mutedForeground} />
+      <View style={[styles.iconWrap, { backgroundColor: colors.homeAqua, borderRadius: colors.radius * 2 }]}>
+        <Feather name={icon} size={32} color={colors.homeMuted} />
       </View>
-      <Text style={[styles.title, { color: colors.foreground }]}>{title}</Text>
+      <Text style={[styles.title, { color: colors.homeInk }]}>{title}</Text>
       {subtitle ? (
-        <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>{subtitle}</Text>
+        <Text style={[styles.subtitle, { color: colors.homeMuted }]}>{subtitle}</Text>
       ) : null}
       {actionLabel && onAction ? (
         <TouchableOpacity
-          style={[styles.btn, { backgroundColor: colors.primary, borderRadius: colors.radius }]}
+          style={[styles.btn, { backgroundColor: colors.homeCoral, borderRadius: colors.radius }]}
           onPress={onAction}
           activeOpacity={0.8}
         >
-          <Text style={[styles.btnLabel, { color: colors.primaryForeground }]}>{actionLabel}</Text>
+          <Text style={[styles.btnLabel, { color: colors.homeSurface }]}>{actionLabel}</Text>
         </TouchableOpacity>
       ) : null}
     </View>

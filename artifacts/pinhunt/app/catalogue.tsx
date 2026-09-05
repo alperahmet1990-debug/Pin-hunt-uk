@@ -18,6 +18,7 @@ import { SearchBar } from '@/components/SearchBar';
 import { FilterBar, StatusFilter } from '@/components/FilterBar';
 import { EmptyState } from '@/components/EmptyState';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
+import { radius, spacing } from '@/constants/theme';
 import type { Brand } from '@/types/pin';
 import type { CataloguePin } from '@workspace/pin-repository';
 
@@ -62,26 +63,26 @@ export default function CatalogueScreen() {
   const numCols = viewMode === 'grid' ? 2 : 1;
 
   return (
-    <View style={[styles.root, { backgroundColor: colors.background }]}>
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       {/* Header */}
       <View
         style={[
           styles.headerBar,
           {
             paddingTop: topPad + 12,
-            backgroundColor: colors.card,
-            borderBottomColor: colors.border,
+            backgroundColor: colors.homeSurface,
+            borderBottomColor: colors.homeLine,
           },
         ]}
       >
         <View style={styles.headerRow}>
-          <Text style={[styles.headerTitle, { color: colors.foreground }]}>Catalogue</Text>
+          <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Catalogue</Text>
           <TouchableOpacity
             onPress={() => setViewMode(v => (v === 'grid' ? 'list' : 'grid'))}
-            style={[styles.toggleBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}
+            style={[styles.toggleBtn, { backgroundColor: colors.homeAqua, borderRadius: radius.sm }]}
             activeOpacity={0.75}
           >
-            <Feather name={viewMode === 'grid' ? 'list' : 'grid'} size={18} color={colors.foreground} />
+            <Feather name={viewMode === 'grid' ? 'list' : 'grid'} size={18} color={colors.homeInk} />
           </TouchableOpacity>
         </View>
         <View style={styles.searchWrap}>
@@ -96,8 +97,8 @@ export default function CatalogueScreen() {
       </View>
 
       {/* Results count */}
-      <View style={[styles.countRow, { borderBottomColor: colors.border }]}>
-        <Text style={[styles.countText, { color: colors.mutedForeground }]}>
+      <View style={[styles.countRow, { borderBottomColor: colors.homeLine }]}>
+        <Text style={[styles.countText, { color: colors.homeMuted }]}>
           {filtered.length} {filtered.length === 1 ? 'pin' : 'pins'}
         </Text>
       </View>
@@ -131,6 +132,7 @@ export default function CatalogueScreen() {
             <PinCard
               pin={item}
               mode={viewMode}
+              seaGlass
               onPress={() =>
                 router.push({ pathname: '/pin/[id]', params: { id: item.id } })
               }
@@ -140,7 +142,7 @@ export default function CatalogueScreen() {
         />
       )}
 
-      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
     </View>
   );
 }

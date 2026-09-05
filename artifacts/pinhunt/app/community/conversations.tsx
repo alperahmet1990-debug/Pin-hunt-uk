@@ -18,6 +18,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
+import { radius, spacing } from '@/constants/theme';
 import type { Conversation } from '@workspace/pin-repository';
 
 function timeAgo(iso: string): string {
@@ -30,10 +31,6 @@ function timeAgo(iso: string): string {
   const day = Math.floor(hr / 24);
   if (day < 7) return `${day}d`;
   return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-}
-
-function initials(name: string): string {
-  return name.split(' ').map(n => n[0]?.toUpperCase() ?? '').join('').slice(0, 2);
 }
 
 function ConversationRow({ conv, onPress, colors }: {
@@ -51,7 +48,7 @@ function ConversationRow({ conv, onPress, colors }: {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.82}
-      style={[styles.row, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+      style={[styles.row, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
     >
       {/* Avatar */}
       <Avatar uri={other?.avatarUrl} name={name} size={46} />
@@ -59,32 +56,32 @@ function ConversationRow({ conv, onPress, colors }: {
       {/* Content */}
       <View style={styles.rowContent}>
         <View style={styles.rowHeader}>
-          <Text style={[styles.rowName, { color: colors.foreground }]}>@{name}</Text>
-          <Text style={[styles.rowTime, { color: unread ? colors.primary : colors.mutedForeground }]}>{timeAgo(ts)}</Text>
+          <Text style={[styles.rowName, { color: colors.homeInk }]}>@{name}</Text>
+          <Text style={[styles.rowTime, { color: unread ? colors.homeCoral : colors.homeMuted }]}>{timeAgo(ts)}</Text>
         </View>
         {lastMsg ? (
           <Text
             style={[
               styles.rowPreview,
               unread
-                ? { color: colors.foreground, fontFamily: 'Inter_600SemiBold' }
-                : { color: colors.mutedForeground },
+                ? { color: colors.homeInk, fontFamily: 'Inter_600SemiBold' }
+                : { color: colors.homeMuted },
             ]}
             numberOfLines={1}
           >
             {lastMsg.body}
           </Text>
         ) : (
-          <Text style={[styles.rowPreview, { color: colors.mutedForeground }]}>No messages yet</Text>
+          <Text style={[styles.rowPreview, { color: colors.homeMuted }]}>No messages yet</Text>
         )}
       </View>
 
       {unread ? (
-        <View style={[styles.unreadBadge, { backgroundColor: colors.primary }]}>
-          <Text style={styles.unreadBadgeText}>{unread > 9 ? '9+' : unread}</Text>
+        <View style={[styles.unreadBadge, { backgroundColor: colors.homeCoral }]}>
+          <Text style={[styles.unreadBadgeText, { color: colors.homeSurface }]}>{unread > 9 ? '9+' : unread}</Text>
         </View>
       ) : (
-        <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+        <Feather name="chevron-right" size={16} color={colors.homeMuted} />
       )}
     </TouchableOpacity>
   );
@@ -124,29 +121,29 @@ export default function ConversationsScreen() {
     <>
       <Stack.Screen options={{ title: 'Messages' }} />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
-        contentContainerStyle={{ padding: 12, paddingBottom: botPad, gap: 8 }}
+        style={[styles.root, { backgroundColor: colors.homeBackground }]}
+        contentContainerStyle={{ padding: spacing.md, paddingBottom: botPad, gap: spacing.sm }}
         showsVerticalScrollIndicator={false}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.primary} />
+          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.homeCoral} />
         }
       >
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
-            <TouchableOpacity onPress={() => load()} style={{ padding: 8 }}>
-              <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
+            <TouchableOpacity onPress={() => load()} style={{ padding: spacing.sm }}>
+              <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
         ) : convs.length === 0 ? (
           <View style={styles.empty}>
-            <Feather name="mail" size={40} color={colors.mutedForeground} />
-            <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No messages yet</Text>
-            <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+            <Feather name="mail" size={40} color={colors.homeMuted} />
+            <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No messages yet</Text>
+            <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
               Start a conversation from a community post or a collector's profile.
             </Text>
           </View>
@@ -167,21 +164,16 @@ export default function ConversationsScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  center: { paddingTop: 60, alignItems: 'center', gap: 12 },
+  center: { paddingTop: 60, alignItems: 'center', gap: spacing.md },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
-  empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
+  empty: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
 
   row: {
-    flexDirection: 'row', alignItems: 'center', gap: 12,
-    padding: 14, borderWidth: 1,
+    flexDirection: 'row', alignItems: 'center', gap: spacing.md,
+    padding: spacing.lg - 2, borderWidth: 1,
   },
-  avatar: {
-    width: 46, height: 46, borderRadius: 23,
-    alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-  },
-  avatarText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_700Bold' },
   rowContent: { flex: 1, gap: 3 },
   rowHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   rowName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
@@ -195,5 +187,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  unreadBadgeText: { color: '#fff', fontSize: 11, fontFamily: 'Inter_700Bold' },
+  unreadBadgeText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
 });

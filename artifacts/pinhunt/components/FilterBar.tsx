@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import { useColors } from '@/hooks/useColors';
+import { radius, spacing } from '@/constants/theme';
 import type { Brand, CollectionStatus } from '@/types/pin';
 
 export type StatusFilter = CollectionStatus | 'any';
@@ -40,14 +41,14 @@ function Chip({
   activeColor?: string;
 }) {
   const colors = useColors();
-  const bg = active ? (activeColor ?? colors.primary) : colors.secondary;
-  const fg = active ? '#fff' : colors.mutedForeground;
+  const bg = active ? (activeColor ?? colors.homeCoral) : colors.homeAqua;
+  const fg = active ? colors.homeSurface : colors.homeMuted;
 
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.75}
-      style={[styles.chip, { backgroundColor: bg, borderRadius: colors.radius - 2, borderColor: active ? 'transparent' : colors.border }]}
+      style={[styles.chip, { backgroundColor: bg, borderRadius: radius.pill, borderColor: active ? 'transparent' : colors.homeLine }]}
     >
       <Text style={[styles.chipLabel, { color: fg }]}>{label}</Text>
     </TouchableOpacity>
@@ -78,7 +79,7 @@ export function FilterBar({
           />
         ))}
       </ScrollView>
-      <View style={[styles.divider, { backgroundColor: colors.border }]} />
+      <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -111,15 +112,15 @@ const styles = StyleSheet.create({
     gap: 0,
   },
   row: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    gap: 8,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    gap: spacing.sm,
     flexDirection: 'row',
     alignItems: 'center',
   },
   chip: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs + 2,
     borderWidth: 1,
   },
   chipLabel: {
@@ -128,6 +129,6 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: StyleSheet.hairlineWidth,
-    marginHorizontal: 16,
+    marginHorizontal: spacing.lg,
   },
 });

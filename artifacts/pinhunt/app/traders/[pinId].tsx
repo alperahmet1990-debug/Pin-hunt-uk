@@ -20,6 +20,8 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { Avatar } from '@/components/Avatar';
+import { radius, spacing } from '@/constants/theme';
 import type { TraderProfile } from '@workspace/pin-repository';
 
 // ─── Rating badge ─────────────────────────────────────────────────────────────
@@ -29,13 +31,13 @@ function RatingBadge({ positive, total, colors }: {
 }) {
   if (total === 0) {
     return (
-      <View style={[styles.badge, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
-        <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>No ratings yet</Text>
+      <View style={[styles.badge, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+        <Text style={[styles.badgeText, { color: colors.homeMuted }]}>No ratings yet</Text>
       </View>
     );
   }
   const pct = Math.round((positive / total) * 100);
-  const color = pct >= 80 ? '#16A34A' : pct >= 50 ? '#F59E0B' : '#EF4444';
+  const color = pct >= 80 ? colors.owned : pct >= 50 ? colors.homeSandInk : colors.destructive;
   return (
     <View style={[styles.badge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
       <Text style={{ fontSize: 12 }}>👍</Text>
@@ -54,30 +56,26 @@ function TraderCard({ trader, onRequestTrade, onMessage, isMe, colors }: {
   colors: ReturnType<typeof useColors>;
 }) {
   const router = useRouter();
-  const initials = trader.username
-    .split(' ').map(n => n[0]?.toUpperCase() ?? '').join('').slice(0, 2);
 
   return (
     <TouchableOpacity
       onPress={() => router.push({ pathname: '/collector/[username]', params: { username: trader.username } })}
       activeOpacity={0.85}
-      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+      style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
     >
       {/* Avatar */}
-      <View style={[styles.avatar, { backgroundColor: colors.primary }]}>
-        <Text style={styles.avatarText}>{initials}</Text>
-      </View>
+      <Avatar uri={trader.avatarUrl} name={trader.username} size={44} />
 
       {/* Info */}
       <View style={styles.cardInfo}>
-        <Text style={[styles.displayName, { color: colors.foreground }]}>
+        <Text style={[styles.displayName, { color: colors.homeInk }]}>
           @{trader.username}
-          {isMe && <Text style={[styles.meTag, { color: colors.mutedForeground }]}> (you)</Text>}
+          {isMe && <Text style={[styles.meTag, { color: colors.homeMuted }]}> (you)</Text>}
         </Text>
         {trader.tradingRegion ? (
           <View style={styles.regionRow}>
-            <Feather name="map-pin" size={11} color={colors.mutedForeground} />
-            <Text style={[styles.regionText, { color: colors.mutedForeground }]}>{trader.tradingRegion}</Text>
+            <Feather name="map-pin" size={11} color={colors.homeMuted} />
+            <Text style={[styles.regionText, { color: colors.homeMuted }]}>{trader.tradingRegion}</Text>
           </View>
         ) : null}
         <RatingBadge positive={trader.positiveRatings} total={trader.totalRatings} colors={colors} />
@@ -89,18 +87,18 @@ function TraderCard({ trader, onRequestTrade, onMessage, isMe, colors }: {
           <TouchableOpacity
             onPress={onMessage}
             activeOpacity={0.85}
-            style={[styles.tradeBtn, { backgroundColor: colors.primary, borderRadius: 8 }]}
+            style={[styles.tradeBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.sm }]}
           >
-            <Feather name="mail" size={13} color="#fff" />
-            <Text style={styles.tradeBtnLabel}>Message</Text>
+            <Feather name="mail" size={13} color={colors.homeSurface} />
+            <Text style={[styles.tradeBtnLabel, { color: colors.homeSurface }]}>Message</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={onRequestTrade}
             activeOpacity={0.85}
             accessibilityLabel="Request trade"
-            style={[styles.tradeBtn, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: 8, borderWidth: 1 }]}
+            style={[styles.tradeBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine, borderRadius: radius.sm, borderWidth: 1 }]}
           >
-            <Feather name="repeat" size={13} color={colors.foreground} />
+            <Feather name="repeat" size={13} color={colors.homeInk} />
           </TouchableOpacity>
         </View>
       )}
@@ -167,35 +165,35 @@ export default function TradersScreen() {
     <>
       <Stack.Screen options={{ title: pin ? `Traders — ${pin.title}` : 'Traders' }} />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
-        contentContainerStyle={{ padding: 16, paddingBottom: botPad }}
+        style={[styles.root, { backgroundColor: colors.homeBackground }]}
+        contentContainerStyle={{ padding: spacing.lg, paddingBottom: botPad }}
         showsVerticalScrollIndicator={false}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.primary} />
+          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.homeCoral} />
         }
       >
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
-            <TouchableOpacity onPress={() => load()} style={{ padding: 8 }}>
-              <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
+            <TouchableOpacity onPress={() => load()} style={{ padding: spacing.sm }}>
+              <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
         ) : traders.length === 0 ? (
           <View style={styles.empty}>
-            <Feather name="users" size={36} color={colors.mutedForeground} />
-            <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No traders yet</Text>
-            <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+            <Feather name="users" size={36} color={colors.homeMuted} />
+            <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No traders yet</Text>
+            <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
               No one has this pin marked for trade at the moment.
             </Text>
           </View>
         ) : (
           <>
-            <Text style={[styles.countLabel, { color: colors.mutedForeground }]}>
+            <Text style={[styles.countLabel, { color: colors.homeMuted }]}>
               {traders.length} collector{traders.length !== 1 ? 's' : ''} offering this for trade
             </Text>
             {traders.map(trader => (
@@ -227,30 +225,24 @@ export default function TradersScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  center: { alignItems: 'center', paddingTop: 60, gap: 12 },
+  center: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
-  empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
+  empty: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
-  countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: 12 },
+  countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.md },
   card: {
-    flexDirection: 'row', alignItems: 'center', padding: 14,
-    marginBottom: 10, borderWidth: 1, gap: 12,
+    flexDirection: 'row', alignItems: 'center', padding: spacing.lg - 2,
+    marginBottom: spacing.sm + 2, borderWidth: 1, gap: spacing.md,
   },
-  avatar: {
-    width: 44, height: 44, borderRadius: 22,
-    alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-  },
-  avatarText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_700Bold' },
   cardInfo: { flex: 1, gap: 3 },
   displayName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   meTag: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  username: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  regionRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  regionRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
   regionText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  badge: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 6, borderWidth: 1, marginTop: 2 },
+  badge: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs, alignSelf: 'flex-start', paddingHorizontal: spacing.sm, paddingVertical: 3, borderRadius: radius.sm - 4, borderWidth: 1, marginTop: 2 },
   badgeText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
-  cardActions: { flexDirection: 'row', gap: 6 },
-  tradeBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 12, paddingVertical: 8 },
-  tradeBtnLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#fff' },
+  cardActions: { flexDirection: 'row', gap: spacing.xs + 2 },
+  tradeBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: spacing.md, paddingVertical: spacing.sm },
+  tradeBtnLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
 });

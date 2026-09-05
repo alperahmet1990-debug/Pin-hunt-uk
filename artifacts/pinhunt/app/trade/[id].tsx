@@ -23,6 +23,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { radius, spacing } from '@/constants/theme';
 import {
   isDismissedValue,
   persistBannerDismissal,
@@ -39,13 +40,15 @@ const STATUS_LABEL: Record<TradeStatus, string> = {
   completed: 'Completed ✓',
   cancelled: 'Cancelled',
 };
-const STATUS_COLOR: Record<TradeStatus, string> = {
-  pending:   '#F59E0B',
-  accepted:  '#3B82F6',
-  rejected:  '#EF4444',
-  completed: '#16A34A',
-  cancelled: '#6B7280',
-};
+function statusColor(status: TradeStatus, colors: ReturnType<typeof useColors>): string {
+  switch (status) {
+    case 'pending': return colors.homeSandInk;
+    case 'accepted': return colors.forTrade;
+    case 'rejected': return colors.destructive;
+    case 'completed': return colors.owned;
+    case 'cancelled': return colors.homeMuted;
+  }
+}
 
 // ─── Potential match banner ───────────────────────────────────────────────────
 
@@ -66,48 +69,48 @@ function PotentialMatchBanner({
   const iHave    = pins.filter(p => p.direction === 'i_have_they_want');
 
   return (
-    <View style={[bannerStyles.container, { backgroundColor: colors.primary + '12', borderColor: colors.primary + '40' }]}>
+    <View style={[bannerStyles.container, { backgroundColor: colors.homeCoral + '12', borderColor: colors.homeCoral + '40' }]}>
       {/* Header row */}
       <View style={bannerStyles.header}>
         <View style={bannerStyles.headerLeft}>
-          <Feather name="shuffle" size={14} color={colors.primary} />
-          <Text style={[bannerStyles.headerTitle, { color: colors.primary }]}>Potential match</Text>
-          <Text style={[bannerStyles.headerCount, { color: colors.primary + 'BB' }]}>
+          <Feather name="shuffle" size={14} color={colors.homeCoral} />
+          <Text style={[bannerStyles.headerTitle, { color: colors.homeCoral }]}>Potential match</Text>
+          <Text style={[bannerStyles.headerCount, { color: colors.homeCoral + 'BB' }]}>
             {pins.length} pin{pins.length !== 1 ? 's' : ''}
           </Text>
         </View>
         <View style={bannerStyles.headerActions}>
           <TouchableOpacity onPress={() => setCollapsed(c => !c)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-            <Feather name={collapsed ? 'chevron-down' : 'chevron-up'} size={16} color={colors.primary} />
+            <Feather name={collapsed ? 'chevron-down' : 'chevron-up'} size={16} color={colors.homeCoral} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={onDismiss} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginLeft: 12 }}>
-            <Feather name="x" size={16} color={colors.mutedForeground} />
+          <TouchableOpacity onPress={onDismiss} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginLeft: spacing.md }}>
+            <Feather name="x" size={16} color={colors.homeMuted} />
           </TouchableOpacity>
         </View>
       </View>
 
       {/* Pin lists */}
       {!collapsed && (
-        <View style={{ gap: 10 }}>
+        <View style={{ gap: spacing.sm + 2 }}>
           {theyHave.length > 0 && (
-            <View style={{ gap: 6 }}>
-              <Text style={[bannerStyles.groupLabel, { color: colors.mutedForeground }]}>They have · you want</Text>
+            <View style={{ gap: spacing.xs + 2 }}>
+              <Text style={[bannerStyles.groupLabel, { color: colors.homeMuted }]}>They have · you want</Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={bannerStyles.pinRow}>
                 {theyHave.map(pin => (
                   <TouchableOpacity
                     key={pin.pinId}
                     onPress={() => onPinPress(pin.pinhuntId)}
                     activeOpacity={0.8}
-                    style={[bannerStyles.pinCard, { backgroundColor: colors.card, borderColor: colors.border }]}
+                    style={[bannerStyles.pinCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                   >
                     {pin.imageUrl ? (
                       <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
                     ) : (
-                      <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.secondary }]}>
-                        <Feather name="image" size={18} color={colors.mutedForeground} />
+                      <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.homeAqua }]}>
+                        <Feather name="image" size={18} color={colors.homeMuted} />
                       </View>
                     )}
-                    <Text style={[bannerStyles.pinTitle, { color: colors.foreground }]} numberOfLines={2}>
+                    <Text style={[bannerStyles.pinTitle, { color: colors.homeInk }]} numberOfLines={2}>
                       {pin.title}
                     </Text>
                   </TouchableOpacity>
@@ -117,24 +120,24 @@ function PotentialMatchBanner({
           )}
 
           {iHave.length > 0 && (
-            <View style={{ gap: 6 }}>
-              <Text style={[bannerStyles.groupLabel, { color: colors.mutedForeground }]}>You have · they want</Text>
+            <View style={{ gap: spacing.xs + 2 }}>
+              <Text style={[bannerStyles.groupLabel, { color: colors.homeMuted }]}>You have · they want</Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={bannerStyles.pinRow}>
                 {iHave.map(pin => (
                   <TouchableOpacity
                     key={pin.pinId}
                     onPress={() => onPinPress(pin.pinhuntId)}
                     activeOpacity={0.8}
-                    style={[bannerStyles.pinCard, { backgroundColor: colors.card, borderColor: colors.border }]}
+                    style={[bannerStyles.pinCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                   >
                     {pin.imageUrl ? (
                       <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
                     ) : (
-                      <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.secondary }]}>
-                        <Feather name="image" size={18} color={colors.mutedForeground} />
+                      <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.homeAqua }]}>
+                        <Feather name="image" size={18} color={colors.homeMuted} />
                       </View>
                     )}
-                    <Text style={[bannerStyles.pinTitle, { color: colors.foreground }]} numberOfLines={2}>
+                    <Text style={[bannerStyles.pinTitle, { color: colors.homeInk }]} numberOfLines={2}>
                       {pin.title}
                     </Text>
                   </TouchableOpacity>
@@ -149,15 +152,15 @@ function PotentialMatchBanner({
 }
 
 const bannerStyles = StyleSheet.create({
-  container:       { margin: 10, borderWidth: 1, borderRadius: 12, padding: 12, gap: 10 },
+  container:       { margin: spacing.sm + 2, borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm + 2 },
   header:          { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  headerLeft:      { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  headerLeft:      { flexDirection: 'row', alignItems: 'center', gap: spacing.xs + 2 },
   headerTitle:     { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   headerCount:     { fontSize: 12, fontFamily: 'Inter_400Regular' },
   headerActions:   { flexDirection: 'row', alignItems: 'center' },
   groupLabel:      { fontSize: 11, fontFamily: 'Inter_500Medium', textTransform: 'uppercase', letterSpacing: 0.4 },
-  pinRow:          { gap: 8, paddingRight: 4 },
-  pinCard:         { width: 80, borderRadius: 10, borderWidth: 1, overflow: 'hidden', gap: 4, paddingBottom: 6 },
+  pinRow:          { gap: spacing.sm, paddingRight: spacing.xs },
+  pinCard:         { width: 80, borderRadius: radius.sm, borderWidth: 1, overflow: 'hidden', gap: spacing.xs, paddingBottom: spacing.xs + 2 },
   pinImage:        { width: 80, height: 80 },
   pinImagePlaceholder: { width: 80, height: 80, alignItems: 'center', justifyContent: 'center' },
   pinTitle:        { fontSize: 11, fontFamily: 'Inter_400Regular', paddingHorizontal: 5, lineHeight: 14 },
@@ -197,53 +200,53 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
 
   if (done) {
     return (
-      <View style={[styles.ratingBox, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 14 }]}>
-        <Text style={[styles.ratingTitle, { color: colors.foreground }]}>Rating submitted! 👍</Text>
-        <TouchableOpacity onPress={onDone} style={{ padding: 8 }}>
-          <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium', textAlign: 'center' }}>Done</Text>
+      <View style={[styles.ratingBox, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+        <Text style={[styles.ratingTitle, { color: colors.homeInk }]}>Rating submitted! 👍</Text>
+        <TouchableOpacity onPress={onDone} style={{ padding: spacing.sm }}>
+          <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium', textAlign: 'center' }}>Done</Text>
         </TouchableOpacity>
       </View>
     );
   }
 
   return (
-    <View style={[styles.ratingBox, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 14 }]}>
-      <Text style={[styles.ratingTitle, { color: colors.foreground }]}>Rate this trade</Text>
-      <Text style={[styles.ratingSub, { color: colors.mutedForeground }]}>
+    <View style={[styles.ratingBox, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+      <Text style={[styles.ratingTitle, { color: colors.homeInk }]}>Rate this trade</Text>
+      <Text style={[styles.ratingSub, { color: colors.homeMuted }]}>
         How was your experience with this trader?
       </Text>
       <TextInput
         value={comment}
         onChangeText={setComment}
         placeholder="Optional comment…"
-        placeholderTextColor={colors.mutedForeground + '88'}
-        style={[styles.ratingInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.secondary, borderRadius: 10 }]}
+        placeholderTextColor={colors.homeMuted}
+        style={[styles.ratingInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
         multiline
       />
       {saving ? (
-        <ActivityIndicator color={colors.primary} />
+        <ActivityIndicator color={colors.homeCoral} />
       ) : (
         <View style={styles.ratingBtns}>
           <TouchableOpacity
             onPress={() => submit(false)}
             activeOpacity={0.85}
-            style={[styles.ratingBtn, { backgroundColor: '#FEE2E2', borderColor: '#EF4444', borderRadius: 10 }]}
+            style={[styles.ratingBtn, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
           >
             <Text style={{ fontSize: 20 }}>👎</Text>
-            <Text style={[styles.ratingBtnLabel, { color: '#EF4444' }]}>Negative</Text>
+            <Text style={[styles.ratingBtnLabel, { color: colors.destructive }]}>Negative</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => submit(true)}
             activeOpacity={0.85}
-            style={[styles.ratingBtn, { backgroundColor: '#DCFCE7', borderColor: '#16A34A', borderRadius: 10 }]}
+            style={[styles.ratingBtn, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '55' }]}
           >
             <Text style={{ fontSize: 20 }}>👍</Text>
-            <Text style={[styles.ratingBtnLabel, { color: '#16A34A' }]}>Positive</Text>
+            <Text style={[styles.ratingBtnLabel, { color: colors.owned }]}>Positive</Text>
           </TouchableOpacity>
         </View>
       )}
-      <TouchableOpacity onPress={onDone} style={{ padding: 8 }}>
-        <Text style={[styles.skipLabel, { color: colors.mutedForeground }]}>Skip rating</Text>
+      <TouchableOpacity onPress={onDone} style={{ padding: spacing.sm }}>
+        <Text style={[styles.skipLabel, { color: colors.homeMuted }]}>Skip rating</Text>
       </TouchableOpacity>
     </View>
   );
@@ -258,13 +261,13 @@ function MessageBubble({ msg, isMe, colors }: {
     <View style={[styles.bubbleRow, isMe && styles.bubbleRowMe]}>
       <View style={[
         styles.bubble,
-        { backgroundColor: isMe ? colors.primary : colors.card, borderColor: colors.border },
+        { backgroundColor: isMe ? colors.homeCoral : colors.homeSurface, borderColor: colors.homeLine },
         isMe && styles.bubbleMe,
       ]}>
-        <Text style={[styles.bubbleText, { color: isMe ? '#fff' : colors.foreground }]}>
+        <Text style={[styles.bubbleText, { color: isMe ? colors.homeSurface : colors.homeInk }]}>
           {msg.message}
         </Text>
-        <Text style={[styles.bubbleTime, { color: isMe ? 'rgba(255,255,255,0.6)' : colors.mutedForeground }]}>
+        <Text style={[styles.bubbleTime, { color: isMe ? colors.homeSurface + '99' : colors.homeMuted }]}>
           {new Date(msg.createdAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
         </Text>
       </View>
@@ -429,13 +432,13 @@ export default function TradeScreen() {
     <>
       <Stack.Screen options={{ title: 'Trade Request' }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVerticalOffset={90}
       >
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
@@ -444,17 +447,17 @@ export default function TradeScreen() {
         ) : !trade ? null : (
           <>
             {/* Status banner */}
-            <View style={[styles.statusBar, { backgroundColor: STATUS_COLOR[trade.status] + '18', borderBottomColor: STATUS_COLOR[trade.status] + '33' }]}>
-              <Text style={[styles.statusText, { color: STATUS_COLOR[trade.status] }]}>
+            <View style={[styles.statusBar, { backgroundColor: statusColor(trade.status, colors) + '18', borderBottomColor: statusColor(trade.status, colors) + '33' }]}>
+              <Text style={[styles.statusText, { color: statusColor(trade.status, colors) }]}>
                 {STATUS_LABEL[trade.status]}
               </Text>
             </View>
 
             {/* Trade note */}
             {trade.notes ? (
-              <View style={[styles.noteBox, { backgroundColor: colors.secondary, borderBottomColor: colors.border }]}>
-                <Feather name="info" size={12} color={colors.mutedForeground} />
-                <Text style={[styles.noteText, { color: colors.mutedForeground }]}>{trade.notes}</Text>
+              <View style={[styles.noteBox, { backgroundColor: colors.homeAqua, borderBottomColor: colors.homeLine }]}>
+                <Feather name="info" size={12} color={colors.homeMuted} />
+                <Text style={[styles.noteText, { color: colors.homeMuted }]}>{trade.notes}</Text>
               </View>
             ) : null}
 
@@ -472,13 +475,13 @@ export default function TradeScreen() {
             <ScrollView
               ref={scrollRef}
               style={styles.messageList}
-              contentContainerStyle={{ padding: 16, gap: 8, paddingBottom: 8 }}
+              contentContainerStyle={{ padding: spacing.lg, gap: spacing.sm, paddingBottom: spacing.sm }}
               showsVerticalScrollIndicator={false}
               onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}
             >
               {messages.length === 0 && (
                 <View style={styles.emptyMessages}>
-                  <Text style={[styles.emptyMsgText, { color: colors.mutedForeground }]}>
+                  <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>
                     No messages yet. Start the conversation!
                   </Text>
                 </View>
@@ -507,27 +510,27 @@ export default function TradeScreen() {
 
             {/* Action buttons */}
             {actioning ? (
-              <View style={[styles.actionBar, { borderTopColor: colors.border }]}>
-                <ActivityIndicator color={colors.primary} />
+              <View style={[styles.actionBar, { borderTopColor: colors.homeLine }]}>
+                <ActivityIndicator color={colors.homeCoral} />
               </View>
             ) : (
-              <View style={[styles.actionBar, { borderTopColor: colors.border, backgroundColor: colors.background }]}>
+              <View style={[styles.actionBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground }]}>
                 {/* Recipient: accept or reject pending */}
                 {isRecipient && trade.status === 'pending' && (
                   <View style={styles.actionRow}>
                     <TouchableOpacity
                       onPress={() => updateStatus('rejected')}
                       activeOpacity={0.85}
-                      style={[styles.actionBtn, { backgroundColor: '#FEE2E2', borderColor: '#EF4444', borderRadius: 10 }]}
+                      style={[styles.actionBtn, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
                     >
-                      <Text style={[styles.actionBtnLabel, { color: '#EF4444' }]}>Decline</Text>
+                      <Text style={[styles.actionBtnLabel, { color: colors.destructive }]}>Decline</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                       onPress={() => updateStatus('accepted')}
                       activeOpacity={0.85}
-                      style={[styles.actionBtn, { backgroundColor: '#DCFCE7', borderColor: '#16A34A', borderRadius: 10 }]}
+                      style={[styles.actionBtn, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '55' }]}
                     >
-                      <Text style={[styles.actionBtnLabel, { color: '#16A34A' }]}>Accept</Text>
+                      <Text style={[styles.actionBtnLabel, { color: colors.owned }]}>Accept</Text>
                     </TouchableOpacity>
                   </View>
                 )}
@@ -541,9 +544,9 @@ export default function TradeScreen() {
                         { text: 'Yes, cancel', style: 'destructive', onPress: () => updateStatus('cancelled') },
                       ])}
                       activeOpacity={0.85}
-                      style={[styles.actionBtn, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: 10 }]}
+                      style={[styles.actionBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
                     >
-                      <Text style={[styles.actionBtnLabel, { color: colors.mutedForeground }]}>Cancel</Text>
+                      <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Cancel</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                       onPress={() => Alert.alert('Mark as completed?', 'This means the trade has been successfully completed.', [
@@ -551,9 +554,9 @@ export default function TradeScreen() {
                         { text: 'Yes, completed', onPress: () => updateStatus('completed') },
                       ])}
                       activeOpacity={0.85}
-                      style={[styles.actionBtn, { backgroundColor: colors.primary, borderRadius: 10 }]}
+                      style={[styles.actionBtn, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
                     >
-                      <Text style={[styles.actionBtnLabel, { color: '#fff' }]}>Mark Complete</Text>
+                      <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>Mark Complete</Text>
                     </TouchableOpacity>
                   </View>
                 )}
@@ -563,9 +566,9 @@ export default function TradeScreen() {
                   <TouchableOpacity
                     onPress={() => updateStatus('cancelled')}
                     activeOpacity={0.85}
-                    style={[styles.actionBtnFull, { backgroundColor: colors.secondary, borderColor: colors.border, borderRadius: 10 }]}
+                    style={[styles.actionBtnFull, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
                   >
-                    <Text style={[styles.actionBtnLabel, { color: colors.mutedForeground }]}>Cancel Request</Text>
+                    <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Cancel Request</Text>
                   </TouchableOpacity>
                 )}
 
@@ -574,21 +577,21 @@ export default function TradeScreen() {
                   <TouchableOpacity
                     onPress={() => setShowRating(true)}
                     activeOpacity={0.85}
-                    style={[styles.actionBtnFull, { backgroundColor: colors.primary, borderRadius: 10 }]}
+                    style={[styles.actionBtnFull, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
                   >
-                    <Text style={[styles.actionBtnLabel, { color: '#fff' }]}>Rate this Trade</Text>
+                    <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>Rate this Trade</Text>
                   </TouchableOpacity>
                 )}
 
                 {/* Message input (active trades only) */}
                 {isActive && (
-                  <View style={[styles.inputRow, { borderTopColor: colors.border }]}>
+                  <View style={[styles.inputRow, { borderTopColor: colors.homeLine }]}>
                     <TextInput
                       value={msgText}
                       onChangeText={setMsgText}
                       placeholder="Type a message…"
-                      placeholderTextColor={colors.mutedForeground + '88'}
-                      style={[styles.msgInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.secondary, borderRadius: 22 }]}
+                      placeholderTextColor={colors.homeMuted}
+                      style={[styles.msgInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
                       multiline
                       maxLength={1000}
                     />
@@ -596,11 +599,11 @@ export default function TradeScreen() {
                       onPress={sendMessage}
                       disabled={!msgText.trim() || sending}
                       activeOpacity={0.85}
-                      style={[styles.sendBtn, { backgroundColor: msgText.trim() ? colors.primary : colors.secondary, borderRadius: 22 }]}
+                      style={[styles.sendBtn, { backgroundColor: msgText.trim() ? colors.homeCoral : colors.homeAqua }]}
                     >
                       {sending
-                        ? <ActivityIndicator color="#fff" size="small" />
-                        : <Feather name="send" size={16} color={msgText.trim() ? '#fff' : colors.mutedForeground} />
+                        ? <ActivityIndicator color={colors.homeSurface} size="small" />
+                        : <Feather name="send" size={16} color={msgText.trim() ? colors.homeSurface : colors.homeMuted} />
                       }
                     </TouchableOpacity>
                   </View>
@@ -620,34 +623,34 @@ export default function TradeScreen() {
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
-  statusBar: { padding: 12, borderBottomWidth: 1, alignItems: 'center' },
+  statusBar: { padding: spacing.md, borderBottomWidth: 1, alignItems: 'center' },
   statusText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  noteBox: { flexDirection: 'row', gap: 8, padding: 12, borderBottomWidth: StyleSheet.hairlineWidth },
+  noteBox: { flexDirection: 'row', gap: spacing.sm, padding: spacing.md, borderBottomWidth: StyleSheet.hairlineWidth },
   noteText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular' },
   messageList: { flex: 1 },
-  emptyMessages: { alignItems: 'center', paddingVertical: 40 },
+  emptyMessages: { alignItems: 'center', paddingVertical: spacing.xxxl + spacing.sm },
   emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   bubbleRow: { flexDirection: 'row' },
   bubbleRowMe: { justifyContent: 'flex-end' },
-  bubble: { maxWidth: '78%', padding: 10, borderRadius: 16, borderWidth: 1, gap: 3 },
-  bubbleMe: { borderRadius: 16, borderWidth: 0 },
+  bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: 3 },
+  bubbleMe: { borderRadius: radius.lg, borderWidth: 0 },
   bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 },
   bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' },
-  actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: 12, paddingTop: 10, gap: 10 },
-  actionRow: { flexDirection: 'row', gap: 10 },
-  actionBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 11, borderWidth: 1 },
-  actionBtnFull: { alignItems: 'center', paddingVertical: 11, borderWidth: 1 },
+  actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, gap: spacing.sm + 2 },
+  actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
+  actionBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },
+  actionBtnFull: { alignItems: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },
   actionBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  inputRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 8, paddingTop: 10, borderTopWidth: StyleSheet.hairlineWidth },
-  msgInput: { flex: 1, paddingHorizontal: 14, paddingVertical: 10, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1 },
-  sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  inputRow: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth },
+  msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 },
+  sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
   // Rating
-  ratingBox: { padding: 16, borderWidth: 1, gap: 12, marginTop: 8 },
+  ratingBox: { padding: spacing.lg, borderWidth: 1, borderRadius: radius.md, gap: spacing.md, marginTop: spacing.sm },
   ratingTitle: { fontSize: 16, fontFamily: 'Inter_700Bold' },
   ratingSub: { fontSize: 13, fontFamily: 'Inter_400Regular' },
-  ratingInput: { borderWidth: 1, padding: 10, fontSize: 14, fontFamily: 'Inter_400Regular', minHeight: 60, textAlignVertical: 'top' },
-  ratingBtns: { flexDirection: 'row', gap: 12 },
-  ratingBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 12, borderWidth: 1 },
+  ratingInput: { borderWidth: 1, borderRadius: radius.sm, padding: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', minHeight: 60, textAlignVertical: 'top' },
+  ratingBtns: { flexDirection: 'row', gap: spacing.md },
+  ratingBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm, paddingVertical: spacing.md, borderWidth: 1, borderRadius: radius.sm },
   ratingBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   skipLabel: { textAlign: 'center', fontSize: 13, fontFamily: 'Inter_400Regular' },
 });

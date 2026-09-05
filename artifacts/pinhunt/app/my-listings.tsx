@@ -21,6 +21,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
+import { radius, spacing } from '@/constants/theme';
 import type { ExternalSaleListing, ExternalSaleListingStatus } from '@workspace/pin-repository';
 
 const STATUS_LABEL: Record<ExternalSaleListingStatus, string> = {
@@ -31,13 +32,15 @@ const STATUS_LABEL: Record<ExternalSaleListingStatus, string> = {
   removed: 'Removed',
 };
 
-const STATUS_COLOR: Record<ExternalSaleListingStatus, string> = {
-  active: '#16A34A',
-  draft: '#6366F1',
-  sold: '#9CA3AF',
-  expired: '#9CA3AF',
-  removed: '#EF4444',
-};
+function statusColor(status: ExternalSaleListingStatus, colors: ReturnType<typeof useColors>): string {
+  switch (status) {
+    case 'active': return colors.owned;
+    case 'draft': return colors.forTrade;
+    case 'sold': return colors.homeMuted;
+    case 'expired': return colors.homeMuted;
+    case 'removed': return colors.destructive;
+  }
+}
 
 export default function MyListingsScreen() {
   const colors = useColors();
@@ -116,46 +119,46 @@ export default function MyListingsScreen() {
     <>
       <Stack.Screen options={{ title: 'My Listings' }} />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
-        contentContainerStyle={{ paddingBottom: botPad, paddingTop: 16, paddingHorizontal: 16 }}
+        style={[styles.root, { backgroundColor: colors.homeBackground }]}
+        contentContainerStyle={{ paddingBottom: botPad, paddingTop: spacing.lg, paddingHorizontal: spacing.lg }}
         showsVerticalScrollIndicator={false}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.primary} />
+          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.homeCoral} />
         }
       >
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
             <TouchableOpacity onPress={() => load()} style={styles.retryBtn}>
-              <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
+              <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
         ) : listings.length === 0 ? (
           <View style={styles.empty}>
-            <Feather name="shopping-bag" size={40} color={colors.mutedForeground} />
-            <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No listings yet</Text>
-            <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+            <Feather name="shopping-bag" size={40} color={colors.homeMuted} />
+            <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No listings yet</Text>
+            <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
               Open a pin in your collection and tap "List for Sale" to get started.
             </Text>
           </View>
         ) : (
           <>
-            <Text style={[styles.countLabel, { color: colors.mutedForeground }]}>
+            <Text style={[styles.countLabel, { color: colors.homeMuted }]}>
               {listings.length} listing{listings.length !== 1 ? 's' : ''}
             </Text>
             {listings.map(listing => {
               const pcfg = PLATFORM_CONFIG[listing.platform];
-              const statusColor = STATUS_COLOR[listing.status];
+              const sColor = statusColor(listing.status, colors);
               const isActive = listing.status === 'active';
 
               return (
                 <View
                   key={listing.id}
-                  style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+                  style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
                 >
                   {/* Top row: platform + status */}
                   <View style={styles.cardHeader}>
@@ -163,21 +166,21 @@ export default function MyListingsScreen() {
                       <Feather name={pcfg.icon as keyof typeof Feather.glyphMap} size={13} color={pcfg.color} />
                       <Text style={[styles.platformBadgeLabel, { color: pcfg.color }]}>{pcfg.label}</Text>
                     </View>
-                    <View style={[styles.statusBadge, { backgroundColor: statusColor + '18' }]}>
-                      <Text style={[styles.statusLabel, { color: statusColor }]}>
+                    <View style={[styles.statusBadge, { backgroundColor: sColor + '18' }]}>
+                      <Text style={[styles.statusLabel, { color: sColor }]}>
                         {STATUS_LABEL[listing.status]}
                       </Text>
                     </View>
                   </View>
 
                   {/* Pin title */}
-                  <Text style={[styles.pinTitle, { color: colors.foreground }]} numberOfLines={2}>
+                  <Text style={[styles.pinTitle, { color: colors.homeInk }]} numberOfLines={2}>
                     {listing.pinTitle ?? listing.pinPinhuntId ?? 'Unknown Pin'}
                   </Text>
 
                   {/* Price */}
                   {listing.askingPrice != null && (
-                    <Text style={[styles.price, { color: colors.primary }]}>
+                    <Text style={[styles.price, { color: colors.homeCoral }]}>
                       {CURRENCY_SYMBOLS[(listing.currency as keyof typeof CURRENCY_SYMBOLS) ?? 'GBP'] ?? listing.currency}{' '}
                       {listing.askingPrice.toFixed(2)}
                     </Text>
@@ -189,19 +192,19 @@ export default function MyListingsScreen() {
                     style={styles.urlRow}
                     activeOpacity={0.7}
                   >
-                    <Feather name="external-link" size={12} color={colors.primary} />
-                    <Text style={[styles.urlText, { color: colors.primary }]} numberOfLines={1}>
+                    <Feather name="external-link" size={12} color={colors.homeCoral} />
+                    <Text style={[styles.urlText, { color: colors.homeCoral }]} numberOfLines={1}>
                       {listing.listingUrl.replace(/^https?:\/\/(www\.)?/, '')}
                     </Text>
                   </TouchableOpacity>
 
                   {/* Actions */}
-                  <View style={[styles.cardActions, { borderTopColor: colors.border }]}>
+                  <View style={[styles.cardActions, { borderTopColor: colors.homeLine }]}>
                     {isActive && (
                       <TouchableOpacity
                         onPress={() => handleMarkSold(listing)}
                         activeOpacity={0.8}
-                        style={[styles.actionBtn, { borderColor: colors.border }]}
+                        style={[styles.actionBtn, { borderColor: colors.homeLine }]}
                       >
                         <Feather name="check-circle" size={14} color={colors.owned} />
                         <Text style={[styles.actionLabel, { color: colors.owned }]}>Mark Sold</Text>
@@ -210,7 +213,7 @@ export default function MyListingsScreen() {
                     <TouchableOpacity
                       onPress={() => handleRemove(listing)}
                       activeOpacity={0.8}
-                      style={[styles.actionBtn, { borderColor: colors.border }]}
+                      style={[styles.actionBtn, { borderColor: colors.homeLine }]}
                     >
                       <Feather name="trash-2" size={14} color={colors.destructive} />
                       <Text style={[styles.actionLabel, { color: colors.destructive }]}>Remove</Text>
@@ -228,23 +231,23 @@ export default function MyListingsScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 60, gap: 12 },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 60, gap: spacing.md },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
-  retryBtn: { paddingHorizontal: 16, paddingVertical: 8 },
-  empty: { alignItems: 'center', paddingTop: 80, gap: 12 },
+  retryBtn: { paddingHorizontal: spacing.lg, paddingVertical: spacing.sm },
+  empty: { alignItems: 'center', paddingTop: 80, gap: spacing.md },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
-  countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: 12 },
+  countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.md },
   card: {
     borderWidth: 1,
-    padding: 14,
-    marginBottom: 12,
-    gap: 8,
+    padding: spacing.lg - 2,
+    marginBottom: spacing.md,
+    gap: spacing.sm,
   },
   cardHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  platformBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
+  platformBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: spacing.sm, paddingVertical: spacing.xs, borderRadius: radius.sm - 4 },
   platformBadgeLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
-  statusBadge: { paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
+  statusBadge: { paddingHorizontal: spacing.sm, paddingVertical: spacing.xs, borderRadius: radius.sm - 4 },
   statusLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   pinTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold', lineHeight: 20 },
   price: { fontSize: 18, fontFamily: 'Inter_700Bold' },
@@ -253,18 +256,18 @@ const styles = StyleSheet.create({
   cardActions: {
     flexDirection: 'row',
     borderTopWidth: StyleSheet.hairlineWidth,
-    paddingTop: 10,
-    gap: 10,
+    paddingTop: spacing.sm + 2,
+    gap: spacing.sm + 2,
     marginTop: 2,
   },
   actionBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
-    paddingHorizontal: 12,
-    paddingVertical: 7,
+    gap: spacing.xs + 2,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs + 3,
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: radius.sm,
   },
   actionLabel: { fontSize: 13, fontFamily: 'Inter_500Medium' },
 });

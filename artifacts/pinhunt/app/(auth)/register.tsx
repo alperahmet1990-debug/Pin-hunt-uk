@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
+  Image,
   TextInput,
   TouchableOpacity,
   StyleSheet,
@@ -14,6 +15,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
 import { useColors } from '@/hooks/useColors';
+import { radius, spacing } from '@/constants/theme';
 
 export default function RegisterScreen() {
   const colors = useColors();
@@ -87,7 +89,11 @@ export default function RegisterScreen() {
       >
         {/* Brand */}
         <View style={styles.brand}>
-          <Text style={styles.logo}>📌</Text>
+          <Image
+            source={require('../../assets/images/pinhunt-logo.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
           <Text style={styles.appName}>PinHunt UK</Text>
         </View>
 
@@ -100,7 +106,7 @@ export default function RegisterScreen() {
           <TextInput
             style={styles.input}
             placeholder="Email"
-            placeholderTextColor={colors.mutedForeground}
+            placeholderTextColor={colors.homeMuted}
             value={email}
             onChangeText={setEmail}
             autoCapitalize="none"
@@ -113,7 +119,7 @@ export default function RegisterScreen() {
           <TextInput
             style={styles.input}
             placeholder="Password (min 8 characters)"
-            placeholderTextColor={colors.mutedForeground}
+            placeholderTextColor={colors.homeMuted}
             value={password}
             onChangeText={setPassword}
             secureTextEntry
@@ -124,7 +130,7 @@ export default function RegisterScreen() {
           <TextInput
             style={styles.input}
             placeholder="Confirm password"
-            placeholderTextColor={colors.mutedForeground}
+            placeholderTextColor={colors.homeMuted}
             value={confirm}
             onChangeText={setConfirm}
             secureTextEntry
@@ -140,7 +146,7 @@ export default function RegisterScreen() {
             activeOpacity={0.8}
           >
             {loading ? (
-              <ActivityIndicator color="#fff" />
+              <ActivityIndicator color={colors.homeSurface} />
             ) : (
               <Text style={styles.buttonText}>Create account</Text>
             )}
@@ -166,107 +172,113 @@ function makeStyles(colors: any) {
   return StyleSheet.create({
     root: {
       flex: 1,
-      backgroundColor: colors.background,
+      backgroundColor: colors.homeBackground,
     },
     successRoot: {
       justifyContent: 'center',
       alignItems: 'center',
-      paddingHorizontal: 32,
-      gap: 16,
+      paddingHorizontal: spacing.xxl,
+      gap: spacing.lg,
     },
     successEmoji: { fontSize: 56 },
     successHeading: {
       fontSize: 22,
       fontFamily: 'Inter_700Bold',
-      color: colors.foreground,
+      color: colors.homeInk,
       textAlign: 'center',
     },
     successBody: {
       fontSize: 15,
       fontFamily: 'Inter_400Regular',
-      color: colors.mutedForeground,
+      color: colors.homeMuted,
       textAlign: 'center',
       lineHeight: 22,
     },
     successEmail: {
       fontFamily: 'Inter_600SemiBold',
-      color: colors.foreground,
+      color: colors.homeInk,
     },
     scroll: {
       flexGrow: 1,
       justifyContent: 'center',
-      paddingHorizontal: 28,
-      paddingVertical: 32,
+      paddingHorizontal: spacing.xxl + spacing.xs,
+      paddingVertical: spacing.xxxl,
     },
     brand: {
       alignItems: 'center',
-      marginBottom: 40,
+      marginBottom: spacing.xxxl + spacing.sm,
     },
     logo: {
-      fontSize: 48,
-      marginBottom: 10,
+      width: 96,
+      height: 96,
+      marginBottom: spacing.sm + 2,
     },
     appName: {
       fontSize: 26,
       fontFamily: 'Inter_700Bold',
-      color: colors.foreground,
+      color: colors.homeInk,
       letterSpacing: -0.5,
     },
-    form: { gap: 12 },
+    form: { gap: spacing.md },
     heading: {
       fontSize: 22,
       fontFamily: 'Inter_600SemiBold',
-      color: colors.foreground,
-      marginBottom: 4,
+      color: colors.homeInk,
+      marginBottom: spacing.xs,
     },
     error: {
       fontSize: 13,
       fontFamily: 'Inter_400Regular',
-      color: '#ef4444',
-      backgroundColor: 'rgba(239,68,68,0.08)',
-      borderRadius: 8,
-      paddingHorizontal: 12,
-      paddingVertical: 8,
+      color: colors.destructive,
+      backgroundColor: colors.destructive + '14',
+      borderRadius: radius.sm,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm,
     },
     input: {
       height: 50,
-      borderRadius: 12,
+      borderRadius: radius.lg,
       borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.card,
-      paddingHorizontal: 16,
+      borderColor: colors.homeLine,
+      backgroundColor: colors.homeSurface,
+      paddingHorizontal: spacing.lg,
       fontSize: 15,
       fontFamily: 'Inter_400Regular',
-      color: colors.foreground,
+      color: colors.homeInk,
     },
     button: {
       height: 50,
-      borderRadius: 12,
-      backgroundColor: colors.primary,
+      borderRadius: radius.lg,
+      backgroundColor: colors.homeCoral,
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 4,
+      marginTop: spacing.xs,
+      shadowColor: colors.homeShadow,
+      shadowOpacity: 0.2,
+      shadowRadius: 10,
+      shadowOffset: { width: 0, height: 5 },
+      elevation: 3,
     },
     buttonDisabled: { opacity: 0.6 },
     buttonText: {
       fontSize: 16,
       fontFamily: 'Inter_600SemiBold',
-      color: colors.primaryForeground,
+      color: colors.homeSurface,
     },
     footer: {
       flexDirection: 'row',
       justifyContent: 'center',
-      marginTop: 32,
+      marginTop: spacing.xxxl,
     },
     footerText: {
       fontSize: 14,
       fontFamily: 'Inter_400Regular',
-      color: colors.mutedForeground,
+      color: colors.homeMuted,
     },
     footerLink: {
       fontSize: 14,
       fontFamily: 'Inter_600SemiBold',
-      color: colors.primary,
+      color: colors.homeCoral,
     },
   });
 }

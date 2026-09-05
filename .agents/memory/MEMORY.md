@@ -17,3 +17,4 @@
 - [Expo native picker presentation](expo-native-picker-presentation.md) — dismiss RN modals before system pickers, and keep sheet actions outside tappable backdrop ancestry
 - [Final V1 Collection architecture](final-v1-collection.md) — Boards-first single-row navigation; catalogue Sets derive automatically, never through manual tracking
 - [PinHunt visual direction](pinhunt-visual-direction.md) — Sea Glass & Coral is the approved Home palette and interaction style for future visual work.
+- [Collectible PinTrader rights record](collectible-pintrader-rights.md) — rights basis for Catalogue V2 seed data/images; evidence fields still need dates/contact filled in.

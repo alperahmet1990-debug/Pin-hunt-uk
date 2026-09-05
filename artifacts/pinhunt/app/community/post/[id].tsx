@@ -30,20 +30,21 @@ import type { CommunityPost, PostComment } from '@workspace/pin-repository';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
+// Matches app/(tabs)/community.tsx exactly — Sea Glass & Coral palette.
 const TYPE_LABEL: Record<string, string> = {
   in_search_of: 'In Search Of',
   for_trade:    'For Trade',
   for_sale:     'For Sale',
-  new_pickup:   'New Pickup',
+  new_pickup:   'Event',
   discussion:   'Discussion',
 };
 
 const TYPE_COLOR: Record<string, string> = {
-  in_search_of: '#F59E0B',
-  for_trade:    '#3B82F6',
-  for_sale:     '#16A34A',
-  new_pickup:   '#8B5CF6',
-  discussion:   '#64748B',
+  in_search_of: '#84601F', // homeSandInk
+  for_trade:    '#E86D61', // homeCoral
+  for_sale:     '#2D9E6B', // owned green
+  new_pickup:   '#A83F3D', // homeCoralDeep
+  discussion:   '#58777A', // homeMuted
 };
 
 function timeAgo(iso: string): string {
@@ -215,15 +216,15 @@ function CommentRow({ comment, isMe, isAdmin, canReport, hasReported, onReport, 
 }) {
   const name = comment.authorProfile?.username ?? '…';
   return (
-    <View style={[styles.commentRow, { borderBottomColor: colors.border }]}>
+    <View style={[styles.commentRow, { borderBottomColor: colors.homeLine }]}>
       <Avatar uri={comment.authorProfile?.avatarUrl} name={name} size={32} />
       <View style={styles.commentBody}>
         <View style={styles.commentMeta}>
-          <Text style={[styles.commentAuthor, { color: colors.foreground }]}>@{name}</Text>
-          <Text style={[styles.commentTime, { color: colors.mutedForeground }]}>{timeAgo(comment.createdAt)}</Text>
+          <Text style={[styles.commentAuthor, { color: colors.homeInk }]}>@{name}</Text>
+          <Text style={[styles.commentTime, { color: colors.homeMuted }]}>{timeAgo(comment.createdAt)}</Text>
           {canReport && (
             <TouchableOpacity onPress={onReport} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-              <Feather name="flag" size={13} color={hasReported ? colors.destructive : colors.mutedForeground} />
+              <Feather name="flag" size={13} color={hasReported ? colors.destructive : colors.homeMuted} />
             </TouchableOpacity>
           )}
           {(isMe || isAdmin) && (
@@ -232,7 +233,7 @@ function CommentRow({ comment, isMe, isAdmin, canReport, hasReported, onReport, 
             </TouchableOpacity>
           )}
         </View>
-        <Text style={[styles.commentText, { color: colors.foreground }]}>{comment.body}</Text>
+        <Text style={[styles.commentText, { color: colors.homeInk }]}>{comment.body}</Text>
       </View>
     </View>
   );
@@ -443,8 +444,8 @@ export default function PostDetailScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Post' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
-          <ActivityIndicator color={colors.primary} />
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
+          <ActivityIndicator color={colors.homeCoral} />
         </View>
       </>
     );
@@ -454,7 +455,7 @@ export default function PostDetailScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Post' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
           <Text style={[styles.errorText, { color: colors.destructive }]}>{error ?? 'Post not found.'}</Text>
         </View>
       </>
@@ -475,8 +476,8 @@ export default function PostDetailScreen() {
                   {!isAuthor && userId ? (
                     <TouchableOpacity onPress={handleReport} disabled={reporting} style={{ padding: 8 }}>
                       {reporting
-                        ? <ActivityIndicator size="small" color={colors.mutedForeground} />
-                        : <Feather name="flag" size={18} color={hasReported ? colors.destructive : colors.mutedForeground} />
+                        ? <ActivityIndicator size="small" color={colors.homeMuted} />
+                        : <Feather name="flag" size={18} color={hasReported ? colors.destructive : colors.homeMuted} />
                       }
                     </TouchableOpacity>
                   ) : null}
@@ -485,7 +486,7 @@ export default function PostDetailScreen() {
                       onPress={() => router.push({ pathname: '/community/edit-post' as any, params: { id: post.id } })}
                       style={{ padding: 8 }}
                     >
-                      <Feather name="edit-2" size={18} color={colors.foreground} />
+                      <Feather name="edit-2" size={18} color={colors.homeInk} />
                     </TouchableOpacity>
                   ) : null}
                   {canDeletePost ? (
@@ -509,7 +510,7 @@ export default function PostDetailScreen() {
       )}
 
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVerticalOffset={90}
       >
@@ -520,7 +521,7 @@ export default function PostDetailScreen() {
           showsVerticalScrollIndicator={false}
         >
           {/* Post card */}
-          <View style={[styles.postCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <View style={[styles.postCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             {/* Type badge */}
             <View style={[styles.typeBadge, { backgroundColor: typeColor + '18', borderColor: typeColor + '44' }]}>
               <Text style={[styles.typeBadgeLabel, { color: typeColor }]}>{TYPE_LABEL[post.postType]}</Text>
@@ -530,8 +531,8 @@ export default function PostDetailScreen() {
             <View style={styles.authorRow}>
               <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={40} />
               <View style={{ flex: 1 }}>
-                <Text style={[styles.authorName, { color: colors.foreground }]}>@{authorName}</Text>
-                <Text style={[styles.postTime, { color: colors.mutedForeground }]}>
+                <Text style={[styles.authorName, { color: colors.homeInk }]}>@{authorName}</Text>
+                <Text style={[styles.postTime, { color: colors.homeMuted }]}>
                   {timeAgo(post.createdAt)}
                   {wasEdited(post.createdAt, post.updatedAt) ? ' · Edited' : ''}
                 </Text>
@@ -539,7 +540,7 @@ export default function PostDetailScreen() {
               {!isAuthor && userId && (
                 <TouchableOpacity
                   onPress={handleMessage}
-                  style={[styles.messageBtn, { backgroundColor: colors.primary, borderRadius: 8 }]}
+                  style={[styles.messageBtn, { backgroundColor: colors.homeCoral, borderRadius: 8 }]}
                   activeOpacity={0.85}
                 >
                   <Feather name="mail" size={14} color="#fff" />
@@ -549,7 +550,7 @@ export default function PostDetailScreen() {
             </View>
 
             {/* Body */}
-            <Text style={[styles.postBody, { color: colors.foreground }]}>{post.body}</Text>
+            <Text style={[styles.postBody, { color: colors.homeInk }]}>{post.body}</Text>
 
             {/* Photos */}
             {photos.length > 0 && (
@@ -563,49 +564,57 @@ export default function PostDetailScreen() {
             {(post.priceText || post.lookingFor || post.locationText) ? (
               <View style={styles.detailRows}>
                 {post.priceText ? (
-                  <Text style={[styles.detailRow, { color: colors.foreground }]}>
+                  <Text style={[styles.detailRow, { color: colors.homeInk }]}>
                     <Text style={{ fontFamily: 'Inter_600SemiBold' }}>Price / value: </Text>{post.priceText}
                   </Text>
                 ) : null}
                 {post.lookingFor ? (
-                  <Text style={[styles.detailRow, { color: colors.foreground }]}>
+                  <Text style={[styles.detailRow, { color: colors.homeInk }]}>
                     <Text style={{ fontFamily: 'Inter_600SemiBold' }}>Looking for: </Text>{post.lookingFor}
                   </Text>
                 ) : null}
                 {post.locationText ? (
-                  <Text style={[styles.detailRow, { color: colors.foreground }]}>
+                  <Text style={[styles.detailRow, { color: colors.homeInk }]}>
                     <Text style={{ fontFamily: 'Inter_600SemiBold' }}>Location / postage: </Text>{post.locationText}
                   </Text>
                 ) : null}
               </View>
             ) : null}
 
-            {/* Linked pin */}
+            {/* Linked pin — taps through to the real Pin Detail screen */}
             {post.linkedPin && (
-              <View style={[styles.pinChip, { backgroundColor: colors.secondary, borderColor: colors.border }]}>
+              <TouchableOpacity
+                onPress={() => router.push({ pathname: '/pin/[id]', params: { id: post.linkedPin!.id } })}
+                activeOpacity={0.8}
+                style={[styles.pinChip, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+              >
                 {post.linkedPin.imageUrl
                   ? <Image source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
-                  : <Feather name="tag" size={13} color={colors.mutedForeground} />
+                  : <View style={[styles.pinChipImage, { alignItems: 'center', justifyContent: 'center', backgroundColor: colors.homeSurface }]}>
+                      <Feather name="tag" size={18} color={colors.homeMuted} />
+                    </View>
                 }
-                <View>
-                  <Text style={[styles.pinChipName, { color: colors.foreground }]} numberOfLines={1}>
+                <View style={{ flex: 1 }}>
+                  <Text style={[styles.pinChipLabel, { color: colors.homeMuted }]}>LINKED PIN</Text>
+                  <Text style={[styles.pinChipName, { color: colors.homeInk }]} numberOfLines={1}>
                     {post.linkedPin.title}
                   </Text>
-                  <Text style={[styles.pinChipBrand, { color: colors.mutedForeground }]}>{post.linkedPin.brand}</Text>
+                  <Text style={[styles.pinChipBrand, { color: colors.homeMuted }]}>{post.linkedPin.brand}</Text>
                 </View>
-              </View>
+                <Feather name="chevron-right" size={18} color={colors.homeMuted} />
+              </TouchableOpacity>
             )}
           </View>
 
           {/* Comments section */}
-          <View style={[styles.commentsSection, { borderTopColor: colors.border }]}>
-            <Text style={[styles.commentsHeading, { color: colors.mutedForeground }]}>
+          <View style={[styles.commentsSection, { borderTopColor: colors.homeLine }]}>
+            <Text style={[styles.commentsHeading, { color: colors.homeMuted }]}>
               {comments.length} COMMENT{comments.length !== 1 ? 'S' : ''}
             </Text>
 
             {comments.length === 0 ? (
               <View style={styles.noComments}>
-                <Text style={[styles.noCommentsText, { color: colors.mutedForeground }]}>
+                <Text style={[styles.noCommentsText, { color: colors.homeMuted }]}>
                   No comments yet. Be the first!
                 </Text>
               </View>
@@ -629,13 +638,13 @@ export default function PostDetailScreen() {
 
         {/* Comment input */}
         {userId ? (
-          <View style={[styles.inputBar, { borderTopColor: colors.border, backgroundColor: colors.background, paddingBottom: botPad }]}>
+          <View style={[styles.inputBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground, paddingBottom: botPad }]}>
             <TextInput
               value={commentText}
               onChangeText={setCommentText}
               placeholder="Add a comment…"
-              placeholderTextColor={colors.mutedForeground + '88'}
-              style={[styles.commentInput, { color: colors.foreground, borderColor: colors.border, backgroundColor: colors.secondary, borderRadius: 20 }]}
+              placeholderTextColor={colors.homeMuted + '88'}
+              style={[styles.commentInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua, borderRadius: 20 }]}
               multiline
               maxLength={1000}
             />
@@ -643,11 +652,11 @@ export default function PostDetailScreen() {
               onPress={handleSendComment}
               disabled={!commentText.trim() || sending}
               activeOpacity={0.85}
-              style={[styles.sendBtn, { backgroundColor: commentText.trim() ? colors.primary : colors.secondary, borderRadius: 20 }]}
+              style={[styles.sendBtn, { backgroundColor: commentText.trim() ? colors.homeCoral : colors.homeAqua, borderRadius: 20 }]}
             >
               {sending
                 ? <ActivityIndicator color="#fff" size="small" />
-                : <Feather name="send" size={16} color={commentText.trim() ? '#fff' : colors.mutedForeground} />
+                : <Feather name="send" size={16} color={commentText.trim() ? '#fff' : colors.homeMuted} />
               }
             </TouchableOpacity>
           </View>
@@ -745,12 +754,13 @@ const styles = StyleSheet.create({
   messageBtnLabel: { color: '#fff', fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   postBody: { fontSize: 15, fontFamily: 'Inter_400Regular', lineHeight: 22 },
   pinChip: {
-    flexDirection: 'row', alignItems: 'center', gap: 10,
-    padding: 10, borderRadius: 10, borderWidth: 1,
+    flexDirection: 'row', alignItems: 'center', gap: 12,
+    padding: 10, borderRadius: 12, borderWidth: 1,
   },
-  pinChipImage: { width: 36, height: 36, borderRadius: 6 },
-  pinChipName: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  pinChipBrand: { fontSize: 11, fontFamily: 'Inter_400Regular' },
+  pinChipImage: { width: 52, height: 52, borderRadius: 8 },
+  pinChipLabel: { fontSize: 10, fontFamily: 'Inter_700Bold', letterSpacing: 0.6, marginBottom: 1 },
+  pinChipName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  pinChipBrand: { fontSize: 12, fontFamily: 'Inter_400Regular' },
 
   detailRows: { marginTop: 10, gap: 4 },
   detailRow: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pinhunt-web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@workspace/pinhunt", "run", "dev:local"],
+      "port": 8081
+    }
+  ]
+}

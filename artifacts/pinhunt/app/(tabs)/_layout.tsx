@@ -1,11 +1,11 @@
 import React from 'react';
-import { Platform, StyleSheet, useColorScheme, View } from 'react-native';
+import { ColorValue, Platform, StyleSheet, useColorScheme, View } from 'react-native';
 import { useColors } from '@/hooks/useColors';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { Tabs } from 'expo-router';
-import { Badge, Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
+import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import { SymbolView } from 'expo-symbols';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
@@ -13,7 +13,7 @@ import { Text } from 'react-native';
 
 // ─── Community tab icon with unread-message count badge ──────────────────────
 
-function CommunityTabIcon({ color, count }: { color: string; count: number }) {
+function CommunityTabIcon({ color, count }: { color: ColorValue; count: number }) {
   const isIOS = Platform.OS === 'ios';
   return (
     <View>
@@ -38,25 +38,25 @@ function NativeTabLayout() {
   return (
     <NativeTabs>
       <NativeTabs.Trigger name="index">
-        <Icon sf={{ default: 'house', selected: 'house.fill' }} />
-        <Label>Home</Label>
+        <NativeTabs.Trigger.Icon sf={{ default: 'house', selected: 'house.fill' }} />
+        <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="community">
-        <Icon sf={{ default: 'bubble.left.and.bubble.right', selected: 'bubble.left.and.bubble.right.fill' }} />
-        <Label>Community</Label>
-        {totalUnread > 0 && <Badge>{totalUnread > 9 ? '9+' : String(totalUnread)}</Badge>}
+        <NativeTabs.Trigger.Icon sf={{ default: 'bubble.left.and.bubble.right', selected: 'bubble.left.and.bubble.right.fill' }} />
+        <NativeTabs.Trigger.Label>Community</NativeTabs.Trigger.Label>
+        {totalUnread > 0 && <NativeTabs.Trigger.Badge>{totalUnread > 9 ? '9+' : String(totalUnread)}</NativeTabs.Trigger.Badge>}
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="scan">
-        <Icon sf={{ default: 'magnifyingglass', selected: 'magnifyingglass' }} />
-        <Label>Find</Label>
+        <NativeTabs.Trigger.Icon sf={{ default: 'magnifyingglass', selected: 'magnifyingglass' }} />
+        <NativeTabs.Trigger.Label>Find</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="collection">
-        <Icon sf={{ default: 'heart', selected: 'heart.fill' }} />
-        <Label>Collection</Label>
+        <NativeTabs.Trigger.Icon sf={{ default: 'heart', selected: 'heart.fill' }} />
+        <NativeTabs.Trigger.Label>Collection</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="profile">
-        <Icon sf={{ default: 'person', selected: 'person.fill' }} />
-        <Label>Profile</Label>
+        <NativeTabs.Trigger.Icon sf={{ default: 'person', selected: 'person.fill' }} />
+        <NativeTabs.Trigger.Label>Profile</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
     </NativeTabs>
   );
@@ -64,7 +64,7 @@ function NativeTabLayout() {
 
 // ─── Profile tab icon with optional badge dot ─────────────────────────────────
 
-function ProfileTabIcon({ color, hasBadge }: { color: string; hasBadge: boolean }) {
+function ProfileTabIcon({ color, hasBadge }: { color: ColorValue; hasBadge: boolean }) {
   const isIOS = Platform.OS === 'ios';
   return (
     <View>

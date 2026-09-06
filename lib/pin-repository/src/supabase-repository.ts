@@ -489,6 +489,26 @@ class SupabasePinRepository implements PinRepository {
     };
   }
 
+  // ── Catalogue-data provenance / attribution ─────────────────────────────
+
+  /**
+   * Resolves a pin's catalogue_source (e.g. "collectible_pintrader") to its
+   * public display name via the catalogue_sources registry. Returns null for
+   * an unregistered/unknown source — callers must not invent a name.
+   */
+  async getCatalogueSourceDisplayName(sourceId: string): Promise<string | null> {
+    const { data, error } = await this.client
+      // catalogue_sources (migration 037) predates the generated Database
+      // types below — see database.types.ts for the hand-added entry.
+      .from('catalogue_sources')
+      .select('display_name')
+      .eq('id', sourceId)
+      .maybeSingle();
+
+    if (error || !data) return null;
+    return (data as { display_name: string }).display_name;
+  }
+
   // ── createPin ─────────────────────────────────────────────────────────
 
   async createPin(input: CreatePinInput): Promise<CataloguePin> {

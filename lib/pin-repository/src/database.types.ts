@@ -233,6 +233,51 @@ export interface Database {
         Update: { name?: string };
         Relationships: [];
       };
+      // Migration 037 (catalogue_sources rights/attribution registry) — hand
+      // added here since this file predates that migration being generated.
+      catalogue_sources: {
+        Row: {
+          id: string;
+          display_name: string;
+          attribution_text: string | null;
+          rights_basis: string | null;
+          exact_license_variant: string | null;
+          public_display_allowed: boolean;
+          storage_allowed: boolean;
+          app_use_allowed: boolean;
+          attribution_required: boolean;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          display_name: string;
+          attribution_text?: string | null;
+          rights_basis?: string | null;
+          exact_license_variant?: string | null;
+          public_display_allowed?: boolean;
+          storage_allowed?: boolean;
+          app_use_allowed?: boolean;
+          attribution_required?: boolean;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          display_name?: string;
+          attribution_text?: string | null;
+          rights_basis?: string | null;
+          exact_license_variant?: string | null;
+          public_display_allowed?: boolean;
+          storage_allowed?: boolean;
+          app_use_allowed?: boolean;
+          attribution_required?: boolean;
+          notes?: string | null;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       pin_categories: {
         Row: { pin_id: string; category_id: string };
         Insert: { pin_id: string; category_id: string };

@@ -35,11 +35,13 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const GRID_CARD_WIDTH = (SCREEN_WIDTH - 16 * 2 - 12) / 2;
 
 type Tab = 'boards' | 'sets' | 'traders' | 'iso';
+// No icons here — at 4-up and ~375px, the icon + gap is exactly the width
+// "For Trade" needs to render without shrinking type or squeezing the pill.
 const TAB_OPTIONS: SegmentedControlOption<Tab>[] = [
-  { value: 'boards', label: 'Boards', icon: 'grid', tone: 'coral' },
-  { value: 'sets', label: 'Sets', icon: 'package', tone: 'coral' },
-  { value: 'traders', label: 'Traders', icon: 'repeat', tone: 'coral' },
-  { value: 'iso', label: 'ISO', icon: 'bookmark', tone: 'coral' },
+  { value: 'boards', label: 'Boards', tone: 'coral' },
+  { value: 'sets', label: 'Sets', tone: 'coral' },
+  { value: 'traders', label: 'For Trade', tone: 'coral' },
+  { value: 'iso', label: 'ISO', tone: 'coral' },
 ];
 type SetProgressFilter = 'all' | 'progress' | 'complete';
 type MetadataFilterKey = 'character' | 'series' | 'location' | 'year' | 'brand' | 'edition';
@@ -398,7 +400,7 @@ export default function CollectionScreen() {
         {activeTab === 'traders' && (
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
             <Text style={[s.statText, { color: colors.homeInk }]}>
-              {forTradePins.length} <Text style={{ color: colors.homeMuted }}>Traders</Text>
+              {forTradePins.length} <Text style={{ color: colors.homeMuted }}>For Trade</Text>
             </Text>
             <View style={{ flexDirection: 'row', gap: 12 }}>
               <TouchableOpacity onPress={() => router.push('/(tabs)/community')} style={s.iconStatBtn}>
@@ -495,7 +497,7 @@ export default function CollectionScreen() {
     }
     if (activeTab === 'traders') {
       if (searchActive && searchQuery || traderFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
-      return <EmptyState icon="repeat" title="No traders yet" subtitle="Mark pins as 'For Trade' to see them here." />;
+      return <EmptyState icon="repeat" title="No pins for trade yet" subtitle="Mark pins as 'For Trade' to see them here." />;
     }
     if (activeTab === 'iso') {
       if (searchActive && searchQuery || isoFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
@@ -598,9 +600,19 @@ export default function CollectionScreen() {
               <Feather name="search" size={24} color={colors.homeInk} />
               <Text style={[s.addMenuText, { color: colors.homeInk }]}>Add Pin</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={s.addMenuItem} onPress={() => { setAddModalVisible(false); setCreateBoardVisible(true); }}>
+            <TouchableOpacity
+              style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
+              onPress={() => { setAddModalVisible(false); setCreateBoardVisible(true); }}
+            >
               <Feather name="folder-plus" size={24} color={colors.homeInk} />
               <Text style={[s.addMenuText, { color: colors.homeInk }]}>Create Board</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={s.addMenuItem}
+              onPress={() => { setAddModalVisible(false); router.push('/catalogue'); }}
+            >
+              <Feather name="grid" size={24} color={colors.homeInk} />
+              <Text style={[s.addMenuText, { color: colors.homeInk }]}>Browse Catalogue</Text>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
@@ -724,7 +736,7 @@ export default function CollectionScreen() {
           <TouchableOpacity activeOpacity={1} style={[s.addMenuSheet, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <View style={s.addMenuHeader}>
               <Text style={[s.addMenuTitle, { color: colors.homeInk }]}>
-                {filterSheetTab === 'traders' ? 'Traders' : filterSheetTab === 'iso' ? 'ISO' : filterSheetTab === 'sets' ? 'Sets' : 'Pins'} View Options
+                {filterSheetTab === 'traders' ? 'For Trade' : filterSheetTab === 'iso' ? 'ISO' : filterSheetTab === 'sets' ? 'Sets' : 'Pins'} View Options
               </Text>
             </View>
 

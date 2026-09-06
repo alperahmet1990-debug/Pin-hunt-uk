@@ -25,6 +25,7 @@ import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
+import { formatMatchSummary } from '@/utils/tradeMatch';
 
 export default function StartConversationScreen() {
   const params = useLocalSearchParams<{
@@ -34,6 +35,9 @@ export default function StartConversationScreen() {
     contextPostTitle?: string;
     contextPinId?: string;
     contextPinTitle?: string;
+    /** Potential Trade Match counts, display-only — never persisted as a trade. */
+    matchTheyHave?: string;
+    matchIHave?: string;
   }>();
   const colors = useColors();
   const insets = useSafeAreaInsets();
@@ -52,6 +56,11 @@ export default function StartConversationScreen() {
     : params.contextPinTitle
     ? `Re: ${params.contextPinTitle}`
     : undefined;
+
+  const matchSummary = formatMatchSummary(
+    Number(params.matchTheyHave ?? 0),
+    Number(params.matchIHave ?? 0),
+  );
 
   const handleSend = async () => {
     if (!repo || !userId) return;
@@ -102,6 +111,16 @@ export default function StartConversationScreen() {
               <Feather name="link" size={13} color={colors.homeMuted} />
               <Text style={[styles.contextLabel, { color: colors.homeMuted }]} numberOfLines={2}>
                 {contextLabel}
+              </Text>
+            </View>
+          )}
+
+          {/* Potential Trade Match context — display only, no trade is created here */}
+          {matchSummary && (
+            <View style={[styles.matchBanner, { backgroundColor: colors.homeCoral + '12', borderColor: colors.homeCoral + '30' }]}>
+              <Feather name="repeat" size={13} color={colors.homeCoral} />
+              <Text style={[styles.matchLabel, { color: colors.homeCoral }]} numberOfLines={2}>
+                {matchSummary}
               </Text>
             </View>
           )}
@@ -174,6 +193,12 @@ const styles = StyleSheet.create({
     padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.lg,
   },
   contextLabel: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+
+  matchBanner: {
+    flexDirection: 'row', alignItems: 'flex-start', gap: spacing.sm,
+    padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.lg,
+  },
+  matchLabel: { flex: 1, fontSize: 13, fontFamily: 'Inter_600SemiBold', lineHeight: 18 },
 
   label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8 },
   input: {

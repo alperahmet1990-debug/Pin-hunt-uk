@@ -55,6 +55,8 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
             {opt.icon && <Feather name={opt.icon} size={14} color={active ? colors.homeSurface : colors.homeMuted} />}
             <Text
               numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.8}
               style={[styles.label, { color: active ? colors.homeSurface : colors.homeMuted }]}
             >
               {opt.label}

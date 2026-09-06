@@ -1,11 +1,11 @@
 /**
- * Traders screen — lists users who have a specific pin marked as "for trade",
- * with their rating badge and a "Request Trade" button.
+ * Traders screen — lists collectors who have a specific pin marked as "for
+ * trade". Leads toward the Potential Trade Match (View Match) when one
+ * exists; otherwise offers a single plain Message action.
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
-  Alert,
   Platform,
   RefreshControl,
   ScrollView,
@@ -22,6 +22,7 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
+import { formatMatchSummary, isReciprocalMatch } from '@/utils/tradeMatch';
 import type { TraderProfile } from '@workspace/pin-repository';
 
 // ─── Rating badge ─────────────────────────────────────────────────────────────
@@ -48,14 +49,18 @@ function RatingBadge({ positive, total, colors }: {
 
 // ─── Trader card ──────────────────────────────────────────────────────────────
 
-function TraderCard({ trader, onRequestTrade, onMessage, isMe, colors }: {
+function TraderCard({ trader, match, onViewMatch, onMessage, isMe, colors }: {
   trader: TraderProfile;
-  onRequestTrade: () => void;
+  /** Reciprocal potential-trade counts for this pin's collector, when known. */
+  match?: { theyHave: number; iHave: number };
+  onViewMatch: () => void;
   onMessage: () => void;
   isMe: boolean;
   colors: ReturnType<typeof useColors>;
 }) {
   const router = useRouter();
+  const summary = match ? formatMatchSummary(match.theyHave, match.iHave) : null;
+  const hasMatch = !!match && isReciprocalMatch(match.theyHave, match.iHave);
 
   return (
     <TouchableOpacity
@@ -63,44 +68,47 @@ function TraderCard({ trader, onRequestTrade, onMessage, isMe, colors }: {
       activeOpacity={0.85}
       style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
     >
-      {/* Avatar */}
-      <Avatar uri={trader.avatarUrl} name={trader.username} size={44} />
+      <View style={styles.cardTop}>
+        {/* Avatar */}
+        <Avatar uri={trader.avatarUrl} name={trader.username} size={44} />
 
-      {/* Info */}
-      <View style={styles.cardInfo}>
-        <Text style={[styles.displayName, { color: colors.homeInk }]}>
-          @{trader.username}
-          {isMe && <Text style={[styles.meTag, { color: colors.homeMuted }]}> (you)</Text>}
-        </Text>
-        {trader.tradingRegion ? (
-          <View style={styles.regionRow}>
-            <Feather name="map-pin" size={11} color={colors.homeMuted} />
-            <Text style={[styles.regionText, { color: colors.homeMuted }]}>{trader.tradingRegion}</Text>
-          </View>
-        ) : null}
-        <RatingBadge positive={trader.positiveRatings} total={trader.totalRatings} colors={colors} />
+        {/* Info */}
+        <View style={styles.cardInfo}>
+          <Text style={[styles.displayName, { color: colors.homeInk }]}>
+            @{trader.username}
+            {isMe && <Text style={[styles.meTag, { color: colors.homeMuted }]}> (you)</Text>}
+          </Text>
+          {trader.tradingRegion ? (
+            <View style={styles.regionRow}>
+              <Feather name="map-pin" size={11} color={colors.homeMuted} />
+              <Text style={[styles.regionText, { color: colors.homeMuted }]}>{trader.tradingRegion}</Text>
+            </View>
+          ) : null}
+          <RatingBadge positive={trader.positiveRatings} total={trader.totalRatings} colors={colors} />
+        </View>
       </View>
 
-      {/* Actions — messaging first; a formal trade can start from the chat */}
+      {/* One clear primary action — lead toward the match when there is one,
+          otherwise a plain message. Never both at once. */}
       {!isMe && (
-        <View style={styles.cardActions}>
+        <>
+          {hasMatch && summary && (
+            <View style={[styles.matchRow, { backgroundColor: colors.homeCoral + '10' }]}>
+              <Feather name="repeat" size={12} color={colors.homeCoral} />
+              <Text style={[styles.matchText, { color: colors.homeCoral }]}>{summary}</Text>
+            </View>
+          )}
           <TouchableOpacity
-            onPress={onMessage}
+            onPress={hasMatch ? onViewMatch : onMessage}
             activeOpacity={0.85}
-            style={[styles.tradeBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.sm }]}
+            style={[styles.primaryBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.sm }]}
           >
-            <Feather name="mail" size={13} color={colors.homeSurface} />
-            <Text style={[styles.tradeBtnLabel, { color: colors.homeSurface }]}>Message</Text>
+            <Feather name={hasMatch ? 'repeat' : 'mail'} size={13} color={colors.homeSurface} />
+            <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>
+              {hasMatch ? 'View Match' : 'Message'}
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={onRequestTrade}
-            activeOpacity={0.85}
-            accessibilityLabel="Request trade"
-            style={[styles.tradeBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine, borderRadius: radius.sm, borderWidth: 1 }]}
-          >
-            <Feather name="repeat" size={13} color={colors.homeInk} />
-          </TouchableOpacity>
-        </View>
+        </>
       )}
     </TouchableOpacity>
   );
@@ -122,7 +130,9 @@ export default function TradersScreen() {
   const [loading,    setLoading]    = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error,      setError]      = useState<string | null>(null);
-  const [requesting, setRequesting] = useState<string | null>(null); // trader id being requested
+  // Real getPotentialTrades() counts per trader — never fabricated, and
+  // simply absent (no card) for anyone we couldn't resolve a match for.
+  const [matches, setMatches] = useState<Map<string, { theyHave: number; iHave: number }>>(new Map());
 
   const load = useCallback(async (isRefresh = false) => {
     if (!repo || !pinId) { setLoading(false); return; }
@@ -141,23 +151,28 @@ export default function TradersScreen() {
 
   useEffect(() => { load(); }, [load]);
 
-  const handleRequestTrade = async (trader: TraderProfile) => {
-    if (!repo || !userId) return;
-    if (requesting) return; // prevent double-tap
-    try {
-      setRequesting(trader.id);
-      const trade = await repo.createTrade(
-        userId,
-        trader.id,
-        pin ? `Interested in trading for: ${pin.title}` : undefined,
-      );
-      router.push({ pathname: '/trade/[id]', params: { id: trade.id } });
-    } catch (e) {
-      Alert.alert('Could not start trade', e instanceof Error ? e.message : 'Try again.');
-    } finally {
-      setRequesting(null);
-    }
-  };
+  useEffect(() => {
+    if (!repo || !userId || traders.length === 0) { setMatches(new Map()); return; }
+    let cancelled = false;
+    Promise.all(
+      traders
+        .filter(trader => trader.id !== userId)
+        .map(trader =>
+          repo.getPotentialTrades({ viewerId: userId, collectorId: trader.id })
+            .then(rows => [trader.id, {
+              theyHave: rows.filter(r => r.direction === 'they_have_i_want').length,
+              iHave: rows.filter(r => r.direction === 'i_have_they_want').length,
+            }] as const)
+            .catch(() => null),
+        ),
+    ).then(results => {
+      if (cancelled) return;
+      const next = new Map<string, { theyHave: number; iHave: number }>();
+      for (const r of results) if (r) next.set(r[0], r[1]);
+      setMatches(next);
+    });
+    return () => { cancelled = true; };
+  }, [repo, userId, traders]);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -196,26 +211,32 @@ export default function TradersScreen() {
             <Text style={[styles.countLabel, { color: colors.homeMuted }]}>
               {traders.length} collector{traders.length !== 1 ? 's' : ''} offering this for trade
             </Text>
-            {traders.map(trader => (
-              <TraderCard
-                key={trader.id}
-                trader={trader}
-                isMe={trader.id === userId}
-                onRequestTrade={() => handleRequestTrade(trader)}
-                onMessage={() =>
-                  router.push({
-                    pathname: '/community/start-conversation' as any,
-                    params: {
-                      recipientId: trader.id,
-                      recipientName: trader.username,
-                      contextPinId: pin?.id,
-                      contextPinTitle: pin?.title,
-                    },
-                  })
-                }
-                colors={colors}
-              />
-            ))}
+            {traders.map(trader => {
+              const match = matches.get(trader.id);
+              return (
+                <TraderCard
+                  key={trader.id}
+                  trader={trader}
+                  match={match}
+                  isMe={trader.id === userId}
+                  onViewMatch={() => router.push({ pathname: '/collector/[username]', params: { username: trader.username } })}
+                  onMessage={() =>
+                    router.push({
+                      pathname: '/community/start-conversation' as any,
+                      params: {
+                        recipientId: trader.id,
+                        recipientName: trader.username,
+                        contextPinId: pin?.id,
+                        contextPinTitle: pin?.title,
+                        matchTheyHave: String(match?.theyHave ?? 0),
+                        matchIHave: String(match?.iHave ?? 0),
+                      },
+                    })
+                  }
+                  colors={colors}
+                />
+              );
+            })}
           </>
         )}
       </ScrollView>
@@ -232,9 +253,10 @@ const styles = StyleSheet.create({
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
   countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.md },
   card: {
-    flexDirection: 'row', alignItems: 'center', padding: spacing.lg - 2,
+    padding: spacing.lg - 2,
     marginBottom: spacing.sm + 2, borderWidth: 1, gap: spacing.md,
   },
+  cardTop: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
   cardInfo: { flex: 1, gap: 3 },
   displayName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   meTag: { fontSize: 12, fontFamily: 'Inter_400Regular' },
@@ -242,7 +264,8 @@ const styles = StyleSheet.create({
   regionText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   badge: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs, alignSelf: 'flex-start', paddingHorizontal: spacing.sm, paddingVertical: 3, borderRadius: radius.sm - 4, borderWidth: 1, marginTop: 2 },
   badgeText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
-  cardActions: { flexDirection: 'row', gap: spacing.xs + 2 },
-  tradeBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: spacing.md, paddingVertical: spacing.sm },
-  tradeBtnLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  matchRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs + 2, padding: spacing.sm + 2, borderRadius: radius.sm },
+  matchText: { flex: 1, fontSize: 12, fontFamily: 'Inter_500Medium', lineHeight: 16 },
+  primaryBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: spacing.sm + 2 },
+  primaryBtnLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
 });

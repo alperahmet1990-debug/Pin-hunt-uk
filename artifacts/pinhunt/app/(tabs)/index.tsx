@@ -149,7 +149,7 @@ export default function HomeScreen() {
       </View>
       <View style={[styles.stats, { borderColor: colors.homeLine }]}>
         <Stat value={ownedCount} label="pins" onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })} colors={colors} />
-        <Stat value={tradeCount} label="traders" onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'traders' } })} colors={colors} />
+        <Stat value={tradeCount} label="for trade" onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'traders' } })} colors={colors} />
         <Stat value={isoCount} label="ISO" onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'iso' } })} colors={colors} last />
       </View>
       <TouchableOpacity accessibilityLabel="Find a Pin, scan or search the catalogue" onPress={() => router.push('/(tabs)/scan')} activeOpacity={0.9}>

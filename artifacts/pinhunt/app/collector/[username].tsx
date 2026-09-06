@@ -74,7 +74,6 @@ export default function CollectorProfileScreen() {
 
   const [potentialTrades, setPotentialTrades] = useState<PotentialTradePin[]>([]);
   const [tradesLoading, setTradesLoading] = useState(false);
-  const [startingTrade, setStartingTrade] = useState(false);
 
   // Load public profile
   useEffect(() => {
@@ -110,23 +109,25 @@ export default function CollectorProfileScreen() {
 
   useEffect(() => { loadPotentialTrades(); }, [loadPotentialTrades]);
 
-  // Start a conversation (create trade + navigate to chat)
-  const handleStartConversation = async () => {
-    if (!repo || !userId || !profile || startingTrade) return;
-    setStartingTrade(true);
-    try {
-      const trade = await repo.createTrade(userId, profile.id);
-      router.push({ pathname: '/trade/[id]', params: { id: trade.id } });
-    } catch {
-      // silently ignore
-    } finally {
-      setStartingTrade(false);
-    }
-  };
-
   const theyHaveIWant = potentialTrades.filter(p => p.direction === 'they_have_i_want');
   const iHaveTheyWant = potentialTrades.filter(p => p.direction === 'i_have_they_want');
   const hasPotentialTrades = potentialTrades.length > 0;
+
+  // Start a plain conversation — this must never silently create a formal
+  // Trade Request. The Potential Trade Match counts travel along as display
+  // context only, so the compose screen can still explain why they matched.
+  const startConversation = () => {
+    if (!profile) return;
+    router.push({
+      pathname: '/community/start-conversation' as any,
+      params: {
+        recipientId: profile.id,
+        recipientName: profile.username,
+        matchTheyHave: String(theyHaveIWant.length),
+        matchIHave: String(iHaveTheyWant.length),
+      },
+    });
+  };
 
   return (
     <>
@@ -213,12 +214,7 @@ export default function CollectorProfileScreen() {
                   surfaces Start Conversation as the primary way to reach out. */}
               {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && (
                 <TouchableOpacity
-                  onPress={() =>
-                    router.push({
-                      pathname: '/community/start-conversation' as any,
-                      params: { recipientId: profile.id, recipientName: profile.username },
-                    })
-                  }
+                  onPress={startConversation}
                   activeOpacity={0.85}
                   style={[styles.messageBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
                 >
@@ -302,21 +298,15 @@ export default function CollectorProfileScreen() {
                       <Text style={[styles.safetyText, { color: colors.homeMuted }]}>Trading safely</Text>
                     </View>
 
-                    {/* Start conversation button */}
+                    {/* Start conversation button — opens a normal chat; it does
+                        NOT create a formal Trade Request. */}
                     <TouchableOpacity
-                      onPress={handleStartConversation}
+                      onPress={startConversation}
                       activeOpacity={0.85}
-                      disabled={startingTrade}
                       style={[styles.convoBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
                     >
-                      {startingTrade ? (
-                        <ActivityIndicator color={colors.homeSurface} size="small" />
-                      ) : (
-                        <>
-                          <Feather name="message-circle" size={16} color={colors.homeSurface} />
-                          <Text style={[styles.convoBtnText, { color: colors.homeSurface }]}>Start Conversation</Text>
-                        </>
-                      )}
+                      <Feather name="message-circle" size={16} color={colors.homeSurface} />
+                      <Text style={[styles.convoBtnText, { color: colors.homeSurface }]}>Start Conversation</Text>
                     </TouchableOpacity>
                   </View>
                 )}

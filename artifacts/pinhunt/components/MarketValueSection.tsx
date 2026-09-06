@@ -171,15 +171,15 @@ export function MarketValueSection({ pinId, embedded = false }: MarketValueSecti
         <TouchableOpacity
           onPress={refresh}
           disabled={refreshing}
-          activeOpacity={0.85}
-          style={[styles.checkBtn, { backgroundColor: colors.homeCoral, borderRadius: themeRadius.md }]}
+          activeOpacity={0.8}
+          style={[styles.checkBtn, { borderColor: colors.homeLine }]}
         >
           {refreshing ? (
-            <ActivityIndicator size="small" color={colors.homeSurface} />
+            <ActivityIndicator size="small" color={colors.homeCoral} />
           ) : (
-            <Feather name="search" size={15} color={colors.homeSurface} />
+            <Feather name="search" size={14} color={colors.homeCoral} />
           )}
-          <Text style={[styles.checkBtnLabel, { color: colors.homeSurface }]}>
+          <Text style={[styles.checkBtnLabel, { color: colors.homeCoral }]}>
             {refreshing ? 'Checking eBay…' : 'Check eBay value'}
           </Text>
         </TouchableOpacity>
@@ -339,7 +339,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 8,
-    paddingVertical: 12,
+    paddingVertical: 11,
+    borderWidth: 1,
   },
   checkBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   marketGrid: { flexDirection: 'row', gap: spacing.sm },

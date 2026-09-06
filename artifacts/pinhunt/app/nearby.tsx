@@ -9,6 +9,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
+  Modal,
   Platform,
   StyleSheet,
   Text,
@@ -187,6 +188,22 @@ function Pill({
   );
 }
 
+// ─── Active (non-default) filter chip, removable ──────────────────────────────
+
+function ActiveFilterChip({ label, onClear }: { label: string; onClear(): void }) {
+  const colors = useColors();
+  return (
+    <TouchableOpacity
+      onPress={onClear}
+      activeOpacity={0.75}
+      style={[styles.activeChip, { backgroundColor: colors.homeCoral + '15', borderColor: colors.homeCoral }]}
+    >
+      <Text style={[styles.activeChipText, { color: colors.homeCoral }]}>{label}</Text>
+      <Feather name="x" size={12} color={colors.homeCoral} />
+    </TouchableOpacity>
+  );
+}
+
 // ─── Screen ────────────────────────────────────────────────────────────────────
 
 export default function NearbyScreen() {
@@ -196,15 +213,20 @@ export default function NearbyScreen() {
   const { profile } = useProfile();
   const { repo, userId } = useMarketplace();
 
-  const [radius, setRadius] = useState<RadiusMiles>(
-    (profile?.preferredRadiusMiles as RadiusMiles | undefined) ?? 25,
-  );
+  const defaultRadius = (profile?.preferredRadiusMiles as RadiusMiles | undefined) ?? 25;
+  const [radius, setRadius] = useState<RadiusMiles>(defaultRadius);
   const [tradeFilter, setTradeFilter] = useState<TradeFilter>('any');
   const [sortBy, setSortBy] = useState<SortMode>('match');
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const [results, setResults] = useState<NearbyCollector[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const activeFilters: Array<{ key: string; label: string; onClear(): void }> = [];
+  if (radius !== defaultRadius) activeFilters.push({ key: 'radius', label: `${radius}mi`, onClear: () => setRadius(defaultRadius) });
+  if (tradeFilter !== 'any') activeFilters.push({ key: 'trade', label: tradeFilter === 'local' ? 'Local trades' : 'Postal trades', onClear: () => setTradeFilter('any') });
+  if (sortBy !== 'match') activeFilters.push({ key: 'sort', label: sortBy === 'nearest' ? 'Nearest' : 'Recently active', onClear: () => setSortBy('match') });
 
   // Gate on discovery being enabled (coords may be added later by admin/geocoding).
   // Users who have enabled discovery can always enter the screen; if their coords
@@ -251,10 +273,7 @@ export default function NearbyScreen() {
   if (!discoveryEnabled) {
     return (
       <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
-        <View style={[styles.headerBar, { paddingTop: topPad + spacing.md, backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
-          <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Collectors Nearby</Text>
-        </View>
-        <View style={styles.centred}>
+        <View style={[styles.centred, { paddingTop: topPad + spacing.xxxl }]}>
           <View style={[styles.emptyIcon, { backgroundColor: colors.homeAqua }]}>
             <Feather name="map-pin" size={32} color={colors.homeCoral} />
           </View>
@@ -280,40 +299,32 @@ export default function NearbyScreen() {
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       {/* Header */}
       <View style={[styles.headerBar, { paddingTop: topPad + spacing.md, backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
-        <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Collectors Nearby</Text>
-        <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
-          Your exact location is never shown to other collectors
-        </Text>
+        <View style={styles.headerTopRow}>
+          <Text style={[styles.headerSub, { color: colors.homeMuted, flex: 1 }]}>
+            Your exact location is never shown to other collectors
+          </Text>
+          <TouchableOpacity
+            onPress={() => setFiltersOpen(true)}
+            activeOpacity={0.8}
+            style={[styles.filtersBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+          >
+            <Feather name="sliders" size={15} color={colors.homeInk} />
+            <Text style={[styles.filtersBtnText, { color: colors.homeInk }]}>Filters</Text>
+            {activeFilters.length > 0 && (
+              <View style={[styles.filtersBadge, { backgroundColor: colors.homeCoral }]}>
+                <Text style={[styles.filtersBadgeText, { color: colors.homeSurface }]}>{activeFilters.length}</Text>
+              </View>
+            )}
+          </TouchableOpacity>
+        </View>
 
-        {/* Radius filter */}
-        <View style={styles.filterRow}>
-          <Text style={[styles.filterLabel, { color: colors.homeMuted }]}>Radius</Text>
-          <View style={styles.pills}>
-            {RADIUS_OPTIONS.map(r => (
-              <Pill key={r} active={radius === r} label={`${r}mi`} onPress={() => setRadius(r)} />
+        {activeFilters.length > 0 && (
+          <View style={styles.activeChipsRow}>
+            {activeFilters.map(f => (
+              <ActiveFilterChip key={f.key} label={f.label} onClear={f.onClear} />
             ))}
           </View>
-        </View>
-
-        {/* Trade filter */}
-        <View style={styles.filterRow}>
-          <Text style={[styles.filterLabel, { color: colors.homeMuted }]}>Trades</Text>
-          <View style={styles.pills}>
-            <Pill active={tradeFilter === 'any'} label="Any" onPress={() => setTradeFilter('any')} />
-            <Pill active={tradeFilter === 'local'} label="Local" onPress={() => setTradeFilter('local')} />
-            <Pill active={tradeFilter === 'postal'} label="Postal" onPress={() => setTradeFilter('postal')} />
-          </View>
-        </View>
-
-        {/* Sort */}
-        <View style={styles.filterRow}>
-          <Text style={[styles.filterLabel, { color: colors.homeMuted }]}>Sort</Text>
-          <View style={styles.pills}>
-            <Pill active={sortBy === 'match'} label="Best match" onPress={() => setSortBy('match')} />
-            <Pill active={sortBy === 'nearest'} label="Nearest" onPress={() => setSortBy('nearest')} />
-            <Pill active={sortBy === 'recent'} label="Recently active" onPress={() => setSortBy('recent')} />
-          </View>
-        </View>
+        )}
       </View>
 
       {/* Results */}
@@ -370,6 +381,53 @@ export default function NearbyScreen() {
           )}
         />
       )}
+
+      {/* Filters sheet — Radius, Trade preference, Sort, all in one place */}
+      <Modal visible={filtersOpen} transparent animationType="slide" onRequestClose={() => setFiltersOpen(false)}>
+        <TouchableOpacity style={styles.modalBackdrop} activeOpacity={1} onPress={() => setFiltersOpen(false)}>
+          <TouchableOpacity activeOpacity={1} style={[styles.filterSheet, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <View style={styles.filterSheetHeader}>
+              <Text style={[styles.filterSheetTitle, { color: colors.homeInk }]}>Filters</Text>
+              {activeFilters.length > 0 && (
+                <TouchableOpacity onPress={() => { setRadius(defaultRadius); setTradeFilter('any'); setSortBy('match'); }}>
+                  <Text style={[styles.clearText, { color: colors.homeCoral }]}>Clear</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+
+            <Text style={[styles.filterLabel, { color: colors.homeMuted }]}>Radius</Text>
+            <View style={styles.pills}>
+              {RADIUS_OPTIONS.map(r => (
+                <Pill key={r} active={radius === r} label={`${r}mi`} onPress={() => setRadius(r)} />
+              ))}
+            </View>
+
+            <Text style={[styles.filterLabel, { color: colors.homeMuted, marginTop: spacing.lg }]}>Trade preference</Text>
+            <View style={styles.pills}>
+              <Pill active={tradeFilter === 'any'} label="Any" onPress={() => setTradeFilter('any')} />
+              <Pill active={tradeFilter === 'local'} label="Local" onPress={() => setTradeFilter('local')} />
+              <Pill active={tradeFilter === 'postal'} label="Postal" onPress={() => setTradeFilter('postal')} />
+            </View>
+
+            <Text style={[styles.filterLabel, { color: colors.homeMuted, marginTop: spacing.lg }]}>Sort by</Text>
+            <View style={styles.pills}>
+              <Pill active={sortBy === 'match'} label="Best match" onPress={() => setSortBy('match')} />
+              <Pill active={sortBy === 'nearest'} label="Nearest" onPress={() => setSortBy('nearest')} />
+              <Pill active={sortBy === 'recent'} label="Recently active" onPress={() => setSortBy('recent')} />
+            </View>
+
+            <TouchableOpacity
+              onPress={() => setFiltersOpen(false)}
+              activeOpacity={0.85}
+              style={[styles.doneBtn, { backgroundColor: colors.homeCoral }]}
+            >
+              <Text style={[styles.doneBtnText, { color: colors.homeSurface }]}>
+                Show {sorted.length} collector{sorted.length !== 1 ? 's' : ''}
+              </Text>
+            </TouchableOpacity>
+          </TouchableOpacity>
+        </TouchableOpacity>
+      </Modal>
     </View>
   );
 }
@@ -383,11 +441,32 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.md,
     gap: spacing.sm,
   },
-  headerTitle: { fontSize: 26, fontFamily: 'Inter_700Bold' },
-  headerSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.xs },
+  headerTopRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  headerSub: { fontSize: 12, fontFamily: 'Inter_400Regular' },
 
-  filterRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2 },
-  filterLabel: { fontSize: 12, fontFamily: 'Inter_500Medium', width: 44 },
+  filtersBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: spacing.md, paddingVertical: spacing.sm,
+    borderRadius: radius.pill, borderWidth: 1,
+  },
+  filtersBtnText: { fontSize: 12.5, fontFamily: 'Inter_600SemiBold' },
+  filtersBadge: { minWidth: 17, height: 17, borderRadius: 9, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
+  filtersBadgeText: { fontSize: 10, fontFamily: 'Inter_700Bold' },
+
+  activeChipsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs + 2 },
+  activeChip: {
+    flexDirection: 'row', alignItems: 'center', gap: 5,
+    paddingHorizontal: spacing.sm + 2, paddingVertical: 5,
+    borderRadius: radius.pill, borderWidth: 1,
+  },
+  activeChipText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
+
+  modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'flex-end' },
+  filterSheet: { maxHeight: '80%', borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: spacing.lg, borderTopWidth: StyleSheet.hairlineWidth },
+  filterSheetHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: spacing.md },
+  filterSheetTitle: { fontSize: 18, fontFamily: 'Inter_700Bold' },
+  clearText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  filterLabel: { fontSize: 12, fontFamily: 'Inter_700Bold', textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: spacing.sm },
   pills: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs + 2 },
   pill: {
     paddingHorizontal: spacing.sm + 2,
@@ -396,6 +475,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   pillText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
+  doneBtn: { minHeight: 48, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
+  doneBtnText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 
   centred: {
     flex: 1,

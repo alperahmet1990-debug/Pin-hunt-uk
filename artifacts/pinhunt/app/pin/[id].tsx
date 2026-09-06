@@ -42,7 +42,7 @@ export default function PinDetailScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection, getEntry, markViewed } = useCollection();
-  const { allBoards } = useBoards();
+  const { customBoards } = useBoards();
   const { pins, repository } = usePinCatalogue();
 
   const { repo: marketplaceRepo } = useMarketplace();
@@ -71,6 +71,7 @@ export default function PinDetailScreen() {
   const [traderCount, setTraderCount] = useState(0);
   const [activeImage, setActiveImage] = useState(0);
   const [marketplaceExpanded, setMarketplaceExpanded] = useState(false);
+  const [sourceDisplayName, setSourceDisplayName] = useState<string | null>(null);
 
   useEffect(() => {
     if (pin) markViewed(pin.id);
@@ -89,6 +90,17 @@ export default function PinDetailScreen() {
       .then(traders => setTraderCount(traders.length))
       .catch(() => {});
   }, [pin?.id, marketplaceRepo]);
+
+  // Subtle catalogue-data attribution — resolved from the pin's actual
+  // provenance (catalogueSource), never hard-coded. Stays null (no line
+  // shown) for pins with no registered source.
+  useEffect(() => {
+    setSourceDisplayName(null);
+    if (!pin?.catalogueSource || !repository) return;
+    repository.getCatalogueSourceDisplayName(pin.catalogueSource)
+      .then(setSourceDisplayName)
+      .catch(() => setSourceDisplayName(null));
+  }, [pin?.catalogueSource, repository]);
 
   if (!pin) {
     return (
@@ -124,10 +136,13 @@ export default function PinDetailScreen() {
     setmates.filter(p => ['owned', 'for_trade'].includes(collection[p.id]?.status ?? '')).length +
     (currentStatus === 'owned' || currentStatus === 'for_trade' ? 1 : 0);
 
-  // Boards that already contain this pin
+  // Boards that already contain this pin — custom boards only. Auto-suggested
+  // "boards" (one per owned collection) aren't boards the collector created,
+  // so counting them here would contradict the Add to Collection sheet, which
+  // only ever shows/toggles customBoards.
   const pinBoardIds = useMemo(
-    () => new Set(allBoards.filter(b => b.pinIds.includes(pin.id)).map(b => b.id)),
-    [allBoards, pin.id],
+    () => new Set(customBoards.filter(b => b.pinIds.includes(pin.id)).map(b => b.id)),
+    [customBoards, pin.id],
   );
 
   const images = [getPinImageSource(pin), ...(pin.backImageUrl ? [{ uri: pin.backImageUrl }] : [])];
@@ -440,6 +455,12 @@ export default function PinDetailScreen() {
               </View>
             </View>
           )}
+
+          {sourceDisplayName && (
+            <Text style={[styles.attribution, { color: colors.homeMuted }]}>
+              Pin data · {sourceDisplayName}
+            </Text>
+          )}
         </View>
       </ScrollView>
 
@@ -554,4 +575,5 @@ const styles = StyleSheet.create({
   setTiles: { gap: spacing.md, paddingTop: spacing.md, paddingRight: spacing.xs },
   seeAllRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: spacing.md, paddingTop: spacing.sm },
   seeAllLabel: { fontSize: 13, fontFamily: 'Inter_700Bold' },
+  attribution: { fontSize: 11, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: -spacing.sm },
 });

@@ -80,6 +80,14 @@ export interface PinRepository {
    */
   countMissingImages(): Promise<MissingImageCounts>;
 
+  /**
+   * Resolve a pin's catalogue_source (CataloguePin.catalogueSource, e.g.
+   * "collectible_pintrader") to its public display name from the
+   * catalogue_sources registry, for subtle attribution on Pin Detail.
+   * Returns null when the source is unregistered/unknown — never invent one.
+   */
+  getCatalogueSourceDisplayName(sourceId: string): Promise<string | null>;
+
   // ── Catalogue writes ─────────────────────────────────────────────────────
   // Intended for admin tooling and import pipelines, not end-user screens.
   // Requires service-role key or admin privileges.

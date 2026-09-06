@@ -21,6 +21,7 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
@@ -68,6 +69,7 @@ export default function AdminReviewScreen() {
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
   const { repo } = useMarketplace();
+  const { session } = useAuth();
 
   const [submission, setSubmission] = useState<PinSubmission | null>(null);
   const [frontUrl, setFrontUrl]     = useState<string | null>(null);
@@ -142,14 +144,16 @@ export default function AdminReviewScreen() {
     if (!actionable) return;
 
     setCandidatesLoading(true);
-    fetch(`${API_BASE}/admin/submissions/${submission.id}/duplicate-candidates`)
+    fetch(`${API_BASE}/admin/submissions/${submission.id}/duplicate-candidates`, {
+      headers: session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {},
+    })
       .then(r => r.json())
       .then((body: { candidates?: DuplicateCandidate[]; error?: string }) => {
         if (body.candidates) setCandidates(body.candidates);
       })
       .catch(() => { /* non-fatal */ })
       .finally(() => setCandidatesLoading(false));
-  }, [submission]);
+  }, [submission, session?.access_token]);
 
   const takeAction = async (action: ReviewAction) => {
     if (!repo || !submission) return;

@@ -1,11 +1,23 @@
 /**
- * eBay image dry-run routes (admin only).
+ * eBay image dry-run routes (admin only). Developer tooling — not exposed
+ * in the normal Admin navigation.
  *
  * POST /api/catalogue/ebay-image-dry-run           — start a run (limit ≤ 50)
  * GET  /api/catalogue/ebay-image-dry-run/runs      — recent runs
  * GET  /api/catalogue/ebay-image-dry-run/runs/:id  — run summary + results
+ * POST /api/catalogue/ebay-image-dry-run/results/:id/apply — WRITES the
+ *      candidate image to the live pin (pinhunt admin screen gates this
+ *      behind a per-item confirmation dialog before calling it).
  *
- * Report only: never modifies pin image fields or approved images.
+ * NOT guaranteed non-destructive. The default call (limit only) is a
+ * read-only report. But passing `releaseYear` and/or `autoApplyMinScore`
+ * in the POST body switches the run into "bulk ingest" mode (up to
+ * BULK_INGEST_MAX_PINS pins) and AUTO-APPLIES any high-scoring image
+ * directly to the live pin with no per-item confirmation — see
+ * applyCandidateImage() in ../services/ebay-image-dryrun.ts. The pinhunt
+ * admin screen never sends these params, so this mode is only reachable by
+ * a direct API call (curl/Postman/script) — treat it as a live-write action,
+ * not a report, if you call it that way.
  */
 import { Router, type IRouter, type Request, type Response } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";

@@ -1,10 +1,13 @@
 /**
- * Admin — eBay Image Dry Run report.
+ * Admin — eBay Image Dry Run report. Developer tooling — not linked from
+ * the normal Admin navigation; still reachable directly by URL.
  *
- * Starts a 50-pin dry-run test (server side) and shows the resulting report:
- * per-pin best eBay listing candidate, match score, classification, reasons,
- * and whether the image would be assigned. Report only — no approve/reject
- * controls, and nothing here changes live pin images.
+ * Starts a 50-pin search (server side) and shows the resulting report:
+ * per-pin best eBay listing candidate, match score, classification, and
+ * reasons. Running the search itself does not change anything, but the
+ * "Use this image for the pin" action on a result DOES write that image to
+ * the live pin once you confirm the dialog — this screen is a review tool
+ * with a real write action, not a read-only report.
  */
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -253,8 +256,9 @@ export default function EbayImageDryRunScreen() {
         ListHeaderComponent={
           <View>
             <Text style={[styles.intro, { color: colors.mutedForeground }]}>
-              Report-only test: finds candidate eBay images for pins with no photo.
-              Nothing in the live catalogue is changed.
+              Finds candidate eBay images for pins with no photo. Running this
+              search doesn't change anything — but choosing "Use this image"
+              on a result writes that image to the live pin.
             </Text>
             {error ? <Text style={[styles.error, { color: '#dc2626' }]}>{error}</Text> : null}
 

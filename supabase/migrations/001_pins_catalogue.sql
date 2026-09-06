@@ -1,4 +1,20 @@
 -- ============================================================
+-- ⚠️  DEPRECATED — DO NOT RUN THIS FILE.
+--
+-- This is an early, superseded draft of the schema. The actual schema all
+-- later migrations (002_rls.sql onward) build on is 001_schema.sql, whose
+-- `pins` table has different columns (verification_status, etc.) and,
+-- critically, has RLS enabled. This file's tables below have RLS
+-- deliberately left disabled (see the commented-out ENABLE ROW LEVEL
+-- SECURITY statements further down) and are NOT part of the live schema.
+--
+-- Kept only for historical reference. Replaying it — including via any
+-- tool that applies migrations by globbing/sorting this directory — would
+-- create a conflicting, RLS-less `pins` table. Do not run it, and do not
+-- use it as a template for new migrations.
+-- ============================================================
+
+-- ============================================================
 -- PinHunt Supabase Schema
 -- Run this once in the Supabase SQL editor for your project.
 -- ============================================================

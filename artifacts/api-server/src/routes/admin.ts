@@ -1,17 +1,19 @@
 /**
- * Admin routes — development / setup use only.
+ * Admin routes — dev-seeding, catalogue-status, and admin support endpoints.
  *
  * POST /admin/seed-pins        Insert 20 mock pins (dev convenience only —
  *                               production data comes from the import script)
  * GET  /admin/catalogue-status Count pins by verification_status
  *
- * SECURITY: These endpoints are unprotected during development.
- *           Add authentication before deploying to production.
+ * All routes require an authenticated admin (requireAdmin below — same
+ * Bearer JWT -> profiles.is_admin convention used by catalogue-validation.ts,
+ * catalogue-import.ts, ebay-image-dryrun.ts, and vision-test.ts).
  *
  * Write operations require SUPABASE_SERVICE_ROLE_KEY because RLS blocks
  * anonymous writes. The anon key is used for read operations.
  */
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response } from "express";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import {
   createSupabasePinRepository,
   createSupabaseUserRepository,
@@ -20,6 +22,47 @@ import {
 } from "@workspace/pin-repository";
 
 const router: IRouter = Router();
+
+// ─── Admin auth (same convention as catalogue-validation.ts et al.) ──────────
+
+let anonClient: SupabaseClient | null = null;
+let adminAuthClient: SupabaseClient | null = null;
+
+function getAnonClient(): SupabaseClient {
+  if (!anonClient) {
+    anonClient = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
+  }
+  return anonClient;
+}
+function getAdminAuthClient(): SupabaseClient {
+  if (!adminAuthClient) {
+    adminAuthClient = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+  }
+  return adminAuthClient;
+}
+
+interface AdminRequest extends Request {
+  adminId?: string;
+}
+
+async function requireAdmin(req: AdminRequest, res: Response, next: () => void) {
+  const auth = req.headers.authorization;
+  if (!auth?.startsWith("Bearer ")) {
+    res.status(401).json({ error: "Missing Authorization header" });
+    return;
+  }
+  try {
+    const { data: { user }, error } = await getAnonClient().auth.getUser(auth.slice(7));
+    if (error || !user) { res.status(401).json({ error: "Invalid token" }); return; }
+    const { data: profile } = await getAdminAuthClient()
+      .from("profiles").select("is_admin").eq("id", user.id).single();
+    if (!profile?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
+    req.adminId = user.id;
+    next();
+  } catch {
+    res.status(500).json({ error: "Auth check failed" });
+  }
+}
 
 /** Repository with service-role key — bypasses RLS for writes. */
 function getWriteRepository(): PinRepository {
@@ -72,7 +115,7 @@ function getAdminUserRepository() {
  *
  * curl -X POST https://<domain>/api/admin/seed-pins
  */
-router.post("/admin/seed-pins", async (_req, res) => {
+router.post("/admin/seed-pins", requireAdmin, async (_req, res) => {
   try {
     const repo = getWriteRepository();
 
@@ -105,7 +148,7 @@ router.post("/admin/seed-pins", async (_req, res) => {
  *
  * curl https://<domain>/api/admin/catalogue-status
  */
-router.get("/admin/catalogue-status", async (_req, res) => {
+router.get("/admin/catalogue-status", requireAdmin, async (_req, res) => {
   try {
     const repo = getWriteRepository(); // service role to see unverified pins
 
@@ -146,7 +189,7 @@ router.get("/admin/catalogue-status", async (_req, res) => {
  *
  * curl "https://<domain>/api/admin/pins/missing-images?brand=Disney"
  */
-router.get("/admin/pins/missing-images", async (req, res) => {
+router.get("/admin/pins/missing-images", requireAdmin, async (req, res) => {
   try {
     const repo = getWriteRepository(); // service role to see all pins
     const { brand, collection, limit = "200" } = req.query as Record<string, string>;
@@ -176,7 +219,7 @@ router.get("/admin/pins/missing-images", async (req, res) => {
  *
  * curl "https://<domain>/api/admin/catalogue/distinct?field=brand&search=dis"
  */
-router.get("/admin/catalogue/distinct", async (req, res) => {
+router.get("/admin/catalogue/distinct", requireAdmin, async (req, res) => {
   try {
     const { field, search, limit = "25" } = req.query as Record<string, string>;
 
@@ -211,9 +254,9 @@ router.get("/admin/catalogue/distinct", async (req, res) => {
  *   -H "Content-Type: application/json" \
  *   -d '{"imageUrl":"https://..."}'
  */
-router.patch("/admin/pins/:pinhuntId/images", async (req, res) => {
+router.patch("/admin/pins/:pinhuntId/images", requireAdmin, async (req: Request, res: Response) => {
   try {
-    const { pinhuntId } = req.params;
+    const { pinhuntId } = req.params as { pinhuntId: string };
     const { imageUrl, backImageUrl } = req.body as {
       imageUrl?: string;
       backImageUrl?: string;
@@ -250,12 +293,12 @@ router.patch("/admin/pins/:pinhuntId/images", async (req, res) => {
  */
 router.get(
   "/admin/submissions/:id/duplicate-candidates",
-  async (req, res) => {
+  requireAdmin,
+  async (req: Request, res: Response) => {
     try {
       const userRepo = getAdminUserRepository();
-      const candidates = await userRepo.findSubmissionDuplicateCandidates(
-        req.params.id,
-      );
+      const { id } = req.params as { id: string };
+      const candidates = await userRepo.findSubmissionDuplicateCandidates(id);
       res.json({ candidates });
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);

@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import {
   FlatList,
   Image,
@@ -25,6 +25,22 @@ import { ScreenContainer } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
 
+// Search scope for Add Pins to Board: name/title, character, set/series —
+// mirrors the fields collection.tsx's search matches, minus the broader
+// catalogue metadata (brand, retailer, etc.) that isn't relevant here.
+function pinMatchesAddSearch(pin: CataloguePin, query: string) {
+  const q = query.trim().toLowerCase();
+  if (!q) return true;
+  const haystack = [
+    pin.title,
+    pin.collection,
+    pin.normalisedSeries,
+    ...(pin.characters || []),
+    pin.allCharacters,
+  ].filter(Boolean).join(' ').toLowerCase();
+  return haystack.includes(q);
+}
+
 export default function BoardDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const colors = useColors();
@@ -35,6 +51,7 @@ export default function BoardDetailScreen() {
   const { collection } = useCollection();
 
   const [addModalVisible, setAddModalVisible] = useState(false);
+  const [addSearchQuery, setAddSearchQuery] = useState('');
   const [editMode, setEditMode] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
   const [deleteConfirmVisible, setDeleteConfirmVisible] = useState(false);
@@ -51,20 +68,51 @@ export default function BoardDetailScreen() {
     }
   }, [board, renameVisible]);
 
+  useEffect(() => {
+    if (!addModalVisible) setAddSearchQuery('');
+  }, [addModalVisible]);
+
   const topInset = Platform.OS === 'web' ? Math.max(insets.top, 24) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
 
-  // Owned pins not yet in this custom board
-  const availablePins = useMemo(() => {
-    if (!board || !board.isCustom) return [];
-    const boardPinIds = new Set(board.pinIds);
+  // Owned/for-trade pins, regardless of board membership.
+  const ownedPool = useMemo(() => {
+    if (!board || !board.isCustom) return [] as CataloguePin[];
     const ownedIds = new Set(
       Object.values(collection)
         .filter(e => e.status === 'owned' || e.status === 'for_trade')
         .map(e => e.pinId),
     );
-    return catalogue.filter(p => ownedIds.has(p.id) && !boardPinIds.has(p.id));
+    return catalogue.filter(p => ownedIds.has(p.id));
   }, [board, collection, catalogue]);
+
+  // Pins eligible for this Add Pins session: owned pins that weren't already
+  // on the board when the sheet opened. Fixed for the life of the sheet so a
+  // pin the collector just added stays visible (as a check) instead of the
+  // row vanishing under their thumb — that's what lets them add several in a
+  // row. Pins that were on the board before opening never appear here.
+  const addModalBoardPinIdsRef = useRef<Set<string>>(new Set());
+  const prevAddModalVisibleRef = useRef(false);
+  if (addModalVisible && !prevAddModalVisibleRef.current) {
+    addModalBoardPinIdsRef.current = new Set(board?.pinIds ?? []);
+  }
+  prevAddModalVisibleRef.current = addModalVisible;
+
+  const eligiblePins = useMemo(() => {
+    return ownedPool
+      .filter(p => !addModalBoardPinIdsRef.current.has(p.id))
+      .sort((a, b) =>
+        (collection[b.id]?.dateAdded || '').localeCompare(collection[a.id]?.dateAdded || ''),
+      );
+    // Recomputed whenever the sheet opens/closes so the sort reflects the
+    // snapshot captured just above; addModalBoardPinIdsRef itself isn't reactive.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ownedPool, collection, addModalVisible]);
+
+  const filteredAddPins = useMemo(
+    () => eligiblePins.filter(p => pinMatchesAddSearch(p, addSearchQuery)),
+    [eligiblePins, addSearchQuery],
+  );
 
   if (!board) {
     return (
@@ -291,41 +339,79 @@ export default function BoardDetailScreen() {
             </TouchableOpacity>
           </View>
 
-          {availablePins.length === 0 ? (
+          {eligiblePins.length === 0 ? (
             <EmptyState
               icon="check-circle"
-              title="All owned pins added"
-              subtitle="Every owned pin is already on this board."
+              title="All your eligible pins are already on this board."
               actionLabel="Close"
               onAction={() => setAddModalVisible(false)}
             />
           ) : (
-            <FlatList
-              data={availablePins}
-              keyExtractor={p => p.id}
-              showsVerticalScrollIndicator={false}
-              contentContainerStyle={{ paddingVertical: 12, paddingBottom: insets.bottom + 20 }}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  onPress={() => handleAddPin(item)}
-                  activeOpacity={0.8}
-                  style={[styles.addRow, { borderBottomColor: colors.homeLine }]}
-                >
-                  <Image source={getPinImageSource(item)} style={[styles.addRowImage, { backgroundColor: colors.homeAqua }]} />
-                  <View style={styles.addRowInfo}>
-                    <Text style={[styles.addRowTitle, { color: colors.homeInk }]} numberOfLines={2}>
-                      {item.title}
-                    </Text>
-                    <Text style={[styles.addRowMeta, { color: colors.homeMuted }]}>
-                      {item.collection}
-                    </Text>
-                  </View>
-                  <View style={[styles.addCircle, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral }]}>
-                    <Feather name="plus" size={16} color={colors.homeSurface} />
-                  </View>
-                </TouchableOpacity>
+            <>
+              <View style={styles.addSearchWrap}>
+                <View style={[styles.addSearchBox, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+                  <Feather name="search" size={16} color={colors.homeMuted} />
+                  <TextInput
+                    value={addSearchQuery}
+                    onChangeText={setAddSearchQuery}
+                    placeholder="Search your collection..."
+                    placeholderTextColor={colors.homeMuted}
+                    style={[styles.addSearchInput, { color: colors.homeInk }]}
+                    returnKeyType="search"
+                    autoCorrect={false}
+                  />
+                  {addSearchQuery ? (
+                    <TouchableOpacity onPress={() => setAddSearchQuery('')} hitSlop={10}>
+                      <Feather name="x-circle" size={16} color={colors.homeMuted} />
+                    </TouchableOpacity>
+                  ) : null}
+                </View>
+              </View>
+
+              {filteredAddPins.length === 0 ? (
+                <EmptyState icon="search" title="No pins found in your collection." />
+              ) : (
+                <FlatList
+                  data={filteredAddPins}
+                  keyExtractor={p => p.id}
+                  showsVerticalScrollIndicator={false}
+                  keyboardShouldPersistTaps="handled"
+                  contentContainerStyle={{ paddingTop: 4, paddingBottom: insets.bottom + 20 }}
+                  renderItem={({ item }) => {
+                    const isAdded = board.pinIds.includes(item.id);
+                    return (
+                      <TouchableOpacity
+                        onPress={() => !isAdded && handleAddPin(item)}
+                        activeOpacity={isAdded ? 1 : 0.8}
+                        disabled={isAdded}
+                        style={[styles.addRow, { borderBottomColor: colors.homeLine }]}
+                      >
+                        <Image source={getPinImageSource(item)} style={[styles.addRowImage, { backgroundColor: colors.homeAqua }]} />
+                        <View style={styles.addRowInfo}>
+                          <Text style={[styles.addRowTitle, { color: colors.homeInk }]} numberOfLines={2}>
+                            {item.title}
+                          </Text>
+                          <Text style={[styles.addRowMeta, { color: colors.homeMuted }]}>
+                            {item.collection}
+                          </Text>
+                        </View>
+                        <View
+                          style={[
+                            styles.addCircle,
+                            {
+                              borderColor: isAdded ? colors.owned : colors.homeCoral,
+                              backgroundColor: isAdded ? colors.owned : colors.homeCoral,
+                            },
+                          ]}
+                        >
+                          <Feather name={isAdded ? 'check' : 'plus'} size={16} color={colors.homeSurface} />
+                        </View>
+                      </TouchableOpacity>
+                    );
+                  }}
+                />
               )}
-            />
+            </>
           )}
         </View>
       </Modal>
@@ -524,6 +610,9 @@ const styles = StyleSheet.create({
   },
   modalCloseBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   modalTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' },
+  addSearchWrap: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 4 },
+  addSearchBox: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, height: 44, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
+  addSearchInput: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular', height: '100%' },
   addRow: {
     flexDirection: 'row',
     alignItems: 'center',

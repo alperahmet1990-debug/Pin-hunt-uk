@@ -124,16 +124,35 @@ export default function ScanScreen() {
     [shutterAnim],
   );
 
-  // ── Open camera ──────────────────────────────────────────────────────────────
-  const handleOpenCamera = useCallback(async () => {
+  // ── Shared: accept a picked/captured asset ───────────────────────────────────
+  const handlePickerResult = useCallback((result: ImagePicker.ImagePickerResult) => {
+    if (result.canceled || !result.assets?.[0]) return;
+
+    const asset = result.assets[0];
+    if (!asset.base64) {
+      Alert.alert('Could not read image', 'Please try again.');
+      return;
+    }
+
+    flashShutter(() => {
+      setCaptured({
+        uri: asset.uri,
+        base64: asset.base64!,
+        mimeType: asset.mimeType ?? 'image/jpeg',
+      });
+      setScanState('captured');
+    });
+  }, [flashShutter]);
+
+  // ── Scan Pin (camera) — falls back to the photo library on web, where no
+  // camera is available. ──────────────────────────────────────────────────────
+  const handleScanPin = useCallback(async () => {
     setErrorMsg(null);
 
-    // On web, fall back to image library (camera not available in browser)
     const launcher = Platform.OS === 'web'
       ? ImagePicker.launchImageLibraryAsync
       : ImagePicker.launchCameraAsync;
 
-    // Request permission
     if (Platform.OS !== 'web') {
       const { status } = await ImagePicker.requestCameraPermissionsAsync();
       if (status !== 'granted') {
@@ -153,23 +172,23 @@ export default function ScanScreen() {
       aspect: [1, 1],
     });
 
-    if (result.canceled || !result.assets?.[0]) return;
+    handlePickerResult(result);
+  }, [handlePickerResult]);
 
-    const asset = result.assets[0];
-    if (!asset.base64) {
-      Alert.alert('Could not read image', 'Please try again.');
-      return;
-    }
+  // ── Choose Photo (library) ───────────────────────────────────────────────────
+  const handleChoosePhoto = useCallback(async () => {
+    setErrorMsg(null);
 
-    flashShutter(() => {
-      setCaptured({
-        uri: asset.uri,
-        base64: asset.base64!,
-        mimeType: asset.mimeType ?? 'image/jpeg',
-      });
-      setScanState('captured');
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: 'images',
+      quality: 0.7,
+      base64: true,
+      allowsEditing: true,
+      aspect: [1, 1],
     });
-  }, [flashShutter]);
+
+    handlePickerResult(result);
+  }, [handlePickerResult]);
 
   // ── Identify ─────────────────────────────────────────────────────────────────
   const handleIdentify = useCallback(async () => {
@@ -256,7 +275,7 @@ export default function ScanScreen() {
         <View style={styles.headerRow}>
           <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Find a Pin</Text>
           <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
-            Search by name or scan with your camera
+            Scan, upload or search for a pin
           </Text>
         </View>
 
@@ -269,13 +288,17 @@ export default function ScanScreen() {
             ]}
           >
             {scanState === 'idle' && (
-              <View style={styles.viewfinderPlaceholder}>
+              <TouchableOpacity
+                style={styles.viewfinderPlaceholder}
+                onPress={handleScanPin}
+                activeOpacity={0.85}
+              >
                 <Feather name="camera" size={48} color="rgba(255,255,255,0.25)" />
                 <Text style={styles.viewfinderHint}>Point camera at your pin</Text>
                 <Text style={styles.viewfinderHintSub}>
                   {Platform.OS === 'web' ? 'Select a photo from your library' : 'Works best in good light on a plain background'}
                 </Text>
-              </View>
+              </TouchableOpacity>
             )}
 
             {captured && scanState !== 'idle' && (
@@ -311,21 +334,27 @@ export default function ScanScreen() {
             <>
               <TouchableOpacity
                 style={[styles.primaryBtn, { backgroundColor: colors.homeCoral, borderRadius: 18 }]}
-                onPress={handleOpenCamera}
+                onPress={handleScanPin}
                 activeOpacity={0.85}
               >
-                <Feather name={Platform.OS === 'web' ? 'image' : 'camera'} size={20} color={colors.homeSurface} />
-                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>
-                  {Platform.OS === 'web' ? 'Choose Photo' : 'Scan'}
-                </Text>
+                <Feather name="camera" size={20} color={colors.homeSurface} />
+                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>Scan Pin</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[styles.primaryBtn, { backgroundColor: colors.homeTeal, borderRadius: 18 }]}
-                onPress={() => router.push('/search')}
+                style={[styles.secondaryFullBtn, { borderColor: colors.homeLine, borderRadius: 18, backgroundColor: colors.homeSurface }]}
+                onPress={handleChoosePhoto}
                 activeOpacity={0.85}
               >
-                <Feather name="search" size={20} color={colors.homeSurface} />
-                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>Manually Search</Text>
+                <Feather name="image" size={18} color={colors.homeInk} />
+                <Text style={[styles.secondaryFullBtnLabel, { color: colors.homeInk }]}>Choose Photo</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.tertiaryBtn}
+                onPress={() => router.push('/search')}
+                activeOpacity={0.7}
+              >
+                <Feather name="search" size={15} color={colors.homeMuted} />
+                <Text style={[styles.tertiaryBtnLabel, { color: colors.homeMuted }]}>Manually Search</Text>
               </TouchableOpacity>
             </>
           )}
@@ -334,7 +363,7 @@ export default function ScanScreen() {
             <View style={styles.captureRow}>
               <TouchableOpacity
                 style={[styles.secondaryBtn, { borderColor: colors.homeLine, borderRadius: 18, backgroundColor: colors.homeSurface }]}
-                onPress={handleOpenCamera}
+                onPress={handleScanPin}
                 activeOpacity={0.85}
               >
                 <Feather name="refresh-cw" size={16} color={colors.homeInk} />
@@ -563,6 +592,23 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   primaryBtnLabel: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  secondaryFullBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 13,
+    gap: 8,
+    borderWidth: 1,
+  },
+  secondaryFullBtnLabel: { fontSize: 15, fontFamily: 'Inter_500Medium' },
+  tertiaryBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    gap: 6,
+  },
+  tertiaryBtnLabel: { fontSize: 14, fontFamily: 'Inter_500Medium' },
   captureRow: { flexDirection: 'row', gap: 12 },
   secondaryBtn: {
     flexDirection: 'row',

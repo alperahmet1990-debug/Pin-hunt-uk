@@ -232,7 +232,7 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
             activeOpacity={0.85}
             style={[styles.ratingBtn, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
           >
-            <Text style={{ fontSize: 20 }}>👎</Text>
+            <Feather name="thumbs-down" size={18} color={colors.destructive} />
             <Text style={[styles.ratingBtnLabel, { color: colors.destructive }]}>Negative</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -240,7 +240,7 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
             activeOpacity={0.85}
             style={[styles.ratingBtn, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '55' }]}
           >
-            <Text style={{ fontSize: 20 }}>👍</Text>
+            <Feather name="thumbs-up" size={18} color={colors.owned} />
             <Text style={[styles.ratingBtnLabel, { color: colors.owned }]}>Positive</Text>
           </TouchableOpacity>
         </View>

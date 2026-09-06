@@ -157,7 +157,7 @@ export default function CollectorProfileScreen() {
           >
             {/* Avatar + identity */}
             <View style={[styles.hero, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
-              <Avatar uri={profile.avatarUrl} name={profile.username} size={88} style={styles.avatar} />
+              <Avatar uri={profile.avatarUrl} name={profile.username} size={88} style={styles.avatar} seaGlass />
               <Text style={[styles.displayName, { color: colors.homeInk }]}>
                 @{profile.username}
               </Text>
@@ -199,7 +199,7 @@ export default function CollectorProfileScreen() {
                 const color = pct >= 80 ? colors.owned : pct >= 50 ? colors.homeSandInk : colors.destructive;
                 return (
                   <View style={[styles.ratingBadge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
-                    <Text style={{ fontSize: 12 }}>👍</Text>
+                    <Feather name="thumbs-up" size={11} color={color} />
                     <Text style={[styles.ratingBadgeText, { color }]}>
                       {rating.total} trade{rating.total !== 1 ? 's' : ''} · {pct}% positive
                     </Text>

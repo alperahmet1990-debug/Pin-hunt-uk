@@ -41,15 +41,15 @@ const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; icon: k
   { key: 'new_pickup',   label: 'Events', icon: 'calendar' },
 ];
 
-// Sea Glass & Coral equivalents (kept as literals — used both here and inside
+// Collector palette equivalents (kept as literals — used both here and inside
 // PostCard, and needs to stay visually distinct per category, not theme-adaptive).
 const TYPE_COLOR: Record<CommunityPostType | 'all', string> = {
-  all:          '#3C7778', // homeTealSoft
-  in_search_of: '#84601F', // homeSandInk
-  for_trade:    '#E86D61', // homeCoral
+  all:          '#3E6169', // homeTealSoft
+  in_search_of: '#8C3A5C', // homeSandInk
+  for_trade:    '#6C6FA0', // homeCoral
   for_sale:     '#2D9E6B', // owned green
-  new_pickup:   '#A83F3D', // homeCoralDeep
-  discussion:   '#58777A', // homeMuted
+  new_pickup:   '#4C4E78', // homeCoralDeep
+  discussion:   '#6E6B80', // homeMuted
 };
 
 const TYPE_LABEL: Record<CommunityPostType, string> = {
@@ -206,7 +206,7 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
           <Text style={[styles.typeBadgeLabel, { color }]}>{TYPE_LABEL[post.postType]}</Text>
         </View>
         <View style={styles.cardMeta}>
-          <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={22} />
+          <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={22} seaGlass />
           <Text style={[styles.cardAuthor, { color: colors.homeInk }]}>@{authorName}</Text>
           <Text style={[styles.cardTime, { color: colors.homeMuted }]}>
             {timeAgo(post.createdAt)}

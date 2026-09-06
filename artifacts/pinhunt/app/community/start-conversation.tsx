@@ -98,7 +98,7 @@ export default function StartConversationScreen() {
         >
           {/* Recipient card */}
           <View style={[styles.recipientCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
-            <Avatar uri={null} name={recipientName} size={44} />
+            <Avatar uri={null} name={recipientName} size={44} seaGlass />
             <View>
               <Text style={[styles.recipientLabel, { color: colors.homeMuted }]}>Sending to</Text>
               <Text style={[styles.recipientName, { color: colors.homeInk }]}>@{recipientName}</Text>

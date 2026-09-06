@@ -52,7 +52,7 @@ function CollectorCard({ item, match, onPress }: {
       onPress={onPress}
       activeOpacity={0.75}
     >
-      <Avatar uri={item.avatarUrl} name={item.username} size={44} />
+      <Avatar uri={item.avatarUrl} name={item.username} size={44} seaGlass />
       <View style={{ flex: 1, gap: 2 }}>
         <Text style={[styles.username, { color: colors.homeInk }]}>@{item.username}</Text>
         {item.tradingRegion ? (

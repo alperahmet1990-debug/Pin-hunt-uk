@@ -41,7 +41,7 @@ function RatingBadge({ positive, total, colors }: {
   const color = pct >= 80 ? colors.owned : pct >= 50 ? colors.homeSandInk : colors.destructive;
   return (
     <View style={[styles.badge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
-      <Text style={{ fontSize: 12 }}>👍</Text>
+      <Feather name="thumbs-up" size={11} color={color} />
       <Text style={[styles.badgeText, { color }]}>{positive}/{total} ({pct}%)</Text>
     </View>
   );
@@ -70,7 +70,7 @@ function TraderCard({ trader, match, onViewMatch, onMessage, isMe, colors }: {
     >
       <View style={styles.cardTop}>
         {/* Avatar */}
-        <Avatar uri={trader.avatarUrl} name={trader.username} size={44} />
+        <Avatar uri={trader.avatarUrl} name={trader.username} size={44} seaGlass />
 
         {/* Info */}
         <View style={styles.cardInfo}>

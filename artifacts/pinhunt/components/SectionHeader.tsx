@@ -13,10 +13,10 @@ export function SectionHeader({ title, actionLabel, onAction }: SectionHeaderPro
 
   return (
     <View style={styles.row}>
-      <Text style={[styles.title, { color: colors.foreground }]}>{title}</Text>
+      <Text style={[styles.title, { color: colors.homeInk }]}>{title}</Text>
       {actionLabel && onAction ? (
         <TouchableOpacity onPress={onAction} activeOpacity={0.7}>
-          <Text style={[styles.action, { color: colors.primary }]}>{actionLabel}</Text>
+          <Text style={[styles.action, { color: colors.homeCoral }]}>{actionLabel}</Text>
         </TouchableOpacity>
       ) : null}
     </View>

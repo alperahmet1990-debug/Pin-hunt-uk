@@ -386,7 +386,7 @@ export default function EditProfileScreen() {
           {/* Avatar picker */}
           <View style={styles.avatarSection}>
             <TouchableOpacity onPress={handlePickAvatar} activeOpacity={0.8} style={styles.avatarWrap}>
-              <Avatar uri={avatarUrl} name={username || 'Me'} size={90} />
+              <Avatar uri={avatarUrl} name={username || 'Me'} size={90} seaGlass />
               <View style={[styles.avatarEditBadge, { backgroundColor: colors.homeCoral, borderColor: colors.homeBackground }]}>
                 {uploadingAvatar
                   ? <ActivityIndicator size="small" color={colors.homeSurface} />

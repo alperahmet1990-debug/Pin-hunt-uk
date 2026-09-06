@@ -28,11 +28,11 @@ import type { CommunityPostType } from '@workspace/pin-repository';
 
 const MAX_PHOTOS = 6;
 
-const POST_TYPES: Array<{ key: CommunityPostType; label: string; emoji: string; hint: string }> = [
-  { key: 'for_trade',    label: 'Trade',        emoji: '🔄', hint: 'Offering pins to swap' },
-  { key: 'in_search_of', label: 'ISO',          emoji: '🔍', hint: 'Looking for specific pins' },
-  { key: 'discussion',   label: 'Discussion',   emoji: '💬', hint: 'General chat' },
-  { key: 'new_pickup',   label: 'Event',        emoji: '📦', hint: 'Share an upcoming event' },
+const POST_TYPES: Array<{ key: CommunityPostType; label: string; icon: React.ComponentProps<typeof Feather>['name']; hint: string }> = [
+  { key: 'for_trade',    label: 'Trade',        icon: 'repeat',          hint: 'Offering pins to swap' },
+  { key: 'in_search_of', label: 'ISO',          icon: 'search',         hint: 'Looking for specific pins' },
+  { key: 'discussion',   label: 'Discussion',   icon: 'message-circle', hint: 'General chat' },
+  { key: 'new_pickup',   label: 'Event',        icon: 'package',        hint: 'Share an upcoming event' },
 ];
 
 export default function CreatePostScreen() {
@@ -196,7 +196,7 @@ export default function CreatePostScreen() {
                     },
                   ]}
                 >
-                  <Text style={styles.typeEmoji}>{pt.emoji}</Text>
+                  <Feather name={pt.icon} size={20} color={active ? color : colors.homeMuted} />
                   <Text style={[styles.typeLabel, { color: active ? color : colors.homeInk }]}>
                     {pt.label}
                   </Text>
@@ -416,7 +416,6 @@ const styles = StyleSheet.create({
     padding: spacing.md, borderWidth: 1.5, gap: 3,
     flexGrow: 1,
   },
-  typeEmoji: { fontSize: 20 },
   typeLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   typeHint: { fontSize: 11, fontFamily: 'Inter_400Regular', lineHeight: 15 },
 

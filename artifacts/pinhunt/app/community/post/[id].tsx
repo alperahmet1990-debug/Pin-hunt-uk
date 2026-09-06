@@ -40,11 +40,11 @@ const TYPE_LABEL: Record<string, string> = {
 };
 
 const TYPE_COLOR: Record<string, string> = {
-  in_search_of: '#84601F', // homeSandInk
-  for_trade:    '#E86D61', // homeCoral
+  in_search_of: '#8C3A5C', // homeSandInk
+  for_trade:    '#6C6FA0', // homeCoral
   for_sale:     '#2D9E6B', // owned green
-  new_pickup:   '#A83F3D', // homeCoralDeep
-  discussion:   '#58777A', // homeMuted
+  new_pickup:   '#4C4E78', // homeCoralDeep
+  discussion:   '#6E6B80', // homeMuted
 };
 
 function timeAgo(iso: string): string {
@@ -217,7 +217,7 @@ function CommentRow({ comment, isMe, isAdmin, canReport, hasReported, onReport, 
   const name = comment.authorProfile?.username ?? '…';
   return (
     <View style={[styles.commentRow, { borderBottomColor: colors.homeLine }]}>
-      <Avatar uri={comment.authorProfile?.avatarUrl} name={name} size={32} />
+      <Avatar uri={comment.authorProfile?.avatarUrl} name={name} size={32} seaGlass />
       <View style={styles.commentBody}>
         <View style={styles.commentMeta}>
           <Text style={[styles.commentAuthor, { color: colors.homeInk }]}>@{name}</Text>
@@ -529,7 +529,7 @@ export default function PostDetailScreen() {
 
             {/* Author row */}
             <View style={styles.authorRow}>
-              <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={40} />
+              <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={40} seaGlass />
               <View style={{ flex: 1 }}>
                 <Text style={[styles.authorName, { color: colors.homeInk }]}>@{authorName}</Text>
                 <Text style={[styles.postTime, { color: colors.homeMuted }]}>

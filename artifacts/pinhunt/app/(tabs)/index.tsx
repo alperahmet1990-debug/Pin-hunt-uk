@@ -139,7 +139,7 @@ export default function HomeScreen() {
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[styles.scroll, { paddingTop: topPad + 12, paddingBottom: bottomPad }]}>
       <View style={styles.header}>
         <TouchableOpacity accessibilityLabel="Open profile" onPress={() => router.push('/edit-profile')} style={styles.headerLeft}>
-          <Avatar uri={profile?.avatarUrl ?? null} name={profile?.username ?? '?'} size={42} />
+          <Avatar uri={profile?.avatarUrl ?? null} name={profile?.username ?? '?'} size={42} seaGlass />
           <View><Text style={[styles.welcome, { color: colors.homeMuted }]}>{greeting()}</Text><Text style={[styles.name, { color: colors.homeInk }]}>{firstName ? `Hi, ${firstName}` : 'Hi there'}</Text></View>
         </TouchableOpacity>
         <View style={styles.tools}>

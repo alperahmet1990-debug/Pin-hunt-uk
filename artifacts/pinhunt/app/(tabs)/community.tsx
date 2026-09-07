@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
@@ -256,10 +256,20 @@ export default function CommunityScreen() {
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
+  const params  = useLocalSearchParams<{ filter?: string }>();
   const { repo, userId } = useCommunity();
   const { totalUnread } = useUnreadMessages();
 
   const [filter, setFilter]     = useState<CommunityPostType | 'all'>('all');
+
+  // Lets Home's "What's Happening" → See all deep-link straight into the
+  // Events chip instead of a bespoke events screen (`/(tabs)/community?filter=new_pickup`).
+  useEffect(() => {
+    if (params.filter && POST_TYPES.some(type => type.key === params.filter)) {
+      setFilter(params.filter as CommunityPostType);
+    }
+  }, [params.filter]);
+
   const [posts, setPosts]       = useState<CommunityPost[]>([]);
   const [loading, setLoading]   = useState(true);
   const [refreshing, setRefreshing] = useState(false);

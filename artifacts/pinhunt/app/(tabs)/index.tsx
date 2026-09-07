@@ -156,7 +156,7 @@ export default function HomeScreen() {
         <LinearGradient colors={[colors.homeCoralDeep, colors.homeCoral, colors.homeSand]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={[styles.hero, { shadowColor: colors.homeShadow }]}>
           <Animated.View pointerEvents="none" style={[styles.heroRing, { borderColor: colors.homeSand, transform: [{ translateX: translateOrbit }, { translateY: translateOrbit }] }]} />
           <Animated.View pointerEvents="none" style={[styles.heroOrbit, { borderColor: colors.homeSurface, transform: [{ translateX: translateDrift }, { rotate: '-20deg' }] }]} />
-          <View><Text style={[styles.heroKicker, { color: colors.homeHeroMuted }]}>✦  START HERE</Text><Text style={[styles.heroTitle, { color: colors.homeHeroText }]}>Find a Pin</Text><Text style={[styles.heroSubtitle, { color: colors.homeHeroSubtitle }]}>Scan or search the catalogue</Text></View>
+          <View><Text style={[styles.heroKicker, { color: colors.homeHeroMuted }]}>✦  START HERE</Text><Text style={[styles.heroTitle, { color: colors.homeHeroText }]}>Find a Pin</Text><Text style={[styles.heroSubtitle, { color: colors.homeHeroSubtitle }]}>Scan, search or discover your next pin</Text></View>
           <View style={[styles.heroIcon, { backgroundColor: colors.homeSurface }]}><Feather name="search" size={23} color={colors.homeCoralDeep} /></View>
         </LinearGradient>
       </TouchableOpacity>

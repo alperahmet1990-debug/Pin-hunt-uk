@@ -17,7 +17,9 @@ import type {
   EditionType,
   ExternalIdentifiers,
   ExternalSaleListing,
+  ForTradeInventoryItem,
   GetAllSubmissionsInput,
+  GetForTradeInventoryInput,
   GetNearbyCollectorsInput,
   GetPotentialTradesInput,
   NearbyCollector,
@@ -1135,6 +1137,55 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       positiveRatings: ratingMap.get(p.id as string)?.positive ?? 0,
       totalRatings: ratingMap.get(p.id as string)?.total ?? 0,
     }));
+  }
+
+  async getForTradeInventory(input: GetForTradeInventoryInput): Promise<ForTradeInventoryItem[]> {
+    const { viewerId, pinIds, limit } = input;
+
+    // Resolve app-facing pinhunt_ids → internal UUIDs when a pin list is given.
+    let pinUuidToPinhuntId: Map<string, string> | null = null;
+    if (pinIds) {
+      if (pinIds.length === 0) return [];
+      const { data: pinRows, error: pinRowsErr } = await this.client
+        .from('pins')
+        .select('id, pinhunt_id')
+        .in('pinhunt_id', pinIds);
+      if (pinRowsErr || !pinRows || pinRows.length === 0) return [];
+      pinUuidToPinhuntId = new Map((pinRows as { id: string; pinhunt_id: string }[]).map(r => [r.id, r.pinhunt_id]));
+    }
+
+    let query = this.client
+      .from('user_pins')
+      .select('pin_id, user_id, pins(pinhunt_id, title, image_url, collection)')
+      .eq('status', 'for_trade')
+      .neq('user_id', viewerId);
+
+    query = pinUuidToPinhuntId
+      ? query.in('pin_id', [...pinUuidToPinhuntId.keys()])
+      : query.limit(limit ?? 500);
+
+    const { data: rows, error } = await query;
+    if (error || !rows || rows.length === 0) return [];
+
+    const userIds = [...new Set((rows as { user_id: string }[]).map(r => r.user_id))];
+    const { data: profileData } = await this.client
+      .from('profiles')
+      .select('id, username')
+      .in('id', userIds)
+      .not('username', 'is', null);
+    const usernameById = new Map(((profileData ?? []) as { id: string; username: string }[]).map(p => [p.id, p.username]));
+
+    type Row = { pin_id: string; user_id: string; pins: { pinhunt_id: string; title: string; image_url: string | null; collection: string | null } | null };
+    return (rows as Row[])
+      .filter(r => r.pins && usernameById.has(r.user_id))
+      .map(r => ({
+        pinId: r.pins!.pinhunt_id,
+        title: r.pins!.title,
+        imageUrl: r.pins!.image_url ?? undefined,
+        collection: r.pins!.collection ?? undefined,
+        traderId: r.user_id,
+        traderUsername: usernameById.get(r.user_id)!,
+      }));
   }
 
   async getTraderRating(userId: string): Promise<{ positive: number; total: number }> {

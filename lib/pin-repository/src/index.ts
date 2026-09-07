@@ -49,6 +49,8 @@ export type {
   GetNearbyCollectorsInput,
   PotentialTradePin,
   GetPotentialTradesInput,
+  ForTradeInventoryItem,
+  GetForTradeInventoryInput,
   // Community (migration 007_community)
   CommunityPost,
   CommunityPostType,

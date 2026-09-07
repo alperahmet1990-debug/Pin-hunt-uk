@@ -12,6 +12,8 @@ import type {
   EditionType,
   ExternalSaleListing,
   GetAllSubmissionsInput,
+  ForTradeInventoryItem,
+  GetForTradeInventoryInput,
   GetNearbyCollectorsInput,
   GetPotentialTradesInput,
   NearbyCollector,
@@ -284,6 +286,14 @@ export interface IUserPinRepository {
    * to surface a potential trade match.
    */
   getPotentialTrades(input: GetPotentialTradesInput): Promise<PotentialTradePin[]>;
+
+  /**
+   * Return current for-trade listings, optionally restricted to a set of pins
+   * (by pinhunt_id). Powers Find Trades' "on your ISO", "missing from your
+   * set" and collection-based discovery calculations — one shared query
+   * instead of a bespoke RPC per section.
+   */
+  getForTradeInventory(input: GetForTradeInventoryInput): Promise<ForTradeInventoryItem[]>;
 
   // ── Community posts ────────────────────────────────────────────────────────
 

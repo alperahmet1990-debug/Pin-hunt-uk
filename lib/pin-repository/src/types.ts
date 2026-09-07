@@ -422,6 +422,32 @@ export interface GetPotentialTradesInput {
   collectorId: string;
 }
 
+// ─── For-trade inventory (Find Trades) ────────────────────────────────────────
+
+/** One collector's for-trade listing of a pin, for Find Trades opportunity calculations. */
+export interface ForTradeInventoryItem {
+  /** App-facing pin id (pinhunt_id). */
+  pinId: string;
+  title: string;
+  imageUrl?: string;
+  collection?: string;
+  traderId: string;
+  traderUsername: string;
+}
+
+export interface GetForTradeInventoryInput {
+  /** Excluded from results — the viewer's own for-trade listings never count as opportunities for themselves. */
+  viewerId: string;
+  /**
+   * Restrict to these pins (by pinhunt_id) — used for "on your ISO" and
+   * "missing from your set" lookups. Omit to scan all current for-trade
+   * inventory (used for collection-based discovery).
+   */
+  pinIds?: string[];
+  /** Only applies when `pinIds` is omitted. Defaults to 500. */
+  limit?: number;
+}
+
 // ─── Trade types ──────────────────────────────────────────────────────────────
 export type TradeStatus = 'pending' | 'accepted' | 'rejected' | 'completed' | 'cancelled';
 

@@ -162,7 +162,7 @@ export default function HomeScreen() {
       </TouchableOpacity>
       <View style={styles.shortcuts}>
         <Shortcut icon="heart" label={'My\nCollection'} tone={colors.homeCoralDeep} onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })} colors={colors} />
-        <Shortcut icon="compass" label={'Find\nTrades'} tone={colors.homeSandInk} onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'traders' } })} colors={colors} />
+        <Shortcut icon="compass" label={'Find\nTrades'} tone={colors.homeSandInk} onPress={() => router.push('/find-trades')} colors={colors} />
         <Shortcut icon="users" label="Community" tone={colors.homeTealSoft} onPress={() => router.push('/(tabs)/community')} colors={colors} />
       </View>
       {(officialPost || forYou.length > 0) && <Section title="For You" colors={colors}>

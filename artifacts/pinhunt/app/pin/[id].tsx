@@ -41,7 +41,7 @@ export default function PinDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { collection, getEntry, markViewed } = useCollection();
+  const { collection, getEntry, markViewed, setStatus } = useCollection();
   const { customBoards } = useBoards();
   const { pins, repository } = usePinCatalogue();
 
@@ -152,10 +152,23 @@ export default function PinDetailScreen() {
     setManageSheetPin(pin);
   };
 
+  // Based on Your Collection lands here first ("this looks interesting"), so
+  // the two obvious next steps are surfaced directly: add it to the ISO list,
+  // or go find a trade for it. The ISO toggle only makes sense for a pin you
+  // don't already own/have for trade — reuses the same setStatus mutation
+  // QuickAddSheet uses, no new wishlist logic.
+  const canToggleIso = currentStatus === 'none' || currentStatus === 'wanted';
   const primaryActions: PrimaryActionBarAction[] = [
+    ...(canToggleIso ? [{
+      key: 'iso',
+      label: currentStatus === 'wanted' ? 'On Your ISO' : 'Add to ISO',
+      icon: 'heart' as const,
+      variant: 'secondary' as const,
+      onPress: () => setStatus(pin.id, currentStatus === 'wanted' ? 'none' : 'wanted'),
+    }] : []),
     {
       key: 'trades',
-      label: 'Find Trades',
+      label: 'Find a Trade',
       icon: 'compass',
       variant: 'primary',
       onPress: () => router.push({ pathname: '/traders/[pinId]', params: { pinId: pin.id } }),

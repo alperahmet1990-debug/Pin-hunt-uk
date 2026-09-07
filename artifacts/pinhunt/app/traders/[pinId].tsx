@@ -1,11 +1,14 @@
 /**
- * Traders screen — lists collectors who have a specific pin marked as "for
- * trade". Leads toward the Potential Trade Match (View Match) when one
+ * Find a Trade — the one pin-first trading screen reached from On Your ISO,
+ * an available missing set pin, or Pin Detail. Always answers "who has this
+ * pin, and could we trade?" for the pin at the top, which stays visible the
+ * whole time. Leads toward the Potential Trade Match (View Match) when one
  * exists; otherwise offers a single plain Message action.
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
+  Image,
   Platform,
   RefreshControl,
   ScrollView,
@@ -21,6 +24,7 @@ import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { Avatar } from '@/components/Avatar';
+import { getPinImageSource } from '@/utils/pinImage';
 import { radius, spacing } from '@/constants/theme';
 import { formatMatchSummary, isReciprocalMatch } from '@/utils/tradeMatch';
 import type { TraderProfile } from '@workspace/pin-repository';
@@ -64,7 +68,7 @@ function TraderCard({ trader, match, onViewMatch, onMessage, isMe, colors }: {
 
   return (
     <TouchableOpacity
-      onPress={() => router.push({ pathname: '/collector/[username]', params: { username: trader.username } })}
+      onPress={() => router.push({ pathname: '/collector/[username]', params: hasMatch ? { username: trader.username, entry: 'match' } : { username: trader.username } })}
       activeOpacity={0.85}
       style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
     >
@@ -178,7 +182,7 @@ export default function TradersScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: pin ? `Traders — ${pin.title}` : 'Traders' }} />
+      <Stack.Screen options={{ title: 'Find a Trade' }} />
       <ScrollView
         style={[styles.root, { backgroundColor: colors.homeBackground }]}
         contentContainerStyle={{ padding: spacing.lg, paddingBottom: botPad }}
@@ -187,6 +191,28 @@ export default function TradersScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.homeCoral} />
         }
       >
+        {/* The pin we're finding a trade for stays visible above every state
+            below (loading/error/empty/results) — "this is the pin I'm trying
+            to get" should never be in doubt. */}
+        {pin && (
+          <View style={[styles.pinHeader, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <View style={[styles.pinImageWrap, { backgroundColor: colors.homeAqua }]}>
+              <Image source={getPinImageSource(pin)} style={styles.pinImage} resizeMode="contain" />
+            </View>
+            <View style={styles.pinInfo}>
+              <Text numberOfLines={2} style={[styles.pinTitle, { color: colors.homeInk }]}>{pin.title}</Text>
+              {pin.collection ? (
+                <Text numberOfLines={1} style={[styles.pinCollection, { color: colors.homeMuted }]}>{pin.collection}</Text>
+              ) : null}
+              <Text style={[styles.pinMeta, { color: colors.homeMuted }]}>
+                {loading
+                  ? 'For trade · checking…'
+                  : `For trade · ${traders.length} collector${traders.length !== 1 ? 's' : ''}`}
+              </Text>
+            </View>
+          </View>
+        )}
+
         {loading ? (
           <View style={styles.center}>
             <ActivityIndicator color={colors.homeCoral} />
@@ -208,9 +234,6 @@ export default function TradersScreen() {
           </View>
         ) : (
           <>
-            <Text style={[styles.countLabel, { color: colors.homeMuted }]}>
-              {traders.length} collector{traders.length !== 1 ? 's' : ''} offering this for trade
-            </Text>
             {traders.map(trader => {
               const match = matches.get(trader.id);
               return (
@@ -219,7 +242,7 @@ export default function TradersScreen() {
                   trader={trader}
                   match={match}
                   isMe={trader.id === userId}
-                  onViewMatch={() => router.push({ pathname: '/collector/[username]', params: { username: trader.username } })}
+                  onViewMatch={() => router.push({ pathname: '/collector/[username]', params: { username: trader.username, entry: 'match' } })}
                   onMessage={() =>
                     router.push({
                       pathname: '/community/start-conversation' as any,
@@ -251,7 +274,16 @@ const styles = StyleSheet.create({
   empty: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
-  countLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.md },
+  pinHeader: {
+    flexDirection: 'row', alignItems: 'center', gap: spacing.md,
+    padding: spacing.md, borderWidth: 1, borderRadius: radius.lg, marginBottom: spacing.lg,
+  },
+  pinImageWrap: { width: 72, height: 72, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', padding: spacing.xs },
+  pinImage: { width: '100%', height: '100%' },
+  pinInfo: { flex: 1, gap: 2 },
+  pinTitle: { fontSize: 16, fontFamily: 'Inter_700Bold', lineHeight: 20 },
+  pinCollection: { fontSize: 12.5, fontFamily: 'Inter_500Medium' },
+  pinMeta: { fontSize: 12.5, fontFamily: 'Inter_600SemiBold', marginTop: 2 },
   card: {
     padding: spacing.lg - 2,
     marginBottom: spacing.sm + 2, borderWidth: 1, gap: spacing.md,

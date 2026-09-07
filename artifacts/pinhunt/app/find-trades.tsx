@@ -62,8 +62,13 @@ export default function FindTradesScreen() {
   } = useFindTrades();
 
   const goToTraders = (pinId: string) => router.push({ pathname: '/traders/[pinId]', params: { pinId } });
-  const goToCollector = (username: string) => router.push({ pathname: '/collector/[username]', params: { username } });
+  // Potential Trades only ever surfaces genuine two-way matches, so every tap
+  // here already knows why — go straight to the match-first collector view.
+  const goToMatch = (username: string) => router.push({ pathname: '/collector/[username]', params: { username, entry: 'match' } });
   const goToSet = (collectionName: string) => router.push({ pathname: '/set/[collection]', params: { collection: collectionName } });
+  // Discovery is "this looks interesting", not "I want this" — land on Pin
+  // Detail first so the collector can inspect before committing to ISO or a trade.
+  const goToPin = (pinId: string) => router.push({ pathname: '/pin/[id]', params: { id: pinId } });
 
   const nothingAtAll =
     !loading && !error && isoOpportunities.length === 0 && potentialTrades.length === 0 &&
@@ -101,7 +106,7 @@ export default function FindTradesScreen() {
             <>
               {isoOpportunities.length > 0 && (
                 <View style={styles.section}>
-                  <SectionHeader icon="search" tint={colors.wanted} title="On your ISO" colors={colors} />
+                  <SectionHeader icon="search" tint={colors.wanted} title="In your ISO" colors={colors} />
                   <Text style={[styles.sectionSubtitle, { color: colors.homeMuted }]}>
                     {isoOpportunities.length} pin{isoOpportunities.length === 1 ? '' : 's'} you're looking for {isoOpportunities.length === 1 ? 'is' : 'are'} available
                   </Text>
@@ -131,7 +136,7 @@ export default function FindTradesScreen() {
                         key={card.traderId}
                         card={card}
                         colors={colors}
-                        onPress={() => card.profile && goToCollector(card.profile.username)}
+                        onPress={() => card.profile && goToMatch(card.profile.username)}
                       />
                     ))}
                   </Shelf>
@@ -143,7 +148,13 @@ export default function FindTradesScreen() {
                   <SectionHeader icon="layers" tint={colors.homeSand} title="Complete your sets" colors={colors} />
                   <Shelf>
                     {setOpportunities.map(set => (
-                      <SetCard key={set.setName} set={set} colors={colors} onPress={() => goToSet(set.setName)} />
+                      <SetCard
+                        key={set.setName}
+                        set={set}
+                        colors={colors}
+                        onPress={() => goToSet(set.setName)}
+                        onPressAvailable={set.available[0] ? () => goToTraders(set.available[0].pinId) : undefined}
+                      />
                     ))}
                   </Shelf>
                 </View>
@@ -154,7 +165,7 @@ export default function FindTradesScreen() {
                 {discoveryItems.length > 0 ? (
                   <View style={styles.discoveryGrid}>
                     {discoveryItems.map(item => (
-                      <DiscoveryTile key={item.pinId} item={item} colors={colors} onPress={() => goToTraders(item.pinId)} />
+                      <DiscoveryTile key={item.pinId} item={item} colors={colors} onPress={() => goToPin(item.pinId)} />
                     ))}
                   </View>
                 ) : (
@@ -302,21 +313,43 @@ function PotentialTradeHero({ card, colors, onPress }: {
 // the image's bottom edge rather than a separate row, keeping the tile the
 // same height as ISO/Discovery.
 
-function SetCard({ set, colors, onPress }: { set: SetOpportunity; colors: ReturnType<typeof useColors>; onPress: () => void }) {
+function SetCard({ set, colors, onPress, onPressAvailable }: {
+  set: SetOpportunity;
+  colors: ReturnType<typeof useColors>;
+  onPress: () => void;
+  onPressAvailable?: () => void;
+}) {
   const pct = set.totalCount > 0 ? set.ownedCount / set.totalCount : 0;
   const representative = set.available[0];
+  const image = (
+    <>
+      <Image source={pinImageSource(representative?.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+      <View style={styles.setProgressTrack}>
+        <View style={[styles.setProgressFill, { width: `${Math.round(pct * 100)}%`, backgroundColor: colors.homeSand }]} />
+      </View>
+    </>
+  );
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
       style={[styles.setCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
-      <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
-        <Image source={pinImageSource(representative?.imageUrl)} style={styles.tileImage} resizeMode="contain" />
-        <View style={styles.setProgressTrack}>
-          <View style={[styles.setProgressFill, { width: `${Math.round(pct * 100)}%`, backgroundColor: colors.homeSand }]} />
-        </View>
-      </View>
+      {/* Two distinct intents on one card: tapping the available missing pin
+          jumps straight to Find a Trade for it; tapping the rest (title/progress
+          label) opens Set Detail — same nested-touchable pattern PinCard already
+          uses for its quick-add button. */}
+      {onPressAvailable ? (
+        <TouchableOpacity
+          onPress={onPressAvailable}
+          activeOpacity={0.85}
+          style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}
+        >
+          {image}
+        </TouchableOpacity>
+      ) : (
+        <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>{image}</View>
+      )}
       <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{set.setName}</Text>
       <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>
         {set.ownedCount}/{set.totalCount}

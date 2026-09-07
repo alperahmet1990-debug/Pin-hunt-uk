@@ -60,7 +60,12 @@ export default function CollectorProfileScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { username } = useLocalSearchParams<{ username: string }>();
+  const { username, entry } = useLocalSearchParams<{ username: string; entry?: string }>();
+  // Arrived from Find Trades' Potential Trades shelf or a Find a Trade "View
+  // Match" — PinHunt already told the collector this is a match, so lead
+  // with why rather than a generic profile. Any other entry point (search,
+  // Collectors Nearby, a deep link) keeps the normal profile-first layout.
+  const isMatchEntry = entry === 'match';
   const { getPublicProfile } = useProfile();
 
   const { repo, userId } = useMarketplace();
@@ -150,170 +155,219 @@ export default function CollectorProfileScreen() {
               This profile is private or doesn't exist.
             </Text>
           </View>
-        ) : (
+        ) : (() => {
+          // Computed once here (rather than inline below) so both the
+          // match-first and normal orderings below can reuse the exact same
+          // markup instead of duplicating it.
+          const badgeRow = (profile.internationalTradingEnabled || profile.openToLocalTrades || profile.openToPostalTrades || profile.happyToTravel) ? (
+            <View style={styles.badgeRow}>
+              {profile.internationalTradingEnabled && (
+                <Chip icon="globe" label="Open to international trades" tone="coral" variant="soft" size="sm" />
+              )}
+              {profile.openToLocalTrades && (
+                <Chip icon="map-pin" label="Local trades" tone="coral" variant="soft" size="sm" />
+              )}
+              {profile.openToPostalTrades && (
+                <Chip icon="package" label="Postal trades" tone="neutral" variant="soft" size="sm" />
+              )}
+              {profile.happyToTravel && (
+                <Chip icon="navigation" label="Happy to travel" tone="neutral" variant="soft" size="sm" />
+              )}
+            </View>
+          ) : null;
+
+          const ratingRow = rating !== null ? (
+            rating.total > 0 ? (() => {
+              const pct = Math.round((rating.positive / rating.total) * 100);
+              const color = pct >= 80 ? colors.owned : pct >= 50 ? colors.homeSandInk : colors.destructive;
+              return (
+                <View style={[styles.ratingBadge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
+                  <Feather name="thumbs-up" size={11} color={color} />
+                  <Text style={[styles.ratingBadgeText, { color }]}>
+                    {rating.total} trade{rating.total !== 1 ? 's' : ''} · {pct}% positive
+                  </Text>
+                </View>
+              );
+            })() : (
+              <Chip label="No trade ratings yet" tone="neutral" variant="soft" size="sm" />
+            )
+          ) : null;
+
+          const bioSection = profile.bio ? (
+            <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
+              <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>ABOUT</Text>
+              <View style={[styles.bioCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                <Text style={[styles.bioText, { color: colors.homeInk }]}>{profile.bio}</Text>
+              </View>
+            </View>
+          ) : null;
+
+          const tradeMatchCard = (
+            <View style={[styles.tradeMatchCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+              {theyHaveIWant.length > 0 && (
+                <View style={styles.tradeGroup}>
+                  <Chip
+                    icon="download"
+                    label={`${theyHaveIWant.length} pin${theyHaveIWant.length !== 1 ? 's' : ''} you want`}
+                    tone="wanted"
+                    variant="solid"
+                  />
+                  <View style={styles.tradePins}>
+                    {theyHaveIWant.slice(0, 5).map(p => (
+                      <PotentialTradeRow key={p.pinId} pin={p} />
+                    ))}
+                    {theyHaveIWant.length > 5 && (
+                      <Text style={[styles.moreLabel, { color: colors.homeMuted }]}>
+                        +{theyHaveIWant.length - 5} more
+                      </Text>
+                    )}
+                  </View>
+                </View>
+              )}
+              {theyHaveIWant.length > 0 && iHaveTheyWant.length > 0 && (
+                <View style={[styles.tradeDivider, { backgroundColor: colors.homeLine }]} />
+              )}
+              {iHaveTheyWant.length > 0 && (
+                <View style={styles.tradeGroup}>
+                  <Chip
+                    icon="upload"
+                    label={`${iHaveTheyWant.length} pin${iHaveTheyWant.length !== 1 ? 's' : ''} they want`}
+                    tone="forTrade"
+                    variant="solid"
+                  />
+                  <View style={styles.tradePins}>
+                    {iHaveTheyWant.slice(0, 5).map(p => (
+                      <PotentialTradeRow key={p.pinId} pin={p} />
+                    ))}
+                    {iHaveTheyWant.length > 5 && (
+                      <Text style={[styles.moreLabel, { color: colors.homeMuted }]}>
+                        +{iHaveTheyWant.length - 5} more
+                      </Text>
+                    )}
+                  </View>
+                </View>
+              )}
+
+              <View style={styles.safetyNote}>
+                <Feather name="shield" size={11} color={colors.homeMuted} />
+                <Text style={[styles.safetyText, { color: colors.homeMuted }]}>Trading safely</Text>
+              </View>
+
+              {/* Opens a normal chat; never silently creates a formal Trade Request. */}
+              <TouchableOpacity
+                onPress={startConversation}
+                activeOpacity={0.85}
+                style={[styles.convoBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
+              >
+                <Feather name="message-circle" size={16} color={colors.homeSurface} />
+                <Text style={[styles.convoBtnText, { color: colors.homeSurface }]}>Start Conversation</Text>
+              </TouchableOpacity>
+            </View>
+          );
+
+          return (
           <ScrollView
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxxl }}
           >
-            {/* Avatar + identity */}
-            <View style={[styles.hero, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
-              <Avatar uri={profile.avatarUrl} name={profile.username} size={88} style={styles.avatar} seaGlass />
-              <Text style={[styles.displayName, { color: colors.homeInk }]}>
-                @{profile.username}
-              </Text>
+            {isMatchEntry && hasPotentialTrades ? (
+              <>
+                {/* Compact identity — a small row, not the full profile hero,
+                    since PinHunt already told the collector this is a match. */}
+                <View style={[styles.compactHero, { borderBottomColor: colors.homeLine }]}>
+                  <Avatar uri={profile.avatarUrl} name={profile.username} size={44} seaGlass />
+                  <View style={styles.compactIdentity}>
+                    <Text style={[styles.compactName, { color: colors.homeInk }]}>@{profile.username}</Text>
+                    {(profile.town || profile.county || profile.tradingRegion) ? (
+                      <View style={styles.metaRow}>
+                        <Feather name="map-pin" size={12} color={colors.homeMuted} />
+                        <Text style={[styles.compactMeta, { color: colors.homeMuted }]}>
+                          {[profile.town, profile.county].filter(Boolean).join(', ') || profile.tradingRegion}
+                        </Text>
+                      </View>
+                    ) : null}
+                  </View>
+                </View>
 
-              {/* Location */}
-              {(profile.town || profile.county) ? (
-                <View style={styles.metaRow}>
-                  <Feather name="map-pin" size={13} color={colors.homeMuted} />
-                  <Text style={[styles.metaText, { color: colors.homeMuted }]}>
-                    {[profile.town, profile.county].filter(Boolean).join(', ')}
+                <View style={{ marginHorizontal: spacing.lg, marginTop: spacing.lg }}>
+                  <Text style={[styles.matchHeadline, { color: colors.homeInk }]}>
+                    You could trade with {profile.displayName || `@${profile.username}`}
                   </Text>
                 </View>
-              ) : profile.tradingRegion ? (
-                <View style={styles.metaRow}>
-                  <Feather name="map-pin" size={13} color={colors.homeMuted} />
-                  <Text style={[styles.metaText, { color: colors.homeMuted }]}>{profile.tradingRegion}</Text>
+
+                <View style={{ marginHorizontal: spacing.lg, marginTop: spacing.md }}>
+                  {tradeMatchCard}
                 </View>
-              ) : null}
 
-              {/* Trade preference badges */}
-              <View style={styles.badgeRow}>
-                {profile.internationalTradingEnabled && (
-                  <Chip icon="globe" label="Open to international trades" tone="coral" variant="soft" size="sm" />
-                )}
-                {profile.openToLocalTrades && (
-                  <Chip icon="map-pin" label="Local trades" tone="coral" variant="soft" size="sm" />
-                )}
-                {profile.openToPostalTrades && (
-                  <Chip icon="package" label="Postal trades" tone="neutral" variant="soft" size="sm" />
-                )}
-                {profile.happyToTravel && (
-                  <Chip icon="navigation" label="Happy to travel" tone="neutral" variant="soft" size="sm" />
-                )}
-              </View>
+                {bioSection}
 
-              {/* Trade rating badge */}
-              {rating !== null && rating.total > 0 && (() => {
-                const pct = Math.round((rating.positive / rating.total) * 100);
-                const color = pct >= 80 ? colors.owned : pct >= 50 ? colors.homeSandInk : colors.destructive;
-                return (
-                  <View style={[styles.ratingBadge, { backgroundColor: color + '18', borderColor: color + '44' }]}>
-                    <Feather name="thumbs-up" size={11} color={color} />
-                    <Text style={[styles.ratingBadgeText, { color }]}>
-                      {rating.total} trade{rating.total !== 1 ? 's' : ''} · {pct}% positive
-                    </Text>
-                  </View>
-                );
-              })()}
-              {rating !== null && rating.total === 0 && (
-                <Chip label="No trade ratings yet" tone="neutral" variant="soft" size="sm" />
-              )}
-
-              {/* Message button — hidden when Potential Trade Match below already
-                  surfaces Start Conversation as the primary way to reach out. */}
-              {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && (
-                <TouchableOpacity
-                  onPress={startConversation}
-                  activeOpacity={0.85}
-                  style={[styles.messageBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
-                >
-                  <Feather name="mail" size={14} color={colors.homeSurface} />
-                  <Text style={[styles.messageBtnLabel, { color: colors.homeSurface }]}>Message</Text>
-                </TouchableOpacity>
-              )}
-            </View>
-
-            {/* Bio */}
-            {profile.bio ? (
-              <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
-                <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>ABOUT</Text>
-                <View style={[styles.bioCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
-                  <Text style={[styles.bioText, { color: colors.homeInk }]}>{profile.bio}</Text>
-                </View>
-              </View>
-            ) : null}
-
-            {/* ── Potential trades ── */}
-            {(hasPotentialTrades || tradesLoading) && (
-              <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
-                <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>POTENTIAL TRADE MATCH</Text>
-
-                {tradesLoading ? (
-                  <ActivityIndicator color={colors.homeCoral} style={{ marginTop: spacing.sm }} />
-                ) : (
-                  <View
-                    style={[
-                      styles.tradeMatchCard,
-                      { backgroundColor: colors.homeSurface, borderColor: colors.homeLine },
-                    ]}
-                  >
-                    {theyHaveIWant.length > 0 && (
-                      <View style={styles.tradeGroup}>
-                        <Chip
-                          icon="download"
-                          label={`${theyHaveIWant.length} pin${theyHaveIWant.length !== 1 ? 's' : ''} you want`}
-                          tone="wanted"
-                          variant="solid"
-                        />
-                        <View style={styles.tradePins}>
-                          {theyHaveIWant.slice(0, 5).map(p => (
-                            <PotentialTradeRow key={p.pinId} pin={p} />
-                          ))}
-                          {theyHaveIWant.length > 5 && (
-                            <Text style={[styles.moreLabel, { color: colors.homeMuted }]}>
-                              +{theyHaveIWant.length - 5} more
-                            </Text>
-                          )}
-                        </View>
-                      </View>
-                    )}
-                    {theyHaveIWant.length > 0 && iHaveTheyWant.length > 0 && (
-                      <View style={[styles.tradeDivider, { backgroundColor: colors.homeLine }]} />
-                    )}
-                    {iHaveTheyWant.length > 0 && (
-                      <View style={styles.tradeGroup}>
-                        <Chip
-                          icon="upload"
-                          label={`${iHaveTheyWant.length} pin${iHaveTheyWant.length !== 1 ? 's' : ''} they want`}
-                          tone="forTrade"
-                          variant="solid"
-                        />
-                        <View style={styles.tradePins}>
-                          {iHaveTheyWant.slice(0, 5).map(p => (
-                            <PotentialTradeRow key={p.pinId} pin={p} />
-                          ))}
-                          {iHaveTheyWant.length > 5 && (
-                            <Text style={[styles.moreLabel, { color: colors.homeMuted }]}>
-                              +{iHaveTheyWant.length - 5} more
-                            </Text>
-                          )}
-                        </View>
-                      </View>
-                    )}
-
-                    {/* Safety note — compact, not the full guidance paragraph */}
-                    <View style={styles.safetyNote}>
-                      <Feather name="shield" size={11} color={colors.homeMuted} />
-                      <Text style={[styles.safetyText, { color: colors.homeMuted }]}>Trading safely</Text>
+                {/* Secondary — badges/rating, now that the match itself has
+                    already been shown first. */}
+                {(badgeRow || ratingRow) && (
+                  <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
+                    <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>ABOUT {profile.username}</Text>
+                    <View style={styles.secondaryStack}>
+                      {badgeRow}
+                      {ratingRow}
                     </View>
+                  </View>
+                )}
+              </>
+            ) : (
+              <>
+                {/* Avatar + identity — normal profile-first presentation */}
+                <View style={[styles.hero, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
+                  <Avatar uri={profile.avatarUrl} name={profile.username} size={88} style={styles.avatar} seaGlass />
+                  <Text style={[styles.displayName, { color: colors.homeInk }]}>
+                    @{profile.username}
+                  </Text>
 
-                    {/* Start conversation button — opens a normal chat; it does
-                        NOT create a formal Trade Request. */}
+                  {(profile.town || profile.county) ? (
+                    <View style={styles.metaRow}>
+                      <Feather name="map-pin" size={13} color={colors.homeMuted} />
+                      <Text style={[styles.metaText, { color: colors.homeMuted }]}>
+                        {[profile.town, profile.county].filter(Boolean).join(', ')}
+                      </Text>
+                    </View>
+                  ) : profile.tradingRegion ? (
+                    <View style={styles.metaRow}>
+                      <Feather name="map-pin" size={13} color={colors.homeMuted} />
+                      <Text style={[styles.metaText, { color: colors.homeMuted }]}>{profile.tradingRegion}</Text>
+                    </View>
+                  ) : null}
+
+                  {badgeRow}
+                  {ratingRow}
+
+                  {/* Message button — hidden when Potential Trade Match below already
+                      surfaces Start Conversation as the primary way to reach out. */}
+                  {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && (
                     <TouchableOpacity
                       onPress={startConversation}
                       activeOpacity={0.85}
-                      style={[styles.convoBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
+                      style={[styles.messageBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
                     >
-                      <Feather name="message-circle" size={16} color={colors.homeSurface} />
-                      <Text style={[styles.convoBtnText, { color: colors.homeSurface }]}>Start Conversation</Text>
+                      <Feather name="mail" size={14} color={colors.homeSurface} />
+                      <Text style={[styles.messageBtnLabel, { color: colors.homeSurface }]}>Message</Text>
                     </TouchableOpacity>
+                  )}
+                </View>
+
+                {bioSection}
+
+                {(hasPotentialTrades || tradesLoading) && (
+                  <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
+                    <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>POTENTIAL TRADE MATCH</Text>
+                    {tradesLoading ? (
+                      <ActivityIndicator color={colors.homeCoral} style={{ marginTop: spacing.sm }} />
+                    ) : tradeMatchCard}
                   </View>
                 )}
-              </View>
+              </>
             )}
           </ScrollView>
-        )}
+          );
+        })()}
       </View>
     </>
   );
@@ -337,6 +391,17 @@ const styles = StyleSheet.create({
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
   metaText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   badgeRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: spacing.xs, marginTop: spacing.xs },
+  // Match-first entry — compact identity row instead of the full hero
+  compactHero: {
+    flexDirection: 'row', alignItems: 'center', gap: spacing.md,
+    paddingTop: spacing.xxl, paddingBottom: spacing.lg, paddingHorizontal: spacing.lg,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  compactIdentity: { flex: 1, gap: 2 },
+  compactName: { fontSize: 16, fontFamily: 'Inter_700Bold' },
+  compactMeta: { fontSize: 12.5, fontFamily: 'Inter_400Regular' },
+  matchHeadline: { fontSize: 19, fontFamily: 'Inter_700Bold', lineHeight: 24 },
+  secondaryStack: { gap: spacing.sm, alignItems: 'center' },
   ratingBadge: {
     flexDirection: 'row',
     alignItems: 'center',

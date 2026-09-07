@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  Dimensions,
   Image,
   StyleSheet,
   Text,
   TouchableOpacity,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
@@ -14,9 +14,6 @@ import { CollectionBadge } from './CollectionBadge';
 import { getPinImageSource } from '@/utils/pinImage';
 import { useLatestMarketValue, formatLatestValue } from '@/hooks/useMarketValue';
 import type { CataloguePin } from '@workspace/pin-repository';
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const GRID_CARD_WIDTH = (SCREEN_WIDTH - 16 * 2 - 12) / 2;
 
 const BRAND_COLORS: Record<string, string> = {
   'Disney Parks': '#1A4A8A',
@@ -40,6 +37,8 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
   const entry = getEntry(pin.id);
   const status = entry?.status ?? 'none';
   const added = status !== 'none';
+  const { width: screenWidth } = useWindowDimensions();
+  const gridCardWidth = (screenWidth - 16 * 2 - 12) / 2;
 
   const t = seaGlass
     ? {
@@ -91,7 +90,9 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
   const latest = useLatestMarketValue(pin.id);
   const priceLabel = latest
     ? formatLatestValue(latest)
-    : `£${(pin.estimatedValueGBP ?? 0).toFixed(0)}`;
+    : pin.estimatedValueGBP
+      ? `£${pin.estimatedValueGBP.toFixed(0)}`
+      : null;
 
   if (mode === 'list') {
     return (
@@ -129,10 +130,12 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
           <Text style={[styles.listMeta, { color: t.muted }]} numberOfLines={1}>
             {pin.collection}
           </Text>
-          <View style={styles.listFooter}>
-            <Text style={[styles.listPrice, { color: t.gold }]}>
-              {priceLabel}
-            </Text>
+          <View style={[styles.listFooter, !priceLabel && styles.footerNoPrice]}>
+            {priceLabel ? (
+              <Text style={[styles.listPrice, { color: t.gold }]}>
+                {priceLabel}
+              </Text>
+            ) : null}
             {status !== 'none' && <CollectionBadge status={status} size="sm" />}
             {quickAddButton}
           </View>
@@ -157,12 +160,12 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
           borderRadius: t.radius,
           borderColor: t.border,
           shadowColor: t.shadow,
-          width: GRID_CARD_WIDTH,
+          width: gridCardWidth,
         },
       ]}
     >
       <View style={styles.imageWrap}>
-        <Image source={getPinImageSource(pin)} style={styles.gridImage} />
+        <Image source={getPinImageSource(pin)} style={[styles.gridImage, { height: gridCardWidth }]} />
         {pin.limitedEditionSize ? (
           <View style={[styles.leBadge, { backgroundColor: t.gold }]}>
             <Text style={styles.leLabel}>LE</Text>
@@ -191,10 +194,12 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
             {pin.brand}
           </Text>
         </View>
-        <View style={styles.gridFooter}>
-          <Text style={[styles.gridPrice, { color: t.gold }]}>
-            {priceLabel}
-          </Text>
+        <View style={[styles.gridFooter, !priceLabel && styles.footerNoPrice]}>
+          {priceLabel ? (
+            <Text style={[styles.gridPrice, { color: t.gold }]}>
+              {priceLabel}
+            </Text>
+          ) : null}
           {status !== 'none' && <CollectionBadge status={status} size="sm" />}
           {quickAddButton}
         </View>
@@ -220,7 +225,6 @@ const styles = StyleSheet.create({
   },
   gridImage: {
     width: '100%',
-    height: GRID_CARD_WIDTH,
     resizeMode: 'cover',
   },
   gridInfo: {
@@ -237,6 +241,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 2,
+  },
+  footerNoPrice: {
+    justifyContent: 'flex-end',
   },
   gridPrice: {
     fontSize: 14,

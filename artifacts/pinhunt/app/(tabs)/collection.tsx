@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
-  Dimensions,
   FlatList,
   Image,
   Modal,
@@ -10,6 +9,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -30,9 +30,6 @@ import {
   type CataloguePin,
   type PinSetSummary,
 } from '@workspace/pin-repository';
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const GRID_CARD_WIDTH = (SCREEN_WIDTH - 16 * 2 - 12) / 2;
 
 type Tab = 'boards' | 'sets' | 'traders' | 'iso';
 // No icons here — at 4-up and ~375px, the icon + gap is exactly the width
@@ -109,6 +106,8 @@ function processPins(pins: CataloguePin[], filter: PinFilterType, sort: PinSortT
 
 export default function CollectionScreen() {
   const colors = useColors();
+  const { width: screenWidth } = useWindowDimensions();
+  const gridCardWidth = (screenWidth - 16 * 2 - 12) / 2;
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const params = useLocalSearchParams<{ tab?: string }>();
@@ -525,7 +524,7 @@ export default function CollectionScreen() {
             // Boards can just use BoardCard to look identical to other board locations
             if (group.isBoard) {
               return (
-                <View style={s.gridItemWrap}>
+                <View style={[s.gridItemWrap, { width: gridCardWidth }]}>
                   <BoardCard
                     board={{ id: group.id, name: group.title, pinIds: group.pins.map(p => p.id), createdAt: '', isCustom: true }}
                     pins={group.pins}
@@ -539,8 +538,8 @@ export default function CollectionScreen() {
             // Sets use the visual group card
             const preview = group.pins.slice(0, 4);
             return (
-              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} style={[s.groupCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
-                <View style={[s.groupPreviewArea, { backgroundColor: colors.homeAqua }]}>
+              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} style={[s.groupCard, { width: gridCardWidth, backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                <View style={[s.groupPreviewArea, { height: gridCardWidth * 0.8, backgroundColor: colors.homeAqua }]}>
                   {preview.length === 0 ? (
                     <View style={s.groupEmpty}>
                       <Feather name="folder" size={24} color={colors.homeMuted} />
@@ -569,7 +568,7 @@ export default function CollectionScreen() {
           }
           const pin = item as CataloguePin;
           return (
-            <View style={s.gridItemWrap}>
+            <View style={[s.gridItemWrap, { width: gridCardWidth }]}>
               <PinCard pin={pin} mode="grid" onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })} seaGlass />
               {(collection[pin.id]?.quantity ?? 1) > 1 && (
                 <View style={[s.quantityBadge, { backgroundColor: colors.homeInk }]}>
@@ -868,11 +867,11 @@ const s = StyleSheet.create({
   utilBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
   flatListContent: { paddingHorizontal: 16 },
   gridRow: { gap: 12, justifyContent: 'flex-start' },
-  gridItemWrap: { width: GRID_CARD_WIDTH, marginBottom: 12, position: 'relative' },
+  gridItemWrap: { marginBottom: 12, position: 'relative' },
   quantityBadge: { position: 'absolute', top: 8, right: 8, minWidth: 28, height: 22, borderRadius: 11, paddingHorizontal: 7, alignItems: 'center', justifyContent: 'center' },
   quantityBadgeText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
-  groupCard: { width: GRID_CARD_WIDTH, borderRadius: 18, borderWidth: StyleSheet.hairlineWidth, overflow: 'hidden', marginBottom: 12 },
-  groupPreviewArea: { height: GRID_CARD_WIDTH * 0.8 },
+  groupCard: { borderRadius: 18, borderWidth: StyleSheet.hairlineWidth, overflow: 'hidden', marginBottom: 12 },
+  groupPreviewArea: {},
   groupEmpty: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   groupPreviewSingle: { width: '100%', height: '100%', resizeMode: 'cover' },
   groupPreviewGrid: { flexDirection: 'row', flexWrap: 'wrap', width: '100%', height: '100%' },

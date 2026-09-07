@@ -8,11 +8,19 @@
  * hooks/useFindTrades.ts for the calculations behind each section — this
  * file is presentation only.
  *
- * Each horizontal shelf is given an explicit `height` on its ScrollView.
- * Native (unlike React Native Web, which sizes the underlying div to
- * content automatically) doesn't guarantee a horizontal ScrollView's
- * cross-axis size resolves from its children — leaving it unset caused a
- * large blank gap and pushed later sections out of view on a real device.
+ * Native layout note: each horizontal shelf below is a plain
+ * `<ScrollView horizontal>` with NO explicit height/flexGrow override —
+ * matching the proven working pattern already in this codebase (Pin
+ * Detail's "MORE FROM THIS SET" shelf, app/pin/[id].tsx). That shelf's
+ * children (CompactPinTile) are fully deterministic: fixed
+ * width/height, no `flex`, no negative margins. An earlier version of
+ * this screen fought native-only layout ambiguity by guessing explicit
+ * ScrollView heights instead — that didn't hold up on a real device.
+ * The actual cause was `flex: 1` (twice) and a negative-margin
+ * thumbnail overlap inside the Potential Trades card, the one card that
+ * didn't follow the deterministic-sizing pattern every other shelf
+ * already used. Every card here now sizes purely from its own fixed
+ * dimensions and text content, same as the proven reference.
  */
 import React from 'react';
 import {
@@ -27,17 +35,13 @@ import {
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
-import { ScreenContainer, SetProgressBar } from '@/components/ui';
+import { ScreenContainer } from '@/components/ui';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 import { formatMatchSummary } from '@/utils/tradeMatch';
 import { useFindTrades, type PotentialTradeCard, type SetOpportunity } from '@/hooks/useFindTrades';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
-
-const ISO_SHELF_HEIGHT = 148;
-const PT_SHELF_HEIGHT = 172;
-const SET_SHELF_HEIGHT = 68;
 
 function pinImageSource(imageUrl?: string) {
   return imageUrl ? { uri: imageUrl } : PLACEHOLDER_IMAGE;
@@ -96,8 +100,12 @@ export default function FindTradesScreen() {
           ) : (
             <>
               {isoOpportunities.length > 0 && (
-                <Section title="On your ISO" subtitle={`${isoOpportunities.length} pin${isoOpportunities.length === 1 ? '' : 's'} you're looking for ${isoOpportunities.length === 1 ? 'is' : 'are'} available`}>
-                  <HScroll height={ISO_SHELF_HEIGHT}>
+                <View style={styles.section}>
+                  <SectionHeader icon="search" tint={colors.wanted} title="On your ISO" colors={colors} />
+                  <Text style={[styles.sectionSubtitle, { color: colors.homeMuted }]}>
+                    {isoOpportunities.length} pin{isoOpportunities.length === 1 ? '' : 's'} you're looking for {isoOpportunities.length === 1 ? 'is' : 'are'} available
+                  </Text>
+                  <Shelf>
                     {isoOpportunities.map(op => (
                       <IsoCard
                         key={op.pinId}
@@ -107,13 +115,17 @@ export default function FindTradesScreen() {
                         onPress={() => goToTraders(op.pinId)}
                       />
                     ))}
-                  </HScroll>
-                </Section>
+                  </Shelf>
+                </View>
               )}
 
               {potentialTrades.length > 0 && (
-                <Section title="Potential trades" subtitle="Collectors who have pins you want — and want yours">
-                  <HScroll height={PT_SHELF_HEIGHT}>
+                <View style={styles.section}>
+                  <SectionHeader icon="repeat" tint={colors.homeCoral} title="Potential trades" colors={colors} />
+                  <Text style={[styles.sectionSubtitle, { color: colors.homeMuted }]}>
+                    Collectors who have pins you want — and want yours
+                  </Text>
+                  <Shelf>
                     {potentialTrades.map(card => (
                       <PotentialTradeHero
                         key={card.traderId}
@@ -122,29 +134,38 @@ export default function FindTradesScreen() {
                         onPress={() => card.profile && goToCollector(card.profile.username)}
                       />
                     ))}
-                  </HScroll>
-                </Section>
+                  </Shelf>
+                </View>
               )}
 
               {setOpportunities.length > 0 && (
-                <Section title="Complete your sets">
-                  <HScroll height={SET_SHELF_HEIGHT}>
+                <View style={styles.section}>
+                  <SectionHeader icon="layers" tint={colors.homeSand} title="Complete your sets" colors={colors} />
+                  <Shelf>
                     {setOpportunities.map(set => (
                       <SetCard key={set.setName} set={set} colors={colors} onPress={() => goToSet(set.setName)} />
                     ))}
-                  </HScroll>
-                </Section>
+                  </Shelf>
+                </View>
               )}
 
-              {discoveryItems.length > 0 && (
-                <Section title="Based on your collection">
-                  <View style={styles.grid}>
+              <View style={styles.section}>
+                <SectionHeader icon="compass" tint={colors.homeTealSoft} title="Based on your collection" colors={colors} />
+                {discoveryItems.length > 0 ? (
+                  <View style={styles.discoveryGrid}>
                     {discoveryItems.map(item => (
                       <DiscoveryTile key={item.pinId} item={item} colors={colors} onPress={() => goToTraders(item.pinId)} />
                     ))}
                   </View>
-                </Section>
-              )}
+                ) : (
+                  <View style={[styles.discoveryEmpty, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                    <Feather name="grid" size={20} color={colors.homeMuted} />
+                    <Text style={[styles.discoveryEmptyText, { color: colors.homeMuted }]}>
+                      Build a Board with a few pins of one character and we'll start recommending trades based on it.
+                    </Text>
+                  </View>
+                )}
+              </View>
             </>
           )}
         </ScrollView>
@@ -153,34 +174,45 @@ export default function FindTradesScreen() {
   );
 }
 
-// ─── Layout helpers ─────────────────────────────────────────────────────────
+// ─── Section header ─────────────────────────────────────────────────────────
+// A leading icon in a section-specific accent colour, reused consistently
+// (ISO/wanted-orange, Potential Trades/coral, Sets/sand, Discovery/teal) —
+// the same colour recurs on that section's badges elsewhere on the page, so
+// it doubles as a wayfinding cue while scrolling.
 
-function Section({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
-  const colors = useColors();
+function SectionHeader({ icon, tint, title, colors }: {
+  icon: React.ComponentProps<typeof Feather>['name'];
+  tint: string;
+  title: string;
+  colors: ReturnType<typeof useColors>;
+}) {
   return (
-    <View style={{ marginBottom: spacing.sm + 2 }}>
+    <View style={styles.sectionHeadRow}>
+      <View style={[styles.sectionIconWrap, { backgroundColor: tint + '1c' }]}>
+        <Feather name={icon} size={13} color={tint} />
+      </View>
       <Text style={[styles.sectionTitle, { color: colors.homeInk }]}>{title}</Text>
-      {subtitle && <Text style={[styles.sectionSubtitle, { color: colors.homeMuted }]}>{subtitle}</Text>}
-      {children}
     </View>
   );
 }
 
-/** Explicit `height` — see the file header note on native ScrollView sizing. */
-function HScroll({ height, children }: { height: number; children: React.ReactNode }) {
+// ─── Shelf ──────────────────────────────────────────────────────────────────
+// A partially visible next card is its own affordance — how the App Store,
+// Airbnb and Spotify all handle "there's more, swipe" in a horizontal shelf,
+// with no extra decoration. A translucent overlay sitting on static content
+// reads as a glitch more than a hint, so this is just a plain ScrollView.
+
+function Shelf({ children }: { children: React.ReactNode }) {
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      style={{ height }}
-      contentContainerStyle={styles.hscroll}
-    >
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.shelf}>
       {children}
     </ScrollView>
   );
 }
 
 // ─── On Your ISO ────────────────────────────────────────────────────────────
+// Deterministic sizing: fixed card width, fixed image height, numberOfLines-
+// capped text. No flex, no negative margins — same shape as CompactPinTile.
 
 function IsoCard({ opportunity, hasMatch, colors, onPress }: {
   opportunity: PinOpportunity;
@@ -192,18 +224,18 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
-      style={[styles.isoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+      style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
-      <View style={{ position: 'relative' }}>
-        <Image source={pinImageSource(opportunity.imageUrl)} style={styles.isoImage} resizeMode="contain" />
+      <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
+        <Image source={pinImageSource(opportunity.imageUrl)} style={styles.tileImage} resizeMode="contain" />
         {hasMatch && (
           <View style={[styles.matchDot, { backgroundColor: colors.homeCoral }]}>
             <Feather name="repeat" size={9} color={colors.homeSurface} />
           </View>
         )}
       </View>
-      <Text numberOfLines={2} style={[styles.isoTitle, { color: colors.homeInk }]}>{opportunity.title}</Text>
-      <Text style={[styles.isoMeta, { color: colors.homeMuted }]}>
+      <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{opportunity.title}</Text>
+      <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>
         For trade · {opportunity.collectors.length} collector{opportunity.collectors.length === 1 ? '' : 's'}
       </Text>
     </TouchableOpacity>
@@ -211,6 +243,13 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
 }
 
 // ─── Potential Trades (hero) ────────────────────────────────────────────────
+// The one deliberate exception to the shared tile grammar: bigger, richer,
+// built around the collector rather than a single pin — this is PinHunt's
+// rarest, most differentiated result and should feel like it. The avatar
+// sits next to the collector's name (not as an unexplained floating badge),
+// two matched pins sit side by side below, and a real "View match" button
+// makes the action obvious. Border/radius still match the rest of the page
+// so it reads as special content on a calm page, not a different app.
 
 function PotentialTradeHero({ card, colors, onPress }: {
   card: PotentialTradeCard;
@@ -218,40 +257,37 @@ function PotentialTradeHero({ card, colors, onPress }: {
   onPress: () => void;
 }) {
   const summary = formatMatchSummary(card.theyHaveCount, card.iHaveCount);
+  const [firstPin, secondPin] = card.samplePins;
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
-      style={[styles.ptCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeCoral }]}
+      style={[styles.ptCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
       <View style={[styles.ptLabel, { backgroundColor: colors.homeCoral }]}>
         <Feather name="repeat" size={9} color={colors.homeSurface} />
         <Text style={styles.ptLabelText}>TWO-WAY MATCH</Text>
       </View>
-      <View style={styles.ptRow}>
-        <Avatar uri={card.profile?.avatarUrl} name={card.profile?.username ?? '?'} size={26} seaGlass />
-        <View style={{ flex: 1 }}>
-          <Text style={[styles.ptName, { color: colors.homeInk }]} numberOfLines={1}>
+      <View style={styles.ptPersonRow}>
+        <Avatar uri={card.profile?.avatarUrl} name={card.profile?.username ?? '?'} size={30} seaGlass />
+        <View style={styles.ptPersonCol}>
+          <Text numberOfLines={1} style={[styles.ptName, { color: colors.homeInk }]}>
             {card.profile?.displayName || card.profile?.username || 'Collector'}
           </Text>
           {card.profile?.town ? (
-            <Text style={[styles.ptMeta, { color: colors.homeMuted }]} numberOfLines={1}>{card.profile.town}</Text>
+            <Text numberOfLines={1} style={[styles.ptTown, { color: colors.homeMuted }]}>{card.profile.town}</Text>
           ) : null}
         </View>
       </View>
-      <View style={styles.ptThumbRow}>
-        <View style={styles.ptStack}>
-          {card.samplePins.map((p, i) => (
-            <Image
-              key={i}
-              source={pinImageSource(p.imageUrl)}
-              style={[styles.ptThumb, { backgroundColor: colors.homeAqua, marginLeft: i > 0 ? -12 : 0, borderColor: colors.homeSurface }]}
-              resizeMode="contain"
-            />
-          ))}
+      <View style={[styles.ptImageWrap, { backgroundColor: colors.homeAqua }]}>
+        <View style={styles.ptImageHalf}>
+          {firstPin && <Image source={pinImageSource(firstPin.imageUrl)} style={styles.ptImage} resizeMode="contain" />}
         </View>
-        {summary && <Text numberOfLines={2} style={[styles.ptSummary, { color: colors.homeMuted }]}>{summary}</Text>}
+        <View style={styles.ptImageHalf}>
+          {secondPin && <Image source={pinImageSource(secondPin.imageUrl)} style={styles.ptImage} resizeMode="contain" />}
+        </View>
       </View>
+      <Text numberOfLines={2} style={[styles.ptMeta, { color: colors.homeMuted }]}>{summary}</Text>
       <View style={[styles.ptCta, { backgroundColor: colors.homeCoral }]}>
         <Text style={[styles.ptCtaText, { color: colors.homeSurface }]}>View match</Text>
       </View>
@@ -260,41 +296,55 @@ function PotentialTradeHero({ card, colors, onPress }: {
 }
 
 // ─── Complete Your Sets ─────────────────────────────────────────────────────
+// Same tile grammar too: the image is a pin that's actually missing from
+// this set and currently for trade — not just any pin from it — so the
+// tile itself explains why the set surfaced. Progress is a thin strip along
+// the image's bottom edge rather than a separate row, keeping the tile the
+// same height as ISO/Discovery.
 
 function SetCard({ set, colors, onPress }: { set: SetOpportunity; colors: ReturnType<typeof useColors>; onPress: () => void }) {
   const pct = set.totalCount > 0 ? set.ownedCount / set.totalCount : 0;
+  const representative = set.available[0];
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
       style={[styles.setCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
-      <Text numberOfLines={1} style={[styles.setTitle, { color: colors.homeInk }]}>{set.setName}</Text>
-      <Text style={[styles.setSub, { color: colors.homeMuted }]}>
-        {set.ownedCount} / {set.totalCount} collected
+      <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
+        <Image source={pinImageSource(representative?.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+        <View style={styles.setProgressTrack}>
+          <View style={[styles.setProgressFill, { width: `${Math.round(pct * 100)}%`, backgroundColor: colors.homeSand }]} />
+        </View>
+      </View>
+      <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{set.setName}</Text>
+      <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>
+        {set.ownedCount}/{set.totalCount}
         {set.available.length > 0 ? <Text style={{ color: colors.homeSand, fontFamily: 'Inter_600SemiBold' }}> · {set.available.length} available</Text> : null}
       </Text>
-      <SetProgressBar progress={pct} trackColor={colors.homeLine} fillColor={colors.homeSand} height={4} />
     </TouchableOpacity>
   );
 }
 
 // ─── Based on Your Collection ───────────────────────────────────────────────
+// Deliberately the exact same tile as On Your ISO (same size, image
+// treatment, typography) — this pool can grow much larger than ISO's, so it
+// wraps into a grid rather than scrolling as one more shelf.
 
 function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors: ReturnType<typeof useColors>; onPress: () => void }) {
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
-      style={[styles.gcard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+      style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
-      <Image source={pinImageSource(item.imageUrl)} style={styles.gImage} resizeMode="contain" />
-      <View style={{ padding: spacing.sm }}>
-        <Text numberOfLines={2} style={[styles.gTitle, { color: colors.homeInk }]}>{item.title}</Text>
-        <Text style={[styles.gMeta, { color: colors.homeMuted }]}>
-          For trade · {item.collectorCount} collector{item.collectorCount === 1 ? '' : 's'}
-        </Text>
+      <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
+        <Image source={pinImageSource(item.imageUrl)} style={styles.tileImage} resizeMode="contain" />
       </View>
+      <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{item.title}</Text>
+      <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>
+        For trade · {item.collectorCount} collector{item.collectorCount === 1 ? '' : 's'}
+      </Text>
     </TouchableOpacity>
   );
 }
@@ -305,41 +355,53 @@ const styles = StyleSheet.create({
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
 
-  sectionTitle: { fontSize: 15.5, fontFamily: 'Inter_700Bold', marginBottom: 2 },
-  sectionSubtitle: { fontSize: 11.5, fontFamily: 'Inter_400Regular', marginBottom: spacing.sm - 2 },
-  hscroll: { paddingBottom: 2, paddingRight: spacing.lg },
+  section: { marginBottom: spacing.xl + 2 },
+  sectionHeadRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2, marginBottom: 2 },
+  sectionIconWrap: { width: 24, height: 24, borderRadius: 7, alignItems: 'center', justifyContent: 'center' },
+  sectionTitle: { fontSize: 15.5, fontFamily: 'Inter_700Bold' },
+  sectionSubtitle: { fontSize: 11.5, fontFamily: 'Inter_400Regular', marginBottom: spacing.sm - 2, marginLeft: 32 },
+  // Plain contentContainerStyle only — no `style`/height on the ScrollView
+  // itself. Matches app/pin/[id].tsx's proven "MORE FROM THIS SET" shelf.
+  shelf: { paddingBottom: 2, paddingRight: spacing.lg },
 
-  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
-
-  // ISO — image-dominant, compact, uniform border (MATCH signalled by the small dot only)
-  isoCard: { width: 102, borderRadius: radius.md, padding: 6, borderWidth: 1, marginRight: spacing.sm },
-  isoImage: { width: '100%', height: 70, borderRadius: radius.sm - 2 },
+  // ─── Shared tile grammar — used identically by On Your ISO, Complete Your
+  // Sets (image portion) and Based on Your Collection: image mat → title →
+  // meta. marginRight spaces cards within a horizontal shelf; marginBottom
+  // spaces rows when the same tile wraps into Based on Your Collection's grid.
+  tileCard: { width: 102, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, marginRight: spacing.sm, marginBottom: spacing.sm },
+  tileImageWrap: { width: 86, height: 86, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center', padding: 6 },
+  tileImage: { width: '100%', height: '100%' },
   matchDot: { position: 'absolute', top: 4, right: 4, width: 17, height: 17, borderRadius: 9, alignItems: 'center', justifyContent: 'center' },
-  isoTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', lineHeight: 13.5, marginTop: 5 },
-  isoMeta: { fontSize: 9.5, fontFamily: 'Inter_400Regular', marginTop: 1 },
+  tileTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', lineHeight: 13.5, marginTop: 5 },
+  tileMeta: { fontSize: 9.5, fontFamily: 'Inter_400Regular', marginTop: 1 },
 
-  // Potential trades — hero, but compact
-  ptCard: { width: 206, borderRadius: radius.lg, padding: spacing.sm + 2, borderWidth: 1, marginRight: spacing.sm },
-  ptLabel: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-start', paddingHorizontal: 7, paddingVertical: 2.5, borderRadius: 6, marginBottom: 6 },
+  // Potential trades — hero: bigger card, collector identity up front,
+  // two matched pins side by side, a real CTA. Border/radius still match
+  // the rest of the page so it reads as special content, not a different app.
+  ptCard: { width: 214, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, marginRight: spacing.sm },
+  ptLabel: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-start', paddingHorizontal: 7, paddingVertical: 2.5, borderRadius: 6, marginBottom: spacing.sm },
   ptLabelText: { fontSize: 9, fontFamily: 'Inter_700Bold', color: '#fff', letterSpacing: 0.3 },
-  ptRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2, marginBottom: 6 },
-  ptName: { fontSize: 12.5, fontFamily: 'Inter_600SemiBold' },
-  ptMeta: { fontSize: 10, fontFamily: 'Inter_400Regular' },
-  ptThumbRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2, marginBottom: spacing.sm - 2 },
-  ptStack: { flexDirection: 'row' },
-  ptThumb: { width: 40, height: 40, borderRadius: 10, borderWidth: 2 },
-  ptSummary: { fontSize: 10.5, fontFamily: 'Inter_400Regular', flex: 1, lineHeight: 14 },
-  ptCta: { paddingVertical: 7, borderRadius: radius.sm, alignItems: 'center' },
-  ptCtaText: { fontSize: 12, fontFamily: 'Inter_700Bold' },
+  ptPersonRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2, marginBottom: spacing.sm },
+  ptPersonCol: { width: 160 },
+  ptName: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  ptTown: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: 1 },
+  ptImageWrap: { flexDirection: 'row', gap: 4, width: '100%', height: 92, borderRadius: radius.sm, padding: 6 },
+  ptImageHalf: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  ptImage: { width: '100%', height: '100%' },
+  ptMeta: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: spacing.sm - 2, marginBottom: spacing.sm - 2, lineHeight: 14 },
+  ptCta: { paddingVertical: spacing.sm - 1, borderRadius: radius.sm, alignItems: 'center' },
+  ptCtaText: { fontSize: 12.5, fontFamily: 'Inter_700Bold' },
 
-  // Complete your sets — minimal, information-only
-  setCard: { width: 156, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, marginRight: spacing.sm, justifyContent: 'center' },
-  setTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold', lineHeight: 15 },
-  setSub: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: 1, marginBottom: 6 },
+  // Complete your sets — same grammar as the shared tile, card just a touch
+  // wider to fit the "X/Y · N available" meta line comfortably.
+  setCard: { width: 140, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, marginRight: spacing.sm },
+  setProgressTrack: { position: 'absolute', bottom: 0, left: 0, right: 0, height: 4, backgroundColor: 'rgba(0,0,0,0.12)' },
+  setProgressFill: { height: '100%' },
 
-  // Discovery grid
-  gcard: { width: '48%', borderRadius: radius.md, borderWidth: 1, overflow: 'hidden' },
-  gImage: { width: '100%', height: 100, backgroundColor: 'transparent' },
-  gTitle: { fontSize: 12.5, fontFamily: 'Inter_600SemiBold', lineHeight: 16 },
-  gMeta: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  // Based on Your Collection — the shared tile, wrapped into a grid (no
+  // shelf) since this pool can grow much larger than a single row.
+  discoveryGrid: { flexDirection: 'row', flexWrap: 'wrap' },
+
+  discoveryEmpty: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, borderRadius: radius.md, borderWidth: 1, padding: spacing.md },
+  discoveryEmptyText: { flex: 1, fontSize: 12.5, fontFamily: 'Inter_400Regular', lineHeight: 17 },
 });

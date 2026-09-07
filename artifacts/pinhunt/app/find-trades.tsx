@@ -1,10 +1,18 @@
 /**
  * Find Trades — "what could I trade for today?" A personalised discovery
- * screen, not a trader directory. Four sections, in priority order:
- * On Your ISO (direct, explicit signal) → Complete Your Sets → Potential
- * Trades (rare two-way matches) → Based on Your Collection (open-ended
- * discovery inferred from Boards/Owned pins). See utils/findTradesEngine.ts
- * and hooks/useFindTrades.ts for the calculations behind each section.
+ * feed, not a trader directory. Four sections, in priority order:
+ * On Your ISO (direct, explicit signal) → Potential Trades (rare two-way
+ * matches — PinHunt's most differentiated result) → Complete Your Sets →
+ * Based on Your Collection (open-ended discovery inferred from
+ * Boards/Owned pins). See utils/findTradesEngine.ts and
+ * hooks/useFindTrades.ts for the calculations behind each section — this
+ * file is presentation only.
+ *
+ * Each horizontal shelf is given an explicit `height` on its ScrollView.
+ * Native (unlike React Native Web, which sizes the underlying div to
+ * content automatically) doesn't guarantee a horizontal ScrollView's
+ * cross-axis size resolves from its children — leaving it unset caused a
+ * large blank gap and pushed later sections out of view on a real device.
  */
 import React from 'react';
 import {
@@ -26,6 +34,10 @@ import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 import { formatMatchSummary } from '@/utils/tradeMatch';
 import { useFindTrades, type PotentialTradeCard, type SetOpportunity } from '@/hooks/useFindTrades';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
+
+const ISO_SHELF_HEIGHT = 148;
+const PT_SHELF_HEIGHT = 172;
+const SET_SHELF_HEIGHT = 68;
 
 function pinImageSource(imageUrl?: string) {
   return imageUrl ? { uri: imageUrl } : PLACEHOLDER_IMAGE;
@@ -85,7 +97,7 @@ export default function FindTradesScreen() {
             <>
               {isoOpportunities.length > 0 && (
                 <Section title="On your ISO" subtitle={`${isoOpportunities.length} pin${isoOpportunities.length === 1 ? '' : 's'} you're looking for ${isoOpportunities.length === 1 ? 'is' : 'are'} available`}>
-                  <HScroll>
+                  <HScroll height={ISO_SHELF_HEIGHT}>
                     {isoOpportunities.map(op => (
                       <IsoCard
                         key={op.pinId}
@@ -99,19 +111,9 @@ export default function FindTradesScreen() {
                 </Section>
               )}
 
-              {setOpportunities.length > 0 && (
-                <Section title="Complete your sets">
-                  <HScroll>
-                    {setOpportunities.map(set => (
-                      <SetCard key={set.setName} set={set} colors={colors} onPress={() => goToSet(set.setName)} />
-                    ))}
-                  </HScroll>
-                </Section>
-              )}
-
               {potentialTrades.length > 0 && (
-                <Section title="Potential trades">
-                  <HScroll>
+                <Section title="Potential trades" subtitle="Collectors who have pins you want — and want yours">
+                  <HScroll height={PT_SHELF_HEIGHT}>
                     {potentialTrades.map(card => (
                       <PotentialTradeHero
                         key={card.traderId}
@@ -119,6 +121,16 @@ export default function FindTradesScreen() {
                         colors={colors}
                         onPress={() => card.profile && goToCollector(card.profile.username)}
                       />
+                    ))}
+                  </HScroll>
+                </Section>
+              )}
+
+              {setOpportunities.length > 0 && (
+                <Section title="Complete your sets">
+                  <HScroll height={SET_SHELF_HEIGHT}>
+                    {setOpportunities.map(set => (
+                      <SetCard key={set.setName} set={set} colors={colors} onPress={() => goToSet(set.setName)} />
                     ))}
                   </HScroll>
                 </Section>
@@ -146,7 +158,7 @@ export default function FindTradesScreen() {
 function Section({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
   const colors = useColors();
   return (
-    <View style={{ marginBottom: spacing.md }}>
+    <View style={{ marginBottom: spacing.sm + 2 }}>
       <Text style={[styles.sectionTitle, { color: colors.homeInk }]}>{title}</Text>
       {subtitle && <Text style={[styles.sectionSubtitle, { color: colors.homeMuted }]}>{subtitle}</Text>}
       {children}
@@ -154,9 +166,15 @@ function Section({ title, subtitle, children }: { title: string; subtitle?: stri
   );
 }
 
-function HScroll({ children }: { children: React.ReactNode }) {
+/** Explicit `height` — see the file header note on native ScrollView sizing. */
+function HScroll({ height, children }: { height: number; children: React.ReactNode }) {
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hscroll}>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={{ height }}
+      contentContainerStyle={styles.hscroll}
+    >
       {children}
     </ScrollView>
   );
@@ -174,17 +192,13 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
-      style={[
-        styles.isoCard,
-        { backgroundColor: colors.homeSurface, borderColor: hasMatch ? colors.homeCoral : colors.homeLine, borderWidth: hasMatch ? 1.5 : 1 },
-      ]}
+      style={[styles.isoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
       <View style={{ position: 'relative' }}>
         <Image source={pinImageSource(opportunity.imageUrl)} style={styles.isoImage} resizeMode="contain" />
         {hasMatch && (
-          <View style={[styles.matchBadge, { backgroundColor: colors.homeCoral }]}>
+          <View style={[styles.matchDot, { backgroundColor: colors.homeCoral }]}>
             <Feather name="repeat" size={9} color={colors.homeSurface} />
-            <Text style={styles.matchBadgeText}>MATCH</Text>
           </View>
         )}
       </View>
@@ -196,31 +210,7 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
   );
 }
 
-// ─── Complete Your Sets ─────────────────────────────────────────────────────
-
-function SetCard({ set, colors, onPress }: { set: SetOpportunity; colors: ReturnType<typeof useColors>; onPress: () => void }) {
-  const pct = set.totalCount > 0 ? set.ownedCount / set.totalCount : 0;
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      activeOpacity={0.85}
-      style={[styles.setCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
-    >
-      {set.available.length > 0 && (
-        <View style={[styles.setBadge, { backgroundColor: colors.homeSand + '1c' }]}>
-          <Text style={[styles.setBadgeText, { color: colors.homeSand }]}>
-            {set.available.length} available
-          </Text>
-        </View>
-      )}
-      <Text numberOfLines={2} style={[styles.setTitle, { color: colors.homeInk }]}>{set.setName}</Text>
-      <Text style={[styles.setSub, { color: colors.homeMuted }]}>{set.ownedCount} / {set.totalCount} collected</Text>
-      <SetProgressBar progress={pct} trackColor={colors.homeLine} fillColor={colors.homeSand} />
-    </TouchableOpacity>
-  );
-}
-
-// ─── Potential Trades ───────────────────────────────────────────────────────
+// ─── Potential Trades (hero) ────────────────────────────────────────────────
 
 function PotentialTradeHero({ card, colors, onPress }: {
   card: PotentialTradeCard;
@@ -235,20 +225,17 @@ function PotentialTradeHero({ card, colors, onPress }: {
       style={[styles.ptCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeCoral }]}
     >
       <View style={[styles.ptLabel, { backgroundColor: colors.homeCoral }]}>
-        <Feather name="repeat" size={10} color={colors.homeSurface} />
+        <Feather name="repeat" size={9} color={colors.homeSurface} />
         <Text style={styles.ptLabelText}>TWO-WAY MATCH</Text>
       </View>
       <View style={styles.ptRow}>
-        <Avatar uri={card.profile?.avatarUrl} name={card.profile?.username ?? '?'} size={30} seaGlass />
+        <Avatar uri={card.profile?.avatarUrl} name={card.profile?.username ?? '?'} size={26} seaGlass />
         <View style={{ flex: 1 }}>
           <Text style={[styles.ptName, { color: colors.homeInk }]} numberOfLines={1}>
             {card.profile?.displayName || card.profile?.username || 'Collector'}
           </Text>
           {card.profile?.town ? (
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-              <Feather name="map-pin" size={10} color={colors.homeMuted} />
-              <Text style={[styles.ptMeta, { color: colors.homeMuted }]}>{card.profile.town}</Text>
-            </View>
+            <Text style={[styles.ptMeta, { color: colors.homeMuted }]} numberOfLines={1}>{card.profile.town}</Text>
           ) : null}
         </View>
       </View>
@@ -258,16 +245,36 @@ function PotentialTradeHero({ card, colors, onPress }: {
             <Image
               key={i}
               source={pinImageSource(p.imageUrl)}
-              style={[styles.ptThumb, { backgroundColor: colors.homeAqua, marginLeft: i > 0 ? -14 : 0, borderColor: colors.homeSurface }]}
+              style={[styles.ptThumb, { backgroundColor: colors.homeAqua, marginLeft: i > 0 ? -12 : 0, borderColor: colors.homeSurface }]}
               resizeMode="contain"
             />
           ))}
         </View>
-        {summary && <Text style={[styles.ptSummary, { color: colors.homeMuted }]}>{summary}</Text>}
+        {summary && <Text numberOfLines={2} style={[styles.ptSummary, { color: colors.homeMuted }]}>{summary}</Text>}
       </View>
       <View style={[styles.ptCta, { backgroundColor: colors.homeCoral }]}>
         <Text style={[styles.ptCtaText, { color: colors.homeSurface }]}>View match</Text>
       </View>
+    </TouchableOpacity>
+  );
+}
+
+// ─── Complete Your Sets ─────────────────────────────────────────────────────
+
+function SetCard({ set, colors, onPress }: { set: SetOpportunity; colors: ReturnType<typeof useColors>; onPress: () => void }) {
+  const pct = set.totalCount > 0 ? set.ownedCount / set.totalCount : 0;
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.85}
+      style={[styles.setCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+    >
+      <Text numberOfLines={1} style={[styles.setTitle, { color: colors.homeInk }]}>{set.setName}</Text>
+      <Text style={[styles.setSub, { color: colors.homeMuted }]}>
+        {set.ownedCount} / {set.totalCount} collected
+        {set.available.length > 0 ? <Text style={{ color: colors.homeSand, fontFamily: 'Inter_600SemiBold' }}> · {set.available.length} available</Text> : null}
+      </Text>
+      <SetProgressBar progress={pct} trackColor={colors.homeLine} fillColor={colors.homeSand} height={4} />
     </TouchableOpacity>
   );
 }
@@ -298,40 +305,37 @@ const styles = StyleSheet.create({
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
 
-  sectionTitle: { fontSize: 16, fontFamily: 'Inter_700Bold', marginBottom: 2 },
-  sectionSubtitle: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: spacing.sm },
-  hscroll: { gap: spacing.sm, paddingBottom: spacing.xs, paddingRight: spacing.lg },
+  sectionTitle: { fontSize: 15.5, fontFamily: 'Inter_700Bold', marginBottom: 2 },
+  sectionSubtitle: { fontSize: 11.5, fontFamily: 'Inter_400Regular', marginBottom: spacing.sm - 2 },
+  hscroll: { paddingBottom: 2, paddingRight: spacing.lg },
 
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
 
-  // ISO
-  isoCard: { width: 118, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1 },
-  isoImage: { width: '100%', height: 84, borderRadius: radius.sm - 2 },
-  matchBadge: { position: 'absolute', top: 5, right: 5, flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 },
-  matchBadgeText: { fontSize: 8.5, fontFamily: 'Inter_700Bold', color: '#fff', letterSpacing: 0.3 },
-  isoTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold', lineHeight: 15, marginTop: 6 },
-  isoMeta: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  // ISO — image-dominant, compact, uniform border (MATCH signalled by the small dot only)
+  isoCard: { width: 102, borderRadius: radius.md, padding: 6, borderWidth: 1, marginRight: spacing.sm },
+  isoImage: { width: '100%', height: 70, borderRadius: radius.sm - 2 },
+  matchDot: { position: 'absolute', top: 4, right: 4, width: 17, height: 17, borderRadius: 9, alignItems: 'center', justifyContent: 'center' },
+  isoTitle: { fontSize: 11, fontFamily: 'Inter_600SemiBold', lineHeight: 13.5, marginTop: 5 },
+  isoMeta: { fontSize: 9.5, fontFamily: 'Inter_400Regular', marginTop: 1 },
 
-  // Sets
-  setCard: { width: 172, borderRadius: radius.md, padding: spacing.sm + 2, borderWidth: 1 },
-  setBadge: { alignSelf: 'flex-start', paddingHorizontal: 7, paddingVertical: 3, borderRadius: 6, marginBottom: 6 },
-  setBadgeText: { fontSize: 10, fontFamily: 'Inter_700Bold' },
-  setTitle: { fontSize: 12.5, fontFamily: 'Inter_600SemiBold', lineHeight: 16 },
-  setSub: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 1, marginBottom: 6 },
-
-  // Potential trades
-  ptCard: { width: 236, borderRadius: radius.lg, padding: spacing.md, borderWidth: 1.5 },
-  ptLabel: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 6, marginBottom: spacing.sm },
-  ptLabelText: { fontSize: 9.5, fontFamily: 'Inter_700Bold', color: '#fff', letterSpacing: 0.3 },
-  ptRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, marginBottom: spacing.sm },
-  ptName: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  ptMeta: { fontSize: 10.5, fontFamily: 'Inter_400Regular' },
-  ptThumbRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, marginBottom: spacing.sm },
+  // Potential trades — hero, but compact
+  ptCard: { width: 206, borderRadius: radius.lg, padding: spacing.sm + 2, borderWidth: 1, marginRight: spacing.sm },
+  ptLabel: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-start', paddingHorizontal: 7, paddingVertical: 2.5, borderRadius: 6, marginBottom: 6 },
+  ptLabelText: { fontSize: 9, fontFamily: 'Inter_700Bold', color: '#fff', letterSpacing: 0.3 },
+  ptRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2, marginBottom: 6 },
+  ptName: { fontSize: 12.5, fontFamily: 'Inter_600SemiBold' },
+  ptMeta: { fontSize: 10, fontFamily: 'Inter_400Regular' },
+  ptThumbRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2, marginBottom: spacing.sm - 2 },
   ptStack: { flexDirection: 'row' },
-  ptThumb: { width: 46, height: 46, borderRadius: 11, borderWidth: 2 },
-  ptSummary: { fontSize: 11, fontFamily: 'Inter_400Regular', flex: 1, lineHeight: 15 },
-  ptCta: { paddingVertical: spacing.sm, borderRadius: radius.sm, alignItems: 'center' },
-  ptCtaText: { fontSize: 12.5, fontFamily: 'Inter_700Bold' },
+  ptThumb: { width: 40, height: 40, borderRadius: 10, borderWidth: 2 },
+  ptSummary: { fontSize: 10.5, fontFamily: 'Inter_400Regular', flex: 1, lineHeight: 14 },
+  ptCta: { paddingVertical: 7, borderRadius: radius.sm, alignItems: 'center' },
+  ptCtaText: { fontSize: 12, fontFamily: 'Inter_700Bold' },
+
+  // Complete your sets — minimal, information-only
+  setCard: { width: 156, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, marginRight: spacing.sm, justifyContent: 'center' },
+  setTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold', lineHeight: 15 },
+  setSub: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: 1, marginBottom: 6 },
 
   // Discovery grid
   gcard: { width: '48%', borderRadius: radius.md, borderWidth: 1, overflow: 'hidden' },

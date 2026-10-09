@@ -15,12 +15,42 @@ export interface PickedImage {
   uri: string;
   width: number;
   height: number;
+  /** Base64-encoded JPEG data — hand this to the repository instead of the URI. */
+  base64: string;
 }
 
 /** Maximum pixel dimension for the longer edge of a submission image. */
 const MAX_DIMENSION = 1400;
 /** JPEG quality 0–1 (0.8 preserves enough detail to read pin back markings). */
 const JPEG_QUALITY = 0.8;
+
+/**
+ * Resize/compress an already-captured local image URI to a sensible mobile
+ * size and return it with base64 data attached. Used both right after a
+ * picker launch and for an image handed off from elsewhere (e.g. a scan
+ * photo carried into the add-pin flow).
+ */
+export async function compressSubmissionImage(uri: string, width: number, height: number): Promise<PickedImage> {
+  const longestSide = Math.max(width, height);
+  const needsResize = longestSide > MAX_DIMENSION;
+
+  const resizeAction: ImageManipulator.Action[] = needsResize
+    ? [{ resize: width >= height ? { width: MAX_DIMENSION } : { height: MAX_DIMENSION } }]
+    : [];
+
+  const compressed = await ImageManipulator.manipulateAsync(
+    uri,
+    resizeAction,
+    { compress: JPEG_QUALITY, format: ImageManipulator.SaveFormat.JPEG, base64: true },
+  );
+
+  return {
+    uri: compressed.uri,
+    width: compressed.width,
+    height: compressed.height,
+    base64: compressed.base64!,
+  };
+}
 
 /**
  * Open the camera or photo library, compress the result to a sensible
@@ -63,27 +93,7 @@ export async function pickSubmissionImage(source: ImageSource): Promise<PickedIm
   if (result.canceled || !result.assets?.[0]) return null;
 
   const asset = result.assets[0];
-
-  // ── Compress ──────────────────────────────────────────────────────────────────
-  const { width, height } = asset;
-  const longestSide = Math.max(width, height);
-  const needsResize = longestSide > MAX_DIMENSION;
-
-  const resizeAction: ImageManipulator.Action[] = needsResize
-    ? [{ resize: width >= height ? { width: MAX_DIMENSION } : { height: MAX_DIMENSION } }]
-    : [];
-
-  const compressed = await ImageManipulator.manipulateAsync(
-    asset.uri,
-    resizeAction,
-    { compress: JPEG_QUALITY, format: ImageManipulator.SaveFormat.JPEG },
-  );
-
-  return {
-    uri: compressed.uri,
-    width: compressed.width,
-    height: compressed.height,
-  };
+  return compressSubmissionImage(asset.uri, asset.width, asset.height);
 }
 
 /**

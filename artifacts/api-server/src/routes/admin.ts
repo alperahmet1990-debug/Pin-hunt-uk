@@ -5,9 +5,10 @@
  *                               production data comes from the import script)
  * GET  /admin/catalogue-status Count pins by verification_status
  *
- * All routes require an authenticated admin (requireAdmin below — same
- * Bearer JWT -> profiles.is_admin convention used by catalogue-validation.ts,
- * catalogue-import.ts, ebay-image-dryrun.ts, and vision-test.ts).
+ * Catalogue routes require the App Creator (requireAppCreator below —
+ * profiles.is_app_creator, migrations 040/041); the submission
+ * duplicate-candidate lookup only needs an admin (requireAdmin), since
+ * admins still review submissions.
  *
  * Write operations require SUPABASE_SERVICE_ROLE_KEY because RLS blocks
  * anonymous writes. The anon key is used for read operations.
@@ -57,6 +58,27 @@ async function requireAdmin(req: AdminRequest, res: Response, next: () => void) 
     const { data: profile } = await getAdminAuthClient()
       .from("profiles").select("is_admin").eq("id", user.id).single();
     if (!profile?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
+    req.adminId = user.id;
+    next();
+  } catch {
+    res.status(500).json({ error: "Auth check failed" });
+  }
+}
+
+// Catalogue tooling is App Creator only (migration 041) — plain admins only
+// moderate. Duplicate-candidate lookup stays requireAdmin (submission review).
+async function requireAppCreator(req: AdminRequest, res: Response, next: () => void) {
+  const auth = req.headers.authorization;
+  if (!auth?.startsWith("Bearer ")) {
+    res.status(401).json({ error: "Missing Authorization header" });
+    return;
+  }
+  try {
+    const { data: { user }, error } = await getAnonClient().auth.getUser(auth.slice(7));
+    if (error || !user) { res.status(401).json({ error: "Invalid token" }); return; }
+    const { data: profile } = await getAdminAuthClient()
+      .from("profiles").select("is_app_creator").eq("id", user.id).single();
+    if (!profile?.is_app_creator) { res.status(403).json({ error: "App Creator access required" }); return; }
     req.adminId = user.id;
     next();
   } catch {
@@ -115,7 +137,7 @@ function getAdminUserRepository() {
  *
  * curl -X POST https://<domain>/api/admin/seed-pins
  */
-router.post("/admin/seed-pins", requireAdmin, async (_req, res) => {
+router.post("/admin/seed-pins", requireAppCreator, async (_req, res) => {
   try {
     const repo = getWriteRepository();
 
@@ -148,7 +170,7 @@ router.post("/admin/seed-pins", requireAdmin, async (_req, res) => {
  *
  * curl https://<domain>/api/admin/catalogue-status
  */
-router.get("/admin/catalogue-status", requireAdmin, async (_req, res) => {
+router.get("/admin/catalogue-status", requireAppCreator, async (_req, res) => {
   try {
     const repo = getWriteRepository(); // service role to see unverified pins
 
@@ -189,7 +211,7 @@ router.get("/admin/catalogue-status", requireAdmin, async (_req, res) => {
  *
  * curl "https://<domain>/api/admin/pins/missing-images?brand=Disney"
  */
-router.get("/admin/pins/missing-images", requireAdmin, async (req, res) => {
+router.get("/admin/pins/missing-images", requireAppCreator, async (req, res) => {
   try {
     const repo = getWriteRepository(); // service role to see all pins
     const { brand, collection, limit = "200" } = req.query as Record<string, string>;
@@ -219,7 +241,7 @@ router.get("/admin/pins/missing-images", requireAdmin, async (req, res) => {
  *
  * curl "https://<domain>/api/admin/catalogue/distinct?field=brand&search=dis"
  */
-router.get("/admin/catalogue/distinct", requireAdmin, async (req, res) => {
+router.get("/admin/catalogue/distinct", requireAppCreator, async (req, res) => {
   try {
     const { field, search, limit = "25" } = req.query as Record<string, string>;
 
@@ -254,7 +276,7 @@ router.get("/admin/catalogue/distinct", requireAdmin, async (req, res) => {
  *   -H "Content-Type: application/json" \
  *   -d '{"imageUrl":"https://..."}'
  */
-router.patch("/admin/pins/:pinhuntId/images", requireAdmin, async (req: Request, res: Response) => {
+router.patch("/admin/pins/:pinhuntId/images", requireAppCreator, async (req: Request, res: Response) => {
   try {
     const { pinhuntId } = req.params as { pinhuntId: string };
     const { imageUrl, backImageUrl } = req.body as {

@@ -11,6 +11,7 @@ import catalogueValidationRouter from "./catalogue-validation";
 import visionTestRouter from "./vision-test";
 import pinImagesRouter from "./pin-images";
 import contributePinImageRouter from "./contribute-pin-image";
+import pinSubmissionsRouter from "./pin-submissions";
 
 const router: IRouter = Router();
 
@@ -26,5 +27,6 @@ router.use(catalogueValidationRouter);
 router.use(visionTestRouter);
 router.use(pinImagesRouter);
 router.use(contributePinImageRouter);
+router.use(pinSubmissionsRouter);
 
 export default router;

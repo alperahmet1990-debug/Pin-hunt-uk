@@ -1,6 +1,10 @@
 /**
  * Admin Submission Queue — lists all community pin submissions.
- * Filter tabs: Pending Review | Under Review | All
+ * Filter tabs: Pending Review | Under Review | To Add | All
+ *
+ * "To Add" = approved by an admin but not yet in the catalogue — only the
+ * App Creator can create the catalogue pin (migration 041), so these wait
+ * here until they do.
  */
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -22,11 +26,12 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
-type TabKey = 'pending' | 'under_review' | 'all';
+type TabKey = 'pending' | 'under_review' | 'to_add' | 'all';
 
-const TABS: { key: TabKey; label: string; statuses?: PinSubmissionStatus[] }[] = [
+const TABS: { key: TabKey; label: string; statuses?: PinSubmissionStatus[]; uncataloguedOnly?: boolean }[] = [
   { key: 'pending',      label: 'Pending',      statuses: ['submitted'] },
   { key: 'under_review', label: 'Under Review',  statuses: ['under_review'] },
+  { key: 'to_add',       label: 'To Add',        statuses: ['approved'], uncataloguedOnly: true },
   { key: 'all',          label: 'All',           statuses: undefined },
 ];
 
@@ -81,9 +86,10 @@ export default function AdminSubmissionsScreen() {
     try {
       if (isRefresh) setRefreshing(true); else setLoading(true);
       setError(null);
-      const data = await repo.getAllPinSubmissions(
+      const fetched = await repo.getAllPinSubmissions(
         currentTab.statuses ? { statuses: currentTab.statuses } : undefined,
       );
+      const data = currentTab.uncataloguedOnly ? fetched.filter(s => !s.approvedPinId) : fetched;
       setSubmissions(data);
 
       // Load thumbnails in background
@@ -101,7 +107,7 @@ export default function AdminSubmissionsScreen() {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [repo, currentTab.statuses]);
+  }, [repo, currentTab.statuses, currentTab.uncataloguedOnly]);
 
   useEffect(() => { load(); }, [load]);
 
@@ -198,10 +204,13 @@ export default function AdminSubmissionsScreen() {
           <View style={styles.empty}>
             <Feather name="inbox" size={40} color={colors.mutedForeground} />
             <Text style={[styles.emptyTitle, { color: colors.foreground }]}>
-              {tab === 'pending' ? 'No pending submissions' : tab === 'under_review' ? 'Nothing under review' : 'No submissions yet'}
+              {tab === 'pending' ? 'No pending submissions'
+                : tab === 'under_review' ? 'Nothing under review'
+                : tab === 'to_add' ? 'Nothing waiting to be added'
+                : 'No submissions yet'}
             </Text>
             <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
-              {tab === 'pending' ? "You're all caught up." : 'Check back later.'}
+              {tab === 'pending' || tab === 'to_add' ? "You're all caught up." : 'Check back later.'}
             </Text>
           </View>
         ) : (

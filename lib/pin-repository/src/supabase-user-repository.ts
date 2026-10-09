@@ -13,6 +13,7 @@ import type {
   UpdateCommunityPostInput,
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
+  PinSubmissionMetadataInput,
   DuplicateCandidate,
   EditionType,
   ExternalIdentifiers,
@@ -30,9 +31,17 @@ import type {
   PostReportSummary,
   CommentReport,
   ReportedComment,
+  CatalogueImageCoverage,
+  CatalogueImageSource,
   ContributedPinImage,
+  ContributedImageReason,
   ContributedImageStatus,
   CreateContributedImageInput,
+  FeatureAudience,
+  FeatureFlag,
+  FeatureKey,
+  MyAccess,
+  UserAccess,
   ReviewContributedImageInput,
   PotentialTradePin,
   Profile,
@@ -53,6 +62,15 @@ import type {
   UserPin,
 } from './types';
 import type { Database } from './database.types';
+
+// crypto.randomUUID() is not available in all React Native runtimes, so pin
+// submission IDs use a simple RFC 4122 v4 generator instead.
+function generateSubmissionId(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = (Math.random() * 16) | 0;
+    return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
 
 // ─── Row → domain mappers ─────────────────────────────────────────────────────
 
@@ -181,16 +199,18 @@ function rowToPinSubmission(row: Record<string, unknown>): PinSubmission {
 }
 
 function rowToContributedImage(row: Record<string, unknown>): ContributedPinImage {
-  const pin = row.pin as { pinhunt_id?: string; title?: string } | null;
+  const pin = row.pin as { pinhunt_id?: string; title?: string; image_url?: string | null } | null;
   return {
     id: row.id as string,
     pinId: row.pin_id as string,
     pinhuntId: pin?.pinhunt_id ?? undefined,
     pinTitle: pin?.title ?? undefined,
+    pinImageUrl: pin?.image_url ?? undefined,
     uploadedBy: row.uploaded_by as string,
     storagePath: row.image_url as string,
     status: row.status as ContributedImageStatus,
     contributorConsentAt: row.contributor_consent_at as string,
+    proposalReason: (row.proposal_reason as ContributedImageReason | null) ?? undefined,
     reviewerNotes: (row.reviewer_notes as string | null) ?? undefined,
     reviewedBy: (row.reviewed_by as string | null) ?? undefined,
     reviewedAt: (row.reviewed_at as string | null) ?? undefined,
@@ -772,41 +792,53 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   // ── Pin submissions ───────────────────────────────────────────────────────────
 
-  /** Upload a local image URI to Supabase Storage and return the storage path. */
+  /**
+   * Upload a base64-encoded image to Supabase Storage and return the storage
+   * path. Takes base64 (as returned directly by the image picker/manipulator)
+   * rather than fetching a local file URI — `fetch(uri).blob()` is unreliable
+   * on-device in React Native.
+   */
   private async uploadSubmissionImage(
     userId: string,
     submissionId: string,
-    localUri: string,
+    base64: string,
     side: 'front' | 'back',
   ): Promise<string> {
     const path = `${userId}/${submissionId}/${side}.jpg`;
-    const response = await fetch(localUri);
-    const blob = await response.blob();
+    const binaryString = atob(base64);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
     const { error } = await this.client.storage
       .from('pin-submissions')
-      .upload(path, blob, { contentType: 'image/jpeg', upsert: true });
+      .upload(path, bytes, { contentType: 'image/jpeg', upsert: true });
     if (error) throw new Error(`Image upload failed: ${error.message}`);
     return path;
   }
 
   async createPinSubmission(userId: string, input: CreatePinSubmissionInput): Promise<PinSubmission> {
-    // Generate the submission UUID upfront so we can build storage paths.
-    // crypto.randomUUID() is not available in all React Native runtimes,
-    // so we use a simple RFC 4122 v4 UUID generator instead.
-    const submissionId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-      const r = (Math.random() * 16) | 0;
-      return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
-    });
+    const submissionId = generateSubmissionId();
 
     // Upload front image (required).
-    const frontPath = await this.uploadSubmissionImage(userId, submissionId, input.frontImageUri, 'front');
+    const frontPath = await this.uploadSubmissionImage(userId, submissionId, input.frontImageBase64, 'front');
 
     // Upload back image (optional).
     let backPath: string | null = null;
-    if (input.backImageUri) {
-      backPath = await this.uploadSubmissionImage(userId, submissionId, input.backImageUri, 'back');
+    if (input.backImageBase64) {
+      backPath = await this.uploadSubmissionImage(userId, submissionId, input.backImageBase64, 'back');
     }
 
+    return this.createPinSubmissionFromPaths(userId, input, submissionId, frontPath, backPath);
+  }
+
+  async createPinSubmissionFromPaths(
+    userId: string,
+    input: PinSubmissionMetadataInput,
+    submissionId: string,
+    frontImagePath: string,
+    backImagePath: string | null,
+  ): Promise<PinSubmission> {
     const { data, error } = await this.client
       .from('pin_submissions')
       .insert({
@@ -822,8 +854,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         fac_number: input.facNumber ?? null,
         sku: input.sku ?? null,
         character_names: input.characterNames ?? null,
-        front_image_path: frontPath,
-        back_image_path: backPath,
+        front_image_path: frontImagePath,
+        back_image_path: backImagePath,
         notes: input.notes ?? null,
         status: (input.status ?? 'draft') as PinSubmissionStatus,
       })
@@ -860,7 +892,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return rowToPinSubmission(data as Record<string, unknown>);
   }
 
-  async uploadSubmissionFrontImage(submissionId: string, localUri: string): Promise<PinSubmission> {
+  async uploadSubmissionFrontImage(submissionId: string, base64: string): Promise<PinSubmission> {
     const { data: sub, error: subError } = await this.client
       .from('pin_submissions')
       .select('submitted_by')
@@ -869,7 +901,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (subError || !sub) throw new Error('Submission not found.');
 
     const userId = (sub as { submitted_by: string }).submitted_by;
-    const frontPath = await this.uploadSubmissionImage(userId, submissionId, localUri, 'front');
+    const frontPath = await this.uploadSubmissionImage(userId, submissionId, base64, 'front');
 
     const { data, error } = await this.client
       .from('pin_submissions')
@@ -883,7 +915,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return rowToPinSubmission(data as Record<string, unknown>);
   }
 
-  async uploadSubmissionBackImage(submissionId: string, localUri: string): Promise<PinSubmission> {
+  async uploadSubmissionBackImage(submissionId: string, base64: string): Promise<PinSubmission> {
     const { data: sub, error: subError } = await this.client
       .from('pin_submissions')
       .select('submitted_by')
@@ -892,7 +924,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (subError || !sub) throw new Error('Submission not found.');
 
     const userId = (sub as { submitted_by: string }).submitted_by;
-    const backPath = await this.uploadSubmissionImage(userId, submissionId, localUri, 'back');
+    const backPath = await this.uploadSubmissionImage(userId, submissionId, base64, 'back');
 
     const { data, error } = await this.client
       .from('pin_submissions')
@@ -1131,6 +1163,9 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         status: 'pending',
         public_display_allowed: false,
         contributor_consent_at: new Date().toISOString(),
+        // Only sent when set, so the 038-era scan flow keeps working on a
+        // database without migration 039's proposal_reason column.
+        ...(input.proposalReason ? { proposal_reason: input.proposalReason } : {}),
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any)
       .select()
@@ -1143,7 +1178,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async getMyContributedImages(userId: string): Promise<ContributedPinImage[]> {
     const { data, error } = await this.client
       .from('pin_images')
-      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .select('*, pin:pins!pin_id(pinhunt_id, title, image_url)')
       .eq('uploaded_by', userId)
       .order('created_at', { ascending: false });
 
@@ -1154,7 +1189,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async getPendingContributedImages(): Promise<ContributedPinImage[]> {
     const { data, error } = await this.client
       .from('pin_images')
-      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .select('*, pin:pins!pin_id(pinhunt_id, title, image_url)')
       .eq('status', 'pending')
       .order('created_at', { ascending: true });
 
@@ -1165,7 +1200,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async getContributedImage(imageId: string): Promise<ContributedPinImage | null> {
     const { data, error } = await this.client
       .from('pin_images')
-      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .select('*, pin:pins!pin_id(pinhunt_id, title, image_url)')
       .eq('id', imageId)
       .maybeSingle();
 
@@ -1191,7 +1226,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .update(updates as any)
       .eq('id', imageId)
-      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .select('*, pin:pins!pin_id(pinhunt_id, title, image_url)')
       .single();
 
     if (error) throw new Error(error.message);
@@ -1204,6 +1239,127 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .createSignedUrl(storagePath, 3600);
     if (error || !data?.signedUrl) throw new Error(`Could not generate image URL: ${error?.message ?? 'unknown'}`);
     return data.signedUrl;
+  }
+
+  async hasPendingContributedImage(userId: string, pinId: string): Promise<boolean> {
+    const { data: pinRow, error: pinErr } = await this.client
+      .from('pins')
+      .select('id')
+      .eq('pinhunt_id', pinId)
+      .maybeSingle();
+    if (pinErr) throw new Error(pinErr.message);
+    if (!pinRow) return false;
+
+    const { count, error } = await this.client
+      .from('pin_images')
+      .select('id', { count: 'exact', head: true })
+      .eq('pin_id', (pinRow as { id: string }).id)
+      .eq('uploaded_by', userId)
+      .eq('status', 'pending');
+    if (error) throw new Error(error.message);
+    return (count ?? 0) > 0;
+  }
+
+  // ── Feature flags & catalogue photo coverage ─────────────────────────────────
+
+  async canAccessFeature(key: FeatureKey): Promise<boolean> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any).rpc('can_access_feature', { p_key: key });
+    if (error) return false;
+    return data === true;
+  }
+
+  async getCatalogueImageCoverage(): Promise<CatalogueImageCoverage[]> {
+    // PostgREST caps rows per request, so page through the function's
+    // (deterministically ordered) result.
+    const PAGE = 1000;
+    const rows: Record<string, unknown>[] = [];
+    for (let from = 0; ; from += PAGE) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data, error } = await (this.client as any)
+        .rpc('get_catalogue_image_coverage')
+        .range(from, from + PAGE - 1);
+      if (error) throw new Error(error.message);
+      const page = (data ?? []) as Record<string, unknown>[];
+      rows.push(...page);
+      if (page.length < PAGE) break;
+    }
+    return rows.map(row => ({
+      pinhuntId: row.pinhunt_id as string,
+      title: row.title as string,
+      setName: (row.set_name as string | null) ?? 'Uncategorised',
+      releaseYear: (row.release_year as number | null) ?? undefined,
+      editionType: (row.edition_type as string | null) ?? undefined,
+      imageUrl: (row.image_url as string | null) ?? undefined,
+      imageSource: (row.image_source as CatalogueImageSource) ?? null,
+      pendingCount: (row.pending_count as number | null) ?? 0,
+      myStatus: (row.my_status as ContributedImageStatus | null) ?? undefined,
+    }));
+  }
+
+  async getFeatureFlags(): Promise<FeatureFlag[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any)
+      .from('feature_flags')
+      .select('key, audience, description')
+      .order('key');
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as Record<string, unknown>[]).map(row => ({
+      key: row.key as FeatureKey,
+      audience: row.audience as FeatureAudience,
+      description: (row.description as string | null) ?? undefined,
+    }));
+  }
+
+  async setFeatureAudience(key: FeatureKey, audience: FeatureAudience): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any)
+      .from('feature_flags')
+      .update({ audience, updated_at: new Date().toISOString() })
+      .eq('key', key)
+      .select('key');
+    if (error) throw new Error(error.message);
+    // RLS silently filters a non-creator's update to zero rows.
+    if (!data || data.length === 0) throw new Error('Only the App Creator can change feature rollouts.');
+  }
+
+  // ── Access levels ────────────────────────────────────────────────────────────
+
+  async getMyAccess(): Promise<MyAccess> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any).rpc('get_my_access');
+    const row = (Array.isArray(data) ? data[0] : data) as Record<string, unknown> | undefined;
+    if (error || !row) return { isAppCreator: false, isAdmin: false, isContributor: false };
+    return {
+      isAppCreator: row.is_app_creator === true,
+      isAdmin: row.is_admin === true,
+      isContributor: row.is_contributor === true,
+    };
+  }
+
+  async listUserAccess(query: string): Promise<UserAccess[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any).rpc('list_user_access', { p_query: query });
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as Record<string, unknown>[]).map(row => ({
+      id: row.id as string,
+      username: (row.username as string | null) ?? undefined,
+      displayName: (row.display_name as string | null) ?? undefined,
+      avatarUrl: (row.avatar_url as string | null) ?? undefined,
+      isAppCreator: row.is_app_creator === true,
+      isAdmin: row.is_admin === true,
+      isContributor: row.is_contributor === true,
+    }));
+  }
+
+  async setUserAccess(userId: string, access: { isAdmin: boolean; isContributor: boolean }): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error } = await (this.client as any).rpc('set_user_access', {
+      p_user: userId,
+      p_is_admin: access.isAdmin,
+      p_is_contributor: access.isContributor,
+    });
+    if (error) throw new Error(error.message);
   }
 
   // ── Trade ratings & for-trade discovery ─────────────────────────────────────

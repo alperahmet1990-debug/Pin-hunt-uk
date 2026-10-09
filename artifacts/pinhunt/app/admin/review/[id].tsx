@@ -21,6 +21,7 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { useMyAccess } from '@/hooks/useMyAccess';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
@@ -68,6 +69,9 @@ export default function AdminReviewScreen() {
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
+  // Creating/editing catalogue pins is App Creator only (migration 041);
+  // plain admins approve, reject, or merge into an existing pin.
+  const { isAppCreator } = useMyAccess();
   const { repo } = useMarketplace();
   const { session } = useAuth();
 
@@ -441,10 +445,9 @@ export default function AdminReviewScreen() {
             {submission.approvedPinId && submission.approvedPinhuntId && (
               <TouchableOpacity
                 onPress={() =>
-                  router.push({
-                    pathname: '/admin/pin/[id]',
-                    params: { id: submission.approvedPinhuntId! },
-                  })
+                  router.push(isAppCreator
+                    ? { pathname: '/admin/pin/[id]', params: { id: submission.approvedPinhuntId! } }
+                    : { pathname: '/pin/[id]', params: { id: submission.approvedPinhuntId! } })
                 }
                 activeOpacity={0.85}
                 style={[styles.outlineBtn, { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card }]}
@@ -452,6 +455,25 @@ export default function AdminReviewScreen() {
                 <Feather name="book-open" size={15} color="#16A34A" />
                 <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>View in Catalogue</Text>
               </TouchableOpacity>
+            )}
+
+            {/* Approved by an admin but not catalogued yet — only the App
+                Creator can create the catalogue pin (migration 041). */}
+            {submission.status === 'approved' && !submission.approvedPinId && (
+              isAppCreator ? (
+                <TouchableOpacity
+                  onPress={approveAndAddToCatalogue}
+                  activeOpacity={0.85}
+                  style={[styles.actionBtn, { backgroundColor: '#16A34A', borderRadius: 12 }]}
+                >
+                  <Feather name="book-open" size={16} color="#fff" />
+                  <Text style={styles.actionBtnLabel}>Add to Catalogue</Text>
+                </TouchableOpacity>
+              ) : (
+                <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: colors.mutedForeground, textAlign: 'center' }}>
+                  Approved — waiting for the App Creator to add it to the catalogue.
+                </Text>
+              )
             )}
 
             {/* Action buttons */}
@@ -462,7 +484,7 @@ export default function AdminReviewScreen() {
                 <View style={{ gap: 10 }}>
                   {/* Primary CTA: approve and open pre-filled pin editor.
                       Hidden when this submission already has a linked catalogue pin. */}
-                  {!submission.approvedPinId && (
+                  {!submission.approvedPinId && isAppCreator && (
                     <TouchableOpacity
                       onPress={approveAndAddToCatalogue}
                       activeOpacity={0.85}
@@ -480,7 +502,9 @@ export default function AdminReviewScreen() {
                     style={[styles.outlineBtn, { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card }]}
                   >
                     <Feather name="check-circle" size={15} color="#16A34A" />
-                    <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>Approve Only</Text>
+                    <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>
+                      {isAppCreator ? 'Approve Only' : 'Approve'}
+                    </Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity
@@ -508,10 +532,9 @@ export default function AdminReviewScreen() {
             {submission.status === 'approved' && submission.approvedPinhuntId && (
               <TouchableOpacity
                 onPress={() =>
-                  router.push({
-                    pathname: '/admin/pin/[id]',
-                    params: { id: submission.approvedPinhuntId! },
-                  })
+                  router.push(isAppCreator
+                    ? { pathname: '/admin/pin/[id]', params: { id: submission.approvedPinhuntId! } }
+                    : { pathname: '/pin/[id]', params: { id: submission.approvedPinhuntId! } })
                 }
                 activeOpacity={0.85}
                 style={[

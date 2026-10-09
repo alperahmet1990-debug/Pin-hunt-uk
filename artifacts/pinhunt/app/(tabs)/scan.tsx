@@ -108,6 +108,7 @@ export default function ScanScreen() {
   const [matches, setMatches] = useState<Match[]>([]);
   const [insights, setInsights] = useState<ImageInsights | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [noMatchFound, setNoMatchFound] = useState(false);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
@@ -194,6 +195,7 @@ export default function ScanScreen() {
   const handleIdentify = useCallback(async () => {
     if (!captured) return;
     setErrorMsg(null);
+    setNoMatchFound(false);
     setScanState('identifying');
 
     try {
@@ -224,7 +226,8 @@ export default function ScanScreen() {
       ).filter(Boolean) as Match[];
 
       if (resolved.length === 0) {
-        setErrorMsg('No matches found. Try a clearer photo with good lighting.');
+        setErrorMsg('No matches found in our catalogue. Try a clearer photo, or add this pin yourself.');
+        setNoMatchFound(true);
         setScanState('captured');
         return;
       }
@@ -255,6 +258,21 @@ export default function ScanScreen() {
     setMatches([]);
     setInsights(null);
     setErrorMsg(null);
+    setNoMatchFound(false);
+  };
+
+  // ── Hand off to Add Pin ───────────────────────────────────────────────────────
+  // Carries the already-captured photo forward, plus any characters the AI
+  // scan recognised, so the user doesn't have to start from scratch.
+  const handleAddPinInstead = () => {
+    if (!captured) return;
+    router.push({
+      pathname: '/add-pin',
+      params: {
+        frontUri: captured.uri,
+        characters: insights?.characters.join(', ') ?? '',
+      },
+    });
   };
 
   const confidenceColor = (score: number) => {
@@ -330,6 +348,23 @@ export default function ScanScreen() {
             <Feather name="alert-circle" size={14} color={colors.destructive} />
             <Text style={[styles.errorText, { color: colors.destructive }]}>{errorMsg}</Text>
           </View>
+        )}
+
+        {/* ── Not in our catalogue? Offer to add it ── */}
+        {noMatchFound && (
+          <TouchableOpacity
+            onPress={handleAddPinInstead}
+            activeOpacity={0.85}
+            style={[
+              styles.addPinCta,
+              { marginHorizontal: 16, borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12', borderRadius: 18 },
+            ]}
+          >
+            <Feather name="plus-circle" size={16} color={colors.homeCoral} />
+            <Text style={[styles.addPinCtaLabel, { color: colors.homeCoral }]}>
+              Can't find it? Add this pin yourself
+            </Text>
+          </TouchableOpacity>
         )}
 
         {/* ── Controls ── */}
@@ -509,6 +544,17 @@ export default function ScanScreen() {
                 None of these — try again
               </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={handleAddPinInstead}
+              activeOpacity={0.85}
+              style={[styles.addPinCta, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12', borderRadius: 18 }]}
+            >
+              <Feather name="plus-circle" size={16} color={colors.homeCoral} />
+              <Text style={[styles.addPinCtaLabel, { color: colors.homeCoral }]}>
+                Still can't find it? Add this pin yourself
+              </Text>
+            </TouchableOpacity>
           </View>
         )}
 
@@ -586,6 +632,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   errorText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+  addPinCta: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    marginBottom: 12,
+    paddingVertical: 12,
+    borderWidth: 1,
+  },
+  addPinCtaLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   // Controls
   controls: { paddingHorizontal: 16, gap: 12 },
   primaryBtn: {

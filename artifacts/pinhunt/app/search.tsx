@@ -288,10 +288,22 @@ export default function SearchScreen() {
                 <Text style={[styles.stateText, { color: colors.homeMuted }]}>Searching…</Text>
               </View>
             ) : results.length === 0 ? (
-              <View style={styles.stateRow}>
-                <Feather name="search" size={15} color={colors.homeMuted} />
-                <Text style={[styles.stateText, { color: colors.homeMuted }]}>No pins found</Text>
-              </View>
+              <>
+                <View style={styles.stateRow}>
+                  <Feather name="search" size={15} color={colors.homeMuted} />
+                  <Text style={[styles.stateText, { color: colors.homeMuted }]}>No pins found</Text>
+                </View>
+                <TouchableOpacity
+                  onPress={() => router.push({ pathname: '/add-pin', params: { name: query.trim() } })}
+                  activeOpacity={0.85}
+                  style={[styles.addPinLink, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12' }]}
+                >
+                  <Feather name="plus-circle" size={15} color={colors.homeCoral} />
+                  <Text style={[styles.addPinLinkLabel, { color: colors.homeCoral }]}>
+                    Can&apos;t find it? Add this pin to the catalogue
+                  </Text>
+                </TouchableOpacity>
+              </>
             ) : (
               results.map(pin => (
                 <TouchableOpacity
@@ -397,6 +409,8 @@ const styles = StyleSheet.create({
   popularImage: { width: '100%', height: '100%' },
   stateRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.lg },
   stateText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
+  addPinLink: { flexDirection: 'row', alignItems: 'center', gap: 8, borderWidth: 1, borderRadius: 18, paddingHorizontal: 14, paddingVertical: 12, marginTop: 12 },
+  addPinLinkLabel: { flex: 1, fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   resultRow: {
     flexDirection: 'row',
     alignItems: 'center',

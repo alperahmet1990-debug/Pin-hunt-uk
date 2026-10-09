@@ -18,14 +18,21 @@ import type {
   GetPotentialTradesInput,
   NearbyCollector,
   PinSubmission,
+  PinSubmissionMetadataInput,
   PinSubmissionStatus,
   PostComment,
   PostReport,
   PostReportSummary,
   CommentReport,
   ReportedComment,
+  CatalogueImageCoverage,
   ContributedPinImage,
   CreateContributedImageInput,
+  FeatureAudience,
+  FeatureFlag,
+  FeatureKey,
+  MyAccess,
+  UserAccess,
   ReviewContributedImageInput,
   PotentialTradePin,
   StartConversationInput,
@@ -195,6 +202,21 @@ export interface IUserPinRepository {
   createPinSubmission(userId: string, input: CreatePinSubmissionInput): Promise<PinSubmission>;
 
   /**
+   * Create a pin submission row directly from an already-uploaded storage
+   * path, skipping the upload step createPinSubmission performs internally.
+   * Used by the API server after running the front photo through Pixian
+   * normalization — the server uploads it itself (service-role key) and
+   * just needs the row created with the resulting path.
+   */
+  createPinSubmissionFromPaths(
+    userId: string,
+    input: PinSubmissionMetadataInput,
+    submissionId: string,
+    frontImagePath: string,
+    backImagePath: string | null,
+  ): Promise<PinSubmission>;
+
+  /**
    * Update metadata fields on a draft or needs-changes submission.
    * Does not change images or status.
    */
@@ -203,16 +225,18 @@ export interface IUserPinRepository {
   /**
    * Upload (or replace) the front image on an existing submission.
    * Uploads to Supabase Storage and updates `front_image_path`.
-   * `localUri` is a device file URI.
+   * `base64` is base64-encoded JPEG data (as returned by the image
+   * picker/manipulator) — not a local file URI.
    */
-  uploadSubmissionFrontImage(submissionId: string, localUri: string): Promise<PinSubmission>;
+  uploadSubmissionFrontImage(submissionId: string, base64: string): Promise<PinSubmission>;
 
   /**
    * Upload (or replace) the back image on an existing submission.
    * Uploads to Supabase Storage and updates `back_image_path`.
-   * `localUri` is a device file URI.
+   * `base64` is base64-encoded JPEG data (as returned by the image
+   * picker/manipulator) — not a local file URI.
    */
-  uploadSubmissionBackImage(submissionId: string, localUri: string): Promise<PinSubmission>;
+  uploadSubmissionBackImage(submissionId: string, base64: string): Promise<PinSubmission>;
 
   /**
    * Change a draft submission's status to 'submitted', making it
@@ -303,6 +327,47 @@ export interface IUserPinRepository {
 
   /** Return a signed URL (1 hour TTL) for a private contributed image. */
   getContributedImageUrl(storagePath: string): Promise<string>;
+
+  /**
+   * True when the user already has a pending contribution for this pin
+   * (pinhunt_id). Used to stop duplicate submissions.
+   */
+  hasPendingContributedImage(userId: string, pinId: string): Promise<boolean>;
+
+  // ── Feature flags & catalogue photo coverage (migration 039) ──────────────
+
+  /**
+   * Whether the signed-in caller may see a gated feature, per its
+   * feature_flags audience. Fails closed — false on any error, including
+   * migration 039 not being applied yet.
+   */
+  canAccessFeature(key: FeatureKey): Promise<boolean>;
+
+  /**
+   * Photo status for every Collectible PinTrader catalogue pin. Empty unless
+   * the caller can access 'catalogue_contributions'.
+   */
+  getCatalogueImageCoverage(): Promise<CatalogueImageCoverage[]>;
+
+  /** All feature flags and their current audience. */
+  getFeatureFlags(): Promise<FeatureFlag[]>;
+
+  /** App creator only (enforced by RLS): change who a feature is open to. */
+  setFeatureAudience(key: FeatureKey, audience: FeatureAudience): Promise<void>;
+
+  // ── Access levels (migration 040) ─────────────────────────────────────────
+
+  /** The caller's own access levels. All false on error / migration missing. */
+  getMyAccess(): Promise<MyAccess>;
+
+  /**
+   * App creator only: search users by username/display name. An empty query
+   * returns everyone who currently has elevated access.
+   */
+  listUserAccess(query: string): Promise<UserAccess[]>;
+
+  /** App creator only: set a user's admin/contributor rights (audited). */
+  setUserAccess(userId: string, access: { isAdmin: boolean; isContributor: boolean }): Promise<void>;
 
   // ── Trade ratings & for-trade discovery ───────────────────────────────────
 

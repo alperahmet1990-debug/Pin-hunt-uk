@@ -16,6 +16,7 @@ import { Avatar } from '@/components/Avatar';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
+import { useFeature } from '@/hooks/useFeature';
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
@@ -131,6 +132,7 @@ export default function ProfileScreen() {
   const { signOut } = useAuth();
   const { unseenCount } = useSubmissionNotifications();
   const isAdmin = profile?.isAdmin === true;
+  const { enabled: canContribute } = useFeature('catalogue_contributions');
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -224,6 +226,18 @@ export default function ProfileScreen() {
                 last
               />
             </Section>
+
+            {/* Beta features (feature_flags, migration 039) */}
+            {canContribute && (
+              <Section title="Beta">
+                <SettingsRow
+                  icon="camera"
+                  label="Help Build the Catalogue"
+                  onPress={() => router.push('/contribute' as any)}
+                  last
+                />
+              </Section>
+            )}
 
             {/* App Settings */}
             <Section title="App">

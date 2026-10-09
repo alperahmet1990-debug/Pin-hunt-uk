@@ -143,17 +143,27 @@ export default function CatalogueScreen() {
       </View>
 
       {filtered.length === 0 ? (
-        <EmptyState
-          icon="search"
-          title="No pins found"
-          subtitle="Try adjusting your search or filters."
-          actionLabel="Clear Filters"
-          onAction={() => {
-            setQuery('');
-            setBrand('All');
-            setStatus('any');
-          }}
-        />
+        <View>
+          <EmptyState
+            icon="search"
+            title="No pins found"
+            subtitle="Try adjusting your search or filters."
+            actionLabel="Clear Filters"
+            onAction={() => {
+              setQuery('');
+              setBrand('All');
+              setStatus('any');
+            }}
+          />
+          <TouchableOpacity
+            onPress={() => router.push({ pathname: '/add-pin', params: { name: query.trim() } })}
+            activeOpacity={0.8}
+            style={styles.addPinLink}
+          >
+            <Feather name="plus-circle" size={15} color={colors.homeCoral} />
+            <Text style={[styles.addPinLinkLabel, { color: colors.homeCoral }]}>Missing a pin? Add it to the catalogue</Text>
+          </TouchableOpacity>
+        </View>
       ) : (
         <FlatList
           key={viewMode}
@@ -245,6 +255,8 @@ export default function CatalogueScreen() {
 }
 
 const styles = StyleSheet.create({
+  addPinLink: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 8 },
+  addPinLinkLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   root: { flex: 1 },
   headerBar: {
     borderBottomWidth: StyleSheet.hairlineWidth,

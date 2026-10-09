@@ -2,18 +2,28 @@
  * Add Pin — multi-step catalogue contribution flow.
  *
  * Steps:
- *  0 — Front photo (optional for now — storage bucket pending)
- *  1 — Back photo  (optional)
- *  2 — Pin details
- *  3 — Review & submit
- *  4 — Confirmation
+ *  0 — Front photo (required — only photo captured for now; back photo
+ *      is a later addition)
+ *  1 — Pin details
+ *  2 — Review & submit
+ *  3 — Confirmation
  *
- * Submits via submitMissingPin which inserts directly into the pins
- * table with verification_status = 'community_submitted'.
- * Photos are captured locally and shown as previews; image upload
- * will be wired in once the storage bucket is created.
+ * Submits via POST /pin-submissions on the API server rather than talking
+ * to Supabase directly — the server runs the front photo through Pixian.ai
+ * to normalize it (uniform white background, cropped and centered) before
+ * storing it, the same way contribute-pin-image.ts does for existing pins.
+ * That normalized photo is what becomes the pin's public catalogue image
+ * if an admin approves the submission. The submission lands in the
+ * pin_submissions review queue (status 'submitted') — an admin must
+ * approve it before it becomes a real, publicly visible catalogue pin.
+ *
+ * Can be reached directly, or from the scan screen's "can't find it" flow
+ * (which pre-fills a captured photo and any characters the AI scan
+ * recognised via the frontUri / characters route params). Search, the
+ * catalogue, and the contributor screen also link here when a pin is
+ * missing, passing what the user typed as the `name` param.
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -28,14 +38,13 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
-import { supabase, isSupabaseConfigured } from '@/lib/supabase';
-import { pickSubmissionImage, uploadLocalImageToStorage } from '@/utils/submissionImage';
+import { compressSubmissionImage, pickSubmissionImage, type PickedImage } from '@/utils/submissionImage';
+import { API_BASE } from '@/lib/apiBase';
 import { radius, spacing } from '@/constants/theme';
-import { createSupabasePinRepository } from '@workspace/pin-repository';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -50,7 +59,7 @@ const EDITION_TYPES = [
 
 type EditionValue = (typeof EDITION_TYPES)[number]['value'];
 
-const STEPS = ['Front Photo', 'Back Photo', 'Details', 'Review'];
+const STEPS = ['Front Photo', 'Details', 'Review'];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -166,13 +175,17 @@ export default function AddPinScreen() {
   const colors   = useColors();
   const insets   = useSafeAreaInsets();
   const router   = useRouter();
-  const { user } = useAuth();
+  const { session } = useAuth();
+  const { frontUri: handoffUri, characters: handoffCharacters, name: handoffName } = useLocalSearchParams<{
+    frontUri?: string;
+    characters?: string;
+    name?: string;
+  }>();
 
   const [step, setStep] = useState(0);
 
-  // Photos (local URIs only — not uploaded)
-  const [frontUri, setFrontUri] = useState<string | null>(null);
-  const [backUri,  setBackUri]  = useState<string | null>(null);
+  // Photo (front only for now — back photo is a later addition)
+  const [front, setFront] = useState<PickedImage | null>(null);
 
   // Details
   const [proposedName,    setProposedName]    = useState('');
@@ -193,14 +206,37 @@ export default function AddPinScreen() {
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
-  // ── Photo pickers ───────────────────────────────────────────────────────────
+  // ── Scan handoff ─────────────────────────────────────────────────────────────
+  // Arriving from the scan screen's "can't find it" link: carry the photo the
+  // user already captured forward, and prefill characters the AI scan
+  // recognised (editable — it's a guess, not a confirmed match).
+  useEffect(() => {
+    if (handoffUri && !front) {
+      Image.getSize(
+        handoffUri,
+        (width, height) => {
+          compressSubmissionImage(handoffUri, width, height).then(setFront).catch(() => {});
+        },
+        () => {
+          // Handoff photo couldn't be read (e.g. a stale temp file) — fall
+          // back to letting the user pick one on the front-photo step.
+        },
+      );
+    }
+    if (handoffCharacters && !characterNames) {
+      setCharacterNames(handoffCharacters);
+    }
+    if (handoffName && !proposedName) {
+      setProposedName(handoffName);
+    }
+    // Only ever consume the handoff once, on mount.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // ── Photo picker ─────────────────────────────────────────────────────────────
   const pickFront = async (source: 'camera' | 'library') => {
     const img = await pickSubmissionImage(source);
-    if (img) setFrontUri(img.uri);
-  };
-  const pickBack = async (source: 'camera' | 'library') => {
-    const img = await pickSubmissionImage(source);
-    if (img) setBackUri(img.uri);
+    if (img) setFront(img);
   };
 
   // ── Validation ──────────────────────────────────────────────────────────────
@@ -222,15 +258,23 @@ export default function AddPinScreen() {
 
   // ── Navigation ──────────────────────────────────────────────────────────────
   const goNext = () => {
-    if (step === 2 && !validate()) return;
+    if (step === 0 && !front) {
+      Alert.alert('Front photo required', 'Please add a front photo before continuing.');
+      return;
+    }
+    if (step === 1 && !validate()) return;
     setStep(s => s + 1);
   };
   const goBack = () => setStep(s => s - 1);
 
   // ── Submit ──────────────────────────────────────────────────────────────────
   const handleSubmit = async () => {
-    if (!isSupabaseConfigured) {
-      Alert.alert('Not connected', 'Supabase is not configured.');
+    if (!session?.access_token) {
+      Alert.alert('Sign in required', 'Please sign in to submit a pin.');
+      return;
+    }
+    if (!front) {
+      Alert.alert('Front photo required', 'Please add a front photo before submitting.');
       return;
     }
 
@@ -238,56 +282,36 @@ export default function AddPinScreen() {
       ? characterNames.split(',').map(s => s.trim()).filter(Boolean)
       : undefined;
 
-    const description = [
-      notes.trim(),
-      facNumber.trim()   ? `FAC: ${facNumber.trim()}`            : '',
-      sku.trim()         ? `SKU: ${sku.trim()}`                  : '',
-      releaseYear.trim() ? `Year: ${releaseYear.trim()}`         : '',
-      editionSize.trim() ? `Edition size: ${editionSize.trim()}` : '',
-    ].filter(Boolean).join('\n') || undefined;
-
     try {
       setSaving(true);
 
-      // ── Upload front image ────────────────────────────────────────────────
-      let imageUrl: string | undefined;
-      if (frontUri && user?.id) {
-        try {
-          const path = `${user.id}/${Date.now()}/front.jpg`;
-          await uploadLocalImageToStorage(frontUri, 'pin-submissions', path, supabase.storage);
-          const { data: urlData } = supabase.storage
-            .from('pin-submissions')
-            .getPublicUrl(path);
-          imageUrl = urlData.publicUrl;
-        } catch (uploadErr) {
-          console.warn('[add-pin] image upload failed:', uploadErr);
-          Alert.alert(
-            'Image upload failed',
-            uploadErr instanceof Error ? uploadErr.message : String(uploadErr),
-          );
-          setSaving(false);
-          return;
-        }
-      }
-
-      // ── Insert into catalogue ─────────────────────────────────────────────
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const repo = createSupabasePinRepository(supabase as any);
-      await repo.submitMissingPin({
-        title:       proposedName.trim(),
-        brand:       brand.trim(),
-        collection:  seriesName.trim() || brand.trim(),
-        characters,
-        edition:     editionType !== 'unknown' ? editionType : undefined,
-        origin:      releaseLocation.trim() || undefined,
-        description,
-        imageUrl,
-        submittedBy: user?.id,
+      const res = await fetch(`${API_BASE}/pin-submissions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({
+          proposedName:     proposedName.trim(),
+          brand:            brand.trim(),
+          seriesName:       seriesName.trim() || undefined,
+          releaseLocation:  releaseLocation.trim() || undefined,
+          releaseYear:      releaseYear.trim() ? parseInt(releaseYear, 10) : undefined,
+          editionType,
+          editionSize:      editionSize.trim() ? parseInt(editionSize, 10) : undefined,
+          facNumber:        facNumber.trim() || undefined,
+          sku:              sku.trim() || undefined,
+          characterNames:   characters,
+          frontImageBase64: front.base64,
+          notes:            notes.trim() || undefined,
+        }),
       });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? 'Could not submit pin.');
 
       setDone(true);
     } catch (err) {
-      Alert.alert('Error', err instanceof Error ? err.message : 'Could not add pin. Try again.');
+      Alert.alert('Error', err instanceof Error ? err.message : 'Could not submit pin. Try again.');
     } finally {
       setSaving(false);
     }
@@ -297,17 +321,17 @@ export default function AddPinScreen() {
   if (done) {
     return (
       <>
-        <Stack.Screen options={{ title: 'Pin Added', headerBackVisible: false }} />
+        <Stack.Screen options={{ title: 'Pin Submitted', headerBackVisible: false }} />
         <View style={[styles.confirm, { backgroundColor: colors.homeBackground, paddingBottom: botPad }]}>
-          {frontUri && (
-            <Image source={{ uri: frontUri }} style={styles.confirmThumb} resizeMode="cover" />
+          {front && (
+            <Image source={{ uri: front.uri }} style={styles.confirmThumb} resizeMode="cover" />
           )}
           <View style={[styles.confirmIcon, { backgroundColor: colors.homeCoral + '18' }]}>
             <Feather name="check-circle" size={48} color={colors.homeCoral} />
           </View>
-          <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Pin Added!</Text>
+          <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Pin Submitted!</Text>
           <Text style={[styles.confirmSub, { color: colors.homeMuted }]}>
-            "{proposedName}" has been added to the catalogue as a community submission and will appear in searches while awaiting verification.
+            "{proposedName}" has been submitted for review. We'll let you know once an admin has checked it — you can track its status under My Submissions.
           </Text>
           <TouchableOpacity
             onPress={() => router.back()}
@@ -318,7 +342,7 @@ export default function AddPinScreen() {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              setFrontUri(null); setBackUri(null);
+              setFront(null);
               setProposedName(''); setBrand(''); setCharacterNames('');
               setSeriesName(''); setReleaseLocation(''); setReleaseYear('');
               setEditionType('unknown'); setEditionSize('');
@@ -373,8 +397,8 @@ export default function AddPinScreen() {
   // ── Review step ─────────────────────────────────────────────────────────────
   const renderReview = () => (
     <View style={styles.reviewWrap}>
-      {frontUri && (
-        <Image source={{ uri: frontUri }} style={[styles.reviewHero, { borderRadius: radius.md }]} resizeMode="cover" />
+      {front && (
+        <Image source={{ uri: front.uri }} style={[styles.reviewHero, { borderRadius: radius.md }]} resizeMode="cover" />
       )}
 
       <View style={[styles.reviewCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
@@ -389,7 +413,6 @@ export default function AddPinScreen() {
           ['Edition Size',editionSize     || '—'],
           ['FAC #',       facNumber       || '—'],
           ['SKU',         sku             || '—'],
-          ['Back photo',  backUri ? 'Included' : 'Not provided'],
           ['Notes',       notes           || '—'],
         ] as [string, string][]).map(([label, value], i, arr) => (
           <View
@@ -413,8 +436,8 @@ export default function AddPinScreen() {
           activeOpacity={0.85}
           style={[styles.submitBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.md, shadowColor: colors.homeShadow }]}
         >
-          <Feather name="plus-circle" size={16} color={colors.homeSurface} />
-          <Text style={[styles.submitBtnLabel, { color: colors.homeSurface }]}>Add to Catalogue</Text>
+          <Feather name="send" size={16} color={colors.homeSurface} />
+          <Text style={[styles.submitBtnLabel, { color: colors.homeSurface }]}>Submit for Review</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -500,19 +523,10 @@ export default function AddPinScreen() {
     <PhotoStep
       key="front"
       title="Front Photo"
-      subtitle="Photograph the front of the pin clearly. You can skip this for now."
-      uri={frontUri}
+      subtitle="Photograph the front of the pin clearly. Required so an admin can verify it."
+      uri={front?.uri ?? null}
       onCamera={() => pickFront('camera')}
       onLibrary={() => pickFront('library')}
-      colors={colors}
-    />,
-    <PhotoStep
-      key="back"
-      title="Back Photo"
-      subtitle="Photograph the back of the pin to capture markings and copyright info. Optional."
-      uri={backUri}
-      onCamera={() => pickBack('camera')}
-      onLibrary={() => pickBack('library')}
       colors={colors}
     />,
     renderDetails(),
@@ -536,7 +550,7 @@ export default function AddPinScreen() {
           {stepContent}
 
           {/* Nav — not shown on review step (has its own submit button) */}
-          {step < 3 && (
+          {step < 2 && (
             <View style={styles.navRow}>
               {step > 0 && (
                 <TouchableOpacity
@@ -548,23 +562,13 @@ export default function AddPinScreen() {
                   <Text style={[styles.navBtnLabel, { color: colors.homeInk }]}>Back</Text>
                 </TouchableOpacity>
               )}
-              {/* Photo steps can be skipped */}
-              {step < 2 && (
-                <TouchableOpacity
-                  onPress={goNext}
-                  activeOpacity={0.8}
-                  style={[styles.navBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
-                >
-                  <Text style={[styles.navBtnLabel, { color: colors.homeMuted }]}>Skip</Text>
-                </TouchableOpacity>
-              )}
               <TouchableOpacity
                 onPress={goNext}
                 activeOpacity={0.85}
                 style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral }]}
               >
                 <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>
-                  {step === 2 ? 'Review' : 'Next'}
+                  {step === 1 ? 'Review' : 'Next'}
                 </Text>
                 <Feather name="arrow-right" size={16} color={colors.homeSurface} />
               </TouchableOpacity>

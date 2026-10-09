@@ -22,7 +22,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
-import { pickSubmissionImage } from '@/utils/submissionImage';
+import { pickSubmissionImage, type PickedImage } from '@/utils/submissionImage';
 import { radius, spacing } from '@/constants/theme';
 import type { EditionType, PinSubmission } from '@workspace/pin-repository';
 
@@ -61,8 +61,8 @@ export default function EditSubmissionScreen() {
   const [submission, setSubmission] = useState<PinSubmission | null>(null);
   const [frontUrl, setFrontUrl]     = useState<string | null>(null);
   const [backUrl,  setBackUrl]      = useState<string | null>(null);
-  const [newFrontUri, setNewFrontUri] = useState<string | null>(null);
-  const [newBackUri,  setNewBackUri]  = useState<string | null>(null);
+  const [newFrontImg, setNewFrontImg] = useState<PickedImage | null>(null);
+  const [newBackImg,  setNewBackImg]  = useState<PickedImage | null>(null);
   const [loading, setLoading]         = useState(true);
   const [saving, setSaving]           = useState(false);
   const [error, setError]             = useState<string | null>(null);
@@ -122,7 +122,7 @@ export default function EditSubmissionScreen() {
   // Signed URLs expire after SIGNED_URL_TTL_SECONDS. Re-sign them when an
   // image fails to load, and proactively before expiry, so photos never go
   // blank while the screen stays open for over an hour. Newly picked local
-  // images (newFrontUri / newBackUri) never expire, so they're left alone.
+  // images (newFrontImg / newBackImg) never expire, so they're left alone.
   const submissionRef = useRef<PinSubmission | null>(null);
   useEffect(() => { submissionRef.current = submission; }, [submission]);
 
@@ -189,8 +189,8 @@ export default function EditSubmissionScreen() {
       });
 
       // Upload replacement images if chosen
-      if (newFrontUri) await repo.uploadSubmissionFrontImage(submission.id, newFrontUri);
-      if (newBackUri)  await repo.uploadSubmissionBackImage(submission.id, newBackUri);
+      if (newFrontImg) await repo.uploadSubmissionFrontImage(submission.id, newFrontImg.base64);
+      if (newBackImg)  await repo.uploadSubmissionBackImage(submission.id, newBackImg.base64);
 
       // Submit for review if requested
       if (submitForReview) await repo.submitPinForReview(submission.id);
@@ -205,12 +205,12 @@ export default function EditSubmissionScreen() {
 
   const pickFront = async (source: 'camera' | 'library') => {
     const img = await pickSubmissionImage(source);
-    if (img) setNewFrontUri(img.uri);
+    if (img) setNewFrontImg(img);
   };
 
   const pickBack = async (source: 'camera' | 'library') => {
     const img = await pickSubmissionImage(source);
-    if (img) setNewBackUri(img.uri);
+    if (img) setNewBackImg(img);
   };
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
@@ -295,10 +295,10 @@ export default function EditSubmissionScreen() {
           <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>FRONT PHOTO</Text>
           <View style={[styles.photoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
             <Image
-              source={{ uri: newFrontUri ?? frontUrl ?? undefined }}
+              source={{ uri: newFrontImg?.uri ?? frontUrl ?? undefined }}
               style={styles.thumbImg}
               resizeMode="cover"
-              onError={newFrontUri ? undefined : refreshImageUrls}
+              onError={newFrontImg ? undefined : refreshImageUrls}
             />
             <View style={styles.photoActions}>
               <TouchableOpacity onPress={() => pickFront('camera')} style={[styles.photoBtn, { backgroundColor: colors.homeAqua, borderRadius: radius.sm - 2 }]}>
@@ -317,8 +317,8 @@ export default function EditSubmissionScreen() {
           {/* Back photo */}
           <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>BACK PHOTO (OPTIONAL)</Text>
           <View style={[styles.photoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
-            {(newBackUri ?? backUrl) ? (
-              <Image source={{ uri: newBackUri ?? backUrl ?? undefined }} style={styles.thumbImg} resizeMode="cover" onError={newBackUri ? undefined : refreshImageUrls} />
+            {(newBackImg?.uri ?? backUrl) ? (
+              <Image source={{ uri: newBackImg?.uri ?? backUrl ?? undefined }} style={styles.thumbImg} resizeMode="cover" onError={newBackImg ? undefined : refreshImageUrls} />
             ) : (
               <View style={[styles.thumbPlaceholder, { backgroundColor: colors.homeAqua }]}>
                 <Feather name="image" size={24} color={colors.homeMuted} />

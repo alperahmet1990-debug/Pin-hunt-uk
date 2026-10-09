@@ -75,6 +75,9 @@ function getServiceUserRepository() {
 
 const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image, same cap as /scan/identify
 
+const PROPOSAL_REASONS = ["missing", "wrong_pin", "poor_quality", "other"] as const;
+type ProposalReason = (typeof PROPOSAL_REASONS)[number];
+
 router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res: Response) => {
   try {
     if (!pixianConfigured()) {
@@ -82,11 +85,13 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
       return;
     }
 
-    const { pinId, imageBase64, mimeType = "image/jpeg", consentGranted } = req.body as {
+    const { pinId, imageBase64, mimeType = "image/jpeg", consentGranted, proposalReason } = req.body as {
       pinId?: string;
       imageBase64?: string;
       mimeType?: string;
       consentGranted?: boolean;
+      /** Sent by the catalogue contribution flow; omitted by scan. */
+      proposalReason?: string;
     };
 
     if (!pinId) { res.status(400).json({ error: "pinId is required" }); return; }
@@ -100,7 +105,20 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
       return;
     }
 
+    if (proposalReason !== undefined && !PROPOSAL_REASONS.includes(proposalReason as ProposalReason)) {
+      res.status(400).json({ error: "Unknown proposal reason." });
+      return;
+    }
+
     const userId = req.userId!;
+    const userRepo = getServiceUserRepository();
+
+    // Checked before the (paid) Pixian call, not just before the insert.
+    if (await userRepo.hasPendingContributedImage(userId, pinId)) {
+      res.status(409).json({ error: "You've already sent a photo of this pin — it's waiting for review." });
+      return;
+    }
+
     const rawBuffer = Buffer.from(imageBase64, "base64");
 
     let processedBuffer: Buffer;
@@ -123,10 +141,10 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
       return;
     }
 
-    const userRepo = getServiceUserRepository();
     const image = await userRepo.createContributedImage(userId, pinId, {
       storagePath,
       consentGranted,
+      proposalReason: proposalReason as ProposalReason | undefined,
     });
 
     res.json({ image });

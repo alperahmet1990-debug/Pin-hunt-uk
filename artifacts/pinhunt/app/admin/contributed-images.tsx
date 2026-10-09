@@ -25,9 +25,16 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { API_BASE } from '@/lib/apiBase';
-import type { ContributedPinImage } from '@workspace/pin-repository';
+import type { ContributedImageReason, ContributedPinImage } from '@workspace/pin-repository';
 
 type PendingImage = ContributedPinImage & { signedUrl: string };
+
+const REASON_LABEL: Record<ContributedImageReason, string> = {
+  missing: 'No photo',
+  wrong_pin: 'Current photo is the wrong pin',
+  poor_quality: 'Current photo is poor quality',
+  other: 'Other',
+};
 
 export default function AdminContributedImagesScreen() {
   const colors = useColors();
@@ -135,6 +142,17 @@ export default function AdminContributedImagesScreen() {
                       {img.pinTitle ?? 'Unknown pin'}
                     </Text>
                     <Text style={[styles.cardMeta, { color: colors.mutedForeground }]}>{img.pinhuntId}</Text>
+                    {img.proposalReason && img.proposalReason !== 'missing' && (
+                      <Text style={[styles.cardMeta, { color: colors.destructive }]}>
+                        Replacement · {REASON_LABEL[img.proposalReason]}
+                      </Text>
+                    )}
+                    {img.pinImageUrl && (
+                      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                        <Image source={{ uri: img.pinImageUrl }} style={{ width: 32, height: 32, borderRadius: 6 }} resizeMode="contain" />
+                        <Text style={[styles.cardMeta, { color: colors.mutedForeground }]}>Current photo (replaced on approve)</Text>
+                      </View>
+                    )}
                     <Text style={[styles.cardMeta, { color: colors.mutedForeground }]}>
                       Consented {new Date(img.contributorConsentAt).toLocaleDateString('en-GB', {
                         day: 'numeric', month: 'short', year: 'numeric',

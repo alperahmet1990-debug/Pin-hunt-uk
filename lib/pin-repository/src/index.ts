@@ -69,8 +69,18 @@ export type {
   // Contributed pin images
   ContributedPinImage,
   ContributedImageStatus,
+  ContributedImageReason,
   CreateContributedImageInput,
   ReviewContributedImageInput,
+  // Feature flags & catalogue photo coverage
+  FeatureKey,
+  CatalogueImageSource,
+  CatalogueImageCoverage,
+  FeatureAudience,
+  FeatureFlag,
+  // Access levels
+  MyAccess,
+  UserAccess,
 } from './types';
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────

@@ -21,6 +21,7 @@ import { Stack, useFocusEffect, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { useMyAccess } from '@/hooks/useMyAccess';
 
 interface AttentionCounts {
   reportedContent: number;
@@ -32,6 +33,7 @@ export default function AdminIndexScreen() {
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
   const { repo } = useMarketplace();
+  const { isAppCreator } = useMyAccess();
 
   const [counts, setCounts]         = useState<AttentionCounts | null>(null);
   const [loading, setLoading]       = useState(true);
@@ -132,6 +134,17 @@ export default function AdminIndexScreen() {
           </View>
         )}
 
+        {/* App Creator only — people & rollouts (migration 040) */}
+        {isAppCreator && (
+          <ActionCard
+            icon="users"
+            title="Manage People"
+            description="Grant or remove admin and contributor rights, and roll out beta features."
+            onPress={() => router.push('/admin/people' as any)}
+            colors={colors}
+          />
+        )}
+
         {/* Quick access */}
         <View style={styles.sectionLabel}>
           <Text style={[styles.sectionLabelText, { color: colors.mutedForeground }]}>QUICK ACCESS</Text>
@@ -144,13 +157,15 @@ export default function AdminIndexScreen() {
           onPress={() => router.push('/admin/community-moderation' as any)}
           colors={colors}
         />
-        <ActionCard
-          icon="book-open"
-          title="Catalogue"
-          description="Search and edit existing catalogue records."
-          onPress={() => router.push('/admin/catalogue' as any)}
-          colors={colors}
-        />
+        {isAppCreator && (
+          <ActionCard
+            icon="book-open"
+            title="Catalogue"
+            description="Search and edit existing catalogue records."
+            onPress={() => router.push('/admin/catalogue' as any)}
+            colors={colors}
+          />
+        )}
         <ActionCard
           icon="inbox"
           title="Catalogue Submissions"
@@ -158,28 +173,39 @@ export default function AdminIndexScreen() {
           onPress={() => router.push('/admin/submissions' as any)}
           colors={colors}
         />
-        <ActionCard
-          icon="image"
-          title="Missing Images"
-          description="Add missing front or back photos to catalogue pins."
-          onPress={() => router.push('/admin/image-backfill' as any)}
-          colors={colors}
-        />
+        {isAppCreator && (
+          <ActionCard
+            icon="image"
+            title="Missing Images"
+            description="Add missing front or back photos to catalogue pins."
+            onPress={() => router.push('/admin/image-backfill' as any)}
+            colors={colors}
+          />
+        )}
         <ActionCard
           icon="camera"
           title="Contributed Photos"
-          description="Review pin photos collectors submitted from the scan flow."
+          description="Review pin photos collectors submitted from scan or the catalogue."
           onPress={() => router.push('/admin/contributed-images' as any)}
           colors={colors}
         />
         <ActionCard
-          icon="plus-circle"
-          title="Add New Pin"
-          description="Create a new catalogue entry directly."
-          onPress={() => router.push({ pathname: '/admin/pin/[id]' as any, params: { id: 'new' } })}
+          icon="grid"
+          title="Help Build the Catalogue"
+          description="Beta contributor view: every catalogue pin by photo status."
+          onPress={() => router.push('/contribute' as any)}
           colors={colors}
-          primary
         />
+        {isAppCreator && (
+          <ActionCard
+            icon="plus-circle"
+            title="Add New Pin"
+            description="Create a new catalogue entry directly."
+            onPress={() => router.push({ pathname: '/admin/pin/[id]' as any, params: { id: 'new' } })}
+            colors={colors}
+            primary
+          />
+        )}
       </ScrollView>
     </>
   );

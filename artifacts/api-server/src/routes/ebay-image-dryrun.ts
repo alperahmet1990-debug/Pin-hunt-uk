@@ -54,7 +54,9 @@ function getAdminClient(): SupabaseClient {
   return adminClient;
 }
 
-async function requireAdmin(req: Request, res: Response, next: () => void) {
+// Catalogue tooling is App Creator only (migration 041) — plain admins
+// only moderate (photos, posts, submissions).
+async function requireAppCreator(req: Request, res: Response, next: () => void) {
   const auth = req.headers.authorization;
   if (!auth?.startsWith("Bearer ")) {
     res.status(401).json({ error: "Missing Authorization header" });
@@ -64,8 +66,8 @@ async function requireAdmin(req: Request, res: Response, next: () => void) {
     const { data: { user }, error } = await getAnonClient().auth.getUser(auth.slice(7));
     if (error || !user) { res.status(401).json({ error: "Invalid token" }); return; }
     const { data: profile } = await getAdminClient()
-      .from("profiles").select("is_admin").eq("id", user.id).single();
-    if (!profile?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
+      .from("profiles").select("is_app_creator").eq("id", user.id).single();
+    if (!profile?.is_app_creator) { res.status(403).json({ error: "App Creator access required" }); return; }
     next();
   } catch {
     res.status(500).json({ error: "Auth check failed" });
@@ -74,7 +76,7 @@ async function requireAdmin(req: Request, res: Response, next: () => void) {
 
 // ─── Routes ──────────────────────────────────────────────────────────────────
 
-router.post("/catalogue/ebay-image-dry-run", requireAdmin, async (req: Request, res: Response) => {
+router.post("/catalogue/ebay-image-dry-run", requireAppCreator, async (req: Request, res: Response) => {
   try {
     if (!ebayConfigured()) {
       res.status(503).json({ error: "eBay credentials are not configured" });
@@ -101,7 +103,7 @@ router.post("/catalogue/ebay-image-dry-run", requireAdmin, async (req: Request, 
   }
 });
 
-router.get("/catalogue/ebay-image-dry-run/runs", requireAdmin, async (_req, res: Response) => {
+router.get("/catalogue/ebay-image-dry-run/runs", requireAppCreator, async (_req, res: Response) => {
   try {
     res.json({ runs: await listDryRuns(), active: isDryRunActive() });
   } catch (e) {
@@ -109,7 +111,7 @@ router.get("/catalogue/ebay-image-dry-run/runs", requireAdmin, async (_req, res:
   }
 });
 
-router.get("/catalogue/ebay-image-dry-run/runs/:runId", requireAdmin, async (req, res: Response) => {
+router.get("/catalogue/ebay-image-dry-run/runs/:runId", requireAppCreator, async (req, res: Response) => {
   try {
     const runId = String(req.params.runId);
     const summary = await getDryRunSummary(runId);
@@ -124,7 +126,7 @@ router.get("/catalogue/ebay-image-dry-run/runs/:runId", requireAdmin, async (req
 // Re-search eBay for a different candidate image (excludes rejected listings).
 router.post(
   "/catalogue/ebay-image-dry-run/results/:resultId/retry",
-  requireAdmin,
+  requireAppCreator,
   async (req, res: Response) => {
     try {
       const result = await retryDryRunResult(String(req.params.resultId));
@@ -139,7 +141,7 @@ router.post(
 // Admin-confirmed apply: writes the candidate image to the live pin.
 router.post(
   "/catalogue/ebay-image-dry-run/results/:resultId/apply",
-  requireAdmin,
+  requireAppCreator,
   async (req, res: Response) => {
     try {
       const applied = await applyDryRunImage(String(req.params.resultId));

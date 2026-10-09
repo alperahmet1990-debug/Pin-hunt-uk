@@ -8,8 +8,13 @@
  * confirm (preview, retake or submit). The submitted photo is stored
  * privately pending admin review; it only becomes the pin's public
  * catalogue image once approved.
+ *
+ * `from=catalogue` (the beta contributor screen, app/contribute) adds an
+ * "Is this your pin?" check against the pin's details/reference photo, lets
+ * a contributor propose a replacement for a pin that already has a photo
+ * (with a reason), and finishes with "Next pin" instead of the pin page.
  */
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -30,9 +35,22 @@ import { useColors } from '@/hooks/useColors';
 import { spacing } from '@/constants/theme';
 import { useAuth } from '@/context/AuthContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { useCollection } from '@/context/CollectionContext';
 import { API_BASE } from '@/lib/apiBase';
+import {
+  findNextContributionTarget,
+  getCachedCoverage,
+  markCoveragePending,
+} from '@/hooks/useCatalogueCoverage';
+import type { ContributedImageReason } from '@workspace/pin-repository';
 
 type Step = 'consent' | 'confirm' | 'submitting' | 'done';
+
+const REPLACE_REASONS: Array<{ value: ContributedImageReason; label: string }> = [
+  { value: 'wrong_pin', label: 'Current photo is the wrong pin' },
+  { value: 'poor_quality', label: 'Current photo is poor quality' },
+  { value: 'other', label: 'Something else' },
+];
 
 interface CapturedPhoto {
   uri: string;
@@ -41,14 +59,26 @@ interface CapturedPhoto {
 }
 
 export default function ContributeImageScreen() {
-  const { pinId } = useLocalSearchParams<{ pinId: string }>();
+  const { pinId, from } = useLocalSearchParams<{ pinId: string; from?: string }>();
+  const fromCatalogue = from === 'catalogue';
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { pins } = usePinCatalogue();
+  const { pins, ensurePins } = usePinCatalogue();
   const { session } = useAuth();
+  const { collection } = useCollection();
+
+  // The catalogue context only caches a slice — make sure this pin is loaded.
+  useEffect(() => { if (pinId) ensurePins([pinId]); }, [pinId, ensurePins]);
 
   const pin = pins.find(p => p.id === pinId);
+  const coverage = fromCatalogue ? getCachedCoverage(pinId) : undefined;
+  const title = pin?.title ?? coverage?.title;
+  const existingImageUrl = pin?.imageUrl ?? coverage?.imageUrl;
+  // Replacing an existing photo is only offered from the catalogue screen;
+  // the scan flow only routes here for pins with no photo.
+  const isReplacement = fromCatalogue && !!existingImageUrl;
+  const [reason, setReason] = useState<ContributedImageReason | null>(null);
 
   const [step, setStep] = useState<Step>('consent');
   const [consentChecked, setConsentChecked] = useState(false);
@@ -60,6 +90,23 @@ export default function ContributeImageScreen() {
   const goToPin = useCallback(() => {
     router.replace({ pathname: '/pin/[id]', params: { id: pinId } });
   }, [router, pinId]);
+
+  const leave = useCallback(() => {
+    if (fromCatalogue) router.back();
+    else goToPin();
+  }, [fromCatalogue, router, goToPin]);
+
+  const ownedIds = useMemo(() => new Set(
+    Object.entries(collection)
+      .filter(([, e]) => e.status === 'owned' || e.status === 'for_trade')
+      .map(([id]) => id),
+  ), [collection]);
+  const nextPin = step === 'done' && fromCatalogue ? findNextContributionTarget(pinId, ownedIds) : undefined;
+
+  const goToNextPin = useCallback(() => {
+    if (!nextPin) return;
+    router.replace({ pathname: '/contribute-image/[pinId]', params: { pinId: nextPin.pinhuntId, from: 'catalogue' } });
+  }, [router, nextPin]);
 
   const handleTakePhoto = useCallback(async () => {
     setError(null);
@@ -109,20 +156,24 @@ export default function ContributeImageScreen() {
           imageBase64: photo.base64,
           mimeType: photo.mimeType,
           consentGranted: true,
+          ...(fromCatalogue ? { proposalReason: isReplacement ? reason : 'missing' } : {}),
         }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'Could not submit your photo.');
+      markCoveragePending(pinId);
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not submit your photo.');
       setStep('confirm');
     }
-  }, [photo, session?.access_token, pinId]);
+  }, [photo, session?.access_token, pinId, fromCatalogue, isReplacement, reason]);
+
+  const canStart = consentChecked && (!isReplacement || reason !== null);
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Add a Photo' }} />
+      <Stack.Screen options={{ title: isReplacement ? 'Propose a Photo' : 'Add a Photo' }} />
       <ScrollView
         style={[styles.root, { backgroundColor: colors.background }]}
         contentContainerStyle={{ padding: spacing.lg, paddingBottom: botPad, flexGrow: 1 }}
@@ -134,10 +185,49 @@ export default function ContributeImageScreen() {
               <Feather name="camera" size={28} color={colors.primary} />
             </View>
             <Text style={[styles.title, { color: colors.foreground }]}>
-              We don&apos;t have a photo of this pin yet
+              {isReplacement ? 'Propose a better photo' : 'We don\u2019t have a photo of this pin yet'}
             </Text>
-            {pin && (
-              <Text style={[styles.pinName, { color: colors.mutedForeground }]}>{pin.title}</Text>
+            {fromCatalogue ? (
+              <View style={[styles.pinCard, { borderColor: colors.border, backgroundColor: colors.card }]}>
+                {existingImageUrl ? (
+                  <Image source={{ uri: existingImageUrl }} style={styles.pinCardImage} resizeMode="contain" />
+                ) : (
+                  <View style={[styles.pinCardImage, styles.pinCardEmpty, { backgroundColor: colors.secondary }]}>
+                    <Feather name="image" size={20} color={colors.mutedForeground} />
+                  </View>
+                )}
+                <View style={{ flex: 1, gap: 2 }}>
+                  <Text style={[styles.pinCardLabel, { color: colors.mutedForeground }]}>Is this your pin?</Text>
+                  <Text style={[styles.pinCardTitle, { color: colors.foreground }]} numberOfLines={3}>{title ?? pinId}</Text>
+                  <Text style={[styles.pinCardMeta, { color: colors.mutedForeground }]} numberOfLines={2}>
+                    {[coverage?.setName ?? pin?.collection, coverage?.releaseYear ?? pin?.releaseYear, coverage?.editionType ?? pin?.edition]
+                      .filter(Boolean).join(' · ')}
+                  </Text>
+                  <Text style={[styles.pinCardMeta, { color: colors.mutedForeground }]}>{pinId}</Text>
+                </View>
+              </View>
+            ) : title ? (
+              <Text style={[styles.pinName, { color: colors.mutedForeground }]}>{title}</Text>
+            ) : null}
+
+            {isReplacement && (
+              <View style={styles.reasons}>
+                <Text style={[styles.reasonsLabel, { color: colors.foreground }]}>Why replace the current photo?</Text>
+                {REPLACE_REASONS.map(r => {
+                  const active = reason === r.value;
+                  return (
+                    <TouchableOpacity
+                      key={r.value}
+                      onPress={() => setReason(r.value)}
+                      activeOpacity={0.8}
+                      style={[styles.reasonRow, { borderColor: active ? colors.primary : colors.border }]}
+                    >
+                      <Feather name={active ? 'check-circle' : 'circle'} size={18} color={active ? colors.primary : colors.mutedForeground} />
+                      <Text style={[styles.reasonText, { color: colors.foreground }]}>{r.label}</Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
             )}
             <Text style={[styles.body, { color: colors.mutedForeground }]}>
               Take one clean photo — plain background, good light, pin filling the frame —
@@ -145,8 +235,9 @@ export default function ContributeImageScreen() {
               browsing, set pages, and every collector&apos;s view, not just yours.
             </Text>
             <Text style={[styles.body, { color: colors.mutedForeground }]}>
-              A PinHunt moderator reviews every photo before it goes live, so it won&apos;t
-              appear anywhere until approved.
+              {isReplacement
+                ? 'The current photo stays until a PinHunt moderator reviews yours \u2014 nothing changes unless it\u2019s approved.'
+                : 'A PinHunt moderator reviews every photo before it goes live, so it won\u2019t appear anywhere until approved.'}
             </Text>
 
             <TouchableOpacity
@@ -162,19 +253,21 @@ export default function ContributeImageScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={[styles.primaryBtn, { backgroundColor: consentChecked ? colors.primary : colors.secondary }]}
+              style={[styles.primaryBtn, { backgroundColor: canStart ? colors.primary : colors.secondary }]}
               onPress={handleTakePhoto}
-              disabled={!consentChecked}
+              disabled={!canStart}
               activeOpacity={0.85}
             >
-              <Feather name="camera" size={18} color={consentChecked ? '#fff' : colors.mutedForeground} />
-              <Text style={[styles.primaryBtnLabel, { color: consentChecked ? '#fff' : colors.mutedForeground }]}>
+              <Feather name="camera" size={18} color={canStart ? '#fff' : colors.mutedForeground} />
+              <Text style={[styles.primaryBtnLabel, { color: canStart ? '#fff' : colors.mutedForeground }]}>
                 Take Photo
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.skipBtn} onPress={goToPin} activeOpacity={0.7}>
-              <Text style={[styles.skipLabel, { color: colors.mutedForeground }]}>Maybe later</Text>
+            <TouchableOpacity style={styles.skipBtn} onPress={leave} activeOpacity={0.7}>
+              <Text style={[styles.skipLabel, { color: colors.mutedForeground }]}>
+                {fromCatalogue ? 'Not my pin \u2014 go back' : 'Maybe later'}
+              </Text>
             </TouchableOpacity>
           </View>
         )}
@@ -221,13 +314,32 @@ export default function ContributeImageScreen() {
               Your photo is being reviewed. We&apos;ll use it as this pin&apos;s catalogue photo
               once it&apos;s approved.
             </Text>
-            <TouchableOpacity
-              style={[styles.primaryBtn, { backgroundColor: colors.primary }]}
-              onPress={goToPin}
-              activeOpacity={0.85}
-            >
-              <Text style={[styles.primaryBtnLabel, { color: '#fff' }]}>Continue</Text>
-            </TouchableOpacity>
+            {nextPin ? (
+              <>
+                <TouchableOpacity
+                  style={[styles.primaryBtn, { backgroundColor: colors.primary }]}
+                  onPress={goToNextPin}
+                  activeOpacity={0.85}
+                >
+                  <Feather name="camera" size={18} color="#fff" />
+                  <Text style={[styles.primaryBtnLabel, { color: '#fff' }]}>Next pin that needs a photo</Text>
+                </TouchableOpacity>
+                <Text style={[styles.pinName, { color: colors.mutedForeground }]} numberOfLines={2}>{nextPin.title}</Text>
+                <TouchableOpacity style={styles.skipBtn} onPress={leave} activeOpacity={0.7}>
+                  <Text style={[styles.skipLabel, { color: colors.mutedForeground }]}>Back to the catalogue</Text>
+                </TouchableOpacity>
+              </>
+            ) : (
+              <TouchableOpacity
+                style={[styles.primaryBtn, { backgroundColor: colors.primary }]}
+                onPress={leave}
+                activeOpacity={0.85}
+              >
+                <Text style={[styles.primaryBtnLabel, { color: '#fff' }]}>
+                  {fromCatalogue ? 'Back to the catalogue' : 'Continue'}
+                </Text>
+              </TouchableOpacity>
+            )}
           </View>
         )}
       </ScrollView>
@@ -253,5 +365,15 @@ const styles = StyleSheet.create({
   confirmRow: { flexDirection: 'row', gap: spacing.md, width: '100%' },
   secondaryBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.xs, borderWidth: 1, borderRadius: 18, paddingVertical: 13 },
   secondaryBtnLabel: { fontSize: 15, fontFamily: 'Inter_500Medium' },
+  pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, width: '100%', borderWidth: 1, borderRadius: 18, padding: spacing.md },
+  pinCardImage: { width: 76, height: 76, borderRadius: 12 },
+  pinCardEmpty: { alignItems: 'center', justifyContent: 'center' },
+  pinCardLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.4, textTransform: 'uppercase' },
+  pinCardTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  pinCardMeta: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  reasons: { width: '100%', gap: spacing.sm },
+  reasonsLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  reasonRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, borderWidth: 1, borderRadius: 14, padding: spacing.md },
+  reasonText: { flex: 1, fontSize: 14, fontFamily: 'Inter_400Regular' },
   submitBtn: { flex: 2, alignItems: 'center', justifyContent: 'center', borderRadius: 18, paddingVertical: 14 },
 });

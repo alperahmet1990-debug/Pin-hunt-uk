@@ -33,7 +33,9 @@ function getAdminClient(): SupabaseClient {
   return adminClient;
 }
 
-async function requireAdmin(req: Request, res: Response, next: () => void) {
+// Catalogue tooling is App Creator only (migration 041) — plain admins
+// only moderate (photos, posts, submissions).
+async function requireAppCreator(req: Request, res: Response, next: () => void) {
   const auth = req.headers.authorization;
   if (!auth?.startsWith("Bearer ")) {
     res.status(401).json({ error: "Missing Authorization header" });
@@ -43,8 +45,8 @@ async function requireAdmin(req: Request, res: Response, next: () => void) {
     const { data: { user }, error } = await getAnonClient().auth.getUser(auth.slice(7));
     if (error || !user) { res.status(401).json({ error: "Invalid token" }); return; }
     const { data: profile } = await getAdminClient()
-      .from("profiles").select("is_admin").eq("id", user.id).single();
-    if (!profile?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
+      .from("profiles").select("is_app_creator").eq("id", user.id).single();
+    if (!profile?.is_app_creator) { res.status(403).json({ error: "App Creator access required" }); return; }
     next();
   } catch {
     res.status(500).json({ error: "Auth check failed" });
@@ -72,7 +74,7 @@ function getVisionClient(): ImageAnnotatorClient {
 
 const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image
 
-router.post("/vision-test", requireAdmin, async (req: Request, res: Response) => {
+router.post("/vision-test", requireAppCreator, async (req: Request, res: Response) => {
   const { imageBase64 } = req.body as { imageBase64?: unknown };
   if (typeof imageBase64 !== "string" || imageBase64.length === 0) {
     res.status(400).json({ error: "imageBase64 is required" });

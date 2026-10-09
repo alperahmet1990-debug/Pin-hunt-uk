@@ -591,7 +591,10 @@ export interface PinSubmission {
   updatedAt: string;
 }
 
-export interface CreatePinSubmissionInput {
+/** Every pin_submissions field except the images — shared by CreatePinSubmissionInput
+ *  (client uploads base64 itself) and the API server's path-based create call
+ *  (server has already uploaded a Pixian-normalized image and just has a path). */
+export interface PinSubmissionMetadataInput {
   proposedName: string;
   brand: string;
   seriesName?: string;
@@ -602,10 +605,14 @@ export interface CreatePinSubmissionInput {
   facNumber?: string;
   sku?: string;
   characterNames?: string[];
-  frontImageUri: string;
-  backImageUri?: string;
   notes?: string;
   status?: PinSubmissionStatus;
+}
+
+export interface CreatePinSubmissionInput extends PinSubmissionMetadataInput {
+  /** Base64-encoded JPEG data, as returned directly by the image picker/manipulator. */
+  frontImageBase64: string;
+  backImageBase64?: string;
 }
 
 // ─── Community post types ──────────────────────────────────────────────────────
@@ -801,18 +808,24 @@ export interface GetAllSubmissionsInput {
 
 export type ContributedImageStatus = 'pending' | 'approved' | 'rejected';
 
+/** Why a contributor offered a photo (migration 039). Null on 038-era rows. */
+export type ContributedImageReason = 'missing' | 'wrong_pin' | 'poor_quality' | 'other';
+
 export interface ContributedPinImage {
   id: string;
   pinId: string;
   /** PHUK-XXXXXXXX identifier, for display in the admin review queue. */
   pinhuntId?: string;
   pinTitle?: string;
+  /** The pin's current display photo, so reviewers can compare replacements. */
+  pinImageUrl?: string;
   uploadedBy: string;
   /** Path within the private `pin-contributed-images` bucket. */
   storagePath: string;
   status: ContributedImageStatus;
   /** When the contributor granted PinHunt the right to reuse this photo. */
   contributorConsentAt: string;
+  proposalReason?: ContributedImageReason;
   reviewerNotes?: string;
   reviewedBy?: string;
   reviewedAt?: string;
@@ -824,6 +837,64 @@ export interface CreateContributedImageInput {
   storagePath: string;
   /** Must be true — the repository rejects the call otherwise. */
   consentGranted: boolean;
+  /** Omitted by the scan flow; set by the catalogue contribution flow. */
+  proposalReason?: ContributedImageReason;
+}
+
+// ─── Feature flags & catalogue photo coverage (migration 039) ────────────────
+
+/** Gated feature keys — one row each in `feature_flags`. */
+export type FeatureKey = 'catalogue_contributions';
+
+/**
+ * Where a pin's current display photo came from:
+ * 'community' — an approved contributed photo;
+ * 'reference' — imported (Collectible PinTrader) image;
+ * null — no photo.
+ */
+export type CatalogueImageSource = 'community' | 'reference' | null;
+
+/** Who a gated feature is open to (feature_flags.audience). */
+export type FeatureAudience = 'admin' | 'contributor' | 'public';
+
+export interface FeatureFlag {
+  key: FeatureKey;
+  audience: FeatureAudience;
+  description?: string;
+}
+
+// ─── Access levels (migrations 039–040) ───────────────────────────────────────
+// app creator > admin > contributor > public. Only the app creator can change
+// admin/contributor rights; app creator itself is set in the SQL editor only.
+
+export interface MyAccess {
+  isAppCreator: boolean;
+  isAdmin: boolean;
+  isContributor: boolean;
+}
+
+/** A user row on the App Creator's "Manage people" screen. */
+export interface UserAccess extends MyAccess {
+  id: string;
+  username?: string;
+  displayName?: string;
+  avatarUrl?: string;
+}
+
+/** One row of get_catalogue_image_coverage() — a pin and its photo status. */
+export interface CatalogueImageCoverage {
+  /** PHUK-XXXXXXXX — the same id the app uses as CataloguePin.id. */
+  pinhuntId: string;
+  title: string;
+  setName: string;
+  releaseYear?: number;
+  editionType?: string;
+  imageUrl?: string;
+  imageSource: CatalogueImageSource;
+  /** Pending contributions from anyone (count only). */
+  pendingCount: number;
+  /** The caller's own most recent contribution status for this pin. */
+  myStatus?: ContributedImageStatus;
 }
 
 export interface ReviewContributedImageInput {

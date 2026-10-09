@@ -54,7 +54,9 @@ interface AdminRequest extends Request {
   adminId?: string;
 }
 
-async function requireAdmin(req: AdminRequest, res: Response, next: () => void) {
+// Catalogue tooling is App Creator only (migration 041) — plain admins
+// only moderate (photos, posts, submissions).
+async function requireAppCreator(req: AdminRequest, res: Response, next: () => void) {
   const auth = req.headers.authorization;
   if (!auth?.startsWith("Bearer ")) {
     res.status(401).json({ error: "Missing Authorization header" });
@@ -64,8 +66,8 @@ async function requireAdmin(req: AdminRequest, res: Response, next: () => void) 
     const { data: { user }, error } = await getAnonClient().auth.getUser(auth.slice(7));
     if (error || !user) { res.status(401).json({ error: "Invalid token" }); return; }
     const { data: profile } = await getAdminClient()
-      .from("profiles").select("is_admin").eq("id", user.id).single();
-    if (!profile?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
+      .from("profiles").select("is_app_creator").eq("id", user.id).single();
+    if (!profile?.is_app_creator) { res.status(403).json({ error: "App Creator access required" }); return; }
     req.adminId = user.id;
     next();
   } catch {
@@ -75,7 +77,7 @@ async function requireAdmin(req: AdminRequest, res: Response, next: () => void) 
 
 // ─── Routes ──────────────────────────────────────────────────────────────────
 
-router.post("/catalogue/validation", requireAdmin, async (req: AdminRequest, res: Response) => {
+router.post("/catalogue/validation", requireAppCreator, async (req: AdminRequest, res: Response) => {
   try {
     if (!ebayConfigured()) {
       res.status(503).json({ error: "eBay credentials are not configured" });
@@ -101,11 +103,11 @@ router.post("/catalogue/validation", requireAdmin, async (req: AdminRequest, res
   }
 });
 
-router.post("/catalogue/validation/pause", requireAdmin, async (_req, res: Response) => {
+router.post("/catalogue/validation/pause", requireAppCreator, async (_req, res: Response) => {
   res.json({ paused: requestPause() });
 });
 
-router.get("/catalogue/validation/runs", requireAdmin, async (_req, res: Response) => {
+router.get("/catalogue/validation/runs", requireAppCreator, async (_req, res: Response) => {
   try {
     res.json({ runs: await listValidationRuns(), active: isValidationRunActive() });
   } catch (e) {
@@ -113,7 +115,7 @@ router.get("/catalogue/validation/runs", requireAdmin, async (_req, res: Respons
   }
 });
 
-router.get("/catalogue/validation/runs/:runId", requireAdmin, async (req, res: Response) => {
+router.get("/catalogue/validation/runs/:runId", requireAppCreator, async (req, res: Response) => {
   try {
     const runId = String(req.params.runId);
     const summary = await getValidationRun(runId);
@@ -125,7 +127,7 @@ router.get("/catalogue/validation/runs/:runId", requireAdmin, async (req, res: R
   }
 });
 
-router.get("/catalogue/validation/runs/:runId/csv", requireAdmin, async (req, res: Response) => {
+router.get("/catalogue/validation/runs/:runId/csv", requireAppCreator, async (req, res: Response) => {
   try {
     const csv = await buildValidationCsv(String(req.params.runId));
     res.setHeader("Content-Type", "text/csv; charset=utf-8");
@@ -138,7 +140,7 @@ router.get("/catalogue/validation/runs/:runId/csv", requireAdmin, async (req, re
 
 router.post(
   "/catalogue/validation/results/:validationId/decision",
-  requireAdmin,
+  requireAppCreator,
   async (req: AdminRequest, res: Response) => {
     try {
       const body = req.body as {
@@ -171,7 +173,7 @@ router.post(
 
 router.post(
   "/catalogue/validation/results/:validationId/apply-image",
-  requireAdmin,
+  requireAppCreator,
   async (req: AdminRequest, res: Response) => {
     try {
       const body = req.body as { itemId?: unknown };
@@ -194,7 +196,7 @@ router.post(
 
 router.post(
   "/catalogue/validation/results/:validationId/revalidate",
-  requireAdmin,
+  requireAppCreator,
   async (req, res: Response) => {
     try {
       await revalidateOne(String(req.params.validationId));

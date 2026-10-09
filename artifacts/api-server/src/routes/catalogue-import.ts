@@ -103,7 +103,9 @@ function getAnonClient(): SupabaseClient {
 
 // ─── Auth middleware ──────────────────────────────────────────────────────────
 
-async function requireAdmin(req: Request & { adminUserId?: string }, res: Response, next: () => void) {
+// Catalogue tooling is App Creator only (migration 041) — plain admins
+// only moderate (photos, posts, submissions).
+async function requireAppCreator(req: Request & { adminUserId?: string }, res: Response, next: () => void) {
   const auth = req.headers.authorization;
   if (!auth?.startsWith("Bearer ")) {
     res.status(401).json({ error: "Missing Authorization header" });
@@ -118,11 +120,11 @@ async function requireAdmin(req: Request & { adminUserId?: string }, res: Respon
     const admin = getAdminClient();
     const { data: profile } = await admin
       .from("profiles")
-      .select("is_admin")
+      .select("is_app_creator")
       .eq("id", user.id)
       .single();
 
-    if (!profile?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
+    if (!profile?.is_app_creator) { res.status(403).json({ error: "App Creator access required" }); return; }
     req.adminUserId = user.id;
     next();
   } catch (e) {
@@ -804,7 +806,7 @@ async function runImportJob(
 
 // ─── Preview endpoint ─────────────────────────────────────────────────────────
 
-router.post("/admin/catalogue-import/preview", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
+router.post("/admin/catalogue-import/preview", requireAppCreator, async (req: Request & { adminUserId?: string }, res: Response) => {
   try {
     const { fileBase64, filename = "upload.xlsx", sheetName } = req.body as { fileBase64: string; filename?: string; sheetName?: string };
     if (!fileBase64) { res.status(400).json({ error: "fileBase64 is required" }); return; }
@@ -828,7 +830,7 @@ router.post("/admin/catalogue-import/preview", requireAdmin, async (req: Request
 
 // ─── Import endpoint (dry-run or async kick-off) ──────────────────────────────
 
-router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
+router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & { adminUserId?: string }, res: Response) => {
   const {
     fileBase64, filename = "upload.xlsx", sheetName,
     dryRun = false, force = false, overwriteProtectedFields = false,
@@ -972,7 +974,7 @@ router.post("/admin/catalogue-import", requireAdmin, async (req: Request & { adm
 
 // ─── Single batch status (for live polling) ───────────────────────────────────
 
-router.get("/admin/catalogue-import/batches/:batchId", requireAdmin, async (req, res: Response) => {
+router.get("/admin/catalogue-import/batches/:batchId", requireAppCreator, async (req, res: Response) => {
   const { batchId } = req.params;
   const db = getAdminClient();
 
@@ -998,7 +1000,7 @@ router.get("/admin/catalogue-import/batches/:batchId", requireAdmin, async (req,
 
 // ─── List batches ─────────────────────────────────────────────────────────────
 
-router.get("/admin/catalogue-import/batches", requireAdmin, async (_req, res: Response) => {
+router.get("/admin/catalogue-import/batches", requireAppCreator, async (_req, res: Response) => {
   const db = getAdminClient();
   const { data, error } = await db
     .from("import_batches")
@@ -1011,7 +1013,7 @@ router.get("/admin/catalogue-import/batches", requireAdmin, async (_req, res: Re
 
 // ─── Reprocess single error row ───────────────────────────────────────────────
 
-router.post("/admin/catalogue-import/batches/:batchId/reprocess-row", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
+router.post("/admin/catalogue-import/batches/:batchId/reprocess-row", requireAppCreator, async (req: Request & { adminUserId?: string }, res: Response) => {
   const batchId = String(req.params.batchId);
   const { rowNum, fields } = req.body as { rowNum: number; fields: Record<string, unknown> };
 
@@ -1102,7 +1104,7 @@ router.post("/admin/catalogue-import/batches/:batchId/reprocess-row", requireAdm
 
 // ─── Rollback ─────────────────────────────────────────────────────────────────
 
-router.post("/admin/catalogue-import/batches/:batchId/rollback", requireAdmin, async (req: Request & { adminUserId?: string }, res: Response) => {
+router.post("/admin/catalogue-import/batches/:batchId/rollback", requireAppCreator, async (req: Request & { adminUserId?: string }, res: Response) => {
   const { batchId } = req.params;
   const db = getAdminClient();
 

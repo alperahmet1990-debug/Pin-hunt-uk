@@ -24,6 +24,9 @@ import type {
   PostReportSummary,
   CommentReport,
   ReportedComment,
+  ContributedPinImage,
+  CreateContributedImageInput,
+  ReviewContributedImageInput,
   PotentialTradePin,
   StartConversationInput,
   SendConversationMessageInput,
@@ -256,6 +259,50 @@ export interface IUserPinRepository {
    * Admin only.
    */
   findSubmissionDuplicateCandidates(submissionId: string): Promise<DuplicateCandidate[]>;
+
+  // ── Contributed pin images (scan → canonical display image) ───────────────
+  // Distinct from pin submissions (a whole new pin) and from user_pin_images
+  // (a user's private photo of a pin in their own collection). A contributed
+  // image offers to become the CATALOGUE's public display image for a pin
+  // that doesn't have one yet — gated on consent and admin review.
+
+  /**
+   * Record a pending image contribution. `input.storagePath` must already
+   * point at an uploaded object in the `pin-contributed-images` bucket —
+   * this method only writes the DB row, since the upload itself needs
+   * platform-specific compression the repository package doesn't depend on.
+   * Throws if `input.consentGranted` is not `true`.
+   */
+  createContributedImage(
+    userId: string,
+    pinId: string,
+    input: CreateContributedImageInput,
+  ): Promise<ContributedPinImage>;
+
+  /** Return all of the authenticated user's own contributed images, any status. */
+  getMyContributedImages(userId: string): Promise<ContributedPinImage[]>;
+
+  /** Admin only: all pending contributed images awaiting review, oldest first. */
+  getPendingContributedImages(): Promise<ContributedPinImage[]>;
+
+  /** Admin only: a single contributed image by id, with its pin's pinhunt_id/title joined. */
+  getContributedImage(imageId: string): Promise<ContributedPinImage | null>;
+
+  /**
+   * Admin only: record a reject decision (status + reviewer_notes only).
+   * Approval additionally requires promoting the image into the public
+   * `pin-catalogue` bucket and writing `pins.image_url` — that cross-bucket
+   * step needs the Storage API with a service-role key, so it happens in
+   * the API server, which calls this method for the DB bookkeeping half.
+   */
+  markContributedImageReviewed(
+    imageId: string,
+    reviewedBy: string,
+    input: ReviewContributedImageInput,
+  ): Promise<ContributedPinImage>;
+
+  /** Return a signed URL (1 hour TTL) for a private contributed image. */
+  getContributedImageUrl(storagePath: string): Promise<string>;
 
   // ── Trade ratings & for-trade discovery ───────────────────────────────────
 

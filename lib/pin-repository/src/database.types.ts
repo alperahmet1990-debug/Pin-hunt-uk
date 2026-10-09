@@ -296,9 +296,9 @@ export interface Database {
         ];
       };
       pin_images: {
-        Row: { id: string; pin_id: string; image_url: string; image_type: 'front' | 'back' | 'reference' | 'scan'; description: string | null; is_primary: boolean; uploaded_by: string | null; created_at: string; updated_at: string };
-        Insert: { id?: string; pin_id: string; image_url: string; image_type?: 'front' | 'back' | 'reference' | 'scan'; description?: string | null; is_primary?: boolean; uploaded_by?: string | null; created_at?: string; updated_at?: string };
-        Update: { image_url?: string; image_type?: 'front' | 'back' | 'reference' | 'scan'; description?: string | null; is_primary?: boolean; updated_at?: string };
+        Row: { id: string; pin_id: string; image_url: string; image_type: 'front' | 'back' | 'reference' | 'scan'; description: string | null; is_primary: boolean; uploaded_by: string | null; source: string | null; source_record_id: string | null; content_hash: string | null; public_display_allowed: boolean; attribution_required: boolean; status: 'pending' | 'approved' | 'rejected'; contributor_consent_at: string | null; reviewer_notes: string | null; reviewed_by: string | null; reviewed_at: string | null; created_at: string; updated_at: string };
+        Insert: { id?: string; pin_id: string; image_url: string; image_type?: 'front' | 'back' | 'reference' | 'scan'; description?: string | null; is_primary?: boolean; uploaded_by?: string | null; source?: string | null; source_record_id?: string | null; content_hash?: string | null; public_display_allowed?: boolean; attribution_required?: boolean; status?: 'pending' | 'approved' | 'rejected'; contributor_consent_at?: string | null; reviewer_notes?: string | null; reviewed_by?: string | null; reviewed_at?: string | null; created_at?: string; updated_at?: string };
+        Update: { image_url?: string; image_type?: 'front' | 'back' | 'reference' | 'scan'; description?: string | null; is_primary?: boolean; public_display_allowed?: boolean; status?: 'pending' | 'approved' | 'rejected'; reviewer_notes?: string | null; reviewed_by?: string | null; reviewed_at?: string | null; updated_at?: string };
         Relationships: [
           { foreignKeyName: 'pin_images_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
         ];

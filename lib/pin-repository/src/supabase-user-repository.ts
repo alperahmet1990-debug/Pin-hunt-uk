@@ -30,6 +30,10 @@ import type {
   PostReportSummary,
   CommentReport,
   ReportedComment,
+  ContributedPinImage,
+  ContributedImageStatus,
+  CreateContributedImageInput,
+  ReviewContributedImageInput,
   PotentialTradePin,
   Profile,
   PublicProfile,
@@ -173,6 +177,24 @@ function rowToPinSubmission(row: Record<string, unknown>): PinSubmission {
     approvedPinTitle: (row.approved_pin as { title?: string } | null)?.title ?? undefined,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
+  };
+}
+
+function rowToContributedImage(row: Record<string, unknown>): ContributedPinImage {
+  const pin = row.pin as { pinhunt_id?: string; title?: string } | null;
+  return {
+    id: row.id as string,
+    pinId: row.pin_id as string,
+    pinhuntId: pin?.pinhunt_id ?? undefined,
+    pinTitle: pin?.title ?? undefined,
+    uploadedBy: row.uploaded_by as string,
+    storagePath: row.image_url as string,
+    status: row.status as ContributedImageStatus,
+    contributorConsentAt: row.contributor_consent_at as string,
+    reviewerNotes: (row.reviewer_notes as string | null) ?? undefined,
+    reviewedBy: (row.reviewed_by as string | null) ?? undefined,
+    reviewedAt: (row.reviewed_at as string | null) ?? undefined,
+    createdAt: row.created_at as string,
   };
 }
 
@@ -1077,6 +1099,111 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     }
 
     return Array.from(candidates.values());
+  }
+
+  // ── Contributed pin images ────────────────────────────────────────────────────
+
+  async createContributedImage(
+    userId: string,
+    pinId: string,
+    input: CreateContributedImageInput,
+  ): Promise<ContributedPinImage> {
+    if (!input.consentGranted) {
+      throw new Error('Rights consent is required to contribute a pin image.');
+    }
+
+    // Resolve pinhunt_id → DB UUID (the app always passes pinhunt_id as pinId).
+    const { data: pinRow, error: pinErr } = await this.client
+      .from('pins')
+      .select('id')
+      .eq('pinhunt_id', pinId)
+      .maybeSingle();
+    if (pinErr) throw new Error(pinErr.message);
+    if (!pinRow) throw new Error(`Pin not found in catalogue: ${pinId}`);
+
+    const { data, error } = await this.client
+      .from('pin_images')
+      .insert({
+        pin_id: (pinRow as { id: string }).id,
+        image_url: input.storagePath,
+        image_type: 'front',
+        uploaded_by: userId,
+        status: 'pending',
+        public_display_allowed: false,
+        contributor_consent_at: new Date().toISOString(),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any)
+      .select()
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToContributedImage(data as Record<string, unknown>);
+  }
+
+  async getMyContributedImages(userId: string): Promise<ContributedPinImage[]> {
+    const { data, error } = await this.client
+      .from('pin_images')
+      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .eq('uploaded_by', userId)
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+    return (data as unknown as Record<string, unknown>[]).map(rowToContributedImage);
+  }
+
+  async getPendingContributedImages(): Promise<ContributedPinImage[]> {
+    const { data, error } = await this.client
+      .from('pin_images')
+      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .eq('status', 'pending')
+      .order('created_at', { ascending: true });
+
+    if (error) throw new Error(error.message);
+    return (data as unknown as Record<string, unknown>[]).map(rowToContributedImage);
+  }
+
+  async getContributedImage(imageId: string): Promise<ContributedPinImage | null> {
+    const { data, error } = await this.client
+      .from('pin_images')
+      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .eq('id', imageId)
+      .maybeSingle();
+
+    if (error) throw new Error(error.message);
+    if (!data) return null;
+    return rowToContributedImage(data as Record<string, unknown>);
+  }
+
+  async markContributedImageReviewed(
+    imageId: string,
+    reviewedBy: string,
+    input: ReviewContributedImageInput,
+  ): Promise<ContributedPinImage> {
+    const updates: Record<string, unknown> = {
+      status: input.action === 'approve' ? 'approved' : 'rejected',
+      reviewed_by: reviewedBy,
+      reviewed_at: new Date().toISOString(),
+    };
+    if (input.reviewerNotes !== undefined) updates.reviewer_notes = input.reviewerNotes;
+
+    const { data, error } = await this.client
+      .from('pin_images')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .update(updates as any)
+      .eq('id', imageId)
+      .select('*, pin:pins!pin_id(pinhunt_id, title)')
+      .single();
+
+    if (error) throw new Error(error.message);
+    return rowToContributedImage(data as Record<string, unknown>);
+  }
+
+  async getContributedImageUrl(storagePath: string): Promise<string> {
+    const { data, error } = await this.client.storage
+      .from('pin-contributed-images')
+      .createSignedUrl(storagePath, 3600);
+    if (error || !data?.signedUrl) throw new Error(`Could not generate image URL: ${error?.message ?? 'unknown'}`);
+    return data.signedUrl;
   }
 
   // ── Trade ratings & for-trade discovery ─────────────────────────────────────

@@ -242,6 +242,10 @@ export default function ScanScreen() {
   const handleSelectMatch = (match: Match) => {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     markViewed(match.pin.id);
+    if (!match.pin.imageUrl) {
+      router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: match.pin.id } });
+      return;
+    }
     router.push({ pathname: '/pin/[id]', params: { id: match.pin.id } });
   };
 

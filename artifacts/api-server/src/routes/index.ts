@@ -9,6 +9,8 @@ import ebayDeletionRouter from "./ebay-deletion";
 import ebayImageDryRunRouter from "./ebay-image-dryrun";
 import catalogueValidationRouter from "./catalogue-validation";
 import visionTestRouter from "./vision-test";
+import pinImagesRouter from "./pin-images";
+import contributePinImageRouter from "./contribute-pin-image";
 
 const router: IRouter = Router();
 
@@ -22,5 +24,7 @@ router.use(ebayDeletionRouter);
 router.use(ebayImageDryRunRouter);
 router.use(catalogueValidationRouter);
 router.use(visionTestRouter);
+router.use(pinImagesRouter);
+router.use(contributePinImageRouter);
 
 export default router;

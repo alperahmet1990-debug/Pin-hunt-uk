@@ -66,6 +66,11 @@ export type {
   StartConversationInput,
   // Duplicate detection
   DuplicateCandidate,
+  // Contributed pin images
+  ContributedPinImage,
+  ContributedImageStatus,
+  CreateContributedImageInput,
+  ReviewContributedImageInput,
 } from './types';
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────

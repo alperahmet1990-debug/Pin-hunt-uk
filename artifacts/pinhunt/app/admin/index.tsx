@@ -166,6 +166,13 @@ export default function AdminIndexScreen() {
           colors={colors}
         />
         <ActionCard
+          icon="camera"
+          title="Contributed Photos"
+          description="Review pin photos collectors submitted from the scan flow."
+          onPress={() => router.push('/admin/contributed-images' as any)}
+          colors={colors}
+        />
+        <ActionCard
           icon="plus-circle"
           title="Add New Pin"
           description="Create a new catalogue entry directly."

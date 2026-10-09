@@ -793,6 +793,44 @@ export interface GetAllSubmissionsInput {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ─── Contributed pin images ───────────────────────────────────────────────────
+// A user-submitted photo of their own physical pin, offered to become that
+// pin's public catalogue image (gated behind admin review). Distinct from
+// pin_submissions (proposing a whole new pin) and from user_pin_images
+// (a user's private photo of a pin already in their own collection).
+
+export type ContributedImageStatus = 'pending' | 'approved' | 'rejected';
+
+export interface ContributedPinImage {
+  id: string;
+  pinId: string;
+  /** PHUK-XXXXXXXX identifier, for display in the admin review queue. */
+  pinhuntId?: string;
+  pinTitle?: string;
+  uploadedBy: string;
+  /** Path within the private `pin-contributed-images` bucket. */
+  storagePath: string;
+  status: ContributedImageStatus;
+  /** When the contributor granted PinHunt the right to reuse this photo. */
+  contributorConsentAt: string;
+  reviewerNotes?: string;
+  reviewedBy?: string;
+  reviewedAt?: string;
+  createdAt: string;
+}
+
+export interface CreateContributedImageInput {
+  /** Path already uploaded to the `pin-contributed-images` bucket. */
+  storagePath: string;
+  /** Must be true — the repository rejects the call otherwise. */
+  consentGranted: boolean;
+}
+
+export interface ReviewContributedImageInput {
+  action: 'approve' | 'reject';
+  reviewerNotes?: string;
+}
+
 export interface UpdatePinSubmissionInput {
   proposedName?: string;
   brand?: string;

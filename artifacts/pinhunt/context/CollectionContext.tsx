@@ -22,6 +22,8 @@ import {
 interface CollectionContextValue {
   collection: CollectionMap;
   setStatus: (pinId: string, status: CollectionStatus) => void;
+  /** setStatus for many pins at once — one state update, batched sync. */
+  setStatuses: (pinIds: string[], status: CollectionStatus) => void;
   adjustQuantity: (pinId: string, delta: number) => void;
   setNotes: (pinId: string, notes: string) => void;
   getEntry: (pinId: string) => CollectionEntry | undefined;
@@ -99,6 +101,19 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
           p_status: change.status,
           p_quantity: change.quantity,
         }),
+      // Migration 044. Until it's applied the call fails as a whole and the
+      // queue falls back to per-pin `send`.
+      sendBatch: async items => {
+        const { data, error } = await supabase.rpc('set_user_pin_statuses' as never, {
+          p_items: items.map(([pinId, change]) => ({
+            pinhunt_id: pinId,
+            status: change.status,
+            quantity: change.quantity,
+          })),
+        } as never);
+        const failed = Array.isArray(data) ? (data as { pinhunt_id: string }[]) : [];
+        return { error, failedKeys: failed.map(f => f.pinhunt_id) };
+      },
       onPendingChange: pending => {
         const ownerId = pendingOwnerRef.current;
         if (!ownerId) {
@@ -305,6 +320,40 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     });
   }, [collection, userId, pushEntry, pushQueue]);
 
+  const setStatuses = useCallback((pinIds: string[], status: CollectionStatus) => {
+    const ids = [...new Set(pinIds)];
+    if (ids.length === 0) return;
+    const prev = latestCollectionRef.current;
+    const next: CollectionMap = { ...prev };
+    const changes: Array<[string, PendingPush]> = [];
+    for (const pinId of ids) {
+      const existing = prev[pinId];
+      const quantity = status === 'wanted' || status === 'none' ? 1 : existing?.quantity ?? 1;
+      changes.push([pinId, { status, quantity }]);
+      if (status === 'none') {
+        delete next[pinId];
+      } else {
+        next[pinId] = {
+          pinId,
+          status,
+          quantity,
+          notes: existing?.notes ?? '',
+          dateAdded: existing?.dateAdded ?? new Date().toISOString(),
+        };
+      }
+    }
+    if (userId && isSupabaseConfigured) {
+      if (pendingOwnerRef.current !== userId) {
+        pendingOwnerRef.current = userId;
+        pushQueue.clear();
+      }
+      pushQueue.enqueueMany(changes);
+    }
+    latestCollectionRef.current = next;
+    setCollection(next);
+    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  }, [userId, pushQueue]);
+
   const adjustQuantity = useCallback((pinId: string, delta: number) => {
     const existing = latestCollectionRef.current[pinId];
     if (!existing || (existing.status !== 'owned' && existing.status !== 'for_trade')) return;
@@ -365,6 +414,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
       value={{
         collection: visibleCollection,
         setStatus,
+        setStatuses,
         adjustQuantity,
         setNotes,
         getEntry,

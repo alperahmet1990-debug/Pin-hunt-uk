@@ -10,7 +10,7 @@
  *
  * Reached from Search ("Browse entire catalogue"), which is where
  * Collection → + → Add Pin lands. Writes go through CollectionContext's
- * setStatus, so cloud sync / retry behaves exactly like single adds.
+ * setStatuses (one batched sync), with the same retry behaviour as single adds.
  *
  * Pins already owned or for trade are shown but can't be selected; ISO
  * pins can be selected so "Add to Collection" moves them to owned.
@@ -72,7 +72,7 @@ export default function BrowseCatalogueScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { rows, loading, error, refresh } = useCatalogueBrowseIndex();
-  const { collection, setStatus } = useCollection();
+  const { collection, setStatuses } = useCollection();
   const { customBoards, createBoard, addPinsToBoard } = useBoards();
 
   const [query, setQuery] = useState('');
@@ -85,7 +85,7 @@ export default function BrowseCatalogueScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [lastAdded, setLastAdded] = useState<{ count: number; status: 'owned' | 'wanted'; boardName?: string } | null>(null);
   const [boardSheetOpen, setBoardSheetOpen] = useState(false);
-  // Board adds wait until the pins are Owned in the collection (setStatus
+  // Board adds wait until the pins are Owned in the collection (setStatuses
   // commits on the next render) — same pattern as QuickAddSheet.
   const [pendingBoard, setPendingBoard] = useState<{ boardId: string; boardName: string; pinIds: string[]; added: number } | null>(null);
 
@@ -174,18 +174,17 @@ export default function BrowseCatalogueScreen() {
   };
 
   const addSelected = (status: 'owned' | 'wanted') => {
-    let count = 0;
-    for (const id of selected) {
+    // Never downgrade: owned/for-trade pins stay put, ISO pins already in ISO are a no-op.
+    const ids = [...selected].filter(id => {
       const current = statusOf(id);
-      // Never downgrade: owned/for-trade pins stay put, ISO pins already in ISO are a no-op.
-      if (current === 'owned' || current === 'for_trade') continue;
-      if (status === 'wanted' && current === 'wanted') continue;
-      setStatus(id, status);
-      count++;
-    }
+      if (current === 'owned' || current === 'for_trade') return false;
+      return !(status === 'wanted' && current === 'wanted');
+    });
+    // One state update and one batched sync, however many pins.
+    setStatuses(ids, status);
     setSelected(new Set());
-    setLastAdded({ count, status });
-    return count;
+    setLastAdded({ count: ids.length, status });
+    return ids.length;
   };
 
   const addSelectedToBoard = (boardId: string, boardName: string) => {

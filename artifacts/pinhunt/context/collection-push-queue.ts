@@ -7,8 +7,22 @@ interface PushResult {
   error: { message: string } | null;
 }
 
+interface BatchPushResult extends PushResult {
+  /** Keys the server rejected individually; the rest succeeded. */
+  failedKeys?: string[];
+}
+
 interface PushQueueOptions<C> {
   send: (key: string, change: C) => PromiseLike<PushResult>;
+  /**
+   * Optional: send several keys in one request. Used by flush() and
+   * enqueueMany() when more than one key is ready. If the whole call fails
+   * (offline, or the server doesn't support it yet) each key falls back to
+   * `send`.
+   */
+  sendBatch?: (items: Array<[string, C]>) => PromiseLike<BatchPushResult>;
+  /** Largest batch per request (default 500). */
+  maxBatch?: number;
   onPendingChange: (pending: Record<string, C>) => void;
   onError?: (message: string) => void;
   /** Whether a pending change is the same one that was sent. */
@@ -93,8 +107,15 @@ export class PushQueue<C> {
     this.drain(pinId);
   }
 
+  /** Stage several changes at once and send them together when possible. */
+  enqueueMany(changes: Array<[string, C]>) {
+    for (const [key, change] of changes) this.pending[key] = change;
+    this.notify();
+    this.drainMany(changes.map(([key]) => key));
+  }
+
   flush() {
-    for (const pinId of Object.keys(this.pending)) this.drain(pinId);
+    this.drainMany(Object.keys(this.pending));
   }
 
   async waitForIdle() {
@@ -105,6 +126,70 @@ export class PushQueue<C> {
 
   private notify() {
     this.options.onPendingChange({ ...this.pending });
+  }
+
+  private drainMany(keys: string[]) {
+    const ready = [...new Set(keys)].filter(k => this.pending[k] !== undefined && !this.active.has(k));
+    const sendBatch = this.options.sendBatch;
+    if (!sendBatch || ready.length < 2) {
+      for (const key of ready) this.drain(key);
+      return;
+    }
+    const size = Math.max(1, this.options.maxBatch ?? 500);
+    for (let i = 0; i < ready.length; i += size) {
+      const chunk = ready.slice(i, i + size);
+      if (chunk.length === 1) this.drain(chunk[0]);
+      else this.drainBatch(chunk, sendBatch);
+    }
+  }
+
+  private drainBatch(
+    keys: string[],
+    sendBatch: NonNullable<PushQueueOptions<C>['sendBatch']>,
+  ) {
+    const desired = new Map(keys.map(k => [k, this.pending[k]] as const));
+    const generation = this.generation;
+    let wholeCallFailed = false;
+    let rejected = new Set<string>();
+
+    const task = (async () => {
+      try {
+        const result = await sendBatch([...desired.entries()]);
+        if (generation !== this.generation) return;
+        if (result.error) {
+          wholeCallFailed = true;
+          this.options.onError?.(result.error.message);
+          return;
+        }
+        rejected = new Set(result.failedKeys ?? []);
+        if (rejected.size > 0) {
+          this.options.onError?.(`${rejected.size} of ${keys.length} changes were rejected`);
+        }
+        for (const [key, sent] of desired) {
+          if (!rejected.has(key) && this.options.isSame(this.pending[key], sent)) {
+            delete this.pending[key];
+          }
+        }
+      } catch (error) {
+        if (generation !== this.generation) return;
+        wholeCallFailed = true;
+        this.options.onError?.(error instanceof Error ? error.message : 'Sync failed');
+      } finally {
+        if (generation !== this.generation) return;
+        for (const key of keys) this.active.delete(key);
+        this.notify();
+        for (const [key, sent] of desired) {
+          const latest = this.pending[key];
+          if (!latest) continue;
+          // Whole call failed: try each key on its own (works before the
+          // batch endpoint exists). Otherwise only resend keys that changed
+          // while in flight — never tight-loop an unchanged rejected value.
+          if (wholeCallFailed || !this.options.isSame(latest, sent)) this.drain(key);
+        }
+      }
+    })();
+
+    for (const key of keys) this.active.set(key, task);
   }
 
   private drain(pinId: string) {

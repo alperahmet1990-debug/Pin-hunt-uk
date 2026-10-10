@@ -169,3 +169,85 @@ test('a stale pull cannot overwrite a local increment with a pending write', asy
 
   assert.equal(persistedQuantity, 3);
 });
+// ── Batch mode (sendBatch) ────────────────────────────────────────────────────
+
+const batchQueue = (overrides = {}) => {
+  const calls = { batch: [], single: [] };
+  const queue = new CollectionPushQueue({
+    send: async (pinId, change) => { calls.single.push([pinId, change.status]); return { error: null }; },
+    sendBatch: async items => { calls.batch.push(items.map(([id]) => id)); return { error: null, failedKeys: [] }; },
+    onPendingChange: () => {},
+    ...overrides,
+  });
+  return { queue, calls };
+};
+const owned = { status: 'owned', quantity: 1 };
+
+test('enqueueMany sends one batch and clears every pin', async () => {
+  const { queue, calls } = batchQueue();
+  queue.enqueueMany([['A', owned], ['B', owned], ['C', owned]]);
+  await queue.waitForIdle();
+  assert.deepEqual(calls.batch, [['A', 'B', 'C']]);
+  assert.deepEqual(calls.single, []);
+  assert.deepEqual(queue.entries(), []);
+});
+
+test('a single ready pin still uses the per-pin path', async () => {
+  const { queue, calls } = batchQueue();
+  queue.enqueueMany([['A', owned]]);
+  await queue.waitForIdle();
+  assert.deepEqual(calls.batch, []);
+  assert.deepEqual(calls.single, [['A', 'owned']]);
+});
+
+test('rejected pins stay pending without a tight retry loop', async () => {
+  const { queue, calls } = batchQueue({
+    sendBatch: async items => { calls.batch.push(items.map(([id]) => id)); return { error: null, failedKeys: ['B'] }; },
+  });
+  queue.enqueueMany([['A', owned], ['B', owned]]);
+  await queue.waitForIdle();
+  assert.deepEqual(queue.entries().map(([id]) => id), ['B']);
+  assert.equal(calls.batch.length, 1);
+  assert.deepEqual(calls.single, []);
+});
+
+test('a failed batch call falls back to per-pin sends', async () => {
+  const { queue, calls } = batchQueue({
+    sendBatch: async () => ({ error: { message: 'function set_user_pin_statuses does not exist' } }),
+  });
+  queue.enqueueMany([['A', owned], ['B', owned]]);
+  await queue.waitForIdle();
+  assert.deepEqual(calls.single.map(([id]) => id).sort(), ['A', 'B']);
+  assert.deepEqual(queue.entries(), []);
+});
+
+test('a pin changed during an in-flight batch is sent again with the latest value', async () => {
+  let release;
+  const gate = new Promise(r => { release = r; });
+  const { queue, calls } = batchQueue({
+    sendBatch: async items => { calls.batch.push(items.map(([id]) => id)); await gate; return { error: null, failedKeys: [] }; },
+  });
+  queue.enqueueMany([['A', owned], ['B', owned]]);
+  queue.enqueue('A', { status: 'none', quantity: 1 });
+  release();
+  await queue.waitForIdle();
+  assert.deepEqual(calls.single, [['A', 'none']]);
+  assert.deepEqual(queue.entries(), []);
+});
+
+test('large selections are split into maxBatch-sized requests', async () => {
+  const { queue, calls } = batchQueue({ maxBatch: 2 });
+  queue.enqueueMany(['A', 'B', 'C', 'D', 'E'].map(id => [id, owned]));
+  await queue.waitForIdle();
+  assert.deepEqual(calls.batch, [['A', 'B'], ['C', 'D']]);
+  assert.deepEqual(calls.single, [['E', 'owned']]);
+  assert.deepEqual(queue.entries(), []);
+});
+
+test('flush sends a hydrated backlog as a batch', async () => {
+  const { queue, calls } = batchQueue();
+  queue.hydrate({ A: owned, B: owned, C: owned }, true);
+  await queue.waitForIdle();
+  assert.deepEqual(calls.batch, [['A', 'B', 'C']]);
+  assert.deepEqual(queue.entries(), []);
+});

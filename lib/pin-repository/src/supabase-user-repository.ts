@@ -15,6 +15,7 @@ import type {
   CreatePinSubmissionInput,
   PinSubmissionMetadataInput,
   DuplicateCandidate,
+  DuplicateCandidateResult,
   EditionType,
   ExternalIdentifiers,
   ExternalSaleListing,
@@ -1062,76 +1063,117 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return rowToPinSubmission(data as Record<string, unknown>);
   }
 
-  async findSubmissionDuplicateCandidates(submissionId: string): Promise<DuplicateCandidate[]> {
+  async findSubmissionDuplicateCandidates(submissionId: string): Promise<DuplicateCandidateResult> {
     const sub = await this.getPinSubmission(submissionId);
     if (!sub) throw new Error('Submission not found');
 
-    const PIN_COLS = 'pinhunt_id, title, brand, collection, release_year, image_url';
-    const candidates = new Map<string, DuplicateCandidate>();
+    const PIN_COLS = 'pinhunt_id, title, brand, collection, release_year, image_url, all_characters';
+    // Signal strength — lower ranks first in the result.
+    const STRENGTH: Record<string, number> = {
+      'FAC number': 0, SKU: 0, 'name + brand': 1, name: 2, 'same set + character': 3,
+    };
+    const candidates = new Map<string, DuplicateCandidate & { strength: number }>();
+    const failedChecks: string[] = [];
 
     const addCandidate = (row: Record<string, unknown>, reason: string) => {
       const id = row.pinhunt_id as string;
-      if (candidates.has(id)) {
-        // Upgrade the reason to reflect multiple signals
-        const existing = candidates.get(id)!;
-        if (!existing.matchReason.includes(reason)) {
-          existing.matchReason = `${existing.matchReason} + ${reason}`;
-        }
-      } else {
-        candidates.set(id, {
-          pinhuntId: id,
-          title: row.title as string,
-          brand: row.brand as string,
-          collection: row.collection as string,
-          releaseYear: (row.release_year as number | null) ?? undefined,
-          imageUrl: (row.image_url as string | null) ?? undefined,
-          matchReason: reason,
-        });
+      const existing = candidates.get(id);
+      if (existing) {
+        // Several signals agreeing is worth showing.
+        if (!existing.matchReason.includes(reason)) existing.matchReason += ` + ${reason}`;
+        existing.strength = Math.min(existing.strength, STRENGTH[reason]);
+        return;
       }
+      candidates.set(id, {
+        pinhuntId: id,
+        title: row.title as string,
+        brand: row.brand as string,
+        collection: row.collection as string,
+        releaseYear: (row.release_year as number | null) ?? undefined,
+        imageUrl: (row.image_url as string | null) ?? undefined,
+        matchReason: reason,
+        strength: STRENGTH[reason],
+      });
     };
 
-    // 1. Title + brand similarity (primary signal)
-    const titleSlug = sub.proposedName.trim().substring(0, 40);
-    if (titleSlug) {
-      const { data: titleMatches } = await this.client
-        .from('pins')
-        .select(PIN_COLS)
-        .ilike('title', `%${titleSlug}%`)
-        .ilike('brand', `%${sub.brand.trim()}%`)
-        .limit(10);
+    // Retired/archived pins aren't merge targets — same filter as searchPins.
+    const livePins = () => this.client
+      .from('pins')
+      .select(PIN_COLS)
+      .is('archived_at', null)
+      .or('catalogue_status.is.null,catalogue_status.neq.archived');
 
-      for (const row of (titleMatches ?? []) as Record<string, unknown>[]) {
-        addCandidate(row, 'title + brand');
+    // Runs one check, recording (not swallowing) a failure.
+    const run = async (label: string, query: PromiseLike<{ data: unknown; error: { message: string } | null }>) => {
+      const { data, error } = await query;
+      if (error) {
+        if (!failedChecks.includes(label)) failedChecks.push(label);
+        return [] as Record<string, unknown>[];
+      }
+      return (data ?? []) as Record<string, unknown>[];
+    };
+
+    const norm = (v: string | undefined) => (v ?? '').trim().toLowerCase();
+    const checks: Promise<void>[] = [];
+
+    // 1. Identifiers — strongest signal. Catalogue imports have used several
+    //    key names for SKUs, so check each.
+    const idChecks: Array<[string, string | undefined, string[]]> = [
+      ['FAC number', sub.facNumber, ['facNumber', 'fac']],
+      ['SKU', sub.sku, ['sku', 'disneySku', 'boxlunchSku', 'loungeflySku']],
+    ];
+    for (const [label, value, keys] of idChecks) {
+      const v = value?.trim();
+      if (!v) continue;
+      for (const key of keys) {
+        checks.push(run(label, livePins().contains('external_identifiers', { [key]: v }).limit(5))
+          .then(rows => rows.forEach(r => addCandidate(r, label))));
       }
     }
 
-    // 2. FAC number match (strong external ID signal)
-    if (sub.facNumber?.trim()) {
-      const { data: facMatches } = await this.client
-        .from('pins')
-        .select(PIN_COLS)
-        .contains('external_identifiers', { facNumber: sub.facNumber.trim() })
-        .limit(5);
-
-      for (const row of (facMatches ?? []) as Record<string, unknown>[]) {
-        addCandidate(row, 'FAC number');
-      }
+    // 2. Name — every significant word of the proposed name appears in the
+    //    title, in any order. Brand is a bonus, not a requirement, because
+    //    submitters and the catalogue spell brands differently
+    //    ("Disney" vs "Disney Parks").
+    const STOP = new Set(['the', 'and', 'pin', 'pins', 'disney', 'with', 'for', 'of']);
+    const tokens = sub.proposedName
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+      .split(/\s+/)
+      .filter(t => t.length >= 3 && !STOP.has(t))
+      .slice(0, 5);
+    if (tokens.length > 0) {
+      let q = livePins();
+      for (const t of tokens) q = q.ilike('title', `%${t}%`);
+      const brand = norm(sub.brand);
+      checks.push(run('name', q.limit(15)).then(rows => rows.forEach(r => {
+        const pinBrand = norm(r.brand as string);
+        const brandMatch = !!brand && !!pinBrand && (pinBrand.includes(brand) || brand.includes(pinBrand));
+        addCandidate(r, brandMatch ? 'name + brand' : 'name');
+      })));
     }
 
-    // 3. SKU match (strong external ID signal)
-    if (sub.sku?.trim()) {
-      const { data: skuMatches } = await this.client
-        .from('pins')
-        .select(PIN_COLS)
-        .contains('external_identifiers', { sku: sub.sku.trim() })
-        .limit(5);
-
-      for (const row of (skuMatches ?? []) as Record<string, unknown>[]) {
-        addCandidate(row, 'SKU');
-      }
+    // 3. Same set and year with a shared character — catches a pin whose
+    //    catalogue title is worded differently from the submission.
+    const series = sub.seriesName?.trim().replace(/[,()]/g, ' ');
+    const characters = (sub.characterNames ?? []).map(norm).filter(Boolean);
+    if (series && sub.releaseYear && characters.length > 0) {
+      checks.push(run('same set', livePins()
+        .or(`collection.ilike.%${series}%,normalised_series.ilike.%${series}%`)
+        .eq('release_year', sub.releaseYear)
+        .limit(60)).then(rows => rows.forEach(r => {
+          const text = `${norm(r.title as string)} ${norm(r.all_characters as string)}`;
+          if (characters.some(c => text.includes(c))) addCandidate(r, 'same set + character');
+        })));
     }
 
-    return Array.from(candidates.values());
+    await Promise.all(checks);
+
+    const sorted = Array.from(candidates.values())
+      .sort((a, b) => a.strength - b.strength || a.title.localeCompare(b.title))
+      .slice(0, 10)
+      .map(({ strength: _strength, ...c }) => c);
+    return { candidates: sorted, failedChecks };
   }
 
   // ── Contributed pin images ────────────────────────────────────────────────────

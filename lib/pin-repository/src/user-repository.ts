@@ -9,6 +9,7 @@ import type {
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
   DuplicateCandidate,
+  DuplicateCandidateResult,
   EditionType,
   ExternalSaleListing,
   GetAllSubmissionsInput,
@@ -283,7 +284,7 @@ export interface IUserPinRepository {
    * and SKU. Returns up to 10 candidates with a human-readable match reason.
    * Admin only.
    */
-  findSubmissionDuplicateCandidates(submissionId: string): Promise<DuplicateCandidate[]>;
+  findSubmissionDuplicateCandidates(submissionId: string): Promise<DuplicateCandidateResult>;
 
   // ── Contributed pin images (scan → canonical display image) ───────────────
   // Distinct from pin submissions (a whole new pin) and from user_pin_images

@@ -367,7 +367,8 @@ router.post("/admin/catalogue-photos", requireAppCreator, async (req: Request, r
  * GET /admin/submissions/:id/duplicate-candidates
  *
  * Returns catalogue pins that may already represent the same pin as the
- * given submission, matched by title+brand similarity, FAC number, and SKU.
+ * given submission, matched by FAC number / SKU, name words (+ brand), and
+ * same set + year + character.
  * Admins use this before approving to decide whether to merge or create new.
  *
  * curl https://<domain>/api/admin/submissions/<id>/duplicate-candidates
@@ -379,8 +380,10 @@ router.get(
     try {
       const userRepo = getAdminUserRepository();
       const { id } = req.params as { id: string };
-      const candidates = await userRepo.findSubmissionDuplicateCandidates(id);
-      res.json({ candidates });
+      // failedChecks lists any check that errored — the admin UI warns that
+      // the list may be incomplete rather than implying "no duplicates".
+      const { candidates, failedChecks } = await userRepo.findSubmissionDuplicateCandidates(id);
+      res.json({ candidates, failedChecks });
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       const status = msg.includes("not found") ? 404 : 500;

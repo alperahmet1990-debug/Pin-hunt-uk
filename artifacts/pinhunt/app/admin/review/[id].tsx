@@ -101,6 +101,9 @@ export default function AdminReviewScreen() {
 
   const [candidates, setCandidates]         = useState<DuplicateCandidate[]>([]);
   const [candidatesLoading, setCandidatesLoading] = useState(false);
+  // Set when the duplicate check failed or only partly ran — never let that
+  // look like "no duplicates found".
+  const [candidatesWarning, setCandidatesWarning] = useState<string | null>(null);
   const [duplicateBannerDismissed, setDuplicateBannerDismissed] = useState(false);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
@@ -164,14 +167,24 @@ export default function AdminReviewScreen() {
     if (!actionable) return;
 
     setCandidatesLoading(true);
+    setCandidatesWarning(null);
     fetch(`${API_BASE}/admin/submissions/${submission.id}/duplicate-candidates`, {
       headers: session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {},
     })
       .then(r => r.json())
-      .then((body: { candidates?: DuplicateCandidate[]; error?: string }) => {
-        if (body.candidates) setCandidates(body.candidates);
+      .then((body: { candidates?: DuplicateCandidate[]; failedChecks?: string[]; error?: string }) => {
+        if (!body.candidates) {
+          setCandidatesWarning(`Couldn't check for existing catalogue matches${body.error ? ` (${body.error})` : ''}. Search the catalogue before approving.`);
+          return;
+        }
+        setCandidates(body.candidates);
+        if (body.failedChecks?.length) {
+          setCandidatesWarning(`Some duplicate checks failed (${body.failedChecks.join(', ')}), so this list may be incomplete.`);
+        }
       })
-      .catch(() => { /* non-fatal */ })
+      .catch(() => {
+        setCandidatesWarning("Couldn't check for existing catalogue matches. Search the catalogue before approving.");
+      })
       .finally(() => setCandidatesLoading(false));
   }, [submission, session?.access_token]);
 
@@ -303,6 +316,13 @@ export default function AdminReviewScreen() {
               <View style={[styles.dupBanner, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeWarmLine }]}>
                 <ActivityIndicator size="small" color={colors.homeSandInk} style={{ marginRight: 8 }} />
                 <Text style={[styles.dupBannerText, { color: colors.homeSandInk }]}>Checking for existing catalogue matches…</Text>
+              </View>
+            )}
+
+            {candidatesWarning && isActionable && !candidatesLoading && (
+              <View style={[styles.dupBanner, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeSandInk }]}>
+                <Feather name="alert-circle" size={15} color={colors.homeSandInk} style={{ marginRight: 8 }} />
+                <Text style={[styles.dupBannerText, { color: colors.homeSandInk }]}>{candidatesWarning}</Text>
               </View>
             )}
 

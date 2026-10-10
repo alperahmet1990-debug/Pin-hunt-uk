@@ -66,6 +66,7 @@ export type {
   StartConversationInput,
   // Duplicate detection
   DuplicateCandidate,
+  DuplicateCandidateResult,
   // Contributed pin images
   ContributedPinImage,
   PinAndPopReference,

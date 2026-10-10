@@ -772,8 +772,19 @@ export interface DuplicateCandidate {
   collection: string;
   releaseYear?: number;
   imageUrl?: string;
-  /** Human-readable reason why this pin was flagged, e.g. "title + brand" or "FAC number". */
+  /** Human-readable reason why this pin was flagged, e.g. "name + brand" or "SKU". */
   matchReason: string;
+}
+
+/** Result of findSubmissionDuplicateCandidates. */
+export interface DuplicateCandidateResult {
+  /** Strongest matches first, at most 10. */
+  candidates: DuplicateCandidate[];
+  /**
+   * Checks that errored (e.g. "SKU", "name"). Non-empty means the list may
+   * be incomplete — callers must say so rather than imply "no duplicates".
+   */
+  failedChecks: string[];
 }
 
 // ─── Admin review types ───────────────────────────────────────────────────────

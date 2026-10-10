@@ -9,6 +9,7 @@
     "build": "node scripts/build.js",
     "serve": "node server/serve.js",
     "test:collection-sync": "node --test context/collection-push-queue.test.mjs",
+    "test:boards-sync": "node --test context/boards-sync.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {

@@ -7,11 +7,15 @@ interface PushResult {
   error: { message: string } | null;
 }
 
-interface CollectionPushQueueOptions {
-  send: (pinId: string, change: CollectionPushChange) => PromiseLike<PushResult>;
-  onPendingChange: (pending: Record<string, CollectionPushChange>) => void;
+interface PushQueueOptions<C> {
+  send: (key: string, change: C) => PromiseLike<PushResult>;
+  onPendingChange: (pending: Record<string, C>) => void;
   onError?: (message: string) => void;
+  /** Whether a pending change is the same one that was sent. */
+  isSame: (pending: C | undefined, sent: C) => boolean;
 }
+
+type CollectionPushQueueOptions = Omit<PushQueueOptions<CollectionPushChange>, 'isSame'>;
 
 function changesMatch(
   left: CollectionPushChange | undefined,
@@ -44,20 +48,21 @@ export function reconcileCollectionEntry<T>(
   return hasPendingChange && localEntry ? localEntry : serverEntry;
 }
 /**
- * Serialises writes per pin while coalescing rapid changes to the latest value.
- * Different pins can still sync in parallel.
+ * Serialises writes per key while coalescing rapid changes to the latest
+ * value. Different keys can still sync in parallel. Used for collection pins
+ * (CollectionPushQueue) and boards (BoardsContext).
  */
-export class CollectionPushQueue {
-  private pending: Record<string, CollectionPushChange> = {};
+export class PushQueue<C> {
+  private pending: Record<string, C> = {};
   private active = new Map<string, Promise<void>>();
   private generation = 0;
-  private readonly options: CollectionPushQueueOptions;
+  private readonly options: PushQueueOptions<C>;
 
-  constructor(options: CollectionPushQueueOptions) {
+  constructor(options: PushQueueOptions<C>) {
     this.options = options;
   }
 
-  hydrate(saved: Record<string, CollectionPushChange>, flushAfterHydration = false) {
+  hydrate(saved: Record<string, C>, flushAfterHydration = false) {
     this.pending = { ...saved, ...this.pending };
     this.notify();
     if (flushAfterHydration) this.flush();
@@ -78,12 +83,12 @@ export class CollectionPushQueue {
     return Object.entries(this.pending);
   }
 
-  stage(pinId: string, change: CollectionPushChange) {
+  stage(pinId: string, change: C) {
     this.pending[pinId] = change;
     this.notify();
   }
 
-  enqueue(pinId: string, change: CollectionPushChange) {
+  enqueue(pinId: string, change: C) {
     this.stage(pinId, change);
     this.drain(pinId);
   }
@@ -116,14 +121,14 @@ export class CollectionPushQueue {
         if (error) {
           failed = true;
           this.options.onError?.(error.message);
-        } else if (changesMatch(this.pending[pinId], desired)) {
+        } else if (this.options.isSame(this.pending[pinId], desired)) {
           delete this.pending[pinId];
         }
       } catch (error) {
         if (generation !== this.generation) return;
         failed = true;
         this.options.onError?.(
-          error instanceof Error ? error.message : 'Collection sync failed',
+          error instanceof Error ? error.message : 'Sync failed',
         );
       } finally {
         if (generation !== this.generation) return;
@@ -133,12 +138,19 @@ export class CollectionPushQueue {
         // A newer value arrived while this request was in flight. Send it
         // next even if the superseded request failed; do not immediately
         // retry an unchanged failed value in a tight loop.
-        if (latest && (!failed || !changesMatch(latest, desired))) {
+        if (latest && (!failed || !this.options.isSame(latest, desired))) {
           this.drain(pinId);
         }
       }
     })();
 
     this.active.set(pinId, task);
+  }
+}
+
+/** Collection pin status/quantity writes. */
+export class CollectionPushQueue extends PushQueue<CollectionPushChange> {
+  constructor(options: CollectionPushQueueOptions) {
+    super({ ...options, isSame: changesMatch });
   }
 }

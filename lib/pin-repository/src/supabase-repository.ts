@@ -2,6 +2,7 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { PinRepositoryError, type PinRepository } from './repository';
 import type {
   AiMatchAdapter,
+  CatalogueBrowsePin,
   CataloguePin,
   CataloguePinStatus,
   CreatePinInput,
@@ -353,6 +354,51 @@ class SupabasePinRepository implements PinRepository {
       out.push(...(data as unknown as PinRow[]).map(rowToPin));
     }
     return out;
+  }
+
+  // ── getCatalogueBrowseIndex ────────────────────────────────────────────
+
+  async getCatalogueBrowseIndex(): Promise<CatalogueBrowsePin[]> {
+    // RLS already limits non-admins to verified + searchable pins, but it
+    // also lets owners read archived/unsearchable pins they hold — filter
+    // those out explicitly so the browse list is the same for everyone.
+    const PAGE = 1000;
+    type BrowseRow = {
+      pinhunt_id: string; title: string; collection: string | null;
+      normalised_series: string | null; brand: string | null;
+      release_year: number | null; edition_type: string | null;
+      image_url: string | null; main_character: string | null;
+      all_characters: string | null;
+    };
+    const rows: BrowseRow[] = [];
+    for (let from = 0; ; from += PAGE) {
+      const { data, error } = await this.client
+        .from('pins')
+        .select('pinhunt_id, title, collection, normalised_series, brand, release_year, edition_type, image_url, main_character, all_characters')
+        .eq('verification_status', 'verified')
+        .is('archived_at', null)
+        .or('catalogue_status.is.null,catalogue_status.neq.archived')
+        .or('is_searchable.is.null,is_searchable.eq.true')
+        .order('collection')
+        .order('title')
+        .order('pinhunt_id')
+        .range(from, from + PAGE - 1);
+      if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+      const page = (data ?? []) as unknown as BrowseRow[];
+      rows.push(...page);
+      if (page.length < PAGE) break;
+    }
+    return rows.map(r => ({
+      id: r.pinhunt_id,
+      title: r.title,
+      setName: r.collection || r.normalised_series || 'Uncategorised',
+      brand: r.brand ?? undefined,
+      releaseYear: r.release_year ?? undefined,
+      edition: r.edition_type ?? undefined,
+      imageUrl: r.image_url ?? undefined,
+      mainCharacter: r.main_character ?? undefined,
+      allCharacters: r.all_characters ?? undefined,
+    }));
   }
 
   // ── getSetSummaries ────────────────────────────────────────────────────

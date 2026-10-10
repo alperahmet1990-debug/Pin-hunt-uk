@@ -4,6 +4,8 @@
  * Opened from the Find tab. Shows recent searches and popular pins while
  * idle; typing runs a debounced database search (title / brand / series /
  * character) and lists clickable pins that navigate to the pin detail page.
+ * Also where Collection → + → Add Pin lands; the idle state links to
+ * /browse-catalogue for multi-select adding.
  */
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -229,6 +231,24 @@ export default function SearchScreen() {
       >
         {showIdle ? (
           <>
+            {/* ── Browse entire catalogue (multi-select add) ── */}
+            <View style={styles.section}>
+              <TouchableOpacity
+                onPress={() => { Keyboard.dismiss(); router.push('/browse-catalogue'); }}
+                activeOpacity={0.85}
+                style={[styles.browseCta, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
+              >
+                <View style={[styles.browseIcon, { backgroundColor: colors.homeCoral + '1A' }]}>
+                  <Feather name="grid" size={18} color={colors.homeCoral} />
+                </View>
+                <View style={styles.resultInfo}>
+                  <Text style={[styles.resultTitle, { color: colors.homeInk }]}>Browse entire catalogue</Text>
+                  <Text style={[styles.resultMeta, { color: colors.homeMuted }]}>Filter, select several pins, and add them in one go</Text>
+                </View>
+                <Feather name="chevron-right" size={18} color={colors.homeMuted} />
+              </TouchableOpacity>
+            </View>
+
             {/* ── Beta catalogue note ── */}
             <View style={styles.betaNote}>
               <Feather name="info" size={12} color={colors.homeMuted} />
@@ -418,6 +438,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     gap: spacing.md,
   },
+  browseCta: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, borderWidth: 1, padding: spacing.md },
+  browseIcon: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   resultImage: { width: 44, height: 44, borderRadius: radius.sm - 2 },
   resultInfo: { flex: 1 },
   quickAddBtn: {

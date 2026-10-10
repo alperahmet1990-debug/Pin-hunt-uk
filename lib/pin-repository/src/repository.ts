@@ -1,5 +1,6 @@
 import type {
   PinSetSummary,
+  CatalogueBrowsePin,
   CataloguePin,
   CreatePinInput,
   MissingImageCounts,
@@ -47,6 +48,13 @@ export interface PinRepository {
    * Returns [] when the table is empty or unavailable.
    */
   getSetSummaries(): Promise<PinSetSummary[]>;
+
+  /**
+   * Every publicly browsable pin (verified, searchable, not archived) as
+   * lightweight rows, ordered by set then title. Pages internally past the
+   * PostgREST row cap — for the Browse Entire Catalogue screen.
+   */
+  getCatalogueBrowseIndex(): Promise<CatalogueBrowsePin[]>;
 
   /** Fetch multiple pins by their PinHunt IDs (order not guaranteed). */
   getPinsByIds(pinhuntIds: string[]): Promise<CataloguePin[]>;

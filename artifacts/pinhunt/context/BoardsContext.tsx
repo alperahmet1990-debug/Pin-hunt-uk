@@ -20,6 +20,8 @@ interface BoardsContextValue {
   createBoard: (name: string) => Board;
   deleteBoard: (boardId: string) => void;
   addPinToBoard: (boardId: string, pinId: string) => void;
+  /** Bulk addPinToBoard — same owned/for-trade rule, one persist. */
+  addPinsToBoard: (boardId: string, pinIds: string[]) => void;
   removePinFromBoard: (boardId: string, pinId: string) => void;
   setBoardThumbnail: (boardId: string, pinId: string | undefined) => void;
   renameBoard: (boardId: string, newName: string) => void;
@@ -178,6 +180,23 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
     });
   }, [collection, persist]);
 
+  const addPinsToBoard = useCallback((boardId: string, pinIds: string[]) => {
+    const kept = pinIds.filter(id => {
+      const entry = collection[id];
+      return entry && (entry.status === 'owned' || entry.status === 'for_trade');
+    });
+    if (kept.length === 0) return;
+    setCustomBoards(prev => {
+      const next = prev.map(b => {
+        if (b.id !== boardId) return b;
+        const added = kept.filter(id => !b.pinIds.includes(id));
+        return added.length ? { ...b, pinIds: [...b.pinIds, ...added] } : b;
+      });
+      persist(next);
+      return next;
+    });
+  }, [collection, persist]);
+
   const removePinFromBoard = useCallback((boardId: string, pinId: string) => {
     setCustomBoards(prev => {
       const next = prev.map(b =>
@@ -260,6 +279,7 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
         createBoard,
         deleteBoard,
         addPinToBoard,
+        addPinsToBoard,
         removePinFromBoard,
         setBoardThumbnail,
         renameBoard,

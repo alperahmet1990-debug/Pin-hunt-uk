@@ -894,6 +894,25 @@ export interface UserAccess extends MyAccess {
   avatarUrl?: string;
 }
 
+/**
+ * A lightweight row for browsing the entire public catalogue at once
+ * (Browse Entire Catalogue → multi-select add). Only the fields the browse
+ * grid, search, and filters need — not a full CataloguePin.
+ */
+export interface CatalogueBrowsePin {
+  /** PHUK-XXXXXXXX — the same id the app uses as CataloguePin.id. */
+  id: string;
+  title: string;
+  /** Display set name — matches CataloguePin.collection. */
+  setName: string;
+  brand?: string;
+  releaseYear?: number;
+  edition?: string;
+  imageUrl?: string;
+  mainCharacter?: string;
+  allCharacters?: string;
+}
+
 /** One row of get_catalogue_image_coverage() — a pin and its photo status. */
 export interface CatalogueImageCoverage {
   /** PHUK-XXXXXXXX — the same id the app uses as CataloguePin.id. */

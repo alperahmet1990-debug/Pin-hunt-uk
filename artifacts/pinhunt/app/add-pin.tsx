@@ -23,7 +23,7 @@
  * catalogue, and the contributor screen also link here when a pin is
  * missing, passing what the user typed as the `name` param.
  */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -110,11 +110,13 @@ function StepIndicator({ current, colors }: { current: number; colors: ReturnTyp
 // ─── Photo step ───────────────────────────────────────────────────────────────
 
 function PhotoStep({
-  title, subtitle, uri, onCamera, onLibrary, colors,
+  title, subtitle, uri, status, onCamera, onLibrary, colors,
 }: {
   title: string;
   subtitle: string;
   uri: string | null;
+  /** Clean-up progress for the picked photo (see previewFront). */
+  status: PreviewStatus;
   onCamera: () => void;
   onLibrary: () => void;
   colors: ReturnType<typeof useColors>;
@@ -126,7 +128,25 @@ function PhotoStep({
 
       {uri ? (
         <View style={styles.previewWrap}>
-          <Image source={{ uri }} style={styles.preview} resizeMode="contain" />
+          <View>
+            <Image source={{ uri }} style={styles.preview} resizeMode="contain" />
+            {status === 'processing' && (
+              <View style={[styles.processingOverlay, { backgroundColor: colors.homeSurface + 'CC' }]}>
+                <ActivityIndicator color={colors.homeCoral} />
+                <Text style={[styles.processingText, { color: colors.homeInk }]}>Cleaning up your photo…</Text>
+              </View>
+            )}
+          </View>
+          {status === 'ready' && (
+            <Text style={[styles.previewNote, { color: colors.homeMuted }]}>
+              This is how your photo will look in the catalogue.
+            </Text>
+          )}
+          {status === 'raw' && (
+            <Text style={[styles.previewNote, { color: colors.homeMuted }]}>
+              We couldn{"\u2019"}t clean up this photo, so it{"\u2019"}ll be reviewed as taken. A plain background and good light help.
+            </Text>
+          )}
           <TouchableOpacity
             onPress={onCamera}
             activeOpacity={0.8}
@@ -169,6 +189,16 @@ function PhotoStep({
   );
 }
 
+type PreviewStatus = 'none' | 'processing' | 'ready' | 'raw';
+
+interface FrontPreview {
+  /** Watermarked, cleaned-up JPEG as a data URI — exactly what will publish. */
+  uri: string;
+  /** Server-side draft submitted in place of the raw photo. */
+  draftPath: string;
+  cleaned: boolean;
+}
+
 // ─── Main screen ──────────────────────────────────────────────────────────────
 
 export default function AddPinScreen() {
@@ -186,6 +216,10 @@ export default function AddPinScreen() {
 
   // Photo (front only for now — back photo is a later addition)
   const [front, setFront] = useState<PickedImage | null>(null);
+  // Cleaned-up preview of `front` from the server (Pixian + watermark).
+  const [frontPreview, setFrontPreview] = useState<FrontPreview | null>(null);
+  const [previewing, setPreviewing] = useState(false);
+  const previewSeq = useRef(0);
 
   // Details
   const [proposedName,    setProposedName]    = useState('');
@@ -233,6 +267,36 @@ export default function AddPinScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // ── Clean-up preview ────────────────────────────────────────────────────────
+  // As soon as a photo is chosen, run it through the server's clean-up
+  // (Pixian background removal + the PinHunt watermark) and show the result,
+  // so the collector sees exactly what will appear in the catalogue before
+  // submitting. If it fails, the raw photo is still submitted as before.
+  useEffect(() => {
+    if (!front || !session?.access_token) { setFrontPreview(null); return; }
+    const seq = ++previewSeq.current;
+    setFrontPreview(null);
+    setPreviewing(true);
+    fetch(`${API_BASE}/pin-submissions/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
+      body: JSON.stringify({ frontImageBase64: front.base64, mimeType: 'image/jpeg' }),
+    })
+      .then(r => r.json().then(d => (r.ok ? d : null)))
+      .then((d: { draftPath: string; previewBase64: string; cleaned: boolean } | null) => {
+        if (seq !== previewSeq.current || !d) return;
+        setFrontPreview({ uri: `data:image/jpeg;base64,${d.previewBase64}`, draftPath: d.draftPath, cleaned: d.cleaned });
+      })
+      .catch(() => {})
+      .finally(() => { if (seq === previewSeq.current) setPreviewing(false); });
+  }, [front, session?.access_token]);
+
+  const previewStatus: PreviewStatus = !front ? 'none'
+    : previewing ? 'processing'
+    : frontPreview?.cleaned ? 'ready'
+    : 'raw';
+  const shownFrontUri = frontPreview?.uri ?? front?.uri ?? null;
+
   // ── Photo picker ─────────────────────────────────────────────────────────────
   const pickFront = async (source: 'camera' | 'library') => {
     const img = await pickSubmissionImage(source);
@@ -262,6 +326,7 @@ export default function AddPinScreen() {
       Alert.alert('Front photo required', 'Please add a front photo before continuing.');
       return;
     }
+    if (step === 0 && previewing) return;
     if (step === 1 && !validate()) return;
     setStep(s => s + 1);
   };
@@ -302,7 +367,10 @@ export default function AddPinScreen() {
           facNumber:        facNumber.trim() || undefined,
           sku:              sku.trim() || undefined,
           characterNames:   characters,
-          frontImageBase64: front.base64,
+          // Submit the previewed (already cleaned) photo when there is one.
+          ...(frontPreview
+            ? { frontDraftPath: frontPreview.draftPath }
+            : { frontImageBase64: front.base64 }),
           notes:            notes.trim() || undefined,
         }),
       });
@@ -324,7 +392,7 @@ export default function AddPinScreen() {
         <Stack.Screen options={{ title: 'Pin Submitted', headerBackVisible: false }} />
         <View style={[styles.confirm, { backgroundColor: colors.homeBackground, paddingBottom: botPad }]}>
           {front && (
-            <Image source={{ uri: front.uri }} style={styles.confirmThumb} resizeMode="cover" />
+            <Image source={{ uri: shownFrontUri ?? front.uri }} style={styles.confirmThumb} resizeMode="cover" />
           )}
           <View style={[styles.confirmIcon, { backgroundColor: colors.homeCoral + '18' }]}>
             <Feather name="check-circle" size={48} color={colors.homeCoral} />
@@ -398,7 +466,7 @@ export default function AddPinScreen() {
   const renderReview = () => (
     <View style={styles.reviewWrap}>
       {front && (
-        <Image source={{ uri: front.uri }} style={[styles.reviewHero, { borderRadius: radius.md }]} resizeMode="cover" />
+        <Image source={{ uri: shownFrontUri ?? front.uri }} style={[styles.reviewHero, { borderRadius: radius.md }]} resizeMode="cover" />
       )}
 
       <View style={[styles.reviewCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
@@ -524,7 +592,8 @@ export default function AddPinScreen() {
       key="front"
       title="Front Photo"
       subtitle="Photograph the front of the pin clearly. Required so an admin can verify it."
-      uri={front?.uri ?? null}
+      uri={shownFrontUri}
+      status={previewStatus}
       onCamera={() => pickFront('camera')}
       onLibrary={() => pickFront('library')}
       colors={colors}
@@ -583,6 +652,9 @@ export default function AddPinScreen() {
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
+  processingOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', gap: 8, borderRadius: 12 },
+  processingText:    { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  previewNote:       { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, textAlign: 'center' },
   scroll: { padding: spacing.lg, gap: spacing.xl },
 
   // Step indicator

@@ -21,6 +21,7 @@ import {
   SEED_PINS,
   type PinRepository,
 } from "@workspace/pin-repository";
+import { watermarkPinPhoto } from "../services/watermark";
 
 const router: IRouter = Router();
 
@@ -301,6 +302,64 @@ router.patch("/admin/pins/:pinhuntId/images", requireAppCreator, async (req: Req
     const msg = err instanceof Error ? err.message : String(err);
     const status = msg.includes("NOT_FOUND") ? 404 : 500;
     res.status(status).json({ error: msg });
+  }
+});
+
+/**
+ * POST /admin/catalogue-photos
+ *
+ * Upload a photo taken or picked in the app (Pin Editor, Missing Images)
+ * as a catalogue image. Every PinHunt-owned photo that goes public carries
+ * the PinHunt watermark (services/watermark.ts), so these uploads go
+ * through the server rather than straight from the app to Storage.
+ * Images set by URL (e.g. imported reference photos) are not touched.
+ *
+ * Body: { pinhuntId, side: 'front' | 'back', imageBase64 }
+ * Returns: { publicUrl } — the caller saves it on the pin as before.
+ */
+const MAX_PHOTO_BASE64_CHARS = 14_000_000;
+
+router.post("/admin/catalogue-photos", requireAppCreator, async (req: Request, res: Response) => {
+  try {
+    const { pinhuntId, side, imageBase64 } = req.body as {
+      pinhuntId?: string;
+      side?: string;
+      imageBase64?: string;
+    };
+    if (!pinhuntId || !/^[A-Za-z0-9_-]+$/.test(pinhuntId)) {
+      res.status(400).json({ error: "pinhuntId is required" });
+      return;
+    }
+    if (side !== "front" && side !== "back") {
+      res.status(400).json({ error: "side must be 'front' or 'back'" });
+      return;
+    }
+    if (!imageBase64) { res.status(400).json({ error: "imageBase64 is required" }); return; }
+    if (imageBase64.length > MAX_PHOTO_BASE64_CHARS) {
+      res.status(413).json({ error: "Photo is too large." });
+      return;
+    }
+
+    const url = process.env.SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!url || !key) {
+      res.status(503).json({ error: "SUPABASE_SERVICE_ROLE_KEY must be set to upload catalogue photos." });
+      return;
+    }
+
+    const watermarked = await watermarkPinPhoto(Buffer.from(imageBase64, "base64"));
+    // Same path as before (pin deletion cleans up pins/<id>/front|back.jpg);
+    // the ?v= on the returned URL stops a replaced photo being served stale.
+    const path = `pins/${pinhuntId}/${side}.jpg`;
+    const storage = createClient(url, key).storage.from("pin-catalogue");
+    const { error } = await storage.upload(path, watermarked, { contentType: "image/jpeg", upsert: true });
+    if (error) {
+      res.status(500).json({ error: `Could not store photo: ${error.message}` });
+      return;
+    }
+    res.json({ publicUrl: `${storage.getPublicUrl(path).data.publicUrl}?v=${Date.now()}` });
+  } catch (err) {
+    res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
   }
 });
 

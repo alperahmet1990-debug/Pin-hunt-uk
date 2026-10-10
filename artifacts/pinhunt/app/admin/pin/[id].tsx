@@ -29,6 +29,8 @@ import palette from '@/constants/colors';
 import { createSupabasePinRepository, createSupabaseUserRepository } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { pickSubmissionImage } from '@/utils/submissionImage';
+import { uploadCataloguePhoto } from '@/utils/cataloguePhoto';
+import { useAuth } from '@/context/AuthContext';
 import type {
   CataloguePin,
   CataloguePinStatus,
@@ -83,17 +85,6 @@ async function getSubmissionSignedUrl(path: string): Promise<string | null> {
   } catch {
     return null;
   }
-}
-
-async function uploadImage(localUri: string, storagePath: string): Promise<string> {
-  const response = await fetch(localUri);
-  const blob = await response.blob();
-  const { error } = await supabase.storage
-    .from('pin-catalogue')
-    .upload(storagePath, blob, { contentType: 'image/jpeg', upsert: true });
-  if (error) throw new Error(`Upload failed: ${error.message}`);
-  const { data } = supabase.storage.from('pin-catalogue').getPublicUrl(storagePath);
-  return data.publicUrl;
 }
 
 // ─── Field helper ─────────────────────────────────────────────────────────────
@@ -157,6 +148,7 @@ export default function AdminPinEditorScreen() {
   }>();
   const isNew = routeId === 'new';
   const colors = useColors();
+  const { session } = useAuth();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const scrollRef = useRef<ScrollView>(null);
@@ -381,13 +373,13 @@ export default function AdminPinEditorScreen() {
     let front = imageUrl;
     let back  = backImageUrl;
     if (newFrontUri) {
-      front = await uploadImage(newFrontUri, `pins/${pinhuntId}/front.jpg`);
+      front = await uploadCataloguePhoto(newFrontUri, pinhuntId, 'front', session?.access_token);
     }
     if (newBackUri) {
-      back = await uploadImage(newBackUri, `pins/${pinhuntId}/back.jpg`);
+      back = await uploadCataloguePhoto(newBackUri, pinhuntId, 'back', session?.access_token);
     }
     return { front, back };
-  }, [newFrontUri, newBackUri, imageUrl, backImageUrl, pinhuntId]);
+  }, [newFrontUri, newBackUri, imageUrl, backImageUrl, pinhuntId, session?.access_token]);
 
   // ── Save ────────────────────────────────────────────────────────────────────
   const handleSave = async (andAddAnother = false) => {

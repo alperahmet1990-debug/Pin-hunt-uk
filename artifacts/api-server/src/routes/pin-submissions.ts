@@ -3,7 +3,8 @@
  * something that's not in PinHunt yet" flow (scan.tsx's "can't find it"
  * link, and the standalone Add Pin screen) → add-pin.tsx.
  *
- * POST /pin-submissions
+ * POST /pin-submissions/preview   Step 1: clean up the photo and show it.
+ * POST /pin-submissions           Step 2: submit (with the previewed photo).
  *
  * Runs the front photo through Pixian.ai (services/pixian.ts) to normalize
  * it into a uniform catalogue thumbnail — solid white background, cropped
@@ -27,6 +28,7 @@ import { Router, type IRouter, type Request, type Response, type NextFunction } 
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { createSupabaseUserRepository, type EditionType } from "@workspace/pin-repository";
 import { pixianConfigured, normalizePinPhoto } from "../services/pixian";
+import { watermarkPinPhoto } from "../services/watermark";
 
 const router: IRouter = Router();
 
@@ -99,46 +101,103 @@ interface SubmitPinBody {
   notes?: string;
   frontImageBase64?: string;
   mimeType?: string;
+  /** From /pin-submissions/preview — submits that already-cleaned photo. */
+  frontDraftPath?: string;
 }
+
+/** Pixian-normalize, falling back to the raw photo (see header). */
+async function normalizeOrRaw(rawBuffer: Buffer, mimeType: string): Promise<{ buffer: Buffer; cleaned: boolean }> {
+  if (!pixianConfigured()) return { buffer: rawBuffer, cleaned: false };
+  try {
+    return { buffer: await normalizePinPhoto(rawBuffer, mimeType), cleaned: true };
+  } catch (err) {
+    console.warn("[pin-submissions] Pixian normalization failed, using raw photo:", err);
+    return { buffer: rawBuffer, cleaned: false };
+  }
+}
+
+// Cleaned photos waiting for the submitter to confirm, in the private
+// pin-submissions bucket. Each user keeps at most one — a new preview
+// clears the old — so abandoned previews can't pile up.
+const draftDir = (userId: string) => `${userId}/drafts`;
+
+/**
+ * POST /pin-submissions/preview
+ *
+ * Step 1: clean up the front photo and return it as it will appear in the
+ * catalogue (watermarked), so the collector can confirm or retake before
+ * submitting. Returns { draftPath, previewBase64, cleaned }.
+ */
+router.post("/pin-submissions/preview", requireUser, async (req: UserRequest, res: Response) => {
+  try {
+    const { frontImageBase64, mimeType = "image/jpeg" } = req.body as SubmitPinBody;
+    if (!frontImageBase64) { res.status(400).json({ error: "frontImageBase64 is required" }); return; }
+    if (frontImageBase64.length > MAX_IMAGE_BASE64_CHARS) {
+      res.status(413).json({ error: "Photo is too large — please retake it." });
+      return;
+    }
+    const userId = req.userId!;
+    const { buffer, cleaned } = await normalizeOrRaw(Buffer.from(frontImageBase64, "base64"), mimeType);
+
+    const bucket = getStorageClient().storage.from("pin-submissions");
+    const { data: old } = await bucket.list(draftDir(userId));
+    if (old?.length) await bucket.remove(old.map((f) => `${draftDir(userId)}/${f.name}`));
+
+    const draftPath = `${draftDir(userId)}/${Date.now()}.jpg`;
+    const { error } = await bucket.upload(draftPath, buffer, { contentType: "image/jpeg", upsert: false });
+    if (error) {
+      res.status(500).json({ error: `Could not store your photo: ${error.message}` });
+      return;
+    }
+    const preview = await watermarkPinPhoto(buffer);
+    res.json({ draftPath, previewBase64: preview.toString("base64"), cleaned });
+  } catch (err) {
+    res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
+  }
+});
 
 router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Response) => {
   try {
     const {
       proposedName, brand, seriesName, releaseLocation, releaseYear,
       editionType, editionSize, facNumber, sku, characterNames, notes,
-      frontImageBase64, mimeType = "image/jpeg",
+      frontImageBase64, mimeType = "image/jpeg", frontDraftPath,
     } = req.body as SubmitPinBody;
 
     if (!proposedName?.trim()) { res.status(400).json({ error: "proposedName is required" }); return; }
     if (!brand?.trim()) { res.status(400).json({ error: "brand is required" }); return; }
-    if (!frontImageBase64) { res.status(400).json({ error: "frontImageBase64 is required" }); return; }
-    if (frontImageBase64.length > MAX_IMAGE_BASE64_CHARS) {
-      res.status(413).json({ error: "Photo is too large — please retake it." });
-      return;
-    }
+    if (!frontImageBase64 && !frontDraftPath) { res.status(400).json({ error: "A front photo is required" }); return; }
 
     const userId = req.userId!;
-    const rawBuffer = Buffer.from(frontImageBase64, "base64");
-
-    let finalBuffer: Buffer = rawBuffer;
-    if (pixianConfigured()) {
-      try {
-        finalBuffer = await normalizePinPhoto(rawBuffer, mimeType);
-      } catch (err) {
-        // Don't block a core flow on a third-party API outage — fall back
-        // to the raw photo; an admin can still review the submission.
-        console.warn("[pin-submissions] Pixian normalization failed, using raw photo:", err);
-      }
-    }
-
     const submissionId = generateSubmissionId();
     const storagePath = `${userId}/${submissionId}/front.jpg`;
-    const { error: uploadError } = await getStorageClient().storage
-      .from("pin-submissions")
-      .upload(storagePath, finalBuffer, { contentType: "image/jpeg", upsert: true });
-    if (uploadError) {
-      res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
-      return;
+    const bucket = getStorageClient().storage.from("pin-submissions");
+
+    if (frontDraftPath) {
+      // Only the caller's own preview can be submitted.
+      if (!frontDraftPath.startsWith(`${draftDir(userId)}/`) || frontDraftPath.split("/").length !== 3) {
+        res.status(400).json({ error: "That photo preview isn't yours." });
+        return;
+      }
+      const { error: moveError } = await bucket.move(frontDraftPath, storagePath);
+      if (moveError) {
+        res.status(410).json({ error: "This photo preview has expired — please take the photo again." });
+        return;
+      }
+    } else {
+      // Older app builds send the photo directly, without a preview.
+      if (!frontImageBase64) { res.status(400).json({ error: "frontImageBase64 is required" }); return; }
+      if (frontImageBase64.length > MAX_IMAGE_BASE64_CHARS) {
+        res.status(413).json({ error: "Photo is too large — please retake it." });
+        return;
+      }
+      const { buffer } = await normalizeOrRaw(Buffer.from(frontImageBase64, "base64"), mimeType);
+      const { error: uploadError } = await bucket
+        .upload(storagePath, buffer, { contentType: "image/jpeg", upsert: true });
+      if (uploadError) {
+        res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
+        return;
+      }
     }
 
     const userRepo = getServiceUserRepository();

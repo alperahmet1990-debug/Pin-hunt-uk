@@ -32,20 +32,11 @@ import { useColors } from '@/hooks/useColors';
 import { createSupabasePinRepository } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { pickSubmissionImage } from '@/utils/submissionImage';
+import { uploadCataloguePhoto } from '@/utils/cataloguePhoto';
+import { useAuth } from '@/context/AuthContext';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
-
-async function uploadImage(localUri: string, storagePath: string): Promise<string> {
-  const response = await fetch(localUri);
-  const blob = await response.blob();
-  const { error } = await supabase.storage
-    .from('pin-catalogue')
-    .upload(storagePath, blob, { contentType: 'image/jpeg', upsert: true });
-  if (error) throw new Error(`Upload failed: ${error.message}`);
-  const { data } = supabase.storage.from('pin-catalogue').getPublicUrl(storagePath);
-  return data.publicUrl;
-}
 
 // ─── Badge ────────────────────────────────────────────────────────────────────
 
@@ -117,6 +108,7 @@ function EditModal({
   colors: ReturnType<typeof useColors>;
 }) {
   const insets = useSafeAreaInsets();
+  const { session } = useAuth();
 
   // Front image state
   const [frontUrl,    setFrontUrl]    = useState('');
@@ -180,7 +172,7 @@ function EditModal({
       if (hasFrontChange) {
         let url = frontUrl.trim();
         if (frontUri) {
-          url = await uploadImage(frontUri, `pins/${pin.id}/front.jpg`);
+          url = await uploadCataloguePhoto(frontUri, pin.id, 'front', session?.access_token);
         }
         update.imageUrl       = url;
         update.needsFrontImage = false;
@@ -189,7 +181,7 @@ function EditModal({
       if (hasBackChange) {
         let url = backUrl.trim();
         if (backUri) {
-          url = await uploadImage(backUri, `pins/${pin.id}/back.jpg`);
+          url = await uploadCataloguePhoto(backUri, pin.id, 'back', session?.access_token);
         }
         update.backImageUrl  = url;
         update.needsBackImage = false;

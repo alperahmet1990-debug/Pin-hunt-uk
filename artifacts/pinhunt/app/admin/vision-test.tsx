@@ -95,10 +95,10 @@ export default function VisionTestScreen() {
     <>
       <Stack.Screen options={{ title: 'Vision Test', headerShown: true }} />
       <ScrollView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         contentContainerStyle={{ padding: 20, paddingBottom: insets.bottom + 40 }}
       >
-        <Text style={[styles.intro, { color: colors.mutedForeground }]}>
+        <Text style={[styles.intro, { color: colors.homeMuted }]}>
           Proof of concept — sends a photo to Google Cloud Vision and shows the raw
           results. Nothing here changes the catalogue or your collection.
         </Text>
@@ -107,14 +107,14 @@ export default function VisionTestScreen() {
         <TouchableOpacity
           onPress={pickImage}
           activeOpacity={0.85}
-          style={[styles.pickBox, { borderColor: colors.border, backgroundColor: colors.card }]}
+          style={[styles.pickBox, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
         >
           {imageUri ? (
             <Image source={{ uri: imageUri }} style={styles.preview} resizeMode="contain" />
           ) : (
             <View style={styles.pickEmpty}>
-              <Feather name="upload" size={28} color={colors.mutedForeground} />
-              <Text style={[styles.pickText, { color: colors.mutedForeground }]}>
+              <Feather name="upload" size={28} color={colors.homeMuted} />
+              <Text style={[styles.pickText, { color: colors.homeMuted }]}>
                 {Platform.OS === 'web' ? 'Choose a photo of a pin' : 'Pick a photo of a pin'}
               </Text>
             </View>
@@ -127,15 +127,15 @@ export default function VisionTestScreen() {
           activeOpacity={0.85}
           style={[
             styles.analyseBtn,
-            { backgroundColor: colors.primary, opacity: !imageBase64 || loading ? 0.5 : 1 },
+            { backgroundColor: colors.homeCoral, opacity: !imageBase64 || loading ? 0.5 : 1 },
           ]}
         >
           {loading ? (
-            <ActivityIndicator color={colors.primaryForeground} />
+            <ActivityIndicator color={colors.homeSurface} />
           ) : (
-            <Feather name="eye" size={18} color={colors.primaryForeground} />
+            <Feather name="eye" size={18} color={colors.homeSurface} />
           )}
-          <Text style={[styles.analyseLabel, { color: colors.primaryForeground }]}>
+          <Text style={[styles.analyseLabel, { color: colors.homeSurface }]}>
             {loading ? 'Analysing…' : 'Analyse with Google Vision'}
           </Text>
         </TouchableOpacity>
@@ -156,8 +156,8 @@ export default function VisionTestScreen() {
               ) : (
                 <View style={styles.chipWrap}>
                   {result.suggestedSearchTerms.map((t, i) => (
-                    <View key={i} style={[styles.chip, { backgroundColor: colors.primary + '14', borderColor: colors.primary + '40' }]}>
-                      <Text style={[styles.chipText, { color: colors.primary }]}>{t}</Text>
+                    <View key={i} style={[styles.chip, { backgroundColor: colors.homeCoral + '14', borderColor: colors.homeCoral + '40' }]}>
+                      <Text style={[styles.chipText, { color: colors.homeCoral }]}>{t}</Text>
                     </View>
                   ))}
                 </View>
@@ -167,7 +167,7 @@ export default function VisionTestScreen() {
             {/* OCR */}
             <Section title="OCR Text" colors={colors}>
               {result.ocrText ? (
-                <Text style={[styles.mono, { color: colors.foreground }]}>{result.ocrText}</Text>
+                <Text style={[styles.mono, { color: colors.homeInk }]}>{result.ocrText}</Text>
               ) : (
                 <Empty colors={colors} label="No text detected" />
               )}
@@ -180,9 +180,9 @@ export default function VisionTestScreen() {
               ) : (
                 result.logos.map((l, i) => (
                   <View key={i} style={styles.row}>
-                    <Text style={[styles.rowText, { color: colors.foreground }]}>{l.description}</Text>
+                    <Text style={[styles.rowText, { color: colors.homeInk }]}>{l.description}</Text>
                     {l.score != null && (
-                      <Text style={[styles.rowScore, { color: colors.mutedForeground }]}>{l.score}%</Text>
+                      <Text style={[styles.rowScore, { color: colors.homeMuted }]}>{l.score}%</Text>
                     )}
                   </View>
                 ))
@@ -193,20 +193,20 @@ export default function VisionTestScreen() {
             <Section title="Web Detection" colors={colors}>
               {result.webDetection.bestGuessLabels.length > 0 && (
                 <>
-                  <Text style={[styles.subLabel, { color: colors.mutedForeground }]}>BEST GUESS</Text>
+                  <Text style={[styles.subLabel, { color: colors.homeMuted }]}>BEST GUESS</Text>
                   {result.webDetection.bestGuessLabels.map((l, i) => (
-                    <Text key={i} style={[styles.rowText, { color: colors.foreground }]}>{l}</Text>
+                    <Text key={i} style={[styles.rowText, { color: colors.homeInk }]}>{l}</Text>
                   ))}
                 </>
               )}
               {result.webDetection.webEntities.length > 0 && (
                 <>
-                  <Text style={[styles.subLabel, { color: colors.mutedForeground, marginTop: 10 }]}>WEB ENTITIES</Text>
+                  <Text style={[styles.subLabel, { color: colors.homeMuted, marginTop: 10 }]}>WEB ENTITIES</Text>
                   {result.webDetection.webEntities.map((e, i) => (
                     <View key={i} style={styles.row}>
-                      <Text style={[styles.rowText, { color: colors.foreground }]}>{e.description}</Text>
+                      <Text style={[styles.rowText, { color: colors.homeInk }]}>{e.description}</Text>
                       {e.score != null && (
-                        <Text style={[styles.rowScore, { color: colors.mutedForeground }]}>{e.score}</Text>
+                        <Text style={[styles.rowScore, { color: colors.homeMuted }]}>{e.score}</Text>
                       )}
                     </View>
                   ))}
@@ -214,10 +214,10 @@ export default function VisionTestScreen() {
               )}
               {result.webDetection.pagesWithMatchingImages.length > 0 && (
                 <>
-                  <Text style={[styles.subLabel, { color: colors.mutedForeground, marginTop: 10 }]}>PAGES WITH THIS IMAGE</Text>
+                  <Text style={[styles.subLabel, { color: colors.homeMuted, marginTop: 10 }]}>PAGES WITH THIS IMAGE</Text>
                   {result.webDetection.pagesWithMatchingImages.map((p, i) => (
                     <TouchableOpacity key={i} onPress={() => Linking.openURL(p.url)}>
-                      <Text style={[styles.link, { color: colors.primary }]} numberOfLines={2}>
+                      <Text style={[styles.link, { color: colors.homeCoral }]} numberOfLines={2}>
                         {p.title || p.url}
                       </Text>
                     </TouchableOpacity>
@@ -226,10 +226,10 @@ export default function VisionTestScreen() {
               )}
               {result.webDetection.similarImages.length > 0 && (
                 <>
-                  <Text style={[styles.subLabel, { color: colors.mutedForeground, marginTop: 10 }]}>VISUALLY SIMILAR IMAGES</Text>
+                  <Text style={[styles.subLabel, { color: colors.homeMuted, marginTop: 10 }]}>VISUALLY SIMILAR IMAGES</Text>
                   <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingVertical: 6 }}>
                     {result.webDetection.similarImages.map((u, i) => (
-                      <Image key={i} source={{ uri: u }} style={[styles.similarImg, { borderColor: colors.border }]} />
+                      <Image key={i} source={{ uri: u }} style={[styles.similarImg, { borderColor: colors.homeLine }]} />
                     ))}
                   </ScrollView>
                 </>
@@ -250,15 +250,15 @@ export default function VisionTestScreen() {
 
 function Section({ title, colors, children }: { title: string; colors: ReturnType<typeof useColors>; children: React.ReactNode }) {
   return (
-    <View style={[styles.section, { backgroundColor: colors.card, borderColor: colors.border }]}>
-      <Text style={[styles.sectionTitle, { color: colors.mutedForeground }]}>{title.toUpperCase()}</Text>
+    <View style={[styles.section, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+      <Text style={[styles.sectionTitle, { color: colors.homeMuted }]}>{title.toUpperCase()}</Text>
       {children}
     </View>
   );
 }
 
 function Empty({ colors, label = 'Nothing found' }: { colors: ReturnType<typeof useColors>; label?: string }) {
-  return <Text style={[styles.emptyText, { color: colors.mutedForeground }]}>{label}</Text>;
+  return <Text style={[styles.emptyText, { color: colors.homeMuted }]}>{label}</Text>;
 }
 
 const styles = StyleSheet.create({

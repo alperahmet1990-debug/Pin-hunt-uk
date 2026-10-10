@@ -34,6 +34,7 @@ import type {
   MyAccess,
   UserAccess,
   ReviewContributedImageInput,
+  PinAndPopReference,
   PotentialTradePin,
   StartConversationInput,
   SendConversationMessageInput,
@@ -324,6 +325,12 @@ export interface IUserPinRepository {
     reviewedBy: string,
     input: ReviewContributedImageInput,
   ): Promise<ContributedPinImage>;
+
+  /**
+   * Admin only: Pin & Pop reference images/ids for the given pins (DB UUIDs),
+   * keyed by pin id. Pins with neither an image nor an id are omitted.
+   */
+  getPinAndPopReferences(pinIds: string[]): Promise<Record<string, PinAndPopReference>>;
 
   /** Return a signed URL (1 hour TTL) for a private contributed image. */
   getContributedImageUrl(storagePath: string): Promise<string>;

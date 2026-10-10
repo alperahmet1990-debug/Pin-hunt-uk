@@ -19,12 +19,17 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import palette from '@/constants/colors';
+import { radius } from '@/constants/theme';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
+
+// Theme-independent status colours for module-level lookup tables.
+const statusPalette = palette.light;
 
 type TabKey = 'pending' | 'under_review' | 'to_add' | 'all';
 
@@ -44,12 +49,12 @@ const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   needs_changes: 'Needs Changes',
 };
 const STATUS_COLOR: Record<PinSubmissionStatus, string> = {
-  draft:         '#6366F1',
-  submitted:     '#3B82F6',
-  under_review:  '#F59E0B',
-  approved:      '#16A34A',
-  rejected:      '#EF4444',
-  needs_changes: '#F97316',
+  draft:         statusPalette.homeMuted,
+  submitted:     statusPalette.forTrade,
+  under_review:  statusPalette.homeSandInk,
+  approved:      statusPalette.owned,
+  rejected:      statusPalette.destructive,
+  needs_changes: statusPalette.wanted,
 };
 
 /** Lifetime of signed image URLs (seconds). */
@@ -70,7 +75,11 @@ export default function AdminSubmissionsScreen() {
   const router     = useRouter();
   const { repo }   = useMarketplace();
 
-  const [tab, setTab]               = useState<TabKey>('pending');
+  // Admin home deep-links straight to a tab (e.g. "Approved pins to add").
+  const { tab: initialTab } = useLocalSearchParams<{ tab?: string }>();
+  const [tab, setTab]               = useState<TabKey>(
+    TABS.some(t => t.key === initialTab) ? (initialTab as TabKey) : 'pending',
+  );
   const [submissions, setSubmissions] = useState<PinSubmission[]>([]);
   const [imageUrls, setImageUrls]   = useState<Record<string, string>>({});
   const [loading, setLoading]       = useState(true);
@@ -163,7 +172,7 @@ export default function AdminSubmissionsScreen() {
       <Stack.Screen options={{ title: 'Submission Queue' }} />
 
       {/* Tab bar */}
-      <View style={[styles.tabBar, { backgroundColor: colors.background, borderBottomColor: colors.border }]}>
+      <View style={[styles.tabBar, { backgroundColor: colors.homeBackground, borderBottomColor: colors.homeLine }]}>
         {TABS.map(t => {
           const active = tab === t.key;
           return (
@@ -171,9 +180,9 @@ export default function AdminSubmissionsScreen() {
               key={t.key}
               onPress={() => setTab(t.key)}
               activeOpacity={0.7}
-              style={[styles.tab, active && { borderBottomColor: colors.primary, borderBottomWidth: 2 }]}
+              style={[styles.tab, active && { borderBottomColor: colors.homeCoral, borderBottomWidth: 2 }]}
             >
-              <Text style={[styles.tabLabel, { color: active ? colors.primary : colors.mutedForeground }]}>
+              <Text style={[styles.tabLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>
                 {t.label}
               </Text>
             </TouchableOpacity>
@@ -182,40 +191,40 @@ export default function AdminSubmissionsScreen() {
       </View>
 
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
+        style={[styles.root, { backgroundColor: colors.homeBackground }]}
         contentContainerStyle={{ padding: 16, paddingBottom: botPad }}
         showsVerticalScrollIndicator={false}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.primary} />
+          <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.homeCoral} />
         }
       >
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
             <TouchableOpacity onPress={() => load()} style={{ padding: 8 }}>
-              <Text style={{ color: colors.primary, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
+              <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
         ) : submissions.length === 0 ? (
           <View style={styles.empty}>
-            <Feather name="inbox" size={40} color={colors.mutedForeground} />
-            <Text style={[styles.emptyTitle, { color: colors.foreground }]}>
+            <Feather name="inbox" size={40} color={colors.homeMuted} />
+            <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>
               {tab === 'pending' ? 'No pending submissions'
                 : tab === 'under_review' ? 'Nothing under review'
                 : tab === 'to_add' ? 'Nothing waiting to be added'
                 : 'No submissions yet'}
             </Text>
-            <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+            <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
               {tab === 'pending' || tab === 'to_add' ? "You're all caught up." : 'Check back later.'}
             </Text>
           </View>
         ) : (
           <>
-            <Text style={[styles.countLabel, { color: colors.mutedForeground }]}>
+            <Text style={[styles.countLabel, { color: colors.homeMuted }]}>
               {submissions.length} submission{submissions.length !== 1 ? 's' : ''}
             </Text>
             {submissions.map(s => (
@@ -223,42 +232,42 @@ export default function AdminSubmissionsScreen() {
                 key={s.id}
                 onPress={() => router.push({ pathname: '/admin/review/[id]' as any, params: { id: s.id } })}
                 activeOpacity={0.85}
-                style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+                style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
               >
                 {/* Thumbnail */}
-                <View style={[styles.thumb, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
+                <View style={[styles.thumb, { backgroundColor: colors.homeAqua, borderRadius: 8 }]}>
                   {imageUrls[s.id] ? (
                     <Image source={{ uri: imageUrls[s.id] }} style={styles.thumbImg} resizeMode="cover" onError={() => refreshImageUrl(s.id)} />
                   ) : (
-                    <Feather name="image" size={24} color={colors.mutedForeground} />
+                    <Feather name="image" size={24} color={colors.homeMuted} />
                   )}
                 </View>
 
                 <View style={{ flex: 1, gap: 4 }}>
-                  <Text style={[styles.cardName, { color: colors.foreground }]} numberOfLines={2}>
+                  <Text style={[styles.cardName, { color: colors.homeInk }]} numberOfLines={2}>
                     {s.proposedName}
                   </Text>
-                  <Text style={[styles.cardBrand, { color: colors.mutedForeground }]}>{s.brand}</Text>
+                  <Text style={[styles.cardBrand, { color: colors.homeMuted }]}>{s.brand}</Text>
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                     <View style={[styles.statusBadge, { backgroundColor: STATUS_COLOR[s.status] + '18' }]}>
                       <Text style={[styles.statusLabel, { color: STATUS_COLOR[s.status] }]}>
                         {STATUS_LABEL[s.status]}
                       </Text>
                     </View>
-                    <Text style={[styles.cardDate, { color: colors.mutedForeground }]}>
+                    <Text style={[styles.cardDate, { color: colors.homeMuted }]}>
                       {new Date(s.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                     </Text>
                   </View>
                   {s.reviewerNotes && (
-                    <View style={[styles.noteBox, { backgroundColor: colors.secondary, borderRadius: 6 }]}>
-                      <Text style={[styles.noteText, { color: colors.mutedForeground }]} numberOfLines={1}>
+                    <View style={[styles.noteBox, { backgroundColor: colors.homeAqua, borderRadius: 6 }]}>
+                      <Text style={[styles.noteText, { color: colors.homeMuted }]} numberOfLines={1}>
                         {s.reviewerNotes}
                       </Text>
                     </View>
                   )}
                 </View>
 
-                <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
+                <Feather name="chevron-right" size={18} color={colors.homeMuted} />
               </TouchableOpacity>
             ))}
           </>

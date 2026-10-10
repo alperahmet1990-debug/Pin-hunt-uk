@@ -43,6 +43,7 @@ import type {
   MyAccess,
   UserAccess,
   ReviewContributedImageInput,
+  PinAndPopReference,
   PotentialTradePin,
   Profile,
   PublicProfile,
@@ -1191,6 +1192,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .from('pin_images')
       .select('*, pin:pins!pin_id(pinhunt_id, title, image_url)')
       .eq('status', 'pending')
+      // Contributions only — imported/reference rows (e.g. Pin & Pop) have no uploader.
+      .not('uploaded_by', 'is', null)
       .order('created_at', { ascending: true });
 
     if (error) throw new Error(error.message);
@@ -1231,6 +1234,45 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
     if (error) throw new Error(error.message);
     return rowToContributedImage(data as Record<string, unknown>);
+  }
+
+  async getPinAndPopReferences(pinIds: string[]): Promise<Record<string, PinAndPopReference>> {
+    const out: Record<string, PinAndPopReference> = {};
+    if (pinIds.length === 0) return out;
+
+    const [{ data: pinRows, error: pinErr }, { data: imageRows, error: imageErr }] = await Promise.all([
+      this.client.from('pins').select('id, external_identifiers').in('id', pinIds),
+      this.client
+        .from('pin_images')
+        .select('pin_id, image_url, source_record_id, created_at')
+        .eq('source', 'pin_and_pop')
+        .in('pin_id', pinIds)
+        .order('created_at', { ascending: false }),
+    ]);
+    if (pinErr) throw new Error(pinErr.message);
+    // Tolerate a database without migration 037's pin_images.source column.
+    if (imageErr && !/source/.test(imageErr.message)) throw new Error(imageErr.message);
+
+    for (const row of (pinRows ?? []) as Array<{ id: string; external_identifiers: ExternalIdentifiers | null }>) {
+      const externalId = (row.external_identifiers as Record<string, unknown> | null)?.pin_and_pop;
+      if (externalId) {
+        out[row.id] = {
+          externalId: String(externalId),
+          pageUrl: `https://pinandpop.com/pins/${encodeURIComponent(String(externalId))}`,
+        };
+      }
+    }
+    for (const row of (imageRows ?? []) as Array<{ pin_id: string; image_url: string; source_record_id: string | null }>) {
+      const ref = out[row.pin_id] ?? {};
+      if (ref.imageUrl) continue; // newest first — keep the latest
+      ref.imageUrl = row.image_url;
+      if (!ref.externalId && row.source_record_id) {
+        ref.externalId = row.source_record_id;
+        ref.pageUrl = `https://pinandpop.com/pins/${encodeURIComponent(row.source_record_id)}`;
+      }
+      out[row.pin_id] = ref;
+    }
+    return out;
   }
 
   async getContributedImageUrl(storagePath: string): Promise<string> {

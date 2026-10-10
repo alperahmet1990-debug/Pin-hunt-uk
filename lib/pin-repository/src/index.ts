@@ -68,6 +68,7 @@ export type {
   DuplicateCandidate,
   // Contributed pin images
   ContributedPinImage,
+  PinAndPopReference,
   ContributedImageStatus,
   ContributedImageReason,
   CreateContributedImageInput,

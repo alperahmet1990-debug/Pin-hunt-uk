@@ -6,7 +6,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
-  Alert,
   FlatList,
   Platform,
   RefreshControl,
@@ -19,11 +18,19 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import palette from '@/constants/colors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
 import type { CommunityPost, PostReportSummary, ReportedComment } from '@workspace/pin-repository';
 
+// Theme-independent status colours for module-level lookup tables.
+const statusPalette = palette.light;
+
 const PAGE_SIZE = 30;
+
+type Confirming =
+  | { kind: 'remove' | 'dismiss'; id: string }
+  | { kind: 'removeComment'; id: string };
 
 const TYPE_LABEL: Record<string, string> = {
   in_search_of: 'In Search Of',
@@ -34,11 +41,11 @@ const TYPE_LABEL: Record<string, string> = {
 };
 
 const TYPE_COLOR: Record<string, string> = {
-  in_search_of: '#F59E0B',
-  for_trade:    '#3B82F6',
-  for_sale:     '#16A34A',
-  new_pickup:   '#8B5CF6',
-  discussion:   '#64748B',
+  in_search_of: statusPalette.homeSandInk,
+  for_trade:    statusPalette.forTrade,
+  for_sale:     statusPalette.owned,
+  new_pickup:   statusPalette.homeCoral,
+  discussion:   statusPalette.homeMuted,
 };
 
 function timeAgo(iso: string): string {
@@ -113,85 +120,58 @@ export default function CommunityModerationScreen() {
     }
   }, [repo, loadingMore, loading, refreshing, hasMore, posts.length]);
 
-  const handleRemove = useCallback((post: CommunityPost) => {
+  // Destructive actions confirm in-app (InlineConfirm) rather than via
+  // Alert — native alert callbacks don't reliably fire on Expo web.
+  const [confirming, setConfirming] = useState<Confirming | null>(null);
+  const [actionError, setActionError] = useState<string | null>(null);
+
+  const handleRemove = useCallback(async (post: CommunityPost) => {
     if (!repo) return;
-    Alert.alert(
-      'Remove post?',
-      'This will permanently remove the post from the community feed.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Remove',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              setRemovingId(post.id);
-              await repo.deleteCommunityPost(post.id);
-              setPosts(prev => prev.filter(p => p.id !== post.id));
-            } catch (e) {
-              Alert.alert('Error', e instanceof Error ? e.message : 'Could not remove post.');
-            } finally {
-              setRemovingId(null);
-            }
-          },
-        },
-      ],
-    );
+    try {
+      setRemovingId(post.id);
+      setActionError(null);
+      await repo.deleteCommunityPost(post.id);
+      setPosts(prev => prev.filter(p => p.id !== post.id));
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not remove post.');
+    } finally {
+      setRemovingId(null);
+    }
   }, [repo]);
 
-  const handleDismiss = useCallback((post: CommunityPost) => {
+  const handleDismiss = useCallback(async (post: CommunityPost) => {
     if (!repo) return;
-    Alert.alert(
-      'Dismiss report?',
-      'This clears all reports on this post. The post stays in the feed.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Dismiss',
-          onPress: async () => {
-            try {
-              setDismissingId(post.id);
-              await repo.dismissPostReports(post.id);
-              setReports(prev => {
-                const next = new Map(prev);
-                next.delete(post.id);
-                return next;
-              });
-            } catch (e) {
-              Alert.alert('Error', e instanceof Error ? e.message : 'Could not dismiss the report.');
-            } finally {
-              setDismissingId(null);
-            }
-          },
-        },
-      ],
-    );
+    try {
+      setDismissingId(post.id);
+      setActionError(null);
+      await repo.dismissPostReports(post.id);
+      setReports(prev => {
+        const next = new Map(prev);
+        next.delete(post.id);
+        return next;
+      });
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not dismiss the report.');
+    } finally {
+      setDismissingId(null);
+    }
   }, [repo]);
 
-  const handleRemoveComment = useCallback((rc: ReportedComment) => {
+  const handleRemoveComment = useCallback(async (rc: ReportedComment) => {
     if (!repo) return;
-    Alert.alert(
-      'Remove comment?',
-      'This will permanently remove the comment from the post.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Remove',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              setRemovingCommentId(rc.comment.id);
-              await repo.deletePostComment(rc.comment.id);
-              setReportedComments(prev => prev.filter(c => c.comment.id !== rc.comment.id));
-            } catch (e) {
-              Alert.alert('Error', e instanceof Error ? e.message : 'Could not remove comment.');
-            } finally {
-              setRemovingCommentId(null);
-            }
-          },
-        },
-      ],
-    );
+    try {
+      setRemovingCommentId(rc.comment.id);
+      setActionError(null);
+      await repo.deletePostComment(rc.comment.id);
+      setReportedComments(prev => prev.filter(c => c.comment.id !== rc.comment.id));
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not remove comment.');
+    } finally {
+      setRemovingCommentId(null);
+    }
   }, [repo]);
 
   // Reported posts first (most recently reported at top), then newest posts.
@@ -211,16 +191,17 @@ export default function CommunityModerationScreen() {
   );
 
   const renderItem = useCallback(({ item }: { item: CommunityPost }) => {
-    const typeColor  = TYPE_COLOR[item.postType] ?? '#64748B';
+    const typeColor  = TYPE_COLOR[item.postType] ?? colors.homeMuted;
     const authorName = item.authorProfile?.username ?? '…';
     const removing   = removingId === item.id;
     const dismissing = dismissingId === item.id;
     const report     = reports.get(item.id);
+    const confirmingThis = confirming && confirming.kind !== 'removeComment' && confirming.id === item.id ? confirming : null;
     return (
       <TouchableOpacity
         activeOpacity={0.85}
         onPress={() => router.push({ pathname: '/community/post/[id]' as any, params: { id: item.id } })}
-        style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
+        style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
       >
         {report && (
           <View style={[styles.reportedBanner, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}>
@@ -234,74 +215,88 @@ export default function CommunityModerationScreen() {
         <View style={styles.cardTop}>
           <Avatar uri={item.authorProfile?.avatarUrl} name={authorName} size={32} />
           <View style={{ flex: 1 }}>
-            <Text style={[styles.author, { color: colors.foreground }]} numberOfLines={1}>@{authorName}</Text>
-            <Text style={[styles.time, { color: colors.mutedForeground }]}>{timeAgo(item.createdAt)}</Text>
+            <Text style={[styles.author, { color: colors.homeInk }]} numberOfLines={1}>@{authorName}</Text>
+            <Text style={[styles.time, { color: colors.homeMuted }]}>{timeAgo(item.createdAt)}</Text>
           </View>
           <View style={[styles.typeBadge, { backgroundColor: typeColor + '18', borderColor: typeColor + '44' }]}>
             <Text style={[styles.typeBadgeLabel, { color: typeColor }]}>{TYPE_LABEL[item.postType] ?? item.postType}</Text>
           </View>
         </View>
 
-        <Text style={[styles.snippet, { color: colors.foreground }]} numberOfLines={3}>
+        <Text style={[styles.snippet, { color: colors.homeInk }]} numberOfLines={3}>
           {item.body}
         </Text>
 
-        <View style={styles.cardBottom}>
-          {item.photos.length > 0 && (
-            <View style={styles.metaChip}>
-              <Feather name="image" size={12} color={colors.mutedForeground} />
-              <Text style={[styles.metaChipLabel, { color: colors.mutedForeground }]}>
-                {item.photos.length} photo{item.photos.length !== 1 ? 's' : ''}
-              </Text>
-            </View>
-          )}
-          <View style={{ flex: 1 }} />
-          {report && (
+        {confirmingThis ? (
+          <InlineConfirm
+            message={confirmingThis.kind === 'remove'
+              ? 'Permanently remove this post from the community feed?'
+              : 'Clear all reports on this post? It stays in the feed.'}
+            confirmLabel={confirmingThis.kind === 'remove' ? 'Remove' : 'Dismiss'}
+            destructive={confirmingThis.kind === 'remove'}
+            busy={removing || dismissing}
+            error={actionError}
+            onCancel={() => { setConfirming(null); setActionError(null); }}
+            onConfirm={() => (confirmingThis.kind === 'remove' ? handleRemove(item) : handleDismiss(item))}
+          />
+        ) : (
+          <View style={styles.cardBottom}>
+            {item.photos.length > 0 && (
+              <View style={styles.metaChip}>
+                <Feather name="image" size={12} color={colors.homeMuted} />
+                <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]}>
+                  {item.photos.length} photo{item.photos.length !== 1 ? 's' : ''}
+                </Text>
+              </View>
+            )}
+            <View style={{ flex: 1 }} />
+            {report && (
+              <TouchableOpacity
+                onPress={() => setConfirming({ kind: 'dismiss', id: item.id })}
+                disabled={dismissing}
+                activeOpacity={0.85}
+                style={[styles.removeBtn, { backgroundColor: colors.homeMuted + '12', borderColor: colors.homeLine }]}
+                hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+              >
+                {dismissing ? (
+                  <ActivityIndicator size="small" color={colors.homeMuted} />
+                ) : (
+                  <>
+                    <Feather name="check" size={13} color={colors.homeMuted} />
+                    <Text style={[styles.removeBtnLabel, { color: colors.homeMuted }]}>Dismiss</Text>
+                  </>
+                )}
+              </TouchableOpacity>
+            )}
             <TouchableOpacity
-              onPress={() => handleDismiss(item)}
-              disabled={dismissing}
+              onPress={() => setConfirming({ kind: 'remove', id: item.id })}
+              disabled={removing}
               activeOpacity={0.85}
-              style={[styles.removeBtn, { backgroundColor: colors.mutedForeground + '12', borderColor: colors.border }]}
+              style={[styles.removeBtn, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}
               hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
             >
-              {dismissing ? (
-                <ActivityIndicator size="small" color={colors.mutedForeground} />
+              {removing ? (
+                <ActivityIndicator size="small" color={colors.destructive} />
               ) : (
                 <>
-                  <Feather name="check" size={13} color={colors.mutedForeground} />
-                  <Text style={[styles.removeBtnLabel, { color: colors.mutedForeground }]}>Dismiss</Text>
+                  <Feather name="trash-2" size={13} color={colors.destructive} />
+                  <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Remove</Text>
                 </>
               )}
             </TouchableOpacity>
-          )}
-          <TouchableOpacity
-            onPress={() => handleRemove(item)}
-            disabled={removing}
-            activeOpacity={0.85}
-            style={[styles.removeBtn, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}
-            hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
-          >
-            {removing ? (
-              <ActivityIndicator size="small" color={colors.destructive} />
-            ) : (
-              <>
-                <Feather name="trash-2" size={13} color={colors.destructive} />
-                <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Remove</Text>
-              </>
-            )}
-          </TouchableOpacity>
-        </View>
+          </View>
+        )}
       </TouchableOpacity>
     );
-  }, [colors, removingId, dismissingId, router, handleRemove, handleDismiss, reports]);
+  }, [colors, removingId, dismissingId, router, handleRemove, handleDismiss, reports, confirming, actionError]);
 
   return (
     <>
       <Stack.Screen options={{ title: 'Community Moderation' }} />
-      <View style={[styles.root, { backgroundColor: colors.background }]}>
+      <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.homeCoral} />
           </View>
         ) : error ? (
           <View style={styles.center}>
@@ -309,8 +304,8 @@ export default function CommunityModerationScreen() {
               <Feather name="alert-circle" size={14} color={colors.destructive} />
               <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
             </View>
-            <TouchableOpacity onPress={() => load()} style={[styles.retryBtn, { borderColor: colors.border }]}>
-              <Text style={[styles.retryLabel, { color: colors.primary }]}>Try again</Text>
+            <TouchableOpacity onPress={() => load()} style={[styles.retryBtn, { borderColor: colors.homeLine }]}>
+              <Text style={[styles.retryLabel, { color: colors.homeCoral }]}>Try again</Text>
             </TouchableOpacity>
           </View>
         ) : (
@@ -338,7 +333,7 @@ export default function CommunityModerationScreen() {
 
                 {reportedComments.length > 0 && (
                   <View style={{ gap: 8 }}>
-                    <Text style={[styles.sectionHeading, { color: colors.mutedForeground }]}>
+                    <Text style={[styles.sectionHeading, { color: colors.homeMuted }]}>
                       REPORTED COMMENTS ({reportedComments.length})
                     </Text>
                     {reportedComments.map(rc => {
@@ -349,7 +344,7 @@ export default function CommunityModerationScreen() {
                           key={rc.comment.id}
                           activeOpacity={0.85}
                           onPress={() => router.push({ pathname: '/community/post/[id]' as any, params: { id: rc.comment.postId } })}
-                          style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
+                          style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                         >
                           <View style={[styles.reportedBanner, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}>
                             <Feather name="flag" size={12} color={colors.destructive} />
@@ -361,40 +356,52 @@ export default function CommunityModerationScreen() {
                           <View style={styles.cardTop}>
                             <Avatar uri={rc.comment.authorProfile?.avatarUrl} name={name} size={32} />
                             <View style={{ flex: 1 }}>
-                              <Text style={[styles.author, { color: colors.foreground }]} numberOfLines={1}>@{name}</Text>
-                              <Text style={[styles.time, { color: colors.mutedForeground }]}>{timeAgo(rc.comment.createdAt)}</Text>
+                              <Text style={[styles.author, { color: colors.homeInk }]} numberOfLines={1}>@{name}</Text>
+                              <Text style={[styles.time, { color: colors.homeMuted }]}>{timeAgo(rc.comment.createdAt)}</Text>
                             </View>
                           </View>
-                          <Text style={[styles.snippet, { color: colors.foreground }]} numberOfLines={3}>
+                          <Text style={[styles.snippet, { color: colors.homeInk }]} numberOfLines={3}>
                             {rc.comment.body}
                           </Text>
-                          <View style={styles.cardBottom}>
-                            <View style={styles.metaChip}>
-                              <Feather name="message-circle" size={12} color={colors.mutedForeground} />
-                              <Text style={[styles.metaChipLabel, { color: colors.mutedForeground }]}>View post</Text>
+                          {confirming?.kind === 'removeComment' && confirming.id === rc.comment.id ? (
+                            <InlineConfirm
+                              message="Permanently remove this comment from the post?"
+                              confirmLabel="Remove"
+                              destructive
+                              busy={removing}
+                              error={actionError}
+                              onCancel={() => { setConfirming(null); setActionError(null); }}
+                              onConfirm={() => handleRemoveComment(rc)}
+                            />
+                          ) : (
+                            <View style={styles.cardBottom}>
+                              <View style={styles.metaChip}>
+                                <Feather name="message-circle" size={12} color={colors.homeMuted} />
+                                <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]}>View post</Text>
+                              </View>
+                              <View style={{ flex: 1 }} />
+                              <TouchableOpacity
+                                onPress={() => setConfirming({ kind: 'removeComment', id: rc.comment.id })}
+                                disabled={removing}
+                                activeOpacity={0.85}
+                                style={[styles.removeBtn, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}
+                                hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                              >
+                                {removing ? (
+                                  <ActivityIndicator size="small" color={colors.destructive} />
+                                ) : (
+                                  <>
+                                    <Feather name="trash-2" size={13} color={colors.destructive} />
+                                    <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Remove</Text>
+                                  </>
+                                )}
+                              </TouchableOpacity>
                             </View>
-                            <View style={{ flex: 1 }} />
-                            <TouchableOpacity
-                              onPress={() => handleRemoveComment(rc)}
-                              disabled={removing}
-                              activeOpacity={0.85}
-                              style={[styles.removeBtn, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}
-                              hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
-                            >
-                              {removing ? (
-                                <ActivityIndicator size="small" color={colors.destructive} />
-                              ) : (
-                                <>
-                                  <Feather name="trash-2" size={13} color={colors.destructive} />
-                                  <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Remove</Text>
-                                </>
-                              )}
-                            </TouchableOpacity>
-                          </View>
+                          )}
                         </TouchableOpacity>
                       );
                     })}
-                    <Text style={[styles.sectionHeading, { color: colors.mutedForeground, marginTop: 4 }]}>
+                    <Text style={[styles.sectionHeading, { color: colors.homeMuted, marginTop: 4 }]}>
                       POSTS
                     </Text>
                   </View>
@@ -406,14 +413,14 @@ export default function CommunityModerationScreen() {
             contentContainerStyle={{ padding: 16, paddingBottom: botPad, gap: 12 }}
             showsVerticalScrollIndicator={false}
             refreshControl={
-              <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.primary} />
+              <RefreshControl refreshing={refreshing} onRefresh={() => load(true)} tintColor={colors.homeCoral} />
             }
             onEndReached={loadMore}
             onEndReachedThreshold={0.4}
             ListEmptyComponent={
               <View style={styles.center}>
-                <Feather name="check-circle" size={28} color={colors.mutedForeground} />
-                <Text style={[styles.emptyText, { color: colors.mutedForeground }]}>
+                <Feather name="check-circle" size={28} color={colors.homeMuted} />
+                <Text style={[styles.emptyText, { color: colors.homeMuted }]}>
                   {reportedOnly ? 'No reported posts. All clear!' : 'No community posts yet.'}
                 </Text>
               </View>
@@ -421,7 +428,7 @@ export default function CommunityModerationScreen() {
             ListFooterComponent={
               loadingMore ? (
                 <View style={{ paddingVertical: 16 }}>
-                  <ActivityIndicator color={colors.primary} />
+                  <ActivityIndicator color={colors.homeCoral} />
                 </View>
               ) : null
             }
@@ -432,7 +439,44 @@ export default function CommunityModerationScreen() {
   );
 }
 
+function InlineConfirm({
+  message, confirmLabel, destructive, busy, error, onCancel, onConfirm,
+}: {
+  message: string;
+  confirmLabel: string;
+  destructive?: boolean;
+  busy: boolean;
+  error: string | null;
+  onCancel: () => void;
+  onConfirm: () => void;
+}) {
+  const colors = useColors();
+  const tone = destructive ? colors.destructive : colors.homeCoral;
+  return (
+    <View style={[styles.confirmBar, { backgroundColor: colors.homeAqua }]}>
+      <Text style={[styles.confirmText, { color: colors.homeInk }]}>{message}</Text>
+      {error && <Text style={[styles.confirmError, { color: colors.destructive }]}>{error}</Text>}
+      <View style={styles.confirmButtons}>
+        <TouchableOpacity onPress={onCancel} disabled={busy} style={styles.confirmBtn}>
+          <Text style={[styles.confirmBtnLabel, { color: colors.homeMuted }]}>Cancel</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onConfirm} disabled={busy} style={[styles.confirmBtn, { backgroundColor: tone }]}>
+          {busy
+            ? <ActivityIndicator size="small" color={colors.homeHeroText} />
+            : <Text style={[styles.confirmBtnLabel, { color: colors.homeHeroText }]}>{confirmLabel}</Text>}
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
+  confirmBar:    { borderRadius: 12, padding: 12, gap: 8 },
+  confirmText:   { fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18 },
+  confirmError:  { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  confirmButtons:{ flexDirection: 'row', justifyContent: 'flex-end', gap: 8 },
+  confirmBtn:    { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 999, minWidth: 84, alignItems: 'center' },
+  confirmBtnLabel:{ fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   root:          { flex: 1 },
   center:        { alignItems: 'center', justifyContent: 'center', padding: 32, gap: 12 },
   errorBox:      { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 12, borderWidth: 1, borderRadius: 12 },

@@ -25,6 +25,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import palette from '@/constants/colors';
 import { createSupabasePinRepository, createSupabaseUserRepository } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { pickSubmissionImage } from '@/utils/submissionImage';
@@ -33,6 +34,9 @@ import type {
   CataloguePinStatus,
   PinVerificationStatus,
 } from '@workspace/pin-repository';
+
+// Theme-independent status colours for module-level lookup tables.
+const statusPalette = palette.light;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -46,16 +50,16 @@ const EDITION_TYPES = [
 ] as const;
 
 const VERIFICATION_STATUSES: { value: PinVerificationStatus; label: string; color: string }[] = [
-  { value: 'verified',                  label: 'Verified',         color: '#16A34A' },
-  { value: 'needs_source_verification', label: 'Needs Source',     color: '#F59E0B' },
-  { value: 'community_submitted',       label: 'Community',        color: '#3B82F6' },
-  { value: 'unverified',                label: 'Unverified',       color: '#6B7280' },
+  { value: 'verified',                  label: 'Verified',         color: statusPalette.owned },
+  { value: 'needs_source_verification', label: 'Needs Source',     color: statusPalette.homeSandInk },
+  { value: 'community_submitted',       label: 'Community',        color: statusPalette.forTrade },
+  { value: 'unverified',                label: 'Unverified',       color: statusPalette.homeMuted },
 ];
 
 const CATALOGUE_STATUSES: { value: CataloguePinStatus; label: string; color: string }[] = [
-  { value: 'active',         label: 'Active',         color: '#16A34A' },
-  { value: 'pending_review', label: 'Pending Review', color: '#F59E0B' },
-  { value: 'archived',       label: 'Archived',       color: '#6B7280' },
+  { value: 'active',         label: 'Active',         color: statusPalette.owned },
+  { value: 'pending_review', label: 'Pending Review', color: statusPalette.homeSandInk },
+  { value: 'archived',       label: 'Archived',       color: statusPalette.homeMuted },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -105,11 +109,11 @@ function Field({
   const colors = useColors();
   return (
     <View style={{ gap: 5 }}>
-      <Text style={{ fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.4, color: colors.mutedForeground }}>
-        {label}{required && <Text style={{ color: '#EF4444' }}> *</Text>}
+      <Text style={{ fontSize: 11, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.4, color: colors.homeMuted }}>
+        {label}{required && <Text style={{ color: colors.destructive }}> *</Text>}
       </Text>
       {children}
-      {error && <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: '#EF4444' }}>{error}</Text>}
+      {error && <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: colors.destructive }}>{error}</Text>}
     </View>
   );
 }
@@ -530,16 +534,16 @@ export default function AdminPinEditorScreen() {
       value={value}
       onChangeText={v => { onChange(v); if (opts?.errKey) setErrors(e => ({ ...e, [opts.errKey!]: '' })); }}
       placeholder={placeholder}
-      placeholderTextColor={colors.mutedForeground + '88'}
+      placeholderTextColor={colors.homeMuted + '88'}
       keyboardType={opts?.keyboardType ?? 'default'}
       multiline={opts?.multiline}
       style={[
         styles.input,
         opts?.multiline && { height: 88, textAlignVertical: 'top' },
         {
-          color: colors.foreground,
-          borderColor: opts?.errKey && errors[opts.errKey] ? '#EF4444' : colors.border,
-          backgroundColor: colors.card,
+          color: colors.homeInk,
+          borderColor: opts?.errKey && errors[opts.errKey] ? colors.destructive : colors.homeLine,
+          backgroundColor: colors.homeSurface,
           borderRadius: 10,
         },
       ]}
@@ -551,8 +555,8 @@ export default function AdminPinEditorScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Loading…' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
-          <ActivityIndicator color={colors.primary} />
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
+          <ActivityIndicator color={colors.homeCoral} />
         </View>
       </>
     );
@@ -561,7 +565,7 @@ export default function AdminPinEditorScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Error' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
           <Text style={{ color: colors.destructive, fontFamily: 'Inter_400Regular', fontSize: 14 }}>{loadError}</Text>
         </View>
       </>
@@ -572,7 +576,7 @@ export default function AdminPinEditorScreen() {
     <>
       <Stack.Screen options={{ title: isNew ? 'Add New Pin' : `Edit ${title || 'Pin'}` }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -584,13 +588,13 @@ export default function AdminPinEditorScreen() {
 
           {/* ── Already-approved submission warning ── */}
           {submissionAlreadyApproved && (
-            <View style={[styles.dupBox, { backgroundColor: '#FEE2E2', borderColor: '#EF4444', borderRadius: 10 }]}>
-              <Feather name="alert-octagon" size={14} color="#991B1B" />
+            <View style={[styles.dupBox, { backgroundColor: colors.destructive + '14', borderColor: colors.destructive, borderRadius: 10 }]}>
+              <Feather name="alert-octagon" size={14} color={colors.destructive} />
               <View style={{ flex: 1, gap: 6 }}>
-                <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#991B1B' }}>
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: colors.destructive }}>
                   This submission already has a catalogue entry
                 </Text>
-                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: '#991B1B' }}>
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: colors.destructive }}>
                   Saving is disabled to prevent creating a duplicate pin.
                 </Text>
                 {!!alreadyApprovedPinhuntId && (
@@ -599,8 +603,8 @@ export default function AdminPinEditorScreen() {
                     activeOpacity={0.8}
                     style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}
                   >
-                    <Feather name="external-link" size={12} color="#991B1B" />
-                    <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#991B1B', textDecorationLine: 'underline' }}>
+                    <Feather name="external-link" size={12} color={colors.destructive} />
+                    <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: colors.destructive, textDecorationLine: 'underline' }}>
                       View in Catalogue ({alreadyApprovedPinhuntId})
                     </Text>
                   </TouchableOpacity>
@@ -610,13 +614,13 @@ export default function AdminPinEditorScreen() {
           )}
 
           {/* ── PinHunt ID ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>IDENTIFIER</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>IDENTIFIER</Text>
           <Field label="PinHunt ID" required error={errors.pinhuntId}>
             {inp(pinhuntId, setPinhuntId, 'e.g. PHUK-00000001', { errKey: 'pinhuntId' })}
           </Field>
 
           {/* ── Images ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>IMAGES</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>IMAGES</Text>
           <View style={{ gap: 10 }}>
             <ImagePickerCard
               label="Front Image"
@@ -641,7 +645,7 @@ export default function AdminPinEditorScreen() {
           </View>
 
           {/* ── Core details ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>DETAILS</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>DETAILS</Text>
           <View style={{ gap: 12 }}>
             <Field label="Pin Name" required error={errors.title}>
               {inp(title, setTitle, 'e.g. Mickey Mouse 50th Anniversary', { errKey: 'title' })}
@@ -650,21 +654,21 @@ export default function AdminPinEditorScreen() {
             {/* Duplicate search results */}
             {isNew && searchingDups && (
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-                <ActivityIndicator size="small" color={colors.mutedForeground} />
-                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: colors.mutedForeground }}>
+                <ActivityIndicator size="small" color={colors.homeMuted} />
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: colors.homeMuted }}>
                   Checking for duplicates…
                 </Text>
               </View>
             )}
             {isNew && !searchingDups && duplicates.length > 0 && (
-              <View style={[styles.dupBox, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>
-                <Feather name="alert-triangle" size={14} color="#92400E" />
+              <View style={[styles.dupBox, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeSandInk, borderRadius: 10 }]}>
+                <Feather name="alert-triangle" size={14} color={colors.homeSandInk} />
                 <View style={{ flex: 1, gap: 4 }}>
-                  <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#92400E' }}>
+                  <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: colors.homeSandInk }}>
                     Possible duplicates found:
                   </Text>
                   {duplicates.map(d => (
-                    <Text key={d.id} style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: '#92400E' }}>
+                    <Text key={d.id} style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: colors.homeSandInk }}>
                       • {d.title} ({d.brand}) — {d.id}
                     </Text>
                   ))}
@@ -687,7 +691,7 @@ export default function AdminPinEditorScreen() {
           </View>
 
           {/* ── Release info ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>RELEASE INFO</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>RELEASE INFO</Text>
           <View style={{ gap: 12 }}>
             <Field label="Release Year" error={errors.releaseYear}>
               {inp(releaseYear, setReleaseYear, 'e.g. 2024', { keyboardType: 'numeric', errKey: 'releaseYear' })}
@@ -701,7 +705,7 @@ export default function AdminPinEditorScreen() {
           </View>
 
           {/* ── Edition ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>EDITION</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>EDITION</Text>
           <View style={{ gap: 12 }}>
             <Field label="Edition Type">
               <View style={styles.chipRow}>
@@ -713,12 +717,12 @@ export default function AdminPinEditorScreen() {
                       onPress={() => setEditionType(e.value)}
                       activeOpacity={0.8}
                       style={[styles.chip, {
-                        backgroundColor: active ? colors.primary + '18' : colors.card,
-                        borderColor: active ? colors.primary : colors.border,
+                        backgroundColor: active ? colors.homeCoral + '18' : colors.homeSurface,
+                        borderColor: active ? colors.homeCoral : colors.homeLine,
                         borderRadius: 8,
                       }]}
                     >
-                      <Text style={[styles.chipLabel, { color: active ? colors.primary : colors.mutedForeground }]}>
+                      <Text style={[styles.chipLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>
                         {e.label}
                       </Text>
                     </TouchableOpacity>
@@ -732,13 +736,13 @@ export default function AdminPinEditorScreen() {
           </View>
 
           {/* ── Description ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>DESCRIPTION</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>DESCRIPTION</Text>
           <Field label="Description">
             {inp(description, setDescription, 'Catalogue description…', { multiline: true })}
           </Field>
 
           {/* ── Source notes ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>SOURCE & IDENTIFIERS</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>SOURCE & IDENTIFIERS</Text>
           <View style={{ gap: 12 }}>
             <Field label="FAC Number">
               {inp(facNumber, setFacNumber, 'e.g. 24-FAC-12345')}
@@ -755,7 +759,7 @@ export default function AdminPinEditorScreen() {
           </View>
 
           {/* ── Status ── */}
-          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>STATUS</Text>
+          <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>STATUS</Text>
           <View style={{ gap: 12 }}>
             <Field label="Verification Status">
               <View style={styles.chipRow}>
@@ -767,12 +771,12 @@ export default function AdminPinEditorScreen() {
                       onPress={() => setVerificationStatus(v.value)}
                       activeOpacity={0.8}
                       style={[styles.chip, {
-                        backgroundColor: active ? v.color + '18' : colors.card,
-                        borderColor: active ? v.color : colors.border,
+                        backgroundColor: active ? v.color + '18' : colors.homeSurface,
+                        borderColor: active ? v.color : colors.homeLine,
                         borderRadius: 8,
                       }]}
                     >
-                      <Text style={[styles.chipLabel, { color: active ? v.color : colors.mutedForeground }]}>
+                      <Text style={[styles.chipLabel, { color: active ? v.color : colors.homeMuted }]}>
                         {v.label}
                       </Text>
                     </TouchableOpacity>
@@ -790,12 +794,12 @@ export default function AdminPinEditorScreen() {
                       onPress={() => setCatalogueStatus(s.value)}
                       activeOpacity={0.8}
                       style={[styles.chip, {
-                        backgroundColor: active ? s.color + '18' : colors.card,
-                        borderColor: active ? s.color : colors.border,
+                        backgroundColor: active ? s.color + '18' : colors.homeSurface,
+                        borderColor: active ? s.color : colors.homeLine,
                         borderRadius: 8,
                       }]}
                     >
-                      <Text style={[styles.chipLabel, { color: active ? s.color : colors.mutedForeground }]}>
+                      <Text style={[styles.chipLabel, { color: active ? s.color : colors.homeMuted }]}>
                         {s.label}
                       </Text>
                     </TouchableOpacity>
@@ -807,7 +811,7 @@ export default function AdminPinEditorScreen() {
 
           {/* ── Actions ── */}
           {saving || deleting ? (
-            <ActivityIndicator color={colors.primary} style={{ marginTop: 16 }} />
+            <ActivityIndicator color={colors.homeCoral} style={{ marginTop: 16 }} />
           ) : (
             <View style={{ gap: 10, marginTop: 8 }}>
               <TouchableOpacity
@@ -815,7 +819,7 @@ export default function AdminPinEditorScreen() {
                 activeOpacity={0.85}
                 disabled={submissionAlreadyApproved}
                 style={[styles.btn, {
-                  backgroundColor: colors.primary,
+                  backgroundColor: colors.homeCoral,
                   borderRadius: 12,
                   opacity: submissionAlreadyApproved ? 0.4 : 1,
                 }]}
@@ -828,10 +832,10 @@ export default function AdminPinEditorScreen() {
                 <TouchableOpacity
                   onPress={() => handleSave(true)}
                   activeOpacity={0.85}
-                  style={[styles.btn, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}
+                  style={[styles.btn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}
                 >
-                  <Feather name="plus" size={16} color={colors.foreground} />
-                  <Text style={[styles.btnLabel, { color: colors.foreground }]}>Save and Add Another</Text>
+                  <Feather name="plus" size={16} color={colors.homeInk} />
+                  <Text style={[styles.btnLabel, { color: colors.homeInk }]}>Save and Add Another</Text>
                 </TouchableOpacity>
               )}
 
@@ -839,10 +843,10 @@ export default function AdminPinEditorScreen() {
                 <TouchableOpacity
                   onPress={handleDelete}
                   activeOpacity={0.85}
-                  style={[styles.btn, { backgroundColor: colors.card, borderColor: '#EF4444', borderWidth: 1, borderRadius: 12 }]}
+                  style={[styles.btn, { backgroundColor: colors.homeSurface, borderColor: colors.destructive, borderWidth: 1, borderRadius: 12 }]}
                 >
-                  <Feather name="trash-2" size={16} color="#EF4444" />
-                  <Text style={[styles.btnLabel, { color: '#EF4444' }]}>Delete Pin</Text>
+                  <Feather name="trash-2" size={16} color={colors.destructive} />
+                  <Text style={[styles.btnLabel, { color: colors.destructive }]}>Delete Pin</Text>
                 </TouchableOpacity>
               )}
             </View>
@@ -865,32 +869,32 @@ function ImagePickerCard({
   colors: ReturnType<typeof useColors>;
 }) {
   return (
-    <View style={[styles.photoCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+    <View style={[styles.photoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
       {uri ? (
         <Image source={{ uri }} style={styles.photoThumb} resizeMode="cover" onError={onImageError} />
       ) : (
-        <View style={[styles.photoPlaceholder, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
-          <Feather name="image" size={22} color={colors.mutedForeground} />
+        <View style={[styles.photoPlaceholder, { backgroundColor: colors.homeAqua, borderRadius: 8 }]}>
+          <Feather name="image" size={22} color={colors.homeMuted} />
         </View>
       )}
       <View style={{ flex: 1, gap: 4 }}>
-        <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: colors.foreground }}>{label}</Text>
+        <Text style={{ fontSize: 12, fontFamily: 'Inter_600SemiBold', color: colors.homeInk }}>{label}</Text>
         <View style={{ flexDirection: 'row', gap: 8 }}>
           <TouchableOpacity
             onPress={() => onPick('camera')}
-            style={[styles.photoBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}
+            style={[styles.photoBtn, { backgroundColor: colors.homeAqua, borderRadius: 8 }]}
           >
-            <Feather name="camera" size={13} color={colors.foreground} />
-            <Text style={{ fontSize: 12, fontFamily: 'Inter_500Medium', color: colors.foreground }}>
+            <Feather name="camera" size={13} color={colors.homeInk} />
+            <Text style={{ fontSize: 12, fontFamily: 'Inter_500Medium', color: colors.homeInk }}>
               {Platform.OS === 'web' ? 'Choose' : 'Camera'}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => onPick('library')}
-            style={[styles.photoBtn, { backgroundColor: colors.secondary, borderRadius: 8 }]}
+            style={[styles.photoBtn, { backgroundColor: colors.homeAqua, borderRadius: 8 }]}
           >
-            <Feather name="image" size={13} color={colors.foreground} />
-            <Text style={{ fontSize: 12, fontFamily: 'Inter_500Medium', color: colors.foreground }}>Library</Text>
+            <Feather name="image" size={13} color={colors.homeInk} />
+            <Text style={{ fontSize: 12, fontFamily: 'Inter_500Medium', color: colors.homeInk }}>Library</Text>
           </TouchableOpacity>
         </View>
       </View>

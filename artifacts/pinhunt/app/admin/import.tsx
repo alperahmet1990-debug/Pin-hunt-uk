@@ -522,15 +522,15 @@ export default function CatalogueImportScreen() {
     <>
       <Stack.Screen options={{ title: 'Catalogue Import' }} />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.background }]}
+        style={[styles.root, { backgroundColor: colors.homeBackground }]}
         contentContainerStyle={{ padding: 16, paddingBottom: botPad, gap: 16 }}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
         {/* ── Header ── */}
         <View style={styles.headerBlock}>
-          <Text style={[styles.title, { color: colors.foreground }]}>Excel Catalogue Import</Text>
-          <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
+          <Text style={[styles.title, { color: colors.homeInk }]}>Excel Catalogue Import</Text>
+          <Text style={[styles.subtitle, { color: colors.homeMuted }]}>
             Upload a .xlsx workbook to bulk-load pins into the catalogue. Always run a dry run first.
           </Text>
         </View>
@@ -540,7 +540,7 @@ export default function CatalogueImportScreen() {
           <TouchableOpacity
             onPress={handlePickFile}
             activeOpacity={0.85}
-            style={[styles.pickBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+            style={[styles.pickBtn, { backgroundColor: colors.homeCoral, borderRadius: 12 }]}
           >
             <Feather name="upload" size={20} color="#fff" />
             <Text style={styles.pickBtnLabel}>Choose .xlsx File</Text>
@@ -549,16 +549,16 @@ export default function CatalogueImportScreen() {
 
         {/* ── Import history (past batches) ── */}
         {step === 'idle' && (
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
             <View style={styles.sectionHeader}>
-              <Text style={[styles.cardTitle, { color: colors.mutedForeground }]}>IMPORT HISTORY</Text>
-              {loadingBatches && <ActivityIndicator size="small" color={colors.primary} />}
+              <Text style={[styles.cardTitle, { color: colors.homeMuted }]}>IMPORT HISTORY</Text>
+              {loadingBatches && <ActivityIndicator size="small" color={colors.homeCoral} />}
             </View>
             {!loadingBatches && batchList.length === 0 && (
-              <Text style={[styles.editHint, { color: colors.mutedForeground }]}>No past imports yet.</Text>
+              <Text style={[styles.editHint, { color: colors.homeMuted }]}>No past imports yet.</Text>
             )}
             {batchList.length > 0 && (
-              <Text style={[styles.editHint, { color: colors.mutedForeground }]}>
+              <Text style={[styles.editHint, { color: colors.homeMuted }]}>
                 Tap a batch to reopen its summary and error report — you can keep fixing error rows where you left off.
               </Text>
             )}
@@ -568,7 +568,7 @@ export default function CatalogueImportScreen() {
                 onPress={() => openPastBatch(b)}
                 disabled={!!openingBatchId}
                 activeOpacity={0.75}
-                style={[styles.batchRow, { borderTopColor: colors.border }]}
+                style={[styles.batchRow, { borderTopColor: colors.homeLine }]}
               >
                 <View style={{ flex: 1 }}>
                   <BatchHistoryCard batch={b} colors={colors} now={nowTick} />
@@ -581,8 +581,8 @@ export default function CatalogueImportScreen() {
                   </View>
                 )}
                 {openingBatchId === b.id
-                  ? <ActivityIndicator size="small" color={colors.primary} />
-                  : <Feather name="chevron-right" size={16} color={colors.mutedForeground} />}
+                  ? <ActivityIndicator size="small" color={colors.homeCoral} />
+                  : <Feather name="chevron-right" size={16} color={colors.homeMuted} />}
               </TouchableOpacity>
             ))}
           </View>
@@ -590,48 +590,48 @@ export default function CatalogueImportScreen() {
 
         {/* ── Loading: preview / dry run ── */}
         {(step === 'previewing' || step === 'dry_running') && (
-          <View style={[styles.loadingCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
-            <ActivityIndicator color={colors.primary} size="large" />
-            <Text style={[styles.loadingText, { color: colors.foreground }]}>{statusMsg}</Text>
+          <View style={[styles.loadingCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
+            <ActivityIndicator color={colors.homeCoral} size="large" />
+            <Text style={[styles.loadingText, { color: colors.homeInk }]}>{statusMsg}</Text>
           </View>
         )}
 
         {/* ── Step importing: live progress bar ── */}
         {step === 'importing' && (
-          <View style={[styles.progressCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+          <View style={[styles.progressCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
             {!batchStatus ? (
               <>
-                <ActivityIndicator color={colors.primary} size="small" />
-                <Text style={[styles.loadingText, { color: colors.foreground }]}>Starting import…</Text>
+                <ActivityIndicator color={colors.homeCoral} size="small" />
+                <Text style={[styles.loadingText, { color: colors.homeInk }]}>Starting import…</Text>
               </>
             ) : (
               <>
                 <View style={styles.progressHeader}>
-                  <Text style={[styles.progressLabel, { color: colors.foreground }]}>Importing…</Text>
-                  <Text style={[styles.progressPct, { color: colors.primary }]}>
+                  <Text style={[styles.progressLabel, { color: colors.homeInk }]}>Importing…</Text>
+                  <Text style={[styles.progressPct, { color: colors.homeCoral }]}>
                     {Math.round(progressFraction * 100)}%
                   </Text>
                 </View>
 
                 {/* Progress bar */}
-                <View style={[styles.progressTrack, { backgroundColor: colors.secondary }]}>
+                <View style={[styles.progressTrack, { backgroundColor: colors.homeAqua }]}>
                   <View
                     style={[
                       styles.progressFill,
-                      { backgroundColor: colors.primary, width: `${Math.round(progressFraction * 100)}%` as `${number}%` },
+                      { backgroundColor: colors.homeCoral, width: `${Math.round(progressFraction * 100)}%` as `${number}%` },
                     ]}
                   />
                 </View>
 
                 {/* Live counters */}
                 <View style={styles.liveCountRow}>
-                  <LiveCount label="Inserted" value={batchStatus.inserted_rows} color={colors.primary} />
+                  <LiveCount label="Inserted" value={batchStatus.inserted_rows} color={colors.homeCoral} />
                   <LiveCount label="Updated" value={batchStatus.updated_rows} color={colors.owned} />
-                  <LiveCount label="Remaining" value={remainingRows} color={colors.mutedForeground} />
+                  <LiveCount label="Remaining" value={remainingRows} color={colors.homeMuted} />
                   <LiveCount label="Errors" value={batchStatus.error_rows} color={colors.destructive} />
                 </View>
 
-                <Text style={[styles.progressNote, { color: colors.mutedForeground }]}>
+                <Text style={[styles.progressNote, { color: colors.homeMuted }]}>
                   {batchStatus.progress_rows.toLocaleString()} / {batchStatus.total_rows.toLocaleString()} rows processed
                 </Text>
               </>
@@ -641,28 +641,28 @@ export default function CatalogueImportScreen() {
 
         {/* ── Step 2: Preview ── */}
         {preview && (step === 'preview_done' || step === 'dry_done' || step === 'done') && (
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
             <Row label="File" value={preview.filename} />
             <Row label="Sheet" value={preview.selectedSheet} />
             <Row label="Total rows" value={preview.totalRows.toLocaleString()} />
             <Row label="Columns detected" value={String(preview.headers.length)} />
 
             <TouchableOpacity onPress={() => setShowMapping(!showMapping)} style={styles.expandRow}>
-              <Text style={[styles.expandLabel, { color: colors.primary }]}>
+              <Text style={[styles.expandLabel, { color: colors.homeCoral }]}>
                 {showMapping ? 'Hide' : 'Show'} column mapping
               </Text>
-              <Feather name={showMapping ? 'chevron-up' : 'chevron-down'} size={14} color={colors.primary} />
+              <Feather name={showMapping ? 'chevron-up' : 'chevron-down'} size={14} color={colors.homeCoral} />
             </TouchableOpacity>
 
             {showMapping && (
               <View style={styles.mappingTable}>
                 <View style={styles.mappingHeader}>
-                  <Text style={[styles.mappingCell, styles.mappingHeaderText, { color: colors.mutedForeground, flex: 1 }]}>Spreadsheet</Text>
-                  <Text style={[styles.mappingCell, styles.mappingHeaderText, { color: colors.mutedForeground, flex: 1 }]}>Database field</Text>
+                  <Text style={[styles.mappingCell, styles.mappingHeaderText, { color: colors.homeMuted, flex: 1 }]}>Spreadsheet</Text>
+                  <Text style={[styles.mappingCell, styles.mappingHeaderText, { color: colors.homeMuted, flex: 1 }]}>Database field</Text>
                 </View>
                 {preview.columnMapping.map((m, i) => (
-                  <View key={i} style={[styles.mappingRow, { borderTopColor: colors.border }]}>
-                    <Text style={[styles.mappingCell, { color: colors.foreground, flex: 1 }]}>{m.spreadsheetHeader}</Text>
+                  <View key={i} style={[styles.mappingRow, { borderTopColor: colors.homeLine }]}>
+                    <Text style={[styles.mappingCell, { color: colors.homeInk, flex: 1 }]}>{m.spreadsheetHeader}</Text>
                     <Text style={[styles.mappingCell, { color: m.databaseField === '(unmapped)' ? colors.destructive : colors.owned, flex: 1 }]}>
                       {m.databaseField}
                     </Text>
@@ -672,24 +672,24 @@ export default function CatalogueImportScreen() {
             )}
 
             <TouchableOpacity onPress={() => setShowPreviewRows(!showPreviewRows)} style={styles.expandRow}>
-              <Text style={[styles.expandLabel, { color: colors.primary }]}>
+              <Text style={[styles.expandLabel, { color: colors.homeCoral }]}>
                 {showPreviewRows ? 'Hide' : 'Show'} first 5 rows
               </Text>
-              <Feather name={showPreviewRows ? 'chevron-up' : 'chevron-down'} size={14} color={colors.primary} />
+              <Feather name={showPreviewRows ? 'chevron-up' : 'chevron-down'} size={14} color={colors.homeCoral} />
             </TouchableOpacity>
 
             {showPreviewRows && (
               <ScrollView horizontal showsHorizontalScrollIndicator style={{ marginTop: 8 }}>
                 <View>
-                  <View style={[styles.tableRow, { backgroundColor: colors.secondary }]}>
+                  <View style={[styles.tableRow, { backgroundColor: colors.homeAqua }]}>
                     {preview.headers.slice(0, 6).map((h, i) => (
-                      <Text key={i} style={[styles.tableCell, styles.tableHeader, { color: colors.foreground, borderColor: colors.border }]}>{h}</Text>
+                      <Text key={i} style={[styles.tableCell, styles.tableHeader, { color: colors.homeInk, borderColor: colors.homeLine }]}>{h}</Text>
                     ))}
                   </View>
                   {preview.previewRows.slice(0, 5).map((row, ri) => (
-                    <View key={ri} style={[styles.tableRow, { borderTopColor: colors.border }]}>
+                    <View key={ri} style={[styles.tableRow, { borderTopColor: colors.homeLine }]}>
                       {preview.headers.slice(0, 6).map((h, ci) => (
-                        <Text key={ci} numberOfLines={1} style={[styles.tableCell, { color: colors.mutedForeground, borderColor: colors.border }]}>
+                        <Text key={ci} numberOfLines={1} style={[styles.tableCell, { color: colors.homeMuted, borderColor: colors.homeLine }]}>
                           {String(row[preview.columnMapping[ci]?.databaseField ?? h] ?? row[h] ?? '')}
                         </Text>
                       ))}
@@ -706,25 +706,25 @@ export default function CatalogueImportScreen() {
           <TouchableOpacity
             onPress={handleDryRun}
             activeOpacity={0.85}
-            style={[styles.actionBtn, { backgroundColor: colors.card, borderColor: colors.primary, borderRadius: 12 }]}
+            style={[styles.actionBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeCoral, borderRadius: 12 }]}
           >
-            <Feather name="eye" size={18} color={colors.primary} />
-            <Text style={[styles.actionBtnLabel, { color: colors.primary }]}>Run Dry Run</Text>
+            <Feather name="eye" size={18} color={colors.homeCoral} />
+            <Text style={[styles.actionBtnLabel, { color: colors.homeCoral }]}>Run Dry Run</Text>
           </TouchableOpacity>
         )}
 
         {/* ── Dry run results ── */}
         {dryRunSummary && (step === 'dry_done' || step === 'done') && (
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
-            <Text style={[styles.cardTitle, { color: colors.mutedForeground }]}>DRY RUN RESULTS</Text>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
+            <Text style={[styles.cardTitle, { color: colors.homeMuted }]}>DRY RUN RESULTS</Text>
             <SummaryGrid summary={dryRunSummary} colors={colors} />
             {errorReport.length > 0 && (
               <TouchableOpacity
                 onPress={() => downloadErrorReport(errorReport)}
-                style={[styles.smallBtn, { borderColor: colors.border }]}
+                style={[styles.smallBtn, { borderColor: colors.homeLine }]}
               >
-                <Feather name="download" size={14} color={colors.mutedForeground} />
-                <Text style={[styles.smallBtnLabel, { color: colors.mutedForeground }]}>
+                <Feather name="download" size={14} color={colors.homeMuted} />
+                <Text style={[styles.smallBtnLabel, { color: colors.homeMuted }]}>
                   Download error report ({errorReport.length} rows)
                 </Text>
               </TouchableOpacity>
@@ -737,7 +737,7 @@ export default function CatalogueImportScreen() {
           <TouchableOpacity
             onPress={() => handleImport(false)}
             activeOpacity={0.85}
-            style={[styles.actionBtn, { backgroundColor: colors.primary, borderRadius: 12 }]}
+            style={[styles.actionBtn, { backgroundColor: colors.homeCoral, borderRadius: 12 }]}
           >
             <Feather name="download-cloud" size={18} color="#fff" />
             <Text style={[styles.actionBtnLabel, { color: '#fff' }]}>
@@ -749,7 +749,7 @@ export default function CatalogueImportScreen() {
         {/* ── Import complete summary ── */}
         {step === 'done' && batchStatus && (
           <View style={[styles.card, {
-            backgroundColor: colors.card,
+            backgroundColor: colors.homeSurface,
             borderColor: batchStatus.status === 'completed' ? colors.owned + '40' : colors.destructive + '40',
             borderRadius: 12,
           }]}>
@@ -765,7 +765,7 @@ export default function CatalogueImportScreen() {
                 {batchStatus.status === 'completed' ? 'IMPORT COMPLETE' : 'IMPORT FAILED'}
               </Text>
             </View>
-            <Text style={[styles.batchId, { color: colors.mutedForeground }]}>Batch: {batchStatus.id}</Text>
+            <Text style={[styles.batchId, { color: colors.homeMuted }]}>Batch: {batchStatus.id}</Text>
             <SummaryGrid
               summary={{
                 totalRows: batchStatus.total_rows,
@@ -787,16 +787,16 @@ export default function CatalogueImportScreen() {
 
         {/* ── Error report with edit actions ── */}
         {step === 'done' && errorOnlyRows.length > 0 && (
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
             <View style={styles.sectionHeader}>
               <Text style={[styles.cardTitle, { color: colors.destructive }]}>
                 ERRORS ({errorOnlyRows.length})
               </Text>
               <TouchableOpacity onPress={() => downloadErrorReport(errorOnlyRows)}>
-                <Feather name="download" size={16} color={colors.mutedForeground} />
+                <Feather name="download" size={16} color={colors.homeMuted} />
               </TouchableOpacity>
             </View>
-            <Text style={[styles.editHint, { color: colors.mutedForeground }]}>
+            <Text style={[styles.editHint, { color: colors.homeMuted }]}>
               Tap a row to fix the values and re-import without re-uploading the file.
             </Text>
             {errorOnlyRows.slice(0, 50).map((row, i) => (
@@ -808,7 +808,7 @@ export default function CatalogueImportScreen() {
               />
             ))}
             {errorOnlyRows.length > 50 && (
-              <Text style={[styles.moreRows, { color: colors.mutedForeground }]}>
+              <Text style={[styles.moreRows, { color: colors.homeMuted }]}>
                 + {errorOnlyRows.length - 50} more errors — download the report for the full list.
               </Text>
             )}
@@ -817,13 +817,13 @@ export default function CatalogueImportScreen() {
 
         {/* ── Warning report ── */}
         {step === 'done' && warningOnlyRows.length > 0 && (
-          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 12 }]}>
+          <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 12 }]}>
             <View style={styles.sectionHeader}>
-              <Text style={[styles.cardTitle, { color: '#F59E0B' }]}>
+              <Text style={[styles.cardTitle, { color: colors.homeSandInk }]}>
                 WARNINGS ({warningOnlyRows.length})
               </Text>
               <TouchableOpacity onPress={() => downloadErrorReport(warningOnlyRows)}>
-                <Feather name="download" size={16} color={colors.mutedForeground} />
+                <Feather name="download" size={16} color={colors.homeMuted} />
               </TouchableOpacity>
             </View>
             {warningOnlyRows.slice(0, 20).map((row, i) => (
@@ -835,7 +835,7 @@ export default function CatalogueImportScreen() {
               />
             ))}
             {warningOnlyRows.length > 20 && (
-              <Text style={[styles.moreRows, { color: colors.mutedForeground }]}>
+              <Text style={[styles.moreRows, { color: colors.homeMuted }]}>
                 + {warningOnlyRows.length - 20} more warnings
               </Text>
             )}
@@ -845,7 +845,7 @@ export default function CatalogueImportScreen() {
         {/* ── Start again ── */}
         {(step === 'preview_done' || step === 'dry_done' || step === 'done') && (
           <TouchableOpacity onPress={reset} style={styles.resetBtn}>
-            <Text style={[styles.resetLabel, { color: colors.mutedForeground }]}>← Choose a different file</Text>
+            <Text style={[styles.resetLabel, { color: colors.homeMuted }]}>← Choose a different file</Text>
           </TouchableOpacity>
         )}
       </ScrollView>
@@ -858,19 +858,19 @@ export default function CatalogueImportScreen() {
         onRequestClose={closeEditRow}
       >
         <KeyboardAvoidingView
-          style={{ flex: 1, backgroundColor: colors.background }}
+          style={{ flex: 1, backgroundColor: colors.homeBackground }}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         >
           {/* Modal header */}
-          <View style={[styles.modalHeader, { borderBottomColor: colors.border, backgroundColor: colors.card }]}>
+          <View style={[styles.modalHeader, { borderBottomColor: colors.homeLine, backgroundColor: colors.homeSurface }]}>
             <TouchableOpacity onPress={closeEditRow} disabled={saving}>
-              <Text style={[styles.modalCancel, { color: colors.mutedForeground }]}>Cancel</Text>
+              <Text style={[styles.modalCancel, { color: colors.homeMuted }]}>Cancel</Text>
             </TouchableOpacity>
-            <Text style={[styles.modalTitle, { color: colors.foreground }]}>Fix Row {editingRow?.rowNum}</Text>
+            <Text style={[styles.modalTitle, { color: colors.homeInk }]}>Fix Row {editingRow?.rowNum}</Text>
             <TouchableOpacity onPress={saveEditedRow} disabled={saving}>
               {saving
-                ? <ActivityIndicator size="small" color={colors.primary} />
-                : <Text style={[styles.modalSave, { color: colors.primary }]}>Save &amp; Re-import</Text>
+                ? <ActivityIndicator size="small" color={colors.homeCoral} />
+                : <Text style={[styles.modalSave, { color: colors.homeCoral }]}>Save &amp; Re-import</Text>
               }
             </TouchableOpacity>
           </View>
@@ -921,8 +921,8 @@ function Row({ label, value }: { label: string; value: string }) {
   const colors = useColors();
   return (
     <View style={styles.infoRow}>
-      <Text style={[styles.infoLabel, { color: colors.mutedForeground }]}>{label}</Text>
-      <Text style={[styles.infoValue, { color: colors.foreground }]}>{value}</Text>
+      <Text style={[styles.infoLabel, { color: colors.homeMuted }]}>{label}</Text>
+      <Text style={[styles.infoValue, { color: colors.homeInk }]}>{value}</Text>
     </View>
   );
 }
@@ -938,23 +938,23 @@ function LiveCount({ label, value, color }: { label: string; value: number; colo
 
 function SummaryGrid({ summary, colors }: { summary: ImportSummary; colors: ReturnType<typeof useColors> }) {
   const items = [
-    { label: 'Total rows', value: summary.totalRows, color: colors.foreground },
+    { label: 'Total rows', value: summary.totalRows, color: colors.homeInk },
     { label: 'Valid', value: summary.validRows, color: colors.owned },
     { label: 'Errors', value: summary.errorRows, color: colors.destructive },
-    { label: 'Warnings', value: summary.warningRows, color: '#F59E0B' },
-    { label: 'New records', value: summary.insertedRows, color: colors.primary },
-    { label: 'Updates', value: summary.updatedRows, color: colors.mutedForeground },
-    { label: 'Seed records', value: summary.seedRows, color: '#F59E0B' },
+    { label: 'Warnings', value: summary.warningRows, color: colors.homeSandInk },
+    { label: 'New records', value: summary.insertedRows, color: colors.homeCoral },
+    { label: 'Updates', value: summary.updatedRows, color: colors.homeMuted },
+    { label: 'Seed records', value: summary.seedRows, color: colors.homeSandInk },
     { label: 'Verified', value: summary.verifiedRows, color: colors.owned },
-    { label: 'No front image', value: summary.missingFrontImage, color: colors.mutedForeground },
-    { label: 'No back image', value: summary.missingBackImage, color: colors.mutedForeground },
+    { label: 'No front image', value: summary.missingFrontImage, color: colors.homeMuted },
+    { label: 'No back image', value: summary.missingBackImage, color: colors.homeMuted },
   ];
   return (
     <View style={styles.summaryGrid}>
       {items.map(item => (
         <View key={item.label} style={styles.summaryItem}>
           <Text style={[styles.summaryCount, { color: item.color }]}>{(item.value ?? 0).toLocaleString()}</Text>
-          <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>{item.label}</Text>
+          <Text style={[styles.summaryLabel, { color: colors.homeMuted }]}>{item.label}</Text>
         </View>
       ))}
     </View>
@@ -976,8 +976,8 @@ function BatchHistoryCard({
   const statusColor =
     batch.status === 'completed' ? colors.owned
     : batch.status === 'failed' ? colors.destructive
-    : batch.status === 'rolled_back' ? colors.mutedForeground
-    : colors.primary;
+    : batch.status === 'rolled_back' ? colors.homeMuted
+    : colors.homeCoral;
 
   const statusLabel =
     batch.status === 'running' ? 'Running'
@@ -993,9 +993,9 @@ function BatchHistoryCard({
     : '';
 
   return (
-    <View style={[styles.batchCard, { borderTopColor: colors.border }]}>
+    <View style={[styles.batchCard, { borderTopColor: colors.homeLine }]}>
       <View style={styles.batchRowTop}>
-        <Text style={[styles.batchFilename, { color: colors.foreground }]} numberOfLines={1}>
+        <Text style={[styles.batchFilename, { color: colors.homeInk }]} numberOfLines={1}>
           {batch.filename}
         </Text>
         <View style={[styles.statusBadge, { backgroundColor: statusColor + '20' }]}>
@@ -1007,31 +1007,31 @@ function BatchHistoryCard({
       {isRunning ? (
         <>
           {/* Compact progress bar */}
-          <View style={[styles.batchProgressTrack, { backgroundColor: colors.secondary }]}>
+          <View style={[styles.batchProgressTrack, { backgroundColor: colors.homeAqua }]}>
             <View
               style={[
                 styles.batchProgressFill,
-                { backgroundColor: colors.primary, width: `${Math.round(fraction * 100)}%` as `${number}%` },
+                { backgroundColor: colors.homeCoral, width: `${Math.round(fraction * 100)}%` as `${number}%` },
               ]}
             />
           </View>
           <View style={styles.batchRowBottom}>
-            <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>
+            <Text style={[styles.batchMeta, { color: colors.homeMuted }]}>
               {batch.progress_rows.toLocaleString()} / {batch.total_rows.toLocaleString()} rows · {Math.round(fraction * 100)}%
             </Text>
             {elapsed !== '' && (
-              <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>{elapsed} elapsed</Text>
+              <Text style={[styles.batchMeta, { color: colors.homeMuted }]}>{elapsed} elapsed</Text>
             )}
           </View>
         </>
       ) : (
         <View style={styles.batchRowBottom}>
-          <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>
+          <Text style={[styles.batchMeta, { color: colors.homeMuted }]}>
             {batch.total_rows.toLocaleString()} rows
             {batch.error_rows > 0 ? ` · ${batch.error_rows.toLocaleString()} errors` : ''}
           </Text>
           {startedLabel !== '' && (
-            <Text style={[styles.batchMeta, { color: colors.mutedForeground }]}>{startedLabel}</Text>
+            <Text style={[styles.batchMeta, { color: colors.homeMuted }]}>{startedLabel}</Text>
           )}
         </View>
       )}
@@ -1049,7 +1049,7 @@ function ErrorRowCard({
   onEdit: () => void;
 }) {
   const isError = row.result === 'error';
-  const accent = isError ? colors.destructive : '#F59E0B';
+  const accent = isError ? colors.destructive : colors.homeSandInk;
   return (
     <TouchableOpacity
       onPress={onEdit}
@@ -1058,20 +1058,20 @@ function ErrorRowCard({
     >
       <View style={styles.errorRowTop}>
         <View style={styles.errorRowMeta}>
-          <Text style={[styles.errorRowNum, { color: colors.mutedForeground }]}>Row {row.rowNum}</Text>
+          <Text style={[styles.errorRowNum, { color: colors.homeMuted }]}>Row {row.rowNum}</Text>
           {row.pinhuntId && (
-            <Text style={[styles.errorRowId, { color: colors.mutedForeground }]}> · {row.pinhuntId}</Text>
+            <Text style={[styles.errorRowId, { color: colors.homeMuted }]}> · {row.pinhuntId}</Text>
           )}
         </View>
         {isError && (
-          <View style={[styles.editBadge, { backgroundColor: colors.primary + '20' }]}>
-            <Feather name="edit-2" size={11} color={colors.primary} />
-            <Text style={[styles.editBadgeText, { color: colors.primary }]}>Fix</Text>
+          <View style={[styles.editBadge, { backgroundColor: colors.homeCoral + '20' }]}>
+            <Feather name="edit-2" size={11} color={colors.homeCoral} />
+            <Text style={[styles.editBadgeText, { color: colors.homeCoral }]}>Fix</Text>
           </View>
         )}
       </View>
       {row.title && (
-        <Text style={[styles.errorRowTitle, { color: colors.foreground }]} numberOfLines={1}>{row.title}</Text>
+        <Text style={[styles.errorRowTitle, { color: colors.homeInk }]} numberOfLines={1}>{row.title}</Text>
       )}
       <Text style={[styles.errorRowMsg, { color: accent }]}>{row.message}</Text>
     </TouchableOpacity>
@@ -1097,12 +1097,12 @@ function EditField({
 }) {
   return (
     <View style={styles.editFieldWrap}>
-      <Text style={[styles.editFieldLabel, { color: colors.mutedForeground }]}>{label}</Text>
+      <Text style={[styles.editFieldLabel, { color: colors.homeMuted }]}>{label}</Text>
       <TextInput
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder ?? ''}
-        placeholderTextColor={colors.mutedForeground + '80'}
+        placeholderTextColor={colors.homeMuted + '80'}
         keyboardType={keyboardType ?? 'default'}
         multiline={multiline}
         autoCapitalize="none"
@@ -1110,9 +1110,9 @@ function EditField({
         style={[
           styles.editFieldInput,
           {
-            color: colors.foreground,
-            backgroundColor: colors.secondary,
-            borderColor: colors.border,
+            color: colors.homeInk,
+            backgroundColor: colors.homeAqua,
+            borderColor: colors.homeLine,
             minHeight: multiline ? 72 : undefined,
           },
         ]}

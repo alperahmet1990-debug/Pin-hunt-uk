@@ -832,6 +832,19 @@ export interface ContributedPinImage {
   createdAt: string;
 }
 
+/**
+ * The Pin & Pop image for a pin (migration 042) — shown to admins only, as a
+ * reference while reviewing a contributed photo. Never displayed to collectors.
+ */
+export interface PinAndPopReference {
+  /** Pin & Pop pin id, from pins.external_identifiers.pin_and_pop. */
+  externalId?: string;
+  /** Pin & Pop-hosted image URL, when a reference row exists. */
+  imageUrl?: string;
+  /** Link to the pin on pinandpop.com, when the external id is known. */
+  pageUrl?: string;
+}
+
 export interface CreateContributedImageInput {
   /** Path already uploaded to the `pin-contributed-images` bucket. */
   storagePath: string;

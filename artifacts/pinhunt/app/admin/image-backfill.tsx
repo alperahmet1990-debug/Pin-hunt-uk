@@ -72,31 +72,31 @@ function PinRow({
     <TouchableOpacity
       onPress={() => onEdit(pin)}
       activeOpacity={0.8}
-      style={[styles.row, { backgroundColor: colors.card, borderColor: colors.border }]}
+      style={[styles.row, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
       {/* Thumbnail or placeholder */}
       {pin.imageUrl ? (
         <Image source={{ uri: pin.imageUrl }} style={styles.thumb} resizeMode="cover" />
       ) : (
-        <View style={[styles.thumbPlaceholder, { backgroundColor: colors.secondary }]}>
-          <Feather name="image" size={18} color={colors.mutedForeground} />
+        <View style={[styles.thumbPlaceholder, { backgroundColor: colors.homeAqua }]}>
+          <Feather name="image" size={18} color={colors.homeMuted} />
         </View>
       )}
 
       <View style={{ flex: 1, gap: 4 }}>
-        <Text style={[styles.rowTitle, { color: colors.foreground }]} numberOfLines={1}>
+        <Text style={[styles.rowTitle, { color: colors.homeInk }]} numberOfLines={1}>
           {pin.title}
         </Text>
-        <Text style={[styles.rowMeta, { color: colors.mutedForeground }]} numberOfLines={1}>
+        <Text style={[styles.rowMeta, { color: colors.homeMuted }]} numberOfLines={1}>
           {pin.brand} · {pin.collection}
         </Text>
         <View style={styles.badgeRow}>
-          {pin.needsFrontImage && <MissingBadge label="Front" color="#EF4444" />}
-          {pin.needsBackImage  && <MissingBadge label="Back"  color="#F59E0B" />}
+          {pin.needsFrontImage && <MissingBadge label="Front" color={colors.destructive} />}
+          {pin.needsBackImage  && <MissingBadge label="Back"  color={colors.homeSandInk} />}
         </View>
       </View>
 
-      <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
+      <Feather name="chevron-right" size={16} color={colors.homeMuted} />
     </TouchableOpacity>
   );
 }
@@ -212,15 +212,15 @@ function EditModal({
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
       <KeyboardAvoidingView
-        style={[styles.modalRoot, { backgroundColor: colors.background }]}
+        style={[styles.modalRoot, { backgroundColor: colors.homeBackground }]}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         {/* Header */}
-        <View style={[styles.modalHeader, { borderBottomColor: colors.border }]}>
+        <View style={[styles.modalHeader, { borderBottomColor: colors.homeLine }]}>
           <TouchableOpacity onPress={onClose} style={styles.modalClose}>
-            <Feather name="x" size={20} color={colors.foreground} />
+            <Feather name="x" size={20} color={colors.homeInk} />
           </TouchableOpacity>
-          <Text style={[styles.modalTitle, { color: colors.foreground }]} numberOfLines={1}>
+          <Text style={[styles.modalTitle, { color: colors.homeInk }]} numberOfLines={1}>
             {pin.title}
           </Text>
           <View style={{ width: 36 }} />
@@ -230,13 +230,13 @@ function EditModal({
           contentContainerStyle={[styles.modalScroll, { paddingBottom: insets.bottom + 24 }]}
           keyboardShouldPersistTaps="handled"
         >
-          <Text style={[styles.modalMeta, { color: colors.mutedForeground }]}>
+          <Text style={[styles.modalMeta, { color: colors.homeMuted }]}>
             {pin.brand} · {pin.collection} · {pin.id}
           </Text>
 
           <View style={styles.missingRow}>
-            {pin.needsFrontImage && <MissingBadge label="Front image missing" color="#EF4444" />}
-            {pin.needsBackImage  && <MissingBadge label="Back image missing"  color="#F59E0B" />}
+            {pin.needsFrontImage && <MissingBadge label="Front image missing" color={colors.destructive} />}
+            {pin.needsBackImage  && <MissingBadge label="Back image missing"  color={colors.homeSandInk} />}
           </View>
 
           {/* Front image section */}
@@ -282,7 +282,7 @@ function EditModal({
             onPress={handleSave}
             disabled={saving}
             activeOpacity={0.85}
-            style={[styles.saveBtn, { backgroundColor: colors.primary, opacity: saving ? 0.6 : 1 }]}
+            style={[styles.saveBtn, { backgroundColor: colors.homeCoral, opacity: saving ? 0.6 : 1 }]}
           >
             {saving ? (
               <ActivityIndicator color="#fff" size="small" />
@@ -330,26 +330,26 @@ function ImageSection({
   // Read-only (collapsed) state: pin already has this image and admin hasn't opted to replace
   if (hasExisting && !editable) {
     return (
-      <View style={[styles.imageSection, { borderColor: colors.border }]}>
+      <View style={[styles.imageSection, { borderColor: colors.homeLine }]}>
         <View style={styles.sectionHeaderRow}>
-          <Text style={[styles.imageSectionLabel, { color: colors.foreground }]}>{label}</Text>
-          <View style={[styles.badge, { backgroundColor: '#10B98118', borderColor: '#10B98140' }]}>
-            <Text style={[styles.badgeText, { color: '#10B981' }]}>Image set</Text>
+          <Text style={[styles.imageSectionLabel, { color: colors.homeInk }]}>{label}</Text>
+          <View style={[styles.badge, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '40' }]}>
+            <Text style={[styles.badgeText, { color: colors.owned }]}>Image set</Text>
           </View>
         </View>
         <View style={styles.previewRow}>
           <Image source={{ uri: currentUrl }} style={styles.preview} resizeMode="cover" />
           <View style={{ flex: 1, gap: 8 }}>
-            <Text style={[styles.urlLabel, { color: colors.mutedForeground }]}>
+            <Text style={[styles.urlLabel, { color: colors.homeMuted }]}>
               This pin already has a {label.toLowerCase()}. It won't be changed when you save.
             </Text>
             <TouchableOpacity
               onPress={onToggleReplace}
               activeOpacity={0.8}
-              style={[styles.replaceBtn, { borderColor: colors.border, backgroundColor: colors.card }]}
+              style={[styles.replaceBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
             >
-              <Feather name="refresh-cw" size={13} color={colors.foreground} />
-              <Text style={[styles.pickBtnLabel, { color: colors.foreground }]}>Replace image</Text>
+              <Feather name="refresh-cw" size={13} color={colors.homeInk} />
+              <Text style={[styles.pickBtnLabel, { color: colors.homeInk }]}>Replace image</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -358,21 +358,21 @@ function ImageSection({
   }
 
   return (
-    <View style={[styles.imageSection, { borderColor: replacing ? '#F59E0B' : colors.border }]}>
+    <View style={[styles.imageSection, { borderColor: replacing ? colors.homeSandInk : colors.homeLine }]}>
       <View style={styles.sectionHeaderRow}>
-        <Text style={[styles.imageSectionLabel, { color: colors.foreground }]}>{label}</Text>
+        <Text style={[styles.imageSectionLabel, { color: colors.homeInk }]}>{label}</Text>
         {replacing ? (
           <View style={styles.sectionHeaderActions}>
-            <View style={[styles.badge, { backgroundColor: '#F59E0B18', borderColor: '#F59E0B40' }]}>
-              <Text style={[styles.badgeText, { color: '#F59E0B' }]}>Replacing existing</Text>
+            <View style={[styles.badge, { backgroundColor: colors.homeSandInk + '18', borderColor: colors.homeSandInk + '40' }]}>
+              <Text style={[styles.badgeText, { color: colors.homeSandInk }]}>Replacing existing</Text>
             </View>
             <TouchableOpacity onPress={onToggleReplace} hitSlop={8}>
-              <Text style={[styles.cancelReplaceLabel, { color: colors.mutedForeground }]}>Cancel</Text>
+              <Text style={[styles.cancelReplaceLabel, { color: colors.homeMuted }]}>Cancel</Text>
             </TouchableOpacity>
           </View>
         ) : (
-          <View style={[styles.badge, { backgroundColor: '#EF444418', borderColor: '#EF444440' }]}>
-            <Text style={[styles.badgeText, { color: '#EF4444' }]}>Adding missing</Text>
+          <View style={[styles.badge, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '40' }]}>
+            <Text style={[styles.badgeText, { color: colors.destructive }]}>Adding missing</Text>
           </View>
         )}
       </View>
@@ -382,8 +382,8 @@ function ImageSection({
         {preview ? (
           <Image source={{ uri: preview }} style={styles.preview} resizeMode="cover" />
         ) : (
-          <View style={[styles.previewPlaceholder, { backgroundColor: colors.secondary }]}>
-            <Feather name="image" size={24} color={colors.mutedForeground} />
+          <View style={[styles.previewPlaceholder, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="image" size={24} color={colors.homeMuted} />
           </View>
         )}
 
@@ -391,37 +391,37 @@ function ImageSection({
         <View style={styles.pickButtons}>
           <TouchableOpacity
             onPress={() => onPick('camera')}
-            style={[styles.pickBtn, { backgroundColor: colors.secondary }]}
+            style={[styles.pickBtn, { backgroundColor: colors.homeAqua }]}
           >
-            <Feather name="camera" size={13} color={colors.foreground} />
-            <Text style={[styles.pickBtnLabel, { color: colors.foreground }]}>
+            <Feather name="camera" size={13} color={colors.homeInk} />
+            <Text style={[styles.pickBtnLabel, { color: colors.homeInk }]}>
               {Platform.OS === 'web' ? 'Choose' : 'Camera'}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => onPick('library')}
-            style={[styles.pickBtn, { backgroundColor: colors.secondary }]}
+            style={[styles.pickBtn, { backgroundColor: colors.homeAqua }]}
           >
-            <Feather name="image" size={13} color={colors.foreground} />
-            <Text style={[styles.pickBtnLabel, { color: colors.foreground }]}>Library</Text>
+            <Feather name="image" size={13} color={colors.homeInk} />
+            <Text style={[styles.pickBtnLabel, { color: colors.homeInk }]}>Library</Text>
           </TouchableOpacity>
         </View>
       </View>
 
       {/* URL paste field */}
-      <Text style={[styles.urlLabel, { color: colors.mutedForeground }]}>Or paste a URL</Text>
+      <Text style={[styles.urlLabel, { color: colors.homeMuted }]}>Or paste a URL</Text>
       <TextInput
         value={pastedUrl}
         onChangeText={onUrlChange}
         placeholder="https://example.com/image.jpg"
-        placeholderTextColor={colors.mutedForeground + '88'}
+        placeholderTextColor={colors.homeMuted + '88'}
         autoCapitalize="none"
         autoCorrect={false}
         keyboardType="url"
         style={[styles.urlInput, {
-          color: colors.foreground,
-          borderColor: colors.border,
-          backgroundColor: colors.card,
+          color: colors.homeInk,
+          borderColor: colors.homeLine,
+          backgroundColor: colors.homeSurface,
         }]}
       />
     </View>
@@ -476,7 +476,7 @@ function FilterAutocomplete({
 
   return (
     <View style={{ zIndex: field === 'brand' ? 20 : 10 }}>
-      <View style={[styles.filterInput, { backgroundColor: colors.card, borderColor: colors.border }]}>
+      <View style={[styles.filterInput, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
         <TextInput
           value={value}
           onChangeText={onChange}
@@ -486,10 +486,10 @@ function FilterAutocomplete({
             setTimeout(() => setFocused(false), 150);
           }}
           placeholder={placeholder}
-          placeholderTextColor={colors.mutedForeground + '88'}
+          placeholderTextColor={colors.homeMuted + '88'}
           autoCapitalize="none"
           autoCorrect={false}
-          style={[styles.filterInputText, { color: colors.foreground }]}
+          style={[styles.filterInputText, { color: colors.homeInk }]}
         />
         {value.length > 0 && (
           <TouchableOpacity
@@ -497,13 +497,13 @@ function FilterAutocomplete({
             style={styles.filterClear}
             hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
           >
-            <Feather name="x" size={14} color={colors.mutedForeground} />
+            <Feather name="x" size={14} color={colors.homeMuted} />
           </TouchableOpacity>
         )}
       </View>
 
       {showDropdown && (
-        <View style={[styles.suggestBox, { backgroundColor: colors.card, borderColor: colors.border }]}>
+        <View style={[styles.suggestBox, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
           {suggestions.map(s => (
             <TouchableOpacity
               key={s}
@@ -513,14 +513,14 @@ function FilterAutocomplete({
                 setFocused(false);
                 onSelect(s);
               }}
-              style={[styles.suggestItem, { borderBottomColor: colors.border }]}
+              style={[styles.suggestItem, { borderBottomColor: colors.homeLine }]}
             >
               <Feather
                 name={field === 'brand' ? 'tag' : 'layers'}
                 size={12}
-                color={colors.mutedForeground}
+                color={colors.homeMuted}
               />
-              <Text style={[styles.suggestText, { color: colors.foreground }]} numberOfLines={1}>
+              <Text style={[styles.suggestText, { color: colors.homeInk }]} numberOfLines={1}>
                 {s}
               </Text>
             </TouchableOpacity>
@@ -627,41 +627,41 @@ export default function ImageBackfillScreen() {
     <>
       <Stack.Screen options={{ title: 'Image Backfill' }} />
 
-      <View style={[styles.root, { backgroundColor: colors.background }]}>
+      <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
 
         {/* ── Summary bar ── */}
-        <View style={[styles.summaryBar, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
+        <View style={[styles.summaryBar, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
           <View style={styles.summaryItem}>
-            <Text style={[styles.summaryCount, { color: '#EF4444' }]}>{totalMissingFront}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>Missing front</Text>
+            <Text style={[styles.summaryCount, { color: colors.destructive }]}>{totalMissingFront}</Text>
+            <Text style={[styles.summaryLabel, { color: colors.homeMuted }]}>Missing front</Text>
           </View>
-          <View style={[styles.summaryDivider, { backgroundColor: colors.border }]} />
+          <View style={[styles.summaryDivider, { backgroundColor: colors.homeLine }]} />
           <View style={styles.summaryItem}>
-            <Text style={[styles.summaryCount, { color: '#F59E0B' }]}>{totalMissingBack}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>Missing back</Text>
+            <Text style={[styles.summaryCount, { color: colors.homeSandInk }]}>{totalMissingBack}</Text>
+            <Text style={[styles.summaryLabel, { color: colors.homeMuted }]}>Missing back</Text>
           </View>
-          <View style={[styles.summaryDivider, { backgroundColor: colors.border }]} />
+          <View style={[styles.summaryDivider, { backgroundColor: colors.homeLine }]} />
           <View style={styles.summaryItem}>
-            <Text style={[styles.summaryCount, { color: colors.foreground }]}>{pins.length}</Text>
-            <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>Total</Text>
+            <Text style={[styles.summaryCount, { color: colors.homeInk }]}>{pins.length}</Text>
+            <Text style={[styles.summaryLabel, { color: colors.homeMuted }]}>Total</Text>
           </View>
         </View>
 
         {/* ── Filters ── */}
-        <View style={[styles.filterBar, { borderBottomColor: colors.border }]}>
+        <View style={[styles.filterBar, { borderBottomColor: colors.homeLine }]}>
           {/* Search */}
-          <View style={[styles.searchBox, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <Feather name="search" size={14} color={colors.mutedForeground} />
+          <View style={[styles.searchBox, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <Feather name="search" size={14} color={colors.homeMuted} />
             <TextInput
               value={search}
               onChangeText={setSearch}
               placeholder="Search pins…"
-              placeholderTextColor={colors.mutedForeground + '88'}
-              style={[styles.searchInput, { color: colors.foreground }]}
+              placeholderTextColor={colors.homeMuted + '88'}
+              style={[styles.searchInput, { color: colors.homeInk }]}
             />
             {search.length > 0 && (
               <TouchableOpacity onPress={() => setSearch('')}>
-                <Feather name="x" size={14} color={colors.mutedForeground} />
+                <Feather name="x" size={14} color={colors.homeMuted} />
               </TouchableOpacity>
             )}
           </View>
@@ -692,15 +692,15 @@ export default function ImageBackfillScreen() {
         {/* ── List ── */}
         {loading ? (
           <View style={styles.center}>
-            <ActivityIndicator color={colors.primary} />
-            <Text style={[styles.loadingLabel, { color: colors.mutedForeground }]}>Loading…</Text>
+            <ActivityIndicator color={colors.homeCoral} />
+            <Text style={[styles.loadingLabel, { color: colors.homeMuted }]}>Loading…</Text>
           </View>
         ) : error ? (
           <View style={[styles.errorBox, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}>
             <Feather name="alert-circle" size={14} color={colors.destructive} />
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
             <TouchableOpacity onPress={() => load()}>
-              <Text style={[styles.retryText, { color: colors.primary }]}>Retry</Text>
+              <Text style={[styles.retryText, { color: colors.homeCoral }]}>Retry</Text>
             </TouchableOpacity>
           </View>
         ) : (
@@ -715,14 +715,14 @@ export default function ImageBackfillScreen() {
               <RefreshControl
                 refreshing={refreshing}
                 onRefresh={() => load(true)}
-                tintColor={colors.primary}
+                tintColor={colors.homeCoral}
               />
             }
             ListEmptyComponent={
               <View style={styles.empty}>
-                <Feather name="check-circle" size={32} color={colors.mutedForeground} />
-                <Text style={[styles.emptyTitle, { color: colors.foreground }]}>All images filled in</Text>
-                <Text style={[styles.emptyDesc, { color: colors.mutedForeground }]}>
+                <Feather name="check-circle" size={32} color={colors.homeMuted} />
+                <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>All images filled in</Text>
+                <Text style={[styles.emptyDesc, { color: colors.homeMuted }]}>
                   {brandFilter || collFilter
                     ? 'No pins missing images match your filters.'
                     : 'No pins are currently missing front or back images.'}

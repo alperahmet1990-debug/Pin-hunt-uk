@@ -5,7 +5,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
-  Alert,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -20,6 +19,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import palette from '@/constants/colors';
+import { radius, spacing } from '@/constants/theme';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { useAuth } from '@/context/AuthContext';
@@ -27,6 +28,9 @@ import { supabase } from '@/lib/supabase';
 import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
 import { API_BASE } from '@/lib/apiBase';
+
+// Theme-independent status colours for module-level lookup tables.
+const statusPalette = palette.light;
 
 /** Lifetime of signed image URLs (seconds). */
 const SIGNED_URL_TTL_SECONDS = 3600;
@@ -41,14 +45,24 @@ async function getSignedUrl(path: string): Promise<string | null> {
 }
 
 type ReviewAction = 'approved' | 'rejected' | 'needs_changes' | 'under_review';
+type PendingConfirm =
+  | { kind: 'status'; action: ReviewAction }
+  | { kind: 'merge'; candidate: DuplicateCandidate };
+
+const ACTION_LABEL: Record<ReviewAction, string> = {
+  approved:      'Approve',
+  rejected:      'Reject',
+  needs_changes: 'Request Changes',
+  under_review:  'Mark Under Review',
+};
 
 const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   draft: 'Draft', submitted: 'Submitted', under_review: 'Under Review',
   approved: 'Approved', rejected: 'Rejected', needs_changes: 'Needs Changes',
 };
 const STATUS_COLOR: Record<PinSubmissionStatus, string> = {
-  draft: '#6366F1', submitted: '#3B82F6', under_review: '#F59E0B',
-  approved: '#16A34A', rejected: '#EF4444', needs_changes: '#F97316',
+  draft: statusPalette.homeMuted, submitted: statusPalette.forTrade, under_review: statusPalette.homeSandInk,
+  approved: statusPalette.owned, rejected: statusPalette.destructive, needs_changes: statusPalette.wanted,
 };
 
 function InfoRow({ label, value }: { label: string; value?: string | number | string[] }) {
@@ -57,9 +71,9 @@ function InfoRow({ label, value }: { label: string; value?: string | number | st
   if (Array.isArray(value) && value.length === 0) return null;
   const display = Array.isArray(value) ? value.join(', ') : String(value);
   return (
-    <View style={[styles.row, { borderBottomColor: colors.border }]}>
-      <Text style={[styles.rowLabel, { color: colors.mutedForeground }]}>{label}</Text>
-      <Text style={[styles.rowValue, { color: colors.foreground }]}>{display}</Text>
+    <View style={[styles.row, { borderBottomColor: colors.homeLine }]}>
+      <Text style={[styles.rowLabel, { color: colors.homeMuted }]}>{label}</Text>
+      <Text style={[styles.rowValue, { color: colors.homeInk }]}>{display}</Text>
     </View>
   );
 }
@@ -82,6 +96,8 @@ export default function AdminReviewScreen() {
   const [saving, setSaving]         = useState(false);
   const [error, setError]           = useState<string | null>(null);
   const [reviewerNotes, setReviewerNotes] = useState('');
+  const [pendingConfirm, setPendingConfirm] = useState<PendingConfirm | null>(null);
+  const [actionError, setActionError] = useState<string | null>(null);
 
   const [candidates, setCandidates]         = useState<DuplicateCandidate[]>([]);
   const [candidatesLoading, setCandidatesLoading] = useState(false);
@@ -159,81 +175,46 @@ export default function AdminReviewScreen() {
       .finally(() => setCandidatesLoading(false));
   }, [submission, session?.access_token]);
 
-  const takeAction = async (action: ReviewAction) => {
-    if (!repo || !submission) return;
-
-    const actionLabels: Record<ReviewAction, string> = {
-      approved:      'Approve',
-      rejected:      'Reject',
-      needs_changes: 'Request Changes',
-      under_review:  'Mark Under Review',
-    };
-
+  // Confirmations render in-app (see ConfirmBar) rather than via Alert —
+  // native alert callbacks don't reliably fire on Expo web.
+  const requestAction = (action: ReviewAction) => {
+    if (!submission) return;
+    setActionError(null);
     const needsNotes = action === 'needs_changes' || action === 'rejected';
     if (needsNotes && !reviewerNotes.trim()) {
-      Alert.alert(
-        'Note Required',
-        `Please add a reviewer note before ${action === 'needs_changes' ? 'requesting changes' : 'rejecting'}.`,
-      );
+      setActionError(`Add a reviewer note before ${action === 'needs_changes' ? 'requesting changes' : 'rejecting'}.`);
       return;
     }
-
-    Alert.alert(
-      actionLabels[action],
-      `Set this submission to "${STATUS_LABEL[action]}"?`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: actionLabels[action],
-          style: action === 'rejected' ? 'destructive' : 'default',
-          onPress: async () => {
-            try {
-              setSaving(true);
-              await repo.reviewPinSubmission(submission.id, {
-                status: action,
-                reviewerNotes: reviewerNotes.trim() || undefined,
-              });
-              router.back();
-            } catch (err) {
-              Alert.alert('Error', err instanceof Error ? err.message : 'Action failed.');
-            } finally {
-              setSaving(false);
-            }
-          },
-        },
-      ],
-    );
+    setPendingConfirm({ kind: 'status', action });
   };
 
-  const markUnderReview = () => takeAction('under_review');
+  const markUnderReview = () => requestAction('under_review');
 
-  const mergeIntoExisting = (candidate: DuplicateCandidate) => {
-    if (!repo || !submission) return;
-    Alert.alert(
-      'Merge into Existing Pin',
-      `Approve this submission and credit the submitter against the existing catalogue pin "${candidate.title}" (${candidate.pinhuntId})?`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Merge',
-          onPress: async () => {
-            try {
-              setSaving(true);
-              await repo.reviewPinSubmission(submission.id, {
-                status: 'approved',
-                reviewerNotes: reviewerNotes.trim() || `Merged into existing catalogue pin ${candidate.pinhuntId}.`,
-                approvedPinhuntId: candidate.pinhuntId,
-              });
-              router.back();
-            } catch (err) {
-              Alert.alert('Error', err instanceof Error ? err.message : 'Merge failed.');
-            } finally {
-              setSaving(false);
-            }
-          },
-        },
-      ],
-    );
+  const confirmPending = async () => {
+    if (!repo || !submission || !pendingConfirm) return;
+    try {
+      setSaving(true);
+      setActionError(null);
+      if (pendingConfirm.kind === 'status') {
+        await repo.reviewPinSubmission(submission.id, {
+          status: pendingConfirm.action,
+          reviewerNotes: reviewerNotes.trim() || undefined,
+        });
+      } else {
+        const { candidate } = pendingConfirm;
+        await repo.reviewPinSubmission(submission.id, {
+          status: 'approved',
+          reviewerNotes: reviewerNotes.trim() || `Merged into existing catalogue pin ${candidate.pinhuntId}.`,
+          approvedPinhuntId: candidate.pinhuntId,
+        });
+      }
+      setPendingConfirm(null);
+      router.back();
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : 'Action failed.');
+    } finally {
+      setSaving(false);
+    }
   };
 
   const approveAndAddToCatalogue = () => {
@@ -264,8 +245,8 @@ export default function AdminReviewScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Review Submission' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
-          <ActivityIndicator color={colors.primary} />
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
+          <ActivityIndicator color={colors.homeCoral} />
         </View>
       </>
     );
@@ -275,7 +256,7 @@ export default function AdminReviewScreen() {
     return (
       <>
         <Stack.Screen options={{ title: 'Review Submission' }} />
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
           <Text style={[styles.errorText, { color: colors.destructive }]}>{error ?? 'Not found.'}</Text>
         </View>
       </>
@@ -289,7 +270,7 @@ export default function AdminReviewScreen() {
     <>
       <Stack.Screen options={{ title: submission.proposedName ?? 'Review Submission' }} />
       <KeyboardAvoidingView
-        style={{ flex: 1, backgroundColor: colors.background }}
+        style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -300,8 +281,8 @@ export default function AdminReviewScreen() {
           {frontUrl ? (
             <Image source={{ uri: frontUrl }} style={styles.heroImage} resizeMode="contain" onError={refreshImageUrls} />
           ) : (
-            <View style={[styles.heroPlaceholder, { backgroundColor: colors.secondary }]}>
-              <Feather name="image" size={36} color={colors.mutedForeground} />
+            <View style={[styles.heroPlaceholder, { backgroundColor: colors.homeAqua }]}>
+              <Feather name="image" size={36} color={colors.homeMuted} />
             </View>
           )}
 
@@ -319,18 +300,18 @@ export default function AdminReviewScreen() {
 
             {/* ── Duplicate warning banner ── */}
             {candidatesLoading && isActionable && (
-              <View style={[styles.dupBanner, { backgroundColor: '#FEF9C3', borderColor: '#FDE047' }]}>
-                <ActivityIndicator size="small" color="#92400E" style={{ marginRight: 8 }} />
-                <Text style={styles.dupBannerText}>Checking for existing catalogue matches…</Text>
+              <View style={[styles.dupBanner, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeWarmLine }]}>
+                <ActivityIndicator size="small" color={colors.homeSandInk} style={{ marginRight: 8 }} />
+                <Text style={[styles.dupBannerText, { color: colors.homeSandInk }]}>Checking for existing catalogue matches…</Text>
               </View>
             )}
 
             {showDuplicateWarning && (
-              <View style={[styles.dupBanner, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>
+              <View style={[styles.dupBanner, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeSandInk, borderRadius: 10 }]}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flex: 1 }}>
-                    <Feather name="alert-triangle" size={15} color="#92400E" />
-                    <Text style={[styles.dupBannerTitle, { color: '#92400E' }]}>
+                    <Feather name="alert-triangle" size={15} color={colors.homeSandInk} />
+                    <Text style={[styles.dupBannerTitle, { color: colors.homeSandInk }]}>
                       Possible duplicate{candidates.length > 1 ? 's' : ''} found
                     </Text>
                   </View>
@@ -338,46 +319,56 @@ export default function AdminReviewScreen() {
                     onPress={() => setDuplicateBannerDismissed(true)}
                     hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
                   >
-                    <Feather name="x" size={14} color="#92400E" />
+                    <Feather name="x" size={14} color={colors.homeSandInk} />
                   </TouchableOpacity>
                 </View>
 
                 {candidates.map(c => (
                   <View
                     key={c.pinhuntId}
-                    style={[styles.dupCandidate, { backgroundColor: '#FFFBEB', borderColor: '#FDE68A' }]}
+                    style={[styles.dupCandidate, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeWarmLine }]}
                   >
                     <View style={{ flex: 1 }}>
-                      <Text style={styles.dupCandidateName} numberOfLines={1}>{c.title}</Text>
-                      <Text style={styles.dupCandidateMeta}>
+                      <Text style={[styles.dupCandidateName, { color: colors.homeInk }]} numberOfLines={1}>{c.title}</Text>
+                      <Text style={[styles.dupCandidateMeta, { color: colors.homeMuted }]}>
                         {c.pinhuntId}{c.releaseYear ? ` · ${c.releaseYear}` : ''} · {c.matchReason}
                       </Text>
                     </View>
                     {c.imageUrl ? (
                       <Image source={{ uri: c.imageUrl }} style={styles.dupThumb} resizeMode="cover" />
                     ) : (
-                      <View style={[styles.dupThumb, { backgroundColor: '#FDE68A', alignItems: 'center', justifyContent: 'center' }]}>
-                        <Feather name="image" size={12} color="#92400E" />
+                      <View style={[styles.dupThumb, { backgroundColor: colors.homeWarmLine, alignItems: 'center', justifyContent: 'center' }]}>
+                        <Feather name="image" size={12} color={colors.homeSandInk} />
                       </View>
                     )}
                     <TouchableOpacity
-                      onPress={() => mergeIntoExisting(c)}
+                      onPress={() => { setActionError(null); setPendingConfirm({ kind: 'merge', candidate: c }); }}
                       disabled={saving}
-                      style={[styles.mergeBtn, { backgroundColor: '#92400E' }]}
+                      style={[styles.mergeBtn, { backgroundColor: colors.homeSandInk }]}
                     >
                       <Text style={styles.mergeBtnLabel}>Merge</Text>
                     </TouchableOpacity>
                   </View>
                 ))}
 
-                <Text style={[styles.dupBannerHint, { color: '#92400E' }]}>
+                {pendingConfirm?.kind === 'merge' && (
+                  <ConfirmBar
+                    message={`Approve and credit the submitter against "${pendingConfirm.candidate.title}" (${pendingConfirm.candidate.pinhuntId})?`}
+                    confirmLabel="Merge"
+                    saving={saving}
+                    onCancel={() => setPendingConfirm(null)}
+                    onConfirm={confirmPending}
+                  />
+                )}
+
+                <Text style={[styles.dupBannerHint, { color: colors.homeSandInk }]}>
                   Tap Merge to approve and link this submission to the existing pin, or dismiss to create a new entry.
                 </Text>
               </View>
             )}
 
             {/* Submission detail */}
-            <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 14 }]}>
+            <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 14 }]}>
               <InfoRow label="Pin Name"     value={submission.proposedName} />
               <InfoRow label="Brand"        value={submission.brand} />
               <InfoRow label="Characters"   value={submission.characterNames} />
@@ -389,9 +380,9 @@ export default function AdminReviewScreen() {
               <InfoRow label="FAC #"        value={submission.facNumber} />
               <InfoRow label="SKU"          value={submission.sku} />
               <InfoRow label="Notes"        value={submission.notes} />
-              <View style={[styles.row, { borderBottomColor: colors.border }]}>
-                <Text style={[styles.rowLabel, { color: colors.mutedForeground }]}>Submitted</Text>
-                <Text style={[styles.rowValue, { color: colors.foreground }]}>
+              <View style={[styles.row, { borderBottomColor: colors.homeLine }]}>
+                <Text style={[styles.rowLabel, { color: colors.homeMuted }]}>Submitted</Text>
+                <Text style={[styles.rowValue, { color: colors.homeInk }]}>
                   {new Date(submission.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </Text>
               </View>
@@ -400,7 +391,7 @@ export default function AdminReviewScreen() {
             {/* Back image */}
             {backUrl && (
               <View style={{ gap: 8 }}>
-                <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>BACK OF PIN</Text>
+                <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>BACK OF PIN</Text>
                 <Image source={{ uri: backUrl }} style={[styles.backImage, { borderRadius: 12 }]} resizeMode="contain" onError={refreshImageUrls} />
               </View>
             )}
@@ -411,29 +402,29 @@ export default function AdminReviewScreen() {
                 onPress={markUnderReview}
                 disabled={saving}
                 activeOpacity={0.85}
-                style={[styles.outlineBtn, { borderColor: colors.border, borderRadius: 12, backgroundColor: colors.card }]}
+                style={[styles.outlineBtn, { borderColor: colors.homeLine, borderRadius: 12, backgroundColor: colors.homeSurface }]}
               >
-                <Feather name="eye" size={15} color={colors.foreground} />
-                <Text style={[styles.outlineBtnLabel, { color: colors.foreground }]}>Mark Under Review</Text>
+                <Feather name="eye" size={15} color={colors.homeInk} />
+                <Text style={[styles.outlineBtnLabel, { color: colors.homeInk }]}>Mark Under Review</Text>
               </TouchableOpacity>
             )}
 
             {/* Reviewer notes */}
             {isActionable && (
               <View style={{ gap: 8 }}>
-                <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>REVIEWER NOTE</Text>
+                <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>REVIEWER NOTE</Text>
                 <TextInput
                   value={reviewerNotes}
                   onChangeText={setReviewerNotes}
                   placeholder="Add a note for the submitter (required for Reject / Needs Changes)…"
-                  placeholderTextColor={colors.mutedForeground + '88'}
+                  placeholderTextColor={colors.homeMuted + '88'}
                   multiline
                   style={[
                     styles.noteInput,
                     {
-                      color: colors.foreground,
-                      borderColor: colors.border,
-                      backgroundColor: colors.card,
+                      color: colors.homeInk,
+                      borderColor: colors.homeLine,
+                      backgroundColor: colors.homeSurface,
                       borderRadius: 10,
                     },
                   ]}
@@ -450,10 +441,10 @@ export default function AdminReviewScreen() {
                     : { pathname: '/pin/[id]', params: { id: submission.approvedPinhuntId! } })
                 }
                 activeOpacity={0.85}
-                style={[styles.outlineBtn, { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card }]}
+                style={[styles.outlineBtn, { borderColor: colors.owned, borderRadius: 12, backgroundColor: colors.homeSurface }]}
               >
-                <Feather name="book-open" size={15} color="#16A34A" />
-                <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>View in Catalogue</Text>
+                <Feather name="book-open" size={15} color={colors.owned} />
+                <Text style={[styles.outlineBtnLabel, { color: colors.owned }]}>View in Catalogue</Text>
               </TouchableOpacity>
             )}
 
@@ -464,22 +455,35 @@ export default function AdminReviewScreen() {
                 <TouchableOpacity
                   onPress={approveAndAddToCatalogue}
                   activeOpacity={0.85}
-                  style={[styles.actionBtn, { backgroundColor: '#16A34A', borderRadius: 12 }]}
+                  style={[styles.actionBtn, { backgroundColor: colors.owned, borderRadius: 12 }]}
                 >
                   <Feather name="book-open" size={16} color="#fff" />
                   <Text style={styles.actionBtnLabel}>Add to Catalogue</Text>
                 </TouchableOpacity>
               ) : (
-                <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: colors.mutedForeground, textAlign: 'center' }}>
+                <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: colors.homeMuted, textAlign: 'center' }}>
                   Approved — waiting for the App Creator to add it to the catalogue.
                 </Text>
               )
             )}
 
-            {/* Action buttons */}
-            {isActionable && (
+            {actionError && (
+              <Text style={[styles.inlineError, { color: colors.destructive }]}>{actionError}</Text>
+            )}
+
+            {/* Action buttons — replaced by an in-app confirmation once one is tapped */}
+            {isActionable && pendingConfirm?.kind === 'status' ? (
+              <ConfirmBar
+                message={`Set this submission to "${STATUS_LABEL[pendingConfirm.action]}"?`}
+                confirmLabel={ACTION_LABEL[pendingConfirm.action]}
+                destructive={pendingConfirm.action === 'rejected'}
+                saving={saving}
+                onCancel={() => setPendingConfirm(null)}
+                onConfirm={confirmPending}
+              />
+            ) : isActionable && (
               saving ? (
-                <ActivityIndicator color={colors.primary} style={{ marginTop: 8 }} />
+                <ActivityIndicator color={colors.homeCoral} style={{ marginTop: 8 }} />
               ) : (
                 <View style={{ gap: 10 }}>
                   {/* Primary CTA: approve and open pre-filled pin editor.
@@ -488,7 +492,7 @@ export default function AdminReviewScreen() {
                     <TouchableOpacity
                       onPress={approveAndAddToCatalogue}
                       activeOpacity={0.85}
-                      style={[styles.actionBtn, { backgroundColor: '#16A34A', borderRadius: 12 }]}
+                      style={[styles.actionBtn, { backgroundColor: colors.owned, borderRadius: 12 }]}
                     >
                       <Feather name="book-open" size={16} color="#fff" />
                       <Text style={styles.actionBtnLabel}>Approve &amp; Add to Catalogue</Text>
@@ -497,27 +501,27 @@ export default function AdminReviewScreen() {
 
                   {/* Secondary: approve without creating a catalogue entry */}
                   <TouchableOpacity
-                    onPress={() => takeAction('approved')}
+                    onPress={() => requestAction('approved')}
                     activeOpacity={0.85}
-                    style={[styles.outlineBtn, { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card }]}
+                    style={[styles.outlineBtn, { borderColor: colors.owned, borderRadius: 12, backgroundColor: colors.homeSurface }]}
                   >
-                    <Feather name="check-circle" size={15} color="#16A34A" />
-                    <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>
+                    <Feather name="check-circle" size={15} color={colors.owned} />
+                    <Text style={[styles.outlineBtnLabel, { color: colors.owned }]}>
                       {isAppCreator ? 'Approve Only' : 'Approve'}
                     </Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity
-                    onPress={() => takeAction('needs_changes')}
+                    onPress={() => requestAction('needs_changes')}
                     activeOpacity={0.85}
-                    style={[styles.actionBtn, { backgroundColor: '#F97316', borderRadius: 12 }]}
+                    style={[styles.actionBtn, { backgroundColor: colors.wanted, borderRadius: 12 }]}
                   >
                     <Feather name="edit-2" size={16} color="#fff" />
                     <Text style={styles.actionBtnLabel}>Needs Changes</Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity
-                    onPress={() => takeAction('rejected')}
+                    onPress={() => requestAction('rejected')}
                     activeOpacity={0.85}
                     style={[styles.actionBtn, { backgroundColor: colors.destructive, borderRadius: 12 }]}
                   >
@@ -528,32 +532,13 @@ export default function AdminReviewScreen() {
               )
             )}
 
-            {/* View in Catalogue — shown once approved and linked to a pin */}
-            {submission.status === 'approved' && submission.approvedPinhuntId && (
-              <TouchableOpacity
-                onPress={() =>
-                  router.push(isAppCreator
-                    ? { pathname: '/admin/pin/[id]', params: { id: submission.approvedPinhuntId! } }
-                    : { pathname: '/pin/[id]', params: { id: submission.approvedPinhuntId! } })
-                }
-                activeOpacity={0.85}
-                style={[
-                  styles.outlineBtn,
-                  { borderColor: '#16A34A', borderRadius: 12, backgroundColor: colors.card },
-                ]}
-              >
-                <Feather name="external-link" size={15} color="#16A34A" />
-                <Text style={[styles.outlineBtnLabel, { color: '#16A34A' }]}>View in Catalogue</Text>
-              </TouchableOpacity>
-            )}
-
             {/* Previous reviewer note (read-only when not actionable) */}
             {!isActionable && submission.reviewerNotes && (
-              <View style={[styles.reviewerBox, { backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderRadius: 10 }]}>
-                <Feather name="message-circle" size={14} color="#92400E" />
+              <View style={[styles.reviewerBox, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeSandInk, borderRadius: 10 }]}>
+                <Feather name="message-circle" size={14} color={colors.homeSandInk} />
                 <View style={{ flex: 1, gap: 2 }}>
-                  <Text style={styles.reviewerTitle}>Reviewer note</Text>
-                  <Text style={styles.reviewerText}>{submission.reviewerNotes}</Text>
+                  <Text style={[styles.reviewerTitle, { color: colors.homeSandInk }]}>Reviewer note</Text>
+                  <Text style={[styles.reviewerText, { color: colors.homeSandInk }]}>{submission.reviewerNotes}</Text>
                 </View>
               </View>
             )}
@@ -564,7 +549,42 @@ export default function AdminReviewScreen() {
   );
 }
 
+function ConfirmBar({
+  message, confirmLabel, destructive, saving, onCancel, onConfirm,
+}: {
+  message: string;
+  confirmLabel: string;
+  destructive?: boolean;
+  saving: boolean;
+  onCancel: () => void;
+  onConfirm: () => void;
+}) {
+  const colors = useColors();
+  const tone = destructive ? colors.destructive : colors.homeCoral;
+  return (
+    <View style={[styles.confirmBar, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+      <Text style={[styles.confirmText, { color: colors.homeInk }]}>{message}</Text>
+      <View style={styles.confirmButtons}>
+        <TouchableOpacity onPress={onCancel} disabled={saving} style={styles.confirmBtn}>
+          <Text style={[styles.confirmBtnLabel, { color: colors.homeMuted }]}>Cancel</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onConfirm} disabled={saving} style={[styles.confirmBtn, { backgroundColor: tone }]}>
+          {saving
+            ? <ActivityIndicator size="small" color={colors.homeHeroText} />
+            : <Text style={[styles.confirmBtnLabel, { color: colors.homeHeroText }]}>{confirmLabel}</Text>}
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
+  inlineError:     { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
+  confirmBar:      { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm },
+  confirmText:     { fontSize: 14, fontFamily: 'Inter_500Medium', lineHeight: 20 },
+  confirmButtons:  { flexDirection: 'row', justifyContent: 'flex-end', gap: spacing.sm },
+  confirmBtn:      { paddingHorizontal: 16, paddingVertical: 9, borderRadius: radius.pill, minWidth: 88, alignItems: 'center' },
+  confirmBtnLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   center:          { flex: 1, alignItems: 'center', justifyContent: 'center' },
   errorText:       { fontSize: 14, fontFamily: 'Inter_400Regular' },
   heroImage:       { width: '100%', height: 300 },
@@ -583,16 +603,16 @@ const styles = StyleSheet.create({
   actionBtn:       { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 14 },
   actionBtnLabel:  { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: '#fff' },
   reviewerBox:     { flexDirection: 'row', gap: 10, padding: 12, borderWidth: 1 },
-  reviewerTitle:   { fontSize: 11, fontFamily: 'Inter_600SemiBold', color: '#92400E' },
-  reviewerText:    { fontSize: 13, fontFamily: 'Inter_400Regular', color: '#92400E', lineHeight: 18 },
+  reviewerTitle:   { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  reviewerText:    { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
   // ── Duplicate warning ────────────────────────────────────────────────────
   dupBanner:       { borderWidth: 1, borderRadius: 10, padding: 12, gap: 8, flexDirection: 'column' },
   dupBannerTitle:  { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  dupBannerText:   { fontSize: 13, fontFamily: 'Inter_400Regular', color: '#92400E', flex: 1 },
+  dupBannerText:   { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
   dupBannerHint:   { fontSize: 11, fontFamily: 'Inter_400Regular', lineHeight: 16, marginTop: 4 },
   dupCandidate:    { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderRadius: 8, padding: 8 },
-  dupCandidateName:{ fontSize: 13, fontFamily: 'Inter_600SemiBold', color: '#1C1917' },
-  dupCandidateMeta:{ fontSize: 11, fontFamily: 'Inter_400Regular', color: '#78716C', marginTop: 2 },
+  dupCandidateName:{ fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  dupCandidateMeta:{ fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 2 },
   dupThumb:        { width: 40, height: 40, borderRadius: 6, flexShrink: 0 },
   mergeBtn:        { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 6 },
   mergeBtnLabel:   { fontSize: 12, fontFamily: 'Inter_600SemiBold', color: '#fff' },

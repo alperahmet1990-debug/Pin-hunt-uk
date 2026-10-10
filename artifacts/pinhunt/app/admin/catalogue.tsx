@@ -17,9 +17,14 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import palette from '@/constants/colors';
+import { radius } from '@/constants/theme';
 import { createSupabasePinRepository } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CataloguePin } from '@workspace/pin-repository';
+
+// Theme-independent status colours for module-level lookup tables.
+const statusPalette = palette.light;
 
 const VERIFICATION_LABEL: Record<string, string> = {
   verified:                  'Verified',
@@ -28,10 +33,10 @@ const VERIFICATION_LABEL: Record<string, string> = {
   unverified:                'Unverified',
 };
 const VERIFICATION_COLOR: Record<string, string> = {
-  verified:                  '#16A34A',
-  needs_source_verification: '#F59E0B',
-  community_submitted:       '#3B82F6',
-  unverified:                '#6B7280',
+  verified:                  statusPalette.owned,
+  needs_source_verification: statusPalette.homeSandInk,
+  community_submitted:       statusPalette.forTrade,
+  unverified:                statusPalette.homeMuted,
 };
 
 export default function AdminCatalogueScreen() {
@@ -82,34 +87,34 @@ export default function AdminCatalogueScreen() {
   useEffect(() => { search(''); }, [search]);
 
   const renderItem = ({ item }: { item: CataloguePin }) => {
-    const vColor = VERIFICATION_COLOR[item.verificationStatus ?? 'unverified'] ?? '#6B7280';
+    const vColor = VERIFICATION_COLOR[item.verificationStatus ?? 'unverified'] ?? colors.homeMuted;
     const vLabel = VERIFICATION_LABEL[item.verificationStatus ?? 'unverified'] ?? 'Unknown';
     return (
       <TouchableOpacity
         onPress={() => router.push({ pathname: '/admin/pin/[id]' as any, params: { id: item.id } })}
         activeOpacity={0.85}
-        style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}
+        style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
       >
-        <View style={[styles.thumb, { backgroundColor: colors.secondary, borderRadius: 8 }]}>
+        <View style={[styles.thumb, { backgroundColor: colors.homeAqua, borderRadius: 8 }]}>
           {item.imageUrl ? (
             <Image source={{ uri: item.imageUrl }} style={styles.thumbImg} resizeMode="cover" />
           ) : (
-            <Feather name="image" size={22} color={colors.mutedForeground} />
+            <Feather name="image" size={22} color={colors.homeMuted} />
           )}
         </View>
         <View style={{ flex: 1, gap: 3 }}>
-          <Text style={[styles.cardTitle, { color: colors.foreground }]} numberOfLines={2}>{item.title}</Text>
-          <Text style={[styles.cardBrand, { color: colors.mutedForeground }]}>{item.brand}</Text>
+          <Text style={[styles.cardTitle, { color: colors.homeInk }]} numberOfLines={2}>{item.title}</Text>
+          <Text style={[styles.cardBrand, { color: colors.homeMuted }]}>{item.brand}</Text>
           <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
             <View style={[styles.badge, { backgroundColor: vColor + '18' }]}>
               <Text style={[styles.badgeLabel, { color: vColor }]}>{vLabel}</Text>
             </View>
-            <View style={[styles.badge, { backgroundColor: colors.secondary }]}>
-              <Text style={[styles.badgeLabel, { color: colors.mutedForeground }]}>{item.id}</Text>
+            <View style={[styles.badge, { backgroundColor: colors.homeAqua }]}>
+              <Text style={[styles.badgeLabel, { color: colors.homeMuted }]}>{item.id}</Text>
             </View>
           </View>
         </View>
-        <Feather name="edit-2" size={15} color={colors.mutedForeground} />
+        <Feather name="edit-2" size={15} color={colors.homeMuted} />
       </TouchableOpacity>
     );
   };
@@ -119,38 +124,38 @@ export default function AdminCatalogueScreen() {
       <Stack.Screen options={{ title: 'Catalogue' }} />
 
       {/* Search + Add button */}
-      <View style={[styles.searchRow, { backgroundColor: colors.background, borderBottomColor: colors.border }]}>
-        <View style={[styles.searchBox, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: 10, flex: 1 }]}>
-          <Feather name="search" size={16} color={colors.mutedForeground} />
+      <View style={[styles.searchRow, { backgroundColor: colors.homeBackground, borderBottomColor: colors.homeLine }]}>
+        <View style={[styles.searchBox, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 10, flex: 1 }]}>
+          <Feather name="search" size={16} color={colors.homeMuted} />
           <TextInput
             value={query}
             onChangeText={setQuery}
             placeholder="Search pins…"
-            placeholderTextColor={colors.mutedForeground + '88'}
-            style={[styles.searchInput, { color: colors.foreground }]}
+            placeholderTextColor={colors.homeMuted + '88'}
+            style={[styles.searchInput, { color: colors.homeInk }]}
             returnKeyType="search"
           />
           {query.length > 0 && (
             <TouchableOpacity onPress={() => setQuery('')}>
-              <Feather name="x" size={14} color={colors.mutedForeground} />
+              <Feather name="x" size={14} color={colors.homeMuted} />
             </TouchableOpacity>
           )}
         </View>
         <TouchableOpacity
           onPress={() => router.push({ pathname: '/admin/pin/[id]' as any, params: { id: 'new' } })}
           activeOpacity={0.85}
-          style={[styles.addBtn, { backgroundColor: colors.primary, borderRadius: 10 }]}
+          style={[styles.addBtn, { backgroundColor: colors.homeCoral, borderRadius: 10 }]}
         >
           <Feather name="plus" size={18} color="#fff" />
         </TouchableOpacity>
       </View>
 
       {loading && !searched ? (
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
-          <ActivityIndicator color={colors.primary} />
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
+          <ActivityIndicator color={colors.homeCoral} />
         </View>
       ) : error ? (
-        <View style={[styles.center, { backgroundColor: colors.background }]}>
+        <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
           <Text style={{ color: colors.destructive, fontFamily: 'Inter_400Regular', fontSize: 14 }}>{error}</Text>
         </View>
       ) : (
@@ -158,12 +163,12 @@ export default function AdminCatalogueScreen() {
           data={pins}
           keyExtractor={item => item.id}
           renderItem={renderItem}
-          style={{ backgroundColor: colors.background }}
+          style={{ backgroundColor: colors.homeBackground }}
           contentContainerStyle={{ padding: 16, paddingBottom: botPad }}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
             searched ? (
-              <Text style={[styles.count, { color: colors.mutedForeground }]}>
+              <Text style={[styles.count, { color: colors.homeMuted }]}>
                 {loading ? 'Searching…' : `${pins.length} pin${pins.length !== 1 ? 's' : ''}`}
               </Text>
             ) : null
@@ -171,9 +176,9 @@ export default function AdminCatalogueScreen() {
           ListEmptyComponent={
             !loading ? (
               <View style={styles.empty}>
-                <Feather name="database" size={36} color={colors.mutedForeground} />
-                <Text style={[styles.emptyTitle, { color: colors.foreground }]}>No pins found</Text>
-                <Text style={[styles.emptySub, { color: colors.mutedForeground }]}>
+                <Feather name="database" size={36} color={colors.homeMuted} />
+                <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No pins found</Text>
+                <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
                   {query ? 'Try a different search.' : 'The catalogue is empty. Add the first pin!'}
                 </Text>
               </View>

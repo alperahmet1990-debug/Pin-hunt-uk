@@ -40,8 +40,8 @@ export default function AdminLayout() {
 
   if (loading || (creatorOnly && accessLoading)) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background }}>
-        <ActivityIndicator color={colors.primary} />
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.homeBackground }}>
+        <ActivityIndicator color={colors.homeCoral} />
       </View>
     );
   }
@@ -51,10 +51,10 @@ export default function AdminLayout() {
 
   if (creatorOnly && !isAppCreator) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12, padding: 24, backgroundColor: colors.background }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12, padding: 24, backgroundColor: colors.homeBackground }}>
         <Stack.Screen options={{ title: 'Admin' }} />
-        <Feather name="lock" size={28} color={colors.mutedForeground} />
-        <Text style={{ fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', color: colors.mutedForeground }}>
+        <Feather name="lock" size={28} color={colors.homeMuted} />
+        <Text style={{ fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', color: colors.homeMuted }}>
           Catalogue editing is limited to the App Creator.
         </Text>
       </View>

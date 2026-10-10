@@ -37,6 +37,16 @@ export function markCoveragePending(pinhuntId: string) {
   ));
 }
 
+/** Mark a pin's photo as live — admin/App Creator contributions skip review. */
+export function markCoveragePublished(pinhuntId: string, imageUrl: string) {
+  if (!cached) return;
+  publish(cached.map(row =>
+    row.pinhuntId === pinhuntId
+      ? { ...row, imageUrl, imageSource: 'community', myStatus: 'approved' }
+      : row,
+  ));
+}
+
 export function useCatalogueCoverage(enabled: boolean) {
   const repo = useMemo(() => {
     if (!isSupabaseConfigured) return null;

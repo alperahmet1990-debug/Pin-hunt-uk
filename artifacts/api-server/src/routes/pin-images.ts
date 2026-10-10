@@ -1,7 +1,8 @@
 /**
  * Contributed pin image moderation (admin only).
  *
- * GET  /admin/pending-pin-images              List images awaiting review.
+ * GET  /admin/pending-pin-images              List images awaiting review,
+ *      each with the pin's Pin & Pop reference (admin-only, migration 042).
  * POST /admin/pin-images/:id/approve          Promote into the public
  *      pin-catalogue bucket and set it as the pin's display image.
  * POST /admin/pin-images/:id/reject           Mark rejected, no storage change.
@@ -17,6 +18,7 @@ import {
   createSupabasePinRepository,
   createSupabaseUserRepository,
 } from "@workspace/pin-repository";
+import { publishContributedImage } from "../services/contributed-images";
 
 const router: IRouter = Router();
 
@@ -88,13 +90,24 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
   try {
     const userRepo = getAdminUserRepository();
     const images = await userRepo.getPendingContributedImages();
+    // Admin-only reference — never returned by any collector-facing route.
+    const pinAndPop = await userRepo.getPinAndPopReferences([...new Set(images.map((img) => img.pinId))]);
     const withUrls = await Promise.all(
-      images.map(async (img) => ({
-        ...img,
-        signedUrl: await userRepo.getContributedImageUrl(img.storagePath),
-      })),
+      images.map(async (img) => {
+        try {
+          return {
+            ...img,
+            signedUrl: await userRepo.getContributedImageUrl(img.storagePath),
+            pinAndPop: pinAndPop[img.pinId] ?? null,
+          };
+        } catch (err) {
+          // One unreadable row shouldn't take down the whole queue.
+          console.error(`[pin-images] skipping pending image ${img.id}:`, err);
+          return null;
+        }
+      }),
     );
-    res.json({ images: withUrls });
+    res.json({ images: withUrls.filter((img) => img !== null) });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     res.status(500).json({ error: msg });
@@ -104,12 +117,8 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
 /**
  * POST /admin/pin-images/:id/approve
  *
- * Downloads the pending object from the private pin-contributed-images
- * bucket, re-uploads it into the public pin-catalogue bucket, writes
- * pins.image_url, and flips the pin_images row to approved + publicly
- * displayable. Known v1 gap: no cross-step transaction — a failure
- * between the storage copy and the DB writes can leave an orphaned
- * public-bucket object (low-volume admin action, acceptable for now).
+ * Publishes the pending photo into the live catalogue — see
+ * services/contributed-images.ts (also used when an admin contributes).
  *
  * curl -X POST -H "Authorization: Bearer <token>" \
  *   https://<domain>/api/admin/pin-images/<id>/approve
@@ -125,39 +134,17 @@ router.post("/admin/pin-images/:id/approve", requireAdmin, async (req: AdminRequ
       res.status(400).json({ error: `Image is already ${image.status}, not pending.` });
       return;
     }
-    if (!image.pinhuntId) {
-      res.status(500).json({ error: "Contributed image is missing its linked pin." });
+    if (!image.uploadedBy) {
+      res.status(400).json({ error: "Only collector-contributed photos can be approved." });
       return;
     }
 
-    const storage = getAdminAuthClient().storage;
-    const { data: blob, error: downloadError } = await storage
-      .from("pin-contributed-images")
-      .download(image.storagePath);
-    if (downloadError || !blob) {
-      res.status(500).json({ error: `Could not read contributed image: ${downloadError?.message ?? "unknown"}` });
-      return;
-    }
-
-    const publicPath = `${image.pinId}/contributed-${image.id}.jpg`;
-    const { error: uploadError } = await storage
-      .from("pin-catalogue")
-      .upload(publicPath, blob, { contentType: "image/jpeg", upsert: true });
-    if (uploadError) {
-      res.status(500).json({ error: `Could not publish image: ${uploadError.message}` });
-      return;
-    }
-
-    const { data: publicUrlData } = storage.from("pin-catalogue").getPublicUrl(publicPath);
-
-    const pinRepo = getWritePinRepository();
-    await pinRepo.updatePin(image.pinhuntId, {
-      imageUrl: publicUrlData.publicUrl,
-      needsFrontImage: false,
+    const published = await publishContributedImage(image, req.adminId!, {
+      serviceClient: getAdminAuthClient(),
+      userRepo,
+      pinRepo: getWritePinRepository(),
     });
-
-    const reviewed = await userRepo.markContributedImageReviewed(id, req.adminId!, { action: "approve" });
-    res.json({ image: { ...reviewed, publicUrl: publicUrlData.publicUrl } });
+    res.json({ image: published });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     res.status(500).json({ error: msg });

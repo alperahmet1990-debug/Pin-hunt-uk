@@ -29,9 +29,15 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import palette from '@/constants/colors';
 import { useAuth } from '@/context/AuthContext';
 
 import { API_BASE } from '@/lib/apiBase';
+
+const EBAY_IMAGE_APPLY_ENABLED = false;
+
+// Theme-independent status colours for module-level lookup tables.
+const statusPalette = palette.light;
 
 // ─── Types (mirror api-server catalogue-validation service) ──────────────────
 
@@ -98,12 +104,12 @@ interface ValidationResult {
 }
 
 const STATUS_META: Record<ValidationStatus, { label: string; color: string }> = {
-  strong_match: { label: 'Strong match', color: '#16a34a' },
-  probable_match: { label: 'Probable match', color: '#2563eb' },
-  needs_review: { label: 'Needs review', color: '#d97706' },
-  no_match: { label: 'No reliable match', color: '#6b7280' },
+  strong_match: { label: 'Strong match', color: statusPalette.owned },
+  probable_match: { label: 'Probable match', color: statusPalette.forTrade },
+  needs_review: { label: 'Needs review', color: statusPalette.homeSandInk },
+  no_match: { label: 'No reliable match', color: statusPalette.homeMuted },
   insufficient_data: { label: 'Insufficient data', color: '#9333ea' },
-  error: { label: 'Error', color: '#dc2626' },
+  error: { label: 'Error', color: statusPalette.destructive },
 };
 
 const FILTERS: Array<{ key: ValidationStatus | 'all' | 'flagged'; label: string }> = [
@@ -378,51 +384,51 @@ export default function CatalogueValidationScreen() {
       : results.filter(r => r.validation_status === filter);
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <View style={[styles.container, { backgroundColor: colors.homeBackground }]}>
       <Stack.Screen options={{ title: 'Catalogue Validation' }} />
       <FlatList
         data={filtered}
         keyExtractor={r => r.id}
         contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 32 }}
-        refreshControl={<RefreshControl refreshing={loading} onRefresh={loadLatest} tintColor={colors.primary} />}
+        refreshControl={<RefreshControl refreshing={loading} onRefresh={loadLatest} tintColor={colors.homeCoral} />}
         ListHeaderComponent={
           <View>
-            <Text style={[styles.intro, { color: colors.mutedForeground }]}>
+            <Text style={[styles.intro, { color: colors.homeMuted }]}>
               Checks catalogue records against current eBay listings and flags likely
               spreadsheet errors. All findings are suggestions — nothing changes until
               you approve it. Prices shown are current eBay asking prices, not values.
             </Text>
-            {error ? <Text style={[styles.error, { color: '#dc2626' }]}>{error}</Text> : null}
+            {error ? <Text style={[styles.error, { color: colors.destructive }]}>{error}</Text> : null}
 
             {/* Optional series scope */}
-            <View style={[styles.seriesBox, { backgroundColor: colors.card, borderColor: colors.border }]}>
-              <Text style={[styles.seriesLabel, { color: colors.mutedForeground }]}>Limit to a series (optional)</Text>
+            <View style={[styles.seriesBox, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+              <Text style={[styles.seriesLabel, { color: colors.homeMuted }]}>Limit to a series (optional)</Text>
               {seriesChosen ? (
                 <View style={styles.seriesChosenRow}>
-                  <View style={[styles.badge, { backgroundColor: colors.primary + '18', borderColor: colors.primary + '40' }]}>
-                    <Text style={[styles.badgeText, { color: colors.primary }]}>{seriesChosen}</Text>
+                  <View style={[styles.badge, { backgroundColor: colors.homeCoral + '18', borderColor: colors.homeCoral + '40' }]}>
+                    <Text style={[styles.badgeText, { color: colors.homeCoral }]}>{seriesChosen}</Text>
                   </View>
                   <TouchableOpacity onPress={() => { setSeriesChosen(null); setSeriesQuery(''); }}>
-                    <Feather name="x-circle" size={18} color={colors.mutedForeground} />
+                    <Feather name="x-circle" size={18} color={colors.homeMuted} />
                   </TouchableOpacity>
                 </View>
               ) : (
                 <>
                   <TextInput
-                    style={[styles.seriesInput, { color: colors.text, borderColor: colors.border, backgroundColor: colors.background }]}
+                    style={[styles.seriesInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
                     placeholder="Start typing a series name…"
-                    placeholderTextColor={colors.mutedForeground}
+                    placeholderTextColor={colors.homeMuted}
                     value={seriesQuery}
                     onChangeText={setSeriesQuery}
                   />
                   {seriesOptions.map(opt => (
                     <TouchableOpacity
                       key={opt}
-                      style={[styles.seriesOption, { borderColor: colors.border }]}
+                      style={[styles.seriesOption, { borderColor: colors.homeLine }]}
                       onPress={() => { setSeriesChosen(opt); setSeriesOptions([]); }}
                     >
-                      <Feather name="tag" size={13} color={colors.primary} />
-                      <Text style={[styles.seriesOptionText, { color: colors.text }]}>{opt}</Text>
+                      <Feather name="tag" size={13} color={colors.homeCoral} />
+                      <Text style={[styles.seriesOptionText, { color: colors.homeInk }]}>{opt}</Text>
                     </TouchableOpacity>
                   ))}
                 </>
@@ -430,7 +436,7 @@ export default function CatalogueValidationScreen() {
             </View>
 
             <TouchableOpacity
-              style={[styles.startBtn, { backgroundColor: colors.primary, opacity: starting || summary?.status === 'running' ? 0.6 : 1 }]}
+              style={[styles.startBtn, { backgroundColor: colors.homeCoral, opacity: starting || summary?.status === 'running' ? 0.6 : 1 }]}
               disabled={starting || summary?.status === 'running'}
               onPress={startRun}
             >
@@ -446,9 +452,9 @@ export default function CatalogueValidationScreen() {
             </TouchableOpacity>
 
             {summary && (
-              <View style={[styles.summaryCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+              <View style={[styles.summaryCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
                 <View style={styles.summaryHeader}>
-                  <Text style={[styles.summaryTitle, { color: colors.text }]}>
+                  <Text style={[styles.summaryTitle, { color: colors.homeInk }]}>
                     {summary.status === 'running'
                       ? `Running — ${summary.pins_checked} pins checked`
                       : summary.status === 'failed' ? 'Run failed'
@@ -456,29 +462,29 @@ export default function CatalogueValidationScreen() {
                       : `${summary.pins_checked} pins checked`}
                     {summary.filter_collection ? ` — ${summary.filter_collection}` : ''}
                   </Text>
-                  {summary.status === 'running' && <ActivityIndicator size="small" color={colors.primary} />}
+                  {summary.status === 'running' && <ActivityIndicator size="small" color={colors.homeCoral} />}
                 </View>
                 <SummaryRow label="Strong matches" value={summary.strong_match_count} color={STATUS_META.strong_match.color} colors={colors} />
                 <SummaryRow label="Probable matches" value={summary.probable_match_count} color={STATUS_META.probable_match.color} colors={colors} />
                 <SummaryRow label="Needs review" value={summary.needs_review_count} color={STATUS_META.needs_review.color} colors={colors} />
                 <SummaryRow label="No reliable match" value={summary.no_match_count} color={STATUS_META.no_match.color} colors={colors} />
                 <SummaryRow label="Too vague to check" value={summary.insufficient_data_count} color={STATUS_META.insufficient_data.color} colors={colors} />
-                <SummaryRow label="Suspected record errors" value={summary.suspected_error_count} color="#dc2626" colors={colors} />
-                <SummaryRow label="Suspected duplicates" value={summary.suspected_duplicate_count} color="#dc2626" colors={colors} />
-                <Text style={[styles.apiLine, { color: colors.mutedForeground }]}>
+                <SummaryRow label="Suspected record errors" value={summary.suspected_error_count} color={colors.destructive} colors={colors} />
+                <SummaryRow label="Suspected duplicates" value={summary.suspected_duplicate_count} color={colors.destructive} colors={colors} />
+                <Text style={[styles.apiLine, { color: colors.homeMuted }]}>
                   {summary.api_calls_used} eBay API calls · {summary.api_error_count} API errors
                 </Text>
                 <View style={styles.summaryActions}>
                   {summary.status === 'running' && (
-                    <TouchableOpacity style={[styles.smallBtn, { borderColor: colors.border, backgroundColor: colors.background }]} onPress={pauseRun}>
-                      <Feather name="pause" size={13} color="#d97706" />
-                      <Text style={[styles.smallBtnText, { color: '#d97706' }]}>Pause run</Text>
+                    <TouchableOpacity style={[styles.smallBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]} onPress={pauseRun}>
+                      <Feather name="pause" size={13} color={colors.homeSandInk} />
+                      <Text style={[styles.smallBtnText, { color: colors.homeSandInk }]}>Pause run</Text>
                     </TouchableOpacity>
                   )}
                   {summary.status !== 'running' && summary.pins_checked > 0 && (
-                    <TouchableOpacity style={[styles.smallBtn, { borderColor: colors.border, backgroundColor: colors.background }]} onPress={exportCsv}>
-                      <Feather name="download" size={13} color={colors.primary} />
-                      <Text style={[styles.smallBtnText, { color: colors.primary }]}>Export CSV</Text>
+                    <TouchableOpacity style={[styles.smallBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]} onPress={exportCsv}>
+                      <Feather name="download" size={13} color={colors.homeCoral} />
+                      <Text style={[styles.smallBtnText, { color: colors.homeCoral }]}>Export CSV</Text>
                     </TouchableOpacity>
                   )}
                 </View>
@@ -490,12 +496,12 @@ export default function CatalogueValidationScreen() {
                 <TouchableOpacity
                   key={f.key}
                   style={[styles.chip, {
-                    backgroundColor: filter === f.key ? colors.primary : colors.card,
-                    borderColor: filter === f.key ? colors.primary : colors.border,
+                    backgroundColor: filter === f.key ? colors.homeCoral : colors.homeSurface,
+                    borderColor: filter === f.key ? colors.homeCoral : colors.homeLine,
                   }]}
                   onPress={() => setFilter(f.key)}
                 >
-                  <Text style={{ color: filter === f.key ? '#fff' : colors.text, fontSize: 13 }}>{f.label}</Text>
+                  <Text style={{ color: filter === f.key ? '#fff' : colors.homeInk, fontSize: 13 }}>{f.label}</Text>
                 </TouchableOpacity>
               ))}
             </ScrollView>
@@ -503,7 +509,7 @@ export default function CatalogueValidationScreen() {
         }
         ListEmptyComponent={
           loading ? null : (
-            <Text style={[styles.empty, { color: colors.mutedForeground }]}>
+            <Text style={[styles.empty, { color: colors.homeMuted }]}>
               {summary ? 'No results in this filter.' : 'No validation run has been started yet.'}
             </Text>
           )
@@ -554,8 +560,8 @@ function SummaryRow({ label, value, color, colors }: { label: string; value: num
   return (
     <View style={styles.summaryRow}>
       <View style={[styles.dot, { backgroundColor: color }]} />
-      <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>{label}</Text>
-      <Text style={[styles.summaryValue, { color: colors.text }]}>{value}</Text>
+      <Text style={[styles.summaryLabel, { color: colors.homeMuted }]}>{label}</Text>
+      <Text style={[styles.summaryValue, { color: colors.homeInk }]}>{value}</Text>
     </View>
   );
 }
@@ -583,7 +589,7 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
 
   return (
     <TouchableOpacity
-      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
+      style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
       onPress={onToggle}
       activeOpacity={0.8}
     >
@@ -593,42 +599,42 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
             <Image source={{ uri: snap.imageUrl }} style={styles.thumb} resizeMode="contain" />
           </TouchableOpacity>
         ) : (
-          <View style={[styles.thumb, styles.thumbEmpty, { backgroundColor: colors.background }]}>
-            <Feather name="image" size={20} color={colors.mutedForeground} />
+          <View style={[styles.thumb, styles.thumbEmpty, { backgroundColor: colors.homeBackground }]}>
+            <Feather name="image" size={20} color={colors.homeMuted} />
           </View>
         )}
         <View style={{ flex: 1 }}>
-          <Text style={[styles.pinName, { color: colors.text }]} numberOfLines={2}>{snap.title ?? result.pinhunt_id}</Text>
-          <Text style={[styles.pinId, { color: colors.mutedForeground }]}>{result.pinhunt_id}</Text>
+          <Text style={[styles.pinName, { color: colors.homeInk }]} numberOfLines={2}>{snap.title ?? result.pinhunt_id}</Text>
+          <Text style={[styles.pinId, { color: colors.homeMuted }]}>{result.pinhunt_id}</Text>
           <View style={styles.badgeRow}>
             <View style={[styles.badge, { backgroundColor: meta.color + '18', borderColor: meta.color + '40' }]}>
               <Text style={[styles.badgeText, { color: meta.color }]}>{meta.label}</Text>
             </View>
             {result.confidence_score != null && (
-              <Text style={[styles.score, { color: colors.text }]}>{result.confidence_score}/100</Text>
+              <Text style={[styles.score, { color: colors.homeInk }]}>{result.confidence_score}/100</Text>
             )}
             {flags.length > 0 && (
-              <View style={[styles.badge, { backgroundColor: '#dc262618', borderColor: '#dc262640' }]}>
-                <Text style={[styles.badgeText, { color: '#dc2626' }]}>{flags.length} flag{flags.length > 1 ? 's' : ''}</Text>
+              <View style={[styles.badge, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '40' }]}>
+                <Text style={[styles.badgeText, { color: colors.destructive }]}>{flags.length} flag{flags.length > 1 ? 's' : ''}</Text>
               </View>
             )}
             {reviewed && (
-              <View style={[styles.badge, { backgroundColor: colors.background, borderColor: colors.border }]}>
-                <Text style={[styles.badgeText, { color: colors.mutedForeground }]}>
+              <View style={[styles.badge, { backgroundColor: colors.homeBackground, borderColor: colors.homeLine }]}>
+                <Text style={[styles.badgeText, { color: colors.homeMuted }]}>
                   {result.admin_status.replace(/_/g, ' ')}
                 </Text>
               </View>
             )}
           </View>
         </View>
-        <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={18} color={colors.mutedForeground} />
+        <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={18} color={colors.homeMuted} />
       </View>
 
       {expanded && (
-        <View style={[styles.detail, { borderTopColor: colors.border }]}>
+        <View style={[styles.detail, { borderTopColor: colors.homeLine }]}>
           {/* Existing record */}
-          <Text style={[styles.sectionTitle, { color: colors.mutedForeground }]}>Existing record</Text>
-          <Text style={[styles.detailValue, { color: colors.text }]}>
+          <Text style={[styles.sectionTitle, { color: colors.homeMuted }]}>Existing record</Text>
+          <Text style={[styles.detailValue, { color: colors.homeInk }]}>
             {[
               snap.brand, snap.collection,
               (snap.characters ?? []).join(', ') || null,
@@ -641,38 +647,38 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
           {/* Flags */}
           {flags.length > 0 && (
             <>
-              <Text style={[styles.sectionTitle, { color: colors.mutedForeground }]}>Findings</Text>
+              <Text style={[styles.sectionTitle, { color: colors.homeMuted }]}>Findings</Text>
               {flags.map((f, i) => (
                 <View key={i} style={styles.flagRow}>
-                  <Feather name="alert-triangle" size={13} color="#d97706" style={{ marginTop: 2 }} />
-                  <Text style={[styles.flagText, { color: colors.text }]}>{f.message}</Text>
+                  <Feather name="alert-triangle" size={13} color={colors.homeSandInk} style={{ marginTop: 2 }} />
+                  <Text style={[styles.flagText, { color: colors.homeInk }]}>{f.message}</Text>
                 </View>
               ))}
             </>
           )}
 
           {result.validation_notes && (
-            <Text style={[styles.notes, { color: colors.mutedForeground }]}>{result.validation_notes}</Text>
+            <Text style={[styles.notes, { color: colors.homeMuted }]}>{result.validation_notes}</Text>
           )}
 
           {/* eBay candidates */}
           {(result.raw_candidate_results ?? []).length > 0 && (
             <>
-              <Text style={[styles.sectionTitle, { color: colors.mutedForeground }]}>Best eBay candidates</Text>
+              <Text style={[styles.sectionTitle, { color: colors.homeMuted }]}>Best eBay candidates</Text>
               {result.raw_candidate_results.map(c => (
-                <View key={c.itemId} style={[styles.candidate, { borderColor: colors.border }]}>
+                <View key={c.itemId} style={[styles.candidate, { borderColor: colors.homeLine }]}>
                   {c.imageUrl ? (
                     <TouchableOpacity onPress={() => onViewImage(c.imageUrl!)}>
                       <Image source={{ uri: c.imageUrl }} style={styles.candThumb} resizeMode="contain" />
                     </TouchableOpacity>
                   ) : (
-                    <View style={[styles.candThumb, styles.thumbEmpty, { backgroundColor: colors.background }]}>
-                      <Feather name="image" size={14} color={colors.mutedForeground} />
+                    <View style={[styles.candThumb, styles.thumbEmpty, { backgroundColor: colors.homeBackground }]}>
+                      <Feather name="image" size={14} color={colors.homeMuted} />
                     </View>
                   )}
                   <View style={{ flex: 1 }}>
-                    <Text style={[styles.candTitle, { color: colors.text }]} numberOfLines={2}>{c.title}</Text>
-                    <Text style={[styles.candMeta, { color: colors.mutedForeground }]}>
+                    <Text style={[styles.candTitle, { color: colors.homeInk }]} numberOfLines={2}>{c.title}</Text>
+                    <Text style={[styles.candMeta, { color: colors.homeMuted }]}>
                       {c.score}/100 · {c.marketplace === 'EBAY_GB' ? 'eBay UK' : 'eBay US'}
                       {c.askingPrice != null ? ` · asking ${c.currency === 'USD' ? '$' : '£'}${c.askingPrice}` : ''}
                       {c.sellerLocation ? ` · ${c.sellerLocation}` : ''}
@@ -680,25 +686,27 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
                     <View style={styles.candActions}>
                       {c.url && (
                         <TouchableOpacity style={styles.linkRow} onPress={() => Linking.openURL(c.url!)}>
-                          <Feather name="external-link" size={12} color={colors.primary} />
-                          <Text style={[styles.linkText, { color: colors.primary, fontSize: 12 }]}>Open listing</Text>
+                          <Feather name="external-link" size={12} color={colors.homeCoral} />
+                          <Text style={[styles.linkText, { color: colors.homeCoral, fontSize: 12 }]}>Open listing</Text>
                         </TouchableOpacity>
                       )}
-                      {c.imageUrl && (
+                      {/* eBay images are no longer a catalogue image source, so
+                          "Use this image" stays off (EBAY_IMAGE_APPLY_ENABLED). */}
+                      {EBAY_IMAGE_APPLY_ENABLED && c.imageUrl && (
                         <TouchableOpacity
                           style={styles.linkRow}
                           disabled={busy}
                           onPress={() => onApplyImage(c)}
                         >
-                          <Feather name="image" size={12} color="#16a34a" />
-                          <Text style={[styles.linkText, { color: '#16a34a', fontSize: 12 }]}>Use this image</Text>
+                          <Feather name="image" size={12} color={colors.owned} />
+                          <Text style={[styles.linkText, { color: colors.owned, fontSize: 12 }]}>Use this image</Text>
                         </TouchableOpacity>
                       )}
                     </View>
                   </View>
                 </View>
               ))}
-              <Text style={[styles.priceNote, { color: colors.mutedForeground }]}>
+              <Text style={[styles.priceNote, { color: colors.homeMuted }]}>
                 Prices are current eBay asking prices, not sold prices or values.
               </Text>
             </>
@@ -707,7 +715,7 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
           {/* Suggested corrections with per-field checkboxes */}
           {!reviewed && suggestions.length > 0 && (
             <>
-              <Text style={[styles.sectionTitle, { color: colors.mutedForeground }]}>Suggested corrections</Text>
+              <Text style={[styles.sectionTitle, { color: colors.homeMuted }]}>Suggested corrections</Text>
               {suggestions.map(f => {
                 const current = f.key === 'year' ? snap.releaseYear
                   : f.key === 'edition_size' ? snap.limitedEditionSize
@@ -715,15 +723,15 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
                 const checked = picked.has(f.key);
                 return (
                   <TouchableOpacity key={f.key} style={styles.fieldRow} onPress={() => onTogglePick(f.key)}>
-                    <Feather name={checked ? 'check-square' : 'square'} size={18} color={checked ? colors.primary : colors.mutedForeground} />
-                    <Text style={[styles.fieldText, { color: colors.text }]}>
+                    <Feather name={checked ? 'check-square' : 'square'} size={18} color={checked ? colors.homeCoral : colors.homeMuted} />
+                    <Text style={[styles.fieldText, { color: colors.homeInk }]}>
                       {f.label}: {current ?? '—'} → {String(f.get(result))}
                     </Text>
                   </TouchableOpacity>
                 );
               })}
               <TouchableOpacity
-                style={[styles.actionBtn, { backgroundColor: colors.primary, opacity: busy || picked.size === 0 ? 0.5 : 1 }]}
+                style={[styles.actionBtn, { backgroundColor: colors.homeCoral, opacity: busy || picked.size === 0 ? 0.5 : 1 }]}
                 disabled={busy || picked.size === 0}
                 onPress={() => onApprovePicked([...picked])}
               >
@@ -735,18 +743,18 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, busy, pic
 
           {/* Decision buttons */}
           <View style={styles.decisionRow}>
-            <SmallBtn label="Edit record" icon="edit-2" color={colors.primary} onPress={onEdit} disabled={busy} colors={colors} />
+            <SmallBtn label="Edit record" icon="edit-2" color={colors.homeCoral} onPress={onEdit} disabled={busy} colors={colors} />
             {!reviewed && (
               <>
                 {suggestions.length === 0 && (
-                  <SmallBtn label="Confirm correct" icon="check-circle" color="#16a34a" onPress={() => onDecision('approve')} disabled={busy} colors={colors} />
+                  <SmallBtn label="Confirm correct" icon="check-circle" color={colors.owned} onPress={() => onDecision('approve')} disabled={busy} colors={colors} />
                 )}
-                <SmallBtn label="Reject" icon="x" color="#dc2626" onPress={() => onDecision('reject')} disabled={busy} colors={colors} />
-                <SmallBtn label="Can't verify" icon="help-circle" color="#6b7280" onPress={() => onDecision('unable_to_verify')} disabled={busy} colors={colors} />
+                <SmallBtn label="Reject" icon="x" color={colors.destructive} onPress={() => onDecision('reject')} disabled={busy} colors={colors} />
+                <SmallBtn label="Can't verify" icon="help-circle" color={colors.homeMuted} onPress={() => onDecision('unable_to_verify')} disabled={busy} colors={colors} />
                 {result.suspected_duplicate_pin_id && (
-                  <SmallBtn label="Confirm duplicate" icon="copy" color="#d97706" onPress={() => onDecision('mark_duplicate')} disabled={busy} colors={colors} />
+                  <SmallBtn label="Confirm duplicate" icon="copy" color={colors.homeSandInk} onPress={() => onDecision('mark_duplicate')} disabled={busy} colors={colors} />
                 )}
-                <SmallBtn label="Re-check" icon="refresh-cw" color={colors.primary} onPress={onRevalidate} disabled={busy} colors={colors} />
+                <SmallBtn label="Re-check" icon="refresh-cw" color={colors.homeCoral} onPress={onRevalidate} disabled={busy} colors={colors} />
               </>
             )}
           </View>
@@ -762,7 +770,7 @@ function SmallBtn({ label, icon, color, onPress, disabled, colors }: {
 }) {
   return (
     <TouchableOpacity
-      style={[styles.smallBtn, { borderColor: colors.border, backgroundColor: colors.card, opacity: disabled ? 0.5 : 1 }]}
+      style={[styles.smallBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface, opacity: disabled ? 0.5 : 1 }]}
       onPress={onPress}
       disabled={disabled}
     >

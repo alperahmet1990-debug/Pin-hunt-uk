@@ -28,9 +28,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import palette from '@/constants/colors';
 import { useAuth } from '@/context/AuthContext';
 
 import { API_BASE } from '@/lib/apiBase';
+
+// Theme-independent status colours for module-level lookup tables.
+const statusPalette = palette.light;
 
 // ─── Types (mirror api-server dry-run service) ───────────────────────────────
 
@@ -69,11 +73,11 @@ interface DryRunResult {
 }
 
 const CLASS_META: Record<Classification, { label: string; color: string }> = {
-  high_confidence: { label: 'High confidence', color: '#16a34a' },
-  provisional: { label: 'Provisional', color: '#2563eb' },
-  review_required: { label: 'Review required', color: '#d97706' },
-  no_match: { label: 'No match', color: '#6b7280' },
-  error: { label: 'Error', color: '#dc2626' },
+  high_confidence: { label: 'High confidence', color: statusPalette.owned },
+  provisional: { label: 'Provisional', color: statusPalette.forTrade },
+  review_required: { label: 'Review required', color: statusPalette.homeSandInk },
+  no_match: { label: 'No match', color: statusPalette.homeMuted },
+  error: { label: 'Error', color: statusPalette.destructive },
 };
 
 const FILTERS: Array<{ key: Classification | 'all'; label: string }> = [
@@ -246,24 +250,24 @@ export default function EbayImageDryRunScreen() {
     : 0;
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <View style={[styles.container, { backgroundColor: colors.homeBackground }]}>
       <Stack.Screen options={{ title: 'eBay Image Dry Run' }} />
       <FlatList
         data={filtered}
         keyExtractor={r => r.id}
         contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 32 }}
-        refreshControl={<RefreshControl refreshing={loading} onRefresh={loadLatest} tintColor={colors.primary} />}
+        refreshControl={<RefreshControl refreshing={loading} onRefresh={loadLatest} tintColor={colors.homeCoral} />}
         ListHeaderComponent={
           <View>
-            <Text style={[styles.intro, { color: colors.mutedForeground }]}>
+            <Text style={[styles.intro, { color: colors.homeMuted }]}>
               Finds candidate eBay images for pins with no photo. Running this
               search doesn't change anything — but choosing "Use this image"
               on a result writes that image to the live pin.
             </Text>
-            {error ? <Text style={[styles.error, { color: '#dc2626' }]}>{error}</Text> : null}
+            {error ? <Text style={[styles.error, { color: colors.destructive }]}>{error}</Text> : null}
 
             <TouchableOpacity
-              style={[styles.startBtn, { backgroundColor: colors.primary, opacity: starting || summary?.status === 'running' ? 0.6 : 1 }]}
+              style={[styles.startBtn, { backgroundColor: colors.homeCoral, opacity: starting || summary?.status === 'running' ? 0.6 : 1 }]}
               disabled={starting || summary?.status === 'running'}
               onPress={startRun}
             >
@@ -277,23 +281,23 @@ export default function EbayImageDryRunScreen() {
             </TouchableOpacity>
 
             {summary && (
-              <View style={[styles.summaryCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+              <View style={[styles.summaryCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
                 <View style={styles.summaryHeader}>
-                  <Text style={[styles.summaryTitle, { color: colors.text }]}>
+                  <Text style={[styles.summaryTitle, { color: colors.homeInk }]}>
                     {summary.status === 'running'
                       ? `Running — ${summary.pins_examined} pins done`
                       : summary.status === 'failed'
                         ? 'Run failed'
                         : `${summary.pins_examined} pins examined`}
                   </Text>
-                  {summary.status === 'running' && <ActivityIndicator size="small" color={colors.primary} />}
+                  {summary.status === 'running' && <ActivityIndicator size="small" color={colors.homeCoral} />}
                 </View>
                 <SummaryRow label="High confidence" value={summary.high_confidence_count} color={CLASS_META.high_confidence.color} colors={colors} />
                 <SummaryRow label="Provisional" value={summary.provisional_count} color={CLASS_META.provisional.color} colors={colors} />
                 <SummaryRow label="Review required" value={summary.review_required_count} color={CLASS_META.review_required.color} colors={colors} />
                 <SummaryRow label="No reliable match" value={summary.no_match_count} color={CLASS_META.no_match.color} colors={colors} />
                 <SummaryRow label="Errors" value={summary.error_count} color={CLASS_META.error.color} colors={colors} />
-                <Text style={[styles.coverage, { color: colors.text }]}>
+                <Text style={[styles.coverage, { color: colors.homeInk }]}>
                   Estimated automatic coverage: {autoCoverage}%
                 </Text>
               </View>
@@ -306,13 +310,13 @@ export default function EbayImageDryRunScreen() {
                   style={[
                     styles.chip,
                     {
-                      backgroundColor: filter === f.key ? colors.primary : colors.card,
-                      borderColor: filter === f.key ? colors.primary : colors.border,
+                      backgroundColor: filter === f.key ? colors.homeCoral : colors.homeSurface,
+                      borderColor: filter === f.key ? colors.homeCoral : colors.homeLine,
                     },
                   ]}
                   onPress={() => setFilter(f.key)}
                 >
-                  <Text style={{ color: filter === f.key ? '#fff' : colors.text, fontSize: 13 }}>
+                  <Text style={{ color: filter === f.key ? '#fff' : colors.homeInk, fontSize: 13 }}>
                     {f.label}
                   </Text>
                 </TouchableOpacity>
@@ -322,7 +326,7 @@ export default function EbayImageDryRunScreen() {
         }
         ListEmptyComponent={
           loading ? null : (
-            <Text style={[styles.empty, { color: colors.mutedForeground }]}>
+            <Text style={[styles.empty, { color: colors.homeMuted }]}>
               {summary ? 'No results in this filter.' : 'No dry run has been started yet.'}
             </Text>
           )
@@ -362,8 +366,8 @@ function SummaryRow({ label, value, color, colors }: { label: string; value: num
   return (
     <View style={styles.summaryRow}>
       <View style={[styles.dot, { backgroundColor: color }]} />
-      <Text style={[styles.summaryLabel, { color: colors.mutedForeground }]}>{label}</Text>
-      <Text style={[styles.summaryValue, { color: colors.text }]}>{value}</Text>
+      <Text style={[styles.summaryLabel, { color: colors.homeMuted }]}>{label}</Text>
+      <Text style={[styles.summaryValue, { color: colors.homeInk }]}>{value}</Text>
     </View>
   );
 }
@@ -383,7 +387,7 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, 
   const md = result.pin_metadata ?? {};
   return (
     <TouchableOpacity
-      style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}
+      style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
       onPress={onToggle}
       activeOpacity={0.8}
     >
@@ -396,36 +400,36 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, 
             </View>
           </TouchableOpacity>
         ) : (
-          <View style={[styles.thumb, styles.thumbEmpty, { backgroundColor: colors.background }]}>
-            <Feather name="image" size={20} color={colors.mutedForeground} />
+          <View style={[styles.thumb, styles.thumbEmpty, { backgroundColor: colors.homeBackground }]}>
+            <Feather name="image" size={20} color={colors.homeMuted} />
           </View>
         )}
         <View style={{ flex: 1 }}>
-          <Text style={[styles.pinName, { color: colors.text }]} numberOfLines={2}>{result.pin_name}</Text>
-          <Text style={[styles.pinId, { color: colors.mutedForeground }]}>{result.pinhunt_id}</Text>
+          <Text style={[styles.pinName, { color: colors.homeInk }]} numberOfLines={2}>{result.pin_name}</Text>
+          <Text style={[styles.pinId, { color: colors.homeMuted }]}>{result.pinhunt_id}</Text>
           <View style={styles.badgeRow}>
             <View style={[styles.badge, { backgroundColor: meta.color + '18', borderColor: meta.color + '40' }]}>
               <Text style={[styles.badgeText, { color: meta.color }]}>{meta.label}</Text>
             </View>
             {result.match_score != null && (
-              <Text style={[styles.score, { color: colors.text }]}>{result.match_score}/100</Text>
+              <Text style={[styles.score, { color: colors.homeInk }]}>{result.match_score}/100</Text>
             )}
             {result.applied_at ? (
-              <View style={[styles.badge, { backgroundColor: '#16a34a', borderColor: '#16a34a' }]}>
+              <View style={[styles.badge, { backgroundColor: colors.owned, borderColor: colors.owned }]}>
                 <Text style={[styles.badgeText, { color: '#fff' }]}>Applied</Text>
               </View>
             ) : result.would_assign ? (
-              <View style={[styles.badge, { backgroundColor: '#16a34a18', borderColor: '#16a34a40' }]}>
-                <Text style={[styles.badgeText, { color: '#16a34a' }]}>Would assign</Text>
+              <View style={[styles.badge, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '40' }]}>
+                <Text style={[styles.badgeText, { color: colors.owned }]}>Would assign</Text>
               </View>
             ) : null}
           </View>
         </View>
-        <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={18} color={colors.mutedForeground} />
+        <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={18} color={colors.homeMuted} />
       </View>
 
       {expanded && (
-        <View style={[styles.detail, { borderTopColor: colors.border }]}>
+        <View style={[styles.detail, { borderTopColor: colors.homeLine }]}>
           <DetailLine label="Metadata" value={[
             md.brand, md.collection,
             Array.isArray(md.characters) && md.characters.length ? (md.characters as string[]).join(', ') : null,
@@ -443,13 +447,13 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, 
           )}
           {result.listing_url && (
             <TouchableOpacity style={styles.linkRow} onPress={() => Linking.openURL(result.listing_url!)}>
-              <Feather name="external-link" size={14} color={colors.primary} />
-              <Text style={[styles.linkText, { color: colors.primary }]}>View listing on eBay</Text>
+              <Feather name="external-link" size={14} color={colors.homeCoral} />
+              <Text style={[styles.linkText, { color: colors.homeCoral }]}>View listing on eBay</Text>
             </TouchableOpacity>
           )}
           {result.image_url && !result.applied_at && (
             <TouchableOpacity
-              style={[styles.applyBtn, { backgroundColor: colors.primary, opacity: applying ? 0.6 : 1 }]}
+              style={[styles.applyBtn, { backgroundColor: colors.homeCoral, opacity: applying ? 0.6 : 1 }]}
               disabled={applying}
               onPress={onApply}
             >
@@ -463,22 +467,22 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, 
           )}
           {!result.applied_at && (
             <TouchableOpacity
-              style={[styles.applyBtn, { backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border, opacity: retrying ? 0.6 : 1 }]}
+              style={[styles.applyBtn, { backgroundColor: colors.homeSurface, borderWidth: 1, borderColor: colors.homeLine, opacity: retrying ? 0.6 : 1 }]}
               disabled={retrying}
               onPress={onRetry}
             >
               {retrying ? (
-                <ActivityIndicator size="small" color={colors.primary} />
+                <ActivityIndicator size="small" color={colors.homeCoral} />
               ) : (
-                <Feather name="refresh-cw" size={15} color={colors.primary} />
+                <Feather name="refresh-cw" size={15} color={colors.homeCoral} />
               )}
-              <Text style={[styles.applyBtnText, { color: colors.primary }]}>
+              <Text style={[styles.applyBtnText, { color: colors.homeCoral }]}>
                 {retrying ? 'Searching eBay…' : 'Find a different image'}
               </Text>
             </TouchableOpacity>
           )}
           {result.applied_at && (
-            <Text style={[styles.detailValue, { color: '#16a34a', marginTop: 4 }]}>
+            <Text style={[styles.detailValue, { color: colors.owned, marginTop: 4 }]}>
               ✓ Applied as the live catalogue image
             </Text>
           )}
@@ -491,8 +495,8 @@ function ResultCard({ result, colors, expanded, onToggle, onViewImage, onApply, 
 function DetailLine({ label, value, colors }: { label: string; value: string; colors: ReturnType<typeof useColors> }) {
   return (
     <View style={{ marginBottom: 8 }}>
-      <Text style={[styles.detailLabel, { color: colors.mutedForeground }]}>{label}</Text>
-      <Text style={[styles.detailValue, { color: colors.text }]}>{value}</Text>
+      <Text style={[styles.detailLabel, { color: colors.homeMuted }]}>{label}</Text>
+      <Text style={[styles.detailValue, { color: colors.homeInk }]}>{value}</Text>
     </View>
   );
 }

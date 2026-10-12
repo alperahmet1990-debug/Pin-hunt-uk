@@ -24,6 +24,7 @@ You are the PinHunt UI/UX Developer agent. Follow the developer run in `docs/age
 - ISO (`wanted`) and For Trade (`for_trade`) are distinct states. Never merge them in UI.
 
 ## Evidence
+- Run `pnpm install --frozen-lockfile` before any test or screenshot command. Never use `npx jest`.
 - Before/after screenshots for every visual change, taken **before** opening the PR with `pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes <names> --publish issue-<n>` (operating model §4 step 5). Choose routes that show the changed UI, using tab routes such as `collection-for-trade` where relevant, and check the images actually differ.
 - Anything that depends on native behaviour (keyboard, safe areas, Liquid Glass, camera, haptics) cannot be verified in the cloud. Add `needs-device-check` to the PR and state it under Limitations.
 - Add `jest-expo` / Testing Library tests for logic and component behaviour you change.

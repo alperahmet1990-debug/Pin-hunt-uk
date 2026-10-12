@@ -46,6 +46,9 @@ const PERMITTED = [
   ['blocked: status:needs-human (gh api)', () => bash(`gh api ${REPO}/issues/44/labels -f "labels[]=status:needs-human"`)],
   ['blocked: status:needs-decision (gh api)', () => bash(`gh api ${REPO}/issues/44/labels -f "labels[]=status:needs-decision"`)],
   ['blocked: release claim (remove status:claimed)', () => bash(`gh api --method DELETE ${REPO}/issues/44/labels/status%3Aclaimed`)],
+  // Review: open screenshots from agent-artifacts
+  ['review: fetch screenshots worktree', () => bash('git fetch -q origin agent-artifacts && git worktree add -q /tmp/agent-artifacts FETCH_HEAD')],
+  ['review: open a screenshot', () => check({ tool_name: 'Read', tool_input: { file_path: '/tmp/agent-artifacts/issue-44/after/pin-iso__390x844__dark.png' }, cwd: root })],
   // Reading
   ['read: list approved + ready issues', () => gh('list_issues', { ...O, labels: ['approved', 'status:ready'] })],
   ['read: issue and comments', () => gh('issue_read', { ...O, issue_number: 44, method: 'get_comments' })],
@@ -78,6 +81,8 @@ const PROHIBITED = [
   ['raise autonomy to L3', () => gh('issue_write', { ...O, method: 'update', issue_number: 44, labels: [...keep, 'autonomy:L3'] })],
   ['change size', () => bash(`gh api ${REPO}/issues/44/labels -f "labels[]=size:M"`)],
   ['fail closed when current labels cannot be read', () => check({ tool_name: 'mcp__github__issue_write', tool_input: { ...O, method: 'update', issue_number: 44, labels: [...keep, 'status:claimed'] }, cwd: root }, { currentLabels: () => { throw new Error('offline'); } })],
+  // PR labels are reserved for review agents
+  ['copy issue labels onto a new PR', () => gh('create_pull_request', { ...O, head: 'claude/44-x', base: 'main', title: 'x', labels: ['autonomy:L1', 'agent:ui'] })],
   // Merge / main
   ['merge a PR', () => gh('merge_pull_request', { ...O, pullNumber: 97 })],
   ['approve a PR', () => gh('pull_request_review_write', { ...O, pullNumber: 97, method: 'create', event: 'APPROVE' })],

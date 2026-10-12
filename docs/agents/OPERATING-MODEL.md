@@ -97,7 +97,13 @@ Discard any issue that:
 - lists a `Touches:` path that an open `claude/*` PR also changes;
 - would take the open `claude/*` PRs past **2** in total (WIP limit). Only **one** issue may be `status:claimed` at a time.
 
-Pick the first remaining issue by priority (P0 → P3), then critical path, then the oldest.
+Order the remaining issues by these keys, in this order. **Never just take the lowest issue number.**
+1. **Effective priority.** This is the issue's own `P0`–`P3`, raised to the highest priority of any open issue that lists it under `Blocked by`. Unblocking a P0 makes an issue effectively P0. Find dependents by searching open issues' `Blocked by` sections for `#<n>`.
+2. **Unblocks more work.** The issue that appears in more open issues' `Blocked by` lists comes first.
+3. **Earlier launch phase.** Lower `Phase` (Report 9) number in the issue header first.
+4. **Oldest.** Lowest issue number, as the final tie-break only.
+
+State the ordering you computed (top 3 with their keys) in your claim comment.
 
 If nothing is eligible, stop. Do not invent work.
 

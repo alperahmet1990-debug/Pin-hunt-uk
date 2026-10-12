@@ -9,6 +9,7 @@ import {
   copiedData,
   diffFingerprints,
   findTool,
+  missingRoles,
   assertServerVersions,
   toolMajor,
   missingExtensionsSql,
@@ -76,8 +77,10 @@ describe("sanitizeSchemaDump", () => {
     expect(() => sanitizeSchemaDump(`${dump}\nINSERT INTO public.profiles VALUES (1);`)).toThrow(/row data/);
   });
 
-  it("refuses grants to roles a new project doesn't have", () => {
-    expect(() => sanitizeSchemaDump(`${dump}\nGRANT SELECT ON TABLE public.pins TO metabase_reader;`)).toThrow(/metabase_reader/);
+  it("reports every role the schema grants to, so restore can check them first", () => {
+    const { roles } = sanitizeSchemaDump(`${dump}\nGRANT SELECT ON TABLE public.pins TO metabase_reader;\nGRANT ALL ON SCHEMA public TO pg_database_owner;\nREVOKE ALL ON SCHEMA public FROM PUBLIC;`);
+    expect(roles).toEqual(["anon", "authenticated", "metabase_reader", "pg_database_owner", "service_role"]);
+    expect(missingRoles(roles, ["anon", "authenticated", "service_role", "pg_database_owner"])).toEqual(["metabase_reader"]);
   });
 });
 

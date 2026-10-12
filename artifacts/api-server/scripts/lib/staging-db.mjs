@@ -60,6 +60,12 @@ export function pgDumpArgs(conn, outFile, { major = null } = {}) {
   ];
 }
 
+/** Roles the export grants to that staging doesn't have. */
+export function missingRoles(required, stagingRoles) {
+  const have = new Set(stagingRoles);
+  return required.filter((r) => !have.has(r));
+}
+
 /** Restoring a newer server's schema into an older server can fail. */
 export function assertServerVersions(productionNum, stagingNum) {
   const prod = Number(productionNum);
@@ -79,13 +85,6 @@ export function productionReadOnlySql(sql) {
   return `set default_transaction_read_only = on;\nbegin read only;\n${sql.trim().replace(/;?\s*$/, ";")}\nrollback;\n`;
 }
 
-// Roles that exist in every Supabase project. A grant to any other role
-// would fail on restore, so the export stops and names it instead.
-export const SUPABASE_ROLES = new Set([
-  "public", "postgres", "anon", "authenticated", "service_role", "authenticator", "dashboard_user",
-  "pgbouncer", "supabase_admin", "supabase_auth_admin", "supabase_storage_admin",
-  "supabase_realtime_admin", "supabase_replication_admin", "supabase_read_only_user",
-]);
 
 /** Lines a fresh Supabase project already has, or that only Supabase may run. */
 const DROP_LINES = [
@@ -100,13 +99,14 @@ const DROP_LINES = [
 
 /**
  * Makes a `pg_dump --schema-only --schema=public` file safe to restore into a
- * fresh Supabase project. Throws if the file contains any row data, or a
- * grant to a role Supabase doesn't have.
+ * fresh Supabase project. Throws if the file contains any row data. Returns
+ * the roles the schema grants to, so restore can check staging has them all
+ * before it changes anything.
  */
 export function sanitizeSchemaDump(text) {
   const out = [];
   const removed = {};
-  const unknownRoles = new Set();
+  const roles = new Set();
   for (const line of text.split("\n")) {
     if (/^COPY .* FROM stdin;$/.test(line) || /^INSERT INTO /.test(line)) {
       throw new Error("the dump contains row data; only --schema-only dumps may be restored.");
@@ -120,15 +120,12 @@ export function sanitizeSchemaDump(text) {
     if (grant) {
       for (const role of grant[1].replace(/ WITH GRANT OPTION$/, "").split(",")) {
         const name = role.trim().replace(/^"|"$/g, "");
-        if (!SUPABASE_ROLES.has(name.toLowerCase())) unknownRoles.add(name);
+        if (name.toUpperCase() !== "PUBLIC") roles.add(name);
       }
     }
     out.push(line);
   }
-  if (unknownRoles.size) {
-    throw new Error(`the dump grants to roles a new Supabase project doesn't have: ${[...unknownRoles].join(", ")}.`);
-  }
-  return { sql: out.join("\n"), removed };
+  return { sql: out.join("\n"), removed, roles: [...roles].sort() };
 }
 
 /**

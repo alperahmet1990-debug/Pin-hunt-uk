@@ -18,7 +18,9 @@
  *   config.sql is built only from bucket settings, policies, triggers,
  *   realtime membership and two configuration tables. After restore, staging
  *   must have zero sign-ins, zero files and empty user tables.
- * - Restore refuses a non-empty staging project.
+ * - Restore refuses a non-empty staging project, and applies extensions,
+ *   schema, configuration and the marker in ONE transaction: a failure
+ *   anywhere leaves staging empty, so it can simply be re-run.
  * - Exports go to STAGING_EXPORT_DIR (default ~/PinHunt-Private/staging), which
  *   must be outside every git repository. Passwords are prompted, kept in
  *   memory, and passed only to psql/pg_dump.
@@ -40,6 +42,7 @@ import {
   copiedData,
   diffFingerprints,
   findTool,
+  missingRoles,
   assertServerVersions,
   toolMajor,
   missingExtensionsSql,
@@ -133,10 +136,11 @@ function psql(conn, password, sql, { singleTransaction = false } = {}) {
   return r.stdout.trim();
 }
 
-function psqlFile(conn, password, file) {
-  const args = [...conn, "-X", "-q", "-v", "ON_ERROR_STOP=1", "--single-transaction", "-f", file];
+/** Applies several SQL files in ONE transaction: all of them or none. */
+function psqlFiles(conn, password, files) {
+  const args = [...conn, "-X", "-q", "-v", "ON_ERROR_STOP=1", "--single-transaction", ...files.flatMap((f) => ["-f", f])];
   const r = spawnSync(tool("psql"), args, { encoding: "utf8", env: pgEnv(password), maxBuffer: 64 * 1024 * 1024 });
-  if (r.status !== 0) throw new Error(`restoring ${path.basename(file)} failed (nothing from this file was applied): ${(r.stderr || "").trim().slice(0, 800)}`);
+  if (r.status !== 0) throw new Error(`restore failed and was rolled back; staging is unchanged and you can re-run: ${(r.stderr || "").trim().slice(0, 800)}`);
 }
 
 /** The ONLY way this tool runs SQL against production. */
@@ -180,7 +184,7 @@ async function exportSchema(s) {
   const raw = path.join(dir, "raw-dump.sql");
   const dump = spawnSync(tool("pg_dump"), pgDumpArgs(conn, raw, { major: toolMajor(toolVersion("pg_dump")) }), { encoding: "utf8", env: pgEnv(password) });
   if (dump.status !== 0) throw new Error(`pg_dump failed: ${(dump.stderr || "").trim().slice(0, 600)}`);
-  const { sql, removed } = sanitizeSchemaDump(fs.readFileSync(raw, "utf8"));
+  const { sql, removed, roles } = sanitizeSchemaDump(fs.readFileSync(raw, "utf8"));
   fs.writeFileSync(path.join(dir, "schema.sql"), sql, { mode: 0o600 });
   fs.rmSync(raw);
 
@@ -199,6 +203,7 @@ async function exportSchema(s) {
     pgDump: toolVersion("pg_dump"),
     serverVersionNum,
     extensions: cfg.extensions,
+    grantRoles: roles,
     counts: {
       buckets: cfg.buckets.length,
       storagePolicies: cfg.storagePolicies.length,
@@ -228,19 +233,22 @@ async function restore(s) {
     throw new Error(`staging isn't empty (${tables} public tables, ${counts["auth.users"]} users, ${counts["storage.objects"]} files). Restore only into a new project; use staging:verify to check an existing one.`);
   }
 
-  console.log("  2/6 extensions…");
+  const absentRoles = missingRoles(manifest.grantRoles ?? [], psql(conn, password, "select rolname from pg_roles;").split("\n").filter(Boolean));
+  if (absentRoles.length) throw new Error(`staging lacks roles the schema grants to: ${absentRoles.join(", ")}. Nothing was changed.`);
+
+  console.log("  2/6 preparing one transaction: extensions, schema, configuration, marker…");
   const have = psql(conn, password, "select extname from pg_extension;").split("\n").filter(Boolean);
   const exts = missingExtensionsSql(manifest.extensions, have);
-  if (exts.length) psql(conn, password, exts.join("\n"), { singleTransaction: true });
-  console.log(`      enabled ${exts.length} missing extension(s).`);
+  const pre = path.join(dir, "restore-1-extensions.sql");
+  const post = path.join(dir, "restore-4-marker.sql");
+  fs.writeFileSync(pre, (exts.join("\n") || "-- no missing extensions") + "\n", { mode: 0o600 });
+  fs.writeFileSync(post, `insert into storage.buckets (id, name, public) values ('${STAGING_MARKER_BUCKET}', '${STAGING_MARKER_BUCKET}', false) on conflict (id) do nothing;\nnotify pgrst, 'reload schema';\n`, { mode: 0o600 });
+  console.log(`      ${exts.length} missing extension(s) to enable.`);
 
-  console.log("  3/6 schema…");
-  psqlFile(conn, password, path.join(dir, "schema.sql"));
-  console.log("  4/6 configuration…");
-  psqlFile(conn, password, path.join(dir, "config.sql"));
-
-  console.log("  5/6 staging marker and API schema reload…");
-  psql(conn, password, `insert into storage.buckets (id, name, public) values ('${STAGING_MARKER_BUCKET}', '${STAGING_MARKER_BUCKET}', false) on conflict (id) do nothing;\nnotify pgrst, 'reload schema';`);
+  console.log("  3/6 applying (all or nothing)…");
+  psqlFiles(conn, password, [pre, path.join(dir, "schema.sql"), path.join(dir, "config.sql"), post]);
+  console.log("  4/6 committed.");
+  console.log("  5/6 API schema cache reloaded.");
 
   console.log("  6/6 verifying…");
   await verify(s, { password, requireEmpty: true });

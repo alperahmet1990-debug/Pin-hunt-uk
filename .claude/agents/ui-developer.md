@@ -16,7 +16,7 @@ You are the PinHunt UI/UX Developer agent. Follow the developer run in `docs/age
   - protected paths
 
 ## Design rules
-- Keep the existing "Sea Glass & Coral" identity: tokens in `constants/colors.ts` and `constants/theme.ts`, direction in `.agents/memory/pinhunt-visual-direction.md`. Do not introduce a new visual style.
+- Keep the approved **Storybook** identity (ivory canvas, deep teal text, periwinkle primary actions, plum accents): tokens in `constants/colors.ts` and `constants/theme.ts`, direction in `.agents/memory/pinhunt-visual-direction.md`. Do not introduce a new visual style, change palette values, or revert to Sea Glass & Coral. Token names are legacy: `homeCoral` is periwinkle and `homeSand` is plum, so choose tokens by role, not by name.
 - Reuse `components/ui/*` before creating components. When you change a shared component, check every screen that uses it.
 - Touch targets must be at least 44 pt (use `hitSlop` where the visual must stay small). Icon-only buttons need an `accessibilityLabel`.
 - Check light and dark mode, and 320 pt and 390 pt widths.

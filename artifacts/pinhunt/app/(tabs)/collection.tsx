@@ -402,10 +402,6 @@ export default function CollectionScreen() {
               {forTradePins.length} <Text style={{ color: colors.homeMuted }}>For Trade</Text>
             </Text>
             <View style={{ flexDirection: 'row', gap: 12 }}>
-              <TouchableOpacity onPress={() => router.push('/(tabs)/community')} style={s.iconStatBtn}>
-                <Feather name="share" size={16} color={colors.homeCoral} />
-                <Text style={[s.iconStatBtnText, { color: colors.homeCoral }]}>Share</Text>
-              </TouchableOpacity>
               {!searchActive && (
                 <TouchableOpacity onPress={() => setFilterSheetTab('traders')} style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />
@@ -421,10 +417,6 @@ export default function CollectionScreen() {
               {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
             </Text>
             <View style={{ flexDirection: 'row', gap: 12 }}>
-              <TouchableOpacity onPress={() => router.push('/(tabs)/community')} style={s.iconStatBtn}>
-                <Feather name="share" size={16} color={colors.homeCoral} />
-                <Text style={[s.iconStatBtnText, { color: colors.homeCoral }]}>Share</Text>
-              </TouchableOpacity>
               {!searchActive && (
                 <TouchableOpacity onPress={() => setFilterSheetTab('iso')} style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />

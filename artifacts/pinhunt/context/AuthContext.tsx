@@ -77,6 +77,22 @@ export async function sendPasswordReset(email: string): Promise<{ error: string 
   }
 }
 
+const PASSWORD_UPDATE_RETRY = 'Unable to update your password right now. Please try again shortly.';
+
+/**
+ * Sets a new password for the current (recovery) session. Failures map to
+ * fixed messages — the password and raw Supabase errors are never surfaced or logged.
+ */
+export async function updatePassword(password: string): Promise<{ error: string | null }> {
+  if (!isSupabaseConfigured) return { error: NOT_CONFIGURED };
+  try {
+    const { error } = await supabase.auth.updateUser({ password });
+    return { error: error ? safeAuthError(error, PASSWORD_UPDATE_RETRY) : null };
+  } catch (err) {
+    return { error: safeAuthError(err, PASSWORD_UPDATE_RETRY) };
+  }
+}
+
 // ─── Context shape ────────────────────────────────────────────────────────────
 interface AuthContextValue {
   session: Session | null;
@@ -90,6 +106,7 @@ interface AuthContextValue {
   ): Promise<{ error: string | null; needsEmailConfirmation: boolean }>;
   signOut(): Promise<void>;
   requestPasswordReset(email: string): Promise<{ error: string | null }>;
+  updatePassword(password: string): Promise<{ error: string | null }>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -188,6 +205,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         signUp,
         signOut,
         requestPasswordReset: sendPasswordReset,
+        updatePassword,
       }}
     >
       {children}

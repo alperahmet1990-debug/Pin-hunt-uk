@@ -123,7 +123,7 @@ export default function SetDetailScreen() {
       <ScreenContainer>
         <Stack.Screen options={{ headerShown: false }} />
         <TouchableOpacity
-          accessibilityLabel="Go back"
+          accessibilityLabel="Back"
           onPress={() => router.back()}
           activeOpacity={0.85}
           style={[styles.backBtn, { top: topInset + 10, backgroundColor: colors.homeAqua }]}
@@ -149,7 +149,7 @@ export default function SetDetailScreen() {
       <View style={[styles.header, { paddingTop: topInset + 10, borderBottomColor: colors.homeLine }]}>
         <View style={styles.headerTop}>
           <TouchableOpacity
-            accessibilityLabel="Go back"
+            accessibilityLabel="Back"
             onPress={() => router.back()}
             activeOpacity={0.85}
             style={[styles.backBtn, { backgroundColor: colors.homeAqua }]}
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   headerTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  backBtn: { width: 38, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center' },
+  backBtn: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   completeBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 6 },
   completeBadgeLabel: { fontSize: 12, fontFamily: 'Inter_700Bold' },
   setTitle: { fontSize: 21, lineHeight: 26, fontFamily: 'Inter_700Bold', letterSpacing: -0.4, marginTop: spacing.sm },

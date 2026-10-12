@@ -46,3 +46,15 @@ test('the untouched PR template fails, a filled one passes', () => {
     .replace('## Human steps required\n', '## Human steps required\nNone\n');
   assert.deepEqual(templateProblems(filled), []);
 });
+
+test('gate labels added via an app or bot are flagged; human additions are not', async () => {
+  const { illegitimateGates } = await import('./agent-ops.mjs');
+  const human = { event: 'labeled', label: { name: 'approved' }, actor: { login: 'maintainer', type: 'User' }, performed_via_github_app: null };
+  const viaClaude = { event: 'labeled', label: { name: 'approved' }, actor: { login: 'maintainer', type: 'User' }, performed_via_github_app: { slug: 'claude' } };
+  const bot = { event: 'labeled', label: { name: 'l3-go' }, actor: { login: 'github-actions[bot]', type: 'Bot' } };
+  assert.deepEqual(illegitimateGates([human], ['approved']), []);
+  assert.deepEqual(illegitimateGates([viaClaude], ['approved']), [{ gate: 'approved', via: 'claude' }]);
+  assert.deepEqual(illegitimateGates([viaClaude, human], ['approved']), [], 'a later human re-add wins');
+  assert.deepEqual(illegitimateGates([bot], ['l3-go']), [{ gate: 'l3-go', via: 'github-actions[bot]' }]);
+  assert.deepEqual(illegitimateGates([viaClaude], ['P1']), [], 'only labels still present');
+});

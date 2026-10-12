@@ -9,8 +9,12 @@
 //  5. Rewrite the body of the open issue labelled `status-report`. If no such
 //     issue exists, the report goes to the job summary only; this script never
 //     creates issues.
+//  0. Gate-label backstop: if `approved`, `l3-go` or `human-approved-config` was
+//     last added by an app or bot (agents act through the "claude" GitHub app),
+//     remove it, comment, and flag the item status:needs-human. Runs on every
+//     `issues`/`pull_request` labeled event as well as daily.
 
-import { appendFileSync } from 'node:fs';
+import { appendFileSync, readFileSync } from 'node:fs';
 import {
   REPO, addLabels, comment, formSection, gh, ghAll, issueRefs, labelNames, removeLabel,
 } from './lib.mjs';
@@ -20,6 +24,7 @@ const now = Date.now();
 const HOUR = 3_600_000;
 const STATE_LABELS = ['status:ready', 'status:claimed', 'status:in-review', 'status:blocked', 'status:needs-human', 'status:needs-decision'];
 
+const GATE_LABELS = ['approved', 'l3-go', 'human-approved-config'];
 const log = msg => console.log(DRY_RUN ? `[dry-run] ${msg}` : msg);
 const act = async (msg, fn) => { log(msg); if (!DRY_RUN) await fn(); };
 
@@ -28,7 +33,46 @@ function linkedIssueNumbers(pr) {
   return issueRefs(refs.join(' '));
 }
 
+/** Labels on `item` that were last added by an app or bot. Exported for tests. */
+export function illegitimateGates(events, labels) {
+  const out = [];
+  for (const gate of GATE_LABELS.filter(g => labels.includes(g))) {
+    const last = events.filter(e => e.event === 'labeled' && e.label?.name === gate).at(-1);
+    if (last && (last.performed_via_github_app || last.actor?.type === 'Bot')) {
+      out.push({ gate, via: last.performed_via_github_app?.slug ?? last.actor?.login });
+    }
+  }
+  return out;
+}
+
+async function auditGates(item) {
+  const labels = labelNames(item);
+  if (!labels.some(l => GATE_LABELS.includes(l))) return [];
+  const events = await ghAll(`/repos/${REPO}/issues/${item.number}/events`);
+  const bad = illegitimateGates(events, labels);
+  for (const { gate, via } of bad) {
+    await act(`#${item.number}: ${gate} was added via ${via} → removing`, async () => {
+      await removeLabel(item.number, gate);
+      await addLabels(item.number, ['status:needs-human']);
+      await comment(item.number, `⚠️ Removed \`${gate}\`: it was added via **${via}**, not by the maintainer. Only a human may add gate labels (docs/agents/OPERATING-MODEL.md §2). Re-add it yourself if it is intended.`);
+    });
+  }
+  return bad.map(b => ({ number: item.number, title: item.title, ...b }));
+}
+
 async function main() {
+  // Event-driven run: audit only the item that was just labelled.
+  if (process.env.GITHUB_EVENT_NAME === 'issues' || process.env.GITHUB_EVENT_NAME === 'pull_request') {
+    const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
+    const item = event.issue ?? event.pull_request;
+    if (GATE_LABELS.includes(event.label?.name)) {
+      const fresh = await gh(`/repos/${REPO}/issues/${item.number}`);
+      const alerts = await auditGates(fresh);
+      log(alerts.length ? `Gate alerts: ${JSON.stringify(alerts)}` : `#${item.number}: ${event.label.name} added by a human, OK`);
+    }
+    return;
+  }
+
   const [openIssuesAndPrs, closedRecent, openPrs] = await Promise.all([
     ghAll(`/repos/${REPO}/issues?state=open`),
     ghAll(`/repos/${REPO}/issues?state=closed&since=${new Date(now - 7 * 24 * HOUR).toISOString()}`),
@@ -39,6 +83,9 @@ async function main() {
   const agentPrs = openPrs.filter(p => p.head.ref.startsWith('claude/'));
   const prsByIssue = new Map();
   for (const pr of openPrs) for (const n of linkedIssueNumbers(pr)) prsByIssue.set(n, pr);
+
+  const gateAlerts = [];
+  for (const item of openIssuesAndPrs) gateAlerts.push(...await auditGates(item));
 
   let paused = false;
   try { await gh(`/repos/${REPO}/contents/.agents/PAUSE`); paused = true; } catch { /* not paused */ }
@@ -105,7 +152,7 @@ async function main() {
     const all = (await ghAll(`/repos/${REPO}/issues?state=all&labels=${p}`)).filter(i => !i.pull_request);
     readiness[p] = { closed: all.filter(i => i.state === 'closed').length, total: all.length };
   }
-  const report = buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness });
+  const report = buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness, gateAlerts });
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, report);
   const target = openIssues.find(i => labelNames(i).includes('status-report'));
   if (target) {
@@ -116,7 +163,7 @@ async function main() {
   }
 }
 
-function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness }) {
+function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness, gateAlerts = [] }) {
   const has = (i, l) => labelNames(i).includes(l);
   const line = i => `- #${i.number} ${i.title}`;
   const list = (items, empty = '_None_') => (items.length ? items.join('\n') : empty);
@@ -144,6 +191,7 @@ function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, re
     `# 📊 Development status`,
     `_Updated ${new Date(now).toISOString().slice(0, 16).replace('T', ' ')} UTC_${paused ? ' · **Agents paused** (`.agents/PAUSE`)' : ''}`,
     '',
+    ...(gateAlerts.length ? ['## ⚠️ Gate label alerts', ...gateAlerts.map(a => `- #${a.number} ${a.title}: \`${a.gate}\` added via ${a.via}; removed`), ''] : []),
     '## Launch readiness',
     `- **${weighted}%** weighted (P0 ×3, P1 ×1)`,
     `- P0 closed: **${p0.closed}/${p0.total}** (${pct(p0)}%) · P1 closed: **${p1.closed}/${p1.total}** (${pct(p1)}%)`,
@@ -181,4 +229,6 @@ function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, re
   ].join('\n');
 }
 
-main().catch(err => { console.error(err); process.exit(1); });
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => { console.error(err); process.exit(1); });
+}

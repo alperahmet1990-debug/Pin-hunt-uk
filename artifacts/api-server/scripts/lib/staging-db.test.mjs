@@ -8,6 +8,7 @@ import {
   connectionArgs,
   copiedData,
   diffFingerprints,
+  findTool,
   missingExtensionsSql,
   pgDumpArgs,
   productionReadOnlySql,
@@ -127,5 +128,14 @@ describe("verification", () => {
     expect(copiedData({ "auth.users": 3, "storage.objects": 1, public: { profiles: 3 } }))
       .toEqual(["auth.users (3)", "storage.objects (1)", "public.profiles (3)"]);
     expect(DATA_COUNTS_QUERY).toMatch(/auth\.users/);
+  });
+});
+
+describe("findTool", () => {
+  it("prefers PATH, then the known Mac folders, else null", () => {
+    const has = (set) => (p) => set.has(p);
+    expect(findTool("psql", { pathEnv: "/usr/bin:/x/bin", dirs: ["/app/bin"], exists: has(new Set(["/x/bin/psql", "/app/bin/psql"])) })).toBe("/x/bin/psql");
+    expect(findTool("psql", { pathEnv: "/usr/bin", dirs: ["/app/bin"], exists: has(new Set(["/app/bin/psql"])) })).toBe("/app/bin/psql");
+    expect(findTool("psql", { pathEnv: "", dirs: ["/app/bin"], exists: () => false })).toBeNull();
   });
 });

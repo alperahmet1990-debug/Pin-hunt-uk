@@ -22,7 +22,8 @@
  * - Exports go to STAGING_EXPORT_DIR (default ~/PinHunt-Private/staging), which
  *   must be outside every git repository. Passwords are prompted, kept in
  *   memory, and passed only to psql/pg_dump.
- * Requires psql and pg_dump (brew install libpq).
+ * Requires psql and pg_dump: Postgres.app (postgresapp.com) or Homebrew libpq.
+ * Both are found automatically; no PATH changes needed.
  */
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
@@ -38,6 +39,7 @@ import {
   connectionArgs,
   copiedData,
   diffFingerprints,
+  findTool,
   missingExtensionsSql,
   pgDumpArgs,
   productionReadOnlySql,
@@ -64,9 +66,15 @@ function settings(env) {
   };
 }
 
-function toolVersion(tool) {
-  const r = spawnSync(tool, ["--version"], { encoding: "utf8" });
-  if (r.error || r.status !== 0) throw new Error(`${tool} not found. Install it with: brew install libpq (then add /opt/homebrew/opt/libpq/bin to PATH).`);
+function tool(name) {
+  const found = findTool(name, { exists: (p) => { try { fs.accessSync(p, fs.constants.X_OK); return true; } catch { return false; } } });
+  if (!found) throw new Error(`${name} not found. Install Postgres.app from postgresapp.com (drag it to Applications and open it once).`);
+  return found;
+}
+
+function toolVersion(name) {
+  const r = spawnSync(tool(name), ["--version"], { encoding: "utf8" });
+  if (r.error || r.status !== 0) throw new Error(`${name} --version failed.`);
   return r.stdout.trim();
 }
 
@@ -118,14 +126,14 @@ function pgEnv(password) {
 /** Runs an SQL script with psql; returns trimmed stdout. */
 function psql(conn, password, sql, { singleTransaction = false } = {}) {
   const args = [...conn, "-X", "-qAt", "-v", "ON_ERROR_STOP=1", ...(singleTransaction ? ["--single-transaction"] : []), "-f", "-"];
-  const r = spawnSync("psql", args, { input: sql, encoding: "utf8", env: pgEnv(password), maxBuffer: 64 * 1024 * 1024 });
+  const r = spawnSync(tool("psql"), args, { input: sql, encoding: "utf8", env: pgEnv(password), maxBuffer: 64 * 1024 * 1024 });
   if (r.status !== 0) throw new Error(`psql failed: ${(r.stderr || r.error?.message || "").trim().slice(0, 600)}`);
   return r.stdout.trim();
 }
 
 function psqlFile(conn, password, file) {
   const args = [...conn, "-X", "-q", "-v", "ON_ERROR_STOP=1", "--single-transaction", "-f", file];
-  const r = spawnSync("psql", args, { encoding: "utf8", env: pgEnv(password), maxBuffer: 64 * 1024 * 1024 });
+  const r = spawnSync(tool("psql"), args, { encoding: "utf8", env: pgEnv(password), maxBuffer: 64 * 1024 * 1024 });
   if (r.status !== 0) throw new Error(`restoring ${path.basename(file)} failed (nothing from this file was applied): ${(r.stderr || "").trim().slice(0, 800)}`);
 }
 
@@ -168,7 +176,7 @@ async function exportSchema(s) {
 
   console.log("  1/3 schema-only dump (definitions, no rows)…");
   const raw = path.join(dir, "raw-dump.sql");
-  const dump = spawnSync("pg_dump", pgDumpArgs(conn, raw), { encoding: "utf8", env: pgEnv(password) });
+  const dump = spawnSync(tool("pg_dump"), pgDumpArgs(conn, raw), { encoding: "utf8", env: pgEnv(password) });
   if (dump.status !== 0) throw new Error(`pg_dump failed: ${(dump.stderr || "").trim().slice(0, 600)}`);
   const { sql, removed } = sanitizeSchemaDump(fs.readFileSync(raw, "utf8"));
   fs.writeFileSync(path.join(dir, "schema.sql"), sql, { mode: 0o600 });

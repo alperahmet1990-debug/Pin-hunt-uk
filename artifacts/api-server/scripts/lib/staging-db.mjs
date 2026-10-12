@@ -7,6 +7,22 @@
  */
 import { STAGING_MARKER_BUCKET, isValidRef } from "./staging-guard.mjs";
 
+/** Where psql/pg_dump usually live on a Mac, checked after PATH. */
+export const TOOL_DIRS = [
+  "/Applications/Postgres.app/Contents/Versions/latest/bin",
+  "/opt/homebrew/opt/libpq/bin",
+  "/usr/local/opt/libpq/bin",
+];
+
+/** Full path of a Postgres tool: the first PATH entry or known folder that has it, else null. */
+export function findTool(name, { pathEnv = process.env.PATH ?? "", dirs = TOOL_DIRS, exists } = {}) {
+  for (const dir of [...pathEnv.split(":").filter(Boolean), ...dirs]) {
+    const candidate = `${dir.replace(/\/$/, "")}/${name}`;
+    if (exists(candidate)) return candidate;
+  }
+  return null;
+}
+
 /** Pooler host shown in Dashboard → Connect → Session pooler. */
 const POOLER_HOST_RE = /^aws-\d+-[a-z0-9-]+\.pooler\.supabase\.com$/;
 

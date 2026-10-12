@@ -3,7 +3,8 @@
 //
 //  1. Groom: approved issues whose "Blocked by" issues are all closed get
 //     `status:ready`; ready issues with an open blocker lose it.
-//  2. Release stale claims: `status:claimed` for 24 h+ with no open PR.
+//  2. Release stale claims: `status:claimed` for STALE_CLAIM_HOURS (2) h+ with
+//     no open PR.
 //  3. Flag in-review issues whose PR closed without merging, and clear
 //     status:* labels from issues closed in the last 7 days.
 //  4. Flag claude/* PRs with merge conflicts (once per head commit).
@@ -26,6 +27,17 @@ const HOUR = 3_600_000;
 const STATE_LABELS = ['status:ready', 'status:claimed', 'status:in-review', 'status:blocked', 'status:needs-human', 'status:needs-decision'];
 
 const GATE_LABELS = ['approved', 'l3-go', 'human-approved-config'];
+// Dev runs take ~5–15 min; with an hourly schedule a claim older than this is dead.
+const STALE_CLAIM_HOURS = Number(process.env.STALE_CLAIM_HOURS ?? 2);
+
+/** 'add' / 'remove' status:ready, or null. Exported for tests. */
+export function readyDecision(labels, openBlockers) {
+  if (!labels.includes('approved') || labels.includes('human-only')) return null;
+  const hasState = labels.some(l => STATE_LABELS.includes(l));
+  if (!openBlockers.length && !hasState) return 'add';
+  if (openBlockers.length && labels.includes('status:ready')) return 'remove';
+  return null;
+}
 const log = msg => console.log(DRY_RUN ? `[dry-run] ${msg}` : msg);
 const act = async (msg, fn) => { log(msg); if (!DRY_RUN) await fn(); };
 
@@ -66,12 +78,26 @@ async function main() {
   if (process.env.GITHUB_EVENT_NAME === 'issues' || process.env.GITHUB_EVENT_NAME === 'pull_request') {
     const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
     const item = event.issue ?? event.pull_request;
-    if (GATE_LABELS.includes(event.label?.name)) {
-      const fresh = await gh(`/repos/${REPO}/issues/${item.number}`);
-      const alerts = await auditGates(fresh);
-      log(alerts.length ? `Gate alerts: ${JSON.stringify(alerts)}` : `#${item.number}: ${event.label.name} added by a human, OK`);
+    // A closed issue may unblock others: fall through to the full run.
+    if (!(process.env.GITHUB_EVENT_NAME === 'issues' && event.action === 'closed')) {
+      if (GATE_LABELS.includes(event.label?.name)) {
+        const fresh = await gh(`/repos/${REPO}/issues/${item.number}`);
+        const alerts = await auditGates(fresh);
+        log(alerts.length ? `Gate alerts: ${JSON.stringify(alerts)}` : `#${item.number}: ${event.label.name} added by a human, OK`);
+        // A human approval makes the issue ready straight away when nothing blocks it.
+        if (!alerts.length && event.label.name === 'approved' && !fresh.pull_request) {
+          const blockers = [];
+          for (const n of issueRefs(formSection(fresh.body, 'Blocked by'))) {
+            const b = await gh(`/repos/${REPO}/issues/${n}`).catch(() => null);
+            if (b?.state === 'open') blockers.push(n);
+          }
+          if (readyDecision(labelNames(fresh), blockers) === 'add') {
+            await act(`#${fresh.number}: approved and unblocked → status:ready`, () => addLabels(fresh.number, ['status:ready']));
+          }
+        }
+      }
+      return;
     }
-    return;
   }
 
   const [openIssuesAndPrs, closedRecent, openPrs] = await Promise.all([
@@ -96,10 +122,10 @@ async function main() {
     const labels = labelNames(issue);
     if (!labels.includes('approved') || labels.includes('human-only')) continue;
     const blockers = issueRefs(formSection(issue.body, 'Blocked by')).filter(n => openByNumber.has(n));
-    const hasState = labels.some(l => STATE_LABELS.includes(l));
-    if (!blockers.length && !hasState) {
+    const decision = readyDecision(labels, blockers);
+    if (decision === 'add') {
       await act(`#${issue.number}: blockers clear → status:ready`, () => addLabels(issue.number, ['status:ready']));
-    } else if (blockers.length && labels.includes('status:ready')) {
+    } else if (decision === 'remove') {
       await act(`#${issue.number}: blocked by ${blockers.map(n => `#${n}`).join(', ')} → remove status:ready`,
         () => removeLabel(issue.number, 'status:ready'));
     }
@@ -112,11 +138,11 @@ async function main() {
       const comments = await ghAll(`/repos/${REPO}/issues/${issue.number}/comments`);
       const lastClaim = comments.filter(c => c.body.startsWith('agent-claim')).at(-1);
       const claimedAt = lastClaim ? Date.parse(lastClaim.created_at) : Date.parse(issue.updated_at);
-      if (now - claimedAt > 24 * HOUR) {
+      if (now - claimedAt > STALE_CLAIM_HOURS * HOUR) {
         await act(`#${issue.number}: stale claim → status:ready`, async () => {
           await removeLabel(issue.number, 'status:claimed');
           await addLabels(issue.number, ['status:ready']);
-          await comment(issue.number, 'agent-release (stale: claimed over 24 h ago with no open PR)');
+          await comment(issue.number, `agent-release (stale: claimed over ${STALE_CLAIM_HOURS} h ago with no open PR)`);
         });
       }
     }

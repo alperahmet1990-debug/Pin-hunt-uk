@@ -74,8 +74,12 @@ The maintainer (repository owner, GitHub user `alperahmet1990-debug`) manages th
 
 ## 4. Developer run: one issue per run
 
-### 0. Pause check
-If `.agents/PAUSE` exists on `main`, stop immediately and do nothing.
+### 0. Pause, lock and quick exit
+The dev routine runs **hourly, every day**, starting at :07. Agent ops runs at :41 and also whenever `approved` is added or an issue closes. Before doing anything else, stop without changes if:
+- `.agents/PAUSE` exists on `main`;
+- any open issue has `status:claimed`. That is the single-runner lock: one development agent at a time. Agent ops releases claims older than 2 h with no PR.
+- 2 or more `claude/*` PRs are open (the WIP limit);
+- no issue is eligible (step 1).
 
 ### 1. Select
 List open issues with `approved` + `status:ready` + your `agent:` label. Use the built-in GitHub tools or `gh api` (REST). `gh issue` and `gh pr` use GraphQL, which is blocked in cloud sessions.
@@ -86,11 +90,11 @@ gh api "repos/{owner}/{repo}/issues?state=open&labels=approved,status:ready,agen
 
 Discard any issue that:
 - has `status:needs-decision`, or is missing `approved`;
-- is L3 without `l3-go`, `human-only`, or not `size:S` (until the maintainer widens the size limit here);
+- is L3 (scheduled runs never take L3, even with `l3-go`; L3 is started by hand), `human-only`, or not `size:S` (until the maintainer widens the size limit here);
 - lists a `Blocked by` issue that is still open;
 - already has an open PR that references it;
 - lists a `Touches:` path that an open `claude/*` PR also changes;
-- would take the open `claude/*` PRs past **2** in total (WIP limit).
+- would take the open `claude/*` PRs past **2** in total (WIP limit). Only **one** issue may be `status:claimed` at a time.
 
 Pick the first remaining issue by priority (P0 → P3), then critical path, then the oldest.
 

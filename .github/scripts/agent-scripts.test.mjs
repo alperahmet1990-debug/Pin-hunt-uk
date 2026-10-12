@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { formSection, globToRegExp, issueRefs, loadAgentPaths } from './lib.mjs';
+import { ciSummary, formSection, globToRegExp, issueRefs, loadAgentPaths } from './lib.mjs';
 import { templateProblems } from './agent-pr-checks.mjs';
 import { readFileSync } from 'node:fs';
 
@@ -85,4 +85,31 @@ test('Kanban column follows labels, never the other way round', async () => {
   assert.equal(col(['status:needs-human']), 'Awaiting Review');
   assert.equal(columnFor({ state: 'closed', labels: ['approved'] }), 'Done');
   assert.equal(columnFor({ state: 'CLOSED', labels: [] }), 'Done');
+});
+
+test('CI summary counts only the latest run of each check', () => {
+  const run = (id, name, conclusion, status = 'completed') => ({ id, name, status, conclusion });
+  // #168: cancelled runs superseded by successful reruns of the same check.
+  assert.deepEqual(ciSummary([
+    run(1, 'sync', 'cancelled'), run(2, 'Agent rules', 'cancelled'), run(3, 'Typecheck and tests', 'success'),
+    run(4, 'Agent rules', 'success'), run(5, 'sync', 'success'), run(6, 'ops', 'skipped'),
+  ]), { failed: [], pending: false, none: false });
+  // A real failure on the latest run is still reported, and a rerun in progress is pending.
+  assert.deepEqual(ciSummary([run(1, 'sync', 'success'), run(2, 'sync', 'failure'), run(3, 'Agent rules', null, 'in_progress')]),
+    { failed: ['sync'], pending: true, none: false });
+  // A check whose only run was cancelled still counts as failed.
+  assert.deepEqual(ciSummary([run(1, 'CI', 'cancelled')]).failed, ['CI']);
+  assert.deepEqual(ciSummary([]), { failed: [], pending: false, none: true });
+});
+
+test('project sync GraphQL retries HTML error pages and 5xx, then fails clearly', async () => {
+  process.env.GITHUB_REPOSITORY ??= 'o/r';
+  const { graphql } = await import('./project-sync.mjs');
+  const reply = (status, body, type) => ({ ok: status < 400, status, headers: { get: () => type }, text: async () => body, json: async () => JSON.parse(body) });
+  const html = () => reply(200, '<!DOCTYPE html><html>Unicorn</html>', 'text/html');
+  const replies = [html(), reply(502, 'Bad gateway', 'text/plain'), reply(200, '{"data":{"ok":1}}', 'application/json')];
+  const fetchImpl = async () => replies.shift();
+  assert.deepEqual(await graphql('q', {}, { fetchImpl, delayMs: 0 }), { ok: 1 });
+  await assert.rejects(graphql('q', {}, { fetchImpl: async () => html(), delayMs: 0, attempts: 2 }), /GraphQL → 200 <!DOCTYPE/);
+  await assert.rejects(graphql('q', {}, { fetchImpl: async () => reply(401, 'Bad credentials', 'application/json'), delayMs: 0 }), /GraphQL → 401/);
 });

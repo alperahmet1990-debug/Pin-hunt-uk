@@ -40,6 +40,10 @@ import * as XLSX from 'xlsx';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
+import { requireStaging } from '../artifacts/api-server/scripts/lib/staging-guard.mjs';
+
+// Staging only: refuses production and any project not prepared by staging-db restore.
+await requireStaging();
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 

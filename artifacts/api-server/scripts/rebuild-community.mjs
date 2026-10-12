@@ -7,9 +7,13 @@
  * (including several involving the seeded admin account) using only real
  * Catalogue V2 pins.
  *
- * Usage: node --env-file=.env scripts/rebuild-community.mjs --apply
+ * Usage: node --env-file=.env.staging scripts/rebuild-community.mjs --apply
  */
 import { createClient } from "@supabase/supabase-js";
+import { requireStaging } from "./lib/staging-guard.mjs";
+
+// Staging only: refuses production and any project not prepared by staging-db restore.
+await requireStaging();
 
 const APPLY = process.argv.includes("--apply");
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });

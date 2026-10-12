@@ -11,6 +11,11 @@
     "start:local": "node --env-file=.env --enable-source-maps ./dist/index.mjs",
     "start:staging": "node --env-file=.env.staging --enable-source-maps ./dist/index.mjs",
     "seed:staging": "node --env-file=.env.staging scripts/seed-staging.mjs",
+    "staging:check": "node --env-file=.env.staging scripts/staging-db.mjs check",
+    "staging:export": "node --env-file=.env.staging scripts/staging-db.mjs export",
+    "staging:restore": "node --env-file=.env.staging scripts/staging-db.mjs restore",
+    "staging:verify": "node --env-file=.env.staging scripts/staging-db.mjs verify",
+    "staging:import-catalogue": "node --env-file=.env.staging scripts/import-collectible-pintrader.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
   },

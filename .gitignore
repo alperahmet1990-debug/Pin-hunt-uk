@@ -53,6 +53,9 @@ Thumbs.db
 .env.local
 .env.development
 .env.production
+.env.staging
+.env.staging.local
+.staging-test-accounts.local.json
 
 # Local/generated presentation files
 PinHunt-*.pptx

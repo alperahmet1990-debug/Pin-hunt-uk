@@ -59,3 +59,10 @@ PinHunt-*.pptx
 
 # Screenshot harness output (artifacts/pinhunt/scripts/screenshots.mjs)
 .screenshots/
+
+# Internal planning, audit and research documents. Kept locally and in private
+# storage; never committed while the repository is public.
+# (docs/agents/ stays tracked: it is the public agent operating model.)
+docs/launch-audit/
+docs/agent-workflow/
+docs/competitor-research/

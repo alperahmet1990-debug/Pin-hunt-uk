@@ -58,7 +58,7 @@ export default function LoginScreen() {
             style={styles.logo}
             resizeMode="contain"
           />
-          <Text style={styles.appName}>PinHunt UK</Text>
+          <Text style={styles.appName}>PinHunt</Text>
           <Text style={styles.tagline}>Your Disney pin collection, anywhere.</Text>
         </View>
 

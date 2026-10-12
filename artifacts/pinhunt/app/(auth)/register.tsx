@@ -16,6 +16,7 @@ import { Link } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
 import { useColors } from '@/hooks/useColors';
 import { radius, spacing } from '@/constants/theme';
+import { validateNewPassword } from '@/utils/validatePassword';
 
 export default function RegisterScreen() {
   const colors = useColors();
@@ -34,12 +35,9 @@ export default function RegisterScreen() {
       setError('Please enter your email and a password.');
       return;
     }
-    if (password.length < 8) {
-      setError('Password must be at least 8 characters.');
-      return;
-    }
-    if (password !== confirm) {
-      setError('Passwords do not match.');
+    const invalid = validateNewPassword(password, confirm);
+    if (invalid) {
+      setError(invalid);
       return;
     }
     setError(null);

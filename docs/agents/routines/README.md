@@ -17,4 +17,7 @@ These prompts are pasted into the routines at claude.ai/code/routines. The repos
   corepack enable && corepack prepare pnpm@9.15.9 --activate
   pnpm install --frozen-lockfile
   pnpm --filter @workspace/pin-repository run build
+  # Headless Chrome for the screenshot harness (skipped if Chrome is already installed)
+  command -v google-chrome >/dev/null || npx --yes @puppeteer/browsers install chrome-headless-shell@stable --path "$HOME/.cache/puppeteer"
   ```
+  If the Chrome download is blocked by the Trusted network allowlist, add `storage.googleapis.com` to the environment's allowed domains. This is verified during the pilot (AGT-06).

@@ -12,6 +12,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { DEMO_SESSION, isDemoMode } from '@/lib/demoMode';
 
 // Shown to the user when they attempt auth without Supabase configured.
 const NOT_CONFIGURED =
@@ -76,6 +77,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Skip Supabase calls entirely when not configured — avoids the
     // "invalid path in request URL" fetch error on unconfigured builds.
     if (!isSupabaseConfigured) {
+      // Screenshot harness only: a mock signed-in session (see lib/demoMode).
+      if (isDemoMode) setSession(DEMO_SESSION);
       setLoading(false);
       return;
     }

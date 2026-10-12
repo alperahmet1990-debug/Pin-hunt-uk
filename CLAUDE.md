@@ -92,7 +92,7 @@ Replit remains a fallback development/deployment environment. Do not remove or r
 
 ### Autonomous agent runs
 
-Cloud routines and unattended sessions follow `docs/agents/OPERATING-MODEL.md`: role files in `.claude/agents/`, routine prompts in `docs/agents/routines/`, autonomy levels L1/L2/L3, and the human-only `approved` / `l3-go` labels. `.claude/hooks/agent-guard.mjs` enforces the hard limits when `CLAUDE_CODE_REMOTE=true` or `PINHUNT_AGENT=1`. It is inert in local sessions. Tests: `pnpm test` (vitest + supertest in `api-server`, jest-expo in the app, `node --test` suites).
+Cloud routines and unattended sessions follow `docs/agents/OPERATING-MODEL.md`: role files in `.claude/agents/`, routine prompts in `docs/agents/routines/`, autonomy levels L1/L2/L3, and the human-only `approved` / `l3-go` labels. `.claude/hooks/agent-guard.mjs` enforces the hard limits when `CLAUDE_CODE_REMOTE=true` or `PINHUNT_AGENT=1`. It is inert in local sessions. Tests: `pnpm test` (vitest + supertest in `api-server`, jest-expo in the app, `node --test` suites). UI screenshots: `pnpm --filter @workspace/pinhunt run screenshots` (Expo web export in demo mock mode via `lib/demoMode.ts`; demo mode can only activate when Supabase is not configured).
 
 ---
 

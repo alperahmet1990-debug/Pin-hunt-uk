@@ -89,7 +89,15 @@ pnpm test
 
 - Add tests for the change: `vitest` + `supertest` in `api-server` (`src/**/*.test.ts`), `jest-expo` in the app (`**/__tests__/*.test.ts(x)`).
 - After touching `lib/pin-repository/src`, run `pnpm --filter @workspace/pin-repository run build`.
-- UI changes: capture before (`main`) and after screenshots of the Expo web build at 390×844 and 320×568, light and dark, using mock data. Push them to the `agent-artifacts` branch under `pr-<issue>/`. If screenshots are impossible, say why under Limitations.
+- **UI changes:** capture before/after screenshots with the harness. Run it after opening the PR, so you have the number:
+  ```bash
+  pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes <names> --publish <PR number>
+  ```
+  - Route names are in `artifacts/pinhunt/scripts/screenshot-routes.json`. Add a one-off route with `--route name=/path`.
+  - The harness builds the Expo web export in demo mock mode (no Supabase, no `.env`, external requests blocked) at 390×844 and 320×568, light and dark.
+  - It pushes the images to the `agent-artifacts` branch and prints a Markdown table. Update the PR body's Screenshots section with it (`gh api -X PATCH repos/{owner}/{repo}/pulls/<n> -f body=…`).
+  - Mock data has no pin photos on web; tiles show "Image needed". Judge layout, not imagery.
+  - If capture fails, say why under Limitations.
 
 ### 6. Open the PR (REST only)
 

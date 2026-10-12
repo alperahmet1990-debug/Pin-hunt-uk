@@ -29,11 +29,14 @@ const STATE_LABELS = ['status:ready', 'status:claimed', 'status:in-review', 'sta
 const GATE_LABELS = ['approved', 'l3-go', 'human-approved-config'];
 // Dev runs take ~5–15 min; with an hourly schedule a claim older than this is dead.
 const STALE_CLAIM_HOURS = Number(process.env.STALE_CLAIM_HOURS ?? 2);
+// Human-only labels that keep an issue out of the autonomous queue.
+export const HOLD_LABELS = ['on-hold', 'ux-review-pending'];
+const isHeld = labels => labels.some(l => HOLD_LABELS.includes(l));
 
 /** 'add' / 'remove' status:ready, or null. Exported for tests. */
 export function readyDecision(labels, openBlockers) {
   // Held work never enters the queue, even when approved.
-  if (labels.includes('on-hold')) return labels.includes('status:ready') ? 'remove' : null;
+  if (isHeld(labels)) return labels.includes('status:ready') ? 'remove' : null;
   if (!labels.includes('approved') || labels.includes('human-only')) return null;
   const hasState = labels.some(l => STATE_LABELS.includes(l));
   if (!openBlockers.length && !hasState) return 'add';
@@ -122,13 +125,13 @@ async function main() {
   // 1. Groom readiness
   for (const issue of openIssues) {
     const labels = labelNames(issue);
-    if ((!labels.includes('approved') && !labels.includes('on-hold')) || labels.includes('human-only')) continue;
+    if ((!labels.includes('approved') && !isHeld(labels)) || labels.includes('human-only')) continue;
     const blockers = issueRefs(formSection(issue.body, 'Blocked by')).filter(n => openByNumber.has(n));
     const decision = readyDecision(labels, blockers);
     if (decision === 'add') {
       await act(`#${issue.number}: blockers clear → status:ready`, () => addLabels(issue.number, ['status:ready']));
     } else if (decision === 'remove') {
-      await act(`#${issue.number}: ${labels.includes('on-hold') ? 'on hold' : `blocked by ${blockers.map(n => `#${n}`).join(', ')}`} → remove status:ready`,
+      await act(`#${issue.number}: ${isHeld(labels) ? 'on hold' : `blocked by ${blockers.map(n => `#${n}`).join(', ')}`} → remove status:ready`,
         () => removeLabel(issue.number, 'status:ready'));
     }
   }

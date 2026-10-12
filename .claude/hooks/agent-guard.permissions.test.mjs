@@ -104,3 +104,10 @@ test('prohibited: agents cannot lift a hold', () => {
     { currentLabels: () => ['P1', 'approved', 'on-hold', 'status:ready'] });
   assert.ok(drop, 'sending a label list without on-hold is blocked');
 });
+
+test('prohibited: agents cannot add or lift ux-review-pending', () => {
+  assert.ok(check({ tool_name: 'mcp__github__remove_issue_label', tool_input: { owner: 'o', repo: 'r', issue_number: 46, label: 'ux-review-pending' }, cwd: root }));
+  assert.ok(check({ tool_name: 'Bash', tool_input: { command: 'gh api repos/o/r/issues/46/labels -f "labels[]=ux-review-pending"' }, cwd: root }));
+  assert.ok(check({ tool_name: 'mcp__github__issue_write', tool_input: { owner: 'o', repo: 'r', method: 'update', issue_number: 46, labels: ['P1', 'approved', 'status:claimed'] }, cwd: root },
+    { currentLabels: () => ['P1', 'approved', 'ux-review-pending', 'status:ready'] }));
+});

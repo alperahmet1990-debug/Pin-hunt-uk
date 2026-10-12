@@ -105,3 +105,12 @@ test('on-hold keeps an issue out of the queue even when approved', async () => {
   assert.equal(readyDecision(['approved', 'on-hold', 'status:ready'], []), 'remove');
   assert.equal(columnFor({ state: 'open', labels: ['approved', 'on-hold'] }), 'Backlog');
 });
+
+test('ux-review-pending holds an issue exactly like on-hold', async () => {
+  const { readyDecision, HOLD_LABELS } = await import('./agent-ops.mjs');
+  const { columnFor } = await import('./project-sync.mjs');
+  assert.deepEqual(HOLD_LABELS, ['on-hold', 'ux-review-pending']);
+  assert.equal(readyDecision(['approved', 'ux-review-pending'], []), null);
+  assert.equal(readyDecision(['approved', 'ux-review-pending', 'status:ready'], []), 'remove');
+  assert.equal(columnFor({ state: 'open', labels: ['approved', 'ux-review-pending'] }), 'Backlog');
+});

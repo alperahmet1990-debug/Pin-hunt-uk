@@ -3,8 +3,7 @@
  * two-account test scenarios start from. STAGING ONLY.
  *
  * Refuses to run unless the staging guard passes (scripts/lib/staging-guard.mjs):
- * PINHUNT_ENV=staging, SUPABASE_URL matching STAGING_PROJECT_REF, and not the
- * production URL in .env. Uses only catalogue pins already in staging, so
+ * staging refs set and not production, and the staging marker bucket present. Uses only catalogue pins already in staging, so
  * import the catalogue into staging first (see the staging runbook).
  *
  * What it writes (staging only):
@@ -25,25 +24,17 @@ import { createClient } from "@supabase/supabase-js";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
-import { assertStagingTarget, readSupabaseUrlFromEnvFile } from "./lib/staging-guard.mjs";
+import { requireStaging } from "./lib/staging-guard.mjs";
 import { STAGING_ACCOUNTS, planSeed } from "./lib/staging-seed-plan.mjs";
 
 const APPLY = process.argv.includes("--apply");
 const REMOVE = process.argv.includes("--remove");
 const RESET_PASSWORDS = process.argv.includes("--reset-passwords");
-// Resolved from this file, not the working directory, so the production
-// check and the credentials file work wherever the script is started from.
+// Resolved from this file, not the working directory.
 const PACKAGE_DIR = fileURLToPath(new URL("..", import.meta.url));
-const PRODUCTION_ENV_FILE = `${PACKAGE_DIR}.env`;
 const CREDENTIALS_FILE = `${PACKAGE_DIR}.staging-test-accounts.local.json`;
 
-let ref;
-try {
-  ({ ref } = assertStagingTarget(process.env, { productionUrl: readSupabaseUrlFromEnvFile(PRODUCTION_ENV_FILE) }));
-} catch (err) {
-  console.error(`[seed-staging] ${err.message}`);
-  process.exit(1);
-}
+const { ref } = await requireStaging();
 console.log(`[seed-staging] target: staging project ${ref} — ${APPLY ? "APPLY" : "dry run"}${REMOVE ? " (remove)" : ""}`);
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {

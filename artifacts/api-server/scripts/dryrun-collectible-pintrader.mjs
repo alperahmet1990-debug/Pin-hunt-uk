@@ -15,7 +15,7 @@
  *      can't be disambiguated are reported as ambiguous, never guessed.
  *
  * Usage:
- *   node --env-file=.env scripts/dryrun-collectible-pintrader.mjs <export-dir> [--report <dir>]
+ *   node --env-file=.env.staging scripts/dryrun-collectible-pintrader.mjs <export-dir> [--report <dir>]
  *
  * <export-dir> is the folder containing the numbered subfolders (0001, 0002, ...)
  * of extracted JSON records — NOT the zip files.
@@ -37,7 +37,7 @@ const reportDir = reportFlagIdx >= 0 ? flags[reportFlagIdx + 1] : exportDirArg;
 fs.mkdirSync(reportDir, { recursive: true });
 
 if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-  console.error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set (run with node --env-file=.env).");
+  console.error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set (run with node --env-file=.env.staging).");
   process.exit(1);
 }
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {

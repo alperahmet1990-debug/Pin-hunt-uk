@@ -11,8 +11,8 @@
  * for the full rationale and classification breakdown).
  *
  * Usage:
- *   node --env-file=.env scripts/import-collectible-pintrader.mjs <export-dir> --dry-run
- *   node --env-file=.env scripts/import-collectible-pintrader.mjs <export-dir> --apply
+ *   node --env-file=.env.staging scripts/import-collectible-pintrader.mjs <export-dir> --dry-run
+ *   node --env-file=.env.staging scripts/import-collectible-pintrader.mjs <export-dir> --apply
  *
  * <export-dir>: folder containing numbered subfolders (0001, 0002, ...) of
  * extracted JSON records — NOT the zip files.
@@ -23,6 +23,10 @@ import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { requireStaging } from "./lib/staging-guard.mjs";
+
+// Staging only: refuses production and any project not prepared by staging-db restore.
+await requireStaging();
 
 const [, , exportDirArg, ...flags] = process.argv;
 const APPLY = flags.includes("--apply");
@@ -31,7 +35,7 @@ if (!exportDirArg || !fs.existsSync(exportDirArg)) {
   process.exit(1);
 }
 if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-  console.error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set (run with node --env-file=.env).");
+  console.error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set (run with node --env-file=.env.staging).");
   process.exit(1);
 }
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {

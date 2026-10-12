@@ -18,6 +18,10 @@ import { createClient } from "@supabase/supabase-js";
 import XLSX from "xlsx";
 import fs from "node:fs";
 import path from "node:path";
+import { requireStaging } from "./lib/staging-guard.mjs";
+
+// Staging only: refuses production and any project not prepared by staging-db restore.
+await requireStaging();
 
 const [, , workbookPath, ...flags] = process.argv;
 if (!workbookPath || !fs.existsSync(workbookPath)) {

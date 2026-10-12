@@ -15,6 +15,10 @@
 
 import 'dotenv/config';
 import { createClient } from '@supabase/supabase-js';
+import { requireStaging } from '../artifacts/api-server/scripts/lib/staging-guard.mjs';
+
+// Staging only: refuses production and any project not prepared by staging-db restore.
+await requireStaging();
 
 const SUPABASE_URL =
   process.env.SUPABASE_URL ?? process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';

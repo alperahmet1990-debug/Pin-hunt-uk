@@ -1,3 +1,13 @@
+\set ON_ERROR_STOP on
+-- Staging only: stop unless this database was prepared by staging-db restore
+-- (production never has this marker bucket).
+do $$
+begin
+  if not exists (select 1 from storage.buckets where id = 'pinhunt-staging-marker') then
+    raise exception 'Refusing to run: not the prepared staging project (pinhunt-staging-marker bucket missing).';
+  end if;
+end $$;
+
 -- One-off bulk import from /tmp/pin-import CSVs. Idempotent.
 BEGIN;
 

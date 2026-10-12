@@ -11,11 +11,15 @@
  * removal, rather than adding a schema-level tag column.
  *
  * Usage:
- *   node --env-file=.env scripts/seed-showcase-account.mjs --dry-run
- *   node --env-file=.env scripts/seed-showcase-account.mjs --apply
+ *   node --env-file=.env.staging scripts/seed-showcase-account.mjs --dry-run
+ *   node --env-file=.env.staging scripts/seed-showcase-account.mjs --apply
  */
 import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
+import { requireStaging } from "./lib/staging-guard.mjs";
+
+// Staging only: refuses production and any project not prepared by staging-db restore.
+await requireStaging();
 
 const APPLY = process.argv.includes("--apply");
 const USER_ID = "fcbcf74e-4ff6-4dba-b11a-373ee8e4bfb9"; // alperahmet1990@gmail.com, confirmed admin

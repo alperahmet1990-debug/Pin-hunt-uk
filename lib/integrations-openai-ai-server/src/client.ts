@@ -10,6 +10,11 @@ import OpenAI from "openai";
  * from starting.
  */
 
+/** Hard cap per upstream call so a hung request can't hold a scan open. */
+export const OPENAI_REQUEST_TIMEOUT_MS = 25_000;
+/** SDK default is 2 retries; one is enough and keeps worst case bounded. */
+export const OPENAI_MAX_RETRIES = 1;
+
 let cachedClient: OpenAI | null = null;
 
 export function isAiConfigured(): boolean {
@@ -24,6 +29,8 @@ export function getOpenAIClient(): OpenAI {
   if (!cachedClient) {
     cachedClient = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
+      timeout: OPENAI_REQUEST_TIMEOUT_MS,
+      maxRetries: OPENAI_MAX_RETRIES,
     });
   }
   return cachedClient;

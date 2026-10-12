@@ -50,11 +50,11 @@ export function PrimaryActionBar({ actions }: PrimaryActionBarProps) {
             ]}
           >
             {action.icon && (
-              <Feather name={action.icon} size={16} color={isPrimary ? colors.homeSurface : colors.homeTeal} />
+              <Feather name={action.icon} size={16} color={isPrimary ? colors.homeSurface : colors.homeInk} />
             )}
             <Text
               numberOfLines={1}
-              style={[styles.label, { color: isPrimary ? colors.homeSurface : colors.homeTeal }]}
+              style={[styles.label, { color: isPrimary ? colors.homeSurface : colors.homeInk }]}
             >
               {action.label}
             </Text>

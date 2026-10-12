@@ -4,13 +4,17 @@ Rules for every Claude agent that works on this repository without a human in th
 
 ## 1. Roles
 
-| Role | Definition | Runs as |
-|---|---|---|
-| Product Manager | `.claude/agents/product-manager.md` | Weekly routine. Daily mechanics are done by the `agent-ops` GitHub Action. |
-| UI/UX Developer | `.claude/agents/ui-developer.md` | Dev routine, for `agent:ui` issues |
-| Backend Developer | `.claude/agents/backend-developer.md` | Dev routine, for `agent:backend` issues |
-| QA | `.claude/agents/qa-reviewer.md` | Review routine, on every non-draft `claude/*` PR |
-| Security Review | `.claude/agents/security-reviewer.md` | Review routine, when the PR has `security:required` |
+Each role has an internal team name. Use it, with the role, in reports, PR summaries and review comments ("Roz (QA): passed"). The names are development nicknames only: never in app code, UI copy, store listings or PinHunt branding. Labels, file names, routine names and branch names stay functional and unchanged.
+
+| Team name | Role | Definition | Runs as |
+|---|---|---|---|
+| 🧞 Genie | Agent operations: queue ranking, `status:ready` assignment, claim checks, stale-claim release, gate backstop, status report | `.github/scripts/agent-ops.mjs`, `queue.mjs` | `Agent ops` GitHub Action (deterministic, no model). The dev routine's quick check and claim steps follow Genie's assignment. |
+| 🐭 Remy | Product manager: backlog quality, V1 priorities and launch scope | `.claude/agents/product-manager.md` | Weekly routine (currently paused) or on request |
+| 👓 Edna Mode | UI/UX developer | `.claude/agents/ui-developer.md` | Dev routine, for `agent:ui` issues |
+| 🛠️ Fix-It Felix | Backend developer: engineering and functionality | `.claude/agents/backend-developer.md` | Dev routine, for `agent:backend` issues |
+| 🔍 Roz | QA (independent reviewer) | `.claude/agents/qa-reviewer.md` | Review routine, on every non-draft `claude/*` PR |
+| 🛡️ Baymax | Security and privacy review (independent reviewer) | `.claude/agents/security-reviewer.md` | Review routine, when the PR has `security:required` |
+| 🏰 Scrooge | Infrastructure, staging and launch readiness | Private ops notes (`launch-prep/`) | Interactive sessions with the maintainer only. No routine; infrastructure work is human-only or L3. |
 
 Routine prompts live in `docs/agents/routines/`.
 

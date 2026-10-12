@@ -143,7 +143,7 @@ pnpm test
   ```bash
   pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes <names> --publish issue-<issue number>
   ```
-  - Route names are in `artifacts/pinhunt/scripts/screenshot-routes.json`. Choose routes that **show the changed UI**. If the change is on a tab or segment, use the matching route (e.g. `collection-for-trade`, `collection-iso`, `collection-boards`) or add a one-off route with `--route name=/path`. A route in the JSON may set `"click": "<visible label>"` to tap a tab first.
+  - Route names are in `artifacts/pinhunt/scripts/screenshot-routes.json`. Choose routes that **show the changed UI**. If the change is on a tab or segment, use the matching route (e.g. `collection-for-trade`, `collection-iso`, `collection-boards`) or add a one-off route with `--route name=/path`. A route in the JSON may set `"click": "<visible label>"` to tap a tab first. It may also set `"scroll": "end"` to capture the bottom of a scrolling screen (e.g. `profile-bottom`). If the changed UI is still hidden, for example behind the web tab bar, add a tall viewport such as `--viewports 390x844,320x568,390x1800`. Check that the changed text is actually in the "after" images before you describe it in the PR.
   - Look at the images before using them. If before and after look identical, you captured the wrong screen: pick another route.
   - The harness builds the Expo web export in demo mock mode (no Supabase, no `.env`, external requests blocked) at 390×844 and 320×568, light and dark.
   - It pushes the images to the `agent-artifacts` branch and prints a Markdown table (also saved to `.screenshots/pr-screenshots.md`). Put that table in the PR body's Screenshots section when you open the PR.

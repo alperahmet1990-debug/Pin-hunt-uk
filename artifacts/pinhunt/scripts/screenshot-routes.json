@@ -35,6 +35,11 @@
     "path": "/profile"
   },
   {
+    "name": "profile-bottom",
+    "path": "/profile",
+    "scroll": "end"
+  },
+  {
     "name": "search",
     "path": "/search"
   },

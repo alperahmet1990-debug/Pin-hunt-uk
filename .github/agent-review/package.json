@@ -1,0 +1,8 @@
+{
+  "name": "pinhunt-agent-review",
+  "private": true,
+  "description": "Pinned dependencies for .github/scripts/agent-review.mjs (installed with npm ci in the Agent review workflow).",
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.130.0"
+  }
+}

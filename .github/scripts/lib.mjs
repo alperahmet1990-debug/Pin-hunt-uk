@@ -75,6 +75,9 @@ export function loadAgentPaths(file = '.github/agent-paths.json') {
   return {
     sensitive: cfg.sensitive.map(globToRegExp),
     protected: cfg.protected.map(globToRegExp),
+    highRisk: (cfg.highRisk ?? []).map(globToRegExp),
+    highRiskLabels: cfg.highRiskLabels ?? [],
+    highRiskKeywords: cfg.highRiskKeywords ? new RegExp(cfg.highRiskKeywords, 'i') : null,
   };
 }
 

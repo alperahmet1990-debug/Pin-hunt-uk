@@ -3,13 +3,14 @@
 // All PRs:
 //   - add `security:required` when sensitive paths change, or when the linked
 //     issue is autonomy:L2/L3
+//   - on new commits, remove `merge-approved`: an approval covers one head only
 // claude/* PRs (agent work) additionally fail when:
 //   - protected paths change without the human-only `human-approved-config` label
 //   - an existing migration is modified, renamed or deleted
 //   - a required PR-template section is missing or empty, or there is no "Closes #N"
 
 import { readFileSync } from 'node:fs';
-import { REPO, addLabels, gh, ghAll, issueRefs, labelNames, loadAgentPaths } from './lib.mjs';
+import { REPO, addLabels, comment, gh, ghAll, issueRefs, labelNames, loadAgentPaths, removeLabel } from './lib.mjs';
 
 const REQUIRED_SECTIONS = [
   'Linked issue',
@@ -63,6 +64,12 @@ async function main() {
       const issue = await gh(`/repos/${REPO}/issues/${number}`);
       linkedAutonomy.push(...labelNames(issue).filter(l => /^autonomy:L[23]$/.test(l)));
     } catch { /* missing issue is reported by the template check */ }
+  }
+
+  if (event.action === 'synchronize' && labels.includes('merge-approved')) {
+    await removeLabel(pr.number, 'merge-approved');
+    await comment(pr.number, `New commits were pushed, so \`merge-approved\` was removed. Re-add it after the fresh review of \`${pr.head.sha.slice(0, 7)}\` if you still approve the merge.`);
+    console.log('Removed merge-approved after new commits.');
   }
 
   if ((sensitive.length || linkedAutonomy.length) && !labels.includes('security:required')) {

@@ -1,5 +1,5 @@
 {
-  "_comment": "Shared by .github/scripts/agent-pr-checks.mjs and the agent review prompts. Patterns are matched against repo-relative paths (simple globs: ** = any depth, * = one segment).",
+  "_comment": "Shared by .github/scripts/agent-pr-checks.mjs and the agent review prompts. Patterns are matched against repo-relative paths (simple globs: ** = any depth, * = one segment). highRisk/highRiskLabels/highRiskKeywords drive the merge tiers in .github/scripts/risk.mjs: a match means manual approval and a manual merge.",
   "sensitive": [
     "supabase/**",
     "artifacts/api-server/src/middlewares/**",
@@ -24,5 +24,36 @@
     "scripts/post-merge.sh",
     "pnpm-workspace.yaml",
     "CLAUDE.md"
-  ]
+  ],
+  "highRisk": [
+    "supabase/**",
+    "scripts/**",
+    "lib/db/**",
+    "artifacts/api-server/src/middlewares/**",
+    "artifacts/api-server/src/app.ts",
+    "artifacts/api-server/src/routes/admin.ts",
+    "artifacts/pinhunt/context/AuthContext.tsx",
+    "artifacts/pinhunt/lib/supabase.ts",
+    "lib/pin-repository/src/supabase-*.ts",
+    "artifacts/pinhunt/app.json",
+    "artifacts/pinhunt/eas.json",
+    "**/package.json",
+    "pnpm-lock.yaml",
+    "**/.env*"
+  ],
+  "highRiskLabels": [
+    "autonomy:L3",
+    "human-only",
+    "interactive",
+    "area:auth",
+    "area:db",
+    "area:infra",
+    "area:security",
+    "area:agents",
+    "area:release",
+    "area:compliance",
+    "area:payments",
+    "area:shipping"
+  ],
+  "highRiskKeywords": "payment|checkout|stripe|escrow|shipping|postage|royal-?mail|courier"
 }

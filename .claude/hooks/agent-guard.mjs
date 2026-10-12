@@ -27,7 +27,7 @@ export function isActive(env = process.env) {
   return env.CLAUDE_CODE_REMOTE === 'true' || env.PINHUNT_AGENT === '1';
 }
 
-const HUMAN_ONLY_LABELS = ['approved', 'l3-go', 'human-approved-config'];
+const HUMAN_ONLY_LABELS = ['approved', 'l3-go', 'human-approved-config', 'merge-approved'];
 // The only labels agents may add or remove (docs/agents/OPERATING-MODEL.md §2a).
 export const isAgentManagedLabel = l => /^(status|qa|security):/.test(l) || l === 'needs-device-check';
 
@@ -54,8 +54,15 @@ const BASH_RULES = [
   [/\bgh\s+api\b[^;&|]*\/(merge|merges|protection|rulesets|hooks|secrets|variables|collaborators|keys|environments|actions\/permissions|deployments)\b/,
     'Merging and repository administration through the GitHub API are not allowed.'],
   [/\bgh\s+pr\s+merge\b/, 'Agents never merge pull requests.'],
+  // GraphQL and raw HTTP reach the same operations as the REST rules above.
+  [/\b(mergePullRequest|enablePullRequestAutoMerge|disablePullRequestAutoMerge|enqueuePullRequest|dequeuePullRequest|mergeBranch|updatePullRequestBranch)\b/,
+    'Agents never merge pull requests or change auto-merge (including through GraphQL).'],
+  [/\/pulls\/\d+\/(merge|update-branch)\b|\/repos\/[^\s/]+\/[^\s/]+\/merges\b/, 'Agents never merge pull requests.'],
+  // Writes to check runs or statuses: the path plus a write method or body fields, unless it is an explicit GET.
+  [/^(?![\s\S]*(?:-X|--method)\s*['"]?GET\b)(?=[\s\S]*\/(?:check-runs|check-suites|statuses)\b)(?=[\s\S]*(?:(?:-X|--method|--request)\s*['"]?(?:POST|PATCH|PUT)\b|\s(?:-f|-F|--field|--raw-field|--input|-d|--data|--data-raw)\s))/i,
+    'Agents may not create or change check runs or commit statuses; review verdicts come only from GitHub Actions.'],
   [new RegExp(`\\bgh\\s+api\\b[^;&|]*(\\/labels\\b[^;&|]*|labels\\[\\]=\\s*['"]?)\\b(${HUMAN_ONLY_LABELS.join('|')})\\b(?![:-])`),
-    'Only a human can add the approved, l3-go or human-approved-config labels.'],
+    'Only a human can add the approved, l3-go, human-approved-config or merge-approved labels.'],
   [/(^|[\s'"=<>/])\.env(\.(local|development|production|staging|test))?($|[\s'";|&)])/, 'Reading or writing .env files is not allowed.'],
   [/--env-file\b/, 'Loading .env files is not allowed.'],
   [/(^|[;&|(]\s*)(printenv|env|export\s+-p|set)\s*($|[|;&>])/, 'Dumping environment variables is not allowed.'],
@@ -80,6 +87,7 @@ const GITHUB_TOOL_RULES = [
   [/merge/i, 'Agents never merge pull requests.'],
   [/delete(?!.*label)|remove_(?!sub_issue|.*label)/i, 'Deleting GitHub content is not allowed for agents.'],
   [/(update|create|fork)_repository|fork_/i, 'Repository creation and settings changes are not allowed.'],
+  [/(create|update|rerequest)_(check_run|check_suite|commit_status)|create_status/i, 'Agents may not create or change check runs or commit statuses.'],
   [/secret|variable|ruleset|branch_protection|collaborator|deploy_key|webhook|hook/i, 'Repository administration is not allowed.'],
   [/(create|update|publish|edit)_(release|tag)/i, 'Releases and tags are not allowed for agents.'],
   [/(run|rerun|cancel|dispatch|enable|disable)_?(workflow|job|run)|workflow_dispatch/i, 'Running or controlling workflows is not allowed.'],

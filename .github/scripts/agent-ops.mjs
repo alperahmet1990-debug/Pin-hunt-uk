@@ -11,7 +11,7 @@
 //  5. Rewrite the body of the open issue labelled `status-report`. If no such
 //     issue exists, the report goes to the job summary only; this script never
 //     creates issues.
-//  0. Gate-label backstop: if `approved`, `l3-go` or `human-approved-config` was
+//  0. Gate-label backstop: if `approved`, `l3-go`, `human-approved-config` or `merge-approved` was
 //     last added by an app or bot (agents act through the "claude" GitHub app),
 //     remove it, comment, and flag the item status:needs-human. Runs on every
 //     `issues`/`pull_request` labeled event as well as daily.
@@ -27,7 +27,7 @@ const now = Date.now();
 const HOUR = 3_600_000;
 const STATE_LABELS = ['status:ready', 'status:claimed', 'status:in-review', 'status:blocked', 'status:needs-human', 'status:needs-decision'];
 
-const GATE_LABELS = ['approved', 'l3-go', 'human-approved-config'];
+const GATE_LABELS = ['approved', 'l3-go', 'human-approved-config', 'merge-approved'];
 // Dev runs take ~5–15 min; with an hourly schedule a claim older than this is dead.
 const STALE_CLAIM_HOURS = Number(process.env.STALE_CLAIM_HOURS ?? 2);
 const log = msg => console.log(DRY_RUN ? `[dry-run] ${msg}` : msg);

@@ -14,6 +14,7 @@ import {
   type UpdateProfileInput,
 } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { DEMO_PROFILE, isDemoMode } from '@/lib/demoMode';
 import { useAuth } from '@/context/AuthContext';
 
 // ─── Context shape ────────────────────────────────────────────────────────────
@@ -50,7 +51,15 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const userId = session?.user?.id ?? null;
 
   const loadProfile = useCallback(async (id: string) => {
-    if (!userRepo) return;
+    if (!userRepo) {
+      // Screenshot harness only: mock-mode profile (see lib/demoMode).
+      if (isDemoMode) {
+        setProfile(DEMO_PROFILE);
+        setLoadedUserId(id);
+        setLoading(false);
+      }
+      return;
+    }
     const requestId = ++profileRequestId.current;
     setLoading(true);
     setLoadedUserId(null);

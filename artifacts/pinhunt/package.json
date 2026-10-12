@@ -12,7 +12,8 @@
     "test:boards-sync": "node --test context/boards-sync.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "jest && pnpm run test:collection-sync && pnpm run test:boards-sync",
-    "test:unit": "jest"
+    "test:unit": "jest",
+    "screenshots": "node scripts/screenshots.mjs"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -53,6 +54,7 @@
     "expo-web-browser": "~57.0.2",
     "jest": "~29.7.0",
     "jest-expo": "~57.0.5",
+    "puppeteer-core": "^25.13.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-native": "0.86.3",

@@ -24,6 +24,6 @@ You are the PinHunt UI/UX Developer agent. Follow the developer run in `docs/age
 - ISO (`wanted`) and For Trade (`for_trade`) are distinct states. Never merge them in UI.
 
 ## Evidence
-- Before/after screenshots for every visual change (operating model §4 step 5).
+- Before/after screenshots for every visual change, using `pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes <names> --publish <PR number>` (operating model §4 step 5).
 - Anything that depends on native behaviour (keyboard, safe areas, Liquid Glass, camera, haptics) cannot be verified in the cloud. Add `needs-device-check` to the PR and state it under Limitations.
 - Add `jest-expo` / Testing Library tests for logic and component behaviour you change.

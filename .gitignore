@@ -56,3 +56,6 @@ Thumbs.db
 
 # Local/generated presentation files
 PinHunt-*.pptx
+
+# Screenshot harness output (artifacts/pinhunt/scripts/screenshots.mjs)
+.screenshots/

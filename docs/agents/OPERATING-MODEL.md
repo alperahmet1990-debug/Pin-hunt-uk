@@ -20,7 +20,7 @@ Labels are the source of truth for agent state. Agents cannot write to the GitHu
 
 | Group | Labels | Who sets them |
 |---|---|---|
-| Gate | `approved`, `l3-go`, `human-approved-config` | **Humans only.** The guard hook blocks agents from adding them. |
+| Gate | `approved`, `l3-go`, `human-approved-config` | **Humans only.** The guard hook blocks agents from adding them (shell and built-in GitHub tools). As a backstop, the `Agent ops` workflow removes any gate label that was added through an app or bot, including the `claude` app agents act through, and flags the item `status:needs-human`. |
 | Priority | `P0` `P1` `P2` `P3` | Humans |
 | Autonomy | `autonomy:L1` `autonomy:L2` `autonomy:L3` `human-only` | Humans |
 | Agent | `agent:ui` `agent:backend` | Humans / PM proposal |
@@ -46,7 +46,7 @@ Labels are the source of truth for agent state. Agents cannot write to the GitHu
 If `.agents/PAUSE` exists on `main`, stop immediately and do nothing.
 
 ### 1. Select
-List open issues with `approved` + `status:ready` + your `agent:` label. Use `gh api` (REST). `gh issue` and `gh pr` use GraphQL, which is blocked in cloud sessions.
+List open issues with `approved` + `status:ready` + your `agent:` label. Use the built-in GitHub tools or `gh api` (REST). `gh issue` and `gh pr` use GraphQL, which is blocked in cloud sessions.
 
 ```bash
 gh api "repos/{owner}/{repo}/issues?state=open&labels=approved,status:ready,agent:ui&per_page=100"

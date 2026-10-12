@@ -3,6 +3,11 @@ name: Agent ops
 # Daily grooming and the "Development status" report (no Claude usage).
 # See .github/scripts/agent-ops.mjs. Never creates issues.
 on:
+  # Immediate gate-label backstop (see agent-ops.mjs step 0).
+  issues:
+    types: [labeled]
+  pull_request:
+    types: [labeled]
   schedule:
     - cron: '17 6 * * 1-5' # 06:17 UTC weekdays
   workflow_dispatch:
@@ -19,11 +24,15 @@ permissions:
   checks: read
 
 concurrency:
-  group: agent-ops
+  group: agent-ops-${{ github.event_name }}-${{ github.event.issue.number || github.event.pull_request.number || 'daily' }}
   cancel-in-progress: false
 
 jobs:
   ops:
+    # Label events only matter for the three human-only gate labels.
+    if: >-
+      (github.event_name != 'issues' && github.event_name != 'pull_request') ||
+      contains(fromJSON('["approved","l3-go","human-approved-config"]'), github.event.label.name)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

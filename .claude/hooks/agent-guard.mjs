@@ -13,10 +13,13 @@
 //  - reading or writing .env files
 //  - edits to protected paths (agent/CI config, Replit config, CLAUDE.md,
 //    existing migrations, agent memory notes)
+//  - built-in GitHub tools (mcp__github__*) that merge, approve, delete, change
+//    repository settings, run workflows, write to main, or add human-only labels
 //
 // See docs/agents/OPERATING-MODEL.md. Changes to this file need the
 // `human-approved-config` label on the PR.
 
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
@@ -67,6 +70,60 @@ const PROTECTED_PATHS = [
   [/(^|\/)\.env(\.(local|development|production|staging|test))?$/, 'Reading or writing .env files is not allowed.'],
 ];
 
+// Built-in GitHub tools in cloud sessions bypass the Bash rules above, so they
+// are checked by name and arguments.
+const GITHUB_TOOL_RULES = [
+  [/merge/i, 'Agents never merge pull requests.'],
+  [/delete(?!.*label)|remove_(?!sub_issue|.*label)/i, 'Deleting GitHub content is not allowed for agents.'],
+  [/(update|create|fork)_repository|fork_/i, 'Repository creation and settings changes are not allowed.'],
+  [/secret|variable|ruleset|branch_protection|collaborator|deploy_key|webhook|hook/i, 'Repository administration is not allowed.'],
+  [/(create|update|publish|edit)_(release|tag)/i, 'Releases and tags are not allowed for agents.'],
+  [/(run|rerun|cancel|dispatch|enable|disable)_?(workflow|job|run)|workflow_dispatch/i, 'Running or controlling workflows is not allowed.'],
+  [/dismiss|security_alert|code_scanning|dependabot.*(update|dismiss)/i, 'Changing security alerts is not allowed.'],
+];
+
+function issueNumberOf(args) {
+  return args.issue_number ?? args.issueNumber ?? args.pull_number ?? args.pullNumber ?? args.number;
+}
+
+function fetchLabels(owner, repo, number) {
+  const out = execFileSync('gh', ['api', `repos/${owner}/${repo}/issues/${number}`, '--jq', '[.labels[].name]'],
+    { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: 15_000 });
+  return JSON.parse(out);
+}
+
+function checkGithubTool(tool, args, { currentLabels = fetchLabels } = {}) {
+  const name = tool.replace(/^mcp__github__/, '');
+  // Agents may approve nothing: block approving reviews.
+  if (/review/i.test(name) && /approve/i.test(String(args.event ?? args.state ?? ''))) {
+    return 'Agents never approve pull requests.';
+  }
+  for (const [pattern, reason] of GITHUB_TOOL_RULES) {
+    if (pattern.test(name)) return `${reason} (${name})`;
+  }
+  const branch = String(args.branch ?? args.ref ?? args.base ?? '');
+  if (/push_files|create_or_update_file|commit/i.test(name) && /^(refs\/heads\/)?(main|master)$/.test(branch)) {
+    return 'Writing to main is not allowed. Use a claude/* branch and a PR.';
+  }
+  // Reads (list/get/search) may filter by label; only writes are checked.
+  const isRead = /^(list|get|search)_|_read$/i.test(name);
+  const labels = isRead ? [] : [args.labels, args.label, args.add_labels].flat().filter(Boolean).map(l => (typeof l === 'string' ? l : l?.name));
+  const gates = labels.filter(l => HUMAN_ONLY_LABELS.includes(l));
+  if (gates.length) {
+    const number = issueNumberOf(args);
+    if (!args.owner || !args.repo || !number) return 'Only a human can add the approved, l3-go or human-approved-config labels.';
+    let existing;
+    try {
+      existing = currentLabels(args.owner, args.repo, number);
+    } catch {
+      return 'Could not verify existing labels; human-only labels cannot be set by agents.';
+    }
+    const added = gates.filter(g => !existing.includes(g));
+    if (added.length) return `Only a human can add ${added.join(', ')}.`;
+  }
+  return null;
+}
+
 function repoRelative(filePath, cwd) {
   if (!filePath) return '';
   const abs = path.resolve(cwd || process.cwd(), filePath);
@@ -84,10 +141,14 @@ function findRepoRoot(start) {
 }
 
 /** Returns a reason string when the call must be blocked, otherwise null. */
-export function check(input, { fileExists = existsSync } = {}) {
+export function check(input, { fileExists = existsSync, currentLabels } = {}) {
   const tool = input.tool_name;
   const args = input.tool_input ?? {};
   const cwd = input.cwd;
+
+  if (typeof tool === 'string' && tool.startsWith('mcp__github__')) {
+    return checkGithubTool(tool, args, currentLabels ? { currentLabels } : undefined);
+  }
 
   if (tool === 'Bash') {
     const command = String(args.command ?? '');

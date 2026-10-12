@@ -99,3 +99,48 @@ test('protects config, memory and existing migrations', () => {
   assert.equal(edit('supabase/migrations/060_new_policy.sql', 'Write', () => false), null);
   assert.equal(edit('artifacts/pinhunt/app/(tabs)/collection.tsx'), null);
 });
+
+test('built-in GitHub tools: blocks merges, approvals, deletes, admin and main writes', () => {
+  const gh = (tool_name, tool_input = {}) => check({ tool_name, tool_input, cwd: root });
+  for (const [tool, input] of [
+    ['mcp__github__merge_pull_request', { pullNumber: 5 }],
+    ['mcp__github__pull_request_review_write', { method: 'create', event: 'APPROVE' }],
+    ['mcp__github__delete_file', { path: 'x' }],
+    ['mcp__github__update_repository', {}],
+    ['mcp__github__create_release', {}],
+    ['mcp__github__run_workflow', {}],
+    ['mcp__github__push_files', { branch: 'main' }],
+    ['mcp__github__create_or_update_file', { branch: 'refs/heads/main' }],
+  ]) {
+    assert.ok(gh(tool, input), tool);
+  }
+});
+
+test('built-in GitHub tools: allows normal agent work', () => {
+  const gh = (tool_name, tool_input = {}) => check({ tool_name, tool_input, cwd: root }, { currentLabels: () => ['P1', 'approved'] });
+  for (const [tool, input] of [
+    ['mcp__github__list_issues', { labels: ['approved', 'status:ready'] }],
+    ['mcp__github__issue_read', { issue_number: 27 }],
+    ['mcp__github__add_issue_comment', { issue_number: 27, body: 'agent-claim' }],
+    ['mcp__github__create_pull_request', { head: 'claude/27-x', base: 'main' }],
+    ['mcp__github__push_files', { branch: 'claude/27-x' }],
+    ['mcp__github__pull_request_review_write', { method: 'create', event: 'COMMENT' }],
+    ['mcp__github__remove_issue_label', { issue_number: 27, label: 'status:ready' }],
+    // Re-sending the full label set that already contains `approved` is fine.
+    ['mcp__github__issue_write', { owner: 'o', repo: 'r', issue_number: 27, labels: ['P1', 'approved', 'status:claimed'] }],
+  ]) {
+    assert.equal(gh(tool, input), null, tool);
+  }
+});
+
+test('built-in GitHub tools: cannot add human-only labels', () => {
+  const run = (labels, existing, extra = {}) => check(
+    { tool_name: 'mcp__github__issue_write', tool_input: { owner: 'o', repo: 'r', issue_number: 42, labels, ...extra }, cwd: root },
+    { currentLabels: typeof existing === 'function' ? existing : () => existing },
+  );
+  assert.ok(run(['P1', 'approved'], ['P1']));
+  assert.ok(run(['l3-go'], ['approved']));
+  assert.ok(run(['approved'], () => { throw new Error('offline'); }), 'fails closed when labels cannot be read');
+  assert.ok(check({ tool_name: 'mcp__github__issue_write', tool_input: { labels: ['approved'] }, cwd: root }), 'no issue number → blocked');
+  assert.equal(run(['P1', 'approved', 'status:claimed'], ['P1', 'approved']), null);
+});

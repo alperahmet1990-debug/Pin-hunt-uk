@@ -105,6 +105,16 @@ export default function LoginScreen() {
               <Text style={styles.buttonText}>Sign in</Text>
             )}
           </TouchableOpacity>
+
+          <Link href="/(auth)/forgot-password" asChild>
+            <TouchableOpacity
+              style={styles.forgot}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+              accessibilityRole="link"
+            >
+              <Text style={styles.footerLink}>Forgot password?</Text>
+            </TouchableOpacity>
+          </Link>
         </View>
 
         {/* Footer */}
@@ -204,6 +214,11 @@ function makeStyles(colors: any) {
       fontSize: 16,
       fontFamily: 'Inter_600SemiBold',
       color: colors.homeSurface,
+    },
+    forgot: {
+      alignSelf: 'center',
+      minHeight: 44,
+      justifyContent: 'center',
     },
     footer: {
       flexDirection: 'row',

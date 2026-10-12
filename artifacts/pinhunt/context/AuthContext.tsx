@@ -52,6 +52,31 @@ function safeAuthError(
   return fallback;
 }
 
+export const PASSWORD_RESET_REDIRECT = 'pinhunt://reset';
+const PASSWORD_RESET_RETRY = 'Unable to send the reset email right now. Please try again shortly.';
+
+/**
+ * Sends a password-reset email. An unknown address is reported as success so
+ * the UI can show one neutral confirmation (no account enumeration). Any other
+ * failure maps to a fixed retry message — raw Supabase errors never reach the UI.
+ */
+export async function sendPasswordReset(email: string): Promise<{ error: string | null }> {
+  if (!isSupabaseConfigured) return { error: NOT_CONFIGURED };
+  try {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: PASSWORD_RESET_REDIRECT,
+    });
+    if (!error) return { error: null };
+    const message = (error.message ?? '').toLowerCase();
+    if (message.includes('not found') || message.includes('user does not exist')) {
+      return { error: null };
+    }
+    return { error: safeAuthError(error, PASSWORD_RESET_RETRY) };
+  } catch (err) {
+    return { error: safeAuthError(err, PASSWORD_RESET_RETRY) };
+  }
+}
+
 // ─── Context shape ────────────────────────────────────────────────────────────
 interface AuthContextValue {
   session: Session | null;
@@ -64,6 +89,7 @@ interface AuthContextValue {
     displayName?: string,
   ): Promise<{ error: string | null; needsEmailConfirmation: boolean }>;
   signOut(): Promise<void>;
+  requestPasswordReset(email: string): Promise<{ error: string | null }>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -161,6 +187,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         signIn,
         signUp,
         signOut,
+        requestPasswordReset: sendPasswordReset,
       }}
     >
       {children}

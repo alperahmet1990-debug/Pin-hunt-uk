@@ -1,0 +1,65 @@
+name: Backlog item
+description: A launch-backlog task that a human or agent can pick up.
+title: "[B-XX-00] "
+body:
+  - type: input
+    id: audit
+    attributes:
+      label: Audit refs
+      description: Backlog / technical IDs and report rows, e.g. "B-P1-05 · Report 5 'Share' row"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is wrong, with evidence labels (EXEC / CODE / VISUAL / INFERRED). For security weaknesses in this public repo, write "Details held off-repo."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Testable, observable checklist.
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Required tests
+      value: |
+        - [ ] New:
+        - [ ] Regression: typecheck + all suites;
+    validations:
+      required: true
+  - type: input
+    id: touches
+    attributes:
+      label: Touches
+      description: Files or hotspots this changes; used to avoid conflicting agent PRs.
+  - type: input
+    id: blocked-by
+    attributes:
+      label: Blocked by
+      description: Issue references that must be closed first, e.g. "#12, #15". Leave empty if none.
+  - type: textarea
+    id: memory
+    attributes:
+      label: Memory notes to read
+      description: Relevant .agents/memory/*.md files.
+  - type: textarea
+    id: human-steps
+    attributes:
+      label: Human steps
+      description: Anything only the maintainer can do (apply SQL, create accounts, device check).

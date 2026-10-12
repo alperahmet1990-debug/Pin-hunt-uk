@@ -146,6 +146,13 @@ function buildImageInsights(
   };
 }
 
+/** True when the OpenAI SDK gave up on a call because it timed out. */
+export function isUpstreamTimeout(err: unknown): boolean {
+  const name = (err as { name?: string } | null)?.name ?? "";
+  const ctor = (err as object | null)?.constructor?.name ?? "";
+  return name === "APIConnectionTimeoutError" || ctor === "APIConnectionTimeoutError";
+}
+
 /** Require a valid signed-in Supabase user (Bearer token). */
 async function requireUser(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers.authorization ?? "";
@@ -480,6 +487,13 @@ Give a confidence above 85 only when a reference image visually confirms the mat
       imageInsights: buildImageInsights(description, visionSignals),
     });
   } catch (err) {
+    if (isUpstreamTimeout(err)) {
+      console.error("[scan] upstream timeout");
+      res.status(504).json({
+        error: "The scan took too long. Please try again, or search for the pin instead.",
+      });
+      return;
+    }
     console.error("[scan] Vision analysis error:", err);
     res.status(500).json({ error: "Vision analysis failed. Please try again." });
   }

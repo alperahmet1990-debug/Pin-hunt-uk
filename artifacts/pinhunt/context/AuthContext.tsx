@@ -13,6 +13,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { DEMO_SESSION, isDemoMode } from '@/lib/demoMode';
+import * as Linking from 'expo-linking';
+import { parseRecoveryLink } from '@/utils/recoveryLink';
 
 // Shown to the user when they attempt auth without Supabase configured.
 const NOT_CONFIGURED =
@@ -98,6 +100,8 @@ interface AuthContextValue {
   session: Session | null;
   user: User | null;
   loading: boolean;
+  /** True while a password-recovery session is active and the password is not yet updated. */
+  isRecovery: boolean;
   signIn(email: string, password: string): Promise<{ error: string | null }>;
   signUp(
     email: string,
@@ -115,6 +119,7 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isRecovery, setIsRecovery] = useState(false);
 
   useEffect(() => {
     // Skip Supabase calls entirely when not configured — avoids the
@@ -135,11 +140,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Subscribe to auth state changes (login, logout, token refresh)
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, newSession) => {
+    } = supabase.auth.onAuthStateChange((event, newSession) => {
       setSession(newSession);
+      if (event === 'PASSWORD_RECOVERY') setIsRecovery(true);
+      else if (event === 'USER_UPDATED' || event === 'SIGNED_OUT') setIsRecovery(false);
     });
 
-    return () => subscription.unsubscribe();
+    // Password-reset deep link: establish the recovery session from the URL.
+    // The flag is set before the session so AuthGuard never sees a normal one.
+    const handleUrl = async (url: string | null) => {
+      const link = parseRecoveryLink(url);
+      if (!link) return;
+      try {
+        setIsRecovery(true);
+        const { error } =
+          link.kind === 'tokens'
+            ? await supabase.auth.setSession({
+                access_token: link.accessToken,
+                refresh_token: link.refreshToken,
+              })
+            : await supabase.auth.exchangeCodeForSession(link.code);
+        if (error) setIsRecovery(false);
+      } catch {
+        setIsRecovery(false);
+      }
+    };
+    Linking.getInitialURL().then(handleUrl).catch(() => {});
+    const linkSub = Linking.addEventListener('url', ({ url }) => {
+      handleUrl(url);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+      linkSub.remove();
+    };
   }, []);
 
   const signIn = async (email: string, password: string) => {
@@ -201,6 +235,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         session,
         user: session?.user ?? null,
         loading,
+        isRecovery,
         signIn,
         signUp,
         signOut,

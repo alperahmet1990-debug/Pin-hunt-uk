@@ -201,7 +201,7 @@ export default function PinDetailScreen() {
           style={[styles.hero, { height: HERO_HEIGHT }]}
         >
           <TouchableOpacity
-            accessibilityLabel="Go back"
+            accessibilityLabel="Back"
             onPress={() => router.back()}
             activeOpacity={0.85}
             style={[styles.backBtn, { top: topInset + 10, backgroundColor: colors.homeSurface + 'E6' }]}
@@ -504,9 +504,9 @@ const styles = StyleSheet.create({
   backBtn: {
     position: 'absolute',
     left: spacing.lg,
-    width: 38,
-    height: 38,
-    borderRadius: 19,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 2,

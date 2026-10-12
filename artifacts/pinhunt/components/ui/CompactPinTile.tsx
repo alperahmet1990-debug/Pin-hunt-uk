@@ -34,7 +34,7 @@ export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd }: Compac
         {!owned && onQuickAdd && (
           <TouchableOpacity
             onPress={e => { e.stopPropagation?.(); onQuickAdd(); }}
-            hitSlop={8}
+            hitSlop={13}
             accessibilityLabel={`Quick add ${pin.title}`}
             style={[styles.addBadge, { backgroundColor: colors.homeCoral }]}
           >

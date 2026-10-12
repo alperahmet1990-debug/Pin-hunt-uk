@@ -4,13 +4,18 @@
 // PR can never change its own reviewer. It never checks out or executes PR
 // code: it reads the diff, the linked issue and the screenshots through the
 // API and asks Claude for a verdict with no tools, in one call per review.
-// Verdicts are published as the "QA review" and "Security review" check runs,
-// which only GitHub Actions can create; development agents cannot forge them.
+// Verdicts are published as the "QA review" and "Security review" check runs
+// by the PinHunt review GitHub App, whose key exists only in the main-only
+// `agent-review` environment, so neither agents nor branch workflows (whose
+// GITHUB_TOKEN can only post as "github-actions") can forge them.
 //
 // Every new commit (and every edit of the PR text) triggers a fresh review of
 // the new head. Any error or refusal fails closed.
 
 import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { pathToFileURL } from 'node:url';
+import { ghAs, installationToken } from './github-app.mjs';
 import { REPO, addLabels, gh, ghAll, issueRefs, labelNames, loadAgentPaths, removeLabel } from './lib.mjs';
 import { securityRequired } from './risk.mjs';
 
@@ -74,6 +79,25 @@ export function screenshotUrls(body, repo) {
   const urls = [...new Set(String(body ?? '').match(re) ?? [])];
   // Prefer the 390-pt captures when there are too many.
   return urls.sort((a, b) => Number(!/390x/.test(a)) - Number(!/390x/.test(b))).slice(0, MAX_IMAGES);
+}
+
+/**
+ * Deterministic blockers checked before any model call. Any workflow's token
+ * can forge "Agent rules", so the trusted reviewer re-checks the hard rules:
+ * agent/CI configuration needs a human-added `human-approved-config`, and
+ * existing migrations are immutable.
+ */
+export function hardBlockers({ files, paths, labels, events }) {
+  const out = [];
+  const protectedHits = files.flatMap(f => [f.filename, f.previous_filename].filter(Boolean)).filter(f => paths.protected.some(re => re.test(f)));
+  if (protectedHits.length) {
+    const last = events.filter(e => e.event === 'labeled' && e.label?.name === 'human-approved-config').at(-1);
+    const human = labels.includes('human-approved-config') && last && !last.performed_via_github_app && last.actor?.type !== 'Bot';
+    if (!human) out.push(`Protected agent/CI configuration changed without a maintainer-added human-approved-config label: ${[...new Set(protectedHits)].join(', ')}`);
+  }
+  const migrationEdits = files.filter(f => (f.filename.startsWith('supabase/migrations/') || f.previous_filename?.startsWith('supabase/migrations/')) && f.status !== 'added');
+  if (migrationEdits.length) out.push(`Existing migrations are immutable: ${migrationEdits.map(f => f.filename).join(', ')}`);
+  return out;
 }
 
 /** Untrusted text wrapped so the reviewer treats it as data. */
@@ -154,24 +178,23 @@ function securityComment(r, pass, sha) {
   ].join('\n');
 }
 
-async function setVerdictLabels(number, prefix, value, labels) {
-  for (const l of labels.filter(l => l.startsWith(`${prefix}:`) && l !== `${prefix}:${value}` && l !== 'security:required')) await removeLabel(number, l);
-  await addLabels(number, [`${prefix}:${value}`]);
-}
-
 async function main() {
   const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
   const pr = await gh(`/repos/${REPO}/pulls/${event.pull_request.number}`);
   if (pr.draft || pr.state !== 'open') return console.log('Draft or closed; nothing to review.');
-  if (!process.env.ANTHROPIC_API_KEY) {
+  if (pr.base.ref !== event.repository.default_branch) return console.log('Base is not the default branch; not reviewed.');
+  if (!process.env.ANTHROPIC_API_KEY || !process.env.REVIEW_APP_ID || !process.env.REVIEW_APP_PRIVATE_KEY) {
     // No check runs: required checks stay "not reported", so nothing can merge.
-    return console.log('ANTHROPIC_API_KEY is not configured for the agent-review environment; skipping.');
+    return console.log('The agent-review environment is not configured (API key or review app); skipping.');
   }
   const sha = pr.head.sha;
   const advisory = !pr.head.ref.startsWith('claude/');
-  const start = name => gh(`/repos/${REPO}/check-runs`, { method: 'POST', body: { name, head_sha: sha, status: 'in_progress' } });
+  const appToken = await installationToken({
+    appId: process.env.REVIEW_APP_ID, privateKey: process.env.REVIEW_APP_PRIVATE_KEY, repo: REPO, permissions: { checks: 'write' },
+  });
+  const start = name => ghAs(appToken, `/repos/${REPO}/check-runs`, { method: 'POST', body: { name, head_sha: sha, status: 'in_progress' } });
   const [qaRun, secRun] = await Promise.all([start('QA review'), start('Security review')]);
-  const finish = (run, conclusion, title, summary) => gh(`/repos/${REPO}/check-runs/${run.id}`, {
+  const finish = (run, conclusion, title, summary) => ghAs(appToken, `/repos/${REPO}/check-runs/${run.id}`, {
     method: 'PATCH', body: { status: 'completed', conclusion, output: { title, summary: summary.slice(0, 60000) } },
   });
   // A failing verdict on a non-agent PR is advisory: those PRs are merged by hand.
@@ -194,7 +217,19 @@ async function main() {
     const needsSecurity = securityRequired({ files: changed, issueLabels: issues.flatMap(labelNames), prLabels: labelNames(pr), paths });
     const { text, tooLarge } = buildContext({ pr, issues, maintainerComments: maintainerComments.slice(-10), files, ciSummary });
 
+    // Verdict labels describe one head: clear the previous ones before reviewing this one.
     for (const prefix of ['qa', 'security']) for (const l of labelNames(pr).filter(l => l.startsWith(`${prefix}:`) && l !== 'security:required')) await removeLabel(pr.number, l);
+
+    const blockers = hardBlockers({ files, paths, labels: labelNames(pr), events: await ghAll(`/repos/${REPO}/issues/${pr.number}/events`) });
+    if (blockers.length) {
+      // Blocking on every branch: these are the rules a forged "Agent rules" check could hide.
+      const why = `${blockers.map(b => `- ${b}`).join('\n')}\n\nThe maintainer must approve this change; it was not sent for automated review.`;
+      await gh(`/repos/${REPO}/issues/${pr.number}/comments`, { method: 'POST', body: { body: `<!-- agent-review:qa:${sha} -->\n## QA review — 🔍 Roz (automated)\n**Verdict: FAIL** · head \`${sha.slice(0, 7)}\`\n\n${why}` } });
+      await finish(qaRun, 'failure', 'Blocked: maintainer approval required', why);
+      await finish(secRun, 'failure', 'Blocked: maintainer approval required', why);
+      await addLabels(pr.number, ['qa:fail']);
+      return;
+    }
 
     if (tooLarge) {
       const why = 'The diff is too large for automated review. The maintainer must review and merge this PR by hand.';
@@ -203,7 +238,9 @@ async function main() {
       return;
     }
 
-    const { default: Anthropic } = await import('@anthropic-ai/sdk');
+    // The SDK is installed with `npm ci` from .github/agent-review/package-lock.json.
+    const sdk = createRequire(new URL('../agent-review/package.json', import.meta.url)).resolve('@anthropic-ai/sdk');
+    const { default: Anthropic } = await import(pathToFileURL(sdk).href);
     const client = new Anthropic();
     const qaSystem = readFileSync('.github/agent-review/qa.md', 'utf8');
     const secSystem = readFileSync('.github/agent-review/security.md', 'utf8');
@@ -217,7 +254,7 @@ async function main() {
     const qaOk = qaPasses(qa);
     await gh(`/repos/${REPO}/issues/${pr.number}/comments`, { method: 'POST', body: { body: qaComment(qa, qaOk, sha, advisory) } });
     await finish(qaRun, qaOk ? 'success' : failConclusion, qaOk ? 'QA passed' : 'QA failed', qaComment(qa, qaOk, sha, advisory));
-    await setVerdictLabels(pr.number, 'qa', qaOk ? 'pass' : 'fail', labelNames(pr));
+    await addLabels(pr.number, [`qa:${qaOk ? 'pass' : 'fail'}`]);
 
     if (!sec) {
       await finish(secRun, 'success', 'Not required', 'No sensitive or protected paths and the linked issue is L1, so no security review is required.');
@@ -225,7 +262,7 @@ async function main() {
       const secOk = securityPasses(sec);
       await gh(`/repos/${REPO}/issues/${pr.number}/comments`, { method: 'POST', body: { body: securityComment(sec, secOk, sha) } });
       await finish(secRun, secOk ? 'success' : failConclusion, secOk ? 'Security passed' : 'Security changes required', securityComment(sec, secOk, sha));
-      await setVerdictLabels(pr.number, 'security', secOk ? 'pass' : 'changes', labelNames(pr));
+      await addLabels(pr.number, [`security:${secOk ? 'pass' : 'changes'}`]);
     }
   } catch (err) {
     // Fail closed: an incomplete review never lets a PR through.

@@ -184,10 +184,11 @@ The guard hook (`.claude/hooks/agent-guard.mjs`) enforces most of this list. Tre
 
 **Verdict of record: the `Agent review` workflow** (`.github/workflows/agent-review.yml`). It reviews every non-draft PR when it opens, **on every new commit** and when the PR text is edited, always against the current head:
 
-- It runs in GitHub Actions from the default branch (`pull_request_target`). It never checks out or runs PR code, so a PR cannot change its own reviewer.
+- It runs in GitHub Actions from the default branch (`pull_request_target`, PRs into `main` only). It never checks out or runs PR code, so a PR cannot change its own reviewer. Its secrets (`ANTHROPIC_API_KEY`, the review app key) live only in the `agent-review` environment, which is restricted to `main`.
+- Before any model call it applies two hard rules that a forged `Agent rules` check could hide: agent/CI configuration (protected paths) needs a **maintainer-added** `human-approved-config`, and existing migrations are immutable. Breaking either fails both checks on every branch.
 - 🔍 Roz (QA, `.github/agent-review/qa.md`) checks acceptance criteria, tests, scope and the before/after screenshots. 🛡️ Baymax (security, `.github/agent-review/security.md`) runs when security is required: `security:required`, a linked L2/L3 issue, or sensitive or protected paths.
 - The reviewer has no tools. It reads the diff, the linked issue, the maintainer's comments and the screenshots, and returns a structured verdict. PR text is treated as data, never as instructions.
-- Verdicts are published as the **`QA review`** and **`Security review`** check runs (Security reports "Not required" when it doesn't apply), plus one comment each and the `qa:*` / `security:*` labels for visibility. Only GitHub Actions can create these check runs: the guard blocks agents from writing check runs or statuses, and the ruleset pins the checks to GitHub Actions.
+- Verdicts are published as the **`QA review`** and **`Security review`** check runs (Security reports "Not required" when it doesn't apply), plus one comment each and the `qa:*` / `security:*` labels for visibility. **They are published by the PinHunt review GitHub App**, and the ruleset and the merge gate accept them only from that app. Any workflow's `GITHUB_TOKEN` can post as `github-actions`, so that identity is not trusted for verdicts. The guard also blocks agents from writing check runs or statuses.
 - It fails closed: an API error, refusal, missing evidence or an oversized diff fails the check.
 - Verdicts on non-`claude/*` PRs are advisory (`neutral` on failure), because those PRs are always merged by hand.
 
@@ -204,9 +205,11 @@ Development agents never merge, never arm auto-merge and never add `merge-approv
 
 | Tier | What | How it merges |
 |---|---|---|
-| **Low** | `claude/*` PR for one open `approved` **L1** issue; no sensitive, high-risk or protected paths; no risky labels | **Automatically**, once `Typecheck and tests`, `Agent rules`, `QA review` and `Security review` all pass on the current head and it is conflict-free |
+| **Low** | `claude/*` PR for one open `approved` **L1** issue; no sensitive, high-risk or protected paths; no risky labels | **Automatically**, once `Typecheck and tests`, `Agent rules`, `QA review` and `Security review` all pass on the current head, it is conflict-free and **up to date with `main`** |
 | **Medium** | L2, security-required, sensitive paths or `needs-device-check` | Same checks **plus** the maintainer's `merge-approved` label, added after the current head was pushed. New commits remove the label automatically. |
 | **High** | Infrastructure, database, auth, payments, shipping, release, agent/CI configuration (`supabase/**`, `scripts/**`, `package.json`, lockfile, `app.json`, auth files, `.github/**`, `.claude/**`, payment/shipping paths, `area:auth|db|infra|security|agents|release|compliance|payments|shipping`), L3, `human-only`, and every non-`claude/*` branch | **Never automatically.** The maintainer reviews, approves and merges by hand; branch protection still requires CI, QA and security. |
+
+**No untested combinations.** A PR is only merged when its head already contains the current `main`. If it is behind, the merge app first merges `main` into it ("Update branch"). That new head goes through CI and a fresh review again, and for medium PRs needs a fresh `merge-approved`. The gate updates or merges at most one PR per run, and every merge and update pins the exact head SHA it evaluated.
 
 Any hold blocks every tier: `on-hold`, `status:needs-human`, `status:needs-decision`, `status:blocked`, `do-not-merge`, `qa:fail` or `security:changes`. So does any other failing check, a draft, or a merge conflict. `.agents/PAUSE` stops all automatic merges. Each PR shows its tier and the gate's decision in the **`Merge gate`** check (informational).
 

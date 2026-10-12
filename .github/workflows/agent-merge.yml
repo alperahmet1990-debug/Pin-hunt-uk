@@ -1,9 +1,10 @@
 name: Agent merge
 
 # Merges eligible agent PRs with the dedicated PinHunt merge GitHub App.
-# Low risk merges after CI, QA and security pass; medium risk also needs the
-# maintainer's `merge-approved` label on the current head; high risk is never
-# merged here. See .github/scripts/merge-gate.mjs and OPERATING-MODEL §6.
+# Low risk merges after CI, QA and security pass on the exact head; medium risk
+# also needs the maintainer's `merge-approved` label on that head; high risk is
+# never merged here. A PR behind main is first updated (main merged in) so CI
+# and the review re-run on the combined code. See .github/scripts/merge-gate.mjs and OPERATING-MODEL §6.
 #
 # Inactive (report only) unless the repository variable AUTO_MERGE_ENABLED is
 # "true". Runs only default-branch code. The app key lives in the `pr-merge`
@@ -51,4 +52,5 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           AUTO_MERGE_ENABLED: ${{ vars.AUTO_MERGE_ENABLED }}
           MERGE_APP_ID: ${{ vars.MERGE_APP_ID }}
+          REVIEW_APP_ID: ${{ vars.REVIEW_APP_ID }}
           MERGE_APP_PRIVATE_KEY: ${{ secrets.MERGE_APP_PRIVATE_KEY }}

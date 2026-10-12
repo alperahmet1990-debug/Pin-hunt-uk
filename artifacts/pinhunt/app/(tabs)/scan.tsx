@@ -21,44 +21,8 @@ import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
-import { API_BASE } from '@/lib/apiBase';
+import { identifyPin, type ImageInsights } from '@/utils/identifyPin';
 import type { CataloguePin } from '@workspace/pin-repository';
-
-/** What the scan understood from the photo (AI description + Google Vision). */
-interface ImageInsights {
-  characters: string[];
-  keywords: string[];
-  textOnPin: string | null;
-  logos: string[];
-  webGuesses: string[];
-}
-
-async function identifyPin(
-  imageBase64: string,
-  mimeType: string,
-  accessToken?: string,
-): Promise<{
-  matches: Array<{ pinId: string; confidence: number; reasoning: string }>;
-  imageInsights: ImageInsights | null;
-}> {
-  const res = await fetch(`${API_BASE}/scan/identify`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
-    },
-    body: JSON.stringify({ imageBase64, mimeType }),
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error((err as { error?: string }).error ?? 'Identification failed');
-  }
-  const data = await res.json() as {
-    matches: Array<{ pinId: string; confidence: number; reasoning: string }>;
-    imageInsights?: ImageInsights;
-  };
-  return { matches: data.matches, imageInsights: data.imageInsights ?? null };
-}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -350,6 +314,34 @@ export default function ScanScreen() {
           </View>
         )}
 
+        {/* ── Every failure offers Try again + Search instead ── */}
+        {errorMsg && scanState === 'captured' && (
+          <View style={styles.errorActions}>
+            {!noMatchFound && (
+              <TouchableOpacity
+                onPress={handleIdentify}
+                activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel="Try again"
+                style={[styles.errorActionBtn, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12' }]}
+              >
+                <Feather name="refresh-cw" size={15} color={colors.homeCoral} />
+                <Text style={[styles.errorActionLabel, { color: colors.homeCoral }]}>Try again</Text>
+              </TouchableOpacity>
+            )}
+            <TouchableOpacity
+              onPress={() => router.push('/search')}
+              activeOpacity={0.85}
+              accessibilityRole="button"
+              accessibilityLabel="Search instead"
+              style={[styles.errorActionBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+            >
+              <Feather name="search" size={15} color={colors.homeInk} />
+              <Text style={[styles.errorActionLabel, { color: colors.homeInk }]}>Search instead</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+
         {/* ── Not in our catalogue? Offer to add it ── */}
         {noMatchFound && (
           <TouchableOpacity
@@ -632,6 +624,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   errorText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+  errorActions: { flexDirection: 'row', gap: 10, marginHorizontal: 16, marginBottom: 12 },
+  errorActionBtn: {
+    flex: 1,
+    minHeight: 44,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    borderWidth: 1,
+    borderRadius: 14,
+  },
+  errorActionLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   addPinCta: {
     flexDirection: 'row',
     alignItems: 'center',

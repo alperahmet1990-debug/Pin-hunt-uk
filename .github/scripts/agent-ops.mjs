@@ -18,8 +18,9 @@
 
 import { appendFileSync, readFileSync } from 'node:fs';
 import {
-  REPO, addLabels, comment, formSection, gh, ghAll, issueRefs, labelNames, removeLabel,
+  REPO, addLabels, comment, gh, ghAll, issueRefs, labelNames, removeLabel,
 } from './lib.mjs';
+import { duplicateClaims, rankQueue, readyPlan } from './queue.mjs';
 
 const DRY_RUN = process.env.DRY_RUN === '1';
 const now = Date.now();
@@ -29,20 +30,6 @@ const STATE_LABELS = ['status:ready', 'status:claimed', 'status:in-review', 'sta
 const GATE_LABELS = ['approved', 'l3-go', 'human-approved-config'];
 // Dev runs take ~5–15 min; with an hourly schedule a claim older than this is dead.
 const STALE_CLAIM_HOURS = Number(process.env.STALE_CLAIM_HOURS ?? 2);
-// Human-only labels that keep an issue out of the autonomous queue.
-export const HOLD_LABELS = ['on-hold', 'ux-review-pending'];
-const isHeld = labels => labels.some(l => HOLD_LABELS.includes(l));
-
-/** 'add' / 'remove' status:ready, or null. Exported for tests. */
-export function readyDecision(labels, openBlockers) {
-  // Held work never enters the queue, even when approved.
-  if (isHeld(labels)) return labels.includes('status:ready') ? 'remove' : null;
-  if (!labels.includes('approved') || labels.includes('human-only')) return null;
-  const hasState = labels.some(l => STATE_LABELS.includes(l));
-  if (!openBlockers.length && !hasState) return 'add';
-  if (openBlockers.length && labels.includes('status:ready')) return 'remove';
-  return null;
-}
 const log = msg => console.log(DRY_RUN ? `[dry-run] ${msg}` : msg);
 const act = async (msg, fn) => { log(msg); if (!DRY_RUN) await fn(); };
 
@@ -79,39 +66,34 @@ async function auditGates(item) {
 }
 
 async function main() {
-  // Event-driven run: audit only the item that was just labelled.
+  // Event-driven runs: audit gate labels on the item, then (for issue events)
+  // recalculate the whole queue, since approvals, holds, claims, merges and
+  // closures can all change which issue is next.
   if (process.env.GITHUB_EVENT_NAME === 'issues' || process.env.GITHUB_EVENT_NAME === 'pull_request') {
     const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
     const item = event.issue ?? event.pull_request;
-    // A closed issue may unblock others: fall through to the full run.
-    if (!(process.env.GITHUB_EVENT_NAME === 'issues' && event.action === 'closed')) {
-      if (GATE_LABELS.includes(event.label?.name)) {
-        const fresh = await gh(`/repos/${REPO}/issues/${item.number}`);
-        const alerts = await auditGates(fresh);
-        log(alerts.length ? `Gate alerts: ${JSON.stringify(alerts)}` : `#${item.number}: ${event.label.name} added by a human, OK`);
-        // A human approval makes the issue ready straight away when nothing blocks it.
-        if (!alerts.length && event.label.name === 'approved' && !fresh.pull_request) {
-          const blockers = [];
-          for (const n of issueRefs(formSection(fresh.body, 'Blocked by'))) {
-            const b = await gh(`/repos/${REPO}/issues/${n}`).catch(() => null);
-            if (b?.state === 'open') blockers.push(n);
-          }
-          if (readyDecision(labelNames(fresh), blockers) === 'add') {
-            await act(`#${fresh.number}: approved and unblocked → status:ready`, () => addLabels(fresh.number, ['status:ready']));
-          }
-        }
-      }
-      return;
+    if (GATE_LABELS.includes(event.label?.name)) {
+      const fresh = await gh(`/repos/${REPO}/issues/${item.number}`);
+      const alerts = await auditGates(fresh);
+      log(alerts.length ? `Gate alerts: ${JSON.stringify(alerts)}` : `#${item.number}: ${event.label.name} added by a human, OK`);
     }
+    if (process.env.GITHUB_EVENT_NAME !== 'issues') return;
   }
 
-  const [openIssuesAndPrs, closedRecent, openPrs] = await Promise.all([
+  if (process.env.QUEUE_ONLY === '1') {
+    const [all, prs] = await Promise.all([ghAll(`/repos/${REPO}/issues?state=all`), ghAll(`/repos/${REPO}/pulls?state=open`)]);
+    const { ranked, excluded } = rankQueue(all, prs);
+    console.log(formatQueue(ranked, excluded));
+    return;
+  }
+
+  const [allIssues, openIssuesAndPrs, closedRecent, openPrs] = await Promise.all([
+    ghAll(`/repos/${REPO}/issues?state=all`),
     ghAll(`/repos/${REPO}/issues?state=open`),
     ghAll(`/repos/${REPO}/issues?state=closed&since=${new Date(now - 7 * 24 * HOUR).toISOString()}`),
     ghAll(`/repos/${REPO}/pulls?state=open`),
   ]);
   const openIssues = openIssuesAndPrs.filter(i => !i.pull_request);
-  const openByNumber = new Map(openIssues.map(i => [i.number, i]));
   const agentPrs = openPrs.filter(p => p.head.ref.startsWith('claude/'));
   const prsByIssue = new Map();
   for (const pr of openPrs) for (const n of linkedIssueNumbers(pr)) prsByIssue.set(n, pr);
@@ -122,17 +104,31 @@ async function main() {
   let paused = false;
   try { await gh(`/repos/${REPO}/contents/.agents/PAUSE`); paused = true; } catch { /* not paused */ }
 
-  // 1. Groom readiness
-  for (const issue of openIssues) {
-    const labels = labelNames(issue);
-    if ((!labels.includes('approved') && !isHeld(labels)) || labels.includes('human-only')) continue;
-    const blockers = issueRefs(formSection(issue.body, 'Blocked by')).filter(n => openByNumber.has(n));
-    const decision = readyDecision(labels, blockers);
-    if (decision === 'add') {
-      await act(`#${issue.number}: blockers clear → status:ready`, () => addLabels(issue.number, ['status:ready']));
-    } else if (decision === 'remove') {
-      await act(`#${issue.number}: ${isHeld(labels) ? 'on hold' : `blocked by ${blockers.map(n => `#${n}`).join(', ')}`} → remove status:ready`,
-        () => removeLabel(issue.number, 'status:ready'));
+  // 1. Queue: rank eligible issues; only the top one is status:ready.
+  const { ranked, excluded } = rankQueue(allIssues, openPrs);
+  const plan = readyPlan(ranked, openIssues);
+  for (const n of plan.remove) {
+    const why = excluded.find(e => e.number === n)?.reason ?? 'not the top-ranked issue';
+    await act(`#${n}: remove status:ready (${why})`, () => removeLabel(n, 'status:ready'));
+  }
+  for (const n of plan.add) {
+    const r = ranked[0];
+    await act(`#${n}: next in queue → status:ready (P${r.effectivePriority} effective, ${r.downstream} downstream, phase ${r.phase})`,
+      () => addLabels(n, ['status:ready']));
+  }
+
+  // 1b. Duplicate claims must never happen; flag them for a human.
+  const claimed = openIssues.filter(i => labelNames(i).includes('status:claimed'));
+  if (claimed.length) {
+    const commentsByIssue = new Map();
+    for (const i of claimed) commentsByIssue.set(i.number, await ghAll(`/repos/${REPO}/issues/${i.number}/comments`));
+    for (const p of duplicateClaims(claimed, commentsByIssue, now)) {
+      const marker = `<!-- agent-ops:duplicate-claim:${p.reason} -->`;
+      if ((commentsByIssue.get(p.number) ?? []).some(c => c.body.includes(marker))) continue;
+      await act(`#${p.number}: duplicate claim (${p.reason}) → status:needs-human`, async () => {
+        await addLabels(p.number, ['status:needs-human']);
+        await comment(p.number, `${marker}\n⚠️ Duplicate agent claim detected (${p.reason}). Agents stop here; a human should decide which run keeps the issue.`);
+      });
     }
   }
 
@@ -191,7 +187,7 @@ async function main() {
     const all = (await ghAll(`/repos/${REPO}/issues?state=all&labels=${p}`)).filter(i => !i.pull_request);
     readiness[p] = { closed: all.filter(i => i.state === 'closed').length, total: all.length };
   }
-  const report = buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness, gateAlerts });
+  const report = buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness, gateAlerts, ranked });
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, report);
   const target = openIssues.find(i => labelNames(i).includes('status-report'));
   if (target) {
@@ -202,7 +198,17 @@ async function main() {
   }
 }
 
-function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness, gateAlerts = [] }) {
+export function formatQueue(ranked, excluded = []) {
+  const rows = ranked.map((r, i) => `${i + 1}. #${r.number} ${r.title} — effective P${r.effectivePriority}` +
+    `${r.raisedBy.length ? ` (own P${r.ownPriority}, raised by #${r.raisedBy.join(', #')})` : ''}, ${r.downstream} downstream, phase ${r.phase === 99 ? '—' : r.phase}`);
+  const approvedOut = excluded.filter(e => e.reason !== 'not approved' && e.reason !== 'closed' && e.reason !== 'pull request');
+  return [
+    rows.length ? rows.join('\n') : '_No eligible issues_',
+    approvedOut.length ? `\nApproved but not eligible: ${approvedOut.map(e => `#${e.number} (${e.reason})`).join(', ')}` : '',
+  ].join('\n');
+}
+
+function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness, gateAlerts = [], ranked = [] }) {
   const has = (i, l) => labelNames(i).includes(l);
   const line = i => `- #${i.number} ${i.title}`;
   const list = (items, empty = '_None_') => (items.length ? items.join('\n') : empty);
@@ -262,8 +268,8 @@ function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, re
       ...openIssues.filter(i => has(i, 'human-only') && (has(i, 'P0') || has(i, 'P1'))).map(i => `${line(i)} (human-only)`),
     ]),
     '',
-    '## Ready for agents',
-    list(openIssues.filter(i => has(i, 'status:ready')).map(line)),
+    '## Agent queue (calculated by Agent ops)',
+    ranked.length ? ranked.slice(0, 5).map((r, i) => `${i + 1}. #${r.number} ${r.title}${i === 0 ? ' ← **status:ready**' : ''}`).join('\n') : '_No eligible issues_',
     '',
   ].join('\n');
 }

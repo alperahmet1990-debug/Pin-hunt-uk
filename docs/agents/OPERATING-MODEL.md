@@ -82,37 +82,36 @@ The dev routine runs **hourly, every day**, starting at :07. Agent ops runs at :
 - 2 or more `claude/*` PRs are open (the WIP limit);
 - no issue is eligible (step 1).
 
-### 1. Select
-List open issues with `approved` + `status:ready` + your `agent:` label. Use the built-in GitHub tools or `gh api` (REST). `gh issue` and `gh pr` use GraphQL, which is blocked in cloud sessions.
+### 1. Select (Agent ops does this, not you)
+**Agent ops owns task selection.** On every issue change and hourly, it ranks every eligible issue in code (`.github/scripts/queue.mjs`, unit-tested) and gives `status:ready` to **only the top-ranked one**. All other approved issues stay approved but not ready. Development agents **never rank or choose**: they take the single `status:ready` issue, or nothing.
 
-```bash
-gh api "repos/{owner}/{repo}/issues?state=open&labels=approved,status:ready,agent:ui&per_page=100"
-```
+**Eligible:**
+- open
+- `approved`
+- `autonomy:L1` or `autonomy:L2`
+- `size:S`
+- an `agent:` label
+- no `human-only`, `interactive`, `on-hold` or `ux-review-pending`
+- no `status:claimed`, `status:in-review`, `status:blocked`, `status:needs-human` or `status:needs-decision`
+- no open PR linked to it
+- every `Blocked by` issue is **closed as completed**. An open PR, an issue closed as not planned, or an unknown reference keeps blocking.
 
-Discard any issue that:
-- has `status:needs-decision`, `on-hold` or `ux-review-pending`, or is missing `approved`;
-- is L3 (scheduled runs never take L3, even with `l3-go`; L3 is started by hand), `human-only`, or not `size:S` (until the maintainer widens the size limit here);
-- lists a `Blocked by` issue that is still open;
-- already has an open PR that references it;
-- lists a `Touches:` path that an open `claude/*` PR also changes;
-- would take the open `claude/*` PRs past **2** in total (WIP limit). Only **one** issue may be `status:claimed` at a time.
+**Ranking keys, in order:**
+1. **Effective priority.** The issue's own P-label, raised to the highest priority of any open issue that depends on it, directly or transitively.
+2. **Downstream dependents:** more first.
+3. **Launch phase:** lower first.
+4. **Issue number:** final tie-break only.
 
-Order the remaining issues by these keys, in this order. **Never just take the lowest issue number.**
-1. **Effective priority.** This is the issue's own `P0`–`P3`, raised to the highest priority of any open issue that lists it under `Blocked by`. Unblocking a P0 makes an issue effectively P0. Find dependents by searching open issues' `Blocked by` sections for `#<n>`.
-2. **Unblocks more work.** The issue that appears in more open issues' `Blocked by` lists comes first.
-3. **Earlier launch phase.** Lower `Phase` (Report 9) number in the issue header first.
-4. **Oldest.** Lowest issue number, as the final tie-break only.
+**When it recalculates:** approvals, holds, claims, merges, closures and reopenings all trigger a new ranking. Runs are serialised, so two runs can't hand out different issues.
 
-State the ordering you computed (top 3 with their keys) in your claim comment.
+If more than one issue has `status:ready`, the queue is inconsistent. Take nothing and report it. Agent ops corrects it on its next run.
 
-If nothing is eligible, stop. Do not invent work.
-
-Before choosing, **read the whole issue**: the full body and **all** comments, paginating if needed. Build the specification as described in §2a. If a maintainer comment after approval changes the scope materially, apply §2a (comment, set `status:needs-decision`) and **end the run** without taking another issue. Report it in the run summary.
+Before claiming, **read the whole issue**: the full body and **all** comments, paginating if needed. Build the specification as described in §2a. If a maintainer comment after approval changes the scope materially, apply §2a (comment, set `status:needs-decision`) and **end the run**. Agent ops will then hand `status:ready` to the next issue.
 
 ### 2. Claim
-1. Add the `status:claimed` label and remove `status:ready`. When you set labels by sending the full list, keep every existing label, including `approved` and the maintainer's labels.
+1. Re-read the issue's labels immediately before claiming: it must still have `status:ready` and no `status:claimed`. Then swap `status:ready` → `status:claimed`. When you set labels by sending the full list, keep every existing label, including `approved` and the maintainer's labels.
 2. Comment `agent-claim <session URL> <UTC timestamp>`. Take the timestamp from `date -u +%Y-%m-%dT%H:%M:%SZ`; never write one by hand.
-3. Re-read the comments. If another `agent-claim` from a different session within the last 24 h is earlier than yours, remove your label change, comment `agent-release`, and go back to step 1.
+3. Re-read the comments. If another `agent-claim` from a different session exists in the last 24 h, set `status:needs-human`, comment, and stop. Never take a different issue in the same run. Agent ops also flags any issue claimed by two sessions, and any second claimed issue.
 
 ### 3. Branch
 Create `claude/<issue-number>-<short-slug>` from the latest `main`.

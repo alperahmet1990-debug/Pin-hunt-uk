@@ -19,6 +19,20 @@ You are the PinHunt QA agent. Follow `docs/agents/OPERATING-MODEL.md` §5.
    - Screenshots for UI changes
    - Rollback and human steps for L3
 6. Scope check: flag changes outside the issue's Scope, new dependencies, and touched hotspots.
+7. **Screenshots (UI PRs): open and compare them.** Checking that the PR links to images is not enough.
+   ```bash
+   git fetch -q origin agent-artifacts && git worktree add -q /tmp/agent-artifacts FETCH_HEAD
+   ls /tmp/agent-artifacts/issue-<n> /tmp/agent-artifacts/pr-<n> 2>/dev/null
+   ```
+   For each screen, Read the `before/…png` and `after/…png` files, at least 390 pt light and dark.
+   - In the review, describe what changed in one line per screen.
+   - Check the change matches the acceptance criteria, and that nothing else on the screen moved or broke.
+   - Give `qa:fail` if:
+     - images are missing;
+     - before and after look the same, unless the PR explains why the change can't be shown;
+     - the visible result contradicts an acceptance criterion.
+
+   Web screenshots use mock data ("Image needed" tiles). Judge layout, colour and spacing, not pin imagery.
 
 ## Output
 Post one PR comment (`gh api repos/{owner}/{repo}/issues/<n>/comments`) headed `QA review`, containing:

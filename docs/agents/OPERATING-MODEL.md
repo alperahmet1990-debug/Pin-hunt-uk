@@ -94,7 +94,7 @@ Pick the first remaining issue by priority (P0 → P3), then critical path, then
 
 If nothing is eligible, stop. Do not invent work.
 
-Before choosing, **read the whole issue**: the full body and **all** comments, paginating if needed. Build the specification as described in §2a. If a maintainer comment after approval changes the scope materially, apply §2a (comment, set `status:needs-decision`, stop) and move on to the next candidate.
+Before choosing, **read the whole issue**: the full body and **all** comments, paginating if needed. Build the specification as described in §2a. If a maintainer comment after approval changes the scope materially, apply §2a (comment, set `status:needs-decision`) and **end the run** without taking another issue. Report it in the run summary.
 
 ### 2. Claim
 1. Add the `status:claimed` label and remove `status:ready`. When you set labels by sending the full list, keep every existing label, including `approved` and the maintainer's labels.
@@ -145,6 +145,7 @@ gh api repos/{owner}/{repo}/pulls -f head=claude/42-slug -f base=main \
 - Fill every heading of `.github/pull_request_template.md` and include `Closes #<issue>`. UI PRs include the screenshot table from step 5.
 - **Report only what you observed.** Copy test counts and command results from the actual output, and never estimate them. If you did not run something, say so.
 - L3 PRs use `-F draft=true`.
+- **Do not set labels when creating the PR.** In particular, don't copy the issue's labels; the linked issue carries them. Labels on PRs are reserved for the review agents (`qa:*`, `security:*`) and the path-labeler workflow (`security:required`). The guard blocks other labels.
 - Add `security:required` to the PR if the issue is L2/L3 or you changed a `sensitive` path in `.github/agent-paths.json`. The `Agent PR checks` workflow also adds it as a backstop.
 - On the issue, set `status:in-review` and remove `status:claimed`.
 
@@ -167,7 +168,7 @@ The guard hook (`.claude/hooks/agent-guard.mjs`) enforces most of this list. Tre
 
 The Review routine runs on `pull_request.opened` for non-draft `claude/*` PRs.
 
-1. **QA** (`qa-reviewer.md`):
+1. **QA** (`qa-reviewer.md`). For UI PRs, the reviewer must **open the before/after screenshots** and confirm the change is visible:
    - Run the verification commands.
    - Check each acceptance criterion against the diff and the evidence.
    - Check that tests exist for the change and that the PR template is complete.

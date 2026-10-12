@@ -39,6 +39,38 @@ export function columnFor({ state, labels, prLabels = null }) {
   return 'Backlog';
 }
 
+// Optional "Team" field: who holds the ticket now (OPERATING-MODEL §1 names).
+// Display only, derived from the same labels; nothing reads it back. The sync
+// fills it only if a single-select field named "Team" exists with these
+// options, so it is inert until the maintainer creates that field.
+export const TEAM_FIELD = 'Team';
+export const TEAM = {
+  genie: '🧞 Genie', felix: '🛠️ Fix-It Felix', edna: '👓 Edna Mode', roz: '🔍 Roz',
+  baymax: '🛡️ Baymax', remy: '🐭 Remy', scrooge: '🏰 Scrooge', maintainer: '👤 Maintainer',
+};
+const SCROOGE_AREAS = ['area:infra', 'area:release', 'area:db', 'area:testing'];
+
+/** Team member currently holding an open issue, or null for closed ones. Pure, unit-tested. */
+export function teamFor({ state, labels, prLabels = null }) {
+  if (state === 'closed' || state === 'CLOSED') return null;
+  const has = l => labels.includes(l);
+  const pr = prLabels ?? [];
+  if (has('status:needs-human') || has('status:needs-decision') || has('status:blocked')) return TEAM.maintainer;
+  if (has('status:in-review')) {
+    if (!pr.some(l => l.startsWith('qa:'))) return TEAM.roz;
+    if (pr.includes('security:required') && !pr.some(l => l === 'security:pass' || l === 'security:changes')) return TEAM.baymax;
+    return TEAM.maintainer; // reviewed: merge or send back
+  }
+  if (has('status:claimed')) return has('agent:backend') ? TEAM.felix : has('agent:ui') ? TEAM.edna : TEAM.maintainer;
+  if (has('human-only') || has('interactive')) {
+    if (SCROOGE_AREAS.some(has)) return TEAM.scrooge;
+    if (has('area:security')) return TEAM.baymax;
+    return TEAM.maintainer;
+  }
+  if (has('on-hold') || has('ux-review-pending') || !has('approved')) return TEAM.remy;
+  return TEAM.genie; // approved: in Genie's queue
+}
+
 async function graphql(query, variables) {
   const res = await fetch(`${process.env.GITHUB_API_URL ?? 'https://api.github.com'}/graphql`, {
     method: 'POST',
@@ -70,10 +102,14 @@ export async function syncProject({ dryRun = false, log = console.log } = {}) {
   const number = Number(process.env.PROJECT_NUMBER ?? 1);
 
   const head = await graphql(`query($o: String!, $n: Int!) { user(login: $o) { projectV2(number: $n) {
-    id field(name: "Status") { ... on ProjectV2SingleSelectField { id options { id name } } } } } }`, { o: owner, n: number });
+    id field(name: "Status") { ... on ProjectV2SingleSelectField { id options { id name } } }
+    team: field(name: "${TEAM_FIELD}") { ... on ProjectV2SingleSelectField { id options { id name } } } } } }`, { o: owner, n: number });
   const project = head.user.projectV2;
   const field = dryRun ? project.field : await ensureColumns(project.field);
   const optionId = Object.fromEntries(field.options.map(o => [o.name, o.id]));
+  const teamField = project.team?.id ? project.team : null;
+  const teamOptionId = Object.fromEntries((teamField?.options ?? []).map(o => [o.name, o.id]));
+  if (!teamField) log(`No "${TEAM_FIELD}" field in the Project; skipping team display.`);
 
   // All items currently in the Project.
   const items = [];
@@ -82,6 +118,7 @@ export async function syncProject({ dryRun = false, log = console.log } = {}) {
     const page = await graphql(`query($id: ID!, $after: String) { node(id: $id) { ... on ProjectV2 {
       items(first: 100, after: $after) { pageInfo { hasNextPage endCursor } nodes { id
         status: fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
+        team: fieldValueByName(name: "${TEAM_FIELD}") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
         content { __typename ... on Issue { number state repository { nameWithOwner } labels(first: 50) { nodes { name } } } } } } } } }`,
     { id: project.id, after: cursor });
     const conn = page.node.items;
@@ -104,7 +141,7 @@ export async function syncProject({ dryRun = false, log = console.log } = {}) {
     if (!dryRun) {
       const added = await graphql(`mutation($p: ID!, $c: ID!) { addProjectV2ItemById(input: { projectId: $p, contentId: $c }) { item { id } } }`,
         { p: project.id, c: issue.node_id });
-      items.push({ id: added.addProjectV2ItemById.item.id, status: null,
+      items.push({ id: added.addProjectV2ItemById.item.id, status: null, team: null,
         content: { __typename: 'Issue', number: issue.number, state: issue.state, repository: { nameWithOwner: REPO }, labels: { nodes: issue.labels } } });
     }
   }
@@ -115,7 +152,17 @@ export async function syncProject({ dryRun = false, log = console.log } = {}) {
     if (c?.__typename !== 'Issue' || c.repository.nameWithOwner.toLowerCase() !== REPO.toLowerCase()) continue;
     const labels = c.labels.nodes.map(l => l.name);
     if (labels.includes('status-report')) continue;
-    const want = columnFor({ state: c.state, labels, prLabels: prLabelsByIssue.get(c.number) });
+    const prLabels = prLabelsByIssue.get(c.number);
+    const team = teamField ? teamFor({ state: c.state, labels, prLabels }) : null;
+    if (team && item.team?.name !== team && teamOptionId[team]) {
+      log(`#${c.number}: team ${item.team?.name ?? '(none)'} → ${team}`);
+      if (!dryRun) {
+        await graphql(`mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) { updateProjectV2ItemFieldValue(input: {
+          projectId: $p, itemId: $i, fieldId: $f, value: { singleSelectOptionId: $o } }) { projectV2Item { id } } }`,
+        { p: project.id, i: item.id, f: teamField.id, o: teamOptionId[team] });
+      }
+    }
+    const want = columnFor({ state: c.state, labels, prLabels });
     if (item.status?.name === want) continue;
     changed++;
     log(`#${c.number}: ${item.status?.name ?? '(none)'} → ${want}`);

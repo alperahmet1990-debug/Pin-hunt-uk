@@ -86,3 +86,22 @@ test('Kanban column follows labels, never the other way round', async () => {
   assert.equal(columnFor({ state: 'closed', labels: ['approved'] }), 'Done');
   assert.equal(columnFor({ state: 'CLOSED', labels: [] }), 'Done');
 });
+
+test('Team display follows labels and review state', async () => {
+  const { teamFor, TEAM } = await import('./project-sync.mjs');
+  const t = (labels, prLabels) => teamFor({ state: 'open', labels, prLabels });
+  assert.equal(t(['P1', 'agent:ui']), TEAM.remy, 'not approved: product backlog');
+  assert.equal(t(['approved', 'on-hold']), TEAM.remy);
+  assert.equal(t(['approved', 'agent:ui']), TEAM.genie);
+  assert.equal(t(['approved', 'status:ready', 'agent:backend']), TEAM.genie);
+  assert.equal(t(['approved', 'status:claimed', 'agent:ui']), TEAM.edna);
+  assert.equal(t(['approved', 'status:claimed', 'agent:backend']), TEAM.felix);
+  assert.equal(t(['approved', 'status:in-review'], []), TEAM.roz);
+  assert.equal(t(['approved', 'status:in-review'], ['qa:pass', 'security:required']), TEAM.baymax);
+  assert.equal(t(['approved', 'status:in-review'], ['qa:fail', 'security:required', 'security:pass']), TEAM.maintainer);
+  assert.equal(t(['approved', 'status:needs-decision']), TEAM.maintainer);
+  assert.equal(t(['human-only', 'area:infra']), TEAM.scrooge);
+  assert.equal(t(['interactive', 'area:security']), TEAM.baymax);
+  assert.equal(t(['human-only', 'area:compliance']), TEAM.maintainer);
+  assert.equal(teamFor({ state: 'closed', labels: ['approved'] }), null);
+});

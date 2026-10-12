@@ -1,15 +1,15 @@
 name: Agent ops
 
-# Daily grooming and the "Development status" report (no Claude usage).
+# Hourly grooming and the "Development status" report (no Claude usage).
 # See .github/scripts/agent-ops.mjs. Never creates issues.
 on:
   # Immediate gate-label backstop (see agent-ops.mjs step 0).
   issues:
-    types: [labeled]
+    types: [labeled, unlabeled, closed, reopened]
   pull_request:
     types: [labeled]
   schedule:
-    - cron: '17 6 * * 1-5' # 06:17 UTC weekdays
+    - cron: '41 * * * *' # hourly, every day (dev routine runs at :07)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -23,15 +23,18 @@ permissions:
   pull-requests: write
   checks: read
 
+# One run at a time (queued, never cancelled) so two runs can't hand out
+# status:ready to different issues.
 concurrency:
-  group: agent-ops-${{ github.event_name }}-${{ github.event.issue.number || github.event.pull_request.number || 'daily' }}
+  group: agent-ops
   cancel-in-progress: false
 
 jobs:
   ops:
-    # Label events only matter for the three human-only gate labels.
+    # Any issue change can change the queue; PR label events only matter for
+    # the human-only gate labels (backstop audit).
     if: >-
-      (github.event_name != 'issues' && github.event_name != 'pull_request') ||
+      github.event_name != 'pull_request' ||
       contains(fromJSON('["approved","l3-go","human-approved-config"]'), github.event.label.name)
     runs-on: ubuntu-latest
     timeout-minutes: 10

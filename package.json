@@ -8,7 +8,7 @@
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
     "test": "pnpm run test:agents && pnpm -r --if-present run test",
-    "test:agents": "node --test .claude/hooks/agent-guard.test.mjs .claude/hooks/agent-guard.permissions.test.mjs .github/scripts/agent-scripts.test.mjs"
+    "test:agents": "node --test .claude/hooks/agent-guard.test.mjs .claude/hooks/agent-guard.permissions.test.mjs .github/scripts/agent-scripts.test.mjs .github/scripts/queue.test.mjs"
   },
   "private": true,
   "dependencies": {

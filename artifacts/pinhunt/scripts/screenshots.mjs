@@ -125,7 +125,8 @@ function findChrome() {
     '/opt/google/chrome/chrome',
   ].filter(Boolean);
   for (const c of candidates) if (existsSync(c)) return c;
-  for (const cache of [path.join(os.homedir(), '.cache/puppeteer'), path.join(repoRoot, 'chrome-headless-shell'), path.join(repoRoot, 'chrome')]) {
+  // Cloud sessions ship Playwright's Chromium under /opt/pw-browsers.
+  for (const cache of ['/opt/pw-browsers', path.join(os.homedir(), '.cache/puppeteer'), path.join(repoRoot, 'chrome-headless-shell'), path.join(repoRoot, 'chrome')]) {
     if (!existsSync(cache)) continue;
     const hit = spawnSync('find', [cache, '-type', 'f', '(', '-name', 'chrome-headless-shell', '-o', '-name', 'chrome', ')', '-perm', '-u+x'], { encoding: 'utf8' }).stdout.split('\n').find(Boolean);
     if (hit) return hit;

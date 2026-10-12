@@ -42,9 +42,32 @@ export function connectionArgs({ host, ref }) {
   return ["-h", host, "-p", "5432", "-U", `postgres.${ref}`, "-d", "postgres"];
 }
 
-/** pg_dump args: definitions only — no rows, ever. */
-export function pgDumpArgs(conn, outFile) {
-  return [...conn, "--schema-only", "--schema=public", "--no-owner", "--no-comments", "-f", outFile];
+/** Major version from "pg_dump (PostgreSQL) 18.6 (…)". */
+export function toolMajor(versionText) {
+  const m = /\(PostgreSQL\) (\d+)/.exec(versionText ?? "");
+  return m ? Number(m[1]) : null;
+}
+
+/**
+ * pg_dump args: definitions only — no rows, ever. From pg_dump 18, optimizer
+ * statistics are excluded explicitly too (older servers can't load them).
+ */
+export function pgDumpArgs(conn, outFile, { major = null } = {}) {
+  return [
+    ...conn, "--schema-only", "--schema=public", "--no-owner", "--no-comments",
+    ...(major && major >= 18 ? ["--no-statistics"] : []),
+    "-f", outFile,
+  ];
+}
+
+/** Restoring a newer server's schema into an older server can fail. */
+export function assertServerVersions(productionNum, stagingNum) {
+  const prod = Number(productionNum);
+  const staging = Number(stagingNum);
+  if (!prod || !staging) throw new Error("couldn't read the Postgres server versions.");
+  if (Math.floor(staging / 10000) < Math.floor(prod / 10000)) {
+    throw new Error(`staging runs Postgres ${Math.floor(staging / 10000)} but production runs ${Math.floor(prod / 10000)}; upgrade staging first (Settings → Infrastructure).`);
+  }
 }
 
 /**
@@ -67,6 +90,7 @@ export const SUPABASE_ROLES = new Set([
 /** Lines a fresh Supabase project already has, or that only Supabase may run. */
 const DROP_LINES = [
   { re: /^SET transaction_timeout = .*;$/, why: "pg_dump 17 setting unknown to older servers" },
+  { re: /^SELECT \* FROM pg_catalog\.pg_restore_(relation|attribute)_stats\(/, why: "optimizer statistics (not needed, may not load)" },
   { re: /^CREATE SCHEMA public;$/, why: "public already exists" },
   { re: /^ALTER SCHEMA public OWNER TO .*;$/, why: "Supabase owns public" },
   { re: /^COMMENT ON SCHEMA public IS .*;$/, why: "Supabase owns public" },

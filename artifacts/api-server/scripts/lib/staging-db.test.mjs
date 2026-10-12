@@ -9,6 +9,8 @@ import {
   copiedData,
   diffFingerprints,
   findTool,
+  assertServerVersions,
+  toolMajor,
   missingExtensionsSql,
   pgDumpArgs,
   productionReadOnlySql,
@@ -49,6 +51,7 @@ describe("sanitizeSchemaDump", () => {
   const dump = [
     "SET statement_timeout = 0;",
     "SET transaction_timeout = 0;",
+    "SELECT * FROM pg_catalog.pg_restore_relation_stats('version', '170004'::integer);",
     "CREATE SCHEMA public;",
     "ALTER SCHEMA public OWNER TO pg_database_owner;",
     "COMMENT ON SCHEMA public IS 'standard public schema';",
@@ -64,7 +67,8 @@ describe("sanitizeSchemaDump", () => {
     expect(sql).toContain("CREATE TABLE public.pins (id uuid);");
     expect(sql).toContain("GRANT SELECT ON TABLE public.pins TO anon, authenticated;");
     expect(sql).not.toMatch(/transaction_timeout|CREATE SCHEMA public|ALTER SCHEMA public|COMMENT ON SCHEMA|ALTER DEFAULT PRIVILEGES|PUBLICATION/);
-    expect(Object.values(removed).reduce((a, b) => a + b, 0)).toBe(6);
+    expect(Object.values(removed).reduce((a, b) => a + b, 0)).toBe(7);
+    expect(sql).not.toMatch(/pg_restore_relation_stats/);
   });
 
   it("refuses a dump that contains row data", () => {
@@ -137,5 +141,20 @@ describe("findTool", () => {
     expect(findTool("psql", { pathEnv: "/usr/bin:/x/bin", dirs: ["/app/bin"], exists: has(new Set(["/x/bin/psql", "/app/bin/psql"])) })).toBe("/x/bin/psql");
     expect(findTool("psql", { pathEnv: "/usr/bin", dirs: ["/app/bin"], exists: has(new Set(["/app/bin/psql"])) })).toBe("/app/bin/psql");
     expect(findTool("psql", { pathEnv: "", dirs: ["/app/bin"], exists: () => false })).toBeNull();
+  });
+});
+
+describe("tool and server versions", () => {
+  it("excludes statistics only for pg_dump 18+", () => {
+    expect(toolMajor("pg_dump (PostgreSQL) 18.6 (Postgres.app)")).toBe(18);
+    expect(pgDumpArgs([], "/x", { major: 18 })).toContain("--no-statistics");
+    expect(pgDumpArgs([], "/x", { major: 17 })).not.toContain("--no-statistics");
+  });
+
+  it("refuses to restore into an older Postgres major version", () => {
+    expect(() => assertServerVersions("170004", "170006")).not.toThrow();
+    expect(() => assertServerVersions("150008", "170004")).not.toThrow();
+    expect(() => assertServerVersions("170004", "150008")).toThrow(/upgrade staging/);
+    expect(() => assertServerVersions("", "170004")).toThrow(/versions/);
   });
 });

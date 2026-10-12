@@ -40,6 +40,8 @@ import {
   copiedData,
   diffFingerprints,
   findTool,
+  assertServerVersions,
+  toolMajor,
   missingExtensionsSql,
   pgDumpArgs,
   productionReadOnlySql,
@@ -176,7 +178,7 @@ async function exportSchema(s) {
 
   console.log("  1/3 schema-only dump (definitions, no rows)…");
   const raw = path.join(dir, "raw-dump.sql");
-  const dump = spawnSync(tool("pg_dump"), pgDumpArgs(conn, raw), { encoding: "utf8", env: pgEnv(password) });
+  const dump = spawnSync(tool("pg_dump"), pgDumpArgs(conn, raw, { major: toolMajor(toolVersion("pg_dump")) }), { encoding: "utf8", env: pgEnv(password) });
   if (dump.status !== 0) throw new Error(`pg_dump failed: ${(dump.stderr || "").trim().slice(0, 600)}`);
   const { sql, removed } = sanitizeSchemaDump(fs.readFileSync(raw, "utf8"));
   fs.writeFileSync(path.join(dir, "schema.sql"), sql, { mode: 0o600 });
@@ -186,6 +188,8 @@ async function exportSchema(s) {
   const cfg = JSON.parse(productionQuery(s, password, `set search_path = pg_catalog;\n${CONFIG_QUERY}`));
   fs.writeFileSync(path.join(dir, "config.sql"), buildConfigSql(cfg), { mode: 0o600 });
 
+  const serverVersionNum = productionQuery(s, password, "select current_setting('server_version_num');");
+
   console.log("  3/3 schema fingerprint…");
   fs.writeFileSync(path.join(dir, "prod-fingerprint.txt"), productionQuery(s, password, FINGERPRINT_QUERY) + "\n", { mode: 0o600 });
 
@@ -193,6 +197,7 @@ async function exportSchema(s) {
     productionRef: s.productionRef,
     createdAt: new Date().toISOString(),
     pgDump: toolVersion("pg_dump"),
+    serverVersionNum,
     extensions: cfg.extensions,
     counts: {
       buckets: cfg.buckets.length,
@@ -215,7 +220,8 @@ async function restore(s) {
   const password = await promptPassword(`STAGING database password (project ${s.stagingRef})`);
   const conn = stagingConn(s);
 
-  console.log("  1/6 checking staging is a fresh, empty project…");
+  console.log("  1/6 checking staging is a fresh, empty project on a compatible Postgres version…");
+  assertServerVersions(manifest.serverVersionNum, psql(conn, password, "select current_setting('server_version_num');"));
   const tables = Number(psql(conn, password, "select count(*) from pg_tables where schemaname = 'public';"));
   const counts = JSON.parse(psql(conn, password, DATA_COUNTS_QUERY));
   if (tables > 0 || counts["auth.users"] > 0 || counts["storage.objects"] > 0) {

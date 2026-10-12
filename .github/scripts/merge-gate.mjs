@@ -31,12 +31,19 @@ export const VERDICT_CHECKS = ['QA review', 'Security review'];
 export const APPROVAL_LABEL = 'merge-approved';
 const HOLD_LABELS = ['on-hold', 'status:needs-human', 'status:needs-decision', 'status:blocked', 'do-not-merge', 'qa:fail', 'security:changes'];
 
-/** Latest check run per name (reruns and cancelled duplicates replaced). */
+/**
+ * Latest check run per name, ordered the way branch protection orders them:
+ * by check suite (one per workflow run) first, then by run. When two runs of a
+ * workflow start together and the newer one is cancelled, GitHub judges the
+ * required check by that newer, cancelled run, so the gate must as well.
+ */
 export function latestRuns(checkRuns) {
   const latest = new Map();
+  const key = r => [r.check_suite?.id ?? 0, r.id];
+  const newer = (a, b) => key(a)[0] !== key(b)[0] ? key(a)[0] > key(b)[0] : key(a)[1] > key(b)[1];
   for (const run of checkRuns) {
     const prev = latest.get(run.name);
-    if (!prev || run.id > prev.id) latest.set(run.name, run);
+    if (!prev || newer(run, prev)) latest.set(run.name, run);
   }
   return latest;
 }

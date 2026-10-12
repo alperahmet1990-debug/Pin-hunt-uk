@@ -218,3 +218,27 @@ test('agents cannot forge review verdicts (check runs, statuses), but may read t
   assert.equal(gh('mcp__github__get_check_run', { check_run_id: 5 }), null);
   assert.equal(gh('mcp__github__pull_request_read', { method: 'get_check_runs', pullNumber: 5 }), null);
 });
+
+test('session-proxy PR routes are blocked; reading gate labels is not', () => {
+  for (const command of [
+    'gh api -X PUT repos/o/r/pulls/12/ccr/auto_merge',
+    'gh api --method DELETE repos/o/r/pulls/12/ccr/auto_merge',
+    'gh api -X POST repos/o/r/pulls/12/ccr/ready_for_review',
+    'gh api -X POST repos/o/r/pulls/12/ccr/convert_to_draft',
+    `curl -X PUT https://api.github.com/repos/o/r/pulls/12/ccr/auto_merge`,
+    'gh api repos/o/r/issues/42/labels -f "labels[]=merge-approved"',
+    'gh api -X POST repos/o/r/issues/42/labels --input labels.json -f x=merge-approved',
+    'gh api -X PUT repos/o/r/pulls/12/merge',
+    'gh api repos/o/r/pulls/12/merge?x=1 -X PUT',
+  ]) {
+    assert.ok(bash(command), command);
+  }
+  for (const command of [
+    'gh api repos/o/r/labels/merge-approved',
+    'gh api repos/o/r/labels/approved --jq .description',
+    'gh api "repos/o/r/issues?labels=merge-approved&state=open"',
+    'gh api repos/o/r/pulls/12/ccr/review_threads',
+  ]) {
+    assert.equal(bash(command), null, command);
+  }
+});

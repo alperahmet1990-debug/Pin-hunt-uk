@@ -51,17 +51,21 @@ const BASH_RULES = [
   // DELETE is blocked except removing an agent-managed label from an issue/PR.
   [/\bgh\s+api\b(?![^;&|]*\/issues\/\d+\/labels\/(status|qa|security)(:|%3A)|[^;&|]*\/issues\/\d+\/labels\/needs-device-check)[^;&|]*(-X|--method)\s*['"]?DELETE/i,
     'DELETE calls to the GitHub API are not allowed (except removing status:*, qa:*, security:* or needs-device-check labels).'],
-  [/\bgh\s+api\b[^;&|]*\/(merge|merges|protection|rulesets|hooks|secrets|variables|collaborators|keys|environments|actions\/permissions|deployments)\b/,
+  // A segment ends at /, ?, #, whitespace, a quote or the end, so label names such as merge-approved don't match.
+  [/\bgh\s+api\b[^;&|]*\/(merge|merges|protection|rulesets|hooks|secrets|variables|collaborators|keys|environments|actions\/permissions|deployments)(?=[\/?#\s'"]|$)/,
     'Merging and repository administration through the GitHub API are not allowed.'],
   [/\bgh\s+pr\s+merge\b/, 'Agents never merge pull requests.'],
   // GraphQL and raw HTTP reach the same operations as the REST rules above.
   [/\b(mergePullRequest|enablePullRequestAutoMerge|disablePullRequestAutoMerge|enqueuePullRequest|dequeuePullRequest|mergeBranch|updatePullRequestBranch)\b/,
     'Agents never merge pull requests or change auto-merge (including through GraphQL).'],
-  [/\/pulls\/\d+\/(merge|update-branch)\b|\/repos\/[^\s/]+\/[^\s/]+\/merges\b/, 'Agents never merge pull requests.'],
+  [/\/pulls\/\d+\/(merge|update-branch)(?=[\/?#\s'"]|$)|\/repos\/[^\s/]+\/[^\s/]+\/merges(?=[\/?#\s'"]|$)/, 'Agents never merge pull requests.'],
+  // The Claude Code session proxy exposes its own PR-state routes under /pulls/<n>/ccr/ (auto-merge, draft state).
+  [/\/pulls\/\d+\/ccr\/(auto_merge|ready_for_review|convert_to_draft)(?=[\/?#\s'"]|$)/,
+    'Agents never arm auto-merge or change a PR\'s draft state through the session proxy.'],
   // Writes to check runs or statuses: the path plus a write method or body fields, unless it is an explicit GET.
   [/^(?![\s\S]*(?:-X|--method)\s*['"]?GET\b)(?=[\s\S]*\/(?:check-runs|check-suites|statuses)\b)(?=[\s\S]*(?:(?:-X|--method|--request)\s*['"]?(?:POST|PATCH|PUT)\b|\s(?:-f|-F|--field|--raw-field|--input|-d|--data|--data-raw)\s))/i,
     'Agents may not create or change check runs or commit statuses; review verdicts come only from GitHub Actions.'],
-  [new RegExp(`\\bgh\\s+api\\b[^;&|]*(\\/labels\\b[^;&|]*|labels\\[\\]=\\s*['"]?)\\b(${HUMAN_ONLY_LABELS.join('|')})\\b(?![:-])`),
+  [new RegExp(`^(?![^;&|]*(?:-X|--method)\\s*['"]?GET\\b)(?=[^;&|]*(?:(?:-X|--method)\\s*['"]?(?:POST|PUT|PATCH)\\b|\\s(?:-f|-F|--field|--raw-field|--input)\\s))[\\s\\S]*\\bgh\\s+api\\b[^;&|]*(\\/labels\\b[^;&|]*|labels\\[\\]=\\s*['"]?)\\b(${HUMAN_ONLY_LABELS.join('|')})\\b(?![:-])`),
     'Only a human can add the approved, l3-go, human-approved-config or merge-approved labels.'],
   [/(^|[\s'"=<>/])\.env(\.(local|development|production|staging|test))?($|[\s'";|&)])/, 'Reading or writing .env files is not allowed.'],
   [/--env-file\b/, 'Loading .env files is not allowed.'],

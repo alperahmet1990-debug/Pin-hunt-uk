@@ -65,7 +65,7 @@ If nothing is eligible, stop. Do not invent work.
 
 ### 2. Claim
 1. Add the `status:claimed` label and remove `status:ready`.
-2. Comment `agent-claim <session URL> <UTC timestamp>`.
+2. Comment `agent-claim <session URL> <UTC timestamp>`. Take the timestamp from `date -u +%Y-%m-%dT%H:%M:%SZ`; never write one by hand.
 3. Re-read the comments. If another `agent-claim` from a different session within the last 24 h is earlier than yours, remove your label change, comment `agent-release`, and go back to step 1.
 
 ### 3. Branch
@@ -89,13 +89,14 @@ pnpm test
 
 - Add tests for the change: `vitest` + `supertest` in `api-server` (`src/**/*.test.ts`), `jest-expo` in the app (`**/__tests__/*.test.ts(x)`).
 - After touching `lib/pin-repository/src`, run `pnpm --filter @workspace/pin-repository run build`.
-- **UI changes:** capture before/after screenshots with the harness. Run it after opening the PR, so you have the number:
+- **UI changes:** capture before/after screenshots **before opening the PR**, so the review that runs when the PR opens can see them:
   ```bash
-  pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes <names> --publish <PR number>
+  pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes <names> --publish issue-<issue number>
   ```
-  - Route names are in `artifacts/pinhunt/scripts/screenshot-routes.json`. Add a one-off route with `--route name=/path`.
+  - Route names are in `artifacts/pinhunt/scripts/screenshot-routes.json`. Choose routes that **show the changed UI**. If the change is on a tab or segment, use the matching route (e.g. `collection-for-trade`, `collection-iso`, `collection-boards`) or add a one-off route with `--route name=/path`. A route in the JSON may set `"click": "<visible label>"` to tap a tab first.
+  - Look at the images before using them. If before and after look identical, you captured the wrong screen: pick another route.
   - The harness builds the Expo web export in demo mock mode (no Supabase, no `.env`, external requests blocked) at 390×844 and 320×568, light and dark.
-  - It pushes the images to the `agent-artifacts` branch and prints a Markdown table. Update the PR body's Screenshots section with it (`gh api -X PATCH repos/{owner}/{repo}/pulls/<n> -f body=…`).
+  - It pushes the images to the `agent-artifacts` branch and prints a Markdown table (also saved to `.screenshots/pr-screenshots.md`). Put that table in the PR body's Screenshots section when you open the PR.
   - Mock data has no pin photos on web; tiles show "Image needed". Judge layout, not imagery.
   - If capture fails, say why under Limitations.
 
@@ -107,7 +108,8 @@ gh api repos/{owner}/{repo}/pulls -f head=claude/42-slug -f base=main \
   -F draft=false -f body="$(cat /tmp/pr-body.md)"
 ```
 
-- Fill every heading of `.github/pull_request_template.md` and include `Closes #<issue>`.
+- Fill every heading of `.github/pull_request_template.md` and include `Closes #<issue>`. UI PRs include the screenshot table from step 5.
+- **Report only what you observed.** Copy test counts and command results from the actual output, and never estimate them. If you did not run something, say so.
 - L3 PRs use `-F draft=true`.
 - Add `security:required` to the PR if the issue is L2/L3 or you changed a `sensitive` path in `.github/agent-paths.json`. The `Agent PR checks` workflow also adds it as a backstop.
 - On the issue, set `status:in-review` and remove `status:claimed`.

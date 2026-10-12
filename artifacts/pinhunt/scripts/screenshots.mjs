@@ -7,18 +7,20 @@
 //
 //   pnpm --filter @workspace/pinhunt run screenshots -- --label after --routes home,collection
 //   pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes collection
-//   pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --publish 42
+//   pnpm --filter @workspace/pinhunt run screenshots -- --base origin/main --routes collection-for-trade --publish issue-27
 //
 // Options
 //   --label <name>      output folder name (default "after")
 //   --base <git-ref>    also capture "before" from that ref (built in a temp worktree)
-//   --routes a,b        route names from scripts/screenshot-routes.json (default: all)
+//   --routes a,b        route names from scripts/screenshot-routes.json (default: all).
+//                       A route may set "click": "<label>" to tap a tab/segment first.
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
 //   --skip-build        reuse the last export for this label
-//   --publish <n>       push images to the `agent-artifacts` branch under pr-<n>/
-//                       and print a Markdown before/after table for the PR body
+//   --publish <key>     push images to the `agent-artifacts` branch and print a
+//                       Markdown before/after table. <key> is issue-<n> (use this
+//                       before the PR exists) or a PR number.
 //
 // Chrome: set CHROME_PATH, or the script looks for Chrome/Chromium in the usual
 // places. Install one with `npx @puppeteer/browsers install chrome-headless-shell@stable`.
@@ -157,6 +159,18 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
           await page.setViewport({ width, height, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
           await page.goto(origin + route.path, { waitUntil: 'networkidle0', timeout: 30_000 }).catch(() => {});
           await new Promise(r => setTimeout(r, 1200));
+          if (route.click) {
+            const clicked = await page.evaluate(text => {
+              // Innermost element whose visible text is exactly `text` (a tab, segment or button label).
+              const matches = [...document.querySelectorAll('body *')].filter(el =>
+                el.childElementCount === 0 && el.textContent.trim() === text && el.getBoundingClientRect().width > 0);
+              const target = matches[0]?.closest('[role="button"],[role="tab"],button,a,[tabindex]') ?? matches[0];
+              target?.click();
+              return Boolean(target);
+            }, route.click);
+            if (!clicked) throw new Error(`Route "${route.name}": no visible element with text "${route.click}"`);
+            await new Promise(r => setTimeout(r, 800));
+          }
           const name = `${route.name}__${width}x${height}__${scheme}.png`;
           await page.screenshot({ path: path.join(outDir, name) });
           files.push(name);
@@ -173,7 +187,16 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
 }
 
 // ── Publish ─────────────────────────────────────────────────────────────
-function publish(prNumber, outRoot, labels) {
+/** Folder on agent-artifacts: "93" → "pr-93"; "issue-27" stays "issue-27". */
+export function publishKey(value) {
+  const v = String(value).trim().toLowerCase();
+  if (/^\d+$/.test(v)) return `pr-${v}`;
+  if (/^(pr|issue)-\d+$/.test(v)) return v;
+  throw new Error(`--publish expects a PR number or issue-<n>, got "${value}"`);
+}
+
+function publish(publishArg, outRoot, labels) {
+  const key = publishKey(publishArg);
   const remote = execFileSync('git', ['remote', 'get-url', 'origin'], { cwd: repoRoot, encoding: 'utf8' }).trim();
   const slug = remote.replace(/^.*github\.com[:/]/, '').replace(/\.git$/, '');
   const dir = path.join(os.tmpdir(), `pinhunt-agent-artifacts-${process.pid}`);
@@ -189,14 +212,14 @@ function publish(prNumber, outRoot, labels) {
     writeFileSync(path.join(dir, 'README.md'), '# agent-artifacts\n\nScreenshots attached to agent pull requests. Never merged into main.\n');
   }
   try {
-    const target = path.join(dir, `pr-${prNumber}`);
+    const target = path.join(dir, key);
     rmSync(target, { recursive: true, force: true });
     for (const label of labels) cpSync(path.join(outRoot, label), path.join(target, label), { recursive: true });
     git('add', '-A');
-    git('commit', '--quiet', '-m', `Screenshots for #${prNumber}`);
+    git('commit', '--quiet', '-m', `Screenshots for ${key}`);
     git('push', '--quiet', 'origin', 'HEAD:refs/heads/agent-artifacts');
     const sha = git('rev-parse', 'HEAD').trim();
-    return `https://raw.githubusercontent.com/${slug}/${sha}/pr-${prNumber}`;
+    return `https://raw.githubusercontent.com/${slug}/${sha}/${key}`;
   } finally {
     execFileSync('git', ['worktree', 'remove', '--force', dir], { cwd: repoRoot, stdio: 'ignore' });
     // The first publish creates a local orphan branch; it is not needed afterwards.
@@ -257,4 +280,6 @@ async function main() {
   }
 }
 
-main().catch(err => { console.error(err.message ?? err); process.exit(1); });
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => { console.error(err.message ?? err); process.exit(1); });
+}

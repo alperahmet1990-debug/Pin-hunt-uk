@@ -58,3 +58,12 @@ test('gate labels added via an app or bot are flagged; human additions are not',
   assert.deepEqual(illegitimateGates([bot], ['l3-go']), [{ gate: 'l3-go', via: 'github-actions[bot]' }]);
   assert.deepEqual(illegitimateGates([viaClaude], ['P1']), [], 'only labels still present');
 });
+
+test('screenshot publish keys', async () => {
+  const { publishKey } = await import('../../artifacts/pinhunt/scripts/screenshots.mjs');
+  assert.equal(publishKey('93'), 'pr-93');
+  assert.equal(publishKey('issue-27'), 'issue-27');
+  assert.equal(publishKey('PR-5'), 'pr-5');
+  assert.throws(() => publishKey('../main'));
+  assert.throws(() => publishKey('issue-'));
+});

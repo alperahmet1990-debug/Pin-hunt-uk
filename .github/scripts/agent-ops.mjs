@@ -4,7 +4,8 @@
 //  1. Groom: approved issues whose "Blocked by" issues are all closed get
 //     `status:ready`; ready issues with an open blocker lose it.
 //  2. Release stale claims: `status:claimed` for 24 h+ with no open PR.
-//  3. Flag in-review issues whose PR closed without merging.
+//  3. Flag in-review issues whose PR closed without merging, and clear
+//     status:* labels from issues closed in the last 7 days.
 //  4. Flag claude/* PRs with merge conflicts (once per head commit).
 //  5. Rewrite the body of the open issue labelled `status-report`. If no such
 //     issue exists, the report goes to the job summary only; this script never
@@ -125,6 +126,13 @@ async function main() {
         await addLabels(issue.number, ['status:needs-human']);
         await comment(issue.number, 'The linked PR was closed without merging. Needs a human decision: re-queue (`status:ready`) or close.');
       });
+    }
+  }
+
+  // 3b. Closed issues keep no workflow state.
+  for (const issue of closedRecent.filter(i => !i.pull_request)) {
+    for (const label of labelNames(issue).filter(l => STATE_LABELS.includes(l))) {
+      await act(`#${issue.number} (closed): remove ${label}`, () => removeLabel(issue.number, label));
     }
   }
 

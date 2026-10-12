@@ -198,6 +198,8 @@ function publish(prNumber, outRoot, labels) {
     return `https://raw.githubusercontent.com/${slug}/${sha}/pr-${prNumber}`;
   } finally {
     execFileSync('git', ['worktree', 'remove', '--force', dir], { cwd: repoRoot, stdio: 'ignore' });
+    // The first publish creates a local orphan branch; it is not needed afterwards.
+    spawnSync('git', ['branch', '-D', 'agent-artifacts-tmp'], { cwd: repoRoot, stdio: 'ignore' });
   }
 }
 

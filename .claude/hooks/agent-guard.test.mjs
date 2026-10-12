@@ -144,3 +144,39 @@ test('built-in GitHub tools: cannot add human-only labels', () => {
   assert.ok(check({ tool_name: 'mcp__github__issue_write', tool_input: { labels: ['approved'] }, cwd: root }), 'no issue number → blocked');
   assert.equal(run(['P1', 'approved', 'status:claimed'], ['P1', 'approved']), null);
 });
+
+test('maintainer authority: agents cannot edit issue text, create/close issues or edit comments', () => {
+  const gh = (tool_name, tool_input) => check({ tool_name, tool_input, cwd: root }, { currentLabels: () => ['P1', 'approved'] });
+  assert.ok(gh('mcp__github__issue_write', { method: 'update', owner: 'o', repo: 'r', issue_number: 5, body: 'rewritten' }));
+  assert.ok(gh('mcp__github__issue_write', { method: 'update', owner: 'o', repo: 'r', issue_number: 5, title: 'x' }));
+  assert.ok(gh('mcp__github__issue_write', { method: 'update', owner: 'o', repo: 'r', issue_number: 5, state: 'closed' }));
+  assert.ok(gh('mcp__github__issue_write', { method: 'create', owner: 'o', repo: 'r', title: 'new work' }));
+  assert.ok(gh('mcp__github__update_issue_comment', { comment_id: 1, body: 'edited' }));
+  assert.equal(gh('mcp__github__add_issue_comment', { issue_number: 5, body: 'Question for the maintainer' }), null);
+  assert.equal(gh('mcp__github__update_pull_request', { pullNumber: 93, body: 'own PR body' }), null);
+  for (const command of [
+    'gh api -X PATCH repos/o/r/issues/5 -f body=x',
+    'gh api repos/o/r/issues/5 -f title=x',
+    'gh api repos/o/r/issues -f title=new',
+    'gh api -X PATCH repos/o/r/issues/comments/99 -f body=x',
+  ]) assert.ok(bash(command), command);
+  assert.equal(bash('gh api repos/o/r/issues/5/comments -f body="note"'), null);
+  assert.equal(bash('gh api "repos/o/r/issues?state=open&labels=approved,status:ready"'), null);
+});
+
+test('maintainer authority: only agent-managed labels may change', () => {
+  const run = (labels, existing) => check(
+    { tool_name: 'mcp__github__issue_write', tool_input: { method: 'update', owner: 'o', repo: 'r', issue_number: 5, labels }, cwd: root },
+    { currentLabels: () => existing },
+  );
+  assert.equal(run(['P1', 'approved', 'status:claimed'], ['P1', 'approved', 'status:ready']), null, 'status swap ok');
+  assert.ok(run(['P2', 'approved'], ['P1', 'approved']), 'priority change blocked');
+  assert.ok(run(['P1'], ['P1', 'approved']), 'removing approved blocked');
+  assert.ok(run(['P1', 'approved', 'autonomy:L3'], ['P1', 'approved']), 'autonomy change blocked');
+  assert.equal(run(['P1', 'approved', 'needs-device-check'], ['P1', 'approved']), null);
+  const rm = label => check({ tool_name: 'mcp__github__remove_issue_label', tool_input: { issue_number: 5, label }, cwd: root });
+  assert.equal(rm('status:ready'), null);
+  assert.ok(rm('approved'));
+  assert.ok(bash('gh api repos/o/r/issues/5/labels -f "labels[]=P0"'));
+  assert.equal(bash('gh api repos/o/r/issues/5/labels -f "labels[]=status:needs-decision"'), null);
+});

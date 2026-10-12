@@ -28,6 +28,8 @@ export function isActive(env = process.env) {
 }
 
 const HUMAN_ONLY_LABELS = ['approved', 'l3-go', 'human-approved-config'];
+// The only labels agents may add or remove (docs/agents/OPERATING-MODEL.md §2a).
+export const isAgentManagedLabel = l => /^(status|qa|security):/.test(l) || l === 'needs-device-check';
 
 const BASH_RULES = [
   [/\b(psql|pg_dump|pg_restore|pg_dumpall)\b/, 'Direct database access is not allowed for agents.'],
@@ -46,7 +48,9 @@ const BASH_RULES = [
   [/\bgit\s+push\b[^;&|]*\s:[^\s]/, 'Deleting remote branches is not allowed.'],
   [/\bgh\s+(repo\s+(delete|edit|archive|rename)|secret|variable|ruleset|release|workflow\s+(run|enable|disable))\b/,
     'Repository settings, secrets, releases and workflow control are not allowed.'],
-  [/\bgh\s+api\b[^;&|]*(-X|--method)\s*['"]?DELETE/i, 'DELETE calls to the GitHub API are not allowed.'],
+  // DELETE is blocked except removing an agent-managed label from an issue/PR.
+  [/\bgh\s+api\b(?![^;&|]*\/issues\/\d+\/labels\/(status|qa|security)(:|%3A)|[^;&|]*\/issues\/\d+\/labels\/needs-device-check)[^;&|]*(-X|--method)\s*['"]?DELETE/i,
+    'DELETE calls to the GitHub API are not allowed (except removing status:*, qa:*, security:* or needs-device-check labels).'],
   [/\bgh\s+api\b[^;&|]*\/(merge|merges|protection|rulesets|hooks|secrets|variables|collaborators|keys|environments|actions\/permissions|deployments)\b/,
     'Merging and repository administration through the GitHub API are not allowed.'],
   [/\bgh\s+pr\s+merge\b/, 'Agents never merge pull requests.'],
@@ -82,6 +86,21 @@ const GITHUB_TOOL_RULES = [
   [/dismiss|security_alert|code_scanning|dependabot.*(update|dismiss)/i, 'Changing security alerts is not allowed.'],
 ];
 
+/** Maintainer authority for `gh api` issue calls made through Bash. */
+function checkBashIssueEdits(command) {
+  for (const call of command.split(/[;&|]+/).filter(c => /\bgh\s+api\b/.test(c))) {
+    const writes = /(-X|--method)\s*['"]?(POST|PATCH|PUT)|\s(-f|-F|--field|--raw-field|--input)\s/i.test(call);
+    if (!writes) continue;
+    if (/\/issues\/comments\/\d+/.test(call)) return 'Agents never edit comments.';
+    if (/\/issues\/\d+['"]?(\s|$)/.test(call)) return 'Agents never edit issue titles, bodies, state or metadata. Comment instead.';
+    if (/repos\/[^/\s]+\/[^/\s]+\/issues['"]?(\s|$)/.test(call)) return 'Agents never create issues in autonomous runs. Propose work in a comment.';
+    const labels = [...call.matchAll(/labels(?:\[\])?=\s*['"]?([^'"\s,]+)/g)].map(m => m[1]);
+    const foreign = labels.filter(l => !isAgentManagedLabel(l));
+    if (foreign.length) return `Agents may only change status:*, qa:*, security:* and needs-device-check labels (not ${foreign.join(', ')}).`;
+  }
+  return null;
+}
+
 function issueNumberOf(args) {
   return args.issue_number ?? args.issueNumber ?? args.pull_number ?? args.pullNumber ?? args.number;
 }
@@ -107,20 +126,43 @@ function checkGithubTool(tool, args, { currentLabels = fetchLabels } = {}) {
   }
   // Reads (list/get/search) may filter by label; only writes are checked.
   const isRead = /^(list|get|search)_|_read$/i.test(name);
-  const labels = isRead ? [] : [args.labels, args.label, args.add_labels].flat().filter(Boolean).map(l => (typeof l === 'string' ? l : l?.name));
-  const gates = labels.filter(l => HUMAN_ONLY_LABELS.includes(l));
-  if (gates.length) {
-    const number = issueNumberOf(args);
-    if (!args.owner || !args.repo || !number) return 'Only a human can add the approved, l3-go or human-approved-config labels.';
-    let existing;
-    try {
-      existing = currentLabels(args.owner, args.repo, number);
-    } catch {
-      return 'Could not verify existing labels; human-only labels cannot be set by agents.';
-    }
-    const added = gates.filter(g => !existing.includes(g));
-    if (added.length) return `Only a human can add ${added.join(', ')}.`;
+  if (isRead) return null;
+
+  // Maintainer authority (OPERATING-MODEL §2a).
+  if (/comment/i.test(name) && /update|edit/i.test(name)) return 'Agents never edit comments.';
+  const isIssueWrite = /issue/i.test(name) && !/comment|sub_issue/i.test(name);
+  if (isIssueWrite && (String(args.method ?? '').toLowerCase() === 'create' || /create_issue/i.test(name))) {
+    return 'Agents never create issues in autonomous runs. Propose work in a comment.';
   }
+  if (isIssueWrite && ['title', 'body', 'milestone', 'assignees', 'state', 'state_reason', 'type'].some(k => args[k] !== undefined)) {
+    return 'Agents never edit issue titles, bodies, state or metadata. Comment instead.';
+  }
+
+  const listed = [args.labels, args.label, args.add_labels].flat().filter(Boolean).map(l => (typeof l === 'string' ? l : l?.name));
+  if (/remove.*label/i.test(name)) {
+    const foreign = listed.filter(l => !isAgentManagedLabel(l));
+    return foreign.length ? `Agents may only remove status:*, qa:*, security:* and needs-device-check labels (not ${foreign.join(', ')}).` : null;
+  }
+  if (!listed.length) return null;
+  const replacesAll = isIssueWrite && Array.isArray(args.labels);
+  const number = issueNumberOf(args);
+  if (!args.owner || !args.repo || !number) {
+    const foreign = listed.filter(l => !isAgentManagedLabel(l));
+    return foreign.length ? 'Cannot verify label changes without owner, repo and issue number.' : null;
+  }
+  let existing;
+  try {
+    existing = currentLabels(args.owner, args.repo, number);
+  } catch {
+    return 'Could not verify existing labels; label change blocked.';
+  }
+  const added = listed.filter(l => !existing.includes(l) && !isAgentManagedLabel(l));
+  const removed = replacesAll ? existing.filter(l => !listed.includes(l) && !isAgentManagedLabel(l)) : [];
+  if (added.length) {
+    const gates = added.filter(l => HUMAN_ONLY_LABELS.includes(l));
+    return gates.length ? `Only a human can add ${gates.join(', ')}.` : `Agents may not add maintainer labels (${added.join(', ')}).`;
+  }
+  if (removed.length) return `Agents may not remove maintainer labels (${removed.join(', ')}). Send the full existing label list.`;
   return null;
 }
 
@@ -155,7 +197,7 @@ export function check(input, { fileExists = existsSync, currentLabels } = {}) {
     for (const [pattern, reason] of BASH_RULES) {
       if (pattern.test(command)) return reason;
     }
-    return null;
+    return checkBashIssueEdits(command);
   }
 
   if (tool === 'Read') {

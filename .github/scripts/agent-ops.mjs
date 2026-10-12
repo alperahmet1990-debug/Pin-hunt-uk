@@ -18,7 +18,7 @@
 
 import { appendFileSync, readFileSync } from 'node:fs';
 import {
-  REPO, addLabels, comment, gh, ghAll, issueRefs, labelNames, removeLabel,
+  REPO, addLabels, ciSummary, comment, gh, ghAll, issueRefs, labelNames, removeLabel,
 } from './lib.mjs';
 import { duplicateClaims, rankQueue, readyPlan } from './queue.mjs';
 
@@ -168,9 +168,7 @@ async function main() {
   for (const pr of openPrs) {
     const full = await gh(`/repos/${REPO}/pulls/${pr.number}`);
     const runs = await gh(`/repos/${REPO}/commits/${pr.head.sha}/check-runs?per_page=100`);
-    const failed = runs.check_runs.filter(r => ['failure', 'timed_out', 'cancelled'].includes(r.conclusion)).map(r => r.name);
-    const pending = runs.check_runs.some(r => r.status !== 'completed');
-    prDetails.push({ pr: full, failed, pending, none: runs.check_runs.length === 0 });
+    prDetails.push({ pr: full, ...ciSummary(runs.check_runs) });
     if (pr.head.ref.startsWith('claude/') && full.mergeable_state === 'dirty') {
       const marker = `<!-- agent-ops:conflict:${pr.head.sha} -->`;
       const comments = await ghAll(`/repos/${REPO}/issues/${pr.number}/comments`);

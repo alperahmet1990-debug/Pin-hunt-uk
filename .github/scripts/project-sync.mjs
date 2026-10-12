@@ -39,15 +39,29 @@ export function columnFor({ state, labels, prLabels = null }) {
   return 'Backlog';
 }
 
-async function graphql(query, variables) {
-  const res = await fetch(`${process.env.GITHUB_API_URL ?? 'https://api.github.com'}/graphql`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${process.env.PROJECT_TOKEN}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query, variables }),
-  });
-  const json = await res.json();
-  if (json.errors) throw new Error(JSON.stringify(json.errors));
-  return json.data;
+/**
+ * GitHub GraphQL call. A 5xx, 429 or non-JSON reply (GitHub sometimes answers
+ * with an HTML error page) is retried with backoff instead of crashing on
+ * JSON.parse; anything else fails with the HTTP status.
+ */
+export async function graphql(query, variables, { fetchImpl = fetch, attempts = 3, delayMs = 2000 } = {}) {
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetchImpl(`${process.env.GITHUB_API_URL ?? 'https://api.github.com'}/graphql`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${process.env.PROJECT_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, variables }),
+    });
+    const isJson = (res.headers.get('content-type') ?? '').includes('json');
+    const retryable = res.status >= 500 || res.status === 429 || (res.ok && !isJson);
+    if (retryable && attempt < attempts) {
+      await new Promise(r => setTimeout(r, delayMs * attempt));
+      continue;
+    }
+    if (!res.ok || !isJson) throw new Error(`GraphQL → ${res.status} ${(await res.text()).slice(0, 200)}`);
+    const json = await res.json();
+    if (json.errors) throw new Error(JSON.stringify(json.errors));
+    return json.data;
+  }
 }
 
 /** Make sure the Status field has exactly the Kanban columns, in order. */

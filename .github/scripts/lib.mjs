@@ -36,6 +36,25 @@ export async function ghAll(path) {
   return out;
 }
 
+/**
+ * CI state of a commit from its check runs. Only the latest run of each check
+ * name counts: workflows with `concurrency: cancel-in-progress` leave cancelled
+ * runs behind that a newer run of the same check has replaced. Pure, unit-tested.
+ */
+export function ciSummary(checkRuns) {
+  const latest = new Map();
+  for (const run of checkRuns) {
+    const prev = latest.get(run.name);
+    if (!prev || run.id > prev.id) latest.set(run.name, run);
+  }
+  const runs = [...latest.values()];
+  return {
+    failed: runs.filter(r => ['failure', 'timed_out', 'cancelled'].includes(r.conclusion)).map(r => r.name),
+    pending: runs.some(r => r.status !== 'completed'),
+    none: runs.length === 0,
+  };
+}
+
 export const labelNames = item => (item.labels ?? []).map(l => (typeof l === 'string' ? l : l.name));
 
 export async function addLabels(number, labels) {

@@ -141,3 +141,14 @@ test('trusted reviewer re-checks the rules a forged "Agent rules" check could hi
   assert.equal(block([f('supabase/migrations/010_x.sql')]).length, 1);
   assert.equal(block([f('supabase/migrations/070_new.sql', 'added')]).length, 0);
 });
+
+test('latest run per check follows check-suite order, like branch protection', () => {
+  // Seen on #171: two simultaneous runs; the newer suite was cancelled, the older one passed.
+  const runs = [
+    { id: 114918017717, name: 'Agent rules', status: 'completed', conclusion: 'success', check_suite: { id: 103718307120 } },
+    { id: 114918009322, name: 'Agent rules', status: 'completed', conclusion: 'cancelled', check_suite: { id: 103718307228 } },
+  ];
+  assert.equal(gate.latestRuns(runs).get('Agent rules').conclusion, 'cancelled');
+  const rerun = [...runs, { id: 114920264436, name: 'Agent rules', status: 'completed', conclusion: 'success', check_suite: { id: 103719000000 } }];
+  assert.equal(gate.latestRuns(rerun).get('Agent rules').conclusion, 'success');
+});

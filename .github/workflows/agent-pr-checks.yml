@@ -1,0 +1,40 @@
+name: Agent PR checks
+
+# Labels security-sensitive PRs and enforces agent rules on claude/* branches.
+# See docs/agents/OPERATING-MODEL.md and .github/scripts/agent-pr-checks.mjs.
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, edited, labeled, unlabeled, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: agent-pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Agent rules
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Scripts come from the base branch so a PR cannot weaken its own checks.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          sparse-checkout: .github
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      # The first PR that adds this workflow has no script on its base yet.
+      - run: |
+          if [ -f .github/scripts/agent-pr-checks.mjs ]; then
+            node .github/scripts/agent-pr-checks.mjs
+          else
+            echo "agent-pr-checks.mjs is not on the base branch yet; skipping."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

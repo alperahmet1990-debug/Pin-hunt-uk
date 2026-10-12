@@ -90,6 +90,10 @@ Replit remains a fallback development/deployment environment. Do not remove or r
 - Do not clean up unrelated TypeScript errors, prototype code, or mockup code while completing another task — known mockup/prototype errors are expected and out of scope unless specifically requested.
 - Do not remove apparently unused code or scaffolding merely because it looks unnecessary — investigate first and get approval (e.g. the `lib/db` / `lib/api-spec` / `lib/api-zod` / `lib/api-client-react` scaffolding below).
 
+### Autonomous agent runs
+
+Cloud routines and unattended sessions follow `docs/agents/OPERATING-MODEL.md`: role files in `.claude/agents/`, routine prompts in `docs/agents/routines/`, autonomy levels L1/L2/L3, and the human-only `approved` / `l3-go` labels. `.claude/hooks/agent-guard.mjs` enforces the hard limits when `CLAUDE_CODE_REMOTE=true` or `PINHUNT_AGENT=1`. It is inert in local sessions. Tests: `pnpm test` (vitest + supertest in `api-server`, jest-expo in the app, `node --test` suites).
+
 ---
 
 ## PINHUNT PRODUCT CONTEXT

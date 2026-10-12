@@ -23,6 +23,7 @@ The Project's **Status** field (Kanban columns Backlog → Approved → In Progr
 | Group | Labels | Who sets them |
 |---|---|---|
 | Gate | `approved`, `l3-go`, `human-approved-config` | **Humans only.** The guard hook blocks agents from adding them (shell and built-in GitHub tools). As a backstop, the `Agent ops` workflow removes any gate label that was added through an app or bot, including the `claude` app agents act through, and flags the item `status:needs-human`. |
+| Hold | `on-hold` | **Humans only.** Keeps an issue out of the autonomous queue even if it is approved (e.g. design work pending competitor analysis). Agent ops removes `status:ready` from held issues, and the board shows them in Backlog. Agents cannot add or remove it. |
 | Priority | `P0` `P1` `P2` `P3` | Humans |
 | Autonomy | `autonomy:L1` `autonomy:L2` `autonomy:L3` `human-only` | Humans |
 | Agent | `agent:ui` `agent:backend` | Humans / PM proposal |
@@ -89,7 +90,7 @@ gh api "repos/{owner}/{repo}/issues?state=open&labels=approved,status:ready,agen
 ```
 
 Discard any issue that:
-- has `status:needs-decision`, or is missing `approved`;
+- has `status:needs-decision` or `on-hold`, or is missing `approved`;
 - is L3 (scheduled runs never take L3, even with `l3-go`; L3 is started by hand), `human-only`, or not `size:S` (until the maintainer widens the size limit here);
 - lists a `Blocked by` issue that is still open;
 - already has an open PR that references it;

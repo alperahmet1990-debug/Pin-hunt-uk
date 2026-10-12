@@ -24,17 +24,22 @@
 import { createClient } from "@supabase/supabase-js";
 import crypto from "node:crypto";
 import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 import { assertStagingTarget, readSupabaseUrlFromEnvFile } from "./lib/staging-guard.mjs";
 import { STAGING_ACCOUNTS, planSeed } from "./lib/staging-seed-plan.mjs";
 
 const APPLY = process.argv.includes("--apply");
 const REMOVE = process.argv.includes("--remove");
 const RESET_PASSWORDS = process.argv.includes("--reset-passwords");
-const CREDENTIALS_FILE = ".staging-test-accounts.local.json";
+// Resolved from this file, not the working directory, so the production
+// check and the credentials file work wherever the script is started from.
+const PACKAGE_DIR = fileURLToPath(new URL("..", import.meta.url));
+const PRODUCTION_ENV_FILE = `${PACKAGE_DIR}.env`;
+const CREDENTIALS_FILE = `${PACKAGE_DIR}.staging-test-accounts.local.json`;
 
 let ref;
 try {
-  ({ ref } = assertStagingTarget(process.env, { productionUrl: readSupabaseUrlFromEnvFile(".env") }));
+  ({ ref } = assertStagingTarget(process.env, { productionUrl: readSupabaseUrlFromEnvFile(PRODUCTION_ENV_FILE) }));
 } catch (err) {
   console.error(`[seed-staging] ${err.message}`);
   process.exit(1);
@@ -83,6 +88,15 @@ async function remove() {
   }
 }
 
+function saveCredentials(credentials) {
+  if (!credentials.length) return;
+  const previous = fs.existsSync(CREDENTIALS_FILE) ? JSON.parse(fs.readFileSync(CREDENTIALS_FILE, "utf8")) : [];
+  const merged = [...previous.filter((p) => !credentials.some((c) => c.email === p.email)), ...credentials];
+  fs.writeFileSync(CREDENTIALS_FILE, JSON.stringify(merged, null, 2) + "\n", { mode: 0o600 });
+  fs.chmodSync(CREDENTIALS_FILE, 0o600);
+  console.log(`  wrote ${credentials.length} new password(s) to .staging-test-accounts.local.json (gitignored)`);
+}
+
 async function seed() {
   // 1. Catalogue state in staging.
   const pins = await fetchAll("pins", "id, pinhunt_id", (q) =>
@@ -124,10 +138,13 @@ async function seed() {
     ids[acct.key] = user.id;
     if (password) credentials.push({ email: acct.email, username: acct.username, password });
   }
+  // Save new passwords before any later step can fail, so a partial run
+  // never leaves accounts whose passwords nobody knows.
+  saveCredentials(credentials);
 
   // 3. Profiles (handle_new_user created the rows; the service role may set is_admin).
   for (const acct of STAGING_ACCOUNTS) {
-    const { error } = await supabase.from("profiles").update({
+    const { data, error } = await supabase.from("profiles").update({
       username: acct.username,
       display_name: acct.displayName,
       town: acct.town,
@@ -138,8 +155,13 @@ async function seed() {
       open_to_postal_trades: true,
       open_to_local_trades: true,
       is_admin: acct.isAdmin,
-    }).eq("id", ids[acct.key]);
+    }).eq("id", ids[acct.key]).select("id");
     if (error) throw new Error(`profile ${acct.username}: ${error.message}`);
+    if (!data?.length) {
+      throw new Error(
+        `no profile row for ${acct.username}: the on_auth_user_created trigger is probably missing in staging (runbook step 4).`,
+      );
+    }
   }
 
   // 4. Collections: replace A's and B's user_pins with the plan.
@@ -161,12 +183,6 @@ async function seed() {
     if (error) throw new Error(`board ${b.id}: ${error.message}`);
   }
 
-  if (credentials.length) {
-    const previous = fs.existsSync(CREDENTIALS_FILE) ? JSON.parse(fs.readFileSync(CREDENTIALS_FILE, "utf8")) : [];
-    const merged = [...previous.filter((p) => !credentials.some((c) => c.email === p.email)), ...credentials];
-    fs.writeFileSync(CREDENTIALS_FILE, JSON.stringify(merged, null, 2) + "\n", { mode: 0o600 });
-    console.log(`  wrote ${credentials.length} new password(s) to ${CREDENTIALS_FILE} (gitignored)`);
-  }
   console.log(`  done. Untouched pins for "add" tests: ${plan.expected.untouchedPinhuntIds.join(", ")}`);
 }
 

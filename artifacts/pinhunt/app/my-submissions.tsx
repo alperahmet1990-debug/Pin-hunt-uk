@@ -356,7 +356,7 @@ export default function MySubmissionsScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'My Submissions' }} />
+      <Stack.Screen options={{ title: 'Submission updates' }} />
       <ScrollView
         style={[styles.root, { backgroundColor: colors.homeBackground }]}
         contentContainerStyle={{ paddingBottom: botPad, paddingTop: spacing.lg, paddingHorizontal: spacing.lg }}

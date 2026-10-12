@@ -161,7 +161,7 @@ export default function HomeScreen() {
         </TouchableOpacity>
         <View style={styles.tools}>
           <IconButton icon="message-square" count={totalUnread} onPress={() => router.push('/community/conversations')} colors={colors} label="Messages" />
-          <IconButton icon="bell" count={unseenCount} onPress={() => router.push('/my-submissions')} colors={colors} label="Notifications" />
+          <IconButton icon="bell" count={unseenCount} onPress={() => router.push('/my-submissions')} colors={colors} label="Submission updates" />
         </View>
       </View>
       <View style={[styles.stats, { borderColor: colors.homeLine }]}>

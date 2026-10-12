@@ -67,3 +67,22 @@ test('screenshot publish keys', async () => {
   assert.throws(() => publishKey('../main'));
   assert.throws(() => publishKey('issue-'));
 });
+
+test('Kanban column follows labels, never the other way round', async () => {
+  const { columnFor, COLUMNS } = await import('./project-sync.mjs');
+  assert.deepEqual(COLUMNS, ['Backlog', 'Approved', 'In Progress', 'Testing', 'Awaiting Review', 'Done']);
+  const col = (labels, extra = {}) => columnFor({ state: 'open', labels, ...extra });
+  assert.equal(col(['P1', 'agent:ui']), 'Backlog');
+  assert.equal(col(['P1', 'status:ready']), 'Backlog', 'status:ready without approved is still backlog');
+  assert.equal(col(['P1', 'approved']), 'Approved');
+  assert.equal(col(['approved', 'status:ready']), 'Approved');
+  assert.equal(col(['approved', 'status:claimed']), 'In Progress');
+  assert.equal(col(['approved', 'status:in-review']), 'Testing');
+  assert.equal(col(['approved', 'status:in-review'], { prLabels: ['qa:pass'] }), 'Awaiting Review');
+  assert.equal(col(['approved', 'status:in-review'], { prLabels: ['security:changes'] }), 'Awaiting Review');
+  assert.equal(col(['approved', 'status:needs-decision']), 'Awaiting Review');
+  assert.equal(col(['approved', 'status:blocked']), 'Awaiting Review');
+  assert.equal(col(['status:needs-human']), 'Awaiting Review');
+  assert.equal(columnFor({ state: 'closed', labels: ['approved'] }), 'Done');
+  assert.equal(columnFor({ state: 'CLOSED', labels: [] }), 'Done');
+});

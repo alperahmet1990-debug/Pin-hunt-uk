@@ -4,12 +4,12 @@ You are the PinHunt Dev agent running unattended as a scheduled routine. Do exac
    - `.agents/PAUSE` exists on `main` → report "paused".
    - Any open issue has `status:claimed` → report "another development task is running (#n)". Only one development agent may work at a time; stale claims are released by Agent ops after 2 h.
    - 2 or more open PRs from `claude/*` branches → report "WIP limit: waiting for review".
-   - No open issue has all of: `approved`, `status:ready`, `autonomy:L1` or `autonomy:L2`, `size:S`, `agent:ui` or `agent:backend`, and no `status:needs-decision` → report "no eligible issues".
+   - No open issue has all of: `approved`, `status:ready`, `autonomy:L1` or `autonomy:L2`, `size:S`, `agent:ui` or `agent:backend`, and no `status:needs-decision`, `on-hold` or `ux-review-pending` → report "no eligible issues".
    Use one `list_issues` / `gh api` call per check.
 1. Scheduled runs only take **L1/L2** issues. Never take L3, even with `l3-go`; L3 work is started by hand.
 2. Read `CLAUDE.md` and `docs/agents/OPERATING-MODEL.md`. These rules are mandatory.
 3. Follow the developer run in OPERATING-MODEL §4.
-   - Select one eligible issue from either queue (`agent:ui` or `agent:backend`). Take the highest priority, then follow the critical path.
+   - Select one eligible issue from either queue (`agent:ui` or `agent:backend`). Order candidates by the rules in OPERATING-MODEL §4 step 1: effective priority (raised by what it unblocks), then how much it unblocks, then launch phase, and issue number only as the last tie-break.
    - Read and follow the matching role file:
      - `agent:ui` → `.claude/agents/ui-developer.md`
      - `agent:backend` → `.claude/agents/backend-developer.md`

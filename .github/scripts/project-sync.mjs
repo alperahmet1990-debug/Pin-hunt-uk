@@ -34,6 +34,7 @@ export function columnFor({ state, labels, prLabels = null }) {
     return reviewed ? 'Awaiting Review' : 'Testing';
   }
   if (has('status:claimed')) return 'In Progress';
+  if (has('on-hold') || has('ux-review-pending')) return 'Backlog';
   if (has('approved')) return 'Approved';
   return 'Backlog';
 }

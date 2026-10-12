@@ -23,6 +23,7 @@ The Project's **Status** field (Kanban columns Backlog → Approved → In Progr
 | Group | Labels | Who sets them |
 |---|---|---|
 | Gate | `approved`, `l3-go`, `human-approved-config` | **Humans only.** The guard hook blocks agents from adding them (shell and built-in GitHub tools). As a backstop, the `Agent ops` workflow removes any gate label that was added through an app or bot, including the `claude` app agents act through, and flags the item `status:needs-human`. |
+| Hold | `on-hold`, `ux-review-pending` | **Humans only.** Keeps an issue out of the autonomous queue even if it is approved (`on-hold`: general hold, e.g. pending competitor analysis; `ux-review-pending`: waiting for UX review or consolidation). Agent ops removes `status:ready` from held issues, and the board shows them in Backlog. Agents cannot add or remove it. |
 | Priority | `P0` `P1` `P2` `P3` | Humans |
 | Autonomy | `autonomy:L1` `autonomy:L2` `autonomy:L3` `human-only` | Humans |
 | Agent | `agent:ui` `agent:backend` | Humans / PM proposal |
@@ -89,14 +90,20 @@ gh api "repos/{owner}/{repo}/issues?state=open&labels=approved,status:ready,agen
 ```
 
 Discard any issue that:
-- has `status:needs-decision`, or is missing `approved`;
+- has `status:needs-decision`, `on-hold` or `ux-review-pending`, or is missing `approved`;
 - is L3 (scheduled runs never take L3, even with `l3-go`; L3 is started by hand), `human-only`, or not `size:S` (until the maintainer widens the size limit here);
 - lists a `Blocked by` issue that is still open;
 - already has an open PR that references it;
 - lists a `Touches:` path that an open `claude/*` PR also changes;
 - would take the open `claude/*` PRs past **2** in total (WIP limit). Only **one** issue may be `status:claimed` at a time.
 
-Pick the first remaining issue by priority (P0 → P3), then critical path, then the oldest.
+Order the remaining issues by these keys, in this order. **Never just take the lowest issue number.**
+1. **Effective priority.** This is the issue's own `P0`–`P3`, raised to the highest priority of any open issue that lists it under `Blocked by`. Unblocking a P0 makes an issue effectively P0. Find dependents by searching open issues' `Blocked by` sections for `#<n>`.
+2. **Unblocks more work.** The issue that appears in more open issues' `Blocked by` lists comes first.
+3. **Earlier launch phase.** Lower `Phase` (Report 9) number in the issue header first.
+4. **Oldest.** Lowest issue number, as the final tie-break only.
+
+State the ordering you computed (top 3 with their keys) in your claim comment.
 
 If nothing is eligible, stop. Do not invent work.
 

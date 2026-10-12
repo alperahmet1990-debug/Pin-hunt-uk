@@ -13,7 +13,8 @@
 //   --label <name>      output folder name (default "after")
 //   --base <git-ref>    also capture "before" from that ref (built in a temp worktree)
 //   --routes a,b        route names from scripts/screenshot-routes.json (default: all).
-//                       A route may set "click": "<label>" to tap a tab/segment first.
+//                       A route may set "click": "<label>" to tap a tab/segment first,
+//                       and "scroll": "end" to capture the bottom of a scrolling screen.
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -169,6 +170,16 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
               return Boolean(target);
             }, route.click);
             if (!clicked) throw new Error(`Route "${route.name}": no visible element with text "${route.click}"`);
+            await new Promise(r => setTimeout(r, 800));
+          }
+          if (route.scroll === 'end') {
+            // React Native Web renders ScrollViews as overflow divs, so scroll those as well as the window.
+            await page.evaluate(() => {
+              window.scrollTo(0, document.documentElement.scrollHeight);
+              for (const el of document.querySelectorAll('body *')) {
+                if (el.scrollHeight > el.clientHeight + 1 && /(auto|scroll)/.test(getComputedStyle(el).overflowY)) el.scrollTop = el.scrollHeight;
+              }
+            });
             await new Promise(r => setTimeout(r, 800));
           }
           const name = `${route.name}__${width}x${height}__${scheme}.png`;

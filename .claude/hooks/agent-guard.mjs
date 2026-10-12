@@ -48,7 +48,9 @@ const BASH_RULES = [
   [/\bgit\s+push\b[^;&|]*\s:[^\s]/, 'Deleting remote branches is not allowed.'],
   [/\bgh\s+(repo\s+(delete|edit|archive|rename)|secret|variable|ruleset|release|workflow\s+(run|enable|disable))\b/,
     'Repository settings, secrets, releases and workflow control are not allowed.'],
-  [/\bgh\s+api\b[^;&|]*(-X|--method)\s*['"]?DELETE/i, 'DELETE calls to the GitHub API are not allowed.'],
+  // DELETE is blocked except removing an agent-managed label from an issue/PR.
+  [/\bgh\s+api\b(?![^;&|]*\/issues\/\d+\/labels\/(status|qa|security)(:|%3A)|[^;&|]*\/issues\/\d+\/labels\/needs-device-check)[^;&|]*(-X|--method)\s*['"]?DELETE/i,
+    'DELETE calls to the GitHub API are not allowed (except removing status:*, qa:*, security:* or needs-device-check labels).'],
   [/\bgh\s+api\b[^;&|]*\/(merge|merges|protection|rulesets|hooks|secrets|variables|collaborators|keys|environments|actions\/permissions|deployments)\b/,
     'Merging and repository administration through the GitHub API are not allowed.'],
   [/\bgh\s+pr\s+merge\b/, 'Agents never merge pull requests.'],

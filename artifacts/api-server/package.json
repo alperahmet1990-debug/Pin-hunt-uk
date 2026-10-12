@@ -9,6 +9,8 @@
     "build": "node ./build.mjs",
     "start": "node --enable-source-maps ./dist/index.mjs",
     "start:local": "node --env-file=.env --enable-source-maps ./dist/index.mjs",
+    "start:staging": "node --env-file=.env.staging --enable-source-maps ./dist/index.mjs",
+    "seed:staging": "node --env-file=.env.staging scripts/seed-staging.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
   },

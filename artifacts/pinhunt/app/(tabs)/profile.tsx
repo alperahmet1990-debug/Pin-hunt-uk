@@ -246,7 +246,7 @@ export default function ProfileScreen() {
 
             {/* Support */}
             <Section title="Support">
-              <SettingsRow icon="info" label="About PinHunt UK" />
+              <SettingsRow icon="info" label="About PinHunt" />
               <SettingsRow icon="message-circle" label="Send Feedback" />
               <SettingsRow icon="star" label="Rate the App" last />
             </Section>
@@ -276,7 +276,7 @@ export default function ProfileScreen() {
 
             <View style={styles.footer}>
               <Text style={[styles.footerText, { color: colors.homeMuted }]}>
-                PinHunt UK · v0.1
+                PinHunt · v0.1
               </Text>
             </View>
           </>

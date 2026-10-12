@@ -94,7 +94,7 @@ export default function RegisterScreen() {
             style={styles.logo}
             resizeMode="contain"
           />
-          <Text style={styles.appName}>PinHunt UK</Text>
+          <Text style={styles.appName}>PinHunt</Text>
         </View>
 
         {/* Form */}

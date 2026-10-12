@@ -67,3 +67,14 @@ test('screenshot publish keys', async () => {
   assert.throws(() => publishKey('../main'));
   assert.throws(() => publishKey('issue-'));
 });
+
+test('status:ready only for approved, unblocked issues without workflow state', async () => {
+  const { readyDecision } = await import('./agent-ops.mjs');
+  assert.equal(readyDecision(['P1', 'approved'], []), 'add');
+  assert.equal(readyDecision(['P1'], []), null, 'not approved: never ready');
+  assert.equal(readyDecision(['approved', 'human-only'], []), null);
+  assert.equal(readyDecision(['approved'], [12]), null, 'blocked');
+  assert.equal(readyDecision(['approved', 'status:ready'], [12]), 'remove', 'newly blocked');
+  assert.equal(readyDecision(['approved', 'status:claimed'], []), null, 'already in progress');
+  assert.equal(readyDecision(['approved', 'status:needs-decision'], []), null, 'waiting for the maintainer');
+});

@@ -8,6 +8,8 @@ These prompts are pasted into the routines at claude.ai/code/routines. The repos
 | `pinhunt-review` | `trig_0162foJJn4YqGbqroWkXXHfz` | GitHub `pull_request.opened`. Filters to add in the web UI: head branch starts with `claude/`, is draft = false, base = `main`. It also has a placeholder yearly schedule (`0 6 1 1 *`) because the API requires one; remove that schedule in the web UI. Created **disabled**. | Sonnet | `pinhunt-agents` | none |
 | `pinhunt-pm-weekly` | `trig_01RAMYULMrJefdbw7wBBYVNM` | Schedule `17 6 * * 1` UTC (Mondays 07:17 BST / 06:17 GMT). Created **disabled**. | Sonnet | `pinhunt-agents` | none |
 
+**Reviews and merging.** The verdict of record now comes from the `Agent review` GitHub workflow, which re-reviews automatically on every new commit (OPERATING-MODEL §5). Once that workflow is configured, `pinhunt-review` is optional: disable it to avoid paying for two reviews. Once `AUTO_MERGE_ENABLED` is on, low-risk agent PRs merge automatically, which frees WIP slots for the hourly dev run without a human in the loop. Medium and high-risk PRs still hold a WIP slot until the maintainer approves or merges them (OPERATING-MODEL §6).
+
 Tools: the dev routine has Bash, Read, Write, Edit, Glob and Grep. The review and PM routines are read-only plus Bash (no Write/Edit).
 
 ## Cloud environment `pinhunt-agents`

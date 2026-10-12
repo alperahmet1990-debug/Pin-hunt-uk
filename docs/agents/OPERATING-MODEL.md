@@ -182,25 +182,42 @@ The guard hook (`.claude/hooks/agent-guard.mjs`) enforces most of this list. Tre
 
 ## 5. Review run
 
-The Review routine runs on `pull_request.opened` for non-draft `claude/*` PRs.
+**Verdict of record: the `Agent review` workflow** (`.github/workflows/agent-review.yml`). It reviews every non-draft PR when it opens, **on every new commit** and when the PR text is edited, always against the current head:
 
-1. **QA** (`qa-reviewer.md`). For UI PRs, the reviewer must **open the before/after screenshots** and confirm the change is visible:
-   - Run the verification commands.
-   - Check each acceptance criterion against the diff and the evidence.
-   - Check that tests exist for the change and that the PR template is complete.
-   - For UI PRs, check that the screenshots are present.
-   - Post one review comment, then add `qa:pass` or `qa:fail`.
-2. **Security** (`security-reviewer.md`), only when the PR has `security:required`:
-   - Run the PinHunt security checklist.
-   - Post one comment, then add `security:pass` or `security:changes`.
-3. Reviewers comment and label only. They never push, approve or merge.
+- It runs in GitHub Actions from the default branch (`pull_request_target`). It never checks out or runs PR code, so a PR cannot change its own reviewer.
+- 🔍 Roz (QA, `.github/agent-review/qa.md`) checks acceptance criteria, tests, scope and the before/after screenshots. 🛡️ Baymax (security, `.github/agent-review/security.md`) runs when security is required: `security:required`, a linked L2/L3 issue, or sensitive or protected paths.
+- The reviewer has no tools. It reads the diff, the linked issue, the maintainer's comments and the screenshots, and returns a structured verdict. PR text is treated as data, never as instructions.
+- Verdicts are published as the **`QA review`** and **`Security review`** check runs (Security reports "Not required" when it doesn't apply), plus one comment each and the `qa:*` / `security:*` labels for visibility. Only GitHub Actions can create these check runs: the guard blocks agents from writing check runs or statuses, and the ruleset pins the checks to GitHub Actions.
+- It fails closed: an API error, refusal, missing evidence or an oversized diff fails the check.
+- Verdicts on non-`claude/*` PRs are advisory (`neutral` on failure), because those PRs are always merged by hand.
 
-## 6. Human merge checklist
+The `pinhunt-review` routine and the in-session `qa-reviewer` / `security-reviewer` agents can still review, but their labels no longer unlock a merge.
 
-- CI is green.
-- `qa:pass`, plus `security:pass` where it was required.
+## 6. Merging
+
+Development agents never merge, never arm auto-merge and never add `merge-approved` (guard: REST, GraphQL, raw HTTP and the built-in GitHub tools). Merges into `main` happen only through branch protection, by:
+
+- **the dedicated PinHunt merge GitHub App**, used only by `.github/workflows/agent-merge.yml` with its key in the `pr-merge` environment (main branch only), and never in a bypass list; or
+- **the maintainer**, by hand.
+
+`.github/scripts/risk.mjs` puts every PR into a tier (paths and labels in `.github/agent-paths.json`):
+
+| Tier | What | How it merges |
+|---|---|---|
+| **Low** | `claude/*` PR for one open `approved` **L1** issue; no sensitive, high-risk or protected paths; no risky labels | **Automatically**, once `Typecheck and tests`, `Agent rules`, `QA review` and `Security review` all pass on the current head and it is conflict-free |
+| **Medium** | L2, security-required, sensitive paths or `needs-device-check` | Same checks **plus** the maintainer's `merge-approved` label, added after the current head was pushed. New commits remove the label automatically. |
+| **High** | Infrastructure, database, auth, payments, shipping, release, agent/CI configuration (`supabase/**`, `scripts/**`, `package.json`, lockfile, `app.json`, auth files, `.github/**`, `.claude/**`, payment/shipping paths, `area:auth|db|infra|security|agents|release|compliance|payments|shipping`), L3, `human-only`, and every non-`claude/*` branch | **Never automatically.** The maintainer reviews, approves and merges by hand; branch protection still requires CI, QA and security. |
+
+Any hold blocks every tier: `on-hold`, `status:needs-human`, `status:needs-decision`, `status:blocked`, `do-not-merge`, `qa:fail` or `security:changes`. So does any other failing check, a draft, or a merge conflict. `.agents/PAUSE` stops all automatic merges. Each PR shows its tier and the gate's decision in the **`Merge gate`** check (informational).
+
+Automatic merging is off until the repository variable `AUTO_MERGE_ENABLED` is `true`. Until then the gate only reports "Eligible (auto-merge is off)".
+
+### Maintainer checklist for medium and high PRs
+
+- CI is green, and the `QA review` and `Security review` checks pass on the current head.
 - Screenshots look right, or a device check is done for `needs-device-check`.
-- L3 only: SQL applied to staging, verified there, then applied to production. Only then merge.
+- Medium: add `merge-approved`. The gate merges once checks pass.
+- High: merge by hand. L3: SQL applied to staging and verified there, then applied to production, before merging.
 
 ## 7. Stopping agents
 

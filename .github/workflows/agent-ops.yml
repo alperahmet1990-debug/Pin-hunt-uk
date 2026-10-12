@@ -35,7 +35,7 @@ jobs:
     # the human-only gate labels (backstop audit).
     if: >-
       github.event_name != 'pull_request' ||
-      contains(fromJSON('["approved","l3-go","human-approved-config"]'), github.event.label.name)
+      contains(fromJSON('["approved","l3-go","human-approved-config","merge-approved"]'), github.event.label.name)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

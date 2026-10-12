@@ -1,0 +1,54 @@
+name: Agent merge
+
+# Merges eligible agent PRs with the dedicated PinHunt merge GitHub App.
+# Low risk merges after CI, QA and security pass; medium risk also needs the
+# maintainer's `merge-approved` label on the current head; high risk is never
+# merged here. See .github/scripts/merge-gate.mjs and OPERATING-MODEL §6.
+#
+# Inactive (report only) unless the repository variable AUTO_MERGE_ENABLED is
+# "true". Runs only default-branch code. The app key lives in the `pr-merge`
+# environment, which must be restricted to the main branch.
+on:
+  workflow_run:
+    workflows: [CI, Agent review, Agent PR checks]
+    types: [completed]
+  pull_request_target:
+    types: [labeled, unlabeled]
+  schedule:
+    - cron: '53 * * * *' # hourly sweep
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  checks: write
+
+concurrency:
+  group: agent-merge
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    name: Merge gate sweep
+    # Label events only matter for the approval label.
+    if: github.event_name != 'pull_request_target' || github.event.label.name == 'merge-approved'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: pr-merge
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          sparse-checkout: |
+            .github
+            .agents
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: node .github/scripts/merge-gate.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          AUTO_MERGE_ENABLED: ${{ vars.AUTO_MERGE_ENABLED }}
+          MERGE_APP_ID: ${{ vars.MERGE_APP_ID }}
+          MERGE_APP_PRIVATE_KEY: ${{ secrets.MERGE_APP_PRIVATE_KEY }}

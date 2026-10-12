@@ -180,3 +180,41 @@ test('maintainer authority: only agent-managed labels may change', () => {
   assert.ok(bash('gh api repos/o/r/issues/5/labels -f "labels[]=P0"'));
   assert.equal(bash('gh api repos/o/r/issues/5/labels -f "labels[]=status:needs-decision"'), null);
 });
+
+test('closes the GraphQL and raw-HTTP merge loopholes', () => {
+  for (const command of [
+    `gh api graphql -f query='mutation { mergePullRequest(input: {pullRequestId: "x"}) { clientMutationId } }'`,
+    `gh api graphql -f query='mutation { enablePullRequestAutoMerge(input: {pullRequestId: "x"}) { clientMutationId } }'`,
+    `gh api graphql -F query=@q.graphql -f op=disablePullRequestAutoMerge`,
+    `curl -X PUT -H "Authorization: token x" https://api.github.com/repos/o/r/pulls/12/merge`,
+    `curl -X POST https://api.github.com/repos/o/r/merges -d '{"base":"main","head":"claude/1-x"}'`,
+    'gh api -X PUT repos/o/r/pulls/12/update-branch',
+    'gh api repos/o/r/issues/42/labels -f "labels[]=merge-approved"',
+  ]) {
+    assert.ok(bash(command), command);
+  }
+});
+
+test('agents cannot forge review verdicts (check runs, statuses), but may read them', () => {
+  for (const command of [
+    'gh api repos/o/r/check-runs -f name="QA review" -f head_sha=abc -f conclusion=success',
+    'gh api -X PATCH repos/o/r/check-runs/5 -f conclusion=success',
+    'gh api --method POST repos/o/r/statuses/abc -f state=success',
+    `curl -X POST https://api.github.com/repos/o/r/check-runs -d '{"name":"QA review"}'`,
+  ]) {
+    assert.ok(bash(command), command);
+  }
+  for (const command of [
+    'gh api repos/o/r/commits/abc/check-runs',
+    'gh api -X GET repos/o/r/commits/abc/check-runs -f per_page=100',
+    'gh api repos/o/r/commits/abc/check-runs --jq ".check_runs[].name"',
+  ]) {
+    assert.equal(bash(command), null, command);
+  }
+  const gh = (tool_name, tool_input = {}) => check({ tool_name, tool_input, cwd: root }, { currentLabels: () => ['P1'] });
+  assert.ok(gh('mcp__github__create_check_run', { name: 'QA review' }));
+  assert.ok(gh('mcp__github__enable_pr_auto_merge', { pullNumber: 5 }));
+  assert.ok(gh('mcp__github__issue_write', { owner: 'o', repo: 'r', issue_number: 5, labels: ['P1', 'merge-approved'] }));
+  assert.equal(gh('mcp__github__get_check_run', { check_run_id: 5 }), null);
+  assert.equal(gh('mcp__github__pull_request_read', { method: 'get_check_runs', pullNumber: 5 }), null);
+});

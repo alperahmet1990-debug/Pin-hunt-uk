@@ -208,6 +208,14 @@ export function formatQueue(ranked, excluded = []) {
   ].join('\n');
 }
 
+// Report-only: show review labels with the reviewer's team name (OPERATING-MODEL §1).
+function teamVerdicts(verdicts) {
+  return verdicts
+    .replace(/\bqa:(\S+)/g, '🔍 Roz qa:$1')
+    .replace(/\bsecurity:required\b/g, '🛡️ Baymax review required')
+    .replace(/\bsecurity:(pass|changes)\b/g, '🛡️ Baymax security:$1');
+}
+
 function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, readiness, gateAlerts = [], ranked = [] }) {
   const has = (i, l) => labelNames(i).includes(l);
   const line = i => `- #${i.number} ${i.title}`;
@@ -226,7 +234,7 @@ function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, re
     const verdicts = labelNames(pr).filter(l => /^(qa|security):/.test(l)).join(' ') || 'not reviewed';
     const ci = none ? 'no CI runs' : failed.length ? `CI failed (${failed.join(', ')})` : pending ? 'CI running' : 'CI green';
     const age = Math.floor((now - Date.parse(pr.created_at)) / (24 * HOUR));
-    return `- #${pr.number} ${pr.title} · ${ci} · ${verdicts} · ${age}d old`;
+    return `- #${pr.number} ${pr.title} · ${ci} · ${teamVerdicts(verdicts)} · ${age}d old`;
   });
   const drafts = prDetails.filter(d => d.pr.draft).map(({ pr }) => `- #${pr.number} ${pr.title} (draft)`);
   const failedCi = prDetails.filter(d => d.failed.length).map(({ pr, failed }) => `- #${pr.number}: ${failed.join(', ')}`);
@@ -249,9 +257,9 @@ function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, re
     `<details><summary>Completed in the last 7 days (${closedIssues.length})</summary>\n\n${list(closedIssues.map(line))}\n</details>`,
     '',
     '## In progress',
-    list(openIssues.filter(i => has(i, 'status:claimed')).map(line)),
+    list(openIssues.filter(i => has(i, 'status:claimed')).map(i => `${line(i)}${has(i, 'agent:ui') ? ' · 👓 Edna Mode' : has(i, 'agent:backend') ? ' · 🛠️ Fix-It Felix' : ''}`)),
     '',
-    '## Pull requests awaiting review',
+    '## Pull requests awaiting review (🔍 Roz · 🛡️ Baymax)',
     list(awaiting),
     drafts.length ? `\n**Drafts (L3 or failed runs):**\n${drafts.join('\n')}` : '',
     '',
@@ -268,7 +276,7 @@ function buildReport({ openIssues, closedRecent, prDetails, agentPrs, paused, re
       ...openIssues.filter(i => has(i, 'human-only') && (has(i, 'P0') || has(i, 'P1'))).map(i => `${line(i)} (human-only)`),
     ]),
     '',
-    '## Agent queue (calculated by Agent ops)',
+    '## Agent queue (🧞 Genie, calculated by Agent ops)',
     ranked.length ? ranked.slice(0, 5).map((r, i) => `${i + 1}. #${r.number} ${r.title}${i === 0 ? ' ← **status:ready**' : ''}`).join('\n') : '_No eligible issues_',
     '',
   ].join('\n');

@@ -1,12 +1,57 @@
 [
-  { "name": "home", "path": "/" },
-  { "name": "collection", "path": "/collection" },
-  { "name": "community", "path": "/community" },
-  { "name": "find", "path": "/scan" },
-  { "name": "profile", "path": "/profile" },
-  { "name": "search", "path": "/search" },
-  { "name": "pin-detail", "path": "/pin/dp-001" },
-  { "name": "set-detail", "path": "/set/Classics%202024" },
-  { "name": "browse-catalogue", "path": "/browse-catalogue" },
-  { "name": "find-trades", "path": "/find-trades" }
+  {
+    "name": "home",
+    "path": "/"
+  },
+  {
+    "name": "collection",
+    "path": "/collection"
+  },
+  {
+    "name": "collection-boards",
+    "path": "/collection",
+    "click": "Boards"
+  },
+  {
+    "name": "collection-for-trade",
+    "path": "/collection",
+    "click": "For Trade"
+  },
+  {
+    "name": "collection-iso",
+    "path": "/collection",
+    "click": "ISO"
+  },
+  {
+    "name": "community",
+    "path": "/community"
+  },
+  {
+    "name": "find",
+    "path": "/scan"
+  },
+  {
+    "name": "profile",
+    "path": "/profile"
+  },
+  {
+    "name": "search",
+    "path": "/search"
+  },
+  {
+    "name": "pin-detail",
+    "path": "/pin/dp-001"
+  },
+  {
+    "name": "set-detail",
+    "path": "/set/Classics%202024"
+  },
+  {
+    "name": "browse-catalogue",
+    "path": "/browse-catalogue"
+  },
+  {
+    "name": "find-trades",
+    "path": "/find-trades"
+  }
 ]

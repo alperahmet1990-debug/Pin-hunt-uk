@@ -94,13 +94,15 @@ describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
 
     it('does not tag tiles for people who cannot contribute photos', async () => {
       await render(<BrowseCatalogueScreen />);
-      expect(screen.queryByText('Photo needed')).toBeNull();
+      expect(screen.queryAllByLabelText(/, photo needed$/)).toHaveLength(0);
+      expect(screen.queryByText(/No catalogue photo yet/)).toBeNull();
     });
 
     it('tags tiles with no catalogue photo for contributors', async () => {
       mockCanContribute = true;
       await render(<BrowseCatalogueScreen />);
-      expect(screen.getAllByText('Photo needed')).toHaveLength(2);
+      expect(screen.getAllByLabelText(/, photo needed$/)).toHaveLength(2);
+      expect(screen.getByText(/No catalogue photo yet/)).toBeTruthy();
       expect(screen.getByLabelText('Mickey Classic, photo needed')).toBeTruthy();
     });
 

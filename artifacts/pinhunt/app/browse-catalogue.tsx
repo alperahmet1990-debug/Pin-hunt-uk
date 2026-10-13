@@ -311,6 +311,14 @@ export default function BrowseCatalogueScreen() {
         </Text>
       )}
       <SearchBar value={query} onChangeText={setQuery} placeholder="Search pins, characters, sets or years" />
+      {photoNeededIds.size > 0 && (
+        <View style={styles.photoKey}>
+          <View style={[styles.photoTag, { position: 'relative', left: 0, top: 0, backgroundColor: colors.homeSurface, borderColor: colors.homeCoral }]}>
+            <Feather name="camera" size={11} color={colors.homeCoral} />
+          </View>
+          <Text style={[styles.metaText, { color: colors.homeMuted, flex: 1 }]}>No catalogue photo yet. Snap yours to help other collectors.</Text>
+        </View>
+      )}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
         {chip(hideHave ? 'Hiding pins I have' : 'Hide pins I have', hideHave, () => setHideHave(v => !v), false)}
         {chip(setFilter ?? 'Set', !!setFilter, () => setOpenFilter('set'))}
@@ -590,9 +598,9 @@ function Tile({ pin, status, photoNeeded, selected, onPress, onLongPress }: {
           resizeMode="contain"
         />
         {photoNeeded && (
+          // Same size as the select tick opposite, so it never clips or collides on narrow tiles.
           <View style={[styles.photoTag, { backgroundColor: colors.homeSurface + 'F2', borderColor: colors.homeCoral }]}>
-            <Feather name="camera" size={9} color={colors.homeCoral} />
-            <Text style={[styles.badgeLabel, { color: colors.homeCoralDeep }]} numberOfLines={1}>Photo needed</Text>
+            <Feather name="camera" size={11} color={colors.homeCoral} />
           </View>
         )}
         {!locked && (
@@ -796,7 +804,8 @@ const styles = StyleSheet.create({
   checkCircle: { position: 'absolute', top: 6, right: 6, width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
   badge: { position: 'absolute', left: 6, bottom: 6, flexDirection: 'row', alignItems: 'center', gap: 3, borderRadius: radius.pill, paddingVertical: 3, paddingHorizontal: 7 },
   badgeLabel: { fontSize: 9, fontFamily: 'Inter_600SemiBold' },
-  photoTag: { position: 'absolute', left: 6, top: 6, flexDirection: 'row', alignItems: 'center', gap: 3, borderRadius: radius.pill, borderWidth: 1, paddingVertical: 2, paddingHorizontal: 6 },
+  photoTag: { position: 'absolute', left: 6, top: 6, width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
+  photoKey: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   promptBackdrop: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, backgroundColor: 'rgba(0,0,0,0.45)' },
   promptCard: { width: '100%', maxWidth: 360, borderRadius: 24, borderWidth: 1, padding: 22, alignItems: 'center', gap: 8 },
   promptTitle: { fontSize: 19, fontFamily: 'Inter_700Bold', textAlign: 'center' },

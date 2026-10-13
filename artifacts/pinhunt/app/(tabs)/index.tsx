@@ -8,6 +8,7 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { AddPinsCard } from '@/components/AddPinsCard';
 import { AddPinsWelcomeSheet } from '@/components/AddPinsWelcomeSheet';
+import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { useProfile } from '@/context/ProfileContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
@@ -180,6 +181,7 @@ export default function HomeScreen() {
         </LinearGradient>
       </TouchableOpacity>
       <AddPinsCard />
+      <PhotoGapsCard />
       <View style={styles.shortcuts}>
         <Shortcut icon="heart" label={'My\nCollection'} tone={colors.homeCoralDeep} onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })} colors={colors} />
         <Shortcut icon="compass" label={'Find\nTrades'} tone={colors.homeSandInk} onPress={() => router.push('/find-trades')} colors={colors} />

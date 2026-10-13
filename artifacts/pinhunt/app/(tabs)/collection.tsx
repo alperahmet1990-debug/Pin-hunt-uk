@@ -22,6 +22,7 @@ import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
 import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
+import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
 import { BoardCard } from '@/components/BoardCard';
@@ -406,6 +407,9 @@ export default function CollectionScreen() {
           }}
         />
       </View>
+
+      {/* Contributors: owned pins with no catalogue photo yet (UX-056). */}
+      <PhotoGapsCard style={s.photoGapsCard} />
 
       {/* Contextual Stats & Search */}
       <View style={s.contextualArea}>
@@ -932,6 +936,7 @@ const s = StyleSheet.create({
   contextualArea: { paddingBottom: 8 },
   statsRow: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 16, paddingVertical: 12 },
   statText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  photoGapsCard: { marginTop: 0, marginBottom: 12, marginHorizontal: 16 },
   listFooter: { marginTop: 8, marginHorizontal: -16 },
   linkRow: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56, marginHorizontal: 16, marginBottom: 12, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
   linkRowIcon: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },

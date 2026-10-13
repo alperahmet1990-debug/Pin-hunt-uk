@@ -41,6 +41,9 @@ import { useToast } from '@/components/ui/Toast';
 import { useCatalogueBrowseIndex } from '@/hooks/useCatalogueBrowseIndex';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
+import { useFeature } from '@/hooks/useFeature';
+import { useCatalogueCoverage } from '@/hooks/useCatalogueCoverage';
+import { needsPhoto } from '@/utils/photoGaps';
 import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
@@ -82,6 +85,16 @@ export default function BrowseCatalogueScreen() {
   const narrow = useWindowDimensions().width < 360;
   const screenTitle = addMode ? 'Add pins you own' : 'Entire Catalogue';
   const [addedCount, setAddedCount] = useState(0);
+  // Pins added as owned/For Trade this visit, for the photo prompt on Done (UX-056).
+  const [addedOwnedIds, setAddedOwnedIds] = useState<string[]>([]);
+  const [photoPrompt, setPhotoPrompt] = useState<string[] | null>(null);
+  // Photo contributors (beta: contributor tier) see which pins have no catalogue photo.
+  const { enabled: canContribute } = useFeature('catalogue_contributions');
+  const { rows: coverage } = useCatalogueCoverage(canContribute);
+  const photoNeededIds = useMemo(
+    () => new Set(canContribute ? coverage.filter(needsPhoto).map(r => r.pinhuntId) : []),
+    [canContribute, coverage],
+  );
   const { rows, loading, error, refresh } = useCatalogueBrowseIndex();
   const { collection, setStatuses } = useCollection();
   const { customBoards, createBoard, addPinsToBoard } = useBoards();
@@ -203,6 +216,7 @@ export default function BrowseCatalogueScreen() {
     setStatuses(ids, status);
     setSelected(new Set());
     setAddedCount(n => n + ids.length);
+    if (status !== 'wanted') setAddedOwnedIds(prev => [...prev, ...ids]);
     if (confirm) {
       const pins = `${ids.length} ${ids.length === 1 ? 'pin' : 'pins'}`;
       toast.show(ids.length === 0
@@ -217,11 +231,21 @@ export default function BrowseCatalogueScreen() {
                 if (wasNone.length) setStatusesRef.current(wasNone, 'none');
                 if (wasIso.length) setStatusesRef.current(wasIso, 'wanted');
                 setAddedCount(n => Math.max(0, n - ids.length));
+                setAddedOwnedIds(prev => prev.filter(id => !ids.includes(id)));
               },
             },
           });
     }
     return ids.length;
+  };
+
+  const leave = () => (router.canGoBack() ? router.back() : router.replace('/(tabs)'));
+  // Done: contributors who just added pins with no catalogue photo are asked
+  // to photograph them while they're in hand (UX-056). Everyone else leaves.
+  const finish = () => {
+    const unphotographed = [...new Set(addedOwnedIds)].filter(id => photoNeededIds.has(id));
+    if (unphotographed.length > 0) setPhotoPrompt(unphotographed);
+    else leave();
   };
 
   const addSelectedToBoard = (boardId: string, boardName: string) => {
@@ -382,6 +406,7 @@ export default function BrowseCatalogueScreen() {
                 key={pin.id}
                 pin={pin}
                 status={statusOf(pin.id)}
+                photoNeeded={photoNeededIds.has(pin.id)}
                 selected={selected.has(pin.id)}
                 onPress={() => toggle(pin.id)}
                 onLongPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
@@ -456,7 +481,7 @@ export default function BrowseCatalogueScreen() {
           paddingBottom: botPad + spacing.md,
         }]}>
           <TouchableOpacity
-            onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)'))}
+            onPress={finish}
             activeOpacity={0.85}
             accessibilityRole="button"
             style={[styles.primaryBtn, { backgroundColor: colors.homeCoral }]}
@@ -467,6 +492,41 @@ export default function BrowseCatalogueScreen() {
           </TouchableOpacity>
         </View>
       )}
+
+      <Modal visible={photoPrompt !== null} transparent animationType="fade" onRequestClose={() => { setPhotoPrompt(null); leave(); }}>
+        <View style={styles.promptBackdrop}>
+          <View accessibilityViewIsModal style={[styles.promptCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <Feather name="camera" size={26} color={colors.homeCoralDeep} />
+            <Text accessibilityRole="header" style={[styles.promptTitle, { color: colors.homeInk }]}>Help with photos?</Text>
+            <Text style={[styles.promptBody, { color: colors.homeMuted }]}>
+              {photoPrompt?.length === 1
+                ? 'One of the pins you just added doesn\u2019t have a photo yet. Snap it to help other collectors.'
+                : `${photoPrompt?.length ?? 0} of the pins you just added don\u2019t have a photo yet. Snap them to help other collectors.`}
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                const pins = photoPrompt ?? [];
+                setPhotoPrompt(null);
+                router.replace({ pathname: '/contribute/photos', params: { pins: pins.join(',') } });
+              }}
+              accessibilityRole="button"
+              activeOpacity={0.85}
+              style={[styles.primaryBtn, { alignSelf: 'stretch', backgroundColor: colors.homeCoral }]}
+            >
+              <Text style={[styles.primaryLabel, { color: colors.homeHeroText }]}>
+                {photoPrompt?.length === 1 ? 'Photograph it' : 'Photograph them'}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => { setPhotoPrompt(null); leave(); }}
+              accessibilityRole="button"
+              style={styles.promptLater}
+            >
+              <Text style={[styles.metaLink, { color: colors.homeCoralDeep }]}>Later</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
 
       <BoardSheet
         visible={boardSheetOpen}
@@ -490,9 +550,10 @@ export default function BrowseCatalogueScreen() {
   );
 }
 
-function Tile({ pin, status, selected, onPress, onLongPress }: {
+function Tile({ pin, status, photoNeeded, selected, onPress, onLongPress }: {
   pin: CatalogueBrowsePin;
   status?: string;
+  photoNeeded?: boolean;
   selected: boolean;
   onPress(): void;
   onLongPress(): void;
@@ -512,7 +573,7 @@ function Tile({ pin, status, selected, onPress, onLongPress }: {
       onLongPress={onLongPress}
       accessibilityRole="checkbox"
       accessibilityState={{ checked: selected, disabled: locked }}
-      accessibilityLabel={pin.title}
+      accessibilityLabel={photoNeeded ? `${pin.title}, photo needed` : pin.title}
       style={styles.tile}
     >
       <View style={[
@@ -528,6 +589,12 @@ function Tile({ pin, status, selected, onPress, onLongPress }: {
           style={[styles.tileImage, locked && { opacity: 0.45 }]}
           resizeMode="contain"
         />
+        {photoNeeded && (
+          <View style={[styles.photoTag, { backgroundColor: colors.homeSurface + 'F2', borderColor: colors.homeCoral }]}>
+            <Feather name="camera" size={9} color={colors.homeCoral} />
+            <Text style={[styles.badgeLabel, { color: colors.homeCoralDeep }]} numberOfLines={1}>Photo needed</Text>
+          </View>
+        )}
         {!locked && (
           <View style={[styles.checkCircle, {
             backgroundColor: selected ? colors.homeCoral : colors.homeSurface + 'E6',
@@ -729,6 +796,12 @@ const styles = StyleSheet.create({
   checkCircle: { position: 'absolute', top: 6, right: 6, width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
   badge: { position: 'absolute', left: 6, bottom: 6, flexDirection: 'row', alignItems: 'center', gap: 3, borderRadius: radius.pill, paddingVertical: 3, paddingHorizontal: 7 },
   badgeLabel: { fontSize: 9, fontFamily: 'Inter_600SemiBold' },
+  photoTag: { position: 'absolute', left: 6, top: 6, flexDirection: 'row', alignItems: 'center', gap: 3, borderRadius: radius.pill, borderWidth: 1, paddingVertical: 2, paddingHorizontal: 6 },
+  promptBackdrop: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, backgroundColor: 'rgba(0,0,0,0.45)' },
+  promptCard: { width: '100%', maxWidth: 360, borderRadius: 24, borderWidth: 1, padding: 22, alignItems: 'center', gap: 8 },
+  promptTitle: { fontSize: 19, fontFamily: 'Inter_700Bold', textAlign: 'center' },
+  promptBody: { fontSize: 14, lineHeight: 20, fontFamily: 'Inter_400Regular', textAlign: 'center', marginBottom: 8 },
+  promptLater: { alignSelf: 'stretch', minHeight: 44, alignItems: 'center', justifyContent: 'center' },
   tileTitle: { fontSize: 11, fontFamily: 'Inter_500Medium', lineHeight: 14 },
   bottomBar: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: spacing.md },
   bottomMeta: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },

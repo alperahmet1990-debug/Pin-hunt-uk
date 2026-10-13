@@ -56,7 +56,7 @@ describe('Research Review screen', () => {
   const fetchMock = jest.fn();
   beforeEach(() => {
     fetchMock.mockReset();
-    global.fetch = fetchMock as unknown as typeof fetch;
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
     fetchMock.mockImplementation(async (url: string) => {
       const json = (body: unknown, ok = true, status = 200) => ({ ok, status, json: async () => body });
       if (url.endsWith('/admin/research/runs')) return json({ runs: [{ id: 'r1', git_commit: 'abc1234', loaded_at: '', summary: { pins: 28, engineVerified: 28 } }] });

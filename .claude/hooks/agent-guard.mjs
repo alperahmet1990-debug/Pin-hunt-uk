@@ -143,9 +143,14 @@ function checkGithubTool(tool, args, { currentLabels = fetchLabels } = {}) {
   // Maintainer authority (OPERATING-MODEL §2a).
   if (/comment/i.test(name) && /update|edit/i.test(name)) return 'Agents never edit comments.';
   const isIssueWrite = /issue/i.test(name) && !/comment|sub_issue/i.test(name);
-  if (isIssueWrite && (String(args.method ?? '').toLowerCase() === 'create' || /create_issue/i.test(name))) {
-    return 'Agents never create issues in autonomous runs. Propose work in a comment.';
+    if (isIssueWrite && (String(args.method ?? '').toLowerCase() === 'create' || /create_issue/i.test(name))) {
+    // Agents may file a proposal for the maintainer to triage: labelled
+    // agent-proposed and nothing else (no priority, autonomy or gate labels).
+    const proposed = [args.labels].flat().filter(Boolean).map(l => (typeof l === 'string' ? l : l?.name));
+    if (proposed.length === 1 && proposed[0] === 'agent-proposed') return null;
+    return 'Agents may only create issues labelled agent-proposed (and no other labels).';
   }
+
   if (isIssueWrite && ['title', 'body', 'milestone', 'assignees', 'state', 'state_reason', 'type'].some(k => args[k] !== undefined)) {
     return 'Agents never edit issue titles, bodies, state or metadata. Comment instead.';
   }

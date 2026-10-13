@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Dimensions,
   FlatList,
@@ -22,6 +22,9 @@ import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, PinSetSummary } from '@workspace/pin-repository';
 import { useSetTraders } from '@/hooks/useSetTraders';
 import { useAddMissingToIso } from '@/hooks/useAddMissingToIso';
+import { usePinSelection } from '@/hooks/usePinSelection';
+import { useToast } from '@/components/ui/Toast';
+import { pinsToAddToIso } from '@/utils/setTraders';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
@@ -37,7 +40,12 @@ export default function SetDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { collection: userCollection, getEntry } = useCollection();
+  const { collection: userCollection, getEntry, setStatuses } = useCollection();
+  const toast = useToast();
+  // Undo runs after later renders, so it reads the latest setter (collection-mutation-ordering.md).
+  const setStatusesRef = useRef(setStatuses);
+  setStatusesRef.current = setStatuses;
+  const selection = usePinSelection();
   const { pins: catalogue, loading: catalogueLoading, repository, ensureCollections } = usePinCatalogue();
 
   const [filter, setFilter] = useState<PinFilter>('all');
@@ -111,8 +119,46 @@ export default function SetDetailScreen() {
   const missingIds = useMemo(() => missingPins.map(p => p.id), [missingPins]);
   const { available, loading: tradersLoading } = useSetTraders(loading ? [] : missingIds);
   const { add: addMissingToIso, pending: pendingIso } = useAddMissingToIso();
-  const showFooter = !loading && missingIds.length > 0;
+  const showFooter = !loading && missingIds.length > 0 && !selection.active;
   const toIsoCount = showFooter ? pendingIso(missingIds).length : 0;
+
+  // Select mode (UX-022): tick off many missing pins, then Owned or ISO in one batch.
+  const selectedIds = useMemo(
+    () => missingIds.filter(id => selection.selected.has(id)),
+    [missingIds, selection.selected],
+  );
+  const markSelectedOwned = () => {
+    const ids = selectedIds;
+    if (ids.length === 0) return;
+    // Missing pins have no status or are on the ISO; Undo puts each back exactly.
+    const wasIso = ids.filter(id => userCollection[id]?.status === 'wanted');
+    const wasNone = ids.filter(id => userCollection[id]?.status !== 'wanted');
+    setStatuses(ids, 'owned');
+    selection.stop();
+    toast.show({
+      message: `Added ${ids.length} · Set ${ownedCount + ids.length}/${total}`,
+      action: {
+        label: 'Undo',
+        onPress: () => {
+          if (wasNone.length) setStatusesRef.current(wasNone, 'none');
+          if (wasIso.length) setStatusesRef.current(wasIso, 'wanted');
+        },
+      },
+    });
+  };
+  const addSelectedToIso = () => {
+    const ids = pinsToAddToIso(selectedIds, id => userCollection[id]?.status);
+    selection.stop();
+    if (ids.length === 0) {
+      toast.show({ message: 'Those pins are already on your ISO' });
+      return;
+    }
+    setStatuses(ids, 'wanted');
+    toast.show({
+      message: `Added ${ids.length} ${ids.length === 1 ? 'pin' : 'pins'} to your ISO`,
+      action: { label: 'Undo', onPress: () => setStatusesRef.current(ids, 'none') },
+    });
+  };
 
   const total = setPins.length;
   const ownedCount = ownedPins.length;
@@ -175,6 +221,17 @@ export default function SetDetailScreen() {
               <Text style={[styles.completeBadgeLabel, { color: colors.owned }]}>Complete!</Text>
             </View>
           )}
+          {!loading && missingIds.length > 0 && (
+            <TouchableOpacity
+              onPress={selection.active ? selection.stop : selection.start}
+              accessibilityRole="button"
+              accessibilityLabel={selection.active ? 'Cancel selecting' : 'Select pins'}
+              activeOpacity={0.7}
+              style={[styles.selectBtn, { backgroundColor: selection.active ? colors.homeAqua : 'transparent', borderColor: colors.homeLine }]}
+            >
+              <Text style={[styles.selectBtnLabel, { color: colors.homeInk }]}>{selection.active ? 'Cancel' : 'Select'}</Text>
+            </TouchableOpacity>
+          )}
         </View>
 
         <Text style={[styles.setTitle, { color: colors.homeInk }]} numberOfLines={2}>
@@ -204,6 +261,18 @@ export default function SetDetailScreen() {
         <View style={styles.filterWrap}>
           <SegmentedControl options={FILTERS} value={filter} onChange={setFilter} />
         </View>
+        {selection.active && (
+          <View style={styles.selectRow}>
+            <Text style={[styles.selectCount, { color: colors.homeInk }]}>
+              {selectedIds.length === 0 ? 'Tap the pins you have' : `${selectedIds.length} selected`}
+            </Text>
+            <TouchableOpacity onPress={() => selection.toggleAll(missingIds)} accessibilityRole="button" hitSlop={8} style={styles.selectAllBtn}>
+              <Text style={[styles.selectAllLabel, { color: colors.homeCoralDeep }]}>
+                {selection.allSelected(missingIds) ? 'Clear' : 'Select all missing'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
 
       {/* ── Pin grid ── */}
@@ -237,7 +306,8 @@ export default function SetDetailScreen() {
           keyExtractor={p => p.id}
           numColumns={COLS}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={[styles.grid, { paddingBottom: botPad + (showFooter ? FOOTER_SPACE : 0) }]}
+          contentContainerStyle={[styles.grid, { paddingBottom: botPad + (showFooter || selection.active ? FOOTER_SPACE : 0) }]}
+          extraData={selection.selected}
           columnWrapperStyle={styles.gridRow}
           renderItem={({ item }) => {
             const isOwned = ownedIds.has(item.id);
@@ -250,8 +320,13 @@ export default function SetDetailScreen() {
                   status={entry?.status}
                   copies={isOwned ? entry?.quantity : undefined}
                   size={TILE}
-                  onPress={() => router.push({ pathname: '/pin/[id]', params: { id: item.id } })}
-                  onQuickAdd={!isOwned ? () => setQuickAddPin(item) : undefined}
+                  // In select mode only missing pins can be ticked; owned ones stay put.
+                  selected={selection.active && !isOwned ? selection.has(item.id) : undefined}
+                  onPress={() => {
+                    if (!selection.active) router.push({ pathname: '/pin/[id]', params: { id: item.id } });
+                    else if (!isOwned) selection.toggle(item.id);
+                  }}
+                  onQuickAdd={!isOwned && !selection.active ? () => setQuickAddPin(item) : undefined}
                 />
               </View>
             );
@@ -289,6 +364,33 @@ export default function SetDetailScreen() {
         </View>
       )}
 
+      {selection.active && (
+        <View style={[styles.footer, { backgroundColor: colors.homeSurface, borderTopColor: colors.homeLine, paddingBottom: botPad }]}>
+          <TouchableOpacity
+            onPress={markSelectedOwned}
+            disabled={selectedIds.length === 0}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityState={{ disabled: selectedIds.length === 0 }}
+            style={[styles.footerPrimary, { backgroundColor: colors.homeCoral, opacity: selectedIds.length === 0 ? 0.5 : 1 }]}
+          >
+            <Text style={[styles.footerPrimaryLabel, { color: colors.homeSurface }]}>
+              {selectedIds.length === 0 ? 'Mark as Owned' : `Mark ${selectedIds.length} as Owned`}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={addSelectedToIso}
+            disabled={selectedIds.length === 0}
+            activeOpacity={0.7}
+            accessibilityRole="button"
+            accessibilityState={{ disabled: selectedIds.length === 0 }}
+            style={[styles.footerSecondary, { opacity: selectedIds.length === 0 ? 0.5 : 1 }]}
+          >
+            <Text style={[styles.footerSecondaryLabel, { color: colors.homeCoralDeep }]}>Add to ISO</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
       <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
     </ScreenContainer>
   );
@@ -301,7 +403,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     gap: spacing.sm,
   },
-  headerTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  headerTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
+  selectBtn: { minHeight: 44, minWidth: 64, paddingHorizontal: spacing.md, borderRadius: radius.pill, borderWidth: 1, alignItems: 'center', justifyContent: 'center', marginLeft: 'auto' },
+  selectBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  selectRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: spacing.xs },
+  selectCount: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
+  selectAllBtn: { minHeight: 44, justifyContent: 'center' },
+  selectAllLabel: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
   backBtn: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   completeBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 6 },
   completeBadgeLabel: { fontSize: 12, fontFamily: 'Inter_700Bold' },

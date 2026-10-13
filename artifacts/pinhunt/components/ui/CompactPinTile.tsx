@@ -22,6 +22,11 @@ interface CompactPinTileProps {
   status?: CollectionStatus;
   /** Copies owned; shown as ×N in the top-left corner when above 1. */
   copies?: number;
+  /**
+   * Select mode: true/false shows a selection circle and makes the tile a
+   * checkbox (UX-022). Leave undefined outside select mode.
+   */
+  selected?: boolean;
 }
 
 const MARKER_ICON: Record<Exclude<CollectionStatus, 'none'>, keyof typeof Feather.glyphMap> = {
@@ -34,7 +39,7 @@ const MARKER_ICON: Record<Exclude<CollectionStatus, 'none'>, keyof typeof Feathe
  * Small, image-led pin preview — "what else is in this set?", not a shopping card.
  * Used by Pin Detail's set strip and the Set Detail grid so both share one look.
  */
-export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, copies }: CompactPinTileProps) {
+export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, copies, selected }: CompactPinTileProps) {
   const colors = useColors();
   const marker: Exclude<CollectionStatus, 'none'> | null =
     status && status !== 'none' ? status : owned ? 'owned' : null;
@@ -46,7 +51,8 @@ export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, 
       onPress={onPress}
       activeOpacity={0.85}
       style={{ width: size }}
-      accessibilityRole="button"
+      accessibilityRole={selected === undefined ? 'button' : 'checkbox'}
+      accessibilityState={selected === undefined ? undefined : { checked: selected }}
       accessibilityLabel={
         [pin.title, marker && STATUS_BADGE[marker].label, copies && copies > 1 ? `${copies} copies` : null]
           .filter(Boolean)
@@ -68,7 +74,20 @@ export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, 
             <Text style={[styles.copiesLabel, { color: colors.homeSurface }]}>×{copies}</Text>
           </View>
         )}
-        {!owned && onQuickAdd && (
+        {selected !== undefined && (
+          <>
+            {selected && <View pointerEvents="none" style={[styles.selectedRing, { width: size, height: size, borderColor: colors.homeCoral }]} />}
+            <View
+              pointerEvents="none"
+              style={[styles.selectCircle, selected
+                ? { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }
+                : { backgroundColor: colors.homeSurface + 'E6', borderColor: colors.homeLine }]}
+            >
+              {selected && <Feather name="check" size={12} color={colors.homeSurface} />}
+            </View>
+          </>
+        )}
+        {selected === undefined && !owned && onQuickAdd && (
           <TouchableOpacity
             onPress={e => { e.stopPropagation?.(); onQuickAdd(); }}
             hitSlop={13}
@@ -123,6 +142,18 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
     borderRadius: 9,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  selectedRing: { position: 'absolute', top: 0, left: 0, borderWidth: 2.5, borderRadius: radius.md },
+  selectCircle: {
+    position: 'absolute',
+    bottom: 5,
+    right: 5,
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    borderWidth: 1.5,
     alignItems: 'center',
     justifyContent: 'center',
   },

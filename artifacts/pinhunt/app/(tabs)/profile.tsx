@@ -24,6 +24,7 @@ import { useFeature } from '@/hooks/useFeature';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { buildCollectionExportText } from '@/utils/exportCollection';
+import { APPEARANCE_OPTIONS, appearanceLabel, useAppearancePreference } from '@/hooks/useAppearance';
 import {
   EXPORT_COLLECTION_ENABLED,
   RATE_APP_ENABLED,
@@ -149,6 +150,8 @@ export default function ProfileScreen() {
   const { collection } = useCollection();
   const { pins } = usePinCatalogue();
   const feedbackUrl = feedbackMailtoUrl();
+  // Appearance (#224): System · Light Side · Dark Side, on its own settings screen.
+  const appearance = useAppearancePreference();
 
   const exportCollection = async () => {
     const titles: Record<string, string> = {};
@@ -273,11 +276,18 @@ export default function ProfileScreen() {
             )}
 
             {/* App Settings */}
-            {EXPORT_COLLECTION_ENABLED && (
-              <Section title="App">
+            <Section title="App">
+              <SettingsRow
+                icon={APPEARANCE_OPTIONS.find(o => o.value === appearance)?.icon ?? 'smartphone'}
+                label="Appearance"
+                value={appearanceLabel(appearance)}
+                onPress={() => router.push('/settings/appearance')}
+                last={!EXPORT_COLLECTION_ENABLED}
+              />
+              {EXPORT_COLLECTION_ENABLED && (
                 <SettingsRow icon="download" label="Export Collection" onPress={exportCollection} last />
-              </Section>
-            )}
+              )}
+            </Section>
 
             {/* Support */}
             <Section title="Support">

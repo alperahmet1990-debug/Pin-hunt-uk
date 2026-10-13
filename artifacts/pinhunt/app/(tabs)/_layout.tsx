@@ -1,5 +1,6 @@
 import React from 'react';
-import { ColorValue, Platform, StyleSheet, useColorScheme, View } from 'react-native';
+import { ColorValue, Platform, StyleSheet, View } from 'react-native';
+import { useResolvedColorScheme } from '@/hooks/useAppearance';
 import { useColors } from '@/hooks/useColors';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
@@ -84,7 +85,7 @@ function ProfileTabIcon({ color, hasBadge }: { color: ColorValue; hasBadge: bool
 
 function ClassicTabLayout() {
   const colors = useColors();
-  const colorScheme = useColorScheme();
+  const colorScheme = useResolvedColorScheme();
   const isDark = colorScheme === 'dark';
   const isIOS = Platform.OS === 'ios';
   const isWeb = Platform.OS === 'web';

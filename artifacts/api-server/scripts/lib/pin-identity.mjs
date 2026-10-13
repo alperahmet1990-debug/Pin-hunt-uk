@@ -33,37 +33,52 @@ export function tokens(s) {
 /** @param {unknown} s */
 const normName = (s) => [...tokens(s)].sort().join(" ");
 
-/** Character name words ("Winnie the Pooh" → winnie, pooh), ignoring placeholders. @param {unknown} list */
-function characterSet(list) {
+/** One word set per character name ("Winnie the Pooh" → {winnie, pooh}), ignoring placeholders. @param {unknown} list */
+function characterNames(list) {
   const arr = Array.isArray(list) ? list : String(list ?? "").split(/[;,]/);
-  const words = new Set();
+  const names = [];
   for (const c of arr) {
     const name = normName(c);
-    if (!name || PLACEHOLDER_CHARS.has(name)) continue;
-    for (const w of name.split(" ")) words.add(w);
+    if (name && !PLACEHOLDER_CHARS.has(name)) names.push(new Set(name.split(" ")));
   }
-  return words;
+  return names;
 }
 
-/** Similarity of two words (0–1) from edit distance, so "Stich"/"Stitch" and "Cinderela"/"Cinderella" match. */
-export function wordSimilarity(a, b) {
-  if (a === b) return 1;
-  if (a.length < 4 || b.length < 4) return 0;          // short words must match exactly
-  const m = a.length, n = b.length;
-  let prev = Array.from({ length: n + 1 }, (_, j) => j);
-  for (let i = 1; i <= m; i++) {
+/** Two names are the same character when all words of one appear in the other ("Pooh" ⊂ "Winnie the Pooh"),
+ *  so a shared surname alone ("Mickey Mouse" / "Minnie Mouse", "Donald Duck" / "Daisy Duck") is not enough. */
+const sameCharacter = (a, b) => {
+  const [small, big] = a.size <= b.size ? [a, b] : [b, a];
+  return sharedWords(small, big) === small.size;
+};
+const anySameCharacter = (as, bs) => as.some((a) => bs.some((b) => sameCharacter(a, b)));
+
+/** Edit distance between two words. */
+function editDistance(a, b) {
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
     const cur = [i];
-    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    for (let j = 1; j <= b.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
     prev = cur;
   }
-  return 1 - prev[n] / Math.max(m, n);
+  return prev[b.length];
 }
 
-const TYPO = 0.75;
-const sameWord = (a, b) => wordSimilarity(a, b) >= TYPO;
+/**
+ * Same word, allowing only a likely typo: a missing/extra letter in words of
+ * 5+ letters ("Stich"/"Stitch", "Cinderela"/"Cinderella"), or up to two edits
+ * in words of 8+ letters. Swapped letters in short words are different words
+ * ("Lilo"/"Milo", "Pluto"/"Plato", "Goofy"/"Goody").
+ */
+export function sameWord(a, b) {
+  if (a === b) return true;
+  const min = Math.min(a.length, b.length);
+  const d = editDistance(a, b);
+  if (min >= 8) return d <= 2;
+  return min >= 5 && d === 1 && a.length !== b.length;
+}
+
 /** Words of `a` that have an equal-or-typo match in `b`. */
 const sharedWords = (a, b) => [...a].filter((x) => [...b].some((y) => sameWord(x, y))).length;
-const overlaps = (a, b) => sharedWords(a, b) > 0;
 
 /**
  * @param {{ title?: string|null, collection?: string|null, characters?: string[]|string|null }} existing
@@ -71,7 +86,7 @@ const overlaps = (a, b) => sharedWords(a, b) > 0;
  */
 export function isPlaceholder(existing) {
   if (PLACEHOLDER_TITLE.test(String(existing.title ?? "").trim())) return true;
-  return characterSet(existing.characters).size === 0 && /\b(unknown|various)\b/i.test(String(existing.characters ?? ""));
+  return characterNames(existing.characters).length === 0 && /\b(unknown|various)\b/i.test(String(existing.characters ?? ""));
 }
 
 /**
@@ -83,21 +98,29 @@ export function isPlaceholder(existing) {
 export function checkPinIdentity(existing, incoming) {
   const collA = tokens(existing.collection);
   const collB = tokens(incoming.collection);
-  const sameCollection = collA.size === 0 || collB.size === 0 || overlaps(collA, collB);
+  const sameCollection = collA.size === 0 || collB.size === 0 || sharedWords(collA, collB) > 0;
+
+  // When both rows name characters, they must name the same character: a shared
+  // title or set ("Ice Cream Bar Mickey" / "Ice Cream Bar Minnie") is not enough.
+  const cA = characterNames(existing.characters);
+  const cB = characterNames(incoming.characters);
+  if (cA.length && cB.length) {
+    if (!anySameCharacter(cA, cB)) return { ok: false, basis: "different character" };
+    if (sameCollection) return { ok: true, basis: "same character in the same set" };
+  }
 
   // Compare titles without the set words both rows share ("Ice Cream Bar Minnie" vs "Ice Cream Bar Stitch").
   const strip = (t) => new Set([...tokens(t)].filter((x) => !collA.has(x) && !collB.has(x)));
   const tA = strip(existing.title);
   const tB = strip(incoming.title);
   if (normName(existing.title) && normName(existing.title) === normName(incoming.title)) return { ok: true, basis: "same title" };
+  // Words may be added or misspelt, never swapped: every word of the shorter title must
+  // appear in the longer one ("Haunted Mansion" ⊂ "Haunted Mansion – Windows of Attraction",
+  // "Cinderela Castle" ≈ "Cinderella Castle"), but "Mickey Ice Cream Bar" ≠ "Minnie Ice Cream Bar".
   if (tA.size && tB.size) {
-    const shared = sharedWords(tA, tB);
-    if (shared >= 1 && shared / Math.min(tA.size, tB.size) >= 0.6) return { ok: true, basis: "same title words (spelling-tolerant)" };
+    const [small, big] = tA.size <= tB.size ? [tA, tB] : [tB, tA];
+    if (sharedWords(small, big) === small.size) return { ok: true, basis: "same title words (spelling-tolerant)" };
   }
-
-  const cA = characterSet(existing.characters);
-  const cB = characterSet(incoming.characters);
-  if (cA.size && cB.size && overlaps(cA, cB) && sameCollection) return { ok: true, basis: "same character in the same set" };
 
   if (isPlaceholder(existing) && sameCollection) return { ok: true, basis: "placeholder resolved within its set" };
 

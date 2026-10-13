@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { checkPinIdentity, guardIdMatch, identityConflictMessage, isPlaceholder } from "./pin-identity.mjs";
+import { checkPinIdentity, guardIdMatch, identityConflictMessage, isPlaceholder, sameWord } from "./pin-identity.mjs";
 
 const vectors = JSON.parse(readFileSync(new URL("./pin-identity.vectors.json", import.meta.url), "utf8"));
 
@@ -58,6 +58,26 @@ describe("checkPinIdentity — rules", () => {
     ["character short name", { title: "Hunny pot", collection: "Pooh Friends", characters: "Winnie the Pooh" }, { title: "Honey jar", collection: "Pooh Friends", characters: ["Pooh"] }],
   ])("accepts legitimate corrections: %s", (_label, existing, incoming) => {
     expect(checkPinIdentity(existing, incoming).ok).toBe(true);
+  });
+
+  it.each([
+    ["Mickey Paintbrush", "Mickey Mouse", "Minnie Paintbrush", "Minnie Mouse", "Brush of Magic Series 1"],
+    ["Mickey Ice Cream Bar", "Mickey Mouse", "Minnie Ice Cream Bar", "Minnie Mouse", "Ice Cream Bar Mystery Collection"],
+    ["Ice Cream Bar Minnie", "Minnie Mouse", "Ice Cream Bar Mickey", "Mickey Mouse", "Sweet Treats"],
+    ["Halloween Mickey", "Mickey Mouse", "Halloween Minnie", "Minnie Mouse", "Halloween 2026"],
+    ["Donald Duck – Classic", "Donald Duck", "Daisy Duck – Classic", "Daisy Duck", "Classics"],
+    ["Lilo Surf", "Lilo", "Milo Surf", "Milo", "Surf"],
+  ])("refuses a sibling swap within one set: %s → %s", (t1, c1, t2, c2, coll) => {
+    expect(checkPinIdentity({ title: t1, collection: coll, characters: c1 }, { title: t2, collection: coll, characters: [c2] }).ok).toBe(false);
+  });
+
+  it.each([["lilo", "milo"], ["anna", "hanna"], ["pluto", "plato"], ["goofy", "goody"], ["mickey", "minnie"]])(
+    "treats %s and %s as different words", (a, b) => expect(sameWord(a, b)).toBe(false));
+  it.each([["stich", "stitch"], ["cinderela", "cinderella"], ["rapunzle", "rapunzel"]])(
+    "treats %s and %s as a typo of the same word", (a, b) => expect(sameWord(a, b)).toBe(true));
+
+  it("refuses a word swap in the title when nothing else identifies the pin", () => {
+    expect(checkPinIdentity({ title: "Mickey Ice Cream Bar", collection: "", characters: "" }, { title: "Minnie Ice Cream Bar", collection: "", characters: "" }).ok).toBe(false);
   });
 
   it("still refuses a complete rename with nothing in common", () => {

@@ -110,6 +110,14 @@ describe("admin catalogue import — pinhunt_id identity guard (dry run)", () =>
     expect(res.body.errorReport.filter((e: { result: string }) => e.result === "error")).toHaveLength(0);
   });
 
+  it("refuses a sibling swap in the same set (Mickey Mouse → Minnie Mouse)", async () => {
+    existingPins.push({ id: "u-626", pinhunt_id: "PHUK-00000626", title: "Mickey Paintbrush", collection: "Brush of Magic Series 1",
+      main_character: "Mickey Mouse", all_characters: "Mickey Mouse", pin_characters: [{ characters: { name: "Mickey Mouse" } }] });
+    const res = await importRows([{ pinhunt_id: "PHUK-00000626", "Pin name": "Minnie Paintbrush", Series: "Brush of Magic Series 1", Characters: "Minnie Mouse", Brand: "Disney Store" }], true);
+    expect(res.body.summary.updatedRows).toBe(0);
+    expect(res.body.errorReport.find((e: { pinhuntId: string }) => e.pinhuntId === "PHUK-00000626").result).toBe("error");
+  });
+
   it("reports each refused row with its own row number when an id repeats", async () => {
     const res = await importRows([ALICE, { ...ALICE, "Pin name": "Pinocchio", Characters: "Pinocchio" }], true);
     const rows = res.body.errorReport.filter((e: { result: string }) => e.result === "error").map((e: { rowNum: number }) => e.rowNum);
@@ -158,6 +166,16 @@ describe("admin catalogue import — reprocess-row", () => {
       .send({ rowNum: 2, fields: { pinhunt_id: "PHUK-00000331", title: "Alice", collection: "Animated Cuties", characters: "Alice", brand: "Disney Parks" } });
     expect(res.status).toBe(409);
     expect(res.body.error).toMatch(/already belongs to a different pin/);
+    expect(pinUpserts).toHaveLength(0);
+  });
+
+  it("changes nothing when the existing pin can't be read (500)", async () => {
+    batches = [{ id: "batch-1", status: "completed", error_report: [], inserted_rows: 0, updated_rows: 0 }];
+    failPinsRead = true;
+    const res = await request(app).post("/api/admin/catalogue-import/batches/batch-1/reprocess-row")
+      .set("Authorization", "Bearer t")
+      .send({ rowNum: 2, fields: { pinhunt_id: "PHUK-00000500", title: "Cinderella Castle", collection: "Castles", brand: "Disney Parks" } });
+    expect(res.status).toBe(500);
     expect(pinUpserts).toHaveLength(0);
   });
 

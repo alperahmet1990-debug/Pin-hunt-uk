@@ -1139,9 +1139,12 @@ router.post("/admin/catalogue-import/batches/:batchId/reprocess-row", requireApp
   const charMap = new Map((charRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
 
   // Check if pin already exists (for snapshot preservation)
-  const { data: existingPin } = row.pinhuntId.startsWith("PHUK-NOID-")
-    ? { data: null }
+  const { data: existingPin, error: existingPinErr } = row.pinhuntId.startsWith("PHUK-NOID-")
+    ? { data: null, error: null }
     : await db.from("pins").select("id, pinhunt_id, verification_status, title, collection, release_year, limited_edition_size, edition_type, origin, image_url, back_image_url, main_character, all_characters, pin_characters(characters(name))").eq("pinhunt_id", row.pinhuntId).maybeSingle();
+
+  // Fail closed: without the existing pin the identity guard can't run.
+  if (existingPinErr) { res.status(500).json({ error: "Could not check the existing pin; nothing was changed." }); return; }
 
   const existingMap = new Map<string, Record<string, unknown>>(
     existingPin ? [[row.pinhuntId, existingPin as Record<string, unknown>]] : [],

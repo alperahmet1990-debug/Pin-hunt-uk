@@ -8,6 +8,7 @@ import {
   Alert,
   AppState,
   Dimensions,
+  useWindowDimensions,
   Image,
   Platform,
   RefreshControl,
@@ -259,6 +260,13 @@ export default function CommunityScreen() {
   const params  = useLocalSearchParams<{ filter?: string }>();
   const { repo, userId } = useCommunity();
   const { totalUnread } = useUnreadMessages();
+  // Four header buttons beside the title: on phones narrower than 430 pt "Post"
+  // becomes a round + button; below 360 pt the title and buttons also shrink.
+  const { width: screenWidth } = useWindowDimensions();
+  const compactHeader = screenWidth < 430;
+  const narrowHeader = screenWidth < 360;
+  const iconBtnSize = narrowHeader ? { width: 36, height: 36, borderRadius: 18 } : null;
+  const iconHitSlop = narrowHeader ? 4 : 3;
 
   const [filter, setFilter]     = useState<CommunityPostType | 'all'>('all');
 
@@ -439,19 +447,35 @@ export default function CommunityScreen() {
       {/* Fixed header */}
       <View style={[styles.header, { paddingTop: topPad + 8, backgroundColor: colors.homeBackground, borderBottomColor: colors.homeLine }]}>
         <View style={styles.titleRow}>
-          <Text style={[styles.title, { color: colors.homeInk }]}>Community</Text>
-          <View style={styles.headerActions}>
+          <Text style={[styles.title, narrowHeader && styles.titleNarrow, { color: colors.homeInk }]}>Community</Text>
+          <View style={[styles.headerActions, narrowHeader && styles.headerActionsNarrow]}>
             <TouchableOpacity
               onPress={() => router.push('/nearby')}
-              style={[styles.headerIconBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+              style={[styles.headerIconBtn, iconBtnSize, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
               activeOpacity={0.75}
+              hitSlop={iconHitSlop}
+              accessibilityRole="button"
+              accessibilityLabel="Collectors nearby"
             >
               <Feather name="map-pin" size={17} color={colors.homeInk} />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => router.push('/community/conversations' as any)}
-              style={[styles.headerIconBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+              onPress={() => router.push('/find-trades')}
+              style={[styles.headerIconBtn, iconBtnSize, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
               activeOpacity={0.75}
+              hitSlop={iconHitSlop}
+              accessibilityRole="button"
+              accessibilityLabel="Find trades"
+            >
+              <Feather name="compass" size={18} color={colors.homeInk} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push('/community/conversations' as any)}
+              style={[styles.headerIconBtn, iconBtnSize, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+              activeOpacity={0.75}
+              hitSlop={iconHitSlop}
+              accessibilityRole="button"
+              accessibilityLabel={totalUnread > 0 ? `Messages, ${totalUnread} unread` : 'Messages'}
             >
               <Feather name="mail" size={18} color={colors.homeInk} />
               {totalUnread > 0 && (
@@ -465,11 +489,14 @@ export default function CommunityScreen() {
                 if (!userId) { Alert.alert('Sign in to post'); return; }
                 router.push('/community/create-post' as any);
               }}
-              style={[styles.headerPostBtn, { backgroundColor: colors.homeCoral }]}
+              style={[styles.headerPostBtn, compactHeader && styles.headerPostBtnCompact, iconBtnSize, { backgroundColor: colors.homeCoral }]}
+              hitSlop={compactHeader ? iconHitSlop : undefined}
               activeOpacity={0.85}
+              accessibilityRole="button"
+              accessibilityLabel="New post"
             >
               <Feather name="plus" size={17} color="#fff" />
-              <Text style={styles.headerPostLabel}>Post</Text>
+              {!compactHeader && <Text style={styles.headerPostLabel}>Post</Text>}
             </TouchableOpacity>
           </View>
         </View>
@@ -600,6 +627,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 5,
   },
+  headerPostBtnCompact: { width: 38, paddingHorizontal: 0 },
   headerPostLabel: { color: '#fff', fontSize: 13, fontFamily: 'Inter_700Bold' },
   root: { flex: 1 },
 
@@ -615,7 +643,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: { fontSize: 32, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
-  headerActions: { flexDirection: 'row', gap: 8 },
+  titleNarrow: { fontSize: 24 },
+  headerActions: { flexDirection: 'row', gap: 6 },
+  headerActionsNarrow: { gap: 4 },
   headerIconBtn: {
     width: 38, height: 38, borderRadius: 19,
     alignItems: 'center', justifyContent: 'center',

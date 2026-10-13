@@ -59,7 +59,8 @@ interface GroupData {
 }
 
 type PinFilterType = 'all' | 'le' | 'open';
-type PinSortType = 'recent' | 'name' | 'year' | 'value';
+// No value sort: estimates aren't reliable enough to order by (B-P1-19).
+type PinSortType = 'recent' | 'name' | 'year';
 
 function pinMatchesSearch(pin: CataloguePin, query: string) {
   if (!query) return true;
@@ -98,7 +99,6 @@ function processPins(pins: CataloguePin[], filter: PinFilterType, sort: PinSortT
       const releaseB = b.releaseDate || b.releaseYear?.toString() || '';
       return releaseB.localeCompare(releaseA);
     }
-    if (sort === 'value') return (b.estimatedValueGBP || 0) - (a.estimatedValueGBP || 0);
     const dateA = collectionMap[a.id]?.dateAdded || '';
     const dateB = collectionMap[b.id]?.dateAdded || '';
     return dateB.localeCompare(dateA);
@@ -810,9 +810,9 @@ export default function CollectionScreen() {
               <View style={s.filterSection}>
                 <Text style={[s.sheetSectionTitle, { color: colors.homeMuted }]}>Sort by</Text>
                 <View style={s.sheetRowWrap}>
-                  {(['recent', 'name', 'year', 'value'] as const).map(option => {
+                  {(['recent', 'name', 'year'] as const).map(option => {
                     const active = allPinsSort === option;
-                    const label = option === 'recent' ? 'Recently Added' : option === 'name' ? 'Name' : option === 'year' ? 'Release date' : 'Estimated value';
+                    const label = option === 'recent' ? 'Recently Added' : option === 'name' ? 'Name' : 'Release date';
                     return (
                       <TouchableOpacity
                         key={option}
@@ -912,9 +912,9 @@ export default function CollectionScreen() {
 
               <Text style={[s.sheetSectionTitle, { color: colors.homeMuted, marginTop: 20 }]}>Sort by</Text>
               <View style={s.sheetRowWrap}>
-                {(['recent', 'name', 'year', 'value'] as const).map(sOpt => {
+                {(['recent', 'name', 'year'] as const).map(sOpt => {
                   const active = filterSheetTab === 'traders' ? traderSort === sOpt : isoSort === sOpt;
-                  const label = sOpt === 'recent' ? 'Recently Added' : sOpt === 'name' ? 'Name (A-Z)' : sOpt === 'year' ? 'Year (Newest)' : 'Est. Value';
+                  const label = sOpt === 'recent' ? 'Recently Added' : sOpt === 'name' ? 'Name (A-Z)' : 'Year (Newest)';
                   return (
                     <TouchableOpacity
                       key={sOpt}

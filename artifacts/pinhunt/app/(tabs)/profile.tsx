@@ -2,8 +2,11 @@ import { FEATURES } from '@/constants/features';
 import React from 'react';
 import {
   ActivityIndicator,
+  Alert,
+  Linking,
   Platform,
   ScrollView,
+  Share,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -18,6 +21,14 @@ import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useFeature } from '@/hooks/useFeature';
+import { useCollection } from '@/context/CollectionContext';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { buildCollectionExportText } from '@/utils/exportCollection';
+import {
+  EXPORT_COLLECTION_ENABLED,
+  RATE_APP_ENABLED,
+  feedbackMailtoUrl,
+} from '@/constants/appConfig';
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
@@ -135,6 +146,25 @@ export default function ProfileScreen() {
   const isAdmin = profile?.isAdmin === true;
   const { enabled: canContribute } = useFeature('catalogue_contributions');
 
+  const { collection } = useCollection();
+  const { pins } = usePinCatalogue();
+  const feedbackUrl = feedbackMailtoUrl();
+
+  const exportCollection = async () => {
+    const titles: Record<string, string> = {};
+    for (const p of pins) titles[p.id] = p.title;
+    const text = buildCollectionExportText(collection, titles);
+    if (!text) {
+      Alert.alert('Nothing to export', 'Add pins to your collection, For Trade or ISO lists first.');
+      return;
+    }
+    try {
+      await Share.share({ message: text, title: 'My PinHunt collection' });
+    } catch {
+      Alert.alert('Could not share', 'Please try again.');
+    }
+  };
+
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
 
@@ -243,15 +273,29 @@ export default function ProfileScreen() {
             )}
 
             {/* App Settings */}
-            <Section title="App">
-              <SettingsRow icon="download" label="Export Collection" last />
-            </Section>
+            {EXPORT_COLLECTION_ENABLED && (
+              <Section title="App">
+                <SettingsRow icon="download" label="Export Collection" onPress={exportCollection} last />
+              </Section>
+            )}
 
             {/* Support */}
             <Section title="Support">
-              <SettingsRow icon="info" label="About PinHunt" />
-              <SettingsRow icon="message-circle" label="Send Feedback" />
-              <SettingsRow icon="star" label="Rate the App" last />
+              <SettingsRow
+                icon="info"
+                label="About PinHunt"
+                onPress={() => router.push('/about' as any)}
+                last={!feedbackUrl && !RATE_APP_ENABLED}
+              />
+              {feedbackUrl && (
+                <SettingsRow
+                  icon="message-circle"
+                  label="Send Feedback"
+                  onPress={() => { void Linking.openURL(feedbackUrl); }}
+                  last={!RATE_APP_ENABLED}
+                />
+              )}
+              {RATE_APP_ENABLED && <SettingsRow icon="star" label="Rate the App" last />}
             </Section>
 
             {/* Admin */}

@@ -1,10 +1,15 @@
 """Per-field reconciliation with evidence retention. The engine can only ever choose among claimed values."""
 from collections import defaultdict
 from .normalize import (LIST_FIELDS, TEXT_FIELDS, EVIDENCE_METHODS, dates_compatible, norm_key)
+from .sources import market_of
 
 RANK = {"High": 3, "Medium": 2, "Low": 1, "Unverified": 0}
 INHERITABLE = ("release_date", "release_location", "region", "edition_type", "currency")
 CRITICAL_PIN = ("characters", "release_date", "edition_type", "release_location")
+# Disagreement on these changes WHICH pin it is → blocks sign-off. Elsewhere disagreement is
+# expected variance (retailer titles, regional prices/codes, store vs park dates) → warning only.
+BLOCKING = {"characters", "main_character", "attraction", "edition_size", "edition_type", "is_chaser", "expected_pin_count"}
+IDENTITY = ("characters", "main_character", "attraction", "pin_name")
 
 
 def confidence(claims) -> str:
@@ -79,8 +84,14 @@ def reconcile_field(field, claims):
         out["value"], out["confidence"] = best[0], confidence(best[1])
         if not ev_groups:
             out["status"] = "unverified"
+            out["alternatives"] = "editorial/legacy only: " + " || ".join(_fmt(g[0]) for g in groups)
+            out["value"] = None          # never present unevidenced values as facts
         if len(ev_groups) > 1:
-            out["status"] = "conflict"
+            out["status"] = "conflict" if field in BLOCKING else "variants"
+            mk = [{market_of(c["url"]) for c in g[1] if c["method"] in EVIDENCE_METHODS} for g in ev_groups]
+            if all(m and "" not in m for m in mk) and all(not (a & b) for i, a in enumerate(mk) for b in mk[i + 1:]):
+                out["status"] = "regional variants"
+                out["value"] = " | ".join(f"{'/'.join(sorted(m))}: {_fmt(g[0])}" for m, g in zip(mk, ev_groups))
             out["alternatives"] = " || ".join(f"{_fmt(g[0])} ({len({c['publisher'] for c in g[1]})} src: {', '.join(sorted({c['publisher'] for c in g[1]}))})" for g in ev_groups)
         claims = best[1]
     ev = [c for c in claims if c["method"] in EVIDENCE_METHODS]
@@ -115,6 +126,10 @@ def reconcile(store):
             completeness = f"over ({found}/{exp}) — check for variants or wrong set"
         sets[key] = dict(key=key, parent=parent, fields=f, members=members, found=found, expected=exp, completeness=completeness)
 
+    ev_by_key = defaultdict(list)
+    for c in store.claims:
+        if c["method"] in EVIDENCE_METHODS:
+            ev_by_key[c["key"]].append(c)
     pins = {}
     for key, sk in store.pins.items():
         f = dict(fields.get(("pin", key), {}))
@@ -133,23 +148,31 @@ def reconcile(store):
                     break
         if "release_year" not in f and f.get("release_date", {}).get("value"):
             rd = f["release_date"]
-            f["release_year"] = dict({k: v for k, v in rd.items() if k != "inherited_from"},
-                                    value=int(str(rd["value"])[:4]), derived_from="release_date")
-        ident = f.get("characters") or f.get("attraction") or f.get("pin_name")
-        ev_claims = [c for c in store.claims if c["key"] == key and c["method"] in EVIDENCE_METHODS]
-        rec_conf = ident["confidence"] if ident and ident.get("confidence") else "Unverified"
-        if not ev_claims:
-            rec_conf = "Unverified"
-        reasons = []
+            import re as _re
+            years = {int(y) for y in _re.findall(r"\b(20\d\d)-\d\d", str(rd.get("alternatives", "")))} or {int(str(rd["value"])[:4])}
+            f["release_year"] = dict({k: v for k, v in rd.items() if k != "inherited_from"}, value=int(str(rd["value"])[:4]),
+                                    derived_from="release_date", status="ok" if len(years) == 1 else "conflict",
+                                    alternatives="" if len(years) == 1 else rd.get("alternatives", ""))
+        ev_claims = ev_by_key.get(key, [])
+        # Identity = any claim that names the pin (characters, attraction, retailer title), pooled across publishers.
+        ident_claims = [c for c in ev_claims if c["field"] in IDENTITY]
+        rec_conf = confidence(ident_claims) if ident_claims else "Unverified"
+        if any(f.get(k, {}).get("status") == "conflict" for k in ("characters", "main_character", "attraction")):
+            rec_conf = "Low" if rec_conf != "Unverified" else rec_conf
+        reasons, warnings = [], []
         for fld, r in f.items():
             if r["status"] == "conflict":
                 reasons.append(f"conflict: {fld}")
+            elif r["status"] == "variants":
+                warnings.append(f"variants: {fld}")
         if RANK.get(rec_conf, 0) <= 1:
             reasons.append(f"identity confidence {rec_conf}")
         missing = [c for c in CRITICAL_PIN if not f.get(c, {}).get("value")]
+        if "characters" in missing and f.get("attraction", {}).get("value"):
+            missing.remove("characters")      # attraction pins are identified by the attraction
         if missing:
             reasons.append("missing: " + ", ".join(missing))
-        pins[key] = dict(key=key, set_key=sk, fields=f, record_confidence=rec_conf, review_reasons=reasons,
+        pins[key] = dict(key=key, set_key=sk, fields=f, record_confidence=rec_conf, review_reasons=reasons, warnings=warnings,
                          n_evidence_claims=len(ev_claims),
                          n_publishers=len({c["publisher"] for c in ev_claims}))
     for s in sets.values():

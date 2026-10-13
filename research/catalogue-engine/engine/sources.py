@@ -58,3 +58,17 @@ def classify(url: str) -> str:
 
 def is_evidence(url: str) -> bool:
     return classify(url) not in ("excluded", "marketplace")
+
+
+MARKETS = (("disneystore.co.uk", "UK"), ("shopdisney.co.uk", "UK"), ("disneystore.eu", "EU"), ("disneystore.fr", "EU"),
+           ("disneystore.de", "EU"), ("disneystore.asia", "Asia"), ("disneystore.com.au", "AU"), ("disneylandparis.com", "FR-DLP"),
+           ("disneystore.com", "US"), ("shopdisney.com", "US"))
+
+
+def market_of(url: str) -> str:
+    """Retail market of an official store page ('' when unknown, e.g. news/fan sites)."""
+    host = domain_of(url)
+    for needle, m in MARKETS:
+        if host == needle or host.endswith("." + needle):
+            return m
+    return ""

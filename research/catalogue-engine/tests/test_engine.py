@@ -81,6 +81,11 @@ class Reconciliation(unittest.TestCase):
         self.assertIsNone(r["value"])
         self.assertEqual(p["record_confidence"], "Unverified")
 
+    def test_legacy_only_scalar_is_withheld(self):
+        p, r = self._one([claim("characters", ["A"], FAN), claim("edition_size", 2500, FAN, "legacy_record")], "edition_size")
+        self.assertIsNone(r["value"])
+        self.assertIn("legacy", r["alternatives"])
+
     def test_no_invention(self):
         """Every non-empty output value must equal a claimed value (or be inherited/derived from one)."""
         st = Store()
@@ -118,6 +123,18 @@ class EndToEnd(unittest.TestCase):
             self.assertTrue(pathlib.Path(d, "catalogue_research_output.xlsx").exists())
 
 
+class DedupeRegression(unittest.TestCase):
+    def test_single_pin_line_never_merges_into_mystery_set(self):
+        from engine.dedupe import Catalogue, match_pin
+        from engine.run import TRUSTED
+        cat = Catalogue(TRUSTED)
+        st = match_pin(cat, "Brush of Magic", "Brush of Magic Limited Edition singles", ["Captain Hook"],
+                       "Captain Hook Pin - Peter Pan - Brush of Magic", set(), family_hint="brush of magic")
+        self.assertNotEqual(st[0], "DUPLICATE")
+        st = match_pin(cat, "Brush of Magic", "Brush of Magic Mystery Series 1", ["Peter Pan"], "", set(), family_hint="brush of magic")
+        self.assertEqual(st[0], "DUPLICATE")
+
+
 class Fetcher(unittest.TestCase):
     def test_extracts_structured_facts_only(self):
         html = """<html><head><meta property="og:title" content="X"><script type="application/ld+json">
@@ -137,3 +154,33 @@ class Fetcher(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SeverityAndRegions(unittest.TestCase):
+    def _run(self, claims):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="f/s/a", claims=claims)]))
+        return reconcile(st)[0]["f/s/a"]
+
+    def test_regional_codes_are_variants_not_conflicts(self):
+        p = self._run([claim("characters", ["A"], OFF), claim("pack_product_code", "438030741301", OFF),
+                       claim("pack_product_code", "438030755384", "https://www.disneystore.eu/x")])
+        r = p["fields"]["pack_product_code"]
+        self.assertEqual(r["status"], "regional variants")
+        self.assertIn("US: 438030741301", r["value"])
+        self.assertFalse(p["review_reasons"] and any("conflict" in x for x in p["review_reasons"]))
+
+    def test_non_identity_disagreement_is_a_warning(self):
+        p = self._run([claim("characters", ["A"], OFF), claim("characters", ["A"], NEWS),
+                       claim("release_date", "2026-06-02", NEWS), claim("release_date", "2026-06-23", FAN)])
+        self.assertEqual(p["fields"]["release_date"]["status"], "variants")
+        self.assertIn("variants: release_date", p["warnings"])
+        self.assertNotIn("conflict: release_date", p["review_reasons"])
+
+    def test_identity_conflict_blocks(self):
+        p = self._run([claim("characters", ["A"], OFF), claim("edition_size", 2250, NEWS), claim("edition_size", 3750, OFF)])
+        self.assertIn("conflict: edition_size", p["review_reasons"])
+
+    def test_identity_pools_publishers_across_identity_fields(self):
+        p = self._run([claim("characters", ["Marie"], FAN), claim("pin_name", "Marie Pin – Brush of Magic", OFF)])
+        self.assertEqual(p["record_confidence"], "High")

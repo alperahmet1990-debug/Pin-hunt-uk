@@ -15,10 +15,10 @@ MASTER_COLUMNS = ["pinhunt_id", "Pin name", "Brand", "Series", "Characters", "Re
                   "Set count check", "Validation tier", "Validation notes", "Import action", "Main subject",
                   "Subject type", "Validation source 2", "Validated date", "Catalogue status", "Safe for app search",
                   "Confidence basis"]
-EXTRA_COLUMNS = ["research_key", "record_confidence", "review_status", "duplicate_status", "duplicate_of", "duplicate_basis",
-                 "field_conflicts", "inherited_fields", "visual_form", "visual_colours", "visual_features", "pack_product_code"]
+EXTRA_COLUMNS = ["research_key", "record_confidence", "verified", "review_status", "warnings", "duplicate_status", "duplicate_of", "duplicate_basis",
+                 "field_conflicts", "inherited_fields", "pin_name_source", "visual_form", "visual_colours", "visual_features", "pack_product_code"]
 
-FILL = {"High": "C6EFCE", "Medium": "FFEB9C", "Low": "FFC7CE", "Unverified": "D9D9D9", "conflict": "F4B183",
+FILL = {"High": "C6EFCE", "Medium": "FFEB9C", "Low": "FFC7CE", "Unverified": "D9D9D9", "conflict": "F4B183", "variants": "FFF2CC", "regional variants": "DDEBF7", "Yes": "C6EFCE",
         "NEEDS REVIEW": "FFC7CE", "READY FOR HUMAN SIGN-OFF": "C6EFCE"}
 
 
@@ -57,6 +57,7 @@ def build_rows(pins, sets, dupes, run_date):
         subject = main or _v(f, "attraction")
         name = _v(f, "pin_name")
         conflicts = [k for k, r in f.items() if r["status"] == "conflict"]
+        verified = p["record_confidence"] in ("High", "Medium") and not any(x.startswith("conflict") for x in p["review_reasons"])
         inherited = [k for k, r in f.items() if r.get("inherited_from")]
         dstat, did, dbasis = dupes.get(key, ("", "", ""))
         review = "NEEDS REVIEW" if p["review_reasons"] or dstat.startswith("PROBABLE") else "READY FOR HUMAN SIGN-OFF"
@@ -88,9 +89,11 @@ def build_rows(pins, sets, dupes, run_date):
             "Import action": action, "Main subject": subject, "Subject type": "Character" if main else ("Attraction" if subject else ""),
             "Validated date": run_date, "Catalogue status": "Research candidate (not for import)", "Safe for app search": "No",
             "Confidence basis": f"{p['n_publishers']} independent publishers; {sum(r.get('official', 0) for r in f.values())} official claims; {p['n_evidence_claims']} evidence claims",
-            "research_key": key, "record_confidence": p["record_confidence"], "review_status": review,
+            "research_key": key, "record_confidence": p["record_confidence"], "verified": "Yes" if verified else "No",
+            "review_status": review, "warnings": "; ".join(p.get("warnings", [])),
             "duplicate_status": dstat, "duplicate_of": did, "duplicate_basis": dbasis,
             "field_conflicts": "; ".join(conflicts), "inherited_fields": "; ".join(inherited),
+            "pin_name_source": "claimed" if name else ("composed display label (subject – set)" if subject and set_name else ""),
             "visual_form": _v(f, "visual_form"), "visual_colours": _v(f, "visual_colours"),
             "visual_features": _v(f, "visual_features"), "pack_product_code": _v(f, "pack_product_code"),
         })
@@ -159,6 +162,7 @@ def write_outputs(out_dir, store, pins, sets, dupes, seed_notes=None):
                ("Pins", len(pins)), ("Sets", len(sets)),
                *[(f"Record confidence: {k}", conf.get(k, 0)) for k in ("High", "Medium", "Low", "Unverified")],
                *[(f"Duplicate status: {k}", v) for k, v in dcount.most_common()],
+               ("Verified pins (identity High/Medium from ≥1 non-legacy source, no blocking conflict)", sum(1 for r in rows if r["verified"] == "Yes")),
                ("Needs review", review), ("Ready for human sign-off", len(rows) - review),
                ("Field conflicts", sum(1 for p in pins.values() for r in p["fields"].values() if r["status"] == "conflict")),
                ("Safety", "Import action values are RESEARCH-* and Catalogue status is 'Research candidate', so the existing "
@@ -166,7 +170,8 @@ def write_outputs(out_dir, store, pins, sets, dupes, seed_notes=None):
                ("Evidence rule", "Every non-empty value traces to ≥1 accepted claim (see Field Evidence). Values are never generated.")]
     sheet("Summary", summary, first=True, widths={1: 45, 2: 110})
     sheet("Review Queue", [dict(research_key=r["research_key"], pin=r["Pin name"], record_confidence=r["record_confidence"],
-                                duplicate_status=r["duplicate_status"], reasons=r["Validation notes"], conflicts=r["field_conflicts"])
+                                duplicate_status=r["duplicate_status"], reasons=r["Validation notes"], conflicts=r["field_conflicts"],
+                                warnings=r["warnings"])
                            for r in rows if r["review_status"] == "NEEDS REVIEW"] or [dict(research_key="", pin="none")])
     sheet("Master Catalogue", rows)
     sheet("Sets", [dict(set_key=k, parent=s["parent"], set_name=_v(s["fields"], "set_name"), issuer=_v(s["fields"], "issuer"),

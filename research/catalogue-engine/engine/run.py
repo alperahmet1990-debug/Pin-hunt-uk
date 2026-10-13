@@ -24,7 +24,7 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
         chars = f.get("characters", {}).get("value") or []
         name = " ".join(str(x) for x in [_v(f, "pin_name"), _v(f, "attraction")] if x)
         codes = {c for c in [str(_v(f, "product_code"))] if c}
-        dupes[key] = match_pin(cat, family, subset, chars, name, codes)
+        dupes[key] = match_pin(cat, family, subset, chars, name, codes, family_hint=key.split("/")[0].replace("-", " "))
         if dupes[key][0] == "PROBABLE DUPLICATE":
             p["review_reasons"].append("probable duplicate: " + dupes[key][2])
         # internal duplicates: same set + same character set inside this run

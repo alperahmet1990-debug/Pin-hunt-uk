@@ -36,21 +36,27 @@ class Catalogue:
             self.seed = [dict(pinhunt_id=r["pinhunt_id"], title=_s(r["Pin name"]), stoks=toks(r["Series"])) for _, r in s.iterrows()]
 
 
-def match_pin(cat: Catalogue, family: str, subset: str, chars, name: str, codes):
-    """→ (status, existing pinhunt_id or '', basis)"""
+def match_pin(cat: Catalogue, family: str, subset: str, chars, name: str, codes, family_hint: str = ""):
+    """→ (status, existing pinhunt_id or '', basis). family_hint = slug of the packet's family key."""
     ftoks = toks(family)
+    if family_hint and not any(ftoks and ftoks <= r["stoks"] for r in cat.rows):
+        ftoks = toks(family_hint)
     want = {norm_key(norm_character(c)) for c in (chars or [])}
     sno = series_no(subset)
     fam_rows = [r for r in cat.rows if ftoks and ftoks <= r["stoks"]]
     for r in cat.rows:
         if codes and codes & r["codes"]:
             return "DUPLICATE", r["pinhunt_id"], f"product code {sorted(codes & r['codes'])[0]}"
-    same_subset = [r for r in fam_rows if series_no(r["series"]) == sno or (sno is None or series_no(r["series"]) is None)]
+    is_mys = "mystery" in subset.lower() or "blind" in subset.lower()
+    same_subset = [r for r in fam_rows
+                   if (series_no(r["series"]) or "1") == (sno or "1")          # an unnumbered series is series 1
+                   and ("mystery" in r["series"].lower()) == is_mys]        # mystery vs single-pin line never merge
     ntoks = toks(name) - ftoks
     for r in same_subset:
         if want and want & r["chars"]:
             return "DUPLICATE", r["pinhunt_id"], f"same set family '{r['series']}' + character"
-        if ntoks and r["ntoks"] and len(ntoks & r["ntoks"]) / len(ntoks | r["ntoks"]) >= 0.5:
+        if ntoks and r["ntoks"] and len(ntoks & r["ntoks"]) / min(len(ntoks), len(r["ntoks"])) >= 0.6 and len(ntoks & r["ntoks"]) >= 2 \
+                or (ntoks and r["ntoks"] and ntoks == r["ntoks"]):
             return "DUPLICATE", r["pinhunt_id"], f"same set family '{r['series']}' + pin name tokens"
     for r in same_subset:
         for w in want:

@@ -1,0 +1,4384 @@
+{
+ "packet_id": "animated-cuties-evidence-2026-10-13-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-13",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+   "title": "Disney Animated Cuties Mystery Pin Blind Pack – 2-Pc.",
+   "publisher": "Disney Store (US)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+   "title": "Disney Animated Cuties Mystery Pin Set",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+   "title": "Disney Animated Cuties Mystery 2-Piece Pin Blind Pack",
+   "publisher": "Disney Store Asia (Malaysia)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+   "title": "New Animated Cuties Mystery Pin Box Available at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2026-01-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+   "title": "Tinker Bell, Jim Hawkins, Peter Pan and More in Cuties Mystery Pin Pack at Disney Store",
+   "publisher": "WDW News Today",
+   "published_date": "2026-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+   "title": "Animated Cuties Mystery Pin Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+   "title": "Disney Pins Blog Threads post: new Animated Cuties mystery pin set at Disney Parks",
+   "publisher": "Disney Pins Blog (Threads)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+   "title": "Disney Animated Cuties Mystery Pin Set at Disney Store & Disney Parks",
+   "publisher": "Disney Mouseketeer",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+   "title": "Disney Animated Cuties Mystery Pin Blind Pack - 2-Pc. - Get It Here",
+   "publisher": "DisMerchandise (affiliate news site)",
+   "published_date": "2026-05-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+   "title": "Animated Cuties Series 2 Mystery Pin Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-10-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+   "title": "Disney Pins Blog Threads post: new Animated Cuties Series 2 set, spotted today at Magic Kingdom",
+   "publisher": "Disney Pins Blog (Threads)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "animated-cuties/series-1",
+   "parent_set_key": "animated-cuties",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US listing: 2 random pins per pack from 8 designs."
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US listing: 2 random pins per pack from 8 designs."
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing: 2 random pins from 8 overall designs."
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing: 2 random pins from 8 overall designs."
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing: 2 random pins from 8 designs."
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing: 2 random pins from 8 designs."
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT: eight pins in the set."
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT: 8 possible designs, two per box."
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT: 8 possible designs, two per box."
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog: 2 random pins from 8 designs."
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog: 2 random pins from 8 designs."
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site: two random pins from eight designs."
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site: two random pins from eight designs."
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Animated Cuties Mystery Pin Blind Pack – 2-Pc.",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US official product title."
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Animated Cuties Mystery Pin Set",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU official product title."
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Animated Cuties Mystery 2-Piece Pin Blind Pack",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Asia official product title."
+    },
+    {
+     "field": "set_name",
+     "value": "Animated Cuties Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Fan blog title for the parks release."
+    },
+    {
+     "field": "format",
+     "value": "mystery blind box, 2 random pins",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Specific designs cannot be chosen."
+    },
+    {
+     "field": "issuer",
+     "value": "Disney Store",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold by Disney Store US."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Parks release stated as open edition."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Article dated 31 Jan 2026 reports newly available at WDW."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Released January 2026 at Disney Parks."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Disney Store US online release date."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Where WDWNT found it."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Where Disney Pins Blog spotted it."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDW."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU listing."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia listing."
+    },
+    {
+     "field": "price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 at WDW."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US."
+    },
+    {
+     "field": "price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of 2 at parks."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US."
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US online."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US."
+    },
+    {
+     "field": "price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU."
+    },
+    {
+     "field": "price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US item number."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU item number."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia item number."
+    }
+   ]
+  },
+  {
+   "set_key": "animated-cuties/series-2",
+   "parent_set_key": "animated-cuties",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "2 random pins from a possibility of 8 designs."
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Box of two pins."
+    },
+    {
+     "field": "set_name",
+     "value": "Animated Cuties Series 2 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Fan blog title."
+    },
+    {
+     "field": "sub_series",
+     "value": "Series 2",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Second wave of Animated Cuties."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026; released October 2026."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Spotted at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "WDW."
+    },
+    {
+     "field": "price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US."
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "animated-cuties/series-1/alice",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site identifies the film this character is from in its design list."
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-1/pinocchio",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Pinocchio",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-1/aladdin",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Aladdin",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-1/megara-meg",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Megara"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Meg"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Megara"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Megara"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Megara"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Megara"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Meg"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site identifies the film this character is from in its design list."
+    },
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-1/peter-pan",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Peter Pan",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-1/esmeralda",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Esmeralda"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Esmeralda"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Esmeralda"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Esmerelda"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Esmerelda"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Esmeralda"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Esmerelda"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "The Hunchback of Notre Dame",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site identifies the film this character is from in its design list."
+    },
+    {
+     "field": "franchise",
+     "value": "The Hunchback of Notre Dame",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-1/jim-hawkins",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jim Hawkins"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jim Hawkins"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jim Hawkins"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jim Hawkins"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jim Hawkins"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jim Hawkins"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jim Hawkins"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Treasure Planet",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site identifies the film this character is from in its design list."
+    },
+    {
+     "field": "franchise",
+     "value": "Treasure Planet",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-1/tinker-bell",
+   "set_key": "animated-cuties/series-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Official US listing names this character among the 8 designs in the blind pack."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU listing's 'entire series includes' list names this character."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia listing names this character among the 8 designs, drawn in a cute anime style."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT Jan 2026 park report lists this character among the 8 pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2026 Disney Store report lists this character among the 8 possible pins."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 designs of the parks set."
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan news site lists this character among the 8 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Peter Pan",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT article dated 31 Jan 2026 reports the boxes newly found in WDW; exact first-sale day not stated."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog states the parks set released January 2026; no exact day given."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-12",
+     "source_url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+     "method": "search_snippet",
+     "note": "Affiliate site says the Disney Store US blind pack released on 12 May 2026 (online release, not parks)."
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "WDWNT found the boxes on sale at World of Disney."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog says it was spotted at Disney's Pin Traders."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store US (disneystore.com)",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Sold online as a 2-pc blind pack."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU (disneystore.eu)",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on EU store; marked sold out when indexed."
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Asia - Malaysia (disneystore.asia/my)",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Listed on Malaysia store; marked sold out when indexed."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Walt Disney World, Florida."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "EU",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU Disney Store online."
+    },
+    {
+     "field": "region",
+     "value": "MY",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysia Disney Store online."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog calls the parks set open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DUJ0_qfjnZT/new-animated-cuties-mystery-pin-set-at-disney-parks-open-edition-per-box-of-two",
+     "method": "search_snippet",
+     "note": "Same publisher's Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "Per box of 2 pins at World of Disney (pack price, not per pin)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins at Disney Parks (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Disney Store US price per 2-pc blind pack."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT reports Disney Store blind pack at $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "US online price."
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU price per pack."
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "EU online price."
+    },
+    {
+     "field": "original_price",
+     "value": 119.9,
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Disney Store Malaysia price per pack (RM)."
+    },
+    {
+     "field": "currency",
+     "value": "MYR",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Malaysian ringgit."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "Fan site gives $22.99 retail per box; also notes online store charged $24.99."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+     "method": "search_snippet",
+     "note": "US price."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030741301",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Item number of the US 2-pc blind pack (pack code, not per pin)."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the EU pack listing."
+    },
+    {
+     "field": "pack_product_code",
+     "value": "438030755384",
+     "source_url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+     "method": "search_snippet",
+     "note": "Item number of the Malaysia pack listing (same as EU)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Character reimagined in a cute anime/chibi style",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing describes the designs as favourite characters reimagined in adorable anime styling (series-wide, not per pin)."
+    },
+    {
+     "field": "visual_description",
+     "value": "Big-eyed 'cutie' form of the character",
+     "source_url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+     "method": "search_snippet",
+     "note": "WDWNT describes all eight characters in a big-eyed cutie form (series-wide)."
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "cloisonne",
+      "laser-printed elements",
+      "nickel finish"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Series-wide feature list from the US listing."
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disney Pin Trading 2026",
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing says pins carry Disney Pin Trading 2026 backstamps (exact wording on pin not verified)."
+    },
+    {
+     "field": "materials",
+     "value": [
+      "zinc alloy",
+      "enamel"
+     ],
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing material statement; Mickey/mouse-icon pin backs."
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+     "method": "search_snippet",
+     "note": "Listing: approx 1 1/2 in x 1 1/2 in, varies slightly by design (converted ~38 mm)."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/kuzco",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Kuzco"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 Series 2 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "The Emperor's New Groove",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/flynn-rider",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flynn Rider"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 Series 2 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Tangled",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/li-shang",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Li Shang"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 Series 2 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Mulan",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/ariel",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 Series 2 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "The Little Mermaid",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/maleficent",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 Series 2 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Sleeping Beauty",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/sally",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sally"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 Series 2 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/vanellope-von-schweetz",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Vanellope"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Source gives the name as 'Vanellope'; full name is editorial."
+    },
+    {
+     "field": "franchise",
+     "value": "Wreck-It Ralph",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  },
+  {
+   "pin_key": "animated-cuties/series-2/hercules",
+   "set_key": "animated-cuties/series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hercules"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog lists this character among the 8 Series 2 designs."
+    },
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": null,
+     "method": "editorial",
+     "note": "General knowledge of the character's source film."
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Post dated 9 Oct 2026 says released October 2026; exact first-sale day not stated."
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (Walt Disney World)",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post says the set was 'spotted today' at Magic Kingdom."
+    },
+    {
+     "field": "region",
+     "value": "US",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Walt Disney World parks release."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Stated as open edition."
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Threads post: open edition."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "US park price."
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "Per box of two pins (pack price)."
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+     "method": "search_snippet",
+     "note": "US park price."
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "animated-cuties/series-1/alice",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/alice",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/alice",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/alice",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-1/pinocchio",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/pinocchio",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/pinocchio",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/pinocchio",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-1/aladdin",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/aladdin",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/aladdin",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/aladdin",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-1/megara-meg",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/megara-meg",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/megara-meg",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/megara-meg",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-1/peter-pan",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/peter-pan",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/peter-pan",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/peter-pan",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-1/esmeralda",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/esmeralda",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/esmeralda",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/esmeralda",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-1/jim-hawkins",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/jim-hawkins",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/jim-hawkins",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/jim-hawkins",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-1/tinker-bell",
+   "field": "set_position",
+   "searched": "Disney Store US/EU/MY listings, WDWNT x2, Disney Pins Blog; 4 queries",
+   "note": "No numbering of the 8 designs published."
+  },
+  {
+   "key": "animated-cuties/series-1/tinker-bell",
+   "field": "product_code",
+   "searched": "official listings; 3 queries",
+   "note": "Only pack item numbers published; no per-pin code."
+  },
+  {
+   "key": "animated-cuties/series-1/tinker-bell",
+   "field": "is_chaser",
+   "searched": "chaser/limited release query + all set sources",
+   "note": "No source mentions a chaser; absence not proven."
+  },
+  {
+   "key": "animated-cuties/series-1/tinker-bell",
+   "field": "visual_colours",
+   "searched": "per-pin design queries (2)",
+   "note": "No per-pin colour or pose description found in any snippet."
+  },
+  {
+   "key": "animated-cuties/series-2/kuzco",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/kuzco",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/kuzco",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/kuzco",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/kuzco",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-2/flynn-rider",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/flynn-rider",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/flynn-rider",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/flynn-rider",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/flynn-rider",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-2/li-shang",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/li-shang",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/li-shang",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/li-shang",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/li-shang",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-2/ariel",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/ariel",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/ariel",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/ariel",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/ariel",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-2/maleficent",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/maleficent",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/maleficent",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/maleficent",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/maleficent",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-2/sally",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/sally",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/sally",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/sally",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/sally",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-2/vanellope-von-schweetz",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/vanellope-von-schweetz",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/vanellope-von-schweetz",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/vanellope-von-schweetz",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/vanellope-von-schweetz",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-2/hercules",
+   "field": "characters",
+   "searched": "WDWNT, Disney Store US/UK/EU/Asia, disneymouseketeer, dismerchandise; 5 queries",
+   "note": "No second independent publisher found for Series 2; only Disney Pins Blog (+ its own Threads)."
+  },
+  {
+   "key": "animated-cuties/series-2/hercules",
+   "field": "pack_product_code",
+   "searched": "Disney Store sites; 2 queries",
+   "note": "No official online listing for Series 2 found."
+  },
+  {
+   "key": "animated-cuties/series-2/hercules",
+   "field": "visual_description",
+   "searched": "Series 2 design query",
+   "note": "No per-pin design description found."
+  },
+  {
+   "key": "animated-cuties/series-2/hercules",
+   "field": "is_chaser",
+   "searched": "chaser query",
+   "note": "Not mentioned."
+  },
+  {
+   "key": "animated-cuties/series-2/hercules",
+   "field": "set_position",
+   "searched": "Disney Pins Blog",
+   "note": "No numbering."
+  },
+  {
+   "key": "animated-cuties/series-1",
+   "field": "price",
+   "searched": "disneystore.co.uk site search, GBP/UK queries (3), item-code query",
+   "note": "No disneystore.co.uk listing for Animated Cuties found; no GBP price from a permitted source."
+  },
+  {
+   "key": "animated-cuties/series-1",
+   "field": "release_date",
+   "searched": "WDWNT, Disney Pins Blog, weekly roundups; 4 queries",
+   "note": "Exact WDW first-sale day not stated; only January 2026 (WDWNT article 31 Jan)."
+  },
+  {
+   "key": "animated-cuties/series-1",
+   "field": "has_chaser",
+   "searched": "chaser query + all sources",
+   "note": "No chaser mentioned anywhere."
+  },
+  {
+   "key": "animated-cuties/series-2",
+   "field": "release_date",
+   "searched": "Disney Pins Blog Oct roundups, WDWNT; 3 queries",
+   "note": "Only 'October 2026' with post dated 9 Oct; no exact first-sale date."
+  },
+  {
+   "key": "animated-cuties/series-2",
+   "field": "pack_product_code",
+   "searched": "Disney Store US/UK/EU/Asia",
+   "note": "No online listing for Series 2."
+  },
+  {
+   "key": "animated-cuties/series-2",
+   "field": "release_location",
+   "searched": "WDWNT/Disneyland coverage",
+   "note": "No Disneyland, Disney Store, UK or Paris release found."
+  }
+ ],
+ "discovery_notes": "WebFetch blocked (DNS failure for wdwnt.com); all claims are from search-engine summaries. Series 1: 8 characters agree across 3 official Disney Store listings (US/EU/MY) and 4 news/fan sources. Spelling variants recorded as stated (Megara vs Meg; Esmeralda vs Esmerelda). Per-pin pose/colour descriptions not found anywhere; only series-wide style (anime/chibi, big-eyed). WDWNT May 2026 notes the box art carries film symbols (e.g. tambourine for Esmeralda, Grecian column for Megara) - box, not pin, so not claimed as pin visuals. No disneystore.co.uk listing found (a GBP figure seen previously only on an excluded source). Series 2 remains single-publisher (Disney Pins Blog article + its Threads post); no WDWNT/official corroboration as of 2026-10-13. Resellers seen but not used: yourwdwstore.net, usshoppingsos.com (titled 'DLR/WDW'), eBay, Mercari. No new pins found."
+}

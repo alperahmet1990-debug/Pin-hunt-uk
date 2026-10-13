@@ -72,5 +72,8 @@ def load_packets(patterns) -> Store:
     for pat in patterns:
         for path in sorted(glob.glob(pat)):
             with open(path) as f:
-                st.add_packet(json.load(f), origin=path)
+                pkt = json.load(f)
+            if not isinstance(pkt, dict) or not ("pins" in pkt or "sets" in pkt):
+                continue          # not an evidence packet (e.g. key lists)
+            st.add_packet(pkt, origin=path)
     return st

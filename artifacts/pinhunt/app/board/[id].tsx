@@ -21,6 +21,8 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
 import { usePinActions } from '@/components/PinActionsSheet';
+import { BulkSelectBar, BULK_BAR_HEIGHT } from '@/components/BulkSelectBar';
+import { usePinSelection } from '@/hooks/usePinSelection';
 import { ConfirmDialog, PinGrid, PinTile, ScreenContainer, Sheet } from '@/components/ui';
 import { BOARD_SORT_OPTIONS, sortBoardPins, type BoardSort } from '@/utils/boardSort';
 import { radius, spacing } from '@/constants/theme';
@@ -48,6 +50,8 @@ export default function BoardDetailScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const pinActions = usePinActions();
+  // Bulk edits (UX-017); never at the same time as edit mode.
+  const selection = usePinSelection();
   const { getBoardById, getBoardPins, addPinToBoard, removePinFromBoard, deleteBoard, setBoardThumbnail, renameBoard } = useBoards();
   const { pins: catalogue } = usePinCatalogue();
   const { collection } = useCollection();
@@ -212,7 +216,7 @@ export default function BoardDetailScreen() {
           )}
         </View>
 
-        {board.isCustom && !editMode && boardPins.length > 0 && (
+        {board.isCustom && !editMode && !selection.active && boardPins.length > 0 && (
           <View style={styles.actionsRow}>
             <TouchableOpacity
               onPress={() => setAddModalVisible(true)}
@@ -233,17 +237,38 @@ export default function BoardDetailScreen() {
           </View>
         )}
 
-        {!editMode && boardPins.length > 1 && (
-          <TouchableOpacity
-            onPress={() => setSortVisible(true)}
-            accessibilityRole="button"
-            accessibilityLabel={`Sort: ${sortLabel}`}
-            style={styles.sortBtn}
-          >
-            <Feather name="bar-chart-2" size={14} color={colors.homeMuted} style={{ transform: [{ rotate: '90deg' }] }} />
-            <Text style={[styles.sortBtnText, { color: colors.homeMuted }]}>Sort: <Text style={{ color: colors.homeInk }}>{sortLabel}</Text></Text>
-            <Feather name="chevron-down" size={14} color={colors.homeMuted} />
-          </TouchableOpacity>
+        {!editMode && !selection.active && boardPins.length > 1 && (
+          <View style={styles.toolRow}>
+            <TouchableOpacity
+              onPress={() => setSortVisible(true)}
+              accessibilityRole="button"
+              accessibilityLabel={`Sort: ${sortLabel}`}
+              style={styles.sortBtn}
+            >
+              <Feather name="bar-chart-2" size={14} color={colors.homeMuted} style={{ transform: [{ rotate: '90deg' }] }} />
+              <Text style={[styles.sortBtnText, { color: colors.homeMuted }]}>Sort: <Text style={{ color: colors.homeInk }}>{sortLabel}</Text></Text>
+              <Feather name="chevron-down" size={14} color={colors.homeMuted} />
+            </TouchableOpacity>
+            {board.isCustom && (
+              <TouchableOpacity onPress={selection.start} accessibilityRole="button" accessibilityLabel="Select pins" style={styles.sortBtn}>
+                <Feather name="check-square" size={14} color={colors.homeInk} />
+                <Text style={[styles.sortBtnText, { color: colors.homeInk }]}>Select</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
+        {selection.active && (
+          <View style={styles.toolRow}>
+            <Text accessibilityLiveRegion="polite" style={[styles.sortBtnText, { color: colors.homeInk, flex: 1 }]}>{selection.count} selected</Text>
+            <TouchableOpacity onPress={() => selection.toggleAll(sortedPins.map(p => p.id))} accessibilityRole="button" style={styles.sortBtn}>
+              <Text style={[styles.sortBtnText, { color: colors.homeCoralDeep }]}>
+                {selection.allSelected(sortedPins.map(p => p.id)) ? 'Clear' : `Select all ${sortedPins.length}`}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={selection.stop} accessibilityRole="button" accessibilityLabel="Cancel selecting" style={styles.sortBtn}>
+              <Text style={[styles.sortBtnText, { color: colors.homeInk }]}>Cancel</Text>
+            </TouchableOpacity>
+          </View>
         )}
         {editMode && (
           <Text style={[styles.editHint, { color: colors.homeMuted }]}>
@@ -269,7 +294,8 @@ export default function BoardDetailScreen() {
           data={sortedPins}
           keyExtractor={p => p.id}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingTop: 12, paddingBottom: botPad }}
+          contentContainerStyle={{ paddingTop: 12, paddingBottom: botPad + (selection.active ? BULK_BAR_HEIGHT : 0) }}
+          extraData={selection.selected}
           renderTile={(item, size) => {
             const isCover = board.thumbnailPinId === item.id;
             return (
@@ -280,9 +306,13 @@ export default function BoardDetailScreen() {
                   size={size}
                   copies={editMode ? undefined : collection[item.id]?.quantity}
                   // Edit mode only acts through the two controls below, never the tile.
-                  onPress={() => { if (!editMode) router.push({ pathname: '/pin/[id]', params: { id: item.id } }); }}
-                  onLongPress={editMode ? undefined : () => pinActions.open(item)}
-                  {...(editMode ? {} : pinActions.a11y(item))}
+                  selected={selection.active ? selection.has(item.id) : undefined}
+                  onPress={() => {
+                    if (selection.active) selection.toggle(item.id);
+                    else if (!editMode) router.push({ pathname: '/pin/[id]', params: { id: item.id } });
+                  }}
+                  onLongPress={editMode || selection.active ? undefined : () => pinActions.open(item)}
+                  {...(editMode || selection.active ? {} : pinActions.a11y(item))}
                 />
                 {!editMode && isCover && (
                   <View pointerEvents="none" style={[styles.coverChip, { backgroundColor: colors.homeCoral }]}>
@@ -339,6 +369,9 @@ export default function BoardDetailScreen() {
       </Sheet>
 
       {pinActions.sheet}
+      {selection.active && (
+        <BulkSelectBar ids={[...selection.selected]} boardId={board.id} onDone={selection.stop} />
+      )}
 
       {/* Board options (UX-041: a Sheet, so the backdrop no longer wraps the rows) */}
       <Sheet visible={menuVisible} onClose={() => setMenuVisible(false)} title="Board options">
@@ -547,6 +580,7 @@ const styles = StyleSheet.create({
   addBtnText: { fontSize: 13.5, fontFamily: 'Inter_700Bold' },
   editBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: spacing.md, height: 40, borderRadius: radius.md },
   editBtnText: { fontSize: 13.5, fontFamily: 'Inter_700Bold' },
+  toolRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
   sortBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', minHeight: 44 },
   sortBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   editHint: { fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18, marginTop: 4 },

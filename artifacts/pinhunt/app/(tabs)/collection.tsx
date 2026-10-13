@@ -27,6 +27,8 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { Button, IconButton } from '@/components/ui/Button';
+import { BulkSelectBar, BULK_BAR_HEIGHT, tabBarOffset } from '@/components/BulkSelectBar';
+import { usePinSelection } from '@/hooks/usePinSelection';
 import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
 import { spacing } from '@/constants/theme';
 import type { SegmentedControlOption } from '@/components/ui';
@@ -192,6 +194,8 @@ export default function CollectionScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const pinActions = usePinActions();
+  // Bulk edits on All / For Trade / ISO (UX-017).
+  const selection = usePinSelection();
   const params = useLocalSearchParams<{ tab?: string }>();
   const { collection } = useCollection();
   const { pins: catalogue, ensurePins, ensureCollections, repository } = usePinCatalogue();
@@ -385,6 +389,12 @@ export default function CollectionScreen() {
   }, [activeTab, filteredOwnedPins, setGroups, filteredTraderPins, filteredIsoPins]);
   // Pin tabs use the shared 3-column PinTile grid (B-P1-04); Sets keep 2-up cards.
   const pinGrid = activeTab !== 'sets';
+  const visiblePinIds = useMemo(
+    () => (pinGrid ? (gridData as CataloguePin[]).map(p => p.id) : []),
+    [pinGrid, gridData],
+  );
+  // Selected ids in the order they appear, for the bulk bar.
+  const selectedIds = useMemo(() => [...selection.selected], [selection.selected]);
   const allPinsFiltered = Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent';
 
   const handleGroupPress = (item: GroupData) => {
@@ -433,6 +443,7 @@ export default function CollectionScreen() {
             setActiveTab(tab);
             setSearchQuery('');
             setSearchActive(false);
+            selection.stop();
           }}
         />
       </View>
@@ -454,12 +465,20 @@ export default function CollectionScreen() {
             <Text style={[s.statText, { color: colors.homeInk }]}>
               {ownedIds.size} <Text style={{ color: colors.homeMuted }}>Owned</Text>
             </Text>
-            {!searchActive && ownedIds.size > 0 && (
+            <View style={{ flexDirection: 'row', gap: 4 }}>
+              {!selection.active && filteredOwnedPins.length > 0 && (
+                <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
+                  <Feather name="check-square" size={16} color={colors.homeInk} />
+                  <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Select</Text>
+                </TouchableOpacity>
+              )}
+              {!searchActive && ownedIds.size > 0 && (
               <TouchableOpacity onPress={() => setAllPinsFilterVisible(true)} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Filter and sort pins">
                 <Feather name="sliders" size={16} color={allPinsFiltered ? colors.homeCoral : colors.homeInk} />
                 <Text style={[s.iconStatBtnText, { color: allPinsFiltered ? colors.homeCoral : colors.homeInk }]}>Filter</Text>
               </TouchableOpacity>
             )}
+            </View>
           </View>
           </>
         )}
@@ -490,7 +509,13 @@ export default function CollectionScreen() {
             <Text style={[s.statText, { color: colors.homeInk }]}>
               {forTradePins.length} <Text style={{ color: colors.homeMuted }}>For Trade</Text>
             </Text>
-            <View style={{ flexDirection: 'row', gap: 12 }}>
+            <View style={{ flexDirection: 'row', gap: 4 }}>
+              {!selection.active && filteredTraderPins.length > 0 && (
+                <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
+                  <Feather name="check-square" size={16} color={colors.homeInk} />
+                  <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Select</Text>
+                </TouchableOpacity>
+              )}
               {!searchActive && (
                 <TouchableOpacity onPress={() => setFilterSheetTab('traders')} style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />
@@ -514,7 +539,13 @@ export default function CollectionScreen() {
             <Text style={[s.statText, { color: colors.homeInk }]}>
               {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
             </Text>
-            <View style={{ flexDirection: 'row', gap: 12 }}>
+            <View style={{ flexDirection: 'row', gap: 4 }}>
+              {!selection.active && filteredIsoPins.length > 0 && (
+                <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
+                  <Feather name="check-square" size={16} color={colors.homeInk} />
+                  <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Select</Text>
+                </TouchableOpacity>
+              )}
               {!searchActive && (
                 <TouchableOpacity onPress={() => setFilterSheetTab('iso')} style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />
@@ -531,6 +562,23 @@ export default function CollectionScreen() {
             />
           )}
           </>
+        )}
+
+        {pinGrid && selection.active && (
+          <View style={[s.selectionRow, { backgroundColor: colors.homeAqua }]}>
+            <Text accessibilityLiveRegion="polite" style={[s.statText, { color: colors.homeInk, flex: 1 }]}>
+              {selection.count} selected
+            </Text>
+            {/* Select all respects the current search and filters. */}
+            <TouchableOpacity onPress={() => selection.toggleAll(visiblePinIds)} accessibilityRole="button" style={s.iconStatBtn}>
+              <Text style={[s.iconStatBtnText, { color: colors.homeCoralDeep }]}>
+                {selection.allSelected(visiblePinIds) ? 'Clear' : `Select all ${visiblePinIds.length}`}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={selection.stop} accessibilityRole="button" accessibilityLabel="Cancel selecting" style={s.iconStatBtn}>
+              <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Cancel</Text>
+            </TouchableOpacity>
+          </View>
         )}
 
         {searchActive && (
@@ -628,7 +676,8 @@ export default function CollectionScreen() {
           ) : null
         }
         columnWrapperStyle={pinGrid ? s.pinGridRow : s.gridRow}
-        contentContainerStyle={[s.flatListContent, { paddingBottom: botPad }]}
+        contentContainerStyle={[s.flatListContent, { paddingBottom: botPad + (selection.active ? BULK_BAR_HEIGHT : 0) }]}
+        extraData={selection.selected}
         renderItem={({ item }) => {
           if ('isGroup' in item) {
             const group = item as GroupData;
@@ -675,9 +724,12 @@ export default function CollectionScreen() {
                 // For Trade and ISO tabs already say the status; All marks only For Trade.
                 status={activeTab === 'all' && entry?.status === 'for_trade' ? 'for_trade' : undefined}
                 copies={entry?.quantity}
-                onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
-                onLongPress={() => pinActions.open(pin)}
-                {...pinActions.a11y(pin)}
+                selected={selection.active ? selection.has(pin.id) : undefined}
+                onPress={() => (selection.active
+                  ? selection.toggle(pin.id)
+                  : router.push({ pathname: '/pin/[id]', params: { id: pin.id } }))}
+                onLongPress={selection.active ? undefined : () => pinActions.open(pin)}
+                {...(selection.active ? {} : pinActions.a11y(pin))}
               />
             </View>
           );
@@ -747,6 +799,9 @@ export default function CollectionScreen() {
       </Sheet>
 
       {pinActions.sheet}
+      {pinGrid && selection.active && (
+        <BulkSelectBar ids={selectedIds} onDone={selection.stop} bottomOffset={tabBarOffset(insets.bottom)} />
+      )}
 
       {/* Secondary owned-pin metadata filter and sort */}
       <Modal visible={allPinsFilterVisible} transparent animationType="slide" onRequestClose={() => setAllPinsFilterVisible(false)}>
@@ -958,6 +1013,7 @@ const s = StyleSheet.create({
   tabCount: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
   iconStatBtn: { minHeight: 44, justifyContent: 'center', flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, borderRadius: 8, backgroundColor: 'transparent' },
   iconStatBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  selectionRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginHorizontal: 16, marginBottom: 8, paddingLeft: 12, borderRadius: 12 },
   controlsRow: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, marginBottom: 12 },
   searchBox: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, height: 44, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
   searchInput: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular', height: '100%' },

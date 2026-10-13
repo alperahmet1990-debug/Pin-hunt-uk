@@ -45,6 +45,8 @@ describe('Collection → Sets: Browse all sets (UX-025)', () => {
   beforeEach(() => { mockPush.mockClear(); mockTab = undefined; });
 
   it('ends the Sets list with a row that opens Browse Catalogue', async () => {
+    // Collection opens on All (B-P1-03); these are about the Sets tab.
+    mockTab = 'sets';
     mockCollection = { p1: { pinId: 'p1', status: 'owned', quantity: 1 } };
     await render(<CollectionScreen />);
     expect(screen.getByText('Classics 2024')).toBeTruthy();
@@ -53,6 +55,8 @@ describe('Collection → Sets: Browse all sets (UX-025)', () => {
   });
 
   it('offers Add pins you own in the empty state when no set is started (UX-055)', async () => {
+    // Collection opens on All (B-P1-03); these are about the Sets tab.
+    mockTab = 'sets';
     mockCollection = {};
     await render(<CollectionScreen />);
     expect(screen.getByText('No sets started')).toBeTruthy();

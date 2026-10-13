@@ -106,7 +106,7 @@ export default function FindTradesScreen() {
             <>
               {isoOpportunities.length > 0 && (
                 <View style={styles.section}>
-                  <SectionHeader icon="search" tint={colors.wanted} title="In your ISO" colors={colors} />
+                  <SectionHeader icon="search" tint={colors.wanted} title="On your ISO" colors={colors} />
                   <Text style={[styles.sectionSubtitle, { color: colors.homeMuted }]}>
                     {isoOpportunities.length} pin{isoOpportunities.length === 1 ? '' : 's'} you're looking for {isoOpportunities.length === 1 ? 'is' : 'are'} available
                   </Text>

@@ -1,5 +1,5 @@
 import { FEATURES } from '@/constants/features';
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -24,13 +24,7 @@ import { useFeature } from '@/hooks/useFeature';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { buildCollectionExportText } from '@/utils/exportCollection';
-import { Sheet } from '@/components/ui/Sheet';
-import {
-  APPEARANCE_OPTIONS,
-  appearanceLabel,
-  setAppearance,
-  useAppearancePreference,
-} from '@/hooks/useAppearance';
+import { APPEARANCE_OPTIONS, appearanceLabel, useAppearancePreference } from '@/hooks/useAppearance';
 import {
   EXPORT_COLLECTION_ENABLED,
   RATE_APP_ENABLED,
@@ -156,9 +150,8 @@ export default function ProfileScreen() {
   const { collection } = useCollection();
   const { pins } = usePinCatalogue();
   const feedbackUrl = feedbackMailtoUrl();
-  // Appearance (#224): System · Light Side · Dark Side.
+  // Appearance (#224): System · Light Side · Dark Side, on its own settings screen.
   const appearance = useAppearancePreference();
-  const [appearanceOpen, setAppearanceOpen] = useState(false);
 
   const exportCollection = async () => {
     const titles: Record<string, string> = {};
@@ -288,7 +281,7 @@ export default function ProfileScreen() {
                 icon={APPEARANCE_OPTIONS.find(o => o.value === appearance)?.icon ?? 'smartphone'}
                 label="Appearance"
                 value={appearanceLabel(appearance)}
-                onPress={() => setAppearanceOpen(true)}
+                onPress={() => router.push('/settings/appearance')}
                 last={!EXPORT_COLLECTION_ENABLED}
               />
               {EXPORT_COLLECTION_ENABLED && (
@@ -346,34 +339,6 @@ export default function ProfileScreen() {
           </>
         )}
       </ScrollView>
-      <Sheet visible={appearanceOpen} onClose={() => setAppearanceOpen(false)} title="Appearance">
-        <View accessibilityRole="radiogroup">
-          {APPEARANCE_OPTIONS.map((option, idx) => {
-            const selected = appearance === option.value;
-            return (
-              <TouchableOpacity
-                key={option.value}
-                onPress={() => { setAppearance(option.value); setAppearanceOpen(false); }}
-                accessibilityRole="radio"
-                accessibilityState={{ checked: selected }}
-                accessibilityLabel={option.value === 'system' ? 'System, follows your device' : option.label}
-                style={[styles.appearanceRow, idx < APPEARANCE_OPTIONS.length - 1 && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.homeLine }]}
-              >
-                <View style={[styles.rowIcon, { backgroundColor: colors.homeAqua, borderRadius: 8 }]}>
-                  <Feather name={option.icon} size={16} color={colors.homeInk} />
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={[styles.rowLabel, { color: colors.homeInk }]}>{option.label}</Text>
-                  {option.value === 'system' && (
-                    <Text style={[styles.rowValue, { color: colors.homeMuted }]}>Follows your device</Text>
-                  )}
-                </View>
-                {selected && <Feather name="check" size={18} color={colors.homeCoral} />}
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-      </Sheet>
     </View>
   );
 }
@@ -405,7 +370,6 @@ const styles = StyleSheet.create({
   rowIcon: { width: 30, height: 30, alignItems: 'center', justifyContent: 'center' },
   rowLabel: { flex: 1, fontSize: 14, fontFamily: 'Inter_500Medium' },
   rowValue: { fontSize: 13, fontFamily: 'Inter_400Regular', marginRight: 4 },
-  appearanceRow: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52 },
   badgePill: {
     backgroundColor: '#EF4444',
     borderRadius: 10,

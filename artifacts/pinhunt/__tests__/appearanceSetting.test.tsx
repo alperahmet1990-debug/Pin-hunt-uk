@@ -12,12 +12,15 @@ import {
   setAppearance,
 } from '../hooks/useAppearance';
 import ProfileScreen from '../app/(tabs)/profile';
+import AppearanceScreen from '../app/settings/appearance';
 
 jest.mock('react-native/Libraries/Utilities/useColorScheme', () => ({ __esModule: true, default: () => 'light' }));
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
 }));
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: jest.fn() }) }));
+const mockPush = jest.fn();
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }), Stack: { Screen: () => null } }));
+jest.mock('expo-haptics', () => ({ selectionAsync: jest.fn() }));
 jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: { username: 'demo', isAdmin: false }, loading: false }) }));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ signOut: jest.fn() }) }));
 jest.mock('@/context/SubmissionNotificationsContext', () => ({ useSubmissionNotifications: () => ({ unseenCount: 0 }) }));
@@ -69,12 +72,28 @@ describe('Appearance: System · Light Side · Dark Side (#224)', () => {
     expect(result.current.homeBackground).toBe(colors.light.homeBackground);
   });
 
-  it('Profile → Appearance picks Light Side', async () => {
+  it('Profile shows the current side and opens Settings → Appearance', async () => {
+    setAppearance('dark');
     await render(<ProfileScreen />);
+    expect(screen.getByText('Dark Side')).toBeTruthy();
     await fireEvent.press(screen.getByText('Appearance'));
-    expect(screen.getByRole('radio', { name: 'System, follows your device' }).props.accessibilityState).toEqual({ checked: true });
-    await fireEvent.press(screen.getByRole('radio', { name: 'Light Side' }));
-    expect(await AsyncStorage.getItem(APPEARANCE_STORAGE_KEY)).toBe('light');
-    expect(screen.getByText('Light Side')).toBeTruthy();
+    expect(mockPush).toHaveBeenCalledWith('/settings/appearance');
+  });
+
+  it('Appearance screen: three preview cards, picking Dark Side applies and saves it', async () => {
+    await render(<AppearanceScreen />);
+    expect(screen.getByRole('header', { name: 'Pick your side' })).toBeTruthy();
+    const radios = screen.getAllByRole('radio');
+    expect(radios).toHaveLength(3);
+    expect(screen.getByRole('radio', { name: /^System\./ }).props.accessibilityState).toEqual({ checked: true });
+    await fireEvent.press(screen.getByRole('radio', { name: /^Dark Side\./ }));
+    expect(screen.getByRole('radio', { name: /^Dark Side\./ }).props.accessibilityState).toEqual({ checked: true });
+    expect(await AsyncStorage.getItem(APPEARANCE_STORAGE_KEY)).toBe('dark');
+  });
+
+  it('keeps the copy free of film references', async () => {
+    await render(<AppearanceScreen />);
+    const text = JSON.stringify(screen.toJSON());
+    expect(text).not.toMatch(/force|jedi|sith|saber|galaxy far|star wars/i);
   });
 });

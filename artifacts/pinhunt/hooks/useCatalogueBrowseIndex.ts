@@ -53,9 +53,12 @@ export function useCatalogueBrowseIndex() {
     }
   }, [repository]);
 
+  // Mock mode builds the rows from the catalogue, which can finish loading
+  // after the first pass, so follow it. Supabase mode still fetches once.
+  const mockPins = repository ? null : pins;
   useEffect(() => {
     void refresh();
-  }, [refresh]);
+  }, [refresh, mockPins]);
 
   return { rows, loading, error, refresh };
 }

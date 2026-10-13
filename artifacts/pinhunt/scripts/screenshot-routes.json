@@ -73,6 +73,15 @@
     "path": "/browse-catalogue"
   },
   {
+    "name": "add-pins",
+    "path": "/browse-catalogue?mode=add"
+  },
+  {
+    "name": "add-pins-selected",
+    "path": "/browse-catalogue?mode=add",
+    "click": "Select all"
+  },
+  {
     "name": "find-trades",
     "path": "/find-trades"
   }

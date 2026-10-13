@@ -104,6 +104,32 @@ function processPins(pins: CataloguePin[], filter: PinFilterType, sort: PinSortT
   return res;
 }
 
+/** One-tap route from the For Trade and ISO tabs to Find Trades (UX-001). */
+function FindTradesRow({ detail, onPress, colors }: {
+  detail: string;
+  onPress: () => void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.8}
+      accessibilityRole="button"
+      accessibilityLabel={`Find trades for these. ${detail}`}
+      style={[s.findTradesRow, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+    >
+      <View style={[s.findTradesIcon, { backgroundColor: colors.homeAqua }]}>
+        <Feather name="compass" size={16} color={colors.homeCoralDeep} />
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text style={[s.findTradesLabel, { color: colors.homeInk }]}>Find trades for these</Text>
+        <Text style={[s.findTradesDetail, { color: colors.homeMuted }]} numberOfLines={1}>{detail}</Text>
+      </View>
+      <Feather name="chevron-right" size={18} color={colors.homeMuted} />
+    </TouchableOpacity>
+  );
+}
+
 export default function CollectionScreen() {
   const colors = useColors();
   const { width: screenWidth } = useWindowDimensions();
@@ -397,6 +423,7 @@ export default function CollectionScreen() {
           </View>
         )}
         {activeTab === 'traders' && (
+          <>
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
             <Text style={[s.statText, { color: colors.homeInk }]}>
               {forTradePins.length} <Text style={{ color: colors.homeMuted }}>For Trade</Text>
@@ -410,8 +437,17 @@ export default function CollectionScreen() {
               )}
             </View>
           </View>
+          {forTradePins.length > 0 && !searchActive && (
+            <FindTradesRow
+              detail="See who wants your For Trade pins"
+              onPress={() => router.push('/find-trades')}
+              colors={colors}
+            />
+          )}
+          </>
         )}
         {activeTab === 'iso' && (
+          <>
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
             <Text style={[s.statText, { color: colors.homeInk }]}>
               {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
@@ -425,6 +461,14 @@ export default function CollectionScreen() {
               )}
             </View>
           </View>
+          {wantedPins.length > 0 && !searchActive && (
+            <FindTradesRow
+              detail="See who has your ISO pins"
+              onPress={() => router.push('/find-trades')}
+              colors={colors}
+            />
+          )}
+          </>
         )}
 
         {searchActive && (
@@ -844,6 +888,10 @@ const s = StyleSheet.create({
   contextualArea: { paddingBottom: 8 },
   statsRow: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 16, paddingVertical: 12 },
   statText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  findTradesRow: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56, marginHorizontal: 16, marginBottom: 12, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
+  findTradesIcon: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
+  findTradesLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  findTradesDetail: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
   secondarySearchResult: { marginHorizontal: 16, padding: 12, borderRadius: 8, marginTop: 4, marginBottom: 8 },
   secondarySearchText: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   tabsRow: { paddingHorizontal: 16, marginBottom: 14 },

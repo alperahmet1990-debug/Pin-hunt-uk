@@ -20,6 +20,7 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
 import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
 import { BoardCard } from '@/components/BoardCard';
@@ -157,7 +158,7 @@ export default function CollectionScreen() {
   const [filterSheetTab, setFilterSheetTab] = useState<'traders' | 'iso' | 'boards' | 'sets' | null>(null);
 
   const [addModalVisible, setAddModalVisible] = useState(false);
-  const [setSummaries, setSetSummaries] = useState<PinSetSummary[]>([]);
+  const [repoSetSummaries, setSetSummaries] = useState<PinSetSummary[]>([]);
   const [createBoardVisible, setCreateBoardVisible] = useState(false);
   const [newBoardName, setNewBoardName] = useState('');
 
@@ -211,6 +212,11 @@ export default function CollectionScreen() {
       cancelled = true;
     };
   }, [repository]);
+  // Mock mode has no set summaries endpoint, so derive them from the catalogue.
+  const setSummaries = useMemo(
+    () => (repository ? repoSetSummaries : setSummariesFromPins(catalogue)),
+    [repository, repoSetSummaries, catalogue],
+  );
 
   const ownedPins = useMemo(() => catalogue.filter(pin => ownedIds.has(pin.id)), [catalogue, ownedIds]);
   const forTradePins = useMemo(() => catalogue.filter(pin => forTradeIds.has(pin.id)), [catalogue, forTradeIds]);

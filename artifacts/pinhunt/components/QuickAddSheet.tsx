@@ -238,8 +238,9 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
           <View style={[styles.handle, { backgroundColor: t.border }]} />
           <TouchableOpacity
             onPress={close}
+            accessibilityRole="button"
             accessibilityLabel="Close"
-            hitSlop={8}
+            hitSlop={6}
             style={[styles.closeBtn, { backgroundColor: t.secondary }]}
           >
             <Feather name="x" size={16} color={t.fg} />
@@ -480,7 +481,7 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
                   { backgroundColor: t.primary, borderRadius: t.radius },
                 ]}
               >
-                <Text style={[styles.footerBtnLabel, { color: t.primaryFg }]}>Done</Text>
+                <Text style={[styles.footerBtnLabel, { color: t.primaryFg }]}>Close</Text>
               </TouchableOpacity>
             </View>
           </KeyboardStickyView>
@@ -563,13 +564,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 12,
     right: SHEET_PADDING,
-    width: 30,
-    height: 30,
-    borderRadius: 15,
+    // 32 pt + 6 pt hitSlop each side = 44 pt target.
+    width: 32,
+    height: 32,
+    borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  pinRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 8, marginBottom: 14 },
+  // paddingRight keeps two-line titles clear of the close button (32 pt + gap).
+  pinRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 8, marginBottom: 14, paddingRight: 52 },
   pinImage: { width: 52, height: 52 },
   pinInfo: { flex: 1, gap: 2 },
   pinTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold', lineHeight: 19 },

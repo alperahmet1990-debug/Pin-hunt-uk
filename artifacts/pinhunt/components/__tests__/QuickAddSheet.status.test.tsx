@@ -138,4 +138,16 @@ describe('QuickAddSheet status changes', () => {
     expect(latest.entries.p1.status).toBe('for_trade');
     expect(latest.writes).toBe(2);
   });
+
+  it('close control is a labelled 44 pt target, and the footer button reads "Close" (UX-013a)', async () => {
+    const { StyleSheet } = require('react-native');
+    await render(<Harness initial={owned3} />);
+    const close = screen.getByRole('button', { name: 'Close' });
+    const size = StyleSheet.flatten(close.props.style);
+    const slop = close.props.hitSlop ?? 0;
+    expect(size.width + 2 * slop).toBeGreaterThanOrEqual(44);
+    expect(size.height + 2 * slop).toBeGreaterThanOrEqual(44);
+    expect(screen.getByText('Close')).toBeTruthy();
+    expect(screen.queryByText('Done')).toBeNull();
+  });
 });

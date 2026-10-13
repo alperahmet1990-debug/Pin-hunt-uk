@@ -22,6 +22,9 @@ jest.mock('expo-router', () => ({
   Stack: { Screen: () => null },
 }));
 jest.mock('@/components/QuickAddSheet', () => ({ QuickAddSheet: () => null }));
+// The missing-pins footer (UX-021) reads these; no Supabase, no toasts here.
+jest.mock('@/hooks/useMarketplace', () => ({ useMarketplace: () => ({ repo: null, userId: null }) }));
+jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: jest.fn(), hide: jest.fn() }) }));
 jest.mock('@/context/CollectionContext', () => ({
   useCollection: () => ({ collection: {}, getEntry: () => undefined }),
 }));

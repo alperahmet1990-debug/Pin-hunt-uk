@@ -20,6 +20,8 @@ import { ScreenContainer, SegmentedControl, SetProgressBar, CompactPinTile } fro
 import type { SegmentedControlOption } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, PinSetSummary } from '@workspace/pin-repository';
+import { useSetTraders } from '@/hooks/useSetTraders';
+import { useAddMissingToIso } from '@/hooks/useAddMissingToIso';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
@@ -27,6 +29,8 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const COLS = 3;
 const GRID_GAP = spacing.md;
 const TILE = (SCREEN_WIDTH - spacing.lg * 2 - GRID_GAP * (COLS - 1)) / COLS;
+// Room for the missing-pins footer so the last row isn't hidden behind it.
+const FOOTER_SPACE = 130;
 
 export default function SetDetailScreen() {
   const { collection: collectionParam } = useLocalSearchParams<{ collection: string }>();
@@ -102,6 +106,13 @@ export default function SetDetailScreen() {
     // "all" — owned first, then missing
     return [...ownedPins, ...missingPins];
   }, [filter, ownedPins, missingPins]);
+
+  // Footer actions for the missing pins (UX-021): who has them, and ISO in one go.
+  const missingIds = useMemo(() => missingPins.map(p => p.id), [missingPins]);
+  const { available, loading: tradersLoading } = useSetTraders(loading ? [] : missingIds);
+  const { add: addMissingToIso, pending: pendingIso } = useAddMissingToIso();
+  const showFooter = !loading && missingIds.length > 0;
+  const toIsoCount = showFooter ? pendingIso(missingIds).length : 0;
 
   const total = setPins.length;
   const ownedCount = ownedPins.length;
@@ -226,7 +237,7 @@ export default function SetDetailScreen() {
           keyExtractor={p => p.id}
           numColumns={COLS}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={[styles.grid, { paddingBottom: botPad }]}
+          contentContainerStyle={[styles.grid, { paddingBottom: botPad + (showFooter ? FOOTER_SPACE : 0) }]}
           columnWrapperStyle={styles.gridRow}
           renderItem={({ item }) => {
             const isOwned = ownedIds.has(item.id);
@@ -246,6 +257,36 @@ export default function SetDetailScreen() {
             );
           }}
         />
+      )}
+
+      {showFooter && (
+        <View style={[styles.footer, { backgroundColor: colors.homeSurface, borderTopColor: colors.homeLine, paddingBottom: botPad }]}>
+          <TouchableOpacity
+            onPress={() => router.push({ pathname: '/set-traders/[collection]', params: { collection: collectionParam } })}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            style={[styles.footerPrimary, { backgroundColor: colors.homeCoral }]}
+          >
+            <Text style={[styles.footerPrimaryLabel, { color: colors.homeSurface }]}>
+              Find the {missingIds.length} missing
+            </Text>
+            {available != null && !tradersLoading && (
+              <Text style={[styles.footerPrimarySub, { color: colors.homeSurface }]}>
+                {available > 0 ? `${available} available from collectors` : 'None for trade yet'}
+              </Text>
+            )}
+          </TouchableOpacity>
+          {toIsoCount > 0 && (
+            <TouchableOpacity
+              onPress={() => addMissingToIso(missingIds)}
+              activeOpacity={0.7}
+              accessibilityRole="button"
+              style={styles.footerSecondary}
+            >
+              <Text style={[styles.footerSecondaryLabel, { color: colors.homeCoralDeep }]}>Add missing to ISO</Text>
+            </TouchableOpacity>
+          )}
+        </View>
       )}
 
       <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
@@ -276,5 +317,12 @@ const styles = StyleSheet.create({
   // Loading placeholders, sized like CompactPinTile (square image + one label line)
   skeletonGrid: { flexDirection: 'row', flexWrap: 'wrap', columnGap: GRID_GAP, rowGap: spacing.lg },
   skeletonImage: { borderRadius: radius.md },
+  // Missing-pins footer
+  footer: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: 2 },
+  footerPrimary: { minHeight: 52, borderRadius: radius.pill, alignItems: 'center', justifyContent: 'center', paddingVertical: 6 },
+  footerPrimaryLabel: { fontSize: 15, fontFamily: 'Inter_700Bold' },
+  footerPrimarySub: { fontSize: 11.5, fontFamily: 'Inter_500Medium', opacity: 0.9 },
+  footerSecondary: { minHeight: 44, alignItems: 'center', justifyContent: 'center' },
+  footerSecondaryLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   skeletonLabel: { height: 9, width: '70%', alignSelf: 'center', borderRadius: 5, marginTop: 9, marginBottom: 2 },
 });

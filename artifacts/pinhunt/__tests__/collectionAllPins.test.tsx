@@ -69,7 +69,7 @@ describe('My Collection: All pins (B-P1-03, B-P1-04)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Favourites, 2 pins' }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/board/[id]', params: { id: 'b1' } });
     await fireEvent.press(screen.getByRole('button', { name: 'New board' }));
-    expect(screen.getByText('New Board')).toBeTruthy();
+    expect(screen.getByRole('header', { name: 'New board' })).toBeTruthy();
   });
 
   it('ISO shows wanted pins without a status marker, and For Trade stays separate', async () => {

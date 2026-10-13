@@ -15,3 +15,7 @@ export { PinGrid, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from './PinGrid
 export { StatusBadge, STATUS_BADGE } from './StatusBadge';
 export { ToastProvider, ToastHost, useToast, TOAST_DURATION_MS } from './Toast';
 export type { ToastOptions, ToastAction } from './Toast';
+export { Sheet } from './Sheet';
+export type { SheetProps } from './Sheet';
+export { ConfirmDialog } from './ConfirmDialog';
+export type { ConfirmDialogProps } from './ConfirmDialog';

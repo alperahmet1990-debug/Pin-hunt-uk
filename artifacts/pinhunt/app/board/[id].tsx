@@ -21,7 +21,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
 import { EmptyState } from '@/components/EmptyState';
-import { ScreenContainer } from '@/components/ui';
+import { ConfirmDialog, ScreenContainer, Sheet } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
 
@@ -129,6 +129,12 @@ export default function BoardDetailScreen() {
       </ScreenContainer>
     );
   }
+
+  const saveRename = () => {
+    if (!board || !newName.trim()) return;
+    renameBoard(board.id, newName);
+    setRenameVisible(false);
+  };
 
   const handleAddPin = (pin: CataloguePin) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -295,34 +301,32 @@ export default function BoardDetailScreen() {
         />
       )}
 
-      {/* Board options menu */}
-      <Modal visible={menuVisible} transparent animationType="fade" onRequestClose={() => setMenuVisible(false)}>
-        <TouchableOpacity style={styles.confirmBackdrop} activeOpacity={1} onPress={() => setMenuVisible(false)}>
-          <View style={[styles.menuCard, { backgroundColor: colors.homeSurface }]}>
-            <TouchableOpacity
-              style={styles.menuRow}
-              activeOpacity={0.75}
-              onPress={() => { setMenuVisible(false); setRenameVisible(true); }}
-            >
-              <View style={[styles.menuIcon, { backgroundColor: colors.homeAqua }]}>
-                <Feather name="edit-2" size={16} color={colors.homeTeal} />
-              </View>
-              <Text style={[styles.menuLabel, { color: colors.homeInk }]}>Rename Board</Text>
-            </TouchableOpacity>
-            <View style={[styles.menuDivider, { backgroundColor: colors.homeLine }]} />
-            <TouchableOpacity
-              style={styles.menuRow}
-              activeOpacity={0.75}
-              onPress={() => { setMenuVisible(false); setDeleteConfirmVisible(true); }}
-            >
-              <View style={[styles.menuIcon, { backgroundColor: colors.destructive + '18' }]}>
-                <Feather name="trash-2" size={16} color={colors.destructive} />
-              </View>
-              <Text style={[styles.menuLabel, { color: colors.destructive }]}>Delete Board</Text>
-            </TouchableOpacity>
+      {/* Board options (UX-041: a Sheet, so the backdrop no longer wraps the rows) */}
+      <Sheet visible={menuVisible} onClose={() => setMenuVisible(false)} title="Board options">
+        <TouchableOpacity
+          style={styles.menuRow}
+          activeOpacity={0.75}
+          accessibilityRole="button"
+          onPress={() => { setMenuVisible(false); setRenameVisible(true); }}
+        >
+          <View style={[styles.menuIcon, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="edit-2" size={16} color={colors.homeTeal} />
           </View>
+          <Text style={[styles.menuLabel, { color: colors.homeInk }]}>Rename Board</Text>
         </TouchableOpacity>
-      </Modal>
+        <View style={[styles.menuDivider, { backgroundColor: colors.homeLine }]} />
+        <TouchableOpacity
+          style={styles.menuRow}
+          activeOpacity={0.75}
+          accessibilityRole="button"
+          onPress={() => { setMenuVisible(false); setDeleteConfirmVisible(true); }}
+        >
+          <View style={[styles.menuIcon, { backgroundColor: colors.destructive + '18' }]}>
+            <Feather name="trash-2" size={16} color={colors.destructive} />
+          </View>
+          <Text style={[styles.menuLabel, { color: colors.destructive }]}>Delete Board</Text>
+        </TouchableOpacity>
+      </Sheet>
 
       {/* Add Pins Modal */}
       <Modal
@@ -416,103 +420,59 @@ export default function BoardDetailScreen() {
         </View>
       </Modal>
 
-      <Modal
+      {/* Rename: input at the top of a Sheet, so it stays above the keyboard (UX-041). */}
+      <Sheet
         visible={renameVisible}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setRenameVisible(false)}
+        onClose={() => setRenameVisible(false)}
+        title="Rename board"
+        footer={
+          <TouchableOpacity
+            onPress={saveRename}
+            disabled={!newName.trim()}
+            accessibilityRole="button"
+            style={[styles.sheetPrimary, { backgroundColor: newName.trim() ? colors.homeCoral : colors.homeAqua }]}
+          >
+            <Text style={[styles.confirmButtonText, { color: newName.trim() ? colors.homeSurface : colors.homeMuted }]}>Save</Text>
+          </TouchableOpacity>
+        }
       >
-        <View style={styles.confirmBackdrop}>
-          <View style={[styles.confirmCard, { backgroundColor: colors.homeSurface }]}>
-            <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Rename Board</Text>
-            <TextInput
-              style={[styles.renameInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
-              value={newName}
-              onChangeText={setNewName}
-              placeholder="Board name"
-              placeholderTextColor={colors.homeMuted}
-              autoFocus
-              returnKeyType="done"
-              onSubmitEditing={() => {
-                if (newName.trim()) {
-                  renameBoard(board.id, newName);
-                  setRenameVisible(false);
-                }
-              }}
-            />
-            <View style={styles.confirmActions}>
-              <TouchableOpacity
-                onPress={() => setRenameVisible(false)}
-                style={[styles.confirmButton, { backgroundColor: colors.homeAqua }]}
-              >
-                <Text style={[styles.confirmButtonText, { color: colors.homeInk }]}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  if (newName.trim()) {
-                    renameBoard(board.id, newName);
-                    setRenameVisible(false);
-                  }
-                }}
-                style={[styles.confirmButton, { backgroundColor: colors.homeCoral, opacity: newName.trim() ? 1 : 0.5 }]}
-                disabled={!newName.trim()}
-              >
-                <Text style={[styles.confirmButtonText, { color: colors.homeSurface }]}>Save</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+        <TextInput
+          style={[styles.renameInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
+          value={newName}
+          onChangeText={setNewName}
+          placeholder="Board name"
+          placeholderTextColor={colors.homeMuted}
+          accessibilityLabel="Board name"
+          autoFocus
+          returnKeyType="done"
+          onSubmitEditing={saveRename}
+        />
+      </Sheet>
 
-      <Modal
-        visible={deleteConfirmVisible || pinToRemove !== null}
-        transparent
-        animationType="fade"
-        onRequestClose={() => {
-          setDeleteConfirmVisible(false);
+      <ConfirmDialog
+        visible={deleteConfirmVisible}
+        title="Delete Board?"
+        message={`Delete "${board.name}"? Your pins won't be removed from your Collection.`}
+        confirmLabel="Delete"
+        destructive
+        onCancel={() => setDeleteConfirmVisible(false)}
+        onConfirm={() => {
+          deleteBoard(board.id);
+          router.back();
+        }}
+      />
+      <ConfirmDialog
+        visible={pinToRemove !== null}
+        title="Remove Pin?"
+        message={`Remove "${pinToRemove?.title ?? 'this pin'}" from this Board?`}
+        confirmLabel="Remove"
+        destructive
+        onCancel={() => setPinToRemove(null)}
+        onConfirm={() => {
+          if (pinToRemove) removePinFromBoard(board.id, pinToRemove.id);
           setPinToRemove(null);
         }}
-      >
-        <View style={styles.confirmBackdrop}>
-          <View style={[styles.confirmCard, { backgroundColor: colors.homeSurface }]}>
-            <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>
-              {deleteConfirmVisible ? 'Delete Board?' : 'Remove Pin?'}
-            </Text>
-            <Text style={[styles.confirmBody, { color: colors.homeMuted }]}>
-              {deleteConfirmVisible
-                ? `Delete "${board.name}"? Your pins won't be removed from your Collection.`
-                : `Remove "${pinToRemove?.title ?? 'this pin'}" from this Board?`}
-            </Text>
-            <View style={styles.confirmActions}>
-              <TouchableOpacity
-                onPress={() => {
-                  setDeleteConfirmVisible(false);
-                  setPinToRemove(null);
-                }}
-                style={[styles.confirmButton, { backgroundColor: colors.homeAqua }]}
-              >
-                <Text style={[styles.confirmButtonText, { color: colors.homeInk }]}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  if (deleteConfirmVisible) {
-                    deleteBoard(board.id);
-                    router.back();
-                  } else if (pinToRemove) {
-                    removePinFromBoard(board.id, pinToRemove.id);
-                    setPinToRemove(null);
-                  }
-                }}
-                style={[styles.confirmButton, { backgroundColor: colors.destructive }]}
-              >
-                <Text style={[styles.confirmButtonText, { color: '#fff' }]}>
-                  {deleteConfirmVisible ? 'Delete' : 'Remove'}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+      />
     </ScreenContainer>
   );
 }
@@ -593,8 +553,7 @@ const styles = StyleSheet.create({
   },
   coverChipText: { fontSize: 10, fontFamily: 'Inter_600SemiBold' },
   // Board options menu
-  menuCard: { position: 'absolute', top: 100, right: spacing.lg, width: 210, borderRadius: radius.lg, overflow: 'hidden', shadowOpacity: 0.15, shadowRadius: 16, shadowOffset: { width: 0, height: 8 }, elevation: 6 },
-  menuRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.md },
+  menuRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 52, paddingVertical: spacing.sm },
   menuIcon: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center' },
   menuLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   menuDivider: { height: StyleSheet.hairlineWidth },
@@ -633,12 +592,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  confirmBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.42)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  confirmCard: { width: '100%', maxWidth: 380, borderRadius: 20, padding: 20 },
-  confirmTitle: { fontSize: 18, fontFamily: 'Inter_700Bold', marginBottom: 8 },
-  confirmBody: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20, marginBottom: 20 },
-  renameInput: { borderWidth: 1, borderRadius: 12, paddingHorizontal: 12, height: 44, fontSize: 15, fontFamily: 'Inter_500Medium', marginBottom: 20 },
-  confirmActions: { flexDirection: 'row', justifyContent: 'flex-end', gap: 10 },
-  confirmButton: { minHeight: 44, minWidth: 92, alignItems: 'center', justifyContent: 'center', borderRadius: 12, paddingHorizontal: 16 },
+  renameInput: { borderWidth: 1, borderRadius: 12, paddingHorizontal: 12, height: 44, fontSize: 15, fontFamily: 'Inter_500Medium' },
+  sheetPrimary: { minHeight: 48, alignItems: 'center', justifyContent: 'center', borderRadius: radius.md },
   confirmButtonText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

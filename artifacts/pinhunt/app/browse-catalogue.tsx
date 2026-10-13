@@ -46,6 +46,7 @@ import { needsPhoto } from '@/utils/photoGaps';
 import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
 import { PinTile } from '@/components/ui/PinTile';
+import { Sheet } from '@/components/ui/Sheet';
 import { pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui/PinGrid';
 import { radius, spacing } from '@/constants/theme';
 
@@ -579,7 +580,6 @@ function BoardSheet({ visible, count, boards, onPickBoard, onCreateBoard, onClos
   onClose(): void;
 }) {
   const colors = useColors();
-  const insets = useSafeAreaInsets();
   const [newName, setNewName] = useState('');
 
   const close = () => { setNewName(''); onClose(); };
@@ -591,67 +591,52 @@ function BoardSheet({ visible, count, boards, onPickBoard, onCreateBoard, onClos
   };
 
   return (
-    <Modal visible={visible} transparent animationType="slide" onRequestClose={close}>
-      <View style={styles.sheetBackdrop}>
-        <TouchableOpacity style={StyleSheet.absoluteFill} activeOpacity={1} onPress={close} />
-        <View style={[styles.sheet, {
-          backgroundColor: colors.homeSurface,
-          borderColor: colors.homeLine,
-          paddingBottom: insets.bottom + spacing.md,
-        }]}>
-          <View style={styles.sheetHeader}>
-            <Text style={[styles.sheetTitle, { color: colors.homeInk }]}>
-              Add {count} {count === 1 ? 'pin' : 'pins'} to a board
-            </Text>
-            <TouchableOpacity onPress={close} hitSlop={8}>
-              <Feather name="x" size={20} color={colors.homeMuted} />
-            </TouchableOpacity>
-          </View>
-          <Text style={[styles.sheetHint, { color: colors.homeMuted }]}>
-            Boards hold pins you have, so these will be marked Owned too.
-          </Text>
-          <View style={styles.newBoardRow}>
-            <TextInput
-              value={newName}
-              onChangeText={setNewName}
-              placeholder="New board name"
-              placeholderTextColor={colors.homeMuted}
-              returnKeyType="done"
-              onSubmitEditing={create}
-              style={[styles.sheetSearch, styles.newBoardInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
-            />
-            <TouchableOpacity
-              onPress={create}
-              disabled={!newName.trim()}
-              activeOpacity={0.85}
-              style={[styles.newBoardBtn, { backgroundColor: newName.trim() ? colors.homeCoral : colors.homeAqua }]}
-            >
-              <Text style={[styles.newBoardBtnLabel, { color: newName.trim() ? colors.homeHeroText : colors.homeMuted }]}>Create</Text>
-            </TouchableOpacity>
-          </View>
-          <FlatList
-            data={boards}
-            keyExtractor={b => b.id}
-            keyboardShouldPersistTaps="handled"
-            ListEmptyComponent={
-              <Text style={[styles.sheetHint, { color: colors.homeMuted, paddingVertical: spacing.md }]}>
-                No boards yet — name one above to create it.
-              </Text>
-            }
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                onPress={() => onPickBoard(item.id, item.name)}
-                style={[styles.sheetRow, { borderBottomColor: colors.homeLine }]}
-              >
-                <Feather name="folder" size={16} color={colors.homeMuted} />
-                <Text style={[styles.sheetRowLabel, { color: colors.homeInk }]} numberOfLines={1}>{item.name}</Text>
-                <Text style={[styles.sectionMeta, { color: colors.homeMuted }]}>{item.count}</Text>
-              </TouchableOpacity>
-            )}
+    <Sheet visible={visible} onClose={close} title={`Add ${count} ${count === 1 ? 'pin' : 'pins'} to a board`} scroll={false}>
+      <View style={styles.sheetBody}>
+        <Text style={[styles.sheetHint, { color: colors.homeMuted }]}>
+          Boards hold pins you have, so these will be marked Owned too.
+        </Text>
+        <View style={styles.newBoardRow}>
+          <TextInput
+            value={newName}
+            onChangeText={setNewName}
+            placeholder="New board name"
+            placeholderTextColor={colors.homeMuted}
+            returnKeyType="done"
+            onSubmitEditing={create}
+            style={[styles.sheetSearch, styles.newBoardInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
           />
+          <TouchableOpacity
+            onPress={create}
+            disabled={!newName.trim()}
+            activeOpacity={0.85}
+            style={[styles.newBoardBtn, { backgroundColor: newName.trim() ? colors.homeCoral : colors.homeAqua }]}
+          >
+            <Text style={[styles.newBoardBtnLabel, { color: newName.trim() ? colors.homeHeroText : colors.homeMuted }]}>Create</Text>
+          </TouchableOpacity>
         </View>
+        <FlatList
+          data={boards}
+          keyExtractor={b => b.id}
+          keyboardShouldPersistTaps="handled"
+          ListEmptyComponent={
+            <Text style={[styles.sheetHint, { color: colors.homeMuted, paddingVertical: spacing.md }]}>
+              No boards yet — name one above to create it.
+            </Text>
+          }
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => onPickBoard(item.id, item.name)}
+              style={[styles.sheetRow, { borderBottomColor: colors.homeLine }]}
+            >
+              <Feather name="folder" size={16} color={colors.homeMuted} />
+              <Text style={[styles.sheetRowLabel, { color: colors.homeInk }]} numberOfLines={1}>{item.name}</Text>
+              <Text style={[styles.sectionMeta, { color: colors.homeMuted }]}>{item.count}</Text>
+            </TouchableOpacity>
+          )}
+        />
       </View>
-    </Modal>
+    </Sheet>
   );
 }
 
@@ -665,7 +650,6 @@ function FilterSheet({ visible, title, searchable, items, value, onSelect, onClo
   onClose(): void;
 }) {
   const colors = useColors();
-  const insets = useSafeAreaInsets();
   const [q, setQ] = useState('');
   const shown = useMemo(() => {
     const lower = q.trim().toLowerCase();
@@ -676,50 +660,37 @@ function FilterSheet({ visible, title, searchable, items, value, onSelect, onClo
   const pick = (v: string | null) => { setQ(''); onSelect(v); };
 
   return (
-    <Modal visible={visible} transparent animationType="slide" onRequestClose={close}>
-      <View style={styles.sheetBackdrop}>
-        <TouchableOpacity style={StyleSheet.absoluteFill} activeOpacity={1} onPress={close} />
-        <View style={[styles.sheet, {
-          backgroundColor: colors.homeSurface,
-          borderColor: colors.homeLine,
-          paddingBottom: insets.bottom + spacing.md,
-        }]}>
-          <View style={styles.sheetHeader}>
-            <Text style={[styles.sheetTitle, { color: colors.homeInk }]}>{title}</Text>
-            <TouchableOpacity onPress={close} hitSlop={8}>
-              <Feather name="x" size={20} color={colors.homeMuted} />
-            </TouchableOpacity>
-          </View>
-          {searchable && (
-            <TextInput
-              value={q}
-              onChangeText={setQ}
-              placeholder={`Search ${title.toLowerCase()}s`}
-              placeholderTextColor={colors.homeMuted}
-              autoCorrect={false}
-              style={[styles.sheetSearch, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
-            />
-          )}
-          <FlatList
-            data={[{ value: '', label: `All ${title.toLowerCase()}s` }, ...shown]}
-            keyExtractor={item => item.value || '__all'}
-            keyboardShouldPersistTaps="handled"
-            renderItem={({ item }) => {
-              const active = item.value ? item.value === value : value === null;
-              return (
-                <TouchableOpacity
-                  onPress={() => pick(item.value || null)}
-                  style={[styles.sheetRow, { borderBottomColor: colors.homeLine }]}
-                >
-                  <Text style={[styles.sheetRowLabel, { color: colors.homeInk }]} numberOfLines={2}>{item.label}</Text>
-                  {active && <Feather name="check" size={16} color={colors.homeCoral} />}
-                </TouchableOpacity>
-              );
-            }}
+    <Sheet visible={visible} onClose={close} title={title} scroll={false}>
+      <View style={styles.sheetBody}>
+        {searchable && (
+          <TextInput
+            value={q}
+            onChangeText={setQ}
+            placeholder={`Search ${title.toLowerCase()}s`}
+            placeholderTextColor={colors.homeMuted}
+            autoCorrect={false}
+            style={[styles.sheetSearch, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
           />
-        </View>
+        )}
+        <FlatList
+          data={[{ value: '', label: `All ${title.toLowerCase()}s` }, ...shown]}
+          keyExtractor={item => item.value || '__all'}
+          keyboardShouldPersistTaps="handled"
+          renderItem={({ item }) => {
+            const active = item.value ? item.value === value : value === null;
+            return (
+              <TouchableOpacity
+                onPress={() => pick(item.value || null)}
+                style={[styles.sheetRow, { borderBottomColor: colors.homeLine }]}
+              >
+                <Text style={[styles.sheetRowLabel, { color: colors.homeInk }]} numberOfLines={2}>{item.label}</Text>
+                {active && <Feather name="check" size={16} color={colors.homeCoral} />}
+              </TouchableOpacity>
+            );
+          }}
+        />
       </View>
-    </Modal>
+    </Sheet>
   );
 }
 
@@ -759,10 +730,7 @@ const styles = StyleSheet.create({
   secondaryLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   primaryBtn: { minHeight: 48, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderRadius: radius.pill, paddingVertical: 13 },
   primaryLabel: { fontSize: 14, fontFamily: 'Inter_700Bold' },
-  sheetBackdrop: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,0.35)' },
-  sheet: { maxHeight: '75%', borderTopLeftRadius: radius.xl, borderTopRightRadius: radius.xl, borderWidth: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.lg, gap: spacing.md },
-  sheetHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  sheetTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' },
+  sheetBody: { flexShrink: 1, gap: spacing.md },
   sheetSearch: { borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md, height: 40, fontSize: 15, fontFamily: 'Inter_400Regular' },
   sheetRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.md, paddingVertical: 13, borderBottomWidth: StyleSheet.hairlineWidth },
   sheetHint: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },

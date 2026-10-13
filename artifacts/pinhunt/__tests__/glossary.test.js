@@ -11,6 +11,8 @@ const RETIRED = [
   ['"In your ISO" (use "On your ISO")', /['"`>]\s*In your ISO/],
   ['"In Collection" (use "Owned" / "You own N")', /['"`>]\s*In Collection\b/],
   ['"For trade" as a badge label (use "For Trade")', /label:\s*'For trade'/],
+  ['"Light Mode" (use "Light Side", #224)', /['"`>]\s*Light Mode\b/],
+  ['"Dark Mode" (use "Dark Side", #224)', /['"`>]\s*Dark Mode\b/],
 ];
 
 const ROOT = path.resolve(__dirname, '..');
@@ -24,7 +26,7 @@ function sourceFiles(dir) {
 }
 
 describe('collecting glossary', () => {
-  const files = ['app', 'components'].flatMap(d => sourceFiles(path.join(ROOT, d)));
+  const files = ['app', 'components', 'hooks'].flatMap(d => sourceFiles(path.join(ROOT, d)));
 
   it('scans the app source', () => {
     expect(files.length).toBeGreaterThan(20);

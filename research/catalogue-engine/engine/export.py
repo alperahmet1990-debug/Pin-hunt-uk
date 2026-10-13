@@ -131,6 +131,8 @@ def write_outputs(out_dir, store, pins, sets, dupes, seed_notes=None):
                                   fields={fn: dict(value=r.get("value"), confidence=r.get("confidence"), status=r["status"]) for fn, r in s["fields"].items()})
                              for k, s in sorted(sets.items())]), fh, indent=1, default=str)
 
+    write_staging_payload(f"{out_dir}/staging_payload.json", store, pins, sets, rows, run_date)
+
     wb = Workbook()
     def sheet(title, data, first=False, widths=None):
         ws = wb.active if first else wb.create_sheet(title)
@@ -217,3 +219,62 @@ def write_outputs(out_dir, store, pins, sets, dupes, seed_notes=None):
     sheet("Packets", store.packets)
     wb.save(f"{out_dir}/catalogue_research_output.xlsx")
     return rows
+
+
+STAGING_FORMAT = "pinhunt-research-run/v1"
+# Master Catalogue columns carried into catalogue_candidates.proposed (values only).
+PROPOSED_COLUMNS = ["Pin name", "Brand", "Series", "Characters", "Main character", "Release year", "Release date",
+                    "Edition type", "Edition size", "Park / Retailer", "Release scope", "Original price", "Currency",
+                    "external_ids", "Categories", "Notes", "Collection name", "Release wave", "Collection type",
+                    "Expected pin count", "Set count check", "visual_form", "visual_colours", "visual_features",
+                    "pack_product_code", "pin_name_source"]
+
+
+def _claim_out(c):
+    return dict(field=c["field"], value=c["value"], source_url=c["url"] or None, publisher=c.get("publisher") or None,
+                source_class=c.get("source_class") or "none", method=c["method"], note=c["note"] or None,
+                claim_ref=c["claim_id"])
+
+
+def write_staging_payload(path, store, pins, sets, rows, run_date, only_keys=None):
+    """Payload for POST /api/admin/research/runs (loaded into catalogue_* staging tables)."""
+    import subprocess
+    from . import SPEC_VERSION
+    try:
+        commit = subprocess.run(["git", "rev-parse", "--short=12", "HEAD"], capture_output=True, text=True, check=True).stdout.strip()
+    except Exception:
+        commit = "0000000"
+    by_key = {}
+    for c in store.claims:
+        by_key.setdefault(c["key"], []).append(_claim_out(c))
+    row_by_key = {r["research_key"]: r for r in rows}
+    cands = []
+    for key, p in sorted(pins.items()):
+        if only_keys is not None and key not in only_keys:
+            continue
+        r = row_by_key[key]
+        cands.append(dict(
+            research_key=key, entity_type="pin", set_research_key=p["set_key"],
+            proposed={k: r[k] for k in PROPOSED_COLUMNS if r.get(k) not in ("", None)},
+            record_confidence=p["record_confidence"], engine_verified=r["verified"] == "Yes",
+            review_reasons=p["review_reasons"], warnings=p.get("warnings", []),
+            duplicate_status=r["duplicate_status"] or "NEW", duplicate_pinhunt_id=r["duplicate_of"] or None,
+            evidence=by_key.get(key, [])))
+    wanted_sets = {c["set_research_key"] for c in cands}
+    for key, s in sorted(sets.items()):
+        if only_keys is not None and key not in wanted_sets:
+            continue
+        f = s["fields"]
+        name = f.get("set_name") or f.get("family") or {}
+        cands.append(dict(
+            research_key=key, entity_type="set", set_research_key=s["parent"] or None,
+            proposed={k: (", ".join(map(str, r["value"])) if isinstance(r.get("value"), list) else r.get("value"))
+                      for k, r in f.items() if r.get("value") not in (None, [], "")},
+            record_confidence=name.get("confidence") or "Unverified", engine_verified=False,
+            review_reasons=[f"set {s['completeness']}"] if s["completeness"].startswith(("incomplete", "over")) else [],
+            warnings=[f"variants: {k}" for k, r in f.items() if r["status"] in ("variants", "conflict")],
+            duplicate_status="NEW", duplicate_pinhunt_id=None, evidence=by_key.get(key, [])))
+    with open(path, "w") as fh:
+        json.dump(dict(format=STAGING_FORMAT, engine_version=f"engine-spec-v{SPEC_VERSION}", git_commit=commit,
+                       generated=run_date, candidates=cands), fh, indent=1, default=str)
+    return len(cands)

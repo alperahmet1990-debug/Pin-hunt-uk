@@ -12,6 +12,8 @@ import {
   ActivityIndicator,
   Image,
   Keyboard,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
   Platform,
   ScrollView,
   StyleSheet,
@@ -31,6 +33,12 @@ import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { getPinImageSource } from '@/utils/pinImage';
 import { StatusBadge } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
+import {
+  SEARCH_PAGE_SIZE,
+  appendSearchPage,
+  hasMoreResults,
+  resultCountLabel,
+} from '@/utils/searchPaging';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 const RECENTS_KEY = 'recent_pin_searches';
@@ -79,6 +87,12 @@ export default function SearchScreen() {
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [results, setResults] = useState<CataloguePin[]>([]);
   const [searching, setSearching] = useState(false);
+  const [total, setTotal] = useState(0);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [loadMoreFailed, setLoadMoreFailed] = useState(false);
+  const offsetRef = useRef(0);
+  const loadingMoreRef = useRef(false);
+  const moreRef = useRef(false);
   const [recents, setRecents] = useState<string[]>([]);
   const seq = useRef(0);
 
@@ -126,14 +140,19 @@ export default function SearchScreen() {
     const q = query.trim();
     const mySeq = ++seq.current;
     setResults([]);
+    setTotal(0);
+    setLoadingMore(false);
+    setLoadMoreFailed(false);
+    offsetRef.current = 0;
+    loadingMoreRef.current = false;
+    moreRef.current = false;
 
     if (!q) { setSearching(false); return; }
 
     // Mock-mode fallback: filter cached list locally.
     if (!repository) {
       const lower = q.toLowerCase();
-      setResults(
-        pinsRef.current
+      const all = pinsRef.current
           .filter(
             p =>
               p.title.toLowerCase().includes(lower) ||
@@ -141,30 +160,24 @@ export default function SearchScreen() {
               p.collection.toLowerCase().includes(lower) ||
               p.brand.toLowerCase().includes(lower),
           )
-          .sort((a, b) => matchRank(a, q) - matchRank(b, q))
-          .slice(0, 30),
-      );
+          .sort((a, b) => matchRank(a, q) - matchRank(b, q));
+      setResults(all);
+      setTotal(all.length);
       return;
     }
 
     setSearching(true);
     const timer = setTimeout(async () => {
       try {
-        const [textMatches, characterMatches] = await Promise.all([
-          repository.searchPins(q, { limit: 30 }),
-          repository.searchPins('', { character: q, limit: 30 }),
-        ]);
+        const page = await repository.searchPinsPage(q, { limit: SEARCH_PAGE_SIZE, offset: 0 });
         if (mySeq !== seq.current) return;
-        const seen = new Set<string>();
-        const merged: CataloguePin[] = [];
-        for (const pin of [...textMatches, ...characterMatches]) {
-          if (!seen.has(pin.id)) { seen.add(pin.id); merged.push(pin); }
-        }
-        // Rank so character matches (collector intent) outrank incidental
-        // text matches, then slice — otherwise a relevant character pin
-        // could be pushed past the 30-result cap by noisy matches.
-        merged.sort((a, b) => matchRank(a, q) - matchRank(b, q));
-        setResults(merged.slice(0, 30));
+        // Rank within the page so character matches (collector intent) come
+        // before incidental text matches; later pages append in server order.
+        const ranked = page.pins.slice().sort((a, b) => matchRank(a, q) - matchRank(b, q));
+        offsetRef.current = page.pins.length;
+        moreRef.current = hasMoreResults(offsetRef.current, page.total, page.pins.length);
+        setResults(ranked);
+        setTotal(page.total);
       } catch {
         if (mySeq === seq.current) setResults([]);
       } finally {
@@ -174,6 +187,40 @@ export default function SearchScreen() {
 
     return () => clearTimeout(timer);
   }, [query, repository]);
+
+  const loadMore = useCallback(async () => {
+    const q = query.trim();
+    if (!repository || !q || !moreRef.current || loadingMoreRef.current) return;
+    const mySeq = seq.current;
+    loadingMoreRef.current = true;
+    setLoadingMore(true);
+    setLoadMoreFailed(false);
+    try {
+      const page = await repository.searchPinsPage(q, {
+        limit: SEARCH_PAGE_SIZE,
+        offset: offsetRef.current,
+      });
+      if (mySeq !== seq.current) return;
+      offsetRef.current += page.pins.length;
+      moreRef.current = hasMoreResults(offsetRef.current, page.total, page.pins.length);
+      setResults(prev => appendSearchPage(prev, page.pins));
+      setTotal(page.total);
+    } catch {
+      if (mySeq === seq.current) setLoadMoreFailed(true);
+    } finally {
+      if (mySeq === seq.current) {
+        loadingMoreRef.current = false;
+        setLoadingMore(false);
+      }
+    }
+  }, [query, repository]);
+
+  const onScroll = useCallback((e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const { layoutMeasurement, contentOffset, contentSize } = e.nativeEvent;
+    if (contentSize.height - (layoutMeasurement.height + contentOffset.y) < 400) {
+      void loadMore();
+    }
+  }, [loadMore]);
 
   const openPin = useCallback((pin: CataloguePin) => {
     saveRecent(query);
@@ -228,6 +275,8 @@ export default function SearchScreen() {
       <ScrollView
         style={styles.body}
         keyboardShouldPersistTaps="handled"
+        onScroll={onScroll}
+        scrollEventThrottle={100}
         contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxl }}
       >
         {showIdle ? (
@@ -326,7 +375,11 @@ export default function SearchScreen() {
                 </TouchableOpacity>
               </>
             ) : (
-              results.map(pin => {
+              <>
+              <Text style={[styles.resultCount, { color: colors.homeMuted }]} accessibilityRole="header">
+                {resultCountLabel(total)}
+              </Text>
+              {results.map(pin => {
                 const status = getEntry(pin.id)?.status;
                 const inCollection = !!status && status !== 'none';
                 return (
@@ -360,7 +413,21 @@ export default function SearchScreen() {
                     </TouchableOpacity>
                   </TouchableOpacity>
                 );
-              })
+              })}
+              {loadingMore ? (
+                <View style={styles.stateRow}>
+                  <ActivityIndicator size="small" color={colors.homeMuted} />
+                  <Text style={[styles.stateText, { color: colors.homeMuted }]}>Loading more…</Text>
+                </View>
+              ) : loadMoreFailed ? (
+                <TouchableOpacity onPress={() => void loadMore()} style={styles.stateRow} accessibilityRole="button">
+                  <Feather name="refresh-cw" size={14} color={colors.homeMuted} />
+                  <Text style={[styles.stateText, { color: colors.homeMuted }]}>Couldn&apos;t load more. Tap to retry</Text>
+                </TouchableOpacity>
+              ) : results.length >= total ? (
+                <Text style={[styles.endOfList, { color: colors.homeMuted }]}>End of results</Text>
+              ) : null}
+              </>
             )}
           </View>
         )}
@@ -430,6 +497,8 @@ const styles = StyleSheet.create({
     padding: spacing.sm + 2,
   },
   popularImage: { width: '100%', height: '100%' },
+  resultCount: { fontSize: 13, fontFamily: 'Inter_500Medium', marginBottom: spacing.xs },
+  endOfList: { fontSize: 13, textAlign: 'center', paddingVertical: spacing.lg, fontFamily: 'Inter_400Regular' },
   stateRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.lg },
   stateText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   addPinLink: { flexDirection: 'row', alignItems: 'center', gap: 8, borderWidth: 1, borderRadius: 18, paddingHorizontal: 14, paddingVertical: 12, marginTop: 12 },

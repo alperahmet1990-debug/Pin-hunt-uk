@@ -196,9 +196,32 @@ class SupabasePinRepository implements PinRepository {
   // ── searchPins ─────────────────────────────────────────────────────────
 
   async searchPins(query: string, filters: PinFilters = {}): Promise<CataloguePin[]> {
+    const q = await this.buildSearchQuery(query, filters, false);
+    if (!q) return [];
+    const { data, error } = await q;
+    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+    return (data as unknown as PinRow[]).map(rowToPin);
+  }
+
+  async searchPinsPage(
+    query: string,
+    filters: PinFilters = {},
+  ): Promise<{ pins: CataloguePin[]; total: number }> {
+    const q = await this.buildSearchQuery(query, filters, true);
+    if (!q) return { pins: [], total: 0 };
+    const { data, error, count } = await q;
+    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+    const pins = (data as unknown as PinRow[]).map(rowToPin);
+    return { pins, total: count ?? pins.length };
+  }
+
+  /** Shared filter/search query for searchPins and searchPinsPage; null = no possible matches. */
+  private async buildSearchQuery(query: string, filters: PinFilters, withCount: boolean) {
     // Build the base query. RLS automatically restricts to verification_status='verified'
     // when using the anon key — no need to duplicate that check here.
-    let q = this.client.from('pins').select(SELECT_PINS);
+    let q = withCount
+      ? this.client.from('pins').select(SELECT_PINS, { count: 'exact' })
+      : this.client.from('pins').select(SELECT_PINS);
 
     // Archived pins (catalogue_status='archived' and/or archived_at set —
     // retired legacy records, and catalogue-filler seed batches that were
@@ -274,7 +297,7 @@ class SupabasePinRepository implements PinRepository {
       } else if (safe) {
         q = q.or(`all_characters.ilike.%${safe}%,main_character.ilike.%${safe}%`);
       } else {
-        return [];
+        return null;
       }
     }
 
@@ -285,14 +308,14 @@ class SupabasePinRepository implements PinRepository {
         .select('id')
         .ilike('name', `%${filters.category}%`);
 
-      if (!catRows?.length) return [];
+      if (!catRows?.length) return null;
 
       const { data: pcRows } = await this.client
         .from('pin_categories')
         .select('pin_id')
         .in('category_id', catRows.map(r => r.id));
 
-      if (!pcRows?.length) return [];
+      if (!pcRows?.length) return null;
       q = q.in('id', [...new Set(pcRows.map(r => r.pin_id))]);
     }
 
@@ -314,11 +337,8 @@ class SupabasePinRepository implements PinRepository {
       q = q.range(filters.offset, filters.offset + (filters.limit ?? 50) - 1);
     }
 
-    q = q.order('title');
-
-    const { data, error } = await q;
-    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    return (data as unknown as PinRow[]).map(rowToPin);
+    // Secondary key keeps paging stable when titles repeat.
+    return q.order('title').order('id');
   }
 
   // ── getPinById / getPinByPinhuntId ─────────────────────────────────────

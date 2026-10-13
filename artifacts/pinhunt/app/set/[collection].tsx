@@ -34,7 +34,7 @@ export default function SetDetailScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection: userCollection, getEntry } = useCollection();
-  const { pins: catalogue, repository, ensureCollections } = usePinCatalogue();
+  const { pins: catalogue, loading: catalogueLoading, repository, ensureCollections } = usePinCatalogue();
 
   const [filter, setFilter] = useState<PinFilter>('all');
   const [setLoading, setSetLoading] = useState(true);
@@ -78,6 +78,10 @@ export default function SetDetailScreen() {
     [catalogue, collectionParam],
   );
 
+  // Placeholders while this set (or, before it exists, the catalogue) is still
+  // loading. Once pins are showing, a catalogue refresh doesn't hide them.
+  const loading = setLoading || (catalogueLoading && setPins.length === 0);
+
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
 
   const ownedIds = useMemo(
@@ -104,21 +108,19 @@ export default function SetDetailScreen() {
   const pct = total > 0 ? ownedCount / total : 0;
   const isComplete = ownedCount === total && total > 0;
 
-  const FILTERS: SegmentedControlOption<PinFilter>[] = [
-    { value: 'all', label: `All · ${total}`, tone: 'neutral' },
-    { value: 'owned', label: `Owned · ${ownedCount}`, tone: 'owned' },
-    { value: 'missing', label: `Missing · ${missingPins.length}`, tone: 'coral' },
-  ];
+  const FILTERS: SegmentedControlOption<PinFilter>[] = loading
+    ? [
+        { value: 'all', label: 'All', tone: 'neutral' },
+        { value: 'owned', label: 'Owned', tone: 'owned' },
+        { value: 'missing', label: 'Missing', tone: 'coral' },
+      ]
+    : [
+        { value: 'all', label: `All · ${total}`, tone: 'neutral' },
+        { value: 'owned', label: `Owned · ${ownedCount}`, tone: 'owned' },
+        { value: 'missing', label: `Missing · ${missingPins.length}`, tone: 'coral' },
+      ];
 
-  if (setLoading) {
-    return (
-      <ScreenContainer>
-        <Stack.Screen options={{ headerShown: false }} />
-      </ScreenContainer>
-    );
-  }
-
-  if (setPins.length === 0) {
+  if (!loading && setPins.length === 0) {
     return (
       <ScreenContainer>
         <Stack.Screen options={{ headerShown: false }} />
@@ -156,7 +158,7 @@ export default function SetDetailScreen() {
           >
             <Feather name="chevron-left" size={20} color={colors.homeInk} />
           </TouchableOpacity>
-          {isComplete && (
+          {!loading && isComplete && (
             <View style={[styles.completeBadge, { backgroundColor: colors.owned + '1E' }]}>
               <Feather name="award" size={13} color={colors.owned} />
               <Text style={[styles.completeBadgeLabel, { color: colors.owned }]}>Complete!</Text>
@@ -170,9 +172,11 @@ export default function SetDetailScreen() {
 
         <View style={styles.progressRow}>
           <Text style={[styles.progressText, { color: colors.homeMuted }]}>
-            {ownedCount} of {total} collected
+            {loading ? 'Loading set…' : `${ownedCount} of ${total} collected`}
           </Text>
-          <Text style={[styles.progressCount, { color: colors.homeCoralDeep }]}>{ownedCount}/{total}</Text>
+          {!loading && (
+            <Text style={[styles.progressCount, { color: colors.homeCoralDeep }]}>{ownedCount}/{total}</Text>
+          )}
         </View>
         <SetProgressBar
           progress={pct}
@@ -192,7 +196,21 @@ export default function SetDetailScreen() {
       </View>
 
       {/* ── Pin grid ── */}
-      {displayPins.length === 0 ? (
+      {loading ? (
+        <View
+          style={[styles.grid, styles.skeletonGrid]}
+          accessible
+          accessibilityRole="progressbar"
+          accessibilityLabel="Loading pins in this set"
+        >
+          {Array.from({ length: COLS * 3 }, (_, i) => (
+            <View key={i} style={{ width: TILE }}>
+              <View style={[styles.skeletonImage, { width: TILE, height: TILE, backgroundColor: colors.homeAqua }]} />
+              <View style={[styles.skeletonLabel, { backgroundColor: colors.homeLine }]} />
+            </View>
+          ))}
+        </View>
+      ) : displayPins.length === 0 ? (
         <EmptyState
           icon={filter === 'owned' ? 'check-circle' : 'search'}
           title={filter === 'owned' ? 'No owned pins in this set' : 'No missing pins — set complete!'}
@@ -255,4 +273,8 @@ const styles = StyleSheet.create({
   // Grid
   grid: { paddingTop: spacing.lg, paddingHorizontal: spacing.lg },
   gridRow: { gap: GRID_GAP, justifyContent: 'flex-start', marginBottom: spacing.lg },
+  // Loading placeholders, sized like CompactPinTile (square image + one label line)
+  skeletonGrid: { flexDirection: 'row', flexWrap: 'wrap', columnGap: GRID_GAP, rowGap: spacing.lg },
+  skeletonImage: { borderRadius: radius.md },
+  skeletonLabel: { height: 9, width: '70%', alignSelf: 'center', borderRadius: 5, marginTop: 9, marginBottom: 2 },
 });

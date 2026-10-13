@@ -1,9 +1,10 @@
-import { readFileSync, readdirSync, statSync } from 'node:fs';
-import path from 'node:path';
+// Plain JS (not TS): it reads source files from disk, and the app tsconfig has no Node types.
+const { readFileSync, readdirSync, statSync } = require('node:fs');
+const path = require('node:path');
 
 // Retired user-facing labels from the collecting glossary (docs/design/glossary.md, #108).
 // Patterns match string literals and JSX text, not code comments.
-const RETIRED: Array<[string, RegExp]> = [
+const RETIRED = [
   ['"Trade" as a filter or post-type label (use "For Trade")', /label:\s*'Trade'/],
   ['"Traders" as a tab label (use "For Trade")', /label:\s*'Traders'/],
   ['"On Your ISO" (use "On your ISO")', /['"`>]\s*On Your ISO/],
@@ -13,7 +14,7 @@ const RETIRED: Array<[string, RegExp]> = [
 ];
 
 const ROOT = path.resolve(__dirname, '..');
-function sourceFiles(dir: string): string[] {
+function sourceFiles(dir) {
   return readdirSync(dir).flatMap(name => {
     const full = path.join(dir, name);
     if (name === '__tests__' || name === 'node_modules') return [];

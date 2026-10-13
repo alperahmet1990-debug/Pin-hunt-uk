@@ -25,4 +25,4 @@ Notes:
 - "Traders" and "collectors" are fine for *people* ("3 collectors offering
   this for trade"). The rule above is about the state.
 - For Trade copies count as owned (Pin detail, Sets, Home progress).
-- `__tests__/glossary.test.ts` fails if a retired label comes back.
+- `artifacts/pinhunt/__tests__/glossary.test.js` fails if a retired label comes back.

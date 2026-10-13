@@ -23,7 +23,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useColors } from '@/hooks/useColors';
@@ -83,7 +83,12 @@ export default function SearchScreen() {
   const { pins, repository } = usePinCatalogue();
   const { getEntry } = useCollection();
 
-  const [query, setQuery] = useState('');
+  // `q` pre-fills the box, e.g. from a scan's "Search the catalogue" recovery.
+  const { q } = useLocalSearchParams<{ q?: string }>();
+  const [query, setQuery] = useState(() => (typeof q === 'string' ? q : ''));
+  useEffect(() => {
+    if (typeof q === 'string' && q) setQuery(q);
+  }, [q]);
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [results, setResults] = useState<CataloguePin[]>([]);
   const [searching, setSearching] = useState(false);

@@ -22,6 +22,14 @@ import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { identifyPin, type ImageInsights } from '@/utils/identifyPin';
+import {
+  RETAKE_TIPS,
+  RETAKE_TIPS_KEY,
+  RETAKE_TIPS_LIMIT,
+  recoveryQuery,
+  sharedCandidateSet,
+} from '@/utils/scanRecovery';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -57,6 +65,35 @@ function CornerMarker({ corner, color }: { corner: 'tl' | 'tr' | 'bl' | 'br'; co
   );
 }
 
+// ─── Recovery option row ─────────────────────────────────────────────────────
+
+function RecoveryOption({ icon, label, detail, onPress, colors }: {
+  icon: React.ComponentProps<typeof Feather>['name'];
+  label: string;
+  detail?: string;
+  onPress: () => void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.8}
+      accessibilityRole="button"
+      accessibilityLabel={detail ? `${label}, ${detail}` : label}
+      style={[styles.recoveryOption, { borderTopColor: colors.homeLine }]}
+    >
+      <Feather name={icon} size={18} color={colors.homeCoral} />
+      <View style={{ flex: 1 }}>
+        <Text style={[styles.recoveryLabel, { color: colors.homeInk }]}>{label}</Text>
+        {detail ? (
+          <Text style={[styles.recoveryDetail, { color: colors.homeMuted }]} numberOfLines={1}>{detail}</Text>
+        ) : null}
+      </View>
+      <Feather name="chevron-right" size={16} color={colors.homeMuted} />
+    </TouchableOpacity>
+  );
+}
+
 // ─── Main screen ─────────────────────────────────────────────────────────────
 
 export default function ScanScreen() {
@@ -73,6 +110,9 @@ export default function ScanScreen() {
   const [insights, setInsights] = useState<ImageInsights | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [noMatchFound, setNoMatchFound] = useState(false);
+  // "None of these" keeps the photo and offers ways forward instead of resetting.
+  const [showRecovery, setShowRecovery] = useState(false);
+  const [showRetakeTips, setShowRetakeTips] = useState(false);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
@@ -160,6 +200,7 @@ export default function ScanScreen() {
     if (!captured) return;
     setErrorMsg(null);
     setNoMatchFound(false);
+    setShowRecovery(false);
     setScanState('identifying');
 
     try {
@@ -223,7 +264,27 @@ export default function ScanScreen() {
     setInsights(null);
     setErrorMsg(null);
     setNoMatchFound(false);
+    setShowRecovery(false);
   };
+
+  // ── "None of these": recovery that keeps the photo ───────────────────────────
+  const openRecovery = async () => {
+    setShowRecovery(true);
+    try {
+      const seen = Number(await AsyncStorage.getItem(RETAKE_TIPS_KEY)) || 0;
+      setShowRetakeTips(seen < RETAKE_TIPS_LIMIT);
+      if (seen < RETAKE_TIPS_LIMIT) await AsyncStorage.setItem(RETAKE_TIPS_KEY, String(seen + 1));
+    } catch {
+      setShowRetakeTips(false);
+    }
+  };
+
+  const searchFromScan = () => {
+    const q = recoveryQuery(insights);
+    router.push(q ? { pathname: '/search', params: { q } } : '/search');
+  };
+
+  const recoverySet = sharedCandidateSet(matches.map(m => m.pin.collection));
 
   // ── Hand off to Add Pin ───────────────────────────────────────────────────────
   // Carries the already-captured photo forward, plus any characters the AI
@@ -330,7 +391,7 @@ export default function ScanScreen() {
               </TouchableOpacity>
             )}
             <TouchableOpacity
-              onPress={() => router.push('/search')}
+              onPress={searchFromScan}
               activeOpacity={0.85}
               accessibilityRole="button"
               accessibilityLabel="Search instead"
@@ -531,22 +592,64 @@ export default function ScanScreen() {
               </TouchableOpacity>
             ))}
 
-            <TouchableOpacity onPress={handleReset} style={styles.noneMatch} activeOpacity={0.7}>
-              <Text style={[styles.noneMatchText, { color: colors.homeMuted }]}>
-                None of these — try again
-              </Text>
-            </TouchableOpacity>
+            {!showRecovery ? (
+              <TouchableOpacity
+                onPress={openRecovery}
+                style={styles.noneMatch}
+                activeOpacity={0.7}
+                accessibilityRole="button"
+              >
+                <Text style={[styles.noneMatchText, { color: colors.homeCoralDeep }]}>None of these?</Text>
+              </TouchableOpacity>
+            ) : (
+              <View
+                style={[styles.recoveryCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+                accessibilityLabel="Not the right pin? Options"
+              >
+                <Text style={[styles.recoveryTitle, { color: colors.homeInk }]}>Not the right pin?</Text>
+                <Text style={[styles.recoverySub, { color: colors.homeMuted }]}>Your photo is kept. Try one of these:</Text>
 
-            <TouchableOpacity
-              onPress={handleAddPinInstead}
-              activeOpacity={0.85}
-              style={[styles.addPinCta, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12', borderRadius: 18 }]}
-            >
-              <Feather name="plus-circle" size={16} color={colors.homeCoral} />
-              <Text style={[styles.addPinCtaLabel, { color: colors.homeCoral }]}>
-                Still can't find it? Add this pin yourself
-              </Text>
-            </TouchableOpacity>
+                <RecoveryOption
+                  icon="search"
+                  label="Search the catalogue"
+                  detail={recoveryQuery(insights) ? `for “${recoveryQuery(insights)}”` : undefined}
+                  onPress={searchFromScan}
+                  colors={colors}
+                />
+                {recoverySet && (
+                  <RecoveryOption
+                    icon="grid"
+                    label="Browse this set"
+                    detail={recoverySet}
+                    onPress={() => router.push({ pathname: '/set/[collection]', params: { collection: recoverySet } })}
+                    colors={colors}
+                  />
+                )}
+                <RecoveryOption
+                  icon="camera"
+                  label="Retake the photo"
+                  onPress={handleScanPin}
+                  colors={colors}
+                />
+                {showRetakeTips && (
+                  <View style={styles.tips} accessibilityLabel={`Tips: ${RETAKE_TIPS.join(', ')}`}>
+                    {RETAKE_TIPS.map(tip => (
+                      <View key={tip} style={styles.tipRow}>
+                        <Feather name="check" size={12} color={colors.homeMuted} />
+                        <Text style={[styles.tipText, { color: colors.homeMuted }]}>{tip}</Text>
+                      </View>
+                    ))}
+                  </View>
+                )}
+                <RecoveryOption
+                  icon="plus-circle"
+                  label="Suggest this pin"
+                  detail="Add it to the catalogue with your photo"
+                  onPress={handleAddPinInstead}
+                  colors={colors}
+                />
+              </View>
+            )}
           </View>
         )}
 
@@ -750,7 +853,16 @@ const styles = StyleSheet.create({
   confidenceWrap: { paddingRight: 12, paddingTop: 10, alignItems: 'center', minWidth: 68 },
   confidenceScore: { fontSize: 20, fontFamily: 'Inter_700Bold' },
   confidenceLabel: { fontSize: 9, fontFamily: 'Inter_600SemiBold', textAlign: 'center', marginTop: 2 },
-  noneMatch: { alignItems: 'center', paddingVertical: 14 },
-  noneMatchText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
+  noneMatch: { alignItems: 'center', justifyContent: 'center', minHeight: 44, paddingVertical: 10 },
+  noneMatchText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  recoveryCard: { borderWidth: 1, borderRadius: 18, paddingHorizontal: 16, paddingTop: 14, marginTop: 4, marginBottom: 12 },
+  recoveryTitle: { fontSize: 16, fontFamily: 'Inter_700Bold' },
+  recoverySub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2, marginBottom: 8 },
+  recoveryOption: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52, borderTopWidth: StyleSheet.hairlineWidth, paddingVertical: 8 },
+  recoveryLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  recoveryDetail: { fontSize: 12.5, fontFamily: 'Inter_400Regular', marginTop: 1 },
+  tips: { paddingLeft: 30, paddingBottom: 8, gap: 4 },
+  tipRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  tipText: { fontSize: 12.5, fontFamily: 'Inter_400Regular' },
   // Tips
 });

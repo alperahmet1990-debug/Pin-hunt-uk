@@ -5,6 +5,7 @@ import { sortBoardPins } from '../utils/boardSort';
 
 const mockPush = jest.fn();
 const mockSetThumb = jest.fn();
+const mockRemoveMany = jest.fn();
 const mockPins = [
   { id: 'p1', title: 'Mickey', collection: 'Park Icons', characters: [], releaseYear: 2022 },
   { id: 'p2', title: 'Dumbo', collection: 'Park Icons', characters: [], releaseYear: 2024 },
@@ -32,14 +33,18 @@ jest.mock('@/context/BoardsContext', () => ({
     getBoardPins: () => mockPins,
     addPinToBoard: jest.fn(),
     removePinFromBoard: jest.fn(),
+    removePinsFromBoard: mockRemoveMany,
+    addPinsToBoard: jest.fn(),
+    customBoards: [],
     deleteBoard: jest.fn(),
     setBoardThumbnail: mockSetThumb,
     renameBoard: jest.fn(),
   }),
 }));
 jest.mock('@/context/CollectionContext', () => ({
-  useCollection: () => ({ collection: { p1: { pinId: 'p1', status: 'owned', quantity: 2 } }, getEntry: () => undefined }),
+  useCollection: () => ({ collection: { p1: { pinId: 'p1', status: 'owned', quantity: 2 } }, getEntry: () => undefined, setStatuses: jest.fn(), restoreEntries: jest.fn() }),
 }));
+jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: jest.fn(), hide: jest.fn() }) }));
 jest.mock('@/context/PinCatalogueContext', () => ({ usePinCatalogue: () => ({ pins: mockPins }) }));
 
 beforeEach(() => jest.clearAllMocks());
@@ -83,5 +88,18 @@ describe('Board detail grid (UX-019)', () => {
     expect(screen.queryByRole('header', { name: 'Remove Pin?' })).toBeNull();
     await fireEvent.press(screen.getByRole('button', { name: 'Remove Dumbo from this board' }));
     expect(screen.getByRole('header', { name: 'Remove Pin?' })).toBeTruthy();
+  });
+
+  it('select mode takes several pins off the board at once', async () => {
+    await render(<BoardDetailScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Select pins' }));
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Dumbo' }));
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Castle' }));
+    expect(screen.getByText('2 selected')).toBeTruthy();
+    // Tapping a tile selects instead of opening it.
+    expect(mockPush).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByRole('button', { name: 'Remove from board, 2 pins' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Remove' }));
+    expect(mockRemoveMany).toHaveBeenCalledWith('b1', ['p2', 'p3']);
   });
 });

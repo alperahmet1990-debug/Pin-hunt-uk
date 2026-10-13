@@ -18,6 +18,13 @@ MASTER_COLUMNS = ["pinhunt_id", "Pin name", "Brand", "Series", "Characters", "Re
 EXTRA_COLUMNS = ["research_key", "record_confidence", "verified", "review_status", "warnings", "duplicate_status", "duplicate_of", "duplicate_basis",
                  "field_conflicts", "inherited_fields", "pin_name_source", "visual_form", "visual_colours", "visual_features", "pack_product_code"]
 
+def safe_cell(v):
+    """Neutralise spreadsheet formula injection from source-derived text (=, +, -, @, tab, CR)."""
+    if isinstance(v, str) and v[:1] in ("=", "+", "-", "@", "\t", "\r"):
+        return "'" + v
+    return v
+
+
 FILL = {"High": "C6EFCE", "Medium": "FFEB9C", "Low": "FFC7CE", "Unverified": "D9D9D9", "conflict": "F4B183", "variants": "FFF2CC", "regional variants": "DDEBF7", "Yes": "C6EFCE",
         "NEEDS REVIEW": "FFC7CE", "READY FOR HUMAN SIGN-OFF": "C6EFCE"}
 
@@ -108,7 +115,7 @@ def write_outputs(out_dir, store, pins, sets, dupes, seed_notes=None):
     os.makedirs(out_dir, exist_ok=True)
     with open(f"{out_dir}/master_catalogue_candidates.csv", "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=MASTER_COLUMNS + EXTRA_COLUMNS)
-        w.writeheader(), w.writerows(rows)
+        w.writeheader(), w.writerows([{k: safe_cell(v) for k, v in r.items()} for r in rows])
     claims_by_id = {c["claim_id"]: c for c in store.claims}
     with open(f"{out_dir}/records_with_evidence.json", "w") as fh:
         json.dump(dict(generated=run_date, note="Research output. Not import-safe: pinhunt_ids are never minted here.",
@@ -132,10 +139,10 @@ def write_outputs(out_dir, store, pins, sets, dupes, seed_notes=None):
             cols = list(data[0].keys())
             ws.append(cols)
             for d in data:
-                ws.append([(", ".join(map(str, d[c])) if isinstance(d[c], (list, tuple, set)) else d[c]) for c in cols])
+                ws.append([safe_cell(", ".join(map(str, d[c])) if isinstance(d[c], (list, tuple, set)) else d[c]) for c in cols])
         else:
             for d in data:
-                ws.append(list(d))
+                ws.append([safe_cell(x) for x in d])
         for c in ws[1]:
             c.font, c.fill = Font(bold=True, color="FFFFFF"), PatternFill("solid", fgColor="2F5D62")
         ws.freeze_panes = "A2"

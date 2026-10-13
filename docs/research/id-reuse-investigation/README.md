@@ -16,6 +16,8 @@
 | Q4 | Listings and community posts at risk |
 | Q5 | Stale market-estimate and eBay-validation caches computed for the old title |
 
+**Quickest way to run them:** paste each file in `impact_queries/` (Q0–Q5) into the Supabase SQL editor. Each file starts with `set default_transaction_read_only = on;`. Step-by-step instructions are in `../catalogue-integration/README.md` §1.
+
 ## What happened
 
 - **Import:** the trusted-catalogue import (`artifacts/api-server/scripts/import-trusted-catalogue.mjs`, apply run **2026-07-31 20:59:39Z**) upserts by `pinhunt_id` first.

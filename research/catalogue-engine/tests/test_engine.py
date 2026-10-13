@@ -128,6 +128,24 @@ class EndToEnd(unittest.TestCase):
             self.assertTrue(pathlib.Path(d, "catalogue_research_output.xlsx").exists())
 
 
+class Hardening(unittest.TestCase):
+    def test_formula_injection_neutralised(self):
+        from engine.export import safe_cell
+        self.assertEqual(safe_cell("=HYPERLINK(\"http://x\")"), "'=HYPERLINK(\"http://x\")")
+        self.assertEqual(safe_cell("@SUM(A1)"), "'@SUM(A1)")
+        self.assertEqual(safe_cell(-5), -5)
+        self.assertEqual(safe_cell("Pluto"), "Pluto")
+
+    def test_bad_urls_and_pasted_text_rejected(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="f/s/a", claims=[
+            claim("characters", ["A"], "javascript:alert(1)"),
+            claim("visual_description", "x" * 700, FAN)])]))
+        reasons = sorted(r["reason"] for r in st.rejected)
+        self.assertTrue(any("http(s)" in r for r in reasons))
+        self.assertTrue(any("longer than" in r for r in reasons))
+
+
 class DedupeRegression(unittest.TestCase):
     def test_single_pin_line_never_merges_into_mystery_set(self):
         from engine.dedupe import Catalogue, match_pin

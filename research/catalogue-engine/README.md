@@ -57,7 +57,7 @@ fetch.py       polite live fetcher: allowlist + robots.txt + rate limit + JSON-L
 
 ```bash
 cd research/catalogue-engine
-python3 -m unittest discover -s tests                   # 19 tests
+python3 -m unittest discover -s tests                   # 21 tests
 python3 -m engine "evidence/*.json" --out out           # full run
 python3 -m engine.audit out/records_with_evidence.json  # no-invention audit
 python3 bench.py 5000                                   # scale benchmark (synthetic)

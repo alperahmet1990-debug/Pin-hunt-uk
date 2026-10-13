@@ -1,9 +1,15 @@
 """Load and validate evidence packets into flat claim records. Invalid claims are kept, with a reason, in `rejected`."""
 import json
+import re
 import glob
 from urllib.parse import urlparse
 from . import sources as S
 from .normalize import PIN_FIELDS, SET_FIELDS, METHODS, normalise
+
+
+MAX_VALUE_CHARS = 600          # facts are short; long values suggest pasted descriptions
+MAX_CLAIMS_PER_PACKET = 20000
+CONTROL = re.compile(r"[\x00-\x08\x0b-\x1f\x7f]")
 
 
 class Store:
@@ -13,6 +19,9 @@ class Store:
 
     def add_packet(self, pkt: dict, origin: str = ""):
         pid = pkt.get("packet_id") or origin
+        n = sum(len(x.get("claims", [])) for x in pkt.get("pins", []) + pkt.get("sets", []))
+        if n > MAX_CLAIMS_PER_PACKET:
+            raise ValueError(f"packet {pid} has {n} claims (> {MAX_CLAIMS_PER_PACKET}); split it")
         self.packets.append(dict(packet_id=pid, collector=pkt.get("collector", ""), collected_at=pkt.get("collected_at", ""),
                                  origin=origin, notes=str(pkt.get("discovery_notes", ""))[:2000]))
         for s in pkt.get("sources", []):
@@ -37,7 +46,7 @@ class Store:
         field, method, url = c.get("field"), c.get("method"), (c.get("source_url") or "").strip()
         rec = dict(claim_id=f"C{len(self.claims) + len(self.rejected) + 1:05d}", packet_id=pid, entity_type=etype,
                    key=key, set_key=set_key, field=field, raw_value=c.get("value"), method=method, url=url,
-                   note=str(c.get("note", ""))[:240])
+                   note=CONTROL.sub(" ", str(c.get("note", "")))[:240])
         allowed = PIN_FIELDS if etype == "pin" else SET_FIELDS
         reason = None
         if field not in allowed:
@@ -46,6 +55,12 @@ class Store:
             reason = f"unknown method '{method}'"
         elif method not in ("physical_pin", "editorial") and not url:
             reason = "no source URL"
+        if url and reason is None and urlparse(url).scheme not in ("http", "https"):
+            reason = "source URL must be http(s)"
+        if url and reason is None and len(url) > 2000:
+            reason = "source URL too long"
+        if reason is None and len(json.dumps(c.get("value"), default=str)) > MAX_VALUE_CHARS:
+            reason = f"value longer than {MAX_VALUE_CHARS} chars (looks like copied text, not a fact)"
         if url and reason is None and urlparse(url).path.strip("/") == "":
             reason = "source URL is a bare home page, not a specific page"
         if url and reason is None:

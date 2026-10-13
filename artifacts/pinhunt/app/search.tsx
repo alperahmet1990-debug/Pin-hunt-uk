@@ -29,6 +29,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useCollection } from '@/context/CollectionContext';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { getPinImageSource } from '@/utils/pinImage';
+import { StatusBadge } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
 
@@ -325,39 +326,41 @@ export default function SearchScreen() {
                 </TouchableOpacity>
               </>
             ) : (
-              results.map(pin => (
-                <TouchableOpacity
-                  key={pin.id}
-                  onPress={() => openPin(pin)}
-                  activeOpacity={0.8}
-                  style={[styles.resultRow, { borderBottomColor: colors.homeLine }]}
-                >
-                  <Image source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.homeAqua }]} />
-                  <View style={styles.resultInfo}>
-                    <Text style={[styles.resultTitle, { color: colors.homeInk }]} numberOfLines={1}>{pin.title}</Text>
-                    <Text style={[styles.resultMeta, { color: colors.homeMuted }]} numberOfLines={1}>
-                      {pin.brand} · {pin.collection}
-                    </Text>
-                  </View>
+              results.map(pin => {
+                const status = getEntry(pin.id)?.status;
+                const inCollection = !!status && status !== 'none';
+                return (
                   <TouchableOpacity
-                    onPress={e => { e.stopPropagation?.(); saveRecent(query); setQuickAddPin(pin); }}
-                    hitSlop={8}
+                    key={pin.id}
+                    onPress={() => openPin(pin)}
                     activeOpacity={0.8}
-                    accessibilityRole="button"
-                    accessibilityLabel={`Quick add ${pin.title}`}
-                    style={[
-                      styles.quickAddBtn,
-                      { backgroundColor: getEntry(pin.id)?.status && getEntry(pin.id)!.status !== 'none' ? colors.owned : colors.homeCoral },
-                    ]}
+                    style={[styles.resultRow, { borderBottomColor: colors.homeLine }]}
                   >
-                    <Feather
-                      name={getEntry(pin.id)?.status && getEntry(pin.id)!.status !== 'none' ? 'check' : 'plus'}
-                      size={15}
-                      color={colors.homeSurface}
-                    />
+                    <Image source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.homeAqua }]} />
+                    <View style={styles.resultInfo}>
+                      <Text style={[styles.resultTitle, { color: colors.homeInk }]} numberOfLines={1}>{pin.title}</Text>
+                      <Text style={[styles.resultMeta, { color: colors.homeMuted }]} numberOfLines={1}>
+                        {pin.brand} · {pin.collection}
+                      </Text>
+                      {inCollection && (
+                        <View style={styles.resultStatus}>
+                          <StatusBadge status={status} />
+                        </View>
+                      )}
+                    </View>
+                    <TouchableOpacity
+                      onPress={e => { e.stopPropagation?.(); saveRecent(query); setQuickAddPin(pin); }}
+                      hitSlop={8}
+                      activeOpacity={0.8}
+                      accessibilityRole="button"
+                      accessibilityLabel={inCollection ? `Change status of ${pin.title}` : `Quick add ${pin.title}`}
+                      style={[styles.quickAddBtn, { backgroundColor: colors.homeCoral }]}
+                    >
+                      <Feather name={inCollection ? 'edit-2' : 'plus'} size={inCollection ? 13 : 15} color={colors.homeSurface} />
+                    </TouchableOpacity>
                   </TouchableOpacity>
-                </TouchableOpacity>
-              ))
+                );
+              })
             )}
           </View>
         )}
@@ -442,6 +445,7 @@ const styles = StyleSheet.create({
   browseIcon: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   resultImage: { width: 44, height: 44, borderRadius: radius.sm - 2 },
   resultInfo: { flex: 1 },
+  resultStatus: { marginTop: 4 },
   quickAddBtn: {
     width: 28,
     height: 28,

@@ -6,7 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
-import { AddPinsCard } from '@/components/AddPinsCard';
+import { GetStartedCard } from '@/components/GetStartedCard';
 import { AddPinsWelcomeSheet } from '@/components/AddPinsWelcomeSheet';
 import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { useProfile } from '@/context/ProfileContext';
@@ -180,7 +180,8 @@ export default function HomeScreen() {
           <View style={[styles.heroIcon, { backgroundColor: colors.homeSurface }]}><Feather name="search" size={23} color={colors.homeCoralDeep} /></View>
         </LinearGradient>
       </TouchableOpacity>
-      <AddPinsCard />
+      {/* New collectors: the Get started checklist, else the zero-pins Add pins card. */}
+      <GetStartedCard />
       <PhotoGapsCard />
       <View style={styles.shortcuts}>
         <Shortcut icon="heart" label={'My\nCollection'} tone={colors.homeCoralDeep} onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })} colors={colors} />

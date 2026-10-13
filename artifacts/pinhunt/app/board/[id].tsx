@@ -19,9 +19,9 @@ import { useBoards } from '@/context/BoardsContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
-import { PinCard } from '@/components/PinCard';
 import { EmptyState } from '@/components/EmptyState';
-import { ConfirmDialog, ScreenContainer, Sheet } from '@/components/ui';
+import { ConfirmDialog, PinGrid, PinTile, ScreenContainer, Sheet } from '@/components/ui';
+import { BOARD_SORT_OPTIONS, sortBoardPins, type BoardSort } from '@/utils/boardSort';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
 
@@ -58,9 +58,16 @@ export default function BoardDetailScreen() {
   const [renameVisible, setRenameVisible] = useState(false);
   const [newName, setNewName] = useState('');
   const [pinToRemove, setPinToRemove] = useState<CataloguePin | null>(null);
+  const [sort, setSort] = useState<BoardSort>('recent');
+  const [sortVisible, setSortVisible] = useState(false);
 
   const board = getBoardById(id ?? '');
   const boardPins = board ? getBoardPins(board) : [];
+  const sortedPins = useMemo(
+    () => (board ? sortBoardPins(boardPins, board.pinIds, sort) : []),
+    [board, boardPins, sort],
+  );
+  const sortLabel = BOARD_SORT_OPTIONS.find(o => o.value === sort)?.label ?? '';
 
   useEffect(() => {
     if (board && !renameVisible) {
@@ -223,6 +230,24 @@ export default function BoardDetailScreen() {
             </TouchableOpacity>
           </View>
         )}
+
+        {!editMode && boardPins.length > 1 && (
+          <TouchableOpacity
+            onPress={() => setSortVisible(true)}
+            accessibilityRole="button"
+            accessibilityLabel={`Sort: ${sortLabel}`}
+            style={styles.sortBtn}
+          >
+            <Feather name="bar-chart-2" size={14} color={colors.homeMuted} style={{ transform: [{ rotate: '90deg' }] }} />
+            <Text style={[styles.sortBtnText, { color: colors.homeMuted }]}>Sort: <Text style={{ color: colors.homeInk }}>{sortLabel}</Text></Text>
+            <Feather name="chevron-down" size={14} color={colors.homeMuted} />
+          </TouchableOpacity>
+        )}
+        {editMode && (
+          <Text style={[styles.editHint, { color: colors.homeMuted }]}>
+            Tap − to remove a pin, or the picture icon to make it the board cover.
+          </Text>
+        )}
       </View>
 
       {boardPins.length === 0 ? (
@@ -238,68 +263,76 @@ export default function BoardDetailScreen() {
           onAction={board.isCustom ? () => setAddModalVisible(true) : undefined}
         />
       ) : (
-        <FlatList
-          data={boardPins}
+        <PinGrid
+          data={sortedPins}
           keyExtractor={p => p.id}
-          numColumns={2}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={[styles.grid, { paddingBottom: botPad }]}
-          columnWrapperStyle={styles.gridRow}
-          renderItem={({ item }) => (
-            <View style={styles.gridItemWrap}>
-              <PinCard
-                pin={item}
-                mode="grid"
-                seaGlass
-                onPress={() =>
-                  editMode
-                    ? handleRemovePin(item)
-                    : router.push({ pathname: '/pin/[id]', params: { id: item.id } })
-                }
-              />
-              {!editMode && board.thumbnailPinId === item.id && (
-                <View style={[styles.coverChip, { backgroundColor: colors.homeCoral }]}>
-                  <Feather name="image" size={10} color={colors.homeSurface} />
-                  <Text style={[styles.coverChipText, { color: colors.homeSurface }]}>Cover</Text>
-                </View>
-              )}
-              {editMode && (
-                <TouchableOpacity
-                  style={[styles.removeOverlay, { borderRadius: radius.lg }]}
-                  onPress={() => handleRemovePin(item)}
-                  activeOpacity={0.8}
-                >
-                  <View style={[styles.removeBadge, { backgroundColor: colors.destructive }]}>
-                    <Feather name="minus" size={14} color="#fff" />
+          contentContainerStyle={{ paddingTop: 12, paddingBottom: botPad }}
+          renderTile={(item, size) => {
+            const isCover = board.thumbnailPinId === item.id;
+            return (
+              <View>
+                <PinTile
+                  title={item.title}
+                  imageUrl={item.imageUrl}
+                  size={size}
+                  copies={editMode ? undefined : collection[item.id]?.quantity}
+                  // Edit mode only acts through the two controls below, never the tile.
+                  onPress={() => { if (!editMode) router.push({ pathname: '/pin/[id]', params: { id: item.id } }); }}
+                />
+                {!editMode && isCover && (
+                  <View pointerEvents="none" style={[styles.coverChip, { backgroundColor: colors.homeCoral }]}>
+                    <Feather name="image" size={10} color={colors.homeSurface} />
+                    <Text style={[styles.coverChipText, { color: colors.homeSurface }]}>Cover</Text>
                   </View>
+                )}
+                {/* Remove and cover are siblings with their own 44 pt targets (UX-019). */}
+                {editMode && (
                   <TouchableOpacity
-                    style={[
-                      styles.coverBadge,
-                      {
-                        backgroundColor:
-                          board.thumbnailPinId === item.id ? colors.homeCoral : 'rgba(0,0,0,0.55)',
-                      },
-                    ]}
+                    onPress={() => handleRemovePin(item)}
+                    hitSlop={8}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Remove ${item.title} from this board`}
+                    style={[styles.editControl, styles.removeControl, { backgroundColor: colors.destructive }]}
+                  >
+                    <Feather name="minus" size={16} color="#fff" />
+                  </TouchableOpacity>
+                )}
+                {editMode && (
+                  <TouchableOpacity
                     onPress={() => {
                       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                      setBoardThumbnail(
-                        board.id,
-                        board.thumbnailPinId === item.id ? undefined : item.id,
-                      );
+                      setBoardThumbnail(board.id, isCover ? undefined : item.id);
                     }}
-                    activeOpacity={0.8}
-                    accessibilityLabel={
-                          board.thumbnailPinId === item.id ? 'Remove as board cover' : 'Set as board cover'
-                    }
+                    hitSlop={8}
+                    accessibilityRole="button"
+                    accessibilityLabel={isCover ? `Remove ${item.title} as board cover` : `Set ${item.title} as board cover`}
+                    accessibilityState={{ selected: isCover }}
+                    style={[styles.editControl, styles.coverControl, { backgroundColor: isCover ? colors.homeCoral : 'rgba(0,0,0,0.55)' }]}
                   >
-                    <Feather name="image" size={13} color="#fff" />
+                    <Feather name="image" size={14} color="#fff" />
                   </TouchableOpacity>
-                </TouchableOpacity>
-              )}
-            </View>
-          )}
+                )}
+              </View>
+            );
+          }}
         />
       )}
+
+      <Sheet visible={sortVisible} onClose={() => setSortVisible(false)} title="Sort board">
+        {BOARD_SORT_OPTIONS.map(option => (
+          <TouchableOpacity
+            key={option.value}
+            onPress={() => { setSort(option.value); setSortVisible(false); }}
+            accessibilityRole="radio"
+            accessibilityState={{ checked: sort === option.value }}
+            style={[styles.menuRow, { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.homeLine }]}
+          >
+            <Text style={[styles.menuLabel, { flex: 1, color: colors.homeInk }]}>{option.label}</Text>
+            {sort === option.value && <Feather name="check" size={18} color={colors.homeCoral} />}
+          </TouchableOpacity>
+        ))}
+      </Sheet>
 
       {/* Board options (UX-041: a Sheet, so the backdrop no longer wraps the rows) */}
       <Sheet visible={menuVisible} onClose={() => setMenuVisible(false)} title="Board options">
@@ -508,38 +541,13 @@ const styles = StyleSheet.create({
   addBtnText: { fontSize: 13.5, fontFamily: 'Inter_700Bold' },
   editBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: spacing.md, height: 40, borderRadius: radius.md },
   editBtnText: { fontSize: 13.5, fontFamily: 'Inter_700Bold' },
-  // Grid
-  grid: { paddingTop: 12, paddingHorizontal: 16 },
-  gridRow: { gap: 12, justifyContent: 'space-between' },
-  gridItemWrap: { position: 'relative', flex: 1 },
-  removeOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.12)',
-  },
-  removeBadge: {
-    position: 'absolute',
-    top: 6,
-    right: 6,
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  coverBadge: {
-    position: 'absolute',
-    top: 6,
-    left: 6,
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  sortBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', minHeight: 44 },
+  sortBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  editHint: { fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18, marginTop: 4 },
+  // Grid: edit controls sit on opposite top corners, 28 pt + 8 pt slop = 44 pt targets
+  editControl: { position: 'absolute', top: 6, width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },
+  removeControl: { left: 6 },
+  coverControl: { right: 6 },
   coverChip: {
     position: 'absolute',
     top: 6,

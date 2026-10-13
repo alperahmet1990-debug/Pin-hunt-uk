@@ -4,7 +4,7 @@
  * On Your ISO (direct, explicit signal) → Potential Trades (rare two-way
  * matches — PinHunt's most differentiated result) → Complete Your Sets →
  * Based on Your Collection (open-ended discovery inferred from
- * Boards/Owned pins). See utils/findTradesEngine.ts and
+ * Owned, For Trade and ISO pins). See utils/findTradesEngine.ts and
  * hooks/useFindTrades.ts for the calculations behind each section — this
  * file is presentation only.
  *
@@ -43,6 +43,7 @@ import { formatMatchSummary } from '@/utils/tradeMatch';
 import { useFindTrades, type PotentialTradeCard, type SetOpportunity } from '@/hooks/useFindTrades';
 import { useCollection } from '@/context/CollectionContext';
 import { findTradesEmptyState, type FindTradesEmptyAction } from '@/utils/findTradesEmpty';
+import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
 
 function pinImageSource(imageUrl?: string) {
@@ -200,15 +201,15 @@ export default function FindTradesScreen() {
                     <Feather name="grid" size={20} color={colors.homeMuted} />
                     <View style={{ flex: 1, gap: spacing.xs }}>
                       <Text style={[styles.discoveryEmptyText, { color: colors.homeMuted }]}>
-                        Build a Board with a few pins of one character and we'll start recommending trades based on it.
+                        Add a few pins you own or are looking for and we'll recommend trades based on them.
                       </Text>
                       <TouchableOpacity
-                        onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })}
+                        onPress={() => router.push(ADD_PINS_ROUTE)}
                         hitSlop={{ top: 12, bottom: 12, left: 8, right: 8 }}
                         accessibilityRole="button"
                         style={styles.discoveryAction}
                       >
-                        <Text style={[styles.discoveryActionLabel, { color: colors.homeCoralDeep }]}>Create a Board</Text>
+                        <Text style={[styles.discoveryActionLabel, { color: colors.homeCoralDeep }]}>Add pins you own</Text>
                         <Feather name="chevron-right" size={14} color={colors.homeCoralDeep} />
                       </TouchableOpacity>
                     </View>

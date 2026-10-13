@@ -11,6 +11,7 @@ import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ProfileProvider, useProfile } from '@/context/ProfileContext';
 import { SubmissionNotificationsProvider } from '@/context/SubmissionNotificationsContext';
 import { UnreadMessagesProvider } from '@/context/UnreadMessagesContext';
+import { resolveGuardTarget } from '@/utils/recoveryLink';
 import { pruneOldBannerDismissals } from '@/utils/tradeBannerDismissals';
 import {
   Inter_400Regular,
@@ -31,8 +32,9 @@ const queryClient = new QueryClient();
 //   • No session → /(auth)/login
 //   • Session + no username → /complete-profile
 //   • Session + username → /(tabs) (if still in auth group)
+//   • Recovery session → /(auth)/update-password only, until the password is set
 function AuthGuard({ children }: { children: React.ReactNode }) {
-  const { session, loading: authLoading } = useAuth();
+  const { session, isRecovery, loading: authLoading } = useAuth();
   const { needsUsername, loading: profileLoading } = useProfile();
   const segments = useSegments();
   const router = useRouter();
@@ -43,23 +45,12 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (loading) return;
 
-    const inAuthGroup = segments[0] === '(auth)';
-    const inCompleteProfile = segments[0] === 'complete-profile';
-    let target: '/(auth)/login' | '/complete-profile' | '/(tabs)' | null = null;
-
-    if (!session && !inAuthGroup) {
-      // Not signed in — send to login
-      target = '/(auth)/login';
-    } else if (session && inAuthGroup) {
-      // Just signed in — check if profile is complete
-      target = needsUsername ? '/complete-profile' : '/(tabs)';
-    } else if (session && needsUsername && !inCompleteProfile) {
-      // Signed in but no username yet — must complete profile
-      target = '/complete-profile';
-    } else if (session && !needsUsername && inCompleteProfile) {
-      // Profile now complete — move into the app
-      target = '/(tabs)';
-    }
+    const target = resolveGuardTarget({
+      hasSession: !!session,
+      isRecovery,
+      needsUsername,
+      segments,
+    });
 
     if (!target) {
       pendingRedirect.current = null;
@@ -75,7 +66,7 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
       router.replace(target);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, loading, needsUsername, segments]);
+  }, [session, isRecovery, loading, needsUsername, segments]);
 
   if (loading) return null;
 

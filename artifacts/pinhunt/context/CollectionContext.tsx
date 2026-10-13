@@ -25,6 +25,11 @@ interface CollectionContextValue {
   /** setStatus for many pins at once — one state update, batched sync. */
   setStatuses: (pinIds: string[], status: CollectionStatus) => void;
   adjustQuantity: (pinId: string, delta: number) => void;
+  /**
+   * Undo helper: put a pin back exactly as it was (status, copies, notes,
+   * date added), or remove it when `snapshot` is undefined. One write.
+   */
+  restoreEntry: (pinId: string, snapshot: CollectionEntry | undefined) => void;
   setNotes: (pinId: string, notes: string) => void;
   getEntry: (pinId: string) => CollectionEntry | undefined;
   counts: { owned: number; wanted: number; forTrade: number };
@@ -370,6 +375,30 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     if (userId && isSupabaseConfigured) pushEntry(pinId, change);
   }, [userId, pushEntry]);
 
+  const restoreEntry = useCallback((pinId: string, snapshot: CollectionEntry | undefined) => {
+    const status: CollectionStatus = snapshot?.status ?? 'none';
+    const kept = status === 'owned' || status === 'for_trade';
+    const quantity = kept ? Math.max(1, snapshot?.quantity ?? 1) : 1;
+    if (userId && isSupabaseConfigured) {
+      if (pendingOwnerRef.current !== userId) {
+        pendingOwnerRef.current = userId;
+        pushQueue.clear();
+      }
+      // Coalesced per pin with any in-flight change, so the restore wins (collection-mutation-ordering).
+      pushEntry(pinId, { status, quantity });
+      pushQueue.flush();
+    }
+    const next: CollectionMap = { ...latestCollectionRef.current };
+    if (status === 'none' || !snapshot) {
+      delete next[pinId];
+    } else {
+      next[pinId] = { ...snapshot, pinId, status, quantity };
+    }
+    latestCollectionRef.current = next;
+    setCollection(next);
+    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  }, [userId, pushEntry, pushQueue]);
+
   const setNotes = useCallback((pinId: string, notes: string) => {
     setCollection(prev => {
       const entry = prev[pinId];
@@ -416,6 +445,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
         setStatus,
         setStatuses,
         adjustQuantity,
+        restoreEntry,
         setNotes,
         getEntry,
         counts,

@@ -455,6 +455,7 @@ const styles = StyleSheet.create({
   backBtn: { padding: spacing.xs },
   inputWrap: {
     flex: 1,
+    minWidth: 0,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
@@ -463,7 +464,9 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     marginRight: spacing.sm,
   },
-  input: { flex: 1, fontSize: 15, paddingVertical: 0, fontFamily: 'Inter_400Regular' },
+  // minWidth 0: on web the <input> otherwise keeps a ~20-character minimum
+  // width and pushes the page wider than a 320 pt screen.
+  input: { flex: 1, minWidth: 0, fontSize: 15, paddingVertical: 0, fontFamily: 'Inter_400Regular' },
   body: { flex: 1 },
   section: { paddingHorizontal: spacing.lg, paddingTop: spacing.lg },
   betaNote: {

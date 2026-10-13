@@ -446,7 +446,7 @@ function Tile({ pin, status, selected, onPress, onLongPress }: {
 
   let badge: { label: string; bg: string } | null = null;
   if (status === 'owned') badge = { label: 'Owned', bg: colors.owned };
-  else if (status === 'for_trade') badge = { label: 'For trade', bg: colors.forTrade };
+  else if (status === 'for_trade') badge = { label: 'For Trade', bg: colors.forTrade };
   else if (status === 'wanted') badge = { label: 'ISO', bg: colors.wanted };
 
   return (

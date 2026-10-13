@@ -35,7 +35,7 @@ const CARD_INNER_WIDTH = SCREEN_WIDTH - 24 - 28;
 
 const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; icon: keyof typeof Feather.glyphMap }> = [
   { key: 'all',          label: 'All',    icon: 'compass' },
-  { key: 'for_trade',    label: 'Trade',  icon: 'repeat' },
+  { key: 'for_trade',    label: 'For Trade', icon: 'repeat' },
   { key: 'in_search_of', label: 'ISO',    icon: 'search' },
   { key: 'discussion',   label: 'Chat',   icon: 'message-circle' },
   { key: 'new_pickup',   label: 'Events', icon: 'calendar' },
@@ -622,14 +622,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 
-  chips: { flexDirection: 'row', gap: 6, paddingVertical: 4 },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, paddingVertical: 4 },
   chip: {
-    flex: 1,
+    // Sized to the label and stretched to fill the row; wraps when it doesn't fit.
+    flexGrow: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 4,
-    paddingHorizontal: 4,
+    paddingHorizontal: 6,
     height: 34,
     borderRadius: 17,
     borderWidth: 1,

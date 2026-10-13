@@ -29,7 +29,7 @@ import type { CommunityPostType } from '@workspace/pin-repository';
 const MAX_PHOTOS = 6;
 
 const POST_TYPES: Array<{ key: CommunityPostType; label: string; icon: React.ComponentProps<typeof Feather>['name']; hint: string }> = [
-  { key: 'for_trade',    label: 'Trade',        icon: 'repeat',          hint: 'Offering pins to swap' },
+  { key: 'for_trade',    label: 'For Trade',    icon: 'repeat',          hint: 'Offering pins to swap' },
   { key: 'in_search_of', label: 'ISO',          icon: 'search',         hint: 'Looking for specific pins' },
   { key: 'discussion',   label: 'Discussion',   icon: 'message-circle', hint: 'General chat' },
   { key: 'new_pickup',   label: 'Event',        icon: 'package',        hint: 'Share an upcoming event' },

@@ -161,7 +161,7 @@ export default function PinDetailScreen() {
   const primaryActions: PrimaryActionBarAction[] = [
     ...(canToggleIso ? [{
       key: 'iso',
-      label: currentStatus === 'wanted' ? 'On Your ISO' : 'Add to ISO',
+      label: currentStatus === 'wanted' ? 'On your ISO' : 'Add to ISO',
       icon: 'heart' as const,
       variant: 'secondary' as const,
       onPress: () => setStatus(pin.id, currentStatus === 'wanted' ? 'none' : 'wanted'),

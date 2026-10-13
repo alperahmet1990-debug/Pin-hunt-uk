@@ -4,8 +4,13 @@
  *
  * Called from: post detail, collector profile, traders list.
  * Params: recipientId, recipientName, contextPostId?, contextPostTitle?, contextPinId?
+ *
+ * From a trade match (matchTheyHave / matchIHave > 0) the screen loads the
+ * matched pins, pre-fills an editable first line and attaches the pins as
+ * removable chips. Nothing is sent until the collector taps Send; the pins
+ * then follow the text as one existing `pin_share` message.
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -25,7 +30,9 @@ import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
-import { formatMatchSummary } from '@/utils/tradeMatch';
+import { formatMatchSummary, matchOpeningMessage, MATCH_PINS_LIMIT } from '@/utils/tradeMatch';
+import { useCollection } from '@/context/CollectionContext';
+import type { PotentialTradePin } from '@workspace/pin-repository';
 
 export default function StartConversationScreen() {
   const params = useLocalSearchParams<{
@@ -44,8 +51,36 @@ export default function StartConversationScreen() {
   const router = useRouter();
   const { repo, userId } = useCommunity();
 
-  const [message, setMessage] = useState('');
+  const { collection } = useCollection();
+  const matchTheyHave = Number(params.matchTheyHave ?? 0);
+  const matchIHave = Number(params.matchIHave ?? 0);
+  const fromMatch = matchTheyHave > 0 || matchIHave > 0;
+
+  const [message, setMessage] = useState(() => matchOpeningMessage(matchTheyHave, matchIHave));
   const [saving,  setSaving]  = useState(false);
+  // Matched pins to attach (pinhunt ids, which chat pin cards use); the sender can remove any.
+  const [matchPins, setMatchPins] = useState<{ theyHave: PotentialTradePin[]; iHave: PotentialTradePin[] }>({ theyHave: [], iHave: [] });
+  const [removed, setRemoved] = useState<Set<string>>(() => new Set());
+
+  useEffect(() => {
+    if (!fromMatch || !repo || !userId || !params.recipientId) return;
+    let cancelled = false;
+    repo.getPotentialTrades({ viewerId: userId, collectorId: params.recipientId })
+      .then(found => {
+        if (cancelled) return;
+        setMatchPins({
+          theyHave: found.filter(p => p.direction === 'they_have_i_want').slice(0, MATCH_PINS_LIMIT),
+          iHave: found.filter(p => p.direction === 'i_have_they_want').slice(0, MATCH_PINS_LIMIT),
+        });
+      })
+      .catch(() => {}); // Optional context: the text message still works without it.
+    return () => { cancelled = true; };
+  }, [fromMatch, repo, userId, params.recipientId]);
+
+  const attachedPinIds = [...matchPins.theyHave, ...matchPins.iHave]
+    .map(p => p.pinhuntId)
+    .filter((id, i, all) => !removed.has(id) && all.indexOf(id) === i);
+  const removePin = (pinhuntId: string) => setRemoved(prev => new Set(prev).add(pinhuntId));
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
   const recipientName = params.recipientName ?? params.recipientId;
@@ -57,10 +92,7 @@ export default function StartConversationScreen() {
     ? `Re: ${params.contextPinTitle}`
     : undefined;
 
-  const matchSummary = formatMatchSummary(
-    Number(params.matchTheyHave ?? 0),
-    Number(params.matchIHave ?? 0),
-  );
+  const matchSummary = formatMatchSummary(matchTheyHave, matchIHave);
 
   const handleSend = async () => {
     if (!repo || !userId) return;
@@ -75,6 +107,18 @@ export default function StartConversationScreen() {
         contextPinId: params.contextPinId ?? undefined,
         openingMessage: message.trim(),
       });
+      if (attachedPinIds.length > 0) {
+        try {
+          await repo.sendConversationMessage(conv.id, userId, '', {
+            messageType: 'pin_share',
+            pinIds: attachedPinIds,
+            // Same rule as sharing from chat: flag the sender's own For Trade pins.
+            forTradePinIds: attachedPinIds.filter(id => collection[id]?.status === 'for_trade'),
+          });
+        } catch {
+          // The conversation and text went through; the pins can be shared again from chat.
+        }
+      }
       // Replace this screen with the chat screen
       router.replace({ pathname: '/community/chat/[id]' as any, params: { id: conv.id } });
     } catch (e) {
@@ -125,6 +169,41 @@ export default function StartConversationScreen() {
             </View>
           )}
 
+          {/* Matched pins, sent as one pin card after the text; each can be removed */}
+          {[
+            { key: 'theyHave', label: 'THEY HAVE, YOU WANT', pins: matchPins.theyHave },
+            { key: 'iHave', label: 'YOU CAN OFFER', pins: matchPins.iHave },
+          ].map(group => {
+            const visible = group.pins.filter(p => !removed.has(p.pinhuntId));
+            if (visible.length === 0) return null;
+            return (
+              <View key={group.key} style={styles.pinGroup}>
+                <Text style={[styles.label, { color: colors.homeMuted }]}>{group.label}</Text>
+                <View style={styles.pinChips}>
+                  {visible.map(p => (
+                    <View key={p.pinhuntId} style={[styles.pinChip, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                      <Text style={[styles.pinChipLabel, { color: colors.homeInk }]} numberOfLines={1}>{p.title}</Text>
+                      <TouchableOpacity
+                        onPress={() => removePin(p.pinhuntId)}
+                        hitSlop={12}
+                        accessibilityRole="button"
+                        accessibilityLabel={`Remove ${p.title}`}
+                        style={styles.pinChipRemove}
+                      >
+                        <Feather name="x" size={14} color={colors.homeMuted} />
+                      </TouchableOpacity>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            );
+          })}
+          {attachedPinIds.length > 0 && (
+            <Text style={[styles.attachNote, { color: colors.homeMuted }]}>
+              {attachedPinIds.length} pin{attachedPinIds.length === 1 ? '' : 's'} will be shared after your message.
+            </Text>
+          )}
+
           {/* Message input */}
           <Text style={[styles.label, { color: colors.homeMuted }]}>YOUR MESSAGE</Text>
           <TextInput
@@ -134,7 +213,7 @@ export default function StartConversationScreen() {
             placeholderTextColor={colors.homeMuted}
             multiline
             maxLength={2000}
-            autoFocus
+            autoFocus={!fromMatch}
             style={[
               styles.input,
               {
@@ -201,6 +280,15 @@ const styles = StyleSheet.create({
   matchLabel: { flex: 1, fontSize: 13, fontFamily: 'Inter_600SemiBold', lineHeight: 18 },
 
   label: { fontSize: 10, fontFamily: 'Inter_600SemiBold', letterSpacing: 0.8 },
+  pinGroup: { gap: spacing.xs },
+  pinChips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs },
+  pinChip: {
+    flexDirection: 'row', alignItems: 'center', gap: 6, maxWidth: '100%',
+    paddingLeft: spacing.md, paddingRight: spacing.xs, minHeight: 34, borderWidth: 1, borderRadius: radius.pill,
+  },
+  pinChipLabel: { flexShrink: 1, fontSize: 13, fontFamily: 'Inter_500Medium' },
+  pinChipRemove: { width: 24, height: 24, alignItems: 'center', justifyContent: 'center' },
+  attachNote: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: -4 },
   input: {
     borderWidth: 1, padding: spacing.md, borderRadius: radius.lg,
     fontSize: 15, fontFamily: 'Inter_400Regular',

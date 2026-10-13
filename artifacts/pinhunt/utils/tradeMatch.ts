@@ -26,3 +26,24 @@ export function formatMatchSummary(theyHaveCount: number, iHaveCount: number): s
   }
   return null;
 }
+
+/** Most matched pins pre-attached to a first message, per direction. */
+export const MATCH_PINS_LIMIT = 8;
+
+/**
+ * Editable first line for a conversation started from a trade match.
+ * Concrete counts, no promises; empty when there is no match.
+ */
+export function matchOpeningMessage(theyHaveCount: number, iHaveCount: number): string {
+  const pins = (n: number) => `${n} pin${n === 1 ? '' : 's'}`;
+  if (theyHaveCount > 0 && iHaveCount > 0) {
+    return `Hi! Looks like we could trade: you have ${pins(theyHaveCount)} on my ISO, and I have ${pins(iHaveCount)} you're after. Fancy a swap?`;
+  }
+  if (theyHaveCount > 0) {
+    return `Hi! You have ${pins(theyHaveCount)} on my ISO. Would you consider a trade?`;
+  }
+  if (iHaveCount > 0) {
+    return `Hi! I have ${pins(iHaveCount)} you're looking for. Interested in a trade?`;
+  }
+  return '';
+}

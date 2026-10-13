@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Dimensions,
   Image,
@@ -17,6 +17,7 @@ import { Feather } from '@expo/vector-icons';
 import { KeyboardStickyView } from 'react-native-keyboard-controller';
 import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
+import { ToastHost, useToast } from '@/components/ui/Toast';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { getPinImageSource } from '@/utils/pinImage';
@@ -74,6 +75,12 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
   // actually landed (setStatus's state update isn't visible synchronously).
   const [pendingBoardId, setPendingBoardId] = useState<string | null>(null);
 
+  const toast = useToast();
+  // Undo runs seconds later, possibly after the sheet closed: always use the
+  // latest mutations rather than the ones captured when the toast was shown.
+  const latest = useRef({ setStatus, addPinToBoard, removePinFromBoard });
+  latest.current = { setStatus, addPinToBoard, removePinFromBoard };
+
   const entry = pin ? getEntry(pin.id) : undefined;
   const currentStatus: CollectionStatus = entry?.status ?? 'none';
   const isKept = currentStatus === 'owned' || currentStatus === 'for_trade';
@@ -116,7 +123,18 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
   const handleStatus = (s: CollectionStatus) => {
     if (!pin) return;
     if (Platform.OS !== 'web') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setStatus(pin.id, currentStatus === s ? 'none' : s);
+    const previous = currentStatus;
+    const next = currentStatus === s ? 'none' : s;
+    setStatus(pin.id, next);
+    const pinId = pin.id;
+    toast.show({
+      message: statusChangeMessage(previous, next),
+      // Only offer Undo when it restores exactly what was there: moving Owned
+      // ×N to ISO or removing it resets copies to 1 (UX-013 adds a full restore).
+      action: canUndoStatusChange(previous, next, entry?.quantity ?? 1)
+        ? { label: 'Undo', onPress: () => latest.current.setStatus(pinId, previous) }
+        : undefined,
+    });
   };
 
   const handleToggleBoard = (boardId: string) => {
@@ -124,8 +142,13 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
     if (Platform.OS !== 'web') Haptics.selectionAsync();
     const board = customBoards.find(b => b.id === boardId);
     if (!board) return;
+    const pinId = pin.id;
     if (board.pinIds.includes(pin.id)) {
       removePinFromBoard(boardId, pin.id);
+      toast.show({
+        message: `Removed from ${board.name}`,
+        action: { label: 'Undo', onPress: () => latest.current.addPinToBoard(boardId, pinId) },
+      });
       return;
     }
     if (!isKept) {
@@ -133,9 +156,14 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
       // Owned automatically rather than silently failing to add it.
       setStatus(pin.id, 'owned');
       setPendingBoardId(boardId);
+      toast.show({ message: `Marked as Owned and added to ${board.name}` });
       return;
     }
     addPinToBoard(boardId, pin.id);
+    toast.show({
+      message: `Added to ${board.name}`,
+      action: { label: 'Undo', onPress: () => latest.current.removePinFromBoard(boardId, pinId) },
+    });
   };
 
   const handleCreateAndAdd = () => {
@@ -151,6 +179,9 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
       setStatus(pin.id, 'owned');
       setPendingBoardId(board.id);
     }
+    toast.show({
+      message: isKept ? `Created ${board.name} and added this pin` : `Created ${board.name} · marked as Owned`,
+    });
     setCreatingBoard(false);
     setNewBoardName('');
   };
@@ -384,6 +415,8 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
           </KeyboardStickyView>
         </View>
       )}
+      {/* On iOS the sheet covers the root toast; draw it inside the sheet instead. */}
+      <ToastHost placement="top" />
     </Modal>
   );
 }
@@ -530,3 +563,30 @@ const styles = StyleSheet.create({
   },
   footerBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 });
+
+const STATUS_WORDS: Record<Exclude<CollectionStatus, 'none'>, string> = {
+  owned: 'Owned',
+  wanted: 'ISO',
+  for_trade: 'For Trade',
+};
+
+/** Toast copy for a status change (glossary: docs/design/glossary.md). */
+export function statusChangeMessage(previous: CollectionStatus, next: CollectionStatus): string {
+  if (next === 'none') return previous === 'wanted' ? 'Removed from your ISO' : 'Removed from your collection';
+  if (next === 'wanted') return 'Added to your ISO';
+  return previous === 'none' || previous === 'wanted'
+    ? `Added to your collection as ${STATUS_WORDS[next]}`
+    : `Marked as ${STATUS_WORDS[next]}`;
+}
+
+/**
+ * Undo is offered only when restoring `previous` gives back exactly the same
+ * entry. setStatus resets copies to 1 for ISO and removal, so undoing a change
+ * away from Owned/For Trade ×N would lose copies.
+ */
+export function canUndoStatusChange(previous: CollectionStatus, next: CollectionStatus, copies: number): boolean {
+  const kept = (s: CollectionStatus) => s === 'owned' || s === 'for_trade';
+  if (!kept(previous)) return true;
+  if (kept(next)) return true;
+  return copies <= 1;
+}

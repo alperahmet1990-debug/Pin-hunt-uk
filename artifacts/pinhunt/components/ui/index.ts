@@ -10,3 +10,5 @@ export type { PrimaryActionBarAction } from './PrimaryActionBar';
 export { SetProgressBar } from './SetProgressBar';
 export { CompactPinTile } from './CompactPinTile';
 export { StatusBadge, STATUS_BADGE } from './StatusBadge';
+export { ToastProvider, ToastHost, useToast, TOAST_DURATION_MS } from './Toast';
+export type { ToastOptions, ToastAction } from './Toast';

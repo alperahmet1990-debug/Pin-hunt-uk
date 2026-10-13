@@ -15,7 +15,7 @@
  * Pins already owned or for trade are shown but can't be selected; ISO
  * pins can be selected so "Add to Collection" moves them to owned.
  */
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
@@ -36,6 +36,7 @@ import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import type { CatalogueBrowsePin } from '@workspace/pin-repository';
 import { useColors } from '@/hooks/useColors';
+import { useToast } from '@/components/ui/Toast';
 import { useCatalogueBrowseIndex } from '@/hooks/useCatalogueBrowseIndex';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
@@ -83,7 +84,10 @@ export default function BrowseCatalogueScreen() {
   const [openFilter, setOpenFilter] = useState<FilterKey | null>(null);
   const [selected, setSelected] = useState<Set<string>>(() => new Set());
   const [refreshing, setRefreshing] = useState(false);
-  const [lastAdded, setLastAdded] = useState<{ count: number; status: 'owned' | 'wanted'; boardName?: string } | null>(null);
+  const toast = useToast();
+  // Undo can run after later renders; use the latest setStatuses.
+  const setStatusesRef = useRef(setStatuses);
+  setStatusesRef.current = setStatuses;
   const [boardSheetOpen, setBoardSheetOpen] = useState(false);
   // Board adds wait until the pins are Owned in the collection (setStatuses
   // commits on the next render) — same pattern as QuickAddSheet.
@@ -97,9 +101,13 @@ export default function BrowseCatalogueScreen() {
     });
     if (!ready) return;
     addPinsToBoard(pendingBoard.boardId, pendingBoard.pinIds);
-    setLastAdded({ count: pendingBoard.added, status: 'owned', boardName: pendingBoard.boardName });
+    const { boardId, boardName, added } = pendingBoard;
+    toast.show({
+      message: `Added to ${boardName}${added > 0 ? ` · ${added} new to your collection` : ''}`,
+      action: { label: 'View board', onPress: () => router.push({ pathname: '/board/[id]', params: { id: boardId } }) },
+    });
     setPendingBoard(null);
-  }, [pendingBoard, collection, addPinsToBoard]);
+  }, [pendingBoard, collection, addPinsToBoard, toast, router]);
 
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom;
 
@@ -152,7 +160,6 @@ export default function BrowseCatalogueScreen() {
 
   const toggle = (id: string) => {
     if (isLocked(id)) return;
-    setLastAdded(null);
     setSelected(prev => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id); else next.add(id);
@@ -163,7 +170,6 @@ export default function BrowseCatalogueScreen() {
   const toggleSet = (pins: CatalogueBrowsePin[]) => {
     const selectable = pins.filter(p => !isLocked(p.id));
     const allSelected = selectable.length > 0 && selectable.every(p => selected.has(p.id));
-    setLastAdded(null);
     setSelected(prev => {
       const next = new Set(prev);
       for (const p of selectable) {
@@ -173,25 +179,40 @@ export default function BrowseCatalogueScreen() {
     });
   };
 
-  const addSelected = (status: 'owned' | 'wanted') => {
+  const addSelected = (status: 'owned' | 'wanted', { confirm = true } = {}) => {
     // Never downgrade: owned/for-trade pins stay put, ISO pins already in ISO are a no-op.
     const ids = [...selected].filter(id => {
       const current = statusOf(id);
       if (current === 'owned' || current === 'for_trade') return false;
       return !(status === 'wanted' && current === 'wanted');
     });
+    // Only pins with no status or ISO can be added, so undo restores them exactly.
+    const wasIso = ids.filter(id => statusOf(id) === 'wanted');
+    const wasNone = ids.filter(id => statusOf(id) !== 'wanted');
     // One state update and one batched sync, however many pins.
     setStatuses(ids, status);
     setSelected(new Set());
-    setLastAdded({ count: ids.length, status });
+    if (confirm) {
+      toast.show(ids.length === 0
+        ? { message: 'Those pins were already in place' }
+        : {
+            message: `Added ${ids.length} ${ids.length === 1 ? 'pin' : 'pins'} to your ${status === 'owned' ? 'collection' : 'ISO'}`,
+            action: {
+              label: 'Undo',
+              onPress: () => {
+                if (wasNone.length) setStatusesRef.current(wasNone, 'none');
+                if (wasIso.length) setStatusesRef.current(wasIso, 'wanted');
+              },
+            },
+          });
+    }
     return ids.length;
   };
 
   const addSelectedToBoard = (boardId: string, boardName: string) => {
     const pinIds = [...selected];
-    const added = addSelected('owned');
+    const added = addSelected('owned', { confirm: false });
     setBoardSheetOpen(false);
-    setLastAdded(null);
     setPendingBoard({ boardId, boardName, pinIds, added });
   };
 
@@ -293,7 +314,7 @@ export default function BrowseCatalogueScreen() {
         stickySectionHeadersEnabled={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
-        contentContainerStyle={{ paddingBottom: botPad + (selected.size > 0 || lastAdded ? 120 : 24) }}
+        contentContainerStyle={{ paddingBottom: botPad + (selected.size > 0 ? 120 : 24) }}
         initialNumToRender={8}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
         ListEmptyComponent={
@@ -351,64 +372,48 @@ export default function BrowseCatalogueScreen() {
         )}
       />
 
-      {(selected.size > 0 || lastAdded) && (
+      {selected.size > 0 && (
         <View style={[styles.bottomBar, {
           backgroundColor: colors.homeSurface,
           borderTopColor: colors.homeLine,
           paddingBottom: botPad + spacing.md,
         }]}>
-          {selected.size > 0 ? (
-            <>
-              <View style={styles.bottomMeta}>
-                <Text style={[styles.bottomCount, { color: colors.homeInk }]}>
-                  {selected.size} selected
-                </Text>
-                <TouchableOpacity onPress={() => setSelected(new Set())} hitSlop={8}>
-                  <Text style={[styles.metaLink, { color: colors.homeMuted }]}>Clear</Text>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.bottomActions}>
-                <TouchableOpacity
-                  onPress={() => addSelected('wanted')}
-                  activeOpacity={0.85}
-                  style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
-                >
-                  <Feather name="heart" size={15} color={colors.homeInk} />
-                  <Text style={[styles.secondaryLabel, { color: colors.homeInk }]}>ISO</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => setBoardSheetOpen(true)}
-                  activeOpacity={0.85}
-                  style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
-                >
-                  <Feather name="folder-plus" size={15} color={colors.homeInk} />
-                  <Text style={[styles.secondaryLabel, { color: colors.homeInk }]}>Board</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => addSelected('owned')}
-                  activeOpacity={0.85}
-                  style={[styles.primaryBtn, { backgroundColor: colors.homeCoral }]}
-                >
-                  <Feather name="plus" size={16} color={colors.homeHeroText} />
-                  <Text style={[styles.primaryLabel, { color: colors.homeHeroText }]}>Add to Collection</Text>
-                </TouchableOpacity>
-              </View>
-            </>
-          ) : lastAdded && (
+          <>
             <View style={styles.bottomMeta}>
-              <Feather name="check-circle" size={18} color={colors.owned} />
-              <Text style={[styles.bottomCount, { color: colors.homeInk, flex: 1 }]}>
-                {lastAdded.count === 0 && !lastAdded.boardName
-                  ? 'Those pins were already in place'
-                  : lastAdded.boardName
-                    ? `Added to "${lastAdded.boardName}"${lastAdded.count > 0 ? ` · ${lastAdded.count} new to your collection` : ''}`
-                    : `Added ${lastAdded.count} ${lastAdded.count === 1 ? 'pin' : 'pins'} to your ${lastAdded.status === 'owned' ? 'collection' : 'ISO'}`}
+              <Text style={[styles.bottomCount, { color: colors.homeInk }]}>
+                {selected.size} selected
               </Text>
-              <TouchableOpacity onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/collection'))} hitSlop={8}>
-                <Text style={[styles.metaLink, { color: colors.homeCoral }]}>Done</Text>
+              <TouchableOpacity onPress={() => setSelected(new Set())} hitSlop={8}>
+                <Text style={[styles.metaLink, { color: colors.homeMuted }]}>Clear</Text>
               </TouchableOpacity>
             </View>
-          )}
+            <View style={styles.bottomActions}>
+              <TouchableOpacity
+                onPress={() => addSelected('wanted')}
+                activeOpacity={0.85}
+                style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
+              >
+                <Feather name="heart" size={15} color={colors.homeInk} />
+                <Text style={[styles.secondaryLabel, { color: colors.homeInk }]}>ISO</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => setBoardSheetOpen(true)}
+                activeOpacity={0.85}
+                style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
+              >
+                <Feather name="folder-plus" size={15} color={colors.homeInk} />
+                <Text style={[styles.secondaryLabel, { color: colors.homeInk }]}>Board</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => addSelected('owned')}
+                activeOpacity={0.85}
+                style={[styles.primaryBtn, { backgroundColor: colors.homeCoral }]}
+              >
+                <Feather name="plus" size={16} color={colors.homeHeroText} />
+                <Text style={[styles.primaryLabel, { color: colors.homeHeroText }]}>Add to Collection</Text>
+              </TouchableOpacity>
+            </View>
+          </>
         </View>
       )}
 

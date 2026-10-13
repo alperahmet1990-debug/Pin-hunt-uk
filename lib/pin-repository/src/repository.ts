@@ -31,6 +31,15 @@ export interface PinRepository {
   searchPins(query: string, filters?: PinFilters): Promise<CataloguePin[]>;
 
   /**
+   * Same matching as searchPins, but returns one page (`filters.limit` from
+   * `filters.offset`) plus the total number of matching pins.
+   */
+  searchPinsPage(
+    query: string,
+    filters?: PinFilters,
+  ): Promise<{ pins: CataloguePin[]; total: number }>;
+
+  /**
    * Fetch a single pin by its stable pinhunt_id (e.g. "PHUK-00000001").
    * Returns null if not found or not accessible via RLS.
    */

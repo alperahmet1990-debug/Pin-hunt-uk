@@ -600,7 +600,7 @@ export default function CollectionScreen() {
             </TouchableOpacity>
             <TouchableOpacity
               style={s.addMenuItem}
-              onPress={() => { setAddModalVisible(false); router.push('/catalogue'); }}
+              onPress={() => { setAddModalVisible(false); router.push('/browse-catalogue'); }}
             >
               <Feather name="grid" size={24} color={colors.homeInk} />
               <Text style={[s.addMenuText, { color: colors.homeInk }]}>Browse Catalogue</Text>

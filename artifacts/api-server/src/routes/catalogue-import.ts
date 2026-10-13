@@ -16,7 +16,6 @@ import { Router, type Request, type Response } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import * as XLSX from "xlsx";
 import crypto from "crypto";
-import { checkPinIdentity, identityConflictMessage } from "../../scripts/lib/pin-identity.mjs";
 
 const router = Router();
 
@@ -263,8 +262,6 @@ const HEADER_MAP: Record<string, string> = {
 };
 
 interface MappedRow {
-  /** 1-based spreadsheet row (header = row 1), for error reports. */
-  rowNum: number;
   pinhuntId: string;
   title: string;
   brand: string;
@@ -304,49 +301,6 @@ interface RowError {
   /** Editable field values stored so the app can pre-fill the edit form */
   fields?: Record<string, unknown>;
 }
-
-// ─── Identity guard ───────────────────────────────────────────────────────────
-//
-// Rows are matched to existing pins by pinhunt_id. A matched row may refine
-// that pin but must never turn it into a different pin (the pinhunt_id is
-// permanent and user collections, listings and posts point at it). Rows whose
-// title/characters/set no longer describe the existing pin are refused.
-
-function existingCharacters(existing: Record<string, unknown>): string[] {
-  const linked = (existing.pin_characters as Array<{ characters: { name: string } | null }> | null | undefined)
-    ?.map(pc => pc.characters?.name ?? "").filter(Boolean) ?? [];
-  const listed = String(existing.all_characters ?? existing.main_character ?? "")
-    .split(/[;,]/).map(s => s.trim()).filter(Boolean);
-  return [...new Set([...linked, ...listed])];
-}
-
-export function splitIdentityConflicts(
-  rows: MappedRow[],
-  existingMap: Map<string, Record<string, unknown>>,
-): { kept: MappedRow[]; refused: RowError[] } {
-  const kept: MappedRow[] = [];
-  const refused: RowError[] = [];
-  for (const row of rows) {
-    const existing = existingMap.get(row.pinhuntId);
-    if (existing) {
-      const check = checkPinIdentity(
-        { title: existing.title as string | null, collection: existing.collection as string | null, characters: existingCharacters(existing) },
-        { title: row.title, collection: row.collection, characters: row.characters },
-      );
-      if (!check.ok) {
-        refused.push({
-          rowNum: row.rowNum, pinhuntId: row.pinhuntId, title: row.title, result: "error",
-          message: identityConflictMessage(row.pinhuntId, String(existing.title ?? "")),
-        });
-        continue;
-      }
-    }
-    kept.push(row);
-  }
-  return { kept, refused };
-}
-
-const IDENTITY_SELECT = "id, pinhunt_id, title, collection, main_character, all_characters, pin_characters(characters(name))";
 
 function mapRow(
   rawRow: Record<string, unknown>,
@@ -414,7 +368,6 @@ function mapRow(
   if (!pinhuntId) seenKeys.add(fallbackKey);
 
   const row: MappedRow = {
-    rowNum,
     pinhuntId: pinhuntId ?? `PHUK-NOID-${rowNum}`,
     title, brand, collection, characters, categories,
     releaseYear, releaseDate, limitedEditionSize, editionType,
@@ -944,15 +897,11 @@ router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & 
     const skippedNoid = validRows.length - actionableRows.length;
 
     const pinhuntIds = actionableRows.map(r => r.pinhuntId);
-    const { data: existing, error: existingErr } = await db.from("pins").select(IDENTITY_SELECT).in("pinhunt_id", pinhuntIds);
-    if (existingErr) { res.status(500).json({ error: "Could not check existing pins" }); return; }
-    const existingRows = new Map(((existing ?? []) as unknown as Record<string, unknown>[]).map(p => [p.pinhunt_id as string, p]));
-    const { kept, refused } = splitIdentityConflicts(actionableRows, existingRows);
-    allErrors.push(...refused);
-    summary.errorRows += refused.length;
-    summary.insertedRows = kept.filter(r => !existingRows.has(r.pinhuntId)).length;
-    summary.updatedRows  = kept.filter(r =>  existingRows.has(r.pinhuntId)).length;
-    summary.skippedRows  = skippedNoid;   // refused rows are reported as errors, as in the real import
+    const { data: existing } = await db.from("pins").select("pinhunt_id").in("pinhunt_id", pinhuntIds);
+    const existingSet = new Set((existing ?? []).map((r: { pinhunt_id: string }) => r.pinhunt_id));
+    summary.insertedRows = actionableRows.filter(r => !existingSet.has(r.pinhuntId)).length;
+    summary.updatedRows  = actionableRows.filter(r =>  existingSet.has(r.pinhuntId)).length;
+    summary.skippedRows  = skippedNoid;
 
     res.json({ dryRun: true, summary, errorReport: allErrors.slice(0, 200) });
     return;
@@ -979,7 +928,7 @@ router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & 
 
   // Fetch existing pins for snapshots + update detection
   const allPinhuntIds = validRows.map(r => r.pinhuntId).filter(id => !id.startsWith("PHUK-NOID-"));
-  const { data: existingPins, error: existingErr } = await db
+  const { data: existingPins } = await db
     .from("pins")
     .select([
       "id", "pinhunt_id", "title", "brand", "collection",
@@ -989,39 +938,15 @@ router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & 
       "verification_status", "is_seed_record", "needs_review",
       "confidence_level", "needs_front_image", "needs_back_image",
       "import_batch_id", "catalogue_source", "catalogue_updated_at",
-      "main_character", "all_characters",
       "pin_categories(categories(name))",
       "pin_characters(characters(name))",
     ].join(", "))
     .in("pinhunt_id", allPinhuntIds);
 
-  // Fail closed: without the existing pins we can neither snapshot for rollback
-  // nor run the identity guard, so nothing is imported.
-  if (existingErr) {
-    await db.from("import_batches").update({
-      status: "failed",
-      error_report: [{ message: "Could not read existing pins; nothing was imported." }],
-      completed_at: new Date().toISOString(),
-    }).eq("id", batch.id);
-    res.status(500).json({ error: "Could not check existing pins; nothing was imported." });
-    return;
-  }
-
   const existingMap = new Map(
     ((existingPins ?? []) as unknown as Record<string, unknown>[])
       .map(p => [p.pinhunt_id as string, p]),
   );
-
-  // Identity guard: refuse rows that would turn an existing pinhunt_id into a different pin.
-  const { kept: identityKept, refused: identityRefused } = splitIdentityConflicts(validRows, existingMap);
-  if (identityRefused.length > 0) {
-    allErrors.push(...identityRefused);
-    validRows.splice(0, validRows.length, ...identityKept);
-    summary.validRows = validRows.length;
-    summary.errorRows += identityRefused.length;
-    summary.seedRows = validRows.filter(r => r.isSeedRecord).length;
-    summary.verifiedRows = validRows.filter(r => !r.isSeedRecord).length;
-  }
 
   // Respond immediately — client starts polling
   res.json({
@@ -1139,21 +1064,13 @@ router.post("/admin/catalogue-import/batches/:batchId/reprocess-row", requireApp
   const charMap = new Map((charRows ?? []).map((r: Record<string, unknown>) => [r.name as string, r.id as string]));
 
   // Check if pin already exists (for snapshot preservation)
-  const { data: existingPin, error: existingPinErr } = row.pinhuntId.startsWith("PHUK-NOID-")
-    ? { data: null, error: null }
-    : await db.from("pins").select("id, pinhunt_id, verification_status, title, collection, release_year, limited_edition_size, edition_type, origin, image_url, back_image_url, main_character, all_characters, pin_characters(characters(name))").eq("pinhunt_id", row.pinhuntId).maybeSingle();
-
-  // Fail closed: without the existing pin the identity guard can't run.
-  if (existingPinErr) { res.status(500).json({ error: "Could not check the existing pin; nothing was changed." }); return; }
+  const { data: existingPin } = row.pinhuntId.startsWith("PHUK-NOID-")
+    ? { data: null }
+    : await db.from("pins").select("id, pinhunt_id, verification_status, title, collection, release_year, limited_edition_size, edition_type, origin, image_url, back_image_url").eq("pinhunt_id", row.pinhuntId).maybeSingle();
 
   const existingMap = new Map<string, Record<string, unknown>>(
     existingPin ? [[row.pinhuntId, existingPin as Record<string, unknown>]] : [],
   );
-
-  if (splitIdentityConflicts([row], existingMap).refused.length > 0) {
-    res.status(409).json({ error: identityConflictMessage(row.pinhuntId, String((existingPin as Record<string, unknown> | null)?.title ?? "")) });
-    return;
-  }
 
   const { action, error: rowErr } = await upsertSingleRow(db, row, batchId, existingMap, catMap, charMap);
 

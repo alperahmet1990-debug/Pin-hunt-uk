@@ -19,7 +19,6 @@ import XLSX from "xlsx";
 import fs from "node:fs";
 import path from "node:path";
 import { requireStaging } from "./lib/staging-guard.mjs";
-import { guardIdMatch } from "./lib/pin-identity.mjs";
 
 // Staging only: refuses production and any project not prepared by staging-db restore.
 await requireStaging();
@@ -98,7 +97,6 @@ const log = {
   characterLinks: 0,
   archived: 0,
   remap: { matched: [], ambiguous: [], untouched: 0 },
-  identityRefused: [],
   errors: [],
 };
 
@@ -168,7 +166,7 @@ async function main() {
   for (let fromRow = 0; ; fromRow += 1000) {
     const { data, error } = await supabase
       .from("pins")
-      .select("id, pinhunt_id, title, collection, release_year, external_identifiers, catalogue_status, image_url, back_image_url, main_character, all_characters")
+      .select("id, pinhunt_id, title, collection, release_year, external_identifiers, catalogue_status, image_url, back_image_url")
       .range(fromRow, fromRow + 999);
     if (error) throw new Error(`preload pins: ${error.message}`);
     existing.push(...data);
@@ -275,15 +273,6 @@ async function main() {
       raw_import_data: r,
       updated_at: new Date().toISOString(),
     };
-
-    // Identity guard: a pinhunt_id may be refined, never repurposed as a different pin.
-    // A refusal also marks the run dirty, so archive/remap are skipped (fail-safe below).
-    const refusal = guardIdMatch({ target, matchedBy, pinhuntId: pid, incoming: { title, collection: series, characters } });
-    if (refusal) {
-      log.identityRefused.push(refusal);
-      log.errors.push(refusal.message);
-      continue;
-    }
 
     if (matchedBy) log.pins.matchedBy[matchedBy] += 1;
 
@@ -394,7 +383,6 @@ async function main() {
   console.log(JSON.stringify({
     mode: log.mode, totalRows: log.totalRows, eligible: log.eligible,
     skipped: log.skipped.length, duplicateIdsPrevented: log.duplicateIdsPrevented.length,
-    identityRefused: log.identityRefused.length,
     sets: { count: setsByKey.size, created: log.sets.created, updated: log.sets.updated },
     pins: log.pins, characterLinks: log.characterLinks,
     archived: log.archived,

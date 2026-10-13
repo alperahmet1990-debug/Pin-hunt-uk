@@ -2,6 +2,8 @@
 
 **Nothing here is active, applied, scheduled or imported.**
 
+**Code moved:** the importer identity check, migration 045 (with `supabase/verify/`) and the Research Review API/screen live in the code-only PR **#229** (issue #227). This research PR (#226, issue #228) holds the research data, evidence, engine and the inactive Basil role.
+
 | File | What |
 |---|---|
 | `01-engine-review.md` | Security, source compliance, evidence quality and ID safeguards review. Hardening fixes applied to the prototype. |

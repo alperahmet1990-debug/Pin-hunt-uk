@@ -19,7 +19,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
-  Image,
   Modal,
   useWindowDimensions,
   Platform,
@@ -46,10 +45,10 @@ import { useCatalogueCoverage } from '@/hooks/useCatalogueCoverage';
 import { needsPhoto } from '@/utils/photoGaps';
 import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
-import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
+import { PinTile } from '@/components/ui/PinTile';
+import { pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui/PinGrid';
 import { radius, spacing } from '@/constants/theme';
 
-const COLUMNS = 3;
 
 const EDITION_LABELS: Record<string, string> = {
   open_edition: 'Open Edition',
@@ -82,7 +81,11 @@ export default function BrowseCatalogueScreen() {
   const addMode = mode === 'add';
   // Three bulk buttons share one row; on narrow phones drop their icons so
   // "For Trade" stays on one line.
-  const narrow = useWindowDimensions().width < 360;
+  const { width: screenWidth } = useWindowDimensions();
+  const narrow = screenWidth < 360;
+  // Same columns and tile size as every other pin grid (PinGrid, UX-043).
+  const columns = pinGridColumns(screenWidth);
+  const tileSize = pinTileSize(screenWidth, columns);
   const screenTitle = addMode ? 'Add pins you own' : 'Entire Catalogue';
   const [addedCount, setAddedCount] = useState(0);
   // Pins added as owned/For Trade this visit, for the photo prompt on Done (UX-056).
@@ -174,12 +177,12 @@ export default function BrowseCatalogueScreen() {
     }
     const out = [...bySet.entries()].map(([setName, pins]) => {
       const chunks: CatalogueBrowsePin[][] = [];
-      for (let i = 0; i < pins.length; i += COLUMNS) chunks.push(pins.slice(i, i + COLUMNS));
+      for (let i = 0; i < pins.length; i += columns) chunks.push(pins.slice(i, i + columns));
       return { title: setName, pins, data: chunks };
     });
     return { sections: out, matchCount: count };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows, query, setFilter, yearFilter, editionFilter, hideHave, collection]);
+  }, [rows, query, setFilter, yearFilter, editionFilter, hideHave, collection, columns]);
 
   const toggle = (id: string) => {
     if (isLocked(id)) return;
@@ -409,18 +412,26 @@ export default function BrowseCatalogueScreen() {
         }}
         renderItem={({ item: chunk }) => (
           <View style={styles.gridRow}>
-            {chunk.map(pin => (
-              <Tile
-                key={pin.id}
-                pin={pin}
-                status={statusOf(pin.id)}
-                photoNeeded={photoNeededIds.has(pin.id)}
-                selected={selected.has(pin.id)}
-                onPress={() => toggle(pin.id)}
-                onLongPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
-              />
-            ))}
-            {Array.from({ length: COLUMNS - chunk.length }).map((_, i) => <View key={`pad-${i}`} style={styles.tile} />)}
+            {chunk.map(pin => {
+              const status = statusOf(pin.id);
+              // Owned and For Trade pins are shown but can't be selected.
+              const locked = status === 'owned' || status === 'for_trade';
+              return (
+                <PinTile
+                  key={pin.id}
+                  title={pin.title}
+                  imageUrl={pin.imageUrl}
+                  size={tileSize}
+                  status={status}
+                  dimmed={locked}
+                  photoNeeded={photoNeededIds.has(pin.id)}
+                  selected={selected.has(pin.id)}
+                  selectionDisabled={locked}
+                  onPress={() => toggle(pin.id)}
+                  onLongPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
+                />
+              );
+            })}
           </View>
         )}
       />
@@ -558,72 +569,6 @@ export default function BrowseCatalogueScreen() {
   );
 }
 
-function Tile({ pin, status, photoNeeded, selected, onPress, onLongPress }: {
-  pin: CatalogueBrowsePin;
-  status?: string;
-  photoNeeded?: boolean;
-  selected: boolean;
-  onPress(): void;
-  onLongPress(): void;
-}) {
-  const colors = useColors();
-  const locked = status === 'owned' || status === 'for_trade';
-
-  let badge: { label: string; bg: string } | null = null;
-  if (status === 'owned') badge = { label: 'Owned', bg: colors.owned };
-  else if (status === 'for_trade') badge = { label: 'For Trade', bg: colors.forTrade };
-  else if (status === 'wanted') badge = { label: 'ISO', bg: colors.wanted };
-
-  return (
-    <TouchableOpacity
-      activeOpacity={locked ? 1 : 0.85}
-      onPress={onPress}
-      onLongPress={onLongPress}
-      accessibilityRole="checkbox"
-      accessibilityState={{ checked: selected, disabled: locked }}
-      accessibilityLabel={photoNeeded ? `${pin.title}, photo needed` : pin.title}
-      style={styles.tile}
-    >
-      <View style={[
-        styles.tileImageWrap,
-        {
-          backgroundColor: colors.homeSurface,
-          borderColor: selected ? colors.homeCoral : colors.homeLine,
-          borderWidth: selected ? 2 : 1,
-        },
-      ]}>
-        <Image
-          source={pin.imageUrl ? { uri: pin.imageUrl } : PLACEHOLDER_IMAGE}
-          style={[styles.tileImage, locked && { opacity: 0.45 }]}
-          resizeMode="contain"
-        />
-        {photoNeeded && (
-          // Same size as the select tick opposite, so it never clips or collides on narrow tiles.
-          <View style={[styles.photoTag, { backgroundColor: colors.homeSurface + 'F2', borderColor: colors.homeCoral }]}>
-            <Feather name="camera" size={11} color={colors.homeCoral} />
-          </View>
-        )}
-        {!locked && (
-          <View style={[styles.checkCircle, {
-            backgroundColor: selected ? colors.homeCoral : colors.homeSurface + 'E6',
-            borderColor: selected ? colors.homeCoral : colors.homeLine,
-          }]}>
-            {selected && <Feather name="check" size={12} color={colors.homeHeroText} />}
-          </View>
-        )}
-        {badge && (
-          <View style={[styles.badge, { backgroundColor: badge.bg }]}>
-            {locked && <Feather name="check" size={9} color={colors.homeHeroText} />}
-            <Text style={[styles.badgeLabel, { color: colors.homeHeroText }]} numberOfLines={1}>{badge.label}</Text>
-          </View>
-        )}
-      </View>
-      <Text style={[styles.tileTitle, { color: locked ? colors.homeMuted : colors.homeInk }]} numberOfLines={2}>
-        {pin.title}
-      </Text>
-    </TouchableOpacity>
-  );
-}
 
 function BoardSheet({ visible, count, boards, onPickBoard, onCreateBoard, onClose }: {
   visible: boolean;
@@ -797,13 +742,7 @@ const styles = StyleSheet.create({
   sectionTitle: { fontSize: 15, fontFamily: 'Inter_700Bold' },
   sectionMeta: { fontSize: 12, fontFamily: 'Inter_500Medium', marginTop: 2 },
   selectAll: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  gridRow: { flexDirection: 'row', gap: spacing.md, paddingHorizontal: spacing.lg, marginBottom: spacing.md },
-  tile: { flex: 1, gap: 6 },
-  tileImageWrap: { aspectRatio: 1, borderRadius: radius.md, overflow: 'hidden', alignItems: 'center', justifyContent: 'center' },
-  tileImage: { width: '86%', height: '86%' },
-  checkCircle: { position: 'absolute', top: 6, right: 6, width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
-  badge: { position: 'absolute', left: 6, bottom: 6, flexDirection: 'row', alignItems: 'center', gap: 3, borderRadius: radius.pill, paddingVertical: 3, paddingHorizontal: 7 },
-  badgeLabel: { fontSize: 9, fontFamily: 'Inter_600SemiBold' },
+  gridRow: { flexDirection: 'row', gap: PIN_GRID_GUTTER, paddingHorizontal: spacing.lg, marginBottom: spacing.lg },
   photoTag: { position: 'absolute', left: 6, top: 6, width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
   photoKey: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   promptBackdrop: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, backgroundColor: 'rgba(0,0,0,0.45)' },
@@ -811,7 +750,6 @@ const styles = StyleSheet.create({
   promptTitle: { fontSize: 19, fontFamily: 'Inter_700Bold', textAlign: 'center' },
   promptBody: { fontSize: 14, lineHeight: 20, fontFamily: 'Inter_400Regular', textAlign: 'center', marginBottom: 8 },
   promptLater: { alignSelf: 'stretch', minHeight: 44, alignItems: 'center', justifyContent: 'center' },
-  tileTitle: { fontSize: 11, fontFamily: 'Inter_500Medium', lineHeight: 14 },
   bottomBar: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: spacing.md },
   bottomMeta: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
   bottomCount: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },

@@ -1,12 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Dimensions,
-  FlatList,
   Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
+  useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
@@ -16,7 +15,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { EmptyState } from '@/components/EmptyState';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
-import { ScreenContainer, SegmentedControl, SetProgressBar, CompactPinTile } from '@/components/ui';
+import { ScreenContainer, SegmentedControl, SetProgressBar, CompactPinTile, PinGrid, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
 import type { SegmentedControlOption } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, PinSetSummary } from '@workspace/pin-repository';
@@ -28,10 +27,6 @@ import { pinsToAddToIso } from '@/utils/setTraders';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const COLS = 3;
-const GRID_GAP = spacing.md;
-const TILE = (SCREEN_WIDTH - spacing.lg * 2 - GRID_GAP * (COLS - 1)) / COLS;
 // Room for the missing-pins footer so the last row isn't hidden behind it.
 const FOOTER_SPACE = 130;
 
@@ -40,6 +35,10 @@ export default function SetDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  // Placeholder tiles match the real grid (PinGrid): same columns and size.
+  const { width: screenWidth } = useWindowDimensions();
+  const skeletonCols = pinGridColumns(screenWidth);
+  const skeletonTile = pinTileSize(screenWidth, skeletonCols);
   const { collection: userCollection, getEntry, setStatuses } = useCollection();
   const toast = useToast();
   // Undo runs after later renders, so it reads the latest setter (collection-mutation-ordering.md).
@@ -283,9 +282,9 @@ export default function SetDetailScreen() {
           accessibilityRole="progressbar"
           accessibilityLabel="Loading pins in this set"
         >
-          {Array.from({ length: COLS * 3 }, (_, i) => (
-            <View key={i} style={{ width: TILE }}>
-              <View style={[styles.skeletonImage, { width: TILE, height: TILE, backgroundColor: colors.homeAqua }]} />
+          {Array.from({ length: skeletonCols * 3 }, (_, i) => (
+            <View key={i} style={{ width: skeletonTile }}>
+              <View style={[styles.skeletonImage, { width: skeletonTile, height: skeletonTile, backgroundColor: colors.homeAqua }]} />
               <View style={[styles.skeletonLabel, { backgroundColor: colors.homeLine }]} />
             </View>
           ))}
@@ -301,34 +300,30 @@ export default function SetDetailScreen() {
           }
         />
       ) : (
-        <FlatList
+        <PinGrid
           data={displayPins}
           keyExtractor={p => p.id}
-          numColumns={COLS}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={[styles.grid, { paddingBottom: botPad + (showFooter || selection.active ? FOOTER_SPACE : 0) }]}
           extraData={selection.selected}
-          columnWrapperStyle={styles.gridRow}
-          renderItem={({ item }) => {
+          renderTile={(item, size) => {
             const isOwned = ownedIds.has(item.id);
             const entry = getEntry(item.id);
             return (
-              <View style={{ width: TILE }}>
-                <CompactPinTile
-                  pin={item}
-                  owned={isOwned}
-                  status={entry?.status}
-                  copies={isOwned ? entry?.quantity : undefined}
-                  size={TILE}
-                  // In select mode only missing pins can be ticked; owned ones stay put.
-                  selected={selection.active && !isOwned ? selection.has(item.id) : undefined}
-                  onPress={() => {
-                    if (!selection.active) router.push({ pathname: '/pin/[id]', params: { id: item.id } });
-                    else if (!isOwned) selection.toggle(item.id);
-                  }}
-                  onQuickAdd={!isOwned && !selection.active ? () => setQuickAddPin(item) : undefined}
-                />
-              </View>
+              <CompactPinTile
+                pin={item}
+                owned={isOwned}
+                status={entry?.status}
+                copies={isOwned ? entry?.quantity : undefined}
+                size={size}
+                // In select mode only missing pins can be ticked; owned ones stay put.
+                selected={selection.active && !isOwned ? selection.has(item.id) : undefined}
+                onPress={() => {
+                  if (!selection.active) router.push({ pathname: '/pin/[id]', params: { id: item.id } });
+                  else if (!isOwned) selection.toggle(item.id);
+                }}
+                onQuickAdd={!isOwned && !selection.active ? () => setQuickAddPin(item) : undefined}
+              />
             );
           }}
         />
@@ -421,9 +416,8 @@ const styles = StyleSheet.create({
   filterWrap: { marginTop: spacing.xs },
   // Grid
   grid: { paddingTop: spacing.lg, paddingHorizontal: spacing.lg },
-  gridRow: { gap: GRID_GAP, justifyContent: 'flex-start', marginBottom: spacing.lg },
   // Loading placeholders, sized like CompactPinTile (square image + one label line)
-  skeletonGrid: { flexDirection: 'row', flexWrap: 'wrap', columnGap: GRID_GAP, rowGap: spacing.lg },
+  skeletonGrid: { flexDirection: 'row', flexWrap: 'wrap', columnGap: PIN_GRID_GUTTER, rowGap: spacing.lg },
   skeletonImage: { borderRadius: radius.md },
   // Missing-pins footer
   footer: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: 2 },

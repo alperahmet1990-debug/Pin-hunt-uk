@@ -135,7 +135,7 @@ revoke all on sequence pinhunt_id_seq from public, anon, authenticated;
 -- working. An audited correction path may opt in for one transaction with
 --   select set_config('pinhunt.allow_identity_change', 'on', true);
 create or replace function pin_identity_words(p text) returns text[]
-language sql immutable as $$
+language sql immutable set search_path = public, pg_temp as $$
   select coalesce(array_agg(distinct w), '{}')
   from regexp_split_to_table(lower(coalesce(p, '')), '[^a-z0-9]+') as w
   where length(w) >= 3
@@ -145,7 +145,7 @@ language sql immutable as $$
 $$;
 
 create or replace function guard_pin_identity() returns trigger
-language plpgsql as $$
+language plpgsql set search_path = public, pg_temp as $$
 begin
   if new.pinhunt_id is distinct from old.pinhunt_id then
     raise exception 'pinhunt_id is immutable (%)', old.pinhunt_id using errcode = 'check_violation';

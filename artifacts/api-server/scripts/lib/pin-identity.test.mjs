@@ -97,6 +97,13 @@ describe("checkPinIdentity — rules", () => {
     expect(checkPinIdentity({ title: "Mickey Ice Cream Bar", collection: "", characters: "" }, { title: "Minnie Ice Cream Bar", collection: "", characters: "" }).ok).toBe(false);
   });
 
+  it("stays fast on pathological input (very long cells)", () => {
+    const long = "x".repeat(30000) + " " + "y".repeat(30000);
+    const t0 = Date.now();
+    for (let i = 0; i < 50; i++) checkPinIdentity({ title: long, collection: long, characters: long }, { title: long + "z", collection: long, characters: [long] });
+    expect(Date.now() - t0).toBeLessThan(1000);
+  });
+
   it("still refuses a complete rename with nothing in common", () => {
     expect(checkPinIdentity({ title: "Haunted Mansion", collection: "Windows", characters: "" }, { title: "Space Mountain", collection: "Rockets", characters: [] }).ok).toBe(false);
   });

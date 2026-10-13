@@ -6,6 +6,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 type Row = Record<string, unknown>;
 const tables: Record<string, Row[]> = {};
 let isCreator = true;
+let beforeUpdate: ((table: string) => void) | null = null;
 let nextId = 1;
 const uuid = () => `00000000-0000-4000-8000-${String(nextId++).padStart(12, "0")}`;
 
@@ -24,7 +25,7 @@ function builder(table: string) {
       rows().push(...inserted);
       return { data: inserted, error: null };
     }
-    if (op === "update") { rows().filter(match).forEach(r => Object.assign(r, payload)); return { data: null, error: null }; }
+    if (op === "update") { beforeUpdate?.(table); const hit = rows().filter(match); hit.forEach(r => Object.assign(r, payload)); return { data: hit.map(r => ({ id: r.id })), error: null }; }
     if (op === "delete") { tables[table] = rows().filter(r => !match(r)); return { data: null, error: null }; }
     return { data: rows().filter(match), error: null };
   };
@@ -140,6 +141,30 @@ describe("research review routes — flow", () => {
     expect(isOfficialHost("disneyworld.disney.go.com")).toBe(true);
     expect(isOfficialHost("disneystore.example.net")).toBe(false);
     expect(isOfficialHost("notdisneystore.com")).toBe(false);
+  });
+
+  it("refuses a decision if the candidate changed meanwhile (409)", async () => {
+    await request(app).post("/api/admin/research/runs").set(auth).send({ run: payload });
+    const zazu = tables.catalogue_candidates.find(c => c.research_key === "brush-of-magic/mystery-series-3/zazu")!;
+    // Another reviewer's decision lands between this request's read and its guarded write.
+    beforeUpdate = (table) => { if (table === "catalogue_candidates") zazu.status = "rejected"; };
+    const res = await request(app).post(`/api/admin/research/candidates/${zazu.id}/decision`).set(auth)
+      .send({ decision: "needs_more_research", notes: "single source" });
+    beforeUpdate = null;
+    expect(res.status).toBe(409);
+    expect(zazu.status).toBe("rejected");
+  });
+
+  it("does not overwrite a decision made during a direct check", async () => {
+    await request(app).post("/api/admin/research/runs").set(auth).send({ run: payload });
+    const zazu = tables.catalogue_candidates.find(c => c.research_key === "brush-of-magic/mystery-series-3/zazu")!;
+    beforeUpdate = (table) => { if (table === "catalogue_candidates") zazu.status = "rejected"; };
+    const res = await request(app).post(`/api/admin/research/candidates/${zazu.id}/direct-check`).set(auth)
+      .send({ fields: ["characters"], sourceUrl: "https://www.disneystore.co.uk/x" });
+    beforeUpdate = null;
+    expect(res.status).toBe(200);
+    expect(res.body.status).toBe("needs_direct_verification");
+    expect(zazu.status).toBe("rejected");
   });
 
   it("validates ids and filters", async () => {

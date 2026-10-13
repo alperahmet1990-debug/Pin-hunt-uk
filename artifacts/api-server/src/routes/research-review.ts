@@ -239,12 +239,13 @@ router.post("/admin/research/candidates/:id/direct-check", requireAppCreator, as
     const confirmsIdentity = (fields as string[]).some(f => IDENTITY_FIELDS.includes(f));
     let status = c.status as string;
     if (confirmsIdentity && c.entity_type === "pin" && ["researched", "needs_direct_verification", "needs_more_research"].includes(status)) {
-      const { error: upErr } = await db.from("catalogue_candidates").update({
+      const { data: moved, error: upErr } = await db.from("catalogue_candidates").update({
         status: "direct_verified", direct_verified_by: req.creatorId, direct_verified_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
-      }).eq("id", id);
+      }).eq("id", id).in("status", ["researched", "needs_direct_verification", "needs_more_research"]).select("id");
       if (upErr) throw upErr;
-      status = "direct_verified";
+      // A decision made meanwhile wins; the check itself is still recorded as evidence.
+      if (moved?.length) status = "direct_verified";
     }
     res.json({ ok: true, status, recorded: rows.length });
   } catch (err) { fail(res, "direct check", err); }
@@ -271,11 +272,12 @@ router.post("/admin/research/candidates/:id/decision", requireAppCreator, async 
     });
     if (problem) { res.status(409).json({ error: problem }); return; }
     const status = decision === "approve" ? "approved" : decision === "reject" ? "rejected" : "needs_more_research";
-    const { error: upErr } = await db.from("catalogue_candidates").update({
+    const { data: updated, error: upErr } = await db.from("catalogue_candidates").update({
       status, decided_by: req.creatorId, decided_at: new Date().toISOString(),
       decision_notes: (notes as string | null) ?? null, updated_at: new Date().toISOString(),
-    }).eq("id", id).eq("status", c.status as string);   // no-op if someone else changed it meanwhile
+    }).eq("id", id).eq("status", c.status as string).select("id");
     if (upErr) throw upErr;
+    if (!updated?.length) { res.status(409).json({ error: "This candidate changed while you were deciding. Reload and try again." }); return; }
     res.json({ ok: true, status });
   } catch (err) { fail(res, "decision", err); }
 });

@@ -17,10 +17,13 @@ const MONTHS = "january|february|march|april|may|june|july|august|september|octo
 const PLACEHOLDER_TITLE = new RegExp(`^(${MONTHS})\\s+\\d{4}\\s*[–—-]`, "i");
 const PLACEHOLDER_CHARS = new Set(["", "unknown", "various", "tbc", "tba", "n/a"]);
 
+const MAX_WORD = 40;        // longer "words" are noise, not names
+const MAX_TEXT = 500;       // titles/sets/characters are short; cap pathological cells
+
 /** @param {unknown} s */
 export function tokens(s) {
   return new Set(
-    String(s ?? "")
+    String(s ?? "").slice(0, MAX_TEXT)
       .toLowerCase()
       .normalize("NFKD")
       .replace(/[̀-ͯ]/g, "")
@@ -79,6 +82,8 @@ function editDistance(a, b) {
 export function sameWord(a, b) {
   if (a === b) return true;
   const min = Math.min(a.length, b.length);
+  // Cheap exits before the O(n·m) distance: too short to be a typo, too different in length, or not a real word.
+  if (min < 5 || Math.abs(a.length - b.length) > 2 || Math.max(a.length, b.length) > MAX_WORD) return false;
   const d = editDistance(a, b);
   if (min >= 8) return d <= 2;
   return min >= 5 && d === 1 && a.length !== b.length;

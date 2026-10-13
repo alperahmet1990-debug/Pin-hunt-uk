@@ -15,8 +15,9 @@
 //   --routes a,b        route names from scripts/screenshot-routes.json (default: all).
 //                       A route may set "upload": "<label>" to tap a button that opens the
 //                       photo picker and give it a fixture image, "click": "<label>" to tap
-//                       a tab/segment/button, and "scroll": "end" to capture the bottom of a
-//                       scrolling screen (applied in that order).
+//                       a tab/segment/button, "type": "<text>" to type into the first text
+//                       field, and "scroll": "end" to capture the bottom of a scrolling screen
+//                       (applied in that order).
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -187,6 +188,13 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
             const clicked = await page.evaluate(clickByText, route.click);
             if (!clicked) throw new Error(`Route "${route.name}": no visible element with text "${route.click}"`);
             await new Promise(r => setTimeout(r, 800));
+          }
+          if (route.type) {
+            // Type into the screen's first text field (e.g. a search query).
+            const input = await page.$('input, textarea');
+            if (!input) throw new Error(`Route "${route.name}": no text field to type into`);
+            await input.type(route.type);
+            await new Promise(r => setTimeout(r, 1200));
           }
           if (route.scroll === 'end') {
             // React Native Web renders ScrollViews as overflow divs, so scroll those as well as the window.

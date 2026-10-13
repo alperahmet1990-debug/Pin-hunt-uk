@@ -9,3 +9,4 @@ export { PrimaryActionBar } from './PrimaryActionBar';
 export type { PrimaryActionBarAction } from './PrimaryActionBar';
 export { SetProgressBar } from './SetProgressBar';
 export { CompactPinTile } from './CompactPinTile';
+export { StatusBadge, STATUS_BADGE } from './StatusBadge';

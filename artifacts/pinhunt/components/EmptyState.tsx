@@ -34,6 +34,7 @@ export function EmptyState({
           style={[styles.btn, { backgroundColor: colors.homeCoral, borderRadius: colors.radius }]}
           onPress={onAction}
           activeOpacity={0.8}
+          accessibilityRole="button"
         >
           <Text style={[styles.btnLabel, { color: colors.homeSurface }]}>{actionLabel}</Text>
         </TouchableOpacity>
@@ -71,8 +72,11 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginTop: 8,
+    minHeight: 44,
     paddingHorizontal: 24,
     paddingVertical: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   btnLabel: {
     fontSize: 14,

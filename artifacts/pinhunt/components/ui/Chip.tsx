@@ -30,7 +30,7 @@ function toneColor(colors: ReturnType<typeof useColors>, tone: ChipTone): string
   }
 }
 
-/** Small pill used for metadata tags, edition badges, and status labels — the "Sea Glass" chip language from Home. */
+/** Small pill used for metadata tags, edition badges, and status labels — the Storybook chip language from Home. */
 export function Chip({ label, icon, tone = 'neutral', variant = 'soft', size = 'md' }: ChipProps) {
   const colors = useColors();
   const base = toneColor(colors, tone);

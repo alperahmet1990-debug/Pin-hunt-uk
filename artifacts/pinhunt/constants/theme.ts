@@ -1,6 +1,7 @@
 /**
- * Shared layout tokens for the "Sea Glass & Coral" design language
- * established on Home (constants/colors.ts `home*` palette).
+ * Shared layout tokens for the Storybook design language (approved
+ * 12 Oct 2026; colours in constants/colors.ts, semantic names via
+ * `useColors().tokens`).
  *
  * Color tokens live in constants/colors.ts / useColors() — this file only
  * holds the scheme-independent spacing/radius/shadow scale so reusable

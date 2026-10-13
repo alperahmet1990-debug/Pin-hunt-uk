@@ -81,6 +81,9 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
     "testMatch": [
       "<rootDir>/**/__tests__/**/*.test.[jt]s?(x)"
     ],

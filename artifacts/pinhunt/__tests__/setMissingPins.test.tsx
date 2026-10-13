@@ -52,6 +52,9 @@ beforeEach(() => {
 });
 
 describe('Set detail: missing-pins footer (UX-021)', () => {
+  // First test in the file: its first render compiles the whole screen tree
+  // (UI kit, icons, Supabase client). On a cold cache with every worker busy
+  // that alone can pass Jest's 5 s default, so it gets a longer limit.
   it('asks once for every missing pin and shows how many are available', async () => {
     await render(<SetDetailScreen />);
     await waitFor(() => expect(screen.getByText('2 available from collectors')).toBeTruthy());
@@ -59,7 +62,7 @@ describe('Set detail: missing-pins footer (UX-021)', () => {
     expect(mockInventory).toHaveBeenCalledWith({ viewerId: 'me', pinIds: ['p2', 'p3'] });
     await fireEvent.press(screen.getByRole('button', { name: /Find the 2 missing/ }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/set-traders/[collection]', params: { collection: 'Park Icons' } });
-  });
+  }, 20_000);
 
   it('adds only missing pins not already on the ISO, with Undo', async () => {
     mockCollection = { ...mockCollection, p3: { pinId: 'p3', status: 'wanted', quantity: 1 } };

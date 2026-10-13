@@ -24,6 +24,7 @@ import { useAddMissingToIso } from '@/hooks/useAddMissingToIso';
 import { usePinSelection } from '@/hooks/usePinSelection';
 import { useToast } from '@/components/ui/Toast';
 import { pinsToAddToIso } from '@/utils/setTraders';
+import { usePinActions } from '@/components/PinActionsSheet';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
@@ -35,6 +36,7 @@ export default function SetDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const pinActions = usePinActions();
   // Placeholder tiles match the real grid (PinGrid): same columns and size.
   const { width: screenWidth } = useWindowDimensions();
   const skeletonCols = pinGridColumns(screenWidth);
@@ -323,6 +325,8 @@ export default function SetDetailScreen() {
                   else if (!isOwned) selection.toggle(item.id);
                 }}
                 onQuickAdd={!isOwned && !selection.active ? () => setQuickAddPin(item) : undefined}
+                onLongPress={selection.active ? undefined : () => pinActions.open(item)}
+                {...(selection.active ? {} : pinActions.a11y(item))}
               />
             );
           }}
@@ -387,6 +391,7 @@ export default function SetDetailScreen() {
       )}
 
       <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
+      {pinActions.sheet}
     </ScreenContainer>
   );
 }

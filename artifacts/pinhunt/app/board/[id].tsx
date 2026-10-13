@@ -20,6 +20,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
+import { usePinActions } from '@/components/PinActionsSheet';
 import { ConfirmDialog, PinGrid, PinTile, ScreenContainer, Sheet } from '@/components/ui';
 import { BOARD_SORT_OPTIONS, sortBoardPins, type BoardSort } from '@/utils/boardSort';
 import { radius, spacing } from '@/constants/theme';
@@ -46,6 +47,7 @@ export default function BoardDetailScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const pinActions = usePinActions();
   const { getBoardById, getBoardPins, addPinToBoard, removePinFromBoard, deleteBoard, setBoardThumbnail, renameBoard } = useBoards();
   const { pins: catalogue } = usePinCatalogue();
   const { collection } = useCollection();
@@ -279,6 +281,8 @@ export default function BoardDetailScreen() {
                   copies={editMode ? undefined : collection[item.id]?.quantity}
                   // Edit mode only acts through the two controls below, never the tile.
                   onPress={() => { if (!editMode) router.push({ pathname: '/pin/[id]', params: { id: item.id } }); }}
+                  onLongPress={editMode ? undefined : () => pinActions.open(item)}
+                  {...(editMode ? {} : pinActions.a11y(item))}
                 />
                 {!editMode && isCover && (
                   <View pointerEvents="none" style={[styles.coverChip, { backgroundColor: colors.homeCoral }]}>
@@ -333,6 +337,8 @@ export default function BoardDetailScreen() {
           </TouchableOpacity>
         ))}
       </Sheet>
+
+      {pinActions.sheet}
 
       {/* Board options (UX-041: a Sheet, so the backdrop no longer wraps the rows) */}
       <Sheet visible={menuVisible} onClose={() => setMenuVisible(false)} title="Board options">

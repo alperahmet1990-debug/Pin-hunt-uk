@@ -4,6 +4,7 @@
  * code should use PinTile directly.
  */
 import React from 'react';
+import type { AccessibilityActionEvent, AccessibilityActionInfo } from 'react-native';
 import type { CataloguePin } from '@workspace/pin-repository';
 import type { CollectionStatus } from '@/types/pin';
 import { PinTile } from './PinTile';
@@ -27,15 +28,22 @@ interface CompactPinTileProps {
    * checkbox (UX-022). Leave undefined outside select mode.
    */
   selected?: boolean;
+  /** Long-press quick actions (UX-016). */
+  onLongPress?: () => void;
+  accessibilityActions?: AccessibilityActionInfo[];
+  onAccessibilityAction?: (event: AccessibilityActionEvent) => void;
 }
 
-export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, copies, selected }: CompactPinTileProps) {
+export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, copies, selected, onLongPress, accessibilityActions, onAccessibilityAction }: CompactPinTileProps) {
   return (
     <PinTile
       title={pin.title}
       imageUrl={pin.imageUrl}
       size={size}
       onPress={onPress}
+      onLongPress={onLongPress}
+      accessibilityActions={accessibilityActions}
+      onAccessibilityAction={onAccessibilityAction}
       status={status && status !== 'none' ? status : owned ? 'owned' : undefined}
       copies={copies}
       dimmed={!owned}

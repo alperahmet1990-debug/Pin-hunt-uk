@@ -8,7 +8,7 @@
  * Images go through expo-image (memory + disk cache).
  */
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, type ImageSourcePropType } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, type AccessibilityActionEvent, type AccessibilityActionInfo, type ImageSourcePropType } from 'react-native';
 import { Image } from 'expo-image';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
@@ -46,6 +46,9 @@ export interface PinTileProps {
   /** Small "+" bottom-right (outside select mode). */
   onQuickAdd?: () => void;
   quickAddLabel?: string;
+  /** VoiceOver custom actions, e.g. the long-press quick actions (UX-016). */
+  accessibilityActions?: AccessibilityActionInfo[];
+  onAccessibilityAction?: (event: AccessibilityActionEvent) => void;
 }
 
 /** "Title, Owned, 2 copies, photo needed" — what VoiceOver reads for the tile. */
@@ -59,7 +62,7 @@ export function pinTileLabel(p: Pick<PinTileProps, 'title' | 'status' | 'copies'
 export function PinTile(props: PinTileProps) {
   const {
     title, imageUrl, size, onPress, onLongPress, status, copies, dimmed, photoNeeded,
-    selected, selectionDisabled, onQuickAdd, quickAddLabel,
+    selected, selectionDisabled, onQuickAdd, quickAddLabel, accessibilityActions, onAccessibilityAction,
   } = props;
   const colors = useColors();
   const marker: ActiveStatus | null = status && status !== 'none' ? status : null;
@@ -76,6 +79,8 @@ export function PinTile(props: PinTileProps) {
       accessibilityRole={selecting ? 'checkbox' : 'button'}
       accessibilityState={selecting ? (selectionDisabled ? { checked: !!selected, disabled: true } : { checked: !!selected }) : undefined}
       accessibilityLabel={pinTileLabel(props)}
+      accessibilityActions={accessibilityActions}
+      onAccessibilityAction={onAccessibilityAction}
     >
       <View style={{ width: size, height: size }}>
         {/* Only the artwork fades; the markers stay full strength. */}

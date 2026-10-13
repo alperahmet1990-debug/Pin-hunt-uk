@@ -143,7 +143,14 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
     if (!name || !pin) return;
     Keyboard.dismiss();
     const board = createBoard(name);
-    addPinToBoard(board.id, pin.id);
+    if (isKept) {
+      addPinToBoard(board.id, pin.id);
+    } else {
+      // Same as tapping an existing board: creating a board for this pin
+      // means "I have it", so mark it Owned and add it once that lands.
+      setStatus(pin.id, 'owned');
+      setPendingBoardId(board.id);
+    }
     setCreatingBoard(false);
     setNewBoardName('');
   };
@@ -399,7 +406,14 @@ function BoardCard({ board, pins, selected, onPress, t }: {
   const hasAny = pins.length > 0;
 
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.85} style={[styles.boardCard, { backgroundColor: t.card, borderColor: selected ? t.primary : t.border }]}>
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.85}
+      accessibilityRole="button"
+      accessibilityLabel={board.name}
+      accessibilityState={{ selected }}
+      style={[styles.boardCard, { backgroundColor: t.card, borderColor: selected ? t.primary : t.border }]}
+    >
       <View style={styles.mosaic}>
         {hasAny ? (
           cells.map((cellPin, i) => (

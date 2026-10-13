@@ -22,6 +22,7 @@ import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { getPinImageSource } from '@/utils/pinImage';
+import { collectionStatusLine } from '@/utils/collectionStatusLine';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
 import type { PrimaryActionBarAction } from '@/components/ui';
@@ -125,9 +126,8 @@ export default function PinDetailScreen() {
   const currentStatus = entry?.status ?? 'none';
   const quantity = entry?.quantity ?? 1;
   // Owned and For Trade are mutually exclusive in the current data model (one
-  // status + one quantity per pin) — see the data-model note in the final report.
-  const ownedQty = currentStatus === 'owned' ? quantity : 0;
-  const tradeQty = currentStatus === 'for_trade' ? quantity : 0;
+  // status + one quantity per pin); For Trade copies still count as owned.
+  const statusLine = collectionStatusLine(currentStatus, quantity);
 
   // Pins in the same collection, excluding current
   const setmates = pins.filter(p => p.collection === pin.collection && p.id !== pin.id);
@@ -294,28 +294,17 @@ export default function PinDetailScreen() {
               <Feather name="chevron-right" size={16} color={currentStatus === 'none' ? colors.homeSurface : colors.homeMuted} />
             </TouchableOpacity>
 
-            <View style={styles.collectionCounters}>
-              <TouchableOpacity onPress={openManageSheet} activeOpacity={0.85} style={[styles.counterPill, { backgroundColor: colors.homeAqua }]}>
-                <Text style={[styles.counterLabel, { color: colors.homeMuted }]}>In Collection</Text>
-                <Text style={[styles.counterValue, { color: colors.homeInk }]}>{ownedQty}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={openManageSheet} activeOpacity={0.85} style={[styles.counterPill, { backgroundColor: colors.homeAqua }]}>
-                <Text style={[styles.counterLabel, { color: colors.homeMuted }]}>For Trade</Text>
-                <Text style={[styles.counterValue, { color: colors.homeInk }]}>{tradeQty}</Text>
-              </TouchableOpacity>
-            </View>
-
-            {(currentStatus === 'wanted' || pinBoardIds.size > 0) && (
+            {(statusLine || pinBoardIds.size > 0) && (
               <View style={styles.collectionHints}>
-                {currentStatus === 'wanted' && (
-                  <View style={[styles.isoPill, { backgroundColor: colors.wanted + '18' }]}>
-                    <Feather name="bookmark" size={10} color={colors.wanted} />
-                    <Text style={[styles.isoPillLabel, { color: colors.wanted }]}>On your ISO list</Text>
+                {statusLine && (
+                  <View style={styles.statusLine}>
+                    <Feather name={manageIcon} size={14} color={manageTone} />
+                    <Text style={[styles.statusLineLabel, { color: colors.homeInk }]}>{statusLine}</Text>
                   </View>
                 )}
                 {pinBoardIds.size > 0 && (
                   <Text style={[styles.boardHint, { color: colors.homeMuted }]}>
-                    In {pinBoardIds.size} board{pinBoardIds.size !== 1 ? 's' : ''}
+                    {statusLine ? '· ' : ''}In {pinBoardIds.size} board{pinBoardIds.size !== 1 ? 's' : ''}
                   </Text>
                 )}
               </View>
@@ -547,13 +536,9 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   manageBtnLabel: { flex: 1, fontSize: 15, fontFamily: 'Inter_700Bold' },
-  collectionCounters: { flexDirection: 'row', gap: spacing.sm },
-  counterPill: { flex: 1, borderRadius: radius.md, paddingVertical: spacing.sm, paddingHorizontal: spacing.md, flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' },
-  counterLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  counterValue: { fontSize: 15, fontFamily: 'Inter_700Bold' },
   collectionHints: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flexWrap: 'wrap' },
-  isoPill: { flexDirection: 'row', alignItems: 'center', gap: 4, borderRadius: radius.pill, paddingHorizontal: spacing.sm, paddingVertical: 3 },
-  isoPillLabel: { fontSize: 10.5, fontFamily: 'Inter_700Bold' },
+  statusLine: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  statusLineLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   boardHint: { fontSize: 11.5, fontFamily: 'Inter_500Medium' },
   // Section label
   sectionLabel: { fontSize: 10.5, fontFamily: 'Inter_700Bold', letterSpacing: 1, marginBottom: spacing.sm },

@@ -4,6 +4,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ToastProvider, ToastHost } from '@/components/ui/Toast';
 import { CollectionProvider } from '@/context/CollectionContext';
 import { BoardsProvider } from '@/context/BoardsContext';
 import { PinCatalogueProvider } from '@/context/PinCatalogueContext';
@@ -145,9 +146,13 @@ export default function RootLayout() {
                       <UnreadMessagesProvider>
                       <GestureHandlerRootView style={{ flex: 1 }}>
                         <KeyboardProvider>
-                          <AuthGuard>
-                            <RootLayoutNav />
-                          </AuthGuard>
+                          {/* Innermost on purpose: no existing provider moves (see CLAUDE.md). */}
+                          <ToastProvider>
+                            <AuthGuard>
+                              <RootLayoutNav />
+                            </AuthGuard>
+                            <ToastHost />
+                          </ToastProvider>
                         </KeyboardProvider>
                       </GestureHandlerRootView>
                       </UnreadMessagesProvider>

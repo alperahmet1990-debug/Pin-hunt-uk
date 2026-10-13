@@ -25,6 +25,7 @@ import { usePinSelection } from '@/hooks/usePinSelection';
 import { useToast } from '@/components/ui/Toast';
 import { pinsToAddToIso } from '@/utils/setTraders';
 import { usePinActions } from '@/components/PinActionsSheet';
+import { Button, IconButton } from '@/components/ui/Button';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
@@ -182,14 +183,7 @@ export default function SetDetailScreen() {
     return (
       <ScreenContainer>
         <Stack.Screen options={{ headerShown: false }} />
-        <TouchableOpacity
-          accessibilityLabel="Back"
-          onPress={() => router.back()}
-          activeOpacity={0.85}
-          style={[styles.backBtn, { top: topInset + 10, backgroundColor: colors.homeAqua }]}
-        >
-          <Feather name="chevron-left" size={20} color={colors.homeInk} />
-        </TouchableOpacity>
+        <IconButton icon="chevron-left" accessibilityLabel="Back" variant="tinted" onPress={() => router.back()} style={{ top: topInset + 10 }} />
         <EmptyState
           icon="package"
           title="Set not found"
@@ -208,14 +202,7 @@ export default function SetDetailScreen() {
       {/* ── Top: back + set name + completion ── */}
       <View style={[styles.header, { paddingTop: topInset + 10, borderBottomColor: colors.homeLine }]}>
         <View style={styles.headerTop}>
-          <TouchableOpacity
-            accessibilityLabel="Back"
-            onPress={() => router.back()}
-            activeOpacity={0.85}
-            style={[styles.backBtn, { backgroundColor: colors.homeAqua }]}
-          >
-            <Feather name="chevron-left" size={20} color={colors.homeInk} />
-          </TouchableOpacity>
+          <IconButton icon="chevron-left" accessibilityLabel="Back" variant="tinted" onPress={() => router.back()} />
           {!loading && isComplete && (
             <View style={[styles.completeBadge, { backgroundColor: colors.owned + '1E' }]}>
               <Feather name="award" size={13} color={colors.owned} />
@@ -223,15 +210,15 @@ export default function SetDetailScreen() {
             </View>
           )}
           {!loading && missingIds.length > 0 && (
-            <TouchableOpacity
-              onPress={selection.active ? selection.stop : selection.start}
-              accessibilityRole="button"
+            <Button
+              variant="secondary"
+              size="compact"
+              fullWidth={false}
+              label={selection.active ? 'Cancel' : 'Select'}
               accessibilityLabel={selection.active ? 'Cancel selecting' : 'Select pins'}
-              activeOpacity={0.7}
-              style={[styles.selectBtn, { backgroundColor: selection.active ? colors.homeAqua : 'transparent', borderColor: colors.homeLine }]}
-            >
-              <Text style={[styles.selectBtnLabel, { color: colors.homeInk }]}>{selection.active ? 'Cancel' : 'Select'}</Text>
-            </TouchableOpacity>
+              onPress={selection.active ? selection.stop : selection.start}
+              style={styles.selectBtn}
+            />
           )}
         </View>
 
@@ -267,11 +254,11 @@ export default function SetDetailScreen() {
             <Text style={[styles.selectCount, { color: colors.homeInk }]}>
               {selectedIds.length === 0 ? 'Tap the pins you have' : `${selectedIds.length} selected`}
             </Text>
-            <TouchableOpacity onPress={() => selection.toggleAll(missingIds)} accessibilityRole="button" hitSlop={8} style={styles.selectAllBtn}>
-              <Text style={[styles.selectAllLabel, { color: colors.homeCoralDeep }]}>
-                {selection.allSelected(missingIds) ? 'Clear' : 'Select all missing'}
-              </Text>
-            </TouchableOpacity>
+            <Button
+              variant="text"
+              label={selection.allSelected(missingIds) ? 'Clear' : 'Select all missing'}
+              onPress={() => selection.toggleAll(missingIds)}
+            />
           </View>
         )}
       </View>
@@ -335,58 +322,27 @@ export default function SetDetailScreen() {
 
       {showFooter && (
         <View style={[styles.footer, { backgroundColor: colors.homeSurface, borderTopColor: colors.homeLine, paddingBottom: botPad }]}>
-          <TouchableOpacity
+          <Button
+            label={`Find the ${missingIds.length} missing`}
+            subtitle={available != null && !tradersLoading
+              ? (available > 0 ? `${available} available from collectors` : 'None for trade yet')
+              : undefined}
             onPress={() => router.push({ pathname: '/set-traders/[collection]', params: { collection: collectionParam } })}
-            activeOpacity={0.85}
-            accessibilityRole="button"
-            style={[styles.footerPrimary, { backgroundColor: colors.homeCoral }]}
-          >
-            <Text style={[styles.footerPrimaryLabel, { color: colors.homeSurface }]}>
-              Find the {missingIds.length} missing
-            </Text>
-            {available != null && !tradersLoading && (
-              <Text style={[styles.footerPrimarySub, { color: colors.homeSurface }]}>
-                {available > 0 ? `${available} available from collectors` : 'None for trade yet'}
-              </Text>
-            )}
-          </TouchableOpacity>
+          />
           {toIsoCount > 0 && (
-            <TouchableOpacity
-              onPress={() => addMissingToIso(missingIds)}
-              activeOpacity={0.7}
-              accessibilityRole="button"
-              style={styles.footerSecondary}
-            >
-              <Text style={[styles.footerSecondaryLabel, { color: colors.homeCoralDeep }]}>Add missing to ISO</Text>
-            </TouchableOpacity>
+            <Button variant="text" fullWidth label="Add missing to ISO" onPress={() => addMissingToIso(missingIds)} />
           )}
         </View>
       )}
 
       {selection.active && (
         <View style={[styles.footer, { backgroundColor: colors.homeSurface, borderTopColor: colors.homeLine, paddingBottom: botPad }]}>
-          <TouchableOpacity
+          <Button
+            label={selectedIds.length === 0 ? 'Mark as Owned' : `Mark ${selectedIds.length} as Owned`}
+            disabled={selectedIds.length === 0}
             onPress={markSelectedOwned}
-            disabled={selectedIds.length === 0}
-            activeOpacity={0.85}
-            accessibilityRole="button"
-            accessibilityState={{ disabled: selectedIds.length === 0 }}
-            style={[styles.footerPrimary, { backgroundColor: colors.homeCoral, opacity: selectedIds.length === 0 ? 0.5 : 1 }]}
-          >
-            <Text style={[styles.footerPrimaryLabel, { color: colors.homeSurface }]}>
-              {selectedIds.length === 0 ? 'Mark as Owned' : `Mark ${selectedIds.length} as Owned`}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={addSelectedToIso}
-            disabled={selectedIds.length === 0}
-            activeOpacity={0.7}
-            accessibilityRole="button"
-            accessibilityState={{ disabled: selectedIds.length === 0 }}
-            style={[styles.footerSecondary, { opacity: selectedIds.length === 0 ? 0.5 : 1 }]}
-          >
-            <Text style={[styles.footerSecondaryLabel, { color: colors.homeCoralDeep }]}>Add to ISO</Text>
-          </TouchableOpacity>
+          />
+          <Button variant="text" fullWidth label="Add to ISO" disabled={selectedIds.length === 0} onPress={addSelectedToIso} />
         </View>
       )}
 
@@ -404,13 +360,9 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   headerTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
-  selectBtn: { minHeight: 44, minWidth: 64, paddingHorizontal: spacing.md, borderRadius: radius.pill, borderWidth: 1, alignItems: 'center', justifyContent: 'center', marginLeft: 'auto' },
-  selectBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  selectBtn: { marginLeft: 'auto' },
   selectRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: spacing.xs },
   selectCount: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
-  selectAllBtn: { minHeight: 44, justifyContent: 'center' },
-  selectAllLabel: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
-  backBtn: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   completeBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 6 },
   completeBadgeLabel: { fontSize: 12, fontFamily: 'Inter_700Bold' },
   setTitle: { fontSize: 21, lineHeight: 26, fontFamily: 'Inter_700Bold', letterSpacing: -0.4, marginTop: spacing.sm },
@@ -426,10 +378,5 @@ const styles = StyleSheet.create({
   skeletonImage: { borderRadius: radius.md },
   // Missing-pins footer
   footer: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: 2 },
-  footerPrimary: { minHeight: 52, borderRadius: radius.pill, alignItems: 'center', justifyContent: 'center', paddingVertical: 6 },
-  footerPrimaryLabel: { fontSize: 15, fontFamily: 'Inter_700Bold' },
-  footerPrimarySub: { fontSize: 11.5, fontFamily: 'Inter_500Medium', opacity: 0.9 },
-  footerSecondary: { minHeight: 44, alignItems: 'center', justifyContent: 'center' },
-  footerSecondaryLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   skeletonLabel: { height: 9, width: '70%', alignSelf: 'center', borderRadius: 5, marginTop: 9, marginBottom: 2 },
 });

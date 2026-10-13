@@ -16,6 +16,7 @@ import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
+import { Button } from '@/components/ui/Button';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
@@ -379,96 +380,37 @@ export default function ScanScreen() {
         {errorMsg && scanState === 'captured' && (
           <View style={styles.errorActions}>
             {!noMatchFound && (
-              <TouchableOpacity
-                onPress={handleIdentify}
-                activeOpacity={0.85}
-                accessibilityRole="button"
-                accessibilityLabel="Try again"
-                style={[styles.errorActionBtn, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12' }]}
-              >
-                <Feather name="refresh-cw" size={15} color={colors.homeCoral} />
-                <Text style={[styles.errorActionLabel, { color: colors.homeCoral }]}>Try again</Text>
-              </TouchableOpacity>
+              <Button label="Try again" icon="refresh-cw" size="compact" onPress={handleIdentify} style={styles.errorActionBtn} />
             )}
-            <TouchableOpacity
-              onPress={searchFromScan}
-              activeOpacity={0.85}
-              accessibilityRole="button"
-              accessibilityLabel="Search instead"
-              style={[styles.errorActionBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
-            >
-              <Feather name="search" size={15} color={colors.homeInk} />
-              <Text style={[styles.errorActionLabel, { color: colors.homeInk }]}>Search instead</Text>
-            </TouchableOpacity>
+            <Button label="Search instead" icon="search" size="compact" variant="secondary" onPress={searchFromScan} style={styles.errorActionBtn} />
           </View>
         )}
 
         {/* ── Not in our catalogue? Offer to add it ── */}
         {noMatchFound && (
-          <TouchableOpacity
+          <Button
+            label="Can't find it? Add this pin yourself"
+            icon="plus-circle"
+            variant="secondary"
             onPress={handleAddPinInstead}
-            activeOpacity={0.85}
-            style={[
-              styles.addPinCta,
-              { marginHorizontal: 16, borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12', borderRadius: 18 },
-            ]}
-          >
-            <Feather name="plus-circle" size={16} color={colors.homeCoral} />
-            <Text style={[styles.addPinCtaLabel, { color: colors.homeCoral }]}>
-              Can't find it? Add this pin yourself
-            </Text>
-          </TouchableOpacity>
+            style={styles.addPinCta}
+          />
         )}
 
         {/* ── Controls ── */}
         <View style={styles.controls}>
           {scanState === 'idle' && (
             <>
-              <TouchableOpacity
-                style={[styles.primaryBtn, { backgroundColor: colors.homeCoral, borderRadius: 18 }]}
-                onPress={handleScanPin}
-                activeOpacity={0.85}
-              >
-                <Feather name="camera" size={20} color={colors.homeSurface} />
-                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>Scan Pin</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.secondaryFullBtn, { borderColor: colors.homeLine, borderRadius: 18, backgroundColor: colors.homeSurface }]}
-                onPress={handleChoosePhoto}
-                activeOpacity={0.85}
-              >
-                <Feather name="image" size={18} color={colors.homeInk} />
-                <Text style={[styles.secondaryFullBtnLabel, { color: colors.homeInk }]}>Choose Photo</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.tertiaryBtn}
-                onPress={() => router.push('/search')}
-                activeOpacity={0.7}
-              >
-                <Feather name="search" size={15} color={colors.homeMuted} />
-                <Text style={[styles.tertiaryBtnLabel, { color: colors.homeMuted }]}>Manually Search</Text>
-              </TouchableOpacity>
+              <Button label="Scan Pin" icon="camera" onPress={handleScanPin} />
+              <Button label="Choose Photo" icon="image" variant="secondary" onPress={handleChoosePhoto} />
+              <Button label="Manually Search" icon="search" variant="text" fullWidth onPress={() => router.push('/search')} />
             </>
           )}
 
           {scanState === 'captured' && (
             <View style={styles.captureRow}>
-              <TouchableOpacity
-                style={[styles.secondaryBtn, { borderColor: colors.homeLine, borderRadius: 18, backgroundColor: colors.homeSurface }]}
-                onPress={handleScanPin}
-                activeOpacity={0.85}
-              >
-                <Feather name="refresh-cw" size={16} color={colors.homeInk} />
-                <Text style={[styles.secondaryBtnLabel, { color: colors.homeInk }]}>Retake</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.identifyBtn, { backgroundColor: colors.homeCoral, borderRadius: 18 }]}
-                onPress={handleIdentify}
-                activeOpacity={0.85}
-              >
-                <Feather name="cpu" size={20} color={colors.homeSurface} />
-                <Text style={[styles.primaryBtnLabel, { color: colors.homeSurface }]}>Identify Pin</Text>
-              </TouchableOpacity>
+              <Button label="Retake" icon="refresh-cw" variant="secondary" onPress={handleScanPin} style={styles.retakeBtn} />
+              <Button label="Identify Pin" icon="cpu" onPress={handleIdentify} style={styles.identifyBtn} />
             </View>
           )}
 
@@ -728,72 +670,14 @@ const styles = StyleSheet.create({
   },
   errorText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
   errorActions: { flexDirection: 'row', gap: 10, marginHorizontal: 16, marginBottom: 12 },
-  errorActionBtn: {
-    flex: 1,
-    minHeight: 44,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    borderWidth: 1,
-    borderRadius: 14,
-  },
-  errorActionLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  addPinCta: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    marginBottom: 12,
-    paddingVertical: 12,
-    borderWidth: 1,
-  },
-  addPinCtaLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  errorActionBtn: { flex: 1 },
+  addPinCta: { marginHorizontal: 16, marginBottom: 12 },
   // Controls
   controls: { paddingHorizontal: 16, gap: 12 },
-  primaryBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 14,
-    gap: 10,
-  },
-  primaryBtnLabel: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
-  secondaryFullBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 13,
-    gap: 8,
-    borderWidth: 1,
-  },
-  secondaryFullBtnLabel: { fontSize: 15, fontFamily: 'Inter_500Medium' },
-  tertiaryBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 10,
-    gap: 6,
-  },
-  tertiaryBtnLabel: { fontSize: 14, fontFamily: 'Inter_500Medium' },
   captureRow: { flexDirection: 'row', gap: 12 },
-  secondaryBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 13,
-    gap: 8,
-    borderWidth: 1,
-  },
-  secondaryBtnLabel: { fontSize: 15, fontFamily: 'Inter_500Medium' },
-  identifyBtn: {
-    flex: 2,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 14,
-    gap: 10,
-  },
+  retakeBtn: { flex: 1 },
+  identifyBtn: { flex: 2 },
+
   loadingRow: {
     flexDirection: 'row',
     alignItems: 'center',

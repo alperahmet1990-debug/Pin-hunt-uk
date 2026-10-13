@@ -19,3 +19,5 @@ export { Sheet } from './Sheet';
 export type { SheetProps } from './Sheet';
 export { ConfirmDialog } from './ConfirmDialog';
 export type { ConfirmDialogProps } from './ConfirmDialog';
+export { Button, IconButton, MIN_TOUCH } from './Button';
+export type { ButtonProps, ButtonVariant, ButtonSize, IconButtonProps, IconButtonVariant } from './Button';

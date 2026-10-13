@@ -26,6 +26,7 @@ import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
 import { usePinActions } from '@/components/PinActionsSheet';
+import { Button, IconButton } from '@/components/ui/Button';
 import { BulkSelectBar, BULK_BAR_HEIGHT, tabBarOffset } from '@/components/BulkSelectBar';
 import { usePinSelection } from '@/hooks/usePinSelection';
 import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
@@ -419,18 +420,17 @@ export default function CollectionScreen() {
       <View style={s.pageHeader}>
         <Text style={[s.pageTitle, { color: colors.homeInk }]}>My Collection</Text>
         <View style={s.headerActions}>
-          <TouchableOpacity
-            style={[s.headerBtn, searchActive && { backgroundColor: colors.homeCoral + '15' }]}
+          <IconButton
+            icon="search"
+            iconSize={24}
+            accessibilityLabel={searchActive ? 'Close search' : 'Search my collection'}
+            active={searchActive}
             onPress={() => {
               setSearchActive(!searchActive);
               if (searchActive) setSearchQuery('');
             }}
-          >
-            <Feather name="search" size={24} color={searchActive ? colors.homeCoral : colors.homeInk} />
-          </TouchableOpacity>
-          <TouchableOpacity style={s.headerBtn} onPress={() => setAddModalVisible(true)} accessibilityRole="button" accessibilityLabel="Add pins">
-            <Feather name="plus" size={24} color={colors.homeInk} />
-          </TouchableOpacity>
+          />
+          <IconButton icon="plus" iconSize={24} accessibilityLabel="Add pins" onPress={() => setAddModalVisible(true)} />
         </View>
       </View>
 
@@ -595,9 +595,7 @@ export default function CollectionScreen() {
                 autoFocus
               />
               {searchQuery ? (
-                <TouchableOpacity onPress={() => setSearchQuery('')} hitSlop={10}>
-                  <Feather name="x-circle" size={16} color={colors.homeMuted} />
-                </TouchableOpacity>
+                <IconButton icon="x-circle" iconSize={16} color={colors.homeMuted} accessibilityLabel="Clear search" onPress={() => setSearchQuery('')} style={s.inputClear} />
               ) : null}
             </View>
             <TouchableOpacity
@@ -784,14 +782,7 @@ export default function CollectionScreen() {
         onClose={() => setCreateBoardVisible(false)}
         title="New board"
         footer={
-          <TouchableOpacity
-            onPress={handleCreateBoard}
-            disabled={!newBoardName.trim()}
-            accessibilityRole="button"
-            style={[s.sheetPrimary, { backgroundColor: newBoardName.trim() ? colors.homeCoral : colors.homeAqua }]}
-          >
-            <Text style={[s.modalBtnText, { color: newBoardName.trim() ? colors.homeSurface : colors.homeMuted }]}>Create</Text>
-          </TouchableOpacity>
+          <Button label="Create" disabled={!newBoardName.trim()} onPress={handleCreateBoard} />
         }
       >
         <TextInput
@@ -820,13 +811,9 @@ export default function CollectionScreen() {
               <Text style={[s.modalTitle, { color: colors.homeInk, marginBottom: 0 }]}>Filter Pins</Text>
               <View style={s.filterHeaderActions}>
                 {(Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent') && (
-                  <TouchableOpacity onPress={() => { setPinFilters({}); setAllPinsSort('recent'); }} style={s.clearBtn}>
-                    <Text style={[s.clearText, { color: colors.homeCoral }]}>Clear</Text>
-                  </TouchableOpacity>
+                  <Button variant="text" label="Clear" accessibilityLabel="Clear filters and sort" onPress={() => { setPinFilters({}); setAllPinsSort('recent'); }} />
                 )}
-                <TouchableOpacity onPress={() => setAllPinsFilterVisible(false)} style={s.closeBtn}>
-                  <Feather name="x" size={20} color={colors.homeInk} />
-                </TouchableOpacity>
+                <IconButton icon="x" accessibilityLabel="Close" onPress={() => setAllPinsFilterVisible(false)} />
               </View>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.filterScrollContent}>
@@ -890,9 +877,11 @@ export default function CollectionScreen() {
                 </View>
               </View>
             </ScrollView>
-            <TouchableOpacity style={[s.applyBtn, { backgroundColor: colors.homeCoral }]} onPress={() => setAllPinsFilterVisible(false)}>
-              <Text style={[s.applyBtnText, { color: colors.homeSurface }]}>Show {filteredOwnedPins.length} pin{filteredOwnedPins.length === 1 ? '' : 's'}</Text>
-            </TouchableOpacity>
+            <Button
+              label={`Show ${filteredOwnedPins.length} pin${filteredOwnedPins.length === 1 ? '' : 's'}`}
+              onPress={() => setAllPinsFilterVisible(false)}
+              style={s.applyBtn}
+            />
           </View>
         </View>
       </Modal>
@@ -1007,7 +996,6 @@ const s = StyleSheet.create({
   pageHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 8, paddingBottom: 16 },
   pageTitle: { fontSize: 24, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
   headerActions: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  headerBtn: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   contextualArea: { paddingBottom: 8 },
   statsRow: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 16, paddingVertical: 12 },
   statText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
@@ -1056,11 +1044,8 @@ const s = StyleSheet.create({
   addMenuItem: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52, borderBottomWidth: StyleSheet.hairlineWidth },
   addMenuText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   addMenuSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
-  closeBtn: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   modalTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold', marginBottom: 16 },
   modalInput: { height: 44, borderWidth: 1, borderRadius: 12, paddingHorizontal: 12, fontSize: 15, fontFamily: 'Inter_400Regular' },
-  sheetPrimary: { minHeight: 48, alignItems: 'center', justifyContent: 'center', borderRadius: 14 },
-  modalBtnText: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   sheetSectionTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 12 },
   sheetRow: { flexDirection: 'row', gap: 8 },
   sheetRowWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
@@ -1069,12 +1054,11 @@ const s = StyleSheet.create({
   filterSheet: { maxHeight: '88%', borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: 16, borderTopWidth: StyleSheet.hairlineWidth },
   filterSheetHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
   filterHeaderActions: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  clearBtn: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 8 },
-  clearText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   filterScrollContent: { paddingBottom: 12 },
   filterSection: { marginTop: 14 },
   compactChip: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 12, borderRadius: 22, borderWidth: 1 },
   compactChipText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
-  applyBtn: { minHeight: 46, borderRadius: 14, alignItems: 'center', justifyContent: 'center', marginTop: 6 },
-  applyBtnText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  applyBtn: { marginTop: 6 },
+  // 44 pt target that overhangs the 44 pt search box rather than growing it.
+  inputClear: { marginRight: -spacing.md },
 });

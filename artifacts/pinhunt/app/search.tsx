@@ -31,6 +31,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useCollection } from '@/context/CollectionContext';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { usePinActions } from '@/components/PinActionsSheet';
+import { Button, IconButton } from '@/components/ui/Button';
 import { getPinImageSource } from '@/utils/pinImage';
 import { StatusBadge } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
@@ -249,14 +250,13 @@ export default function SearchScreen() {
     <View style={[styles.screen, { backgroundColor: colors.homeBackground, paddingTop: topPad }]}>
       {/* ── Header: back + search input ── */}
       <View style={styles.header}>
-        <TouchableOpacity
+        <IconButton
+          icon="chevron-left"
+          iconSize={24}
+          accessibilityLabel="Back"
           onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/scan'))}
-          hitSlop={8}
           style={styles.backBtn}
-          activeOpacity={0.7}
-        >
-          <Feather name="chevron-left" size={24} color={colors.homeInk} />
-        </TouchableOpacity>
+        />
         <View style={[styles.inputWrap, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine, borderRadius: radius.pill }]}>
           <Feather name="search" size={16} color={colors.homeMuted} />
           <TextInput
@@ -272,9 +272,14 @@ export default function SearchScreen() {
             onSubmitEditing={() => saveRecent(query)}
           />
           {query.length > 0 && (
-            <TouchableOpacity onPress={() => setQuery('')} hitSlop={8}>
-              <Feather name="x-circle" size={16} color={colors.homeMuted} />
-            </TouchableOpacity>
+            <IconButton
+              icon="x-circle"
+              iconSize={16}
+              color={colors.homeMuted}
+              accessibilityLabel="Clear search"
+              onPress={() => setQuery('')}
+              style={styles.inputClear}
+            />
           )}
         </View>
       </View>
@@ -320,9 +325,7 @@ export default function SearchScreen() {
               <View style={styles.section}>
                 <View style={styles.sectionHeader}>
                   <Text style={[styles.sectionTitle, { color: colors.homeInk }]}>Recent Searches</Text>
-                  <TouchableOpacity onPress={clearRecents} hitSlop={8}>
-                    <Text style={[styles.clearAll, { color: colors.homeMuted }]}>Clear all</Text>
-                  </TouchableOpacity>
+                  <Button variant="text" label="Clear all" accessibilityLabel="Clear recent searches" onPress={clearRecents} style={styles.clearAll} />
                 </View>
                 {recents.map(term => (
                   <View key={term} style={styles.recentRow}>
@@ -330,9 +333,14 @@ export default function SearchScreen() {
                       <Feather name="clock" size={15} color={colors.homeMuted} />
                       <Text style={[styles.recentText, { color: colors.homeInk }]} numberOfLines={1}>{term}</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => removeRecent(term)} hitSlop={8} style={[styles.recentRemove, { backgroundColor: colors.homeAqua }]}>
-                      <Feather name="x" size={12} color={colors.homeMuted} />
-                    </TouchableOpacity>
+                    <IconButton
+                      icon="x"
+                      iconSize={14}
+                      color={colors.homeMuted}
+                      accessibilityLabel={`Remove ${term} from recent searches`}
+                      onPress={() => removeRecent(term)}
+                      style={styles.recentRemove}
+                    />
                   </View>
                 ))}
               </View>
@@ -370,16 +378,13 @@ export default function SearchScreen() {
                   <Feather name="search" size={15} color={colors.homeMuted} />
                   <Text style={[styles.stateText, { color: colors.homeMuted }]}>No pins found</Text>
                 </View>
-                <TouchableOpacity
+                <Button
+                  variant="secondary"
+                  icon="plus-circle"
+                  label="Can't find it? Add this pin to the catalogue"
                   onPress={() => router.push({ pathname: '/add-pin', params: { name: query.trim() } })}
-                  activeOpacity={0.85}
-                  style={[styles.addPinLink, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12' }]}
-                >
-                  <Feather name="plus-circle" size={15} color={colors.homeCoral} />
-                  <Text style={[styles.addPinLinkLabel, { color: colors.homeCoral }]}>
-                    Can&apos;t find it? Add this pin to the catalogue
-                  </Text>
-                </TouchableOpacity>
+                  style={styles.addPinLink}
+                />
               </>
             ) : (
               <>
@@ -457,7 +462,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     gap: spacing.xs,
   },
-  backBtn: { padding: spacing.xs },
+  backBtn: { marginLeft: -spacing.sm },
   inputWrap: {
     flex: 1,
     minWidth: 0,
@@ -467,6 +472,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     height: 40,
     gap: spacing.sm,
+    overflow: 'visible',
     marginRight: spacing.sm,
   },
   // minWidth 0: on web the <input> otherwise keeps a ~20-character minimum
@@ -489,17 +495,14 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   sectionTitle: { fontSize: 16, fontFamily: 'Inter_700Bold', marginBottom: spacing.xs },
-  clearAll: { fontSize: 13, fontFamily: 'Inter_500Medium' },
-  recentRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: spacing.sm + 2 },
-  recentTap: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2 },
+  clearAll: { marginRight: -spacing.sm },
+  // 44 pt target that overhangs the 40 pt field instead of growing it.
+  inputClear: { marginVertical: -2, marginRight: -spacing.md },
+  recentRow: { flexDirection: 'row', alignItems: 'center' },
+  recentTap: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2, minHeight: 44 },
   recentText: { fontSize: 15, flex: 1, fontFamily: 'Inter_400Regular' },
-  recentRemove: {
-    width: 22,
-    height: 22,
-    borderRadius: 11,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  recentRemove: { marginRight: -spacing.sm },
+
   popularGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm + 2, marginTop: spacing.sm },
   popularCard: {
     width: '30.5%',
@@ -514,8 +517,7 @@ const styles = StyleSheet.create({
   endOfList: { fontSize: 13, textAlign: 'center', paddingVertical: spacing.lg, fontFamily: 'Inter_400Regular' },
   stateRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.lg },
   stateText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
-  addPinLink: { flexDirection: 'row', alignItems: 'center', gap: 8, borderWidth: 1, borderRadius: 18, paddingHorizontal: 14, paddingVertical: 12, marginTop: 12 },
-  addPinLinkLabel: { flex: 1, fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  addPinLink: { marginTop: 12 },
   resultRow: {
     flexDirection: 'row',
     alignItems: 'center',

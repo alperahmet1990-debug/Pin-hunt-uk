@@ -1,3 +1,4 @@
+import { FEATURES } from '@/constants/features';
 import React from 'react';
 import {
   ActivityIndicator,
@@ -213,11 +214,13 @@ export default function ProfileScreen() {
                 label="Find Collectors"
                 onPress={() => router.push('/find-collectors')}
               />
-              <SettingsRow
-                icon="shopping-bag"
-                label="My Marketplace Listings"
-                onPress={() => router.push('/my-listings')}
-              />
+              {FEATURES.marketplaceListings && (
+                <SettingsRow
+                  icon="shopping-bag"
+                  label="My Marketplace Listings"
+                  onPress={() => router.push('/my-listings')}
+                />
+              )}
               <SettingsRow
                 icon="upload"
                 label="My Pin Submissions"

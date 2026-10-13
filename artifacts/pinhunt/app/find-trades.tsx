@@ -41,6 +41,8 @@ import { radius, spacing } from '@/constants/theme';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 import { formatMatchSummary } from '@/utils/tradeMatch';
 import { useFindTrades, type PotentialTradeCard, type SetOpportunity } from '@/hooks/useFindTrades';
+import { useCollection } from '@/context/CollectionContext';
+import { findTradesEmptyState, type FindTradesEmptyAction } from '@/utils/findTradesEmpty';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
 
 function pinImageSource(imageUrl?: string) {
@@ -60,6 +62,13 @@ export default function FindTradesScreen() {
     error,
     refresh,
   } = useFindTrades();
+  const { collection } = useCollection();
+  const isoCount = Object.values(collection).filter(e => e.status === 'wanted').length;
+  const empty = findTradesEmptyState(isoCount);
+  const runEmptyAction = (action: FindTradesEmptyAction) => {
+    if (action === 'forTradePosts') router.push({ pathname: '/(tabs)/community', params: { filter: 'for_trade' } });
+    else router.push('/search');
+  };
 
   const goToTraders = (pinId: string) => router.push({ pathname: '/traders/[pinId]', params: { pinId } });
   // Potential Trades only ever surfaces genuine two-way matches, so every tap
@@ -97,18 +106,26 @@ export default function FindTradesScreen() {
           ) : nothingAtAll ? (
             <View style={styles.center}>
               <Feather name="compass" size={36} color={colors.homeMuted} />
-              <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>Nothing to trade for yet</Text>
-              <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
-                Add pins to your ISO and build up your Boards, and we'll start surfacing trades here.
-              </Text>
+              <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>{empty.title}</Text>
+              <Text style={[styles.emptySub, { color: colors.homeMuted }]}>{empty.body}</Text>
               <TouchableOpacity
-                onPress={() => router.push('/search')}
+                onPress={() => runEmptyAction(empty.primary.action)}
                 activeOpacity={0.8}
                 accessibilityRole="button"
                 style={[styles.emptyAction, { backgroundColor: colors.homeCoral }]}
               >
-                <Text style={[styles.emptyActionLabel, { color: colors.homeSurface }]}>Add to your ISO</Text>
+                <Text style={[styles.emptyActionLabel, { color: colors.homeSurface }]}>{empty.primary.label}</Text>
               </TouchableOpacity>
+              {empty.secondary && (
+                <TouchableOpacity
+                  onPress={() => runEmptyAction(empty.secondary!.action)}
+                  activeOpacity={0.7}
+                  accessibilityRole="button"
+                  style={styles.emptySecondary}
+                >
+                  <Text style={[styles.emptyActionLabel, { color: colors.homeCoralDeep }]}>{empty.secondary.label}</Text>
+                </TouchableOpacity>
+              )}
             </View>
           ) : (
             <>
@@ -460,4 +477,5 @@ const styles = StyleSheet.create({
   discoveryActionLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   emptyAction: { marginTop: spacing.md, minHeight: 44, paddingHorizontal: spacing.xl, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
   emptyActionLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  emptySecondary: { minHeight: 44, paddingHorizontal: spacing.lg, alignItems: 'center', justifyContent: 'center' },
 });

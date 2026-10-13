@@ -24,21 +24,21 @@ import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
 import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
-import { PinCard } from '@/components/PinCard';
-import { BoardCard } from '@/components/BoardCard';
 import { EmptyState } from '@/components/EmptyState';
-import { SegmentedControl, Sheet } from '@/components/ui';
+import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
+import { spacing } from '@/constants/theme';
 import type { SegmentedControlOption } from '@/components/ui';
 import {
   type CataloguePin,
   type PinSetSummary,
 } from '@workspace/pin-repository';
 
-type Tab = 'boards' | 'sets' | 'traders' | 'iso';
+// All is the default (B-P1-03): owned pins first, with Boards as a row on it.
+type Tab = 'all' | 'sets' | 'traders' | 'iso';
 // No icons here — at 4-up and ~375px, the icon + gap is exactly the width
 // "For Trade" needs to render without shrinking type or squeezing the pill.
 const TAB_OPTIONS: SegmentedControlOption<Tab>[] = [
-  { value: 'boards', label: 'Boards', tone: 'coral' },
+  { value: 'all', label: 'All', tone: 'coral' },
   { value: 'sets', label: 'Sets', tone: 'coral' },
   { value: 'traders', label: 'For Trade', tone: 'coral' },
   { value: 'iso', label: 'ISO', tone: 'coral' },
@@ -52,7 +52,6 @@ interface GroupData {
   title: string;
   subtitle: string;
   pins: CataloguePin[];
-  isBoard?: boolean;
   isSet?: boolean;
   setId?: string;
   progress?: number;
@@ -144,10 +143,50 @@ function FindTradesRow({ detail, onPress, colors }: {
   return <LinkRow icon="compass" label="Find trades for these" detail={detail} onPress={onPress} colors={colors} />;
 }
 
+/** Boards stay one tap away on All (B-P1-03): "+ New board" first, then each board. */
+function BoardsRow({ boards, onNewBoard, onOpenBoard, colors }: {
+  boards: { id: string; title: string; count: number }[];
+  onNewBoard: () => void;
+  onOpenBoard: (id: string) => void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  return (
+    <View style={s.boardsRow}>
+      <Text style={[s.boardsRowTitle, { color: colors.homeMuted }]}>Boards</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.boardsRowContent}>
+        <TouchableOpacity
+          onPress={onNewBoard}
+          accessibilityRole="button"
+          accessibilityLabel="New board"
+          style={[s.boardChip, { backgroundColor: colors.homeAqua, borderColor: colors.homeCoral }]}
+        >
+          <Feather name="plus" size={14} color={colors.homeCoralDeep} />
+          <Text style={[s.boardChipText, { color: colors.homeCoralDeep }]}>New board</Text>
+        </TouchableOpacity>
+        {boards.map(board => (
+          <TouchableOpacity
+            key={board.id}
+            onPress={() => onOpenBoard(board.id)}
+            accessibilityRole="button"
+            accessibilityLabel={`${board.title}, ${board.count} pin${board.count === 1 ? '' : 's'}`}
+            style={[s.boardChip, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+          >
+            <Feather name="folder" size={14} color={colors.homeMuted} />
+            <Text style={[s.boardChipText, { color: colors.homeInk }]} numberOfLines={1}>{board.title}</Text>
+            <Text style={[s.boardChipCount, { color: colors.homeMuted }]}>{board.count}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </View>
+  );
+}
+
 export default function CollectionScreen() {
   const colors = useColors();
   const { width: screenWidth } = useWindowDimensions();
   const gridCardWidth = (screenWidth - 16 * 2 - 12) / 2;
+  const pinColumns = pinGridColumns(screenWidth);
+  const tileSize = pinTileSize(screenWidth, pinColumns, spacing.lg);
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const params = useLocalSearchParams<{ tab?: string }>();
@@ -155,7 +194,7 @@ export default function CollectionScreen() {
   const { pins: catalogue, ensurePins, ensureCollections, repository } = usePinCatalogue();
   const { customBoards, createBoard, getBoardPins } = useBoards();
 
-  const [activeTab, setActiveTab] = useState<Tab>('sets');
+  const [activeTab, setActiveTab] = useState<Tab>('all');
   const [searchActive, setSearchActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [pinFilters, setPinFilters] = useState<MetadataFilters>({});
@@ -168,7 +207,7 @@ export default function CollectionScreen() {
   const [isoFilter, setIsoFilter] = useState<PinFilterType>('all');
   const [isoSort, setIsoSort] = useState<PinSortType>('recent');
   const [setsSort, setSetsSort] = useState<'completion' | 'name' | 'year'>('completion');
-  const [filterSheetTab, setFilterSheetTab] = useState<'traders' | 'iso' | 'boards' | 'sets' | null>(null);
+  const [filterSheetTab, setFilterSheetTab] = useState<'traders' | 'iso' | 'sets' | null>(null);
 
   const [addModalVisible, setAddModalVisible] = useState(false);
   const [repoSetSummaries, setSetSummaries] = useState<PinSetSummary[]>([]);
@@ -176,8 +215,10 @@ export default function CollectionScreen() {
   const [newBoardName, setNewBoardName] = useState('');
 
   useEffect(() => {
-    if (params.tab && ['boards', 'sets', 'traders', 'iso'].includes(params.tab)) {
-      setActiveTab(params.tab as Tab);
+    // 'boards' is the old default tab; its links now land on All, where the Boards row is.
+    const tab = params.tab === 'boards' ? 'all' : params.tab;
+    if (tab && ['all', 'sets', 'traders', 'iso'].includes(tab)) {
+      setActiveTab(tab as Tab);
       setSearchQuery('');
       setSearchActive(false);
       setPinFilters({});
@@ -316,21 +357,12 @@ export default function CollectionScreen() {
     return processPins(filtered, 'all', allPinsSort, '', collection);
   }, [ownedPins, searchQuery, pinFilters, allPinsSort, collection]);
 
-  const boardGroups = useMemo<GroupData[]>(() => {
+  const boardRowItems = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     return customBoards
-      .map(b => {
-        const pins = getBoardPins(b);
-        return {
-          isGroup: true as const,
-          id: b.id,
-          title: b.name,
-          subtitle: `${pins.length} pin${pins.length === 1 ? '' : 's'}`,
-          pins,
-          isBoard: true,
-        };
-      })
-      .filter(group => !query || group.title.toLowerCase().includes(query) || group.pins.some(pin => pinMatchesSearch(pin, query)));
+      .map(b => ({ id: b.id, title: b.name, pins: getBoardPins(b) }))
+      .filter(board => !query || board.title.toLowerCase().includes(query) || board.pins.some(pin => pinMatchesSearch(pin, query)))
+      .map(board => ({ id: board.id, title: board.title, count: board.pins.length }));
   }, [customBoards, getBoardPins, searchQuery]);
 
   const filteredTraderPins = useMemo(() => {
@@ -341,24 +373,19 @@ export default function CollectionScreen() {
     return processPins(wantedPins, isoFilter, isoSort, searchQuery, collection);
   }, [wantedPins, isoFilter, isoSort, searchQuery, collection]);
 
-  const boardPinFallbackActive =
-    activeTab === 'boards' &&
-    searchActive &&
-    searchQuery.trim().length > 0 &&
-    boardGroups.length === 0;
-
   const gridData = useMemo(() => {
-    if (activeTab === 'boards') return boardPinFallbackActive ? filteredOwnedPins : boardGroups;
+    if (activeTab === 'all') return filteredOwnedPins;
     if (activeTab === 'sets') return setGroups;
     if (activeTab === 'traders') return filteredTraderPins;
     if (activeTab === 'iso') return filteredIsoPins;
     return [];
-  }, [activeTab, boardPinFallbackActive, filteredOwnedPins, boardGroups, setGroups, filteredTraderPins, filteredIsoPins]);
+  }, [activeTab, filteredOwnedPins, setGroups, filteredTraderPins, filteredIsoPins]);
+  // Pin tabs use the shared 3-column PinTile grid (B-P1-04); Sets keep 2-up cards.
+  const pinGrid = activeTab !== 'sets';
+  const allPinsFiltered = Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent';
 
   const handleGroupPress = (item: GroupData) => {
-    if (item.isBoard) {
-      router.push({ pathname: '/board/[id]', params: { id: item.id } });
-    } else if (item.isSet) {
+    if (item.isSet) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       router.push({ pathname: '/set/[collection]' as any, params: { collection: item.title } });
     }
@@ -413,15 +440,26 @@ export default function CollectionScreen() {
 
       {/* Contextual Stats & Search */}
       <View style={s.contextualArea}>
-        {activeTab === 'boards' && (
-          <View style={s.statsRow}>
+        {activeTab === 'all' && (
+          <>
+          <BoardsRow
+            boards={boardRowItems}
+            onNewBoard={() => setCreateBoardVisible(true)}
+            onOpenBoard={id => router.push({ pathname: '/board/[id]', params: { id } })}
+            colors={colors}
+          />
+          <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
             <Text style={[s.statText, { color: colors.homeInk }]}>
               {ownedIds.size} <Text style={{ color: colors.homeMuted }}>Owned</Text>
             </Text>
-            <Text style={[s.statText, { color: colors.homeInk }]}>
-              {customBoards.length} <Text style={{ color: colors.homeMuted }}>Boards</Text>
-            </Text>
+            {!searchActive && ownedIds.size > 0 && (
+              <TouchableOpacity onPress={() => setAllPinsFilterVisible(true)} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Filter and sort pins">
+                <Feather name="sliders" size={16} color={allPinsFiltered ? colors.homeCoral : colors.homeInk} />
+                <Text style={[s.iconStatBtnText, { color: allPinsFiltered ? colors.homeCoral : colors.homeInk }]}>Filter</Text>
+              </TouchableOpacity>
+            )}
           </View>
+          </>
         )}
         {activeTab === 'sets' && (
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
@@ -500,7 +538,7 @@ export default function CollectionScreen() {
               <TextInput
                 value={searchQuery}
                 onChangeText={setSearchQuery}
-                placeholder={activeTab === 'boards' ? 'Search boards & pins' : `Search ${activeTab}`}
+                placeholder={activeTab === 'all' ? 'Search pins & boards' : activeTab === 'traders' ? 'Search For Trade' : activeTab === 'iso' ? 'Search ISO' : 'Search sets'}
                 placeholderTextColor={colors.homeMuted}
                 style={[s.searchInput, { color: colors.homeInk }]}
                 returnKeyType="search"
@@ -512,31 +550,20 @@ export default function CollectionScreen() {
                 </TouchableOpacity>
               ) : null}
             </View>
-            {(activeTab !== 'boards' || boardPinFallbackActive) && (
-              <TouchableOpacity
-                style={[s.utilBtn, {
-                  backgroundColor: colors.homeSurface,
-                  borderColor: activeTab === 'boards' && (Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent')
-                    ? colors.homeCoral
-                    : colors.homeLine,
-                }]}
-                onPress={() => {
-                  if (activeTab === 'boards') setAllPinsFilterVisible(true);
-                  else setFilterSheetTab(activeTab);
-                }}
-              >
-                <Feather name="sliders" size={18} color={activeTab === 'boards' && (Object.keys(pinFilters).length > 0 || allPinsSort !== 'recent') ? colors.homeCoral : colors.homeInk} />
-              </TouchableOpacity>
-            )}
-          </View>
-        )}
-
-        {/* If searching pins in Boards view, allow viewing all owned pins */}
-        {boardPinFallbackActive && filteredOwnedPins.length > 0 && (
-          <View style={[s.secondarySearchResult, { backgroundColor: colors.homeSurface }]}>
-            <Text style={[s.secondarySearchText, { color: colors.homeMuted }]}>
-              View All Owned Pins · {filteredOwnedPins.length} result{filteredOwnedPins.length === 1 ? '' : 's'}
-            </Text>
+            <TouchableOpacity
+              style={[s.utilBtn, {
+                backgroundColor: colors.homeSurface,
+                borderColor: activeTab === 'all' && allPinsFiltered ? colors.homeCoral : colors.homeLine,
+              }]}
+              accessibilityRole="button"
+              accessibilityLabel="Filter and sort"
+              onPress={() => {
+                if (activeTab === 'all') setAllPinsFilterVisible(true);
+                else setFilterSheetTab(activeTab);
+              }}
+            >
+              <Feather name="sliders" size={18} color={activeTab === 'all' && allPinsFiltered ? colors.homeCoral : colors.homeInk} />
+            </TouchableOpacity>
           </View>
         )}
       </View>
@@ -544,9 +571,19 @@ export default function CollectionScreen() {
   );
 
   const renderEmpty = () => {
-    if (activeTab === 'boards') {
-      if (searchActive && searchQuery) return <EmptyState icon="search" title="No results found" subtitle="Try a different search term." />;
-      return <EmptyState icon="folder" title="No boards yet" subtitle="Create a board to organise your pins." actionLabel="Create Board" onAction={() => setCreateBoardVisible(true)} />;
+    if (activeTab === 'all') {
+      if (searchActive && searchQuery || Object.keys(pinFilters).length > 0) {
+        return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
+      }
+      return (
+        <View>
+          <EmptyState icon="camera" title="No pins yet" subtitle="Scan a pin, or search the catalogue and add the ones you own." actionLabel="Scan a pin" onAction={() => router.push('/(tabs)/scan')} />
+          <View style={{ marginHorizontal: -16 }}>
+            <LinkRow icon="search" label="Search for a pin" detail="Find one pin in the catalogue" onPress={() => router.push('/search')} colors={colors} />
+            <LinkRow icon="grid" label="Add pins you own" detail="Select many from the catalogue" onPress={() => router.push(ADD_PINS_ROUTE)} colors={colors} />
+          </View>
+        </View>
+      );
     }
     if (activeTab === 'sets') {
       if (searchActive && searchQuery) return <EmptyState icon="search" title="No results found" subtitle="Try a different search term." />;
@@ -571,8 +608,8 @@ export default function CollectionScreen() {
       <FlatList<CataloguePin | GroupData>
         data={gridData}
         keyExtractor={item => ('isGroup' in item ? item.id : item.id)}
-        numColumns={2}
-        key="grid-2"
+        numColumns={pinGrid ? pinColumns : 2}
+        key={pinGrid ? `pin-grid-${pinColumns}` : 'grid-2'}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={renderHeader}
         ListEmptyComponent={renderEmpty}
@@ -590,25 +627,11 @@ export default function CollectionScreen() {
             </View>
           ) : null
         }
-        columnWrapperStyle={s.gridRow}
+        columnWrapperStyle={pinGrid ? s.pinGridRow : s.gridRow}
         contentContainerStyle={[s.flatListContent, { paddingBottom: botPad }]}
         renderItem={({ item }) => {
           if ('isGroup' in item) {
             const group = item as GroupData;
-
-            // Boards can just use BoardCard to look identical to other board locations
-            if (group.isBoard) {
-              return (
-                <View style={[s.gridItemWrap, { width: gridCardWidth }]}>
-                  <BoardCard
-                    board={{ id: group.id, name: group.title, pinIds: group.pins.map(p => p.id), createdAt: '', isCustom: true }}
-                    pins={group.pins}
-                    onPress={() => handleGroupPress(group)}
-                    seaGlass
-                  />
-                </View>
-              );
-            }
 
             // Sets use the visual group card
             const preview = group.pins.slice(0, 4);
@@ -642,16 +665,18 @@ export default function CollectionScreen() {
             );
           }
           const pin = item as CataloguePin;
+          const entry = collection[pin.id];
           return (
-            <View style={[s.gridItemWrap, { width: gridCardWidth }]}>
-              <PinCard pin={pin} mode="grid" onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })} seaGlass />
-              {(collection[pin.id]?.quantity ?? 1) > 1 && (
-                <View style={[s.quantityBadge, { backgroundColor: colors.homeInk }]}>
-                  <Text style={[s.quantityBadgeText, { color: colors.homeBackground }]}>
-                    ×{collection[pin.id].quantity}
-                  </Text>
-                </View>
-              )}
+            <View style={{ width: tileSize }}>
+              <PinTile
+                title={pin.title}
+                imageUrl={pin.imageUrl}
+                size={tileSize}
+                // For Trade and ISO tabs already say the status; All marks only For Trade.
+                status={activeTab === 'all' && entry?.status === 'for_trade' ? 'for_trade' : undefined}
+                copies={entry?.quantity}
+                onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
+              />
             </View>
           );
         }}
@@ -931,8 +956,6 @@ const s = StyleSheet.create({
   linkRowIcon: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
   linkRowLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   linkRowDetail: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
-  secondarySearchResult: { marginHorizontal: 16, padding: 12, borderRadius: 8, marginTop: 4, marginBottom: 8 },
-  secondarySearchText: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   tabsRow: { paddingHorizontal: 16, marginBottom: 14 },
   tab: { flex: 1, alignItems: 'center', paddingVertical: 12, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   tabText: { fontSize: 15 },
@@ -949,9 +972,13 @@ const s = StyleSheet.create({
   utilBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
   flatListContent: { paddingHorizontal: 16 },
   gridRow: { gap: 12, justifyContent: 'flex-start' },
-  gridItemWrap: { marginBottom: 12, position: 'relative' },
-  quantityBadge: { position: 'absolute', top: 8, right: 8, minWidth: 28, height: 22, borderRadius: 11, paddingHorizontal: 7, alignItems: 'center', justifyContent: 'center' },
-  quantityBadgeText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
+  pinGridRow: { gap: PIN_GRID_GUTTER, marginBottom: spacing.lg, justifyContent: 'flex-start' },
+  boardsRow: { marginBottom: 4 },
+  boardsRowTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', paddingHorizontal: 16, marginBottom: 8 },
+  boardsRowContent: { paddingHorizontal: 16, gap: 8 },
+  boardChip: { flexDirection: 'row', alignItems: 'center', gap: 6, minHeight: 44, maxWidth: 200, paddingHorizontal: 14, borderRadius: 22, borderWidth: 1 },
+  boardChipText: { fontSize: 14, fontFamily: 'Inter_600SemiBold', flexShrink: 1 },
+  boardChipCount: { fontSize: 13, fontFamily: 'Inter_500Medium' },
   groupCard: { borderRadius: 18, borderWidth: StyleSheet.hairlineWidth, overflow: 'hidden', marginBottom: 12 },
   groupPreviewArea: {},
   groupEmpty: { flex: 1, alignItems: 'center', justifyContent: 'center' },

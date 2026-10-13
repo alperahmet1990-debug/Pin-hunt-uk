@@ -230,21 +230,18 @@ export default function SetDetailScreen() {
           columnWrapperStyle={styles.gridRow}
           renderItem={({ item }) => {
             const isOwned = ownedIds.has(item.id);
-            const qty = getEntry(item.id)?.quantity ?? 1;
+            const entry = getEntry(item.id);
             return (
               <View style={{ width: TILE }}>
                 <CompactPinTile
                   pin={item}
                   owned={isOwned}
+                  status={entry?.status}
+                  copies={isOwned ? entry?.quantity : undefined}
                   size={TILE}
                   onPress={() => router.push({ pathname: '/pin/[id]', params: { id: item.id } })}
                   onQuickAdd={!isOwned ? () => setQuickAddPin(item) : undefined}
                 />
-                {isOwned && qty > 1 && (
-                  <View style={[styles.qtyBadge, { backgroundColor: colors.homeInk }]}>
-                    <Text style={[styles.qtyBadgeLabel, { color: colors.homeSurface }]}>×{qty}</Text>
-                  </View>
-                )}
               </View>
             );
           }}
@@ -280,16 +277,4 @@ const styles = StyleSheet.create({
   skeletonGrid: { flexDirection: 'row', flexWrap: 'wrap', columnGap: GRID_GAP, rowGap: spacing.lg },
   skeletonImage: { borderRadius: radius.md },
   skeletonLabel: { height: 9, width: '70%', alignSelf: 'center', borderRadius: 5, marginTop: 9, marginBottom: 2 },
-  qtyBadge: {
-    position: 'absolute',
-    top: 6,
-    right: 6,
-    minWidth: 24,
-    height: 18,
-    borderRadius: 9,
-    paddingHorizontal: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  qtyBadgeLabel: { fontSize: 10, fontFamily: 'Inter_700Bold' },
 });

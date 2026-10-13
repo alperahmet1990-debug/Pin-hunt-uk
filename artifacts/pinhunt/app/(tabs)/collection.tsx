@@ -25,6 +25,7 @@ import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
+import { usePinActions } from '@/components/PinActionsSheet';
 import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
 import { spacing } from '@/constants/theme';
 import type { SegmentedControlOption } from '@/components/ui';
@@ -189,6 +190,7 @@ export default function CollectionScreen() {
   const tileSize = pinTileSize(screenWidth, pinColumns, spacing.lg);
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const pinActions = usePinActions();
   const params = useLocalSearchParams<{ tab?: string }>();
   const { collection } = useCollection();
   const { pins: catalogue, ensurePins, ensureCollections, repository } = usePinCatalogue();
@@ -676,6 +678,8 @@ export default function CollectionScreen() {
                 status={activeTab === 'all' && entry?.status === 'for_trade' ? 'for_trade' : undefined}
                 copies={entry?.quantity}
                 onPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
+                onLongPress={() => pinActions.open(pin)}
+                {...pinActions.a11y(pin)}
               />
             </View>
           );
@@ -750,6 +754,8 @@ export default function CollectionScreen() {
           onSubmitEditing={handleCreateBoard}
         />
       </Sheet>
+
+      {pinActions.sheet}
 
       {/* Secondary owned-pin metadata filter and sort */}
       <Modal visible={allPinsFilterVisible} transparent animationType="slide" onRequestClose={() => setAllPinsFilterVisible(false)}>

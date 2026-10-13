@@ -30,6 +30,7 @@ import { useColors } from '@/hooks/useColors';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useCollection } from '@/context/CollectionContext';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
+import { usePinActions } from '@/components/PinActionsSheet';
 import { getPinImageSource } from '@/utils/pinImage';
 import { StatusBadge } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
@@ -80,6 +81,7 @@ export default function SearchScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const pinActions = usePinActions();
   const { pins, repository } = usePinCatalogue();
   const { getEntry } = useCollection();
 
@@ -391,6 +393,8 @@ export default function SearchScreen() {
                   <TouchableOpacity
                     key={pin.id}
                     onPress={() => openPin(pin)}
+                    onLongPress={() => pinActions.open(pin)}
+                    {...pinActions.a11y(pin)}
                     activeOpacity={0.8}
                     style={[styles.resultRow, { borderBottomColor: colors.homeLine }]}
                   >
@@ -439,6 +443,7 @@ export default function SearchScreen() {
       </ScrollView>
 
       <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
+      {pinActions.sheet}
     </View>
   );
 }

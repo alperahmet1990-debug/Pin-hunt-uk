@@ -27,7 +27,7 @@ jest.mock('expo-router', () => ({
 }));
 jest.mock('@/components/PhotoGapsCard', () => ({ PhotoGapsCard: () => null }));
 jest.mock('@/context/CollectionContext', () => ({
-  useCollection: () => ({ collection: mockCollection }),
+  useCollection: () => ({ collection: mockCollection, getEntry: (id: string) => mockCollection[id] }),
 }));
 jest.mock('@/context/BoardsContext', () => ({
   useBoards: () => ({

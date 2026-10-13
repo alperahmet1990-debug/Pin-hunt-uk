@@ -484,15 +484,18 @@ export default function CollectionScreen() {
     }
     if (activeTab === 'sets') {
       if (searchActive && searchQuery) return <EmptyState icon="search" title="No results found" subtitle="Try a different search term." />;
-      return <EmptyState icon="bookmark" title={setProgressFilter === 'all' ? 'No sets started' : 'No sets found'} subtitle={setProgressFilter === 'all' ? 'Sets will appear here automatically when you own pins belonging to them.' : 'Try another progress filter.'} />;
+      if (setProgressFilter !== 'all') {
+        return <EmptyState icon="bookmark" title="No sets found" subtitle="No sets match this progress filter." actionLabel="Show all sets" onAction={() => setSetProgressFilter('all')} />;
+      }
+      return <EmptyState icon="bookmark" title="No sets started" subtitle="Sets appear here automatically once you own a pin from one." actionLabel="Browse sets" onAction={() => router.push('/browse-catalogue')} />;
     }
     if (activeTab === 'traders') {
       if (searchActive && searchQuery || traderFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
-      return <EmptyState icon="repeat" title="No pins for trade yet" subtitle="Mark pins as 'For Trade' to see them here." />;
+      return <EmptyState icon="repeat" title="No pins for trade yet" subtitle="Mark pins you own as For Trade and they'll show up here." actionLabel="Choose pins to trade" onAction={() => router.push('/search')} />;
     }
     if (activeTab === 'iso') {
       if (searchActive && searchQuery || isoFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
-      return <EmptyState icon="bookmark" title="No ISO pins yet" subtitle="Mark pins as 'ISO' to track what you're looking for." />;
+      return <EmptyState icon="bookmark" title="No ISO pins yet" subtitle="Add the pins you're looking for to your ISO to keep track of them." actionLabel="Find a pin to add" onAction={() => router.push('/search')} />;
     }
     return null;
   };

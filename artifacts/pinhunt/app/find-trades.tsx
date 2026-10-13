@@ -101,6 +101,14 @@ export default function FindTradesScreen() {
               <Text style={[styles.emptySub, { color: colors.homeMuted }]}>
                 Add pins to your ISO and build up your Boards, and we'll start surfacing trades here.
               </Text>
+              <TouchableOpacity
+                onPress={() => router.push('/search')}
+                activeOpacity={0.8}
+                accessibilityRole="button"
+                style={[styles.emptyAction, { backgroundColor: colors.homeCoral }]}
+              >
+                <Text style={[styles.emptyActionLabel, { color: colors.homeSurface }]}>Add to your ISO</Text>
+              </TouchableOpacity>
             </View>
           ) : (
             <>
@@ -171,9 +179,20 @@ export default function FindTradesScreen() {
                 ) : (
                   <View style={[styles.discoveryEmpty, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
                     <Feather name="grid" size={20} color={colors.homeMuted} />
-                    <Text style={[styles.discoveryEmptyText, { color: colors.homeMuted }]}>
-                      Build a Board with a few pins of one character and we'll start recommending trades based on it.
-                    </Text>
+                    <View style={{ flex: 1, gap: spacing.xs }}>
+                      <Text style={[styles.discoveryEmptyText, { color: colors.homeMuted }]}>
+                        Build a Board with a few pins of one character and we'll start recommending trades based on it.
+                      </Text>
+                      <TouchableOpacity
+                        onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })}
+                        hitSlop={{ top: 12, bottom: 12, left: 8, right: 8 }}
+                        accessibilityRole="button"
+                        style={styles.discoveryAction}
+                      >
+                        <Text style={[styles.discoveryActionLabel, { color: colors.homeCoralDeep }]}>Create a Board</Text>
+                        <Feather name="chevron-right" size={14} color={colors.homeCoralDeep} />
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 )}
               </View>
@@ -436,5 +455,9 @@ const styles = StyleSheet.create({
   discoveryGrid: { flexDirection: 'row', flexWrap: 'wrap' },
 
   discoveryEmpty: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, borderRadius: radius.md, borderWidth: 1, padding: spacing.md },
-  discoveryEmptyText: { flex: 1, fontSize: 12.5, fontFamily: 'Inter_400Regular', lineHeight: 17 },
+  discoveryEmptyText: { fontSize: 12.5, fontFamily: 'Inter_400Regular', lineHeight: 17 },
+  discoveryAction: { flexDirection: 'row', alignItems: 'center', gap: 2, alignSelf: 'flex-start' },
+  discoveryActionLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  emptyAction: { marginTop: spacing.md, minHeight: 44, paddingHorizontal: spacing.xl, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
+  emptyActionLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

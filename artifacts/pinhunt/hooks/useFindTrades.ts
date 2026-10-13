@@ -10,10 +10,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { useMarketplace } from './useMarketplace';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
-import { useBoards } from '@/context/BoardsContext';
 import {
   buildDiscoveryItems,
-  deriveInterestKeywords,
+  deriveCollectionInterests,
   groupInventoryByPin,
   rankReciprocalCandidates,
   type CollectionInterest,
@@ -50,9 +49,6 @@ export interface FindTradesData {
   refresh: () => void;
 }
 
-/** Boards below this size are too thin to count as a genuine collecting interest. */
-const MIN_INTEREST_BOARD_SIZE = 5;
-const MAX_INTEREST_BOARDS = 2;
 const MAX_POTENTIAL_TRADE_CARDS = 3;
 const MAX_SET_CARDS = 2;
 
@@ -60,7 +56,6 @@ export function useFindTrades(): FindTradesData {
   const { repo, userId } = useMarketplace();
   const { collection } = useCollection();
   const { repository: catRepo } = usePinCatalogue();
-  const { customBoards } = useBoards();
 
   const [isoOpportunities, setIsoOpportunities] = useState<PinOpportunity[]>([]);
   const [reciprocalTraderIds, setReciprocalTraderIds] = useState<Set<string>>(new Set());
@@ -140,21 +135,10 @@ export function useFindTrades(): FindTradesData {
         }));
 
         // ── 4. Based on Your Collection ─────────────────────────────────────
-        const bigBoards = customBoards
-          .filter(b => b.pinIds.length >= MIN_INTEREST_BOARD_SIZE)
-          .sort((a, b) => b.pinIds.length - a.pinIds.length)
-          .slice(0, MAX_INTEREST_BOARDS);
-        let interests: CollectionInterest[] = [];
-        if (bigBoards.length) {
-          const boardPinSets = await Promise.all(bigBoards.map(b => catRepo.getPinsByIds(b.pinIds)));
-          interests = bigBoards
-            .map((b, i) => ({ label: b.name, keywords: deriveInterestKeywords(boardPinSets[i]) }))
-            .filter(interest => interest.keywords.length > 0);
-        }
-        if (interests.length === 0 && ownedPinDetails.length > 0) {
-          const keywords = deriveInterestKeywords(ownedPinDetails);
-          if (keywords.length) interests = [{ label: 'your collection', keywords }];
-        }
+        // Owned, For Trade and ISO pins say what someone collects; Boards
+        // aren't needed (B-P2-11).
+        const wantedPinDetails = wantedIds.length ? await catRepo.getPinsByIds(wantedIds) : [];
+        const interests = deriveCollectionInterests([...ownedPinDetails, ...wantedPinDetails]);
 
         let discovery: DiscoveryItem[] = [];
         if (interests.length > 0) {

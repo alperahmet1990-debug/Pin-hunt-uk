@@ -38,19 +38,42 @@ function subjectTokens(title: string): string[] {
   return last.split(/[^a-z]+/).filter(w => w.length > 2 && !DESCRIPTOR_STOP.has(w));
 }
 
+const MAX_COLLECTION_INTERESTS = 3;
+
 /**
- * Derive the dominant subject keyword(s) from a set of pins — used both for
- * a Board's contents and, as a fallback, the collector's whole Owned list.
- * A word counts as "dominant" once it appears in at least half the pins,
- * which is enough to surface "stitch" from a Stitch board and "mickey"+
- * "mouse" from a Mickey Mouse board without any character metadata.
+ * Interests from what the collector owns, has For Trade and has on their ISO
+ * (B-P2-11) — no Boards needed. Each subject word that recurs across those
+ * pins is an interest; words that always appear together ("mickey" +
+ * "mouse") merge into one. Strongest (most pins) first, up to `max`.
+ * With a single pin, its own subject words count.
  */
-export function deriveInterestKeywords(pins: Pick<CataloguePin, 'title'>[]): string[] {
-  if (pins.length === 0) return [];
-  const freq = new Map<string, number>();
-  for (const p of pins) for (const w of subjectTokens(p.title)) freq.set(w, (freq.get(w) ?? 0) + 1);
-  const threshold = pins.length / 2;
-  return [...freq.entries()].filter(([, count]) => count >= threshold).map(([word]) => word);
+export function deriveCollectionInterests(
+  pins: Pick<CataloguePin, 'id' | 'title'>[],
+  max = MAX_COLLECTION_INTERESTS,
+): CollectionInterest[] {
+  const pinsByWord = new Map<string, Set<string>>();
+  for (const p of pins) {
+    for (const w of new Set(subjectTokens(p.title))) {
+      if (!pinsByWord.has(w)) pinsByWord.set(w, new Set());
+      pinsByWord.get(w)!.add(p.id);
+    }
+  }
+  const minPins = pins.length > 1 ? 2 : 1;
+  const groups = new Map<string, { words: string[]; count: number }>();
+  for (const [word, ids] of pinsByWord) {
+    if (ids.size < minPins) continue;
+    const key = [...ids].sort().join('|');
+    const group = groups.get(key) ?? { words: [], count: ids.size };
+    group.words.push(word);
+    groups.set(key, group);
+  }
+  return [...groups.values()]
+    .sort((a, b) => b.count - a.count || a.words[0].localeCompare(b.words[0]))
+    .slice(0, max)
+    .map(g => ({
+      label: g.words.map(w => w[0].toUpperCase() + w.slice(1)).join(' '),
+      keywords: g.words,
+    }));
 }
 
 export function pinTitleMatchesKeywords(title: string, keywords: string[]): boolean {
@@ -77,7 +100,7 @@ export interface DiscoveryItem {
   title: string;
   imageUrl?: string;
   collectorCount: number;
-  /** Which inferred interest(s) this pin matched — e.g. board names. */
+  /** Which inferred interest(s) this pin matched — e.g. "Stitch". */
   tags: string[];
 }
 

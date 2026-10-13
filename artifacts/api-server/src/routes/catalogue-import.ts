@@ -263,6 +263,8 @@ const HEADER_MAP: Record<string, string> = {
 };
 
 interface MappedRow {
+  /** 1-based spreadsheet row (header = row 1), for error reports. */
+  rowNum: number;
   pinhuntId: string;
   title: string;
   brand: string;
@@ -333,7 +335,7 @@ export function splitIdentityConflicts(
       );
       if (!check.ok) {
         refused.push({
-          rowNum: 0, pinhuntId: row.pinhuntId, title: row.title, result: "error",
+          rowNum: row.rowNum, pinhuntId: row.pinhuntId, title: row.title, result: "error",
           message: identityConflictMessage(row.pinhuntId, String(existing.title ?? "")),
         });
         continue;
@@ -412,6 +414,7 @@ function mapRow(
   if (!pinhuntId) seenKeys.add(fallbackKey);
 
   const row: MappedRow = {
+    rowNum,
     pinhuntId: pinhuntId ?? `PHUK-NOID-${rowNum}`,
     title, brand, collection, characters, categories,
     releaseYear, releaseDate, limitedEditionSize, editionType,
@@ -945,13 +948,11 @@ router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & 
     if (existingErr) { res.status(500).json({ error: "Could not check existing pins" }); return; }
     const existingRows = new Map(((existing ?? []) as unknown as Record<string, unknown>[]).map(p => [p.pinhunt_id as string, p]));
     const { kept, refused } = splitIdentityConflicts(actionableRows, existingRows);
-    const rowNumOf = new Map(rawRows.map((raw, i) => [clean(raw["pinhunt_id"]), i + 2]));
-    refused.forEach(e => { e.rowNum = rowNumOf.get(e.pinhuntId) ?? 0; });
     allErrors.push(...refused);
     summary.errorRows += refused.length;
     summary.insertedRows = kept.filter(r => !existingRows.has(r.pinhuntId)).length;
     summary.updatedRows  = kept.filter(r =>  existingRows.has(r.pinhuntId)).length;
-    summary.skippedRows  = skippedNoid + refused.length;
+    summary.skippedRows  = skippedNoid;   // refused rows are reported as errors, as in the real import
 
     res.json({ dryRun: true, summary, errorReport: allErrors.slice(0, 200) });
     return;
@@ -978,7 +979,7 @@ router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & 
 
   // Fetch existing pins for snapshots + update detection
   const allPinhuntIds = validRows.map(r => r.pinhuntId).filter(id => !id.startsWith("PHUK-NOID-"));
-  const { data: existingPins } = await db
+  const { data: existingPins, error: existingErr } = await db
     .from("pins")
     .select([
       "id", "pinhunt_id", "title", "brand", "collection",
@@ -994,6 +995,18 @@ router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & 
     ].join(", "))
     .in("pinhunt_id", allPinhuntIds);
 
+  // Fail closed: without the existing pins we can neither snapshot for rollback
+  // nor run the identity guard, so nothing is imported.
+  if (existingErr) {
+    await db.from("import_batches").update({
+      status: "failed",
+      error_report: [{ message: "Could not read existing pins; nothing was imported." }],
+      completed_at: new Date().toISOString(),
+    }).eq("id", batch.id);
+    res.status(500).json({ error: "Could not check existing pins; nothing was imported." });
+    return;
+  }
+
   const existingMap = new Map(
     ((existingPins ?? []) as unknown as Record<string, unknown>[])
       .map(p => [p.pinhunt_id as string, p]),
@@ -1002,10 +1015,12 @@ router.post("/admin/catalogue-import", requireAppCreator, async (req: Request & 
   // Identity guard: refuse rows that would turn an existing pinhunt_id into a different pin.
   const { kept: identityKept, refused: identityRefused } = splitIdentityConflicts(validRows, existingMap);
   if (identityRefused.length > 0) {
-    const rowNumOf = new Map(rawRows.map((raw, i) => [clean(raw["pinhunt_id"]), i + 2]));
-    identityRefused.forEach(e => { e.rowNum = rowNumOf.get(e.pinhuntId) ?? 0; });
     allErrors.push(...identityRefused);
     validRows.splice(0, validRows.length, ...identityKept);
+    summary.validRows = validRows.length;
+    summary.errorRows += identityRefused.length;
+    summary.seedRows = validRows.filter(r => r.isSeedRecord).length;
+    summary.verifiedRows = validRows.filter(r => !r.isSeedRecord).length;
   }
 
   // Respond immediately — client starts polling

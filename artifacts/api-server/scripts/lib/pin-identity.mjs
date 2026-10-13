@@ -33,13 +33,37 @@ export function tokens(s) {
 /** @param {unknown} s */
 const normName = (s) => [...tokens(s)].sort().join(" ");
 
-/** @param {unknown} list */
+/** Character name words ("Winnie the Pooh" → winnie, pooh), ignoring placeholders. @param {unknown} list */
 function characterSet(list) {
   const arr = Array.isArray(list) ? list : String(list ?? "").split(/[;,]/);
-  return new Set(arr.map((c) => normName(c)).filter((c) => c && !PLACEHOLDER_CHARS.has(c)));
+  const words = new Set();
+  for (const c of arr) {
+    const name = normName(c);
+    if (!name || PLACEHOLDER_CHARS.has(name)) continue;
+    for (const w of name.split(" ")) words.add(w);
+  }
+  return words;
 }
 
-const overlaps = (a, b) => [...a].some((x) => b.has(x));
+/** Similarity of two words (0–1) from edit distance, so "Stich"/"Stitch" and "Cinderela"/"Cinderella" match. */
+export function wordSimilarity(a, b) {
+  if (a === b) return 1;
+  if (a.length < 4 || b.length < 4) return 0;          // short words must match exactly
+  const m = a.length, n = b.length;
+  let prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return 1 - prev[n] / Math.max(m, n);
+}
+
+const TYPO = 0.75;
+const sameWord = (a, b) => wordSimilarity(a, b) >= TYPO;
+/** Words of `a` that have an equal-or-typo match in `b`. */
+const sharedWords = (a, b) => [...a].filter((x) => [...b].some((y) => sameWord(x, y))).length;
+const overlaps = (a, b) => sharedWords(a, b) > 0;
 
 /**
  * @param {{ title?: string|null, collection?: string|null, characters?: string[]|string|null }} existing
@@ -67,8 +91,8 @@ export function checkPinIdentity(existing, incoming) {
   const tB = strip(incoming.title);
   if (normName(existing.title) && normName(existing.title) === normName(incoming.title)) return { ok: true, basis: "same title" };
   if (tA.size && tB.size) {
-    const shared = [...tA].filter((x) => tB.has(x)).length;
-    if (shared >= 1 && shared / Math.min(tA.size, tB.size) >= 0.6) return { ok: true, basis: "same title words" };
+    const shared = sharedWords(tA, tB);
+    if (shared >= 1 && shared / Math.min(tA.size, tB.size) >= 0.6) return { ok: true, basis: "same title words (spelling-tolerant)" };
   }
 
   const cA = characterSet(existing.characters);
@@ -82,8 +106,9 @@ export function checkPinIdentity(existing, incoming) {
 
 /** Error text shown to App Creators when a row is refused. */
 export function identityConflictMessage(pinhuntId, existingTitle) {
-  return `${pinhuntId} already belongs to a different pin ("${existingTitle}"). `
-    + "This row was not imported. Leave pinhunt_id blank to add it as a new pin, or fix the ID.";
+  return `${pinhuntId} already belongs to a different pin ("${existingTitle}"). This row was not imported. `
+    + "If it is a correction to that same pin, edit it in Admin → Catalogue (changes there are one pin at a time). "
+    + "If it is a different pin, give it its own new pinhunt_id.";
 }
 
 /**

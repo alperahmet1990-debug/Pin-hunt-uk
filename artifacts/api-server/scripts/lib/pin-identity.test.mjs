@@ -45,9 +45,23 @@ describe("checkPinIdentity — rules", () => {
     expect(checkPinIdentity(placeholder, { title: "Stitch", collection: "Ducks of Disney", characters: ["Stitch"] }).ok).toBe(false);
   });
 
-  it("explains a refusal without leaking anything but the pin title", () => {
-    expect(identityConflictMessage("PHUK-00000331", "Mickey Mouse – Animated Cutie"))
-      .toMatch(/PHUK-00000331 already belongs to a different pin \("Mickey Mouse – Animated Cutie"\)/);
+  it("explains a refusal and points corrections at the pin editor, never at a blank id", () => {
+    const msg = identityConflictMessage("PHUK-00000331", "Mickey Mouse – Animated Cutie");
+    expect(msg).toMatch(/PHUK-00000331 already belongs to a different pin \("Mickey Mouse – Animated Cutie"\)/);
+    expect(msg).toMatch(/Admin → Catalogue/);
+    expect(msg).not.toMatch(/blank/i);
+  });
+
+  it.each([
+    ["typo fix, no characters", { title: "Cinderela Castle", collection: "Castles", characters: "" }, { title: "Cinderella Castle", collection: "Castles", characters: [] }],
+    ["typo fix + extra word, no characters", { title: "Stich Hula", collection: "Hula", characters: "" }, { title: "Stitch Hula Dancer", collection: "Hula", characters: [] }],
+    ["character short name", { title: "Hunny pot", collection: "Pooh Friends", characters: "Winnie the Pooh" }, { title: "Honey jar", collection: "Pooh Friends", characters: ["Pooh"] }],
+  ])("accepts legitimate corrections: %s", (_label, existing, incoming) => {
+    expect(checkPinIdentity(existing, incoming).ok).toBe(true);
+  });
+
+  it("still refuses a complete rename with nothing in common", () => {
+    expect(checkPinIdentity({ title: "Haunted Mansion", collection: "Windows", characters: "" }, { title: "Space Mountain", collection: "Rockets", characters: [] }).ok).toBe(false);
   });
 });
 

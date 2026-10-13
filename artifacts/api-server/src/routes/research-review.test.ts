@@ -127,6 +127,21 @@ describe("research review routes — flow", () => {
     expect(zazu).toMatchObject({ status: "approved", decided_by: "creator-1" });
   });
 
+  it("refuses oversized runs before doing any work", async () => {
+    const big = { run: { ...payload, padding: "x".repeat(5 * 1024 * 1024 + 10) } };
+    const res = await request(app).post("/api/admin/research/runs").set(auth).send(big);
+    expect(res.status).toBe(413);
+    expect(tables.catalogue_research_runs ?? []).toHaveLength(0);
+  });
+
+  it("labels only real Disney domains as official", async () => {
+    const { isOfficialHost } = await import("./research-review");
+    expect(isOfficialHost("www.disneystore.co.uk")).toBe(true);
+    expect(isOfficialHost("disneyworld.disney.go.com")).toBe(true);
+    expect(isOfficialHost("disneystore.example.net")).toBe(false);
+    expect(isOfficialHost("notdisneystore.com")).toBe(false);
+  });
+
   it("validates ids and filters", async () => {
     expect((await request(app).get("/api/admin/research/candidates/not-a-uuid").set(auth)).status).toBe(400);
     expect((await request(app).get("/api/admin/research/candidates?status=bogus").set(auth)).status).toBe(400);

@@ -117,8 +117,23 @@ def extract_claims(html: str, url: str):
     return claims
 
 
+class _NoCrossHostRedirect(urllib.request.HTTPRedirectHandler):
+    """Follow a redirect only to the same host over https; anything else is refused,
+    so the access policy, robots.txt and allow-list always apply to the page read."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        old, new = urlparse(req.full_url), urlparse(newurl)
+        if new.scheme != "https" or new.hostname != old.hostname:
+            raise urllib.error.HTTPError(newurl, code, "cross-host or non-https redirect refused", headers, fp)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+_OPENER = urllib.request.build_opener(_NoCrossHostRedirect)
+
+
 def fetch(url: str, timeout=20):
     """→ (status, claims). status ∈ ok | not_allowlisted | robots_disallow | blocked | http_<code>."""
+    if urlparse(url).scheme != "https":
+        return "https_only", []
     if not allowed_host(url):
         return "not_allowlisted", []
     if not permitted_by_policy(url):
@@ -134,7 +149,7 @@ def fetch(url: str, timeout=20):
         if not ok:
             return "robots_disallow", []
         req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html"})
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with _OPENER.open(req, timeout=timeout) as r:
             _last[host] = time.time()
             return "ok", extract_claims(r.read(2_000_000).decode("utf-8", "replace"), url)
     except urllib.error.HTTPError as e:

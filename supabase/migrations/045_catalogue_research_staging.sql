@@ -104,6 +104,9 @@ drop policy if exists catalogue_candidates_read on catalogue_candidates;
 create policy catalogue_candidates_read on catalogue_candidates for select using (is_admin());
 drop policy if exists catalogue_evidence_read on catalogue_evidence;
 create policy catalogue_evidence_read on catalogue_evidence for select using (is_admin());
+-- Second layer behind RLS: the API roles get read access only (still filtered by the policies above).
+revoke all on catalogue_research_runs, catalogue_candidates, catalogue_evidence from anon, authenticated;
+grant select on catalogue_research_runs, catalogue_candidates, catalogue_evidence to authenticated;
 -- No insert/update/delete policies: writes go through the API server (service role)
 -- behind requireAppCreator, matching 041. Evidence rows are append-only by convention;
 -- the API exposes no update/delete route for them.
@@ -120,6 +123,8 @@ language sql volatile security definer set search_path = public as $$
   select 'PHUK-' || lpad(nextval('pinhunt_id_seq')::text, 8, '0');
 $$;
 revoke all on function next_pinhunt_id() from public, anon, authenticated;
+-- Supabase's default privileges grant new sequences/tables to the API roles; take them back.
+revoke all on sequence pinhunt_id_seq from public, anon, authenticated;
 
 -- ── 6. Identity guard (backstop; the precise check runs in the importers) ────
 -- pinhunt_id is immutable. An UPDATE that replaces the title with one sharing

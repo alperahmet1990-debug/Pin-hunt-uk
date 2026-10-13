@@ -80,17 +80,32 @@ function fail(res: Response, where: string, err: unknown) {
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const STATUSES = new Set(["researched", "needs_direct_verification", "direct_verified", "approved", "rejected",
   "needs_more_research", "imported", "superseded"]);
-const OFFICIAL_HOST = /(^|\.)(disneystore\.[a-z.]+|shopdisney\.[a-z.]+|disney\.go\.com|disneylandparis\.com|disneyparksblog\.com|disney\.co\.uk)$/i;
+const OFFICIAL_DOMAINS = [
+  "disneystore.com", "disneystore.co.uk", "disneystore.eu", "disneystore.fr", "disneystore.de", "disneystore.asia",
+  "disneystore.com.au", "shopdisney.com", "shopdisney.co.uk", "disney.go.com", "disneylandparis.com",
+  "disneyparksblog.com", "disney.co.uk",
+];
+export const isOfficialHost = (host: string) =>
+  OFFICIAL_DOMAINS.some(d => host === d || host.endsWith(`.${d}`));
 
 // ── Runs ─────────────────────────────────────────────────────────────────────
 
-router.post("/admin/research/runs/preview", requireAppCreator, (req: CreatorRequest, res: Response) => {
+// Research runs are larger than ordinary requests but far below the app-wide 20mb
+// body limit (app.ts parses JSON before routing, so cap by declared size here).
+const MAX_RUN_BYTES = 5 * 1024 * 1024;
+function runBody(req: Request, res: Response, next: () => void) {
+  const declared = Number(req.headers["content-length"] ?? 0);
+  if (declared > MAX_RUN_BYTES) { res.status(413).json({ error: "Research run is too large (max 5 MB)" }); return; }
+  next();
+}
+
+router.post("/admin/research/runs/preview", runBody, requireAppCreator, (req: CreatorRequest, res: Response) => {
   const result = validateResearchRun(req.body?.run);
   if (!result.ok) { res.status(400).json({ ok: false, errors: result.errors }); return; }
   res.json({ ok: true, gitCommit: result.run.gitCommit, engineVersion: result.run.engineVersion, counts: result.run.counts });
 });
 
-router.post("/admin/research/runs", requireAppCreator, async (req: CreatorRequest, res: Response) => {
+router.post("/admin/research/runs", runBody, requireAppCreator, async (req: CreatorRequest, res: Response) => {
   const result = validateResearchRun(req.body?.run);
   if (!result.ok) { res.status(400).json({ ok: false, errors: result.errors }); return; }
   const { run } = result;
@@ -216,7 +231,7 @@ router.post("/admin/research/candidates/:id/direct-check", requireAppCreator, as
     const rows = (fields as string[]).map(f => ({
       candidate_id: id, field: f, value: { confirmed: true },
       source_url: sourceUrl, publisher: host.replace(/^www\./, ""),
-      source_class: OFFICIAL_HOST.test(host) ? "official" : "unclassified",
+      source_class: isOfficialHost(host.toLowerCase()) ? "official" : "unclassified",
       method: "human_direct_check", note: (note as string | undefined) ?? null, checked_by: req.creatorId,
     }));
     const { error: insErr } = await db.from("catalogue_evidence").insert(rows);
@@ -259,7 +274,7 @@ router.post("/admin/research/candidates/:id/decision", requireAppCreator, async 
     const { error: upErr } = await db.from("catalogue_candidates").update({
       status, decided_by: req.creatorId, decided_at: new Date().toISOString(),
       decision_notes: (notes as string | null) ?? null, updated_at: new Date().toISOString(),
-    }).eq("id", id);
+    }).eq("id", id).eq("status", c.status as string);   // no-op if someone else changed it meanwhile
     if (upErr) throw upErr;
     res.json({ ok: true, status });
   } catch (err) { fail(res, "decision", err); }

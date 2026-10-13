@@ -14,3 +14,4 @@ export declare function guardIdMatch(args: {
   pinhuntId: string;
   incoming: PinIdentityInput;
 }): null | { pinhunt_id: string; existing_title: string; incoming_title: string; message: string };
+export declare function wordSimilarity(a: string, b: string): number;

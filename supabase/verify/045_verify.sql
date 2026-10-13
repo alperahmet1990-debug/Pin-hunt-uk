@@ -105,5 +105,23 @@ end $$;
 insert into catalogue_evidence (candidate_id, field, value, source_url, source_class, method)
 values ('00000000-0000-4000-8000-000000000046', 'characters', '["Zazu"]', 'https://www.disneystore.com/x', 'official', 'search_snippet');
 
+-- 6. API roles: no staging writes, no reads without admin, no id minting
+do $$ begin
+  assert not has_table_privilege('anon', 'public.catalogue_evidence', 'select'), '6a anon can select evidence';
+  assert not has_table_privilege('authenticated', 'public.catalogue_evidence', 'insert'), '6b authenticated can insert evidence';
+  assert not has_table_privilege('authenticated', 'public.catalogue_candidates', 'update'), '6c authenticated can update candidates';
+  assert not has_table_privilege('authenticated', 'public.catalogue_research_runs', 'delete'), '6d authenticated can delete runs';
+  assert not has_sequence_privilege('anon', 'public.pinhunt_id_seq', 'usage'), '6e anon can use the id sequence';
+  assert not has_sequence_privilege('authenticated', 'public.pinhunt_id_seq', 'usage'), '6f authenticated can use the id sequence';
+end $$;
+
+-- 7. A signed-in non-admin sees no staging rows (RLS), even with a row present
+set local role authenticated;
+select set_config('request.jwt.claim.sub', '00000000-0000-4000-8000-0000000000ff', true);
+do $$ begin
+  assert (select count(*) from catalogue_candidates) = 0, '7 non-admin can read staging candidates';
+end $$;
+reset role;
+
 select 'ALL 045 CHECKS PASSED' as result;
 rollback;

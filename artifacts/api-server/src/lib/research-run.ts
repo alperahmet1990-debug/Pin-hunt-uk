@@ -11,6 +11,7 @@
 export const RESEARCH_RUN_FORMAT = "pinhunt-research-run/v1";
 export const MAX_CANDIDATES = 2000;
 export const MAX_EVIDENCE = 50000;
+export const MAX_EVIDENCE_PER_CANDIDATE = 500;
 
 const EXCLUDED_HOST = /(^|\.)(pinandpop|pinpics|pintradingdb)\.com$/i;
 const MARKETPLACE_HOST = /(^|\.)(ebay|mercari|amazon|etsy|vinted|depop|poshmark)\./i;
@@ -119,6 +120,10 @@ export function validateResearchRun(payload: unknown): RunValidation {
     if (dupId === undefined) { errors.push(`${where} (${key}): duplicate_pinhunt_id invalid`); return; }
 
     const evidence: EvidenceRow[] = [];
+    if (Array.isArray(c.evidence) && c.evidence.length > MAX_EVIDENCE_PER_CANDIDATE) {
+      errors.push(`${where} (${key}): too much evidence (max ${MAX_EVIDENCE_PER_CANDIDATE} rows per candidate)`);
+      return;
+    }
     for (const [j, re] of (Array.isArray(c.evidence) ? c.evidence : []).entries()) {
       const e = re as Record<string, unknown>;
       const at = `${where} (${key}) evidence ${j + 1}`;

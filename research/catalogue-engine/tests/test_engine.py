@@ -181,6 +181,17 @@ class Fetcher(unittest.TestCase):
         self.assertTrue(policy["hosts"])
         self.assertFalse(any(h["fetch_permitted"] for h in policy["hosts"].values()))
 
+    def test_https_only_and_no_cross_host_redirects(self):
+        import urllib.request
+        self.assertEqual(fetch.fetch("http://www.disneystore.com/x")[0], "https_only")
+        h = fetch._NoCrossHostRedirect()
+        req = urllib.request.Request("https://www.disneystore.com/a")
+        with self.assertRaises(urllib.error.HTTPError):
+            h.redirect_request(req, None, 302, "Found", {}, "https://evil.example/b")
+        with self.assertRaises(urllib.error.HTTPError):
+            h.redirect_request(req, None, 302, "Found", {}, "http://www.disneystore.com/b")
+        self.assertIsNotNone(h.redirect_request(req, None, 302, "Found", {}, "https://www.disneystore.com/b"))
+
     def test_policy_blocks_non_allowlisted(self):
         self.assertEqual(fetch.fetch("https://pinandpop.com/x")[0], "not_allowlisted")
         self.assertEqual(fetch.fetch("https://www.ebay.com/x")[0], "not_allowlisted")

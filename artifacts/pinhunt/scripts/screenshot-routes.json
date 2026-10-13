@@ -8,6 +8,11 @@
     "path": "/collection"
   },
   {
+    "name": "collection-sets-end",
+    "path": "/collection",
+    "scroll": "end"
+  },
+  {
     "name": "collection-boards",
     "path": "/collection",
     "click": "Boards"

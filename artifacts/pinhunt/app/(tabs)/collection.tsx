@@ -105,8 +105,10 @@ function processPins(pins: CataloguePin[], filter: PinFilterType, sort: PinSortT
   return res;
 }
 
-/** One-tap route from the For Trade and ISO tabs to Find Trades (UX-001). */
-function FindTradesRow({ detail, onPress, colors }: {
+/** A full-width row that links out of the grid: icon, label, one-line detail, chevron. */
+function LinkRow({ icon, label, detail, onPress, colors }: {
+  icon: keyof typeof Feather.glyphMap;
+  label: string;
   detail: string;
   onPress: () => void;
   colors: ReturnType<typeof useColors>;
@@ -116,19 +118,28 @@ function FindTradesRow({ detail, onPress, colors }: {
       onPress={onPress}
       activeOpacity={0.8}
       accessibilityRole="button"
-      accessibilityLabel={`Find trades for these. ${detail}`}
-      style={[s.findTradesRow, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+      accessibilityLabel={`${label}. ${detail}`}
+      style={[s.linkRow, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
-      <View style={[s.findTradesIcon, { backgroundColor: colors.homeAqua }]}>
-        <Feather name="compass" size={16} color={colors.homeCoralDeep} />
+      <View style={[s.linkRowIcon, { backgroundColor: colors.homeAqua }]}>
+        <Feather name={icon} size={16} color={colors.homeCoralDeep} />
       </View>
       <View style={{ flex: 1 }}>
-        <Text style={[s.findTradesLabel, { color: colors.homeInk }]}>Find trades for these</Text>
-        <Text style={[s.findTradesDetail, { color: colors.homeMuted }]} numberOfLines={1}>{detail}</Text>
+        <Text style={[s.linkRowLabel, { color: colors.homeInk }]}>{label}</Text>
+        <Text style={[s.linkRowDetail, { color: colors.homeMuted }]} numberOfLines={1}>{detail}</Text>
       </View>
       <Feather name="chevron-right" size={18} color={colors.homeMuted} />
     </TouchableOpacity>
   );
+}
+
+/** One-tap route from the For Trade and ISO tabs to Find Trades (UX-001). */
+function FindTradesRow({ detail, onPress, colors }: {
+  detail: string;
+  onPress: () => void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  return <LinkRow icon="compass" label="Find trades for these" detail={detail} onPress={onPress} colors={colors} />;
 }
 
 export default function CollectionScreen() {
@@ -537,7 +548,7 @@ export default function CollectionScreen() {
       if (setProgressFilter !== 'all') {
         return <EmptyState icon="bookmark" title="No sets found" subtitle="No sets match this progress filter." actionLabel="Show all sets" onAction={() => setSetProgressFilter('all')} />;
       }
-      return <EmptyState icon="bookmark" title="No sets started" subtitle="Sets appear here automatically once you own a pin from one." actionLabel="Browse sets" onAction={() => router.push('/browse-catalogue')} />;
+      return <EmptyState icon="bookmark" title="No sets started" subtitle="Sets appear here automatically once you own a pin from one." actionLabel="Browse all sets" onAction={() => router.push('/browse-catalogue')} />;
     }
     if (activeTab === 'traders') {
       if (searchActive && searchQuery || traderFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
@@ -560,6 +571,20 @@ export default function CollectionScreen() {
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={renderHeader}
         ListEmptyComponent={renderEmpty}
+        ListFooterComponent={
+          activeTab === 'sets' && gridData.length > 0 ? (
+            // Sets only lists sets you've started; this reaches the rest (UX-025).
+            <View style={s.listFooter}>
+              <LinkRow
+                icon="grid"
+                label="Browse all sets"
+                detail="Find new sets to start"
+                onPress={() => router.push('/browse-catalogue')}
+                colors={colors}
+              />
+            </View>
+          ) : null
+        }
         columnWrapperStyle={s.gridRow}
         contentContainerStyle={[s.flatListContent, { paddingBottom: botPad }]}
         renderItem={({ item }) => {
@@ -894,10 +919,11 @@ const s = StyleSheet.create({
   contextualArea: { paddingBottom: 8 },
   statsRow: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 16, paddingVertical: 12 },
   statText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  findTradesRow: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56, marginHorizontal: 16, marginBottom: 12, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
-  findTradesIcon: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
-  findTradesLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  findTradesDetail: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
+  listFooter: { marginTop: 8, marginHorizontal: -16 },
+  linkRow: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56, marginHorizontal: 16, marginBottom: 12, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },
+  linkRowIcon: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
+  linkRowLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  linkRowDetail: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
   secondarySearchResult: { marginHorizontal: 16, padding: 12, borderRadius: 8, marginTop: 4, marginBottom: 8 },
   secondarySearchText: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   tabsRow: { paddingHorizontal: 16, marginBottom: 14 },

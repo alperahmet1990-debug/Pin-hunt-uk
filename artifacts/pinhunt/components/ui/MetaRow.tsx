@@ -9,7 +9,7 @@ interface MetaRowProps {
   last?: boolean;
 }
 
-/** Compact label/value row for technical or catalogue detail lists (Sea Glass design language). */
+/** Compact label/value row for technical or catalogue detail lists (Storybook design language). */
 export function MetaRow({ label, value, last }: MetaRowProps) {
   const colors = useColors();
   return (

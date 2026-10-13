@@ -1,5 +1,5 @@
 import { useColorScheme } from 'react-native';
-import colors from '@/constants/colors';
+import colors, { semanticColors } from '@/constants/colors';
 
 /**
  * Returns the design tokens for the current color scheme.
@@ -19,5 +19,6 @@ export function useColors() {
     scheme === 'dark' && 'dark' in colors
       ? (colors as unknown as Record<string, typeof colors.light>).dark
       : colors.light;
-  return { ...palette, radius: colors.radius };
+  // `tokens`: semantic names for the same values (constants/colors.ts, #150).
+  return { ...palette, radius: colors.radius, tokens: semanticColors(palette) };
 }

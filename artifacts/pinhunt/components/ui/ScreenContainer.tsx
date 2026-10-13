@@ -10,7 +10,7 @@ interface ScreenContainerProps {
   style?: StyleProp<ViewStyle>;
 }
 
-/** Sea Glass background + safe-area shell shared by Home and other screens adopting the design system. Screens own their own scrolling/layout inside it. */
+/** Storybook canvas background + safe-area shell shared by Home and other screens adopting the design system. Screens own their own scrolling/layout inside it. */
 export function ScreenContainer({ children, edges = { top: true, bottom: true }, style }: ScreenContainerProps) {
   const colors = useColors();
   const insets = useSafeAreaInsets();

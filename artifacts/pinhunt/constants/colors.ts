@@ -103,4 +103,63 @@ const colors = {
   radius: 16,
 };
 
+export type Palette = typeof colors.light;
+
+/**
+ * Semantic names for the Storybook palette (UX-038a, #150). Each one is the
+ * same value as an existing `home*` token, in light and dark, so nothing
+ * changes on screen. New code should use these: the `home*` names describe
+ * the retired Sea Glass & Coral palette (`homeCoral` is periwinkle,
+ * `homeSand` is plum, `homeAqua` is a lavender surface) and stay only so old
+ * call sites keep working. Available as `useColors().tokens`.
+ */
+export function semanticColors(p: Palette) {
+  return {
+    bg: {
+      /** Warm ivory page background. */
+      canvas: p.homeBackground,
+      /** Cards and sheets. */
+      surface: p.homeSurface,
+      /** Lavender-tinted subtle fill: chips, image wells, tracks. */
+      subtle: p.homeAqua,
+      /** Plum-tinted surface for treasure moments. */
+      treasure: p.homeWarmSurface,
+    },
+    text: {
+      primary: p.homeInk,
+      muted: p.homeMuted,
+      /** Text on the hero gradient and other dark fills. */
+      onHero: p.homeHeroText,
+      onHeroMuted: p.homeHeroMuted,
+    },
+    line: {
+      default: p.homeLine,
+      treasure: p.homeWarmLine,
+    },
+    action: {
+      /** Periwinkle: primary buttons, links, selection. */
+      primary: p.homeCoral,
+      /** Deeper periwinkle for text-style actions and icons on light fills. */
+      primaryDeep: p.homeCoralDeep,
+    },
+    accent: {
+      /** Plum, reserved for treasure moments (LE badges, set completion, official callouts). */
+      treasure: p.homeSand,
+      treasureInk: p.homeSandInk,
+      /** Deep teal fill (Continue Collecting card). */
+      teal: p.homeTeal,
+      tealSoft: p.homeTealSoft,
+    },
+    status: {
+      owned: p.owned,
+      wanted: p.wanted,
+      forTrade: p.forTrade,
+    },
+    danger: p.destructive,
+    shadow: p.homeShadow,
+  } as const;
+}
+
+export type SemanticColors = ReturnType<typeof semanticColors>;
+
 export default colors;

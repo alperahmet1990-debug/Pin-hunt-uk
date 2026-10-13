@@ -33,6 +33,13 @@ export function tokens(s) {
 /** @param {unknown} s */
 const normName = (s) => [...tokens(s)].sort().join(" ");
 
+/** Set-name words, keeping years (2024 ≠ 2025 is a different set). @param {unknown} s */
+function setTokens(s) {
+  const out = new Set(tokens(s));
+  for (const y of String(s ?? "").match(/\b(19|20)\d\d\b/g) ?? []) out.add(y);
+  return out;
+}
+
 /** One word set per character name ("Winnie the Pooh" → {winnie, pooh}), ignoring placeholders. @param {unknown} list */
 function characterNames(list) {
   const arr = Array.isArray(list) ? list : String(list ?? "").split(/[;,]/);
@@ -79,6 +86,11 @@ export function sameWord(a, b) {
 
 /** Words of `a` that have an equal-or-typo match in `b`. */
 const sharedWords = (a, b) => [...a].filter((x) => [...b].some((y) => sameWord(x, y))).length;
+/** Every word of the smaller set appears (or is a typo) in the larger. */
+const containedIn = (a, b) => {
+  const [small, big] = a.size <= b.size ? [a, b] : [b, a];
+  return sharedWords(small, big) === small.size;
+};
 
 /**
  * @param {{ title?: string|null, collection?: string|null, characters?: string[]|string|null }} existing
@@ -96,34 +108,40 @@ export function isPlaceholder(existing) {
  * @returns {{ ok: boolean, basis: string }}
  */
 export function checkPinIdentity(existing, incoming) {
-  const collA = tokens(existing.collection);
-  const collB = tokens(incoming.collection);
-  const sameCollection = collA.size === 0 || collB.size === 0 || sharedWords(collA, collB) > 0;
+  // Set: the shorter set name must be contained in the longer one, years included
+  // ("Animated Cuties Mystery Collection 2026" ⊇ "Animated Cuties"), so
+  // "Halloween 2024" ≠ "Halloween 2025" and "Valentines Day" ≠ "St Patricks Day".
+  const collA = setTokens(existing.collection);
+  const collB = setTokens(incoming.collection);
+  const sameCollection = collA.size === 0 || collB.size === 0 || containedIn(collA, collB);
 
-  // When both rows name characters, they must name the same character: a shared
-  // title or set ("Ice Cream Bar Mickey" / "Ice Cream Bar Minnie") is not enough.
+  // Characters: when both rows name characters, they must name the same character.
   const cA = characterNames(existing.characters);
   const cB = characterNames(incoming.characters);
-  if (cA.length && cB.length) {
-    if (!anySameCharacter(cA, cB)) return { ok: false, basis: "different character" };
-    if (sameCollection) return { ok: true, basis: "same character in the same set" };
+  if (cA.length && cB.length && !anySameCharacter(cA, cB)) return { ok: false, basis: "different character" };
+
+  if (!sameCollection) {
+    // A month placeholder may only resolve inside its own set; anything else moving set is a different pin.
+    return { ok: false, basis: "different set" };
   }
 
-  // Compare titles without the set words both rows share ("Ice Cream Bar Minnie" vs "Ice Cream Bar Stitch").
-  const strip = (t) => new Set([...tokens(t)].filter((x) => !collA.has(x) && !collB.has(x)));
+  // Title: drop only the set words BOTH rows share and the character names, then the
+  // remaining words may be added or misspelt but never swapped
+  // ("Haunted Mansion" ⊂ "Haunted Mansion – Windows of Attraction", "Cinderela" ≈ "Cinderella",
+  //  but "Stitch Surf" ≠ "Stitch Ski" and "Mickey Ice Cream" ≠ "Mickey Pumpkin").
+  const sharedSet = [...collA].filter((x) => [...collB].some((y) => sameWord(x, y)));
+  // Character names are only "known words" when both rows name that same character;
+  // if one row has no characters, a character word in the title is what identifies the pin.
+  const charWords = cA.length && cB.length ? [...cA, ...cB].flatMap((n) => [...n]) : [];
+  const known = [...sharedSet, ...charWords];
+  const strip = (title) => new Set([...tokens(title)].filter((x) => !known.some((k) => sameWord(x, k))));
   const tA = strip(existing.title);
   const tB = strip(incoming.title);
-  if (normName(existing.title) && normName(existing.title) === normName(incoming.title)) return { ok: true, basis: "same title" };
-  // Words may be added or misspelt, never swapped: every word of the shorter title must
-  // appear in the longer one ("Haunted Mansion" ⊂ "Haunted Mansion – Windows of Attraction",
-  // "Cinderela Castle" ≈ "Cinderella Castle"), but "Mickey Ice Cream Bar" ≠ "Minnie Ice Cream Bar".
-  if (tA.size && tB.size) {
-    const [small, big] = tA.size <= tB.size ? [tA, tB] : [tB, tA];
-    if (sharedWords(small, big) === small.size) return { ok: true, basis: "same title words (spelling-tolerant)" };
-  }
+  const titleCompatible = tA.size === 0 || tB.size === 0 || containedIn(tA, tB);
 
-  if (isPlaceholder(existing) && sameCollection) return { ok: true, basis: "placeholder resolved within its set" };
-
+  if (normName(existing.title) && normName(existing.title) === normName(incoming.title)) return { ok: true, basis: "same title in the same set" };
+  if (titleCompatible && (tA.size || tB.size || (cA.length && cB.length))) return { ok: true, basis: "same pin, refined or corrected" };
+  if (isPlaceholder(existing)) return { ok: true, basis: "placeholder resolved within its set" };
   return { ok: false, basis: "different pin" };
 }
 

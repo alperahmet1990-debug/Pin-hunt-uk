@@ -55,7 +55,9 @@ describe("checkPinIdentity — rules", () => {
   it.each([
     ["typo fix, no characters", { title: "Cinderela Castle", collection: "Castles", characters: "" }, { title: "Cinderella Castle", collection: "Castles", characters: [] }],
     ["typo fix + extra word, no characters", { title: "Stich Hula", collection: "Hula", characters: "" }, { title: "Stitch Hula Dancer", collection: "Hula", characters: [] }],
-    ["character short name", { title: "Hunny pot", collection: "Pooh Friends", characters: "Winnie the Pooh" }, { title: "Honey jar", collection: "Pooh Friends", characters: ["Pooh"] }],
+    ["character short name", { title: "Winnie the Pooh Hunny Pot", collection: "Pooh Friends", characters: "Winnie the Pooh" }, { title: "Pooh Hunny Pot", collection: "Pooh Friends", characters: ["Pooh"] }],
+    ["title reworded, same character and set", { title: "Mickey – Animated Cutie", collection: "Animated Cuties", characters: "Mickey Mouse" }, { title: "Animated Cuties Mickey Mouse", collection: "Animated Cuties", characters: ["Mickey Mouse"] }],
+    ["set name gains its year", { title: "Hatbox Ghost", collection: "Haunted Mansion", characters: "Hatbox Ghost" }, { title: "Hatbox Ghost window", collection: "Haunted Mansion 2026", characters: ["Hatbox Ghost"] }],
   ])("accepts legitimate corrections: %s", (_label, existing, incoming) => {
     expect(checkPinIdentity(existing, incoming).ok).toBe(true);
   });
@@ -75,6 +77,18 @@ describe("checkPinIdentity — rules", () => {
     "treats %s and %s as different words", (a, b) => expect(sameWord(a, b)).toBe(false));
   it.each([["stich", "stitch"], ["cinderela", "cinderella"], ["rapunzle", "rapunzel"]])(
     "treats %s and %s as a typo of the same word", (a, b) => expect(sameWord(a, b)).toBe(true));
+
+  it.each([
+    ["same character, same set, different design", { title: "Stitch Surf", collection: "Summer 2024", characters: "Stitch" }, { title: "Stitch Ski", collection: "Summer 2024", characters: ["Stitch"] }],
+    ["moved to another set (holiday)", { title: "Stitch Halloween", collection: "Halloween 2024", characters: "Stitch" }, { title: "Stitch Christmas", collection: "Christmas 2024", characters: ["Stitch"] }],
+    ["different design words", { title: "Mickey Ice Cream", collection: "Treats", characters: "Mickey Mouse" }, { title: "Mickey Pumpkin", collection: "Treats", characters: ["Mickey Mouse"] }],
+    ["next year's set", { title: "Halloween Mickey", collection: "Halloween 2024", characters: "Mickey Mouse" }, { title: "Halloween Mickey", collection: "Halloween 2025", characters: ["Mickey Mouse"] }],
+    ["incoming drops characters and swaps the title", { title: "Mickey Ice Cream Bar", collection: "Ice Cream Bar", characters: "Mickey Mouse" }, { title: "Minnie Ice Cream Bar", collection: "Ice Cream Bar", characters: [] }],
+    ["existing has no characters, incoming swaps", { title: "Mickey Ice Cream Bar", collection: "Ice Cream Bar", characters: "" }, { title: "Minnie Ice Cream Bar", collection: "Ice Cream Bar", characters: ["Minnie Mouse"] }],
+    ["sets sharing one word", { title: "Hearts", collection: "Valentines Day", characters: "Minnie Mouse" }, { title: "Shamrock", collection: "St Patricks Day", characters: ["Minnie Mouse"] }],
+  ])("refuses: %s", (_label, existing, incoming) => {
+    expect(checkPinIdentity(existing, incoming).ok).toBe(false);
+  });
 
   it("refuses a word swap in the title when nothing else identifies the pin", () => {
     expect(checkPinIdentity({ title: "Mickey Ice Cream Bar", collection: "", characters: "" }, { title: "Minnie Ice Cream Bar", collection: "", characters: "" }).ok).toBe(false);

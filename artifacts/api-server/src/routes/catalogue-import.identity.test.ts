@@ -118,6 +118,14 @@ describe("admin catalogue import — pinhunt_id identity guard (dry run)", () =>
     expect(res.body.errorReport.find((e: { pinhuntId: string }) => e.pinhuntId === "PHUK-00000626").result).toBe("error");
   });
 
+  it("refuses a different design for the same character in the same set (Stitch Surf → Stitch Ski)", async () => {
+    existingPins.push({ id: "u-700", pinhunt_id: "PHUK-00000700", title: "Stitch Surf", collection: "Summer 2024",
+      main_character: "Stitch", all_characters: "Stitch", pin_characters: [{ characters: { name: "Stitch" } }] });
+    const res = await importRows([{ pinhunt_id: "PHUK-00000700", "Pin name": "Stitch Ski", Series: "Summer 2024", Characters: "Stitch", Brand: "Disney Store" }], true);
+    expect(res.body.summary.updatedRows).toBe(0);
+    expect(res.body.errorReport.find((e: { pinhuntId: string }) => e.pinhuntId === "PHUK-00000700").result).toBe("error");
+  });
+
   it("reports each refused row with its own row number when an id repeats", async () => {
     const res = await importRows([ALICE, { ...ALICE, "Pin name": "Pinocchio", Characters: "Pinocchio" }], true);
     const rows = res.body.errorReport.filter((e: { result: string }) => e.result === "error").map((e: { rowNum: number }) => e.rowNum);

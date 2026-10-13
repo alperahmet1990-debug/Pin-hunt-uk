@@ -64,7 +64,7 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { getEntry, setStatus, adjustQuantity } = useCollection();
+  const { getEntry, setStatus, adjustQuantity, restoreEntry } = useCollection();
   const { customBoards, createBoard, addPinToBoard, removePinFromBoard, getBoardPins } = useBoards();
 
   const [creatingBoard, setCreatingBoard] = useState(false);
@@ -78,12 +78,23 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
   const toast = useToast();
   // Undo runs seconds later, possibly after the sheet closed: always use the
   // latest mutations rather than the ones captured when the toast was shown.
-  const latest = useRef({ setStatus, addPinToBoard, removePinFromBoard });
-  latest.current = { setStatus, addPinToBoard, removePinFromBoard };
+  const latest = useRef({ setStatus, addPinToBoard, removePinFromBoard, restoreEntry });
+  latest.current = { setStatus, addPinToBoard, removePinFromBoard, restoreEntry };
 
   const entry = pin ? getEntry(pin.id) : undefined;
   const currentStatus: CollectionStatus = entry?.status ?? 'none';
   const isKept = currentStatus === 'owned' || currentStatus === 'for_trade';
+  const copies = entry?.quantity ?? 1;
+  const boardCount = pin && isKept ? customBoards.filter(b => b.pinIds.includes(pin.id)).length : 0;
+
+  // Status as of the last tap, ahead of the re-render, so rapid taps compare
+  // against what was just chosen (collection-mutation-ordering.md).
+  const statusRef = useRef(currentStatus);
+  useEffect(() => { statusRef.current = currentStatus; }, [currentStatus, pin?.id]);
+
+  // In-sheet confirmation (not Alert: its callbacks don't run on Expo web).
+  const [confirm, setConfirm] = useState<null | 'remove' | 'toIso'>(null);
+  useEffect(() => { setConfirm(null); }, [pin?.id]);
 
   useEffect(() => {
     if (!pendingBoardId || !pin || !isKept) return;
@@ -120,21 +131,33 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
   const statusColor = (s: CollectionStatus) =>
     s === 'owned' ? colors.owned : s === 'wanted' ? colors.wanted : colors.forTrade;
 
-  const handleStatus = (s: CollectionStatus) => {
+  /** Apply a status change with a toast whose Undo restores the exact previous entry. */
+  const applyStatus = (next: CollectionStatus) => {
     if (!pin) return;
-    if (Platform.OS !== 'web') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    const previous = currentStatus;
-    const next = currentStatus === s ? 'none' : s;
-    setStatus(pin.id, next);
+    const previous = statusRef.current;
+    const snapshot = entry ? { ...entry } : undefined;
     const pinId = pin.id;
+    setStatus(pinId, next);
+    statusRef.current = next;
+    setConfirm(null);
     toast.show({
       message: statusChangeMessage(previous, next),
-      // Only offer Undo when it restores exactly what was there: moving Owned
-      // ×N to ISO or removing it resets copies to 1 (UX-013 adds a full restore).
-      action: canUndoStatusChange(previous, next, entry?.quantity ?? 1)
-        ? { label: 'Undo', onPress: () => latest.current.setStatus(pinId, previous) }
-        : undefined,
+      // Status, copies and board membership all come back (boards keep their
+      // references to pins that are temporarily not owned).
+      action: { label: 'Undo', onPress: () => latest.current.restoreEntry(pinId, snapshot) },
     });
+  };
+
+  const handleStatus = (s: CollectionStatus) => {
+    if (!pin) return;
+    // Radio group: tapping the selected status never removes the pin. Removing is its own action.
+    if (s === statusRef.current) return;
+    if (Platform.OS !== 'web') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    if (dropsCopies(statusRef.current, s, copies)) {
+      setConfirm('toIso');
+      return;
+    }
+    applyStatus(s);
   };
 
   const handleToggleBoard = (boardId: string) => {
@@ -309,6 +332,54 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
                   </TouchableOpacity>
                 </View>
               </View>
+            )}
+
+            {confirm && (
+              <View
+                style={[styles.confirmCard, { borderColor: t.border, backgroundColor: t.card, borderRadius: t.radius }]}
+                accessibilityLiveRegion="polite"
+              >
+                <Text style={[styles.confirmTitle, { color: t.fg }]}>
+                  {confirm === 'remove'
+                    ? currentStatus === 'wanted' ? 'Remove from your ISO?' : 'Remove from your collection?'
+                    : 'Move to your ISO?'}
+                </Text>
+                <Text style={[styles.confirmBody, { color: t.muted }]}>
+                  {removalConsequence(confirm, currentStatus, copies, boardCount)}
+                </Text>
+                <View style={styles.confirmActions}>
+                  <TouchableOpacity
+                    onPress={() => setConfirm(null)}
+                    accessibilityRole="button"
+                    style={[styles.confirmBtn, { borderColor: t.border }]}
+                  >
+                    <Text style={[styles.confirmBtnLabel, { color: t.fg }]}>Cancel</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => applyStatus(confirm === 'remove' ? 'none' : 'wanted')}
+                    accessibilityRole="button"
+                    style={[styles.confirmBtn, { borderColor: colors.destructive, backgroundColor: colors.destructive }]}
+                  >
+                    <Text style={[styles.confirmBtnLabel, { color: '#fff' }]}>
+                      {confirm === 'remove' ? 'Remove' : 'Move to ISO'}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
+
+            {currentStatus !== 'none' && !confirm && (
+              <TouchableOpacity
+                onPress={() => setConfirm('remove')}
+                accessibilityRole="button"
+                accessibilityLabel={currentStatus === 'wanted' ? 'Remove from your ISO' : 'Remove from my collection'}
+                style={styles.removeLink}
+              >
+                <Feather name="trash-2" size={14} color={colors.destructive} />
+                <Text style={[styles.removeLinkLabel, { color: colors.destructive }]}>
+                  {currentStatus === 'wanted' ? 'Remove from your ISO' : 'Remove from my collection'}
+                </Text>
+              </TouchableOpacity>
             )}
 
             {/* Boards — the main experience */}
@@ -514,6 +585,14 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
   },
   statusLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  confirmCard: { borderWidth: 1, padding: 14, gap: 6, marginBottom: 16 },
+  confirmTitle: { fontSize: 15, fontFamily: 'Inter_700Bold' },
+  confirmBody: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+  confirmActions: { flexDirection: 'row', gap: 10, marginTop: 6 },
+  confirmBtn: { flex: 1, minHeight: 44, borderWidth: 1, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+  confirmBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  removeLink: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', minHeight: 44, marginTop: -6, marginBottom: 8 },
+  removeLinkLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   quantityRow: {
     minHeight: 58,
     marginBottom: 16,
@@ -572,21 +651,30 @@ const STATUS_WORDS: Record<Exclude<CollectionStatus, 'none'>, string> = {
 
 /** Toast copy for a status change (glossary: docs/design/glossary.md). */
 export function statusChangeMessage(previous: CollectionStatus, next: CollectionStatus): string {
+  const kept = (st: CollectionStatus) => st === 'owned' || st === 'for_trade';
   if (next === 'none') return previous === 'wanted' ? 'Removed from your ISO' : 'Removed from your collection';
-  if (next === 'wanted') return 'Added to your ISO';
+  if (next === 'wanted') return kept(previous) ? 'Moved to your ISO' : 'Added to your ISO';
   return previous === 'none' || previous === 'wanted'
     ? `Added to your collection as ${STATUS_WORDS[next]}`
     : `Marked as ${STATUS_WORDS[next]}`;
 }
 
-/**
- * Undo is offered only when restoring `previous` gives back exactly the same
- * entry. setStatus resets copies to 1 for ISO and removal, so undoing a change
- * away from Owned/For Trade ×N would lose copies.
- */
-export function canUndoStatusChange(previous: CollectionStatus, next: CollectionStatus, copies: number): boolean {
-  const kept = (s: CollectionStatus) => s === 'owned' || s === 'for_trade';
-  if (!kept(previous)) return true;
-  if (kept(next)) return true;
-  return copies <= 1;
+/** Owned/For Trade ×N → ISO drops copies: confirm first (a single copy just gets Undo). */
+export function dropsCopies(previous: CollectionStatus, next: CollectionStatus, copies: number): boolean {
+  return (previous === 'owned' || previous === 'for_trade') && next === 'wanted' && copies > 1;
+}
+
+/** One-line consequence shown in the in-sheet confirmation. */
+export function removalConsequence(
+  kind: 'remove' | 'toIso',
+  status: CollectionStatus,
+  copies: number,
+  boards: number,
+): string {
+  const kept = status === 'owned' || status === 'for_trade';
+  const copiesText = copies > 1 ? `×${copies} copies` : 'this pin';
+  const boardsText = boards > 0 ? ` and it leaves ${boards} board${boards === 1 ? '' : 's'}` : '';
+  if (kind === 'toIso') return `You'll no longer own ${copiesText}${boardsText}. You can undo this.`;
+  if (!kept) return 'It comes off your ISO. You can undo this.';
+  return `You'll no longer own ${copiesText}${boardsText}. You can undo this.`;
 }

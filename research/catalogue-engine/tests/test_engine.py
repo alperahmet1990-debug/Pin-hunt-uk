@@ -41,6 +41,11 @@ class SourcePolicy(unittest.TestCase):
         self.assertEqual(len(st.claims), 1)
         self.assertEqual({r["reason"][:8] for r in st.rejected}, {"excluded", "marketpl"})
 
+    def test_home_page_url_rejected(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="f/s/a", claims=[claim("characters", ["A"], "https://disneypinsblog.com/")])]))
+        self.assertIn("home page", st.rejected[0]["reason"])
+
     def test_claim_without_url_rejected(self):
         st = Store()
         st.add_packet(packet(pins=[dict(pin_key="f/s/a", claims=[claim("characters", ["A"], "")])]))

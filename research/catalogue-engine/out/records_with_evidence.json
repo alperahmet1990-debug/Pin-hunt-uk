@@ -2892,7 +2892,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Peter Pan | Peter Pan (1953)",
+     "alternatives": "editorial/legacy only: Peter Pan (1953) | Peter Pan",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -4008,7 +4008,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Peter Pan | Peter Pan (1953)",
+     "alternatives": "editorial/legacy only: Peter Pan (1953) | Peter Pan",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -5285,7 +5285,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Emperor's New Groove | The Emperor's New Groove (2000)",
+     "alternatives": "editorial/legacy only: The Emperor's New Groove (2000) | The Emperor's New Groove",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -6038,7 +6038,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Tim Burton's The Nightmare Before Christmas (1993) | The Nightmare Before Christmas",
+     "alternatives": "editorial/legacy only: The Nightmare Before Christmas | Tim Burton's The Nightmare Before Christmas (1993)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -6289,7 +6289,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Wreck-It Ralph (2012) | Wreck-It Ralph",
+     "alternatives": "editorial/legacy only: Wreck-It Ralph | Wreck-It Ralph (2012)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -6502,10 +6502,9 @@
   {
    "key": "brush-of-magic/limited-edition/aladdin",
    "set_key": "brush-of-magic/limited-edition",
-   "record_confidence": "Low",
+   "record_confidence": "Medium",
    "review_reasons": [
-    "conflict: edition_size",
-    "identity confidence Low"
+    "conflict: edition_size"
    ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
@@ -6517,7 +6516,7 @@
      "value": [
       "Aladdin"
      ],
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -6534,6 +6533,18 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02336",
+       "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02339",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -6612,6 +6623,12 @@
        "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02337",
+       "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
       }
      ]
     },
@@ -6640,6 +6657,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02340",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -6740,6 +6763,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02338",
+       "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
       }
      ]
     },
@@ -6818,6 +6847,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02340",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     }
@@ -7125,10 +7160,8 @@
   {
    "key": "brush-of-magic/limited-edition/bambi",
    "set_key": "brush-of-magic/limited-edition",
-   "record_confidence": "Low",
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "Medium",
+   "review_reasons": [],
    "duplicate": [
     "NEW (family exists, different sub-set)",
     "",
@@ -7139,7 +7172,7 @@
      "value": [
       "Bambi"
      ],
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -7156,6 +7189,18 @@
        "url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02350",
+       "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02351",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -7256,6 +7301,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02352",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -7428,6 +7479,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02352",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     }
@@ -7436,10 +7493,8 @@
   {
    "key": "brush-of-magic/limited-edition/belle",
    "set_key": "brush-of-magic/limited-edition",
-   "record_confidence": "Low",
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "Medium",
+   "review_reasons": [],
    "duplicate": [
     "NEW (family exists, different sub-set)",
     "",
@@ -7450,7 +7505,7 @@
      "value": [
       "Belle"
      ],
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -7467,6 +7522,18 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02358",
+       "url": "https://disneymouseketeer.com/two-new-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02361",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -7538,7 +7605,7 @@
     },
     "edition_size": {
      "value": 3750,
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -7555,12 +7622,18 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02359",
+       "url": "https://disneymouseketeer.com/two-new-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
       }
      ]
     },
     "release_date": {
      "value": "2026-02-03",
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -7577,6 +7650,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02362",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -7660,7 +7739,7 @@
     },
     "original_price": {
      "value": 24.99,
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -7675,6 +7754,12 @@
       {
        "claim_id": "C01608",
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02360",
+       "url": "https://disneymouseketeer.com/two-new-brush-of-magic-pins-at-disney-store/",
        "method": "search_snippet",
        "source_class": "fan"
       }
@@ -7716,7 +7801,7 @@
     },
     "release_year": {
      "value": 2026,
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -7733,6 +7818,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02362",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     }
@@ -7835,6 +7926,12 @@
       },
       {
        "claim_id": "C01768",
+       "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02349",
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
@@ -8040,7 +8137,7 @@
   {
    "key": "brush-of-magic/limited-edition/cinderella",
    "set_key": "brush-of-magic/limited-edition",
-   "record_confidence": "Medium",
+   "record_confidence": "High",
    "review_reasons": [
     "conflict: edition_size"
    ],
@@ -8054,7 +8151,7 @@
      "value": [
       "Cinderella"
      ],
-     "confidence": "Medium",
+     "confidence": "High",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -8071,6 +8168,18 @@
        "url": "https://www.disneystore.com/cinderella-pin-brush-of-magic-limited-edition-438010243665.html",
        "method": "search_snippet",
        "source_class": "official"
+      },
+      {
+       "claim_id": "C02341",
+       "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02344",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -8152,6 +8261,12 @@
       },
       {
        "claim_id": "C01698",
+       "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02342",
        "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
        "method": "search_snippet",
        "source_class": "fan"
@@ -8272,7 +8387,7 @@
     },
     "original_price": {
      "value": 24.99,
-     "confidence": "Medium",
+     "confidence": "High",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -8289,6 +8404,12 @@
        "url": "https://www.disneystore.com/cinderella-pin-brush-of-magic-limited-edition-438010243665.html",
        "method": "search_snippet",
        "source_class": "official"
+      },
+      {
+       "claim_id": "C02343",
+       "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "fan"
       }
      ]
     },
@@ -8436,10 +8557,9 @@
   {
    "key": "brush-of-magic/limited-edition/darkwing-duck",
    "set_key": "brush-of-magic/limited-edition",
-   "record_confidence": "Low",
+   "record_confidence": "Medium",
    "review_reasons": [
-    "conflict: edition_size",
-    "identity confidence Low"
+    "conflict: edition_size"
    ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
@@ -8451,7 +8571,7 @@
      "value": [
       "Darkwing Duck"
      ],
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -8468,6 +8588,18 @@
        "url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02353",
+       "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02356",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -8540,6 +8672,18 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02354",
+       "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02355",
+       "url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+       "method": "search_snippet",
+       "source_class": "fan"
       }
      ]
     },
@@ -8568,6 +8712,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02357",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -8740,6 +8890,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02357",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     }
@@ -8784,7 +8940,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Disney classic character | Disney classic shorts (Donald Duck)",
+     "alternatives": "editorial/legacy only: Disney classic shorts (Donald Duck) | Disney classic character",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -10184,10 +10340,8 @@
   {
    "key": "brush-of-magic/limited-edition/grumpy",
    "set_key": "brush-of-magic/limited-edition",
-   "record_confidence": "Low",
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "Medium",
+   "review_reasons": [],
    "duplicate": [
     "NEW (family exists, different sub-set)",
     "",
@@ -10198,7 +10352,7 @@
      "value": [
       "Grumpy"
      ],
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -10215,6 +10369,18 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02363",
+       "url": "https://wdwnt.com/2026/09/mickey-mouse-pin-trading-display-bags-case-and-pins-available-online-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "news"
+      },
+      {
+       "claim_id": "C02366",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-september-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -10287,6 +10453,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02364",
+       "url": "https://wdwnt.com/2026/09/mickey-mouse-pin-trading-display-bags-case-and-pins-available-online-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -10321,6 +10493,12 @@
        "url": "https://disneypinsblog.com/category/september-2026-pins/",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02367",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-september-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -10427,6 +10605,12 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02365",
+       "url": "https://wdwnt.com/2026/09/mickey-mouse-pin-trading-display-bags-case-and-pins-available-online-at-disney-store/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -10527,6 +10711,12 @@
        "url": "https://disneypinsblog.com/category/september-2026-pins/",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02367",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-september-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     }
@@ -10934,7 +11124,7 @@
      "value": [
       "Hercules"
      ],
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -10951,6 +11141,18 @@
        "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02368",
+       "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02372",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -11051,12 +11253,18 @@
        "url": "https://www.disneystore.asia/hercules-limited-edition-pin-brush-of-magic-438010541600.html",
        "method": "search_snippet",
        "source_class": "official"
+      },
+      {
+       "claim_id": "C02369",
+       "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+       "method": "search_snippet",
+       "source_class": "fan"
       }
      ]
     },
     "release_date": {
      "value": "2026-02-03",
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -11073,6 +11281,18 @@
        "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02370",
+       "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02373",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -11199,6 +11419,12 @@
        "url": "https://www.disneystore.asia/hercules-limited-edition-pin-brush-of-magic-438010541600.html",
        "method": "search_snippet",
        "source_class": "official"
+      },
+      {
+       "claim_id": "C02371",
+       "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+       "method": "search_snippet",
+       "source_class": "fan"
       }
      ]
     },
@@ -11279,7 +11505,7 @@
     },
     "release_year": {
      "value": 2026,
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -11296,6 +11522,18 @@
        "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02370",
+       "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02373",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     }
@@ -11423,6 +11661,18 @@
        "url": "https://www.disneystore.asia/maleficent-limited-edition-pin-sleeping-beauty-brush-of-magic-438010541112.html",
        "method": "search_snippet",
        "source_class": "official"
+      },
+      {
+       "claim_id": "C02377",
+       "url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02379",
+       "url": "https://www.wdwinfo.com/disney-merchandise/disneys-new-brush-of-magic-pin-collection-sold-out-debut/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -11448,6 +11698,12 @@
       },
       {
        "claim_id": "C01587",
+       "url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02378",
        "url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
        "method": "search_snippet",
        "source_class": "fan"
@@ -11729,6 +11985,12 @@
       },
       {
        "claim_id": "C01587",
+       "url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
+       "method": "search_snippet",
+       "source_class": "fan"
+      },
+      {
+       "claim_id": "C02378",
        "url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
        "method": "search_snippet",
        "source_class": "fan"
@@ -12175,10 +12437,8 @@
   {
    "key": "brush-of-magic/limited-edition/mickey-animators-desk-jumbo",
    "set_key": "brush-of-magic/limited-edition",
-   "record_confidence": "Low",
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "Medium",
+   "review_reasons": [],
    "duplicate": [
     "NEW (family exists, different sub-set)",
     "",
@@ -12189,7 +12449,7 @@
      "value": [
       "Mickey Mouse"
      ],
-     "confidence": "Low",
+     "confidence": "Medium",
      "status": "ok",
      "alternatives": "",
      "inherited_from": null,
@@ -12206,6 +12466,12 @@
        "url": "https://www.dismerchandise.com/2026/10/06/mickey-mouse-on-animators-desk-jumbo-pin-brush-of-magic-2-pc-limited-edition/",
        "method": "search_snippet",
        "source_class": "fan"
+      },
+      {
+       "claim_id": "C02374",
+       "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-october-2026/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -12661,6 +12927,18 @@
        "url": "https://disneypinventory.com/view_item.php?itemID=49153",
        "method": "search_snippet",
        "source_class": "unclassified"
+      },
+      {
+       "claim_id": "C02375",
+       "url": "https://www.disneystore.asia/sorcerer-mickey-mouse-limited-edition-pin-fantasia%C2%A0brush-of-magic-438010540955.html",
+       "method": "search_snippet",
+       "source_class": "official"
+      },
+      {
+       "claim_id": "C02376",
+       "url": "https://www.wdwinfo.com/disney-merchandise/disneys-new-brush-of-magic-pin-collection-sold-out-debut/",
+       "method": "search_snippet",
+       "source_class": "news"
       }
      ]
     },
@@ -13434,7 +13712,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Snow White and the Seven Dwarfs | Snow White and the Seven Dwarfs (1937)",
+     "alternatives": "editorial/legacy only: Snow White and the Seven Dwarfs (1937) | Snow White and the Seven Dwarfs",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -13795,7 +14073,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Mickey & Friends | Disney shorts",
+     "alternatives": "editorial/legacy only: Disney shorts | Mickey & Friends",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -14156,7 +14434,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Oswald shorts (1927) | Oswald the Lucky Rabbit shorts",
+     "alternatives": "editorial/legacy only: Oswald the Lucky Rabbit shorts | Oswald shorts (1927)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -14523,7 +14801,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Peter Pan | Peter Pan (1953)",
+     "alternatives": "editorial/legacy only: Peter Pan (1953) | Peter Pan",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -14884,7 +15162,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Mickey & Friends | Disney shorts",
+     "alternatives": "editorial/legacy only: Disney shorts | Mickey & Friends",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -15245,7 +15523,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Lilo & Stitch (2002) | Lilo & Stitch",
+     "alternatives": "editorial/legacy only: Lilo & Stitch | Lilo & Stitch (2002)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -16360,7 +16638,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Winnie the Pooh | The Many Adventures of Winnie the Pooh (1977)",
+     "alternatives": "editorial/legacy only: The Many Adventures of Winnie the Pooh (1977) | Winnie the Pooh",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -17681,7 +17959,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Mickey & Friends | Disney shorts",
+     "alternatives": "editorial/legacy only: Disney shorts | Mickey & Friends",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -19966,7 +20244,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Fantasia (1940) | Fantasia",
+     "alternatives": "editorial/legacy only: Fantasia | Fantasia (1940)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -20698,7 +20976,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Mickey & Friends | Disney shorts",
+     "alternatives": "editorial/legacy only: Disney shorts | Mickey & Friends",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -21064,7 +21342,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Oliver & Company (1988) | Oliver & Company",
+     "alternatives": "editorial/legacy only: Oliver & Company | Oliver & Company (1988)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -21796,7 +22074,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Not stated by any source; most likely Louis the alligator (The Princess and the Frog) but could be Chef Louis (The Little Mermaid) | The Princess and the Frog (2009)",
+     "alternatives": "editorial/legacy only: The Princess and the Frog (2009) | Not stated by any source; most likely Louis the alligator (The Princess and the Frog) but could be Chef Louis (The Little Mermaid)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -22528,7 +22806,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Adventures of Ichabod and Mr. Toad (1949) | The Adventures of Ichabod and Mr. Toad",
+     "alternatives": "editorial/legacy only: The Adventures of Ichabod and Mr. Toad | The Adventures of Ichabod and Mr. Toad (1949)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -22894,7 +23172,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: A Goofy Movie (1995) | A Goofy Movie",
+     "alternatives": "editorial/legacy only: A Goofy Movie | A Goofy Movie (1995)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -26201,7 +26479,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Snow White and the Seven Dwarfs / Disney Parks | Disney Parks attractions",
+     "alternatives": "editorial/legacy only: Disney Parks attractions | Snow White and the Seven Dwarfs / Disney Parks",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -26595,7 +26873,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Winnie the Pooh / Disney Parks | Disney Parks attractions",
+     "alternatives": "editorial/legacy only: Disney Parks attractions | Winnie the Pooh / Disney Parks",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [

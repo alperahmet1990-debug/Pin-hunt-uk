@@ -1,0 +1,692 @@
+{
+ "packet_id": "corroboration-2026-10-13-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-13",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+   "title": "Disney Store Pins - New and Exclusive Designs for February 2026",
+   "publisher": "Laughing Place",
+   "published_date": "2026-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+   "title": "Disney Store Pins - New and Exclusive Designs for May 2026",
+   "publisher": "Laughing Place",
+   "published_date": "2026-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+   "title": "Disney Store Pins - New and Exclusive Designs for July 2026",
+   "publisher": "Laughing Place",
+   "published_date": "2026-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-september-2026/",
+   "title": "Disney Store Pins - New and Exclusive Designs for September 2026",
+   "publisher": "Laughing Place",
+   "published_date": "2026-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-october-2026/",
+   "title": "Disney Store Pins - New and Exclusive Designs for October 2026",
+   "publisher": "Laughing Place",
+   "published_date": "2026-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+   "title": "Aladdin & Cinderella Brush of Magic Pins at Disney Store",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+   "title": "Bambi & Darkwing Duck Brush of Magic Pins at Disney Store",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/",
+   "title": "Ariel & Captain Hook Brush of Magic Pins at Disney Store (headline seen in search summary; article URL not surfaced)",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-08-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+   "title": "Disney Brush of Magic Pin Series on Disney Store",
+   "publisher": "Extra Magic Minutes",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/two-new-brush-of-magic-pins-at-disney-store/",
+   "title": "Two New Brush of Magic Pins at Disney Store",
+   "publisher": "Disney Mouseketeer",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+   "title": "Hercules Pin - Brush of Magic - Limited Edition - Get It Here",
+   "publisher": "Dis Merchandise News",
+   "published_date": "2026-02-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
+   "title": "Maleficent Pin - Sleeping Beauty - Brush of Magic - Limited Edition was released today",
+   "publisher": "Dis Merchandise News",
+   "published_date": "2026-01-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2026/09/mickey-mouse-pin-trading-display-bags-case-and-pins-available-online-at-disney-store/",
+   "title": "Mickey Mouse Pin Trading Display Bags, Case, and Pins Available Online at Disney Store",
+   "publisher": "WDW News Today",
+   "published_date": "2026-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.asia/sorcerer-mickey-mouse-limited-edition-pin-fantasia%C2%A0brush-of-magic-438010540955.html",
+   "title": "Sorcerer Mickey Mouse Limited Edition Pin, Fantasia, Brush of Magic",
+   "publisher": "Disney Store Asia",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/disney-merchandise/disneys-new-brush-of-magic-pin-collection-sold-out-debut/",
+   "title": "Disney's New Brush of Magic Pin Collection Sold Out Debut",
+   "publisher": "WDWInfo",
+   "published_date": "2026-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "brush-of-magic/limited-edition/aladdin",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Post title pairs Aladdin and Cinderella as Brush of Magic pins at Disney Store"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this post: Aladdin & Cinderella pins each LE 3,750"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this post: $24.99 each"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+     "method": "search_snippet",
+     "note": "May 2026 Disney Store pin roundup lists an Aladdin Brush of Magic Limited Edition pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05-05",
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+     "method": "search_snippet",
+     "note": "Roundup lists the Aladdin Brush of Magic pin under May 5, 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/cinderella",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Post title pairs Cinderella and Aladdin as Brush of Magic pins at Disney Store"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this post: each pin LE 3,750"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/aladdin-cinderella-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this post: $24.99 each"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-may-2026/",
+     "method": "search_snippet",
+     "note": "May 2026 roundup lists a Cinderella Brush of Magic Limited Edition pin in the same batch as Aladdin"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/ariel",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog headline (seen in search summary) names Ariel & Captain Hook Brush of Magic pins at Disney Store, August 4 2026"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-08-04",
+     "source_url": "https://disneypinsblog.com/",
+     "method": "search_snippet",
+     "note": "Headline dated the Ariel & Captain Hook release to Aug 4 2026; metadata noted as inconsistent"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/captain-hook",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Hook"
+     ],
+     "source_url": "https://disneypinsblog.com/",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog headline (seen in search summary) names Ariel & Captain Hook Brush of Magic pins at Disney Store, August 4 2026"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-08-04",
+     "source_url": "https://disneypinsblog.com/",
+     "method": "search_snippet",
+     "note": "Headline dated the Ariel & Captain Hook release to Aug 4 2026; metadata noted as inconsistent"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "method": "search_snippet",
+     "note": "Extra Magic Minutes series table (already a known publisher) gives LE 3,750 for the Ariel/Hook pair; recorded as an extra edition-size statement"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/bambi",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bambi"
+     ],
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "method": "search_snippet",
+     "note": "Series article lists Bambi with Darkwing Duck as the seventh pins of the Brush of Magic series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bambi"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+     "method": "search_snippet",
+     "note": "July 2026 roundup lists a Bambi Brush of Magic Limited Edition pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07-07",
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+     "method": "search_snippet",
+     "note": "Roundup lists Bambi and Darkwing Duck Brush of Magic pins under July 7, 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/darkwing-duck",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Darkwing Duck"
+     ],
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "method": "search_snippet",
+     "note": "Series article lists Darkwing Duck as one of the seventh pins in the series"
+    },
+    {
+     "field": "edition_size",
+     "value": 3250,
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "method": "search_snippet",
+     "note": "Search summary attributes LE 3,250 for Darkwing Duck to Extra Magic Minutes"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog (known publisher) states LE 3,750 worldwide; recorded alongside the conflicting 3,250"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darkwing Duck"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+     "method": "search_snippet",
+     "note": "July 2026 roundup lists a Darkwing Duck Brush of Magic Limited Edition pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07-07",
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-july-2026/",
+     "method": "search_snippet",
+     "note": "Listed under July 7, 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/belle",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneymouseketeer.com/two-new-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Fan site post on two new Brush of Magic pins covers a Belle pin-on-pin design"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://disneymouseketeer.com/two-new-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this post: Belle limited to 3,750 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneymouseketeer.com/two-new-brush-of-magic-pins-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this post: $24.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+     "method": "search_snippet",
+     "note": "Feb 2026 roundup lists a Belle (Beauty and the Beast) Brush of Magic Limited Edition pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02-03",
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+     "method": "search_snippet",
+     "note": "Listed under February 3, 2026 with Hercules"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/grumpy",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Grumpy"
+     ],
+     "source_url": "https://wdwnt.com/2026/09/mickey-mouse-pin-trading-display-bags-case-and-pins-available-online-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Article covers a Grumpy Brush of Magic pin-on-pin pin at Disney Store online"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://wdwnt.com/2026/09/mickey-mouse-pin-trading-display-bags-case-and-pins-available-online-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this article: limited to 3,750"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://wdwnt.com/2026/09/mickey-mouse-pin-trading-display-bags-case-and-pins-available-online-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Summary of this article: $24.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Grumpy"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-september-2026/",
+     "method": "search_snippet",
+     "note": "Sept 2026 roundup lists a Grumpy (Snow White) Brush of Magic Limited Edition pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-09-01",
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-september-2026/",
+     "method": "search_snippet",
+     "note": "Listed under September 1, 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/hercules",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hercules"
+     ],
+     "source_url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+     "method": "search_snippet",
+     "note": "Deal/news post for the Hercules Brush of Magic Limited Edition pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+     "method": "search_snippet",
+     "note": "Post states limited edition of 3,750 worldwide"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02-03",
+     "source_url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+     "method": "search_snippet",
+     "note": "Post says released Feb 3, 2026 on Disney Store"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.dismerchandise.com/2026/02/03/hercules-pin-brush-of-magic-limited-edition-get-it-here/",
+     "method": "search_snippet",
+     "note": "Post gives $24.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hercules"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+     "method": "search_snippet",
+     "note": "Feb 2026 roundup lists a Hercules Brush of Magic Limited Edition pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02-03",
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-february-2026/",
+     "method": "search_snippet",
+     "note": "Listed under February 3, 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/mickey-animators-desk-jumbo",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-october-2026/",
+     "method": "search_snippet",
+     "note": "Oct 2026 roundup lists a Mickey Mouse on Animator's Desk Jumbo Brush of Magic pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/mickey-mouse-sorcerer",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2250,
+     "source_url": "https://www.disneystore.asia/sorcerer-mickey-mouse-limited-edition-pin-fantasia%C2%A0brush-of-magic-438010540955.html",
+     "method": "search_snippet",
+     "note": "Disney Store Asia listing (per search summary) gives LE 2,250. Key inferred from naming pattern"
+    },
+    {
+     "field": "edition_size",
+     "value": 2250,
+     "source_url": "https://www.wdwinfo.com/disney-merchandise/disneys-new-brush-of-magic-pin-collection-sold-out-debut/",
+     "method": "search_snippet",
+     "note": "Article says each debut design was capped at 2,250 (applies to the first two pins, Sorcerer Mickey and Maleficent)"
+    }
+   ]
+  },
+  {
+   "pin_key": "brush-of-magic/limited-edition/maleficent",
+   "set_key": "brush-of-magic/limited-edition",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2250,
+     "source_url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
+     "method": "search_snippet",
+     "note": "Post states LE 2,250, $24.99, released on Disney Store 1/29/26. Key inferred from naming pattern"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-29",
+     "source_url": "https://www.dismerchandise.com/2026/01/29/maleficent-pin-sleeping-beauty-brush-of-magic-limited-edition-was-released-today/",
+     "method": "search_snippet",
+     "note": "Post claims release on 1/29/26; other sources date the debut Jan 6 2026"
+    },
+    {
+     "field": "edition_size",
+     "value": 2250,
+     "source_url": "https://www.wdwinfo.com/disney-merchandise/disneys-new-brush-of-magic-pin-collection-sold-out-debut/",
+     "method": "search_snippet",
+     "note": "Article says each debut design was capped at 2,250"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "animated-cuties/series-2/ariel",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "animated-cuties/series-2/flynn-rider",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "animated-cuties/series-2/hercules",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "animated-cuties/series-2/kuzco",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "animated-cuties/series-2/li-shang",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "animated-cuties/series-2/maleficent",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "animated-cuties/series-2/sally",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "animated-cuties/series-2/vanellope-von-schweetz",
+   "field": "characters",
+   "searched": "3 queries incl. exact 'Animated Cuties Series 2'; restricted to wdwnt, laughingplace, dismerchandise, disneymouseketeer, allears, mickeyblog etc.",
+   "note": "Only Disney Pins Blog (and its own Threads post) names Series 2 lineup; other outlets cover only Series 1"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/baloo",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/chip-n-dale",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/jafar",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/minnie-mouse",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/pascal",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/pegasus",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/pinocchio",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/pongo",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/simba",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "brush-of-magic/mystery-series-2/tigger",
+   "field": "characters",
+   "searched": "5 queries; extramagicminutes, dismerchandise, laughingplace (June 2026), wdwnt, disneymouseketeer, disneystore",
+   "note": "Independent outlets confirm the Series 2 blind pack (June 16 2026, $34.99) but no character list surfaced; only excluded db + Disney Pins Blog name designs"
+  },
+  {
+   "key": "windows-of-attraction/2026-wdw/walt-disney-world-railroad",
+   "field": "attraction",
+   "searched": "4 queries; blogmickey, allears, mickeyblog, disneyfoodblog, disneyblog, laughingplace",
+   "note": "Only WDWNT (Feb 2026 Pin Tuesday) names it as #2 of 12, LE 2500, $26.99"
+  },
+  {
+   "key": "windows-of-attraction/2026-wdw/seven-dwarfs-mine-train",
+   "field": "attraction",
+   "searched": "3 queries excluding wdwnt",
+   "note": "Only WDWNT and excluded db found; laughingplace hit was an unrelated open-edition Mine Train pin"
+  },
+  {
+   "key": "windows-of-attraction/2026-wdw/kilimanjaro-safaris",
+   "field": "attraction",
+   "searched": "3 queries incl. wdwnt-only and disneyblog",
+   "note": "WDWNT April 2026 said that month's Windows of Attraction pin sold out before photos, without naming it"
+  },
+  {
+   "key": "windows-of-attraction/2026-wdw/twilight-zone-tower-of-terror",
+   "field": "attraction",
+   "searched": "3 queries incl. wdwnt-only",
+   "note": "No independent naming found; only Disney Pins Blog image title"
+  },
+  {
+   "key": "windows-of-attraction/2026-wdw/journey-into-imagination-with-figment",
+   "field": "attraction",
+   "searched": "2 queries",
+   "note": "WDWNT July 2026 preview lists Windows of Attraction 7 of 12 (LE 2500, $26.99) but does not name the attraction"
+  },
+  {
+   "key": "windows-of-attraction/2026-wdw",
+   "field": "expected_pin_count",
+   "searched": "2 queries for 11 of 12 / 12 of 12 (Nov/Dec 2026)",
+   "note": "No source names pins #11 or #12; no new pins added"
+  }
+ ],
+ "discovery_notes": "All evidence via search-engine summaries; page fetching not used. Ariel/Captain Hook Disney Pins Blog source is a headline seen in a summary; article URL not surfaced so the blog root is cited. Keys brush-of-magic/limited-edition/sorcerer-mickey and /maleficent were inferred from the naming pattern (not in todo list) - remap if engine uses different keys. Mickey Animator's Desk jumbo: summaries mention LE 3,749 and Oct 6 2026 availability but could not be attributed to a single publisher, so not claimed. Other WDW 2026 Windows of Attraction pins seen: Enchanted Tiki Room = 10 of 12, LE 2500, $26.99, Oct 13 2026 (disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/); Buzz Lightyear's Space Ranger Spin = 8 of 12, LE 2500, $26.99 (wdwnt August 2026 WDW pin releases article). Haunted Mansion = 1 of 12 (wdwnt). Not added as pins (not requested; keys unknown). | Key remapped by orchestrator: sorcerer-mickey \u2192 mickey-mouse-sorcerer."
+}

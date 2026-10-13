@@ -1,6 +1,7 @@
 """Load and validate evidence packets into flat claim records. Invalid claims are kept, with a reason, in `rejected`."""
 import json
 import glob
+from urllib.parse import urlparse
 from . import sources as S
 from .normalize import PIN_FIELDS, SET_FIELDS, METHODS, normalise
 
@@ -45,6 +46,8 @@ class Store:
             reason = f"unknown method '{method}'"
         elif method not in ("physical_pin", "editorial") and not url:
             reason = "no source URL"
+        if url and reason is None and urlparse(url).path.strip("/") == "":
+            reason = "source URL is a bare home page, not a specific page"
         if url and reason is None:
             cls = S.classify(url)
             rec.update(source_class=cls, domain=S.domain_of(url), publisher=S.registrable(S.domain_of(url)))

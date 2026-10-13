@@ -57,7 +57,7 @@ fetch.py       polite live fetcher: allowlist + robots.txt + rate limit + JSON-L
 
 ```bash
 cd research/catalogue-engine
-python3 -m unittest discover -s tests                   # 17 tests
+python3 -m unittest discover -s tests                   # 19 tests
 python3 -m engine "evidence/*.json" --out out           # full run
 python3 -m engine.audit out/records_with_evidence.json  # no-invention audit
 python3 bench.py 5000                                   # scale benchmark (synthetic)
@@ -101,3 +101,42 @@ python3 -m engine.legacy <poc raw dir> evidence/pin_keys_v1.json evidence/00_poc
 - **Snippet-sourced roster claims are attributed per pin.** When a source lists a whole set, every pin gets a claim from it. This is correct for checklists, but a reviewer should spot-check.
 - **Visual descriptors are thin.** Sources describe series-level construction, not per-pin colours or poses. Our own photos are the real fix.
 - **Duplicate detection is rule-based.** It is tuned to the current 182-row catalogue's naming and will need embeddings or a learned matcher at 10k+ rows.
+
+## Results of the 13 Oct 2026 run
+
+**Inputs:** 6 packets, 2,375 accepted claims, 4 rejected (bare home-page URLs), 83 distinct sources. Every claim is `search_snippet`; no pages could be read.
+
+**Pins:** 77 (the 74 POC pins plus 3 new). Record confidence: High 34, Medium 18, Low 25, Unverified 0.
+
+**Verified: 48**
+- 32 High, 16 Medium.
+- 20 duplicate pins already in the trusted catalogue, independently re-verified.
+- 28 not yet in our catalogue.
+
+| Group | Verified |
+|---|---|
+| Animated Cuties S1 | 8/8 |
+| Brush of Magic Mystery S1 | 10/10 |
+| Brush of Magic Mystery S3 | 10/10 |
+| Brush of Magic LE singles | 12/18 |
+| Windows of Attraction 2026 | 5/10 |
+| Disney Classics London | 3/3 |
+
+**Not verified: 29**
+- Identity rests on one publisher for 25:
+  - Animated Cuties S2 (8) and Brush of Magic Mystery S2 (10): Disney Pins Blog only.
+  - Windows of Attraction (5).
+  - Brush of Magic Ariel and Captain Hook (2).
+- Blocking edition-size conflicts for 4 Brush of Magic LE pins: Aladdin, Cinderella, Darkwing Duck, Hercules.
+
+**Duplicates**
+- 25 found against the live trusted catalogue: Animated Cuties S1 ×8, Brush of Magic Mystery S1 ×10, Windows of Attraction ×7.
+- Same count as the manual comparison.
+- "Tod" vs "Todd" is kept as a spelling variant, recorded with sources on both sides.
+
+**Sets**
+- 6 complete: Animated Cuties S1 and S2, Brush of Magic Mystery S1–S3, Disney Classics London.
+- Windows of Attraction 2026 is 10/12; the November and December pins aren't released, and none were created.
+- Brush of Magic LE has no published total.
+
+**Audit:** 846 populated pin fields, 0 without evidence.

@@ -14,6 +14,7 @@ Each role has an internal team name. Use it, with the role, in reports, PR summa
 | 🛠️ Fix-It Felix | Backend developer: engineering and functionality | `.claude/agents/backend-developer.md` | Dev routine, for `agent:backend` issues |
 | 🔍 Roz | QA (independent reviewer) | `.claude/agents/qa-reviewer.md` | Review routine, on every non-draft `claude/*` PR |
 | 🛡️ Baymax | Security and privacy review (independent reviewer) | `.claude/agents/security-reviewer.md` | Review routine, when the PR has `security:required` |
+| 🔎 Basil | Catalogue research: field-level public-source evidence for pins and sets, run through the offline research engine, delivered as a draft PR. Never touches the database, imports or mints ids. | `docs/agents/proposed/catalogue-researcher.md` (moves to `.claude/agents/` on activation) | **Inactive.** No routine and no schedule. Activation needs the maintainer's explicit approval and a `human-approved-config` PR. Prompt draft: `docs/agents/proposed/routines/catalogue-research.md`. |
 | 🏰 Scrooge | Infrastructure, staging and launch readiness | Private ops notes (`launch-prep/`) | Interactive sessions with the maintainer only. No routine; infrastructure work is human-only or L3. |
 
 Routine prompts live in `docs/agents/routines/`.

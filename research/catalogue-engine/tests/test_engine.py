@@ -170,6 +170,17 @@ class Fetcher(unittest.TestCase):
         self.assertEqual(fields["currency"], "USD")
         self.assertNotIn("Long marketing copy", json.dumps(cl))
 
+    def test_access_policy_is_default_deny(self):
+        self.assertEqual(fetch.fetch("https://www.disneystore.co.uk/x")[0], "not_permitted_by_access_policy")
+        self.assertFalse(fetch.permitted_by_policy("https://unknown.example/x"))
+        self.assertFalse(fetch.permitted_by_policy("https://www.disneystore.com/x",
+                         {"hosts": {"www.disneystore.com": {"fetch_permitted": True, "terms_reviewed": False, "robots_txt_checked": True}}}))
+        self.assertTrue(fetch.permitted_by_policy("https://www.disneystore.com/x",
+                        {"hosts": {"www.disneystore.com": {"fetch_permitted": True, "terms_reviewed": True, "robots_txt_checked": True}}}))
+        policy = fetch.load_policy()
+        self.assertTrue(policy["hosts"])
+        self.assertFalse(any(h["fetch_permitted"] for h in policy["hosts"].values()))
+
     def test_policy_blocks_non_allowlisted(self):
         self.assertEqual(fetch.fetch("https://pinandpop.com/x")[0], "not_allowlisted")
         self.assertEqual(fetch.fetch("https://www.ebay.com/x")[0], "not_allowlisted")

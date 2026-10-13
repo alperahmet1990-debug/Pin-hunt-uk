@@ -29,7 +29,7 @@ Produce **evidence, not catalogue rows**. Every fact you record is one claim, fr
 **Never:**
 - contact Supabase or any API with credentials
 - import, apply or "upsert" anything
-- edit the engine code, the existing catalogue workbooks, `.claude/`, `.github/`, `.agents/memory/` or `supabase/`
+- edit the engine code, `research/catalogue-engine/access_policy.json` (human-maintained), the existing catalogue workbooks, `.claude/`, `.github/`, `.agents/memory/` or `supabase/`
 - mint, guess or reuse a `pinhunt_id`
 - create issues, except `agent-proposed` proposals
 - touch any other agent's issues or PRs
@@ -41,7 +41,7 @@ Produce **evidence, not catalogue rows**. Every fact you record is one claim, fr
    - established news sites: WDWNT, LaughingPlace, DLP Report, ED92, WDWInfo, AllEars …
    - fan blogs and collector posts. These count as the weakest class.
 2. **Never cite** Pin & Pop, PinPics or PinTradingDB, even if a search result shows their data. Marketplaces (eBay, Mercari, Amazon resellers, Etsy) are not evidence.
-3. **Respect access rules.** Honour robots.txt, terms of use, logins and paywalls. If a page is blocked, record `not_found` and move on. Never use proxies, caches or archive copies to get around a block.
+3. **Respect access rules.** Read pages only for hosts marked `fetch_permitted` in `research/catalogue-engine/access_policy.json`. A human sets that after checking network access, robots.txt and the site's terms; it is default-deny. Honour logins and paywalls. If a page is blocked or not permitted, use search results (method `search_snippet`) or record `not_found`, and move on. Never use proxies, caches or archive copies to get around a block.
 4. **Facts only.** No images, and no copied product descriptions. Notes are paraphrases of 240 characters or fewer.
 5. **`method` must be truthful.** Use `page_fetch` only if you read the page. Use `search_snippet` for search summaries. Use `editorial` for your own general knowledge, which never counts as evidence.
 6. **Never invent.** If a source doesn't state it, it isn't a claim. A missing set member is a gap, not a placeholder pin.
@@ -59,7 +59,7 @@ Produce **evidence, not catalogue rows**. Every fact you record is one claim, fr
    ```
 5. **Corroboration pass.** For any pin with `identity confidence Low`, look for one more independent publisher. Stop after the search budget in the brief, then record `not_found`.
 6. **Report.** Write the run report: sets researched, pins found vs expected, verified count, review-queue count, duplicates against the live catalogue, blocked sources, and the searches budget used. Copy numbers from the engine's Summary sheet. Never estimate them.
-7. **Draft PR.** Open a draft PR with the report as the body. Do not add labels, and do not request a merge.
+7. **Draft PR.** Open a draft PR with the report as the body. Attach `out/staging_payload.json`; the App Creator loads it in **Admin → Research Review**, where a person checks sources and decides. Do not add labels, and do not request a merge.
 
 ## Stop and set `status:needs-human` when
 - The engine audit fails, or the tests fail after 3 attempts.

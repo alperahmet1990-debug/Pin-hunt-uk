@@ -20,8 +20,26 @@ MIN_INTERVAL_S = 5.0
 _last, _robots = {}, {}
 
 
+POLICY_PATH = __import__("pathlib").Path(__file__).resolve().parents[1] / "access_policy.json"
+
+
+def load_policy(path=POLICY_PATH) -> dict:
+    try:
+        return json.loads(open(path).read())
+    except (OSError, ValueError):
+        return {"default": "deny", "hosts": {}}      # unreadable policy → fetch nothing
+
+
+def permitted_by_policy(url: str, policy: dict | None = None) -> bool:
+    """Default deny: a host is fetched only when a human marked it permitted
+    after checking network access, robots.txt and the site's terms."""
+    policy = policy if policy is not None else load_policy()
+    entry = policy.get("hosts", {}).get(urlparse(url).hostname or "", {})
+    return entry.get("fetch_permitted") is True and entry.get("terms_reviewed") is True and entry.get("robots_txt_checked") is True
+
+
 def allowed_host(url: str) -> bool:
-    return S.classify(url) in ("official", "news")
+    return S.classify(url) in ("official", "news", "fan")
 
 
 def robots_ok(url: str) -> bool:
@@ -103,6 +121,8 @@ def fetch(url: str, timeout=20):
     """→ (status, claims). status ∈ ok | not_allowlisted | robots_disallow | blocked | http_<code>."""
     if not allowed_host(url):
         return "not_allowlisted", []
+    if not permitted_by_policy(url):
+        return "not_permitted_by_access_policy", []
     host = urlparse(url).netloc
     wait = MIN_INTERVAL_S - (time.time() - _last.get(host, 0))
     if wait > 0:

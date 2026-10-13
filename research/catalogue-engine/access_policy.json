@@ -1,0 +1,136 @@
+{
+ "version": 1,
+ "checked_at": "2026-10-13",
+ "default": "deny",
+ "how_to_permit": "Set fetch_permitted to true for a host only after (1) the cloud environment's network policy allows it, (2) robots.txt was read and allows our user agent for the paths we fetch, and (3) the site's terms of use were reviewed and do not prohibit automated access. Record who reviewed and when. Search-engine summaries (WebSearch) remain the fallback and are labelled search_snippet.",
+ "hosts": {
+  "www.disneystore.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "www.disneystore.co.uk": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "www.disneystore.eu": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "www.disneystore.asia": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "www.disneystore.com.au": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "disneyparks.disney.go.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "disneyworld.disney.go.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "disneyland.disney.go.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "www.disneylandparis.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "wdwnt.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "www.laughingplace.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "dlpreport.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "ed92.org": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "www.wdwinfo.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "allears.net": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  },
+  "disneypinsblog.com": {
+   "fetch_permitted": false,
+   "network_reachable": false,
+   "robots_txt_checked": false,
+   "terms_reviewed": false,
+   "reviewed_by": null,
+   "notes": "No connection from the research environment on 2026-10-13 (network policy). Not attempted further."
+  }
+ }
+}

@@ -21,6 +21,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
+import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { getPinImageSource } from '@/utils/pinImage';
 import { PinCard } from '@/components/PinCard';
 import { BoardCard } from '@/components/BoardCard';
@@ -387,7 +388,7 @@ export default function CollectionScreen() {
           >
             <Feather name="search" size={24} color={searchActive ? colors.homeCoral : colors.homeInk} />
           </TouchableOpacity>
-          <TouchableOpacity style={s.headerBtn} onPress={() => setAddModalVisible(true)}>
+          <TouchableOpacity style={s.headerBtn} onPress={() => setAddModalVisible(true)} accessibilityRole="button" accessibilityLabel="Add pins">
             <Feather name="plus" size={24} color={colors.homeInk} />
           </TouchableOpacity>
         </View>
@@ -548,7 +549,7 @@ export default function CollectionScreen() {
       if (setProgressFilter !== 'all') {
         return <EmptyState icon="bookmark" title="No sets found" subtitle="No sets match this progress filter." actionLabel="Show all sets" onAction={() => setSetProgressFilter('all')} />;
       }
-      return <EmptyState icon="bookmark" title="No sets started" subtitle="Sets appear here automatically once you own a pin from one." actionLabel="Browse all sets" onAction={() => router.push('/browse-catalogue')} />;
+      return <EmptyState icon="bookmark" title="No sets started" subtitle="Sets appear here automatically once you own a pin from one." actionLabel="Add pins you own" onAction={() => router.push(ADD_PINS_ROUTE)} />;
     }
     if (activeTab === 'traders') {
       if (searchActive && searchQuery || traderFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
@@ -659,29 +660,41 @@ export default function CollectionScreen() {
             <View style={s.addMenuHeader}>
               <Text style={[s.addMenuTitle, { color: colors.homeInk }]}>Add to Collection</Text>
             </View>
+            {/* Building a collection: many at once first, then one at a time (UX-055). */}
             <TouchableOpacity
               style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
-              onPress={() => {
-                setAddModalVisible(false);
-                router.push('/search');
-              }}
+              accessibilityRole="button"
+              onPress={() => { setAddModalVisible(false); router.push(ADD_PINS_ROUTE); }}
             >
-              <Feather name="search" size={24} color={colors.homeInk} />
-              <Text style={[s.addMenuText, { color: colors.homeInk }]}>Add Pin</Text>
+              <Feather name="grid" size={24} color={colors.homeInk} />
+              <View style={{ flex: 1 }}>
+                <Text style={[s.addMenuText, { color: colors.homeInk }]}>Add pins you own</Text>
+                <Text style={[s.addMenuSub, { color: colors.homeMuted }]}>Select many from the catalogue</Text>
+              </View>
             </TouchableOpacity>
             <TouchableOpacity
               style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
+              accessibilityRole="button"
+              onPress={() => { setAddModalVisible(false); router.push('/(tabs)/scan'); }}
+            >
+              <Feather name="camera" size={24} color={colors.homeInk} />
+              <Text style={[s.addMenuText, { color: colors.homeInk }]}>Scan a pin</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
+              accessibilityRole="button"
+              onPress={() => { setAddModalVisible(false); router.push('/search'); }}
+            >
+              <Feather name="search" size={24} color={colors.homeInk} />
+              <Text style={[s.addMenuText, { color: colors.homeInk }]}>Search for a pin</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={s.addMenuItem}
+              accessibilityRole="button"
               onPress={() => { setAddModalVisible(false); setCreateBoardVisible(true); }}
             >
               <Feather name="folder-plus" size={24} color={colors.homeInk} />
               <Text style={[s.addMenuText, { color: colors.homeInk }]}>Create Board</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={s.addMenuItem}
-              onPress={() => { setAddModalVisible(false); router.push('/browse-catalogue'); }}
-            >
-              <Feather name="grid" size={24} color={colors.homeInk} />
-              <Text style={[s.addMenuText, { color: colors.homeInk }]}>Browse Catalogue</Text>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
@@ -963,6 +976,7 @@ const s = StyleSheet.create({
   addMenuTitle: { fontSize: 16, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
   addMenuItem: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, minHeight: 48, borderBottomWidth: StyleSheet.hairlineWidth },
   addMenuText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
+  addMenuSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
   createBoardModal: { margin: 24, alignSelf: 'stretch', borderRadius: 16, padding: 20, borderWidth: StyleSheet.hairlineWidth },
   closeBtn: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   modalTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold', marginBottom: 16 },

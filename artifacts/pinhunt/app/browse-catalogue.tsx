@@ -21,6 +21,7 @@ import {
   FlatList,
   Image,
   Modal,
+  useWindowDimensions,
   Platform,
   RefreshControl,
   ScrollView,
@@ -32,7 +33,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import type { CatalogueBrowsePin } from '@workspace/pin-repository';
 import { useColors } from '@/hooks/useColors';
@@ -72,6 +73,15 @@ export default function BrowseCatalogueScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  // `mode=add` is the "Add pins you own" entry point (UX-055): same screen,
+  // framed for building a collection, with a Done button and running count.
+  const { mode } = useLocalSearchParams<{ mode?: string }>();
+  const addMode = mode === 'add';
+  // Three bulk buttons share one row; on narrow phones drop their icons so
+  // "For Trade" stays on one line.
+  const narrow = useWindowDimensions().width < 360;
+  const screenTitle = addMode ? 'Add pins you own' : 'Entire Catalogue';
+  const [addedCount, setAddedCount] = useState(0);
   const { rows, loading, error, refresh } = useCatalogueBrowseIndex();
   const { collection, setStatuses } = useCollection();
   const { customBoards, createBoard, addPinsToBoard } = useBoards();
@@ -179,7 +189,7 @@ export default function BrowseCatalogueScreen() {
     });
   };
 
-  const addSelected = (status: 'owned' | 'wanted', { confirm = true } = {}) => {
+  const addSelected = (status: 'owned' | 'for_trade' | 'wanted', { confirm = true } = {}) => {
     // Never downgrade: owned/for-trade pins stay put, ISO pins already in ISO are a no-op.
     const ids = [...selected].filter(id => {
       const current = statusOf(id);
@@ -192,16 +202,21 @@ export default function BrowseCatalogueScreen() {
     // One state update and one batched sync, however many pins.
     setStatuses(ids, status);
     setSelected(new Set());
+    setAddedCount(n => n + ids.length);
     if (confirm) {
+      const pins = `${ids.length} ${ids.length === 1 ? 'pin' : 'pins'}`;
       toast.show(ids.length === 0
         ? { message: 'Those pins were already in place' }
         : {
-            message: `Added ${ids.length} ${ids.length === 1 ? 'pin' : 'pins'} to your ${status === 'owned' ? 'collection' : 'ISO'}`,
+            message: status === 'owned' ? `Added ${pins} to your collection`
+              : status === 'for_trade' ? `Added ${pins} for trade`
+                : `Added ${pins} to your ISO`,
             action: {
               label: 'Undo',
               onPress: () => {
                 if (wasNone.length) setStatusesRef.current(wasNone, 'none');
                 if (wasIso.length) setStatusesRef.current(wasIso, 'wanted');
+                setAddedCount(n => Math.max(0, n - ids.length));
               },
             },
           });
@@ -240,7 +255,7 @@ export default function BrowseCatalogueScreen() {
   if (loading && rows.length === 0) {
     return (
       <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
-        <Stack.Screen options={{ title: 'Entire Catalogue' }} />
+        <Stack.Screen options={{ title: screenTitle }} />
         <ActivityIndicator color={colors.homeCoral} />
         <Text style={[styles.loadingText, { color: colors.homeMuted }]}>Loading the catalogue…</Text>
       </View>
@@ -266,6 +281,11 @@ export default function BrowseCatalogueScreen() {
 
   const header = (
     <View style={styles.header}>
+      {addMode && (
+        <Text style={[styles.addHint, { color: colors.homeMuted }]}>
+          Pick a set and tap Select all, or tap the pins you have.
+        </Text>
+      )}
       <SearchBar value={query} onChangeText={setQuery} placeholder="Search pins, characters, sets or years" />
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
         {chip(hideHave ? 'Hiding pins I have' : 'Hide pins I have', hideHave, () => setHideHave(v => !v), false)}
@@ -306,7 +326,7 @@ export default function BrowseCatalogueScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
-      <Stack.Screen options={{ title: 'Entire Catalogue' }} />
+      <Stack.Screen options={{ title: screenTitle }} />
       <SectionList
         sections={sections}
         keyExtractor={(chunk, i) => `${chunk[0]?.id ?? 'row'}-${i}`}
@@ -314,7 +334,7 @@ export default function BrowseCatalogueScreen() {
         stickySectionHeadersEnabled={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
-        contentContainerStyle={{ paddingBottom: botPad + (selected.size > 0 ? 120 : 24) }}
+        contentContainerStyle={{ paddingBottom: botPad + (selected.size > 0 ? 180 : addMode ? 100 : 24) }}
         initialNumToRender={8}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
         ListEmptyComponent={
@@ -391,29 +411,60 @@ export default function BrowseCatalogueScreen() {
               <TouchableOpacity
                 onPress={() => addSelected('wanted')}
                 activeOpacity={0.85}
+                accessibilityRole="button"
                 style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
               >
-                <Feather name="heart" size={15} color={colors.homeInk} />
-                <Text style={[styles.secondaryLabel, { color: colors.homeInk }]}>ISO</Text>
+                {!narrow && <Feather name="heart" size={15} color={colors.homeInk} />}
+                <Text numberOfLines={1} style={[styles.secondaryLabel, { color: colors.homeInk }]}>ISO</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => addSelected('for_trade')}
+                activeOpacity={0.85}
+                accessibilityRole="button"
+                style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
+              >
+                {!narrow && <Feather name="repeat" size={15} color={colors.homeInk} />}
+                <Text numberOfLines={1} style={[styles.secondaryLabel, { color: colors.homeInk }]}>For Trade</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => setBoardSheetOpen(true)}
                 activeOpacity={0.85}
+                accessibilityRole="button"
                 style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
               >
-                <Feather name="folder-plus" size={15} color={colors.homeInk} />
-                <Text style={[styles.secondaryLabel, { color: colors.homeInk }]}>Board</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => addSelected('owned')}
-                activeOpacity={0.85}
-                style={[styles.primaryBtn, { backgroundColor: colors.homeCoral }]}
-              >
-                <Feather name="plus" size={16} color={colors.homeHeroText} />
-                <Text style={[styles.primaryLabel, { color: colors.homeHeroText }]}>Add to Collection</Text>
+                {!narrow && <Feather name="folder-plus" size={15} color={colors.homeInk} />}
+                <Text numberOfLines={1} style={[styles.secondaryLabel, { color: colors.homeInk }]}>Board</Text>
               </TouchableOpacity>
             </View>
+            <TouchableOpacity
+              onPress={() => addSelected('owned')}
+              activeOpacity={0.85}
+              accessibilityRole="button"
+              style={[styles.primaryBtn, { backgroundColor: colors.homeCoral }]}
+            >
+              <Feather name="plus" size={16} color={colors.homeHeroText} />
+              <Text style={[styles.primaryLabel, { color: colors.homeHeroText }]}>Add to Collection</Text>
+            </TouchableOpacity>
           </>
+        </View>
+      )}
+
+      {addMode && selected.size === 0 && (
+        <View style={[styles.bottomBar, {
+          backgroundColor: colors.homeSurface,
+          borderTopColor: colors.homeLine,
+          paddingBottom: botPad + spacing.md,
+        }]}>
+          <TouchableOpacity
+            onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)'))}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            style={[styles.primaryBtn, { backgroundColor: colors.homeCoral }]}
+          >
+            <Text style={[styles.primaryLabel, { color: colors.homeHeroText }]}>
+              {addedCount > 0 ? `Done · ${addedCount} added` : 'Done'}
+            </Text>
+          </TouchableOpacity>
         </View>
       )}
 
@@ -683,9 +734,10 @@ const styles = StyleSheet.create({
   bottomMeta: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
   bottomCount: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   bottomActions: { flexDirection: 'row', gap: spacing.sm },
-  secondaryBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5, borderWidth: 1, borderRadius: radius.pill, paddingVertical: 13, paddingHorizontal: spacing.md },
+  addHint: { fontSize: 13, lineHeight: 18, fontFamily: 'Inter_500Medium', marginBottom: spacing.sm },
+  secondaryBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5, borderWidth: 1, borderRadius: radius.pill, paddingVertical: 13, paddingHorizontal: spacing.sm },
   secondaryLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  primaryBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderRadius: radius.pill, paddingVertical: 13 },
+  primaryBtn: { minHeight: 48, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderRadius: radius.pill, paddingVertical: 13 },
   primaryLabel: { fontSize: 14, fontFamily: 'Inter_700Bold' },
   sheetBackdrop: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,0.35)' },
   sheet: { maxHeight: '75%', borderTopLeftRadius: radius.xl, borderTopRightRadius: radius.xl, borderWidth: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.lg, gap: spacing.md },

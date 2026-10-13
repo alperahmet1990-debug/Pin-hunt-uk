@@ -6,6 +6,8 @@ import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
+import { AddPinsCard } from '@/components/AddPinsCard';
+import { AddPinsWelcomeSheet } from '@/components/AddPinsWelcomeSheet';
 import { useProfile } from '@/context/ProfileContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
@@ -177,6 +179,7 @@ export default function HomeScreen() {
           <View style={[styles.heroIcon, { backgroundColor: colors.homeSurface }]}><Feather name="search" size={23} color={colors.homeCoralDeep} /></View>
         </LinearGradient>
       </TouchableOpacity>
+      <AddPinsCard />
       <View style={styles.shortcuts}>
         <Shortcut icon="heart" label={'My\nCollection'} tone={colors.homeCoralDeep} onPress={() => router.push({ pathname: '/(tabs)/collection', params: { tab: 'boards' } })} colors={colors} />
         <Shortcut icon="compass" label={'Find\nTrades'} tone={colors.homeSandInk} onPress={() => router.push('/find-trades')} colors={colors} />
@@ -195,6 +198,7 @@ export default function HomeScreen() {
       </Section>}
       {visibleSet && !activeSetLoading && progress && progress.total > 0 && <Section title="Continue Collecting" colors={colors} action={() => router.push({ pathname: '/set/[collection]', params: { collection: visibleSet.setName } })}><TouchableOpacity onPress={() => router.push({ pathname: '/set/[collection]', params: { collection: visibleSet.setName } })} style={[styles.collect, { backgroundColor: colors.homeTeal }]}><View style={styles.cardText}><Text numberOfLines={1} style={[styles.collectTitle, { color: colors.homeCollectText }]}>{visibleSet.setName}</Text><Text style={[styles.collectDetail, { color: colors.homeAqua }]}>{progress.owned} of {progress.total} collected</Text><View style={[styles.progressTrack, { backgroundColor: colors.homeTealSoft }]}><View style={[styles.progressFill, { backgroundColor: colors.homeSand, width: `${Math.round(progress.owned / progress.total * 100)}%` }]} /></View></View><View style={[styles.percent, { borderColor: colors.homeSand }]}><Text style={[styles.percentText, { color: colors.homeCollectText }]}>{Math.round(progress.owned / progress.total * 100)}%</Text></View></TouchableOpacity></Section>}
     </ScrollView>
+    <AddPinsWelcomeSheet />
   </View>;
 }
 

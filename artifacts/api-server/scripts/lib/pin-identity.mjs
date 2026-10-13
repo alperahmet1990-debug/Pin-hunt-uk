@@ -132,7 +132,10 @@ export function checkPinIdentity(existing, incoming) {
   const sharedSet = [...collA].filter((x) => [...collB].some((y) => sameWord(x, y)));
   // Character names are only "known words" when both rows name that same character;
   // if one row has no characters, a character word in the title is what identifies the pin.
-  const charWords = cA.length && cB.length ? [...cA, ...cB].flatMap((n) => [...n]) : [];
+  // Only characters that appear on BOTH rows are stripped ("Mickey & Minnie Kiss" vs
+  // "Mickey & Pluto Kiss" keeps Minnie/Pluto, so the swap is refused).
+  const charWords = [...cA.filter((a) => cB.some((b) => sameCharacter(a, b))),
+                     ...cB.filter((b) => cA.some((a) => sameCharacter(a, b)))].flatMap((n) => [...n]);
   const known = [...sharedSet, ...charWords];
   const strip = (title) => new Set([...tokens(title)].filter((x) => !known.some((k) => sameWord(x, k))));
   const tA = strip(existing.title);

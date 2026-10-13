@@ -56,6 +56,7 @@ describe("checkPinIdentity — rules", () => {
     ["typo fix, no characters", { title: "Cinderela Castle", collection: "Castles", characters: "" }, { title: "Cinderella Castle", collection: "Castles", characters: [] }],
     ["typo fix + extra word, no characters", { title: "Stich Hula", collection: "Hula", characters: "" }, { title: "Stitch Hula Dancer", collection: "Hula", characters: [] }],
     ["character short name", { title: "Winnie the Pooh Hunny Pot", collection: "Pooh Friends", characters: "Winnie the Pooh" }, { title: "Pooh Hunny Pot", collection: "Pooh Friends", characters: ["Pooh"] }],
+    ["second character added", { title: "Mickey Kiss", collection: "Valentines 2026", characters: "Mickey Mouse" }, { title: "Mickey & Minnie Kiss", collection: "Valentines 2026", characters: ["Mickey Mouse", "Minnie Mouse"] }],
     ["title reworded, same character and set", { title: "Mickey – Animated Cutie", collection: "Animated Cuties", characters: "Mickey Mouse" }, { title: "Animated Cuties Mickey Mouse", collection: "Animated Cuties", characters: ["Mickey Mouse"] }],
     ["set name gains its year", { title: "Hatbox Ghost", collection: "Haunted Mansion", characters: "Hatbox Ghost" }, { title: "Hatbox Ghost window", collection: "Haunted Mansion 2026", characters: ["Hatbox Ghost"] }],
   ])("accepts legitimate corrections: %s", (_label, existing, incoming) => {
@@ -85,6 +86,8 @@ describe("checkPinIdentity — rules", () => {
     ["next year's set", { title: "Halloween Mickey", collection: "Halloween 2024", characters: "Mickey Mouse" }, { title: "Halloween Mickey", collection: "Halloween 2025", characters: ["Mickey Mouse"] }],
     ["incoming drops characters and swaps the title", { title: "Mickey Ice Cream Bar", collection: "Ice Cream Bar", characters: "Mickey Mouse" }, { title: "Minnie Ice Cream Bar", collection: "Ice Cream Bar", characters: [] }],
     ["existing has no characters, incoming swaps", { title: "Mickey Ice Cream Bar", collection: "Ice Cream Bar", characters: "" }, { title: "Minnie Ice Cream Bar", collection: "Ice Cream Bar", characters: ["Minnie Mouse"] }],
+    ["duo swap sharing one character", { title: "Mickey & Minnie Kiss", collection: "Valentines 2026", characters: "Mickey Mouse; Minnie Mouse" }, { title: "Mickey & Pluto Kiss", collection: "Valentines 2026", characters: ["Mickey Mouse", "Pluto"] }],
+    ["duo swap, Chip & Dale → Chip & Clarice", { title: "Chip & Dale Acorn", collection: "Autumn", characters: "Chip; Dale" }, { title: "Chip & Clarice Acorn", collection: "Autumn", characters: ["Chip", "Clarice"] }],
     ["sets sharing one word", { title: "Hearts", collection: "Valentines Day", characters: "Minnie Mouse" }, { title: "Shamrock", collection: "St Patricks Day", characters: ["Minnie Mouse"] }],
   ])("refuses: %s", (_label, existing, incoming) => {
     expect(checkPinIdentity(existing, incoming).ok).toBe(false);

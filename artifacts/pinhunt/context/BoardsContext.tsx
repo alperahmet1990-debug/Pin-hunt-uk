@@ -47,6 +47,8 @@ interface BoardsContextValue {
   /** Bulk addPinToBoard — same owned/for-trade rule, one persist. */
   addPinsToBoard: (boardId: string, pinIds: string[]) => void;
   removePinFromBoard: (boardId: string, pinId: string) => void;
+  /** removePinFromBoard for many pins at once (bulk select) — one update. */
+  removePinsFromBoard: (boardId: string, pinIds: string[]) => void;
   setBoardThumbnail: (boardId: string, pinId: string | undefined) => void;
   renameBoard: (boardId: string, newName: string) => void;
   getBoardById: (boardId: string) => Board | undefined;
@@ -344,6 +346,20 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
     ), [boardId]);
   }, [apply]);
 
+  const removePinsFromBoard = useCallback((boardId: string, pinIds: string[]) => {
+    const remove = new Set(pinIds);
+    if (remove.size === 0) return;
+    apply(prev => prev.map(b =>
+      b.id === boardId
+        ? {
+            ...b,
+            pinIds: b.pinIds.filter(id => !remove.has(id)),
+            thumbnailPinId: b.thumbnailPinId && remove.has(b.thumbnailPinId) ? undefined : b.thumbnailPinId,
+          }
+        : b,
+    ), [boardId]);
+  }, [apply]);
+
   const setBoardThumbnail = useCallback((boardId: string, pinId: string | undefined) => {
     apply(prev => prev.map(b =>
       b.id === boardId ? { ...b, thumbnailPinId: pinId } : b,
@@ -403,6 +419,7 @@ export function BoardsProvider({ children }: { children: React.ReactNode }) {
         addPinToBoard,
         addPinsToBoard,
         removePinFromBoard,
+        removePinsFromBoard,
         setBoardThumbnail,
         renameBoard,
         getBoardById,

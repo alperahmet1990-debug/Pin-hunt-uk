@@ -13,8 +13,10 @@
 //   --label <name>      output folder name (default "after")
 //   --base <git-ref>    also capture "before" from that ref (built in a temp worktree)
 //   --routes a,b        route names from scripts/screenshot-routes.json (default: all).
-//                       A route may set "click": "<label>" to tap a tab/segment first,
-//                       and "scroll": "end" to capture the bottom of a scrolling screen.
+//                       A route may set "upload": "<label>" to tap a button that opens the
+//                       photo picker and give it a fixture image, "click": "<label>" to tap
+//                       a tab/segment/button, and "scroll": "end" to capture the bottom of a
+//                       scrolling screen (applied in that order).
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -137,6 +139,18 @@ function findChrome() {
   throw new Error('No Chrome found. Set CHROME_PATH or run: npx @puppeteer/browsers install chrome-headless-shell@stable');
 }
 
+// Innermost element whose visible text is exactly `text` (a tab, segment or button label).
+// Runs in the page, so it must stay self-contained.
+function clickByText(text) {
+  const matches = [...document.querySelectorAll('body *')].filter(el =>
+    el.childElementCount === 0 && el.textContent.trim() === text && el.getBoundingClientRect().width > 0);
+  const target = matches[0]?.closest('[role="button"],[role="tab"],button,a,[tabindex]') ?? matches[0];
+  target?.click();
+  return Boolean(target);
+}
+
+const UPLOAD_FIXTURE = path.join(appDir, 'assets/images/icon.png');
+
 // ── Capture ─────────────────────────────────────────────────────────────
 async function capture(webDir, outDir, routes, viewports, schemes) {
   rmSync(outDir, { recursive: true, force: true });
@@ -160,15 +174,17 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
           await page.setViewport({ width, height, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
           await page.goto(origin + route.path, { waitUntil: 'networkidle0', timeout: 30_000 }).catch(() => {});
           await new Promise(r => setTimeout(r, 1200));
+          if (route.upload) {
+            // Tap the button that opens the photo picker and hand it a fixture image.
+            const [chooser] = await Promise.all([
+              page.waitForFileChooser({ timeout: 5_000 }),
+              page.evaluate(clickByText, route.upload),
+            ]).catch(() => { throw new Error(`Route "${route.name}": "${route.upload}" did not open a file chooser`); });
+            await chooser.accept([UPLOAD_FIXTURE]);
+            await new Promise(r => setTimeout(r, 1200));
+          }
           if (route.click) {
-            const clicked = await page.evaluate(text => {
-              // Innermost element whose visible text is exactly `text` (a tab, segment or button label).
-              const matches = [...document.querySelectorAll('body *')].filter(el =>
-                el.childElementCount === 0 && el.textContent.trim() === text && el.getBoundingClientRect().width > 0);
-              const target = matches[0]?.closest('[role="button"],[role="tab"],button,a,[tabindex]') ?? matches[0];
-              target?.click();
-              return Boolean(target);
-            }, route.click);
+            const clicked = await page.evaluate(clickByText, route.click);
             if (!clicked) throw new Error(`Route "${route.name}": no visible element with text "${route.click}"`);
             await new Promise(r => setTimeout(r, 800));
           }

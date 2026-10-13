@@ -1,4 +1,4 @@
-import { identifyPin, SCAN_TIMEOUT_MESSAGE, SCAN_TIMEOUT_MS } from '../identifyPin';
+import { identifyPin, SCAN_NETWORK_MESSAGE, SCAN_TIMEOUT_MESSAGE, SCAN_TIMEOUT_MS } from '../identifyPin';
 
 describe('identifyPin', () => {
   const realFetch = globalThis.fetch;
@@ -50,5 +50,12 @@ describe('identifyPin', () => {
     }) as unknown as typeof fetch;
 
     await expect(identifyPin('abc', 'image/jpeg')).rejects.toThrow('Scan limit reached');
+  });
+
+  it('replaces the raw network error with a friendly message', async () => {
+    globalThis.fetch = jest.fn().mockRejectedValue(new TypeError('Failed to fetch')) as unknown as typeof fetch;
+
+    await expect(identifyPin('abc', 'image/jpeg')).rejects.toThrow(SCAN_NETWORK_MESSAGE);
+    expect(jest.getTimerCount()).toBe(0);
   });
 });

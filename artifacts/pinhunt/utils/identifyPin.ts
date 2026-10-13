@@ -20,6 +20,9 @@ export const SCAN_TIMEOUT_MS = 35_000;
 export const SCAN_TIMEOUT_MESSAGE =
   'The scan is taking too long. Check your connection and try again, or search for the pin instead.';
 
+export const SCAN_NETWORK_MESSAGE =
+  "We couldn't reach PinHunt. Check your connection and try again, or search for the pin instead.";
+
 export async function identifyPin(
   imageBase64: string,
   mimeType: string,
@@ -53,6 +56,9 @@ export async function identifyPin(
     return { matches: data.matches, imageInsights: data.imageInsights ?? null };
   } catch (err) {
     if (timedOut) throw new Error(SCAN_TIMEOUT_MESSAGE);
+    // fetch rejects with a TypeError ("Failed to fetch", "Network request failed")
+    // when the server can't be reached; don't show that raw text to the user.
+    if (err instanceof TypeError) throw new Error(SCAN_NETWORK_MESSAGE);
     throw err;
   } finally {
     clearTimeout(timer);

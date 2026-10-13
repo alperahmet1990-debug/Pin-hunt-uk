@@ -31,6 +31,13 @@
     "path": "/scan"
   },
   {
+    "name": "find-scan-error",
+    "path": "/scan",
+    "upload": "Choose Photo",
+    "click": "Identify Pin",
+    "scroll": "end"
+  },
+  {
     "name": "profile",
     "path": "/profile"
   },

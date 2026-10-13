@@ -44,6 +44,7 @@ import { useFindTrades, type PotentialTradeCard, type SetOpportunity } from '@/h
 import { useCollection } from '@/context/CollectionContext';
 import { findTradesEmptyState, type FindTradesEmptyAction } from '@/utils/findTradesEmpty';
 import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
+import { Button } from '@/components/ui/Button';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
 
 function pinImageSource(imageUrl?: string) {
@@ -102,32 +103,21 @@ export default function FindTradesScreen() {
           ) : error ? (
             <View style={styles.center}>
               <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
-              <TouchableOpacity onPress={refresh} style={{ padding: spacing.sm }}>
-                <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try again</Text>
-              </TouchableOpacity>
+              <Button variant="text" label="Try again" icon="refresh-cw" onPress={refresh} />
             </View>
           ) : nothingAtAll ? (
             <View style={styles.center}>
               <Feather name="compass" size={36} color={colors.homeMuted} />
               <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>{empty.title}</Text>
               <Text style={[styles.emptySub, { color: colors.homeMuted }]}>{empty.body}</Text>
-              <TouchableOpacity
+              <Button
+                label={empty.primary.label}
                 onPress={() => runEmptyAction(empty.primary.action)}
-                activeOpacity={0.8}
-                accessibilityRole="button"
-                style={[styles.emptyAction, { backgroundColor: colors.homeCoral }]}
-              >
-                <Text style={[styles.emptyActionLabel, { color: colors.homeSurface }]}>{empty.primary.label}</Text>
-              </TouchableOpacity>
+                fullWidth={false}
+                style={styles.emptyAction}
+              />
               {empty.secondary && (
-                <TouchableOpacity
-                  onPress={() => runEmptyAction(empty.secondary!.action)}
-                  activeOpacity={0.7}
-                  accessibilityRole="button"
-                  style={styles.emptySecondary}
-                >
-                  <Text style={[styles.emptyActionLabel, { color: colors.homeCoralDeep }]}>{empty.secondary.label}</Text>
-                </TouchableOpacity>
+                <Button variant="text" label={empty.secondary.label} onPress={() => runEmptyAction(empty.secondary!.action)} />
               )}
             </View>
           ) : (
@@ -203,15 +193,13 @@ export default function FindTradesScreen() {
                       <Text style={[styles.discoveryEmptyText, { color: colors.homeMuted }]}>
                         Add a few pins you own or are looking for and we'll recommend trades based on them.
                       </Text>
-                      <TouchableOpacity
+                      <Button
+                        variant="text"
+                        label="Add pins you own"
+                        trailingIcon="chevron-right"
                         onPress={() => router.push(ADD_PINS_ROUTE)}
-                        hitSlop={{ top: 12, bottom: 12, left: 8, right: 8 }}
-                        accessibilityRole="button"
                         style={styles.discoveryAction}
-                      >
-                        <Text style={[styles.discoveryActionLabel, { color: colors.homeCoralDeep }]}>Add pins you own</Text>
-                        <Feather name="chevron-right" size={14} color={colors.homeCoralDeep} />
-                      </TouchableOpacity>
+                      />
                     </View>
                   </View>
                 )}
@@ -478,9 +466,7 @@ const styles = StyleSheet.create({
 
   discoveryEmpty: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, borderRadius: radius.md, borderWidth: 1, padding: spacing.md },
   discoveryEmptyText: { fontSize: 12.5, fontFamily: 'Inter_400Regular', lineHeight: 17 },
-  discoveryAction: { flexDirection: 'row', alignItems: 'center', gap: 2, alignSelf: 'flex-start' },
-  discoveryActionLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  emptyAction: { marginTop: spacing.md, minHeight: 44, paddingHorizontal: spacing.xl, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
-  emptyActionLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  emptySecondary: { minHeight: 44, paddingHorizontal: spacing.lg, alignItems: 'center', justifyContent: 'center' },
+  // Text button flush with the hint above it.
+  discoveryAction: { marginLeft: -spacing.sm, alignSelf: 'flex-start' },
+  emptyAction: { marginTop: spacing.md },
 });

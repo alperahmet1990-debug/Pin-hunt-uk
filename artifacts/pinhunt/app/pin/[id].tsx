@@ -16,6 +16,7 @@ import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
+import { Button, IconButton } from '@/components/ui/Button';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
@@ -114,9 +115,7 @@ export default function PinDetailScreen() {
           ) : (
             <>
               <Text style={[styles.notFoundText, { color: colors.homeInk }]}>Pin not found.</Text>
-              <TouchableOpacity onPress={() => router.back()}>
-                <Text style={[styles.backLink, { color: colors.homeCoral }]}>Go Back</Text>
-              </TouchableOpacity>
+              <Button variant="text" label="Go Back" onPress={() => router.back()} />
             </>
           )}
         </View>
@@ -201,14 +200,13 @@ export default function PinDetailScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.hero, { height: HERO_HEIGHT }]}
         >
-          <TouchableOpacity
+          <IconButton
+            icon="chevron-left"
             accessibilityLabel="Back"
+            variant="surface"
             onPress={() => router.back()}
-            activeOpacity={0.85}
-            style={[styles.backBtn, { top: topInset + 10, backgroundColor: colors.homeSurface + 'E6' }]}
-          >
-            <Feather name="chevron-left" size={20} color={colors.homeInk} />
-          </TouchableOpacity>
+            style={[styles.backBtn, { top: topInset + 10 }]}
+          />
 
           {pin.limitedEditionSize != null && pin.limitedEditionSize > 0 && (
             <View style={[styles.leBadgeWrap, { top: topInset + 10 }]}>
@@ -278,22 +276,16 @@ export default function PinDetailScreen() {
 
           {/* ── 3. Collection management ── */}
           <View style={styles.collectionSection}>
-            <TouchableOpacity
+            <Button
+              label={currentStatus === 'none' ? 'Add to Collection' : 'Manage Collection'}
+              variant={currentStatus === 'none' ? 'primary' : 'secondary'}
+              icon={manageIcon}
+              iconColor={currentStatus === 'none' ? undefined : manageTone}
+              trailingIcon="chevron-right"
+              align="start"
               onPress={openManageSheet}
-              activeOpacity={0.88}
-              style={[
-                styles.manageBtn,
-                currentStatus === 'none'
-                  ? { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }
-                  : { backgroundColor: colors.homeSurface, borderWidth: 1, borderColor: colors.homeLine },
-              ]}
-            >
-              <Feather name={manageIcon} size={17} color={currentStatus === 'none' ? colors.homeSurface : manageTone} />
-              <Text style={[styles.manageBtnLabel, { color: currentStatus === 'none' ? colors.homeSurface : colors.homeInk }]}>
-                {currentStatus === 'none' ? 'Add to Collection' : 'Manage Collection'}
-              </Text>
-              <Feather name="chevron-right" size={16} color={currentStatus === 'none' ? colors.homeSurface : colors.homeMuted} />
-            </TouchableOpacity>
+              style={currentStatus === 'none' ? [styles.manageShadow, { shadowColor: colors.homeShadow }] : undefined}
+            />
 
             {(statusLine || pinBoardIds.size > 0) && (
               <View style={styles.collectionHints}>
@@ -396,28 +388,25 @@ export default function PinDetailScreen() {
                             {listing.sellerUsername && <Text style={[styles.mktSeller, { color: colors.homeMuted }]}>@{listing.sellerUsername}</Text>}
                             {listing.askingPrice != null && <Text style={[styles.mktPrice, { color: colors.homeInk }]}>{currSym}{listing.askingPrice.toFixed(2)}</Text>}
                           </View>
-                          <TouchableOpacity
+                          <Button
+                            variant="text"
+                            label="View"
+                            trailingIcon="external-link"
+                            accessibilityLabel={`View listing${listing.sellerUsername ? ` by @${listing.sellerUsername}` : ''}`}
                             onPress={() => Linking.openURL(listing.listingUrl)}
-                            activeOpacity={0.75}
-                            style={[styles.mktViewBtn, { borderColor: colors.homeCoral + '40' }]}
-                          >
-                            <Text style={[styles.mktViewBtnLabel, { color: colors.homeCoral }]}>View</Text>
-                          </TouchableOpacity>
+                          />
                         </View>
                       );
                     })}
 
                     {currentStatus === 'for_trade' && (
-                      <TouchableOpacity
+                      <Button
+                        variant="text"
+                        icon="plus"
+                        label={marketplaceListings.length > 0 ? 'Add your listing' : 'List this pin for sale'}
                         onPress={() => router.push({ pathname: '/sell/[pinId]', params: { pinId: pin.id } })}
-                        activeOpacity={0.8}
                         style={styles.mktAddRow}
-                      >
-                        <Feather name="plus" size={13} color={colors.homeCoral} />
-                        <Text style={[styles.mktAddLabel, { color: colors.homeCoral }]}>
-                          {marketplaceListings.length > 0 ? 'Add your listing' : 'List this pin for sale'}
-                        </Text>
-                      </TouchableOpacity>
+                      />
                     )}
                   </View>
                 )}
@@ -451,14 +440,14 @@ export default function PinDetailScreen() {
                     />
                   ))}
                 </ScrollView>
-                <TouchableOpacity
+                <Button
+                  variant="text"
+                  label={`See all ${setTotal}`}
+                  trailingIcon="chevron-right"
+                  fullWidth
                   onPress={() => router.push({ pathname: '/set/[collection]', params: { collection: pin.collection } })}
-                  activeOpacity={0.8}
                   style={styles.seeAllRow}
-                >
-                  <Text style={[styles.seeAllLabel, { color: colors.homeCoralDeep }]}>See all {setTotal}</Text>
-                  <Feather name="chevron-right" size={15} color={colors.homeCoralDeep} />
-                </TouchableOpacity>
+                />
               </View>
             </View>
           )}
@@ -490,21 +479,11 @@ function formatDate(dateStr: string) {
 const styles = StyleSheet.create({
   notFound: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
   notFoundText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
-  backLink: { fontSize: 14, fontFamily: 'Inter_500Medium' },
   scroll: { flex: 1 },
   scrollContent: { paddingBottom: spacing.xxxl },
   // Hero
   hero: { width: '100%', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
-  backBtn: {
-    position: 'absolute',
-    left: spacing.lg,
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 2,
-  },
+  backBtn: { position: 'absolute', left: spacing.lg, zIndex: 2 },
   leBadgeWrap: { position: 'absolute', right: spacing.lg, zIndex: 2 },
   imagePage: { alignItems: 'center', justifyContent: 'center' },
   image: {
@@ -528,19 +507,7 @@ const styles = StyleSheet.create({
   description: { fontSize: 13.5, fontFamily: 'Inter_400Regular', lineHeight: 20 },
   // Collection management
   collectionSection: { gap: spacing.sm },
-  manageBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-    height: 50,
-    borderRadius: radius.lg,
-    paddingHorizontal: spacing.lg,
-    shadowOpacity: 0.2,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 5 },
-    elevation: 3,
-  },
-  manageBtnLabel: { flex: 1, fontSize: 15, fontFamily: 'Inter_700Bold' },
+  manageShadow: { shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3 },
   collectionHints: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flexWrap: 'wrap' },
   statusLine: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   statusLineLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
@@ -566,17 +533,13 @@ const styles = StyleSheet.create({
   mktMeta: { flex: 1, gap: 2 },
   mktSeller: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   mktPrice: { fontSize: 14, fontFamily: 'Inter_700Bold' },
-  mktViewBtn: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 6, borderWidth: 1 },
-  mktViewBtnLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
-  mktAddRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingTop: 4 },
-  mktAddLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  mktAddRow: { alignSelf: 'flex-start', marginLeft: -spacing.sm },
   // Set section
   setCard: { borderWidth: 1, borderRadius: radius.lg, padding: spacing.md },
   setHeadRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: spacing.sm, gap: spacing.sm },
   setName: { flex: 1, fontSize: 14, fontFamily: 'Inter_700Bold' },
   setCount: { fontSize: 14, fontFamily: 'Inter_700Bold' },
   setTiles: { gap: spacing.md, paddingTop: spacing.md, paddingRight: spacing.xs },
-  seeAllRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: spacing.md, paddingTop: spacing.sm },
-  seeAllLabel: { fontSize: 13, fontFamily: 'Inter_700Bold' },
+  seeAllRow: { marginTop: spacing.xs },
   attribution: { fontSize: 11, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: -spacing.sm },
 });

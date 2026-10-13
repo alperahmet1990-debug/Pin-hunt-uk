@@ -20,6 +20,7 @@ import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
 import { Chip } from '@/components/ui';
+import { Button } from '@/components/ui/Button';
 import { radius, spacing } from '@/constants/theme';
 import type { PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
 
@@ -254,14 +255,7 @@ export default function CollectorProfileScreen() {
               </View>
 
               {/* Opens a normal chat; never silently creates a formal Trade Request. */}
-              <TouchableOpacity
-                onPress={startConversation}
-                activeOpacity={0.85}
-                style={[styles.convoBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
-              >
-                <Feather name="message-circle" size={16} color={colors.homeSurface} />
-                <Text style={[styles.convoBtnText, { color: colors.homeSurface }]}>Start Conversation</Text>
-              </TouchableOpacity>
+              <Button label="Start Conversation" icon="message-circle" onPress={startConversation} style={styles.convoBtn} />
             </View>
           );
 
@@ -342,14 +336,7 @@ export default function CollectorProfileScreen() {
                   {/* Message button — hidden when Potential Trade Match below already
                       surfaces Start Conversation as the primary way to reach out. */}
                   {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && (
-                    <TouchableOpacity
-                      onPress={startConversation}
-                      activeOpacity={0.85}
-                      style={[styles.messageBtn, { backgroundColor: colors.homeCoral, shadowColor: colors.homeShadow }]}
-                    >
-                      <Feather name="mail" size={14} color={colors.homeSurface} />
-                      <Text style={[styles.messageBtnLabel, { color: colors.homeSurface }]}>Message</Text>
-                    </TouchableOpacity>
+                    <Button label="Message" icon="mail" size="compact" fullWidth={false} onPress={startConversation} style={styles.messageBtn} />
                   )}
                 </View>
 
@@ -418,16 +405,7 @@ const styles = StyleSheet.create({
   bioCard: { borderWidth: 1, borderRadius: radius.lg, padding: spacing.lg },
   bioText: { fontSize: 15, fontFamily: 'Inter_400Regular', lineHeight: 22 },
 
-  messageBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-    paddingHorizontal: spacing.xl, paddingVertical: spacing.md - 2, marginTop: spacing.xs,
-    borderRadius: radius.md,
-    shadowOpacity: 0.2,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 5 },
-    elevation: 3,
-  },
-  messageBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  messageBtn: { marginTop: spacing.xs },
 
   // Potential trades
   tradeMatchCard: { borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
@@ -459,19 +437,5 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   safetyText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  convoBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: spacing.sm,
-    margin: spacing.lg - 2,
-    marginTop: spacing.xs,
-    paddingVertical: spacing.md + 1,
-    borderRadius: radius.md,
-    shadowOpacity: 0.2,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 5 },
-    elevation: 3,
-  },
-  convoBtnText: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  convoBtn: { margin: spacing.lg - 2, marginTop: spacing.xs },
 });

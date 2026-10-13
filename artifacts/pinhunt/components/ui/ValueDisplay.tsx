@@ -13,7 +13,7 @@ interface ValueDisplayProps {
   collectorValue?: { amountGBP: number } | null;
 }
 
-/** One cohesive value card: PinHunt's own estimate headlines it, with live UK/US eBay-backed figures underneath — replaces the old "Market Valuation" + "Estimated Market Value" pair of competing cards. */
+/** One cohesive value card: PinHunt's own estimate headlines it, with a typical UK eBay asking-price range underneath when one is reliable — replaces the old "Market Valuation" + "Estimated Market Value" pair of competing cards. */
 export function ValueDisplay({ pinId, catalogueEstimateGBP, collectorValue }: ValueDisplayProps) {
   const colors = useColors();
 
@@ -37,8 +37,7 @@ export function ValueDisplay({ pinId, catalogueEstimateGBP, collectorValue }: Va
         </View>
       )}
 
-      <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
-
+      {/* Draws its own divider, and nothing at all without a confident UK price (B-P1-19). */}
       <MarketValueSection pinId={pinId} embedded />
     </View>
   );
@@ -65,5 +64,4 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   collectorText: { fontSize: 11.5, fontFamily: 'Inter_600SemiBold' },
-  divider: { height: StyleSheet.hairlineWidth },
 });

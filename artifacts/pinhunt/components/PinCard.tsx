@@ -12,7 +12,6 @@ import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { CollectionBadge } from './CollectionBadge';
 import { getPinImageSource } from '@/utils/pinImage';
-import { useLatestMarketValue, formatLatestValue } from '@/hooks/useMarketValue';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 const BRAND_COLORS: Record<string, string> = {
@@ -85,14 +84,9 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
       <Feather name={added ? 'check' : 'plus'} size={16} color={t.primaryFg} />
     </TouchableOpacity>
   ) : null;
-  // Latest saved eBay value (batched, read-only) — falls back to the
-  // catalogue estimate when no eBay value has been checked yet.
-  const latest = useLatestMarketValue(pin.id);
-  const priceLabel = latest
-    ? formatLatestValue(latest)
-    : pin.estimatedValueGBP
-      ? `£${pin.estimatedValueGBP.toFixed(0)}`
-      : null;
+  // Catalogue estimate only: saved eBay values carry no confidence, so they
+  // stay off tiles (B-P1-19); pin detail shows a confident UK range instead.
+  const priceLabel = pin.estimatedValueGBP ? `£${pin.estimatedValueGBP.toFixed(0)}` : null;
 
   if (mode === 'list') {
     return (

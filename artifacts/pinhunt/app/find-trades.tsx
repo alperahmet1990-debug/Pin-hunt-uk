@@ -74,6 +74,8 @@ export default function FindTradesScreen() {
   // Potential Trades only ever surfaces genuine two-way matches, so every tap
   // here already knows why — go straight to the match-first collector view.
   const goToMatch = (username: string) => router.push({ pathname: '/collector/[username]', params: { username, entry: 'match' } });
+  // Every collector with any of this set's missing pins, not just the first pin's traders (UX-021).
+  const goToSetTraders = (collectionName: string) => router.push({ pathname: '/set-traders/[collection]', params: { collection: collectionName } });
   const goToSet = (collectionName: string) => router.push({ pathname: '/set/[collection]', params: { collection: collectionName } });
   // Discovery is "this looks interesting", not "I want this" — land on Pin
   // Detail first so the collector can inspect before committing to ISO or a trade.
@@ -178,7 +180,7 @@ export default function FindTradesScreen() {
                         set={set}
                         colors={colors}
                         onPress={() => goToSet(set.setName)}
-                        onPressAvailable={set.available[0] ? () => goToTraders(set.available[0].pinId) : undefined}
+                        onPressAvailable={set.available[0] ? () => goToSetTraders(set.setName) : undefined}
                       />
                     ))}
                   </Shelf>
@@ -379,6 +381,8 @@ function SetCard({ set, colors, onPress, onPressAvailable }: {
         <TouchableOpacity
           onPress={onPressAvailable}
           activeOpacity={0.85}
+          accessibilityRole="button"
+          accessibilityLabel={`Who has the missing ${set.setName} pins`}
           style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}
         >
           {image}

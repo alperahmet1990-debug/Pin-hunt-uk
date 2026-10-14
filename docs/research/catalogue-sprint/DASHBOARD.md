@@ -1,6 +1,6 @@
 # PinHunt independent catalogue: dashboard
 
-_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run ebab73042ebd, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
+_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run 1e68d7a96d5a, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
 
 ## Headline
 
@@ -14,7 +14,7 @@ _Generated from engine output `research/catalogue-engine/out/consolidated/stagin
 | Identity confidence High / Medium / Low / Unverified | 148 / 354 / 350 / 2 |
 | 2+ independent publishers (fan databases and repeats excluded) | 510 |
 | Any official source / news but no official / fan only | 219 / 221 / 414 |
-| Blocking contradictions / flagged possible duplicates / catalogue duplicates | 32 / 26 / 27 |
+| Blocking contradictions / flagged possible duplicates / catalogue duplicates | 21 / 26 / 27 |
 | Pins with variant values (need a per-pin note) | 106 |
 
 ## Progress towards an independent catalogue
@@ -34,9 +34,9 @@ Two bars per milestone: research candidates, and **directly verified** pins (the
 
 | Line | Pins | High | Med | Low | 2+ pubs | Official | Directly verified | Conflicts | Dup flags |
 |---|---|---|---|---|---|---|---|---|---|
-| Disneyland Paris | 340 | 0 | 166 | 173 | 176 | 0 | 0 | 22 | 13 |
+| Disneyland Paris | 340 | 0 | 166 | 173 | 176 | 0 | 0 | 13 | 13 |
 | Disney Store UK | 181 | 100 | 56 | 25 | 114 | 163 | 0 | 1 | 3 |
-| Walt Disney World | 148 | 4 | 64 | 79 | 85 | 4 | 0 | 2 | 1 |
+| Walt Disney World | 148 | 4 | 64 | 79 | 85 | 4 | 0 | 0 | 1 |
 | Disneyland Resort | 108 | 10 | 50 | 48 | 65 | 15 | 0 | 3 | 6 |
 | Earlier POC + pilot | 77 | 34 | 18 | 25 | 70 | 37 | 0 | 4 | 3 |
 

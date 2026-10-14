@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 14:13 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 15:25 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -15,7 +15,11 @@ _Last updated: 2026-10-14 14:13 UTC by Claude (sprint coordinator session). Chec
 
 ## Current work by agent
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
-- **Dev agent:** #235 is `approved` + `status:ready`. The hourly runner is held by the single-runner lock: #63 (an unrelated UI issue) is `status:claimed` by another session. #235 starts at the first :07 run after #63's PR opens and its claim is released. Queue after #235: #239, #237, then #241 / #240. No open PRs.
+- **Dev agent:**
+  - **#235 merged** (PR #246).
+  - **#237 → PR #250:** CI green, `qa:pass`, `security:pass`. **Waiting for your merge.** It unblocks #241.
+  - **#239:** `status:ready`. The runner is currently held by an unrelated claimed issue (#156).
+  - **Then:** #240 (after #239), #241 (after #237).
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)
@@ -40,7 +44,7 @@ _Last updated: 2026-10-14 14:13 UTC by Claude (sprint coordinator session). Chec
 | **Publication-ready** | **0** |
 | High / Medium / Low / Unverified | 148 / 354 / 350 / 2 |
 | 2+ independent publishers | 510 |
-| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 32 / 26 / 27 (+8 recognised variants) |
+| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 21 / 26 / 27 (+8 recognised variants) |
 | Verification effort | 343 pages, ≈ 11–12 h with set-level review; pilot ≈ 45–50 min |
 | Progress to 1,000 / 5,000 / 10,000 **verified** | 0% / 0% / 0% (candidates: 85% / 17% / 8%) |
 
@@ -50,6 +54,7 @@ _Last updated: 2026-10-14 14:13 UTC by Claude (sprint coordinator session). Chec
 - **Search-only research** has hit diminishing returns (≈ 14 pins per 39 searches in the last DLP pass).
 
 ## Decisions requiring your approval
+- **Merge PR #250** (#237: import design + dry run, writes nothing). It is green and has passed QA and security review: https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/250
 - **Labels done:** #235, #237, #239, #240, #241 are approved.
   - **#236:** closed as not planned.
 - **Also:**
@@ -76,6 +81,7 @@ _Last updated: 2026-10-14 14:13 UTC by Claude (sprint coordinator session). Chec
 - **Before the grouping pass,** the random sample was 83% fully correct, hand-adjudicated.
 - **The disagreements found are recorded and blocked for review:** Vault Set 3 Chip 'n Dale; the DLP "Prince Love" edition type.
 - **Remaining risk** is source disagreement on metadata (edition type, dates). The engine surfaces it and does not resolve it.
+- **Engine fix (15:30):** spelling variants of one edition type ("open" / "Open Edition" / "OE") were being counted as conflicts. Blocked pins went from 32 to 21 real disagreements.
 
 ## Next planned actions (check-ins take these in order)
 1. **Pilot:** after any data change, regenerate, re-run the offline load test, and keep `LAPTOP-CHECKLIST.md` numbers current.

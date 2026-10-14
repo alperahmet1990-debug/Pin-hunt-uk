@@ -409,3 +409,21 @@ class GroupingAndVariants(unittest.TestCase):
             f.write_text(_j.dumps(pk))
             _, out, _, _, _ = run([str(f)], str(_p.Path(d) / "out"), seed=None)
         self.assertTrue(any(r.startswith("conflict: grouping:") for r in out["s/x/mickey"]["review_reasons"]))
+
+
+class EditionTypeSpelling(unittest.TestCase):
+    def test_spelling_variants_are_not_conflicts(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[
+            claim("characters", ["Lotso"], NEWS), claim("edition_type", "open", NEWS), claim("edition_type", "Open Edition", FAN)])]))
+        pins, _ = reconcile(st)
+        f = pins["s/x/p"]["fields"]["edition_type"]
+        self.assertEqual(f["value"], "open edition")
+        self.assertNotIn("conflict", str(f["status"]))
+
+    def test_real_edition_disagreement_still_blocks(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[
+            claim("characters", ["Eric"], NEWS), claim("edition_type", "LE 1000", NEWS), claim("edition_type", "open edition", FAN)])]))
+        pins, _ = reconcile(st)
+        self.assertTrue(any(r.startswith("conflict:") for r in pins["s/x/p"]["review_reasons"]))

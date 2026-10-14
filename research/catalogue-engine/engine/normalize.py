@@ -1,5 +1,6 @@
 """Field vocabulary and value normalisation. Normalisation never adds information."""
 import re
+import unicodedata
 
 PIN_FIELDS = {
     "pin_name", "characters", "main_character", "franchise", "attraction", "set_position", "edition_type",
@@ -69,6 +70,24 @@ def norm_bool(v):
     return None
 
 
+EDITION_TYPES = (  # canonical term, patterns (checked in order)
+    ("limited edition", (r"\blimited edition\b", r"\ble\b", r"\bedition limit", r"^limited$")),
+    ("limited release", (r"\blimited release\b", r"\blr\b")),
+    ("open edition", (r"\bopen edition\b", r"\boe\b", r"^open$")),
+)
+
+
+def norm_edition_type(value):
+    """Spelling variants of one edition type ('open', 'Open Edition', 'OE') are the same value.
+    Qualifiers such as 'Annual Passholder exclusive' are not part of the type."""
+    s = unicodedata.normalize("NFKD", str(value)).encode("ascii", "ignore").decode().lower().strip()
+    base = re.split(r"\s*[;(]\s*", s)[0].strip()
+    for canon, pats in EDITION_TYPES:
+        if any(re.search(p, base) for p in pats):
+            return canon
+    return _clean(value)
+
+
 def normalise(field: str, value):
     """Return a normalised value, or None when the claim carries no usable value."""
     if value is None or (isinstance(value, str) and not value.strip()):
@@ -89,6 +108,8 @@ def normalise(field: str, value):
     if field == "currency":
         s = _clean(value).upper()
         return {"$": "USD", "£": "GBP", "€": "EUR"}.get(s, s[:3]) if s else None
+    if field == "edition_type":
+        return norm_edition_type(value)
     if field in ("product_code", "pack_product_code"):
         m = re.search(r"\d{9,15}", str(value))
         return m.group(0) if m else _clean(value)

@@ -75,3 +75,41 @@ The engine never upgrades a fan source.
 4. **Single-publisher pins: 611 of 841.** A second independent publisher is the cheapest confidence gain.
 5. **Snippet attribution risk.** Some claims were tied to a URL from the summary's wording (e.g. weekly round-ups matched by month). A few multi-character designs may have been split per character (DLP Picsou, Pajama Party, skiing). These need human checks before approval.
 6. **Unnamed pins in counted sets:** about 200, led by WDW mystery and event sub-sets, DLP Pin Trading Night 2026 (8 of 12 still unnamed), DSUK Magic of Disney drops and the Mickey's Christmas Carol advent calendar.
+
+---
+
+## Update: Pass 3, second-source corroboration (same day)
+- **What ran:** five supervised helpers searched for a second, independent publisher for every pin that had only one, using about 190 searches. Packets: `evidence/61–65_corrob_*.json`.
+- **Status:** still candidates. All claims remain search summaries, and direct verification is still **0 of 842**.
+
+**Engine fix in this pass**
+- Regional Disney Store sites (disneystore.co.uk / .eu / .com / .asia / shopdisney.*) now count as **one publisher**, and twitter.com and x.com as one. Before this, a UK listing and an EU listing of the same product counted as two independent sources. That overstated the earlier figures.
+- 28 tests pass. Audit: 6,405 populated pin fields, 0 problems.
+
+**Results** (re-run over all packets; 842 pins, one new Disneyland pin)
+
+| Line | Pins | High | Medium | Low | 2+ publishers before → after | Any official | News (no official) | Fan only |
+|---|---|---|---|---|---|---|---|---|
+| DLP | 333 | 0 | 132 | 200 | 56 → **142** | 0 | 31 | 302 |
+| DSUK | 176 | 104 | 53 | 19 | 68 → **139** | 145 | 10 | 21 |
+| WDW | 148 | 2 | 47 | 98 | 22 → **67** | 2 | 107 | 39 |
+| DLR | 108 | 11 | 53 | 44 | 14 → **69** | 15 | 44 | 49 |
+| Earlier | 77 | 34 | 18 | 25 | 70 → 70 | 37 | 29 | 11 |
+| **Total** | **842** | **151** | **303** | **386** | 230 → **487** | 199 | 221 | 422 |
+
+- Two pins remain without an evidence-backed identity (Unverified).
+- **Engine-corroborated:** 260 → **444**. Still not verification.
+- **Pins with blocking identity conflicts:** 5 → **10**. Examples: Lilo vs Stitch with Angel, Goofy vs Goofy & Rafiki, Chip and Dale as one pin vs two, Mother Gothel vs Rapunzel & Mother Gothel.
+- **Prices and dates:** these disagreements are warnings, not blocks.
+- **Possible duplicates flagged:** 33. Exact duplicates of the trusted catalogue: 27.
+
+**Decision needed: disneypinventory.com.** It is a fan pin *database*, comparable in kind to PinPics.
+- It is not on the excluded list, but it may conflict with the aim of a catalogue that does not rely on other pin databases.
+- It is cited by 72 pins. For **60** of them it supplies the only second publisher.
+- If excluded, those 60 drop back to one publisher. Nothing else is affected.
+- It is currently classed as unclassified, which counts like fan.
+
+**Remaining verification gaps**
+- **Direct check:** 842 pins.
+- **Single-publisher:** 355 pins (DLP 191, WDW 81, DLR 39, DSUK 37, earlier 7).
+- **No official source:** DLP (0 of 333) and WDW (2 of 148).

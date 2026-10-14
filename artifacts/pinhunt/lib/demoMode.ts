@@ -14,6 +14,16 @@ import { isSupabaseConfigured } from '@/lib/supabase';
 export const isDemoMode =
   !isSupabaseConfigured && process.env.EXPO_PUBLIC_DEMO_MODE === '1';
 
+/**
+ * Large-collection demo (UX-051, #159): EXPO_PUBLIC_DEMO_PINS=2000 swaps the
+ * mock catalogue for a generated one of that size, and a fresh install's
+ * collection for a collector holding most of it (mock-data/largeFixture.ts).
+ * Demo mode only, so never in a real build. 0 when off; capped at 20,000.
+ */
+export const demoCatalogueSize = isDemoMode
+  ? Math.min(Math.max(0, Math.floor(Number(process.env.EXPO_PUBLIC_DEMO_PINS) || 0)), 20000)
+  : 0;
+
 const DEMO_USER_ID = '00000000-0000-4000-8000-00000000d3e0';
 const EPOCH = '2026-01-01T00:00:00.000Z';
 

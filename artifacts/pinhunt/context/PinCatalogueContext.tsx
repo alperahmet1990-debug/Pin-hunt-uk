@@ -27,6 +27,7 @@ import {
   type PinRepository,
 } from '@workspace/pin-repository';
 import { supabase } from '@/lib/supabase';
+import { demoCatalogueSize } from '@/lib/demoMode';
 
 // Supabase credentials come from the singleton client; only the flag is
 // checked here so the mock fallback still works in environments where the
@@ -85,6 +86,12 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
       // Supabase not yet configured — fall back to mock data so the app stays
       // usable during development before credentials are added.
       try {
+        if (demoCatalogueSize > 0) {
+          // Large-collection demo (UX-051): a generated catalogue instead.
+          const { buildLargeCatalogue } = await import('../mock-data/largeFixture');
+          setPins(buildLargeCatalogue(demoCatalogueSize));
+          return;
+        }
         // Dynamic import avoids bundling mock data in production builds
         const { PINS } = await import('../mock-data/pins');
         // Convert legacy Pin type to CataloguePin shape

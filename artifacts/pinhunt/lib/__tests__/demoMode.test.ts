@@ -1,20 +1,22 @@
 // Demo mode must never activate in a build that has Supabase configured.
 
-const ENV_KEYS = ['EXPO_PUBLIC_DEMO_MODE', 'EXPO_PUBLIC_SUPABASE_URL', 'EXPO_PUBLIC_SUPABASE_ANON_KEY'] as const;
+const ENV_KEYS = ['EXPO_PUBLIC_DEMO_MODE', 'EXPO_PUBLIC_SUPABASE_URL', 'EXPO_PUBLIC_SUPABASE_ANON_KEY', 'EXPO_PUBLIC_DEMO_PINS'] as const;
 const saved = Object.fromEntries(ENV_KEYS.map(k => [k, process.env[k]]));
 
-function loadWith(env: Partial<Record<(typeof ENV_KEYS)[number], string>>): boolean {
+function loadModule(env: Partial<Record<(typeof ENV_KEYS)[number], string>>) {
   for (const k of ENV_KEYS) delete process.env[k];
   Object.assign(process.env, env);
-  let value = false;
+  let mod = { isDemoMode: false, demoCatalogueSize: 0 };
   jest.isolateModules(() => {
     // Only the configuration check matters here; never build a real client.
     jest.doMock('@supabase/supabase-js', () => ({ createClient: () => ({}) }));
     jest.doMock('@react-native-async-storage/async-storage', () => ({}));
-    value = require('../demoMode').isDemoMode;
+    mod = require('../demoMode');
   });
-  return value;
+  return mod;
 }
+
+const loadWith = (env: Partial<Record<(typeof ENV_KEYS)[number], string>>): boolean => loadModule(env).isDemoMode;
 
 afterAll(() => {
   for (const k of ENV_KEYS) {
@@ -38,5 +40,23 @@ describe('isDemoMode', () => {
       EXPO_PUBLIC_SUPABASE_URL: 'https://example-project-ref.supabase.co',
       EXPO_PUBLIC_SUPABASE_ANON_KEY: 'x'.repeat(40),
     })).toBe(false);
+  });
+});
+
+// demoCatalogueSize is 0 whenever isDemoMode is false, so the cases above
+// also keep the large fixture out of any build with Supabase configured.
+describe('demoCatalogueSize (UX-051)', () => {
+  it('is off unless asked for', () => {
+    expect(loadModule({ EXPO_PUBLIC_DEMO_MODE: '1' }).demoCatalogueSize).toBe(0);
+  });
+
+  it('takes the requested size in demo mode, capped at 20,000', () => {
+    expect(loadModule({ EXPO_PUBLIC_DEMO_MODE: '1', EXPO_PUBLIC_DEMO_PINS: '2000' }).demoCatalogueSize).toBe(2000);
+    expect(loadModule({ EXPO_PUBLIC_DEMO_MODE: '1', EXPO_PUBLIC_DEMO_PINS: '999999' }).demoCatalogueSize).toBe(20000);
+    expect(loadModule({ EXPO_PUBLIC_DEMO_MODE: '1', EXPO_PUBLIC_DEMO_PINS: 'lots' }).demoCatalogueSize).toBe(0);
+  });
+
+  it('never applies outside demo mode', () => {
+    expect(loadModule({ EXPO_PUBLIC_DEMO_PINS: '2000' }).demoCatalogueSize).toBe(0);
   });
 });

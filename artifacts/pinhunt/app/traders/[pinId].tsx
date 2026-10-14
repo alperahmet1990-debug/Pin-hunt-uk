@@ -126,9 +126,11 @@ export default function TradersScreen() {
   const insets    = useSafeAreaInsets();
   const router    = useRouter();
   const { repo, userId } = useMarketplace();
-  const { pins } = usePinCatalogue();
+  const { pins, ensurePins } = usePinCatalogue();
 
   const pin = pins.find(p => p.id === pinId);
+  // The catalogue isn't preloaded (#25): fetch this pin if it isn't loaded.
+  useEffect(() => { if (pinId) ensurePins([pinId]).catch(() => {}); }, [pinId, ensurePins]);
 
   const [traders,    setTraders]    = useState<TraderProfile[]>([]);
   const [loading,    setLoading]    = useState(true);

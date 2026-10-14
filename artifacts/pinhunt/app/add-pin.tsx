@@ -369,7 +369,17 @@ export default function AddPinScreen() {
     return () => { cancelled = true; clearTimeout(timer); };
   }, [proposedName, repository, pins]);
 
-  const setOptions = setSuggestions(series, seriesName);
+  // Every set in the catalogue, not just the sets of loaded pins (#25).
+  const [allSets, setAllSets] = useState<string[] | null>(null);
+  useEffect(() => {
+    if (!repository) return;
+    let cancelled = false;
+    repository.getSetSummaries()
+      .then(summaries => { if (!cancelled) setAllSets(summaries.map(x => x.setName)); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repository]);
+  const setOptions = setSuggestions(allSets ?? series, seriesName);
 
   // ── Photo picker ─────────────────────────────────────────────────────────────
   const pickFront = async (source: 'camera' | 'library') => {

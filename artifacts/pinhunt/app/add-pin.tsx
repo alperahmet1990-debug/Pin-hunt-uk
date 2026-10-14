@@ -1,12 +1,13 @@
 /**
- * Add Pin — multi-step catalogue contribution flow.
+ * Add Pin — "Suggest a missing pin" in three short steps (UX-011, #121).
  *
  * Steps:
- *  0 — Front photo (required — only photo captured for now; back photo
- *      is a later addition)
- *  1 — Pin details
- *  2 — Review & submit
- *  3 — Confirmation
+ *  0 — About: what happens to a suggestion (admin review, you're notified)
+ *  1 — Front photo (required; back photo is a later addition)
+ *  2 — Details: only the name is required. Set (with suggestions from the
+ *      catalogue's sets) and year are optional; everything else sits under
+ *      "More details". An "Already in the catalogue?" check runs on the name.
+ *  then — Confirmation
  *
  * Submits via POST /pin-submissions on the API server rather than talking
  * to Supabase directly — the server runs the front photo through Pixian.ai
@@ -28,9 +29,7 @@ import {
   ActivityIndicator,
   Alert,
   Image,
-  KeyboardAvoidingView,
   Platform,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -41,9 +40,15 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { KeyboardAwareScrollViewCompat } from '@/components/KeyboardAwareScrollViewCompat';
 import { useAuth } from '@/context/AuthContext';
 import { compressSubmissionImage, pickSubmissionImage, type PickedImage } from '@/utils/submissionImage';
 import { API_BASE } from '@/lib/apiBase';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { PinImage } from '@/components/ui/PinImage';
+import { getPinImageSource } from '@/utils/pinImage';
+import { localDuplicateCandidates, MIN_DUPLICATE_QUERY, setSuggestions, UNKNOWN_BRAND } from '@/utils/suggestPin';
+import type { CataloguePin } from '@workspace/pin-repository';
 import { radius, spacing } from '@/constants/theme';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -59,13 +64,12 @@ const EDITION_TYPES = [
 
 type EditionValue = (typeof EDITION_TYPES)[number]['value'];
 
-const STEPS = ['Front Photo', 'Details', 'Review'];
+const STEPS = ['About', 'Photo', 'Details'];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 interface FormErrors {
   proposedName?: string;
-  brand?: string;
   releaseYear?: string;
   editionSize?: string;
 }
@@ -107,6 +111,36 @@ function StepIndicator({ current, colors }: { current: number; colors: ReturnTyp
   );
 }
 
+// ─── About step ───────────────────────────────────────────────────────────────
+
+const NEXT_STEPS: Array<{ icon: React.ComponentProps<typeof Feather>['name']; text: string }> = [
+  { icon: 'camera', text: 'Add a clear photo of the front of the pin.' },
+  { icon: 'edit-3', text: 'Give it a name. Everything else is optional.' },
+  { icon: 'check-circle', text: "An admin checks it. We'll let you know when it's in the catalogue." },
+];
+
+function IntroStep({ colors }: { colors: ReturnType<typeof useColors> }) {
+  return (
+    <View style={styles.photoStep}>
+      <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>Help build the catalogue</Text>
+      <Text style={[styles.stepSub, { color: colors.homeMuted }]}>
+        Can{"\u2019"}t find a pin? Suggest it and it{"\u2019"}ll be added for every collector.
+      </Text>
+      <View style={[styles.introCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>WHAT HAPPENS NEXT</Text>
+        {NEXT_STEPS.map(({ icon, text }) => (
+          <View key={icon} style={styles.introRow}>
+            <View style={[styles.introIcon, { backgroundColor: colors.homeCoral + '18' }]}>
+              <Feather name={icon} size={14} color={colors.homeCoral} />
+            </View>
+            <Text style={[styles.introText, { color: colors.homeInk }]}>{text}</Text>
+          </View>
+        ))}
+      </View>
+    </View>
+  );
+}
+
 // ─── Photo step ───────────────────────────────────────────────────────────────
 
 function PhotoStep({
@@ -128,8 +162,9 @@ function PhotoStep({
 
       {uri ? (
         <View style={styles.previewWrap}>
-          <View>
-            <Image source={{ uri }} style={styles.preview} resizeMode="contain" />
+          {/* Stretch, so the 100%-wide preview isn't sized to nothing. */}
+          <View style={styles.previewFrame}>
+            <Image source={{ uri }} style={styles.preview} resizeMode="contain" accessibilityLabel="Your photo" />
             {status === 'processing' && (
               <View style={[styles.processingOverlay, { backgroundColor: colors.homeSurface + 'CC' }]}>
                 <ActivityIndicator color={colors.homeCoral} />
@@ -176,14 +211,17 @@ function PhotoStep({
             {Platform.OS === 'web' ? 'Choose from Library' : 'Take Photo'}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={onLibrary}
-          activeOpacity={0.85}
-          style={[styles.photoBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
-        >
-          <Feather name="image" size={18} color={colors.homeInk} />
-          <Text style={[styles.photoBtnLabel, { color: colors.homeInk }]}>Choose from Library</Text>
-        </TouchableOpacity>
+        {/* Web has no camera, so the first button already opens the library. */}
+        {Platform.OS !== 'web' && (
+          <TouchableOpacity
+            onPress={onLibrary}
+            activeOpacity={0.85}
+            style={[styles.photoBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+          >
+            <Feather name="image" size={18} color={colors.homeInk} />
+            <Text style={[styles.photoBtnLabel, { color: colors.homeInk }]}>Choose from Library</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );
@@ -206,6 +244,7 @@ export default function AddPinScreen() {
   const insets   = useSafeAreaInsets();
   const router   = useRouter();
   const { session } = useAuth();
+  const { pins, series, repository } = usePinCatalogue();
   const { frontUri: handoffUri, characters: handoffCharacters, name: handoffName } = useLocalSearchParams<{
     frontUri?: string;
     characters?: string;
@@ -233,6 +272,11 @@ export default function AddPinScreen() {
   const [facNumber,       setFacNumber]       = useState('');
   const [sku,             setSku]             = useState('');
   const [notes,           setNotes]           = useState('');
+
+  // Brand, characters, edition and the rest: optional, folded away.
+  const [showMore, setShowMore] = useState(false);
+  // Pins already in the catalogue whose title matches the typed name.
+  const [duplicates, setDuplicates] = useState<CataloguePin[]>([]);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [saving, setSaving] = useState(false);
@@ -297,6 +341,26 @@ export default function AddPinScreen() {
     : 'raw';
   const shownFrontUri = frontPreview?.uri ?? front?.uri ?? null;
 
+  // ── Already in the catalogue? ────────────────────────────────────────────────
+  // A light check on the typed name, so a collector can spot a pin that's
+  // already there before suggesting it again. Never blocks submitting.
+  useEffect(() => {
+    const name = proposedName.trim();
+    if (name.length < MIN_DUPLICATE_QUERY) { setDuplicates([]); return; }
+    let cancelled = false;
+    const timer = setTimeout(() => {
+      const search = repository
+        ? repository.searchPinsPage(name, { limit: 3, offset: 0 }).then(r => r.pins)
+        : Promise.resolve(localDuplicateCandidates(pins, name));
+      search
+        .then(found => { if (!cancelled) setDuplicates(found.slice(0, 3)); })
+        .catch(() => { if (!cancelled) setDuplicates([]); });
+    }, 400);
+    return () => { cancelled = true; clearTimeout(timer); };
+  }, [proposedName, repository, pins]);
+
+  const setOptions = setSuggestions(series, seriesName);
+
   // ── Photo picker ─────────────────────────────────────────────────────────────
   const pickFront = async (source: 'camera' | 'library') => {
     const img = await pickSubmissionImage(source);
@@ -306,8 +370,7 @@ export default function AddPinScreen() {
   // ── Validation ──────────────────────────────────────────────────────────────
   const validate = (): boolean => {
     const errs: FormErrors = {};
-    if (!proposedName.trim()) errs.proposedName = 'Pin name is required.';
-    if (!brand.trim())        errs.brand        = 'Brand is required.';
+    if (!proposedName.trim()) errs.proposedName = 'Give the pin a name.';
     if (releaseYear.trim()) {
       const y = parseInt(releaseYear, 10);
       if (isNaN(y) || y < 1900 || y > 2030) errs.releaseYear = 'Enter a year between 1900 and 2030.';
@@ -322,12 +385,11 @@ export default function AddPinScreen() {
 
   // ── Navigation ──────────────────────────────────────────────────────────────
   const goNext = () => {
-    if (step === 0 && !front) {
+    if (step === 1 && !front) {
       Alert.alert('Front photo required', 'Please add a front photo before continuing.');
       return;
     }
-    if (step === 0 && previewing) return;
-    if (step === 1 && !validate()) return;
+    if (step === 1 && previewing) return;
     setStep(s => s + 1);
   };
   const goBack = () => setStep(s => s - 1);
@@ -342,6 +404,7 @@ export default function AddPinScreen() {
       Alert.alert('Front photo required', 'Please add a front photo before submitting.');
       return;
     }
+    if (!validate()) return;
 
     const characters = characterNames.trim()
       ? characterNames.split(',').map(s => s.trim()).filter(Boolean)
@@ -358,7 +421,8 @@ export default function AddPinScreen() {
         },
         body: JSON.stringify({
           proposedName:     proposedName.trim(),
-          brand:            brand.trim(),
+          // Required by the server; optional for collectors (UX-011).
+          brand:            brand.trim() || UNKNOWN_BRAND,
           seriesName:       seriesName.trim() || undefined,
           releaseLocation:  releaseLocation.trim() || undefined,
           releaseYear:      releaseYear.trim() ? parseInt(releaseYear, 10) : undefined,
@@ -415,7 +479,8 @@ export default function AddPinScreen() {
               setSeriesName(''); setReleaseLocation(''); setReleaseYear('');
               setEditionType('unknown'); setEditionSize('');
               setFacNumber(''); setSku(''); setNotes('');
-              setStep(0); setDone(false);
+              // Another suggestion skips the About step.
+              setShowMore(false); setStep(1); setDone(false);
             }}
             activeOpacity={0.7}
             style={styles.confirmSecondary}
@@ -462,136 +527,141 @@ export default function AddPinScreen() {
     </>
   );
 
-  // ── Review step ─────────────────────────────────────────────────────────────
-  const renderReview = () => (
-    <View style={styles.reviewWrap}>
-      {front && (
-        <Image source={{ uri: shownFrontUri ?? front.uri }} style={[styles.reviewHero, { borderRadius: radius.md }]} resizeMode="cover" />
-      )}
-
-      <View style={[styles.reviewCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
-        {([
-          ['Pin Name',    proposedName],
-          ['Brand',       brand],
-          ['Characters',  characterNames  || '—'],
-          ['Series',      seriesName      || '—'],
-          ['Location',    releaseLocation || '—'],
-          ['Year',        releaseYear     || '—'],
-          ['Edition',     EDITION_TYPES.find(e => e.value === editionType)?.label ?? '—'],
-          ['Edition Size',editionSize     || '—'],
-          ['FAC #',       facNumber       || '—'],
-          ['SKU',         sku             || '—'],
-          ['Notes',       notes           || '—'],
-        ] as [string, string][]).map(([label, value], i, arr) => (
-          <View
-            key={label}
-            style={[
-              styles.reviewRow,
-              i < arr.length - 1 && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.homeLine },
-            ]}
-          >
-            <Text style={[styles.reviewLabel, { color: colors.homeMuted }]}>{label}</Text>
-            <Text style={[styles.reviewValue, { color: colors.homeInk }]} numberOfLines={3}>{value}</Text>
-          </View>
-        ))}
-      </View>
-
-      {saving ? (
-        <ActivityIndicator color={colors.homeCoral} style={{ marginTop: spacing.sm }} />
-      ) : (
-        <TouchableOpacity
-          onPress={handleSubmit}
-          activeOpacity={0.85}
-          style={[styles.submitBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.md, shadowColor: colors.homeShadow }]}
-        >
-          <Feather name="send" size={16} color={colors.homeSurface} />
-          <Text style={[styles.submitBtnLabel, { color: colors.homeSurface }]}>Submit for Review</Text>
-        </TouchableOpacity>
-      )}
+  const field = (label: string, required: boolean, input: React.ReactNode) => (
+    <View style={styles.field}>
+      <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>
+        {label}{required ? <Text style={{ color: colors.destructive }}> *</Text> : null}
+      </Text>
+      {input}
     </View>
   );
 
-  // ── Details form ────────────────────────────────────────────────────────────
+  // ── Details: name required; set and year optional; the rest folded away ────
   const renderDetails = () => (
     <View style={{ gap: spacing.md + 2 }}>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>
-          Pin Name <Text style={{ color: colors.destructive }}>*</Text>
-        </Text>
-        {inp(proposedName, setProposedName, 'e.g. Mickey Mouse 50th Anniversary', { errKey: 'proposedName' })}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>
-          Brand / Source <Text style={{ color: colors.destructive }}>*</Text>
-        </Text>
-        {inp(brand, setBrand, 'e.g. Disney Parks, Loungefly, WDW', { errKey: 'brand' })}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Characters (comma-separated)</Text>
-        {inp(characterNames, setCharacterNames, 'e.g. Mickey, Minnie, Goofy')}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Series or Collection</Text>
-        {inp(seriesName, setSeriesName, 'e.g. Halloween 2023, Haunted Mansion')}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Release Location</Text>
-        {inp(releaseLocation, setReleaseLocation, 'e.g. Magic Kingdom, Disney Store UK')}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Release Year</Text>
-        {inp(releaseYear, setReleaseYear, 'e.g. 2024', { keyboardType: 'numeric', errKey: 'releaseYear' })}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Edition Type</Text>
-        <View style={styles.editionGrid}>
-          {EDITION_TYPES.map(e => {
-            const active = editionType === e.value;
-            return (
-              <TouchableOpacity
-                key={e.value}
-                onPress={() => setEditionType(e.value)}
-                activeOpacity={0.8}
-                style={[
-                  styles.editionBtn,
-                  {
-                    backgroundColor: active ? colors.homeCoral + '18' : colors.homeSurface,
-                    borderColor: active ? colors.homeCoral : colors.homeLine,
-                  },
-                ]}
-              >
-                <Text style={[styles.editionBtnLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>
-                  {e.label}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
+      {front && (
+        <View style={styles.detailsHead}>
+          <Image source={{ uri: shownFrontUri ?? front.uri }} style={[styles.detailsThumb, { borderRadius: radius.md }]} resizeMode="cover" />
+          <View style={{ flex: 1 }}>
+            <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>About this pin</Text>
+            <Text style={[styles.stepSub, { color: colors.homeMuted }]}>Only the name is needed. Add anything else you know.</Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Edition Size</Text>
-        {inp(editionSize, setEditionSize, 'e.g. 2500', { keyboardType: 'numeric', errKey: 'editionSize' })}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>FAC Number</Text>
-        {inp(facNumber, setFacNumber, 'e.g. 24-FAC-12345')}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>SKU / Product Number</Text>
-        {inp(sku, setSku, 'e.g. 400041234567')}
-      </View>
-      <View style={styles.field}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Notes</Text>
-        {inp(notes, setNotes, 'Any additional details…', { multiline: true })}
-      </View>
+      )}
+
+      {field('Pin name', true, inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky', { errKey: 'proposedName' }))}
+
+      {duplicates.length > 0 && (
+        <View
+          style={[styles.dupeCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+          accessibilityLabel="Already in the catalogue?"
+        >
+          <Text style={[styles.dupeTitle, { color: colors.homeInk }]}>Already in the catalogue?</Text>
+          {duplicates.map(p => (
+            <TouchableOpacity
+              key={p.id}
+              onPress={() => router.push({ pathname: '/pin/[id]', params: { id: p.id } })}
+              activeOpacity={0.8}
+              accessibilityRole="button"
+              accessibilityLabel={`${p.title}. Open pin details`}
+              style={styles.dupeRow}
+            >
+              <PinImage source={getPinImageSource(p)} style={[styles.dupeThumb, { backgroundColor: colors.homeAqua }]} contentFit="contain" />
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.dupeName, { color: colors.homeInk }]} numberOfLines={1}>{p.title}</Text>
+                {p.collection ? <Text style={[styles.dupeSet, { color: colors.homeMuted }]} numberOfLines={1}>{p.collection}</Text> : null}
+              </View>
+              <Feather name="chevron-right" size={16} color={colors.homeMuted} />
+            </TouchableOpacity>
+          ))}
+          <Text style={[styles.dupeNote, { color: colors.homeMuted }]}>Not one of these? Carry on below.</Text>
+        </View>
+      )}
+
+      {field('Set or collection', false, (
+        <>
+          {inp(seriesName, setSeriesName, 'e.g. Park Icons')}
+          {setOptions.length > 0 && (
+            <View style={styles.chipRow}>
+              {setOptions.map(name => (
+                <TouchableOpacity
+                  key={name}
+                  onPress={() => setSeriesName(name)}
+                  activeOpacity={0.8}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Use set ${name}`}
+                  style={[styles.editionBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+                >
+                  <Text style={[styles.editionBtnLabel, { color: colors.homeInk }]}>{name}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+        </>
+      ))}
+
+      {field('Release year', false, inp(releaseYear, setReleaseYear, 'e.g. 2024', { keyboardType: 'numeric', errKey: 'releaseYear' }))}
+
+      <TouchableOpacity
+        onPress={() => setShowMore(m => !m)}
+        activeOpacity={0.8}
+        accessibilityRole="button"
+        accessibilityLabel="More details (optional)"
+        accessibilityState={{ expanded: showMore }}
+        style={styles.moreToggle}
+      >
+        <Text style={[styles.moreLabel, { color: colors.homeInk }]}>More details (optional)</Text>
+        <Feather name={showMore ? 'chevron-up' : 'chevron-down'} size={16} color={colors.homeMuted} />
+      </TouchableOpacity>
+
+      {showMore && (
+        <View style={{ gap: spacing.md + 2 }}>
+          {field('Brand or source', false, inp(brand, setBrand, 'e.g. Disney Parks, Loungefly'))}
+          {field('Characters (comma-separated)', false, inp(characterNames, setCharacterNames, 'e.g. Mickey, Minnie, Goofy'))}
+          {field('Release location', false, inp(releaseLocation, setReleaseLocation, 'e.g. Disneyland Paris, Disney Store UK'))}
+          {field('Edition type', false, (
+            <View style={styles.editionGrid}>
+              {EDITION_TYPES.map(e => {
+                const active = editionType === e.value;
+                return (
+                  <TouchableOpacity
+                    key={e.value}
+                    onPress={() => setEditionType(e.value)}
+                    activeOpacity={0.8}
+                    accessibilityRole="button"
+                    accessibilityLabel={e.label}
+                    accessibilityState={{ selected: active }}
+                    style={[
+                      styles.editionBtn,
+                      {
+                        backgroundColor: active ? colors.homeCoral + '18' : colors.homeSurface,
+                        borderColor: active ? colors.homeCoral : colors.homeLine,
+                      },
+                    ]}
+                  >
+                    <Text style={[styles.editionBtnLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>
+                      {e.label}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          ))}
+          {field('Edition size', false, inp(editionSize, setEditionSize, 'e.g. 2500', { keyboardType: 'numeric', errKey: 'editionSize' }))}
+          {field('FAC number', false, inp(facNumber, setFacNumber, 'e.g. 24-FAC-12345'))}
+          {field('SKU / product number', false, inp(sku, setSku, 'e.g. 400041234567'))}
+          {field('Notes', false, inp(notes, setNotes, 'Any additional details…', { multiline: true }))}
+        </View>
+      )}
     </View>
   );
 
   const stepContent = [
+    <IntroStep key="intro" colors={colors} />,
     <PhotoStep
       key="front"
-      title="Front Photo"
-      subtitle="Photograph the front of the pin clearly. Required so an admin can verify it."
+      title="Front photo"
+      subtitle="Photograph the front of the pin clearly, so an admin can check it."
       uri={shownFrontUri}
       status={previewStatus}
       onCamera={() => pickFront('camera')}
@@ -599,52 +669,66 @@ export default function AddPinScreen() {
       colors={colors}
     />,
     renderDetails(),
-    renderReview(),
   ][step];
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Add Pin' }} />
-      <KeyboardAvoidingView
+      <Stack.Screen options={{ title: 'Suggest a pin' }} />
+      {/* Scrolls the focused field above the keyboard (UX-011). */}
+      <KeyboardAwareScrollViewCompat
         style={{ flex: 1, backgroundColor: colors.homeBackground }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        contentContainerStyle={[styles.scroll, { paddingBottom: botPad }]}
+        bottomOffset={24}
+        showsVerticalScrollIndicator={false}
       >
-        <ScrollView
-          contentContainerStyle={[styles.scroll, { paddingBottom: botPad }]}
-          keyboardShouldPersistTaps="handled"
-          showsVerticalScrollIndicator={false}
-        >
           <StepIndicator current={step} colors={colors} />
 
           {stepContent}
 
-          {/* Nav — not shown on review step (has its own submit button) */}
-          {step < 2 && (
-            <View style={styles.navRow}>
-              {step > 0 && (
-                <TouchableOpacity
-                  onPress={goBack}
-                  activeOpacity={0.8}
-                  style={[styles.navBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
-                >
-                  <Feather name="arrow-left" size={16} color={colors.homeInk} />
-                  <Text style={[styles.navBtnLabel, { color: colors.homeInk }]}>Back</Text>
-                </TouchableOpacity>
-              )}
+          <View style={styles.navRow}>
+            {step > 0 && (
+              <TouchableOpacity
+                onPress={goBack}
+                activeOpacity={0.8}
+                accessibilityRole="button"
+                accessibilityLabel="Back"
+                style={[styles.navBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+              >
+                <Feather name="arrow-left" size={16} color={colors.homeInk} />
+                <Text style={[styles.navBtnLabel, { color: colors.homeInk }]}>Back</Text>
+              </TouchableOpacity>
+            )}
+            {step < 2 ? (
               <TouchableOpacity
                 onPress={goNext}
                 activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel={step === 0 ? 'Get started' : 'Next'}
                 style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral }]}
               >
                 <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>
-                  {step === 1 ? 'Review' : 'Next'}
+                  {step === 0 ? 'Get started' : 'Next'}
                 </Text>
                 <Feather name="arrow-right" size={16} color={colors.homeSurface} />
               </TouchableOpacity>
-            </View>
-          )}
-        </ScrollView>
-      </KeyboardAvoidingView>
+            ) : saving ? (
+              <View style={[styles.navBtn, styles.navBtnPrimary]}>
+                <ActivityIndicator color={colors.homeCoral} />
+              </View>
+            ) : (
+              <TouchableOpacity
+                onPress={handleSubmit}
+                activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel="Submit for review"
+                style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral }]}
+              >
+                <Feather name="send" size={16} color={colors.homeSurface} />
+                <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>Submit</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+      </KeyboardAwareScrollViewCompat>
     </>
   );
 }
@@ -679,6 +763,7 @@ const styles = StyleSheet.create({
   },
   photoBoxHint: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   previewWrap: { alignItems: 'center', gap: spacing.sm + 2 },
+  previewFrame: { alignSelf: 'stretch' },
   preview: { width: '100%', height: 280, borderRadius: radius.md },
   retakeBtn: {
     flexDirection: 'row', alignItems: 'center', gap: spacing.sm - 2,
@@ -704,13 +789,25 @@ const styles = StyleSheet.create({
   editionBtn: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1, borderRadius: radius.sm - 2 },
   editionBtnLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
 
-  // Review
-  reviewWrap: { gap: spacing.lg },
-  reviewHero: { width: '100%', height: 200 },
-  reviewCard: { borderWidth: 1, overflow: 'hidden' },
-  reviewRow: { flexDirection: 'row', paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, gap: spacing.md },
-  reviewLabel: { width: 90, fontSize: 12, fontFamily: 'Inter_400Regular', paddingTop: 1 },
-  reviewValue: { flex: 1, fontSize: 13, fontFamily: 'Inter_500Medium' },
+  // About
+  introCard: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md + 2, gap: spacing.md },
+  introRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
+  introIcon: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center' },
+  introText: { flex: 1, fontSize: 14, lineHeight: 20, fontFamily: 'Inter_500Medium' },
+
+  // Details
+  detailsHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
+  detailsThumb: { width: 72, height: 72 },
+  chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginTop: spacing.xs },
+  dupeCard: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm },
+  dupeTitle: { fontSize: 14, fontFamily: 'Inter_700Bold' },
+  dupeRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, minHeight: 44 },
+  dupeThumb: { width: 44, height: 44, borderRadius: radius.sm },
+  dupeName: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  dupeSet: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  dupeNote: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  moreToggle: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', minHeight: 44 },
+  moreLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 
   // Nav
   navRow: { flexDirection: 'row', gap: spacing.sm + 2, marginTop: spacing.xs },
@@ -721,13 +818,6 @@ const styles = StyleSheet.create({
   navBtnPrimary: { borderWidth: 0 },
   navBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 
-  // Submit
-  submitBtn: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: spacing.sm, paddingVertical: spacing.lg - 1,
-    shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 3,
-  },
-  submitBtnLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 
   // Confirmation
   confirm: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.xxl, gap: spacing.lg },

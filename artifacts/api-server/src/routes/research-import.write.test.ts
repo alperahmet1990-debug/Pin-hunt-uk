@@ -153,6 +153,15 @@ describe("research import (#241)", () => {
     expect(tables.catalogue_candidates.every(c => c.status !== "imported")).toBe(true);
   });
 
+  it("stores only full release dates (the column is a DATE); month-only dates become null", async () => {
+    tables.catalogue_candidates.push(cand(9, { proposed: proposed({ "Pin name": "Month only", "Release date": "2024-04" }) }));
+    tables.catalogue_candidates.push(cand(10, { proposed: proposed({ "Pin name": "Full day", "Release date": "2024-04-12" }) }));
+    const res = await request(app).post(URL_).set(auth).send({ candidateIds: [id(9), id(10)] });
+    expect(res.status).toBe(200);
+    expect(tables.pins.find(p => p.title === "Month only")!.release_date).toBeNull();
+    expect(tables.pins.find(p => p.title === "Full day")!.release_date).toBe("2024-04-12");
+  });
+
   it("refuses a candidate with an unresolved conflict that is not a duplicate", async () => {
     tables.catalogue_candidates.push(cand(7, { review_reasons: ["conflict: edition_type"] }));
     const res = await request(app).post(URL_).set(auth).send({ candidateIds: [id(7)] });

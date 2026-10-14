@@ -38,6 +38,11 @@ const num = (v: unknown): number | null => {
   return v != null && v !== "" && Number.isFinite(n) ? n : null;
 };
 
+const fullDate = (v: unknown): string | null => {
+  const s = str(v);
+  return s && /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s)) ? s : null;
+};
+
 /**
  * The `pins` row an import would insert. `pinhunt_id` is deliberately absent:
  * the real import mints it with next_pinhunt_id() inside the write.
@@ -52,7 +57,9 @@ export function buildPinRow(c: ImportCandidate) {
     main_character: str(p["Main character"]),
     all_characters: str(p["Characters"]),
     release_year: int(p["Release year"]),
-    release_date: str(p["Release date"]),
+    // pins.release_date is a DATE: only a full day is stored; month-only dates stay in staging
+    // (the year is kept in release_year).
+    release_date: fullDate(p["Release date"]),
     edition_type: str(p["Edition type"]),
     limited_edition_size: int(p["Edition size"]),
     retailer: str(p["Park / Retailer"]),

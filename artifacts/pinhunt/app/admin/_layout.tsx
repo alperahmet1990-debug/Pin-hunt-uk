@@ -18,7 +18,7 @@ import { useColors } from '@/hooks/useColors';
 // First path segment under /admin that only the App Creator may open.
 const APP_CREATOR_ROUTES = new Set([
   'catalogue', 'pin', 'import', 'catalogue-validation', 'image-backfill',
-  'ebay-image-dryrun', 'vision-test',
+  'ebay-image-dryrun', 'vision-test', 'research-review',
 ]);
 
 export default function AdminLayout() {

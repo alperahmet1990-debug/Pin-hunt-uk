@@ -1,0 +1,802 @@
+{
+ "format": "pinhunt-research-run/v1",
+ "engine_version": "engine-spec-v1",
+ "git_commit": "1dbd30b186a0",
+ "generated": "2026-10-13",
+ "candidates": [
+  {
+   "research_key": "brush-of-magic/limited-edition/bambi",
+   "entity_type": "pin",
+   "set_research_key": "brush-of-magic/limited-edition",
+   "proposed": {
+    "Brand": "Disney Store",
+    "Characters": "Bambi",
+    "Main character": "Bambi",
+    "Release year": 2026,
+    "Release date": "2026-07-07",
+    "Edition type": "limited edition",
+    "Edition size": 3750,
+    "Park / Retailer": "Disney Store US online (disneystore.com)",
+    "Release scope": "US",
+    "Original price": 24.99,
+    "Currency": "USD",
+    "Categories": "Brush of Magic",
+    "Release wave": "Limited Edition singles",
+    "Collection type": "pin-on-pin: full-colour cloisonne top layer over laser-printed sketch on 'pegged animation paper', 3D Mickey glove with brushes",
+    "Set count check": "unknown (no expected count claimed)"
+   },
+   "record_confidence": "Medium",
+   "engine_verified": true,
+   "review_reasons": [],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Bambi"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00242"
+    },
+    {
+     "field": "franchise",
+     "value": "Bambi (1942)",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00243"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00244"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00245"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00246"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store US online (disneystore.com)"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00247"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00248"
+    },
+    {
+     "field": "is_chaser",
+     "value": false,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00249"
+    }
+   ]
+  },
+  {
+   "research_key": "brush-of-magic/limited-edition/marie",
+   "entity_type": "pin",
+   "set_research_key": "brush-of-magic/limited-edition",
+   "proposed": {
+    "Pin name": "Marie Limited Edition Pin, The Aristocats, Brush of Magic",
+    "Brand": "Disney Store",
+    "Characters": "Marie",
+    "Main character": "Marie",
+    "Release year": 2026,
+    "Release date": "2026-03-03",
+    "Edition type": "limited edition",
+    "Edition size": 3750,
+    "Park / Retailer": "Disney Store UK online (disneystore.co.uk); Disney Store US online (disneystore.com)",
+    "Release scope": "GB; US",
+    "Original price": 16,
+    "Currency": "GBP",
+    "external_ids": "Disney product code: 438010541945",
+    "Categories": "Brush of Magic; pin-on-pin; full-colour cloisonne top layer; laser-printed character sketch back layer; pin-on-pin",
+    "Notes": "Marie shown as artwork on a canvas",
+    "Release wave": "Limited Edition singles",
+    "Collection type": "pin-on-pin: full-colour cloisonne top layer over laser-printed sketch on 'pegged animation paper', 3D Mickey glove with brushes",
+    "Set count check": "unknown (no expected count claimed)",
+    "visual_form": "pin-on-pin",
+    "visual_features": "full-colour cloisonne top layer; laser-printed character sketch back layer; pin-on-pin",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
+   "warnings": [
+    "variants: set_position",
+    "variants: currency",
+    "variants: original_price",
+    "variants: pin_name"
+   ],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Marie"
+     ],
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00175"
+    },
+    {
+     "field": "franchise",
+     "value": "The Aristocats (1970)",
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00176"
+    },
+    {
+     "field": "set_position",
+     "value": "'1 pin of 16 from a monthly release and 4 quarterly online releases' wording reported (unconfirmed)",
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00177"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00178"
+    },
+    {
+     "field": "edition_size",
+     "value": 3750,
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00179"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-03-03",
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00180"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store UK online (disneystore.co.uk)",
+      "Disney Store US online"
+     ],
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00181"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.disneystore.com/marie-pin-the-aristocats-brush-of-magic-limited-edition-438010101422.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00182"
+    }
+   ]
+  },
+  {
+   "research_key": "brush-of-magic/mystery-series-3/zazu",
+   "entity_type": "pin",
+   "set_research_key": "brush-of-magic/mystery-series-3",
+   "proposed": {
+    "Pin name": "Zazu – US: Disney Brush of Magic Mystery Pin Blind Pack Series 3 - 2-Pc. - Limited Release | UK: Disney Brush of Magic Series 3 Limited Release Mystery Pin Set",
+    "Brand": "Disney Store",
+    "Series": "US: Disney Brush of Magic Mystery Pin Blind Pack Series 3 - 2-Pc. - Limited Release | UK: Disney Brush of Magic Series 3 Limited Release Mystery Pin Set",
+    "Characters": "Zazu",
+    "Main character": "Zazu",
+    "Release year": 2026,
+    "Release date": "2026-09-01",
+    "Edition type": "Limited Release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia); Disney Store UK online (disneystore.co.uk); Disney Store US online (disneystore.com)",
+    "Release scope": "GB; MY/SG; US",
+    "Currency": "US: USD | UK: GBP",
+    "Categories": "Brush of Magic; character with paint pots and brushes; Disney Pin Trading 2026 backstamp; enamelled cloisonne; laser-print elements; Mickey icon pin backs; nickel finish",
+    "Collection name": "US: Disney Brush of Magic Mystery Pin Blind Pack Series 3 - 2-Pc. - Limited Release | UK: Disney Brush of Magic Series 3 Limited Release Mystery Pin Set",
+    "Collection type": "monthly limited-edition pin-on-pin singles plus quarterly 2-pin mystery blind packs | monthly collectible pin release",
+    "Expected pin count": 10,
+    "Set count check": "complete",
+    "visual_features": "character with paint pots and brushes; Disney Pin Trading 2026 backstamp; enamelled cloisonne; laser-print elements; Mickey icon pin backs; nickel finish",
+    "pack_product_code": "US: 438010809137 | UK: 438011184943",
+    "pin_name_source": "composed display label (subject – set)"
+   },
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
+   "warnings": [
+    "variants: release_date"
+   ],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Zazu"
+     ],
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00615"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King (1994)",
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00616"
+    },
+    {
+     "field": "set_position",
+     "value": "1 of 10 designs (individual position numbers not published in sources seen)",
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00617"
+    },
+    {
+     "field": "edition_type",
+     "value": "mystery / blind box (2 random pins per box), limited release",
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00618"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-09-01",
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00619"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store UK online (GBP 25)",
+      "Disney Store US online"
+     ],
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00620"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00621"
+    },
+    {
+     "field": "is_chaser",
+     "value": false,
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00622"
+    }
+   ]
+  },
+  {
+   "research_key": "windows-of-attraction/2026-wdw/walt-disney-s-enchanted-tiki-room",
+   "entity_type": "pin",
+   "set_research_key": "windows-of-attraction/2026-wdw",
+   "proposed": {
+    "Pin name": "Windows of Attraction: Enchanted Tiki Room",
+    "Series": "Windows of Attraction",
+    "Release year": 2026,
+    "Release date": "2026-10-13",
+    "Edition type": "limited edition",
+    "Edition size": 2500,
+    "Park / Retailer": "Walt Disney World",
+    "Release scope": "US",
+    "Original price": 26.99,
+    "Currency": "USD",
+    "Categories": "Windows of Attraction; window",
+    "Collection name": "Windows of Attraction",
+    "Collection type": "monthly Pin of the Month, one window-shaped attraction pin per month",
+    "Expected pin count": 12,
+    "Set count check": "incomplete (10/12) — missing pins are NOT created",
+    "visual_form": "window",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Medium",
+   "engine_verified": true,
+   "review_reasons": [
+    "set incomplete (10/12)"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (existing set has other pins)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "unverified"
+     ],
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00774"
+    },
+    {
+     "field": "franchise",
+     "value": "Disney Parks (attractions)",
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00775"
+    },
+    {
+     "field": "attraction",
+     "value": "Walt Disney's Enchanted Tiki Room - Magic Kingdom",
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00776"
+    },
+    {
+     "field": "set_position",
+     "value": "10 of 12",
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00777"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition (monthly Pin of the Month)",
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00778"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00779"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-10-13",
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00780"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Pin Tuesday release",
+      "USA) - in-park",
+      "Walt Disney World Resort (Florida"
+     ],
+     "source_url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+     "publisher": "disneyblog.com",
+     "source_class": "news",
+     "method": "legacy_record",
+     "note": "POC v0 record-level attribution",
+     "claim_ref": "C00781"
+    }
+   ]
+  },
+  {
+   "research_key": "brush-of-magic/limited-edition",
+   "entity_type": "set",
+   "set_research_key": "brush-of-magic",
+   "proposed": {
+    "sub_series": "Limited Edition singles",
+    "edition_type": "Limited Edition",
+    "price": 24.99,
+    "currency": "USD",
+    "release_location": "Disney Store US online (disneystore.com)",
+    "region": "US",
+    "format": "pin-on-pin: full-colour cloisonne top layer over laser-printed sketch on 'pegged animation paper', 3D Mickey glove with brushes"
+   },
+   "record_confidence": "Unverified",
+   "engine_verified": false,
+   "review_reasons": [],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "sub_series",
+     "value": "Limited Edition singles",
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "publisher": "extramagicminutes.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01473"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "publisher": "extramagicminutes.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01474"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "publisher": "extramagicminutes.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01475"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "publisher": "extramagicminutes.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01476"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store US online (disneystore.com)"
+     ],
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "publisher": "extramagicminutes.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01477"
+    },
+    {
+     "field": "region",
+     "value": [
+      "US"
+     ],
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "publisher": "extramagicminutes.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01478"
+    },
+    {
+     "field": "format",
+     "value": "pin-on-pin: full-colour cloisonne top layer over laser-printed sketch on 'pegged animation paper', 3D Mickey glove with brushes",
+     "source_url": "https://www.extramagicminutes.com/blog/disney-brush-of-magic-pin-series-collection-disney-store-2026",
+     "publisher": "extramagicminutes.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01479"
+    }
+   ]
+  },
+  {
+   "research_key": "brush-of-magic/mystery-series-3",
+   "entity_type": "set",
+   "set_research_key": "brush-of-magic",
+   "proposed": {
+    "set_name": "US: Disney Brush of Magic Mystery Pin Blind Pack Series 3 - 2-Pc. - Limited Release | UK: Disney Brush of Magic Series 3 Limited Release Mystery Pin Set",
+    "expected_pin_count": 10,
+    "pins_per_box": 2,
+    "edition_type": "Limited Release",
+    "price": 34.99,
+    "currency": "US: USD | UK: GBP",
+    "pack_product_code": "Asia/UK: 438011184943 | US: 438010809137",
+    "release_date": "2026-09-01",
+    "release_location": "Disney Store Asia online, Disney Store UK online, Disney Store US online (disneystore.com)",
+    "region": "GB, MY/SG, US"
+   },
+   "record_confidence": "Medium",
+   "engine_verified": false,
+   "review_reasons": [],
+   "warnings": [
+    "variants: price",
+    "variants: release_date"
+   ],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "set_name",
+     "value": "Disney Brush of Magic Mystery Pin Blind Pack Series 3 - 2-Pc. - Limited Release",
+     "source_url": "https://www.disneystore.com/disney-brush-of-magic-mystery-pin-blind-pack-series-3-%C2%A02-pc.-limited-release-438010809137.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01517"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Brush of Magic Series 3 Limited Release Mystery Pin Set",
+     "source_url": "https://www.disneystore.co.uk/disney-brush-of-magic-series-3-limited-release-mystery-pin-set-438011184943.html",
+     "publisher": "disneystore.co.uk",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01518"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.disneystore.com/disney-brush-of-magic-mystery-pin-blind-pack-series-3-%C2%A02-pc.-limited-release-438010809137.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01519"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.disneystore.co.uk/disney-brush-of-magic-series-3-limited-release-mystery-pin-set-438011184943.html",
+     "publisher": "disneystore.co.uk",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01520"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/brush-of-magic-series-3-mystery-pin-set-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01521"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.com/disney-brush-of-magic-mystery-pin-blind-pack-series-3-%C2%A02-pc.-limited-release-438010809137.html",
+     "publisher": "disneystore.com",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01522"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.co.uk/disney-brush-of-magic-series-3-limited-release-mystery-pin-set-438011184943.html",
+     "publisher": "disneystore.co.uk",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01523"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.asia/my/disney-brush-of-magic-series-3-limited-release-mystery-pin-set-438011184943.html",
+     "publisher": "disneystore.asia",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": null,
+     "claim_ref": "C01524"
+    }
+   ]
+  },
+  {
+   "research_key": "windows-of-attraction/2026-wdw",
+   "entity_type": "set",
+   "set_research_key": "windows-of-attraction",
+   "proposed": {
+    "set_name": "Windows of Attraction",
+    "family": "Windows of Attraction",
+    "format": "monthly Pin of the Month, one window-shaped attraction pin per month",
+    "expected_pin_count": 12,
+    "edition_type": "limited edition",
+    "edition_size": 2500,
+    "price": 26.99,
+    "currency": "USD",
+    "region": "US",
+    "release_location": "Walt Disney World (exclusive)",
+    "release_date": "2026-01-06"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "set incomplete (10/12) — missing pins are NOT created"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "set_name",
+     "value": "Windows of Attraction",
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-the-muppets-chip-n-dale-play-along-pins-windows-of-attraction/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Series name as used by WDWNT.",
+     "claim_ref": "C01290"
+    },
+    {
+     "field": "family",
+     "value": "Windows of Attraction",
+     "source_url": "https://disneypinsblog.com/disney-parks-2026-monthly-pin-collections/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Listed among 2026 monthly collections.",
+     "claim_ref": "C01291"
+    },
+    {
+     "field": "format",
+     "value": "monthly Pin of the Month, one window-shaped attraction pin per month",
+     "source_url": "https://wdwnt.com/2026/08/september-2026-walt-disney-world-pin-releases-include-55th-anniversary-muppets-and-more/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "WDWNT labels entries 'Pin of the Month: N of 12'.",
+     "claim_ref": "C01292"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-the-muppets-chip-n-dale-play-along-pins-windows-of-attraction/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Series of 12 pins featuring attractions in a window-shaped pin.",
+     "claim_ref": "C01293"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://wdwnt.com/2026/08/september-2026-walt-disney-world-pin-releases-include-55th-anniversary-muppets-and-more/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "'9 of 12' numbering.",
+     "claim_ref": "C01294"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://wdwnt.com/2026/10/october-2026-walt-disney-world-pin-release-includes-dumbo-85th-anniversary-veterans-day-and-more/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "'10 of 12' numbering.",
+     "claim_ref": "C01295"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2026-monthly-pin-collections/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Each pin LE.",
+     "claim_ref": "C01296"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneypinsblog.com/disney-parks-2026-monthly-pin-collections/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Limited edition of 2,500 each.",
+     "claim_ref": "C01297"
+    }
+   ]
+  }
+ ],
+ "note": "Test fixture: 4 pins + their 3 sets from the 28-pin pilot run (evidence capped at 8 per candidate). Full payload lives with the research PR."
+}

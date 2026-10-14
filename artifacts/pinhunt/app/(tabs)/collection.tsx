@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   FlatList,
-  Image,
   Modal,
   Platform,
   ScrollView,
@@ -36,6 +35,7 @@ import {
   type CataloguePin,
   type PinSetSummary,
 } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // All is the default (B-P1-03): owned pins first, with Boards as a row on it.
 type Tab = 'all' | 'sets' | 'traders' | 'iso';
@@ -716,11 +716,11 @@ export default function CollectionScreen() {
                       <Feather name="folder" size={24} color={colors.homeMuted} />
                     </View>
                   ) : preview.length === 1 ? (
-                    <Image source={getPinImageSource(preview[0])} style={s.groupPreviewSingle} />
+                    <PinImage source={getPinImageSource(preview[0])} style={s.groupPreviewSingle} />
                   ) : (
                     <View style={s.groupPreviewGrid}>
                       {preview.map(p => (
-                        <Image key={p.id} source={getPinImageSource(p)} style={[s.groupPreviewSmall, { borderColor: colors.homeSurface }]} />
+                        <PinImage key={p.id} source={getPinImageSource(p)} style={[s.groupPreviewSmall, { borderColor: colors.homeSurface }]} />
                       ))}
                     </View>
                   )}

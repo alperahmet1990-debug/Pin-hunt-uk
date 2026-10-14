@@ -24,7 +24,6 @@
  */
 import React from 'react';
 import {
-  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -46,6 +45,7 @@ import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { Button } from '@/components/ui/Button';
 import { Skeleton, SkeletonBlock } from '@/components/ui/Skeleton';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
+import { PinImage } from '@/components/ui/PinImage';
 
 function pinImageSource(imageUrl?: string) {
   return imageUrl ? { uri: imageUrl } : PLACEHOLDER_IMAGE;
@@ -293,7 +293,7 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
       style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
-        <Image source={pinImageSource(opportunity.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+        <PinImage source={pinImageSource(opportunity.imageUrl)} style={styles.tileImage} contentFit="contain" />
         {hasMatch && (
           <View style={[styles.matchDot, { backgroundColor: colors.homeCoral }]}>
             <Feather name="repeat" size={9} color={colors.homeSurface} />
@@ -347,10 +347,10 @@ function PotentialTradeHero({ card, colors, onPress }: {
       </View>
       <View style={[styles.ptImageWrap, { backgroundColor: colors.homeAqua }]}>
         <View style={styles.ptImageHalf}>
-          {firstPin && <Image source={pinImageSource(firstPin.imageUrl)} style={styles.ptImage} resizeMode="contain" />}
+          {firstPin && <PinImage source={pinImageSource(firstPin.imageUrl)} style={styles.ptImage} contentFit="contain" />}
         </View>
         <View style={styles.ptImageHalf}>
-          {secondPin && <Image source={pinImageSource(secondPin.imageUrl)} style={styles.ptImage} resizeMode="contain" />}
+          {secondPin && <PinImage source={pinImageSource(secondPin.imageUrl)} style={styles.ptImage} contentFit="contain" />}
         </View>
       </View>
       <Text numberOfLines={2} style={[styles.ptMeta, { color: colors.homeMuted }]}>{summary}</Text>
@@ -378,7 +378,7 @@ function SetCard({ set, colors, onPress, onPressAvailable }: {
   const representative = set.available[0];
   const image = (
     <>
-      <Image source={pinImageSource(representative?.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+      <PinImage source={pinImageSource(representative?.imageUrl)} style={styles.tileImage} contentFit="contain" />
       <View style={styles.setProgressTrack}>
         <View style={[styles.setProgressFill, { width: `${Math.round(pct * 100)}%`, backgroundColor: colors.homeSand }]} />
       </View>
@@ -429,7 +429,7 @@ function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors:
       style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
-        <Image source={pinImageSource(item.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+        <PinImage source={pinImageSource(item.imageUrl)} style={styles.tileImage} contentFit="contain" />
       </View>
       <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{item.title}</Text>
       <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>

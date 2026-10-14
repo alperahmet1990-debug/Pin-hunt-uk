@@ -13,7 +13,6 @@
 import React, { useMemo, useState } from 'react';
 import {
   ActivityIndicator,
-  Image,
   Platform,
   RefreshControl,
   SectionList,
@@ -34,6 +33,7 @@ import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 import { radius, spacing } from '@/constants/theme';
+import { PinImage } from '@/components/ui/PinImage';
 
 type PhotoFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community';
 
@@ -286,7 +286,7 @@ function Tile({ row, owned, onPress }: { row: CatalogueImageCoverage; owned: boo
             <Feather name="camera" size={22} color={pending ? colors.homeMuted : colors.homeCoral} />
           </View>
         ) : (
-          <Image source={row.imageUrl ? { uri: row.imageUrl } : PLACEHOLDER_IMAGE} style={styles.tileImage} resizeMode="contain" />
+          <PinImage source={row.imageUrl ? { uri: row.imageUrl } : PLACEHOLDER_IMAGE} style={styles.tileImage} contentFit="contain" />
         )}
         {owned && (
           <View style={[styles.ownedDot, { backgroundColor: colors.homeTeal }]}>

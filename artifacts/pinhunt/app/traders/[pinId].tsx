@@ -8,7 +8,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
-  Image,
   Platform,
   RefreshControl,
   ScrollView,
@@ -28,6 +27,7 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { radius, spacing } from '@/constants/theme';
 import { formatMatchSummary, isReciprocalMatch } from '@/utils/tradeMatch';
 import type { TraderProfile } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Rating badge ─────────────────────────────────────────────────────────────
 
@@ -197,7 +197,7 @@ export default function TradersScreen() {
         {pin && (
           <View style={[styles.pinHeader, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <View style={[styles.pinImageWrap, { backgroundColor: colors.homeAqua }]}>
-              <Image source={getPinImageSource(pin)} style={styles.pinImage} resizeMode="contain" />
+              <PinImage source={getPinImageSource(pin)} style={styles.pinImage} contentFit="contain" />
             </View>
             <View style={styles.pinInfo}>
               <Text numberOfLines={2} style={[styles.pinTitle, { color: colors.homeInk }]}>{pin.title}</Text>

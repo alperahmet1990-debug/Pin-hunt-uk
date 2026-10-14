@@ -27,6 +27,7 @@ import { useCommunity } from '@/hooks/useCommunity';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -235,7 +236,7 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
       {post.linkedPin && (
         <View style={[styles.pinChip, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
           {post.linkedPin.imageUrl
-            ? <Image source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
+            ? <PinImage source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
             : <Feather name="tag" size={12} color={colors.homeMuted} />
           }
           <Text style={[styles.pinChipLabel, { color: colors.homeMuted }]} numberOfLines={1}>

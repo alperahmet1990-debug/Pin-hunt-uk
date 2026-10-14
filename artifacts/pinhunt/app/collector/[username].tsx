@@ -4,7 +4,6 @@
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import {
-  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -23,6 +22,7 @@ import { Button } from '@/components/ui/Button';
 import { SkeletonHeader, SkeletonRows } from '@/components/ui/Skeleton';
 import { radius, spacing } from '@/constants/theme';
 import type { PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Potential trade row ──────────────────────────────────────────────────────
 
@@ -42,7 +42,7 @@ function PotentialTradeRow({
       ]}
     >
       {pin.imageUrl ? (
-        <Image source={{ uri: pin.imageUrl }} style={styles.tradePinThumb} />
+        <PinImage source={{ uri: pin.imageUrl }} style={styles.tradePinThumb} />
       ) : (
         <View style={[styles.tradePinIcon, { backgroundColor: tone + '26' }]}>
           <Feather name={isTheyHave ? 'download' : 'upload'} size={12} color={tone} />

@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import {
   FlatList,
-  Image,
   Modal,
   Platform,
   StyleSheet,
@@ -27,6 +26,7 @@ import { ConfirmDialog, PinGrid, PinTile, ScreenContainer, Sheet } from '@/compo
 import { BOARD_SORT_OPTIONS, sortBoardPins, type BoardSort } from '@/utils/boardSort';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // Search scope for Add Pins to Board: name/title, character, set/series —
 // mirrors the fields collection.tsx's search matches, minus the broader
@@ -462,7 +462,7 @@ export default function BoardDetailScreen() {
                         disabled={isAdded}
                         style={[styles.addRow, { borderBottomColor: colors.homeLine }]}
                       >
-                        <Image source={getPinImageSource(item)} style={[styles.addRowImage, { backgroundColor: colors.homeAqua }]} />
+                        <PinImage source={getPinImageSource(item)} style={[styles.addRowImage, { backgroundColor: colors.homeAqua }]} />
                         <View style={styles.addRowInfo}>
                           <Text style={[styles.addRowTitle, { color: colors.homeInk }]} numberOfLines={2}>
                             {item.title}

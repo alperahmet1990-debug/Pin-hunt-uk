@@ -7,7 +7,6 @@ import {
   ActivityIndicator,
   Alert,
   AppState,
-  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -30,6 +29,7 @@ import {
   tradeBannerDismissalKey,
 } from '@/utils/tradeBannerDismissals';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -104,7 +104,7 @@ function PotentialMatchBanner({
                     style={[bannerStyles.pinCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                   >
                     {pin.imageUrl ? (
-                      <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
+                      <PinImage source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} contentFit="cover" />
                     ) : (
                       <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.homeAqua }]}>
                         <Feather name="image" size={18} color={colors.homeMuted} />
@@ -131,7 +131,7 @@ function PotentialMatchBanner({
                     style={[bannerStyles.pinCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                   >
                     {pin.imageUrl ? (
-                      <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
+                      <PinImage source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} contentFit="cover" />
                     ) : (
                       <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.homeAqua }]}>
                         <Feather name="image" size={18} color={colors.homeMuted} />

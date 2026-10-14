@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -13,6 +12,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { CollectionBadge } from './CollectionBadge';
 import { getPinImageSource } from '@/utils/pinImage';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 const BRAND_COLORS: Record<string, string> = {
   'Disney Parks': '#1A4A8A',
@@ -103,7 +103,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
           },
         ]}
       >
-        <Image source={getPinImageSource(pin)} style={styles.listImage} />
+        <PinImage source={getPinImageSource(pin)} style={styles.listImage} />
         <View style={styles.listInfo}>
           <Text
             style={[styles.listTitle, { color: t.fg }]}
@@ -159,7 +159,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
       ]}
     >
       <View style={styles.imageWrap}>
-        <Image source={getPinImageSource(pin)} style={[styles.gridImage, { height: gridCardWidth }]} />
+        <PinImage source={getPinImageSource(pin)} style={[styles.gridImage, { height: gridCardWidth }]} />
         {pin.limitedEditionSize ? (
           <View style={[styles.leBadge, { backgroundColor: t.gold }]}>
             <Text style={styles.leLabel}>LE</Text>

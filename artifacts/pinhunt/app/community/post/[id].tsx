@@ -27,6 +27,7 @@ import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import { useProfile } from '@/context/ProfileContext';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -589,7 +590,7 @@ export default function PostDetailScreen() {
                 style={[styles.pinChip, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
               >
                 {post.linkedPin.imageUrl
-                  ? <Image source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
+                  ? <PinImage source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
                   : <View style={[styles.pinChipImage, { alignItems: 'center', justifyContent: 'center', backgroundColor: colors.homeSurface }]}>
                       <Feather name="tag" size={18} color={colors.homeMuted} />
                     </View>

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import {
-  candidateTitle, confidenceTone, describeSetDecision, evidenceByField, groupBySet, safeExternalUrl, setRoute, type ResearchCandidate,
+  candidateTitle, confidenceTone, needsStructureChoice, pageCheckNote, describeSetDecision, evidenceByField, groupBySet, safeExternalUrl, setRoute, type ResearchCandidate,
 } from '../utils/researchReview';
 import ResearchReviewScreen from '../app/admin/research-review';
 
@@ -141,3 +142,94 @@ describe('Research Review set view', () => {
   });
 });
 
+
+describe('Research Review by page', () => {
+  const fetchMock = jest.fn();
+  const PAGE = 'https://www.disneystore.com/pins';
+  const mk = (id: string, set: string, name: string, over: Partial<ResearchCandidate> = {}) =>
+    cand({ id, run_id: 'r1', set_research_key: set, research_key: `${set}/${name}`, proposed: { 'Pin name': name }, ...over });
+  const solo = mk('00000000-0000-4000-8000-0000000000a1', 'set-a', 'Zazu');
+  const duo = mk('00000000-0000-4000-8000-0000000000b2', 'set-a', 'Duo', { proposed: { 'Pin name': 'Duo', Characters: 'Mickey, Minnie' } });
+  const flagged = mk('00000000-0000-4000-8000-0000000000c3', 'set-b', 'Flagged', { review_reasons: ['structure: maybe two pins'] });
+
+  beforeEach(() => {
+    fetchMock.mockReset();
+    jest.spyOn(Linking, 'openURL').mockResolvedValue(true as never);
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
+    fetchMock.mockImplementation(async (url: string) => {
+      const json = (body: unknown, ok = true, status = 200) => ({ ok, status, json: async () => body });
+      if (url.endsWith('/admin/research/runs')) return json({ runs: [{ id: 'r1', git_commit: 'abc', loaded_at: '', summary: {} }] });
+      if (url.includes('/admin/research/pages/candidates')) return json({ candidates: [solo, duo, flagged] });
+      if (url.includes('/admin/research/pages?')) return json({ pages: [{ source_url: PAGE, source_class: 'official', pin_count: 3, unchecked_count: 3, set_keys: ['set-a', 'set-b'] }], total: 1 });
+      if (url.includes('/admin/research/candidates?')) return json({ candidates: [] });
+      if (url.endsWith('/direct-check')) return json({ ok: true, results: [{ candidateId: solo.id, status: 'direct_verified', recorded: 1 }], skipped: [] });
+      if (url.endsWith('/decision')) return json({ ok: true });
+      return json({});
+    });
+  });
+
+  const openPage = async () => {
+    await render(<ResearchReviewScreen />);
+    await waitFor(() => screen.getByText('By page'));
+    await fireEvent.press(screen.getByRole('tab', { name: 'By page' }));
+    await fireEvent.press(await screen.findByRole('button', { name: 'Open page disneystore.com/pins' }));
+    await waitFor(() => screen.getByText('set-b'));
+  };
+
+  it('lists pages with counts and opens only https links', async () => {
+    await openPage();
+    expect(Linking.openURL).toHaveBeenCalledWith(PAGE);
+    expect(screen.getAllByText('set-a').length).toBeGreaterThan(0);
+    expect(screen.getAllByRole('checkbox', { name: /^Tick / })).toHaveLength(3);
+    screen.getAllByRole('checkbox', { name: /^Tick / }).forEach(b => expect(b.props.accessibilityState?.checked).toBe(false));
+    expect(screen.queryByText(/select all/i)).toBeNull();
+  });
+
+  it('blocks recording until a structure choice is made, then calls the route once per set', async () => {
+    await openPage();
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Tick Zazu' }));
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Tick Duo' }));
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Tick Flagged' }));
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Character(s)' }));
+    expect(screen.getByText(/Choose one pin or separate pins for: Duo, Flagged/)).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Record page check' }).props.accessibilityState?.disabled).toBe(true);
+
+    await fireEvent.press(screen.getByRole('radio', { name: 'One pin showing all of these: Duo' }));
+    await fireEvent.press(screen.getByRole('radio', { name: 'One pin showing all of these: Flagged' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Record page check' }));
+    await waitFor(() => expect(screen.getByText(/Zazu: check recorded/)).toBeTruthy());
+
+    const checks = fetchMock.mock.calls.filter(c => String(c[0]).endsWith('/direct-check'));
+    expect(checks).toHaveLength(2);
+    const bodyA = JSON.parse(checks.find(c => String(c[0]).includes('set-a'))![1].body);
+    expect(bodyA.confirmed.map((x: { candidateId: string }) => x.candidateId).sort()).toEqual([solo.id, duo.id].sort());
+    expect(bodyA.source_url).toBe(PAGE);
+    expect(bodyA.note).toMatch(/one pin showing all characters/);
+  });
+
+  it('sends "separate pins" back for more research with the note and records no check for it', async () => {
+    await openPage();
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Tick Duo' }));
+    await fireEvent.press(screen.getByRole('radio', { name: 'Separate pins: Duo' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Record page check' }));
+    await waitFor(() => expect(screen.getByText(/Duo: sent back for more research/)).toBeTruthy());
+    const decision = fetchMock.mock.calls.find(c => String(c[0]).endsWith('/decision'))!;
+    expect(String(decision[0])).toContain(`/candidates/${duo.id}/decision`);
+    expect(JSON.parse(decision[1].body)).toEqual({ decision: 'needs_more_research', notes: 'structure: separate pins on source' });
+    expect(fetchMock.mock.calls.some(c => String(c[0]).endsWith('/direct-check'))).toBe(false);
+  });
+});
+
+describe('structure helpers', () => {
+  it('requires a choice for 2+ characters or a structure: reason only', () => {
+    const base = { proposed: {}, review_reasons: [] as string[] };
+    expect(needsStructureChoice({ ...base, proposed: { Characters: 'Mickey' } })).toBe(false);
+    expect(needsStructureChoice({ ...base, proposed: { Characters: 'Mickey & Minnie' } })).toBe(true);
+    expect(needsStructureChoice({ ...base, proposed: { Characters: ['A', 'B'] } })).toBe(true);
+    expect(needsStructureChoice({ ...base, review_reasons: ['structure: x'] })).toBe(true);
+  });
+  it('keeps the check note within 240 characters', () => {
+    expect(pageCheckNote('', 0)).toBeNull();
+    expect(pageCheckNote('x'.repeat(300), 2)!.length).toBe(240);
+  });
+});

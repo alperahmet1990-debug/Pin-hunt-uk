@@ -95,6 +95,14 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
             else:
                 p["review_reasons"].append(f"possible internal duplicate of {seen[sig]}")
         seen.setdefault(sig, key)
+    # Research findings recorded as not_found notes: a source showing a different grouping blocks
+    # sign-off of the split records; a source showing two keys are one pin flags a duplicate.
+    for nf in store.not_found:
+        k, note = nf.get("key"), str(nf.get("note", "")).strip()
+        if k in pins and note.lower().startswith("grouping:"):
+            pins[k]["review_reasons"].append("conflict: " + note[:200])
+        elif k in pins and note.lower().startswith("variant: same pin as"):
+            pins[k]["review_reasons"].append("possible internal duplicate: " + note[:200])
     counts = {}
     for key, p in pins.items():
         counts[p["set_key"]] = counts.get(p["set_key"], 0) + 1

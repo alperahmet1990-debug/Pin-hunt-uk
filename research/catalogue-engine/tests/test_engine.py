@@ -398,3 +398,14 @@ class GroupingAndVariants(unittest.TestCase):
         out = self._run([dict(pin_key=f"s/x/p{i}", set_key="s/x", claims=[claim("characters", [f"C{i}"], NEWS)]) for i in range(3)],
                         sets=[dict(set_key="s/x", claims=[claim("expected_pin_count", 2, NEWS)])])
         self.assertTrue(any(r.startswith("grouping:") for r in out["s/x/p0"]["review_reasons"]))
+
+    def test_grouping_finding_blocks_split_records(self):
+        import tempfile, json as _j, pathlib as _p
+        from engine.run import run
+        pk = packet(pins=[dict(pin_key="s/x/mickey", set_key="s/x", claims=[claim("characters", ["Mickey"], NEWS)])],
+                    nf=[dict(key="s/x/mickey", field="pin_structure", note="grouping: source shows a combined pin s/x/mickey-and-minnie")])
+        with tempfile.TemporaryDirectory() as d:
+            f = _p.Path(d) / "p.json"
+            f.write_text(_j.dumps(pk))
+            _, out, _, _, _ = run([str(f)], str(_p.Path(d) / "out"), seed=None)
+        self.assertTrue(any(r.startswith("conflict: grouping:") for r in out["s/x/mickey"]["review_reasons"]))

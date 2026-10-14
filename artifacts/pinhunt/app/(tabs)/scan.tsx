@@ -340,6 +340,8 @@ export default function ScanScreen() {
                 style={styles.viewfinderPlaceholder}
                 onPress={handleScanPin}
                 activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel="Scan a pin with the camera"
               >
                 <Feather name="camera" size={48} color="rgba(255,255,255,0.25)" />
                 <Text style={styles.viewfinderHint}>Point camera at your pin</Text>
@@ -500,6 +502,8 @@ export default function ScanScreen() {
                 key={`${match.pin.id}-${i}`}
                 onPress={() => handleSelectMatch(match)}
                 activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel={`Match ${i + 1}: ${match.pin.title}, ${match.confidence}% ${confidenceLabel(match.confidence)}`}
                 style={[
                   styles.matchCard,
                   { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 },

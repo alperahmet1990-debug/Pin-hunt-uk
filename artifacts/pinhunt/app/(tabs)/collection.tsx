@@ -496,7 +496,7 @@ export default function CollectionScreen() {
               </Text>
             </View>
             {!searchActive && (
-              <TouchableOpacity onPress={() => setFilterSheetTab('sets')} style={s.iconStatBtn}>
+              <TouchableOpacity onPress={() => setFilterSheetTab('sets')} accessibilityRole="button" accessibilityLabel="Sort and filter sets" style={s.iconStatBtn}>
                 <Feather name="sliders" size={16} color={colors.homeInk} />
                 <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
               </TouchableOpacity>
@@ -517,7 +517,7 @@ export default function CollectionScreen() {
                 </TouchableOpacity>
               )}
               {!searchActive && (
-                <TouchableOpacity onPress={() => setFilterSheetTab('traders')} style={s.iconStatBtn}>
+                <TouchableOpacity onPress={() => setFilterSheetTab('traders')} accessibilityRole="button" accessibilityLabel="Sort and filter For Trade" style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />
                   <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
                 </TouchableOpacity>
@@ -547,7 +547,7 @@ export default function CollectionScreen() {
                 </TouchableOpacity>
               )}
               {!searchActive && (
-                <TouchableOpacity onPress={() => setFilterSheetTab('iso')} style={s.iconStatBtn}>
+                <TouchableOpacity onPress={() => setFilterSheetTab('iso')} accessibilityRole="button" accessibilityLabel="Sort and filter ISO" style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />
                   <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
                 </TouchableOpacity>
@@ -685,7 +685,7 @@ export default function CollectionScreen() {
             // Sets use the visual group card
             const preview = group.pins.slice(0, 4);
             return (
-              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} style={[s.groupCard, { width: gridCardWidth, backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} accessibilityRole="button" accessibilityLabel={`${group.title}, ${group.subtitle}`} style={[s.groupCard, { width: gridCardWidth, backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
                 <View style={[s.groupPreviewArea, { height: gridCardWidth * 0.8, backgroundColor: colors.homeAqua }]}>
                   {preview.length === 0 ? (
                     <View style={s.groupEmpty}>
@@ -835,6 +835,8 @@ export default function CollectionScreen() {
                         const active = pinFilters[key] === option;
                         return (
                           <TouchableOpacity
+                            accessibilityRole="button"
+                            accessibilityState={{ selected: active }}
                             key={option}
                             onPress={() => setPinFilters(current => {
                               const next = { ...current };
@@ -863,6 +865,8 @@ export default function CollectionScreen() {
                     const label = option === 'recent' ? 'Recently Added' : option === 'name' ? 'Name' : 'Release date';
                     return (
                       <TouchableOpacity
+                        accessibilityRole="radio"
+                        accessibilityState={{ checked: active }}
                         key={option}
                         onPress={() => setAllPinsSort(option)}
                         style={[s.compactChip, {
@@ -902,6 +906,8 @@ export default function CollectionScreen() {
                   const label = f === 'all' ? 'All Sets' : f === 'progress' ? 'In Progress' : 'Completed';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={f}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
@@ -922,6 +928,8 @@ export default function CollectionScreen() {
                   const label = sOpt === 'completion' ? 'Completion %' : sOpt === 'name' ? 'Name (A-Z)' : 'Year (Newest)';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={sOpt}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
@@ -944,6 +952,8 @@ export default function CollectionScreen() {
                   const label = f === 'all' ? 'All' : f === 'le' ? 'Limited' : 'Open/Core';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={f}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
@@ -967,6 +977,8 @@ export default function CollectionScreen() {
                   const label = sOpt === 'recent' ? 'Recently Added' : sOpt === 'name' ? 'Name (A-Z)' : 'Year (Newest)';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={sOpt}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,

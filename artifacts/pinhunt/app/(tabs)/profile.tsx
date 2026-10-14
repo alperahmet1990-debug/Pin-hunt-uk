@@ -50,6 +50,8 @@ function SettingsRow({ icon, label, value, onPress, destructive, last, badge }: 
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={[label, value, badge ? `${badge} new` : null].filter(Boolean).join(', ')}
       style={[styles.row, !last && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.homeLine }]}
     >
       <View style={[styles.rowIcon, { backgroundColor: destructive ? colors.destructive + '18' : colors.homeAqua, borderRadius: 8 }]}>
@@ -118,6 +120,8 @@ function LocationStatusBanner({ hasLocationSet, nearbyEnabled, radiusMiles, onPr
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.75}
+      accessibilityRole="button"
+      accessibilityLabel={`${headline}. ${detail}`}
       style={[
         styles.locationBanner,
         { backgroundColor: bgColor, borderColor, marginHorizontal: 16 },

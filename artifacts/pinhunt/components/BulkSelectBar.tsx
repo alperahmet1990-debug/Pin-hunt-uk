@@ -21,6 +21,7 @@ import { Sheet } from '@/components/ui/Sheet';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { radius, spacing } from '@/constants/theme';
 import type { CollectionStatus } from '@/types/pin';
+import { WEB_TAB_BAR_HEIGHT } from '@/utils/tabBarSpace';
 
 type BulkStatus = 'owned' | 'for_trade' | 'wanted';
 
@@ -188,7 +189,7 @@ export const BULK_BAR_HEIGHT = 64;
 
 /** Where a bar sits on a tab screen: just above the tab bar. */
 export function tabBarOffset(insetBottom: number): number {
-  return Platform.OS === 'web' ? 84 : insetBottom + 52;
+  return Platform.OS === 'web' ? WEB_TAB_BAR_HEIGHT : insetBottom + 52;
 }
 
 const styles = StyleSheet.create({

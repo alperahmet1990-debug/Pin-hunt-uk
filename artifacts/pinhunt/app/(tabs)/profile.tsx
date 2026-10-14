@@ -30,6 +30,7 @@ import {
   RATE_APP_ENABLED,
   feedbackMailtoUrl,
 } from '@/constants/appConfig';
+import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
@@ -173,7 +174,8 @@ export default function ProfileScreen() {
   };
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+  // Clears the floating web tab bar (#260).
+  const botPad = tabScreenBottomPad(insets.bottom + 80);
 
   // Avatar initials from display name, username, or email
   const { user } = useAuth();

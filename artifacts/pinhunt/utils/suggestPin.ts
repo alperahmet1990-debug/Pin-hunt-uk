@@ -44,3 +44,14 @@ export function localDuplicateCandidates(pins: CataloguePin[], name: string, lim
     return words.every(w => title.includes(w));
   }).slice(0, limit);
 }
+
+/**
+ * A scan guess tidied for a "From your scan" suggestion: whitespace
+ * collapsed, cut at a word boundary to `max` characters. Empty when there's
+ * nothing usable.
+ */
+export function scanHint(raw: string | undefined, max = 60): string {
+  const text = (raw ?? '').replace(/\s+/g, ' ').trim();
+  if (text.length <= max) return text;
+  return text.slice(0, max).replace(/\s\S*$/, '').trim();
+}

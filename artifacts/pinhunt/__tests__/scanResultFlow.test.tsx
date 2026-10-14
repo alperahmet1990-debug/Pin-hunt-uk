@@ -87,6 +87,24 @@ describe('Scan result (UX-005)', () => {
     expect(screen.queryByRole('button', { name: 'None of these' })).toBeNull();
   });
 
+  it('"Suggest this pin" hands over the photo, characters and the scan\'s guesses (UX-011)', async () => {
+    mockIdentify.mockResolvedValueOnce({
+      matches: [
+        { pinId: 'p2', confidence: 81, reasoning: 'Blue sky and ears' },
+        { pinId: 'p1', confidence: 55, reasoning: 'Castle' },
+      ],
+      imageInsights: { characters: ['Dumbo'], keywords: [], textOnPin: 'Happy 30th', logos: ['Disneyland Paris'], webGuesses: [] },
+    });
+    await scanToResult();
+    await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
+    await act(async () => { await fireEvent.press(screen.getByRole('button', { name: 'None of these' })); });
+    await fireEvent.press(await screen.findByRole('button', { name: /Suggest this pin/ }));
+    expect(mockPush).toHaveBeenCalledWith({
+      pathname: '/add-pin',
+      params: { frontUri: 'file:///photo.jpg', characters: 'Dumbo', nameHint: 'Happy 30th', brandHint: 'Disneyland Paris', setHint: 'Park Icons' },
+    });
+  });
+
   it('a failed identify says what went wrong in plain words, never the raw error (UX-046)', async () => {
     jest.spyOn(console, 'warn').mockImplementation(() => {});
     mockIdentify.mockRejectedValueOnce(new TypeError('Network request failed'));

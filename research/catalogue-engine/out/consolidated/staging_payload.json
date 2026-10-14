@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "3a9956bff9ae",
+ "git_commit": "747b2fa96917",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -71068,6 +71068,183 @@
      "method": "search_snippet",
      "note": "USD",
      "claim_ref": "C05783"
+    },
+    {
+     "field": "pin_name",
+     "value": "Chalk it Up to Something Magical",
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "AP exclusive, rainbow chalk ribbon, Passholder charm",
+     "claim_ref": "C08995"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE 5,000",
+     "claim_ref": "C08996"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08997"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2023/epcot-festival-of-the-arts-2023/create-your-own-magic-figment",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2023/epcot-festival-of-the-arts-2023",
+   "proposed": {
+    "Pin name": "Create Your Own Magic pin",
+    "Series": "2023 EPCOT International Festival of the Arts pins",
+    "Characters": "Figment",
+    "Main character": "Figment",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "2023 EPCOT International Festival of the Arts pins",
+    "Collection name": "2023 EPCOT International Festival of the Arts pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: release_date",
+    "variant: same characters as wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; confirm the distinguishing pin_name, edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Create Your Own Magic pin",
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Figment making a rainbow",
+     "claim_ref": "C08991"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Figment",
+     "claim_ref": "C08992"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08993"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08994"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2023/epcot-festival-of-the-arts-2023/figment-chalkboard",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2023/epcot-festival-of-the-arts-2023",
+   "proposed": {
+    "Pin name": "Figment \u2013 2023 EPCOT International Festival of the Arts pins",
+    "Series": "2023 EPCOT International Festival of the Arts pins",
+    "Characters": "Figment",
+    "Main character": "Figment",
+    "Edition type": "limited edition",
+    "Edition size": 4000,
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 19.99,
+    "Categories": "2023 EPCOT International Festival of the Arts pins",
+    "Collection name": "2023 EPCOT International Festival of the Arts pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: release_date",
+    "variant: same characters as wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; confirm the distinguishing edition_size"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Figment with miniature chalkboard",
+     "claim_ref": "C08987"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE",
+     "claim_ref": "C08988"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08989"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2023/01/limited-merchandise-2023-epcot-festival-of-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08990"
     }
    ]
   },
@@ -71181,6 +71358,58 @@
      "method": "search_snippet",
      "note": "text in centre, dark background with pavilions",
      "claim_ref": "C05791"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP exclusive dangle",
+     "claim_ref": "C08998"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08999"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C09000"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://wdwnt.com/2023/11/full-list-with-prices-of-2023-epcot-international-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Passholder charm dangles; pavilions and holiday icons",
+     "claim_ref": "C09001"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2023/11/full-list-with-prices-of-2023-epcot-international-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C09002"
     }
    ]
   },
@@ -71196,9 +71425,10 @@
     "Release scope": "US",
     "Original price": 17.99,
     "Currency": "USD",
-    "Categories": "EPCOT International Festival of the Holidays 2023 pins",
+    "Categories": "EPCOT International Festival of the Holidays 2023 pins; Mickey head",
     "Collection name": "EPCOT International Festival of the Holidays 2023 pins",
     "Set count check": "unknown (no expected count claimed)",
+    "visual_form": "Mickey head",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
@@ -71250,6 +71480,56 @@
      "method": "search_snippet",
      "note": "US dollar pricing",
      "claim_ref": "C05801"
+    },
+    {
+     "field": "visual_form",
+     "value": "Mickey head",
+     "source_url": "https://wdwnt.com/2023/11/full-list-with-prices-of-2023-epcot-international-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mickey-head shaped logo pin",
+     "claim_ref": "C09008"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2023/11/full-list-with-prices-of-2023-epcot-international-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C09009"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/11/full-list-with-prices-of-2023-epcot-international-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C09010"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "logo pin LR",
+     "claim_ref": "C09011"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C09012"
     }
    ]
   },
@@ -71374,6 +71654,56 @@
      "method": "search_snippet",
      "note": "ornament-shaped",
      "claim_ref": "C07985"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "ornament, gold glitter",
+     "claim_ref": "C09003"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C09004"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C09005"
+    },
+    {
+     "field": "visual_form",
+     "value": "ornament",
+     "source_url": "https://wdwnt.com/2023/11/full-list-with-prices-of-2023-epcot-international-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "ornament-shaped with gold hardware",
+     "claim_ref": "C09006"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2023/11/full-list-with-prices-of-2023-epcot-international-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C09007"
     }
    ]
   },
@@ -71429,6 +71759,18 @@
      "method": "search_snippet",
      "note": "Merch round-up lists a three-pin set of Orange Bird, Figment and Snow White at $29.99; listed under general festival merch, not AP",
      "claim_ref": "C08451"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "named in 3-pin AP set",
+     "claim_ref": "C08944"
     }
    ]
   },
@@ -71484,6 +71826,18 @@
      "method": "search_snippet",
      "note": "Merch round-up lists a three-pin set of Orange Bird, Figment and Snow White at $29.99; listed under general festival merch, not AP",
      "claim_ref": "C08452"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Orange Bird"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "named in 3-pin AP set",
+     "claim_ref": "C08945"
     }
    ]
   },
@@ -71539,6 +71893,18 @@
      "method": "search_snippet",
      "note": "Merch round-up lists a three-pin set of Orange Bird, Figment and Snow White at $29.99; listed under general festival merch, not AP",
      "claim_ref": "C08453"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "named in 3-pin AP set",
+     "claim_ref": "C08946"
     }
    ]
   },
@@ -71643,6 +72009,214 @@
      "method": "search_snippet",
      "note": "US dollar pricing",
      "claim_ref": "C05769"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "PVC cactus",
+     "claim_ref": "C08932"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 5,000",
+     "claim_ref": "C08933"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08934"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2023/epcot-flower-garden-2023/figment-imagination-grow",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2023/epcot-flower-garden-2023",
+   "proposed": {
+    "Pin name": "Figment \u2013 Epcot International Flower & Garden Festival 2023 pins",
+    "Series": "Epcot International Flower & Garden Festival 2023 pins",
+    "Characters": "Figment",
+    "Main character": "Figment",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Flower & Garden Festival 2023 pins",
+    "Collection name": "Epcot International Flower & Garden Festival 2023 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Medium",
+   "engine_verified": true,
+   "review_reasons": [
+    "missing: release_date",
+    "variant: same characters as wdw/2023/epcot-flower-garden-2023/figment-cactus; confirm the distinguishing edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Figment, 'Let your imagination grow'",
+     "claim_ref": "C08926"
+    },
+    {
+     "field": "front_text",
+     "value": "Let your imagination grow",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "text",
+     "claim_ref": "C08927"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08928"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08929"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://mickeyblog.com/2023/03/01/epcots-flower-garden-festival-unveils-stunning-new-pins/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Figment 'Let your imagination grow' pin",
+     "claim_ref": "C08930"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://mickeyblog.com/2023/03/01/epcots-flower-garden-festival-unveils-stunning-new-pins/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08931"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2023/epcot-flower-garden-2023/figment-passholder",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2023/epcot-flower-garden-2023",
+   "proposed": {
+    "Pin name": "Figment \u2013 Epcot International Flower & Garden Festival 2023 pins",
+    "Series": "Epcot International Flower & Garden Festival 2023 pins",
+    "Characters": "Figment",
+    "Main character": "Figment",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Flower & Garden Festival 2023 pins",
+    "Collection name": "Epcot International Flower & Garden Festival 2023 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Medium",
+   "engine_verified": true,
+   "review_reasons": [
+    "missing: release_date",
+    "variant: same characters as wdw/2023/epcot-flower-garden-2023/figment-cactus; confirm the distinguishing edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP exclusive Figment pin",
+     "claim_ref": "C08935"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08936"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08937"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2023/03/passholder-exclusive-corkcicle-shirt-and-limited-release-pin-at-epcot-international-flower-garden-festival-2023/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "AP pin of Figment watering succulents",
+     "claim_ref": "C08938"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/03/passholder-exclusive-corkcicle-shirt-and-limited-release-pin-at-epcot-international-flower-garden-festival-2023/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08939"
     }
    ]
   },
@@ -71770,6 +72344,111 @@
      "method": "search_snippet",
      "note": "US park pricing",
      "claim_ref": "C08730"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP exclusive with swinging element",
+     "claim_ref": "C08923"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08924"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "swinging element"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "swinging part",
+     "claim_ref": "C08925"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2023/epcot-flower-garden-2023/orange-bird-floral",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2023/epcot-flower-garden-2023",
+   "proposed": {
+    "Pin name": "Orange Bird Floral Pin",
+    "Series": "Epcot International Flower & Garden Festival 2023 pins",
+    "Characters": "Orange Bird",
+    "Main character": "Orange Bird",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Flower & Garden Festival 2023 pins",
+    "Collection name": "Epcot International Flower & Garden Festival 2023 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: release_date",
+    "variant: same characters as wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird; confirm the distinguishing pin_name, edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Orange Bird Floral Pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "PVC Orange Bird",
+     "claim_ref": "C08915"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Orange Bird"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Orange Bird",
+     "claim_ref": "C08916"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08917"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08918"
     }
    ]
   },
@@ -71793,10 +72472,9 @@
     "Set count check": "unknown (no expected count claimed)",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
+   "record_confidence": "Medium",
+   "engine_verified": true,
    "review_reasons": [
-    "identity confidence Low",
     "missing: release_date"
    ],
    "warnings": [],
@@ -71884,6 +72562,48 @@
      "method": "search_snippet",
      "note": "Disney Food Blog: $19.99",
      "claim_ref": "C05762"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "pin-on-pin",
+     "claim_ref": "C08940"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08941"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08942"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://mickeyblog.com/2023/03/01/epcots-flower-garden-festival-unveils-stunning-new-pins/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Snow White pin with critters",
+     "claim_ref": "C08943"
     }
    ]
   },
@@ -72043,6 +72763,48 @@
      "method": "search_snippet",
      "note": "US park pricing",
      "claim_ref": "C08726"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "pin-on-pin",
+     "claim_ref": "C08919"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08920"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08921"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "pin-on-pin",
+     "claim_ref": "C08922"
     }
    ]
   },
@@ -72062,14 +72824,18 @@
     "Currency": "USD",
     "Categories": "2023 EPCOT International Food & Wine Festival pins",
     "Collection name": "2023 EPCOT International Food & Wine Festival pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "over (6/5) \u2014 check for variants or wrong set",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: characters"
+    "missing: characters",
+    "set over (6/5)",
+    "possible internal duplicate: variant: same pin as wdw/2023/epcot-food-wine-2023/madrigal-family (source lists one Encanto group pin)",
+    "grouping: 6 pins recorded but the set states 5; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72134,6 +72900,8 @@
    "proposed": {
     "Pin name": "Figment Passholder pin",
     "Series": "2023 EPCOT International Food & Wine Festival pins",
+    "Characters": "Figment",
+    "Main character": "Figment",
     "Release year": 2023,
     "Release date": "2023-07-27",
     "Edition type": "limited release",
@@ -72143,14 +72911,15 @@
     "Currency": "USD",
     "Categories": "2023 EPCOT International Food & Wine Festival pins",
     "Collection name": "2023 EPCOT International Food & Wine Festival pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "over (6/5) \u2014 check for variants or wrong set",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
+   "record_confidence": "Medium",
+   "engine_verified": true,
    "review_reasons": [
-    "identity confidence Low",
-    "missing: characters"
+    "set over (6/5)",
+    "grouping: 6 pins recorded but the set states 5; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72205,6 +72974,38 @@
      "method": "search_snippet",
      "note": "WDWNT agrees on $17.99",
      "claim_ref": "C05700"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Chef Figment with Passholder flag, AP exclusive",
+     "claim_ref": "C08912"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08913"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08914"
     }
    ]
   },
@@ -72223,15 +73024,19 @@
     "Original price": 17.99,
     "Currency": "USD",
     "Categories": "2023 EPCOT International Food & Wine Festival pins",
+    "Notes": "food stacked on Spaceship Earth with wine bottle and glass on blue banner",
     "Collection name": "2023 EPCOT International Food & Wine Festival pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "over (6/5) \u2014 check for variants or wrong set",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: characters"
+    "missing: characters",
+    "set over (6/5)",
+    "grouping: 6 pins recorded but the set states 5; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72286,6 +73091,46 @@
      "method": "search_snippet",
      "note": "WDWNT agrees on $17.99",
      "claim_ref": "C05690"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "festival pin with food atop Spaceship Earth, LR",
+     "claim_ref": "C08891"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08892"
+    },
+    {
+     "field": "visual_description",
+     "value": "food stacked on Spaceship Earth with wine bottle and glass on blue banner",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "paraphrase",
+     "claim_ref": "C08893"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "logo pin $17.99",
+     "claim_ref": "C08894"
     }
    ]
   },
@@ -72296,6 +73141,7 @@
    "proposed": {
     "Pin name": "Madrigal Family pin",
     "Series": "2023 EPCOT International Food & Wine Festival pins",
+    "Characters": "Antonio; Bruno; Isabela; Luisa; Mirabel",
     "Release year": 2023,
     "Release date": "2023-07-27",
     "Edition type": "limited release",
@@ -72305,14 +73151,15 @@
     "Currency": "USD",
     "Categories": "2023 EPCOT International Food & Wine Festival pins",
     "Collection name": "2023 EPCOT International Food & Wine Festival pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "over (6/5) \u2014 check for variants or wrong set",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
+   "record_confidence": "Medium",
+   "engine_verified": true,
    "review_reasons": [
-    "identity confidence Low",
-    "missing: characters"
+    "set over (6/5)",
+    "grouping: 6 pins recorded but the set states 5; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72367,6 +73214,72 @@
      "method": "search_snippet",
      "note": "WDWNT agrees on $17.99",
      "claim_ref": "C05705"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Antonio",
+      "Bruno",
+      "Isabela",
+      "Luisa",
+      "Mirabel"
+     ],
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Encanto group pin with five Madrigals",
+     "claim_ref": "C08900"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "five characters on a single pin with purple banner",
+     "claim_ref": "C08901"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08902"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08903"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Encanto pin LR",
+     "claim_ref": "C08904"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08905"
     }
    ]
   },
@@ -72390,13 +73303,16 @@
     "Categories": "2023 EPCOT International Food & Wine Festival pins",
     "Notes": "Mirabel holding a golden butterfly with food around her",
     "Collection name": "2023 EPCOT International Food & Wine Festival pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "over (6/5) \u2014 check for variants or wrong set",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "set over (6/5)",
+    "grouping: 6 pins recorded but the set states 5; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72523,6 +73439,68 @@
      "method": "search_snippet",
      "note": "US dollar pricing",
      "claim_ref": "C05685"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mirabel Madrigal"
+     ],
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mirabel alone holding golden butterfly",
+     "claim_ref": "C08906"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE",
+     "claim_ref": "C08907"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08908"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08909"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mirabel LE 4,000",
+     "claim_ref": "C08910"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08911"
     }
    ]
   },
@@ -72531,7 +73509,7 @@
    "entity_type": "pin",
    "set_research_key": "wdw/2023/epcot-food-wine-2023",
    "proposed": {
-    "Pin name": "Wine Your Way Around the World",
+    "Pin name": "Wine Your Way Around the World Pin",
     "Series": "2023 EPCOT International Food & Wine Festival pins",
     "Release year": 2023,
     "Release date": "2023-07-27",
@@ -72544,14 +73522,16 @@
     "Categories": "2023 EPCOT International Food & Wine Festival pins",
     "Notes": "wine-glass heart with festival logo",
     "Collection name": "2023 EPCOT International Food & Wine Festival pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "over (6/5) \u2014 check for variants or wrong set",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
+   "record_confidence": "Medium",
+   "engine_verified": true,
    "review_reasons": [
-    "identity confidence Low",
-    "missing: characters"
+    "missing: characters",
+    "set over (6/5)",
+    "grouping: 6 pins recorded but the set states 5; check for split or extra pins"
    ],
    "warnings": [
     "variants: pin_name"
@@ -72658,6 +73638,56 @@
      "method": "search_snippet",
      "note": "release date July 27, 2023",
      "claim_ref": "C05673"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "clinking wine glasses forming heart",
+     "claim_ref": "C08895"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08896"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08897"
+    },
+    {
+     "field": "front_text",
+     "value": "Wine your way around the world",
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "phrase on pin",
+     "claim_ref": "C08898"
+    },
+    {
+     "field": "pin_name",
+     "value": "Wine Your Way Around The World pin",
+     "source_url": "https://allears.net/2023/07/27/why-epcot-is-dangerous-for-encanto-fans-right-now/",
+     "publisher": "allears.net",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "named pin in 2023 merch roundup",
+     "claim_ref": "C08899"
     }
    ]
   },
@@ -74234,6 +75264,60 @@
      "method": "search_snippet",
      "note": "retail $19.99",
      "claim_ref": "C08738"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "spinner AP pin",
+     "claim_ref": "C08976"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 5,000",
+     "claim_ref": "C08977"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08978"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "spinner element",
+     "claim_ref": "C08979"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://wdwnt.com/2024/01/merchandise-2024-epcot-festival-of-the-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "spinning border of World Showcase pavilions Figment paints",
+     "claim_ref": "C08980"
     }
    ]
   },
@@ -74440,6 +75524,66 @@
      "method": "search_snippet",
      "note": "retail $19.99",
      "claim_ref": "C08734"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "hinged, opens to message",
+     "claim_ref": "C08970"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08971"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08972"
+    },
+    {
+     "field": "front_text",
+     "value": "Make Every Day a Work of Art",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "text inside hinged pin",
+     "claim_ref": "C08973"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://wdwnt.com/2024/01/merchandise-2024-epcot-festival-of-the-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "same LE size",
+     "claim_ref": "C08974"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2024/01/merchandise-2024-epcot-festival-of-the-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08975"
     }
    ]
   },
@@ -74596,6 +75740,38 @@
      "method": "search_snippet",
      "note": "listed at $17.99",
      "claim_ref": "C08743"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "glitter, pin-on-pin",
+     "claim_ref": "C08984"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08985"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08986"
     }
    ]
   },
@@ -74749,6 +75925,38 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C08042"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "pin-on-pin",
+     "claim_ref": "C08981"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08982"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08983"
     }
    ]
   },
@@ -74764,6 +75972,7 @@
     "Edition size": 300,
     "Park / Retailer": "Club 33; EPCOT",
     "Release scope": "US",
+    "Original price": 40,
     "Currency": "USD",
     "Categories": "Epcot Festival of the Holidays 2024 Walt Disney World Club 33 Pin",
     "Collection name": "Epcot Festival of the Holidays 2024 Walt Disney World Club 33 Pin",
@@ -74789,6 +75998,59 @@
      "method": "search_snippet",
      "note": "LE 300",
      "claim_ref": "C05922"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-festival-of-the-holidays-2024-walt-disney-world-club-33-pin",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE",
+     "claim_ref": "C09023"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-festival-of-the-holidays-2024-walt-disney-world-club-33-pin",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 300",
+     "claim_ref": "C09024"
+    },
+    {
+     "field": "original_price",
+     "value": 40,
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-festival-of-the-holidays-2024-walt-disney-world-club-33-pin",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$40",
+     "claim_ref": "C09025"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Club 33",
+      "EPCOT"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-festival-of-the-holidays-2024-walt-disney-world-club-33-pin",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "sold at Club 33 in EPCOT",
+     "claim_ref": "C09026"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-festival-of-the-holidays-2024-walt-disney-world-club-33-pin",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "December 2024",
+     "claim_ref": "C09027"
     }
    ]
   },
@@ -74911,6 +76173,56 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C08027"
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2024/11/2024-epcot-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "AP collection, Mickey-head shape",
+     "claim_ref": "C09018"
+    },
+    {
+     "field": "visual_form",
+     "value": "Mickey head",
+     "source_url": "https://wdwnt.com/2024/11/2024-epcot-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mickey-head shaped",
+     "claim_ref": "C09019"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP exclusive",
+     "claim_ref": "C09020"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C09021"
+    },
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://mickeyblog.com/2024/11/29/photos-all-the-new-merchandise-for-the-2024-epcot-festival-of-the-holidays/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mickey head $22.99",
+     "claim_ref": "C09022"
     }
    ]
   },
@@ -74923,19 +76235,21 @@
     "Series": "EPCOT International Festival of the Holidays 2024 pins",
     "Release year": 2024,
     "Release date": "2024-11-29",
+    "Edition type": "limited release",
     "Park / Retailer": "EPCOT",
     "Release scope": "US",
     "Original price": 19.99,
     "Currency": "USD",
-    "Categories": "EPCOT International Festival of the Holidays 2024 pins",
+    "Categories": "EPCOT International Festival of the Holidays 2024 pins; snow globe",
     "Collection name": "EPCOT International Festival of the Holidays 2024 pins",
     "Set count check": "unknown (no expected count claimed)",
+    "visual_form": "snow globe",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: characters, edition_type"
+    "missing: characters"
    ],
    "warnings": [
     "variants: pin_name"
@@ -75002,6 +76316,210 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C08024"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2024/11/2024-epcot-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Spaceship Earth snowglobe with falling snow",
+     "claim_ref": "C09013"
+    },
+    {
+     "field": "visual_form",
+     "value": "snow globe",
+     "source_url": "https://wdwnt.com/2024/11/2024-epcot-festival-of-the-holidays-merchandise/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "snowglobe styled after Spaceship Earth",
+     "claim_ref": "C09014"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C09015"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-holidays-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C09016"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://mickeyblog.com/2024/11/29/photos-all-the-new-merchandise-for-the-2024-epcot-festival-of-the-holidays/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C09017"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-flower-garden-2024/minnie-icon-dangle",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-flower-garden-2024",
+   "proposed": {
+    "Pin name": "Minnie Mouse Icon Dangle Pin",
+    "Series": "Epcot International Flower & Garden Festival 2024 pins",
+    "Characters": "Minnie Mouse",
+    "Main character": "Minnie Mouse",
+    "Release year": 2024,
+    "Release date": "2024-03-05",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Flower & Garden Festival 2024 pins",
+    "Collection name": "Epcot International Flower & Garden Festival 2024 pins",
+    "Expected pin count": 9,
+    "Set count check": "incomplete (6/9) \u2014 missing pins are NOT created",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (6/9)",
+    "possible internal duplicate of wdw/2024/epcot-flower-garden-2024/minnie-pin-on-pin"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Icon Dangle Pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "dangle",
+     "claim_ref": "C08959"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Minnie icon",
+     "claim_ref": "C08960"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08961"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08962"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-flower-garden-2024/minnie-pin-on-pin",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-flower-garden-2024",
+   "proposed": {
+    "Pin name": "Minnie Mouse \u2013 Epcot International Flower & Garden Festival 2024 pins",
+    "Series": "Epcot International Flower & Garden Festival 2024 pins",
+    "Characters": "Minnie Mouse",
+    "Main character": "Minnie Mouse",
+    "Release year": 2024,
+    "Release date": "2024-03-05",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Flower & Garden Festival 2024 pins; pin-on-pin",
+    "Collection name": "Epcot International Flower & Garden Festival 2024 pins",
+    "Expected pin count": 9,
+    "Set count check": "incomplete (6/9) \u2014 missing pins are NOT created",
+    "visual_features": "pin-on-pin",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (6/9)"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Minnie pin-on-pin design",
+     "claim_ref": "C08955"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "pin-on-pin",
+     "claim_ref": "C08956"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08957"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08958"
     }
    ]
   },
@@ -75014,6 +76532,8 @@
     "Series": "Epcot International Flower & Garden Festival 2024 pins",
     "Characters": "Orange Bird",
     "Main character": "Orange Bird",
+    "Release year": 2024,
+    "Release date": "2024-03-05",
     "Edition type": "limited release",
     "Park / Retailer": "EPCOT",
     "Release scope": "US",
@@ -75021,13 +76541,14 @@
     "Currency": "USD",
     "Categories": "Epcot International Flower & Garden Festival 2024 pins",
     "Collection name": "Epcot International Flower & Garden Festival 2024 pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 9,
+    "Set count check": "incomplete (6/9) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "set incomplete (6/9)"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -75096,6 +76617,124 @@
      "method": "search_snippet",
      "note": "Describes 2024 pin with Orange Bird popping out of a flowerpot, slogan text",
      "claim_ref": "C08440"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "larger pin, pearlized fill",
+     "claim_ref": "C08951"
+    },
+    {
+     "field": "original_price",
+     "value": 39.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$39.99",
+     "claim_ref": "C08952"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Orange Bird"
+     ],
+     "source_url": "https://disneyfashionista.com/epcot-flower-garden-festival-pins-for-2024/",
+     "publisher": "disneyfashionista.com",
+     "source_class": "unclassified",
+     "method": "search_snippet",
+     "note": "Orange Bird popping from flowerpot",
+     "claim_ref": "C08953"
+    },
+    {
+     "field": "front_text",
+     "value": "Orange You Glad You Met Me?",
+     "source_url": "https://disneyfashionista.com/epcot-flower-garden-festival-pins-for-2024/",
+     "publisher": "disneyfashionista.com",
+     "source_class": "unclassified",
+     "method": "search_snippet",
+     "note": "phrase on pin",
+     "claim_ref": "C08954"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-flower-garden-2024/orange-bird-glitter",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-flower-garden-2024",
+   "proposed": {
+    "Pin name": "Orange Bird Glitter Pin",
+    "Series": "Epcot International Flower & Garden Festival 2024 pins",
+    "Characters": "Orange Bird",
+    "Main character": "Orange Bird",
+    "Release year": 2024,
+    "Release date": "2024-03-05",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Flower & Garden Festival 2024 pins",
+    "Collection name": "Epcot International Flower & Garden Festival 2024 pins",
+    "Expected pin count": 9,
+    "Set count check": "incomplete (6/9) \u2014 missing pins are NOT created",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (6/9)",
+    "variant: same characters as wdw/2024/epcot-flower-garden-2024/orange-bird-flower-pot; confirm the distinguishing pin_name"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Orange Bird Glitter Pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "glitter embellishments",
+     "claim_ref": "C08947"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Orange Bird"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Orange Bird",
+     "claim_ref": "C08948"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08949"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08950"
     }
    ]
   },
@@ -75108,6 +76747,8 @@
     "Series": "Epcot International Flower & Garden Festival 2024 pins",
     "Characters": "Spike the Bee",
     "Main character": "Spike the Bee",
+    "Release year": 2024,
+    "Release date": "2024-03-05",
     "Edition type": "limited edition",
     "Edition size": 4000,
     "Park / Retailer": "EPCOT",
@@ -75116,16 +76757,20 @@
     "Currency": "USD",
     "Categories": "Epcot International Flower & Garden Festival 2024 pins; pin-on-pin",
     "Collection name": "Epcot International Flower & Garden Festival 2024 pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 9,
+    "Set count check": "incomplete (6/9) \u2014 missing pins are NOT created",
     "visual_features": "pin-on-pin",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
+   "engine_verified": false,
    "review_reasons": [
-    "missing: release_date"
+    "conflict: edition_type",
+    "set incomplete (6/9)"
    ],
-   "warnings": [],
+   "warnings": [
+    "variants: original_price"
+   ],
    "duplicate_status": "NEW (family exists, different sub-set)",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -75204,6 +76849,455 @@
      "method": "search_snippet",
      "note": "Two 2024 Annual Passholder pins with Spike; one shows Passholder 2024 in a sunflower",
      "claim_ref": "C08441"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Spike the Bee"
+     ],
+     "source_url": "https://wdwnt.com/2024/02/ap-spike-the-bee-merchandise-2024-epcot-festival/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "AP Spike merchandise list",
+     "claim_ref": "C08963"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2024/02/ap-spike-the-bee-merchandise-2024-epcot-festival/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Passholder 2024 in sunflower, LR $17.99",
+     "claim_ref": "C08964"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2024/02/ap-spike-the-bee-merchandise-2024-epcot-festival/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08965"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-flower-garden-2024/spike-the-bee-passholder-le",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-flower-garden-2024",
+   "proposed": {
+    "Pin name": "Spike the Bee \u2013 Epcot International Flower & Garden Festival 2024 pins",
+    "Series": "Epcot International Flower & Garden Festival 2024 pins",
+    "Characters": "Spike the Bee",
+    "Main character": "Spike the Bee",
+    "Release year": 2024,
+    "Release date": "2024-03-05",
+    "Edition type": "limited edition",
+    "Edition size": 4000,
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 19.99,
+    "Categories": "Epcot International Flower & Garden Festival 2024 pins",
+    "Collection name": "Epcot International Flower & Garden Festival 2024 pins",
+    "Expected pin count": 9,
+    "Set count check": "incomplete (6/9) \u2014 missing pins are NOT created",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (6/9)",
+    "possible internal duplicate of wdw/2024/epcot-flower-garden-2024/spike-the-bee-passholder"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Spike the Bee"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "larger sketch-style Spike AP pin",
+     "claim_ref": "C08966"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE",
+     "claim_ref": "C08967"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 4,000",
+     "claim_ref": "C08968"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08969"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/chip",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "proposed": {
+    "Pin name": "Chip \u2013 Food & Wine 2024 Mystery Pin Set",
+    "Series": "Food & Wine 2024 Mystery Pin Set",
+    "Characters": "Chip",
+    "Main character": "Chip",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Currency": "USD",
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Food & Wine 2024 Mystery Pin Set",
+    "Collection type": "mystery box",
+    "Expected pin count": 10,
+    "Set count check": "incomplete (1/10) \u2014 missing pins are NOT created",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (1/10)"
+   ],
+   "warnings": [],
+   "duplicate_status": "DUPLICATE",
+   "duplicate_pinhunt_id": "PHUK-00000226",
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://mypincentral.com/pin/207533",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "entry shows Chip in chef hat from F&W 2024 mystery box set",
+     "claim_ref": "C08890"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024/chef-figment",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024",
+   "proposed": {
+    "Pin name": "Chef Figment pin",
+    "Series": "Epcot International Food & Wine Festival 2024 pins",
+    "Characters": "Figment",
+    "Main character": "Figment",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Epcot International Food & Wine Festival 2024 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "variant: same characters as wdw/2024/epcot-food-wine-2024/figment-passholder; confirm the distinguishing pin_name, edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Chef Figment pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "listed in 2024 F&W pin roundup",
+     "claim_ref": "C08874"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Chef Figment pin in roundup",
+     "claim_ref": "C08875"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08876"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08877"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024/chef-mickey",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024",
+   "proposed": {
+    "Pin name": "Chef Mickey pin",
+    "Series": "Epcot International Food & Wine Festival 2024 pins",
+    "Characters": "Mickey Mouse",
+    "Main character": "Mickey Mouse",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Epcot International Food & Wine Festival 2024 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Chef Mickey pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "listed in 2024 F&W pin roundup",
+     "claim_ref": "C08866"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Chef Mickey pin in roundup",
+     "claim_ref": "C08867"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08868"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08869"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024/chef-minnie",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024",
+   "proposed": {
+    "Pin name": "Chef Minnie pin",
+    "Series": "Epcot International Food & Wine Festival 2024 pins",
+    "Characters": "Minnie Mouse",
+    "Main character": "Minnie Mouse",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Epcot International Food & Wine Festival 2024 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Chef Minnie pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "listed in 2024 F&W pin roundup",
+     "claim_ref": "C08870"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Chef Minnie pin in roundup",
+     "claim_ref": "C08871"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08872"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08873"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024/chef-remy-limited-release",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024",
+   "proposed": {
+    "Pin name": "Chef Remy pin",
+    "Series": "Epcot International Food & Wine Festival 2024 pins",
+    "Characters": "Remy",
+    "Main character": "Remy",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Epcot International Food & Wine Festival 2024 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "variant: same characters as wdw/2024/epcot-food-wine-2024/remy; confirm the distinguishing pin_name, edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Chef Remy pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "listed in 2024 F&W pin roundup",
+     "claim_ref": "C08878"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Remy"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Chef Remy pin in roundup",
+     "claim_ref": "C08879"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08880"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08881"
     }
    ]
   },
@@ -75229,11 +77323,9 @@
     "Set count check": "unknown (no expected count claimed)",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "Medium",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [
     "variants: original_price"
    ],
@@ -75331,6 +77423,241 @@
      "method": "search_snippet",
      "note": "Disney Food Blog: $17.99 (conflict)",
      "claim_ref": "C05912"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP Figment pin LE 5,000",
+     "claim_ref": "C08854"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 5,000",
+     "claim_ref": "C08855"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08856"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "AP Chef Figment pin LE 5000",
+     "claim_ref": "C08857"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "listed at $19.99",
+     "claim_ref": "C08858"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "AP Chef Figment pin",
+     "claim_ref": "C08859"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024/logo",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024",
+   "proposed": {
+    "Pin name": "Food & Wine logo pin",
+    "Series": "Epcot International Food & Wine Festival 2024 pins",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Epcot International Food & Wine Festival 2024 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: characters"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Food & Wine logo pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "festival logo pin in roundup",
+     "claim_ref": "C08885"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08886"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08887"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024/mickey-minnie-passholder",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024",
+   "proposed": {
+    "Series": "Epcot International Food & Wine Festival 2024 pins",
+    "Characters": "Mickey Mouse; Minnie Mouse",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Epcot International Food & Wine Festival 2024 pins",
+    "Set count check": "unknown (no expected count claimed)"
+   },
+   "record_confidence": "Medium",
+   "engine_verified": true,
+   "review_reasons": [
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "roundup lists Mickey & Minnie Passholder pin alongside Figment AP pin",
+     "claim_ref": "C08888"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mickeyblog.com/2024/08/29/all-of-epcots-new-2024-food-wine-festival-merchandise/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "two AP pins to choose from, Mickey and Minnie, and Figment",
+     "claim_ref": "C08889"
+    }
+   ]
+  },
+  {
+   "research_key": "wdw/2024/epcot-food-wine-2024/muppet-labs",
+   "entity_type": "pin",
+   "set_research_key": "wdw/2024/epcot-food-wine-2024",
+   "proposed": {
+    "Pin name": "Muppet Labs pin",
+    "Series": "Epcot International Food & Wine Festival 2024 pins",
+    "Release year": 2024,
+    "Release date": "2024-08-29",
+    "Edition type": "limited release",
+    "Park / Retailer": "EPCOT",
+    "Release scope": "US",
+    "Original price": 17.99,
+    "Categories": "Epcot International Food & Wine Festival 2024 pins",
+    "Collection name": "Epcot International Food & Wine Festival 2024 pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "claimed"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: characters"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW (family exists, different sub-set)",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "pin_name",
+     "value": "Muppet Labs pin",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "listed in 2024 F&W roundup",
+     "claim_ref": "C08882"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LR",
+     "claim_ref": "C08883"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$17.99",
+     "claim_ref": "C08884"
     }
    ]
   },
@@ -75459,6 +77786,70 @@
      "method": "search_snippet",
      "note": "WDWNT: 4,000",
      "claim_ref": "C05903"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Remy dangle pin LE 4,000",
+     "claim_ref": "C08860"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08861"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "described as dangle pin",
+     "claim_ref": "C08862"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Chef Remy pin, only other LE besides AP pin, LE 4000",
+     "claim_ref": "C08863"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$19.99",
+     "claim_ref": "C08864"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Remy"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Chef Remy pin",
+     "claim_ref": "C08865"
     }
    ]
   },
@@ -123274,6 +125665,56 @@
      "method": "search_snippet",
      "note": "$29.99",
      "claim_ref": "C08370"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "3-pin set: Orange Bird, Figment, Snow White",
+     "claim_ref": "C08847"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP exclusive",
+     "claim_ref": "C08848"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 5,000",
+     "claim_ref": "C08849"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$29.99",
+     "claim_ref": "C08850"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://www.disneyfoodblog.com/2023/03/01/hide-your-wallet-all-the-2023-epcot-flower-and-garden-festival-merchandise-is-here/",
+     "publisher": "disneyfoodblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "three-pin set $29.99",
+     "claim_ref": "C08851"
     }
    ]
   },
@@ -123285,11 +125726,14 @@
     "set_name": "2023 EPCOT International Food & Wine Festival pins",
     "release_location": "EPCOT",
     "region": "US",
-    "release_date": "2023-07-27"
+    "release_date": "2023-07-27",
+    "expected_pin_count": 5
    },
    "record_confidence": "Medium",
    "engine_verified": false,
-   "review_reasons": [],
+   "review_reasons": [
+    "set over (6/5) \u2014 check for variants or wrong set"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -123347,6 +125791,26 @@
      "method": "search_snippet",
      "note": "WDWNT full list of festival pins",
      "claim_ref": "C05525"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://wdwnt.com/2023/07/full-list-of-encanto-and-more-2023-epcot-international-food-wine-festival-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "four pins for everyone plus one AP exclusive",
+     "claim_ref": "C08845"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07-27",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "festival from July 27 to Nov 18",
+     "claim_ref": "C08846"
     }
    ]
   },
@@ -124213,11 +126677,15 @@
    "proposed": {
     "set_name": "Epcot International Flower & Garden Festival 2024 pins",
     "release_location": "EPCOT",
-    "region": "US"
+    "region": "US",
+    "release_date": "2024-03-05",
+    "expected_pin_count": 9
    },
    "record_confidence": "Low",
    "engine_verified": false,
-   "review_reasons": [],
+   "review_reasons": [
+    "set incomplete (6/9) \u2014 missing pins are NOT created"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -124255,6 +126723,26 @@
      "method": "search_snippet",
      "note": "Walt Disney World, Florida",
      "claim_ref": "C05607"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-03-05",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "pins available from Tue March 5, 2024",
+     "claim_ref": "C08852"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneyfashionista.com/epcot-flower-garden-festival-pins-for-2024/",
+     "publisher": "disneyfashionista.com",
+     "source_class": "unclassified",
+     "method": "search_snippet",
+     "note": "nine pins plus one mystery box",
+     "claim_ref": "C08853"
     }
    ]
   },
@@ -124318,6 +126806,16 @@
      "method": "search_snippet",
      "note": "festival Aug 29 - Nov 23, 2024",
      "claim_ref": "C05614"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08-29",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "festival ran Aug 29 to Nov 23, 2024",
+     "claim_ref": "C08837"
     }
    ]
   },
@@ -124330,11 +126828,15 @@
     "format": "mystery box",
     "pins_per_box": 2,
     "edition_type": "limited release",
-    "price": 29.99
+    "price": 29.99,
+    "expected_pin_count": 10,
+    "currency": "USD"
    },
    "record_confidence": "Low",
    "engine_verified": false,
-   "review_reasons": [],
+   "review_reasons": [
+    "set incomplete (1/10) \u2014 missing pins are NOT created"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -124388,6 +126890,76 @@
      "method": "search_snippet",
      "note": "DPB box price $29.99; DPB also shows conflicting 2,000/$89.99 entry",
      "claim_ref": "C05619"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "mystery box: 2 random pins from 10 designs",
+     "claim_ref": "C08838"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "two pins per box",
+     "claim_ref": "C08839"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "$29.99 per box",
+     "claim_ref": "C08840"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/epcot-international-food-wine-festival-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US price",
+     "claim_ref": "C08841"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://mickeyblog.com/2024/08/29/all-of-epcots-new-2024-food-wine-festival-merchandise/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "two random pins from ten festival designs",
+     "claim_ref": "C08842"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://mickeyblog.com/2024/08/29/all-of-epcots-new-2024-food-wine-festival-merchandise/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "two per box",
+     "claim_ref": "C08843"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://mickeyblog.com/2024/08/29/all-of-epcots-new-2024-food-wine-festival-merchandise/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$29.99",
+     "claim_ref": "C08844"
     }
    ]
   },

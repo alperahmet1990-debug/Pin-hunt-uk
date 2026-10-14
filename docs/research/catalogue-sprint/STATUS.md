@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 18:24 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 18:29 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -38,13 +38,13 @@ _Last updated: 2026-10-14 18:24 UTC by Claude (sprint coordinator session). Chec
 ## Catalogue metrics (from `DASHBOARD.md`)
 | | |
 |---|---|
-| Candidate pins | 854 (≈ 801 unique) |
+| Candidate pins | 871 (≈ 816 unique) |
 | Sets / releases | 404 |
 | **Directly verified** | **0** (needs your staging session) |
 | **Publication-ready** | **0** |
-| High / Medium / Low / Unverified | 148 / 354 / 350 / 2 |
-| 2+ independent publishers | 510 |
-| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 21 / 26 / 27 (+8 recognised variants) |
+| High / Medium / Low / Unverified | 148 / 363 / 358 / 2 |
+| 2+ independent publishers | 517 |
+| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 22 / 27 / 27 (+ recognised variants) |
 | Verification effort | 343 pages, ≈ 11–12 h with set-level review; pilot ≈ 45–50 min |
 | Progress to 1,000 / 5,000 / 10,000 **verified** | 0% / 0% / 0% (candidates: 85% / 17% / 8%) |
 
@@ -81,6 +81,7 @@ _Last updated: 2026-10-14 18:24 UTC by Claude (sprint coordinator session). Chec
 - **Before the grouping pass,** the random sample was 83% fully correct, hand-adjudicated.
 - **The disagreements found are recorded and blocked for review:** Vault Set 3 Chip 'n Dale; the DLP "Prince Love" edition type.
 - **Remaining risk** is source disagreement on metadata (edition type, dates). The engine surfaces it and does not resolve it.
+- **Pass 7 (WDW festivals):** 17 new named pins across 11 EPCOT festival sets (2023–24). 27 existing pins gained edition, price or second-source claims; set counts were added. Chef Remy and Chef Figment are flagged as variants of the existing Remy and Figment pins for review.
 - **Pass 6 (disagreements + grouping gaps):**
   - 626 Day 2026: one pin each, confirmed by an official listing. The pilot's structure checks went from 21 to 11.
   - Goofy/Rafiki: separate pins, confirmed by a second source.
@@ -91,6 +92,5 @@ _Last updated: 2026-10-14 18:24 UTC by Claude (sprint coordinator session). Chec
 ## Next planned actions (check-ins take these in order)
 1. **Every check-in:** check PRs and CI on sprint issues (#239 → #240, #241 after #250 merges) and act on QA/security findings.
 2. **Pilot:** keep it current after any data change, and re-run the offline load test.
-3. **Coverage:** WDW festival releases (Food & Wine, Flower & Garden, Festival of the Arts 2023–25), named pins from round-up posts, with capped searches.
-4. **Coverage gaps:** DSUK and DLR months with no recorded release.
-5. **Second fresh blind test** after any large data change, so accuracy stays measured, not assumed.
+3. **Coverage gaps:** DSUK and DLR months with no recorded release.
+4. **Second fresh blind test** after any large data change, so accuracy stays measured, not assumed.

@@ -5,8 +5,8 @@
  *  0 — About: what happens to a suggestion (admin review, you're notified)
  *  1 — Front photo (required; back photo is a later addition)
  *  2 — Details: only the name is required. Set (with suggestions from the
- *      catalogue's sets) and year are optional; everything else sits under
- *      "More details". An "Already in the catalogue?" check runs on the name.
+ *      catalogue's sets), year and characters (pre-filled from a scan) are
+ *      optional; everything else sits under "More details". An "Already in the catalogue?" check runs on the name.
  *  then — Confirmation
  *
  * Submits via POST /pin-submissions on the API server rather than talking
@@ -602,6 +602,9 @@ export default function AddPinScreen() {
 
       {field('Release year', false, inp(releaseYear, setReleaseYear, 'e.g. 2024', { keyboardType: 'numeric', errKey: 'releaseYear' }))}
 
+      {/* Always in view: a scan hands over the characters it recognised. */}
+      {field('Characters (comma-separated)', false, inp(characterNames, setCharacterNames, 'e.g. Mickey, Minnie, Goofy'))}
+
       <TouchableOpacity
         onPress={() => setShowMore(m => !m)}
         activeOpacity={0.8}
@@ -617,7 +620,6 @@ export default function AddPinScreen() {
       {showMore && (
         <View style={{ gap: spacing.md + 2 }}>
           {field('Brand or source', false, inp(brand, setBrand, 'e.g. Disney Parks, Loungefly'))}
-          {field('Characters (comma-separated)', false, inp(characterNames, setCharacterNames, 'e.g. Mickey, Minnie, Goofy'))}
           {field('Release location', false, inp(releaseLocation, setReleaseLocation, 'e.g. Disneyland Paris, Disney Store UK'))}
           {field('Edition type', false, (
             <View style={styles.editionGrid}>

@@ -117,4 +117,14 @@ describe('Suggest a missing pin (UX-011)', () => {
     await screen.findByText('Pin Submitted!');
     expect(submitted()).toMatchObject({ brand: 'Disneyland Paris', editionType: 'limited_edition' });
   });
+
+  it('shows the characters a scan recognised without opening More details', async () => {
+    mockParams = { characters: 'Dumbo, Timothy' };
+    await toDetails();
+    expect(screen.getByDisplayValue('Dumbo, Timothy')).toBeTruthy();
+    await fireEvent.changeText(screen.getByPlaceholderText('e.g. Dumbo Blue Sky'), 'Dumbo Circus');
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    await screen.findByText('Pin Submitted!');
+    expect(submitted()).toMatchObject({ characterNames: ['Dumbo', 'Timothy'] });
+  });
 });

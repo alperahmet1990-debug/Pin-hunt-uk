@@ -37,7 +37,7 @@ function toneColor(colors: ReturnType<typeof useColors>, tone: ChipTone): string
 export function SegmentedControl<T extends string>({ options, value, onChange }: SegmentedControlProps<T>) {
   const colors = useColors();
   return (
-    <View style={[styles.row, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+    <View accessibilityRole="tablist" style={[styles.row, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
       {options.map(opt => {
         const active = opt.value === value;
         const tone = toneColor(colors, opt.tone);
@@ -46,6 +46,8 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
             key={opt.value}
             onPress={() => onChange(opt.value)}
             activeOpacity={0.85}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: active }}
             style={[
               styles.segment,
               active && { backgroundColor: tone, shadowColor: tone },

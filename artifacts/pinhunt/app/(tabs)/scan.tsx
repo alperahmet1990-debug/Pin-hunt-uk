@@ -35,6 +35,8 @@ import type { CataloguePin } from '@workspace/pin-repository';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScanResult } from '@/components/scan/ScanResult';
 import { useMyAccess } from '@/hooks/useMyAccess';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, type UserError } from '@/utils/userError';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -114,6 +116,8 @@ export default function ScanScreen() {
   const [matches, setMatches] = useState<Match[]>([]);
   const [insights, setInsights] = useState<ImageInsights | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  // A failed identify (offline, timeout, server…) in plain words (UX-046).
+  const [failure, setFailure] = useState<UserError | null>(null);
   const [noMatchFound, setNoMatchFound] = useState(false);
   // "None of these" keeps the photo and offers ways forward instead of resetting.
   const [showRecovery, setShowRecovery] = useState(false);
@@ -162,6 +166,7 @@ export default function ScanScreen() {
   // camera is available. ──────────────────────────────────────────────────────
   const handleScanPin = useCallback(async () => {
     setErrorMsg(null);
+    setFailure(null);
 
     const launcher = Platform.OS === 'web'
       ? ImagePicker.launchImageLibraryAsync
@@ -192,6 +197,7 @@ export default function ScanScreen() {
   // ── Choose Photo (library) ───────────────────────────────────────────────────
   const handleChoosePhoto = useCallback(async () => {
     setErrorMsg(null);
+    setFailure(null);
 
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: 'images',
@@ -208,6 +214,7 @@ export default function ScanScreen() {
   const handleIdentify = useCallback(async () => {
     if (!captured) return;
     setErrorMsg(null);
+    setFailure(null);
     setNoMatchFound(false);
     setShowRecovery(false);
     setScanState('identifying');
@@ -250,8 +257,7 @@ export default function ScanScreen() {
       setResultKey(k => k + 1);
       setScanState('results');
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Something went wrong';
-      setErrorMsg(msg);
+      setFailure(toUserError(err, 'scan'));
       setScanState('captured');
     }
   }, [captured, pins, repository, session?.access_token]);
@@ -276,6 +282,7 @@ export default function ScanScreen() {
     setMatches([]);
     setInsights(null);
     setErrorMsg(null);
+    setFailure(null);
     setNoMatchFound(false);
     setShowRecovery(false);
   };
@@ -380,12 +387,20 @@ export default function ScanScreen() {
           </View>
         )}
 
-        {/* ── Every failure offers Try again + Search instead ── */}
-        {errorMsg && scanState === 'captured' && (
+        {/* ── A failed identify: plain words, Try again + Search instead ── */}
+        {failure && scanState === 'captured' && (
+          <ErrorState
+            compact
+            error={failure}
+            onRetry={handleIdentify}
+            secondary={{ label: 'Search instead', icon: 'search', onPress: searchFromScan }}
+            style={styles.failure}
+          />
+        )}
+
+        {/* ── No match: Search instead ── */}
+        {errorMsg && noMatchFound && scanState === 'captured' && (
           <View style={styles.errorActions}>
-            {!noMatchFound && (
-              <Button label="Try again" icon="refresh-cw" size="compact" onPress={handleIdentify} style={styles.errorActionBtn} />
-            )}
             <Button label="Search instead" icon="search" size="compact" variant="secondary" onPress={searchFromScan} style={styles.errorActionBtn} />
           </View>
         )}
@@ -578,6 +593,7 @@ const styles = StyleSheet.create({
   errorActions: { flexDirection: 'row', gap: 10, marginHorizontal: 16, marginBottom: 12 },
   errorActionBtn: { flex: 1 },
   addPinCta: { marginHorizontal: 16, marginBottom: 12 },
+  failure: { marginHorizontal: 16, marginBottom: 12 },
   // Controls
   controls: { paddingHorizontal: 16, gap: 12 },
   captureRow: { flexDirection: 'row', gap: 12 },

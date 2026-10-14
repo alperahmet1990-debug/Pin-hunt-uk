@@ -47,7 +47,9 @@ export async function identifyPin(
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error((err as { error?: string }).error ?? 'Identification failed');
+      // The status lets the app say "server problem" vs "sign in again"
+      // without showing the server's own message (UX-046).
+      throw Object.assign(new Error((err as { error?: string }).error ?? 'Identification failed'), { status: res.status });
     }
     const data = await res.json() as {
       matches: IdentifyResult['matches'];

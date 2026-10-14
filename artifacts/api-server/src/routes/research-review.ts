@@ -427,6 +427,13 @@ router.post("/admin/research/sets/:runId/:setKey/decision", requireAppCreator, a
         },
       });
       if (problem) { skipped.push({ candidateId: id, reason: problem }); continue; }
+      // A shared batch note can't stand in for a per-pin decision: these need their own review.
+      if (((c.review_reasons as string[]) ?? []).some(r => /duplicate/i.test(r))) {
+        skipped.push({ candidateId: id, reason: "Flagged as a possible duplicate: review it on its own" }); continue;
+      }
+      if (((c.warnings as string[]) ?? []).length > 0) {
+        skipped.push({ candidateId: id, reason: "Has variant values: approve it on its own with a note" }); continue;
+      }
       const now = new Date().toISOString();
       const { data: updated, error: upErr } = await db.from("catalogue_candidates").update({
         status: "approved", decided_by: req.creatorId, decided_at: now,

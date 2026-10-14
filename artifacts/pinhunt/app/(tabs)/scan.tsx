@@ -22,6 +22,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { identifyPin, type ImageInsights } from '@/utils/identifyPin';
+import { prepareScanPhoto, type ScanPhoto } from '@/utils/scanPhoto';
 import {
   RETAKE_TIPS,
   RETAKE_TIPS_KEY,
@@ -137,21 +138,22 @@ export default function ScanScreen() {
   );
 
   // ── Shared: accept a picked/captured asset ───────────────────────────────────
-  const handlePickerResult = useCallback((result: ImagePicker.ImagePickerResult) => {
+  const handlePickerResult = useCallback(async (result: ImagePicker.ImagePickerResult) => {
     if (result.canceled || !result.assets?.[0]) return;
 
     const asset = result.assets[0];
-    if (!asset.base64) {
+    // Shrink before upload (UX-050): the preview keeps the original photo.
+    let photo: ScanPhoto;
+    try {
+      photo = await prepareScanPhoto(asset.uri, asset.width, asset.height);
+    } catch (err) {
+      if (__DEV__) console.warn('[scan] could not prepare photo', err);
       Alert.alert('Could not read image', 'Please try again.');
       return;
     }
 
     flashShutter(() => {
-      setCaptured({
-        uri: asset.uri,
-        base64: asset.base64!,
-        mimeType: asset.mimeType ?? 'image/jpeg',
-      });
+      setCaptured({ uri: asset.uri, base64: photo.base64, mimeType: photo.mimeType });
       setScanState('captured');
     });
   }, [flashShutter]);
@@ -178,8 +180,8 @@ export default function ScanScreen() {
 
     const result = await launcher({
       mediaTypes: 'images',
-      quality: 0.7,
-      base64: true,
+      // Full quality here: prepareScanPhoto does the one lossy re-encode.
+      quality: 1,
       allowsEditing: true,
       aspect: [1, 1],
     });
@@ -193,8 +195,8 @@ export default function ScanScreen() {
 
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: 'images',
-      quality: 0.7,
-      base64: true,
+      // Full quality here: prepareScanPhoto does the one lossy re-encode.
+      quality: 1,
       allowsEditing: true,
       aspect: [1, 1],
     });

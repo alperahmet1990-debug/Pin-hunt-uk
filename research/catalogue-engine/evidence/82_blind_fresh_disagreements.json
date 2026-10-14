@@ -1,0 +1,102 @@
+{
+ "packet_id": "blind-fresh-2026-10-14",
+ "spec_version": 1,
+ "collected_at": "2026-10-14",
+ "collector": "agent:blind-recheck",
+ "sources": [
+  {
+   "url": "https://www.dismerchandise.com/2026/04/07/disneyland-70th-anniversary-vault-collection-pin-set-3-limited-edition-available-online-for-purchase/",
+   "title": "",
+   "publisher": "dismerchandise",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2026/01/30/disneyland-paris-february-2026-pins-revealed-including-valentines-day-world-of-frozen/",
+   "title": "",
+   "publisher": "Mousesteps",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pixiedustdlp.com/2026/01/30/disneyland-paris-pin-trading-febr-2026/",
+   "title": "",
+   "publisher": "PixieDust DLP",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "dlr/2026/70th-vault-collection-set-3/chip-n-dale",
+   "set_key": "dlr/2026/70th-vault-collection-set-3",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dismerchandise.com/2026/04/07/disneyland-70th-anniversary-vault-collection-pin-set-3-limited-edition-available-online-for-purchase/",
+     "method": "search_snippet",
+     "note": "Blind re-check: listing shows Chip and Dale as two separate pins in Set 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/prince-love-open-edition/aladdin",
+   "set_key": "dlp/2026/prince-love-open-edition",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.mousesteps.com/2026/01/30/disneyland-paris-february-2026-pins-revealed-including-valentines-day-world-of-frozen/",
+     "method": "search_snippet",
+     "note": "Blind re-check: this heart pin listed as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/prince-love-open-edition/eric",
+   "set_key": "dlp/2026/prince-love-open-edition",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.mousesteps.com/2026/01/30/disneyland-paris-february-2026-pins-revealed-including-valentines-day-world-of-frozen/",
+     "method": "search_snippet",
+     "note": "Blind re-check: this heart pin listed as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/prince-love-open-edition/flynn",
+   "set_key": "dlp/2026/prince-love-open-edition",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://pixiedustdlp.com/2026/01/30/disneyland-paris-pin-trading-febr-2026/",
+     "method": "search_snippet",
+     "note": "Blind re-check: this heart pin listed as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/prince-love-open-edition/phillip",
+   "set_key": "dlp/2026/prince-love-open-edition",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://pixiedustdlp.com/2026/01/30/disneyland-paris-pin-trading-febr-2026/",
+     "method": "search_snippet",
+     "note": "Blind re-check: this heart pin listed as open edition"
+    }
+   ]
+  }
+ ],
+ "not_found": [],
+ "discovery_notes": "Disagreements found by the third blind accuracy test, recorded as claims (never resolved here)."
+}

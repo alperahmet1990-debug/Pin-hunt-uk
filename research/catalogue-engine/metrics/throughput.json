@@ -59,6 +59,13 @@
    "new_pins": 7,
    "corroborated": 0,
    "pin_structure_claims": 132
+  },
+  {
+   "name": "Fresh blind accuracy test (20 new releases)",
+   "date": "2026-10-14",
+   "searches": 28,
+   "new_pins": 0,
+   "corroborated": 0
   }
  ],
  "verification": {
@@ -75,7 +82,7 @@
   "confirmed": 50,
   "wrong_or_misstructured": 5,
   "unconfirmed": 5,
-  "summary": "Automatic per-dimension scoring (`tools/accuracy_bench/score_blind.py`) against independent blind re-research. **Random sample (16 releases, 60 pins): identity 90%, grouping 93%, edition size 94%. DSUK pilot sample (10 sets, 77 pins): identity 99%, grouping 100%, edition size 100%.** Hand-adjudicated overall result for the random sample: 83% fully correct (identity + grouping), 8% wrong or mis-structured, 8% unconfirmed. Errors concentrate in Low-confidence DLP sets (combined vs separate characters). Indicative only: small samples, snippets on both sides. After the grouping pass (132 one-pin/separate-pins claims, 9 grouping corrections proposed), the split Pajama Party records are blocked for review and a combined record exists; approvable pins in the random sample: identity 89%, grouping 92%. A fresh blind sample is the next measurement.",
+  "summary": "**Fresh blind test (20 releases not used before, 84 pins), after the grouping pass:** automatic scoring identity 94%, grouping 97%, edition size 87%, release date 90%; hand-adjudicated identity \u224899% (1 unconfirmed), grouping \u224899% (1 disagreement, now blocked), edition size: 1 set (4 pins) disagrees (now blocked), dates: park-vs-store timing only. Earlier random sample (before the grouping pass): 83% fully correct. DSUK pilot sample: 99\u2013100%. Disagreements are recorded and block approval until a person decides. Indicative: snippets on both sides.",
   "by_dimension": {
    "random_sample": {
     "pins": 60,
@@ -101,6 +108,22 @@
     "approvable_grouping": "47/51 (92%)"
    },
    "pilot_sample": "unchanged: 99% / 100% / 100%"
+  },
+  "fresh_sample": {
+   "releases": 20,
+   "pins": 84,
+   "auto": {
+    "identity": "79/84 (94%)",
+    "grouping": "77/79 (97%)",
+    "edition_size": "27/31 (87%)",
+    "release_date": "57/63 (90%)"
+   },
+   "adjudicated": {
+    "identity": "83/84 (\u224899%; 1 unconfirmed)",
+    "grouping": "1 disagreement in 84 (\u224899%)",
+    "edition_size": "1 set disagrees (4 pins: LE 1000 vs open edition)",
+    "release_date": "2 sets differ by park vs store date, not errors"
+   }
   }
  }
 }

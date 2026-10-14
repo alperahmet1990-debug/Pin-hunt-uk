@@ -11,18 +11,20 @@ Three separate dimensions, per candidate pin in a release the blind check resolv
 Blind pins we lack are reported as completeness, not accuracy. Matching is automatic and
 conservative; the per-pin CSV is for human adjudication of edge cases.
 """
-import csv, json, re, sys, collections as C
+import csv, json, re, sys, unicodedata, collections as C
 
 STOP = {"the", "and", "with", "as", "in", "on", "of", "a", "pin", "pins", "le", "mini", "jumbo", "one", "set", "mystery",
         "chaser", "design", "ducky", "rubber", "glitter", "slider", "dangle", "mouse", "duck"}
 
 
 def words(s):
-    return [w for w in re.split(r"[^a-z0-9]+", str(s).lower().replace("'n'", " and ").replace("’", "'")) if w]
+    s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode()
+    return [w for w in re.split(r"[^a-z0-9]+", s.lower().replace("'n'", " and ").replace("’", "'")) if w]
 
 
 GENERIC = {"disney", "disneyland", "anniversary", "logo", "walt", "walts", "magical", "moments", "release", "limited",
-           "edition", "passholder", "annual", "park", "parks", "store", "collection", "series"}
+           "edition", "passholder", "annual", "park", "parks", "store", "collection", "series", "prince", "princess",
+           "holiday", "mvmcp", "mnsshp", "party"}
 
 
 def key_tokens(name):

@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 12:46 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 13:20 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -40,7 +40,7 @@ _Last updated: 2026-10-14 12:46 UTC by Claude (sprint coordinator session). Chec
 | **Publication-ready** | **0** |
 | High / Medium / Low / Unverified | 148 / 354 / 350 / 2 |
 | 2+ independent publishers | 510 |
-| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 27 / 26 / 27 (+8 recognised variants) |
+| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 32 / 26 / 27 (+8 recognised variants) |
 | Verification effort | 343 pages, ≈ 11–12 h with set-level review; pilot ≈ 45–50 min |
 | Progress to 1,000 / 5,000 / 10,000 **verified** | 0% / 0% / 0% (candidates: 85% / 17% / 8%) |
 
@@ -66,23 +66,20 @@ _Last updated: 2026-10-14 12:46 UTC by Claude (sprint coordinator session). Chec
 5. **Separately:** your decisions on making them public (`verification_status`) and on production.
 
 ## Accuracy (blind tests, per dimension)
-| Sample | Identity | Grouping (one pin vs separate) | Edition size |
-|---|---|---|---|
-| Random, 16 releases: before the grouping pass | 90% | 93% | 94% |
-| Random, 16 releases: after the grouping pass, approvable pins only | 89% | 92% | 94% |
-| DSUK pilot, 10 sets, 77 pins | 99% | 100% | 100% |
+| Sample | Identity | Grouping | Edition size | Release date |
+|---|---|---|---|---|
+| Random 16 releases, **before** the grouping pass | 90% | 93% | 94% | n/a |
+| **Fresh 20 releases, after** (automatic) | 94% | 97% | 87% | 90% |
+| **Fresh 20 releases, after** (hand-adjudicated) | ≈99% (1 unconfirmed) | ≈99% (1 disagreement) | 1 set disagrees (LE 1000 vs OE) | park vs store dates only |
+| DSUK pilot sample (77 pins) | 99% | 100% | 100% | n/a |
 
-- **Hand-adjudicated overall (random sample, before):** 83% fully correct.
-- **Grouping pass:**
-  - 132 `pin_structure` claims (one pin / separate pins).
-  - 9 grouping corrections proposed: Pride 2026 Mickey and Minnie are separate; Toy Story 5 Karen & Forky are one pin; Pajama Party; Goofy LE vs Rafiki; Halloween 2025 duos.
-  - Wrong split records are now **blocked for review**, not approvable. Corrected records were added.
-  - Variant identity resolved for Orange Bird, Figment ×3, storyteller Mickeys and Ariel.
-- **Honest reading:** the random sample is small and was used to find the errors, so the "after" numbers mostly show the errors being caught (blocked), not new precision. A **fresh** blind sample is next.
+- **Before the grouping pass,** the random sample was 83% fully correct, hand-adjudicated.
+- **The disagreements found are recorded and blocked for review:** Vault Set 3 Chip 'n Dale; the DLP "Prince Love" edition type.
+- **Remaining risk** is source disagreement on metadata (edition type, dates). The engine surfaces it and does not resolve it.
 
 ## Next planned actions (check-ins take these in order)
-1. **Fresh blind benchmark** on a new random sample, excluding earlier samples. Report identity / grouping / field accuracy before vs after.
-2. **Pilot:** after any data change, regenerate, re-run the offline load test, and keep `LAPTOP-CHECKLIST.md` numbers current.
-3. **Remaining grouping gaps:** Tangled June LEs, Tinker Bell/Periwinkle jumbo, Paris Mickey & Friends pairs, Chip & Dale pins. Also the two Goofy advent variants and Stitch 626.
+1. **Pilot:** after any data change, regenerate, re-run the offline load test, and keep `LAPTOP-CHECKLIST.md` numbers current.
+2. **Remaining grouping gaps:** Tangled June LEs, Tinker Bell/Periwinkle jumbo, Paris Mickey & Friends pairs, Chip & Dale pins. Also the two Goofy advent variants and Stitch 626.
+3. **Metadata disagreements:** resolve park vs store dates and edition-type conflicts with targeted searches (record both; never pick a winner).
 4. **Lower priority:** WDW festival coverage; coverage gaps for DSUK and DLR.
 5. **Every check-in:** check new PRs, QA/security findings and CI on sprint issues, and act on them.

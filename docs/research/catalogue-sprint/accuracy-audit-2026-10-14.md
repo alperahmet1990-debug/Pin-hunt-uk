@@ -43,3 +43,24 @@
   - **Halloween countdown calendar:** an official EU listing confirms all 13 designs. That added an official second source to 6 lower-confidence pins.
   - **Muppets Haunted Mansion:** missing designs were found only on a Fandom fan wiki and a reseller. Not added. Fan wikis are now classed with fan databases: secondary only.
 - **Conclusion:** the pilot set is in good shape for direct verification. The pilot is now 100 pins on 23 pages; one pin dropped below High after the fan-wiki rule.
+
+## Third check: fresh blind test after the grouping pass (same day)
+- **Sample:** 20 releases never used in earlier tests: DLP 8, DSUK 4, WDW 5, DLR 3. That is 84 of our pins.
+- **Method:** blind re-research (28 searches), then automatic scoring (`tools/accuracy_bench/score_blind.py`) and hand adjudication of every flagged row.
+
+| Dimension | Automatic | Hand-adjudicated |
+|---|---|---|
+| Identity | 79/84 (94%) | 83/84 (≈99%): one unconfirmed (TRON "Opening Day Giant Pin") |
+| Grouping (one pin vs separate) | 77/79 (97%) | 1 disagreement: DLR 70th Vault Set 3 Chip 'n Dale, one pin vs two |
+| Edition size / type | 27/31 (87%) | 1 set: DLP "Prince Love" hearts, LE 1000 vs open edition (4 pins) |
+| Release date | 57/63 (90%) | 2 DLR sets differ by park vs online date (variants, not errors) |
+
+**Automatic-scoring misses that hand adjudication corrected** (now fixed in the scorer):
+- accented names (Agustín, Félix)
+- shared title words ("Prince")
+- spelling variants (Sulley / Sully)
+- group names ("Winnie the Pooh & Friends")
+
+**Action taken:** both disagreements are recorded as claims (`evidence/82_blind_fresh_disagreements.json`). Those pins are now **blocked for review** and cannot be approved until a person checks the page.
+
+**Reading:** on fresh releases, identity and grouping are now about 99%. The remaining risk is metadata disagreement between sources (edition type, park vs store dates), which the engine surfaces rather than resolves. Samples are small and snippets are used on both sides, so treat these numbers as indicative.

@@ -19,6 +19,7 @@ describe('pinTileLabel', () => {
     expect(pinTileLabel({ title: 'Stitch' })).toBe('Stitch');
     expect(pinTileLabel({ title: 'Stitch', status: 'none', copies: 1 })).toBe('Stitch');
     expect(pinTileLabel({ title: 'Stitch', status: 'wanted' })).toBe('Stitch, ISO');
+    expect(pinTileLabel({ title: 'Stitch', missing: true })).toBe('Stitch, missing');
   });
 });
 

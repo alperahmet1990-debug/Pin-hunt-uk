@@ -13,7 +13,7 @@ describe('CompactPinTile status markers', () => {
   it.each([
     ['owned', true, 'Test Pin, Owned'],
     ['for_trade', true, 'Test Pin, For Trade'],
-    ['wanted', false, 'Test Pin, ISO'],
+    ['wanted', false, 'Test Pin, ISO, missing'],
   ] as const)('labels a %s tile for screen readers', async (status, owned, label) => {
     const { getByLabelText } = await render(
       <CompactPinTile pin={pin} owned={owned} status={status} size={95} onPress={noop} />,
@@ -36,11 +36,19 @@ describe('CompactPinTile status markers', () => {
     expect(queryByText('×1')).toBeNull();
   });
 
-  it('has no marker for a missing pin that is not on the ISO', async () => {
-    const { getByLabelText } = await render(
+  it('has no status marker for a missing pin that is not on the ISO, only the Missing tag', async () => {
+    const { getByLabelText, getByText } = await render(
       <CompactPinTile pin={pin} owned={false} status="none" size={95} onPress={noop} />,
     );
-    expect(getByLabelText('Test Pin')).toBeTruthy();
+    expect(getByLabelText('Test Pin, missing')).toBeTruthy();
+    expect(getByText('Missing')).toBeTruthy();
+  });
+
+  it('shows no Missing tag on pins you have (UX-048)', async () => {
+    const { queryByText } = await render(
+      <CompactPinTile pin={pin} owned status="owned" size={95} onPress={noop} />,
+    );
+    expect(queryByText('Missing')).toBeNull();
   });
 
   it('still marks owned pins when no status is passed (Pin detail set strip)', async () => {

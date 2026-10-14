@@ -15,9 +15,14 @@ jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({
 jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush, back: jest.fn() }) }));
 jest.mock('expo-haptics', () => ({ impactAsync: jest.fn(), notificationAsync: jest.fn(), ImpactFeedbackStyle: {}, NotificationFeedbackType: {} }));
 jest.mock('expo-image-picker', () => ({
-  launchImageLibraryAsync: jest.fn(() => Promise.resolve({ canceled: false, assets: [{ uri: 'file:///photo.jpg', base64: 'abc', mimeType: 'image/jpeg' }] })),
+  launchImageLibraryAsync: jest.fn(() => Promise.resolve({ canceled: false, assets: [{ uri: 'file:///photo.jpg', width: 3024, height: 3024, mimeType: 'image/heic' }] })),
   launchCameraAsync: jest.fn(),
   requestCameraPermissionsAsync: jest.fn(() => Promise.resolve({ status: 'granted' })),
+}));
+// UX-050 (#114): the photo is shrunk before upload.
+jest.mock('expo-image-manipulator', () => ({
+  manipulateAsync: jest.fn(() => Promise.resolve({ uri: 'file:///small.jpg', width: 1024, height: 1024, base64: 'small' })),
+  SaveFormat: { JPEG: 'jpeg' },
 }));
 jest.mock('@/utils/identifyPin', () => ({ identifyPin: (...args: unknown[]) => mockIdentify(...args) }));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ session: null }) }));
@@ -61,6 +66,11 @@ describe('Scan result (UX-005)', () => {
     await fireEvent.press(screen.getByRole('button', { name: "That's it" }));
     await waitFor(() => expect(mockQuickAddPin?.id).toBe('p2'));
     expect(mockPush).not.toHaveBeenCalled();
+  });
+
+  it('sends the shrunk JPEG, not the original photo (UX-050)', async () => {
+    await scanToResult();
+    expect(mockIdentify).toHaveBeenCalledWith('small', 'image/jpeg', undefined);
   });
 
   it('opening a pin without a catalogue photo goes to Pin detail, never photo contribution', async () => {

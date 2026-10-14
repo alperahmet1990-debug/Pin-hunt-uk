@@ -8,6 +8,7 @@ import ScanScreen from '../app/(tabs)/scan';
 jest.setTimeout(20_000);
 const mockPush = jest.fn();
 let mockQuickAddPin: { id: string } | null = null;
+let mockFocusEffect: (() => (() => void) | void) | undefined;
 let mockOnAdded: ((pinId: string, status: string) => void) | undefined;
 const mockPins = [
   { id: 'p1', title: 'Castle Fireworks', collection: 'Park Icons', imageUrl: 'https://example.test/p1.jpg' },
@@ -16,7 +17,7 @@ const mockPins = [
 const mockIdentify = jest.fn();
 
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush, back: jest.fn() }), useFocusEffect: () => {} }));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush, back: jest.fn() }), useFocusEffect: (cb: () => (() => void) | void) => { mockFocusEffect = cb; } }));
 jest.mock('expo-haptics', () => ({ impactAsync: jest.fn(), notificationAsync: jest.fn(), ImpactFeedbackStyle: {}, NotificationFeedbackType: {} }));
 jest.mock('expo-image-picker', () => ({
   launchImageLibraryAsync: jest.fn(() => Promise.resolve({ canceled: false, assets: [{ uri: 'file:///photo.jpg', width: 3024, height: 3024, mimeType: 'image/heic' }] })),
@@ -99,6 +100,11 @@ describe('Scan result (UX-005)', () => {
 
     await act(async () => { mockOnAdded?.('p1', 'wanted'); });
     expect(screen.getByText('2 pins added this session')).toBeTruthy();
+
+    // Leaving the scan screen (blur runs the focus effect's cleanup) ends the session.
+    await act(async () => { const cleanup = mockFocusEffect?.(); if (typeof cleanup === 'function') cleanup(); });
+    expect(screen.queryByText(/added this session/)).toBeNull();
+    expect(screen.getByRole('button', { name: 'Scan another pin' })).toBeTruthy();
   });
 
   it('sends the shrunk JPEG, not the original photo (UX-050)', async () => {

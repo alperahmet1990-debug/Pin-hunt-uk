@@ -144,6 +144,8 @@ describe('QuickAddSheet status changes', () => {
     await render(<Harness initial={null} onAdded={onAdded} />);
     await press('Mark as For Trade');
     expect(onAdded).toHaveBeenLastCalledWith('p1', 'for_trade');
+    // The add's toast still offers Undo.
+    expect(screen.getByRole('button', { name: 'Undo' })).toBeTruthy();
     await press('Remove from my collection');
     await press('Remove');
     expect(onAdded).toHaveBeenCalledTimes(1);

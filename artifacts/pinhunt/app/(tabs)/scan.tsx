@@ -151,7 +151,7 @@ export default function ScanScreen() {
     try {
       photo = await prepareScanPhoto(asset.uri, asset.width, asset.height);
     } catch (err) {
-      if (__DEV__) console.warn('[scan] could not prepare photo', err);
+      toUserError(err, 'scan-photo');
       Alert.alert('Could not read image', 'Please try again.');
       return;
     }

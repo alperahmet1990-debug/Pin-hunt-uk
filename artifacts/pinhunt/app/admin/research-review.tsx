@@ -40,11 +40,18 @@ import {
   evidenceByField,
   formatValue,
   groupBySet,
+  needsStructureChoice,
+  pageCheckNote,
+  pageLabel,
+  pinsMissingStructure,
   safeExternalUrl,
   setRoute,
+  SEPARATE_PINS_NOTE,
   type CandidateStatus,
   type ResearchCandidate,
   type ResearchEvidence,
+  type ResearchPage,
+  type StructureChoice,
 } from '@/utils/researchReview';
 
 interface Run { id: string; git_commit: string; loaded_at: string; summary: { pins?: number; engineVerified?: number } }
@@ -88,6 +95,18 @@ export default function ResearchReviewScreen() {
   const [setNote, setSetNote] = useState('');
   const [setMsg, setSetMsg] = useState<string | null>(null);
   const [confirmSet, setConfirmSet] = useState(false);
+
+  // Page view: one source page, with its pins from every set. Pins always start unticked.
+  const [tab, setTab] = useState<'sets' | 'pages'>('sets');
+  const [pages, setPages] = useState<ResearchPage[]>([]);
+  const [pagesError, setPagesError] = useState<string | null>(null);
+  const [pageUrl, setPageUrl] = useState<string | null>(null);
+  const [pageCands, setPageCands] = useState<ResearchCandidate[]>([]);
+  const [pageTicked, setPageTicked] = useState<string[]>([]);
+  const [pageFields, setPageFields] = useState<string[]>([]);
+  const [pageNote, setPageNote] = useState('');
+  const [structure, setStructure] = useState<Record<string, StructureChoice | undefined>>({});
+  const [pageMsg, setPageMsg] = useState<string | null>(null);
 
   const api = useCallback(async (path: string, init?: RequestInit) => {
     const resp = await fetch(`${API_BASE}${path}`, { ...init, headers: headers() });
@@ -278,6 +297,95 @@ export default function ResearchReviewScreen() {
     }
   };
 
+  // ── Page view ──
+  const loadPages = useCallback(async () => {
+    if (!token || !runId) return;
+    try {
+      setPagesError(null);
+      const data = await api(`/admin/research/pages?${new URLSearchParams({ runId }).toString()}`);
+      setPages(data.pages ?? []);
+    } catch (e) {
+      setPagesError(e instanceof Error ? e.message : 'Could not load pages');
+    }
+  }, [api, runId, token]);
+
+  useEffect(() => { if (tab === 'pages') loadPages(); }, [tab, loadPages]);
+
+  const openPage = async (url: string) => {
+    setPageUrl(url);
+    setPageCands([]);
+    setPageTicked([]);
+    setPageFields([]);
+    setPageNote('');
+    setStructure({});
+    setPageMsg(null);
+    openSource(url);
+    try {
+      const q = new URLSearchParams({ runId: runId ?? '', url });
+      const data = await api(`/admin/research/pages/candidates?${q.toString()}`);
+      setPageCands(data.candidates ?? []);
+    } catch (e) {
+      setPageMsg(e instanceof Error ? e.message : 'Could not load the pins on this page');
+    }
+  };
+
+  const pageGroups = groupBySet(pageCands);
+  const missingStructure = pinsMissingStructure(pageCands, pageTicked, structure);
+  const togglePageTick = (id: string) => setPageTicked(prev => (prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]));
+  const togglePageField = (f: string) => setPageFields(prev => (prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]));
+
+  const recordPage = async () => {
+    if (!pageUrl || !runId) return;
+    setBusy(true);
+    const lines: string[] = [];
+    try {
+      const sepIds = pageTicked.filter(id => structure[id] === 'separate_pins');
+      const checkIds = pageTicked.filter(id => structure[id] !== 'separate_pins');
+      const titleFor = (id: string) => { const c = pageCands.find(x => x.id === id); return c ? candidateTitle(c) : 'A pin'; };
+      // "Separate pins": no check; send the pin back for more research with the note.
+      for (const id of sepIds) {
+        try {
+          await api(`/admin/research/candidates/${id}/decision`, {
+            method: 'POST', body: JSON.stringify({ decision: 'needs_more_research', notes: SEPARATE_PINS_NOTE }),
+          });
+          lines.push(`• ${titleFor(id)}: sent back for more research (separate pins)`);
+        } catch (e) {
+          lines.push(`• ${titleFor(id)}: ${e instanceof Error ? e.message : 'could not be changed'}`);
+        }
+      }
+      // One direct-check call per set, with only that set's ticked pins.
+      for (const g of pageGroups) {
+        const ids = g.items.map(c => c.id).filter(id => checkIds.includes(id));
+        if (ids.length === 0) continue;
+        const ones = ids.filter(id => { const c = pageCands.find(x => x.id === id); return c && needsStructureChoice(c); }).length;
+        try {
+          const data = await api(setRoute(runId, g.setKey, 'direct-check'), {
+            method: 'POST',
+            body: JSON.stringify({
+              source_url: pageUrl, note: pageCheckNote(pageNote, ones),
+              confirmed: ids.map(candidateId => ({ candidateId, fields: pageFields })),
+            }),
+          });
+          for (const r of data.results ?? []) lines.push(`• ${titleFor(r.candidateId)}: check recorded`);
+          for (const k of data.skipped ?? []) lines.push(`• ${titleFor(k.candidateId)}: skipped. ${k.reason}`);
+        } catch (e) {
+          lines.push(`• ${g.setKey}: ${e instanceof Error ? e.message : 'could not record the check'}`);
+        }
+      }
+      setPageMsg(lines.join('\n'));
+      setPageTicked([]);
+      await loadPages();
+      const q = new URLSearchParams({ runId, url: pageUrl });
+      const fresh = await api(`/admin/research/pages/candidates?${q.toString()}`);
+      setPageCands(fresh.candidates ?? []);
+      await loadCandidates(true);
+    } catch (e) {
+      setPageMsg([...lines, e instanceof Error ? e.message : 'Could not refresh'].join('\n'));
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const openSource = (url: string | null) => {
     const safe = safeExternalUrl(url);
     if (safe) Linking.openURL(safe);
@@ -307,6 +415,38 @@ export default function ResearchReviewScreen() {
           {actionMsg && !detail && <Text style={s.notice}>{actionMsg}</Text>}
         </View>
 
+        <SegmentedControl
+          options={[
+            { value: 'sets' as const, label: 'By set', tone: 'teal' as const },
+            { value: 'pages' as const, label: 'By page', tone: 'teal' as const },
+          ]}
+          value={tab}
+          onChange={setTab}
+        />
+
+        {tab === 'pages' ? (
+          pagesError ? <Text style={s.error}>{pagesError}</Text>
+          : pages.length === 0 ? <Text style={s.muted}>No source pages in this run.</Text>
+          : pages.map(pg => (
+            <TouchableOpacity
+              key={pg.source_url}
+              style={[s.card, s.row, { borderTopWidth: 0 }]}
+              onPress={() => openPage(pg.source_url)}
+              accessibilityRole="button"
+              accessibilityLabel={`Open page ${pageLabel(pg.source_url)}`}
+            >
+              <View style={{ flex: 1, gap: 4 }}>
+                <Text style={s.rowTitle}>{pageLabel(pg.source_url)}</Text>
+                <View style={s.chips}>
+                  <Chip label={pg.source_class ?? 'unclassified'} tone={pg.source_class === 'official' ? 'owned' : 'neutral'} size="sm" />
+                  <Chip label={`${pg.pin_count} pin${pg.pin_count === 1 ? '' : 's'}`} tone="teal" size="sm" />
+                  <Chip label={`${pg.unchecked_count} unchecked`} tone="sand" size="sm" />
+                </View>
+              </View>
+              <Feather name="chevron-right" size={18} color={colors.homeMuted} />
+            </TouchableOpacity>
+          ))
+        ) : (<>
         <SegmentedControl
           options={STATUS_FILTERS.map(f => ({ value: f.value, label: f.label, tone: 'teal' as const }))}
           value={status}
@@ -352,6 +492,7 @@ export default function ResearchReviewScreen() {
             </View>
           ))
         )}
+        </>)}
       </ScrollView>
 
       {/* Preview of a run before loading it */}
@@ -457,6 +598,96 @@ export default function ResearchReviewScreen() {
           onConfirm={approveSet}
           onCancel={() => setConfirmSet(false)}
         />
+      </Modal>
+
+      {/* Page view: one source page beside its pins from every set */}
+      <Modal visible={!!pageUrl} animationType="slide" onRequestClose={() => setPageUrl(null)}>
+        <ScrollView style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + 40, gap: spacing.lg }}>
+          <View style={s.headerRow}>
+            <Text style={[s.title, { flex: 1 }]}>{pageUrl ? pageLabel(pageUrl) : ''}</Text>
+            <Button label="Close" variant="text" onPress={() => setPageUrl(null)} />
+          </View>
+          <View style={s.card}>
+            <Text style={s.setTitle}>Page</Text>
+            <Text style={s.body}>Read the page, then tick only the pins it shows. Pins start unticked.</Text>
+            <Button label="Open page" size="compact" variant="text" icon="external-link" onPress={() => openSource(pageUrl)} />
+          </View>
+          {pageGroups.map(g => (
+            <View key={g.setKey} style={s.card}>
+              <Text style={s.setTitle}>{g.setKey}</Text>
+              {g.items.map(c => {
+                const on = pageTicked.includes(c.id);
+                const needsChoice = needsStructureChoice(c);
+                const choice = structure[c.id];
+                return (
+                  <View key={c.id} style={{ gap: spacing.sm }}>
+                    <TouchableOpacity
+                      style={s.row}
+                      onPress={() => togglePageTick(c.id)}
+                      accessibilityRole="checkbox"
+                      accessibilityState={{ checked: on }}
+                      accessibilityLabel={`Tick ${candidateTitle(c)}`}
+                    >
+                      <Feather name={on ? 'check-square' : 'square'} size={20} color={on ? colors.homeTeal : colors.homeMuted} />
+                      <View style={{ flex: 1, gap: 4 }}>
+                        <Text style={s.rowTitle}>{candidateTitle(c)}</Text>
+                        <View style={s.chips}>
+                          <Chip label={c.status.replace(/_/g, ' ')} tone="teal" size="sm" />
+                          <Chip label={c.record_confidence} tone={confidenceTone(c.record_confidence)} size="sm" />
+                        </View>
+                      </View>
+                    </TouchableOpacity>
+                    {needsChoice && (
+                      <View style={s.chips}>
+                        {([['one_pin', 'One pin showing all of these'], ['separate_pins', 'Separate pins']] as const).map(([val, label]) => (
+                          <TouchableOpacity
+                            key={val}
+                            onPress={() => setStructure(prev => ({ ...prev, [c.id]: val }))}
+                            style={[s.toggle, choice === val && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeTeal }]}
+                            accessibilityRole="radio"
+                            accessibilityState={{ selected: choice === val }}
+                            accessibilityLabel={`${label}: ${candidateTitle(c)}`}
+                          >
+                            <Text style={s.v}>{choice === val ? '✓ ' : ''}{label}</Text>
+                          </TouchableOpacity>
+                        ))}
+                      </View>
+                    )}
+                  </View>
+                );
+              })}
+            </View>
+          ))}
+          <View style={s.card}>
+            <Text style={s.setTitle}>What the page confirms ({pageTicked.length} ticked)</Text>
+            <View style={s.chips}>
+              {CHECKABLE_FIELDS.map(f => {
+                const on = pageFields.includes(f.field);
+                return (
+                  <TouchableOpacity
+                    key={f.field}
+                    onPress={() => togglePageField(f.field)}
+                    style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeTeal }]}
+                    accessibilityRole="checkbox"
+                    accessibilityState={{ checked: on }}
+                  >
+                    <Text style={s.v}>{on ? '✓ ' : ''}{f.label}</Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+            <TextInput style={[s.input, { minHeight: 64 }]} value={pageNote} onChangeText={setPageNote} multiline maxLength={200}
+              placeholder="Note (optional)" placeholderTextColor={colors.homeMuted} accessibilityLabel="Page note" />
+            {missingStructure.length > 0 && (
+              <Text style={s.error}>Choose one pin or separate pins for: {missingStructure.map(candidateTitle).join(', ')}</Text>
+            )}
+            <Button label="Record page check" icon="check" loading={busy}
+              disabled={pageTicked.length === 0 || missingStructure.length > 0
+                || (pageTicked.some(id => structure[id] !== 'separate_pins') && pageFields.length === 0)}
+              onPress={recordPage} />
+            {pageMsg && <Text style={s.notice}>{pageMsg}</Text>}
+          </View>
+        </ScrollView>
       </Modal>
 
       {/* Candidate detail */}

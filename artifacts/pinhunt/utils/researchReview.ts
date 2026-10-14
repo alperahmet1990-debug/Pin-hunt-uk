@@ -124,3 +124,52 @@ export function describeSetDecision(result: SetDecisionResult, titleOf: (id: str
   if (result.skipped.length === 0) return head;
   return `${head}\nStill pending:\n${result.skipped.map(s => `• ${titleOf(s.candidateId)}: ${s.reason}`).join('\n')}`;
 }
+
+// ── Review by page ──
+
+export interface ResearchPage {
+  source_url: string;
+  source_class: string | null;
+  pin_count: number;
+  unchecked_count: number;
+  set_keys: string[];
+}
+
+export type StructureChoice = 'one_pin' | 'separate_pins';
+
+export const SEPARATE_PINS_NOTE = 'structure: separate pins on source';
+
+/** Character names listed on a candidate (a string or an array in `proposed`). */
+export function characterNames(c: Pick<ResearchCandidate, 'proposed'>): string[] {
+  const raw = c.proposed['Characters'];
+  const parts = Array.isArray(raw) ? raw.map(String) : typeof raw === 'string' ? raw.split(/[,;&/]|\band\b/i) : [];
+  return [...new Set(parts.map(p => p.trim()).filter(Boolean))];
+}
+
+/** Two or more characters, or a `structure:` review reason: the reviewer must say one pin or several. */
+export function needsStructureChoice(c: Pick<ResearchCandidate, 'proposed' | 'review_reasons'>): boolean {
+  return characterNames(c).length >= 2 || c.review_reasons.some(r => r.startsWith('structure:'));
+}
+
+/** Ticked pins that still lack a required structure choice. */
+export function pinsMissingStructure(
+  cands: ResearchCandidate[], ticked: string[], choices: Record<string, StructureChoice | undefined>,
+): ResearchCandidate[] {
+  return cands.filter(c => ticked.includes(c.id) && needsStructureChoice(c) && !choices[c.id]);
+}
+
+/** Note sent with a set check; "one pin" answers travel with it so they stay on record (240 characters max). */
+export function pageCheckNote(userNote: string, oneStructureCount: number): string | null {
+  const parts = [userNote.trim(), oneStructureCount > 0 ? `structure: one pin showing all characters (${oneStructureCount})` : '']
+    .filter(Boolean);
+  return parts.length ? parts.join(' · ').slice(0, 240) : null;
+}
+
+export function pageLabel(url: string): string {
+  try {
+    const u = new URL(url);
+    return `${u.hostname.replace(/^www\./, '')}${u.pathname === '/' ? '' : u.pathname}`;
+  } catch {
+    return url;
+  }
+}

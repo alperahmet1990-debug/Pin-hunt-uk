@@ -6,7 +6,8 @@
  * pin, and records approve / reject / needs-more-research decisions.
  *
  * Deliberately NO import route: approved candidates are not written to `pins`
- * until a separately approved import step exists.
+ * until a separately approved import step exists. The import dry run
+ * (research-import.ts) writes nothing.
  *
  * POST /api/admin/research/runs/preview            validate a payload (no writes)
  * POST /api/admin/research/runs                    load a validated payload into staging
@@ -37,7 +38,7 @@ import {
 
 const router: IRouter = Router();
 
-interface CreatorRequest extends Request {
+export interface CreatorRequest extends Request {
   creatorId?: string;
 }
 
@@ -48,14 +49,14 @@ function getAnonClient(): SupabaseClient {
   return createClient(url, key, { auth: { persistSession: false } });
 }
 
-function getAdminClient(): SupabaseClient {
+export function getAdminClient(): SupabaseClient {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) throw new Error("SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not set");
   return createClient(url, key, { auth: { persistSession: false } });
 }
 
-async function requireAppCreator(req: CreatorRequest, res: Response, next: () => void) {
+export async function requireAppCreator(req: CreatorRequest, res: Response, next: () => void) {
   const auth = req.headers.authorization;
   if (!auth?.startsWith("Bearer ")) {
     res.status(401).json({ error: "Missing Authorization header" });
@@ -75,7 +76,7 @@ async function requireAppCreator(req: CreatorRequest, res: Response, next: () =>
 }
 
 /** Generic client error; details stay in the server log. */
-function fail(res: Response, where: string, err: unknown) {
+export function fail(res: Response, where: string, err: unknown) {
   const code = (err as { code?: string } | null)?.code;
   logger.error({ err, where }, "[research-review] failed");
   if (code === "42P01") {
@@ -85,7 +86,7 @@ function fail(res: Response, where: string, err: unknown) {
   res.status(500).json({ error: "Research review request failed" });
 }
 
-const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+export const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const STATUSES = new Set(["researched", "needs_direct_verification", "direct_verified", "approved", "rejected",
   "needs_more_research", "imported", "superseded"]);
 const OFFICIAL_DOMAINS = [

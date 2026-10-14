@@ -66,13 +66,22 @@ def score(payload, blind):
             cs = chars_of(c)
             ident = all(any(mentions(p["subject"], n) for p in r["pins"]) for n in cs)
             group = ident and frozenset(cs) in bsets
+            blocked = any(x.startswith("conflict:") for x in c["review_reasons"])
             res["pins"] += 1
+            res["blocked"] += blocked
+            if not blocked:
+                res["open_pins"] += 1
+                res["open_identity_ok"] += ident
+                res["open_grouping_ok"] += group
+                res["open_grouping_judged"] += ident
+            elif not (ident and group):
+                res["errors_caught_by_block"] += 1
             res["identity_ok"] += ident
             res["grouping_ok"] += group
             res["grouping_judged"] += ident
             row = {"release": r["key"], "pin": c["research_key"].rsplit("/", 1)[-1], "confidence": c["record_confidence"],
                    "our_characters": "; ".join(cs), "identity": "ok" if ident else "NOT FOUND",
-                   "grouping": "ok" if group else ("WRONG" if ident else "n/a")}
+                   "grouping": "ok" if group else ("WRONG" if ident else "n/a"), "blocked": "yes" if blocked else ""}
             match = next((p for p, b in zip(r["pins"], bsets) if b == frozenset(cs)), None)
             for fld, ours_v, theirs_v in [
                 ("edition_size", c["proposed"].get("Edition size"), (match or {}).get("edition_size")),
@@ -104,6 +113,8 @@ if __name__ == "__main__":
     print(f"identity  : {pct(res['identity_ok'], res['pins'])}")
     print(f"grouping  : {pct(res['grouping_ok'], res['grouping_judged'])} (of pins whose identity was found)")
     print(f"edition sz: {pct(res['edition_size_ok'], res['edition_size_judged'])}")
+    print(f"blocked for review (conflicts): {res['blocked']}; errors caught by a block: {res['errors_caught_by_block']}")
+    print(f"approvable pins only: identity {pct(res['open_identity_ok'], res['open_pins'])}, grouping {pct(res['open_grouping_ok'], res['open_grouping_judged'])}")
     print(f"completeness: blind check named {res['blind_pins']} pins, {res['blind_only']} with no counterpart in ours")
     if len(sys.argv) > 3:
         keys = sorted({k for r in rows for k in r})

@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "d99d46e18dd5",
+ "git_commit": "5f4e34424548",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -23324,8 +23324,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23366,6 +23365,16 @@
      "method": "search_snippet",
      "note": "stated March 9th",
      "claim_ref": "C07459"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-march-2024-pin-release-schedule/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "March 9 themed pins: Alice, Mad Hatter with March Hare, Cheshire Cat, White Rabbit",
+     "claim_ref": "C08615"
     }
    ]
   },
@@ -23668,9 +23677,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -23720,6 +23727,16 @@
      "method": "search_snippet",
      "note": "stated November 23",
      "claim_ref": "C07424"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/10/30/disneyland-paris-november-2024-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "on November 23 the limited edition pin is Ariel and Eric",
+     "claim_ref": "C08597"
     }
    ]
   },
@@ -23742,8 +23759,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23771,6 +23787,16 @@
      "method": "search_snippet",
      "note": "Stated open edition",
      "claim_ref": "C04936"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/10/30/disneyland-paris-november-2024-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Aristocats OE pins listed as Marie, Duchesse & Marie, Berlioz & Toulouse, Duchesse and O'Malley; Berlioz & Toulouse is one entry",
+     "claim_ref": "C08599"
     }
    ]
   },
@@ -23793,8 +23819,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23822,6 +23847,16 @@
      "method": "search_snippet",
      "note": "Stated open edition",
      "claim_ref": "C04934"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/10/30/disneyland-paris-november-2024-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Aristocats OE pins listed as Marie, Duchesse & Marie, Berlioz & Toulouse, Duchesse and O'Malley; Duchesse & Marie is one entry",
+     "claim_ref": "C08598"
     }
    ]
   },
@@ -23844,8 +23879,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23873,6 +23907,16 @@
      "method": "search_snippet",
      "note": "Stated open edition",
      "claim_ref": "C04938"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/10/30/disneyland-paris-november-2024-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Aristocats OE pins listed as Marie, Duchesse & Marie, Berlioz & Toulouse, Duchesse and O'Malley; Duchesse and O'Malley is one entry",
+     "claim_ref": "C08600"
     }
    ]
   },
@@ -24265,8 +24309,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -24284,6 +24327,16 @@
      "method": "search_snippet",
      "note": "Character named among the four Aug 10 pins",
      "claim_ref": "C02716"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/07/29/disneyland-paris-august-2024-pins-feature-stitch-beauty-and-the-beast-and-more/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "four BatB pins on Aug 10; designs Belle, Lumiere, Cogsworth, and Mrs. Potts with Chip; no Beast pin",
+     "claim_ref": "C08604"
     }
    ]
   },
@@ -24413,8 +24466,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -24432,6 +24484,16 @@
      "method": "search_snippet",
      "note": "Named Christmas OE pin",
      "claim_ref": "C02746"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/10/30/disneyland-paris-november-2024-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "OE Christmas pins listed as Pooh, Pooh with Piglet, Tigger and Eeyore",
+     "claim_ref": "C08601"
     }
    ]
   },
@@ -25031,8 +25093,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25060,6 +25121,16 @@
      "method": "search_snippet",
      "note": "LE 700",
      "claim_ref": "C02704"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "June 16: a Father's Day pin featuring Judy and Stu Hopps",
+     "claim_ref": "C08605"
     }
    ]
   },
@@ -25083,9 +25154,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -25125,6 +25194,16 @@
      "method": "search_snippet",
      "note": "roundup names Gaston & Belle pin",
      "claim_ref": "C07421"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/10/30/disneyland-paris-november-2024-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "November starts with Gaston and Belle in a Limited Edition pin booked via Lineberty",
+     "claim_ref": "C08596"
     }
    ]
   },
@@ -25380,8 +25459,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25439,6 +25517,16 @@
      "method": "search_snippet",
      "note": "LE 700",
      "claim_ref": "C02743"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/209670",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "entry describes one cake pin with Dale on the left and Chip on the right; back marked LE /700",
+     "claim_ref": "C08602"
     }
    ]
   },
@@ -25682,8 +25770,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25701,6 +25788,16 @@
      "method": "search_snippet",
      "note": "Named pin pairing in Mousesteps June list",
      "claim_ref": "C02706"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "four Inside Out 2 pins pairing emotions; Anger with Ennui is one of the four",
+     "claim_ref": "C08607"
     }
    ]
   },
@@ -25724,8 +25821,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25744,6 +25840,16 @@
      "method": "search_snippet",
      "note": "Named pin pairing in Mousesteps June list",
      "claim_ref": "C02707"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "four Inside Out 2 pins pairing emotions; Disgust and Fear with Envy is one of the four",
+     "claim_ref": "C08608"
     }
    ]
   },
@@ -25767,8 +25873,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25786,6 +25891,16 @@
      "method": "search_snippet",
      "note": "Named pin pairing in Mousesteps June list",
      "claim_ref": "C02705"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "four Inside Out 2 pins pairing emotions; Embarrassment with Sadness is one of the four",
+     "claim_ref": "C08606"
     }
    ]
   },
@@ -25809,8 +25924,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25828,6 +25942,16 @@
      "method": "search_snippet",
      "note": "Named pin pairing in Mousesteps June list",
      "claim_ref": "C02708"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "four Inside Out 2 pins pairing emotions; Joy with Anxiety is one of the four",
+     "claim_ref": "C08609"
     }
    ]
   },
@@ -25893,8 +26017,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25912,6 +26035,16 @@
      "method": "search_snippet",
      "note": "Minnie with Daisy LE 700 pin Sept 14",
      "claim_ref": "C02728"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/08/29/disneyland-paris-pin-release-schedule-for-september-2024-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Sept 14 LE 700 pins listed as Mickey, then Minnie with Daisy",
+     "claim_ref": "C08603"
     }
    ]
   },
@@ -26541,8 +26674,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26561,6 +26693,16 @@
      "method": "search_snippet",
      "note": "June 8, 2024 Toy Story Alien pins cosplaying other Pixar characters; this design named in schedule",
      "claim_ref": "C04940"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Alien pins listed one per item, cosplaying as pairs; 'Carl and Russell' is one listed item (aliens per pin not stated)",
+     "claim_ref": "C08611"
     }
    ]
   },
@@ -26583,8 +26725,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26603,6 +26744,16 @@
      "method": "search_snippet",
      "note": "June 8, 2024 Toy Story Alien pins cosplaying other Pixar characters; this design named in schedule",
      "claim_ref": "C04942"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Alien pins listed one per item, cosplaying as pairs; 'Mr. Incredible and Edna Mode' is one listed item (aliens per pin not stated)",
+     "claim_ref": "C08613"
     }
    ]
   },
@@ -26625,8 +26776,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26645,6 +26795,16 @@
      "method": "search_snippet",
      "note": "June 8, 2024 Toy Story Alien pins cosplaying other Pixar characters; this design named in schedule",
      "claim_ref": "C04943"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Alien pins listed one per item, cosplaying as pairs; 'Sadness and Anger' is one listed item (aliens per pin not stated)",
+     "claim_ref": "C08614"
     }
    ]
   },
@@ -26667,8 +26827,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26687,6 +26846,16 @@
      "method": "search_snippet",
      "note": "June 8, 2024 Toy Story Alien pins cosplaying other Pixar characters; this design named in schedule",
      "claim_ref": "C04941"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Alien pins listed one per item, cosplaying as pairs; 'Sully and Boo' is one listed item (aliens per pin not stated)",
+     "claim_ref": "C08612"
     }
    ]
   },
@@ -26709,8 +26878,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26729,6 +26897,16 @@
      "method": "search_snippet",
      "note": "June 8, 2024 Toy Story Alien pins cosplaying other Pixar characters; this design named in schedule",
      "claim_ref": "C04939"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/05/27/disneyland-paris-pins-for-june-2024-revealed-including-disney-pride-and-inside-out-2/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Alien pins listed one per item, cosplaying as pairs; 'Woody and Jessie' is one listed item (aliens per pin not stated)",
+     "claim_ref": "C08610"
     }
    ]
   },
@@ -26985,9 +27163,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -27047,6 +27223,26 @@
      "method": "search_snippet",
      "note": "May 2025 preview; no day given",
      "claim_ref": "C08291"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneymouseketeer.com/disneyland-paris-may-2025-pins-preview-sheet-schedule/",
+     "publisher": "disneymouseketeer.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "preview counts Stitch and Angel as one of three LE 700 pins in May",
+     "claim_ref": "C08584"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/05/01/disneyland-paris-pin-releases-for-may-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "schedule lists Angel with Stitch as the second LE pin, May 31",
+     "claim_ref": "C08585"
     }
    ]
   },
@@ -27069,8 +27265,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -27088,6 +27283,16 @@
      "method": "search_snippet",
      "note": "Flyer names this LE",
      "claim_ref": "C03418"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-april-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists one Berlioz & Toulouse LE 700 pin at EUR 18, April 26",
+     "claim_ref": "C08587"
     }
    ]
   },
@@ -27196,9 +27401,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -27288,6 +27491,16 @@
      "method": "search_snippet",
      "note": "euro price",
      "claim_ref": "C07440"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-september-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists one Captain Hook & Peter Pan villains pin, LE 700, EUR 20, Sept 13",
+     "claim_ref": "C08575"
     }
    ]
   },
@@ -27669,8 +27882,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -27701,6 +27913,16 @@
      "method": "search_snippet",
      "note": "Second claim: Jaq and Gus pin among Cinderella 75th LEs",
      "claim_ref": "C05019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/01/29/disneyland-paris-shares-february-2025-pin-releases/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Cinderella 75th LE includes a pin with Jaq and Gus",
+     "claim_ref": "C08593"
     }
    ]
   },
@@ -27724,8 +27946,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -27756,6 +27977,16 @@
      "method": "search_snippet",
      "note": "Second claim as stated by schedule summary (sic)",
      "claim_ref": "C05020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/01/29/disneyland-paris-shares-february-2025-pin-releases/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "snippet says one pin with Snow White and Prince Charming (pairing as stated by source)",
+     "claim_ref": "C08594"
     }
    ]
   },
@@ -27820,9 +28051,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -27891,6 +28120,16 @@
      "method": "search_snippet",
      "note": "May 2025 preview; no day given",
      "claim_ref": "C08287"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneymouseketeer.com/disneyland-paris-may-2025-pins-preview-sheet-schedule/",
+     "publisher": "disneymouseketeer.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "preview names a single Villains Cruella x Roger LE pin, one of three LE 700 pins in May",
+     "claim_ref": "C08583"
     }
    ]
   },
@@ -28501,9 +28740,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -28543,6 +28780,16 @@
      "method": "search_snippet",
      "note": "called a Limited Edition pin",
      "claim_ref": "C07411"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/02/26/disneyland-paris-pin-releases-for-march-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "schedule says there is one LE pin, Duchess and O'Malley, on March 8",
+     "claim_ref": "C08588"
     }
    ]
   },
@@ -28562,7 +28809,8 @@
     "Release scope": "France",
     "Categories": "Dumbo and Rabbit butterfly limited edition pins",
     "Collection name": "Dumbo and Rabbit butterfly limited edition pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 2,
+    "Set count check": "complete",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
@@ -28622,7 +28870,8 @@
     "Release scope": "France",
     "Categories": "Dumbo and Rabbit butterfly limited edition pins",
     "Collection name": "Dumbo and Rabbit butterfly limited edition pins",
-    "Set count check": "unknown (no expected count claimed)"
+    "Expected pin count": 2,
+    "Set count check": "complete"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
@@ -28687,9 +28936,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -28741,6 +28988,16 @@
      "method": "search_snippet",
      "note": "stated release April 19",
      "claim_ref": "C07406"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-april-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists one Easter Huey, Dewey & Louie LE 700 pin at EUR 18, April 19",
+     "claim_ref": "C08586"
     }
    ]
   },
@@ -29073,9 +29330,10 @@
     "Set count check": "unknown (no expected count claimed)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
+   "engine_verified": false,
    "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "conflict: pin_structure: a source says these characters are on separate pins",
+    "conflict: grouping: source shows Goofy and Rafiki as two separate LE pins; Rafiki proposed as dlp/2025/goofy-le-2025-07/rafiki"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29115,6 +29373,58 @@
      "method": "search_snippet",
      "note": "described as limited edition",
      "claim_ref": "C07415"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.mousesteps.com/2025/06/30/disneyland-paris-pins-for-july-2025-revealed-including-ratatouille-disney-music-festival/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "schedule lists two LE pins, Goofy and Rafiki, each reserved via Lineberty (Goofy and Rafiki not on one pin)",
+     "claim_ref": "C08581"
+    }
+   ]
+  },
+  {
+   "research_key": "dlp/2025/goofy-le-2025-07/rafiki",
+   "entity_type": "pin",
+   "set_research_key": "dlp/2025/goofy-le-2025-07",
+   "proposed": {
+    "Pin name": "Rafiki \u2013 Goofy limited edition pin (July)",
+    "Series": "Goofy limited edition pin (July)",
+    "Characters": "Rafiki",
+    "Main character": "Rafiki",
+    "Release year": 2025,
+    "Release date": "2025-07",
+    "Edition type": "limited edition",
+    "Park / Retailer": "Disneyland Paris",
+    "Release scope": "France",
+    "Categories": "Goofy limited edition pin (July)",
+    "Collection name": "Goofy limited edition pin (July)",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Rafiki"
+     ],
+     "source_url": "https://www.mousesteps.com/2025/06/30/disneyland-paris-pins-for-july-2025-revealed-including-ratatouille-disney-music-festival/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Rafiki named as the second of two LE pins released alongside Goofy in July 2025",
+     "claim_ref": "C08582"
     }
    ]
   },
@@ -29179,9 +29489,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -29240,6 +29548,16 @@
      "method": "search_snippet",
      "note": "released on the 2nd (August 2025)",
      "claim_ref": "C07433"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneymouseketeer.com/disneyland-paris-august-2025-pins-preview-sheet-schedule/",
+     "publisher": "disneymouseketeer.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "preview describes one LE 700 Villains pin featuring Hades x Hercules, releasing Aug 2",
+     "claim_ref": "C08580"
     }
    ]
   },
@@ -29268,8 +29586,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29337,6 +29654,16 @@
      "method": "search_snippet",
      "note": "Euro pricing",
      "claim_ref": "C05004"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-september-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists a single item 'Halloween Mickey & Minnie - Hot Air Balloon', LE 800, EUR 18",
+     "claim_ref": "C08576"
     }
    ]
   },
@@ -29461,7 +29788,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "conflict: pin_structure: a source says these characters are on separate pins",
+    "conflict: grouping: source shows a 2-pin set, not one pin; which character is on each pin not stated in snippet"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29519,6 +29847,16 @@
      "method": "search_snippet",
      "note": "Euro pricing",
      "claim_ref": "C04967"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-september-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists Halloween Chip & Dale as a set of 2 pins (EUR 15, open edition)",
+     "claim_ref": "C08578"
     }
    ]
   },
@@ -29801,8 +30139,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29860,6 +30197,16 @@
      "method": "search_snippet",
      "note": "Euro pricing",
      "claim_ref": "C04977"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-september-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists one Mickey & Minnie Castle pin at EUR 12",
+     "claim_ref": "C08579"
     }
    ]
   },
@@ -29973,7 +30320,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "conflict: pin_structure: a source says these characters are on separate pins",
+    "conflict: grouping: source shows a 2-pin set, not one pin; which character is on each pin not stated in snippet"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -30031,6 +30379,16 @@
      "method": "search_snippet",
      "note": "Euro pricing",
      "claim_ref": "C04962"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-september-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists Halloween Stitch & Scrump as a 2-pin set (EUR 15, open edition)",
+     "claim_ref": "C08577"
     }
    ]
   },
@@ -30433,8 +30791,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -30452,6 +30809,16 @@
      "method": "search_snippet",
      "note": "Lady and Tramp LE",
      "claim_ref": "C03367"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/01/29/disneyland-paris-shares-february-2025-pin-releases/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "first of four LE pins on February 15 is Lady and Tramp",
+     "claim_ref": "C08592"
     }
    ]
   },
@@ -30475,10 +30842,10 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
+   "review_reasons": [],
+   "warnings": [
+    "variants: release_date"
    ],
-   "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -30529,6 +30896,26 @@
      "method": "search_snippet",
      "note": "preview calls it a Limited Edition pin",
      "claim_ref": "C07403"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/01/29/disneyland-paris-shares-february-2025-pin-releases/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Lady Tremaine pin with a Cinderella silhouette, LE 700, listed as one pin",
+     "claim_ref": "C08590"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://medium.com/@disney_mouseketeer/disneyland-paris-february-2025-pins-preview-sheet-schedule-77f6c793773a",
+     "publisher": "medium.com",
+     "source_class": "unclassified",
+     "method": "search_snippet",
+     "note": "preview names one LE Cinderella and Lady Tremaine pin",
+     "claim_ref": "C08591"
     }
    ]
   },
@@ -30879,9 +31266,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -30911,6 +31296,16 @@
      "method": "search_snippet",
      "note": "Named LE subject",
      "claim_ref": "C03382"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/02/26/disneyland-paris-pin-releases-for-march-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "one of three LE pins on March 15: Maleficent with Aurora in silhouette",
+     "claim_ref": "C08589"
     }
    ]
   },
@@ -31174,8 +31569,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -31193,6 +31587,16 @@
      "method": "search_snippet",
      "note": "Megara and Hercules LE pin",
      "claim_ref": "C03362"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2024/12/27/disneyland-paris-january-2025-pins-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "January 25: a Megara and Hercules LE 700 pin",
+     "claim_ref": "C08595"
     }
    ]
   },
@@ -31578,9 +31982,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31630,6 +32032,16 @@
      "method": "search_snippet",
      "note": "released September 6",
      "claim_ref": "C07443"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-september-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "flyer lists a single Mickey & Minnie Moon LE 700 item at EUR 25 via Lineberty",
+     "claim_ref": "C08574"
     }
    ]
   },
@@ -31705,9 +32117,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31737,6 +32147,26 @@
      "method": "search_snippet",
      "note": "Named LE",
      "claim_ref": "C03475"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-october-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Lunar Series - Miss Bunny & Thumper' as one LE 700 item at 25 EUR, Oct 11 2025",
+     "claim_ref": "C08624"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/09/29/disneyland-paris-october-2025-pins-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Says a limited edition pin featuring Miss Bunny and Thumper is available via Lineberty",
+     "claim_ref": "C08625"
     }
    ]
   },
@@ -31749,7 +32179,7 @@
     "Series": "Mother Gothel limited edition pin",
     "Characters": "Mother Gothel; Rapunzel",
     "Release year": 2025,
-    "Release date": "2025-01-08",
+    "Release date": "2025-01-11",
     "Edition type": "limited",
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
@@ -31761,9 +32191,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31824,6 +32252,26 @@
      "method": "search_snippet",
      "note": "described as a limited edition pin",
      "claim_ref": "C07401"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://pixiedustdlp.com/2024/12/28/disneyland-paris-pin-trading-january-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Describes a Rapunzel and Mother Gothel pin with Liberty ticket (single pin)",
+     "claim_ref": "C08626"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01-11",
+     "source_url": "http://pixiedustdlp.com/2024/12/28/disneyland-paris-pin-trading-january-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Places the Rapunzel and Mother Gothel pin on Jan 11, 2025",
+     "claim_ref": "C08627"
     }
    ]
   },
@@ -31886,9 +32334,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31938,6 +32384,16 @@
      "method": "search_snippet",
      "note": "stated release April 19",
      "claim_ref": "C07409"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-april-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists a single Nala & Simba 'Moon' LE 700 item at 25 EUR on Apr 19, 2025",
+     "claim_ref": "C08628"
     }
    ]
   },
@@ -31994,6 +32450,48 @@
    ]
   },
   {
+   "research_key": "dlp/2025/pajama-party-2025-10-17/chip",
+   "entity_type": "pin",
+   "set_research_key": "dlp/2025/pajama-party-2025-10-17",
+   "proposed": {
+    "Pin name": "Chip \u2013 Pajama Party pins",
+    "Series": "Pajama Party pins",
+    "Characters": "Chip",
+    "Main character": "Chip",
+    "Release year": 2025,
+    "Release date": "2025-10-17",
+    "Park / Retailer": "Disneyland Paris",
+    "Release scope": "France",
+    "Categories": "Pajama Party pins",
+    "Collection name": "Pajama Party pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=49181",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Fan DB (secondary) lists a Chip-only entry tied to the Pajama Party Chip & Dale pin set",
+     "claim_ref": "C08634"
+    }
+   ]
+  },
+  {
    "research_key": "dlp/2025/pajama-party-2025-10-17/chip-and-dale",
    "entity_type": "pin",
    "set_research_key": "dlp/2025/pajama-party-2025-10-17",
@@ -32017,7 +32515,8 @@
    "engine_verified": false,
    "review_reasons": [
     "conflict: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "conflict: pin_structure: a source says these characters are on separate pins",
+    "conflict: grouping: fan DB suggests a 2-pin set (keys .../chip and .../dale); needs a non-fan-DB source to confirm"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -32131,6 +32630,16 @@
      "method": "search_snippet",
      "note": "price given in euros",
      "claim_ref": "C07397"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=49181",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Fan DB (secondary) lists a Chip & Dale 'Pin Set' at 15 EUR plus separate Chip-only and Dale-only entries",
+     "claim_ref": "C08633"
     }
    ]
   },
@@ -32215,6 +32724,48 @@
      "method": "search_snippet",
      "note": "preview places the set's release on October 17",
      "claim_ref": "C07386"
+    }
+   ]
+  },
+  {
+   "research_key": "dlp/2025/pajama-party-2025-10-17/dale",
+   "entity_type": "pin",
+   "set_research_key": "dlp/2025/pajama-party-2025-10-17",
+   "proposed": {
+    "Pin name": "Dale \u2013 Pajama Party pins",
+    "Series": "Pajama Party pins",
+    "Characters": "Dale",
+    "Main character": "Dale",
+    "Release year": 2025,
+    "Release date": "2025-10-17",
+    "Park / Retailer": "Disneyland Paris",
+    "Release scope": "France",
+    "Categories": "Pajama Party pins",
+    "Collection name": "Pajama Party pins",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=49181",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Fan DB (secondary) lists a Dale-only entry tied to the Pajama Party Chip & Dale pin set",
+     "claim_ref": "C08635"
     }
    ]
   },
@@ -32404,8 +32955,10 @@
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
-   "review_reasons": [],
+   "engine_verified": false,
+   "review_reasons": [
+    "conflict: grouping: source shows a combined pin dlp/2025/pajama-party-2025-10-17/mickey-and-minnie (secondary fan DB only)"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -32467,6 +33020,56 @@
    ]
   },
   {
+   "research_key": "dlp/2025/pajama-party-2025-10-17/mickey-and-minnie",
+   "entity_type": "pin",
+   "set_research_key": "dlp/2025/pajama-party-2025-10-17",
+   "proposed": {
+    "Series": "Pajama Party pins",
+    "Characters": "Mickey Mouse; Minnie Mouse",
+    "Release year": 2025,
+    "Release date": "2025-10-17",
+    "Park / Retailer": "Disneyland Paris",
+    "Release scope": "France",
+    "Categories": "Pajama Party pins",
+    "Collection name": "Pajama Party pins",
+    "Set count check": "unknown (no expected count claimed)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "missing: edition_type"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=49180",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Fan DB (secondary) lists one Pajama Party Mickey & Minnie pin, OE 12 EUR, 10/17/2025",
+     "claim_ref": "C08631"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=49180",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Fan DB says the pair share one pin with popcorn and a movie",
+     "claim_ref": "C08632"
+    }
+   ]
+  },
+  {
    "research_key": "dlp/2025/pajama-party-2025-10-17/minnie",
    "entity_type": "pin",
    "set_research_key": "dlp/2025/pajama-party-2025-10-17",
@@ -32486,8 +33089,10 @@
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
-   "review_reasons": [],
+   "engine_verified": false,
+   "review_reasons": [
+    "conflict: grouping: source shows a combined pin dlp/2025/pajama-party-2025-10-17/mickey-and-minnie (secondary fan DB only)"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -32952,6 +33557,16 @@
      "method": "search_snippet",
      "note": "Snippet: Scrooge, Donald and the Beagle Boys on three other pins; one-subject-per-pin mapping is the snippet's wording",
      "claim_ref": "C05017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/07/29/disneyland-paris-pins-for-august-2025-revealed-including-picsou-magazine-theme/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Beagle Boys are on one of the three other pins",
+     "claim_ref": "C08637"
     }
    ]
   },
@@ -33061,8 +33676,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -33097,6 +33711,16 @@
      "method": "search_snippet",
      "note": "Aug 16: Scrooge and the nephews on one pin (second claim on existing pin)",
      "claim_ref": "C05014"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/07/29/disneyland-paris-pins-for-august-2025-revealed-including-picsou-magazine-theme/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "States Scrooge and the nephews are on one pin",
+     "claim_ref": "C08636"
     }
    ]
   },
@@ -33320,9 +33944,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -33362,6 +33984,26 @@
      "method": "search_snippet",
      "note": "listed among limited edition pins",
      "claim_ref": "C07501"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Lists a 101 Dalmatians LE pin featuring Pongo and Perdita",
+     "claim_ref": "C08638"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-07-26",
+     "source_url": "https://www.mousesteps.com/2025/06/30/disneyland-paris-pins-for-july-2025-revealed-including-ratatouille-disney-music-festival/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Places the 101 Dalmatians LE pin on Saturday July 26",
+     "claim_ref": "C08639"
     }
    ]
   },
@@ -33428,7 +34070,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "possible cross-set duplicate of dlp/2025/goofy-le-2025-07/rafiki"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -34097,7 +34741,7 @@
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Categories": "Stitch as Disney Villains series",
-    "Notes": "Stitch dressed as Cruella De Vil",
+    "Notes": "Stitch dressed as Cruella De Vil | Stitch wearing Cruella's coat",
     "Collection name": "Stitch as Disney Villains series",
     "Set count check": "unknown (no expected count claimed)",
     "pin_name_source": "composed display label (subject \u2013 set)"
@@ -34162,6 +34806,26 @@
      "method": "search_snippet",
      "note": "release dated March 8th",
      "claim_ref": "C07464"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch wearing Cruella's coat",
+     "source_url": "https://www.mousesteps.com/2025/02/26/disneyland-paris-pin-releases-for-march-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mar 8 2025 release lists Stitch wearing Cruella's coat among the villain looks; costume distinguishes this pin from the others",
+     "claim_ref": "C08707"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch wearing Cruella's coat",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-pin-release-march-2025/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mar 8 LE series lists Stitch wearing Cruella's coat as one of the villain looks",
+     "claim_ref": "C08708"
     }
    ]
   },
@@ -34180,7 +34844,7 @@
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Categories": "Stitch as Disney Villains series",
-    "Notes": "Stitch dressed as Evil Queen",
+    "Notes": "Stitch dressed as Evil Queen | Stitch dressed as the Evil Queen",
     "Collection name": "Stitch as Disney Villains series",
     "Set count check": "unknown (no expected count claimed)",
     "pin_name_source": "composed display label (subject \u2013 set)"
@@ -34247,6 +34911,26 @@
      "method": "search_snippet",
      "note": "release dated March 8th",
      "claim_ref": "C07473"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch dressed as the Evil Queen",
+     "source_url": "https://www.mousesteps.com/2025/02/26/disneyland-paris-pin-releases-for-march-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mar 8 2025 release lists Stitch dressed as the Evil Queen among the villain looks; costume distinguishes this pin from the others",
+     "claim_ref": "C08713"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch dressed as the Evil Queen",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-pin-release-march-2025/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mar 8 LE series lists Stitch dressed as the Evil Queen as one of the villain looks",
+     "claim_ref": "C08714"
     }
    ]
   },
@@ -34332,6 +35016,26 @@
      "method": "search_snippet",
      "note": "release dated March 8th",
      "claim_ref": "C07470"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch dressed as Ursula",
+     "source_url": "https://www.mousesteps.com/2025/02/26/disneyland-paris-pin-releases-for-march-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mar 8 2025 release lists Stitch dressed as Ursula among the villain looks; costume distinguishes this pin from the others",
+     "claim_ref": "C08711"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch dressed as Ursula",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-pin-release-march-2025/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mar 8 LE series lists Stitch dressed as Ursula as one of the villain looks",
+     "claim_ref": "C08712"
     }
    ]
   },
@@ -34417,6 +35121,26 @@
      "method": "search_snippet",
      "note": "release dated March 8th",
      "claim_ref": "C07467"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch dressed as Yzma",
+     "source_url": "https://www.mousesteps.com/2025/02/26/disneyland-paris-pin-releases-for-march-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mar 8 2025 release lists Stitch dressed as Yzma among the villain looks; costume distinguishes this pin from the others",
+     "claim_ref": "C08709"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch dressed as Yzma",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-pin-release-march-2025/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mar 8 LE series lists Stitch dressed as Yzma as one of the villain looks",
+     "claim_ref": "C08710"
     }
    ]
   },
@@ -34430,6 +35154,7 @@
     "Release year": 2025,
     "Release date": "2025-02-14",
     "Edition type": "limited edition",
+    "Edition size": 700,
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Categories": "Tangled Valentine's Day 2025 surprise pin",
@@ -34441,8 +35166,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -34460,6 +35184,26 @@
      "method": "search_snippet",
      "note": "Features Flynn Rider and Rapunzel",
      "claim_ref": "C03366"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-tangled-valentines-day-2025-pin-at-disneyland-paris",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Surprise Valentine's pin (Feb 14 2025) features Flynn Rider and Rapunzel; LE 700",
+     "claim_ref": "C08640"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-tangled-valentines-day-2025-pin-at-disneyland-paris",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Listed as LE 700",
+     "claim_ref": "C08641"
     }
    ]
   },
@@ -34634,7 +35378,7 @@
     "Series": "Tiana and Naveen frogs limited edition pin",
     "Characters": "Naveen; Tiana",
     "Release year": 2025,
-    "Release date": "2025-08",
+    "Release date": "2025-08-23",
     "Edition type": "limited edition",
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
@@ -34645,9 +35389,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -34697,6 +35439,36 @@
      "method": "search_snippet",
      "note": "Preview says Aug 23 & 30, not which day for this pin",
      "claim_ref": "C08333"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/07/29/disneyland-paris-pins-for-august-2025-revealed-including-picsou-magazine-theme/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "A limited edition pin of Tiana and Naveen as frogs with the moon, LE 700",
+     "claim_ref": "C08642"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-08-23",
+     "source_url": "https://www.mousesteps.com/2025/07/29/disneyland-paris-pins-for-august-2025-revealed-including-picsou-magazine-theme/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Placed on August 23",
+     "claim_ref": "C08643"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-08",
+     "source_url": "https://disneymouseketeer.com/disneyland-paris-august-2025-pins-preview-sheet-schedule/",
+     "publisher": "disneymouseketeer.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Preview gives Aug 23 & 30 for releases incl. Tiana & Naveen; exact day unclear",
+     "claim_ref": "C08644"
     }
    ]
   },
@@ -35040,9 +35812,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -35072,6 +35842,26 @@
      "method": "search_snippet",
      "note": "Ursula and Ariel pin",
      "claim_ref": "C03438"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/disney-parks/dlp-july-2025-pins/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Bastille Day exclusives on July 14; one features Ursula & Ariel",
+     "claim_ref": "C08645"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/06/30/disneyland-paris-pins-for-july-2025-revealed-including-ratatouille-disney-music-festival/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "July 14 also limited for an Ursula and Ariel pin",
+     "claim_ref": "C08646"
     }
    ]
   },
@@ -35199,13 +35989,12 @@
     "Currency": "EUR",
     "Categories": "Disney Villains open edition pins",
     "Collection name": "Disney Villains open edition pins",
-    "Set count check": "unknown (no expected count claimed)"
+    "Expected pin count": 4,
+    "Set count check": "complete"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
    "duplicate_pinhunt_id": null,
@@ -35255,6 +36044,26 @@
      "method": "search_snippet",
      "note": "villain pins dated Saturday October 4",
      "claim_ref": "C07492"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-october-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Evil Queen & Magic Mirror' as a single OE pin at 15 EUR",
+     "claim_ref": "C08647"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/09/29/disneyland-paris-october-2025-pins-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Oct 4 villains pins listed as pairings: Evil Queen with the Magic Mirror",
+     "claim_ref": "C08648"
     }
    ]
   },
@@ -35274,13 +36083,12 @@
     "Currency": "EUR",
     "Categories": "Disney Villains open edition pins",
     "Collection name": "Disney Villains open edition pins",
-    "Set count check": "unknown (no expected count claimed)"
+    "Expected pin count": 4,
+    "Set count check": "complete"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
    "duplicate_pinhunt_id": null,
@@ -35332,6 +36140,26 @@
      "method": "search_snippet",
      "note": "villain pins dated Saturday October 4",
      "claim_ref": "C07496"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-october-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Hades, Pain & Panic' as a single OE pin at 15 EUR",
+     "claim_ref": "C08649"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/09/29/disneyland-paris-october-2025-pins-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Oct 4 villains pins listed as pairings: Hades, Pain and Panic",
+     "claim_ref": "C08650"
     }
    ]
   },
@@ -35351,13 +36179,12 @@
     "Currency": "EUR",
     "Categories": "Disney Villains open edition pins",
     "Collection name": "Disney Villains open edition pins",
-    "Set count check": "unknown (no expected count claimed)"
+    "Expected pin count": 4,
+    "Set count check": "complete"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
    "duplicate_pinhunt_id": null,
@@ -35407,6 +36234,26 @@
      "method": "search_snippet",
      "note": "villain pins dated Saturday October 4",
      "claim_ref": "C07494"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-october-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Jafar & Iago' as a single OE pin at 15 EUR",
+     "claim_ref": "C08651"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2025/09/29/disneyland-paris-october-2025-pins-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Oct 4 villains pins listed as pairings: Jafar and Iago",
+     "claim_ref": "C08652"
     }
    ]
   },
@@ -35426,13 +36273,13 @@
     "Currency": "EUR",
     "Categories": "Disney Villains open edition pins",
     "Collection name": "Disney Villains open edition pins",
-    "Set count check": "unknown (no expected count claimed)"
+    "Expected pin count": 4,
+    "Set count check": "complete"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -35462,6 +36309,16 @@
      "method": "search_snippet",
      "note": "EUR 15",
      "claim_ref": "C03469"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-october-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Scar, Shenzi, Banzai & Ed' as a single OE pin at 15 EUR",
+     "claim_ref": "C08653"
     }
    ]
   },
@@ -35591,6 +36448,7 @@
     "Release year": 2025,
     "Release date": "2025-04-05",
     "Edition type": "limited edition",
+    "Edition size": 700,
     "Park / Retailer": "Disneyland Park (Lineberty); Pueblo Trading Post",
     "Release scope": "France",
     "Currency": "EUR",
@@ -35600,9 +36458,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -35654,6 +36510,26 @@
      "method": "search_snippet",
      "note": "April 2025 DLP gallery lists a Yzma & Kuzco pin",
      "claim_ref": "C07506"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pixiedustdlp.com/2025/03/31/disneyland-paris-pin-trading-april-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mentions a limited edition pin with Yzma and Kuzco (Liberty Ticket) in early April 2025",
+     "claim_ref": "C08629"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-april-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists Yzma & Kuzco as LE 700 at 20 EUR, Apr 5",
+     "claim_ref": "C08630"
     }
    ]
   },
@@ -35667,6 +36543,7 @@
     "Release year": 2026,
     "Release date": "2026-07-04",
     "Edition type": "limited edition",
+    "Edition size": 800,
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Currency": "EUR",
@@ -35677,8 +36554,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -35716,6 +36592,26 @@
      "method": "search_snippet",
      "note": "dated Saturday July 4",
      "claim_ref": "C07613"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/06/29/disneyland-paris-july-2026-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "A limited edition pin that includes Alice and Cheshire Cat",
+     "claim_ref": "C08654"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 75th Anniversary Keyhole as LE 800 at 30 EUR; does not name Cheshire Cat",
+     "claim_ref": "C08655"
     }
    ]
   },
@@ -35741,9 +36637,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -35814,6 +36708,16 @@
      "method": "search_snippet",
      "note": "July 4th",
      "claim_ref": "C08359"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Alice & Dinah' as one OE item at 12 EUR",
+     "claim_ref": "C08656"
     }
    ]
   },
@@ -35910,6 +36814,16 @@
      "method": "search_snippet",
      "note": "July 4th",
      "claim_ref": "C08362"
+    },
+    {
+     "field": "pin_name",
+     "value": "Dinah (Face)",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists a separate Dinah (Face) OE pin at 9 EUR",
+     "claim_ref": "C08657"
     }
    ]
   },
@@ -36106,8 +37020,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -36165,6 +37078,16 @@
      "method": "search_snippet",
      "note": "Jul 4",
      "claim_ref": "C05199"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Tweedle Dee & Tweedle Dum' as one OE item at 12 EUR",
+     "claim_ref": "C08658"
     }
    ]
   },
@@ -36358,8 +37281,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (2/4)",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "set incomplete (2/4)"
    ],
    "warnings": [],
    "duplicate_status": "DUPLICATE",
@@ -36417,6 +37339,16 @@
      "method": "search_snippet",
      "note": "dated July 18",
      "claim_ref": "C07609"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/06/29/disneyland-paris-july-2026-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "July 18 attraction pins: Mickey for Pirates, and Minnie with Goofy for Phantom Manor",
+     "claim_ref": "C08659"
     }
    ]
   },
@@ -37631,8 +38563,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -37711,6 +38642,36 @@
      "method": "search_snippet",
      "note": "Sat 25 April",
      "claim_ref": "C05271"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/04/frozen-ever-after-collectors-key-coming-soon-to-disneyland-paris/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Single golden key design passing Olaf, Marshmallow and Grand Pabbie; 32 EUR, Apr 25 2026",
+     "claim_ref": "C08660"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/04/22/le-frozen-ever-after-attraction-key-arrives-to-disneyland-paris-this-week/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "One LE attraction key; says Grand Pabbie appears to be on it",
+     "claim_ref": "C08661"
+    },
+    {
+     "field": "edition_size",
+     "value": 2026,
+     "source_url": "https://pixiedustdlp.com/2026/04/22/new-frozen-ever-after-attraction-key/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Limited to 2,026, in-store only",
+     "claim_ref": "C08662"
     }
    ]
   },
@@ -38433,9 +39394,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -38528,6 +39487,31 @@
      "method": "search_snippet",
      "note": "LE jumbo",
      "claim_ref": "C05264"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists one 30th Anniversary Jumbo Pin LE 300 at 60 EUR, Jul 25, tagged Frollo, Esmeralda, Quasimodo, Djali",
+     "claim_ref": "C08663"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Djali",
+      "Esmeralda",
+      "Judge Frollo",
+      "Quasimodo"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Characters tagged on the jumbo listing",
+     "claim_ref": "C08664"
     }
    ]
   },
@@ -39112,11 +40096,12 @@
     "Park / Retailer": "Cowboy Cookout Barbecue; Frontierland",
     "Release scope": "France",
     "Currency": "EUR",
-    "Categories": "Pin Trading Night - Enchanted",
+    "Categories": "Pin Trading Night - Enchanted; human form",
     "Collection name": "Pin Trading Night - Enchanted",
     "Collection type": "pin trading event collection | Lineberty ticketed event",
     "Expected pin count": 12,
     "Set count check": "incomplete (4/12) \u2014 missing pins are NOT created",
+    "visual_form": "human form",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
@@ -39163,6 +40148,16 @@
      "method": "search_snippet",
      "note": "Ariel as a human named as example",
      "claim_ref": "C05251"
+    },
+    {
+     "field": "visual_form",
+     "value": "human form",
+     "source_url": "https://www.mousesteps.com/2026/09/01/disneyland-paris-pin-trading-night-returns-on-september-19th/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Ariel is one of three characters with two versions in the set; this is the human version",
+     "claim_ref": "C08715"
     }
    ]
   },
@@ -39181,18 +40176,19 @@
     "Park / Retailer": "Cowboy Cookout Barbecue; Frontierland",
     "Release scope": "France",
     "Currency": "EUR",
-    "Categories": "Pin Trading Night - Enchanted",
+    "Categories": "Pin Trading Night - Enchanted; mermaid form",
     "Collection name": "Pin Trading Night - Enchanted",
     "Collection type": "pin trading event collection | Lineberty ticketed event",
     "Expected pin count": 12,
     "Set count check": "incomplete (4/12) \u2014 missing pins are NOT created",
+    "visual_form": "mermaid form",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "set incomplete (4/12)",
-    "variant: same characters as dlp/2026/pin-trading-night-enchanted/ariel-human; confirm the distinguishing pin_name"
+    "variant: same characters as dlp/2026/pin-trading-night-enchanted/ariel-human; confirm the distinguishing pin_name, visual_form"
    ],
    "warnings": [
     "variants: release_date"
@@ -39233,6 +40229,16 @@
      "method": "search_snippet",
      "note": "Ariel as a mermaid named as example",
      "claim_ref": "C05254"
+    },
+    {
+     "field": "visual_form",
+     "value": "mermaid form",
+     "source_url": "https://www.mousesteps.com/2026/09/01/disneyland-paris-pin-trading-night-returns-on-september-19th/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Ariel's second version in the set is the mermaid version, separate from the human one",
+     "claim_ref": "C08716"
     }
    ]
   },
@@ -39891,6 +40897,58 @@
    ]
   },
   {
+   "research_key": "dlp/2026/pride-2026/mickey",
+   "entity_type": "pin",
+   "set_research_key": "dlp/2026/pride-2026",
+   "proposed": {
+    "Pin name": "Mickey Mouse \u2013 Pride - Mickey and Minnie rainbow",
+    "Series": "Pride - Mickey and Minnie rainbow",
+    "Characters": "Mickey Mouse",
+    "Main character": "Mickey Mouse",
+    "Release year": 2026,
+    "Release date": "2026-06",
+    "Edition type": "open edition",
+    "Park / Retailer": "Disneyland Paris",
+    "Release scope": "France",
+    "Categories": "Pride - Mickey and Minnie rainbow",
+    "Collection name": "Pride - Mickey and Minnie rainbow",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Pride Mickey OE 9 EUR",
+     "claim_ref": "C08667"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "OE",
+     "claim_ref": "C08668"
+    }
+   ]
+  },
+  {
    "research_key": "dlp/2026/pride-2026/mickey-and-minnie",
    "entity_type": "pin",
    "set_research_key": "dlp/2026/pride-2026",
@@ -39909,9 +40967,10 @@
     "Set count check": "unknown (no expected count claimed)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
+   "engine_verified": false,
    "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "conflict: pin_structure: a source says these characters are on separate pins",
+    "conflict: grouping: sources show separate pins dlp/2026/pride-2026/mickey and dlp/2026/pride-2026/minnie"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -39982,6 +41041,78 @@
      "method": "search_snippet",
      "note": "euro",
      "claim_ref": "C07585"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists Pride Minnie and Pride Mickey as separate OE items, 9 EUR each, June 6",
+     "claim_ref": "C08665"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.mousesteps.com/2026/06/01/disneyland-paris-june-2026-pin-release-schedule-includes-toy-story-5-atlantis-pride-pins/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Describes a pair of open-edition Mickey & Minnie Pride pins",
+     "claim_ref": "C08666"
+    }
+   ]
+  },
+  {
+   "research_key": "dlp/2026/pride-2026/minnie",
+   "entity_type": "pin",
+   "set_research_key": "dlp/2026/pride-2026",
+   "proposed": {
+    "Pin name": "Minnie Mouse \u2013 Pride - Mickey and Minnie rainbow",
+    "Series": "Pride - Mickey and Minnie rainbow",
+    "Characters": "Minnie Mouse",
+    "Main character": "Minnie Mouse",
+    "Release year": 2026,
+    "Release date": "2026-06",
+    "Edition type": "open edition",
+    "Park / Retailer": "Disneyland Paris",
+    "Release scope": "France",
+    "Categories": "Pride - Mickey and Minnie rainbow",
+    "Collection name": "Pride - Mickey and Minnie rainbow",
+    "Set count check": "unknown (no expected count claimed)",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Pride Minnie OE 9 EUR",
+     "claim_ref": "C08669"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "OE",
+     "claim_ref": "C08670"
     }
    ]
   },
@@ -40824,8 +41955,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -40853,6 +41983,26 @@
      "method": "search_snippet",
      "note": "LE 800",
      "claim_ref": "C04035"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Maximus & Pascal' as one LE 800 item at 18 EUR, June 6",
+     "claim_ref": "C08671"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 800",
+     "claim_ref": "C08672"
     }
    ]
   },
@@ -40877,9 +42027,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -40939,6 +42087,26 @@
      "method": "search_snippet",
      "note": "limited edition via Lineberty",
      "claim_ref": "C07580"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Rapunzel & Flynn' as one LE 800 item at 18 EUR, June 6",
+     "claim_ref": "C08673"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 800",
+     "claim_ref": "C08674"
     }
    ]
   },
@@ -40963,8 +42131,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -40993,6 +42160,26 @@
      "method": "search_snippet",
      "note": "LE 800",
      "claim_ref": "C04037"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'The Satyr, Vladimir & The Lover' as one LE 800 item at 18 EUR, June 6",
+     "claim_ref": "C08675"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 800",
+     "claim_ref": "C08676"
     }
    ]
   },
@@ -41076,9 +42263,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41121,6 +42306,29 @@
      "method": "search_snippet",
      "note": "Mousesteps (hedged) says Lumiere and Plumette",
      "claim_ref": "C03994"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/01/30/disneyland-paris-february-2026-pins-revealed-including-valentines-day-world-of-frozen/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Feb 14: a Lumiere and Plumette St. Valentine's Day pin (hedged 'it looks like')",
+     "claim_ref": "C08677"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lumiere",
+      "Plumette"
+     ],
+     "source_url": "https://www.mousesteps.com/2026/01/30/disneyland-paris-february-2026-pins-revealed-including-valentines-day-world-of-frozen/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Names Lumiere and Plumette only",
+     "claim_ref": "C08678"
     }
    ]
   },
@@ -41457,9 +42665,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41486,6 +42692,16 @@
      "method": "search_snippet",
      "note": "July 2026 roundup: latest Tales of Magic installment features Beauty and the Beast; characters not named",
      "claim_ref": "C08343"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/06/29/disneyland-paris-july-2026-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "July 11: a LE Disney Tales of Magic pin with Belle and Beast",
+     "claim_ref": "C08679"
     }
    ]
   },
@@ -41560,9 +42776,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41592,6 +42806,16 @@
      "method": "search_snippet",
      "note": "Ellie and Carl from Up",
      "claim_ref": "C04014"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pixiedustdlp.com/2026/05/01/pins-disneyland-paris-may-2026/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "A new LE Tales of Magic pin featuring Ellie and Carl from Up",
+     "claim_ref": "C08680"
     }
    ]
   },
@@ -41605,6 +42829,7 @@
     "Release year": 2026,
     "Release date": "2026-06-27",
     "Edition type": "limited",
+    "Edition size": 800,
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Currency": "EUR",
@@ -41614,9 +42839,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41679,6 +42902,26 @@
      "method": "search_snippet",
      "note": "dated June 27 (differs from 06-20)",
      "claim_ref": "C07574"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Disney Tales of Magic: Lilo & Stitch' as one LE 800 item at 20 EUR",
+     "claim_ref": "C08681"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 800",
+     "claim_ref": "C08682"
     }
    ]
   },
@@ -41984,7 +43227,6 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of dlp/2026/raiponce-tangled-spin-june/rapunzel-and-flynn"
    ],
    "warnings": [],
@@ -42003,6 +43245,16 @@
      "method": "search_snippet",
      "note": "Rapunzel and Flynn named",
      "claim_ref": "C04012"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/04/01/disneyland-paris-april-2026-pins-revealed-including-disney-adventure-world/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Apr 11 Raiponce Tangled Spin pin shows Rapunzel and Flynn in the boat lifting the lantern",
+     "claim_ref": "C08683"
     }
    ]
   },
@@ -42132,9 +43384,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42164,6 +43414,42 @@
      "method": "search_snippet",
      "note": "PixieDust says one of the three good fairies (conflict)",
      "claim_ref": "C04005"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/02/27/disneyland-paris-march-2026-pins-revealed-on-2-pages-including-disney-adventure-world/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mar 21: the three Fairies on a Tarot Series LE pin",
+     "claim_ref": "C08684"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Fauna",
+      "Flora",
+      "Merryweather"
+     ],
+     "source_url": "https://www.mousesteps.com/2026/02/27/disneyland-paris-march-2026-pins-revealed-on-2-pages-including-disney-adventure-world/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Says the three fairies are on the pin",
+     "claim_ref": "C08685"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "one of the three good fairies"
+     ],
+     "source_url": "https://pixiedustdlp.com/2026/02/27/disneyland-paris-pin-trading-03-2026/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Says it features one of the three good fairies; conflicts with Mousesteps",
+     "claim_ref": "C08686"
     }
    ]
   },
@@ -42249,8 +43535,10 @@
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
-   "review_reasons": [],
+   "engine_verified": false,
+   "review_reasons": [
+    "conflict: grouping: source shows a combined pin dlp/2026/toy-story-5-open-edition/karen-and-forky"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42292,7 +43580,7 @@
     "Main character": "Jessie",
     "Release year": 2026,
     "Release date": "2026-06-17",
-    "Edition type": "open",
+    "Edition type": "open edition",
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Categories": "Toy Story 5 open edition pins",
@@ -42330,6 +43618,16 @@
      "method": "search_snippet",
      "note": "Toy Story 5 pin collection features Jessie, Forky, Karen Beverly and new character Lilypad",
      "claim_ref": "C07562"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Jessie OE 9 EUR",
+     "claim_ref": "C08689"
     }
    ]
   },
@@ -42350,9 +43648,10 @@
     "Set count check": "unknown (no expected count claimed)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
+   "engine_verified": false,
    "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "structure: confirm one pin showing all of these characters, not separate pins",
+    "conflict: grouping: source shows a combined pin dlp/2026/toy-story-5-open-edition/karen-and-forky"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -42385,6 +43684,56 @@
    ]
   },
   {
+   "research_key": "dlp/2026/toy-story-5-open-edition/karen-and-forky",
+   "entity_type": "pin",
+   "set_research_key": "dlp/2026/toy-story-5-open-edition",
+   "proposed": {
+    "Series": "Toy Story 5 open edition pins",
+    "Characters": "Forky; Karen Beverly",
+    "Release year": 2026,
+    "Release date": "2026-06-17",
+    "Edition type": "open",
+    "Park / Retailer": "Disneyland Paris",
+    "Release scope": "France",
+    "Categories": "Toy Story 5 open edition pins",
+    "Collection name": "Toy Story 5 open edition pins",
+    "Set count check": "unknown (no expected count claimed)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low"
+   ],
+   "warnings": [],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Forky",
+      "Karen Beverly"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Karen and Forky' as one OE item at 12 EUR, June 17",
+     "claim_ref": "C08687"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Single flyer line Karen and Forky, 12 EUR",
+     "claim_ref": "C08688"
+    }
+   ]
+  },
+  {
    "research_key": "dlp/2026/toy-story-5-open-edition/lilypad",
    "entity_type": "pin",
    "set_research_key": "dlp/2026/toy-story-5-open-edition",
@@ -42395,7 +43744,7 @@
     "Main character": "Lilypad",
     "Release year": 2026,
     "Release date": "2026-06-17",
-    "Edition type": "open",
+    "Edition type": "open edition",
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Categories": "Toy Story 5 open edition pins",
@@ -42433,6 +43782,16 @@
      "method": "search_snippet",
      "note": "Toy Story 5 pin collection features Jessie, Forky, Karen Beverly and new character Lilypad",
      "claim_ref": "C07565"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LilyPad OE 9 EUR",
+     "claim_ref": "C08690"
     }
    ]
   },
@@ -42658,6 +44017,32 @@
      "method": "search_snippet",
      "note": "summary says limited to 1,000 pieces each",
      "claim_ref": "C07526"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Angel",
+      "Stitch"
+     ],
+     "source_url": "https://www.mousesteps.com/2026/01/30/disneyland-paris-february-2026-pins-revealed-including-valentines-day-world-of-frozen/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Feb 7 Valentine's couples incl. Stitch and Angel",
+     "claim_ref": "C08691"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Angel",
+      "Lilo"
+     ],
+     "source_url": "https://pixiedustdlp.com/2026/01/30/disneyland-paris-pin-trading-febr-2026/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Describes the couple as Lilo and Angel; conflicts",
+     "claim_ref": "C08692"
     }
    ]
   },
@@ -43015,9 +44400,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -43090,6 +44473,16 @@
      "method": "search_snippet",
      "note": "dated August 8",
      "claim_ref": "C07618"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/07/29/disneyland-paris-august-2026-pins-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "A Goofy and Max LE pin; the pair are on a car like in A Goofy Movie",
+     "claim_ref": "C08693"
     }
    ]
   },
@@ -43103,6 +44496,7 @@
     "Release year": 2026,
     "Release date": "2026-06-20",
     "Edition type": "limited",
+    "Edition size": 800,
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
     "Currency": "EUR",
@@ -43112,9 +44506,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -43154,6 +44546,26 @@
      "method": "search_snippet",
      "note": "Listed on June 20",
      "claim_ref": "C08356"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists 'Lilo & Stitch Waves Series' as one LE 800 item at 25 EUR",
+     "claim_ref": "C08694"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-june-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 800",
+     "claim_ref": "C08695"
     }
    ]
   },
@@ -43310,9 +44722,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -43372,6 +44782,26 @@
      "method": "search_snippet",
      "note": "Roundup places it in late February",
      "claim_ref": "C08337"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2026/01/30/disneyland-paris-february-2026-pins-revealed-including-valentines-day-world-of-frozen/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "The World of Frozen jumbo pin features Elsa, Anna, Kristoff, Sven and Olaf; LE 1000",
+     "claim_ref": "C08696"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://pixiedustdlp.com/2026/01/30/disneyland-paris-pin-trading-febr-2026/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "LE 1000 via Lineberty",
+     "claim_ref": "C08697"
     }
    ]
   },
@@ -43396,8 +44826,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43435,6 +44864,16 @@
      "method": "search_snippet",
      "note": "Monthly order",
      "claim_ref": "C07242"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Baloo & Mowgli (Dec) as a single monthly release",
+     "claim_ref": "C08767"
     }
    ]
   },
@@ -43459,8 +44898,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43511,6 +44949,16 @@
      "method": "search_snippet",
      "note": "January 2023 Best Buds release",
      "claim_ref": "C07206"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Mrs. Jumbo & Dumbo (Jan) as a single monthly release",
+     "claim_ref": "C08756"
     }
    ]
   },
@@ -43535,8 +44983,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43574,6 +45021,16 @@
      "method": "search_snippet",
      "note": "Monthly order",
      "claim_ref": "C07221"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Goofy & Max (May) as a single monthly release",
+     "claim_ref": "C08760"
     }
    ]
   },
@@ -43598,8 +45055,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43637,6 +45093,16 @@
      "method": "search_snippet",
      "note": "Monthly order",
      "claim_ref": "C07233"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Lady & Tramp (Sep) as a single monthly release",
+     "claim_ref": "C08764"
     }
    ]
   },
@@ -43661,8 +45127,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43700,6 +45165,16 @@
      "method": "search_snippet",
      "note": "Monthly order",
      "claim_ref": "C07227"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Lilo & Stitch (Jul) as a single monthly release",
+     "claim_ref": "C08762"
     }
    ]
   },
@@ -43724,8 +45199,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43776,6 +45250,16 @@
      "method": "search_snippet",
      "note": "Fan database secondary only; sixth Best Buds release 2023-06-06",
      "claim_ref": "C08463"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Minnie & Figaro (Jun) as a single monthly release",
+     "claim_ref": "C08761"
     }
    ]
   },
@@ -43804,8 +45288,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43926,6 +45409,16 @@
      "method": "search_snippet",
      "note": "Fan database secondary only",
      "claim_ref": "C08461"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Geppetto & Pinocchio (Feb) as a single monthly release",
+     "claim_ref": "C08757"
     }
    ]
   },
@@ -43950,8 +45443,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43989,6 +45481,16 @@
      "method": "search_snippet",
      "note": "Monthly order",
      "claim_ref": "C07218"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Pongo & Lucky (Apr) as a single monthly release",
+     "claim_ref": "C08759"
     }
    ]
   },
@@ -44013,8 +45515,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -44052,6 +45553,16 @@
      "method": "search_snippet",
      "note": "Monthly order",
      "claim_ref": "C07230"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Pumbaa & Timon (Aug) as a single monthly release",
+     "claim_ref": "C08763"
     }
    ]
   },
@@ -44076,9 +45587,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -44148,6 +45657,16 @@
      "method": "search_snippet",
      "note": "Article dated Oct 2023",
      "claim_ref": "C08460"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Sulley & Mike Wazowski (Oct) as a single monthly release",
+     "claim_ref": "C08765"
     }
    ]
   },
@@ -44172,8 +45691,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -44211,6 +45729,16 @@
      "method": "search_snippet",
      "note": "Monthly order",
      "claim_ref": "C07239"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Vanellope & Ralph (Nov) as a single monthly release",
+     "claim_ref": "C08766"
     }
    ]
   },
@@ -44239,8 +45767,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -44371,6 +45898,16 @@
      "method": "search_snippet",
      "note": "Fan database secondary only",
      "claim_ref": "C08462"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "12-pin monthly list names Pooh & Piglet (Mar) as a single monthly release",
+     "claim_ref": "C08758"
     }
    ]
   },
@@ -48956,9 +50493,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -49041,6 +50576,16 @@
      "method": "search_snippet",
      "note": "Where sold",
      "claim_ref": "C08122"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2025/09/disneyland-70th-anniversary-magic-key-halloween-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "single Magic Key pin with Mickey and Minnie in wizard/witch hats, LE 3,000",
+     "claim_ref": "C08798"
     }
    ]
   },
@@ -50825,13 +52370,15 @@
     "Categories": "Disneyland 70th Anniversary Vault Collection",
     "Collection name": "Disneyland 70th Anniversary Vault Collection Pin Set 3",
     "Collection type": "display frame + quarterly boxed pin sets",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "incomplete (4/5) \u2014 missing pins are NOT created",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "set incomplete (4/5)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -50886,13 +52433,15 @@
     "Categories": "Disneyland 70th Anniversary Vault Collection",
     "Collection name": "Disneyland 70th Anniversary Vault Collection Pin Set 3",
     "Collection type": "display frame + quarterly boxed pin sets",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 5,
+    "Set count check": "incomplete (4/5) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: characters, edition_type"
+    "missing: characters, edition_type",
+    "set incomplete (4/5)"
    ],
    "warnings": [
     "variants: pin_name"
@@ -50945,13 +52494,14 @@
     "Categories": "Disneyland 70th Anniversary Vault Collection",
     "Collection name": "Disneyland 70th Anniversary Vault Collection Pin Set 3",
     "Collection type": "display frame + quarterly boxed pin sets",
-    "Set count check": "unknown (no expected count claimed)"
+    "Expected pin count": 5,
+    "Set count check": "incomplete (4/5) \u2014 missing pins are NOT created"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "set incomplete (4/5)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -50992,6 +52542,16 @@
      "method": "search_snippet",
      "note": "Article dated 2/10/2026 (Pin Tuesday)",
      "claim_ref": "C08074"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dismerchandise.com/2026/04/07/disneyland-70th-anniversary-vault-collection-pin-set-3-limited-edition-available-online-for-purchase/",
+     "publisher": "dismerchandise.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Chip 'n Dale listed as one of the four character pins",
+     "claim_ref": "C08769"
     }
    ]
   },
@@ -51008,13 +52568,14 @@
     "Categories": "Disneyland 70th Anniversary Vault Collection",
     "Collection name": "Disneyland 70th Anniversary Vault Collection Pin Set 3",
     "Collection type": "display frame + quarterly boxed pin sets",
-    "Set count check": "unknown (no expected count claimed)"
+    "Expected pin count": 5,
+    "Set count check": "incomplete (4/5) \u2014 missing pins are NOT created"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "set incomplete (4/5)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -51057,6 +52618,16 @@
      "method": "search_snippet",
      "note": "Article dated 2/10/2026 (Pin Tuesday)",
      "claim_ref": "C08072"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dismerchandise.com/2026/04/07/disneyland-70th-anniversary-vault-collection-pin-set-3-limited-edition-available-online-for-purchase/",
+     "publisher": "dismerchandise.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "the three good fairies are listed as one of the four character pins",
+     "claim_ref": "C08768"
     }
    ]
   },
@@ -51207,8 +52778,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -51247,6 +52817,16 @@
      "method": "search_snippet",
      "note": "$24.99",
      "claim_ref": "C07368"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/10/october-2026-disneyland-pin-release-includes-haunted-mansion-holiday-monsters-inc-25th-anniversary-and-more/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "one LE 4,000 pin listed as Mike Wazowski, Sully, and Boo",
+     "claim_ref": "C08800"
     }
    ]
   },
@@ -69743,14 +71323,16 @@
     "Release scope": "US",
     "Original price": 17.99,
     "Currency": "USD",
-    "Categories": "Epcot International Flower & Garden Festival 2023 pins",
+    "Categories": "Epcot International Flower & Garden Festival 2023 pins; swinging element",
     "Collection name": "Epcot International Flower & Garden Festival 2023 pins",
     "Set count check": "unknown (no expected count claimed)",
+    "visual_features": "swinging element",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
+    "conflict: edition_type",
     "identity confidence Low",
     "missing: release_date",
     "variant: same characters as wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird; confirm the distinguishing pin_name, edition_type"
@@ -69810,6 +71392,48 @@
      "method": "search_snippet",
      "note": "US dollar pricing",
      "claim_ref": "C05774"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "swinging element"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flower Power Orange Bird pin has a swinging element",
+     "claim_ref": "C08722"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release; Annual Passholder exclusive",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP exclusive, limited release",
+     "claim_ref": "C08723"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "retail $17.99",
+     "claim_ref": "C08724"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US park pricing",
+     "claim_ref": "C08725"
     }
    ]
   },
@@ -70031,6 +71655,58 @@
      "method": "search_snippet",
      "note": "US dollar pricing",
      "claim_ref": "C05754"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Spreadin' the Sunshine Orange Bird pin is a pin-on-pin design",
+     "claim_ref": "C08717"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "listed as limited edition",
+     "claim_ref": "C08718"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "limited edition of 4,000",
+     "claim_ref": "C08719"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "retail $19.99",
+     "claim_ref": "C08720"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2023-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US park pricing",
+     "claim_ref": "C08721"
     }
    ]
   },
@@ -71191,9 +72867,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -71284,6 +72958,16 @@
      "method": "search_snippet",
      "note": "banner reads Holiday Cheer",
      "claim_ref": "C07982"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2023/08/christmas-festival-of-the-holidays-2023-pins/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "single LE pin with Goofy, Pluto, Mickey, Minnie, Daisy and Donald decorating a tree",
+     "claim_ref": "C08779"
     }
    ]
   },
@@ -71482,8 +73166,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -71583,6 +73266,16 @@
      "method": "search_snippet",
      "note": "DPB: $19.99",
      "claim_ref": "C05824"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2023/12/new-ap-le-peoplemover-pin-wdw/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "single AP pin of Mickey and Goofy riding the PeopleMover",
+     "claim_ref": "C08797"
     }
    ]
   },
@@ -72062,14 +73755,18 @@
     "Currency": "USD",
     "Categories": "Epcot International Festival of the Arts 2024 pins; spinner",
     "Collection name": "Epcot International Festival of the Arts 2024 pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 3,
+    "Set count check": "over (4/3) \u2014 check for variants or wrong set",
     "visual_features": "spinner",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
+   "engine_verified": false,
    "review_reasons": [
-    "variant: same characters as wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged; confirm the distinguishing pin_name, edition_size"
+    "conflict: edition_type",
+    "set over (4/3)",
+    "variant: same characters as wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged; confirm the distinguishing pin_name, edition_size",
+    "grouping: 4 pins recorded but the set states 3; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72160,6 +73857,48 @@
      "method": "search_snippet",
      "note": "lists an Annual Passholder Figment pin",
      "claim_ref": "C08043"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP Figment pin has a spinning element (rotating World Showcase border)",
+     "claim_ref": "C08730"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition; Annual Passholder exclusive",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "AP exclusive LE",
+     "claim_ref": "C08731"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "blog gives LE 5,000; no second source found for that figure",
+     "claim_ref": "C08732"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "retail $19.99",
+     "claim_ref": "C08733"
     }
    ]
   },
@@ -72181,14 +73920,17 @@
     "Original price": 19.99,
     "Categories": "Epcot International Festival of the Arts 2024 pins; hinged",
     "Collection name": "Epcot International Festival of the Arts 2024 pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 3,
+    "Set count check": "over (4/3) \u2014 check for variants or wrong set",
     "visual_features": "hinged",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "set over (4/3)",
+    "grouping: 4 pins recorded but the set states 3; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72321,6 +74063,48 @@
      "method": "search_snippet",
      "note": "Fan database date",
      "claim_ref": "C08450"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Figment portrait opens on a hinge revealing festival message",
+     "claim_ref": "C08726"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "hinged Figment pin is LE",
+     "claim_ref": "C08727"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "limited edition of 4,000",
+     "claim_ref": "C08728"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "retail $19.99",
+     "claim_ref": "C08729"
     }
    ]
   },
@@ -72341,14 +74125,17 @@
     "Original price": 17.99,
     "Categories": "Epcot International Festival of the Arts 2024 pins; glitter; pin-on-pin",
     "Collection name": "Epcot International Festival of the Arts 2024 pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 3,
+    "Set count check": "over (4/3) \u2014 check for variants or wrong set",
     "visual_features": "glitter; pin-on-pin",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "variant: same characters as wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged; confirm the distinguishing edition_type"
+    "set over (4/3)",
+    "variant: same characters as wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged; confirm the distinguishing edition_type",
+    "grouping: 4 pins recorded but the set states 3; check for split or extra pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72420,6 +74207,60 @@
      "method": "search_snippet",
      "note": "$17.99",
      "claim_ref": "C08445"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "third Figment pin is a pin-on-pin festival pin",
+     "claim_ref": "C08734"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "limited release at $17.99",
+     "claim_ref": "C08735"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "retail $17.99",
+     "claim_ref": "C08736"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://wdwnt.com/2024/01/merchandise-2024-epcot-festival-of-the-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "WDWNT festival list includes a Figment pin-on-pin at $17.99",
+     "claim_ref": "C08737"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2024/01/merchandise-2024-epcot-festival-of-the-arts/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "listed at $17.99",
+     "claim_ref": "C08738"
     }
    ]
   },
@@ -72441,13 +74282,17 @@
     "Currency": "USD",
     "Categories": "Epcot International Festival of the Arts 2024 pins; pin-on-pin",
     "Collection name": "Epcot International Festival of the Arts 2024 pins",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 3,
+    "Set count check": "over (4/3) \u2014 check for variants or wrong set",
     "visual_features": "pin-on-pin",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "set over (4/3)",
+    "grouping: 4 pins recorded but the set states 3; check for split or extra pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -73300,6 +75145,7 @@
     "Original price": 19.99,
     "Currency": "USD",
     "Categories": "EPCOT Festival of the Holidays Storytellers pin series",
+    "Notes": "Mickey as Pere Noel, France pavilion storyteller",
     "Collection name": "EPCOT Festival of the Holidays Storytellers pin series",
     "Expected pin count": 4,
     "Set count check": "complete",
@@ -73311,7 +75157,9 @@
     "identity confidence Low",
     "variant: same characters as wdw/2024/holidays-around-the-world-storytellers/uk-father-christmas; confirm the distinguishing pin_name"
    ],
-   "warnings": [],
+   "warnings": [
+    "variants: pin_name"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -73366,6 +75214,46 @@
      "method": "search_snippet",
      "note": "USD",
      "claim_ref": "C05932"
+    },
+    {
+     "field": "pin_name",
+     "value": "Pere Noel (France)",
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mickey as Pere Noel, France pavilion storyteller",
+     "claim_ref": "C08743"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey as Pere Noel, France pavilion storyteller",
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "storyteller costume is what distinguishes the three Mickey pins",
+     "claim_ref": "C08744"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000",
+     "claim_ref": "C08745"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "series pins $19.99 each",
+     "claim_ref": "C08746"
     }
    ]
   },
@@ -73473,6 +75361,7 @@
     "Original price": 19.99,
     "Currency": "USD",
     "Categories": "EPCOT Festival of the Holidays Storytellers pin series",
+    "Notes": "Mickey dressed as Barn Santa, Norway pavilion storyteller",
     "Collection name": "EPCOT Festival of the Holidays Storytellers pin series",
     "Expected pin count": 4,
     "Set count check": "complete",
@@ -73484,7 +75373,9 @@
     "identity confidence Low",
     "variant: same characters as wdw/2024/holidays-around-the-world-storytellers/uk-father-christmas; confirm the distinguishing pin_name"
    ],
-   "warnings": [],
+   "warnings": [
+    "variants: pin_name"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -73539,6 +75430,46 @@
      "method": "search_snippet",
      "note": "USD",
      "claim_ref": "C05942"
+    },
+    {
+     "field": "pin_name",
+     "value": "Barn Santa (Norway)",
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mickey dressed as Barn Santa, Norway pavilion storyteller",
+     "claim_ref": "C08747"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey dressed as Barn Santa, Norway pavilion storyteller",
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "storyteller costume is what distinguishes the three Mickey pins",
+     "claim_ref": "C08748"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000",
+     "claim_ref": "C08749"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "series pins $19.99 each",
+     "claim_ref": "C08750"
     }
    ]
   },
@@ -73560,6 +75491,7 @@
     "Original price": 19.99,
     "Currency": "USD",
     "Categories": "EPCOT Festival of the Holidays Storytellers pin series",
+    "Notes": "Mickey dressed as Father Christmas holding a stocking of fruit; UK pavilion storyteller",
     "Collection name": "EPCOT Festival of the Holidays Storytellers pin series",
     "Expected pin count": 4,
     "Set count check": "complete",
@@ -73570,7 +75502,9 @@
    "review_reasons": [
     "identity confidence Low"
    ],
-   "warnings": [],
+   "warnings": [
+    "variants: pin_name"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -73625,6 +75559,46 @@
      "method": "search_snippet",
      "note": "USD",
      "claim_ref": "C05927"
+    },
+    {
+     "field": "pin_name",
+     "value": "Father Christmas (United Kingdom)",
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mickey dressed as Father Christmas holding a stocking of fruit; UK pavilion storyteller",
+     "claim_ref": "C08739"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey dressed as Father Christmas holding a stocking of fruit; UK pavilion storyteller",
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "storyteller costume is what distinguishes the three Mickey pins",
+     "claim_ref": "C08740"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000",
+     "claim_ref": "C08741"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "series pins $19.99 each",
+     "claim_ref": "C08742"
     }
    ]
   },
@@ -73650,8 +75624,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "set incomplete (1/5)",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "set incomplete (1/5)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73669,6 +75642,16 @@
      "method": "search_snippet",
      "note": "completer pin, box exclusive",
      "claim_ref": "C05967"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=38108",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "fan database (secondary): a single Mickey & Minnie completer pin only sold in the box",
+     "claim_ref": "C08774"
     }
    ]
   },
@@ -73694,8 +75677,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73778,6 +75760,16 @@
      "method": "search_snippet",
      "note": "Fan database secondary corroboration only",
      "claim_ref": "C08434"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=38110",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "fan database (secondary): one pin with Shenzi, Banzai and Ed standing in a group",
+     "claim_ref": "C08771"
     }
    ]
   },
@@ -73802,8 +75794,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73854,6 +75845,16 @@
      "method": "search_snippet",
      "note": "Summary says WDWNT states 5,000 of each individual pin",
      "claim_ref": "C08432"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "single $19.99 pin of Jack offering a jack-o'-lantern to Sally",
+     "claim_ref": "C08770"
     }
    ]
   },
@@ -73880,8 +75881,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -74024,6 +76024,16 @@
      "method": "search_snippet",
      "note": "Fan database secondary corroboration only",
      "claim_ref": "C08433"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=38109",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "fan database (secondary): one pin of Pain & Panic together, LE 5000",
+     "claim_ref": "C08772"
     }
    ]
   },
@@ -74049,8 +76059,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -74122,6 +76131,16 @@
      "method": "search_snippet",
      "note": "Fan database secondary only; lists Pooh, Tigger, Piglet, Eeyore trick-or-treating",
      "claim_ref": "C08435"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=38112",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "fan database (secondary): Pooh, Tigger, Piglet and Eeyore trick-or-treating on one pin",
+     "claim_ref": "C08773"
     }
    ]
   },
@@ -74147,8 +76166,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -74249,6 +76267,16 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C07972"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mickeys-very-merry-christmas-party-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Donald & Daisy pin, LE 4,000, $22.99",
+     "claim_ref": "C08775"
     }
    ]
   },
@@ -74274,8 +76302,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -74376,6 +76403,16 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C07975"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mickeys-very-merry-christmas-party-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Goofy & Pluto pin, LE 4,000, $22.99",
+     "claim_ref": "C08776"
     }
    ]
   },
@@ -74401,8 +76438,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -74516,6 +76552,26 @@
      "method": "search_snippet",
      "note": "$22.99",
      "claim_ref": "C08439"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mickeys-very-merry-christmas-party-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Mickey & Minnie MVMCP 2024 pin, LE 4,000",
+     "claim_ref": "C08777"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2024/11/08/all-of-the-merchandise-for-mickeys-very-merry-christmas-party-2024/",
+     "publisher": "mickeyblog.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mickey & Minnie pin listed at $22.99",
+     "claim_ref": "C08778"
     }
    ]
   },
@@ -74801,8 +76857,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -74910,6 +76965,16 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C08036"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2024/06/tianas-bayou-adventure-opening-merchandise-wdw/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Passholder pin pictures Tiana and Louis behind the critters",
+     "claim_ref": "C08793"
     }
    ]
   },
@@ -74937,9 +77002,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -75053,6 +77116,16 @@
      "method": "search_snippet",
      "note": "Article dated March 2025",
      "claim_ref": "C08415"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2025/03/new-limited-edition-pins-available-at-walt-disney-world/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "one LE 4,000 pin featuring Goofy, Max and Lester the possum",
+     "claim_ref": "C08799"
     }
    ]
   },
@@ -77883,9 +79956,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -77963,6 +80034,16 @@
      "method": "search_snippet",
      "note": "USD pricing",
      "claim_ref": "C06457"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2025/06/new-limited-edition-snow-white-old-hag-and-mad-tea-party-carousel-horse-pins-at-walt-disney-world/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "one Inkwells of Evil pin of the Evil Queen as the old hag holding apples; Old Hag and Evil Queen are the same figure",
+     "claim_ref": "C08780"
     }
    ]
   },
@@ -78311,8 +80392,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -78402,6 +80482,16 @@
      "method": "search_snippet",
      "note": "LE 2000",
      "claim_ref": "C06397"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2025/12/disney-world-pin-tuesday-be-our-guest-lunar-new-year/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "one LE 2,000 pin of Mickey and Minnie, Minnie holding a scroll",
+     "claim_ref": "C08795"
     }
    ]
   },
@@ -78429,9 +80519,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [
     "variants: pin_name"
    ],
@@ -78575,6 +80663,16 @@
      "method": "search_snippet",
      "note": "Fan wiki date",
      "claim_ref": "C08413"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://static.wdwnt.com/2025/12/disney-world-pin-tuesday-force-awakens-10th-anniversary-muppet-new-year-more/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "one LE pin of Miss Piggy & Kermit in front of the castle and fireworks",
+     "claim_ref": "C08794"
     }
    ]
   },
@@ -78802,8 +80900,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -78881,6 +80978,26 @@
      "method": "search_snippet",
      "note": "USD pricing",
      "claim_ref": "C06584"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2025/04/catalog-released-for-sold-out-spring-2025-walt-disney-world-pin-trading-night/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "attendee-exclusive pins are 'a Cinderella and Prince Charming pin' and a Dumbo pin",
+     "claim_ref": "C08754"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://wdwnt.com/2025/04/catalog-released-for-sold-out-spring-2025-walt-disney-world-pin-trading-night/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE 500, $22.99",
+     "claim_ref": "C08755"
     }
    ]
   },
@@ -79254,10 +81371,11 @@
     "Release scope": "US",
     "Original price": 49.99,
     "Currency": "USD",
-    "Categories": "Spring 2025 Walt Disney World Pin Trading Night",
+    "Categories": "Spring 2025 Walt Disney World Pin Trading Night; mini jumbo",
     "Collection name": "Spring 2025 Walt Disney World Pin Trading Night",
     "Collection type": "event release",
     "Set count check": "unknown (no expected count claimed)",
+    "visual_form": "mini jumbo",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
@@ -79340,6 +81458,36 @@
      "method": "search_snippet",
      "note": "USD pricing",
      "claim_ref": "C06618"
+    },
+    {
+     "field": "visual_form",
+     "value": "mini jumbo",
+     "source_url": "https://wdwnt.com/2025/04/catalog-released-for-sold-out-spring-2025-walt-disney-world-pin-trading-night/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "mini jumbo shows Stitch destroying his home-made city",
+     "claim_ref": "C08751"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://wdwnt.com/2025/04/catalog-released-for-sold-out-spring-2025-walt-disney-world-pin-trading-night/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "LE 2,000",
+     "claim_ref": "C08752"
+    },
+    {
+     "field": "original_price",
+     "value": 49.99,
+     "source_url": "https://wdwnt.com/2025/04/catalog-released-for-sold-out-spring-2025-walt-disney-world-pin-trading-night/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "$49.99",
+     "claim_ref": "C08753"
     }
    ]
   },
@@ -80459,9 +82607,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -80603,6 +82749,16 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C07930"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-the-muppets-chip-n-dale-play-along-pins-windows-of-attraction/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "rotating bubblegum machine pin with Chip beside it and Dale inside",
+     "claim_ref": "C08801"
     }
    ]
   },
@@ -81243,8 +83399,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81345,6 +83500,16 @@
      "method": "search_snippet",
      "note": "US park pricing",
      "claim_ref": "C08375"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/06/disney-world-pin-tuesday-250th-independence-day-animal-kingdom-daring-detectives/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "AK mini jumbo shows Chip 'n' Dale in detective outfits with Tree of Life behind",
+     "claim_ref": "C08788"
     }
    ]
   },
@@ -81372,8 +83537,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81443,6 +83607,16 @@
      "method": "search_snippet",
      "note": "USD pricing",
      "claim_ref": "C06796"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2026-week-1/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "MK mini jumbo shows detective Donald with Huey, Dewey and Louie; LE 4,000",
+     "claim_ref": "C08789"
     }
    ]
   },
@@ -81463,7 +83637,8 @@
     "Categories": "Enchanted Doors (Pin of the Month); glitter; hinged",
     "Collection name": "Enchanted Doors (Pin of the Month)",
     "Collection type": "monthly LE single-pin series",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 12,
+    "Set count check": "incomplete (3/12) \u2014 missing pins are NOT created",
     "visual_features": "glitter; hinged",
     "pin_name_source": "claimed"
    },
@@ -81471,7 +83646,7 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "set incomplete (3/12)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81612,6 +83787,16 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C07955"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/06/disney-world-pin-tuesday-even-more-daring-detectives-the-hunchback-of-notre-dame-30th-anniversary-and-enchanted-doors/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "6th of 12: human Kuzco at a door with Pacha and llama Kuzco inside; one LE 2,500 pin",
+     "claim_ref": "C08791"
     }
    ]
   },
@@ -81633,14 +83818,16 @@
     "Categories": "Enchanted Doors (Pin of the Month)",
     "Collection name": "Enchanted Doors (Pin of the Month)",
     "Collection type": "monthly LE single-pin series",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 12,
+    "Set count check": "incomplete (3/12) \u2014 missing pins are NOT created",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "set incomplete (3/12)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81728,14 +83915,16 @@
     "Categories": "Enchanted Doors (Pin of the Month); hinged",
     "Collection name": "Enchanted Doors (Pin of the Month)",
     "Collection type": "monthly LE single-pin series",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 12,
+    "Set count check": "incomplete (3/12) \u2014 missing pins are NOT created",
     "visual_features": "hinged",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "set incomplete (3/12)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -82060,8 +84249,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -82154,6 +84342,16 @@
      "method": "search_snippet",
      "note": "LE 4,000",
      "claim_ref": "C06809"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/06/walt-disney-world-pin-tuesday-four-limited-edition-pins-with-finding-dory-and-multiple-disney-daring-detectives/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "one LE 4,000 pin showing Hank, Dory, Gerald, Fluke and Rudder",
+     "claim_ref": "C08792"
     }
    ]
   },
@@ -82181,9 +84379,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [
     "variants: pin_name"
    ],
@@ -82324,6 +84520,16 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C07949"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/03/walt-disney-world-pin-tuesday-limited-edition-easter-expedition-everest/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "one LE 2,500 pin of Mickey and Minnie painting eggs",
+     "claim_ref": "C08796"
     }
    ]
   },
@@ -82442,9 +84648,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -82524,6 +84728,16 @@
      "method": "search_snippet",
      "note": "Listing title says Limited Release",
      "claim_ref": "C08377"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/06/disney-world-pin-tuesday-even-more-daring-detectives-the-hunchback-of-notre-dame-30th-anniversary-and-enchanted-doors/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "single limited release pin of Frollo and Esmeralda with 30 Years stamp",
+     "claim_ref": "C08787"
     }
    ]
   },
@@ -82550,8 +84764,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -82639,6 +84852,16 @@
      "method": "search_snippet",
      "note": "USD pricing",
      "claim_ref": "C06817"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/06/disney-world-pin-tuesday-even-more-daring-detectives-the-hunchback-of-notre-dame-30th-anniversary-and-enchanted-doors/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "movable stage pin: Clopin places the crown on Quasimodo; LE 3,000",
+     "claim_ref": "C08786"
     }
    ]
   },
@@ -82768,8 +84991,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -82837,6 +85059,16 @@
      "method": "search_snippet",
      "note": "USD pricing",
      "claim_ref": "C06697"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-zootopia-10th-anniversary-muppets-disney-park-day/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Gonzo and Camilla on a safari vehicle on a single $26.99 pin, LE 3,000",
+     "claim_ref": "C08783"
     }
    ]
   },
@@ -82959,13 +85191,15 @@
     "Park / Retailer": "Disney's Hollywood Studios; Walt Disney World",
     "Categories": "Muppets Disney Park Day - Disney's Hollywood Studios",
     "Collection name": "Muppets Disney Park Day - Disney's Hollywood Studios",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 3,
+    "Set count check": "incomplete (2/3) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: edition_type",
+    "set incomplete (2/3)",
     "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
@@ -83052,14 +85286,15 @@
     "Park / Retailer": "Disney's Hollywood Studios; Walt Disney World",
     "Categories": "Muppets Disney Park Day - Disney's Hollywood Studios",
     "Collection name": "Muppets Disney Park Day - Disney's Hollywood Studios",
-    "Set count check": "unknown (no expected count claimed)",
+    "Expected pin count": 3,
+    "Set count check": "incomplete (2/3) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "set incomplete (2/3)"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -83117,6 +85352,16 @@
      "method": "search_snippet",
      "note": "summary says LP lists it among Feb 3 Magic Kingdom entries; conflicts with Feb 17 DHS week elsewhere",
      "claim_ref": "C07904"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-muppets-disneys-hollywood-studios-high-school-musical-20th-anniversary-and-more/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Gonzo and Pepe ride Tower of Terror on one mini jumbo, LE 1,500",
+     "claim_ref": "C08784"
     }
    ]
   },
@@ -83143,7 +85388,6 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of brush-of-magic/limited-edition/dumbo"
    ],
    "warnings": [],
@@ -83212,6 +85456,16 @@
      "method": "search_snippet",
      "note": "Bean Bunny and Fozzie ride Dumbo the Flying Elephant",
      "claim_ref": "C07900"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-the-muppets-chip-n-dale-play-along-pins-windows-of-attraction/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Bean Bunny and Fozzie Bear ride Dumbo on one pin, LE 3,000",
+     "claim_ref": "C08781"
     }
    ]
   },
@@ -83382,8 +85636,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: edition_type"
    ],
    "warnings": [
     "variants: pin_name"
@@ -83496,6 +85749,16 @@
      "method": "search_snippet",
      "note": "Castle design with Kermit and Miss Piggy at Magic Kingdom",
      "claim_ref": "C08392"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-the-muppets-chip-n-dale-play-along-pins-windows-of-attraction/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "jumbo shows Kermit and Miss Piggy in front of the castle, LE 1,500",
+     "claim_ref": "C08782"
     }
    ]
   },
@@ -84099,9 +86362,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -84233,6 +86494,16 @@
      "method": "search_snippet",
      "note": "headline: limited edition resort pins",
      "claim_ref": "C07889"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/09/limited-edition-55th-anniversary-contemporary-and-polynesian-resort-pins-debut-at-walt-disney-world/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Polynesian pin shows Mickey and Minnie in tropical attire on one pin",
+     "claim_ref": "C08790"
     }
    ]
   },
@@ -84430,9 +86701,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "structure: confirm one pin showing all of these characters, not separate pins"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -84542,6 +86811,16 @@
      "method": "search_snippet",
      "note": "US dollar price",
      "claim_ref": "C07914"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-zootopia-10th-anniversary-muppets-disney-park-day/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Nick and Judy back to back inside a police badge on one LE 4,000 pin",
+     "claim_ref": "C08785"
     }
    ]
   },
@@ -90571,6 +92850,16 @@
      "method": "search_snippet",
      "note": "Release at Disneyland Paris resort",
      "claim_ref": "C02567"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.mousesteps.com/2024/07/29/disneyland-paris-august-2024-pins-feature-stitch-beauty-and-the-beast-and-more/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "August 10 features four Beauty and the Beast pins plus a lanyard",
+     "claim_ref": "C08573"
     }
    ]
   },
@@ -94525,7 +96814,8 @@
     "release_location": "Walt Disney Studios Store",
     "region": "France",
     "release_date": "2025-04-26",
-    "edition_type": "limited edition"
+    "edition_type": "limited edition",
+    "edition_size": 700
    },
    "record_confidence": "Low",
    "engine_verified": false,
@@ -94587,6 +96877,16 @@
      "method": "search_snippet",
      "note": "Listed among flyer's limited editions",
      "claim_ref": "C02968"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-april-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Berlioz & Toulouse limited edition of 700",
+     "claim_ref": "C08569"
     }
    ]
   },
@@ -95006,6 +97306,16 @@
      "method": "search_snippet",
      "note": "Four LE that day; the remaining three after Lady and Tramp are Cinderella 75th",
      "claim_ref": "C02837"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://medium.com/@disney_mouseketeer/disneyland-paris-february-2025-pins-preview-sheet-schedule-77f6c793773a",
+     "publisher": "medium.com",
+     "source_class": "unclassified",
+     "method": "search_snippet",
+     "note": "four LE pins on Feb 15, three of which celebrate Cinderella's 75th anniversary",
+     "claim_ref": "C08572"
     }
    ]
   },
@@ -95314,6 +97624,16 @@
      "method": "search_snippet",
      "note": "Ten festival pins, Pueblo Trading Post exclusives",
      "claim_ref": "C04919"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.laughingplace.com/disney-parks/dlp-july-2025-pins/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "ten Disney Music Festival pins for July, one with the festival logo, others characters with sheet music",
+     "claim_ref": "C08567"
     }
    ]
   },
@@ -95607,7 +97927,8 @@
     "release_location": "Disneyland Paris",
     "region": "France",
     "release_date": "2025-03-29",
-    "edition_type": "limited edition"
+    "edition_type": "limited edition",
+    "expected_pin_count": 2
    },
    "record_confidence": "Low",
    "engine_verified": false,
@@ -95669,6 +97990,16 @@
      "method": "search_snippet",
      "note": "Listed as limited edition",
      "claim_ref": "C02925"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.mousesteps.com/2025/02/26/disneyland-paris-pin-releases-for-march-2025-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "two LE butterfly-themed pins featuring Dumbo and Rabbit on March 29",
+     "claim_ref": "C08570"
     }
    ]
   },
@@ -95681,7 +98012,8 @@
     "release_location": "World of Disney",
     "region": "France",
     "release_date": "2025-04-19",
-    "edition_type": "limited edition"
+    "edition_type": "limited edition",
+    "edition_size": 700
    },
    "record_confidence": "Low",
    "engine_verified": false,
@@ -95743,6 +98075,16 @@
      "method": "search_snippet",
      "note": "Listed among flyer's limited editions",
      "claim_ref": "C02958"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-april-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Easter HDL limited edition of 700",
+     "claim_ref": "C08568"
     }
    ]
   },
@@ -97348,7 +99690,9 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [],
-   "warnings": [],
+   "warnings": [
+    "variants: release_date"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -97425,6 +99769,16 @@
      "method": "search_snippet",
      "note": "Single LE pin",
      "claim_ref": "C02818"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02-01",
+     "source_url": "https://www.mousesteps.com/2025/01/29/disneyland-paris-shares-february-2025-pin-releases/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "snippet places the Lady Tremaine silhouette LE on February 1 (differs from our 2025-02-08)",
+     "claim_ref": "C08571"
     }
    ]
   },
@@ -98951,6 +101305,16 @@
      "method": "search_snippet",
      "note": "Release date given in schedule",
      "claim_ref": "C03263"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10-17",
+     "source_url": "https://www.mousesteps.com/2025/09/29/disneyland-paris-october-2025-pins-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Goofy, Donald, Daisy, Mickey, Minnie, Chip and Dale pajama party pins on Oct 17",
+     "claim_ref": "C08616"
     }
    ]
   },
@@ -99282,6 +101646,16 @@
      "method": "search_snippet",
      "note": "One pin plus three other pins",
      "claim_ref": "C03137"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.mousesteps.com/2025/07/29/disneyland-paris-pins-for-august-2025-revealed-including-picsou-magazine-theme/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Scrooge with nephews on one pin, plus Scrooge, Donald and Beagle Boys on three other pins",
+     "claim_ref": "C08617"
     }
    ]
   },
@@ -101424,6 +103798,16 @@
      "method": "search_snippet",
      "note": "Described as a limited edition series",
      "claim_ref": "C02848"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-pin-release-march-2025/",
+     "publisher": "laughingplace.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Mar 8 2025 Stitch-as-villains release described as a limited edition series",
+     "claim_ref": "C08698"
     }
    ]
   },
@@ -102440,7 +104824,8 @@
     "release_date": "2025-10-04",
     "edition_type": "open edition",
     "price": 15,
-    "currency": "EUR"
+    "currency": "EUR",
+    "expected_pin_count": 4
    },
    "record_confidence": "Low",
    "engine_verified": false,
@@ -102556,6 +104941,16 @@
      "method": "search_snippet",
      "note": "Euro",
      "claim_ref": "C03209"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-october-2025",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists four villain pins for Oct 4, each OE at 15 EUR",
+     "claim_ref": "C08618"
     }
    ]
   },
@@ -103190,6 +105585,26 @@
      "method": "search_snippet",
      "note": "July 4th",
      "claim_ref": "C08297"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "publisher": "mypincentral.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Flyer lists five OE Alice pins for July 4, 2026",
+     "claim_ref": "C08619"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.mousesteps.com/2026/06/29/disneyland-paris-july-2026-pin-release-schedule-revealed/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Five open edition pins including Alice, Dinah and Mad Hatter",
+     "claim_ref": "C08620"
     }
    ]
   },
@@ -103806,6 +106221,26 @@
      "method": "search_snippet",
      "note": "Mousesteps describes a tea bag-themed set",
      "claim_ref": "C08301"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-august-2026-pin-releases/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Five new OE pins with Disney & Pixar characters on tea bags",
+     "claim_ref": "C08621"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-08-22",
+     "source_url": "https://pixiedustdlp.com/2026/07/29/pins-disneyland-paris-august-2026/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Tea bag OE pins on Aug 22: Marie, Lotso, Winnie the Pooh, Chip & Dale, Olaf",
+     "claim_ref": "C08622"
     }
    ]
   },
@@ -106612,6 +109047,16 @@
      "method": "search_snippet",
      "note": "Article announces a DLP Pin Trading Night in September 2026",
      "claim_ref": "C08306"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://www.mousesteps.com/2026/09/01/disneyland-paris-pin-trading-night-returns-on-september-19th/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Enchanted-themed Pin Trading Night has a set of 12 pins",
+     "claim_ref": "C08699"
     }
    ]
   },
@@ -108949,7 +111394,7 @@
    "set_research_key": null,
    "proposed": {
     "set_name": "Disney Tales of Magic: Lilo & Stitch",
-    "release_date": "2026-06-20",
+    "release_date": "2026-06-27",
     "release_location": "Disneyland Paris",
     "region": "France",
     "edition_type": "limited",
@@ -109059,6 +111504,16 @@
      "method": "search_snippet",
      "note": "Mousesteps says Jun 27 (conflict)",
      "claim_ref": "C03830"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06-27",
+     "source_url": "https://pixiedustdlp.com/2026/06/01/pins-disneyland-paris-06-2026/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Places the Tales of Magic Lilo & Stitch LE pin on June 27",
+     "claim_ref": "C08623"
     }
    ]
   },
@@ -111125,6 +113580,16 @@
      "method": "search_snippet",
      "note": "California",
      "claim_ref": "C06881"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/complete-best-buds-pin-collection/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "monthly Disneyland-only series of 12 pins, LE 2,500 each",
+     "claim_ref": "C08702"
     }
    ]
   },
@@ -113454,11 +115919,14 @@
     "edition_size": 5000,
     "price": 54.99,
     "release_date": "2026-04-07",
-    "release_location": "Disney Store (online)"
+    "release_location": "Disney Store (online)",
+    "expected_pin_count": 5
    },
    "record_confidence": "Low",
    "engine_verified": false,
-   "review_reasons": [],
+   "review_reasons": [
+    "set incomplete (4/5) \u2014 missing pins are NOT created"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -113514,6 +115982,16 @@
      "method": "search_snippet",
      "note": "Disney Store",
      "claim_ref": "C06938"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.dismerchandise.com/2026/04/07/disneyland-70th-anniversary-vault-collection-pin-set-3-limited-edition-available-online-for-purchase/",
+     "publisher": "dismerchandise.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "large Carthay Circle pin plus four character pins; LE 5,000, $54.99",
+     "claim_ref": "C08703"
     }
    ]
   },
@@ -121116,11 +123594,14 @@
     "set_name": "Epcot International Festival of the Arts 2024 pins",
     "release_location": "Creations Shop, EPCOT",
     "region": "US",
-    "release_date": "2024-01-12"
+    "release_date": "2024-01-12",
+    "expected_pin_count": 3
    },
    "record_confidence": "Low",
    "engine_verified": false,
-   "review_reasons": [],
+   "review_reasons": [
+    "set over (4/3) \u2014 check for variants or wrong set"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -121169,6 +123650,16 @@
      "method": "search_snippet",
      "note": "festival Jan 12 - Feb 19, 2024",
      "claim_ref": "C05604"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/epcot-international-festival-of-the-arts-2024-disney-pins/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "blog lists three Figment pins for the 2024 festival (pin-on-pin, hinged, AP spinner)",
+     "claim_ref": "C08700"
     }
    ]
   },
@@ -121621,6 +124112,16 @@
      "method": "search_snippet",
      "note": "each LE 2,000",
      "claim_ref": "C05638"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://wdwnt.com/2024/11/epcot-holiday-around-the-world-pins-storytellers/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "series covers UK, France, Norway and Italy (Minnie) pins",
+     "claim_ref": "C08701"
     }
    ]
   },
@@ -121778,6 +124279,16 @@
      "method": "search_snippet",
      "note": "Aug 9, 2024",
      "claim_ref": "C05649"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=38108",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "fan database (secondary): boxed set of the 4 party pins plus a Mickey & Minnie completer",
+     "claim_ref": "C08704"
     }
    ]
   },
@@ -125253,11 +127764,14 @@
     "edition_size": 2500,
     "price": 26.99,
     "release_location": "Walt Disney World",
-    "release_date": "2026"
+    "release_date": "2026",
+    "expected_pin_count": 12
    },
    "record_confidence": "Low",
    "engine_verified": false,
-   "review_reasons": [],
+   "review_reasons": [
+    "set incomplete (3/12) \u2014 missing pins are NOT created"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -125323,6 +127837,16 @@
      "method": "search_snippet",
      "note": "2026 series",
      "claim_ref": "C06241"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://wdwnt.com/2026/06/disney-world-pin-tuesday-even-more-daring-detectives-the-hunchback-of-notre-dame-30th-anniversary-and-enchanted-doors/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Emperor's New Groove pin is the 6th entry in a 12-part series",
+     "claim_ref": "C08706"
     }
    ]
   },
@@ -125997,11 +128521,14 @@
    "proposed": {
     "set_name": "Muppets Disney Park Day - Disney's Hollywood Studios",
     "release_date": "2026-02",
-    "release_location": "Disney's Hollywood Studios, Walt Disney World"
+    "release_location": "Disney's Hollywood Studios, Walt Disney World",
+    "expected_pin_count": 3
    },
    "record_confidence": "Low",
    "engine_verified": false,
-   "review_reasons": [],
+   "review_reasons": [
+    "set incomplete (2/3) \u2014 missing pins are NOT created"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -126038,6 +128565,16 @@
      "method": "search_snippet",
      "note": "DHS",
      "claim_ref": "C06203"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://wdwnt.com/2026/02/disney-world-pin-tuesday-muppets-disneys-hollywood-studios-high-school-musical-20th-anniversary-and-more/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Feb 17 HS release had three pins: Gertie & Pepe, Runaway Railway Rowlf, Tower of Terror mini jumbo",
+     "claim_ref": "C08705"
     }
    ]
   },

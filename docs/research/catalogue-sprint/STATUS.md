@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 13:40 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 14:25 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -15,7 +15,7 @@ _Last updated: 2026-10-14 13:40 UTC by Claude (sprint coordinator session). Chec
 
 ## Current work by agent
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
-- **Dev agent:** waiting. No sprint issue is approved yet (#235, #237, #239, #240, #241 are proposals).
+- **Dev agent:** #235 is approved and `status:ready`, but the agent is held by the WIP limit (2 open `claude/*` PRs: #238, #242, unrelated work awaiting your review). It starts at the first :07 run after one of them is merged or closed. Queue after that: #239, #237, then #241 / #240.
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)
@@ -34,13 +34,13 @@ _Last updated: 2026-10-14 13:40 UTC by Claude (sprint coordinator session). Chec
 ## Catalogue metrics (from `DASHBOARD.md`)
 | | |
 |---|---|
-| Candidate pins | 847 (≈ 795 unique) |
+| Candidate pins | 854 (≈ 801 unique) |
 | Sets / releases | 404 |
 | **Directly verified** | **0** (needs your staging session) |
 | **Publication-ready** | **0** |
-| High / Medium / Low / Unverified | 148 / 354 / 343 / 2 |
+| High / Medium / Low / Unverified | 148 / 354 / 350 / 2 |
 | 2+ independent publishers | 510 |
-| Contradictions / flagged duplicates / catalogue duplicates | 17 / 25 / 27 (+8 recognised variants) |
+| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 27 / 26 / 27 (+8 recognised variants) |
 | Verification effort | 343 pages, ≈ 11–12 h with set-level review; pilot ≈ 45–50 min |
 | Progress to 1,000 / 5,000 / 10,000 **verified** | 0% / 0% / 0% (candidates: 85% / 17% / 8%) |
 
@@ -49,21 +49,15 @@ _Last updated: 2026-10-14 13:40 UTC by Claude (sprint coordinator session). Chec
 - **Official sources** for DLP and WDW: none machine-readable. They need your photos or approved access.
 - **Search-only research** has hit diminishing returns (≈ 14 pins per 39 searches in the last DLP pass).
 
-## Decisions requiring your approval (labels are human-only: agents cannot add them)
-| Issue | What | Labels to add |
-|---|---|---|
-| #235 | Batch approval never covers variant or possible-duplicate pins | `approved` `autonomy:L2` `size:S` `agent:backend` `P1` |
-| #237 | Import design + dry run (writes nothing) | `approved` `autonomy:L2` `size:S` `agent:backend` `P2` |
-| #239 | Review-by-page API (read only); split from #236 | `approved` `autonomy:L2` `size:S` `agent:backend` `P1` |
-| #240 | Review-by-page screen + one-pin/separate-pins choice; blocked by #239 | `approved` `autonomy:L2` `size:S` `agent:ui` `P1` |
-| #241 | Import approved, verified pins as new **non-public** pins (staging first); blocked by #237 | `approved` `autonomy:L2` `size:S` `agent:backend` `P1` |
-| #236 | Superseded by #239 + #240 | close as not planned |
-
-**Also:**
-- **Network:** allow `www.laughingplace.com`, `wdwnt.com`, `dlpreport.com`.
-- **Affiliate:** apply to Disney Store CJ.
-- **Photos:** 5–10 of your own poster photos.
-- **Open-data stance:** no rush.
+## Decisions requiring your approval
+- **Labels done:** #235, #237, #239, #240, #241 are approved.
+  - **#236:** close it as not planned, if you haven't already.
+- **To unblock the dev agent:** review #238 and #242 (unrelated agent PRs). The WIP limit of 2 holds new work until one is merged or closed.
+- **Also:**
+  - **Network:** allow `www.laughingplace.com`, `wdwnt.com`, `dlpreport.com`.
+  - **Affiliate:** apply to Disney Store CJ.
+  - **Photos:** 5–10 of your own poster photos.
+  - **Open-data stance:** no rush.
 
 ## Shortest path to the first 100 directly verified, safely imported pins
 1. **Phone, now:** label #235, #237, #241 (and #239/#240 if you want page review). The dev agent works through them one at a time, each with QA and security review. You merge each PR.
@@ -75,19 +69,21 @@ _Last updated: 2026-10-14 13:40 UTC by Claude (sprint coordinator session). Chec
 ## Accuracy (blind tests, per dimension)
 | Sample | Identity | Grouping (one pin vs separate) | Edition size |
 |---|---|---|---|
-| Random, 16 releases, 60 pins | 90% | 93% | 94% |
+| Random, 16 releases: before the grouping pass | 90% | 93% | 94% |
+| Random, 16 releases: after the grouping pass, approvable pins only | 89% | 92% | 94% |
 | DSUK pilot, 10 sets, 77 pins | 99% | 100% | 100% |
 
-- **Hand-adjudicated overall (random sample):** 83% fully correct, 8% wrong or mis-structured, 8% unconfirmed. Errors concentrate in Low-confidence DLP sets.
-- **New engine rules in this sprint:**
-  - `pin_structure` evidence: a source saying "separate pins" blocks a combined record.
-  - Variants are no longer flagged as duplicates: 8 pairs reclassified, so duplicate flags went from 33 to 25.
-  - A set with more pins than its stated count is flagged.
+- **Hand-adjudicated overall (random sample, before):** 83% fully correct.
+- **Grouping pass:**
+  - 132 `pin_structure` claims (one pin / separate pins).
+  - 9 grouping corrections proposed: Pride 2026 Mickey and Minnie are separate; Toy Story 5 Karen & Forky are one pin; Pajama Party; Goofy LE vs Rafiki; Halloween 2025 duos.
+  - Wrong split records are now **blocked for review**, not approvable. Corrected records were added.
+  - Variant identity resolved for Orange Bird, Figment ×3, storyteller Mickeys and Ariel.
+- **Honest reading:** the random sample is small and was used to find the errors, so the "after" numbers mostly show the errors being caught (blocked), not new precision. A **fresh** blind sample is next.
 
 ## Next planned actions (check-ins take these in order)
-1. **Grouping re-research:** for multi-character pins in Low/Medium DLP sets, then WDW, find a source that states one pin vs separate pins, and record `pin_structure`. Capped searches; skip when nothing turns up in 2 searches.
-2. **Variant identity:** for the 8 variant pairs and 25 possible duplicates, find what distinguishes them (chaser, colour, size, edition) or confirm they are the same pin.
-3. **Fresh blind benchmark** on a new random sample, excluding earlier samples. Report identity / grouping / field accuracy before vs after.
-4. **Pilot:** after any data change, regenerate, re-run the offline load test, and keep `LAPTOP-CHECKLIST.md` numbers current.
-5. **Lower priority:** WDW festival coverage; coverage gaps for DSUK and DLR.
-6. **Every check-in:** check new PRs, QA/security findings and CI on sprint issues, and act on them.
+1. **Fresh blind benchmark** on a new random sample, excluding earlier samples. Report identity / grouping / field accuracy before vs after.
+2. **Pilot:** after any data change, regenerate, re-run the offline load test, and keep `LAPTOP-CHECKLIST.md` numbers current.
+3. **Remaining grouping gaps:** Tangled June LEs, Tinker Bell/Periwinkle jumbo, Paris Mickey & Friends pairs, Chip & Dale pins. Also the two Goofy advent variants and Stitch 626.
+4. **Lower priority:** WDW festival coverage; coverage gaps for DSUK and DLR.
+5. **Every check-in:** check new PRs, QA/security findings and CI on sprint issues, and act on them.

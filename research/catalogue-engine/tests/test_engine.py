@@ -260,3 +260,19 @@ class CrossSetDuplicates(unittest.TestCase):
         }
         pins = {k + "/dumbo": {"set_key": k, "fields": {}} for k in sets}
         self.assertEqual(cross_set_suspects(pins, sets), {})
+
+
+class PublisherFamilies(unittest.TestCase):
+    def test_regional_disney_stores_are_one_publisher(self):
+        self.assertEqual(S.registrable("disneystore.co.uk"), S.registrable("disneystore.eu"))
+        self.assertEqual(S.registrable("shopdisney.com"), S.registrable("disneystore.com.au"))
+        self.assertEqual(S.registrable("twitter.com"), S.registrable("x.com"))
+        self.assertNotEqual(S.registrable("disneystore.co.uk"), S.registrable("mydisneystore.blog.com"))
+
+    def test_two_regional_stores_do_not_corroborate(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[
+            claim("characters", ["Goofy"], "https://www.disneystore.co.uk/a-438000000001.html"),
+            claim("characters", ["Goofy"], "https://www.disneystore.eu/a-438000000001.html")])]))
+        pins, _ = reconcile(st)
+        self.assertEqual(pins["s/x/p"]["fields"]["characters"]["publishers"], ["Disney Store (all regions)"])

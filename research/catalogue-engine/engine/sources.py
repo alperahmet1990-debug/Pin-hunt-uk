@@ -24,8 +24,23 @@ def domain_of(url: str) -> str:
     return re.sub(r"^(www\d?|m)\.", "", host)
 
 
+# Regional storefronts of one retailer are one publisher: disneystore.co.uk and disneystore.eu
+# must not corroborate each other.
+PUBLISHER_FAMILIES = (
+    (("disneystore.", "shopdisney."), "Disney Store (all regions)"),
+    (("twitter.com", "x.com"), "x.com"),
+)
+
+
 def registrable(host: str) -> str:
-    """Collapse subdomains so blog.x.com and x.com count as one publisher."""
+    """Collapse subdomains (blog.x.com = x.com) and regional storefronts into one publisher."""
+    for needles, family in PUBLISHER_FAMILIES:
+        if any(host == n or host.startswith(n) or ("." + n) in "." + host for n in needles):
+            return family
+    return _registrable(host)
+
+
+def _registrable(host: str) -> str:
     parts = host.split(".")
     if len(parts) >= 3 and parts[-2] in ("co", "com", "org") and len(parts[-1]) == 2:
         return ".".join(parts[-3:])

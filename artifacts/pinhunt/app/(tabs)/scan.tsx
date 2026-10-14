@@ -21,7 +21,6 @@ import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
-import { getPinImageSource } from '@/utils/pinImage';
 import { identifyPin, type ImageInsights } from '@/utils/identifyPin';
 import {
   RETAKE_TIPS,
@@ -32,7 +31,9 @@ import {
 } from '@/utils/scanRecovery';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { CataloguePin } from '@workspace/pin-repository';
-import { PinImage } from '@/components/ui/PinImage';
+import { QuickAddSheet } from '@/components/QuickAddSheet';
+import { ScanResult } from '@/components/scan/ScanResult';
+import { useMyAccess } from '@/hooks/useMyAccess';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -105,6 +106,7 @@ export default function ScanScreen() {
   const { markViewed } = useCollection();
   const { pins, repository } = usePinCatalogue();
   const { session } = useAuth();
+  const access = useMyAccess();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
@@ -115,6 +117,9 @@ export default function ScanScreen() {
   // "None of these" keeps the photo and offers ways forward instead of resetting.
   const [showRecovery, setShowRecovery] = useState(false);
   const [showRetakeTips, setShowRetakeTips] = useState(false);
+  // "That's it" adds the pin in place (UX-005); a new scan starts a fresh result.
+  const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
+  const [resultKey, setResultKey] = useState(0);
   const shutterAnim = useRef(new Animated.Value(1)).current;
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
@@ -240,6 +245,7 @@ export default function ScanScreen() {
       }
 
       setMatches(resolved);
+      setResultKey(k => k + 1);
       setScanState('results');
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Something went wrong';
@@ -248,15 +254,18 @@ export default function ScanScreen() {
     }
   }, [captured, pins, repository, session?.access_token]);
 
-  // ── Confirm match ─────────────────────────────────────────────────────────────
-  const handleSelectMatch = (match: Match) => {
+  // ── Confirm match: "That's it" adds the pin without leaving the scan ─────────
+  const handleConfirm = (pin: CataloguePin) => {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    markViewed(match.pin.id);
-    if (!match.pin.imageUrl) {
-      router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: match.pin.id } });
-      return;
-    }
-    router.push({ pathname: '/pin/[id]', params: { id: match.pin.id } });
+    markViewed(pin.id);
+    setQuickAddPin(pin);
+  };
+
+  // A pin without a catalogue photo opens Pin detail like any other: a scan
+  // never routes collectors into the photo-contribution flow.
+  const handleOpenPin = (pin: CataloguePin) => {
+    markViewed(pin.id);
+    router.push({ pathname: '/pin/[id]', params: { id: pin.id } });
   };
 
   const handleReset = () => {
@@ -302,18 +311,6 @@ export default function ScanScreen() {
     });
   };
 
-  const confidenceColor = (score: number) => {
-    if (score >= 75) return colors.owned;
-    if (score >= 50) return colors.wanted;
-    return colors.homeMuted;
-  };
-
-  const confidenceLabel = (score: number) => {
-    if (score >= 75) return 'Strong match';
-    if (score >= 50) return 'Possible match';
-    return 'Weak match';
-  };
-
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       <ScrollView
@@ -328,7 +325,8 @@ export default function ScanScreen() {
           </Text>
         </View>
 
-        {/* ── Viewfinder ── */}
+        {/* ── Viewfinder (hidden once there's a result: the comparison shows the photo) ── */}
+        {scanState !== 'results' && (
         <View style={[styles.viewfinderWrap, { marginHorizontal: 16 }]}>
           <Animated.View
             style={[
@@ -370,6 +368,7 @@ export default function ScanScreen() {
             <CornerMarker corner="br" color={colors.homeSand} />
           </Animated.View>
         </View>
+        )}
 
         {/* ── Error banner ── */}
         {errorMsg && (
@@ -431,124 +430,22 @@ export default function ScanScreen() {
         {/* ── Match results ── */}
         {scanState === 'results' && (
           <View style={styles.matchesSection}>
-            {/* ── What the scan understood from the photo ── */}
-            {insights &&
-              (insights.textOnPin ||
-                insights.characters.length > 0 ||
-                insights.keywords.length > 0 ||
-                insights.logos.length > 0 ||
-                insights.webGuesses.length > 0) && (
-              <View
-                style={[
-                  styles.insightsCard,
-                  { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 },
-                ]}
-              >
-                <View style={styles.insightsHeader}>
-                  <Feather name="eye" size={14} color={colors.homeCoral} />
-                  <Text style={[styles.insightsTitle, { color: colors.homeInk }]}>
-                    What we saw in your photo
-                  </Text>
-                </View>
-                {insights.textOnPin ? (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Text on pin</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={3}>
-                      “{insights.textOnPin}”
-                    </Text>
-                  </View>
-                ) : null}
-                {insights.characters.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Characters</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]}>
-                      {insights.characters.join(', ')}
-                    </Text>
-                  </View>
-                )}
-                {insights.logos.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Logos</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]}>
-                      {insights.logos.join(', ')}
-                    </Text>
-                  </View>
-                )}
-                {insights.keywords.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Looks like</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={2}>
-                      {insights.keywords.join(', ')}
-                    </Text>
-                  </View>
-                )}
-                {insights.webGuesses.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Web matches</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={2}>
-                      {insights.webGuesses.join(', ')}
-                    </Text>
-                  </View>
-                )}
-              </View>
+            {captured && (
+              <ScanResult
+                key={resultKey}
+                photoUri={captured.uri}
+                candidates={matches}
+                insights={insights}
+                showDetails={access.isAdmin || access.isAppCreator}
+                onConfirm={handleConfirm}
+                onOpenPin={handleOpenPin}
+                onNoneOfThese={openRecovery}
+                recoveryOpen={showRecovery}
+              />
             )}
+            <Button label="Scan another pin" icon="camera" variant="text" fullWidth onPress={handleScanPin} />
 
-            <Text style={[styles.matchesTitle, { color: colors.homeInk }]}>Possible Matches</Text>
-            <Text style={[styles.matchesSub, { color: colors.homeMuted }]}>
-              Tap the correct pin to see its details and value
-            </Text>
-
-            {matches.map((match, i) => (
-              <TouchableOpacity
-                key={`${match.pin.id}-${i}`}
-                onPress={() => handleSelectMatch(match)}
-                activeOpacity={0.85}
-                accessibilityRole="button"
-                accessibilityLabel={`Match ${i + 1}: ${match.pin.title}, ${match.confidence}% ${confidenceLabel(match.confidence)}`}
-                style={[
-                  styles.matchCard,
-                  { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 },
-                ]}
-              >
-                <View style={styles.matchRankWrap}>
-                  <Text style={[styles.matchRank, { color: colors.homeMuted }]}>#{i + 1}</Text>
-                </View>
-                <PinImage source={getPinImageSource(match.pin)} style={styles.matchImage} />
-                <View style={styles.matchInfo}>
-                  <Text style={[styles.matchTitle, { color: colors.homeInk }]} numberOfLines={2}>
-                    {match.pin.title}
-                  </Text>
-                  <Text style={[styles.matchBrand, { color: colors.homeMuted }]}>{match.pin.brand}</Text>
-                  <Text style={[styles.matchCollection, { color: colors.homeMuted }]} numberOfLines={1}>
-                    {match.pin.collection}
-                  </Text>
-                  {match.reasoning ? (
-                    <Text style={[styles.matchReasoning, { color: colors.homeMuted }]} numberOfLines={2}>
-                      {match.reasoning}
-                    </Text>
-                  ) : null}
-                </View>
-                <View style={styles.confidenceWrap}>
-                  <Text style={[styles.confidenceScore, { color: confidenceColor(match.confidence) }]}>
-                    {match.confidence}%
-                  </Text>
-                  <Text style={[styles.confidenceLabel, { color: confidenceColor(match.confidence) }]}>
-                    {confidenceLabel(match.confidence)}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-
-            {!showRecovery ? (
-              <TouchableOpacity
-                onPress={openRecovery}
-                style={styles.noneMatch}
-                activeOpacity={0.7}
-                accessibilityRole="button"
-              >
-                <Text style={[styles.noneMatchText, { color: colors.homeCoralDeep }]}>None of these?</Text>
-              </TouchableOpacity>
-            ) : (
+            {showRecovery && (
               <View
                 style={[styles.recoveryCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                 accessibilityLabel="Not the right pin? Options"
@@ -601,6 +498,8 @@ export default function ScanScreen() {
         )}
 
       </ScrollView>
+
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
 
     </View>
   );
@@ -714,37 +613,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   boardsBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  // Insights ("what we saw")
-  insightsCard: { borderWidth: 1, padding: 12, gap: 8, marginBottom: 4 },
-  insightsHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  insightsTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  insightRow: { flexDirection: 'row', gap: 8 },
-  insightLabel: { fontSize: 12, fontFamily: 'Inter_500Medium', width: 82 },
-  insightValue: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 },
   // Matches
-  matchesSection: { marginTop: 20, paddingHorizontal: 16, gap: 10 },
-  matchesTitle: { fontSize: 18, fontFamily: 'Inter_700Bold' },
-  matchesSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginBottom: 4 },
-  matchCard: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    borderWidth: 1,
-    overflow: 'hidden',
-  },
-  matchRankWrap: { width: 32, alignItems: 'center', paddingTop: 14 },
-  matchRank: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  matchImage: { width: 72, height: 72, resizeMode: 'cover', alignSelf: 'center' },
-  matchInfo: { flex: 1, padding: 10, gap: 2 },
-  matchTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', lineHeight: 17 },
-  matchBrand: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  matchCollection: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  matchReasoning: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 4, lineHeight: 15 },
-  confidenceWrap: { paddingRight: 12, paddingTop: 10, alignItems: 'center', minWidth: 68 },
-  confidenceScore: { fontSize: 20, fontFamily: 'Inter_700Bold' },
-  confidenceLabel: { fontSize: 9, fontFamily: 'Inter_600SemiBold', textAlign: 'center', marginTop: 2 },
-  noneMatch: { alignItems: 'center', justifyContent: 'center', minHeight: 44, paddingVertical: 10 },
-  noneMatchText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  recoveryCard: { borderWidth: 1, borderRadius: 18, paddingHorizontal: 16, paddingTop: 14, marginTop: 4, marginBottom: 12 },
+  matchesSection: { marginTop: 4, gap: 10 },
+  recoveryCard: { borderWidth: 1, borderRadius: 18, paddingHorizontal: 16, paddingTop: 14, marginTop: 4, marginBottom: 12, marginHorizontal: 16 },
   recoveryTitle: { fontSize: 16, fontFamily: 'Inter_700Bold' },
   recoverySub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2, marginBottom: 8 },
   recoveryOption: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52, borderTopWidth: StyleSheet.hairlineWidth, paddingVertical: 8 },

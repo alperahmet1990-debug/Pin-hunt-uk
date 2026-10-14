@@ -272,6 +272,25 @@ describe("research review routes — set level", () => {
     expect(marie().status).toBe("direct_verified");
   });
 
+  it("never approves variant or possible-duplicate pins in a batch, even with a note", async () => {
+    await request(app).post(setUrl("direct-check")).set(auth).send({
+      source_url: OFFICIAL,
+      confirmed: [{ candidateId: bambi().id, fields: ["characters"] }, { candidateId: marie().id, fields: ["characters"] }],
+    });
+    expect((marie().warnings as unknown[]).length).toBeGreaterThan(0);
+    const variant = await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [bambi().id, marie().id], notes: "confirmed all values" });
+    expect(variant.body.approved).toEqual([bambi().id]);
+    expect(variant.body.skipped).toEqual([{ candidateId: marie().id, reason: expect.stringMatching(/Has variant values/) }]);
+    expect(marie().status).toBe("direct_verified");
+
+    bambi().status = "direct_verified";
+    bambi().review_reasons = ["possible cross-set duplicate of Bambi (other set)"];
+    const dup = await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [bambi().id], notes: "ok" });
+    expect(dup.body.approved).toEqual([]);
+    expect(dup.body.skipped).toEqual([{ candidateId: bambi().id, reason: expect.stringMatching(/possible duplicate/) }]);
+    expect(bambi().status).toBe("direct_verified");
+  });
+
   it("does not overwrite a pin that changed status meanwhile", async () => {
     await request(app).post(setUrl("direct-check")).set(auth).send({ source_url: OFFICIAL, confirmed: [{ candidateId: bambi().id, fields: ["characters"] }] });
     beforeUpdate = (table) => { if (table === "catalogue_candidates") bambi().status = "rejected"; };

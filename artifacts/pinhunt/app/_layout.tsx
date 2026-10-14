@@ -13,6 +13,8 @@ import { ProfileProvider, useProfile } from '@/context/ProfileContext';
 import { SubmissionNotificationsProvider } from '@/context/SubmissionNotificationsContext';
 import { UnreadMessagesProvider } from '@/context/UnreadMessagesContext';
 import { resolveGuardTarget } from '@/utils/recoveryLink';
+import { stackHeaderOptions } from '@/utils/stackHeader';
+import { useColors } from '@/hooks/useColors';
 import { pruneOldBannerDismissals } from '@/utils/tradeBannerDismissals';
 import {
   Inter_400Regular,
@@ -76,8 +78,10 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
 
 // ─── Navigation ───────────────────────────────────────────────────────────────
 function RootLayoutNav() {
+  // Headers follow the in-app Appearance (#262).
+  const colors = useColors();
   return (
-    <Stack screenOptions={{ headerBackTitle: 'Back' }}>
+    <Stack screenOptions={stackHeaderOptions(colors)}>
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="complete-profile" options={{ headerShown: false }} />

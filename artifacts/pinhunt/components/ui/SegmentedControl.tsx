@@ -48,6 +48,8 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
             activeOpacity={0.85}
             accessibilityRole="tab"
             accessibilityState={{ selected: active }}
+            // The row's 4 pt padding is part of each segment's target: 36 + 4 + 4 = 44 pt.
+            hitSlop={SEGMENT_HIT_SLOP}
             style={[
               styles.segment,
               active && { backgroundColor: tone, shadowColor: tone },
@@ -70,12 +72,17 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
   );
 }
 
+/** Visible pill height; with SEGMENT_HIT_SLOP the tap target is 44 pt (B-P2-08). */
+export const SEGMENT_HEIGHT = 36;
+const ROW_PADDING = 4;
+export const SEGMENT_HIT_SLOP = { top: ROW_PADDING, bottom: ROW_PADDING, left: 0, right: 0 };
+
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     borderWidth: 1,
     borderRadius: radius.lg,
-    padding: 4,
+    padding: ROW_PADDING,
     gap: 4,
   },
   segment: {
@@ -84,7 +91,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: spacing.xs,
-    paddingVertical: 10,
+    minHeight: SEGMENT_HEIGHT,
+    paddingVertical: 4,
     borderRadius: radius.md,
   },
   segmentActiveShadow: {

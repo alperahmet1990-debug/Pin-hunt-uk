@@ -481,7 +481,8 @@ const styles = StyleSheet.create({
   ptImageHalf: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   ptImage: { width: '100%', height: '100%' },
   ptMeta: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: spacing.sm - 2, marginBottom: spacing.sm - 2, lineHeight: 14 },
-  ptCta: { paddingVertical: spacing.sm - 1, borderRadius: radius.sm, alignItems: 'center' },
+  // 44 pt, like any button (B-P2-08); the whole card is the tap target.
+  ptCta: { minHeight: 44, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   ptCtaText: { fontSize: 12.5, fontFamily: 'Inter_700Bold' },
 
   // Complete your sets — same grammar as the shared tile, card just a touch

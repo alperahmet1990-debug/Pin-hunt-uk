@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 13:10 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 13:40 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -15,7 +15,7 @@ _Last updated: 2026-10-14 13:10 UTC by Claude (sprint coordinator session). Chec
 
 ## Current work by agent
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
-- **Dev agent:** waiting. No sprint issue is approved yet (#235, #236, #237 are proposals).
+- **Dev agent:** waiting. No sprint issue is approved yet (#235, #237, #239, #240, #241 are proposals).
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)
@@ -34,13 +34,13 @@ _Last updated: 2026-10-14 13:10 UTC by Claude (sprint coordinator session). Chec
 ## Catalogue metrics (from `DASHBOARD.md`)
 | | |
 |---|---|
-| Candidate pins | 847 (≈ 787 unique) |
+| Candidate pins | 847 (≈ 795 unique) |
 | Sets / releases | 404 |
 | **Directly verified** | **0** (needs your staging session) |
 | **Publication-ready** | **0** |
 | High / Medium / Low / Unverified | 148 / 354 / 343 / 2 |
 | 2+ independent publishers | 510 |
-| Contradictions / flagged duplicates / catalogue duplicates | 17 / 33 / 27 |
+| Contradictions / flagged duplicates / catalogue duplicates | 17 / 25 / 27 (+8 recognised variants) |
 | Verification effort | 343 pages, ≈ 11–12 h with set-level review; pilot ≈ 45–50 min |
 | Progress to 1,000 / 5,000 / 10,000 **verified** | 0% / 0% / 0% (candidates: 85% / 17% / 8%) |
 
@@ -49,17 +49,45 @@ _Last updated: 2026-10-14 13:10 UTC by Claude (sprint coordinator session). Chec
 - **Official sources** for DLP and WDW: none machine-readable. They need your photos or approved access.
 - **Search-only research** has hit diminishing returns (≈ 14 pins per 39 searches in the last DLP pass).
 
-## Decisions requiring your approval
-1. **#235:** batch approval never covers variant or possible-duplicate pins. Labels: `approved`, `autonomy:L2`, `size:S`, `agent:backend`, `P1`. The dev agent can start within the hour after that.
-2. **#236:** page-first review queue plus pin-structure confirmation. It is size M, so either approve it as is (and it will need a manual start) or ask me to split it into two size-S issues.
-3. **#237:** import design + dry run, no writes. Labels: `approved`, `autonomy:L2`, `size:S`, `agent:backend`, `P2`.
-4. **Network:** allow `www.laughingplace.com`, `wdwnt.com`, `dlpreport.com` (environment settings) to unlock full release lists.
-5. **Affiliate:** apply to Disney Store UK/US on CJ. Feed-match verification stays off until its licence and fields are confirmed.
-6. **Photos:** 5–10 of your own poster or shelf photos for the real vision test.
-7. **Open-data stance and solicitor questions** (`licensing-photos-open-data.md`, "What needs the maintainer"). No rush.
+## Decisions requiring your approval (labels are human-only: agents cannot add them)
+| Issue | What | Labels to add |
+|---|---|---|
+| #235 | Batch approval never covers variant or possible-duplicate pins | `approved` `autonomy:L2` `size:S` `agent:backend` `P1` |
+| #237 | Import design + dry run (writes nothing) | `approved` `autonomy:L2` `size:S` `agent:backend` `P2` |
+| #239 | Review-by-page API (read only); split from #236 | `approved` `autonomy:L2` `size:S` `agent:backend` `P1` |
+| #240 | Review-by-page screen + one-pin/separate-pins choice; blocked by #239 | `approved` `autonomy:L2` `size:S` `agent:ui` `P1` |
+| #241 | Import approved, verified pins as new **non-public** pins (staging first); blocked by #237 | `approved` `autonomy:L2` `size:S` `agent:backend` `P1` |
+| #236 | Superseded by #239 + #240 | close as not planned |
+
+**Also:**
+- **Network:** allow `www.laughingplace.com`, `wdwnt.com`, `dlpreport.com`.
+- **Affiliate:** apply to Disney Store CJ.
+- **Photos:** 5–10 of your own poster photos.
+- **Open-data stance:** no rush.
+
+## Shortest path to the first 100 directly verified, safely imported pins
+1. **Phone, now:** label #235, #237, #241 (and #239/#240 if you want page review). The dev agent works through them one at a time, each with QA and security review. You merge each PR.
+2. **Laptop:** `LAPTOP-CHECKLIST.md` §1–4: staging env, migration 045, smoke test (about 40 min).
+3. **Laptop:** §5: load the 100-pin DSUK pilot and verify 23 pages (about 45–50 min). Use the set view; the 15 marked pins are done one by one.
+4. **After #237 + #241 are merged:** run the import dry run on the approved pilot pins, then the import. That gives about 100 new pins on **staging**, still not public.
+5. **Separately:** your decisions on making them public (`verification_status`) and on production.
+
+## Accuracy (blind tests, per dimension)
+| Sample | Identity | Grouping (one pin vs separate) | Edition size |
+|---|---|---|---|
+| Random, 16 releases, 60 pins | 90% | 93% | 94% |
+| DSUK pilot, 10 sets, 77 pins | 99% | 100% | 100% |
+
+- **Hand-adjudicated overall (random sample):** 83% fully correct, 8% wrong or mis-structured, 8% unconfirmed. Errors concentrate in Low-confidence DLP sets.
+- **New engine rules in this sprint:**
+  - `pin_structure` evidence: a source saying "separate pins" blocks a combined record.
+  - Variants are no longer flagged as duplicates: 8 pairs reclassified, so duplicate flags went from 33 to 25.
+  - A set with more pins than its stated count is flagged.
 
 ## Next planned actions (check-ins take these in order)
-1. WDW festival coverage (Food & Wine, Flower & Garden, Festival of the Arts 2023–25): named pins from round-up posts, with a capped search budget.
-2. Coverage gaps: DSUK months with no recorded release (18), then DLR (32).
-3. After each data change: refresh the dashboard, pilot, worklist and this file.
-4. Every check-in: look for new PRs, QA/security findings and CI on sprint issues, and act on them.
+1. **Grouping re-research:** for multi-character pins in Low/Medium DLP sets, then WDW, find a source that states one pin vs separate pins, and record `pin_structure`. Capped searches; skip when nothing turns up in 2 searches.
+2. **Variant identity:** for the 8 variant pairs and 25 possible duplicates, find what distinguishes them (chaser, colour, size, edition) or confirm they are the same pin.
+3. **Fresh blind benchmark** on a new random sample, excluding earlier samples. Report identity / grouping / field accuracy before vs after.
+4. **Pilot:** after any data change, regenerate, re-run the offline load test, and keep `LAPTOP-CHECKLIST.md` numbers current.
+5. **Lower priority:** WDW festival coverage; coverage gaps for DSUK and DLR.
+6. **Every check-in:** check new PRs, QA/security findings and CI on sprint issues, and act on them.

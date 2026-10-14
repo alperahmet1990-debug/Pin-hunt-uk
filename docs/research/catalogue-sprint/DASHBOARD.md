@@ -1,20 +1,20 @@
 # PinHunt independent catalogue: dashboard
 
-_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run c74b465a4f78, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
+_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run d99d46e18dd5, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
 
 ## Headline
 
 | Measure | Value |
 |---|---|
 | Candidate pins | **847** |
-| Unique candidate pins (excl. catalogue duplicates and flagged repeats) | ≈ 787 |
+| Unique candidate pins (excl. catalogue duplicates and flagged repeats) | ≈ 795 |
 | Sets / releases | 404 |
 | **Directly verified pins** (a person or a physical pin; snippets never count) | **0** |
 | **Publication-ready** (directly verified and approved) | **0** |
 | Identity confidence High / Medium / Low / Unverified | 148 / 354 / 343 / 2 |
 | 2+ independent publishers (fan databases and repeats excluded) | 510 |
 | Any official source / news but no official / fan only | 219 / 220 / 408 |
-| Blocking contradictions / flagged possible duplicates / catalogue duplicates | 17 / 33 / 27 |
+| Blocking contradictions / flagged possible duplicates / catalogue duplicates | 17 / 25 / 27 |
 | Pins with variant values (need a per-pin note) | 102 |
 
 ## Progress towards an independent catalogue
@@ -34,9 +34,9 @@ Two bars per milestone: research candidates, and **directly verified** pins (the
 
 | Line | Pins | High | Med | Low | 2+ pubs | Official | Directly verified | Conflicts | Dup flags |
 |---|---|---|---|---|---|---|---|---|---|
-| Disneyland Paris | 333 | 0 | 166 | 166 | 176 | 0 | 0 | 10 | 13 |
-| Disney Store UK | 181 | 100 | 56 | 25 | 114 | 163 | 0 | 1 | 4 |
-| Walt Disney World | 148 | 4 | 64 | 79 | 85 | 4 | 0 | 0 | 7 |
+| Disneyland Paris | 333 | 0 | 166 | 166 | 176 | 0 | 0 | 10 | 12 |
+| Disney Store UK | 181 | 100 | 56 | 25 | 114 | 163 | 0 | 1 | 3 |
+| Walt Disney World | 148 | 4 | 64 | 79 | 85 | 4 | 0 | 0 | 1 |
 | Disneyland Resort | 108 | 10 | 50 | 48 | 65 | 15 | 0 | 2 | 6 |
 | Earlier POC + pilot | 77 | 34 | 18 | 25 | 70 | 37 | 0 | 4 | 3 |
 
@@ -62,6 +62,6 @@ Total: 760 searches, 847 named pins found by search (≈ 1.1 per search). Search
 
 ## Measured accuracy of candidates (blind audit)
 
-Blind re-research of 16 random releases (60 of our pins resolved): **83% confirmed, 8% wrong or mis-structured, 8% unconfirmed**. Errors are mostly combined-vs-separate character pins in Low-confidence DLP sets. See `accuracy-audit-2026-10-14.md`. Indicative only (small sample, snippets on both sides). A second blind re-check of the DSUK High pilot (10 sets, 61 pins) confirmed **61/61 (100%)**, every multi-character pin confirmed as one pin.
+Automatic per-dimension scoring (`tools/accuracy_bench/score_blind.py`) against independent blind re-research. **Random sample (16 releases, 60 pins): identity 90%, grouping 93%, edition size 94%. DSUK pilot sample (10 sets, 77 pins): identity 99%, grouping 100%, edition size 100%.** Hand-adjudicated overall result for the random sample: 83% fully correct (identity + grouping), 8% wrong or mis-structured, 8% unconfirmed. Errors concentrate in Low-confidence DLP sets (combined vs separate characters). Indicative only: small samples, snippets on both sides.
 
 See `COVERAGE.md` for the release coverage map.

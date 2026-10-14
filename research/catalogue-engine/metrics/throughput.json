@@ -67,6 +67,20 @@
   "confirmed": 50,
   "wrong_or_misstructured": 5,
   "unconfirmed": 5,
-  "summary": "Blind re-research of 16 random releases (60 of our pins resolved): **83% confirmed, 8% wrong or mis-structured, 8% unconfirmed**. Errors are mostly combined-vs-separate character pins in Low-confidence DLP sets. See `accuracy-audit-2026-10-14.md`. Indicative only (small sample, snippets on both sides). A second blind re-check of the DSUK High pilot (10 sets, 61 pins) confirmed **61/61 (100%)**, every multi-character pin confirmed as one pin."
+  "summary": "Automatic per-dimension scoring (`tools/accuracy_bench/score_blind.py`) against independent blind re-research. **Random sample (16 releases, 60 pins): identity 90%, grouping 93%, edition size 94%. DSUK pilot sample (10 sets, 77 pins): identity 99%, grouping 100%, edition size 100%.** Hand-adjudicated overall result for the random sample: 83% fully correct (identity + grouping), 8% wrong or mis-structured, 8% unconfirmed. Errors concentrate in Low-confidence DLP sets (combined vs separate characters). Indicative only: small samples, snippets on both sides.",
+  "by_dimension": {
+   "random_sample": {
+    "pins": 60,
+    "identity": "54/60 (90%)",
+    "grouping": "50/54 (93%)",
+    "edition_size": "16/17 (94%)"
+   },
+   "pilot_sample": {
+    "pins": 77,
+    "identity": "76/77 (99%)",
+    "grouping": "76/76 (100%)",
+    "edition_size": "25/25 (100%)"
+   }
+  }
  }
 }

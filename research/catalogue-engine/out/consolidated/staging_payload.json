@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "c74b465a4f78",
+ "git_commit": "d99d46e18dd5",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -39192,7 +39192,7 @@
    "engine_verified": true,
    "review_reasons": [
     "set incomplete (4/12)",
-    "possible internal duplicate of dlp/2026/pin-trading-night-enchanted/ariel-human"
+    "variant: same characters as dlp/2026/pin-trading-night-enchanted/ariel-human; confirm the distinguishing pin_name"
    ],
    "warnings": [
     "variants: release_date"
@@ -56738,7 +56738,7 @@
    "engine_verified": true,
    "review_reasons": [
     "set incomplete (14/24)",
-    "possible internal duplicate of dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/goofy-marleys-ghost"
+    "variant: same characters as dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/goofy-marleys-ghost; confirm the distinguishing pin_name"
    ],
    "warnings": [
     "variants: currency"
@@ -69753,7 +69753,7 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: release_date",
-    "possible internal duplicate of wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird"
+    "variant: same characters as wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird; confirm the distinguishing pin_name, edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72069,7 +72069,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "possible internal duplicate of wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged"
+    "variant: same characters as wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged; confirm the distinguishing pin_name, edition_size"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72348,7 +72348,7 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "possible internal duplicate of wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged"
+    "variant: same characters as wdw/2024/epcot-festival-of-the-arts-2024/figment-hinged; confirm the distinguishing edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73309,7 +73309,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "possible internal duplicate of wdw/2024/holidays-around-the-world-storytellers/uk-father-christmas"
+    "variant: same characters as wdw/2024/holidays-around-the-world-storytellers/uk-father-christmas; confirm the distinguishing pin_name"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73482,7 +73482,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "possible internal duplicate of wdw/2024/holidays-around-the-world-storytellers/uk-father-christmas"
+    "variant: same characters as wdw/2024/holidays-around-the-world-storytellers/uk-father-christmas; confirm the distinguishing pin_name"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -79370,7 +79370,7 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "possible internal duplicate of wdw/2025/spring-2025-pin-trading-night/stitch-626-mini-jumbo"
+    "variant: same characters as wdw/2025/spring-2025-pin-trading-night/stitch-626-mini-jumbo; confirm the distinguishing pin_name, edition_size"
    ],
    "warnings": [],
    "duplicate_status": "NEW",

@@ -45,6 +45,7 @@ An evidence packet is a JSON file of **claims**. A claim is one fact, from one s
 - Pricing and codes: `original_price`, `currency`, `product_code`, `pack_product_code`, `is_chaser`.
 - Visual: `visual_description`, `visual_form` (e.g. door, window, duck), `visual_colours`, `visual_features` (e.g. pin-on-pin, hinged, glitter, stained glass).
 - Physical: `front_text`, `backstamp_text`, `size_mm`, `materials`.
+- Grouping: `pin_structure` ("one pin" when a source says the characters share one pin; "separate pins" when it says they are separate). A "separate pins" claim on a multi-character record blocks sign-off.
 
 **Set fields**
 - Identity: `set_name`, `family`, `sub_series`, `issuer`, `format`.

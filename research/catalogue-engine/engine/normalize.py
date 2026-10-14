@@ -5,7 +5,7 @@ PIN_FIELDS = {
     "pin_name", "characters", "main_character", "franchise", "attraction", "set_position", "edition_type",
     "edition_size", "release_date", "release_year", "release_location", "region", "original_price", "currency",
     "product_code", "pack_product_code", "is_chaser", "visual_description", "visual_form", "visual_colours",
-    "visual_features", "front_text", "backstamp_text", "size_mm", "materials",
+    "visual_features", "front_text", "backstamp_text", "size_mm", "materials", "pin_structure",
 }
 SET_FIELDS = {
     "set_name", "family", "sub_series", "issuer", "format", "expected_pin_count", "pins_per_box", "has_chaser",

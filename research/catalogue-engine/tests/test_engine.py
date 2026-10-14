@@ -364,3 +364,37 @@ class StructureFlag(unittest.TestCase):
     def test_fan_wikis_are_fan_databases(self):
         self.assertTrue(S.is_fan_database("https://muppet.fandom.com/wiki/x"))
         self.assertEqual(S.classify("https://muppet.fandom.com/wiki/x"), "fan")
+
+
+class GroupingAndVariants(unittest.TestCase):
+    def _run(self, pins, sets=()):
+        import tempfile, json as _j, pathlib as _p
+        from engine.run import run
+        with tempfile.TemporaryDirectory() as d:
+            pk = _p.Path(d) / "p.json"
+            pk.write_text(_j.dumps(packet(pins=pins, sets=list(sets))))
+            _, out, _, _, _ = run([str(pk)], str(_p.Path(d) / "out"), seed=None)
+        return out
+
+    def test_source_saying_separate_pins_blocks_a_combined_record(self):
+        out = self._run([dict(pin_key="s/x/duo", set_key="s/x", claims=[
+            claim("characters", ["Rapunzel", "Flynn"], NEWS), claim("pin_structure", "separate pins", FAN)])])
+        self.assertTrue(any(r.startswith("conflict:") for r in out["s/x/duo"]["review_reasons"]))
+
+    def test_source_confirming_one_pin_clears_the_structure_prompt(self):
+        out = self._run([dict(pin_key="s/x/duo", set_key="s/x", claims=[
+            claim("characters", ["Mickey", "Minnie"], NEWS), claim("pin_structure", "one pin", NEWS)])])
+        self.assertFalse(any(r.startswith(("structure:", "conflict:")) for r in out["s/x/duo"]["review_reasons"]))
+
+    def test_variant_is_not_called_a_duplicate(self):
+        out = self._run([
+            dict(pin_key="s/x/stitch", set_key="s/x", claims=[claim("characters", ["Stitch"], NEWS), claim("is_chaser", False, NEWS)]),
+            dict(pin_key="s/x/stitch-chaser", set_key="s/x", claims=[claim("characters", ["Stitch"], NEWS), claim("is_chaser", True, NEWS)])])
+        reasons = out["s/x/stitch-chaser"]["review_reasons"]
+        self.assertTrue(any(r.startswith("variant:") for r in reasons))
+        self.assertFalse(any("duplicate" in r for r in reasons))
+
+    def test_more_pins_than_stated_count_is_flagged(self):
+        out = self._run([dict(pin_key=f"s/x/p{i}", set_key="s/x", claims=[claim("characters", [f"C{i}"], NEWS)]) for i in range(3)],
+                        sets=[dict(set_key="s/x", claims=[claim("expected_pin_count", 2, NEWS)])])
+        self.assertTrue(any(r.startswith("grouping:") for r in out["s/x/p0"]["review_reasons"]))

@@ -8,7 +8,8 @@ INHERITABLE = ("release_date", "release_location", "region", "edition_type", "cu
 CRITICAL_PIN = ("characters", "release_date", "edition_type", "release_location")
 # Disagreement on these changes WHICH pin it is → blocks sign-off. Elsewhere disagreement is
 # expected variance (retailer titles, regional prices/codes, store vs park dates) → warning only.
-BLOCKING = {"characters", "main_character", "attraction", "edition_size", "edition_type", "is_chaser", "expected_pin_count"}
+BLOCKING = {"characters", "main_character", "attraction", "edition_size", "edition_type", "is_chaser", "expected_pin_count",
+            "pin_structure"}
 IDENTITY = ("characters", "main_character", "attraction", "pin_name")
 
 

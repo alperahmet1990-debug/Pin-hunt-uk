@@ -31,6 +31,7 @@ def _pin_date(sets, p):
 
 
 LINES = ("dlp", "dlr", "wdw", "dsuk")
+VARIANT_FIELDS = ("pin_name", "is_chaser", "edition_type", "edition_size", "visual_form", "set_position")
 
 
 def _same_line(k1, k2):
@@ -78,13 +79,29 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
             p["review_reasons"].append("probable duplicate: " + dupes[key][2])
         # Pin structure is the most common snippet error (blind audit 2026-10-14): one pin showing
         # several characters vs separate pins. Ask the reviewer to confirm it on the page.
-        if len(chars) >= 2:
+        structure = str(_v(f, "pin_structure") or "").lower()
+        if len(chars) >= 2 and "separate" in structure:
+            p["review_reasons"].append("conflict: pin_structure: a source says these characters are on separate pins")
+        elif len(chars) >= 2 and "one" not in structure:
             p["review_reasons"].append("structure: confirm one pin showing all of these characters, not separate pins")
-        # internal duplicates: same set + same character set inside this run
+        # internal duplicates vs variants: same set + same characters inside this run
         sig = (p["set_key"], tuple(sorted(c.lower() for c in chars)))
         if chars and sig in seen:
-            p["review_reasons"].append(f"possible internal duplicate of {seen[sig]}")
+            other = pins[seen[sig]]["fields"]
+            differs = [fld for fld in VARIANT_FIELDS if _v(f, fld) not in ("", None) and _v(other, fld) not in ("", None)
+                       and str(_v(f, fld)).lower() != str(_v(other, fld)).lower()]
+            if differs:
+                p["review_reasons"].append(f"variant: same characters as {seen[sig]}; confirm the distinguishing {', '.join(differs)}")
+            else:
+                p["review_reasons"].append(f"possible internal duplicate of {seen[sig]}")
         seen.setdefault(sig, key)
+    counts = {}
+    for key, p in pins.items():
+        counts[p["set_key"]] = counts.get(p["set_key"], 0) + 1
+    for key, p in pins.items():
+        exp = _v(sets.get(p["set_key"], {}).get("fields", {}), "expected_pin_count") if sets.get(p["set_key"]) else ""
+        if isinstance(exp, (int, float)) and exp > 0 and counts[p["set_key"]] > exp:
+            p["review_reasons"].append(f"grouping: {counts[p['set_key']]} pins recorded but the set states {int(exp)}; check for split or extra pins")
     for key, other in cross_set_suspects(pins, sets).items():
         pins[key]["review_reasons"].append(f"possible cross-set duplicate of {other}")
     seed_notes = {k: seed_note(cat, _v(s["fields"], "set_name") or k.split("/")[0].replace("-", " ")) for k, s in sets.items() if not s["parent"]}

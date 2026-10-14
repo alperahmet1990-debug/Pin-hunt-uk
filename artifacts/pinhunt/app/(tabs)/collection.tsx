@@ -37,6 +37,7 @@ import {
   type PinSetSummary,
 } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { WhatsIsoSheet } from '@/components/WhatsIsoSheet';
 
 // All is the default (B-P1-03): owned pins first, with Boards as a row on it.
 type Tab = 'all' | 'sets' | 'traders' | 'iso';
@@ -216,6 +217,7 @@ export default function CollectionScreen() {
   const [isoSort, setIsoSort] = useState<PinSortType>('recent');
   const [setsSort, setSetsSort] = useState<'completion' | 'name' | 'year'>('completion');
   const [filterSheetTab, setFilterSheetTab] = useState<'traders' | 'iso' | 'sets' | null>(null);
+  const [whatsIsoOpen, setWhatsIsoOpen] = useState(false);
 
   const [addModalVisible, setAddModalVisible] = useState(false);
   const [repoSetSummaries, setSetSummaries] = useState<PinSetSummary[]>([]);
@@ -537,9 +539,16 @@ export default function CollectionScreen() {
         {activeTab === 'iso' && (
           <>
           <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
-            <Text style={[s.statText, { color: colors.homeInk }]}>
-              {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
-            </Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+              <Text style={[s.statText, { color: colors.homeInk }]}>
+                {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
+              </Text>
+              {/* The one place ISO is explained (#65, docs/design/glossary.md). */}
+              <TouchableOpacity onPress={() => setWhatsIsoOpen(true)} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="What's ISO?">
+                <Feather name="help-circle" size={15} color={colors.homeCoralDeep} />
+                <Text style={[s.iconStatBtnText, { color: colors.homeCoralDeep }]}>What's ISO?</Text>
+              </TouchableOpacity>
+            </View>
             <View style={{ flexDirection: 'row', gap: 4 }}>
               {!selection.active && filteredIsoPins.length > 0 && (
                 <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
@@ -904,6 +913,14 @@ export default function CollectionScreen() {
       </Modal>
 
       {/* Filter / Sort Modal */}
+      <WhatsIsoSheet
+        visible={whatsIsoOpen}
+        onClose={() => setWhatsIsoOpen(false)}
+        isoCount={wantedPins.length}
+        onFindTrades={() => router.push('/find-trades')}
+        onFindPins={() => router.push('/search')}
+      />
+
       <Sheet
         visible={filterSheetTab !== null}
         onClose={() => setFilterSheetTab(null)}

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   Dimensions,
-  Image,
   Keyboard,
   Modal,
   Platform,
@@ -25,6 +24,7 @@ import { KeyboardAwareScrollViewCompat } from './KeyboardAwareScrollViewCompat';
 import type { CollectionStatus } from '@/types/pin';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 const STATUS_CONFIG: Array<{
   status: CollectionStatus;
@@ -248,7 +248,7 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
 
           {/* Pin summary — static, not part of the scroll */}
           <View style={styles.pinRow}>
-            <Image
+            <PinImage
               source={getPinImageSource(pin)}
               style={[styles.pinImage, { backgroundColor: t.secondary, borderRadius: 10 }]}
             />
@@ -523,7 +523,7 @@ function BoardCard({ board, pins, selected, onPress, t }: {
         {hasAny ? (
           cells.map((cellPin, i) => (
             <View key={i} style={[styles.mosaicCell, { backgroundColor: t.secondary, borderColor: t.card }]}>
-              {cellPin && <Image source={getPinImageSource(cellPin)} style={styles.mosaicImage} resizeMode="contain" />}
+              {cellPin && <PinImage source={getPinImageSource(cellPin)} style={styles.mosaicImage} contentFit="contain" />}
             </View>
           ))
         ) : (

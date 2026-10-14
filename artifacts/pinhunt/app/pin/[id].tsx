@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Dimensions,
-  Image,
   Linking,
   Platform,
   ScrollView,
@@ -31,6 +30,7 @@ import type { PrimaryActionBarAction } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
 import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const HERO_HEIGHT = Math.min(SCREEN_WIDTH * 1.05, 440);
@@ -225,7 +225,7 @@ export default function PinDetailScreen() {
               >
                 {images.map((src, i) => (
                   <View key={i} style={[styles.imagePage, { width: IMAGE_CARD, height: IMAGE_CARD }]}>
-                    <Image source={src} style={[styles.image, { shadowColor: colors.homeShadow }]} resizeMode="contain" />
+                    <PinImage source={src} style={[styles.image, { shadowColor: colors.homeShadow }]} contentFit="contain" />
                   </View>
                 ))}
               </ScrollView>
@@ -239,10 +239,10 @@ export default function PinDetailScreen() {
               </View>
             </>
           ) : (
-            <Image
+            <PinImage
               source={images[0]}
               style={[styles.image, { width: IMAGE_CARD, height: IMAGE_CARD, shadowColor: colors.homeShadow }]}
-              resizeMode="contain"
+              contentFit="contain"
             />
           )}
         </LinearGradient>

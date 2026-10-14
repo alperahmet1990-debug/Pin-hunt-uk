@@ -10,7 +10,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
-  Image,
   Keyboard,
   NativeScrollEvent,
   NativeSyntheticEvent,
@@ -43,6 +42,7 @@ import {
   resultCountLabel,
 } from '@/utils/searchPaging';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 const RECENTS_KEY = 'recent_pin_searches';
 const MAX_RECENTS = 8;
@@ -359,7 +359,7 @@ export default function SearchScreen() {
                       onPress={() => openPin(pin)}
                       activeOpacity={0.8}
                     >
-                      <Image source={getPinImageSource(pin)} style={styles.popularImage} resizeMode="contain" />
+                      <PinImage source={getPinImageSource(pin)} style={styles.popularImage} contentFit="contain" />
                     </TouchableOpacity>
                   ))}
                 </View>
@@ -407,7 +407,7 @@ export default function SearchScreen() {
                     activeOpacity={0.8}
                     style={[styles.resultRow, { borderBottomColor: colors.homeLine }]}
                   >
-                    <Image source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.homeAqua }]} />
+                    <PinImage source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.homeAqua }]} />
                     <View style={styles.resultInfo}>
                       <Text style={[styles.resultTitle, { color: colors.homeInk }]} numberOfLines={1}>{pin.title}</Text>
                       <Text style={[styles.resultMeta, { color: colors.homeMuted }]} numberOfLines={1}>

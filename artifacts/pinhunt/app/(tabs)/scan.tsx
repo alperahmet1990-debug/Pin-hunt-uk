@@ -32,6 +32,7 @@ import {
 } from '@/utils/scanRecovery';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -512,7 +513,7 @@ export default function ScanScreen() {
                 <View style={styles.matchRankWrap}>
                   <Text style={[styles.matchRank, { color: colors.homeMuted }]}>#{i + 1}</Text>
                 </View>
-                <Image source={getPinImageSource(match.pin)} style={styles.matchImage} />
+                <PinImage source={getPinImageSource(match.pin)} style={styles.matchImage} />
                 <View style={styles.matchInfo}>
                   <Text style={[styles.matchTitle, { color: colors.homeInk }]} numberOfLines={2}>
                     {match.pin.title}

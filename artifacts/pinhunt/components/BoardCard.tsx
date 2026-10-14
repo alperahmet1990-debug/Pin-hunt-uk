@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -11,6 +10,7 @@ import { useColors } from '@/hooks/useColors';
 import { getPinImageSource } from '@/utils/pinImage';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 interface BoardCardProps {
   board: Board;
@@ -52,7 +52,7 @@ export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardP
             {[0, 1, 2, 3].map(i => (
               <View key={i} style={[styles.thumbCell, { backgroundColor: t.thumbBg, borderColor: t.card }]}>
                 {thumbs[i] ? (
-                  <Image source={getPinImageSource(thumbs[i]!)} style={styles.thumbCellImage} resizeMode="contain" />
+                  <PinImage source={getPinImageSource(thumbs[i]!)} style={styles.thumbCellImage} contentFit="contain" />
                 ) : null}
               </View>
             ))}
@@ -99,7 +99,7 @@ export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
       ]}
     >
       {thumb ? (
-        <Image source={getPinImageSource(thumb)} style={styles.hThumb} />
+        <PinImage source={getPinImageSource(thumb)} style={styles.hThumb} />
       ) : (
         <View style={[styles.hThumb, styles.hThumbEmpty, { backgroundColor: colors.muted }]}>
           <Feather name="grid" size={18} color={colors.mutedForeground} />

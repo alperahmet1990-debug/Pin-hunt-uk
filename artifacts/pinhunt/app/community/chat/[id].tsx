@@ -20,6 +20,7 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, CommunityPost, Conversation, ConversationMessage } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 function previewBody(msg: ConversationMessage) {
   if (msg.body.trim()) return msg.body;
@@ -51,7 +52,7 @@ function MessageBubble({ msg, isMe, colors, pins }: {
           const forTrade = msg.forTradePinIds.includes(pinId);
           return (
             <TouchableOpacity key={pinId} onPress={() => router.push({ pathname: '/pin/[id]' as any, params: { id: pinId } })} style={[styles.pinCard, { backgroundColor: isMe ? colors.homeSurface + '24' : colors.homeAqua }]} activeOpacity={0.8}>
-              <Image source={getPinImageSource(pin)} style={styles.pinImage} />
+              <PinImage source={getPinImageSource(pin)} style={styles.pinImage} />
               <View style={{ flex: 1 }}>
                 <Text numberOfLines={2} style={[styles.pinTitle, { color: isMe ? colors.homeSurface : colors.homeInk }]}>{pin.title}</Text>
                 {forTrade && <Text style={[styles.tradeTag, { color: isMe ? colors.homeSurface : colors.homeCoral }]}>FOR TRADE</Text>}
@@ -479,7 +480,7 @@ export default function ChatScreen() {
                       : [...current, pin.id])}
                     style={[styles.pickerRow, { borderBottomColor: colors.homeLine }]}
                   >
-                    <Image source={getPinImageSource(pin)} style={styles.pickerImage} />
+                    <PinImage source={getPinImageSource(pin)} style={styles.pickerImage} />
                     <View style={{ flex: 1 }}>
                       <Text style={[styles.pinTitle, { color: colors.homeInk }]}>{pin.title}</Text>
                       {collection[pin.id]?.status === 'for_trade' && <Text style={[styles.tradeTag, { color: colors.homeCoral }]}>FOR TRADE</Text>}

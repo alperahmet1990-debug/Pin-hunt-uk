@@ -1,0 +1,274 @@
+{
+  "packet_id": "pilot-dates-evidence-2026-10-14-a",
+  "spec_version": 1,
+  "collected_at": "2026-10-14",
+  "collector": "agent:basil-pilot-dates",
+  "sources": [
+    {
+      "url": "https://disneypinsblog.com/blogs/news/mickey-mouse-and-santa-claus-holiday-pin-2024-at-disney-store",
+      "title": "Mickey Mouse and Santa Claus Holiday Pin 2024 at Disney Store",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/celebrating-disney-pins-25-years-pin-set-1-at-disney-store/",
+      "title": "Celebrating Disney Pins 25 Years Pin Set 1 at Disney Store",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinventory.com/view_item.php?itemID=42657",
+      "title": "Celebrating Disney Pins 25th Anniversary Pin Set Series, 1 of 4",
+      "publisher": "Disney Pinventory (fan database)",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/the-muppets-celebrating-disney-pins-25th-anniversary-pin-set/",
+      "title": "The Muppets Celebrating Disney Pins 25th Anniversary Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinventory.com/view_item.php?itemID=46456",
+      "title": "The Muppets Celebrating Disney Pins 25th Anniversary Pin Set 3",
+      "publisher": "Disney Pinventory (fan database)",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney-pin-trading-25th-anniversary-mystery-pin-set/",
+      "title": "Disney Pin Trading 25th Anniversary Mystery Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.dismerchandise.com/2026/07/01/experiment-626-day-2026-mystery-pin-blind-pack-lilo-stitch-limited-release/",
+      "title": "Experiment 626 Day 2026 Mystery Pin Blind Pack",
+      "publisher": "DisMerchandise",
+      "published_date": "2026-07-01",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+      "title": "Experiment 626 2026 Mystery Pin Blind Pack, Lilo & Stitch",
+      "publisher": "Disney Store Asia",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.dismerchandise.com/2026/07/08/spider-man-and-hulk-pin-spider-man-brand-new-day-limited-release/",
+      "title": "Spider-Man and Hulk Pin",
+      "publisher": "DisMerchandise",
+      "published_date": "2026-07-08",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://wdwnt.com/2026/06/walt-disney-world-pin-tuesday-limited-edition-disney-rewards-rebel-pilot-luke-and-spider-man-brand-new-day-pins-released/",
+      "title": "Walt Disney World Pin Tuesday: ... 'Spider-Man: Brand New Day' Pins Released",
+      "publisher": "WDW News Today",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.co.uk/spider-man-and-hulk-limited-release-pin-spider-man-brand-new-day-438011206980.html",
+      "title": "Spider-Man and Hulk Limited Release Pin, Spider-Man: Brand New Day",
+      "publisher": "Disney Store UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/spider-man-and-hulk-limited-release-pin-spider-man-brand-new-day-438011206980.html",
+      "title": "Spider-Man and Hulk Limited Release Pin, Spider-Man: Brand New Day",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.co.uk/fathers-day",
+      "title": "Father's Day Gift Ideas",
+      "publisher": "Disney Store UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "dsuk/2024/mickey-and-santa-claus-festive-pin-2024",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2024-10-15",
+          "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-and-santa-claus-holiday-pin-2024-at-disney-store",
+          "method": "search_snippet",
+          "note": "US market: Disney Store (US) availability from Tue 15 Oct 2024 at $17.99; UK date not stated. Summary cited 'a Disney Pins Blog post' (blog has two posts on this pin)"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2025/celebrating-disney-pins-25-series-1",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2025-02-25",
+          "source_url": "https://disneypinsblog.com/celebrating-disney-pins-25-years-pin-set-1-at-disney-store/",
+          "method": "search_snippet",
+          "note": "US market: available on DisneyStore.com from Tue 25 Feb 2025 ($49.99, LE 900)"
+        },
+        {
+          "field": "release_date",
+          "value": "2025-02-13",
+          "source_url": "https://disneypinventory.com/view_item.php?itemID=42657",
+          "method": "search_snippet",
+          "note": "UK market: fan database lists 13 Feb 2025 for the Disney Store UK version (\u00a335). Secondary fan source only; not independent"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2025/celebrating-disney-pins-25-series-3",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2025-09-02",
+          "source_url": "https://disneypinsblog.com/the-muppets-celebrating-disney-pins-25th-anniversary-pin-set/",
+          "method": "search_snippet",
+          "note": "US market: available on DisneyStore.com from Tue 2 Sep 2025, sold out in seconds; UK date not stated"
+        },
+        {
+          "field": "release_date",
+          "value": "2025-09-01",
+          "source_url": "https://disneypinventory.com/view_item.php?itemID=46456",
+          "method": "search_snippet",
+          "note": "Fan database lists 1 Sep 2025; market not stated in snippet. Secondary fan source only"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2025/pin-trading-25-years-mystery-set",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2025-05-22",
+          "source_url": "https://disneypinsblog.com/disney-pin-trading-25th-anniversary-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "US parks market: first released 22 May 2025 at Walt Disney World Pin Trading Nights; Disney Store (UK/EU) date not stated"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2026-06-30",
+          "source_url": "https://www.dismerchandise.com/2026/07/01/experiment-626-day-2026-mystery-pin-blind-pack-lilo-stitch-limited-release/",
+          "method": "search_snippet",
+          "note": "US market: blog says released 30 Jun 2026 on Disney Store at $34.99, but cites a different SKU (438010524825), so may be the US variant"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store Asia (disneystore.asia)",
+          "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+          "method": "search_snippet",
+          "note": "Listing carrying item 438010927985 is on the Singapore/Asia Disney Store (S$49.90); no UK listing for this code found"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2026/spider-man-hulk-brand-new-day-lr-pin",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2026-07-07",
+          "source_url": "https://www.dismerchandise.com/2026/07/08/spider-man-and-hulk-pin-spider-man-brand-new-day-limited-release/",
+          "method": "search_snippet",
+          "note": "US market: blog says released on Disney Store 7 Jul 2026 at $21.99; UK date not stated"
+        },
+        {
+          "field": "release_date",
+          "value": "2026-06",
+          "source_url": "https://wdwnt.com/2026/06/walt-disney-world-pin-tuesday-limited-edition-disney-rewards-rebel-pilot-luke-and-spider-man-brand-new-day-pins-released/",
+          "method": "search_snippet",
+          "note": "US parks market: Walt Disney World Pin Tuesday release in late June 2026"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store UK (disneystore.co.uk)",
+          "source_url": "https://www.disneystore.co.uk/spider-man-and-hulk-limited-release-pin-spider-man-brand-new-day-438011206980.html",
+          "method": "search_snippet",
+          "note": "UK listing for item 438011206980 at \u00a316.00, limit 2 per guest"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store Europe (disneystore.eu)",
+          "source_url": "https://www.disneystore.eu/spider-man-and-hulk-limited-release-pin-spider-man-brand-new-day-438011206980.html",
+          "method": "search_snippet",
+          "note": "EU listing for same item number at \u20ac18.00"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2026/ariel-king-triton-fathers-day-2026",
+      "claims": [
+        {
+          "field": "release_location",
+          "value": "Disney Store UK (disneystore.co.uk)",
+          "source_url": "https://www.disneystore.co.uk/fathers-day",
+          "method": "search_snippet",
+          "note": "UK Father's Day category page lists this LR pin at \u00a316.00 (category page, not product page)"
+        }
+      ]
+    }
+  ],
+  "pins": [],
+  "not_found": [
+    {
+      "key": "dsuk/2024/chip-n-dale-christmas-countdown-2024-jumbo",
+      "field": "release_date",
+      "searched": "2 web searches (UK listing + UK Christmas 2024 releases)",
+      "note": "UK listing gives no date; park/US coverage is for a 'Mini Jumbo' version, may be a different product"
+    },
+    {
+      "key": "dsuk/2025/stitch-st-patricks-day-2025-slider",
+      "field": "release_date",
+      "searched": "2 web searches",
+      "note": "UK/EU/US listings and WDWInfo give no exact release date"
+    },
+    {
+      "key": "dsuk/2026/experiment-626-day-2026-mystery",
+      "field": "release_location",
+      "searched": "2 web searches incl. disneystore.co.uk",
+      "note": "no disneystore.co.uk listing for 438010927985 found; only the 2024 set appeared on the UK store"
+    },
+    {
+      "key": "dsuk/2024/mickey-and-santa-claus-festive-pin-2024",
+      "field": "release_date",
+      "searched": "1 web search",
+      "note": "no UK/EU-specific release date found; only US date"
+    },
+    {
+      "key": "dsuk/2026/ariel-king-triton-fathers-day-2026",
+      "field": "release_date",
+      "searched": "2 web searches",
+      "note": "UK date not found (US Disney Store 2026-06-02 reported, not recorded as not requested)"
+    }
+  ],
+  "discovery_notes": "14 searches. Most dates found are US-market (DisneyStore.com or WDW parks); UK-specific dates were not published in snippets except a fan-database UK date for Series 1. Ariel US Disney Store date 2026-06-02 (dismerchandise, laughingplace) seen but out of scope. No suspicious content."
+}

@@ -37,6 +37,28 @@ def _v(f, name):
     return "; ".join(map(str, v)) if isinstance(v, list) else v
 
 
+def _year(date):
+    """Year of an evidenced release date (YYYY or YYYY-MM[-DD]); '' when there is none."""
+    s = str(date or "")
+    return int(s[:4]) if len(s) >= 4 and s[:4].isdigit() else ""
+
+
+# Catalogue brand vocabulary (trusted catalogue: "Disney Store", "Disney Parks"), derived only
+# from evidence: an issuer claim, else where the pin was sold (release_location).
+_PARKS = ("disneyland", "disney world", "walt disney world", "epcot", "magic kingdom", "hollywood studios",
+          "animal kingdom", "disney california adventure", "pueblo trading", "disney parks", "park")
+
+
+def _brand(issuer, location):
+    for text in (issuer, location):
+        t = str(text or "").lower()
+        if "disney store" in t or "shopdisney" in t:
+            return "Disney Store"
+        if any(k in t for k in _PARKS):
+            return "Disney Parks"
+    return str(issuer or "")
+
+
 def _set_chain(sets, key):
     out = []
     while key:
@@ -75,9 +97,12 @@ def build_rows(pins, sets, dupes, run_date):
         row = {c: "" for c in MASTER_COLUMNS + EXTRA_COLUMNS}
         row.update({
             "pinhunt_id": did if dstat == "DUPLICATE" else "",
-            "Pin name": name or (f"{subject} – {set_name}" if subject and set_name else ""),
-            "Brand": _from_chain(chain, "issuer"), "Series": set_name, "Characters": "; ".join(chars),
-            "Release year": _v(f, "release_year"), "Edition size": _v(f, "edition_size"),
+            "Pin name": name or (f"{subject or ' & '.join(chars)} – {set_name}" if (subject or chars) and set_name else ""),
+            "Brand": _brand(_from_chain(chain, "issuer"), _v(f, "release_location") or _from_chain(chain, "release_location"))
+                     or ("Disney Store" if any(("disneystore." in u or "shopdisney." in u) for u in urls) else ""),
+            "Series": set_name, "Characters": "; ".join(chars),
+            "Release year": _v(f, "release_year") or _year(_v(f, "release_date") or _from_chain(chain, "release_date")),
+            "Edition size": _v(f, "edition_size"),
             "external_ids": "; ".join(f"Disney product code: {c}" for c in codes),
             "Categories": "; ".join(x for x in [family, _v(f, "visual_form"), _v(f, "visual_features")] if x),
             "Release date": _v(f, "release_date"), "Park / Retailer": _v(f, "release_location"),

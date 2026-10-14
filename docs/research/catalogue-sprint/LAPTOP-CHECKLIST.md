@@ -53,10 +53,19 @@ Work top to bottom.
    5. Use **Needs more research** or **Reject** for anything the page doesn't support.
 3. **Note the results:** approved, rejected, needs-more-research, and minutes taken. Tell Claude "status".
 
-## 6. Safe imports: NOT YET
-- **There is no import route for research candidates yet.** This is by design (#229).
-- **Do not use** the catalogue spreadsheet importer or `import-trusted-catalogue.mjs` to bring research candidates in.
-- **Next step:** a reviewed design for importing approved candidates as **new** pins only. Existing pins are enriched through audited changes; the `candidate_import_creates_new_pin` constraint already enforces this. It will come as its own issue and PR, dry run first, staging first.
+## 6. Safe import into staging (once #241 is merged and deployed to your staging API)
+**Already done offline.** `tools/offline_import_test.mjs` replays migrations plus 045, loads the pilot, simulates the reviews, and imports with the real #241 rules against the real schema:
+- 93 of 100 pins import as **new, non-public** pins, all linked to their candidates and batch, with unique PHUK ids.
+- 7 are refused: 4 possible duplicates, 2 with no evidenced release year, 1 with no named character.
+
+**On staging:**
+1. Research Review approvals done (§5).
+2. **Dry run first:** `POST /api/admin/research/import/dry-run` with up to 50 approved candidate ids. Check `wouldCreate` and `refused`.
+3. **Import the same ids:** `POST /api/admin/research/import`. It is all-or-nothing. A 409 means a candidate was ineligible and nothing was written.
+4. **Check staging:** the new pins have `verification_status = needs_source_verification`, so they are **not visible in the app**. Making them public is a separate decision.
+5. **Rollback, if needed:** delete the batch's pins by `import_batch_id` and reset its candidates. See `docs/research/research-import-design.md` §7.
+
+Never use the spreadsheet importer or `import-trusted-catalogue.mjs` for research candidates.
 
 ## 7. Production
 Not approved. A separate decision is needed after the staging pilot.

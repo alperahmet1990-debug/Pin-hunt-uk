@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "254b9c7f8276",
+ "git_commit": "5f3a8a77eb1e",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -508,7 +508,8 @@
     "currency": "GBP",
     "pack_product_code": "438018034685",
     "release_location": "Disney Store UK (disneystore.co.uk)",
-    "region": "UK"
+    "region": "UK",
+    "release_date": "2024-10-15"
    },
    "record_confidence": "Medium",
    "engine_verified": false,
@@ -620,6 +621,16 @@
      "method": "search_snippet",
      "note": "GBP",
      "claim_ref": "C04132"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-and-santa-claus-holiday-pin-2024-at-disney-store",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US market: Disney Store (US) availability from Tue 15 Oct 2024 at $17.99; UK date not stated. Summary cited 'a Disney Pins Blog post' (blog has two posts on this pin)",
+     "claim_ref": "C09028"
     }
    ]
   },
@@ -1284,12 +1295,15 @@
     "currency": "GBP",
     "pack_product_code": "438019714227",
     "release_location": "Disney Store UK (disneystore.co.uk)",
-    "region": "UK"
+    "region": "UK",
+    "release_date": "2025-02-25"
    },
    "record_confidence": "Medium",
    "engine_verified": false,
    "review_reasons": [],
-   "warnings": [],
+   "warnings": [
+    "variants: release_date"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -1416,6 +1430,26 @@
      "method": "search_snippet",
      "note": "UK listing priced in GBP",
      "claim_ref": "C04483"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02-25",
+     "source_url": "https://disneypinsblog.com/celebrating-disney-pins-25-years-pin-set-1-at-disney-store/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US market: available on DisneyStore.com from Tue 25 Feb 2025 ($49.99, LE 900)",
+     "claim_ref": "C09029"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02-13",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=42657",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "UK market: fan database lists 13 Feb 2025 for the Disney Store UK version (£35). Secondary fan source only; not independent",
+     "claim_ref": "C09030"
     }
    ]
   },
@@ -1635,12 +1669,15 @@
     "currency": "EU: EUR | US: USD",
     "pack_product_code": "EU: 438019877908 | US: 438018656450",
     "release_location": "Disney Store Europe (disneystore.eu)",
-    "region": "Europe"
+    "region": "Europe",
+    "release_date": "2025-09-02"
    },
    "record_confidence": "Medium",
    "engine_verified": false,
    "review_reasons": [],
-   "warnings": [],
+   "warnings": [
+    "variants: release_date"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -1787,6 +1824,26 @@
      "method": "search_snippet",
      "note": "US",
      "claim_ref": "C05303"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-09-02",
+     "source_url": "https://disneypinsblog.com/the-muppets-celebrating-disney-pins-25th-anniversary-pin-set/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US market: available on DisneyStore.com from Tue 2 Sep 2025, sold out in seconds; UK date not stated",
+     "claim_ref": "C09031"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-09-01",
+     "source_url": "https://disneypinventory.com/view_item.php?itemID=46456",
+     "publisher": "disneypinventory.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Fan database lists 1 Sep 2025; market not stated in snippet. Secondary fan source only",
+     "claim_ref": "C09032"
     }
    ]
   },
@@ -2324,7 +2381,8 @@
     "pack_product_code": "438019581485",
     "release_location": "Disney Store UK (disneystore.co.uk)",
     "region": "UK",
-    "expected_pin_count": 10
+    "expected_pin_count": 10,
+    "release_date": "2025-05-22"
    },
    "record_confidence": "Medium",
    "engine_verified": false,
@@ -2436,6 +2494,16 @@
      "method": "search_snippet",
      "note": "10 designs",
      "claim_ref": "C05318"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-05-22",
+     "source_url": "https://disneypinsblog.com/disney-pin-trading-25th-anniversary-mystery-pin-set/",
+     "publisher": "disneypinsblog.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US parks market: first released 22 May 2025 at Walt Disney World Pin Trading Nights; Disney Store (UK/EU) date not stated",
+     "claim_ref": "C09033"
     }
    ]
   },
@@ -2729,7 +2797,8 @@
     "price": "UK: 16 | US: 21.99",
     "currency": "UK: GBP | US: USD",
     "release_date": "2026-06-02",
-    "region": "UK"
+    "region": "UK",
+    "release_location": "Disney Store UK (disneystore.co.uk)"
    },
    "record_confidence": "Medium",
    "engine_verified": false,
@@ -2829,6 +2898,18 @@
      "method": "search_snippet",
      "note": "Listed on UK site",
      "claim_ref": "C04647"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store UK (disneystore.co.uk)"
+     ],
+     "source_url": "https://www.disneystore.co.uk/fathers-day",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "UK Father's Day category page lists this LR pin at £16.00 (category page, not product page)",
+     "claim_ref": "C09040"
     }
    ]
   },
@@ -2845,7 +2926,9 @@
     "region": "UK",
     "pack_product_code": "438010927985",
     "expected_pin_count": 10,
-    "pins_per_box": 2
+    "pins_per_box": 2,
+    "release_date": "2026-06-30",
+    "release_location": "Disney Store Asia (disneystore.asia)"
    },
    "record_confidence": "Medium",
    "engine_verified": false,
@@ -2999,6 +3082,28 @@
      "method": "search_snippet",
      "note": "Official listing: two randomly selected pins per blind box",
      "claim_ref": "C08810"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06-30",
+     "source_url": "https://www.dismerchandise.com/2026/07/01/experiment-626-day-2026-mystery-pin-blind-pack-lilo-stitch-limited-release/",
+     "publisher": "dismerchandise.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US market: blog says released 30 Jun 2026 on Disney Store at $34.99, but cites a different SKU (438010524825), so may be the US variant",
+     "claim_ref": "C09034"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store Asia (disneystore.asia)"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Listing carrying item 438010927985 is on the Singapore/Asia Disney Store (S$49.90); no UK listing for this code found",
+     "claim_ref": "C09035"
     }
    ]
   },
@@ -3013,12 +3118,16 @@
     "price": 16,
     "currency": "GBP",
     "pack_product_code": "438011206980",
-    "region": "UK"
+    "region": "UK",
+    "release_date": "2026-07-07",
+    "release_location": "Disney Store Europe (disneystore.eu), Disney Store UK (disneystore.co.uk)"
    },
    "record_confidence": "Medium",
    "engine_verified": false,
    "review_reasons": [],
-   "warnings": [],
+   "warnings": [
+    "variants: release_date"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -3093,6 +3202,50 @@
      "method": "search_snippet",
      "note": "UK",
      "claim_ref": "C04654"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07-07",
+     "source_url": "https://www.dismerchandise.com/2026/07/08/spider-man-and-hulk-pin-spider-man-brand-new-day-limited-release/",
+     "publisher": "dismerchandise.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "US market: blog says released on Disney Store 7 Jul 2026 at $21.99; UK date not stated",
+     "claim_ref": "C09036"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/walt-disney-world-pin-tuesday-limited-edition-disney-rewards-rebel-pilot-luke-and-spider-man-brand-new-day-pins-released/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "US parks market: Walt Disney World Pin Tuesday release in late June 2026",
+     "claim_ref": "C09037"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store UK (disneystore.co.uk)"
+     ],
+     "source_url": "https://www.disneystore.co.uk/spider-man-and-hulk-limited-release-pin-spider-man-brand-new-day-438011206980.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "UK listing for item 438011206980 at £16.00, limit 2 per guest",
+     "claim_ref": "C09038"
+    },
+    {
+     "field": "release_location",
+     "value": [
+      "Disney Store Europe (disneystore.eu)"
+     ],
+     "source_url": "https://www.disneystore.eu/spider-man-and-hulk-limited-release-pin-spider-man-brand-new-day-438011206980.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "EU listing for same item number at €18.00",
+     "claim_ref": "C09039"
     }
    ]
   },
@@ -3261,6 +3414,7 @@
    "set_research_key": "dsuk/2024/chip-n-dale-christmas-countdown-2024-jumbo",
    "proposed": {
     "Pin name": "Chip 'n Dale Limited Release Christmas Countdown 2024 Jumbo Pin",
+    "Brand": "Disney Store",
     "Series": "Chip 'n Dale Limited Release Christmas Countdown 2024 Jumbo Pin",
     "Characters": "Chip; Dale",
     "Edition type": "limited release",
@@ -3809,6 +3963,7 @@
    "set_research_key": "dsuk/2024/lunar-new-year-2024-mushu",
    "proposed": {
     "Pin name": "Mushu Lunar New Year 2024 Limited Release Pin, Mulan",
+    "Brand": "Disney Store",
     "Series": "Mushu Lunar New Year 2024 Limited Release Pin",
     "Characters": "Mushu",
     "Main character": "Mushu",
@@ -3968,6 +4123,7 @@
    "set_research_key": "dsuk/2024/magical-medallions-jan-2024",
    "proposed": {
     "Pin name": "Big Hero 6 Magical Medallions Limited Release Pin",
+    "Brand": "Disney Store",
     "Series": "Magical Medallions (January 2024 releases)",
     "Release year": 2024,
     "Release date": "2024-01",
@@ -4059,8 +4215,12 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2024/mickey-and-santa-claus-festive-pin-2024",
    "proposed": {
+    "Pin name": "Mickey Mouse & Santa Claus – Mickey Mouse and Santa Claus Limited Release Festive Pin 2024",
+    "Brand": "Disney Store",
     "Series": "Mickey Mouse and Santa Claus Limited Release Festive Pin 2024",
     "Characters": "Mickey Mouse; Santa Claus",
+    "Release year": 2024,
+    "Release date": "2024-10-15",
     "Edition type": "limited release",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
@@ -4074,7 +4234,6 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date",
     "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
@@ -4766,6 +4925,8 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2024/moana-2-moana-simea-pua-heihei",
    "proposed": {
+    "Pin name": "Hei Hei & Moana & Pua & Simea – Moana, Simea, Pua and Hei Hei Limited Release Pin, Moana 2",
+    "Brand": "Disney Store",
     "Series": "Moana, Simea, Pua and Hei Hei Limited Release Pin, Moana 2",
     "Characters": "Hei Hei; Moana; Pua; Simea",
     "Release year": 2024,
@@ -4959,6 +5120,7 @@
    "set_research_key": "dsuk/2024/santa-mickey-mouse-festive-pin-2024",
    "proposed": {
     "Pin name": "Mickey Mouse – Santa Mickey Mouse Limited Edition Festive Pin 2024",
+    "Brand": "Disney Store",
     "Series": "Santa Mickey Mouse Limited Edition Festive Pin 2024",
     "Characters": "Mickey Mouse",
     "Main character": "Mickey Mouse",
@@ -5079,6 +5241,7 @@
    "set_research_key": "dsuk/2024/st-davids-day-2024",
    "proposed": {
     "Pin name": "Mickey Mouse and Minnie Mouse St. David's Day 2024 Limited Edition Pin",
+    "Brand": "Disney Store",
     "Series": "Mickey Mouse and Minnie Mouse St. David's Day 2024 Limited Edition Pin",
     "Characters": "Mickey Mouse; Minnie Mouse",
     "Release year": 2024,
@@ -5218,8 +5381,12 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-1",
    "proposed": {
+    "Pin name": "Chip & Dale – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 1 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 1 of 4",
     "Characters": "Chip; Dale",
+    "Release year": 2025,
+    "Release date": "2025-02-25",
     "Edition type": "limited edition",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
@@ -5234,10 +5401,11 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date",
     "structure: confirm one pin showing all of these characters, not separate pins"
    ],
-   "warnings": [],
+   "warnings": [
+    "variants: release_date"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -5275,9 +5443,12 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-1",
    "proposed": {
     "Pin name": "Donald Duck – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 1 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 1 of 4",
     "Characters": "Donald Duck",
     "Main character": "Donald Duck",
+    "Release year": 2025,
+    "Release date": "2025-02-25",
     "Edition type": "limited edition",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
@@ -5292,10 +5463,10 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date"
+   "review_reasons": [],
+   "warnings": [
+    "variants: release_date"
    ],
-   "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -5331,9 +5502,12 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-1",
    "proposed": {
     "Pin name": "Goofy – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 1 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 1 of 4",
     "Characters": "Goofy",
     "Main character": "Goofy",
+    "Release year": 2025,
+    "Release date": "2025-02-25",
     "Edition type": "limited edition",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
@@ -5348,10 +5522,10 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date"
+   "review_reasons": [],
+   "warnings": [
+    "variants: release_date"
    ],
-   "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -5387,6 +5561,7 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-2",
    "proposed": {
     "Pin name": "Jumba Jookiba – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 2 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 2 of 4",
     "Characters": "Jumba Jookiba",
     "Main character": "Jumba Jookiba",
@@ -5443,6 +5618,7 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-2",
    "proposed": {
     "Pin name": "Pleakley – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 2 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 2 of 4",
     "Characters": "Pleakley",
     "Main character": "Pleakley",
@@ -5498,6 +5674,8 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-2",
    "proposed": {
+    "Pin name": "Angel & Stitch – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 2 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 2 of 4",
     "Characters": "Angel; Stitch",
     "Release year": 2025,
@@ -5570,9 +5748,12 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-3",
    "proposed": {
     "Pin name": "Animal – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 3 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 3 of 4",
     "Characters": "Animal",
     "Main character": "Animal",
+    "Release year": 2025,
+    "Release date": "2025-09-02",
     "Edition type": "limited edition",
     "Edition size": 900,
     "Park / Retailer": "Disney Store Europe (disneystore.eu)",
@@ -5587,10 +5768,10 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date"
+   "review_reasons": [],
+   "warnings": [
+    "variants: release_date"
    ],
-   "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -5636,9 +5817,12 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-3",
    "proposed": {
     "Pin name": "Fozzie Bear – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 3 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 3 of 4",
     "Characters": "Fozzie Bear",
     "Main character": "Fozzie Bear",
+    "Release year": 2025,
+    "Release date": "2025-09-02",
     "Edition type": "limited edition",
     "Edition size": 900,
     "Park / Retailer": "Disney Store Europe (disneystore.eu)",
@@ -5653,10 +5837,10 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date"
+   "review_reasons": [],
+   "warnings": [
+    "variants: release_date"
    ],
-   "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -5701,8 +5885,12 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-3",
    "proposed": {
+    "Pin name": "Kermit the Frog & Miss Piggy – Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 3 of 4",
+    "Brand": "Disney Store",
     "Series": "Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 3 of 4",
     "Characters": "Kermit the Frog; Miss Piggy",
+    "Release year": 2025,
+    "Release date": "2025-09-02",
     "Edition type": "limited edition",
     "Edition size": 900,
     "Park / Retailer": "Disney Store Europe (disneystore.eu)",
@@ -5717,10 +5905,11 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date",
     "structure: confirm one pin showing all of these characters, not separate pins"
    ],
-   "warnings": [],
+   "warnings": [
+    "variants: release_date"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -5768,6 +5957,7 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-4",
    "proposed": {
     "Pin name": "Daisy Duck – Mickey and Friends Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 4 of 4",
+    "Brand": "Disney Store",
     "Series": "Mickey and Friends Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 4 of 4",
     "Characters": "Daisy Duck",
     "Main character": "Daisy Duck",
@@ -5832,6 +6022,8 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-4",
    "proposed": {
+    "Pin name": "Mickey Mouse & Minnie Mouse – Mickey and Friends Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 4 of 4",
+    "Brand": "Disney Store",
     "Series": "Mickey and Friends Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 4 of 4",
     "Characters": "Mickey Mouse; Minnie Mouse",
     "Release year": 2025,
@@ -5909,6 +6101,7 @@
    "set_research_key": "dsuk/2025/celebrating-disney-pins-25-series-4",
    "proposed": {
     "Pin name": "Pluto – Mickey and Friends Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 4 of 4",
+    "Brand": "Disney Store",
     "Series": "Mickey and Friends Celebrating Disney Pins 25th Anniversary Limited Edition Pin Set Series, 4 of 4",
     "Characters": "Pluto",
     "Main character": "Pluto",
@@ -5974,6 +6167,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Baymax – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Baymax",
     "Main character": "Baymax",
@@ -6030,6 +6224,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Cheshire Cat – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Cheshire Cat",
     "Main character": "Cheshire Cat",
@@ -6086,6 +6281,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Daisy Duck – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Daisy Duck",
     "Main character": "Daisy Duck",
@@ -6142,6 +6338,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Donald Duck – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Donald Duck",
     "Main character": "Donald Duck",
@@ -6198,6 +6395,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Dumbo – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Dumbo",
     "Main character": "Dumbo",
@@ -6254,6 +6452,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Figment – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Figment",
     "Main character": "Figment",
@@ -6310,6 +6509,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Goofy – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Goofy",
     "Main character": "Goofy",
@@ -6366,6 +6566,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Marie – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Marie",
     "Main character": "Marie",
@@ -6422,6 +6623,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Minnie Mouse – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Minnie Mouse",
     "Main character": "Minnie Mouse",
@@ -6478,6 +6680,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Nemo – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Nemo",
     "Main character": "Nemo",
@@ -6534,6 +6737,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Pluto – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Pluto",
     "Main character": "Pluto",
@@ -6590,6 +6794,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Powerline – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Powerline",
     "Main character": "Powerline",
@@ -6646,6 +6851,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Sorcerer Mickey – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Sorcerer Mickey",
     "Main character": "Sorcerer Mickey",
@@ -6702,6 +6908,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Stitch – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Stitch",
     "Main character": "Stitch",
@@ -6758,6 +6965,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Tigger – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Tigger",
     "Main character": "Tigger",
@@ -6814,6 +7022,7 @@
    "set_research_key": "dsuk/2025/ducks-of-disney-mystery-pouch",
    "proposed": {
     "Pin name": "Tinker Bell – Ducks of Disney Mystery Pin Pouch",
+    "Brand": "Disney Store",
     "Series": "Ducks of Disney Mystery Pin Pouch",
     "Characters": "Tinker Bell",
     "Main character": "Tinker Bell",
@@ -6870,6 +7079,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Chip – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Chip",
     "Main character": "Chip",
@@ -6958,6 +7168,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Daisy Duck – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Daisy Duck",
     "Main character": "Daisy Duck",
@@ -7046,6 +7257,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Dale – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Dale",
     "Main character": "Dale",
@@ -7112,6 +7324,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Donald Duck – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Donald Duck",
     "Main character": "Donald Duck",
@@ -7178,6 +7391,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Eeyore – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Eeyore",
     "Main character": "Eeyore",
@@ -7266,6 +7480,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Goofy – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Goofy",
     "Main character": "Goofy",
@@ -7332,6 +7547,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Max – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Max",
     "Main character": "Max",
@@ -7420,6 +7636,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Mickey Mouse – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Mickey Mouse",
     "Main character": "Mickey Mouse",
@@ -7508,6 +7725,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Minnie Mouse – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Minnie Mouse",
     "Main character": "Minnie Mouse",
@@ -7574,6 +7792,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Piglet – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Piglet",
     "Main character": "Piglet",
@@ -7640,6 +7859,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Pluto – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Pluto",
     "Main character": "Pluto",
@@ -7728,6 +7948,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Tigger – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Tigger",
     "Main character": "Tigger",
@@ -7816,6 +8037,7 @@
    "set_research_key": "dsuk/2025/halloween-countdown-pin-advent-calendar",
    "proposed": {
     "Pin name": "Winnie the Pooh – Disney Halloween Limited Edition Countdown Pin Advent Calendar",
+    "Brand": "Disney Store",
     "Series": "Disney Halloween Limited Edition Countdown Pin Advent Calendar",
     "Characters": "Winnie the Pooh",
     "Main character": "Winnie the Pooh",
@@ -7882,9 +8104,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Animal – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Animal",
     "Main character": "Animal",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -7898,7 +8123,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -7936,9 +8161,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Baymax – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Baymax",
     "Main character": "Baymax",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -7952,7 +8180,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -7990,9 +8218,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Donald Duck – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Donald Duck",
     "Main character": "Donald Duck",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8006,7 +8237,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8044,9 +8275,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Genie – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Genie",
     "Main character": "Genie",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8060,7 +8294,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8098,9 +8332,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Goofy – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Goofy",
     "Main character": "Goofy",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8114,7 +8351,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8152,9 +8389,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Minnie Mouse – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Minnie Mouse",
     "Main character": "Minnie Mouse",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8168,7 +8408,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8206,9 +8446,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Miss Piggy – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Miss Piggy",
     "Main character": "Miss Piggy",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8222,7 +8465,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8260,9 +8503,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Pete – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Pete",
     "Main character": "Pete",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8276,7 +8522,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8314,9 +8560,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Pluto – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Pluto",
     "Main character": "Pluto",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8330,7 +8579,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8368,9 +8617,12 @@
    "set_research_key": "dsuk/2025/pin-trading-25-years-mystery-set",
    "proposed": {
     "Pin name": "Stitch – Disney Parks Pin Trading 25 Years Mystery Pin Set",
+    "Brand": "Disney Store",
     "Series": "Disney Parks Pin Trading 25 Years Mystery Pin Set",
     "Characters": "Stitch",
     "Main character": "Stitch",
+    "Release year": 2025,
+    "Release date": "2025-05-22",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "GBP",
@@ -8384,7 +8636,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, edition_type"
+    "missing: edition_type"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -8422,6 +8674,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 624 (Angel)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Angel",
     "Main character": "Angel",
@@ -8511,6 +8764,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 010 (Felix)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Felix",
     "Main character": "Felix",
@@ -8600,6 +8854,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 606 (Holio)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Holio",
     "Main character": "Holio",
@@ -8689,6 +8944,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 604 (Houdini)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Houdini",
     "Main character": "Houdini",
@@ -8778,6 +9034,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 629 (Leroy)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Leroy",
     "Main character": "Leroy",
@@ -8867,6 +9124,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 625 (Reuben)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Reuben",
     "Main character": "Reuben",
@@ -8956,6 +9214,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 221 (Sparky)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Sparky",
     "Main character": "Sparky",
@@ -9045,6 +9304,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 619 (Splodyhead)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Splodyhead",
     "Main character": "Splodyhead",
@@ -9134,6 +9394,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 626 (Stitch)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Stitch",
     "Main character": "Stitch",
@@ -9152,7 +9413,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "possible cross-set duplicate of dsuk/2025/pin-trading-25-years-mystery-set/stitch"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -9223,6 +9486,7 @@
    "set_research_key": "dsuk/2025/stitch-626-day-2025-experiments-mystery",
    "proposed": {
     "Pin name": "Experiment 502 (Yang)",
+    "Brand": "Disney Store",
     "Series": "Stitch 626 Day 2025 Limited Release Mystery Pin Set",
     "Characters": "Yang",
     "Main character": "Yang",
@@ -9312,6 +9576,7 @@
    "set_research_key": "dsuk/2025/stitch-st-patricks-day-2025-slider",
    "proposed": {
     "Pin name": "Stitch St. Patrick's Day 2025 Limited Release Slider Pin, Lilo & Stitch",
+    "Brand": "Disney Store",
     "Series": "Stitch St. Patrick's Day 2025 Limited Release Slider Pin",
     "Characters": "Stitch",
     "Main character": "Stitch",
@@ -9516,11 +9781,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/ariel-king-triton-fathers-day-2026",
    "proposed": {
+    "Pin name": "Ariel & King Triton – Ariel and King Triton Father's Day 2026 Limited Release Pin",
+    "Brand": "Disney Store",
     "Series": "Ariel and King Triton Father's Day 2026 Limited Release Pin",
     "Characters": "Ariel; King Triton",
     "Release year": 2026,
     "Release date": "2026-06-02",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | US: USD",
     "external_ids": "Disney product code: 438010245805",
@@ -9532,7 +9800,6 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_location",
     "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
@@ -9602,9 +9869,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "627 & Experiment 627 & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "627; Experiment 627; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -9616,9 +9888,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -9699,9 +9969,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Angel & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Angel; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -9713,9 +9988,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -9796,9 +10069,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Jumba Jookiba & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Jumba Jookiba; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -9810,9 +10088,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -9893,9 +10169,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Kixx & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Kixx; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -9907,9 +10188,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -9990,9 +10269,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Leroy & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Leroy; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -10004,9 +10288,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -10087,9 +10369,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Reuben & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Reuben; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -10101,9 +10388,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -10184,9 +10469,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Richter & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Richter; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -10198,9 +10488,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -10281,9 +10569,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Sinker & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Sinker; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -10295,9 +10588,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -10378,9 +10669,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Splodyhead & Stitch – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Splodyhead; Stitch",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -10392,9 +10688,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -10475,9 +10769,14 @@
    "entity_type": "pin",
    "set_research_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "proposed": {
+    "Pin name": "Stitch & Yaarp – Experiment 626 mystery pin set (626 Day 2026)",
+    "Brand": "Disney Store",
     "Series": "Experiment 626 mystery pin set (626 Day 2026)",
     "Characters": "Stitch; Yaarp",
+    "Release year": 2026,
+    "Release date": "2026-06-30",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Asia (disneystore.asia)",
     "Release scope": "UK",
     "Original price": 34.99,
     "Currency": "USD",
@@ -10489,9 +10788,7 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [
-    "missing: release_date, release_location"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -10573,9 +10870,13 @@
    "set_research_key": "dsuk/2026/spider-man-hulk-brand-new-day-lr-pin",
    "proposed": {
     "Pin name": "Spider-Man and Hulk Limited Release Pin, Spider-Man: Brand New Day",
+    "Brand": "Disney Store",
     "Series": "Spider-Man and Hulk Limited Release Pin, Spider-Man: Brand New Day",
     "Characters": "Hulk; Spider-Man",
+    "Release year": 2026,
+    "Release date": "2026-07-07",
     "Edition type": "limited release",
+    "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Original price": 18,
     "Currency": "EUR",
@@ -10589,10 +10890,11 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
     "structure: confirm one pin showing all of these characters, not separate pins"
    ],
-   "warnings": [],
+   "warnings": [
+    "variants: release_date"
+   ],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
    "evidence": [
@@ -10703,6 +11005,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Baymax – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Baymax",
     "Main character": "Baymax",
@@ -10769,6 +11072,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Fozzie Bear – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Fozzie Bear",
     "Main character": "Fozzie Bear",
@@ -10847,6 +11151,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Genie – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Genie",
     "Main character": "Genie",
@@ -10925,6 +11230,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Hercules – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Hercules",
     "Main character": "Hercules",
@@ -10991,6 +11297,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Lucky – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Lucky",
     "Main character": "Lucky",
@@ -11069,6 +11376,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Mad Hatter – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Mad Hatter",
     "Main character": "Mad Hatter",
@@ -11135,6 +11443,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Marie – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Marie",
     "Main character": "Marie",
@@ -11201,6 +11510,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Powerline – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Powerline",
     "Main character": "Powerline",
@@ -11280,6 +11590,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Stitch – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Stitch",
     "Main character": "Stitch",
@@ -11347,6 +11658,7 @@
    "set_research_key": "dsuk/2026/valentines-day-2026-mystery-set",
    "proposed": {
     "Pin name": "Winnie the Pooh – UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
+    "Brand": "Disney Store",
     "Series": "UK: Valentine's Day Limited Release Mystery Pin Set | AU: Disney Valentine's Day 2026 Mystery 2-Piece Pin Blind Pack",
     "Characters": "Winnie the Pooh",
     "Main character": "Winnie the Pooh",

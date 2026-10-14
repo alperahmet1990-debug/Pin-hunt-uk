@@ -4,7 +4,6 @@
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import {
-  ActivityIndicator,
   Image,
   ScrollView,
   StyleSheet,
@@ -21,6 +20,7 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
 import { Chip } from '@/components/ui';
 import { Button } from '@/components/ui/Button';
+import { SkeletonHeader, SkeletonRows } from '@/components/ui/Skeleton';
 import { radius, spacing } from '@/constants/theme';
 import type { PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
 
@@ -145,9 +145,21 @@ export default function CollectorProfileScreen() {
       />
       <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
         {loading ? (
-          <View style={styles.centred}>
-            <ActivityIndicator color={colors.homeCoral} />
-          </View>
+          // Placeholder in the hero's place: compact row for a match entry,
+          // the full centred hero otherwise (UX-045).
+          isMatchEntry ? (
+            <SkeletonHeader
+              label="Loading collector"
+              layout="inline"
+              avatarSize={44}
+              style={[styles.compactHero, { borderBottomColor: colors.homeLine }]}
+            />
+          ) : (
+            <SkeletonHeader
+              label="Loading collector"
+              style={[styles.hero, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}
+            />
+          )
         ) : notFound || !profile ? (
           <View style={styles.centred}>
             <Feather name="user-x" size={40} color={colors.homeMuted} />
@@ -346,7 +358,9 @@ export default function CollectorProfileScreen() {
                   <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
                     <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>POTENTIAL TRADE MATCH</Text>
                     {tradesLoading ? (
-                      <ActivityIndicator color={colors.homeCoral} style={{ marginTop: spacing.sm }} />
+                      <View style={[styles.tradeMatchCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                        <SkeletonRows label="Loading trade matches" count={3} thumb={22} style={styles.tradeGroup} />
+                      </View>
                     ) : tradeMatchCard}
                   </View>
                 )}

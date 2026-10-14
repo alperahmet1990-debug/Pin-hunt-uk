@@ -29,7 +29,7 @@ import { usePinActions } from '@/components/PinActionsSheet';
 import { Button, IconButton } from '@/components/ui/Button';
 import { BulkSelectBar, BULK_BAR_HEIGHT, tabBarOffset } from '@/components/BulkSelectBar';
 import { usePinSelection } from '@/hooks/usePinSelection';
-import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
+import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER, SkeletonGrid } from '@/components/ui';
 import { spacing } from '@/constants/theme';
 import type { SegmentedControlOption } from '@/components/ui';
 import {
@@ -198,7 +198,7 @@ export default function CollectionScreen() {
   const selection = usePinSelection();
   const params = useLocalSearchParams<{ tab?: string }>();
   const { collection } = useCollection();
-  const { pins: catalogue, ensurePins, ensureCollections, repository } = usePinCatalogue();
+  const { pins: catalogue, loading: catalogueLoading, ensurePins, ensureCollections, repository } = usePinCatalogue();
   const { customBoards, createBoard, getBoardPins } = useBoards();
 
   const [activeTab, setActiveTab] = useState<Tab>('all');
@@ -246,9 +246,16 @@ export default function CollectionScreen() {
   const forTradeIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'for_trade').map(e => e.pinId)), [collection]);
   const wantedIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'wanted').map(e => e.pinId)), [collection]);
 
+  // True while the catalogue rows for collection entries are being fetched,
+  // so the grid shows placeholders rather than "No pins yet" (UX-045).
+  const [resolvingPins, setResolvingPins] = useState(false);
   useEffect(() => {
     const pinIds = Object.values(collection).map(entry => entry.pinId);
-    if (pinIds.length > 0) void ensurePins(pinIds);
+    if (pinIds.length === 0) return;
+    let cancelled = false;
+    setResolvingPins(true);
+    Promise.resolve(ensurePins(pinIds)).finally(() => { if (!cancelled) setResolvingPins(false); });
+    return () => { cancelled = true; };
   }, [collection, ensurePins]);
 
   useEffect(() => {
@@ -259,15 +266,20 @@ export default function CollectionScreen() {
     if (names.size > 0) void ensureCollections([...names]);
   }, [catalogue, ownedIds, ensureCollections]);
 
+  const [summariesLoading, setSummariesLoading] = useState(!!repository);
   useEffect(() => {
     if (!repository) return;
     let cancelled = false;
+    setSummariesLoading(true);
     repository.getSetSummaries()
       .then(summaries => {
         if (!cancelled) setSetSummaries(summaries);
       })
       .catch(() => {
         if (!cancelled) setSetSummaries([]);
+      })
+      .finally(() => {
+        if (!cancelled) setSummariesLoading(false);
       });
     return () => {
       cancelled = true;
@@ -389,6 +401,11 @@ export default function CollectionScreen() {
   }, [activeTab, filteredOwnedPins, setGroups, filteredTraderPins, filteredIsoPins]);
   // Pin tabs use the shared 3-column PinTile grid (B-P1-04); Sets keep 2-up cards.
   const pinGrid = activeTab !== 'sets';
+  // Nothing to show yet but this tab has entries whose pins are still on
+  // their way: placeholders instead of the empty state (UX-045).
+  const tabEntryCount = activeTab === 'traders' ? forTradeIds.size : activeTab === 'iso' ? wantedIds.size : ownedIds.size;
+  const showSkeleton = gridData.length === 0 && tabEntryCount > 0 && !searchQuery &&
+    (catalogueLoading || resolvingPins || (activeTab === 'sets' && summariesLoading));
   const visiblePinIds = useMemo(
     () => (pinGrid ? (gridData as CataloguePin[]).map(p => p.id) : []),
     [pinGrid, gridData],
@@ -619,6 +636,13 @@ export default function CollectionScreen() {
   );
 
   const renderEmpty = () => {
+    if (showSkeleton) {
+      return pinGrid ? (
+        <SkeletonGrid sidePadding={0} tileSize={tileSize} columns={pinColumns} label="Loading your pins" />
+      ) : (
+        <SkeletonGrid sidePadding={0} tileSize={gridCardWidth} columns={2} gap={12} rows={2} label="Loading your sets" />
+      );
+    }
     if (activeTab === 'all') {
       if (searchActive && searchQuery || Object.keys(pinFilters).length > 0) {
         return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;

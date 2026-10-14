@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorValue, Platform, StyleSheet, View } from 'react-native';
+import { ColorValue, Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { useResolvedColorScheme } from '@/hooks/useAppearance';
 import { useColors } from '@/hooks/useColors';
 import { Feather, Ionicons } from '@expo/vector-icons';
@@ -89,6 +89,10 @@ function ClassicTabLayout() {
   const isDark = colorScheme === 'dark';
   const isIOS = Platform.OS === 'ios';
   const isWeb = Platform.OS === 'web';
+  // At 320 pt five tabs get ~64 pt each: a slightly smaller label keeps
+  // "Community" whole instead of "Commun…" (B-P2-04).
+  const { width } = useWindowDimensions();
+  const narrow = width < 360;
   const { unseenCount } = useSubmissionNotifications();
   const { totalUnread } = useUnreadMessages();
 
@@ -97,6 +101,8 @@ function ClassicTabLayout() {
       screenOptions={{
         tabBarActiveTintColor: colors.homeCoral,
         tabBarInactiveTintColor: colors.homeMuted,
+        tabBarLabelStyle: narrow ? { fontSize: 10, letterSpacing: -0.2 } : undefined,
+        tabBarItemStyle: narrow ? { paddingLeft: 0, paddingRight: 0 } : undefined,
         headerShown: false,
         tabBarStyle: {
           position: 'absolute',

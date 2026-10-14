@@ -1,0 +1,963 @@
+{
+  "set": {
+    "set_name": "Animated Cuties Mystery Pin Set (Disney) - a multi-wave series",
+    "is_series_with_multiple_waves": true,
+    "waves": [
+      {
+        "wave": "Series 1",
+        "total_designs": 8,
+        "chaser": "none reported",
+        "format": "blind/mystery box of 2 randomly selected pins from 8 designs",
+        "edition": "open edition",
+        "characters": [
+          "Alice",
+          "Pinocchio",
+          "Aladdin",
+          "Megara (Meg)",
+          "Peter Pan",
+          "Esmeralda",
+          "Jim Hawkins",
+          "Tinker Bell"
+        ],
+        "release_dates": {
+          "Walt Disney World": "January 2026 (WDWNT report dated 2026-01-31; World of Disney + Disney's Pin Traders, Disney Springs)",
+          "Disney Store/shopDisney US": "2026-05-12",
+          "Disney Store EU / Asia": "date not established (listings exist; EU marked out of stock at search time)"
+        },
+        "price_per_box": {
+          "WDW": "22.99 USD",
+          "Disney Store US": "24.99 USD (limit 1 per guest, backorder at search time)",
+          "Disney Store EU": "16.00 EUR",
+          "Disney Store Asia (SG)": "35.90 SGD",
+          "Disney Store UK": "not verified - no disneystore.co.uk listing found; a GBP 14.00 figure appears only on PinPics (excluded source, not used)"
+        },
+        "product_codes": {
+          "disneystore.com": "438030741301",
+          "disneystore.eu / disneystore.asia": "438030755384"
+        },
+        "regions": [
+          "US parks (WDW)",
+          "Disney Store US",
+          "Disney Store EU",
+          "Disney Store Asia"
+        ],
+        "confidence": "High (official Disney Store listings + WDWNT + Disney Pins Blog agree on 8 characters, 2-per-box format)",
+        "sources": [
+          "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+          "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+          "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+          "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+          "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+          "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+          "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+          "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+          "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+        ]
+      },
+      {
+        "wave": "Series 2",
+        "total_designs": 8,
+        "chaser": "unknown",
+        "format": "blind/mystery box of 2 randomly selected pins from 8 designs",
+        "edition": "open edition",
+        "characters": [
+          "Kuzco",
+          "Flynn Rider",
+          "Li Shang",
+          "Ariel",
+          "Maleficent",
+          "Sally",
+          "Vanellope von Schweetz",
+          "Hercules"
+        ],
+        "release_dates": {
+          "Walt Disney World (Magic Kingdom)": "October 2026"
+        },
+        "price_per_box": {
+          "WDW": "22.99 USD"
+        },
+        "regions": [
+          "US parks (WDW)"
+        ],
+        "confidence": "Low (single fan-blog source)",
+        "sources": [
+          "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+          "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+        ]
+      }
+    ],
+    "total_pins_identified": 16,
+    "naming_notes": "Official Disney Store naming: 'Disney Animated Cuties Mystery Pin Blind Pack - 2-Pc.' (US) / 'Disney Animated Cuties Mystery Pin Set' (EU) / 'Disney Animated Cuties Mystery 2-Piece Pin Blind Pack' (Asia). PinPics titles it 'Disney Animated Manga Cuties Mystery Set' (excluded source; noted only). Not to be confused with older 'Cuties' lines: Fantasyland Cuties (Disneyland 65th, 2020), Nightmare Before Christmas Cuties mystery set, Disney Cuties Mystery Pin Pack (disneystore.com item 400000396347), DLP 'Cutie' series, or Animators' Collection.",
+    "disneyland_paris": "No evidence found of a Disneyland Paris release."
+  },
+  "pins": [
+    {
+      "pin_name": "Animated Cuties (Series 1) - Alice",
+      "characters": [
+        "Alice"
+      ],
+      "franchise_film": "Alice in Wonderland (1951)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties (Series 1) - Pinocchio",
+      "characters": [
+        "Pinocchio"
+      ],
+      "franchise_film": "Pinocchio (1940)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties (Series 1) - Aladdin",
+      "characters": [
+        "Aladdin"
+      ],
+      "franchise_film": "Aladdin (1992)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties (Series 1) - Megara (Meg)",
+      "characters": [
+        "Megara (Meg)"
+      ],
+      "franchise_film": "Hercules (1997)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties (Series 1) - Peter Pan",
+      "characters": [
+        "Peter Pan"
+      ],
+      "franchise_film": "Peter Pan (1953)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties (Series 1) - Esmeralda",
+      "characters": [
+        "Esmeralda"
+      ],
+      "franchise_film": "The Hunchback of Notre Dame (1996)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties (Series 1) - Jim Hawkins",
+      "characters": [
+        "Jim Hawkins"
+      ],
+      "franchise_film": "Treasure Planet (2002)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties (Series 1) - Tinker Bell",
+      "characters": [
+        "Tinker Bell"
+      ],
+      "franchise_film": "Peter Pan (1953)",
+      "set_name": "Animated Cuties Mystery Pin Set (Series 1)",
+      "set_position": "one of 8 designs (no numbering stated in sources seen)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-01 (Walt Disney World, reported 2026-01-31); shopDisney/Disney Store US 2026-05-12",
+      "release_region_venue": [
+        "Walt Disney World (World of Disney and Disney's Pin Traders, Disney Springs)",
+        "Disney Store / shopDisney US",
+        "Disney Store EU (disneystore.eu)",
+        "Disney Store Asia (SG/MY)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD",
+        "DisneyStore_US_blind_pack_of_2": "24.99 USD",
+        "DisneyStore_EU": "16.00 EUR",
+        "DisneyStore_Asia_SG": "35.90 SGD"
+      },
+      "sku": {
+        "disneystore_us_item": "438030741301 (pack, not individual pin)",
+        "disneystore_eu_asia_item": "438030755384 (pack, not individual pin)"
+      },
+      "is_chaser": false,
+      "materials_features": "chibi-style design; cloisonne/enamel on zinc-alloy with nickel finish; approx 3.8cm x 3.8cm (per Disney Store listing as summarised by search)",
+      "source_urls": [
+        "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+        "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+        "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+        "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+        "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+        "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+        "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+        "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+        "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/"
+      ],
+      "source_types": [
+        "official",
+        "news",
+        "fan"
+      ],
+      "confidence": "High",
+      "missing_fields": [
+        "set_position numbering",
+        "individual pin SKU",
+        "per-pin design description (pose/props)",
+        "UK GBP price from an official UK source"
+      ],
+      "notes": "Character appears in the 8-name list given consistently by Disney Store listing (seen via search-index summaries only), WDW News Today and Disney Pins Blog. Official pages could not be opened directly (WebFetch DNS failure / proxy 403), so verification is via search-engine summaries of those pages. No chaser found in any source; is_chaser=false means 'not reported', not proven absent."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Kuzco",
+      "characters": [
+        "Kuzco"
+      ],
+      "franchise_film": "The Emperor's New Groove (2000)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Flynn Rider",
+      "characters": [
+        "Flynn Rider"
+      ],
+      "franchise_film": "Tangled (2010)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Li Shang",
+      "characters": [
+        "Li Shang"
+      ],
+      "franchise_film": "Mulan (1998)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Ariel",
+      "characters": [
+        "Ariel"
+      ],
+      "franchise_film": "The Little Mermaid (1989)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Maleficent",
+      "characters": [
+        "Maleficent"
+      ],
+      "franchise_film": "Sleeping Beauty (1959)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Sally",
+      "characters": [
+        "Sally"
+      ],
+      "franchise_film": "Tim Burton's The Nightmare Before Christmas (1993)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Vanellope von Schweetz",
+      "characters": [
+        "Vanellope von Schweetz"
+      ],
+      "franchise_film": "Wreck-It Ralph (2012)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    },
+    {
+      "pin_name": "Animated Cuties Series 2 - Hercules",
+      "characters": [
+        "Hercules"
+      ],
+      "franchise_film": "Hercules (1997)",
+      "set_name": "Animated Cuties Series 2 Mystery Pin Set",
+      "set_position": "one of 8 designs (no numbering stated)",
+      "pin_type": "mystery / blind box (2 random pins per box), open edition",
+      "edition_size": null,
+      "release_date": "2026-10 (spotted at Magic Kingdom)",
+      "release_region_venue": [
+        "Walt Disney World (Magic Kingdom)"
+      ],
+      "original_price": {
+        "WDW_box_of_2": "22.99 USD"
+      },
+      "sku": null,
+      "is_chaser": "unknown",
+      "materials_features": "not stated in sources seen",
+      "source_urls": [
+        "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+        "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/"
+      ],
+      "source_types": [
+        "fan"
+      ],
+      "confidence": "Low",
+      "missing_fields": [
+        "exact release date",
+        "sku",
+        "materials",
+        "set_position",
+        "non-US availability",
+        "official/retailer confirmation",
+        "second independent source"
+      ],
+      "notes": "Only Disney Pins Blog (article + its own Threads post, same publisher) reports Series 2; no official Disney Store/shopDisney listing or second news outlet found in searches. Treat as provisional."
+    }
+  ],
+  "sources_consulted": [
+    {
+      "url": "https://wdwnt.com/2026/01/animated-cuties-mystery-pin-box/",
+      "accessible": false,
+      "useful": true,
+      "note": "WebFetch DNS fail; curl via proxy 403 (policy). Facts via search summaries."
+    },
+    {
+      "url": "https://wdwnt.com/2026/05/tinker-bell-jim-hawkins-peter-pan-and-more-in-cuties-mystery-pin-pack-at-disney-store/",
+      "accessible": false,
+      "useful": true,
+      "note": "Seen in search results only (title confirms Disney Store release of Cuties pack with Tinker Bell, Jim Hawkins, Peter Pan)."
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/animated-cuties-mystery-pin-set-at-disney-parks",
+      "accessible": false,
+      "useful": true,
+      "note": "curl 403 policy; via search summaries"
+    },
+    {
+      "url": "https://disneypinsblog.com/animated-cuties-mystery-pin-set-at-disney-parks/",
+      "accessible": false,
+      "useful": true,
+      "note": "search results only"
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/animated-cuties-series-2-mystery-pin-set-at-disney-parks",
+      "accessible": false,
+      "useful": true,
+      "note": "only source for Series 2"
+    },
+    {
+      "url": "https://www.threads.com/@disneypinsblog/post/DeS8m9FjKzi/new-animated-cuties-series-mystery-pin-set-at-disney-parks-open-edition-and-the/",
+      "accessible": false,
+      "useful": true,
+      "note": "same publisher as DPB2; search snippet only"
+    },
+    {
+      "url": "https://www.disneystore.com/disney-animated-cuties-mystery-pin-blind-pack-2-pc.-438030741301.html",
+      "accessible": false,
+      "useful": true,
+      "note": "WebFetch DNS fail; content via search summaries"
+    },
+    {
+      "url": "https://www.disneystore.eu/disney-animated-cuties-mystery-pin-set-438030755384.html",
+      "accessible": false,
+      "useful": true,
+      "note": "WebFetch DNS fail; content via search summaries"
+    },
+    {
+      "url": "https://www.disneystore.asia/my/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+      "accessible": false,
+      "useful": true,
+      "note": "WebFetch DNS fail; curl 403 policy"
+    },
+    {
+      "url": "https://www.disneystore.asia/disney-animated-cuties-mystery-2-piece-pin-blind-pack-438030755384.html",
+      "accessible": false,
+      "useful": true,
+      "note": "search results only"
+    },
+    {
+      "url": "https://disneymouseketeer.com/disney-animated-cuties-mystery-pin-set-at-disney-store-disney-parks/",
+      "accessible": false,
+      "useful": true,
+      "note": "WebFetch DNS fail; search results only"
+    },
+    {
+      "url": "https://www.dismerchandise.com/2026/05/12/disney-animated-cuties-mystery-pin-blind-pack-2-pc-get-it-here/",
+      "accessible": false,
+      "useful": true,
+      "note": "WebFetch DNS fail; gives 2026-05-12 Disney Store date"
+    },
+    {
+      "url": "https://www.yourwdwstore.net/disney-mystery-pin-set-blind-box-animated-cuties-109134.html",
+      "accessible": false,
+      "useful": false,
+      "note": "search result only (reseller), not fetched"
+    },
+    {
+      "url": "https://www.disneystore.co.uk/disney-toys-in-a-box-mystery-pin-set-438039572647.html",
+      "accessible": false,
+      "useful": false,
+      "note": "only UK Disney Store hit; different product"
+    },
+    {
+      "url": "https://www.disneystore.com/disney-cuties-mystery-pin-pack-400000396347.html",
+      "accessible": false,
+      "useful": false,
+      "note": "different older 'Cuties' product; not part of this set"
+    },
+    {
+      "url": "https://www.laughingplace.com/disney-merchandise/disney-store-pin-drop-october-2026/",
+      "accessible": false,
+      "useful": false,
+      "note": "WebFetch DNS fail"
+    },
+    {
+      "url": "https://disneyblog.com/news/walt-disney-world-reveals-october-2026-pin-releases/",
+      "accessible": false,
+      "useful": false,
+      "note": "WebFetch DNS fail"
+    },
+    {
+      "url": "https://pinandpop.com/series/animated-cuties-mystery-collection",
+      "accessible": false,
+      "useful": false,
+      "note": "excluded source; search snippet says 9 entries (8 pins + unopened box), consistent with 8 designs; no data taken"
+    },
+    {
+      "url": "https://pinpics.com/pin/182750/",
+      "accessible": false,
+      "useful": false,
+      "note": "excluded source; snippet mentions GBP 14 / EUR 16 and Jan 2026; GBP figure NOT used"
+    },
+    {
+      "url": "https://www.ebay.com/itm/358186219007",
+      "accessible": false,
+      "useful": false,
+      "note": "resale listings; some inaccurate (mention Genie/Dumbo); not used"
+    }
+  ],
+  "research_notes": "Two waves identified: Series 1 (8 designs, Jan 2026 WDW, May 2026 Disney Store US, also EU/Asia Disney Store) and Series 2 (8 designs, Oct 2026 Magic Kingdom, single source). All per-pin facts are character + film only; no source seen gives per-pin numbering, SKUs, or design descriptions. No chaser/LE variants reported for either wave. Film attributions are general knowledge, not from sources. Disney Store UK availability/GBP price not verified from an allowed source. No evidence of a Disneyland Paris release.",
+  "time_and_difficulty": "Moderate. WebFetch failed with DNS errors for every host, and a plain curl through the session proxy was refused (403, organization egress policy) for wdwnt.com, disneypinsblog.com and disneystore.asia, so no page was read directly; I did not retry or work around this. All facts come from WebSearch result summaries of official/news pages, which is weaker than direct reading. Series 2 relies on a single fan-blog source."
+}

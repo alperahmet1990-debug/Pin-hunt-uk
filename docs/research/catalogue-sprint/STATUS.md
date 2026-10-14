@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 15:28 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 18:24 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -16,10 +16,10 @@ _Last updated: 2026-10-14 15:28 UTC by Claude (sprint coordinator session). Chec
 ## Current work by agent
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
 - **Dev agent:**
-  - **#235 merged** (PR #246).
-  - **#237 → PR #250:** CI green, `qa:pass`, `security:pass`. **Waiting for your merge.** It unblocks #241.
-  - **#239:** `status:ready`. The runner is currently held by an unrelated claimed issue (#156).
-  - **Then:** #240 (after #239), #241 (after #237).
+  - #235 merged (PR #246). #237 merged (PR #250).
+  - **#239 → PR #253:** CI clean, `qa:pass`, `security:pass`. **Waiting for your merge.**
+  - **#241 (import)** is `status:ready` but held by the WIP limit: 2 open `claude/*` PRs, #253 and #252 (unrelated scan-photo work).
+  - **#240** follows #239.
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)
@@ -54,7 +54,7 @@ _Last updated: 2026-10-14 15:28 UTC by Claude (sprint coordinator session). Chec
 - **Search-only research** has hit diminishing returns (≈ 14 pins per 39 searches in the last DLP pass).
 
 ## Decisions requiring your approval
-- **Merge PR #250** (#237: import design + dry run, writes nothing). It is green and has passed QA and security review: https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/250
+- **Merge PR #253** (#239: review-by-page API, read-only). Green, with QA and security passed: https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/253. This frees the WIP slot for #241 (import) and unblocks #240.
 - **Labels done:** #235, #237, #239, #240, #241 are approved.
   - **#236:** closed as not planned.
 - **Also:**

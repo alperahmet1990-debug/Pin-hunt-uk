@@ -21,7 +21,7 @@ FAN = ("mousesteps.com", "mypincentral.com", "pixiedustdlp.com", "disneypinforum
 # Fan-built pin databases: allowed for discovery and as secondary corroboration only (maintainer
 # decision 2026-10-14). Classed as fan, never counted as an independent publisher, and nothing is
 # copied from them (catalogue, images, descriptions or their identifiers).
-FAN_DATABASES = ("disneypinventory.com",)
+FAN_DATABASES = ("disneypinventory.com", "fandom.com")  # fan pin databases and fan wikis
 
 CLASS_WEIGHT = {"official": 3, "news": 2, "fan": 1, "unclassified": 1, "marketplace": 0, "excluded": 0}
 

@@ -360,3 +360,7 @@ class StructureFlag(unittest.TestCase):
             _, pins, _, _, _ = run([str(pk)], str(_p.Path(d) / "out"), seed=None)
         self.assertTrue(any(r.startswith("structure:") for r in pins["s/x/duo"]["review_reasons"]))
         self.assertFalse(any(r.startswith("structure:") for r in pins["s/x/solo"]["review_reasons"]))
+
+    def test_fan_wikis_are_fan_databases(self):
+        self.assertTrue(S.is_fan_database("https://muppet.fandom.com/wiki/x"))
+        self.assertEqual(S.classify("https://muppet.fandom.com/wiki/x"), "fan")

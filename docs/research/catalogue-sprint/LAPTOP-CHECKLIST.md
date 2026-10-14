@@ -9,7 +9,7 @@ Work top to bottom.
   - 53/54 files apply. The one failure is `006_trade_ratings`, a pre-existing duplicate policy unrelated to 045.
   - `045_verify.sql` passes.
 - **The pilot run loads** exactly as the API loads it. Tool: `research/catalogue-engine/tools/offline_load_test.mjs`.
-  - 101 pins, 23 sets, 668 evidence rows.
+  - 100 pins, 22 sets, 678 evidence rows.
 - **The full run also loads:** 842 pins, 404 sets, 8,510 evidence rows.
 - **Guards hold:**
   - approval without a direct check is refused
@@ -44,8 +44,8 @@ Work top to bottom.
 - [ ] Admin catalogue import, dry run, with a sheet that only corrects a typo in an existing pin. It is accepted.
 
 ## 5. Verification pilot (about 50 min; `pilot-dsuk-high/README.md`)
-1. **Load the run.** Research Review → *Load research run (JSON)* → `docs/research/catalogue-sprint/pilot-dsuk-high/pilot_dsuk_high_payload.json`. The preview should show 101 pins and 23 sets. Then *Load run*.
-2. **Work through the checklist** (`pilot_dsuk_high_checklist.xlsx`, 24 rows). For each row:
+1. **Load the run.** Research Review → *Load research run (JSON)* → `docs/research/catalogue-sprint/pilot-dsuk-high/pilot_dsuk_high_payload.json`. The preview should show 100 pins and 22 sets. Then *Load run*.
+2. **Work through the checklist** (`pilot_dsuk_high_checklist.xlsx`, 23 rows). For each row:
    1. Open the Disney Store page in **your own browser**.
    2. Research Review → **Review set** → paste the page link and tick **only** the pins the page shows. Tick the fields you confirmed → **Record set check**.
    3. For multi-character pins, confirm whether the page shows **one pin with both characters or separate pins**. The blind audit found this to be the most common mistake.

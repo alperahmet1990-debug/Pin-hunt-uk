@@ -34,3 +34,12 @@
    - The sampled DSUK sets with stated counts matched the blind check: Celebrating Disney Pins series 4 (3/3) and the Moana puzzle (8/8 of ours).
    - One sampled High-confidence pin was not confirmed (Big Hero 6). Even "High" must be checked on the page.
 4. **Coverage, not accuracy, is the bigger gap for WDW.** Festival releases have 10–20 designs, and snippet research captures only a few. A permitted page read of one round-up post would close most of it.
+
+## Second check: blind re-check of the DSUK High pilot (same day)
+- **Sample:** 10 random sets from the pilot, 61 of our pins. The re-check was blind (15 searches).
+- **Result:** **61/61 confirmed.** No wrong pins. Every multi-character pin in the sample is one pin showing those characters.
+- **Completeness:** the re-check named pins we lacked.
+  - **Mickey's Christmas Carol advent calendar:** 5 new candidates from a fan blog. Ratty & Moley, Mr. Toad, Grandma Duck & Uncle Waldo, Chip & Dale, Cyril Proudbottom.
+  - **Halloween countdown calendar:** an official EU listing confirms all 13 designs. That added an official second source to 6 lower-confidence pins.
+  - **Muppets Haunted Mansion:** missing designs were found only on a Fandom fan wiki and a reseller. Not added. Fan wikis are now classed with fan databases: secondary only.
+- **Conclusion:** the pilot set is in good shape for direct verification. The pilot is now 100 pins on 23 pages; one pin dropped below High after the fan-wiki rule.

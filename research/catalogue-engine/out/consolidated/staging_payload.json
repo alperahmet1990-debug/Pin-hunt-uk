@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "fb6acebe6a68",
+ "git_commit": "c74b465a4f78",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -56417,6 +56417,125 @@
    ]
   },
   {
+   "research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/chip-and-dale",
+   "entity_type": "pin",
+   "set_research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "proposed": {
+    "Brand": "Disney Store",
+    "Series": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Characters": "Chip; Dale",
+    "Release year": 2024,
+    "Release date": "2024-09-30",
+    "Edition type": "limited edition",
+    "Edition size": 3300,
+    "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
+    "Release scope": "UK/Europe",
+    "Currency": "EUR",
+    "Categories": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
+    "Expected pin count": 24,
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (14/24)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
+   "warnings": [
+    "variants: currency"
+   ],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08531"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08532"
+    }
+   ]
+  },
+  {
+   "research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/cyril-proudbottom",
+   "entity_type": "pin",
+   "set_research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "proposed": {
+    "Pin name": "Cyril Proudbottom \u2013 Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Brand": "Disney Store",
+    "Series": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Characters": "Cyril Proudbottom",
+    "Main character": "Cyril Proudbottom",
+    "Release year": 2024,
+    "Release date": "2024-09-30",
+    "Edition type": "limited edition",
+    "Edition size": 3300,
+    "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
+    "Release scope": "UK/Europe",
+    "Currency": "EUR",
+    "Categories": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
+    "Expected pin count": 24,
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (14/24)"
+   ],
+   "warnings": [
+    "variants: currency"
+   ],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Cyril Proudbottom"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08537"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08538"
+    }
+   ]
+  },
+  {
    "research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/daisy-isabelle",
    "entity_type": "pin",
    "set_research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
@@ -56429,6 +56548,7 @@
     "Release year": 2024,
     "Release date": "2024-09-30",
     "Edition type": "limited edition",
+    "Edition size": 3300,
     "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
     "Release scope": "UK/Europe",
     "Currency": "EUR",
@@ -56436,13 +56556,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: currency"
@@ -56471,6 +56591,28 @@
      "method": "search_snippet",
      "note": "Fan blog shop page for Daisy pin from this calendar",
      "claim_ref": "C05332"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08539"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08540"
     }
    ]
   },
@@ -56487,6 +56629,7 @@
     "Release year": 2024,
     "Release date": "2024-09-30",
     "Edition type": "limited edition",
+    "Edition size": 3300,
     "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
     "Release scope": "UK/Europe",
     "Currency": "EUR",
@@ -56494,13 +56637,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: currency"
@@ -56543,6 +56686,28 @@
      "method": "search_snippet",
      "note": "Chip and Co known pins: Donald as Fred",
      "claim_ref": "C07803"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08521"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08522"
     }
    ]
   },
@@ -56566,13 +56731,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)",
+    "set incomplete (14/24)",
     "possible internal duplicate of dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/goofy-marleys-ghost"
    ],
    "warnings": [
@@ -56642,6 +56807,7 @@
     "Release year": 2024,
     "Release date": "2024-09-30",
     "Edition type": "limited edition",
+    "Edition size": 3300,
     "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
     "Release scope": "UK/Europe",
     "Currency": "EUR",
@@ -56649,13 +56815,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: currency"
@@ -56684,6 +56850,87 @@
      "method": "search_snippet",
      "note": "Fan blog page titled Goofy (URL slug says pluto); mapped to Marley's Ghost by character only",
      "claim_ref": "C05328"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08525"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08526"
+    }
+   ]
+  },
+  {
+   "research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/grandma-duck-and-uncle-waldo",
+   "entity_type": "pin",
+   "set_research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "proposed": {
+    "Brand": "Disney Store",
+    "Series": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Characters": "Grandma Duck; Uncle Waldo",
+    "Release year": 2024,
+    "Release date": "2024-09-30",
+    "Edition type": "limited edition",
+    "Edition size": 3300,
+    "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
+    "Release scope": "UK/Europe",
+    "Currency": "EUR",
+    "Categories": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
+    "Expected pin count": 24,
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (14/24)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
+   "warnings": [
+    "variants: currency"
+   ],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Grandma Duck",
+      "Uncle Waldo"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08529"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08530"
     }
    ]
   },
@@ -56700,6 +56947,7 @@
     "Release year": 2024,
     "Release date": "2024-09-30",
     "Edition type": "limited edition",
+    "Edition size": 3300,
     "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
     "Release scope": "UK/Europe",
     "Currency": "EUR",
@@ -56707,13 +56955,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: pin_name",
@@ -56765,6 +57013,28 @@
      "method": "search_snippet",
      "note": "Fan blog page for Jiminy pin from this calendar",
      "claim_ref": "C05334"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jiminy Cricket"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08535"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08536"
     }
    ]
   },
@@ -56789,13 +57059,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: currency"
@@ -56848,6 +57118,28 @@
      "method": "search_snippet",
      "note": "calendar LE 3,300 per EMM",
      "claim_ref": "C07801"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08519"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08520"
     }
    ]
   },
@@ -56864,6 +57156,7 @@
     "Release year": 2024,
     "Release date": "2024-09-30",
     "Edition type": "limited edition",
+    "Edition size": 3300,
     "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
     "Release scope": "UK/Europe",
     "Currency": "EUR",
@@ -56871,13 +57164,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: currency"
@@ -56906,6 +57199,28 @@
      "method": "search_snippet",
      "note": "Fan blog shop page for Minnie pin from this calendar; LE 3300 set, 2024 Disney Store",
      "claim_ref": "C05330"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08533"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08534"
     }
    ]
   },
@@ -56929,14 +57244,14 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: currency"
@@ -56969,6 +57284,125 @@
    ]
   },
   {
+   "research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/mr-toad",
+   "entity_type": "pin",
+   "set_research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "proposed": {
+    "Pin name": "Mr. Toad \u2013 Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Brand": "Disney Store",
+    "Series": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Characters": "Mr. Toad",
+    "Main character": "Mr. Toad",
+    "Release year": 2024,
+    "Release date": "2024-09-30",
+    "Edition type": "limited edition",
+    "Edition size": 3300,
+    "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
+    "Release scope": "UK/Europe",
+    "Currency": "EUR",
+    "Categories": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
+    "Expected pin count": 24,
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
+    "pin_name_source": "composed display label (subject \u2013 set)"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (14/24)"
+   ],
+   "warnings": [
+    "variants: currency"
+   ],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Toad"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08527"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08528"
+    }
+   ]
+  },
+  {
+   "research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/ratty-and-moley",
+   "entity_type": "pin",
+   "set_research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "proposed": {
+    "Brand": "Disney Store",
+    "Series": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Characters": "Moley; Ratty",
+    "Release year": 2024,
+    "Release date": "2024-09-30",
+    "Edition type": "limited edition",
+    "Edition size": 3300,
+    "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
+    "Release scope": "UK/Europe",
+    "Currency": "EUR",
+    "Categories": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
+    "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
+    "Expected pin count": 24,
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created"
+   },
+   "record_confidence": "Low",
+   "engine_verified": false,
+   "review_reasons": [
+    "identity confidence Low",
+    "set incomplete (14/24)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
+   "warnings": [
+    "variants: currency"
+   ],
+   "duplicate_status": "NEW",
+   "duplicate_pinhunt_id": null,
+   "evidence": [
+    {
+     "field": "characters",
+     "value": [
+      "Moley",
+      "Ratty"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08523"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08524"
+    }
+   ]
+  },
+  {
    "research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/scrooge-mcduck-ebenezer-scrooge",
    "entity_type": "pin",
    "set_research_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
@@ -56981,6 +57415,7 @@
     "Release year": 2024,
     "Release date": "2024-09-30",
     "Edition type": "limited edition",
+    "Edition size": 3300,
     "Park / Retailer": "Disney Store Europe (disneystore.eu); Disney Store UK / shopDisney UK",
     "Release scope": "UK/Europe",
     "Currency": "EUR",
@@ -56988,13 +57423,13 @@
     "Collection name": "Mickey's Christmas Carol 24-Day Advent Calendar Mystery Pin Set 2024",
     "Collection type": "advent calendar, 24 mystery pins in book-shaped case",
     "Expected pin count": 24,
-    "Set count check": "incomplete (9/24) \u2014 missing pins are NOT created",
+    "Set count check": "incomplete (14/24) \u2014 missing pins are NOT created",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (9/24)"
+    "set incomplete (14/24)"
    ],
    "warnings": [
     "variants: currency"
@@ -57037,6 +57472,28 @@
      "method": "search_snippet",
      "note": "Chip and Co known pins: Scrooge McDuck as Scrooge",
      "claim_ref": "C07798"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
+     "claim_ref": "C08517"
+    },
+    {
+     "field": "edition_size",
+     "value": 3300,
+     "source_url": "https://chipandco.com/mickeys-christmas-carol-24-day-advent-calendar-mystery-pin-set-2024-a-must-have-for-disney-pin-collectors-580256/",
+     "publisher": "chipandco.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08518"
     }
    ]
   },
@@ -58118,7 +58575,7 @@
     "Set count check": "incomplete (10/12) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "High",
+   "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
@@ -58160,7 +58617,7 @@
      ],
      "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Muppet Wiki lists the 2024 mystery puzzle pin set (WDW/DL/Disney Store) including Bunsen and Beaker as the staring busts",
      "claim_ref": "C07643"
@@ -58187,7 +58644,7 @@
     "Set count check": "incomplete (10/12) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "High",
+   "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
@@ -58226,7 +58683,7 @@
      ],
      "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Muppet Wiki lists the 2024 mystery puzzle pin set (WDW/DL/Disney Store) including ghostly chickens",
      "claim_ref": "C07639"
@@ -58253,7 +58710,7 @@
     "Set count check": "incomplete (10/12) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "High",
+   "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
@@ -58292,7 +58749,7 @@
      ],
      "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Muppet Wiki lists the 2024 mystery puzzle pin set (WDW/DL/Disney Store) including Electric Mayhem described as Madame Pigota's band",
      "claim_ref": "C07644"
@@ -58319,7 +58776,7 @@
     "Set count check": "incomplete (10/12) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "High",
+   "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
@@ -58358,7 +58815,7 @@
      ],
      "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Muppet Wiki lists the 2024 mystery puzzle pin set (WDW/DL/Disney Store) including Fozzie as Gauzey the Hatbox Bear",
      "claim_ref": "C07645"
@@ -58384,7 +58841,7 @@
     "Set count check": "incomplete (10/12) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "High",
+   "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
@@ -58426,7 +58883,7 @@
      ],
      "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Muppet Wiki lists the 2024 mystery puzzle pin set (WDW/DL/Disney Store) including Gonzo and Pepe",
      "claim_ref": "C07641"
@@ -58558,7 +59015,7 @@
     "Set count check": "incomplete (10/12) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "High",
+   "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
@@ -58597,7 +59054,7 @@
      ],
      "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Muppet Wiki lists the 2024 mystery puzzle pin set (WDW/DL/Disney Store) including Rowlf as the organist",
      "claim_ref": "C07642"
@@ -58623,7 +59080,7 @@
     "Set count check": "incomplete (10/12) \u2014 missing pins are NOT created",
     "pin_name_source": "claimed"
    },
-   "record_confidence": "High",
+   "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
@@ -58664,7 +59121,7 @@
      ],
      "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Muppet Wiki lists the 2024 mystery puzzle pin set (WDW/DL/Disney Store) including Sam the Eagle (Pops not mentioned in snippet)",
      "claim_ref": "C07640"
@@ -60908,6 +61365,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -60958,6 +61416,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05350"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08561"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08562"
     }
    ]
   },
@@ -60973,6 +61453,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61023,6 +61504,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05345"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08541"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08542"
     }
    ]
   },
@@ -61038,6 +61541,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61048,11 +61552,9 @@
     "Set count check": "complete",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -61068,6 +61570,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05342"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08555"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08556"
     }
    ]
   },
@@ -61083,6 +61607,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61093,11 +61618,9 @@
     "Set count check": "complete",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -61113,6 +61636,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05339"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08543"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08544"
     }
    ]
   },
@@ -61128,6 +61673,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61178,6 +61724,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05351"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08565"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08566"
     }
    ]
   },
@@ -61193,6 +61761,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61203,11 +61772,9 @@
     "Set count check": "complete",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -61223,6 +61790,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05343"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08559"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08560"
     }
    ]
   },
@@ -61238,6 +61827,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61288,6 +61878,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05349"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Max"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08557"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08558"
     }
    ]
   },
@@ -61303,6 +61915,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61353,6 +61966,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05347"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08549"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08550"
     }
    ]
   },
@@ -61368,6 +62003,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61378,11 +62014,9 @@
     "Set count check": "complete",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -61398,6 +62032,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05340"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08547"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08548"
     }
    ]
   },
@@ -61413,6 +62069,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61423,11 +62080,9 @@
     "Set count check": "complete",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -61443,6 +62098,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05341"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Piglet"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08551"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08552"
     }
    ]
   },
@@ -61458,6 +62135,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61508,6 +62186,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05346"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08545"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08546"
     }
    ]
   },
@@ -61523,6 +62223,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61573,6 +62274,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05348"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tigger"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08553"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08554"
     }
    ]
   },
@@ -61588,6 +62311,7 @@
     "Release year": 2025,
     "Release date": "2025-07-28",
     "Edition type": "limited edition",
+    "Edition size": 1000,
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
     "Currency": "UK: GBP | EU: EUR",
@@ -61598,11 +62322,9 @@
     "Set count check": "complete",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "High",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -61618,6 +62340,28 @@
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
      "claim_ref": "C05344"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Blind re-check: official EU listing names this character in the countdown calendar",
+     "claim_ref": "C08563"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneystore.eu/disney-halloween-limited-edition-countdown-pin-advent-calendar-438019866285.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "edition size stated for the set",
+     "claim_ref": "C08564"
     }
    ]
   },
@@ -77817,7 +78561,7 @@
      "value": "Happy New Year 2026 - Kermit and Miss Piggy",
      "source_url": "https://muppet.fandom.com/wiki/Muppet_pins_(Disney)",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan wiki lists this WDW pin dated December 16, 2025",
      "claim_ref": "C08412"
@@ -77827,7 +78571,7 @@
      "value": "2025-12-16",
      "source_url": "https://muppet.fandom.com/wiki/Muppet_pins_(Disney)",
      "publisher": "fandom.com",
-     "source_class": "unclassified",
+     "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan wiki date",
      "claim_ref": "C08413"
@@ -114493,7 +115237,7 @@
    "record_confidence": "Medium",
    "engine_verified": false,
    "review_reasons": [
-    "set incomplete (9/24) \u2014 missing pins are NOT created"
+    "set incomplete (14/24) \u2014 missing pins are NOT created"
    ],
    "warnings": [
     "variants: price",

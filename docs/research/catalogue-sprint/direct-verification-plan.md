@@ -20,7 +20,7 @@ Status: proposal.
 | Pins named on a cited page | 739 |
 | Pages to open to cover them | 343 |
 | Official pages | 73, covering 203 pins |
-| **DSUK High-confidence pins** (after the Pinventory decision and pass 4) | **101** |
+| **DSUK High-confidence pins** (after the source rules and blind re-check) | **100** |
 | Official pages covering them | **24** (about 4 pins per page, up to 16) |
 
 **With set-level checks (#230):** about 2 minutes per page. That puts **DSUK High at about 50 minutes** and all 343 pages at about 11–12 hours.
@@ -30,13 +30,13 @@ Status: proposal.
    - Apply 045 to staging and run `045_verify.sql`.
    - Run the app and API against staging.
    - Load `out/consolidated/staging_payload.json` (4.3 MB, under the 5 MB limit).
-2. **Start with the DSUK High sheet now** (24 Disney Store UK pages, 101 pins).
+2. **Start with the DSUK High sheet now** (23 Disney Store UK pages, 100 pins).
    - Open each page in your own browser and confirm each pin in Research Review.
    - Per-pin checks work today, so this needs no new code.
 3. **Set-level verification (#230) is done.** It was built in PR #234 and is merged in `main`.
    - One page is reviewed against many pins. Each pin gets its own tick, evidence row and decision.
    - Follow-up **#235** (proposed) tightens batch approval. Pins with variant values or a possible-duplicate flag are always approved one by one, with their own note.
-   - **Pilot:** `docs/research/catalogue-sprint/pilot-dsuk-high/` (101 pins, 24 pages).
+   - **Pilot:** `docs/research/catalogue-sprint/pilot-dsuk-high/` (100 pins, 23 pages).
 4. **Batch review in set order.**
    - Order: official pages first, then news pages (after the access checks in step 5), then fan pages.
    - Blocking conflicts (17 pins) and flagged duplicates (33) are excluded from batches and reviewed one by one.

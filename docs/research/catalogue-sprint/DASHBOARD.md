@@ -1,32 +1,32 @@
 # PinHunt independent catalogue: dashboard
 
-_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run fb6acebe6a68, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
+_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run c74b465a4f78, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
 
 ## Headline
 
 | Measure | Value |
 |---|---|
-| Candidate pins | **842** |
-| Unique candidate pins (excl. catalogue duplicates and flagged repeats) | ≈ 782 |
+| Candidate pins | **847** |
+| Unique candidate pins (excl. catalogue duplicates and flagged repeats) | ≈ 787 |
 | Sets / releases | 404 |
 | **Directly verified pins** (a person or a physical pin; snippets never count) | **0** |
 | **Publication-ready** (directly verified and approved) | **0** |
-| Identity confidence High / Medium / Low / Unverified | 149 / 347 / 344 / 2 |
-| 2+ independent publishers (fan databases and repeats excluded) | 511 |
-| Any official source / news but no official / fan only | 213 / 220 / 409 |
+| Identity confidence High / Medium / Low / Unverified | 148 / 354 / 343 / 2 |
+| 2+ independent publishers (fan databases and repeats excluded) | 510 |
+| Any official source / news but no official / fan only | 219 / 220 / 408 |
 | Blocking contradictions / flagged possible duplicates / catalogue duplicates | 17 / 33 / 27 |
-| Pins with variant values (need a per-pin note) | 97 |
+| Pins with variant values (need a per-pin note) | 102 |
 
 ## Progress towards an independent catalogue
 
 Two bars per milestone: research candidates, and **directly verified** pins (the number that counts).
 
 ```
- 1,000  candidates █████████████████░░░ 842/1,000 (84.2%)
+ 1,000  candidates █████████████████░░░ 847/1,000 (84.7%)
         verified   ░░░░░░░░░░░░░░░░░░░░ 0/1,000 (0.0%)
- 5,000  candidates ███░░░░░░░░░░░░░░░░░ 842/5,000 (16.8%)
+ 5,000  candidates ███░░░░░░░░░░░░░░░░░ 847/5,000 (16.9%)
         verified   ░░░░░░░░░░░░░░░░░░░░ 0/5,000 (0.0%)
-10,000  candidates ██░░░░░░░░░░░░░░░░░░ 842/10,000 (8.4%)
+10,000  candidates ██░░░░░░░░░░░░░░░░░░ 847/10,000 (8.5%)
         verified   ░░░░░░░░░░░░░░░░░░░░ 0/10,000 (0.0%)
 ```
 
@@ -35,7 +35,7 @@ Two bars per milestone: research candidates, and **directly verified** pins (the
 | Line | Pins | High | Med | Low | 2+ pubs | Official | Directly verified | Conflicts | Dup flags |
 |---|---|---|---|---|---|---|---|---|---|
 | Disneyland Paris | 333 | 0 | 166 | 166 | 176 | 0 | 0 | 10 | 13 |
-| Disney Store UK | 176 | 101 | 49 | 26 | 115 | 157 | 0 | 1 | 4 |
+| Disney Store UK | 181 | 100 | 56 | 25 | 114 | 163 | 0 | 1 | 4 |
 | Walt Disney World | 148 | 4 | 64 | 79 | 85 | 4 | 0 | 0 | 7 |
 | Disneyland Resort | 108 | 10 | 50 | 48 | 65 | 15 | 0 | 2 | 6 |
 | Earlier POC + pilot | 77 | 34 | 18 | 25 | 70 | 37 | 0 | 4 | 3 |
@@ -56,11 +56,12 @@ Two bars per milestone: research candidates, and **directly verified** pins (the
 | Pass 3 corroboration | 2026-10-14 | 188 | 1 | 276 |
 | Pass 4 targeted gap-fill (source rules) | 2026-10-14 | 151 | 0 | 77 |
 | Blind accuracy audit | 2026-10-14 | 36 | 0 | 0 |
+| Blind re-check of DSUK pilot sample | 2026-10-14 | 15 | 5 | 20 |
 
-Total: 745 searches, 842 named pins found by search (≈ 1.1 per search). Search-based gains are now small; verification, not search volume, is the constraint.
+Total: 760 searches, 847 named pins found by search (≈ 1.1 per search). Search-based gains are now small; verification, not search volume, is the constraint.
 
 ## Measured accuracy of candidates (blind audit)
 
-Blind re-research of 16 random releases (60 of our pins resolved): **83% confirmed, 8% wrong or mis-structured, 8% unconfirmed**. Errors are mostly combined-vs-separate character pins in Low-confidence DLP sets. See `accuracy-audit-2026-10-14.md`. Indicative only (small sample, snippets on both sides).
+Blind re-research of 16 random releases (60 of our pins resolved): **83% confirmed, 8% wrong or mis-structured, 8% unconfirmed**. Errors are mostly combined-vs-separate character pins in Low-confidence DLP sets. See `accuracy-audit-2026-10-14.md`. Indicative only (small sample, snippets on both sides). A second blind re-check of the DSUK High pilot (10 sets, 61 pins) confirmed **61/61 (100%)**, every multi-character pin confirmed as one pin.
 
 See `COVERAGE.md` for the release coverage map.

@@ -44,6 +44,13 @@
    "searches": 36,
    "new_pins": 0,
    "corroborated": 0
+  },
+  {
+   "name": "Blind re-check of DSUK pilot sample",
+   "date": "2026-10-14",
+   "searches": 15,
+   "new_pins": 5,
+   "corroborated": 20
   }
  ],
  "verification": {
@@ -60,6 +67,6 @@
   "confirmed": 50,
   "wrong_or_misstructured": 5,
   "unconfirmed": 5,
-  "summary": "Blind re-research of 16 random releases (60 of our pins resolved): **83% confirmed, 8% wrong or mis-structured, 8% unconfirmed**. Errors are mostly combined-vs-separate character pins in Low-confidence DLP sets. See `accuracy-audit-2026-10-14.md`. Indicative only (small sample, snippets on both sides)."
+  "summary": "Blind re-research of 16 random releases (60 of our pins resolved): **83% confirmed, 8% wrong or mis-structured, 8% unconfirmed**. Errors are mostly combined-vs-separate character pins in Low-confidence DLP sets. See `accuracy-audit-2026-10-14.md`. Indicative only (small sample, snippets on both sides). A second blind re-check of the DSUK High pilot (10 sets, 61 pins) confirmed **61/61 (100%)**, every multi-character pin confirmed as one pin."
  }
 }

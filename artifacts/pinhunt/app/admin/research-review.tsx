@@ -32,13 +32,16 @@ import { Button, Chip, ConfirmDialog, SegmentedControl } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import {
   CHECKABLE_FIELDS,
+  MAX_SET_BATCH,
   STATUS_FILTERS,
   candidateTitle,
   confidenceTone,
+  describeSetDecision,
   evidenceByField,
   formatValue,
   groupBySet,
   safeExternalUrl,
+  setRoute,
   type CandidateStatus,
   type ResearchCandidate,
   type ResearchEvidence,
@@ -75,6 +78,16 @@ export default function ResearchReviewScreen() {
   const [busy, setBusy] = useState(false);
   const [actionMsg, setActionMsg] = useState<string | null>(null);
   const [confirm, setConfirm] = useState<Decision | null>(null);
+
+  // Set view: one source page checked against many pins. Pins always start unticked.
+  const [setKey, setSetKey] = useState<string | null>(null);
+  const [setEvidence, setSetEvidence] = useState<ResearchEvidence[]>([]);
+  const [ticked, setTicked] = useState<string[]>([]);
+  const [setFields, setSetFields] = useState<string[]>([]);
+  const [setUrl, setSetUrl] = useState('');
+  const [setNote, setSetNote] = useState('');
+  const [setMsg, setSetMsg] = useState<string | null>(null);
+  const [confirmSet, setConfirmSet] = useState(false);
 
   const api = useCallback(async (path: string, init?: RequestInit) => {
     const resp = await fetch(`${API_BASE}${path}`, { ...init, headers: headers() });
@@ -195,13 +208,82 @@ export default function ResearchReviewScreen() {
     }
   };
 
+  const groups = groupBySet(candidates);
+
+  // ── Set view ──
+  const openSet = async (key: string) => {
+    setSetKey(key);
+    setTicked([]);
+    setSetFields([]);
+    setSetUrl('');
+    setSetNote('');
+    setSetMsg(null);
+    setSetEvidence([]);
+    try {
+      // Show what the research cited for the set itself, so the reviewer can open it.
+      const q = new URLSearchParams({ entity: 'set', ...(runId ? { runId } : {}) });
+      const sets = await api(`/admin/research/candidates?${q.toString()}`);
+      const setCand = (sets.candidates as ResearchCandidate[] | undefined)?.find(c => c.research_key === key);
+      if (setCand) {
+        const d = (await api(`/admin/research/candidates/${setCand.id}`)) as Detail;
+        setSetEvidence(d.evidence.filter(e => safeExternalUrl(e.source_url)));
+      }
+    } catch {
+      // The checklist works without the suggested sources.
+    }
+  };
+
+  const setItems = groups.find(g => g.setKey === setKey)?.items ?? [];
+  const setScopeRunId = setItems[0]?.run_id ?? runId;
+  const titleOf = (id: string) => { const c = setItems.find(x => x.id === id); return c ? candidateTitle(c) : 'A pin'; };
+  const toggleTick = (id: string) => setTicked(prev => (prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]));
+  const toggleSetField = (f: string) => setSetFields(prev => (prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]));
+
+  const recordSetCheck = async () => {
+    if (!setKey || !setScopeRunId) return;
+    setBusy(true);
+    try {
+      const data = await api(setRoute(setScopeRunId, setKey, 'direct-check'), {
+        method: 'POST',
+        body: JSON.stringify({
+          source_url: setUrl.trim(), note: setNote.trim() || null,
+          confirmed: ticked.map(candidateId => ({ candidateId, fields: setFields })),
+        }),
+      });
+      const skipped = (data.skipped ?? []).length;
+      setSetMsg(`Direct check recorded for ${data.results?.length ?? 0} pin${data.results?.length === 1 ? '' : 's'}.${skipped ? ` ${skipped} could not be changed.` : ''}`);
+      await loadCandidates(true);
+    } catch (e) {
+      setSetMsg(e instanceof Error ? e.message : 'Could not record the check');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const approveSet = async () => {
+    if (!setKey || !setScopeRunId) return;
+    setConfirmSet(false);
+    setBusy(true);
+    try {
+      const data = await api(setRoute(setScopeRunId, setKey, 'decision'), {
+        method: 'POST', body: JSON.stringify({ candidateIds: ticked, notes: setNote.trim() || null }),
+      });
+      setSetMsg(describeSetDecision(data, titleOf));
+      setTicked([]);
+      await loadCandidates(true);
+    } catch (e) {
+      setSetMsg(e instanceof Error ? e.message : 'Could not save the decision');
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const openSource = (url: string | null) => {
     const safe = safeExternalUrl(url);
     if (safe) Linking.openURL(safe);
   };
 
   const s = styles(colors);
-  const groups = groupBySet(candidates);
 
   return (
     <View style={[s.root, { backgroundColor: colors.homeBackground }]}>
@@ -240,7 +322,12 @@ export default function ResearchReviewScreen() {
         ) : (
           groups.map(g => (
             <View key={g.setKey} style={s.card}>
-              <Text style={s.setTitle}>{g.setKey}</Text>
+              <View style={s.headerRow}>
+                <Text style={[s.setTitle, { flex: 1 }]}>{g.setKey}</Text>
+                {g.setKey !== '(no set)' && (
+                  <Button label="Review set" size="compact" variant="secondary" onPress={() => openSet(g.setKey)} />
+                )}
+              </View>
               {g.items.map(c => (
                 <TouchableOpacity
                   key={c.id}
@@ -277,6 +364,100 @@ export default function ResearchReviewScreen() {
         onConfirm={loadRun}
         onCancel={() => setPendingRun(null)}
       />
+
+      {/* Set view: one source beside a checklist of the set's pins */}
+      <Modal visible={!!setKey} animationType="slide" onRequestClose={() => setSetKey(null)}>
+        <ScrollView style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + 40, gap: spacing.lg }}>
+          <View style={s.headerRow}>
+            <Text style={[s.title, { flex: 1 }]}>{setKey}</Text>
+            <Button label="Close" variant="text" onPress={() => setSetKey(null)} />
+          </View>
+          <View style={s.card}>
+            <Text style={s.setTitle}>Set source</Text>
+            <Text style={s.body}>
+              Open the page, then tick only the pins it shows. It must be an official page or one already cited for this set.
+            </Text>
+            {setEvidence.map(e => (
+              <View key={e.id} style={s.evidence}>
+                <Text style={s.muted}>{e.publisher ?? 'unknown'} · {e.source_class} · {e.field}</Text>
+                <View style={s.chips}>
+                  <Button label="Open source" size="compact" variant="text" icon="external-link" onPress={() => openSource(e.source_url)} />
+                  <Button label="Use as set source" size="compact" variant="text" onPress={() => setSetUrl(e.source_url ?? '')} />
+                </View>
+              </View>
+            ))}
+            <TextInput style={s.input} value={setUrl} onChangeText={setSetUrl} placeholder="https:// link of the page you opened"
+              placeholderTextColor={colors.homeMuted} autoCapitalize="none" autoCorrect={false} accessibilityLabel="Set source link" />
+          </View>
+
+          <View style={s.card}>
+            <Text style={s.setTitle}>Pins in this list ({ticked.length} ticked, max {MAX_SET_BATCH})</Text>
+            {setItems.length === 0 && <Text style={s.muted}>No pins in this list.</Text>}
+            {setItems.map(c => {
+              const on = ticked.includes(c.id);
+              return (
+                <TouchableOpacity
+                  key={c.id}
+                  style={s.row}
+                  onPress={() => toggleTick(c.id)}
+                  accessibilityRole="checkbox"
+                  accessibilityState={{ checked: on }}
+                  accessibilityLabel={`Tick ${candidateTitle(c)}`}
+                >
+                  <Feather name={on ? 'check-square' : 'square'} size={20} color={on ? colors.homeTeal : colors.homeMuted} />
+                  <View style={{ flex: 1, gap: 4 }}>
+                    <Text style={s.rowTitle}>{candidateTitle(c)}</Text>
+                    <View style={s.chips}>
+                      <Chip label={c.status.replace(/_/g, ' ')} tone="teal" size="sm" />
+                      <Chip label={c.record_confidence} tone={confidenceTone(c.record_confidence)} size="sm" />
+                      {c.duplicate_status.startsWith('DUPLICATE') || c.duplicate_status.startsWith('PROBABLE')
+                        ? <Chip label="Already in catalogue" tone="sand" size="sm" /> : null}
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+
+          <View style={s.card}>
+            <Text style={s.setTitle}>What the page confirms</Text>
+            <View style={s.chips}>
+              {CHECKABLE_FIELDS.map(f => {
+                const on = setFields.includes(f.field);
+                return (
+                  <TouchableOpacity
+                    key={f.field}
+                    onPress={() => toggleSetField(f.field)}
+                    style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeTeal }]}
+                    accessibilityRole="checkbox"
+                    accessibilityState={{ checked: on }}
+                  >
+                    <Text style={s.v}>{on ? '✓ ' : ''}{f.label}</Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+            <TextInput style={[s.input, { minHeight: 64 }]} value={setNote} onChangeText={setSetNote} multiline maxLength={240}
+              placeholder="Note (optional, 240 characters)" placeholderTextColor={colors.homeMuted} accessibilityLabel="Set note" />
+            <Button label="Record set check" icon="check" loading={busy}
+              disabled={ticked.length === 0 || setFields.length === 0 || !setUrl.trim()} onPress={recordSetCheck} />
+            <Button label="Approve ticked pins" icon="check-circle" variant="secondary"
+              disabled={ticked.length === 0 || busy} onPress={() => setConfirmSet(true)} />
+            <Text style={s.muted}>
+              Approval only goes through for checked pins that pass the usual rules; the rest stay pending and are listed here.
+            </Text>
+            {setMsg && <Text style={s.notice}>{setMsg}</Text>}
+          </View>
+        </ScrollView>
+        <ConfirmDialog
+          visible={confirmSet}
+          title={`Approve ${ticked.length} ticked pin${ticked.length === 1 ? '' : 's'}?`}
+          message="This records your decision only. The catalogue is not changed until a separate import. Pins that fail the usual checks stay pending."
+          confirmLabel="Approve"
+          onConfirm={approveSet}
+          onCancel={() => setConfirmSet(false)}
+        />
+      </Modal>
 
       {/* Candidate detail */}
       <Modal visible={!!detail} animationType="slide" onRequestClose={() => setDetail(null)}>

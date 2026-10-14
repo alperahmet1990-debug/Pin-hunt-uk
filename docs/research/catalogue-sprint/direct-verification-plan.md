@@ -17,20 +17,20 @@ Status: proposal.
 | Measure | Value |
 |---|---|
 | Candidate pins | 842 |
-| Pins named on a cited page | 763 |
-| Pages to open to cover them | 355 |
-| Official pages | 68, covering 189 pins |
-| **DSUK High-confidence pins** (after the Pinventory decision; was 104) | **85** |
-| Official pages covering them | **17** (about 5 pins per page, up to 16) |
+| Pins named on a cited page | 739 |
+| Pages to open to cover them | 343 |
+| Official pages | 73, covering 203 pins |
+| **DSUK High-confidence pins** (after the Pinventory decision and pass 4) | **101** |
+| Official pages covering them | **24** (about 4 pins per page, up to 16) |
 
-**With set-level checks (#230):** about 2 minutes per page. That puts **DSUK High at about 35 minutes** and all 355 pages at about 12 hours.
+**With set-level checks (#230):** about 2 minutes per page. That puts **DSUK High at about 50 minutes** and all 343 pages at about 11–12 hours.
 
 ## Recommended route, fastest first
 1. **Unlock Research Review on staging** (laptop, about 30–45 minutes).
    - Apply 045 to staging and run `045_verify.sql`.
    - Run the app and API against staging.
    - Load `out/consolidated/staging_payload.json` (4.3 MB, under the 5 MB limit).
-2. **Start with the DSUK High sheet now** (17 Disney Store UK pages, 85 pins).
+2. **Start with the DSUK High sheet now** (24 Disney Store UK pages, 101 pins).
    - Open each page in your own browser and confirm each pin in Research Review.
    - Per-pin checks work today, so this needs no new code.
 3. **Ship set-level verification (#230).** It is approved and in the backend queue, but it has no priority label, so it may wait behind other work.
@@ -38,7 +38,7 @@ Status: proposal.
    - It turns one page open into N verified pins, plus one batch approval per set.
 4. **Batch review in set order.**
    - Order: official pages first, then news pages (after the access checks in step 5), then fan pages.
-   - Blocking conflicts (10 pins) and flagged duplicates (33) are excluded from batches and reviewed one by one.
+   - Blocking conflicts (17 pins) and flagged duplicates (33) are excluded from batches and reviewed one by one.
 5. **Approved machine access, to improve candidates (not to verify them).**
    - Allow 3–5 news hosts in network settings: Laughing Place, WDWNT, DLP Report.
    - Basil then reads and records each site's terms and robots rules. You approve each host in `access_policy.json`.

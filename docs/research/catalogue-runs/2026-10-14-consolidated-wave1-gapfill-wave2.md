@@ -113,3 +113,32 @@ The engine never upgrades a fan source.
 - **Direct check:** 842 pins.
 - **Single-publisher:** 355 pins (DLP 191, WDW 81, DLR 39, DSUK 37, earlier 7).
 - **No official source:** DLP (0 of 333) and WDW (2 of 148).
+
+---
+
+## Update: Pass 4, maintainer source rules and targeted gap-fill
+**Rules applied** (maintainer decision, 2026-10-14):
+- Disney Pinventory is a **fan database**. It is used for discovery and secondary corroboration only, never as an independent publisher, and no identifiers are taken from it.
+- Mousesteps and similar sites are **fan** sources.
+- A claim that repeats another outlet's release information counts under that outlet (`derived_from`).
+- Secondary-only evidence is capped at **Medium**.
+
+**Effect of the rules:** 46 pins that leaned on Disney Pinventory fell back to a single publisher, giving 401 single-publisher targets.
+
+**Pass 4:** about 151 searches, at most 2 per release. **77 pins** gained an independent second publisher: 14 official, 19 news, 44 fan.
+- **Yield was low** for DLP 2024 (14 of about 100). Most of those releases are only described by one fan site, so search-based corroboration is close to exhausted there.
+
+**Now** (842 pins, all still candidates; 0 directly verified):
+
+| Line | Pins | High | Medium | Low | 2+ independent publishers | Any official |
+|---|---|---|---|---|---|---|
+| DLP | 333 | 0 | 166 | 166 | 176 | 0 |
+| DSUK | 176 | 101 | 49 | 26 | 115 | 157 |
+| WDW | 148 | 4 | 64 | 79 | 85 | 4 |
+| DLR | 108 | 10 | 50 | 48 | 65 | 15 |
+| Earlier | 77 | 34 | 18 | 25 | 70 | 37 |
+| **Total** | **842** | **149** | **347** | **344** | **511** | **213** |
+
+- **Unverified:** 2 pins.
+- **Blocking identity conflicts:** 17. Flagged possible duplicates: 33. Exact duplicates of the trusted catalogue: 27.
+- **Verification worklist:** `out/consolidated/verification_worklist.xlsx`. 343 pages cover 739 pins. 24 official Disney Store pages cover the 101 DSUK High pins.

@@ -1,0 +1,54 @@
+import React from 'react';
+import { act, render, screen } from '@testing-library/react-native';
+import CollectorProfileScreen from '../app/collector/[username]';
+
+// UX-045: the collector profile loads with a header placeholder in the
+// hero's place (compact for a match entry), then trade-match rows.
+let mockEntry: string | undefined;
+let resolveProfile: (p: unknown) => void = () => {};
+const mockGetPublicProfile = () => new Promise(resolve => { resolveProfile = resolve; });
+let resolveTrades: (t: unknown[]) => void = () => {};
+const mockRepo = {
+  getTraderRating: () => Promise.resolve({ positive: 0, total: 0 }),
+  getPotentialTrades: () => new Promise<unknown[]>(resolve => { resolveTrades = resolve; }),
+};
+
+jest.mock('react-native-safe-area-context', () => ({
+  useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
+}));
+jest.mock('expo-router', () => ({
+  useLocalSearchParams: () => ({ username: 'pinpal', entry: mockEntry }),
+  useRouter: () => ({ push: jest.fn(), back: jest.fn() }),
+  Stack: { Screen: () => null },
+}));
+jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ getPublicProfile: mockGetPublicProfile }) }));
+jest.mock('@/hooks/useMarketplace', () => ({ useMarketplace: () => ({ repo: mockRepo, userId: 'me' }) }));
+jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
+
+const profile = { id: 'u2', username: 'pinpal', displayName: 'Pin Pal' };
+
+beforeEach(() => { mockEntry = undefined; });
+
+describe('Collector profile while loading (UX-045)', () => {
+  it('shows a header placeholder until the profile arrives', async () => {
+    await render(<CollectorProfileScreen />);
+    expect(screen.getByRole('progressbar', { name: 'Loading collector' })).toBeTruthy();
+    await act(async () => { resolveProfile(profile); });
+    expect(screen.queryByRole('progressbar', { name: 'Loading collector' })).toBeNull();
+    expect(screen.getByText('@pinpal')).toBeTruthy();
+  });
+
+  it('shows placeholder rows while trade matches load', async () => {
+    await render(<CollectorProfileScreen />);
+    await act(async () => { resolveProfile(profile); });
+    expect(screen.getByRole('progressbar', { name: 'Loading trade matches' })).toBeTruthy();
+    await act(async () => { resolveTrades([]); });
+    expect(screen.queryByRole('progressbar', { name: 'Loading trade matches' })).toBeNull();
+  });
+
+  it('uses the same loading label for a match entry', async () => {
+    mockEntry = 'match';
+    await render(<CollectorProfileScreen />);
+    expect(screen.getByRole('progressbar', { name: 'Loading collector' })).toBeTruthy();
+  });
+});

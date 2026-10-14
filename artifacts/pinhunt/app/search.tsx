@@ -34,6 +34,7 @@ import { usePinActions } from '@/components/PinActionsSheet';
 import { Button, IconButton } from '@/components/ui/Button';
 import { getPinImageSource } from '@/utils/pinImage';
 import { StatusBadge } from '@/components/ui';
+import { Skeleton, SkeletonBlock, SkeletonRow } from '@/components/ui/Skeleton';
 import { radius, spacing } from '@/constants/theme';
 import {
   SEARCH_PAGE_SIZE,
@@ -368,10 +369,13 @@ export default function SearchScreen() {
         ) : (
           <View style={styles.section}>
             {searching && results.length === 0 ? (
-              <View style={styles.stateRow}>
-                <ActivityIndicator size="small" color={colors.homeMuted} />
-                <Text style={[styles.stateText, { color: colors.homeMuted }]}>Searching…</Text>
-              </View>
+              // Shaped like the result count + rows that replace it (UX-045).
+              <Skeleton label="Searching pins">
+                <SkeletonBlock width={96} height={11} style={styles.resultCountSkeleton} />
+                {Array.from({ length: 6 }, (_, i) => (
+                  <SkeletonRow key={i} style={[styles.resultRow, { borderBottomColor: colors.homeLine }]} />
+                ))}
+              </Skeleton>
             ) : results.length === 0 ? (
               <>
                 <View style={styles.stateRow}>
@@ -514,6 +518,7 @@ const styles = StyleSheet.create({
   },
   popularImage: { width: '100%', height: '100%' },
   resultCount: { fontSize: 13, fontFamily: 'Inter_500Medium', marginBottom: spacing.xs },
+  resultCountSkeleton: { marginTop: 3, marginBottom: spacing.xs + 2 },
   endOfList: { fontSize: 13, textAlign: 'center', paddingVertical: spacing.lg, fontFamily: 'Inter_400Regular' },
   stateRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.lg },
   stateText: { fontSize: 14, fontFamily: 'Inter_400Regular' },

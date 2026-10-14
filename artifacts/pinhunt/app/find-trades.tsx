@@ -24,7 +24,6 @@
  */
 import React from 'react';
 import {
-  ActivityIndicator,
   Image,
   ScrollView,
   StyleSheet,
@@ -45,6 +44,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { findTradesEmptyState, type FindTradesEmptyAction } from '@/utils/findTradesEmpty';
 import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { Button } from '@/components/ui/Button';
+import { Skeleton, SkeletonBlock } from '@/components/ui/Skeleton';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
 
 function pinImageSource(imageUrl?: string) {
@@ -97,9 +97,7 @@ export default function FindTradesScreen() {
           showsVerticalScrollIndicator={false}
         >
           {loading ? (
-            <View style={styles.center}>
-              <ActivityIndicator color={colors.homeCoral} />
-            </View>
+            <FindTradesSkeleton colors={colors} />
           ) : error ? (
             <View style={styles.center}>
               <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
@@ -231,6 +229,36 @@ function SectionHeader({ icon, tint, title, colors }: {
       </View>
       <Text style={[styles.sectionTitle, { color: colors.homeInk }]}>{title}</Text>
     </View>
+  );
+}
+
+// ─── Loading ────────────────────────────────────────────────────────────────
+// Two shelves shaped like "On your ISO" (header, subtitle, tile cards), so
+// the first real section lands where the placeholder was (UX-045).
+
+function FindTradesSkeleton({ colors }: { colors: ReturnType<typeof useColors> }) {
+  return (
+    <Skeleton label="Finding trades">
+      {[0, 1].map(section => (
+        <View key={section} style={styles.section}>
+          <View style={styles.sectionHeadRow}>
+            <SkeletonBlock width={24} height={24} rounded={7} tone="art" />
+            <SkeletonBlock width={section === 0 ? 96 : 128} height={14} />
+          </View>
+          <SkeletonBlock width={180} height={9} style={styles.skeletonSubtitle} />
+          <View style={styles.skeletonShelf}>
+            {[0, 1, 2, 3].map(i => (
+              <View key={i} style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                <SkeletonBlock width={86} height={86} rounded={radius.sm} tone="art" />
+                <SkeletonBlock width="85%" height={10} style={{ marginTop: 7 }} />
+                <SkeletonBlock width="55%" height={10} style={{ marginTop: 4 }} />
+                <SkeletonBlock width="70%" height={8} style={{ marginTop: 5 }} />
+              </View>
+            ))}
+          </View>
+        </View>
+      ))}
+    </Skeleton>
   );
 }
 
@@ -425,6 +453,8 @@ const styles = StyleSheet.create({
   // Plain contentContainerStyle only — no `style`/height on the ScrollView
   // itself. Matches app/pin/[id].tsx's proven "MORE FROM THIS SET" shelf.
   shelf: { paddingBottom: 2, paddingRight: spacing.lg },
+  skeletonShelf: { flexDirection: 'row', overflow: 'hidden', paddingBottom: 2 },
+  skeletonSubtitle: { marginLeft: 32, marginTop: 4, marginBottom: spacing.sm },
 
   // ─── Shared tile grammar — used identically by On Your ISO, Complete Your
   // Sets (image portion) and Based on Your Collection: image mat → title →

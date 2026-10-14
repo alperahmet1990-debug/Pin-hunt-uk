@@ -21,3 +21,4 @@ export { ConfirmDialog } from './ConfirmDialog';
 export type { ConfirmDialogProps } from './ConfirmDialog';
 export { Button, IconButton, MIN_TOUCH } from './Button';
 export type { ButtonProps, ButtonVariant, ButtonSize, IconButtonProps, IconButtonVariant } from './Button';
+export { Skeleton, SkeletonBlock, SkeletonTile, SkeletonGrid, SkeletonRow, SkeletonRows, SkeletonHeader, useReduceMotion } from './Skeleton';

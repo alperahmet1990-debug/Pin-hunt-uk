@@ -5,7 +5,6 @@ import {
   Text,
   TouchableOpacity,
   View,
-  useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
@@ -15,7 +14,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { EmptyState } from '@/components/EmptyState';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
-import { ScreenContainer, SegmentedControl, SetProgressBar, CompactPinTile, PinGrid, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
+import { ScreenContainer, SegmentedControl, SetProgressBar, CompactPinTile, PinGrid, SkeletonGrid } from '@/components/ui';
 import type { SegmentedControlOption } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, PinSetSummary } from '@workspace/pin-repository';
@@ -39,9 +38,6 @@ export default function SetDetailScreen() {
   const router = useRouter();
   const pinActions = usePinActions();
   // Placeholder tiles match the real grid (PinGrid): same columns and size.
-  const { width: screenWidth } = useWindowDimensions();
-  const skeletonCols = pinGridColumns(screenWidth);
-  const skeletonTile = pinTileSize(screenWidth, skeletonCols);
   const { collection: userCollection, getEntry, setStatuses } = useCollection();
   const toast = useToast();
   // Undo runs after later renders, so it reads the latest setter (collection-mutation-ordering.md).
@@ -265,19 +261,7 @@ export default function SetDetailScreen() {
 
       {/* ── Pin grid ── */}
       {loading ? (
-        <View
-          style={[styles.grid, styles.skeletonGrid]}
-          accessible
-          accessibilityRole="progressbar"
-          accessibilityLabel="Loading pins in this set"
-        >
-          {Array.from({ length: skeletonCols * 3 }, (_, i) => (
-            <View key={i} style={{ width: skeletonTile }}>
-              <View style={[styles.skeletonImage, { width: skeletonTile, height: skeletonTile, backgroundColor: colors.homeAqua }]} />
-              <View style={[styles.skeletonLabel, { backgroundColor: colors.homeLine }]} />
-            </View>
-          ))}
-        </View>
+        <SkeletonGrid label="Loading pins in this set" style={styles.skeletonGrid} />
       ) : displayPins.length === 0 ? (
         <EmptyState
           icon={filter === 'owned' ? 'check-circle' : 'search'}
@@ -373,10 +357,8 @@ const styles = StyleSheet.create({
   filterWrap: { marginTop: spacing.xs },
   // Grid
   grid: { paddingTop: spacing.lg, paddingHorizontal: spacing.lg },
-  // Loading placeholders, sized like CompactPinTile (square image + one label line)
-  skeletonGrid: { flexDirection: 'row', flexWrap: 'wrap', columnGap: PIN_GRID_GUTTER, rowGap: spacing.lg },
-  skeletonImage: { borderRadius: radius.md },
+  // Loading placeholder sits where the grid's first row will.
+  skeletonGrid: { paddingTop: spacing.lg },
   // Missing-pins footer
   footer: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: 2 },
-  skeletonLabel: { height: 9, width: '70%', alignSelf: 'center', borderRadius: 5, marginTop: 9, marginBottom: 2 },
 });

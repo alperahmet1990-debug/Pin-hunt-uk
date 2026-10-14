@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 12:45 UTC by Claude (sprint coordinator session). Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 12:45 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -27,6 +27,7 @@ _Last updated: 2026-10-14 12:45 UTC by Claude (sprint coordinator session). Bran
 - **Licensing, photos, open data:** `licensing-photos-open-data.md`.
 - **DSUK High pilot ready:** 101 pins, 24 official pages (`pilot-dsuk-high/`).
 - **Laptop checklist:** `LAPTOP-CHECKLIST.md`.
+- **Structure check:** 207 multi-character pins now carry "confirm one pin vs separate pins" (24 in the pilot, marked in the checklist). Pilot reloaded offline: all checks pass. Engine tests: 36.
 
 ## Catalogue metrics (from `DASHBOARD.md`)
 | | |
@@ -56,10 +57,9 @@ _Last updated: 2026-10-14 12:45 UTC by Claude (sprint coordinator session). Bran
 7. **Open-data stance and solicitor questions** (`licensing-photos-open-data.md`, "What needs the maintainer"). No rush.
 
 ## Next planned actions (check-ins take these in order)
-1. Engine: flag multi-character pins for a structure check ("one pin or separate pins"), the audit's top error. Regenerate outputs and re-run the offline load test.
-2. Blind re-check of a sample of the DSUK High pilot pins before your session.
-3. WDW festival coverage (Food & Wine, Flower & Garden, Festival of the Arts 2023–25): named pins from round-up posts, with a capped search budget.
-4. Coverage gaps: DSUK months with no recorded release (18), then DLR (32).
-5. Vision: converter from extraction JSON to a review sheet, ready for your photos.
-6. After each data change: refresh the dashboard, pilot, worklist and this file.
-7. Every check-in: look for new PRs, QA/security findings and CI on sprint issues, and act on them.
+1. Blind re-check of a sample of the DSUK High pilot pins before your session.
+2. WDW festival coverage (Food & Wine, Flower & Garden, Festival of the Arts 2023–25): named pins from round-up posts, with a capped search budget.
+3. Coverage gaps: DSUK months with no recorded release (18), then DLR (32).
+4. Vision: converter from extraction JSON to a review sheet, ready for your photos.
+5. After each data change: refresh the dashboard, pilot, worklist and this file.
+6. Every check-in: look for new PRs, QA/security findings and CI on sprint issues, and act on them.

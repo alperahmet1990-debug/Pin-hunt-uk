@@ -76,6 +76,10 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
         dupes[key] = match_pin(cat, family, subset, chars, name, codes, family_hint=key.split("/")[0].replace("-", " "))
         if dupes[key][0] == "PROBABLE DUPLICATE":
             p["review_reasons"].append("probable duplicate: " + dupes[key][2])
+        # Pin structure is the most common snippet error (blind audit 2026-10-14): one pin showing
+        # several characters vs separate pins. Ask the reviewer to confirm it on the page.
+        if len(chars) >= 2:
+            p["review_reasons"].append("structure: confirm one pin showing all of these characters, not separate pins")
         # internal duplicates: same set + same character set inside this run
         sig = (p["set_key"], tuple(sorted(c.lower() for c in chars)))
         if chars and sig in seen:

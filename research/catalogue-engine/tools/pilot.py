@@ -29,6 +29,7 @@ for c in pins:
     summary["possible duplicate flag (individual review)"] += flag(c, "duplicate")
     summary["variant warnings (note needed)"] += bool(c["warnings"])
     summary["exact catalogue duplicate"] += not c["duplicate_status"].startswith("NEW")
+    summary["multi-character (confirm structure)"] += flag(c, "structure:")
 summary["sets"] = len(sets)
 
 wl = pd.read_excel(worklist, sheet_name="1 DSUK High (start here)")
@@ -44,6 +45,7 @@ def note(keys):
         if flag(c, "conflict:"): tags.append("conflict")
         if flag(c, "duplicate"): tags.append("possible duplicate")
         if c["warnings"]: tags.append("variants: add a note")
+        if flag(c, "structure:"): tags.append("check one pin vs separate pins")
         if tags:
             out.append(f"{k.rsplit('/', 1)[-1]}: {', '.join(tags)}")
     return "; ".join(out)

@@ -1128,7 +1128,9 @@
    "key": "animated-cuties/series-1/esmeralda",
    "set_key": "animated-cuties/series-1",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "DUPLICATE",
     "PHUK-00000336",
@@ -3450,7 +3452,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Pinocchio (1940) | Pinocchio",
+     "alternatives": "editorial/legacy only: Pinocchio | Pinocchio (1940)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -4532,7 +4534,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Little Mermaid (1989) | The Little Mermaid",
+     "alternatives": "editorial/legacy only: The Little Mermaid | The Little Mermaid (1989)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -5285,7 +5287,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Emperor's New Groove (2000) | The Emperor's New Groove",
+     "alternatives": "editorial/legacy only: The Emperor's New Groove | The Emperor's New Groove (2000)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -5787,7 +5789,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Sleeping Beauty (1959) | Sleeping Beauty",
+     "alternatives": "editorial/legacy only: Sleeping Beauty | Sleeping Beauty (1959)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -8607,7 +8609,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Darkwing Duck (1991 TV series) | Darkwing Duck (TV, 1991)",
+     "alternatives": "editorial/legacy only: Darkwing Duck (TV, 1991) | Darkwing Duck (1991 TV series)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -13351,7 +13353,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Alice in Wonderland (1951) | Alice in Wonderland",
+     "alternatives": "editorial/legacy only: Alice in Wonderland | Alice in Wonderland (1951)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -15525,7 +15527,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Lilo & Stitch | Lilo & Stitch (2002)",
+     "alternatives": "editorial/legacy only: Lilo & Stitch (2002) | Lilo & Stitch",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -15833,7 +15835,9 @@
    "key": "brush-of-magic/mystery-series-1/todd",
    "set_key": "brush-of-magic/mystery-series-1",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "DUPLICATE",
     "PHUK-00000628",
@@ -15893,7 +15897,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Fox and the Hound | The Fox and the Hound (1981)",
+     "alternatives": "editorial/legacy only: The Fox and the Hound (1981) | The Fox and the Hound",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -16278,7 +16282,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Little Mermaid (1989) | The Little Mermaid",
+     "alternatives": "editorial/legacy only: The Little Mermaid | The Little Mermaid (1989)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -16586,7 +16590,9 @@
    "key": "brush-of-magic/mystery-series-1/winnie-the-pooh",
    "set_key": "brush-of-magic/mystery-series-1",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "DUPLICATE",
     "PHUK-00000630",
@@ -16640,7 +16646,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Winnie the Pooh | The Many Adventures of Winnie the Pooh (1977)",
+     "alternatives": "editorial/legacy only: The Many Adventures of Winnie the Pooh (1977) | Winnie the Pooh",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -17274,7 +17280,8 @@
    "set_key": "brush-of-magic/mystery-series-2",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
@@ -18937,7 +18944,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Pinocchio (1940) | Pinocchio",
+     "alternatives": "editorial/legacy only: Pinocchio | Pinocchio (1940)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -19587,7 +19594,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Lion King | The Lion King (1994)",
+     "alternatives": "editorial/legacy only: The Lion King (1994) | The Lion King",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -20247,7 +20254,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Fantasia (1940) | Fantasia",
+     "alternatives": "editorial/legacy only: Fantasia | Fantasia (1940)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -20613,7 +20620,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: One Hundred and One Dalmatians (1961) | One Hundred and One Dalmatians",
+     "alternatives": "editorial/legacy only: One Hundred and One Dalmatians | One Hundred and One Dalmatians (1961)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -22809,7 +22816,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Adventures of Ichabod and Mr. Toad | The Adventures of Ichabod and Mr. Toad (1949)",
+     "alternatives": "editorial/legacy only: The Adventures of Ichabod and Mr. Toad (1949) | The Adventures of Ichabod and Mr. Toad",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -23175,7 +23182,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: A Goofy Movie (1995) | A Goofy Movie",
+     "alternatives": "editorial/legacy only: A Goofy Movie | A Goofy Movie (1995)",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -23541,7 +23548,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: The Lion King | The Lion King (1994)",
+     "alternatives": "editorial/legacy only: The Lion King (1994) | The Lion King",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -24825,7 +24832,8 @@
    "set_key": "dlp/2024/alice-in-wonderland-march-2024",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -25611,7 +25619,9 @@
    "key": "dlp/2024/ariel-and-eric-le-november-2024/ariel-and-eric",
    "set_key": "dlp/2024/ariel-and-eric-le-november-2024",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -25735,7 +25745,8 @@
    "set_key": "dlp/2024/aristocats-oe-november-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -25865,7 +25876,8 @@
    "set_key": "dlp/2024/aristocats-oe-november-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -25995,7 +26007,8 @@
    "set_key": "dlp/2024/aristocats-oe-november-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -26255,7 +26268,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -26975,7 +26989,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -27319,7 +27334,8 @@
    "set_key": "dlp/2024/christmas-2024-pooh-oe",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -28533,7 +28549,8 @@
    "set_key": "dlp/2024/fathers-day-2024-judy-stu-hopps",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -28666,7 +28683,9 @@
    "key": "dlp/2024/gaston-and-belle-le-november-2024/gaston-and-belle",
    "set_key": "dlp/2024/gaston-and-belle-le-november-2024",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -28805,7 +28824,8 @@
    "set_key": "dlp/2024/halloween-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -29391,7 +29411,8 @@
    "set_key": "dlp/2024/happy-birthday-cakes-le-700",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -30219,7 +30240,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -30322,7 +30344,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -30426,7 +30449,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -30529,7 +30553,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -30749,7 +30774,8 @@
    "set_key": "dlp/2024/le-700-mickey-minnie-daisy-september-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -31824,7 +31850,9 @@
    "key": "dlp/2024/tinker-bell-periwinkle-symphony-of-colours-jumbo/tinker-bell-and-periwinkle",
    "set_key": "dlp/2024/tinker-bell-periwinkle-symphony-of-colours-jumbo",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -31948,7 +31976,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -32051,7 +32080,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -32155,7 +32185,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -32259,7 +32290,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -32363,7 +32395,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -32467,7 +32500,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -32917,7 +32951,9 @@
    "key": "dlp/2025/angel-stitch-le-2025-05-31/angel-and-stitch",
    "set_key": "dlp/2025/angel-stitch-le-2025-05-31",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -33056,7 +33092,8 @@
    "set_key": "dlp/2025/berlioz-toulouse-le-2025-04-26",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -33337,7 +33374,9 @@
    "key": "dlp/2025/captain-hook-peter-pan-le-2025-09/captain-hook-and-peter-pan",
    "set_key": "dlp/2025/captain-hook-peter-pan-le-2025-09",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -33658,7 +33697,8 @@
    "set_key": "dlp/2025/christmas-2025-oe",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -34227,7 +34267,8 @@
    "set_key": "dlp/2025/cinderella-75th-anniversary-le-2025-02-15",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -34351,7 +34392,8 @@
    "set_key": "dlp/2025/cinderella-75th-anniversary-le-2025-02-15",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -34590,7 +34632,9 @@
    "key": "dlp/2025/cruella-le-2025-05-24/cruella",
    "set_key": "dlp/2025/cruella-le-2025-05-24",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -34746,7 +34790,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -35091,6 +35136,7 @@
     "identity confidence Low",
     "missing: edition_type",
     "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of dlp/2025/disney-music-festival-2025-05-03/chip-and-dale"
    ],
    "duplicate": [
@@ -35231,7 +35277,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
-    "set incomplete (8/10)"
+    "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -35581,7 +35628,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
-    "set incomplete (8/10)"
+    "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -35934,7 +35982,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
-    "set incomplete (8/10)"
+    "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -36050,7 +36099,8 @@
    "set_key": "dlp/2025/disneyland-hotel-oe-2025-01",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -36326,7 +36376,9 @@
    "key": "dlp/2025/duchess-omalley-le-2025-03-08/duchess-and-thomas-omalley",
    "set_key": "dlp/2025/duchess-omalley-le-2025-03-08",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -36569,7 +36621,9 @@
    "key": "dlp/2025/dumbo-rabbit-butterfly-le-2025-03-29/rabbit",
    "set_key": "dlp/2025/dumbo-rabbit-butterfly-le-2025-03-29",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -36691,7 +36745,9 @@
    "key": "dlp/2025/easter-huey-dewey-louie-le-2025-04-19/easter-huey-dewey-louie",
    "set_key": "dlp/2025/easter-huey-dewey-louie-le-2025-04-19",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -37581,7 +37637,9 @@
    "key": "dlp/2025/goofy-le-2025-07/goofy",
    "set_key": "dlp/2025/goofy-le-2025-07",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -37704,7 +37762,8 @@
    "set_key": "dlp/2025/goofy-max-powerline-le-2025-12-06",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -37822,7 +37881,9 @@
    "key": "dlp/2025/hades-le-700/hades",
    "set_key": "dlp/2025/hades-le-700",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -37961,7 +38022,8 @@
    "set_key": "dlp/2025/halloween-2025-le-2025-09-20",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -38420,7 +38482,8 @@
    "set_key": "dlp/2025/halloween-2025-oe-2025-09-20",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -39177,7 +39240,8 @@
    "set_key": "dlp/2025/halloween-2025-oe-2025-09-20",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -39556,7 +39620,8 @@
    "set_key": "dlp/2025/halloween-2025-oe-2025-09-20",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -40529,7 +40594,8 @@
    "set_key": "dlp/2025/lady-and-the-tramp-le-2025-02-15",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -40646,7 +40712,9 @@
    "key": "dlp/2025/lady-tremaine-le-700/lady-tremaine",
    "set_key": "dlp/2025/lady-tremaine-le-700",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -41294,7 +41362,9 @@
    "key": "dlp/2025/maleficent-aurora-silhouette-le-2025-03-15/maleficent-aurora-silhouette",
    "set_key": "dlp/2025/maleficent-aurora-silhouette-le-2025-03-15",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -41428,7 +41498,9 @@
    "key": "dlp/2025/may-1-muguet-oe-2025-05-01/chip-and-dale",
    "set_key": "dlp/2025/may-1-muguet-oe-2025-05-01",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -42028,7 +42100,8 @@
    "set_key": "dlp/2025/megara-hercules-le-700",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -43132,7 +43205,9 @@
    "key": "dlp/2025/mickey-minnie-moon-le-2025-09/mickey-and-minnie",
    "set_key": "dlp/2025/mickey-minnie-moon-le-2025-09",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -43405,7 +43480,9 @@
    "key": "dlp/2025/miss-bunny-thumper-lunar-series-le-700/miss-bunny-and-thumper",
    "set_key": "dlp/2025/miss-bunny-thumper-lunar-series-le-700",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -43561,7 +43638,9 @@
    "key": "dlp/2025/mother-gothel-le-700/mother-gothel",
    "set_key": "dlp/2025/mother-gothel-le-700",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -43706,7 +43785,8 @@
    "set_key": "dlp/2025/mrs-potts-chip-le-2025-05-25",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -43823,7 +43903,9 @@
    "key": "dlp/2025/nala-simba-le-2025-04-19/nala-simba",
    "set_key": "dlp/2025/nala-simba-le-2025-04-19",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -44097,7 +44179,8 @@
    "set_key": "dlp/2025/pajama-party-2025-10-17",
    "record_confidence": "Medium",
    "review_reasons": [
-    "conflict: edition_type"
+    "conflict: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -44932,7 +45015,8 @@
    "set_key": "dlp/2025/paris-mickey-friends-2025-03-01",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -45040,7 +45124,8 @@
    "set_key": "dlp/2025/paris-mickey-friends-2025-03-01",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -45148,7 +45233,8 @@
    "set_key": "dlp/2025/paris-mickey-friends-2025-03-01",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -45256,7 +45342,8 @@
    "set_key": "dlp/2025/paris-mickey-friends-2025-03-01",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -45944,7 +46031,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -46508,7 +46596,9 @@
    "key": "dlp/2025/pongo-perdita-le-2025-07-26/pongo-and-perdita",
    "set_key": "dlp/2025/pongo-perdita-le-2025-07-26",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -49256,7 +49346,8 @@
    "set_key": "dlp/2025/tangled-valentines-day-2025-surprise-le-700",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -49673,7 +49764,9 @@
    "key": "dlp/2025/tiana-naveen-frogs-le-700/tiana-and-naveen-frogs",
    "set_key": "dlp/2025/tiana-naveen-frogs-le-700",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -50531,7 +50624,9 @@
    "key": "dlp/2025/ursula-ariel-le-2025-07-14/ursula-and-ariel",
    "set_key": "dlp/2025/ursula-ariel-le-2025-07-14",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -50944,7 +51039,9 @@
    "key": "dlp/2025/villains-oe-2025-10-04/evil-queen-and-magic-mirror",
    "set_key": "dlp/2025/villains-oe-2025-10-04",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
     "",
@@ -51110,7 +51207,9 @@
    "key": "dlp/2025/villains-oe-2025-10-04/hades-pain-and-panic",
    "set_key": "dlp/2025/villains-oe-2025-10-04",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
     "",
@@ -51277,7 +51376,9 @@
    "key": "dlp/2025/villains-oe-2025-10-04/jafar-and-iago",
    "set_key": "dlp/2025/villains-oe-2025-10-04",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
     "",
@@ -51444,7 +51545,8 @@
    "set_key": "dlp/2025/villains-oe-2025-10-04",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
@@ -51907,7 +52009,9 @@
    "key": "dlp/2025/yzma-kuzco-le-700/yzma-and-kuzco",
    "set_key": "dlp/2025/yzma-kuzco-le-700",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -52053,7 +52157,8 @@
    "set_key": "dlp/2026/alice-75th-anniversary-keyhole",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -52186,7 +52291,9 @@
    "key": "dlp/2026/alice-open-edition-july/alice",
    "set_key": "dlp/2026/alice-open-edition-july",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -52798,7 +52905,8 @@
    "set_key": "dlp/2026/alice-open-edition-july",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -53254,7 +53362,8 @@
    "set_key": "dlp/2026/attraction-open-edition-july",
    "record_confidence": "Medium",
    "review_reasons": [
-    "set incomplete (2/4)"
+    "set incomplete (2/4)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "DUPLICATE",
@@ -54097,7 +54206,8 @@
    "set_key": "dlp/2026/bags-collection",
    "record_confidence": "Medium",
    "review_reasons": [
-    "conflict: edition_type"
+    "conflict: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -56414,7 +56524,8 @@
    "set_key": "dlp/2026/frozen-ever-after-attraction-key",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -56613,7 +56724,8 @@
    "set_key": "dlp/2026/fruits-collection",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -58800,7 +58912,9 @@
    "key": "dlp/2026/hunchback-30th-anniversary-jumbo/notre-dame-30th-jumbo",
    "set_key": "dlp/2026/hunchback-30th-anniversary-jumbo",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -59556,7 +59670,8 @@
    "set_key": "dlp/2026/nap-time-open-edition",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -61166,7 +61281,8 @@
    "set_key": "dlp/2026/pixar-cars-wall-e-june",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -62340,7 +62456,9 @@
    "key": "dlp/2026/pride-2026/mickey-and-minnie",
    "set_key": "dlp/2026/pride-2026",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -63959,7 +64077,8 @@
    "set_key": "dlp/2026/raiponce-tangled-spin-june",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -64114,7 +64233,9 @@
    "key": "dlp/2026/raiponce-tangled-spin-june/rapunzel-and-flynn",
    "set_key": "dlp/2026/raiponce-tangled-spin-june",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -64285,7 +64406,8 @@
    "set_key": "dlp/2026/raiponce-tangled-spin-june",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -64442,7 +64564,8 @@
    "set_key": "dlp/2026/rescuers-bernard-bianca",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -64587,7 +64710,9 @@
    "key": "dlp/2026/saint-valentine-2026/lumiere-and-partner",
    "set_key": "dlp/2026/saint-valentine-2026",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -65481,7 +65606,9 @@
    "key": "dlp/2026/tales-of-magic-beauty-and-the-beast/belle-and-beast",
    "set_key": "dlp/2026/tales-of-magic-beauty-and-the-beast",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -65763,7 +65890,9 @@
    "key": "dlp/2026/tales-of-magic-carl-ellie/carl-and-ellie",
    "set_key": "dlp/2026/tales-of-magic-carl-ellie",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -65887,7 +66016,9 @@
    "key": "dlp/2026/tales-of-magic-lilo-stitch/lilo-and-stitch",
    "set_key": "dlp/2026/tales-of-magic-lilo-stitch",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -66561,6 +66692,7 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of dlp/2026/raiponce-tangled-spin-june/rapunzel-and-flynn"
    ],
    "duplicate": [
@@ -66944,7 +67076,9 @@
    "key": "dlp/2026/tarot-series-three-fairies/three-fairies",
    "set_key": "dlp/2026/tarot-series-three-fairies",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -67443,7 +67577,9 @@
    "key": "dlp/2026/toy-story-5-open-edition/karen",
    "set_key": "dlp/2026/toy-story-5-open-edition",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -67686,7 +67822,9 @@
    "key": "dlp/2026/valentines-love-on-clouds/jack-and-sally",
    "set_key": "dlp/2026/valentines-love-on-clouds",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -67852,7 +67990,9 @@
    "key": "dlp/2026/valentines-love-on-clouds/mickey-and-minnie",
    "set_key": "dlp/2026/valentines-love-on-clouds",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -68018,7 +68158,9 @@
    "key": "dlp/2026/valentines-love-on-clouds/stitch-and-angel",
    "set_key": "dlp/2026/valentines-love-on-clouds",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -69044,7 +69186,9 @@
    "key": "dlp/2026/waves-series-goofy-max/goofy-and-max",
    "set_key": "dlp/2026/waves-series-goofy-max",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -69182,7 +69326,9 @@
    "key": "dlp/2026/waves-series-lilo-stitch/lilo-and-stitch",
    "set_key": "dlp/2026/waves-series-lilo-stitch",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -69601,7 +69747,9 @@
    "key": "dlp/2026/world-of-frozen-jumbo/world-of-frozen-jumbo",
    "set_key": "dlp/2026/world-of-frozen-jumbo",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -69753,7 +69901,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -69887,7 +70036,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -70027,7 +70177,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -70161,7 +70312,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -70295,7 +70447,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -70429,7 +70582,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -70569,7 +70723,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -70793,7 +70948,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -70927,7 +71083,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -71060,7 +71217,9 @@
    "key": "dlr/2023/best-buds-2023/sulley-and-mike-wazowski",
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -71227,7 +71386,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -71361,7 +71521,8 @@
    "set_key": "dlr/2023/best-buds-2023",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -78445,7 +78606,9 @@
    "key": "dlr/2025/70th-vault-collection-set-2/j-thaddeus-toad",
    "set_key": "dlr/2025/70th-vault-collection-set-2",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -79670,7 +79833,9 @@
    "key": "dlr/2025/magic-key-halloween-2025/mickey-and-minnie",
    "set_key": "dlr/2025/magic-key-halloween-2025",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -80183,7 +80348,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "set incomplete (2/3)"
+    "set incomplete (2/3)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -83415,7 +83581,8 @@
    "set_key": "dlr/2026/70th-vault-collection-set-3",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -83505,7 +83672,8 @@
    "set_key": "dlr/2026/70th-vault-collection-set-3",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -83775,7 +83943,8 @@
    "set_key": "dlr/2026/monsters-inc-25th-mike-sully-boo",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -85624,7 +85793,9 @@
    "key": "dlr/2026/walts-magical-moments-2026/steamboat-willie",
    "set_key": "dlr/2026/walts-magical-moments-2026",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -86052,7 +86223,8 @@
    "set_key": "dsuk/2024/chip-n-dale-christmas-countdown-2024-jumbo",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -86272,7 +86444,8 @@
    "set_key": "dsuk/2024/chip-n-dale-new-years-eve-2024",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -86637,7 +86810,9 @@
    "key": "dsuk/2024/disney-magical-collections-2024/belle-and-chip",
    "set_key": "dsuk/2024/disney-magical-collections-2024",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -86864,7 +87039,8 @@
    "set_key": "dsuk/2024/disney-magical-collections-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -87080,7 +87256,8 @@
    "set_key": "dsuk/2024/disney-magical-collections-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -87572,7 +87749,8 @@
    "set_key": "dsuk/2024/disney-magical-collections-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -87786,7 +87964,8 @@
    "set_key": "dsuk/2024/disney-magical-collections-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -88244,7 +88423,8 @@
    "set_key": "dsuk/2024/disney-magical-collections-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -88711,7 +88891,8 @@
    "set_key": "dsuk/2024/disney-magical-collections-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -90225,7 +90406,8 @@
    "set_key": "dsuk/2024/encanto-mystery-puzzle-pin",
    "record_confidence": "Medium",
    "review_reasons": [
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -90716,7 +90898,8 @@
    "set_key": "dsuk/2024/encanto-mystery-puzzle-pin",
    "record_confidence": "Medium",
    "review_reasons": [
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -91099,7 +91282,8 @@
    "set_key": "dsuk/2024/inside-out-2-current-mood-spinner",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -91937,7 +92121,8 @@
    "set_key": "dsuk/2024/mickey-and-santa-claus-festive-pin-2024",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -93602,7 +93787,9 @@
    "key": "dsuk/2024/moana-2-moana-simea-pua-heihei/moana-simea-pua-heihei",
    "set_key": "dsuk/2024/moana-2-moana-simea-pua-heihei",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -93839,7 +94026,8 @@
    "set_key": "dsuk/2024/moana-mystery-puzzle-pin",
    "record_confidence": "Medium",
    "review_reasons": [
-    "set incomplete (8/12)"
+    "set incomplete (8/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -94194,7 +94382,8 @@
    "set_key": "dsuk/2024/moana-mystery-puzzle-pin",
    "record_confidence": "Medium",
    "review_reasons": [
-    "set incomplete (8/12)"
+    "set incomplete (8/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -95316,7 +95505,8 @@
    "record_confidence": "High",
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -95813,7 +96003,8 @@
    "record_confidence": "High",
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -96054,7 +96245,8 @@
    "record_confidence": "Medium",
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -96297,7 +96489,8 @@
    "record_confidence": "High",
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -96422,7 +96615,8 @@
    "record_confidence": "Medium",
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -96742,7 +96936,9 @@
    "key": "dsuk/2024/st-davids-day-2024/mickey-and-minnie",
    "set_key": "dsuk/2024/st-davids-day-2024",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -97151,7 +97347,8 @@
    "set_key": "dsuk/2024/walt-disney-day-2024",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -97380,7 +97577,8 @@
    "set_key": "dsuk/2025/celebrating-disney-pins-25-series-1",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -98011,7 +98209,9 @@
    "key": "dsuk/2025/celebrating-disney-pins-25-series-2/stitch-with-angel",
    "set_key": "dsuk/2025/celebrating-disney-pins-25-series-2",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -98445,7 +98645,8 @@
    "set_key": "dsuk/2025/celebrating-disney-pins-25-series-3",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -98717,7 +98918,9 @@
    "key": "dsuk/2025/celebrating-disney-pins-25-series-4/mickey-and-minnie",
    "set_key": "dsuk/2025/celebrating-disney-pins-25-series-4",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -104830,7 +105033,8 @@
    "set_key": "dsuk/2025/happily-ever-after-slider-series",
    "record_confidence": "Medium",
    "review_reasons": [
-    "set incomplete (11/12)"
+    "set incomplete (11/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -105273,7 +105477,8 @@
    "set_key": "dsuk/2025/kanga-and-roo-mothers-day-2025",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -109625,7 +109830,8 @@
    "set_key": "dsuk/2025/toy-story-30th-anniversary-lr-pin",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -109777,7 +109983,8 @@
    "set_key": "dsuk/2026/ariel-king-triton-fathers-day-2026",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_location"
+    "missing: release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -109953,7 +110160,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110060,7 +110268,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110166,7 +110375,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110272,7 +110482,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110378,7 +110589,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110484,7 +110696,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110590,7 +110803,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110696,7 +110910,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110802,7 +111017,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -110908,7 +111124,8 @@
    "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -111014,7 +111231,8 @@
    "set_key": "dsuk/2026/spider-man-hulk-brand-new-day-lr-pin",
    "record_confidence": "High",
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -111174,7 +111392,8 @@
    "set_key": "dsuk/2026/tails-of-friendship-event-london",
    "record_confidence": "Medium",
    "review_reasons": [
-    "set incomplete (6/9)"
+    "set incomplete (6/9)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -113786,7 +114005,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -116912,7 +117132,9 @@
    "key": "wdw/2023/mnsshp-2023/logo",
    "set_key": "wdw/2023/mnsshp-2023",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -117424,7 +117646,9 @@
    "key": "wdw/2023/mvmcp-2023/holiday-cheer",
    "set_key": "wdw/2023/mvmcp-2023",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -117780,7 +118004,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: release_date, edition_type"
+    "missing: release_date, edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -117972,7 +118197,8 @@
    "set_key": "wdw/2023/peoplemover-passholder-pin",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -121746,7 +121972,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "set incomplete (1/5)"
+    "set incomplete (1/5)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -121880,7 +122107,8 @@
    "set_key": "wdw/2024/mnsshp-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -122070,7 +122298,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -122210,7 +122439,8 @@
    "set_key": "wdw/2024/mnsshp-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -122456,7 +122686,8 @@
    "set_key": "wdw/2024/mnsshp-2024",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -122630,7 +122861,8 @@
    "set_key": "wdw/2024/mvmcp-2024",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
@@ -122798,7 +123030,8 @@
    "set_key": "wdw/2024/mvmcp-2024",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
@@ -122966,7 +123199,8 @@
    "set_key": "wdw/2024/mvmcp-2024",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW (family exists, different sub-set)",
@@ -123475,7 +123709,8 @@
    "set_key": "wdw/2024/tianas-bayou-adventure-grand-opening",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -123658,7 +123893,9 @@
    "key": "wdw/2025/a-goofy-movie-30th-le/goofy-max-lester",
    "set_key": "wdw/2025/a-goofy-movie-30th-le",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -124883,7 +125120,9 @@
    "key": "wdw/2025/dining-with-disney/be-our-guest",
    "set_key": "wdw/2025/dining-with-disney",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -126089,7 +126328,9 @@
    "key": "wdw/2025/dining-with-disney/garden-grill-restaurant",
    "set_key": "wdw/2025/dining-with-disney",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -128591,7 +128832,9 @@
    "key": "wdw/2025/inkwells-of-evil/old-hag",
    "set_key": "wdw/2025/inkwells-of-evil",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -129352,7 +129595,8 @@
    "set_key": "wdw/2025/lunar-new-year-2026-le",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -129533,7 +129777,9 @@
    "key": "wdw/2025/miss-piggy-kermit-new-years-eve-le/miss-piggy-kermit",
    "set_key": "wdw/2025/miss-piggy-kermit-new-years-eve-le",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -130124,7 +130370,8 @@
    "set_key": "wdw/2025/spring-2025-pin-trading-night",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -130670,7 +130917,9 @@
    "key": "wdw/2025/spring-2025-pin-trading-night/pocahontas-john-smith",
    "set_key": "wdw/2025/spring-2025-pin-trading-night",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -131582,7 +131831,9 @@
    "key": "wdw/2025/star-wars-force-awakens-10th/rey-kylo-ren-mini-jumbo",
    "set_key": "wdw/2025/star-wars-force-awakens-10th",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -131961,7 +132212,9 @@
    "key": "wdw/2025/the-little-mermaid-wondrous-worlds-le/ariel",
    "set_key": "wdw/2025/the-little-mermaid-wondrous-worlds-le",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -132706,7 +132959,9 @@
    "key": "wdw/2026/chip-n-dale-play-along-le/bubblegum-machine",
    "set_key": "wdw/2026/chip-n-dale-play-along-le",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -133132,7 +133387,8 @@
    "set_key": "wdw/2026/disney-artist-collection-kate-maria-attraction-animals",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -133845,7 +134101,8 @@
    "set_key": "wdw/2026/disney-daring-detectives",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -134012,7 +134269,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -134162,7 +134420,8 @@
    "set_key": "wdw/2026/enchanted-doors",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -134975,7 +135234,8 @@
    "set_key": "wdw/2026/finding-dory-10th-le",
    "record_confidence": "Low",
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -135159,7 +135419,9 @@
    "key": "wdw/2026/happy-easter-2026-le/mickey-minnie",
    "set_key": "wdw/2026/happy-easter-2026-le",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -135523,7 +135785,9 @@
    "key": "wdw/2026/hunchback-of-notre-dame-30th/frollo-esmeralda",
    "set_key": "wdw/2026/hunchback-of-notre-dame-30th",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -135690,7 +135954,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -136012,7 +136277,8 @@
    "record_confidence": "Low",
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -136327,7 +136593,8 @@
    "set_key": "wdw/2026/muppets-disney-park-day-hollywood-studios",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -136466,7 +136733,8 @@
    "set_key": "wdw/2026/muppets-disney-park-day-hollywood-studios",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -136600,6 +136868,7 @@
    "record_confidence": "Medium",
    "review_reasons": [
     "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of brush-of-magic/limited-edition/dumbo"
    ],
    "duplicate": [
@@ -136953,7 +137222,8 @@
    "set_key": "wdw/2026/muppets-disney-park-day-magic-kingdom",
    "record_confidence": "Medium",
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "duplicate": [
     "NEW",
@@ -137454,7 +137724,9 @@
    "key": "wdw/2026/valentines-day-2026/aladdin-jasmine",
    "set_key": "wdw/2026/valentines-day-2026",
    "record_confidence": "High",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -137946,7 +138218,9 @@
    "key": "wdw/2026/walt-disney-world-55th-anniversary/polynesian-village-resort",
    "set_key": "wdw/2026/walt-disney-world-55th-anniversary",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -138369,7 +138643,9 @@
    "key": "wdw/2026/zootopia-10th-anniversary/nick-and-judy",
    "set_key": "wdw/2026/zootopia-10th-anniversary",
    "record_confidence": "Medium",
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "duplicate": [
     "NEW",
     "",
@@ -138777,7 +139053,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Disney Parks attractions | Toy Story / Disney Parks",
+     "alternatives": "editorial/legacy only: Toy Story / Disney Parks | Disney Parks attractions",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -140612,7 +140888,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Disney Parks attractions | Snow White and the Seven Dwarfs / Disney Parks",
+     "alternatives": "editorial/legacy only: Snow White and the Seven Dwarfs / Disney Parks | Disney Parks attractions",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [
@@ -141006,7 +141282,7 @@
      "value": null,
      "confidence": "Unverified",
      "status": "unverified",
-     "alternatives": "editorial/legacy only: Winnie the Pooh / Disney Parks | Disney Parks attractions",
+     "alternatives": "editorial/legacy only: Disney Parks attractions | Winnie the Pooh / Disney Parks",
      "inherited_from": null,
      "derived_from": null,
      "evidence": [

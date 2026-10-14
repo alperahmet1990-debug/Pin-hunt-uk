@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "a34c6a16382f",
+ "git_commit": "fb6acebe6a68",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -1290,7 +1290,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: release_date",
     "variants: original_price",
@@ -15630,7 +15632,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -16369,7 +16373,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "DUPLICATE",
    "duplicate_pinhunt_id": "PHUK-00000630",
@@ -16971,7 +16977,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -23317,7 +23324,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23660,7 +23668,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -23732,7 +23742,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23782,7 +23793,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23832,7 +23844,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -23934,7 +23947,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -24251,7 +24265,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -24398,7 +24413,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25015,7 +25031,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25066,7 +25083,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -25128,7 +25147,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25360,7 +25380,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25661,7 +25682,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25702,7 +25724,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25744,7 +25767,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25785,7 +25809,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -25868,7 +25893,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26400,7 +26426,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -26472,7 +26500,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26512,7 +26541,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26553,7 +26583,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26594,7 +26625,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26635,7 +26667,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26676,7 +26709,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -26951,7 +26985,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -27033,7 +27069,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -27159,7 +27196,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -27326,7 +27365,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [
     "variants: release_date"
@@ -27629,7 +27669,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -27683,7 +27724,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -27778,7 +27820,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -27869,7 +27913,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -27998,6 +28043,7 @@
     "identity confidence Low",
     "missing: edition_type",
     "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of dlp/2025/disney-music-festival-2025-05-03/chip-and-dale"
    ],
    "warnings": [],
@@ -28064,7 +28110,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
-    "set incomplete (8/10)"
+    "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -28193,7 +28240,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
-    "set incomplete (8/10)"
+    "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -28327,7 +28375,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
-    "set incomplete (8/10)"
+    "set incomplete (8/10)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -28368,7 +28417,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -28451,7 +28501,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -28574,7 +28626,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -28633,7 +28687,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -29018,7 +29074,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -29079,7 +29137,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29120,7 +29179,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -29207,7 +29268,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29398,7 +29460,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29738,7 +29801,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29908,7 +29972,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -30368,7 +30433,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -30409,7 +30475,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -30811,7 +30879,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -30862,7 +30932,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31102,7 +31174,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -31505,7 +31578,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31630,7 +31705,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31684,7 +31761,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31767,7 +31846,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -31806,7 +31886,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -31934,7 +32016,8 @@
    "record_confidence": "Medium",
    "engine_verified": false,
    "review_reasons": [
-    "conflict: edition_type"
+    "conflict: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -32483,7 +32566,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -32545,7 +32629,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -32607,7 +32692,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -32669,7 +32755,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -32974,7 +33061,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -33232,7 +33320,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -34351,7 +34441,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -34554,7 +34645,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -34947,7 +35040,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -35108,7 +35203,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
    "duplicate_pinhunt_id": null,
@@ -35181,7 +35278,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
    "duplicate_pinhunt_id": null,
@@ -35256,7 +35355,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
    "duplicate_pinhunt_id": null,
@@ -35330,7 +35431,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -35498,7 +35600,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -35573,7 +35677,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -35636,7 +35741,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -35999,7 +36106,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -36250,7 +36358,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (2/4)"
+    "set incomplete (2/4)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "DUPLICATE",
@@ -36591,7 +36700,8 @@
    "record_confidence": "Medium",
    "engine_verified": false,
    "review_reasons": [
-    "conflict: edition_type"
+    "conflict: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -37521,7 +37631,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -37622,7 +37733,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -38321,7 +38433,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -38652,7 +38766,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -39361,7 +39476,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -39794,7 +39910,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -40706,7 +40824,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -40758,7 +40877,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -40842,7 +40963,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -40893,7 +41015,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -40953,7 +41076,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41332,7 +41457,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41433,7 +41560,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41485,7 +41614,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -41853,6 +41984,7 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of dlp/2026/raiponce-tangled-spin-june/rapunzel-and-flynn"
    ],
    "warnings": [],
@@ -42000,7 +42132,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42217,7 +42351,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42320,7 +42456,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42393,7 +42531,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42466,7 +42606,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42873,7 +43015,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -42968,7 +43112,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -43164,7 +43310,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -43248,7 +43396,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43310,7 +43459,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43385,7 +43535,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43447,7 +43598,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43509,7 +43661,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43571,7 +43724,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43650,7 +43804,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43795,7 +43950,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43857,7 +44013,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -43919,7 +44076,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -44013,7 +44172,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -44079,7 +44239,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -47893,7 +48054,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -48793,7 +48956,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -49109,7 +49274,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "set incomplete (2/3)"
+    "set incomplete (2/3)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -50784,7 +50950,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -50846,7 +51013,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -51039,7 +51207,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -52084,7 +52253,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -52315,7 +52486,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -52476,7 +52648,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -52720,7 +52893,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: original_price"
    ],
@@ -52892,7 +53067,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [
     "variants: original_price"
@@ -53033,7 +53209,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [
     "variants: original_price"
@@ -53404,7 +53581,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -53546,7 +53724,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [
     "variants: original_price"
@@ -53866,7 +54045,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [
     "variants: original_price"
@@ -54184,7 +54364,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -55142,7 +55323,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -55436,7 +55618,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -55683,7 +55866,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -56187,7 +56371,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -56878,7 +57063,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: original_price",
     "variants: currency"
@@ -57069,7 +57256,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (8/12)"
+    "set incomplete (8/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -57286,7 +57474,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (8/12)"
+    "set incomplete (8/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -57933,7 +58122,8 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -58198,7 +58388,8 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -58315,7 +58506,8 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -58435,7 +58627,8 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -58501,7 +58694,8 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: release_date",
-    "set incomplete (10/12)"
+    "set incomplete (10/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -58677,7 +58871,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -58911,7 +59107,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -59069,7 +59266,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -59350,7 +59548,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -59549,7 +59749,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -59679,7 +59880,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -62857,7 +63060,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (11/12)"
+    "set incomplete (11/12)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -63175,7 +63379,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -65641,7 +65846,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -65747,7 +65953,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_location"
+    "missing: release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -65831,7 +66038,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -65905,7 +66113,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -65979,7 +66188,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66053,7 +66263,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66127,7 +66338,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66201,7 +66413,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66275,7 +66488,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66349,7 +66563,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66423,7 +66638,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66497,7 +66713,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66573,7 +66790,8 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location"
+    "missing: release_date, release_location",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -66703,7 +66921,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "set incomplete (6/9)"
+    "set incomplete (6/9)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68006,7 +68225,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -69923,7 +70143,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -70225,7 +70447,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -70411,7 +70635,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: release_date, edition_type"
+    "missing: release_date, edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -70513,7 +70738,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72680,7 +72906,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "set incomplete (1/5)"
+    "set incomplete (1/5)",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72723,7 +72950,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72830,7 +73058,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72907,7 +73136,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73075,7 +73305,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73172,7 +73403,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -73298,7 +73530,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -73424,7 +73657,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -73823,7 +74057,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date"
+    "missing: release_date",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -73958,7 +74193,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -74724,7 +74961,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -75417,7 +75656,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -76898,7 +77139,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -77324,7 +77567,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -77441,7 +77685,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -77812,7 +78058,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -78129,7 +78376,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -78705,7 +78954,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -78959,7 +79210,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -79462,7 +79715,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -79797,7 +80052,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [
     "variants: pin_name"
@@ -80243,7 +80499,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -80371,7 +80628,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -80468,7 +80726,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81057,7 +81316,8 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low"
+    "identity confidence Low",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81177,7 +81437,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -81436,7 +81698,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -81542,7 +81806,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81759,7 +82024,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -81955,7 +82221,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -82047,7 +82314,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -82131,6 +82399,7 @@
    "engine_verified": true,
    "review_reasons": [
     "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins",
     "possible cross-set duplicate of brush-of-magic/limited-edition/dumbo"
    ],
    "warnings": [],
@@ -82369,7 +82638,8 @@
    "record_confidence": "Medium",
    "engine_verified": true,
    "review_reasons": [
-    "missing: edition_type"
+    "missing: edition_type",
+    "structure: confirm one pin showing all of these characters, not separate pins"
    ],
    "warnings": [
     "variants: pin_name"
@@ -82718,7 +82988,9 @@
    },
    "record_confidence": "High",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [
     "variants: pin_name"
    ],
@@ -83083,7 +83355,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -83412,7 +83686,9 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [],
+   "review_reasons": [
+    "structure: confirm one pin showing all of these characters, not separate pins"
+   ],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,

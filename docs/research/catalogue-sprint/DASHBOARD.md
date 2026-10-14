@@ -1,6 +1,6 @@
 # PinHunt independent catalogue: dashboard
 
-_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run a34c6a16382f, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
+_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run fb6acebe6a68, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
 
 ## Headline
 

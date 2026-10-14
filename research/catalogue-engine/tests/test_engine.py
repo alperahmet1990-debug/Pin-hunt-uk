@@ -346,3 +346,17 @@ class Dashboard(unittest.TestCase):
         self.assertEqual((r["sets"], r["pins"], r["counted"], r["complete"], r["missing_pins"]), (1, 2, 1, 0, 1))
         self.assertIn("2025-04", gaps["dsuk"])
         self.assertNotIn("2025-03", gaps["dsuk"])
+
+
+class StructureFlag(unittest.TestCase):
+    def test_multi_character_pins_ask_for_a_structure_check(self):
+        import tempfile, json as _j, pathlib as _p
+        from engine.run import run
+        with tempfile.TemporaryDirectory() as d:
+            pk = _p.Path(d) / "p.json"
+            pk.write_text(_j.dumps(packet(pins=[
+                dict(pin_key="s/x/duo", set_key="s/x", claims=[claim("characters", ["Mickey", "Minnie"], NEWS)]),
+                dict(pin_key="s/x/solo", set_key="s/x", claims=[claim("characters", ["Goofy"], NEWS)])])))
+            _, pins, _, _, _ = run([str(pk)], str(_p.Path(d) / "out"), seed=None)
+        self.assertTrue(any(r.startswith("structure:") for r in pins["s/x/duo"]["review_reasons"]))
+        self.assertFalse(any(r.startswith("structure:") for r in pins["s/x/solo"]["review_reasons"]))

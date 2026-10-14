@@ -47,7 +47,7 @@ import { API_BASE } from '@/lib/apiBase';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinImage } from '@/components/ui/PinImage';
 import { getPinImageSource } from '@/utils/pinImage';
-import { localDuplicateCandidates, MIN_DUPLICATE_QUERY, setSuggestions, UNKNOWN_BRAND } from '@/utils/suggestPin';
+import { localDuplicateCandidates, MIN_DUPLICATE_QUERY, scanHint, setSuggestions, UNKNOWN_BRAND } from '@/utils/suggestPin';
 import type { CataloguePin } from '@workspace/pin-repository';
 import { radius, spacing } from '@/constants/theme';
 
@@ -245,11 +245,21 @@ export default function AddPinScreen() {
   const router   = useRouter();
   const { session } = useAuth();
   const { pins, series, repository } = usePinCatalogue();
-  const { frontUri: handoffUri, characters: handoffCharacters, name: handoffName } = useLocalSearchParams<{
+  const {
+    frontUri: handoffUri, characters: handoffCharacters, name: handoffName,
+    nameHint: rawNameHint, brandHint: rawBrandHint, setHint: rawSetHint,
+  } = useLocalSearchParams<{
     frontUri?: string;
     characters?: string;
     name?: string;
+    /** Scan guesses, offered as tap-to-use suggestions, never filled in (UX-011). */
+    nameHint?: string;
+    brandHint?: string;
+    setHint?: string;
   }>();
+  const nameHint = scanHint(rawNameHint);
+  const brandHint = scanHint(rawBrandHint);
+  const setHint = scanHint(rawSetHint);
 
   const [step, setStep] = useState(0);
 
@@ -527,6 +537,23 @@ export default function AddPinScreen() {
     </>
   );
 
+  /** "From your scan: …" — tap to use the scan's guess for this field. */
+  const scanChip = (hint: string, current: string, label: string, onUse: () => void) =>
+    hint && current.trim() !== hint ? (
+      <TouchableOpacity
+        onPress={onUse}
+        activeOpacity={0.8}
+        accessibilityRole="button"
+        accessibilityLabel={`Use ${label} from your scan: ${hint}`}
+        style={[styles.scanChip, { backgroundColor: colors.homeCoral + '14', borderColor: colors.homeCoral + '55' }]}
+      >
+        <Feather name="camera" size={12} color={colors.homeCoral} />
+        <Text style={[styles.editionBtnLabel, { color: colors.homeInk, flexShrink: 1 }]} numberOfLines={1}>
+          From your scan: {hint}
+        </Text>
+      </TouchableOpacity>
+    ) : null;
+
   const field = (label: string, required: boolean, input: React.ReactNode) => (
     <View style={styles.field}>
       <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>
@@ -549,7 +576,15 @@ export default function AddPinScreen() {
         </View>
       )}
 
-      {field('Pin name', true, inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky', { errKey: 'proposedName' }))}
+      {field('Pin name', true, (
+        <>
+          {inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky', { errKey: 'proposedName' })}
+          {scanChip(nameHint, proposedName, 'name', () => {
+            setProposedName(nameHint);
+            setErrors(e => ({ ...e, proposedName: undefined }));
+          })}
+        </>
+      ))}
 
       {duplicates.length > 0 && (
         <View
@@ -581,6 +616,7 @@ export default function AddPinScreen() {
       {field('Set or collection', false, (
         <>
           {inp(seriesName, setSeriesName, 'e.g. Park Icons')}
+          {scanChip(setHint, seriesName, 'set', () => setSeriesName(setHint))}
           {setOptions.length > 0 && (
             <View style={styles.chipRow}>
               {setOptions.map(name => (
@@ -619,7 +655,12 @@ export default function AddPinScreen() {
 
       {showMore && (
         <View style={{ gap: spacing.md + 2 }}>
-          {field('Brand or source', false, inp(brand, setBrand, 'e.g. Disney Parks, Loungefly'))}
+          {field('Brand or source', false, (
+            <>
+              {inp(brand, setBrand, 'e.g. Disney Parks, Loungefly')}
+              {scanChip(brandHint, brand, 'brand', () => setBrand(brandHint))}
+            </>
+          ))}
           {field('Release location', false, inp(releaseLocation, setReleaseLocation, 'e.g. Disneyland Paris, Disney Store UK'))}
           {field('Edition type', false, (
             <View style={styles.editionGrid}>
@@ -801,6 +842,10 @@ const styles = StyleSheet.create({
   detailsHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
   detailsThumb: { width: 72, height: 72 },
   chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginTop: spacing.xs },
+  scanChip: {
+    flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: spacing.xs + 2, maxWidth: '100%',
+    marginTop: spacing.xs, minHeight: 36, paddingHorizontal: spacing.md, borderWidth: 1, borderRadius: radius.sm - 2,
+  },
   dupeCard: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm },
   dupeTitle: { fontSize: 14, fontFamily: 'Inter_700Bold' },
   dupeRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, minHeight: 44 },

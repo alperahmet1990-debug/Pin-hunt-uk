@@ -1,4 +1,4 @@
-import { localDuplicateCandidates, setSuggestions } from '../suggestPin';
+import { localDuplicateCandidates, scanHint, setSuggestions } from '../suggestPin';
 import type { CataloguePin } from '@workspace/pin-repository';
 
 // UX-011 (#121): set suggestions and the already-in-the-catalogue check.
@@ -30,5 +30,15 @@ describe('localDuplicateCandidates', () => {
   });
   it('waits for at least three characters', () => {
     expect(localDuplicateCandidates(pins, 'du')).toEqual([]);
+  });
+});
+
+describe('scanHint', () => {
+  it('tidies whitespace and keeps short guesses as they are', () => {
+    expect(scanHint('  Disneyland\n Paris  ')).toBe('Disneyland Paris');
+    expect(scanHint(undefined)).toBe('');
+  });
+  it('cuts long text at a word boundary', () => {
+    expect(scanHint('Happy 30th Anniversary Disneyland Paris', 20)).toBe('Happy 30th');
   });
 });

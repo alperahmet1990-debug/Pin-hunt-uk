@@ -349,7 +349,8 @@ export default function ScanScreen() {
 
   // ── Hand off to Add Pin ───────────────────────────────────────────────────────
   // Carries the already-captured photo forward, plus any characters the AI
-  // scan recognised, so the user doesn't have to start from scratch.
+  // scan recognised, so the user doesn't have to start from scratch. The
+  // text, logo and shared set it saw go as tap-to-use hints (UX-011).
   const handleAddPinInstead = () => {
     if (!captured) return;
     router.push({
@@ -357,6 +358,9 @@ export default function ScanScreen() {
       params: {
         frontUri: captured.uri,
         characters: insights?.characters.join(', ') ?? '',
+        nameHint: insights?.textOnPin ?? '',
+        brandHint: insights?.logos[0] ?? '',
+        setHint: recoverySet ?? '',
       },
     });
   };

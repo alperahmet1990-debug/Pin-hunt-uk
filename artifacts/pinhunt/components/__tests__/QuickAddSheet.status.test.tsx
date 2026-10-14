@@ -55,12 +55,12 @@ function useFakeStores(initial: Entry | null, boards: Board[]) {
   };
 }
 
-function Harness({ initial, boards = [] }: { initial: Entry | null; boards?: Board[] }) {
+function Harness({ initial, boards = [], onAdded }: { initial: Entry | null; boards?: Board[]; onAdded?: (pinId: string, status: CollectionStatus) => void }) {
   const store = useFakeStores(initial, boards);
   return (
     <mockStoreContext.Provider value={store}>
       <ToastProvider>
-        <QuickAddSheet pin={PIN} onClose={() => {}} />
+        <QuickAddSheet pin={PIN} onClose={() => {}} onAdded={onAdded} />
         <ToastHost />
       </ToastProvider>
     </mockStoreContext.Provider>
@@ -137,6 +137,16 @@ describe('QuickAddSheet status changes', () => {
     });
     expect(latest.entries.p1.status).toBe('for_trade');
     expect(latest.writes).toBe(2);
+  });
+
+  it('onAdded reports saves to a list, never a removal (UX-061)', async () => {
+    const onAdded = jest.fn();
+    await render(<Harness initial={null} onAdded={onAdded} />);
+    await press('Mark as For Trade');
+    expect(onAdded).toHaveBeenLastCalledWith('p1', 'for_trade');
+    await press('Remove from my collection');
+    await press('Remove');
+    expect(onAdded).toHaveBeenCalledTimes(1);
   });
 
   it('close control is a labelled 44 pt target, and the footer button reads "Close" (UX-013a)', async () => {

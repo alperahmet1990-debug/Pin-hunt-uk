@@ -85,12 +85,21 @@ def score(payload, blind):
             match = next((p for p, b in zip(r["pins"], bsets) if b == frozenset(cs)), None)
             for fld, ours_v, theirs_v in [
                 ("edition_size", c["proposed"].get("Edition size"), (match or {}).get("edition_size")),
+                ("release_date", c["proposed"].get("Release date"), (match or {}).get("release_date")),
             ]:
                 if ours_v not in (None, "") and theirs_v not in (None, ""):
-                    try:
-                        same = int(float(str(ours_v).split()[0].replace(",", ""))) == int(theirs_v)
-                    except ValueError:
-                        same = str(ours_v) == str(theirs_v)
+                    if fld == "release_date":
+                        # compare at the precision both sides have (YYYY-MM or YYYY-MM-DD)
+                        a, b = str(ours_v)[:10], str(theirs_v)[:10]
+                        n = min(len(a), len(b))
+                        same = n >= 7 and a[:n] == b[:n]
+                        if n < 7:
+                            continue
+                    else:
+                        try:
+                            same = int(float(str(ours_v).split()[0].replace(",", ""))) == int(theirs_v)
+                        except ValueError:
+                            same = str(ours_v) == str(theirs_v)
                     res[f"{fld}_judged"] += 1
                     res[f"{fld}_ok"] += same
                     row[fld] = "ok" if same else f"ours {ours_v} vs blind {theirs_v}"
@@ -113,6 +122,7 @@ if __name__ == "__main__":
     print(f"identity  : {pct(res['identity_ok'], res['pins'])}")
     print(f"grouping  : {pct(res['grouping_ok'], res['grouping_judged'])} (of pins whose identity was found)")
     print(f"edition sz: {pct(res['edition_size_ok'], res['edition_size_judged'])}")
+    print(f"release dt: {pct(res['release_date_ok'], res['release_date_judged'])}")
     print(f"blocked for review (conflicts): {res['blocked']}; errors caught by a block: {res['errors_caught_by_block']}")
     print(f"approvable pins only: identity {pct(res['open_identity_ok'], res['open_pins'])}, grouping {pct(res['open_grouping_ok'], res['open_grouping_judged'])}")
     print(f"completeness: blind check named {res['blind_pins']} pins, {res['blind_only']} with no counterpart in ours")

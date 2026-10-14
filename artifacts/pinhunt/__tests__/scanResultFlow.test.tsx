@@ -47,10 +47,9 @@ beforeEach(() => {
 
 async function scanToResult() {
   await render(<ScanScreen />);
+  // UX-008a (#115): picking the photo starts identification, no Identify tap.
   await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
-  const identify = await screen.findByRole('button', { name: 'Identify Pin' }, { timeout: 3000 });
-  await fireEvent.press(identify);
-  await screen.findByRole('header', { name: 'Best match' });
+  await screen.findByRole('header', { name: 'Best match' }, { timeout: 3000 });
 }
 
 describe('Scan result (UX-005)', () => {
@@ -93,12 +92,53 @@ describe('Scan result (UX-005)', () => {
     mockIdentify.mockRejectedValueOnce(new TypeError('Network request failed'));
     await render(<ScanScreen />);
     await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
-    await fireEvent.press(await screen.findByRole('button', { name: 'Identify Pin' }, { timeout: 3000 }));
     expect(await screen.findByRole('alert', { name: "You're offline. Check your connection and try again." })).toBeTruthy();
     expect(screen.queryByText(/Network request failed/)).toBeNull();
     // Try again re-runs the identify with the same photo.
     await fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
     await screen.findByRole('header', { name: 'Best match' });
     expect(mockIdentify).toHaveBeenCalledTimes(2);
+  });
+});
+
+describe('Auto-identify after capture (UX-008a)', () => {
+  function deferred<T>() {
+    let resolve!: (v: T) => void;
+    const promise = new Promise<T>(r => { resolve = r; });
+    return { promise, resolve };
+  }
+  const result = {
+    matches: [{ pinId: 'p2', confidence: 81, reasoning: 'Blue sky and ears' }],
+    imageInsights: null,
+  };
+
+  it('identifies as soon as the photo is picked, with Retake and Cancel showing while it runs', async () => {
+    const pending = deferred<typeof result>();
+    mockIdentify.mockReturnValueOnce(pending.promise);
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
+    await waitFor(() => expect(mockIdentify).toHaveBeenCalledTimes(1));
+    expect(screen.queryByRole('button', { name: 'Identify Pin' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Retake' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Cancel' })).toBeTruthy();
+    await act(async () => { pending.resolve(result); });
+    await screen.findByRole('header', { name: 'Is this your pin?' });
+  });
+
+  it('Cancel keeps the photo and ignores the late result; Identify Pin runs it again', async () => {
+    const pending = deferred<typeof result>();
+    mockIdentify.mockReturnValueOnce(pending.promise);
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
+    await waitFor(() => expect(mockIdentify).toHaveBeenCalledTimes(1));
+    await fireEvent.press(screen.getByRole('button', { name: 'Cancel' }));
+    expect(screen.getByRole('button', { name: 'Identify Pin' })).toBeTruthy();
+    await act(async () => { pending.resolve(result); });
+    expect(screen.queryByRole('header', { name: 'Is this your pin?' })).toBeNull();
+    await fireEvent.press(screen.getByRole('button', { name: 'Identify Pin' }));
+    // The re-run gets the default two-match result.
+    await screen.findByRole('header', { name: 'Best match' });
+    expect(mockIdentify).toHaveBeenCalledTimes(2);
+    expect(mockIdentify).toHaveBeenLastCalledWith('small', 'image/jpeg', undefined);
   });
 });

@@ -14,8 +14,11 @@ IDENTITY = ("characters", "main_character", "attraction", "pin_name")
 
 def confidence(claims) -> str:
     ev = [c for c in claims if c["method"] in EVIDENCE_METHODS]
-    pubs = {c["publisher"] for c in ev}
+    # Fan pin databases corroborate only weakly: they never count as an independent publisher.
+    pubs = {c["publisher"] for c in ev if not c.get("fan_database")}
     official = any(c["source_class"] == "official" for c in ev)
+    if ev and not pubs and not official:
+        return "Low"
     if any(c["method"] == "physical_pin" for c in ev) or any(c["source_class"] == "official" and c["method"] == "page_fetch" for c in ev):
         return "High"
     if official and len(pubs) >= 2:
@@ -174,7 +177,7 @@ def reconcile(store):
             reasons.append("missing: " + ", ".join(missing))
         pins[key] = dict(key=key, set_key=sk, fields=f, record_confidence=rec_conf, review_reasons=reasons, warnings=warnings,
                          n_evidence_claims=len(ev_claims),
-                         n_publishers=len({c["publisher"] for c in ev_claims}))
+                         n_publishers=len({c["publisher"] for c in ev_claims if not c.get("fan_database")}))
     for s in sets.values():
         if s["completeness"].startswith(("incomplete", "over")):
             for m in s["members"]:

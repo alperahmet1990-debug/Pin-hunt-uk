@@ -12,9 +12,16 @@ NEWS = ("wdwnt.com", "laughingplace.com", "disneyfoodblog.com", "insidethemagic.
         "ed92.org", "wdwinfo.com", "allears.net", "blogmickey.com", "disneytouristblog.com",
         "disneyblog.com", "mickeyblog.com", "dapsmagic.com", "wdwmagic.com", "disneydining.com",
         "attractionsmagazine.com", "theffeed.com", "inside-disney.com")
-FAN = ("disneypinsblog.com", "extramagicminutes.com", "dismerchandise.com", "disneymouseketeer.com",
+FAN = ("mousesteps.com", "mypincentral.com", "pixiedustdlp.com", "disneypinforum.com", "ridingthemagic.uk",
+       "disneybymark.com", "chipandco.com", "dlpguide.com", "dlptownsquare.com", "disboards.com", "grownupmagic.com",
+       "disneypinsblog.com", "extramagicminutes.com", "dismerchandise.com", "disneymouseketeer.com",
        "threads.net", "threads.com", "instagram.com", "reddit.com", "facebook.com", "youtube.com",
        "tiktok.com", "x.com", "twitter.com")
+
+# Fan-built pin databases: allowed for discovery and as secondary corroboration only (maintainer
+# decision 2026-10-14). Classed as fan, never counted as an independent publisher, and nothing is
+# copied from them (catalogue, images, descriptions or their identifiers).
+FAN_DATABASES = ("disneypinventory.com",)
 
 CLASS_WEIGHT = {"official": 3, "news": 2, "fan": 1, "unclassified": 1, "marketplace": 0, "excluded": 0}
 
@@ -66,9 +73,13 @@ def classify(url: str) -> str:
         return "official"
     if _match(host, NEWS):
         return "news"
-    if _match(host, FAN):
+    if _match(host, FAN) or _match(host, FAN_DATABASES):
         return "fan"
     return "unclassified"
+
+
+def is_fan_database(url: str) -> bool:
+    return _match(domain_of(url), FAN_DATABASES)
 
 
 def is_evidence(url: str) -> bool:

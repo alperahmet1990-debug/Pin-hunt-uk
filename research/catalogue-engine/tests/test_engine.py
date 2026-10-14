@@ -276,3 +276,46 @@ class PublisherFamilies(unittest.TestCase):
             claim("characters", ["Goofy"], "https://www.disneystore.eu/a-438000000001.html")])]))
         pins, _ = reconcile(st)
         self.assertEqual(pins["s/x/p"]["fields"]["characters"]["publishers"], ["Disney Store (all regions)"])
+
+
+class SecondarySources(unittest.TestCase):
+    def test_fan_database_is_fan_and_never_an_independent_publisher(self):
+        self.assertEqual(S.classify("https://disneypinventory.com/pin/x"), "fan")
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[
+            claim("characters", ["Goofy"], FAN),
+            claim("characters", ["Goofy"], "https://disneypinventory.com/pin/x")])]))
+        pins, _ = reconcile(st)
+        self.assertEqual(pins["s/x/p"]["fields"]["characters"]["confidence"], "Low")
+
+    def test_fan_database_alone_is_low(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[
+            claim("characters", ["Goofy"], "https://disneypinventory.com/pin/x")])]))
+        pins, _ = reconcile(st)
+        self.assertEqual(pins["s/x/p"]["fields"]["characters"]["confidence"], "Low")
+
+    def test_repeated_release_info_counts_under_its_upstream(self):
+        st = Store()
+        c2 = claim("characters", ["Goofy"], "https://grownupmagic.com/post")
+        c2["derived_from"] = "https://wdwnt.com/x"
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[claim("characters", ["Goofy"], NEWS), c2])]))
+        pins, _ = reconcile(st)
+        f = pins["s/x/p"]["fields"]["characters"]
+        self.assertEqual(f["confidence"], "Low")
+        self.assertEqual(f["publishers"], ["wdwnt.com"])
+
+    def test_two_independent_secondary_sites_are_medium_not_high(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[
+            claim("characters", ["Goofy"], NEWS), claim("characters", ["Goofy"], "https://www.mousesteps.com/x")])]))
+        pins, _ = reconcile(st)
+        self.assertEqual(pins["s/x/p"]["fields"]["characters"]["confidence"], "Medium")
+        self.assertEqual(S.classify("https://www.mousesteps.com/x"), "fan")
+
+    def test_identifiers_never_taken_from_fan_database(self):
+        st = Store()
+        st.add_packet(packet(pins=[dict(pin_key="s/x/p", set_key="s/x", claims=[
+            claim("product_code", "2078210260048", "https://disneypinventory.com/pin/x")])]))
+        self.assertEqual(len(st.claims), 0)
+        self.assertIn("fan pin databases", st.rejected[0]["reason"])

@@ -65,11 +65,21 @@ class Store:
             reason = "source URL is a bare home page, not a specific page"
         if url and reason is None:
             cls = S.classify(url)
-            rec.update(source_class=cls, domain=S.domain_of(url), publisher=S.registrable(S.domain_of(url)))
+            rec.update(source_class=cls, domain=S.domain_of(url), publisher=S.registrable(S.domain_of(url)),
+                       fan_database=S.is_fan_database(url))
+            # A page that repeats another outlet's release information is not independent evidence:
+            # count it under the outlet it says it came from (claim- or source-level "derived_from").
+            upstream = (c.get("derived_from") or self.sources.get(url, {}).get("derived_from") or "").strip()
+            if upstream:
+                host = S.domain_of(upstream if "//" in upstream else "https://" + upstream)
+                if host:
+                    rec.update(publisher=S.registrable(host), derived_from=host)
             if cls == "excluded":
                 reason = "excluded source (policy: Pin & Pop / PinPics / PinTradingDB)"
             elif cls == "marketplace":
                 reason = "marketplace listing is not evidence"
+            elif rec["fan_database"] and field in ("product_code", "pack_product_code"):
+                reason = "identifiers are never taken from fan pin databases"
         else:
             rec.setdefault("source_class", "physical" if method == "physical_pin" else "none")
             rec.setdefault("domain", ""), rec.setdefault("publisher", "physical" if method == "physical_pin" else "")

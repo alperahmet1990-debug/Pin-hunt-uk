@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
-  Dimensions,
+  useWindowDimensions,
   Linking,
   Platform,
   ScrollView,
@@ -31,10 +31,8 @@ import { radius, spacing } from '@/constants/theme';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
 import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { pinHeroSize } from '@/utils/pinHeroSize';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const HERO_HEIGHT = Math.min(SCREEN_WIDTH * 1.05, 440);
-const IMAGE_CARD = SCREEN_WIDTH - 40;
 const SET_TILE = 78;
 
 // ─── Main screen ──────────────────────────────────────────────────────────────
@@ -42,6 +40,9 @@ const SET_TILE = 78;
 export default function PinDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const colors = useColors();
+  const screen = useWindowDimensions();
+  // Capped so the title and Add to Collection fit above the fold at 320×568 (B-P2-07).
+  const { hero: heroHeight, card: imageCard } = pinHeroSize(screen.width, screen.height);
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection, getEntry, markViewed, setStatus } = useCollection();
@@ -198,7 +199,7 @@ export default function PinDetailScreen() {
           colors={[colors.homeCoralDeep, colors.homeCoral, colors.homeSand]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          style={[styles.hero, { height: HERO_HEIGHT }]}
+          style={[styles.hero, { height: heroHeight }]}
         >
           <IconButton
             icon="chevron-left"
@@ -220,11 +221,11 @@ export default function PinDetailScreen() {
                 horizontal
                 pagingEnabled
                 showsHorizontalScrollIndicator={false}
-                onMomentumScrollEnd={e => setActiveImage(Math.round(e.nativeEvent.contentOffset.x / IMAGE_CARD))}
-                style={{ width: IMAGE_CARD, flexGrow: 0 }}
+                onMomentumScrollEnd={e => setActiveImage(Math.round(e.nativeEvent.contentOffset.x / imageCard))}
+                style={{ width: imageCard, flexGrow: 0 }}
               >
                 {images.map((src, i) => (
-                  <View key={i} style={[styles.imagePage, { width: IMAGE_CARD, height: IMAGE_CARD }]}>
+                  <View key={i} style={[styles.imagePage, { width: imageCard, height: imageCard }]}>
                     <PinImage source={src} style={[styles.image, { shadowColor: colors.homeShadow }]} contentFit="contain" />
                   </View>
                 ))}
@@ -241,7 +242,7 @@ export default function PinDetailScreen() {
           ) : (
             <PinImage
               source={images[0]}
-              style={[styles.image, { width: IMAGE_CARD, height: IMAGE_CARD, shadowColor: colors.homeShadow }]}
+              style={[styles.image, { width: imageCard, height: imageCard, shadowColor: colors.homeShadow }]}
               contentFit="contain"
             />
           )}

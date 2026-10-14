@@ -17,6 +17,7 @@ import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
+import { useProfile } from '@/context/ProfileContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
@@ -38,6 +39,9 @@ import {
 } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { WhatsIsoSheet } from '@/components/WhatsIsoSheet';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
+import { buildShareListText, shareListTitle, shareOrCopy, type ShareListKind } from '@/utils/shareList';
+import { useToast } from '@/components/ui/Toast';
 
 // All is the default (B-P1-03): owned pins first, with Boards as a row on it.
 type Tab = 'all' | 'sets' | 'traders' | 'iso';
@@ -218,6 +222,10 @@ export default function CollectionScreen() {
   const [setsSort, setSetsSort] = useState<'completion' | 'name' | 'year'>('completion');
   const [filterSheetTab, setFilterSheetTab] = useState<'traders' | 'iso' | 'sets' | null>(null);
   const [whatsIsoOpen, setWhatsIsoOpen] = useState(false);
+  // Share my ISO / For Trade list (#146); a private profile explains first.
+  const { profile } = useProfile();
+  const [privateShare, setPrivateShare] = useState<ShareListKind | null>(null);
+  const toast = useToast();
 
   const [addModalVisible, setAddModalVisible] = useState(false);
   const [repoSetSummaries, setSetSummaries] = useState<PinSetSummary[]>([]);
@@ -378,6 +386,18 @@ export default function CollectionScreen() {
     return processPins(wantedPins, isoFilter, isoSort, searchQuery, collection);
   }, [wantedPins, isoFilter, isoSort, searchQuery, collection]);
 
+  const shareList = async (kind: ShareListKind) => {
+    if (profile?.profileVisibility === 'private') {
+      setPrivateShare(kind);
+      return;
+    }
+    const list = kind === 'iso' ? wantedPins : forTradePins;
+    const message = buildShareListText(kind, list.map(p => p.title), profile?.username);
+    if (!message) return;
+    const result = await shareOrCopy(message, shareListTitle(kind));
+    if (result === 'copied') toast.show({ message: 'List copied. Paste it into WhatsApp or a group chat.' });
+  };
+
   const gridData = useMemo(() => {
     if (activeTab === 'all') return filteredOwnedPins;
     if (activeTab === 'sets') return setGroups;
@@ -508,11 +528,15 @@ export default function CollectionScreen() {
         )}
         {activeTab === 'traders' && (
           <>
-          <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
-            <Text style={[s.statText, { color: colors.homeInk }]}>
+          {/* Wraps the actions onto their own line when they don't fit (#146). */}
+          <View style={[s.statsRow, s.statsRowWrap]}>
+            <Text style={[s.statText, s.statCount, { color: colors.homeInk }]}>
               {forTradePins.length} <Text style={{ color: colors.homeMuted }}>For Trade</Text>
             </Text>
-            <View style={{ flexDirection: 'row', gap: 4 }}>
+            <View style={s.statActions}>
+              {!selection.active && forTradePins.length > 0 && (
+                <IconButton icon="share" iconSize={17} color={colors.homeInk} accessibilityLabel="Share your For Trade list" onPress={() => shareList('for_trade')} />
+              )}
               {!selection.active && filteredTraderPins.length > 0 && (
                 <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
                   <Feather name="check-square" size={16} color={colors.homeInk} />
@@ -538,9 +562,9 @@ export default function CollectionScreen() {
         )}
         {activeTab === 'iso' && (
           <>
-          <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
+          <View style={[s.statsRow, s.statsRowWrap]}>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-              <Text style={[s.statText, { color: colors.homeInk }]}>
+              <Text style={[s.statText, s.statCount, { color: colors.homeInk }]}>
                 {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
               </Text>
               {/* The one place ISO is explained (#65, docs/design/glossary.md). */}
@@ -549,7 +573,10 @@ export default function CollectionScreen() {
                 <Text style={[s.iconStatBtnText, { color: colors.homeCoralDeep }]}>What's ISO?</Text>
               </TouchableOpacity>
             </View>
-            <View style={{ flexDirection: 'row', gap: 4 }}>
+            <View style={s.statActions}>
+              {!selection.active && wantedPins.length > 0 && (
+                <IconButton icon="share" iconSize={17} color={colors.homeInk} accessibilityLabel="Share your ISO list" onPress={() => shareList('iso')} />
+              )}
               {!selection.active && filteredIsoPins.length > 0 && (
                 <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
                   <Feather name="check-square" size={16} color={colors.homeInk} />
@@ -913,6 +940,16 @@ export default function CollectionScreen() {
       </Modal>
 
       {/* Filter / Sort Modal */}
+      <ConfirmDialog
+        visible={privateShare !== null}
+        title="Your profile is private"
+        message="Collectors can't find you while your profile is private. Make it public in Edit Profile, then share your list."
+        confirmLabel="Edit Profile"
+        cancelLabel="Not now"
+        onConfirm={() => { setPrivateShare(null); router.push('/edit-profile'); }}
+        onCancel={() => setPrivateShare(null)}
+      />
+
       <WhatsIsoSheet
         visible={whatsIsoOpen}
         onClose={() => setWhatsIsoOpen(false)}
@@ -1041,6 +1078,10 @@ const s = StyleSheet.create({
   contextualArea: { paddingBottom: 8 },
   statsRow: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 16, paddingVertical: 12 },
   statText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  statsRowWrap: { justifyContent: 'space-between', flexWrap: 'wrap', rowGap: 0, columnGap: 8 },
+  statCount: { flexShrink: 0 },
+  // Right-aligned, on the count's line when there's room, else on its own.
+  statActions: { flexDirection: 'row', gap: 4, marginLeft: 'auto' },
   photoGapsCard: { marginTop: 0, marginBottom: 12, marginHorizontal: 16 },
   listFooter: { marginTop: 8, marginHorizontal: -16 },
   linkRow: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56, marginHorizontal: 16, marginBottom: 12, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },

@@ -17,6 +17,9 @@ describe('Find Trades entry points', () => {
   });
 
   it('Home keeps at least one', () => {
-    expect(count('app/(tabs)/index.tsx')).toBeGreaterThanOrEqual(1);
+    // Since #59 it leads the Recently added strip that Home renders.
+    const home = readFileSync(path.join(ROOT, 'app/(tabs)/index.tsx'), 'utf8');
+    const viaStrip = /<RecentPinsStrip\b/.test(home) ? count('components/RecentPinsStrip.tsx') : 0;
+    expect(count('app/(tabs)/index.tsx') + viaStrip).toBeGreaterThanOrEqual(1);
   });
 });

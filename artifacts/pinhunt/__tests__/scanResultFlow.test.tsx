@@ -3,6 +3,9 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-
 import ScanScreen from '../app/(tabs)/scan';
 
 // UX-005 (#112): from photo to "That's it" without leaving the scan screen.
+// The first test pays the scan screen's cold start, which can pass 5 s on a
+// busy CI runner (seen on #270); the same allowance as collectionSelectMode.
+jest.setTimeout(20_000);
 const mockPush = jest.fn();
 let mockQuickAddPin: { id: string } | null = null;
 const mockPins = [

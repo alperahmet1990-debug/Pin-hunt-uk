@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 21:00 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 21:25 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -18,6 +18,7 @@ _Last updated: 2026-10-14 21:00 UTC by Claude (sprint coordinator session). Chec
 - **#241 (import):** taken interactively in this session at the maintainer's request ("Take #241"). Claimed on the issue.
   - Branch `claude/241-research-import`: built and tested. 383 API tests pass; typecheck passes.
   - Offline replay on the real schema: 93/100 pilot pins import as new non-public pins; 7 are correctly refused.
+  - **PR #272 opened 21:25 UTC** (https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/272). Waiting on CI, QA and security review; I fix findings on the branch.
   - **The PR is not open yet:** the WIP limit is reached (#269, #270 open). The PR opens as soon as one of them is merged or closed. Its description is ready.
 - **Dev agent:** #240 merged (PR #259). #239 merged (PR #253).
 - **Roz / Baymax:** will review any PR the dev agent opens.
@@ -54,7 +55,7 @@ _Last updated: 2026-10-14 21:00 UTC by Claude (sprint coordinator session). Chec
 - **Search-only research** has hit diminishing returns (≈ 14 pins per 39 searches in the last DLP pass).
 
 ## Decisions requiring your approval
-- **Free a PR slot:** review or merge **#269** or **#270** (unrelated agent work). #241's PR opens straight after.
+- **#272 (#241 import):** merge once QA and security pass (medium risk, so it needs `merge-approved`). Do not run it on production.
 - **Labels done:** #235, #237, #239, #240, #241 are approved.
   - **#236:** closed as not planned.
 - **Also:**
@@ -91,7 +92,7 @@ _Last updated: 2026-10-14 21:00 UTC by Claude (sprint coordinator session). Chec
 - **Engine fix (15:30):** spelling variants of one edition type ("open" / "Open Edition" / "OE") were being counted as conflicts. Blocked pins went from 32 to 21 real disagreements.
 
 ## Next planned actions (check-ins take these in order)
-1. **Open #241's PR** the moment fewer than 2 `claude/*` PRs are open. Use the prepared description and the branch `claude/241-research-import`. Then follow its CI, QA and security review, and fix findings on that branch.
+1. **Follow PR #272** (#241) through CI, QA and security review, and fix findings on `claude/241-research-import`. Never merge.
 2. **Pilot readiness:** 93/100 importable offline. Try to close the 7: release years for Chip 'n Dale Countdown and Stitch St Patrick's; Big Hero 6 identity. Never invent values.
 3. **Keep the laptop checklist current** (import step §6 added).
 4. **Quality, not volume:** no new candidate discovery unless it closes a pilot gap.

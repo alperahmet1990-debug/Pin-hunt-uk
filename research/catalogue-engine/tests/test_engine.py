@@ -319,3 +319,30 @@ class SecondarySources(unittest.TestCase):
             claim("product_code", "2078210260048", "https://disneypinventory.com/pin/x")])]))
         self.assertEqual(len(st.claims), 0)
         self.assertIn("fan pin databases", st.rejected[0]["reason"])
+
+
+class Dashboard(unittest.TestCase):
+    def _cands(self):
+        ev = lambda method, url, cls="news": dict(field="characters", value=["A"], source_url=url, publisher="", source_class=cls, method=method, note=None, claim_ref=None)
+        pin = lambda key, sk, evidence: dict(research_key=key, entity_type="pin", set_research_key=sk, proposed={}, record_confidence="Medium",
+                                             engine_verified=True, review_reasons=[], warnings=[], duplicate_status="NEW", duplicate_pinhunt_id=None, evidence=evidence)
+        return [
+            dict(research_key="dsuk/2025/a", entity_type="set", set_research_key=None, proposed={"release_date": "2025-03-01", "expected_pin_count": 3},
+                 record_confidence="Medium", engine_verified=False, review_reasons=[], warnings=[], duplicate_status="NEW", duplicate_pinhunt_id=None, evidence=[]),
+            pin("dsuk/2025/a/x", "dsuk/2025/a", [ev("search_snippet", "https://wdwnt.com/x"), ev("search_snippet", "https://disneypinventory.com/x", "fan")]),
+            pin("dsuk/2025/a/y", "dsuk/2025/a", [ev("human_direct_check", "https://www.disneystore.co.uk/y", "official")]),
+        ]
+
+    def test_snippets_never_count_as_direct_and_fan_databases_not_independent(self):
+        from tools.dashboard import build
+        m, _ = build({"candidates": self._cands()}, {})
+        self.assertEqual(m["direct"], 1)
+        self.assertEqual(m["2pub"], 0)
+
+    def test_coverage_counts_missing_pins_and_empty_months(self):
+        from tools.dashboard import coverage
+        rows, gaps = coverage(self._cands(), as_of="2025-04")
+        r = rows[("dsuk", "2025-03")]
+        self.assertEqual((r["sets"], r["pins"], r["counted"], r["complete"], r["missing_pins"]), (1, 2, 1, 0, 1))
+        self.assertIn("2025-04", gaps["dsuk"])
+        self.assertNotIn("2025-03", gaps["dsuk"])

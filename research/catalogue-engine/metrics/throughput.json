@@ -1,0 +1,65 @@
+{
+ "as_of_month": "2026-10",
+ "payload": "research/catalogue-engine/out/consolidated/staging_payload.json",
+ "passes": [
+  {
+   "name": "POC + pilot (earlier, 2026 sets)",
+   "date": "2026-10-13",
+   "searches": 0,
+   "new_pins": 77,
+   "corroborated": 0,
+   "note": "searches not logged"
+  },
+  {
+   "name": "Wave 1 (DLP + DSUK 2024-26)",
+   "date": "2026-10-14",
+   "searches": 185,
+   "new_pins": 295,
+   "corroborated": 0
+  },
+  {
+   "name": "Wave 1 gap-fill + Wave 2 (WDW/DLR LE)",
+   "date": "2026-10-14",
+   "searches": 185,
+   "new_pins": 469,
+   "corroborated": 23
+  },
+  {
+   "name": "Pass 3 corroboration",
+   "date": "2026-10-14",
+   "searches": 188,
+   "new_pins": 1,
+   "corroborated": 276
+  },
+  {
+   "name": "Pass 4 targeted gap-fill (source rules)",
+   "date": "2026-10-14",
+   "searches": 151,
+   "new_pins": 0,
+   "corroborated": 77
+  },
+  {
+   "name": "Blind accuracy audit",
+   "date": "2026-10-14",
+   "searches": 36,
+   "new_pins": 0,
+   "corroborated": 0
+  }
+ ],
+ "verification": {
+  "pages": 343,
+  "official_pages": 73,
+  "official_pins": 203,
+  "minutes_per_page": 2,
+  "pilot_pins": 101,
+  "pilot_pages": 24
+ },
+ "accuracy": {
+  "date": "2026-10-14",
+  "sample_pins": 60,
+  "confirmed": 50,
+  "wrong_or_misstructured": 5,
+  "unconfirmed": 5,
+  "summary": "Blind re-research of 16 random releases (60 of our pins resolved): **83% confirmed, 8% wrong or mis-structured, 8% unconfirmed**. Errors are mostly combined-vs-separate character pins in Low-confidence DLP sets. See `accuracy-audit-2026-10-14.md`. Indicative only (small sample, snippets on both sides)."
+ }
+}

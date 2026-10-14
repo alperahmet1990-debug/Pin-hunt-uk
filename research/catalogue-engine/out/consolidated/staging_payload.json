@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "1e68d7a96d5a",
+ "git_commit": "3a9956bff9ae",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -29321,7 +29321,7 @@
     "Series": "Goofy limited edition pin (July)",
     "Characters": "Goofy; Rafiki",
     "Release year": 2025,
-    "Release date": "2025-07",
+    "Release date": "2025-07-12",
     "Edition type": "limited edition",
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
@@ -29383,6 +29383,28 @@
      "method": "search_snippet",
      "note": "schedule lists two LE pins, Goofy and Rafiki, each reserved via Lineberty (Goofy and Rafiki not on one pin)",
      "claim_ref": "C08586"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Snippet describes the Goofy and Rafiki LE pins (plural) as each showing its character with butterflies",
+     "claim_ref": "C08832"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Goofy LE pin shows Goofy with butterflies",
+     "claim_ref": "C08833"
     }
    ]
   },
@@ -29396,20 +29418,19 @@
     "Characters": "Rafiki",
     "Main character": "Rafiki",
     "Release year": 2025,
-    "Release date": "2025-07",
+    "Release date": "2025-07-12",
     "Edition type": "limited edition",
     "Park / Retailer": "Disneyland Paris",
     "Release scope": "France",
-    "Categories": "Goofy limited edition pin (July)",
+    "Categories": "Goofy limited edition pin (July); butterflies",
     "Collection name": "Goofy limited edition pin (July)",
     "Set count check": "unknown (no expected count claimed)",
+    "visual_features": "butterflies",
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
-   "record_confidence": "Low",
-   "engine_verified": false,
-   "review_reasons": [
-    "identity confidence Low"
-   ],
+   "record_confidence": "Medium",
+   "engine_verified": true,
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -29425,6 +29446,30 @@
      "method": "search_snippet",
      "note": "Rafiki named as the second of two LE pins released alongside Goofy in July 2025",
      "claim_ref": "C08587"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rafiki"
+     ],
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Rafiki LE pin shows Rafiki with butterflies; separate from the Goofy pin",
+     "claim_ref": "C08834"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "butterflies"
+     ],
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Each of the two LE pins shows its character with butterflies",
+     "claim_ref": "C08835"
     }
    ]
   },
@@ -29447,8 +29492,7 @@
    "record_confidence": "Low",
    "engine_verified": false,
    "review_reasons": [
-    "identity confidence Low",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "identity confidence Low"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -29467,6 +29511,16 @@
      "method": "search_snippet",
      "note": "Named LE",
      "claim_ref": "C03483"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pixiedustdlp.com/2025/11/28/disneyland-paris-pin-trading-dec-2025/",
+     "publisher": "pixiedustdlp.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Snippet names a single limited edition 'Goofy, Max and Powerline' pin needing Lineberty; separate Goofy & Max and Powerline & Roxanne pins listed too",
+     "claim_ref": "C08836"
     }
    ]
   },
@@ -34063,9 +34117,7 @@
    },
    "record_confidence": "Medium",
    "engine_verified": true,
-   "review_reasons": [
-    "possible cross-set duplicate of dlp/2025/goofy-le-2025-07/rafiki"
-   ],
+   "review_reasons": [],
    "warnings": [],
    "duplicate_status": "NEW",
    "duplicate_pinhunt_id": null,
@@ -46765,7 +46817,7 @@
     "Release year": 2024,
     "Release date": "2024-04-02",
     "Edition type": "limited edition",
-    "Edition size": 2500,
+    "Edition size": 3000,
     "Park / Retailer": "Disneyland Resort",
     "Release scope": "USA (California)",
     "Original price": 19.99,
@@ -46897,6 +46949,16 @@
      "method": "search_snippet",
      "note": "Release 4/2/2024",
      "claim_ref": "C08219"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.disneystore.co.uk/enchanted-tiki-room-disneyland-resort-fantasy-parade-limited-edition-pin-438017783553.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Disney Store UK online listing gives limited edition of 3,000; one of 12 parade pins; online-store release, sold out",
+     "claim_ref": "C08808"
     }
    ]
   },
@@ -47307,7 +47369,7 @@
     "Release year": 2024,
     "Release date": "2024-01-02",
     "Edition type": "limited edition",
-    "Edition size": 2500,
+    "Edition size": 3000,
     "Park / Retailer": "Disneyland Resort",
     "Release scope": "USA (California)",
     "Categories": "Disneyland Parades (2024)",
@@ -47417,6 +47479,16 @@
      "method": "search_snippet",
      "note": "Listed as edition of 3,000 worldwide (conflicts with 2,500)",
      "claim_ref": "C08225"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.disneystore.eu/hatbox-ghost-disneyland-parade-limited-edition-pin-the-haunted-mansion-438017634640.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Disney Store Europe online listing (Disneyland Parade Collection) gives limit 3,000 worldwide; online-store release, sold out",
+     "claim_ref": "C08807"
     }
    ]
   },
@@ -68407,8 +68479,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68459,6 +68530,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07742"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; 627 is listed",
+     "claim_ref": "C08812"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "627",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names 627 among the characters paired with Stitch",
+     "claim_ref": "C08813"
     }
    ]
   },
@@ -68482,8 +68576,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68534,6 +68627,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07745"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Angel is listed",
+     "claim_ref": "C08814"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Angel",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Angel among the characters paired with Stitch",
+     "claim_ref": "C08815"
     }
    ]
   },
@@ -68557,8 +68673,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68609,6 +68724,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07748"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Jumba Jookiba is listed",
+     "claim_ref": "C08816"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jumba Jookiba",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Jumba Jookiba among the characters paired with Stitch",
+     "claim_ref": "C08817"
     }
    ]
   },
@@ -68632,8 +68770,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68684,6 +68821,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07751"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Kixx is listed",
+     "claim_ref": "C08818"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kixx",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Kixx among the characters paired with Stitch",
+     "claim_ref": "C08819"
     }
    ]
   },
@@ -68707,8 +68867,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68759,6 +68918,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07754"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; LeRoy is listed",
+     "claim_ref": "C08820"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "LeRoy",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names LeRoy among the characters paired with Stitch",
+     "claim_ref": "C08821"
     }
    ]
   },
@@ -68782,8 +68964,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68834,6 +69015,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07757"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Reuben is listed",
+     "claim_ref": "C08822"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Reuben",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Reuben among the characters paired with Stitch",
+     "claim_ref": "C08823"
     }
    ]
   },
@@ -68857,8 +69061,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68909,6 +69112,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07760"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Richter is listed",
+     "claim_ref": "C08824"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Richter",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Richter among the characters paired with Stitch",
+     "claim_ref": "C08825"
     }
    ]
   },
@@ -68932,8 +69158,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -68984,6 +69209,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07763"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Sinker is listed",
+     "claim_ref": "C08826"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sinker",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Sinker among the characters paired with Stitch",
+     "claim_ref": "C08827"
     }
    ]
   },
@@ -69007,8 +69255,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -69059,6 +69306,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07766"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Splodyhead is listed",
+     "claim_ref": "C08828"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Splodyhead",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Splodyhead among the characters paired with Stitch",
+     "claim_ref": "C08829"
     }
    ]
   },
@@ -69082,8 +69352,7 @@
    "record_confidence": "High",
    "engine_verified": true,
    "review_reasons": [
-    "missing: release_date, release_location",
-    "structure: confirm one pin showing all of these characters, not separate pins"
+    "missing: release_date, release_location"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -69134,6 +69403,29 @@
      "method": "search_snippet",
      "note": "US Disney Store price",
      "claim_ref": "C07769"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Yaarp is listed",
+     "claim_ref": "C08830"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Yaarp"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing names Yaarp among the characters paired with Stitch",
+     "claim_ref": "C08831"
     }
    ]
   },
@@ -98468,7 +98760,7 @@
     "set_name": "Goofy limited edition pin (July)",
     "release_location": "Disneyland Paris",
     "region": "France",
-    "release_date": "2025-07",
+    "release_date": "2025-07-12",
     "edition_type": "limited edition"
    },
    "record_confidence": "Low",
@@ -98531,6 +98823,16 @@
      "method": "search_snippet",
      "note": "Reserved via Lineberty",
      "claim_ref": "C03096"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-07-12",
+     "source_url": "https://www.mousesteps.com/2025/06/30/disneyland-paris-pins-for-july-2025-revealed-including-ratatouille-disney-music-festival/",
+     "publisher": "mousesteps.com",
+     "source_class": "fan",
+     "method": "search_snippet",
+     "note": "Snippet ties the Goofy and Rafiki LE pins to 12 July, reserved via Lineberty",
+     "claim_ref": "C08811"
     }
    ]
   },
@@ -121877,6 +122179,26 @@
      "method": "search_snippet",
      "note": "US",
      "claim_ref": "C05323"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing: blind box gives 2 random pins from a collection of 10 designs",
+     "claim_ref": "C08809"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Official listing: two randomly selected pins per blind box",
+     "claim_ref": "C08810"
     }
    ]
   },

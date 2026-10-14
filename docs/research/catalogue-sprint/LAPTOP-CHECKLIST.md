@@ -9,7 +9,7 @@ Work top to bottom.
   - 53/54 files apply. The one failure is `006_trade_ratings`, a pre-existing duplicate policy unrelated to 045.
   - `045_verify.sql` passes.
 - **The pilot run loads** exactly as the API loads it. Tool: `research/catalogue-engine/tools/offline_load_test.mjs`.
-  - 100 pins, 22 sets, 678 evidence rows.
+  - 100 pins, 22 sets, 700 evidence rows.
 - **The full run also loads:** 842 pins, 404 sets, 8,510 evidence rows.
 - **Guards hold:**
   - approval without a direct check is refused

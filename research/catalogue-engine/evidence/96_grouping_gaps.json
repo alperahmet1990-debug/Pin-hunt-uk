@@ -1,0 +1,401 @@
+{
+ "packet_id": "pass6-grouping-gaps-2026-10-14-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-14",
+ "collector": "agent:basil-pass6-grouping-gaps",
+ "sources": [
+  {
+   "url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+   "title": "Experiment 626 2026 Mystery Pin Blind Pack, Lilo & Stitch",
+   "publisher": "Disney Store Asia",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+   "title": "Disneyland Paris Pin Trading July 2025",
+   "publisher": "PixieDust DLP",
+   "published_date": "2025-06-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pixiedustdlp.com/2025/11/28/disneyland-paris-pin-trading-dec-2025/",
+   "title": "Disneyland Paris Pin Trading December 2025",
+   "publisher": "PixieDust DLP",
+   "published_date": "2025-11-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2025/06/30/disneyland-paris-pins-for-july-2025-revealed-including-ratatouille-disney-music-festival/",
+   "title": "Disneyland Paris Pins for July 2025 Revealed, Including Ratatouille & Disney Music Festival",
+   "publisher": "Mousesteps",
+   "published_date": "2025-06-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing: blind box gives 2 random pins from a collection of 10 designs"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing: two randomly selected pins per blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2025/goofy-le-2025-07",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2025-07-12",
+     "source_url": "https://www.mousesteps.com/2025/06/30/disneyland-paris-pins-for-july-2025-revealed-including-ratatouille-disney-music-festival/",
+     "method": "search_snippet",
+     "note": "Snippet ties the Goofy and Rafiki LE pins to 12 July, reserved via Lineberty"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/627",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; 627 is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "627"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names 627 among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/angel",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Angel is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Angel"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Angel among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/jumba",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Jumba Jookiba is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Jumba Jookiba"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Jumba Jookiba among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/kixx",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Kixx is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Kixx"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Kixx among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/leroy",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; LeRoy is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "LeRoy"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names LeRoy among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/reuben",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Reuben is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Reuben"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Reuben among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/richter",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Richter is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Richter"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Richter among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/sinker",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Sinker is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Sinker"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Sinker among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/splodyhead",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Splodyhead is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Splodyhead"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Splodyhead among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2026/experiment-626-day-2026-mystery/yaarp",
+   "set_key": "dsuk/2026/experiment-626-day-2026-mystery",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Yaarp is listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Yaarp"
+     ],
+     "source_url": "https://www.disneystore.asia/experiment-626-2026-mystery-pin-blind-pack-lilo-stitch-438010927985.html",
+     "method": "search_snippet",
+     "note": "Official listing names Yaarp among the characters paired with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2025/goofy-le-2025-07/goofy",
+   "set_key": "dlp/2025/goofy-le-2025-07",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "method": "search_snippet",
+     "note": "Snippet describes the Goofy and Rafiki LE pins (plural) as each showing its character with butterflies"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "method": "search_snippet",
+     "note": "Goofy LE pin shows Goofy with butterflies"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2025/goofy-le-2025-07/rafiki",
+   "set_key": "dlp/2025/goofy-le-2025-07",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rafiki"
+     ],
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "method": "search_snippet",
+     "note": "Rafiki LE pin shows Rafiki with butterflies; separate from the Goofy pin"
+    },
+    {
+     "field": "visual_features",
+     "value": "butterflies",
+     "source_url": "https://pixiedustdlp.com/2025/06/30/disneyland-paris-pin-trading-july-2025/",
+     "method": "search_snippet",
+     "note": "Each of the two LE pins shows its character with butterflies"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2025/goofy-max-powerline-le-2025-12-06/goofy-max-powerline",
+   "set_key": "dlp/2025/goofy-max-powerline-le-2025-12-06",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pixiedustdlp.com/2025/11/28/disneyland-paris-pin-trading-dec-2025/",
+     "method": "search_snippet",
+     "note": "Snippet names a single limited edition 'Goofy, Max and Powerline' pin needing Lineberty; separate Goofy & Max and Powerline & Roxanne pins listed too"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2024/tinker-bell-periwinkle-symphony-of-colours-jumbo/tinker-bell-and-periwinkle",
+   "field": "pin_structure",
+   "searched": "4 searches (mousesteps, laughingplace, disneypinsblog, French name)",
+   "note": "no independent source for pin_structure in 2 searches; Disney Pins Blog gallery says 'Fairy Jumbo Pins' (plural), not conclusive; LE 500 only from marketplaces"
+  },
+  {
+   "key": "dlp/2025/paris-mickey-friends-2025-03-01/angel-and-stitch",
+   "field": "pin_structure",
+   "searched": "3 searches (mousesteps, laughingplace, disneypinsblog, disneystore.eu)",
+   "note": "no independent source for pin_structure in 2 searches; outlets list pairs 'dressed for Paris' without saying one or two pins"
+  },
+  {
+   "key": "dlp/2025/paris-mickey-friends-2025-03-01/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "3 searches (mousesteps, laughingplace, disneypinsblog, disneystore.eu)",
+   "note": "no independent source for pin_structure in 2 searches; outlets list pairs 'dressed for Paris' without saying one or two pins"
+  },
+  {
+   "key": "dlp/2025/paris-mickey-friends-2025-03-01/donald-and-daisy",
+   "field": "pin_structure",
+   "searched": "3 searches (mousesteps, laughingplace, disneypinsblog, disneystore.eu)",
+   "note": "no independent source for pin_structure in 2 searches; outlets list pairs 'dressed for Paris' without saying one or two pins"
+  },
+  {
+   "key": "dlp/2025/paris-mickey-friends-2025-03-01/mickey-and-minnie",
+   "field": "pin_structure",
+   "searched": "3 searches (mousesteps, laughingplace, disneypinsblog, disneystore.eu)",
+   "note": "no independent source for pin_structure in 2 searches; outlets list pairs 'dressed for Paris' without saying one or two pins"
+  },
+  {
+   "key": "dlp/2025/goofy-max-powerline-le-2025-12-06/goofy-max-powerline",
+   "field": "pin_structure",
+   "searched": "1 search",
+   "note": "only pixiedustdlp (same publisher as existing claims) states the structure; no independent second source"
+  }
+ ],
+ "discovery_notes": "10 searches. 626 Day 2026: official Disney Store Asia listing gives 10 designs, 2 per box, each Stitch + one named character (supports one pin per pairing). Dis Merchandise repeats same list (not re-added). Goofy July 2025: PixieDust confirms Goofy and Rafiki are two LE pins (butterflies), agreeing with Mousesteps; 'Goofy+Rafiki' characters on the goofy key looks wrong. Dec 6 2025: same day also had Goofy & Max and Max-as-Powerline & Roxanne pins (not in our set). disneystore.eu 'Disneyland Paris Stitch and Angel Pin' and 'Mickey and Minnie Pin' (90th anniv.) exist but are not tied to March 2025, so not used. Tinker Bell/Periwinkle and Paris pairs unresolved. Marketplace hits (eBay, Whatnot, JD Collectibles) ignored. No suspicious instructions seen."
+}

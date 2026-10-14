@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 15:25 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 15:28 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -81,11 +81,16 @@ _Last updated: 2026-10-14 15:25 UTC by Claude (sprint coordinator session). Chec
 - **Before the grouping pass,** the random sample was 83% fully correct, hand-adjudicated.
 - **The disagreements found are recorded and blocked for review:** Vault Set 3 Chip 'n Dale; the DLP "Prince Love" edition type.
 - **Remaining risk** is source disagreement on metadata (edition type, dates). The engine surfaces it and does not resolve it.
+- **Pass 6 (disagreements + grouping gaps):**
+  - 626 Day 2026: one pin each, confirmed by an official listing. The pilot's structure checks went from 21 to 11.
+  - Goofy/Rafiki: separate pins, confirmed by a second source.
+  - Fantasy Parades: Disney Store listings say LE 3,000.
+  - 19 disagreements remain for a person to decide. Snippet research has run out of new evidence for them.
 - **Engine fix (15:30):** spelling variants of one edition type ("open" / "Open Edition" / "OE") were being counted as conflicts. Blocked pins went from 32 to 21 real disagreements.
 
 ## Next planned actions (check-ins take these in order)
-1. **Pilot:** after any data change, regenerate, re-run the offline load test, and keep `LAPTOP-CHECKLIST.md` numbers current.
-2. **Remaining grouping gaps:** Tangled June LEs, Tinker Bell/Periwinkle jumbo, Paris Mickey & Friends pairs, Chip & Dale pins. Also the two Goofy advent variants and Stitch 626.
-3. **Metadata disagreements:** resolve park vs store dates and edition-type conflicts with targeted searches (record both; never pick a winner).
-4. **Lower priority:** WDW festival coverage; coverage gaps for DSUK and DLR.
-5. **Every check-in:** check new PRs, QA/security findings and CI on sprint issues, and act on them.
+1. **Every check-in:** check PRs and CI on sprint issues (#239 → #240, #241 after #250 merges) and act on QA/security findings.
+2. **Pilot:** keep it current after any data change, and re-run the offline load test.
+3. **Coverage:** WDW festival releases (Food & Wine, Flower & Garden, Festival of the Arts 2023–25), named pins from round-up posts, with capped searches.
+4. **Coverage gaps:** DSUK and DLR months with no recorded release.
+5. **Second fresh blind test** after any large data change, so accuracy stays measured, not assumed.

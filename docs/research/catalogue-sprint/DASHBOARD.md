@@ -1,20 +1,20 @@
 # PinHunt independent catalogue: dashboard
 
-_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run 1e68d7a96d5a, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
+_Generated from engine output `research/catalogue-engine/out/consolidated/staging_payload.json` (run 3a9956bff9ae, 2026-10-14). Do not edit by hand: run `tools/dashboard.py`._
 
 ## Headline
 
 | Measure | Value |
 |---|---|
 | Candidate pins | **854** |
-| Unique candidate pins (excl. catalogue duplicates and flagged repeats) | ≈ 801 |
+| Unique candidate pins (excl. catalogue duplicates and flagged repeats) | ≈ 802 |
 | Sets / releases | 404 |
 | **Directly verified pins** (a person or a physical pin; snippets never count) | **0** |
 | **Publication-ready** (directly verified and approved) | **0** |
-| Identity confidence High / Medium / Low / Unverified | 148 / 354 / 350 / 2 |
-| 2+ independent publishers (fan databases and repeats excluded) | 510 |
-| Any official source / news but no official / fan only | 219 / 221 / 414 |
-| Blocking contradictions / flagged possible duplicates / catalogue duplicates | 21 / 26 / 27 |
+| Identity confidence High / Medium / Low / Unverified | 148 / 355 / 349 / 2 |
+| 2+ independent publishers (fan databases and repeats excluded) | 511 |
+| Any official source / news but no official / fan only | 221 / 220 / 413 |
+| Blocking contradictions / flagged possible duplicates / catalogue duplicates | 21 / 25 / 27 |
 | Pins with variant values (need a per-pin note) | 106 |
 
 ## Progress towards an independent catalogue
@@ -34,10 +34,10 @@ Two bars per milestone: research candidates, and **directly verified** pins (the
 
 | Line | Pins | High | Med | Low | 2+ pubs | Official | Directly verified | Conflicts | Dup flags |
 |---|---|---|---|---|---|---|---|---|---|
-| Disneyland Paris | 340 | 0 | 166 | 173 | 176 | 0 | 0 | 13 | 13 |
+| Disneyland Paris | 340 | 0 | 167 | 172 | 177 | 0 | 0 | 13 | 12 |
 | Disney Store UK | 181 | 100 | 56 | 25 | 114 | 163 | 0 | 1 | 3 |
 | Walt Disney World | 148 | 4 | 64 | 79 | 85 | 4 | 0 | 0 | 1 |
-| Disneyland Resort | 108 | 10 | 50 | 48 | 65 | 15 | 0 | 3 | 6 |
+| Disneyland Resort | 108 | 10 | 50 | 48 | 65 | 17 | 0 | 3 | 6 |
 | Earlier POC + pilot | 77 | 34 | 18 | 25 | 70 | 37 | 0 | 4 | 3 |
 
 ## Verification effort (from the worklist)
@@ -59,8 +59,9 @@ Two bars per milestone: research candidates, and **directly verified** pins (the
 | Blind re-check of DSUK pilot sample | 2026-10-14 | 15 | 5 | 20 |
 | Pass 5 grouping + variants (DLP, WDW, DLR) | 2026-10-14 | 122 | 7 | 0 |
 | Fresh blind accuracy test (20 new releases) | 2026-10-14 | 28 | 0 | 0 |
+| Pass 6 disagreements + grouping gaps | 2026-10-14 | 28 | 0 | 12 |
 
-Total: 910 searches, 854 named pins found by search (≈ 0.9 per search). Search-based gains are now small; verification, not search volume, is the constraint.
+Total: 938 searches, 854 named pins found by search (≈ 0.9 per search). Search-based gains are now small; verification, not search volume, is the constraint.
 
 ## Measured accuracy of candidates (blind audit)
 

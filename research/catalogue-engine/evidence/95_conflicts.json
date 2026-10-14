@@ -1,0 +1,170 @@
+{
+ "packet_id": "pass6-conflicts-2026-10-14",
+ "spec_version": 1,
+ "collected_at": "2026-10-14",
+ "collector": "agent:basil-pass6-conflicts",
+ "sources": [
+  {
+   "url": "https://www.disneystore.eu/hatbox-ghost-disneyland-parade-limited-edition-pin-the-haunted-mansion-438017634640.html",
+   "title": "Hatbox Ghost Disneyland Parade Limited Edition Pin, The Haunted Mansion",
+   "publisher": "Disney Store Europe",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/enchanted-tiki-room-disneyland-resort-fantasy-parade-limited-edition-pin-438017783553.html",
+   "title": "Enchanted Tiki Room Disneyland Resort Fantasy Parade Limited Edition Pin",
+   "publisher": "Disney Store UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "dlr/2024/disneyland-parades-2024/the-haunted-mansion",
+   "set_key": "dlr/2024/disneyland-parades-2024",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.disneystore.eu/hatbox-ghost-disneyland-parade-limited-edition-pin-the-haunted-mansion-438017634640.html",
+     "method": "search_snippet",
+     "note": "Disney Store Europe online listing (Disneyland Parade Collection) gives limit 3,000 worldwide; online-store release, sold out"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2024/disneyland-parades-2024/enchanted-tiki-room",
+   "set_key": "dlr/2024/disneyland-parades-2024",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.disneystore.co.uk/enchanted-tiki-room-disneyland-resort-fantasy-parade-limited-edition-pin-438017783553.html",
+     "method": "search_snippet",
+     "note": "Disney Store UK online listing gives limited edition of 3,000; one of 12 parade pins; online-store release, sold out"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "brush-of-magic/limited-edition/aladdin",
+   "field": "edition_size",
+   "searched": "Brush of Magic edition size searches; 3 searches for 4 pins",
+   "note": "no independent source for edition_size in 2 searches; only already-recorded publishers (3,750 majority; disneypinsblog 2,000 line unclear)"
+  },
+  {
+   "key": "brush-of-magic/limited-edition/cinderella",
+   "field": "edition_size",
+   "searched": "Brush of Magic edition size searches; 3 searches for 4 pins",
+   "note": "no independent source for edition_size in 2 searches; only already-recorded publishers"
+  },
+  {
+   "key": "brush-of-magic/limited-edition/darkwing-duck",
+   "field": "edition_size",
+   "searched": "Brush of Magic edition size searches; 3 searches for 4 pins",
+   "note": "no independent source for edition_size in 2 searches; 3,750 vs 3,250 still open; only resale listings add 3,750"
+  },
+  {
+   "key": "brush-of-magic/limited-edition/hercules",
+   "field": "edition_size",
+   "searched": "Brush of Magic edition size searches; 3 searches for 4 pins",
+   "note": "no new source; note 2,250 figure is disneystore.asia under a different item number than the US 3,750 listing; may be a separate regional release"
+  },
+  {
+   "key": "dlp/2026/prince-love-open-edition/aladdin",
+   "field": "edition_type",
+   "searched": "DLP Feb 2026 pins; 2 searches",
+   "note": "no independent source for edition_type in 2 searches; mousesteps says OE; pixiedust snippet now ties 'limited to 1,000 each' to Robin Hood pins, not princes"
+  },
+  {
+   "key": "dlp/2026/prince-love-open-edition/eric",
+   "field": "edition_type",
+   "searched": "DLP Feb 2026 pins; 2 searches",
+   "note": "no independent source for edition_type in 2 searches; mousesteps says OE; pixiedust snippet now ties 'limited to 1,000 each' to Robin Hood pins, not princes"
+  },
+  {
+   "key": "dlp/2026/prince-love-open-edition/flynn",
+   "field": "edition_type",
+   "searched": "DLP Feb 2026 pins; 2 searches",
+   "note": "no independent source for edition_type in 2 searches; mousesteps says OE; pixiedust snippet now ties 'limited to 1,000 each' to Robin Hood pins, not princes"
+  },
+  {
+   "key": "dlp/2026/prince-love-open-edition/phillip",
+   "field": "edition_type",
+   "searched": "DLP Feb 2026 pins; 2 searches",
+   "note": "no independent source for edition_type in 2 searches; mousesteps says OE; pixiedust snippet now ties 'limited to 1,000 each' to Robin Hood pins, not princes"
+  },
+  {
+   "key": "dlp/2025/goofy-le-2025-07/goofy",
+   "field": "pin_structure",
+   "searched": "DLP July 2025 Goofy Rafiki LE; 2 searches",
+   "note": "no independent source for pin_structure in 2 searches; only mousesteps (two LE pins) and pixiedust (designs, not explicit)"
+  },
+  {
+   "key": "dlp/2025/halloween-2025-oe-2025-09-20/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "DLP Sept 2025 Halloween OE; 2 searches",
+   "note": "no independent source for pin_structure in 2 searches; only mypincentral flyer ('2 set of pins') plus marketplace listings (not used)"
+  },
+  {
+   "key": "dlp/2025/halloween-2025-oe-2025-09-20/stitch-and-scrump",
+   "field": "pin_structure",
+   "searched": "DLP Sept 2025 Halloween OE; 2 searches",
+   "note": "no independent source for pin_structure in 2 searches; only mypincentral flyer plus marketplace listings (not used)"
+  },
+  {
+   "key": "dlp/2025/pajama-party-2025-10-17/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "DLP Oct 2025 Pajama Party; 2 searches",
+   "note": "no independent source for pin_structure in 2 searches; mypincentral Oct flyer lists 'Chip & Dale' as one EUR15 line, structure not stated; fan DB only"
+  },
+  {
+   "key": "dlp/2025/pajama-party-2025-10-17/mickey",
+   "field": "pin_structure",
+   "searched": "DLP Oct 2025 Pajama Party; 2 searches",
+   "note": "no independent source for grouping in 2 searches; flyer lists 'Mickey & Minnie' as one EUR12 line but does not state one pin"
+  },
+  {
+   "key": "dlp/2025/pajama-party-2025-10-17/minnie",
+   "field": "pin_structure",
+   "searched": "DLP Oct 2025 Pajama Party; 2 searches",
+   "note": "no independent source for grouping in 2 searches; flyer lists 'Mickey & Minnie' as one EUR12 line but does not state one pin"
+  },
+  {
+   "key": "dlp/2026/pride-2026/mickey-and-minnie",
+   "field": "pin_structure",
+   "searched": "DLP June 2026 Pride; 2 searches",
+   "note": "no independent source for pin_structure in 2 searches; pixiedust June post says Minnie and Mickey in rainbow colours, count not stated"
+  },
+  {
+   "key": "dlp/2026/toy-story-5-open-edition/forky",
+   "field": "pin_structure",
+   "searched": "DLP June 2026 Toy Story 5; 2 searches",
+   "note": "no independent source for grouping in 2 searches; pixiedust and mousesteps list Forky and Karen as names only; 'Karen and Forky' seen only on a reseller (not used)"
+  },
+  {
+   "key": "dlp/2026/toy-story-5-open-edition/karen",
+   "field": "pin_structure",
+   "searched": "DLP June 2026 Toy Story 5; 2 searches",
+   "note": "no independent source for grouping in 2 searches; combined pin seen only on a reseller (not used)"
+  },
+  {
+   "key": "dlr/2026/70th-vault-collection-set-3/chip-n-dale",
+   "field": "pin_structure",
+   "searched": "70th Vault Set 3; 2 searches",
+   "note": "no independent source for pin_structure in 2 searches; dismerchandise: four character pins (Briar Rose, three fairies, Chip and Dale), split not stated"
+  },
+  {
+   "key": "dsuk/2024/magical-medallions-jan-2024/meet-the-robinsons",
+   "field": "edition_size",
+   "searched": "Magical Medallions Meet the Robinsons; 2 searches",
+   "note": "no independent source for edition_size in 2 searches; only disneystore.eu 1,250 vs fan DB 500"
+  }
+ ],
+ "discovery_notes": "Pass 6 conflicts slice, 18 searches. New official evidence: Disney Store Europe/UK online listings give 3,000 for DLR Fantasy Parades Hatbox Ghost and Tiki Room (agrees with fan DB, not with 2,500 news reports; may be online vs park allocation, not stated). Prince Love: pixiedust snippet attributes 1,000 each to Robin Hood pins, suggesting the LE 1000 claim on princes may be misattributed; needs human check. Hercules 2,250 is a disneystore.asia listing with a different item number. Stewpins (reseller), eBay, Mercari, Etsy seen but not used. No instruction-like web content encountered."
+}

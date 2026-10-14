@@ -5,11 +5,11 @@
 - **Importing approved pins is a separate step** that needs your explicit go.
 
 ## Files
-- **`pilot_dsuk_high_payload.json`:** the research run to load in Research Review. It holds 100 pins and their 22 sets (678 evidence rows), and passes the server's own validator (`validateResearchRun`).
+- **`pilot_dsuk_high_payload.json`:** the research run to load in Research Review. It holds 100 pins and their 22 sets (700 evidence rows), and passes the server's own validator (`validateResearchRun`).
 - **`pilot_dsuk_high_checklist.xlsx`:** one row per Disney Store page to open, the candidate pins it names, and a "Review on its own" column.
   - 3 pins carry a possible-duplicate flag.
   - 12 have variant values (price or date) that need a note saying which value you confirmed.
-  - 21 are multi-character pins: confirm on the page that it is one pin showing those characters.
+  - 11 are multi-character pins: confirm on the page that it is one pin showing those characters.
   - None has a blocking conflict.
 
 ## Staging steps (laptop, about 45 minutes the first time)

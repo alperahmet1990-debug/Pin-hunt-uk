@@ -145,3 +145,67 @@ The App Store developer is **7Labs Cloudware LLC**. "LLC" suggests a US-register
 - PinPal's actual ToS text, which decides the contract analysis: **UNKNOWN**.
 - Whether PinPal's maker qualifies for UK/EU database right, and the effect of the post-Brexit reciprocity rules: **needs a lawyer**.
 - No UK IPO guidance page was retrieved. The analysis relies on legislation.gov.uk texts only.
+
+## Second pass (image display and sourcing)
+
+Researched 2026-10-14, search-engine only. **Access check repeated:** WebFetch of `https://thepinpal.com/` and `https://thepinpal.com/terms` failed again with `getaddrinfo ENOTFOUND thepinpal.com`. WebFetch of the third-party pages `appgoblin.info/apps/6756037215` and `pinandpop.com/docs/api/v1-pins` failed the same way. Every finding below therefore comes from search-engine result snippets or summaries (label `search_snippet`). No archive.org, cache, proxy or mirror was used. Nothing was scraped and no images were downloaded. **Every UNKNOWN in this section comes from the network restrictions. None of them is evidence that something is absent.**
+
+### Q1. Do search results expose PinPal image URLs or hostnames?
+
+**Takeaway:** No. Neither web search nor domain-restricted search (`allowed_domains: thepinpal.com`) surfaced any image URL, CDN hostname or storage bucket for PinPal. The image host is still **UNKNOWN**.
+
+- VERIFIED (search_snippet): Domain-restricted search returns only HTML page URLs (`/`, `/explore`, `/catalog/pin/{uuid}`, `/catalog/set/{uuid}/{slug}`). No image or asset URLs appear. A new indexed record is [Minnie Mouse — Spotlight Tikis](https://thepinpal.com/catalog/pin/075d9fd9-e53f-44fc-9f59-a3381cbf9b6a) (2008, WDW, LE 1000, original retail $8.95). Another is [Goofy & Donald — April Fools' Day](https://thepinpal.com/catalog/pin/1c5510df-5eb4-4fc6-beec-b790eeb91524).
+- VERIFIED (search_snippet): The homepage title is "PinPal — Disney Pin Trading and Collection Platform". — [PinPal](https://thepinpal.com/)
+- UNKNOWN: Whether images are self-hosted (own domain or bucket), on Supabase/Firebase/S3/Cloudinary/imgix, or hotlinked from pinandpop.com, pinpics.com, shopDisney or i.ebayimg.com. Search engines do not expose `<img src>`, and this tool has no image-search mode.
+
+### Q2. How are images displayed (reference vs user photos, watermarks, credits, contribution flows)?
+
+**Takeaway:** Snippets confirm that each catalogue record has "reference images" and that pages are curated "approved" records. Nothing indexed mentions watermarks, image credits, attribution lines or a user-photo upload or licence flow.
+
+- VERIFIED (search_snippet): Set pages show "reference images and release details" for each pin and group "the approved PinPal records" assigned to a set. — [Blue Paint Jar](https://thepinpal.com/catalog/set/1cf000db-0c8c-4208-910c-a4da68dbd96f/blue-paint-jar)
+- VERIFIED (search_snippet): The site says catalogue membership is a research aid that "does not authenticate, appraise, or establish" a physical pin's provenance. — [Blue Paint Jar](https://thepinpal.com/catalog/set/1cf000db-0c8c-4208-910c-a4da68dbd96f/blue-paint-jar)
+- VERIFIED (search_snippet): `/explore` supports identifying pins "by character, origin, set, year, or photo". — [Explore](https://thepinpal.com/explore)
+- VERIFIED (negative result): Exact-phrase search for "approved PinPal records" returned no PinPal pages, only unrelated PIN-pad and trademark pages. The phrase is visible in the domain-restricted results but is not otherwise indexed.
+- INFERRED: The words "approved" and "reference images" imply a moderation step between submission and publication. Whether the images are stock or official photos, user photos or scraped images is **UNKNOWN**.
+- UNKNOWN: Watermarks, per-image credit lines, upload UI and the licence that users grant for photos.
+
+### Q3. ToS, privacy, FAQ, App Store text on content ownership, licences, credits, Disney disclaimer, DMCA
+
+**Takeaway:** Still **UNKNOWN**. The ToS and Privacy pages are not in the search index, and domain-restricted searches for terms, Disney or "not affiliated" returned nothing from thepinpal.com.
+
+- VERIFIED (negative result): Search for "thepinpal.com terms of service" returned only unrelated sites: Pincel, Pincali, and an Adweek piece on a 2012 April Fools' "PinPal" Pinterest dating parody that is **unrelated** to this app and should not be confused with it. — [Adweek (unrelated PinPal)](https://www.adweek.com/socialtimes/pinpal/3)
+- VERIFIED (negative result): Domain-restricted search for "PinPal terms disney trademark not affiliated" returned no thepinpal.com pages.
+- VERIFIED (negative result): Search for "thepinpal.com privacy policy photos user content" returned only Pinterest material.
+- UNKNOWN: DMCA policy, user-content licence clause, scraping clause and any Disney disclaimer.
+
+### Q4. Public developer statements or data partnerships (Pin & Pop, PinPics, PinTradingDB, Collectible PinTrader, Disney)
+
+**Takeaway:** I found no public statement by the developer and no partnership announcement. One relevant fact: **Pin & Pop's published API licence forbids public display of its images.** If PinPal shows reference images publicly, those images are therefore unlikely to be Pin & Pop images used under the standard licence. That is an inference, and a bespoke deal cannot be ruled out.
+
+- VERIFIED (search_snippet): Pin & Pop's API is "available by approval and license agreement only". It has a $99 one-time setup fee that includes a CSV/JSON export. Images are supplied as URLs and are permitted only for private or internal use and for training image vectors for reverse-image search, **not for public display**. Attribution to Pin & Pop must be visible to end users, data may not sit exclusively behind a paywall, and redistribution is prohibited. — [Pin & Pop API — Pins (v1)](https://pinandpop.com/docs/api/v1-pins)
+- INFERRED: If PinPal licensed Pin & Pop data, end users should see a visible "Pin & Pop" attribution. No snippet shows one. Pin & Pop's terms also allow image vectors for reverse-image search, which is one plausible (unproven) route for PinPal's photo identification. **There is no evidence that PinPal uses Pin & Pop.**
+- VERIFIED (negative result): Searches for "PinPal" with "7Labs", and for PinPal with "reddit", found no developer posts. Reddit results covered other pin-app projects, such as an April 2025 r/DisneyPinSwap "creating an app" thread with no identified link to PinPal. A search for "Felipe Tavares" PinPal returned only the AppGoblin listing.
+- UNKNOWN: Any relationship with PinPics, PinTradingDB, Collectible PinTrader or Disney.
+
+### Q5. App Store listing and privacy labels, plus a developer-identity conflict
+
+**Takeaway:** I could not retrieve the privacy labels because apps.apple.com and appgoblin.info are unreachable. **A new conflict emerged:** the third-party aggregator AppGoblin lists id 6756037215 under different details from the first pass.
+
+- VERIFIED (search_snippet, third-party aggregator): AppGoblin lists App Store id 6756037215 as **"PinPal: Scan & Organize Pins"**, developer **Felipe Tavares**, Lifestyle, free with IAP. It shows a release of July 2026 and a store update on 15 July 2026. Its description lists a scanner (identify plus market price), a "150,000+ pins" catalogue by collection, series and set, boards, a wishlist, a social feed, a marketplace with "buyer protection", and a trading-spot map. — [AppGoblin: PinPal](https://appgoblin.info/apps/6756037215)
+- CONFLICT: The first pass recorded the same id as "PinPal: Pin Trading & Scanner" by **7Labs Cloudware LLC**, from an apps.apple.com/at snippet. Possible explanations include an app rename, a change of seller or account transfer, an individual developer name versus a legal entity, or an aggregator or search-summary error. **Not resolved.** Treat the developer identity as uncertain until someone checks the live App Store page.
+- CORRECTION to section 1 Gaps: the first pass attributed the "130,000+" figure to another app. The AppGoblin snippet now attributes a **150,000+** catalogue claim to PinPal itself (id 6756037215). This is a marketing claim from the app listing, not verified.
+- INFERRED: "Buyer protection" in a marketplace implies that PinPal handles or mediates payments. This differs from PinHunt's no-payments, no-escrow stance.
+- UNKNOWN: App Privacy labels (whether "Photos or Videos" and "User Content" are collected or linked to identity).
+
+### Manual verification steps for a human, in an ordinary browser (non-intrusive, normal browsing only)
+
+Do not use scripts, bulk downloads or automated crawling. Record findings in `research/catalogue-engine/access_policy.json` and in this file.
+
+1. **Image host:** Open 2–3 pin pages (for example the Simba Symbol, Minnie Spotlight Tikis and Elsa/Anna/Olaf URLs above). Right-click the main pin image, choose "Copy image address", and note the hostname and path pattern (own domain, `*.supabase.co/storage`, `firebasestorage.googleapis.com`, `res.cloudinary.com`, `*.imgix.net`, `*.amazonaws.com`, `i.ebayimg.com`, `pinandpop.com`, `pinpics.com`, shopDisney, or a Next.js `/_next/image?url=` wrapper, in which case decode the `url=` parameter). Do not save the images.
+2. **Credits and watermarks:** Look on the image and in the caption or footer of each pin page for watermarks, "Photo by", "Image courtesy of", "Data from Pin & Pop" or similar attribution.
+3. **Footer legal pages:** Read Terms of Service and Privacy Policy. Note the clauses on (a) ownership of catalogue and images, (b) the licence users grant on uploaded photos, (c) prohibitions on scraping, automated access and commercial reuse, (d) the DMCA or takedown contact, (e) any Disney "not affiliated" disclaimer, and (f) governing law and the legal entity name (7Labs Cloudware LLC vs Felipe Tavares). Then set `terms_reviewed: true` in `access_policy.json`.
+4. **robots.txt:** Visit `https://thepinpal.com/robots.txt` in the browser and note the disallow rules and the sitemap location. Set `robots_txt_checked: true`.
+5. **Contribution flow:** If a free account is available, look (without submitting) at any "submit a pin" or "add photo" screen and its licence or consent wording.
+6. **App Store, UK storefront:** Open `https://apps.apple.com/gb/app/id6756037215`. Record the app title, the **seller/developer name** (to resolve the conflict above), release date and version history, the "Information → Seller" field, the description's catalogue size and data-source wording, and the **App Privacy** labels ("Data Linked to You": Photos or Videos, User Content, Purchases).
+7. **Response headers (optional, passive):** In browser DevTools → Network, reload one page and note the `server`, `x-vercel-id`, `cf-ray` and `x-powered-by` headers. This is a normal page load, with no extra requests.
+8. **Partnership check:** If useful, ask Pin & Pop directly (via its normal contact channel) whether PinPal is a licensee, or ask 7Labs/PinPal via its contact address about its data sources and whether it would consider a licence. Do not imply any affiliation.

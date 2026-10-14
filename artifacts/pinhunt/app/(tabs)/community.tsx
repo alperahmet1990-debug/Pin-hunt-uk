@@ -28,6 +28,7 @@ import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -301,7 +302,8 @@ export default function CommunityScreen() {
   const instanceIdRef           = useRef(`${Date.now()}_${Math.random().toString(36).slice(2, 8)}`);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+  // Clears the floating web tab bar (#260).
+  const botPad = tabScreenBottomPad(insets.bottom + 80);
 
   const load = useCallback(async (isRefresh = false) => {
     if (!repo) { setLoading(false); return; }

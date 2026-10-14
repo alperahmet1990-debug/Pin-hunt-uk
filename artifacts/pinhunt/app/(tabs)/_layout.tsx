@@ -11,6 +11,7 @@ import { SymbolView } from 'expo-symbols';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { Text } from 'react-native';
+import { WEB_TAB_BAR_HEIGHT } from '@/utils/tabBarSpace';
 
 // ─── Community tab icon with unread-message count badge ──────────────────────
 
@@ -110,7 +111,7 @@ function ClassicTabLayout() {
           borderTopWidth: isWeb ? 1 : 0,
           borderTopColor: colors.homeLine,
           elevation: 0,
-          height: isWeb ? 84 : undefined,
+          height: isWeb ? WEB_TAB_BAR_HEIGHT : undefined,
         },
         tabBarBackground: () =>
           isIOS ? (

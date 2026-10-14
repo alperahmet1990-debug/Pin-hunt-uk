@@ -37,6 +37,7 @@ import { ScanResult } from '@/components/scan/ScanResult';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, type UserError } from '@/utils/userError';
+import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -131,7 +132,8 @@ export default function ScanScreen() {
   const identifyRun = useRef(0);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+  // Clears the floating web tab bar (#260).
+  const botPad = tabScreenBottomPad(insets.bottom + 80);
 
   const flashShutter = useCallback(
     (cb?: () => void) => {

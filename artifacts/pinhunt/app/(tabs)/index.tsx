@@ -22,6 +22,7 @@ import { EVENTS } from '@/mock-data/events';
 import { communityPostToEvent, selectUpcomingEvents } from '@/utils/events';
 import type { PinHuntEvent } from '@/types/event';
 import type { CommunityPost, PinSetSummary } from '@workspace/pin-repository';
+import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 function timeAgo(value: string) {
   const minutes = Math.floor((Date.now() - new Date(value).getTime()) / 60000);
@@ -56,7 +57,7 @@ export default function HomeScreen() {
   const drift = useRef(new Animated.Value(0)).current;
   const firstName = profile?.displayName?.split(' ')[0] ?? profile?.username ?? null;
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const bottomPad = Platform.OS === 'web' ? 104 : insets.bottom + 92;
+  const bottomPad = tabScreenBottomPad(insets.bottom + 92);
 
   useEffect(() => {
     let mounted = true;

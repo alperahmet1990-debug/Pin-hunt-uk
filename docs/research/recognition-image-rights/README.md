@@ -6,6 +6,8 @@
 
 **Verification limits in this session.** The network policy blocked direct fetches of commons.wikimedia.org, Openverse, Flickr, pinandpop.com, pinpics.com, developer.ebay.com and pixian.ai. Items marked **[verified]** were confirmed from search-engine extracts of the cited page. Before anyone relies on them, re-read the primary text. Items marked **[estimate]** are judgement.
 
+**Update:** Pin & Pop is now handled separately by the maintainer and is out of scope for this research. The deep dive on independent sources, Collectible PinTrader, the Founding Collector programme and UK law is in **`02-independent-sources.md`**, which supersedes the source ranking in §1 below.
+
 Related: `../scan-independence/` (Arm C "own-image vector benchmark" and its 99-case `test_manifest.csv`), `.agents/memory/collectible-pintrader-rights.md`, `.agents/memory/pinhunt-images.md`, migrations 037/038/042.
 
 ---

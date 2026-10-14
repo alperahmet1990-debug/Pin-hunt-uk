@@ -15,13 +15,21 @@
  * GET  /api/admin/research/candidates/:id          candidate + evidence + duplicate pin
  * POST /api/admin/research/candidates/:id/direct-check   reviewer confirmed fields from a source
  * POST /api/admin/research/candidates/:id/decision       approve | reject | needs_more_research
+ * POST /api/admin/research/sets/:runId/:setKey/direct-check   one source page confirms several pins of a set
+ * POST /api/admin/research/sets/:runId/:setKey/decision       approve the ticked pins that pass the per-pin rules
+ *
+ * :setKey contains "/" and must be URL-encoded. Set routes only reuse the per-pin
+ * rules; they never relax them.
  */
 import { Router, type IRouter, type Request, type Response } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { logger } from "../lib/logger";
 import {
   IDENTITY_FIELDS,
+  KEY_RE,
+  MAX_SET_BATCH,
   checkDecision,
+  isDuplicateStatus,
   checkSourceUrl,
   validateResearchRun,
   type Decision,
@@ -280,6 +288,156 @@ router.post("/admin/research/candidates/:id/decision", requireAppCreator, async 
     if (!updated?.length) { res.status(409).json({ error: "This candidate changed while you were deciding. Reload and try again." }); return; }
     res.json({ ok: true, status });
   } catch (err) { fail(res, "decision", err); }
+});
+
+// ── Set-level review ─────────────────────────────────────────────────────────
+
+const FIELD_OK = /^[a-z_]{2,40}$/;
+const CHECKABLE_STATUSES = ["researched", "needs_direct_verification", "needs_more_research"];
+
+interface SetPin { id: string; status: string }
+
+/** Validates :runId/:setKey and returns them, or answers 400. */
+function setParams(req: Request, res: Response): { runId: string; setKey: string } | null {
+  const runId = String(req.params.runId);
+  const setKey = String(req.params.setKey);
+  if (!UUID.test(runId)) { res.status(400).json({ error: "runId invalid" }); return null; }
+  if (setKey.length > 200 || !KEY_RE.test(setKey)) { res.status(400).json({ error: "setKey invalid" }); return null; }
+  return { runId, setKey };
+}
+
+/** Parses [{candidateId, fields}] / candidateIds, enforcing uniqueness and the batch cap. */
+function uniqueIds(raw: unknown): string[] | null {
+  if (!Array.isArray(raw) || raw.length === 0 || raw.length > MAX_SET_BATCH) return null;
+  if (!raw.every(x => typeof x === "string" && UUID.test(x))) return null;
+  const ids = raw as string[];
+  return new Set(ids).size === ids.length ? ids : null;
+}
+
+router.post("/admin/research/sets/:runId/:setKey/direct-check", requireAppCreator, async (req: CreatorRequest, res: Response) => {
+  const params = setParams(req, res);
+  if (!params) return;
+  const { runId, setKey } = params;
+  const { source_url: sourceUrl, confirmed, note } = (req.body ?? {}) as { source_url?: unknown; confirmed?: unknown; note?: unknown };
+  const urlProblem = typeof sourceUrl === "string" && sourceUrl.startsWith("https://") ? checkSourceUrl(sourceUrl) : "Paste the https link of the page you opened";
+  if (urlProblem) { res.status(400).json({ error: urlProblem }); return; }
+  if (note != null && (typeof note !== "string" || note.length > 240)) { res.status(400).json({ error: "Note must be 240 characters or fewer" }); return; }
+  const entries = Array.isArray(confirmed) ? (confirmed as Array<{ candidateId?: unknown; fields?: unknown }>) : [];
+  const ids = uniqueIds(entries.map(e => e?.candidateId));
+  if (!ids) { res.status(400).json({ error: `Tick between 1 and ${MAX_SET_BATCH} different pins` }); return; }
+  const fieldsById = new Map<string, string[]>();
+  for (const e of entries) {
+    const f = e.fields;
+    if (!Array.isArray(f) || f.length === 0 || f.length > 30 || !f.every(x => typeof x === "string" && FIELD_OK.test(x))) {
+      res.status(400).json({ error: "Choose at least one confirmed field for every ticked pin" }); return;
+    }
+    fieldsById.set(e.candidateId as string, [...new Set(f as string[])]);
+  }
+  try {
+    const db = getAdminClient();
+    const { data: members, error } = await db.from("catalogue_candidates")
+      .select("id, entity_type, status").eq("run_id", runId).eq("set_research_key", setKey).eq("entity_type", "pin").limit(1000);
+    if (error) throw error;
+    const byId = new Map((members ?? []).map(m => [m.id as string, m as unknown as SetPin]));
+    if (!ids.every(id => byId.has(id))) { res.status(400).json({ error: "Every ticked pin must belong to this set and run" }); return; }
+
+    const host = new URL(sourceUrl as string).hostname.toLowerCase();
+    if (!isOfficialHost(host)) {
+      // Otherwise the page must already be cited somewhere in this set (its pins or the set itself).
+      const { data: setRow, error: setErr } = await db.from("catalogue_candidates")
+        .select("id").eq("run_id", runId).eq("research_key", setKey).eq("entity_type", "set").maybeSingle();
+      if (setErr) throw setErr;
+      const scope = [...byId.keys(), ...(setRow ? [setRow.id as string] : [])];
+      const { data: cited, error: citeErr } = await db.from("catalogue_evidence")
+        .select("candidate_id, source_url").in("candidate_id", scope).limit(5000);
+      if (citeErr) throw citeErr;
+      if (!(cited ?? []).some(e => e.source_url === sourceUrl)) {
+        res.status(400).json({ error: "That page is neither an official source nor one already cited for this set" }); return;
+      }
+    }
+
+    const results: Array<{ candidateId: string; status: string; recorded: number }> = [];
+    const skipped: Array<{ candidateId: string; reason: string }> = [];
+    const rows: Array<Record<string, unknown>> = [];
+    const eligible: string[] = [];
+    for (const id of ids) {
+      const status = byId.get(id)!.status;
+      if (["imported", "superseded"].includes(status)) { skipped.push({ candidateId: id, reason: "This candidate can no longer be changed" }); continue; }
+      eligible.push(id);
+      for (const f of fieldsById.get(id)!) {
+        rows.push({
+          candidate_id: id, field: f, value: { confirmed: true }, source_url: sourceUrl,
+          publisher: host.replace(/^www\./, ""), source_class: isOfficialHost(host) ? "official" : "unclassified",
+          method: "human_direct_check", note: (note as string | undefined) ?? null, checked_by: req.creatorId,
+        });
+      }
+    }
+    if (rows.length) {
+      const { error: insErr } = await db.from("catalogue_evidence").insert(rows);
+      if (insErr) throw insErr;
+    }
+    for (const id of eligible) {
+      let status = byId.get(id)!.status;
+      const fields = fieldsById.get(id)!;
+      if (fields.some(f => IDENTITY_FIELDS.includes(f)) && CHECKABLE_STATUSES.includes(status)) {
+        const now = new Date().toISOString();
+        const { data: moved, error: upErr } = await db.from("catalogue_candidates").update({
+          status: "direct_verified", direct_verified_by: req.creatorId, direct_verified_at: now, updated_at: now,
+        }).eq("id", id).in("status", CHECKABLE_STATUSES).select("id");
+        if (upErr) throw upErr;
+        // A decision made meanwhile wins; the check itself stays recorded as evidence.
+        if (moved?.length) status = "direct_verified";
+      }
+      results.push({ candidateId: id, status, recorded: fields.length });
+    }
+    res.json({ ok: true, results, skipped });
+  } catch (err) { fail(res, "set direct check", err); }
+});
+
+router.post("/admin/research/sets/:runId/:setKey/decision", requireAppCreator, async (req: CreatorRequest, res: Response) => {
+  const params = setParams(req, res);
+  if (!params) return;
+  const { runId, setKey } = params;
+  const { candidateIds, notes } = (req.body ?? {}) as { candidateIds?: unknown; notes?: unknown };
+  const ids = uniqueIds(candidateIds);
+  if (!ids) { res.status(400).json({ error: `Tick between 1 and ${MAX_SET_BATCH} different pins` }); return; }
+  if (notes != null && (typeof notes !== "string" || notes.length > 2000)) { res.status(400).json({ error: "Notes are too long" }); return; }
+  try {
+    const db = getAdminClient();
+    const { data: members, error } = await db.from("catalogue_candidates")
+      .select("id, entity_type, status, record_confidence, review_reasons, warnings, duplicate_status, direct_verified_by")
+      .eq("run_id", runId).eq("set_research_key", setKey).eq("entity_type", "pin").limit(1000);
+    if (error) throw error;
+    const byId = new Map((members ?? []).map(m => [m.id as string, m]));
+    if (!ids.every(id => byId.has(id))) { res.status(400).json({ error: "Every ticked pin must belong to this set and run" }); return; }
+
+    const approved: string[] = [];
+    const skipped: Array<{ candidateId: string; reason: string }> = [];
+    for (const id of ids) {
+      const c = byId.get(id)!;
+      if (isDuplicateStatus(c.duplicate_status as string)) {
+        skipped.push({ candidateId: id, reason: "Already in the catalogue: review it on its own" }); continue;
+      }
+      const problem = checkDecision({
+        decision: "approve", notes: (notes as string | null) ?? null,
+        candidate: {
+          entity_type: c.entity_type as string, status: c.status as string, record_confidence: c.record_confidence as string,
+          review_reasons: (c.review_reasons as string[]) ?? [], warnings: (c.warnings as string[]) ?? [],
+          direct_verified_by: (c.direct_verified_by as string | null) ?? null,
+        },
+      });
+      if (problem) { skipped.push({ candidateId: id, reason: problem }); continue; }
+      const now = new Date().toISOString();
+      const { data: updated, error: upErr } = await db.from("catalogue_candidates").update({
+        status: "approved", decided_by: req.creatorId, decided_at: now,
+        decision_notes: (notes as string | null) ?? null, updated_at: now,
+      }).eq("id", id).eq("status", c.status as string).select("id");
+      if (upErr) throw upErr;
+      if (updated?.length) approved.push(id);
+      else skipped.push({ candidateId: id, reason: "Changed while you were deciding. Reload and try again." });
+    }
+    res.json({ ok: true, approved, skipped });
+  } catch (err) { fail(res, "set decision", err); }
 });
 
 export default router;

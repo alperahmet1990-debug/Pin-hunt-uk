@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import {
-  candidateTitle, confidenceTone, evidenceByField, groupBySet, safeExternalUrl, type ResearchCandidate,
+  candidateTitle, confidenceTone, describeSetDecision, evidenceByField, groupBySet, safeExternalUrl, setRoute, type ResearchCandidate,
 } from '../utils/researchReview';
 import ResearchReviewScreen from '../app/admin/research-review';
 
@@ -88,3 +88,56 @@ describe('Research Review screen', () => {
     await waitFor(() => expect(screen.getByText(/confirm the pin's identity before approving/)).toBeTruthy());
   });
 });
+
+describe('Research Review set view', () => {
+  const fetchMock = jest.fn();
+  const SET = 'brush-of-magic/mystery-series-3';
+  const a = cand({ id: '00000000-0000-4000-8000-0000000000a1', run_id: 'r1', proposed: { 'Pin name': 'Zazu' } });
+  const b = cand({ id: '00000000-0000-4000-8000-0000000000b2', run_id: 'r1', research_key: `${SET}/gaston`, proposed: { 'Pin name': 'Gaston' } });
+  beforeEach(() => {
+    fetchMock.mockReset();
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
+    fetchMock.mockImplementation(async (url: string, init?: { method?: string; body?: string }) => {
+      const json = (body: unknown, ok = true, status = 200) => ({ ok, status, json: async () => body });
+      if (url.endsWith('/admin/research/runs')) return json({ runs: [{ id: 'r1', git_commit: 'abc1234', loaded_at: '', summary: {} }] });
+      if (url.includes('entity=set')) return json({ candidates: [] });
+      if (url.includes('/admin/research/candidates?')) return json({ candidates: [a, b] });
+      if (url.endsWith('/decision')) return json({ ok: true, approved: [a.id], skipped: [{ candidateId: b.id, reason: 'Open a source first' }] });
+      return json({});
+    });
+  });
+
+  it('builds encoded set routes and describes partial approvals', () => {
+    expect(setRoute('r1', SET, 'direct-check')).toBe(`/admin/research/sets/r1/${encodeURIComponent(SET)}/direct-check`);
+    expect(describeSetDecision({ approved: ['x'], skipped: [{ candidateId: 'y', reason: 'Why' }] }, id => `pin ${id}`))
+      .toMatch(/Approved 1 pin\./);
+    expect(describeSetDecision({ approved: [], skipped: [] }, () => '')).toMatch(/Approved 0 pins/);
+  });
+
+  it('starts with every pin unticked, has no select-all, and confirms before approving', async () => {
+    await render(<ResearchReviewScreen />);
+    await waitFor(() => screen.getByText('Zazu'));
+    await fireEvent.press(screen.getByRole('button', { name: 'Review set' }));
+    await waitFor(() => screen.getByText('Set source'));
+
+    const boxes = screen.getAllByRole('checkbox', { name: /^Tick / });
+    expect(boxes).toHaveLength(2);
+    boxes.forEach(box => expect(box.props.accessibilityState?.checked).toBe(false));
+    expect(screen.queryByText(/select all/i)).toBeNull();
+    expect(screen.getByText(/0 ticked/)).toBeTruthy();
+
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Tick Zazu' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Approve ticked pins' }));
+    await waitFor(() => screen.getByText('Approve 1 ticked pin?'));
+    expect(fetchMock.mock.calls.some(c => String(c[0]).endsWith('/decision'))).toBe(false);
+
+    const approve = screen.getAllByRole('button', { name: 'Approve' });
+    await fireEvent.press(approve[approve.length - 1]);
+    await waitFor(() => expect(screen.getByText(/Approved 1 pin\./)).toBeTruthy());
+    expect(screen.getByText(/Gaston: Open a source first/)).toBeTruthy();
+    const call = fetchMock.mock.calls.find(c => String(c[0]).endsWith('/decision'))!;
+    expect(call[0]).toBe(`https://api.test/api${setRoute('r1', SET, 'decision')}`);
+    expect(JSON.parse(call[1].body).candidateIds).toEqual([a.id]);
+  });
+});
+

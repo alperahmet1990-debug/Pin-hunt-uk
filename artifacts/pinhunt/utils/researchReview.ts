@@ -10,6 +10,7 @@ export type CandidateStatus =
 
 export interface ResearchCandidate {
   id: string;
+  run_id?: string;
   research_key: string;
   entity_type: 'pin' | 'set';
   set_research_key: string | null;
@@ -101,4 +102,25 @@ export function evidenceByField(evidence: ResearchEvidence[]): Array<{ field: st
   const map = new Map<string, ResearchEvidence[]>();
   for (const e of evidence) map.set(e.field, [...(map.get(e.field) ?? []), e]);
   return [...map.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([field, items]) => ({ field, items }));
+}
+
+/** Most pins one set-level check or approval may include (matches the API). */
+export const MAX_SET_BATCH = 60;
+
+/** :setKey contains "/", so it travels URL-encoded. */
+export function setRoute(runId: string, setKey: string, action: 'direct-check' | 'decision'): string {
+  return `/admin/research/sets/${runId}/${encodeURIComponent(setKey)}/${action}`;
+}
+
+export interface SetDecisionResult {
+  approved: string[];
+  skipped: Array<{ candidateId: string; reason: string }>;
+}
+
+/** Plain-language outcome of a set approval, naming each pin that stayed pending. */
+export function describeSetDecision(result: SetDecisionResult, titleOf: (id: string) => string): string {
+  const n = result.approved.length;
+  const head = `Approved ${n} pin${n === 1 ? '' : 's'}. The catalogue is not changed until a separate import.`;
+  if (result.skipped.length === 0) return head;
+  return `${head}\nStill pending:\n${result.skipped.map(s => `• ${titleOf(s.candidateId)}: ${s.reason}`).join('\n')}`;
 }

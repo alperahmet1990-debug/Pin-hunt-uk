@@ -15,7 +15,7 @@ export const MAX_EVIDENCE_PER_CANDIDATE = 500;
 
 const EXCLUDED_HOST = /(^|\.)(pinandpop|pinpics|pintradingdb)\.com$/i;
 const MARKETPLACE_HOST = /(^|\.)(ebay|mercari|amazon|etsy|vinted|depop|poshmark)\./i;
-const KEY_RE = /^[a-z0-9-]+(\/[a-z0-9-]+)*$/;
+export const KEY_RE = /^[a-z0-9-]+(\/[a-z0-9-]+)*$/;
 const FIELD_RE = /^[a-z_]{2,40}$/;
 const CONFIDENCE = new Set(["High", "Medium", "Low", "Unverified"]);
 const SOURCE_CLASS = new Set(["official", "news", "fan", "unclassified", "physical", "none"]);
@@ -175,6 +175,13 @@ export function validateResearchRun(payload: unknown): RunValidation {
 
 /** Fields whose human check establishes WHICH pin this is. */
 export const IDENTITY_FIELDS = ["characters", "main_character", "attraction", "pin_name"];
+
+/** Most pins one set-level check or decision may touch. */
+export const MAX_SET_BATCH = 60;
+
+/** Exact or probable duplicates of a live pin are never approved in bulk. */
+export const isDuplicateStatus = (status: string | null | undefined) =>
+  !!status && (status.startsWith("DUPLICATE") || status.startsWith("PROBABLE"));
 
 export type Decision = "approve" | "reject" | "needs_more_research";
 

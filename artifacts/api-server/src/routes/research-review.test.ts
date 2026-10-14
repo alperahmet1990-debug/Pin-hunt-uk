@@ -64,6 +64,8 @@ describe("research review routes — access", () => {
     ["get", "/api/admin/research/candidates"], ["get", "/api/admin/research/candidates/00000000-0000-4000-8000-000000000001"],
     ["post", "/api/admin/research/candidates/00000000-0000-4000-8000-000000000001/direct-check"],
     ["post", "/api/admin/research/candidates/00000000-0000-4000-8000-000000000001/decision"],
+    ["post", "/api/admin/research/sets/00000000-0000-4000-8000-000000000001/brush-of-magic%2Flimited-edition/direct-check"],
+    ["post", "/api/admin/research/sets/00000000-0000-4000-8000-000000000001/brush-of-magic%2Flimited-edition/decision"],
   ];
   it.each(routes)("%s %s → 401 without a token", async (m, p) => {
     expect((await request(app)[m](p).send({})).status).toBe(401);
@@ -170,5 +172,121 @@ describe("research review routes — flow", () => {
   it("validates ids and filters", async () => {
     expect((await request(app).get("/api/admin/research/candidates/not-a-uuid").set(auth)).status).toBe(400);
     expect((await request(app).get("/api/admin/research/candidates?status=bogus").set(auth)).status).toBe(400);
+  });
+});
+
+describe("research review routes — set level", () => {
+  const KEY = encodeURIComponent("brush-of-magic/limited-edition");
+  const OFFICIAL = "https://www.disneystore.com/brush-of-magic-limited-edition-set";
+  let runId: string;
+  const pin = (k: string) => tables.catalogue_candidates.find(c => c.research_key === k)!;
+  const setUrl = (kind: "direct-check" | "decision", run = runId, key = KEY) => `/api/admin/research/sets/${run}/${key}/${kind}`;
+  const bambi = () => pin("brush-of-magic/limited-edition/bambi");
+  const marie = () => pin("brush-of-magic/limited-edition/marie");
+
+  beforeEach(async () => {
+    isCreator = true; beforeUpdate = null;
+    for (const k of Object.keys(tables)) delete tables[k];
+    tables.pins = [{ id: "pin-uuid-625", pinhunt_id: "PHUK-00000625" }];
+    runId = (await request(app).post("/api/admin/research/runs").set(auth).send({ run: payload })).body.runId;
+  });
+
+  const humanChecks = (id: unknown) => tables.catalogue_evidence.filter(e => e.candidate_id === id && e.method === "human_direct_check");
+
+  it("records one direct check per ticked pin and none for unticked pins", async () => {
+    const res = await request(app).post(setUrl("direct-check")).set(auth).send({
+      source_url: OFFICIAL, note: "set page lists both",
+      confirmed: [{ candidateId: bambi().id, fields: ["characters", "pin_name"] }],
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.results).toEqual([{ candidateId: bambi().id, status: "direct_verified", recorded: 2 }]);
+    expect(humanChecks(bambi().id)).toHaveLength(2);
+    expect(humanChecks(bambi().id)[0]).toMatchObject({ source_url: OFFICIAL, checked_by: "creator-1", source_class: "official" });
+    expect(humanChecks(marie().id)).toHaveLength(0);
+    expect(marie().status).toBe("needs_direct_verification");
+  });
+
+  it("accepts a non-official page only when it is already cited for the set", async () => {
+    const cited = "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store";
+    const body = (u: string) => ({ source_url: u, confirmed: [{ candidateId: bambi().id, fields: ["characters"] }] });
+    expect((await request(app).post(setUrl("direct-check")).set(auth).send(body("https://example.org/other"))).status).toBe(400);
+    expect(humanChecks(bambi().id)).toHaveLength(0);
+    const ok = await request(app).post(setUrl("direct-check")).set(auth).send(body(cited));
+    expect(ok.status).toBe(200);
+    expect(humanChecks(bambi().id)[0]).toMatchObject({ source_class: "unclassified" });
+  });
+
+  it("refuses excluded sources, a candidate from another set or run, and bad batches (400)", async () => {
+    const one = (id: unknown) => [{ candidateId: id, fields: ["characters"] }];
+    const send = (body: Record<string, unknown>, url = setUrl("direct-check")) => request(app).post(url).set(auth).send(body);
+    expect((await send({ source_url: "https://pinandpop.com/x", confirmed: one(bambi().id) })).status).toBe(400);
+    expect((await send({ source_url: OFFICIAL, confirmed: one(pin("brush-of-magic/mystery-series-3/zazu").id) })).status).toBe(400);
+    expect((await send({ source_url: OFFICIAL, confirmed: one(tables.catalogue_candidates.find(c => c.entity_type === "set")!.id) })).status).toBe(400);
+    expect((await send({ source_url: OFFICIAL, confirmed: one(bambi().id) }, setUrl("direct-check", "00000000-0000-4000-8000-0000000000ff"))).status).toBe(400);
+    expect((await send({ source_url: OFFICIAL, confirmed: [] })).status).toBe(400);
+    expect((await send({ source_url: OFFICIAL, confirmed: [{ candidateId: bambi().id, fields: [] }] })).status).toBe(400);
+    expect((await send({ source_url: OFFICIAL, confirmed: [...one(bambi().id), ...one(bambi().id)] })).status).toBe(400);
+    const tooMany = Array.from({ length: 61 }, (_, i) => ({ candidateId: `00000000-0000-4000-9000-${String(i).padStart(12, "0")}`, fields: ["characters"] }));
+    expect((await send({ source_url: OFFICIAL, confirmed: tooMany })).status).toBe(400);
+    expect(tables.catalogue_evidence.some(e => e.method === "human_direct_check")).toBe(false);
+  });
+
+  it("does not overwrite a status that changed during the set check", async () => {
+    beforeUpdate = (table) => { if (table === "catalogue_candidates") bambi().status = "rejected"; };
+    const res = await request(app).post(setUrl("direct-check")).set(auth)
+      .send({ source_url: OFFICIAL, confirmed: [{ candidateId: bambi().id, fields: ["characters"] }] });
+    expect(res.status).toBe(200);
+    expect(res.body.results[0].status).toBe("needs_direct_verification");
+    expect(bambi().status).toBe("rejected");
+  });
+
+  it("approves only pins that pass the per-pin rules and reports the rest", async () => {
+    // Bambi is checked; Marie (variants) is checked but no note is given; Zazu is in another set.
+    await request(app).post(setUrl("direct-check")).set(auth).send({
+      source_url: OFFICIAL,
+      confirmed: [{ candidateId: bambi().id, fields: ["characters"] }, { candidateId: marie().id, fields: ["characters"] }],
+    });
+    const res = await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [bambi().id, marie().id] });
+    expect(res.status).toBe(200);
+    expect(res.body.approved).toEqual([bambi().id]);
+    expect(res.body.skipped).toEqual([{ candidateId: marie().id, reason: expect.stringMatching(/variant values/) }]);
+    expect(bambi()).toMatchObject({ status: "approved", decided_by: "creator-1" });
+    expect(marie().status).toBe("direct_verified");
+  });
+
+  it("leaves unchecked pins, low identity, conflicts and duplicates pending", async () => {
+    const res0 = await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [bambi().id] });
+    expect(res0.body.approved).toEqual([]);
+    expect(res0.body.skipped[0].reason).toMatch(/confirm the pin's identity/);
+
+    await request(app).post(setUrl("direct-check")).set(auth)
+      .send({ source_url: OFFICIAL, confirmed: [{ candidateId: bambi().id, fields: ["characters"] }, { candidateId: marie().id, fields: ["characters"] }] });
+    bambi().duplicate_status = "PROBABLE DUPLICATE of PHUK-00000625";
+    marie().review_reasons = ["conflict:release_date"];
+    const res = await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [bambi().id, marie().id], notes: "confirmed on set page" });
+    expect(res.body.approved).toEqual([]);
+    expect(res.body.skipped.map((s: { reason: string }) => s.reason)).toEqual([expect.stringMatching(/Already in the catalogue/), expect.stringMatching(/conflicting/)]);
+    marie().review_reasons = []; marie().record_confidence = "Low";
+    const low = await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [marie().id], notes: "confirmed on set page" });
+    expect(low.body.skipped[0].reason).toMatch(/confidence is too low/);
+    expect(marie().status).toBe("direct_verified");
+  });
+
+  it("does not overwrite a pin that changed status meanwhile", async () => {
+    await request(app).post(setUrl("direct-check")).set(auth).send({ source_url: OFFICIAL, confirmed: [{ candidateId: bambi().id, fields: ["characters"] }] });
+    beforeUpdate = (table) => { if (table === "catalogue_candidates") bambi().status = "rejected"; };
+    const res = await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [bambi().id] });
+    beforeUpdate = null;
+    expect(res.body.approved).toEqual([]);
+    expect(res.body.skipped[0].reason).toMatch(/Changed while you were deciding/);
+    expect(bambi().status).toBe("rejected");
+  });
+
+  it("validates ids, set keys and pins from other sets on the decision route", async () => {
+    const zazu = pin("brush-of-magic/mystery-series-3/zazu").id;
+    expect((await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: [zazu] })).status).toBe(400);
+    expect((await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: ["nope"] })).status).toBe(400);
+    expect((await request(app).post(setUrl("decision", "bad")).set(auth).send({ candidateIds: [bambi().id] })).status).toBe(400);
+    expect((await request(app).post(setUrl("decision", runId, "Bad%20Key")).set(auth).send({ candidateIds: [bambi().id] })).status).toBe(400);
   });
 });

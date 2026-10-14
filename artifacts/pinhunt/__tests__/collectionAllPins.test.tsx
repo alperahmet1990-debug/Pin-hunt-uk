@@ -40,6 +40,14 @@ jest.mock('@/context/PinCatalogueContext', () => ({
   usePinCatalogue: () => ({ pins: mockPins, repository: null, ensurePins: mockEnsure, ensureCollections: mockEnsure }),
 }));
 
+/** True when the element sits inside the shared Sheet's keyboard handling (#47). */
+function insideKeyboardAvoidingView(el: { parent: unknown }): boolean {
+  for (let n = el.parent as { props?: { testID?: string }; parent: unknown } | null; n; n = n.parent as typeof n) {
+    if (n.props?.testID === 'keyboard-avoiding-view') return true;
+  }
+  return false;
+}
+
 beforeEach(() => {
   jest.clearAllMocks();
   mockParams = {};
@@ -70,6 +78,12 @@ describe('My Collection: All pins (B-P1-03, B-P1-04)', () => {
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/board/[id]', params: { id: 'b1' } });
     await fireEvent.press(screen.getByRole('button', { name: 'New board' }));
     expect(screen.getByRole('header', { name: 'New board' })).toBeTruthy();
+  });
+
+  it('keeps the Create Board name field above the keyboard (B-P1-21)', async () => {
+    await render(<CollectionScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'New board' }));
+    expect(insideKeyboardAvoidingView(screen.getByLabelText('Board name'))).toBe(true);
   });
 
   it('ISO shows wanted pins without a status marker, and For Trade stays separate', async () => {

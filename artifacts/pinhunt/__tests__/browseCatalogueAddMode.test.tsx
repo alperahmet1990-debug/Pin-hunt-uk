@@ -37,6 +37,14 @@ jest.mock('@/context/BoardsContext', () => ({
   useBoards: () => ({ customBoards: [], createBoard: jest.fn(), addPinsToBoard: jest.fn() }),
 }));
 
+/** True when the element sits inside the shared Sheet's keyboard handling (#47). */
+function insideKeyboardAvoidingView(el: { parent: unknown }): boolean {
+  for (let n = el.parent as { props?: { testID?: string }; parent: unknown } | null; n; n = n.parent as typeof n) {
+    if (n.props?.testID === 'keyboard-avoiding-view') return true;
+  }
+  return false;
+}
+
 describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -81,6 +89,13 @@ describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
 
     mockToast.mock.calls[0][0].action.onPress();
     expect(mockSetStatuses).toHaveBeenLastCalledWith(['p3'], 'none');
+  });
+
+  it('keeps the new-board name field above the keyboard (B-P1-21)', async () => {
+    await render(<BrowseCatalogueScreen />);
+    await fireEvent.press(screen.getByLabelText('Dumbo'));
+    await fireEvent.press(screen.getByRole('button', { name: /Board/ }));
+    expect(insideKeyboardAvoidingView(screen.getByPlaceholderText('New board name'))).toBe(true);
   });
 
   describe('photo gaps for contributors (UX-056)', () => {

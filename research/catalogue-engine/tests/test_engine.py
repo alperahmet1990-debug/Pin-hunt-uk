@@ -229,3 +229,34 @@ class SeverityAndRegions(unittest.TestCase):
     def test_identity_pools_publishers_across_identity_fields(self):
         p = self._run([claim("characters", ["Marie"], FAN), claim("pin_name", "Marie Pin – Brush of Magic", OFF)])
         self.assertEqual(p["record_confidence"], "High")
+
+
+class CrossSetDuplicates(unittest.TestCase):
+    def test_same_subject_in_related_sets_is_flagged_not_merged(self):
+        from engine.run import cross_set_suspects
+        sets = {
+            "dlp/2026/tangled-spin-june": {"parent": "", "fields": {"set_name": {"value": "Tangled Spin pins"}, "release_date": {"value": "2026-06"}}},
+            "dlp/2026/raiponce-tangled-spin": {"parent": "", "fields": {"set_name": {"value": "Raiponce Tangled Spin"}, "release_date": {"value": "2026-06-13"}}},
+            "dlp/2026/princess-studio-rapunzel": {"parent": "", "fields": {"set_name": {"value": "Princess Studio"}, "release_date": {"value": "2026-02"}}},
+        }
+        pins = {k + "/rapunzel": {"set_key": k, "fields": {}} for k in sets}
+        out = cross_set_suspects(pins, sets)
+        self.assertEqual(out, {"dlp/2026/tangled-spin-june/rapunzel": "dlp/2026/raiponce-tangled-spin/rapunzel"})
+
+    def test_same_character_in_unrelated_sets_is_not_flagged(self):
+        from engine.run import cross_set_suspects
+        sets = {
+            "dlp/2025/halloween-2025-oe": {"parent": "", "fields": {"set_name": {"value": "Halloween open edition"}, "release_date": {"value": "2025-09-20"}}},
+            "dlp/2025/mickey-friends-skiing": {"parent": "", "fields": {"set_name": {"value": "Mickey and Friends skiing"}, "release_date": {"value": "2025-01"}}},
+        }
+        pins = {k + "/goofy": {"set_key": k, "fields": {}} for k in sets}
+        self.assertEqual(cross_set_suspects(pins, sets), {})
+
+    def test_different_parks_are_not_compared(self):
+        from engine.run import cross_set_suspects
+        sets = {
+            "dlp/2026/dumbo-85th": {"parent": "", "fields": {"set_name": {"value": "Dumbo 85th"}, "release_date": {"value": "2026-10"}}},
+            "dlr/2026/dumbo-85th": {"parent": "", "fields": {"set_name": {"value": "Dumbo 85th"}, "release_date": {"value": "2026-10"}}},
+        }
+        pins = {k + "/dumbo": {"set_key": k, "fields": {}} for k in sets}
+        self.assertEqual(cross_set_suspects(pins, sets), {})

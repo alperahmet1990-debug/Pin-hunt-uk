@@ -4,7 +4,7 @@
 "Accurate" here means directly verified: a person opened the source (or the pin) and confirmed it. Search snippets never count as direct verification.
 
 ## What limits us today (measured in Wave 1 and the gap-fill)
-1. **Search cap.** All research helpers in one turn share a hard limit of **200 web searches**. Wave 1 used about 185 searches and produced 295 named pins (~1.6 pins per search) and 271 sets. Gap-fill and Wave 2 yields: see the consolidated report.
+1. **Search cap.** All research helpers in one turn share a hard limit of **200 web searches**. Wave 1 used about 185 searches for 295 named pins (~1.6 per search). Gap-fill plus Wave 2 used about 185 searches for 469 named pins (~2.5 per search), with round-up-first queries. See `docs/research/catalogue-runs/2026-10-14-consolidated-wave1-gapfill-wave2.md`.
 2. **Snippets truncate lists.** A release post that lists 12 designs typically shows 2–5 names in a search summary. That is why 97 Wave 1 sets had no named pins and 28 were incomplete.
 3. **No page reads.** The network policy blocks every target host. Even permitted reads would need a terms and robots check first (`source-access.md`).
 4. **Per-pin human verification.** Every approval needs a person to open a source per pin. Issue #230 proposes set-level checks.

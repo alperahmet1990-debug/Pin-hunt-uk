@@ -1,5 +1,6 @@
 """Pipeline entry point."""
 import argparse
+import re
 import pathlib
 from .load import load_packets
 from .reconcile import reconcile
@@ -9,6 +10,54 @@ from .export import write_outputs, _set_chain, _from_chain, _v
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 TRUSTED = ROOT / "attached_assets/PinHunt_UK_Trusted_Test_Catalogue_1785531320477.xlsx"
 SEED = ROOT / "attached_assets/PinHunt_UK_Master_Seed_13000_Pins_Character_Enriched_1785155236773.xlsx"
+
+
+GENERIC = set("""le oe open limited edition editions series set sets pin pins collection mystery box boxed jumbo mini
+event events release releases trading time night disney store park parks dlp dlr wdw dsuk the of and a
+jan january feb february mar march apr april may jun june jul july aug august sep sept september oct october
+nov november dec december mickey minnie friends anniversary day""".split())
+
+
+def _set_words(sets, set_key):
+    chain = _set_chain(sets, set_key)
+    text = " ".join([set_key] + [str(_v(s["fields"], "set_name")) for s in chain])
+    return {w for w in re.split(r"[^a-z0-9]+", text.lower()) if len(w) > 2 and not w.isdigit() and w not in GENERIC}
+
+
+def _pin_date(sets, p):
+    d = str(_v(p["fields"], "release_date") or _from_chain(_set_chain(sets, p["set_key"]), "release_date") or "")
+    y = str(_v(p["fields"], "release_year") or d[:4])
+    return d, y
+
+
+LINES = ("dlp", "dlr", "wdw", "dsuk")
+
+
+def _same_line(k1, k2):
+    """Different parks/retailers sell different pins; only compare within a line (or against unprefixed keys)."""
+    a, b = k1.split("/", 1)[0], k2.split("/", 1)[0]
+    return a == b or a not in LINES or b not in LINES
+
+
+def cross_set_suspects(pins, sets):
+    """Same subject, same year, different set, and either a shared distinctive set word or the same date.
+    Flags the later key for a human; never merges."""
+    by_subject = {}
+    for key, p in sorted(pins.items()):
+        d, y = _pin_date(sets, p)
+        by_subject.setdefault((key.rsplit("/", 1)[-1], y), []).append((key, p, d))
+    out = {}
+    for (subject, y), group in by_subject.items():
+        if not y:
+            continue
+        for i, (k1, p1, d1) in enumerate(group):
+            for k2, p2, d2 in group[i + 1:]:
+                if p1["set_key"] == p2["set_key"] or not _same_line(k1, k2):
+                    continue
+                shared = _set_words(sets, p1["set_key"]) & _set_words(sets, p2["set_key"]) - set(subject.split("-"))
+                if shared or (d1 and len(d1) >= 7 and d1 == d2):
+                    out.setdefault(k2, k1)
+    return out
 
 
 def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
@@ -32,6 +81,8 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
         if chars and sig in seen:
             p["review_reasons"].append(f"possible internal duplicate of {seen[sig]}")
         seen.setdefault(sig, key)
+    for key, other in cross_set_suspects(pins, sets).items():
+        pins[key]["review_reasons"].append(f"possible cross-set duplicate of {other}")
     seed_notes = {k: seed_note(cat, _v(s["fields"], "set_name") or k.split("/")[0].replace("-", " ")) for k, s in sets.items() if not s["parent"]}
     rows = write_outputs(out_dir, store, pins, sets, dupes, seed_notes)
     return store, pins, sets, dupes, rows

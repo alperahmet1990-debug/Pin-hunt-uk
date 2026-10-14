@@ -28,6 +28,7 @@ _Last updated: 2026-10-14 12:45 UTC by Claude (sprint coordinator session). Chec
 - **DSUK High pilot ready:** 101 pins, 24 official pages (`pilot-dsuk-high/`).
 - **Laptop checklist:** `LAPTOP-CHECKLIST.md`.
 - **Structure check:** 207 multi-character pins now carry "confirm one pin vs separate pins" (24 in the pilot, marked in the checklist). Pilot reloaded offline: all checks pass. Engine tests: 36.
+- **Vision review sheet:** `tools/vision_bench/to_review_sheet.py` turns two independent readings of your photos into a Y/N review sheet. Rows where the readers disagree are flagged "CHECK FIRST" (tested).
 
 ## Catalogue metrics (from `DASHBOARD.md`)
 | | |
@@ -60,6 +61,5 @@ _Last updated: 2026-10-14 12:45 UTC by Claude (sprint coordinator session). Chec
 1. Blind re-check of a sample of the DSUK High pilot pins before your session.
 2. WDW festival coverage (Food & Wine, Flower & Garden, Festival of the Arts 2023–25): named pins from round-up posts, with a capped search budget.
 3. Coverage gaps: DSUK months with no recorded release (18), then DLR (32).
-4. Vision: converter from extraction JSON to a review sheet, ready for your photos.
-5. After each data change: refresh the dashboard, pilot, worklist and this file.
-6. Every check-in: look for new PRs, QA/security findings and CI on sprint issues, and act on them.
+4. After each data change: refresh the dashboard, pilot, worklist and this file.
+5. Every check-in: look for new PRs, QA/security findings and CI on sprint issues, and act on them.

@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 19:30 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 21:00 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -15,11 +15,11 @@ _Last updated: 2026-10-14 19:30 UTC by Claude (sprint coordinator session). Chec
 
 ## Current work by agent
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
-- **Dev agent:**
-  - #235 merged (PR #246). #237 merged (PR #250).
-  - **#239 → PR #253:** CI clean, `qa:pass`, `security:pass`. **Waiting for your merge.**
-  - **#241 (import)** is `status:ready` but held by the WIP limit: 2 open `claude/*` PRs, #253 and #252 (unrelated scan-photo work).
-  - **#240** follows #239.
+- **#241 (import):** taken interactively in this session at the maintainer's request ("Take #241"). Claimed on the issue.
+  - Branch `claude/241-research-import`: built and tested. 383 API tests pass; typecheck passes.
+  - Offline replay on the real schema: 93/100 pilot pins import as new non-public pins; 7 are correctly refused.
+  - **The PR is not open yet:** the WIP limit is reached (#269, #270 open). The PR opens as soon as one of them is merged or closed. Its description is ready.
+- **Dev agent:** #240 merged (PR #259). #239 merged (PR #253).
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)
@@ -54,7 +54,7 @@ _Last updated: 2026-10-14 19:30 UTC by Claude (sprint coordinator session). Chec
 - **Search-only research** has hit diminishing returns (≈ 14 pins per 39 searches in the last DLP pass).
 
 ## Decisions requiring your approval
-- **Merge PR #253** (#239: review-by-page API, read-only). Green, with QA and security passed: https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/253. This frees the WIP slot for #241 (import) and unblocks #240.
+- **Free a PR slot:** review or merge **#269** or **#270** (unrelated agent work). #241's PR opens straight after.
 - **Labels done:** #235, #237, #239, #240, #241 are approved.
   - **#236:** closed as not planned.
 - **Also:**
@@ -91,14 +91,7 @@ _Last updated: 2026-10-14 19:30 UTC by Claude (sprint coordinator session). Chec
 - **Engine fix (15:30):** spelling variants of one edition type ("open" / "Open Edition" / "OE") were being counted as conflicts. Blocked pins went from 32 to 21 real disagreements.
 
 ## Next planned actions (check-ins take these in order)
-**Priority (maintainer, 14 Oct evening):** first 100 pins directly verified and safely imported into **staging**. That comes before adding candidates.
-
-1. **#241 (import):** once PR #253 is merged and the queue frees, the dev agent takes #241. Each check-in:
-   - follow its PR through CI, QA and security
-   - check it against the acceptance criteria: new non-public pins only, refusals for duplicates, holds and conflicts, transactional
-   - run the offline PGlite replay of the import against migration 045 with the pilot payload
-   - report findings on the PR thread. Never push to the agent's branch, never merge.
-2. **Pilot readiness:** keep the 100-pin DSUK pilot current. Keep the laptop checklist accurate, including an import step once #241 lands. Re-run the offline load test after any change.
-3. **Quality, not volume:** resolve review flags in the pilot where a source can (variants, possible duplicates). No new candidate discovery unless it closes a pilot gap.
-4. **#240** (review-by-page screen) after #239. Follow it through review the same way.
-5. **Second fresh blind test** only after a large data change.
+1. **Open #241's PR** the moment fewer than 2 `claude/*` PRs are open. Use the prepared description and the branch `claude/241-research-import`. Then follow its CI, QA and security review, and fix findings on that branch.
+2. **Pilot readiness:** 93/100 importable offline. Try to close the 7: release years for Chip 'n Dale Countdown and Stitch St Patrick's; Big Hero 6 identity. Never invent values.
+3. **Keep the laptop checklist current** (import step §6 added).
+4. **Quality, not volume:** no new candidate discovery unless it closes a pilot gap.

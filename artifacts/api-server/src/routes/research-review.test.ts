@@ -64,6 +64,8 @@ describe("research review routes — access", () => {
     ["get", "/api/admin/research/candidates"], ["get", "/api/admin/research/candidates/00000000-0000-4000-8000-000000000001"],
     ["post", "/api/admin/research/candidates/00000000-0000-4000-8000-000000000001/direct-check"],
     ["post", "/api/admin/research/candidates/00000000-0000-4000-8000-000000000001/decision"],
+    ["get", "/api/admin/research/pages?runId=00000000-0000-4000-8000-000000000001"],
+    ["get", "/api/admin/research/pages/candidates?runId=00000000-0000-4000-8000-000000000001&url=https%3A%2F%2Fwww.disneystore.com%2Fa"],
     ["post", "/api/admin/research/sets/00000000-0000-4000-8000-000000000001/brush-of-magic%2Flimited-edition/direct-check"],
     ["post", "/api/admin/research/sets/00000000-0000-4000-8000-000000000001/brush-of-magic%2Flimited-edition/decision"],
   ];
@@ -307,5 +309,76 @@ describe("research review routes — set level", () => {
     expect((await request(app).post(setUrl("decision")).set(auth).send({ candidateIds: ["nope"] })).status).toBe(400);
     expect((await request(app).post(setUrl("decision", "bad")).set(auth).send({ candidateIds: [bambi().id] })).status).toBe(400);
     expect((await request(app).post(setUrl("decision", runId, "Bad%20Key")).set(auth).send({ candidateIds: [bambi().id] })).status).toBe(400);
+  });
+});
+
+describe("research review routes — page view (read only)", () => {
+  const RUN = "00000000-0000-4000-8000-0000000000a1";
+  const OTHER = "00000000-0000-4000-8000-0000000000a2";
+  const OFFICIAL = "https://www.disneystore.com/pins/page-1";
+  const BLOG = "https://example.org/blog/pins";
+  const cand = (id: string, run: string, set: string, status: string, entity = "pin") => ({
+    id, run_id: run, research_key: `${set}/${id}`, entity_type: entity, set_research_key: set, status,
+    proposed: {}, record_confidence: "medium", review_reasons: [], warnings: [],
+  });
+  const ev = (candidate_id: string, source_url: string | null, source_class: string) => ({ candidate_id, source_url, source_class });
+
+  beforeEach(() => {
+    isCreator = true;
+    for (const k of Object.keys(tables)) delete tables[k];
+    tables.catalogue_candidates = [
+      cand("p1", RUN, "set-a", "researched"), cand("p2", RUN, "set-a", "approved"), cand("p3", RUN, "set-b", "needs_direct_verification"),
+      cand("p4", RUN, "set-c", "researched"), cand("p5", OTHER, "set-a", "researched"), cand("s1", RUN, "set-a", "researched", "set"),
+    ];
+    tables.catalogue_evidence = [
+      ev("p1", OFFICIAL, "official"), ev("p1", OFFICIAL, "official"), ev("p2", OFFICIAL, "official"), ev("p3", OFFICIAL, "official"),
+      ev("p1", BLOG, "unclassified"), ev("p3", BLOG, "unclassified"), ev("p4", BLOG, "unclassified"),
+      ev("p5", OFFICIAL, "official"), ev("s1", "https://www.disneystore.com/set-only", "official"), ev("p4", null, "official"),
+    ];
+  });
+
+  it("lists each cited URL once with counts, official first, then by unchecked desc", async () => {
+    const res = await request(app).get(`/api/admin/research/pages?runId=${RUN}`).set(auth);
+    expect(res.status).toBe(200);
+    expect(res.body.pages).toEqual([
+      { source_url: OFFICIAL, source_class: "official", pin_count: 3, unchecked_count: 2, set_keys: ["set-a", "set-b"] },
+      { source_url: BLOG, source_class: "unclassified", pin_count: 3, unchecked_count: 3, set_keys: ["set-a", "set-b", "set-c"] },
+    ]);
+    expect(res.body.total).toBe(2);
+  });
+
+  it("rejects a missing or invalid runId", async () => {
+    expect((await request(app).get("/api/admin/research/pages").set(auth)).status).toBe(400);
+    expect((await request(app).get("/api/admin/research/pages?runId=nope").set(auth)).status).toBe(400);
+    expect((await request(app).get("/api/admin/research/pages/candidates?runId=nope&url=" + encodeURIComponent(BLOG)).set(auth)).status).toBe(400);
+  });
+
+  it("returns the pins citing a URL in that run across sets, and nothing from other runs", async () => {
+    const res = await request(app).get(`/api/admin/research/pages/candidates?runId=${RUN}&url=${encodeURIComponent(OFFICIAL)}`).set(auth);
+    expect(res.status).toBe(200);
+    expect(res.body.candidates.map((c: { id: string }) => c.id).sort()).toEqual(["p1", "p2", "p3"]);
+    expect(res.body.candidates[0]).toEqual(expect.objectContaining({
+      id: expect.any(String), research_key: expect.any(String), set_research_key: expect.any(String), proposed: {},
+      record_confidence: "medium", review_reasons: [], warnings: [], status: expect.any(String),
+    }));
+    const blog = await request(app).get(`/api/admin/research/pages/candidates?runId=${RUN}&url=${encodeURIComponent(BLOG)}`).set(auth);
+    expect(new Set(blog.body.candidates.map((c: { set_research_key: string }) => c.set_research_key))).toEqual(new Set(["set-a", "set-b", "set-c"]));
+    // A set-level citation is not a pin citation.
+    const setOnly = await request(app).get(`/api/admin/research/pages/candidates?runId=${RUN}&url=${encodeURIComponent("https://www.disneystore.com/set-only")}`).set(auth);
+    expect(setOnly.body.candidates).toEqual([]);
+  });
+
+  it.each([
+    ["missing", ""], ["http", "&url=" + encodeURIComponent("http://www.disneystore.com/a")],
+    ["not a url", "&url=nope"], ["marketplace", "&url=" + encodeURIComponent("https://www.ebay.co.uk/itm/1")],
+  ])("page candidates rejects a %s url with 400", async (_n, q) => {
+    expect((await request(app).get(`/api/admin/research/pages/candidates?runId=${RUN}${q}`).set(auth)).status).toBe(400);
+  });
+
+  it("never writes to any table", async () => {
+    const before = JSON.stringify(tables);
+    await request(app).get(`/api/admin/research/pages?runId=${RUN}`).set(auth);
+    await request(app).get(`/api/admin/research/pages/candidates?runId=${RUN}&url=${encodeURIComponent(OFFICIAL)}`).set(auth);
+    expect(JSON.stringify(tables)).toBe(before);
   });
 });

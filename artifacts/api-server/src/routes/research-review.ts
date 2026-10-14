@@ -19,6 +19,9 @@
  * POST /api/admin/research/sets/:runId/:setKey/direct-check   one source page confirms several pins of a set
  * POST /api/admin/research/sets/:runId/:setKey/decision       approve the ticked pins that pass the per-pin rules
  *
+ * GET  /api/admin/research/pages                 source pages cited by pin evidence in a run (?runId)
+ * GET  /api/admin/research/pages/candidates      pins in a run citing one exact page (?runId&url)
+ *
  * :setKey contains "/" and must be URL-encoded. Set routes only reuse the per-pin
  * rules; they never relax them.
  */
@@ -446,6 +449,85 @@ router.post("/admin/research/sets/:runId/:setKey/decision", requireAppCreator, a
     }
     res.json({ ok: true, approved, skipped });
   } catch (err) { fail(res, "set decision", err); }
+});
+
+// ── Page-level review (read only) ────────────────────────────────────────────
+
+const MAX_PAGES = 500;
+const CHUNK = 100;
+const CHECKED_STATUSES = new Set(["direct_verified", "approved", "rejected"]);
+
+/** runId from the query, or answers 400. */
+function pageRunId(req: Request, res: Response): string | null {
+  const runId = req.query.runId;
+  if (typeof runId !== "string" || !UUID.test(runId)) { res.status(400).json({ error: "runId invalid" }); return null; }
+  return runId;
+}
+
+router.get("/admin/research/pages", requireAppCreator, async (req, res: Response) => {
+  const runId = pageRunId(req, res);
+  if (!runId) return;
+  try {
+    const db = getAdminClient();
+    const { data: pins, error } = await db.from("catalogue_candidates")
+      .select("id, set_research_key, status").eq("run_id", runId).eq("entity_type", "pin").limit(1000);
+    if (error) throw error;
+    const byId = new Map((pins ?? []).map(p => [p.id as string, p]));
+    const ids = [...byId.keys()];
+
+    const pages = new Map<string, { official: boolean; cls: string | null; pins: Set<string>; unchecked: Set<string>; sets: Set<string> }>();
+    for (let i = 0; i < ids.length; i += CHUNK) {
+      const { data: ev, error: evErr } = await db.from("catalogue_evidence")
+        .select("candidate_id, source_url, source_class").in("candidate_id", ids.slice(i, i + CHUNK)).limit(5000);
+      if (evErr) throw evErr;
+      for (const e of ev ?? []) {
+        const url = e.source_url as string | null;
+        const pin = byId.get(e.candidate_id as string);
+        if (!url || !pin) continue;
+        let page = pages.get(url);
+        if (!page) { page = { official: false, cls: null, pins: new Set(), unchecked: new Set(), sets: new Set() }; pages.set(url, page); }
+        const cls = (e.source_class as string | null) ?? null;
+        if (cls === "official") page.official = true;
+        page.cls ??= cls;
+        page.pins.add(pin.id as string);
+        if (!CHECKED_STATUSES.has(pin.status as string)) page.unchecked.add(pin.id as string);
+        if (pin.set_research_key) page.sets.add(pin.set_research_key as string);
+      }
+    }
+    const list = [...pages.entries()].map(([url, p]) => ({
+      source_url: url, source_class: p.official ? "official" : p.cls,
+      pin_count: p.pins.size, unchecked_count: p.unchecked.size, set_keys: [...p.sets].sort(),
+    })).sort((a, b) =>
+      Number(b.source_class === "official") - Number(a.source_class === "official")
+      || b.unchecked_count - a.unchecked_count || a.source_url.localeCompare(b.source_url));
+    res.json({ pages: list.slice(0, MAX_PAGES), total: list.length });
+  } catch (err) { fail(res, "list pages", err); }
+});
+
+router.get("/admin/research/pages/candidates", requireAppCreator, async (req, res: Response) => {
+  const runId = pageRunId(req, res);
+  if (!runId) return;
+  const url = req.query.url;
+  if (typeof url !== "string" || !url.startsWith("https://") || checkSourceUrl(url)) {
+    res.status(400).json({ error: "url invalid" }); return;
+  }
+  try {
+    const db = getAdminClient();
+    const { data: ev, error } = await db.from("catalogue_evidence")
+      .select("candidate_id").eq("source_url", url).limit(5000);
+    if (error) throw error;
+    const ids = [...new Set((ev ?? []).map(e => e.candidate_id as string))];
+    const candidates: unknown[] = [];
+    for (let i = 0; i < ids.length; i += CHUNK) {
+      const { data, error: cErr } = await db.from("catalogue_candidates")
+        .select("id, research_key, set_research_key, proposed, record_confidence, review_reasons, warnings, status")
+        .in("id", ids.slice(i, i + CHUNK)).eq("run_id", runId).eq("entity_type", "pin").limit(1000);
+      if (cErr) throw cErr;
+      candidates.push(...(data ?? []));
+    }
+    candidates.sort((a, b) => String((a as { research_key: string }).research_key).localeCompare(String((b as { research_key: string }).research_key)));
+    res.json({ candidates });
+  } catch (err) { fail(res, "page candidates", err); }
 });
 
 export default router;

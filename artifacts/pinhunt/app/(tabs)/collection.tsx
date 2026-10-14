@@ -24,6 +24,7 @@ import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
+import { buildSetGroups, compareIsoDesc, compareText, indexBySet, partitionByStatus } from '@/utils/collectionDerive';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { Button, IconButton } from '@/components/ui/Button';
 import { BulkSelectBar, BULK_BAR_HEIGHT, tabBarOffset } from '@/components/BulkSelectBar';
@@ -96,16 +97,16 @@ function processPins(pins: CataloguePin[], filter: PinFilterType, sort: PinSortT
     res = res.filter(p => !p.limitedEditionSize && (!p.edition || p.edition.toLowerCase().includes('open') || p.edition.toLowerCase().includes('core')));
   }
 
+  // Plain string compares for ISO dates and a shared collator for names:
+  // localeCompare per comparison is slow on thousands of pins (UX-051).
   res = res.sort((a, b) => {
-    if (sort === 'name') return (a.title || '').localeCompare(b.title || '');
+    if (sort === 'name') return compareText(a.title || '', b.title || '');
     if (sort === 'year') {
       const releaseA = a.releaseDate || a.releaseYear?.toString() || '';
       const releaseB = b.releaseDate || b.releaseYear?.toString() || '';
-      return releaseB.localeCompare(releaseA);
+      return compareIsoDesc(releaseA, releaseB);
     }
-    const dateA = collectionMap[a.id]?.dateAdded || '';
-    const dateB = collectionMap[b.id]?.dateAdded || '';
-    return dateB.localeCompare(dateA);
+    return compareIsoDesc(collectionMap[a.id]?.dateAdded || '', collectionMap[b.id]?.dateAdded || '');
   });
   return res;
 }
@@ -291,34 +292,17 @@ export default function CollectionScreen() {
     [repository, repoSetSummaries, catalogue],
   );
 
-  const ownedPins = useMemo(() => catalogue.filter(pin => ownedIds.has(pin.id)), [catalogue, ownedIds]);
-  const forTradePins = useMemo(() => catalogue.filter(pin => forTradeIds.has(pin.id)), [catalogue, forTradeIds]);
-  const wantedPins = useMemo(() => catalogue.filter(pin => wantedIds.has(pin.id)), [catalogue, wantedIds]);
+  // One pass for all three lists, and pins indexed by set once (UX-051).
+  const { owned: ownedPins, forTrade: forTradePins, wanted: wantedPins } = useMemo(
+    () => partitionByStatus(catalogue, collection),
+    [catalogue, collection],
+  );
+  const pinsBySet = useMemo(() => indexBySet(catalogue), [catalogue]);
 
-  const automaticSetGroups = useMemo<GroupData[]>(() => {
-    const ownedSetNames = new Set(ownedPins.map(p => p.collection).filter(Boolean));
-
-    return setSummaries
-      .filter(summary => ownedSetNames.has(summary.setName))
-      .map(summary => {
-        const pins = catalogue.filter(pin => pin.collection === summary.setName);
-        const ownedCount = pins.filter(pin => ownedIds.has(pin.id) || forTradeIds.has(pin.id)).length;
-        // Use the same catalogue membership that Set Detail renders.
-        const total = pins.length;
-        const complete = total > 0 && ownedCount >= total;
-        return {
-          isGroup: true as const,
-          id: summary.id,
-          setId: summary.id,
-          title: summary.setName,
-          subtitle: complete ? `${ownedCount} / ${total} · Complete ✓` : `${ownedCount} / ${total} · ${total ? Math.round((ownedCount / total) * 100) : 0}%`,
-          pins,
-          isSet: true,
-          progress: total > 0 ? Math.min(ownedCount / total, 1) : 0,
-          complete,
-        };
-      });
-  }, [setSummaries, catalogue, ownedPins, ownedIds, forTradeIds]);
+  const automaticSetGroups = useMemo<GroupData[]>(
+    () => buildSetGroups(setSummaries, pinsBySet, ownedPins, collection),
+    [setSummaries, pinsBySet, ownedPins, collection],
+  );
 
   const setGroups = useMemo<GroupData[]>(() => {
     const query = searchQuery.trim().toLowerCase();
@@ -332,7 +316,7 @@ export default function CollectionScreen() {
           return (b.progress || 0) - (a.progress || 0);
         }
         if (setsSort === 'name') {
-          return a.title.localeCompare(b.title);
+          return compareText(a.title, b.title);
         }
         if (setsSort === 'year') {
           const aYear = a.pins[0]?.releaseYear || 0;
@@ -682,6 +666,11 @@ export default function CollectionScreen() {
         keyExtractor={item => ('isGroup' in item ? item.id : item.id)}
         numColumns={pinGrid ? pinColumns : 2}
         key={pinGrid ? `pin-grid-${pinColumns}` : 'grid-2'}
+        // Later batches stay small for collections of thousands of pins (UX-051);
+        // the first render keeps FlatList's default 10 rows.
+        maxToRenderPerBatch={4}
+        windowSize={7}
+        removeClippedSubviews={Platform.OS === 'android'}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={renderHeader}
         ListEmptyComponent={renderEmpty}

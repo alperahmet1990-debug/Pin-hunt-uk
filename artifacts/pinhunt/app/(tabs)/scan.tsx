@@ -643,8 +643,10 @@ const styles = StyleSheet.create({
   // Controls
   controls: { paddingHorizontal: 16, gap: 12 },
   captureRow: { flexDirection: 'row', gap: 12 },
-  retakeBtn: { flex: 1 },
-  identifyBtn: { flex: 2 },
+  // Retake keeps its natural width so its label never wraps at 320 pt;
+  // Identify Pin takes the rest (UX-058, #261).
+  retakeBtn: { flexShrink: 0 },
+  identifyBtn: { flex: 1 },
   halfBtn: { flex: 1 },
 
   // Confirmed

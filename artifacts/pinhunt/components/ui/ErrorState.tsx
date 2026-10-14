@@ -4,12 +4,18 @@
  * `compact` is the inline version for a banner inside a screen.
  */
 import React from 'react';
-import { StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
+import { StyleSheet, Text, View, useWindowDimensions, type StyleProp, type ViewStyle } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { Button } from './Button';
 import { radius, spacing } from '@/constants/theme';
 import type { UserError, UserErrorKind } from '@/utils/userError';
+
+/**
+ * Below this screen width the compact actions stack, so two labels like
+ * "Try again" and "Search instead" never wrap (UX-058, #261).
+ */
+export const COMPACT_STACK_BELOW = 360;
 
 const ICON: Record<UserErrorKind, keyof typeof Feather.glyphMap> = {
   offline: 'wifi-off',
@@ -31,6 +37,9 @@ interface ErrorStateProps {
 
 export function ErrorState({ error, onRetry, retryLabel = 'Try again', secondary, compact, style }: ErrorStateProps) {
   const colors = useColors();
+  const { width } = useWindowDimensions();
+  const stackActions = compact && width < COMPACT_STACK_BELOW;
+  const rowActions = compact && !stackActions;
   return (
     <View
       style={[compact ? [styles.compact, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }] : styles.full, style]}
@@ -52,9 +61,9 @@ export function ErrorState({ error, onRetry, retryLabel = 'Try again', secondary
         </View>
       </View>
       {(onRetry || secondary) && (
-        <View style={compact ? styles.actionsRow : styles.actionsStack}>
+        <View testID="error-actions" style={rowActions ? styles.actionsRow : stackActions ? styles.actionsStackFull : styles.actionsStack}>
           {onRetry && (
-            <Button label={retryLabel} icon="refresh-cw" size="compact" onPress={onRetry} fullWidth={compact} style={compact ? styles.flex : undefined} />
+            <Button label={retryLabel} icon="refresh-cw" size="compact" onPress={onRetry} fullWidth={compact} style={rowActions ? styles.flex : undefined} />
           )}
           {secondary && (
             <Button
@@ -64,7 +73,7 @@ export function ErrorState({ error, onRetry, retryLabel = 'Try again', secondary
               variant="secondary"
               onPress={secondary.onPress}
               fullWidth={compact}
-              style={compact ? styles.flex : undefined}
+              style={rowActions ? styles.flex : undefined}
             />
           )}
         </View>
@@ -88,5 +97,6 @@ const styles = StyleSheet.create({
   messageCentred: { textAlign: 'center', maxWidth: 280 },
   actionsStack: { gap: spacing.sm, alignItems: 'center' },
   actionsRow: { flexDirection: 'row', gap: spacing.sm },
+  actionsStackFull: { gap: spacing.sm },
   flex: { flex: 1 },
 });

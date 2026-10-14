@@ -21,6 +21,8 @@ import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, CommunityPost, Conversation, ConversationMessage } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, userErrorLine, type UserError } from '@/utils/userError';
 
 function previewBody(msg: ConversationMessage) {
   if (msg.body.trim()) return msg.body;
@@ -83,7 +85,7 @@ export default function ChatScreen() {
   const [conv, setConv] = useState<Conversation | null>(null);
   const [messages, setMessages] = useState<ConversationMessage[]>([]);
   const [contextPost, setContextPost] = useState<CommunityPost | null>(null);
-  const [loading, setLoading] = useState(true); const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true); const [error, setError] = useState<UserError | null>(null);
   const [msgText, setMsgText] = useState(''); const [sending, setSending] = useState(false);
   const [attachmentMenuOpen, setAttachmentMenuOpen] = useState(false);
   const [photoPickerPending, setPhotoPickerPending] = useState(false);
@@ -119,7 +121,7 @@ export default function ChatScreen() {
       const hasNew = isInitial || msgs.some(m => m.senderId !== userId && !seenIdsRef.current.has(m.id));
       seenIdsRef.current = new Set(msgs.map(m => m.id)); setMessages(msgs);
       if (hasNew) { if (isFocusedRef.current) markRead(id); else pendingReadRef.current = true; }
-    } catch (e) { setError(e instanceof Error ? e.message : 'Failed to load conversation.'); }
+    } catch (e) { setError(toUserError(e, 'chat')); }
     finally { setLoading(false); }
   }, [repo, userId, id, markRead]);
   useEffect(() => { load(true); }, [repo, userId, id]);
@@ -147,7 +149,7 @@ export default function ChatScreen() {
       setMsgText('');
       setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 100);
     } catch (e) {
-      Alert.alert('Send failed', e instanceof Error ? e.message : 'Try again.');
+      Alert.alert("Message not sent", userErrorLine(e, 'chat-send'));
     } finally {
       setSending(false);
     }
@@ -180,7 +182,7 @@ export default function ChatScreen() {
       );
       await send('', { messageType: 'photo', photoUrls: urls });
     } catch (e) {
-      Alert.alert('Photo upload failed', e instanceof Error ? e.message : 'Please try again.');
+      Alert.alert('Photo not sent', userErrorLine(e, 'chat-photo'));
     } finally {
       setSending(false);
     }
@@ -249,7 +251,7 @@ export default function ChatScreen() {
       setConv(current => current ? { ...current, tradeId: accepted.id } : current);
       setTradeConfirmOpen(false);
     } catch (e) {
-      Alert.alert('Could not mark agreed', e instanceof Error ? e.message : 'Please try again.');
+      Alert.alert('Trade not marked agreed', userErrorLine(e, 'chat-agree'));
     } finally {
       setSending(false);
     }
@@ -269,7 +271,7 @@ export default function ChatScreen() {
           <View style={styles.center}><ActivityIndicator color={colors.homeCoral} /></View>
         ) : error ? (
           <View style={styles.center}>
-            <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
+            <ErrorState error={error} onRetry={() => { setError(null); load(true); }} />
           </View>
         ) : (
           <>
@@ -509,7 +511,7 @@ export default function ChatScreen() {
 }
 
 const styles = StyleSheet.create({
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' }, messageList: { flex: 1 }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, messageList: { flex: 1 }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
   inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },

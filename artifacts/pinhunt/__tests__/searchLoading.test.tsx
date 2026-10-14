@@ -1,11 +1,14 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import SearchScreen from '../app/search';
 
 // UX-045: a search in flight shows result-shaped rows, not a spinner.
 let resolveSearch: (page: unknown) => void = () => {};
+let mockSearchFails = false;
 const mockRepository = {
-  searchPinsPage: () => new Promise(resolve => { resolveSearch = resolve; }),
+  searchPinsPage: jest.fn(() => (mockSearchFails
+    ? Promise.reject(Object.assign(new Error('relation "pins" does not exist'), { status: 500 }))
+    : new Promise(resolve => { resolveSearch = resolve; }))),
 };
 
 jest.mock('react-native-safe-area-context', () => ({
@@ -38,4 +41,24 @@ it('shows placeholder result rows while searching, then the results', async () =
   });
   expect(screen.queryByRole('progressbar', { name: 'Searching pins' })).toBeNull();
   expect(screen.getByText('Stitch Surfing')).toBeTruthy();
+});
+
+it('a failed search explains and retries instead of saying "No pins found" (UX-046)', async () => {
+  jest.spyOn(console, 'warn').mockImplementation(() => {});
+  mockRepository.searchPinsPage.mockClear();
+  mockSearchFails = true;
+  await render(<SearchScreen />);
+  await act(async () => { jest.advanceTimersByTime(300); });
+  expect(screen.getByRole('alert', { name: "Something went wrong on our side. It's not you. Please try again in a moment." })).toBeTruthy();
+  expect(screen.queryByText('No pins found')).toBeNull();
+  expect(screen.queryByText(/does not exist/)).toBeNull();
+
+  mockSearchFails = false;
+  await fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
+  await act(async () => { jest.advanceTimersByTime(300); });
+  await act(async () => {
+    resolveSearch({ pins: [{ id: 'p1', title: 'Stitch Surfing', brand: 'Disney', collection: 'Lilo', characters: ['Stitch'] }], total: 1 });
+  });
+  expect(screen.getByText('Stitch Surfing')).toBeTruthy();
+  expect(mockRepository.searchPinsPage).toHaveBeenCalledTimes(2);
 });

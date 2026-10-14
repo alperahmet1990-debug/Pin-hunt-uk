@@ -77,4 +77,18 @@ describe('Scan result (UX-005)', () => {
     expect(await screen.findByText('Not the right pin?')).toBeTruthy();
     expect(screen.queryByRole('button', { name: 'None of these' })).toBeNull();
   });
+
+  it('a failed identify says what went wrong in plain words, never the raw error (UX-046)', async () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    mockIdentify.mockRejectedValueOnce(new TypeError('Network request failed'));
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
+    await fireEvent.press(await screen.findByRole('button', { name: 'Identify Pin' }, { timeout: 3000 }));
+    expect(await screen.findByRole('alert', { name: "You're offline. Check your connection and try again." })).toBeTruthy();
+    expect(screen.queryByText(/Network request failed/)).toBeNull();
+    // Try again re-runs the identify with the same photo.
+    await fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
+    await screen.findByRole('header', { name: 'Best match' });
+    expect(mockIdentify).toHaveBeenCalledTimes(2);
+  });
 });

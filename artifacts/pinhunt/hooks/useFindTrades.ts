@@ -20,6 +20,7 @@ import {
   type PinOpportunity,
 } from '@/utils/findTradesEngine';
 import type { PublicProfile } from '@workspace/pin-repository';
+import { toUserError, type UserError } from '@/utils/userError';
 
 export interface SetOpportunity {
   setName: string;
@@ -45,7 +46,8 @@ export interface FindTradesData {
   discoveryItems: DiscoveryItem[];
   discoveryInterests: CollectionInterest[];
   loading: boolean;
-  error: string | null;
+  /** Plain-English failure (UX-046); raw messages are only logged. */
+  error: UserError | null;
   refresh: () => void;
 }
 
@@ -64,7 +66,7 @@ export function useFindTrades(): FindTradesData {
   const [discoveryItems, setDiscoveryItems] = useState<DiscoveryItem[]>([]);
   const [discoveryInterests, setDiscoveryInterests] = useState<CollectionInterest[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<UserError | null>(null);
   const [refreshToken, setRefreshToken] = useState(0);
 
   useEffect(() => {
@@ -155,7 +157,7 @@ export function useFindTrades(): FindTradesData {
         setDiscoveryItems(discovery);
         setDiscoveryInterests(interests);
       } catch (e) {
-        if (!cancelled) setError(e instanceof Error ? e.message : 'Failed to load Find Trades.');
+        if (!cancelled) setError(toUserError(e, 'find-trades'));
       } finally {
         if (!cancelled) setLoading(false);
       }

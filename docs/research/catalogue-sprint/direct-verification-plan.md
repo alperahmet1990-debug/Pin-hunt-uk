@@ -33,9 +33,10 @@ Status: proposal.
 2. **Start with the DSUK High sheet now** (24 Disney Store UK pages, 101 pins).
    - Open each page in your own browser and confirm each pin in Research Review.
    - Per-pin checks work today, so this needs no new code.
-3. **Ship set-level verification (#230).** It is approved and in the backend queue, but it has no priority label, so it may wait behind other work.
-   - Add a priority label, or ask me to build it here under the normal PR, QA and security review.
-   - It turns one page open into N verified pins, plus one batch approval per set.
+3. **Set-level verification (#230) is done.** It was built in PR #234 and is merged in `main`.
+   - One page is reviewed against many pins. Each pin gets its own tick, evidence row and decision.
+   - Follow-up **#235** (proposed) tightens batch approval. Pins with variant values or a possible-duplicate flag are always approved one by one, with their own note.
+   - **Pilot:** `docs/research/catalogue-sprint/pilot-dsuk-high/` (101 pins, 24 pages).
 4. **Batch review in set order.**
    - Order: official pages first, then news pages (after the access checks in step 5), then fan pages.
    - Blocking conflicts (17 pins) and flagged duplicates (33) are excluded from batches and reviewed one by one.
@@ -44,10 +45,9 @@ Status: proposal.
    - Basil then reads and records each site's terms and robots rules. You approve each host in `access_policy.json`.
    - Full page reads give complete release lists, so the reviewer sees fewer wrong or missing pins.
    - Fetched secondary pages still **do not verify**.
-6. **Licensed official data for DSUK: a decision for you.**
-   - Apply to the Disney Store affiliate programme (CJ).
-   - If the feed licence allows catalogue fact-checking, decide whether an **exact item-code + name match against the official feed** may count as verification for Disney Store products.
-   - That is the only route that verifies DSUK at scale without a person per page.
+6. **Licensed official data for DSUK.**
+   - **Maintainer position (2026-10-14):** open to treating an exact product/variant match against an official affiliate feed as direct verification. That applies only after the feed's licence is confirmed, along with which fields the feed actually establishes.
+   - **Not implemented.** Next step is to apply to the Disney Store affiliate programme (CJ), then review the licence and the feed's field list.
 7. **DLP official evidence by people.**
    - Monthly release posters in the park, the DLP app, or Pueblo Trading Post signage, entered as human direct checks.
    - Optional later: extend the reviewer role beyond the App Creator to trusted collectors. That is an RLS and auth change, so it needs its own approval and security review.

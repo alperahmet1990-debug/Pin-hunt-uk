@@ -1,0 +1,60 @@
+{
+ "packet_id": "review-holds-2026-10-14",
+ "spec_version": 1,
+ "collected_at": "2026-10-14",
+ "collector": "maintainer-instruction",
+ "sources": [],
+ "sets": [],
+ "pins": [],
+ "not_found": [
+  {
+   "key": "wdw/2024/epcot-food-wine-2024/chef-figment",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2024/epcot-food-wine-2024/figment-passholder; keep blocked until a person reviews both on the source page"
+  },
+  {
+   "key": "wdw/2024/epcot-food-wine-2024/chef-remy-limited-release",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2024/epcot-food-wine-2024/remy; keep blocked until a person reviews both on the source page"
+  },
+  {
+   "key": "wdw/2023/epcot-flower-garden-2023/orange-bird-floral",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird; keep blocked until a person reviews both on the source page"
+  },
+  {
+   "key": "wdw/2023/epcot-flower-garden-2023/figment-imagination-grow",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2023/epcot-flower-garden-2023/figment-cactus; keep blocked until a person reviews both on the source page"
+  },
+  {
+   "key": "wdw/2023/epcot-festival-of-the-arts-2023/create-your-own-magic-figment",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; keep blocked until a person reviews both on the source page"
+  },
+  {
+   "key": "wdw/2023/epcot-festival-of-the-arts-2023/figment-chalkboard",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; keep blocked until a person reviews both on the source page"
+  },
+  {
+   "key": "wdw/2024/epcot-flower-garden-2024/orange-bird-glitter",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2024/epcot-flower-garden-2024/orange-bird-flower-pot; keep blocked until a person reviews both on the source page"
+  },
+  {
+   "key": "wdw/2023/epcot-food-wine-2023/encanto",
+   "field": "identity",
+   "searched": "maintainer instruction 2026-10-14",
+   "note": "hold: possible duplicate of wdw/2023/epcot-food-wine-2023/madrigal-family; keep blocked until a person reviews both on the source page"
+  }
+ ],
+ "discovery_notes": "Maintainer asked that potential EPCOT duplicates stay blocked until reviewed. Holds only; no facts added."
+}

@@ -101,6 +101,9 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
         k, note = nf.get("key"), str(nf.get("note", "")).strip()
         if k in pins and note.lower().startswith("grouping:"):
             pins[k]["review_reasons"].append("conflict: " + note[:200])
+        elif k in pins and note.lower().startswith("hold:"):
+            # An explicit review hold (maintainer instruction or unresolved possible duplicate): blocks sign-off.
+            pins[k]["review_reasons"].append("conflict: " + note[:200])
         elif k in pins and note.lower().startswith("variant: same pin as"):
             pins[k]["review_reasons"].append("possible internal duplicate: " + note[:200])
     counts = {}

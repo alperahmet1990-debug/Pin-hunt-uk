@@ -427,3 +427,14 @@ class EditionTypeSpelling(unittest.TestCase):
             claim("characters", ["Eric"], NEWS), claim("edition_type", "LE 1000", NEWS), claim("edition_type", "open edition", FAN)])]))
         pins, _ = reconcile(st)
         self.assertTrue(any(r.startswith("conflict:") for r in pins["s/x/p"]["review_reasons"]))
+
+    def test_review_hold_blocks_sign_off(self):
+        import tempfile, json as _j, pathlib as _p
+        from engine.run import run
+        pk = packet(pins=[dict(pin_key="s/x/chef-remy", set_key="s/x", claims=[claim("characters", ["Remy"], NEWS)])],
+                    nf=[dict(key="s/x/chef-remy", field="identity", note="hold: possible duplicate of s/x/remy; review before approval")])
+        with tempfile.TemporaryDirectory() as d:
+            f = _p.Path(d) / "p.json"
+            f.write_text(_j.dumps(pk))
+            _, out, _, _, _ = run([str(f)], str(_p.Path(d) / "out"), seed=None)
+        self.assertTrue(any(r.startswith("conflict: hold:") for r in out["s/x/chef-remy"]["review_reasons"]))

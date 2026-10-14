@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 18:29 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 19:30 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -44,7 +44,7 @@ _Last updated: 2026-10-14 18:29 UTC by Claude (sprint coordinator session). Chec
 | **Publication-ready** | **0** |
 | High / Medium / Low / Unverified | 148 / 363 / 358 / 2 |
 | 2+ independent publishers | 517 |
-| Contradictions (blocked for review) / flagged duplicates / catalogue duplicates | 22 / 27 / 27 (+ recognised variants) |
+| Contradictions + review holds (blocked) / flagged duplicates / catalogue duplicates | 30 (incl. 8 EPCOT holds) / 27 / 27 |
 | Verification effort | 343 pages, ≈ 11–12 h with set-level review; pilot ≈ 45–50 min |
 | Progress to 1,000 / 5,000 / 10,000 **verified** | 0% / 0% / 0% (candidates: 85% / 17% / 8%) |
 
@@ -81,6 +81,7 @@ _Last updated: 2026-10-14 18:29 UTC by Claude (sprint coordinator session). Chec
 - **Before the grouping pass,** the random sample was 83% fully correct, hand-adjudicated.
 - **The disagreements found are recorded and blocked for review:** Vault Set 3 Chip 'n Dale; the DLP "Prince Love" edition type.
 - **Remaining risk** is source disagreement on metadata (edition type, dates). The engine surfaces it and does not resolve it.
+- **EPCOT review holds (maintainer instruction):** 8 possible festival duplicates are **blocked** until reviewed: Chef Figment, Chef Remy, Orange Bird Floral/Glitter, Figment Imagination/Chalkboard/Create Your Own Magic, Encanto vs Madrigal family. The engine's `hold:` rule makes them unapprovable (tested).
 - **Pass 7 (WDW festivals):** 17 new named pins across 11 EPCOT festival sets (2023–24). 27 existing pins gained edition, price or second-source claims; set counts were added. Chef Remy and Chef Figment are flagged as variants of the existing Remy and Figment pins for review.
 - **Pass 6 (disagreements + grouping gaps):**
   - 626 Day 2026: one pin each, confirmed by an official listing. The pilot's structure checks went from 21 to 11.
@@ -90,7 +91,14 @@ _Last updated: 2026-10-14 18:29 UTC by Claude (sprint coordinator session). Chec
 - **Engine fix (15:30):** spelling variants of one edition type ("open" / "Open Edition" / "OE") were being counted as conflicts. Blocked pins went from 32 to 21 real disagreements.
 
 ## Next planned actions (check-ins take these in order)
-1. **Every check-in:** check PRs and CI on sprint issues (#239 → #240, #241 after #250 merges) and act on QA/security findings.
-2. **Pilot:** keep it current after any data change, and re-run the offline load test.
-3. **Coverage gaps:** DSUK and DLR months with no recorded release.
-4. **Second fresh blind test** after any large data change, so accuracy stays measured, not assumed.
+**Priority (maintainer, 14 Oct evening):** first 100 pins directly verified and safely imported into **staging**. That comes before adding candidates.
+
+1. **#241 (import):** once PR #253 is merged and the queue frees, the dev agent takes #241. Each check-in:
+   - follow its PR through CI, QA and security
+   - check it against the acceptance criteria: new non-public pins only, refusals for duplicates, holds and conflicts, transactional
+   - run the offline PGlite replay of the import against migration 045 with the pilot payload
+   - report findings on the PR thread. Never push to the agent's branch, never merge.
+2. **Pilot readiness:** keep the 100-pin DSUK pilot current. Keep the laptop checklist accurate, including an import step once #241 lands. Re-run the offline load test after any change.
+3. **Quality, not volume:** resolve review flags in the pilot where a source can (variants, possible duplicates). No new candidate discovery unless it closes a pilot gap.
+4. **#240** (review-by-page screen) after #239. Follow it through review the same way.
+5. **Second fresh blind test** only after a large data change.

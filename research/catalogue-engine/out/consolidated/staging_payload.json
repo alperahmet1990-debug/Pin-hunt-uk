@@ -1,7 +1,7 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "747b2fa96917",
+ "git_commit": "254b9c7f8276",
  "generated": "2026-10-14",
  "candidates": [
   {
@@ -71124,7 +71124,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: release_date",
-    "variant: same characters as wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; confirm the distinguishing pin_name, edition_type"
+    "variant: same characters as wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; confirm the distinguishing pin_name, edition_type",
+    "conflict: hold: possible duplicate of wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; keep blocked until a person reviews both on the source page"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -71198,7 +71199,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: release_date",
-    "variant: same characters as wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; confirm the distinguishing edition_size"
+    "variant: same characters as wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; confirm the distinguishing edition_size",
+    "conflict: hold: possible duplicate of wdw/2023/epcot-festival-of-the-arts-2023/chalk-it-up-passholder; keep blocked until a person reviews both on the source page"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72061,10 +72063,11 @@
     "pin_name_source": "composed display label (subject \u2013 set)"
    },
    "record_confidence": "Medium",
-   "engine_verified": true,
+   "engine_verified": false,
    "review_reasons": [
     "missing: release_date",
-    "variant: same characters as wdw/2023/epcot-flower-garden-2023/figment-cactus; confirm the distinguishing edition_type"
+    "variant: same characters as wdw/2023/epcot-flower-garden-2023/figment-cactus; confirm the distinguishing edition_type",
+    "conflict: hold: possible duplicate of wdw/2023/epcot-flower-garden-2023/figment-cactus; keep blocked until a person reviews both on the source page"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72402,7 +72405,8 @@
    "review_reasons": [
     "identity confidence Low",
     "missing: release_date",
-    "variant: same characters as wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird; confirm the distinguishing pin_name, edition_type"
+    "variant: same characters as wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird; confirm the distinguishing pin_name, edition_type",
+    "conflict: hold: possible duplicate of wdw/2023/epcot-flower-garden-2023/spreadin-sunshine-orange-bird; keep blocked until a person reviews both on the source page"
    ],
    "warnings": [],
    "duplicate_status": "NEW",
@@ -72835,6 +72839,7 @@
     "missing: characters",
     "set over (6/5)",
     "possible internal duplicate: variant: same pin as wdw/2023/epcot-food-wine-2023/madrigal-family (source lists one Encanto group pin)",
+    "conflict: hold: possible duplicate of wdw/2023/epcot-food-wine-2023/madrigal-family; keep blocked until a person reviews both on the source page",
     "grouping: 6 pins recorded but the set states 5; check for split or extra pins"
    ],
    "warnings": [],
@@ -76688,7 +76693,8 @@
    "review_reasons": [
     "identity confidence Low",
     "set incomplete (6/9)",
-    "variant: same characters as wdw/2024/epcot-flower-garden-2024/orange-bird-flower-pot; confirm the distinguishing pin_name"
+    "variant: same characters as wdw/2024/epcot-flower-garden-2024/orange-bird-flower-pot; confirm the distinguishing pin_name",
+    "conflict: hold: possible duplicate of wdw/2024/epcot-flower-garden-2024/orange-bird-flower-pot; keep blocked until a person reviews both on the source page"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -77031,7 +77037,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "variant: same characters as wdw/2024/epcot-food-wine-2024/figment-passholder; confirm the distinguishing pin_name, edition_type"
+    "variant: same characters as wdw/2024/epcot-food-wine-2024/figment-passholder; confirm the distinguishing pin_name, edition_type",
+    "conflict: hold: possible duplicate of wdw/2024/epcot-food-wine-2024/figment-passholder; keep blocked until a person reviews both on the source page"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",
@@ -77251,7 +77258,8 @@
    "engine_verified": false,
    "review_reasons": [
     "identity confidence Low",
-    "variant: same characters as wdw/2024/epcot-food-wine-2024/remy; confirm the distinguishing pin_name, edition_type"
+    "variant: same characters as wdw/2024/epcot-food-wine-2024/remy; confirm the distinguishing pin_name, edition_type",
+    "conflict: hold: possible duplicate of wdw/2024/epcot-food-wine-2024/remy; keep blocked until a person reviews both on the source page"
    ],
    "warnings": [],
    "duplicate_status": "NEW (family exists, different sub-set)",

@@ -15,7 +15,7 @@ _Last updated: 2026-10-14 14:25 UTC by Claude (sprint coordinator session). Chec
 
 ## Current work by agent
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
-- **Dev agent:** #235 is approved and `status:ready`, but the agent is held by the WIP limit (2 open `claude/*` PRs: #238, #242, unrelated work awaiting your review). It starts at the first :07 run after one of them is merged or closed. Queue after that: #239, #237, then #241 / #240.
+- **Dev agent:** the path is clear. There are no open `claude/*` PRs, and #235 is `approved` + `status:ready`, so it should be taken at the next :07 run. Queue after that: #239, #237, then #241 / #240.
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)
@@ -51,8 +51,7 @@ _Last updated: 2026-10-14 14:25 UTC by Claude (sprint coordinator session). Chec
 
 ## Decisions requiring your approval
 - **Labels done:** #235, #237, #239, #240, #241 are approved.
-  - **#236:** close it as not planned, if you haven't already.
-- **To unblock the dev agent:** review #238 and #242 (unrelated agent PRs). The WIP limit of 2 holds new work until one is merged or closed.
+  - **#236:** closed as not planned.
 - **Also:**
   - **Network:** allow `www.laughingplace.com`, `wdwnt.com`, `dlpreport.com`.
   - **Affiliate:** apply to Disney Store CJ.

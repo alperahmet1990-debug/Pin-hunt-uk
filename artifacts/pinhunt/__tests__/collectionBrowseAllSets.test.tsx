@@ -26,6 +26,7 @@ jest.mock('expo-router', () => ({
 }));
 jest.mock('expo-haptics', () => ({ impactAsync: jest.fn(), selectionAsync: jest.fn(), ImpactFeedbackStyle: {} }));
 jest.mock('@/hooks/useMarketValue', () => ({ useLatestMarketValue: () => null, formatLatestValue: () => '' }));
+jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: null }) }));
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: mockCollection, getEntry: (id: string) => mockCollection[id] }) }));
 // The photo-gaps card (UX-056) is for contributors only; off here.
 jest.mock('@/components/PhotoGapsCard', () => ({ PhotoGapsCard: () => null }));

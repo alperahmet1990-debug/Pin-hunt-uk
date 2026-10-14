@@ -21,6 +21,7 @@ jest.mock('expo-router', () => ({
 jest.mock('expo-haptics', () => ({ selectionAsync: jest.fn(), impactAsync: jest.fn(), ImpactFeedbackStyle: {} }));
 jest.mock('@/components/PhotoGapsCard', () => ({ PhotoGapsCard: () => null }));
 jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: jest.fn(), hide: jest.fn() }) }));
+jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: null }) }));
 jest.mock('@/context/CollectionContext', () => ({
   useCollection: () => ({
     collection: mockCollection,

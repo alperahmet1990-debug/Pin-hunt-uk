@@ -34,6 +34,8 @@ import { Button, IconButton } from '@/components/ui/Button';
 import { getPinImageSource } from '@/utils/pinImage';
 import { StatusBadge } from '@/components/ui';
 import { Skeleton, SkeletonBlock, SkeletonRow } from '@/components/ui/Skeleton';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, type UserError } from '@/utils/userError';
 import { radius, spacing } from '@/constants/theme';
 import {
   SEARCH_PAGE_SIZE,
@@ -96,6 +98,9 @@ export default function SearchScreen() {
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [results, setResults] = useState<CataloguePin[]>([]);
   const [searching, setSearching] = useState(false);
+  // A failed search says why and offers Retry, instead of "No pins found" (UX-046).
+  const [searchError, setSearchError] = useState<UserError | null>(null);
+  const [retryKey, setRetryKey] = useState(0);
   const [total, setTotal] = useState(0);
   const [loadingMore, setLoadingMore] = useState(false);
   const [loadMoreFailed, setLoadMoreFailed] = useState(false);
@@ -150,6 +155,7 @@ export default function SearchScreen() {
     const mySeq = ++seq.current;
     setResults([]);
     setTotal(0);
+    setSearchError(null);
     setLoadingMore(false);
     setLoadMoreFailed(false);
     offsetRef.current = 0;
@@ -187,15 +193,18 @@ export default function SearchScreen() {
         moreRef.current = hasMoreResults(offsetRef.current, page.total, page.pins.length);
         setResults(ranked);
         setTotal(page.total);
-      } catch {
-        if (mySeq === seq.current) setResults([]);
+      } catch (e) {
+        if (mySeq === seq.current) {
+          setResults([]);
+          setSearchError(toUserError(e, 'search'));
+        }
       } finally {
         if (mySeq === seq.current) setSearching(false);
       }
     }, 300);
 
     return () => clearTimeout(timer);
-  }, [query, repository]);
+  }, [query, repository, retryKey]);
 
   const loadMore = useCallback(async () => {
     const q = query.trim();
@@ -376,6 +385,8 @@ export default function SearchScreen() {
                   <SkeletonRow key={i} style={[styles.resultRow, { borderBottomColor: colors.homeLine }]} />
                 ))}
               </Skeleton>
+            ) : searchError ? (
+              <ErrorState error={searchError} onRetry={() => setRetryKey(k => k + 1)} />
             ) : results.length === 0 ? (
               <>
                 <View style={styles.stateRow}>

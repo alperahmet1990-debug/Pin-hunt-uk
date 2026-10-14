@@ -20,6 +20,8 @@ import { Avatar } from '@/components/Avatar';
 import { Chip } from '@/components/ui';
 import { Button } from '@/components/ui/Button';
 import { SkeletonHeader, SkeletonRows } from '@/components/ui/Skeleton';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, type UserError } from '@/utils/userError';
 import { radius, spacing } from '@/constants/theme';
 import type { PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
@@ -76,6 +78,9 @@ export default function CollectorProfileScreen() {
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  // Couldn't load (offline, server…) is not the same as "not found" (UX-046).
+  const [loadError, setLoadError] = useState<UserError | null>(null);
+  const [reloadKey, setReloadKey] = useState(0);
   const [rating, setRating] = useState<{ positive: number; total: number } | null>(null);
 
   const [potentialTrades, setPotentialTrades] = useState<PotentialTradePin[]>([]);
@@ -85,6 +90,8 @@ export default function CollectorProfileScreen() {
   useEffect(() => {
     if (!username) return;
     setLoading(true);
+    setLoadError(null);
+    setNotFound(false);
     getPublicProfile(username)
       .then(p => {
         if (!p) { setNotFound(true); return; }
@@ -95,9 +102,9 @@ export default function CollectorProfileScreen() {
             .catch(() => {});
         }
       })
-      .catch(() => setNotFound(true))
+      .catch(e => setLoadError(toUserError(e, 'collector')))
       .finally(() => setLoading(false));
-  }, [username, getPublicProfile, repo]);
+  }, [username, getPublicProfile, repo, reloadKey]);
 
   // Load potential trades once we have both IDs
   const loadPotentialTrades = useCallback(async () => {
@@ -160,6 +167,10 @@ export default function CollectorProfileScreen() {
               style={[styles.hero, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}
             />
           )
+        ) : loadError ? (
+          <View style={styles.centred}>
+            <ErrorState error={loadError} onRetry={() => setReloadKey(k => k + 1)} />
+          </View>
         ) : notFound || !profile ? (
           <View style={styles.centred}>
             <Feather name="user-x" size={40} color={colors.homeMuted} />

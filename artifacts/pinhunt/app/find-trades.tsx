@@ -44,6 +44,7 @@ import { findTradesEmptyState, type FindTradesEmptyAction } from '@/utils/findTr
 import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { Button } from '@/components/ui/Button';
 import { Skeleton, SkeletonBlock } from '@/components/ui/Skeleton';
+import { ErrorState } from '@/components/ui/ErrorState';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
 import { PinImage } from '@/components/ui/PinImage';
 
@@ -99,10 +100,7 @@ export default function FindTradesScreen() {
           {loading ? (
             <FindTradesSkeleton colors={colors} />
           ) : error ? (
-            <View style={styles.center}>
-              <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
-              <Button variant="text" label="Try again" icon="refresh-cw" onPress={refresh} />
-            </View>
+            <ErrorState error={error} onRetry={refresh} />
           ) : nothingAtAll ? (
             <View style={styles.center}>
               <Feather name="compass" size={36} color={colors.homeMuted} />
@@ -441,7 +439,6 @@ function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors:
 
 const styles = StyleSheet.create({
   center: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
-  errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
 

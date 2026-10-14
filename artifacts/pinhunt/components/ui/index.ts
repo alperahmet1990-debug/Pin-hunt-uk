@@ -24,3 +24,4 @@ export type { ButtonProps, ButtonVariant, ButtonSize, IconButtonProps, IconButto
 export { Skeleton, SkeletonBlock, SkeletonTile, SkeletonGrid, SkeletonRow, SkeletonRows, SkeletonHeader, useReduceMotion } from './Skeleton';
 export { PinImage } from './PinImage';
 export type { PinImageProps } from './PinImage';
+export { ErrorState } from './ErrorState';

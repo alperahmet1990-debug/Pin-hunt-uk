@@ -126,6 +126,9 @@ export default function ScanScreen() {
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [resultKey, setResultKey] = useState(0);
   const shutterAnim = useRef(new Animated.Value(1)).current;
+  // Each identification run has an id; a cancelled or superseded run's
+  // result is ignored when it arrives (UX-008a).
+  const identifyRun = useRef(0);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
@@ -142,29 +145,40 @@ export default function ScanScreen() {
   );
 
   // ── Shared: accept a picked/captured asset ───────────────────────────────────
-  const handlePickerResult = useCallback(async (result: ImagePicker.ImagePickerResult) => {
+  async function handlePickerResult(result: ImagePicker.ImagePickerResult) {
     if (result.canceled || !result.assets?.[0]) return;
 
     const asset = result.assets[0];
+    // Identify straight away, no separate tap (UX-008a). The photo shows
+    // with the progress overlay while it is shrunk and sent.
+    const run = ++identifyRun.current;
+    flashShutter();
+    clearResult();
+    setCaptured({ uri: asset.uri, base64: '', mimeType: 'image/jpeg' });
+    setScanState('identifying');
+
     // Shrink before upload (UX-050): the preview keeps the original photo.
     let photo: ScanPhoto;
     try {
       photo = await prepareScanPhoto(asset.uri, asset.width, asset.height);
     } catch (err) {
+      if (run !== identifyRun.current) return;
       toUserError(err, 'scan-photo');
+      setCaptured(null);
+      setScanState('idle');
       Alert.alert('Could not read image', 'Please try again.');
       return;
     }
+    if (run !== identifyRun.current) return;
 
-    flashShutter(() => {
-      setCaptured({ uri: asset.uri, base64: photo.base64, mimeType: photo.mimeType });
-      setScanState('captured');
-    });
-  }, [flashShutter]);
+    const image: CapturedImage = { uri: asset.uri, base64: photo.base64, mimeType: photo.mimeType };
+    setCaptured(image);
+    runIdentify(image, run);
+  }
 
   // ── Scan Pin (camera) — falls back to the photo library on web, where no
   // camera is available. ──────────────────────────────────────────────────────
-  const handleScanPin = useCallback(async () => {
+  async function handleScanPin() {
     setErrorMsg(null);
     setFailure(null);
 
@@ -191,11 +205,11 @@ export default function ScanScreen() {
       aspect: [1, 1],
     });
 
-    handlePickerResult(result);
-  }, [handlePickerResult]);
+    await handlePickerResult(result);
+  }
 
   // ── Choose Photo (library) ───────────────────────────────────────────────────
-  const handleChoosePhoto = useCallback(async () => {
+  async function handleChoosePhoto() {
     setErrorMsg(null);
     setFailure(null);
 
@@ -207,24 +221,28 @@ export default function ScanScreen() {
       aspect: [1, 1],
     });
 
-    handlePickerResult(result);
-  }, [handlePickerResult]);
+    await handlePickerResult(result);
+  }
 
   // ── Identify ─────────────────────────────────────────────────────────────────
-  const handleIdentify = useCallback(async () => {
-    if (!captured) return;
+  function clearResult() {
     setErrorMsg(null);
     setFailure(null);
     setNoMatchFound(false);
     setShowRecovery(false);
+  }
+
+  async function runIdentify(image: CapturedImage, run = ++identifyRun.current) {
+    clearResult();
     setScanState('identifying');
 
     try {
       const { matches: rawMatches, imageInsights } = await identifyPin(
-        captured.base64,
-        captured.mimeType,
+        image.base64,
+        image.mimeType,
         session?.access_token,
       );
+      if (run !== identifyRun.current) return;
       setInsights(imageInsights);
 
       // The cached list only holds part of the catalogue — fetch any matched
@@ -245,6 +263,7 @@ export default function ScanScreen() {
           }),
         )
       ).filter(Boolean) as Match[];
+      if (run !== identifyRun.current) return;
 
       if (resolved.length === 0) {
         setErrorMsg('No matches found in our catalogue. Try a clearer photo, or add this pin yourself.');
@@ -257,10 +276,32 @@ export default function ScanScreen() {
       setResultKey(k => k + 1);
       setScanState('results');
     } catch (err) {
+      if (run !== identifyRun.current) return;
       setFailure(toUserError(err, 'scan'));
       setScanState('captured');
     }
-  }, [captured, pins, repository, session?.access_token]);
+  }
+
+  /** Identify the current photo again (after Cancel, or Try again). */
+  const handleIdentify = () => {
+    if (captured?.base64) runIdentify(captured);
+  };
+
+  /** Stop waiting for this identification; the photo is kept if it's ready. */
+  const cancelIdentify = () => {
+    identifyRun.current += 1;
+    if (captured?.base64) {
+      setScanState('captured');
+    } else {
+      setCaptured(null);
+      setScanState('idle');
+    }
+  };
+
+  const retakeWhileIdentifying = () => {
+    cancelIdentify();
+    handleScanPin();
+  };
 
   // ── Confirm match: "That's it" adds the pin without leaving the scan ─────────
   const handleConfirm = (pin: CataloguePin) => {
@@ -433,12 +474,11 @@ export default function ScanScreen() {
             </View>
           )}
 
+          {/* The photo's overlay shows progress; Retake or stop at any point (UX-008a). */}
           {scanState === 'identifying' && (
-            <View style={[styles.loadingRow, { backgroundColor: colors.homeSurface, borderRadius: 18, borderColor: colors.homeLine }]}>
-              <ActivityIndicator color={colors.homeCoral} />
-              <Text style={[styles.loadingText, { color: colors.homeMuted }]}>
-                Searching pin database…
-              </Text>
+            <View style={styles.captureRow}>
+              <Button label="Retake" icon="refresh-cw" variant="secondary" onPress={retakeWhileIdentifying} style={styles.halfBtn} />
+              <Button label="Cancel" icon="x" variant="secondary" onPress={cancelIdentify} style={styles.halfBtn} />
             </View>
           )}
 
@@ -599,15 +639,8 @@ const styles = StyleSheet.create({
   captureRow: { flexDirection: 'row', gap: 12 },
   retakeBtn: { flex: 1 },
   identifyBtn: { flex: 2 },
+  halfBtn: { flex: 1 },
 
-  loadingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 16,
-    gap: 12,
-    borderWidth: 1,
-  },
-  loadingText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   // Confirmed
   confirmedBlock: { gap: 12 },
   confirmedCard: {

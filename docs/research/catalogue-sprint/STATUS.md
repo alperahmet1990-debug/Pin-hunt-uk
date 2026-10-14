@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 14:25 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-14 12:46 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -15,7 +15,7 @@ _Last updated: 2026-10-14 14:25 UTC by Claude (sprint coordinator session). Chec
 
 ## Current work by agent
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
-- **Dev agent:** the path is clear. There are no open `claude/*` PRs, and #235 is `approved` + `status:ready`, so it should be taken at the next :07 run. Queue after that: #239, #237, then #241 / #240.
+- **Dev agent:** #235 is `approved` + `status:ready`. The hourly runner is held by the single-runner lock: #63 (an unrelated UI issue) is `status:claimed` by another session. #235 starts at the first :07 run after #63's PR opens and its claim is released. Queue after #235: #239, #237, then #241 / #240. No open PRs.
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)

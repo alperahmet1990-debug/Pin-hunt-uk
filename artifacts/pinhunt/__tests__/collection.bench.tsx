@@ -19,6 +19,7 @@ const mockEnsure = () => Promise.resolve();
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
 jest.mock('expo-router', () => ({ useLocalSearchParams: () => ({}), useRouter: () => ({ back: jest.fn(), push: jest.fn() }) }));
 jest.mock('@/components/PhotoGapsCard', () => ({ PhotoGapsCard: () => null }));
+jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: null }) }));
 jest.mock('@/context/CollectionContext', () => ({
   useCollection: () => ({ collection: mockCollection, getEntry: (id: string) => mockCollection[id] }),
 }));

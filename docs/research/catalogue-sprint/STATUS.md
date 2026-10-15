@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-15 05:27 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-15 05:45 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -20,7 +20,8 @@ _Last updated: 2026-10-15 05:27 UTC by Claude (sprint coordinator session). Chec
   - Offline replay on the real schema: **95/100** pilot pins import as new non-public pins; 5 are correctly refused (4 flagged duplicates, 1 with no named character).
   - **PR #272 MERGED by you at 05:26 UTC** (https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/272). The import endpoint is now on `main`; it runs only once deployed to an API and called by the App Creator. First review: CI green, QA PASS, security PASS (21:27 UTC).
   - **03:31 UTC: fix pushed (a7f4b4c).** The import wrote an explicit null into `pins.currency`, which is `NOT NULL DEFAULT 'GBP'`, so any candidate without a currency would have failed the whole batch. The offline replay found it. 384 tests pass; the replay creates 95/100. QA and security re-review the new commit; after that it needs your `merge-approved` label and merge.
-- **Open `claude/*` PRs (05:27 UTC):** #271 and #273, both QA PASS + security PASS + `needs-device-check`. With #272 merged, that is back at the WIP limit of 2.
+- **Open `claude/*` PRs (05:45 UTC): none.** #272, #273 and #271 are merged. Checked on `main` after the last merge: the full test suite passes (API 384, app 494, plus the agent and script suites), and the app and API typechecks pass (the only type errors are the known mockup-sandbox ones).
+- **Merge gate:** it cannot merge medium-risk PRs by itself yet. The review app's ID and private key are not configured in Actions secrets, so the "QA review" and "Security review" checks are never posted, and the gate waits for ever. Until then, you merge by hand after QA and security pass and you add `merge-approved`.
 - **Dev agent:** #240 merged (PR #259). #239 merged (PR #253).
 - **Roz / Baymax:** will review any PR the dev agent opens.
 

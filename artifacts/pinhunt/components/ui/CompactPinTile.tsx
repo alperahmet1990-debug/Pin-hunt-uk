@@ -46,7 +46,7 @@ export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, 
       onAccessibilityAction={onAccessibilityAction}
       status={status && status !== 'none' ? status : owned ? 'owned' : undefined}
       copies={copies}
-      dimmed={!owned}
+      missing={!owned}
       selected={selected}
       onQuickAdd={!owned ? onQuickAdd : undefined}
     />

@@ -60,6 +60,8 @@ export function EventCard({ event, onPress }: { event: PinHuntEvent; onPress: ()
     <TouchableOpacity
       activeOpacity={0.9}
       onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={[event.badgeLabel, event.title, locationLine.trim()].filter(Boolean).join('. ')}
       style={[
         styles.card,
         { width, backgroundColor: colors.homeSurface, borderColor: colors.homeLine, shadowColor: colors.homeShadow },

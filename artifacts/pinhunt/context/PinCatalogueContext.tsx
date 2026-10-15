@@ -27,6 +27,7 @@ import {
   type PinRepository,
 } from '@workspace/pin-repository';
 import { supabase } from '@/lib/supabase';
+import { demoCatalogueSize } from '@/lib/demoMode';
 
 // Supabase credentials come from the singleton client; only the flag is
 // checked here so the mock fallback still works in environments where the
@@ -37,7 +38,12 @@ const isConfigured = Boolean(
 
 // ─── Context value ────────────────────────────────────────────────────────────
 interface PinCatalogueContextValue {
-  /** Full active catalogue, sorted by title. Empty while loading. */
+  /**
+   * Pins loaded so far: the collector's own pins (ensurePins), whole sets
+   * that a screen asked for (ensureCollections) and pins fetched on demand.
+   * With Supabase it is NOT the whole catalogue (no start-up preload, #25);
+   * search the repository to find pins. Mock mode loads the mock catalogue.
+   */
   pins: CataloguePin[];
   loading: boolean;
   error: Error | null;
@@ -68,7 +74,8 @@ const PinCatalogueContext = createContext<PinCatalogueContextValue | null>(null)
 // ─── Provider ─────────────────────────────────────────────────────────────────
 export function PinCatalogueProvider({ children }: { children: React.ReactNode }) {
   const [pins, setPins] = useState<CataloguePin[]>([]);
-  const [loading, setLoading] = useState(true);
+  // With Supabase there is no start-up load (#25), so nothing to wait for.
+  const [loading, setLoading] = useState(!isConfigured);
   const [error, setError] = useState<Error | null>(null);
 
   // Create repository once using the app-wide Supabase singleton.
@@ -85,6 +92,12 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
       // Supabase not yet configured — fall back to mock data so the app stays
       // usable during development before credentials are added.
       try {
+        if (demoCatalogueSize > 0) {
+          // Large-collection demo (UX-051): a generated catalogue instead.
+          const { buildLargeCatalogue } = await import('../mock-data/largeFixture');
+          setPins(buildLargeCatalogue(demoCatalogueSize));
+          return;
+        }
         // Dynamic import avoids bundling mock data in production builds
         const { PINS } = await import('../mock-data/pins');
         // Convert legacy Pin type to CataloguePin shape
@@ -120,26 +133,12 @@ export function PinCatalogueProvider({ children }: { children: React.ReactNode }
       return;
     }
 
-    setLoading(true);
-    try {
-      const rawData = await repository.searchPins('', { limit: 500 });
-      // Admin accounts bypass pins_public_read RLS, so this can otherwise
-      // include archived/legacy-V1 rows alongside the active catalogue —
-      // filter to what a normal (non-admin) user would actually see.
-      const data = rawData.filter(p => p.isSearchable !== false && p.catalogueStatus !== 'archived');
-      // Merge rather than replace: pins pulled in via ensurePins (e.g. the
-      // user's collection) may have landed while this request was in flight,
-      // and replacing would silently drop them.
-      setPins(current => {
-        const inData = new Set(data.map(p => p.id));
-        const keep = current.filter(p => !inData.has(p.id));
-        return keep.length > 0 ? [...data, ...keep] : data;
-      });
-    } catch (err) {
-      setError(err instanceof Error ? err : new Error(String(err)));
-    } finally {
-      setLoading(false);
-    }
+    // No start-up preload (B-P1-01b, #25): screens fetch what they show
+    // (search, ensurePins for a collection's pins, ensureCollections for a
+    // set). A refresh forgets what was fetched so the next request reloads it.
+    requestedIdsRef.current.clear();
+    loadedCollectionsRef.current.clear();
+    setLoading(false);
   }, [repository]);
 
   const mountedRef = useRef(false);

@@ -12,6 +12,8 @@ import visionTestRouter from "./vision-test";
 import pinImagesRouter from "./pin-images";
 import contributePinImageRouter from "./contribute-pin-image";
 import pinSubmissionsRouter from "./pin-submissions";
+import researchReviewRouter from "./research-review";
+import researchImportRouter from "./research-import";
 
 const router: IRouter = Router();
 
@@ -28,5 +30,7 @@ router.use(visionTestRouter);
 router.use(pinImagesRouter);
 router.use(contributePinImageRouter);
 router.use(pinSubmissionsRouter);
+router.use(researchReviewRouter);
+router.use(researchImportRouter);
 
 export default router;

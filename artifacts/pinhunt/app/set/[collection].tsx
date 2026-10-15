@@ -5,7 +5,6 @@ import {
   Text,
   TouchableOpacity,
   View,
-  useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
@@ -15,7 +14,8 @@ import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { EmptyState } from '@/components/EmptyState';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
-import { ScreenContainer, SegmentedControl, SetProgressBar, CompactPinTile, PinGrid, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
+import { ScreenContainer, SegmentedControl, SetProgressBar, CompactPinTile, PinGrid, SkeletonGrid } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import type { SegmentedControlOption } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, PinSetSummary } from '@workspace/pin-repository';
@@ -25,7 +25,7 @@ import { usePinSelection } from '@/hooks/usePinSelection';
 import { useToast } from '@/components/ui/Toast';
 import { pinsToAddToIso } from '@/utils/setTraders';
 import { usePinActions } from '@/components/PinActionsSheet';
-import { Button, IconButton } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
@@ -39,9 +39,6 @@ export default function SetDetailScreen() {
   const router = useRouter();
   const pinActions = usePinActions();
   // Placeholder tiles match the real grid (PinGrid): same columns and size.
-  const { width: screenWidth } = useWindowDimensions();
-  const skeletonCols = pinGridColumns(screenWidth);
-  const skeletonTile = pinTileSize(screenWidth, skeletonCols);
   const { collection: userCollection, getEntry, setStatuses } = useCollection();
   const toast = useToast();
   // Undo runs after later renders, so it reads the latest setter (collection-mutation-ordering.md).
@@ -83,7 +80,6 @@ export default function SetDetailScreen() {
     return () => { cancelled = true; };
   }, [repository, collectionParam]);
 
-  const topInset = Platform.OS === 'web' ? Math.max(insets.top, 24) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
 
   // All catalogue pins in this set
@@ -181,9 +177,9 @@ export default function SetDetailScreen() {
 
   if (!loading && setPins.length === 0) {
     return (
-      <ScreenContainer>
+      <ScreenContainer edges={{ top: false, bottom: true }}>
         <Stack.Screen options={{ headerShown: false }} />
-        <IconButton icon="chevron-left" accessibilityLabel="Back" variant="tinted" onPress={() => router.back()} style={{ top: topInset + 10 }} />
+        <ScreenHeader />
         <EmptyState
           icon="package"
           title="Set not found"
@@ -200,27 +196,30 @@ export default function SetDetailScreen() {
       <Stack.Screen options={{ headerShown: false }} />
 
       {/* ── Top: back + set name + completion ── */}
-      <View style={[styles.header, { paddingTop: topInset + 10, borderBottomColor: colors.homeLine }]}>
-        <View style={styles.headerTop}>
-          <IconButton icon="chevron-left" accessibilityLabel="Back" variant="tinted" onPress={() => router.back()} />
-          {!loading && isComplete && (
-            <View style={[styles.completeBadge, { backgroundColor: colors.owned + '1E' }]}>
-              <Feather name="award" size={13} color={colors.owned} />
-              <Text style={[styles.completeBadgeLabel, { color: colors.owned }]}>Complete!</Text>
-            </View>
-          )}
-          {!loading && missingIds.length > 0 && (
-            <Button
-              variant="secondary"
-              size="compact"
-              fullWidth={false}
-              label={selection.active ? 'Cancel' : 'Select'}
-              accessibilityLabel={selection.active ? 'Cancel selecting' : 'Select pins'}
-              onPress={selection.active ? selection.stop : selection.start}
-              style={styles.selectBtn}
-            />
-          )}
-        </View>
+      <View style={[styles.header, { borderBottomColor: colors.homeLine }]}>
+        <ScreenHeader
+          style={styles.headerTop}
+          right={!loading && (isComplete || missingIds.length > 0) ? (
+            <>
+              {isComplete && (
+                <View style={[styles.completeBadge, { backgroundColor: colors.owned + '1E' }]}>
+                  <Feather name="award" size={13} color={colors.owned} />
+                  <Text style={[styles.completeBadgeLabel, { color: colors.owned }]}>Complete!</Text>
+                </View>
+              )}
+              {missingIds.length > 0 && (
+                <Button
+                  variant="secondary"
+                  size="compact"
+                  fullWidth={false}
+                  label={selection.active ? 'Cancel' : 'Select'}
+                  accessibilityLabel={selection.active ? 'Cancel selecting' : 'Select pins'}
+                  onPress={selection.active ? selection.stop : selection.start}
+                />
+              )}
+            </>
+          ) : undefined}
+        />
 
         <Text style={[styles.setTitle, { color: colors.homeInk }]} numberOfLines={2}>
           {collectionParam}
@@ -265,19 +264,7 @@ export default function SetDetailScreen() {
 
       {/* ── Pin grid ── */}
       {loading ? (
-        <View
-          style={[styles.grid, styles.skeletonGrid]}
-          accessible
-          accessibilityRole="progressbar"
-          accessibilityLabel="Loading pins in this set"
-        >
-          {Array.from({ length: skeletonCols * 3 }, (_, i) => (
-            <View key={i} style={{ width: skeletonTile }}>
-              <View style={[styles.skeletonImage, { width: skeletonTile, height: skeletonTile, backgroundColor: colors.homeAqua }]} />
-              <View style={[styles.skeletonLabel, { backgroundColor: colors.homeLine }]} />
-            </View>
-          ))}
-        </View>
+        <SkeletonGrid label="Loading pins in this set" style={styles.skeletonGrid} />
       ) : displayPins.length === 0 ? (
         <EmptyState
           icon={filter === 'owned' ? 'check-circle' : 'search'}
@@ -359,8 +346,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     gap: spacing.sm,
   },
-  headerTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
-  selectBtn: { marginLeft: 'auto' },
+  // ScreenHeader sits inside the padded header box.
+  headerTop: { paddingHorizontal: 0, paddingBottom: 0 },
   selectRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: spacing.xs },
   selectCount: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
   completeBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 6 },
@@ -373,10 +360,8 @@ const styles = StyleSheet.create({
   filterWrap: { marginTop: spacing.xs },
   // Grid
   grid: { paddingTop: spacing.lg, paddingHorizontal: spacing.lg },
-  // Loading placeholders, sized like CompactPinTile (square image + one label line)
-  skeletonGrid: { flexDirection: 'row', flexWrap: 'wrap', columnGap: PIN_GRID_GUTTER, rowGap: spacing.lg },
-  skeletonImage: { borderRadius: radius.md },
+  // Loading placeholder sits where the grid's first row will.
+  skeletonGrid: { paddingTop: spacing.lg },
   // Missing-pins footer
   footer: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: 2 },
-  skeletonLabel: { height: 9, width: '70%', alignSelf: 'center', borderRadius: 5, marginTop: 9, marginBottom: 2 },
 });

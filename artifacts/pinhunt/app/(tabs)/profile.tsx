@@ -24,11 +24,13 @@ import { useFeature } from '@/hooks/useFeature';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { buildCollectionExportText } from '@/utils/exportCollection';
+import { APPEARANCE_OPTIONS, appearanceLabel, useAppearancePreference } from '@/hooks/useAppearance';
 import {
   EXPORT_COLLECTION_ENABLED,
   RATE_APP_ENABLED,
   feedbackMailtoUrl,
 } from '@/constants/appConfig';
+import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
@@ -49,6 +51,8 @@ function SettingsRow({ icon, label, value, onPress, destructive, last, badge }: 
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={[label, value, badge ? `${badge} new` : null].filter(Boolean).join(', ')}
       style={[styles.row, !last && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.homeLine }]}
     >
       <View style={[styles.rowIcon, { backgroundColor: destructive ? colors.destructive + '18' : colors.homeAqua, borderRadius: 8 }]}>
@@ -117,6 +121,8 @@ function LocationStatusBanner({ hasLocationSet, nearbyEnabled, radiusMiles, onPr
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.75}
+      accessibilityRole="button"
+      accessibilityLabel={`${headline}. ${detail}`}
       style={[
         styles.locationBanner,
         { backgroundColor: bgColor, borderColor, marginHorizontal: 16 },
@@ -149,6 +155,8 @@ export default function ProfileScreen() {
   const { collection } = useCollection();
   const { pins } = usePinCatalogue();
   const feedbackUrl = feedbackMailtoUrl();
+  // Appearance (#224): System · Light Side · Dark Side, on its own settings screen.
+  const appearance = useAppearancePreference();
 
   const exportCollection = async () => {
     const titles: Record<string, string> = {};
@@ -166,7 +174,8 @@ export default function ProfileScreen() {
   };
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+  // Clears the floating web tab bar (#260).
+  const botPad = tabScreenBottomPad(insets.bottom + 80);
 
   // Avatar initials from display name, username, or email
   const { user } = useAuth();
@@ -273,11 +282,18 @@ export default function ProfileScreen() {
             )}
 
             {/* App Settings */}
-            {EXPORT_COLLECTION_ENABLED && (
-              <Section title="App">
+            <Section title="App">
+              <SettingsRow
+                icon={APPEARANCE_OPTIONS.find(o => o.value === appearance)?.icon ?? 'smartphone'}
+                label="Appearance"
+                value={appearanceLabel(appearance)}
+                onPress={() => router.push('/settings/appearance')}
+                last={!EXPORT_COLLECTION_ENABLED}
+              />
+              {EXPORT_COLLECTION_ENABLED && (
                 <SettingsRow icon="download" label="Export Collection" onPress={exportCollection} last />
-              </Section>
-            )}
+              )}
+            </Section>
 
             {/* Support */}
             <Section title="Support">

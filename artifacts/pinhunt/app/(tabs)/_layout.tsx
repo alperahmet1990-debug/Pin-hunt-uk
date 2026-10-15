@@ -1,5 +1,6 @@
 import React from 'react';
-import { ColorValue, Platform, StyleSheet, useColorScheme, View } from 'react-native';
+import { ColorValue, Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { useResolvedColorScheme } from '@/hooks/useAppearance';
 import { useColors } from '@/hooks/useColors';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
@@ -10,6 +11,7 @@ import { SymbolView } from 'expo-symbols';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { Text } from 'react-native';
+import { WEB_TAB_BAR_HEIGHT } from '@/utils/tabBarSpace';
 
 // ─── Community tab icon with unread-message count badge ──────────────────────
 
@@ -84,10 +86,14 @@ function ProfileTabIcon({ color, hasBadge }: { color: ColorValue; hasBadge: bool
 
 function ClassicTabLayout() {
   const colors = useColors();
-  const colorScheme = useColorScheme();
+  const colorScheme = useResolvedColorScheme();
   const isDark = colorScheme === 'dark';
   const isIOS = Platform.OS === 'ios';
   const isWeb = Platform.OS === 'web';
+  // At 320 pt five tabs get ~64 pt each: a slightly smaller label keeps
+  // "Community" whole instead of "Commun…" (B-P2-04).
+  const { width } = useWindowDimensions();
+  const narrow = width < 360;
   const { unseenCount } = useSubmissionNotifications();
   const { totalUnread } = useUnreadMessages();
 
@@ -96,6 +102,8 @@ function ClassicTabLayout() {
       screenOptions={{
         tabBarActiveTintColor: colors.homeCoral,
         tabBarInactiveTintColor: colors.homeMuted,
+        tabBarLabelStyle: narrow ? { fontSize: 10, letterSpacing: -0.2 } : undefined,
+        tabBarItemStyle: narrow ? { paddingLeft: 0, paddingRight: 0 } : undefined,
         headerShown: false,
         tabBarStyle: {
           position: 'absolute',
@@ -103,7 +111,7 @@ function ClassicTabLayout() {
           borderTopWidth: isWeb ? 1 : 0,
           borderTopColor: colors.homeLine,
           elevation: 0,
-          height: isWeb ? 84 : undefined,
+          height: isWeb ? WEB_TAB_BAR_HEIGHT : undefined,
         },
         tabBarBackground: () =>
           isIOS ? (

@@ -41,6 +41,7 @@ export function PrimaryActionBar({ actions }: PrimaryActionBarProps) {
             key={action.key}
             onPress={action.onPress}
             activeOpacity={0.88}
+            accessibilityRole="button"
             style={[
               styles.btn,
               isPrimary

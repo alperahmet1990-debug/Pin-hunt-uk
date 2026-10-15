@@ -30,8 +30,8 @@ export function ValueDisplay({ pinId, catalogueEstimateGBP, collectorValue }: Va
 
       {collectorValue != null && (
         <View style={[styles.collectorRow, { backgroundColor: colors.homeAqua }]}>
-          <Feather name="user" size={12} color={colors.homeTeal} />
-          <Text style={[styles.collectorText, { color: colors.homeTeal }]}>
+          <Feather name="user" size={12} color={colors.homeInk} />
+          <Text style={[styles.collectorText, { color: colors.homeInk }]}>
             Set by you: £{collectorValue.amountGBP.toFixed(2)}
           </Text>
         </View>

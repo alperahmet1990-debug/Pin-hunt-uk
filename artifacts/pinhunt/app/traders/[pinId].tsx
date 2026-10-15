@@ -8,7 +8,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
-  Image,
   Platform,
   RefreshControl,
   ScrollView,
@@ -28,6 +27,8 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { radius, spacing } from '@/constants/theme';
 import { formatMatchSummary, isReciprocalMatch } from '@/utils/tradeMatch';
 import type { TraderProfile } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 
 // ─── Rating badge ─────────────────────────────────────────────────────────────
 
@@ -126,9 +127,11 @@ export default function TradersScreen() {
   const insets    = useSafeAreaInsets();
   const router    = useRouter();
   const { repo, userId } = useMarketplace();
-  const { pins } = usePinCatalogue();
+  const { pins, ensurePins } = usePinCatalogue();
 
   const pin = pins.find(p => p.id === pinId);
+  // The catalogue isn't preloaded (#25): fetch this pin if it isn't loaded.
+  useEffect(() => { if (pinId) ensurePins([pinId]).catch(() => {}); }, [pinId, ensurePins]);
 
   const [traders,    setTraders]    = useState<TraderProfile[]>([]);
   const [loading,    setLoading]    = useState(true);
@@ -181,10 +184,11 @@ export default function TradersScreen() {
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
   return (
-    <>
-      <Stack.Screen options={{ title: 'Find a Trade' }} />
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
+      <Stack.Screen options={{ headerShown: false }} />
+      <ScreenHeader title="Find a Trade" />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.homeBackground }]}
+        style={styles.root}
         contentContainerStyle={{ padding: spacing.lg, paddingBottom: botPad }}
         showsVerticalScrollIndicator={false}
         refreshControl={
@@ -197,7 +201,8 @@ export default function TradersScreen() {
         {pin && (
           <View style={[styles.pinHeader, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <View style={[styles.pinImageWrap, { backgroundColor: colors.homeAqua }]}>
-              <Image source={getPinImageSource(pin)} style={styles.pinImage} resizeMode="contain" />
+              {/* The title sits right next to it, so the photo is decorative here. */}
+              <PinImage source={getPinImageSource(pin)} accessible={false} style={styles.pinImage} contentFit="contain" />
             </View>
             <View style={styles.pinInfo}>
               <Text numberOfLines={2} style={[styles.pinTitle, { color: colors.homeInk }]}>{pin.title}</Text>
@@ -263,7 +268,7 @@ export default function TradersScreen() {
           </>
         )}
       </ScrollView>
-    </>
+    </View>
   );
 }
 

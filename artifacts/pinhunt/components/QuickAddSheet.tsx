@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   Dimensions,
-  Image,
   Keyboard,
   Modal,
   Platform,
@@ -25,6 +24,7 @@ import { KeyboardAwareScrollViewCompat } from './KeyboardAwareScrollViewCompat';
 import type { CollectionStatus } from '@/types/pin';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 const STATUS_CONFIG: Array<{
   status: CollectionStatus;
@@ -52,6 +52,8 @@ interface QuickAddSheetProps {
    * call sites (search, scan matches, catalogue) ahead of the full migration.
    */
   seaGlass?: boolean;
+  /** Called when this pin is saved to a list (Owned, For Trade or ISO). */
+  onAdded?: (pinId: string, status: CollectionStatus) => void;
 }
 
 /**
@@ -60,7 +62,7 @@ interface QuickAddSheetProps {
  * pin onto a board, then jump straight to the collection — all without
  * leaving the current screen.
  */
-export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetProps) {
+export function QuickAddSheet({ pin, onClose, seaGlass = false, onAdded }: QuickAddSheetProps) {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -140,6 +142,7 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
     setStatus(pinId, next);
     statusRef.current = next;
     setConfirm(null);
+    if (next !== 'none') onAdded?.(pinId, next);
     toast.show({
       message: statusChangeMessage(previous, next),
       // Status, copies and board membership all come back (boards keep their
@@ -178,6 +181,7 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
       // Tapping a board is the collector saying "I have this" — mark it
       // Owned automatically rather than silently failing to add it.
       setStatus(pin.id, 'owned');
+      onAdded?.(pin.id, 'owned');
       setPendingBoardId(boardId);
       toast.show({ message: `Marked as Owned and added to ${board.name}` });
       return;
@@ -200,6 +204,7 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
       // Same as tapping an existing board: creating a board for this pin
       // means "I have it", so mark it Owned and add it once that lands.
       setStatus(pin.id, 'owned');
+      onAdded?.(pin.id, 'owned');
       setPendingBoardId(board.id);
     }
     toast.show({
@@ -248,7 +253,7 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false }: QuickAddSheetP
 
           {/* Pin summary — static, not part of the scroll */}
           <View style={styles.pinRow}>
-            <Image
+            <PinImage
               source={getPinImageSource(pin)}
               style={[styles.pinImage, { backgroundColor: t.secondary, borderRadius: 10 }]}
             />
@@ -523,7 +528,7 @@ function BoardCard({ board, pins, selected, onPress, t }: {
         {hasAny ? (
           cells.map((cellPin, i) => (
             <View key={i} style={[styles.mosaicCell, { backgroundColor: t.secondary, borderColor: t.card }]}>
-              {cellPin && <Image source={getPinImageSource(cellPin)} style={styles.mosaicImage} resizeMode="contain" />}
+              {cellPin && <PinImage source={getPinImageSource(cellPin)} style={styles.mosaicImage} contentFit="contain" />}
             </View>
           ))
         ) : (

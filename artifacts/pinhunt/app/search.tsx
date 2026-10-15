@@ -10,7 +10,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
-  Image,
   Keyboard,
   NativeScrollEvent,
   NativeSyntheticEvent,
@@ -32,8 +31,12 @@ import { useCollection } from '@/context/CollectionContext';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { Button, IconButton } from '@/components/ui/Button';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { getPinImageSource } from '@/utils/pinImage';
 import { StatusBadge } from '@/components/ui';
+import { Skeleton, SkeletonBlock, SkeletonRow } from '@/components/ui/Skeleton';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, type UserError } from '@/utils/userError';
 import { radius, spacing } from '@/constants/theme';
 import {
   SEARCH_PAGE_SIZE,
@@ -42,6 +45,7 @@ import {
   resultCountLabel,
 } from '@/utils/searchPaging';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 const RECENTS_KEY = 'recent_pin_searches';
 const MAX_RECENTS = 8;
@@ -95,6 +99,9 @@ export default function SearchScreen() {
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [results, setResults] = useState<CataloguePin[]>([]);
   const [searching, setSearching] = useState(false);
+  // A failed search says why and offers Retry, instead of "No pins found" (UX-046).
+  const [searchError, setSearchError] = useState<UserError | null>(null);
+  const [retryKey, setRetryKey] = useState(0);
   const [total, setTotal] = useState(0);
   const [loadingMore, setLoadingMore] = useState(false);
   const [loadMoreFailed, setLoadMoreFailed] = useState(false);
@@ -149,6 +156,7 @@ export default function SearchScreen() {
     const mySeq = ++seq.current;
     setResults([]);
     setTotal(0);
+    setSearchError(null);
     setLoadingMore(false);
     setLoadMoreFailed(false);
     offsetRef.current = 0;
@@ -186,15 +194,18 @@ export default function SearchScreen() {
         moreRef.current = hasMoreResults(offsetRef.current, page.total, page.pins.length);
         setResults(ranked);
         setTotal(page.total);
-      } catch {
-        if (mySeq === seq.current) setResults([]);
+      } catch (e) {
+        if (mySeq === seq.current) {
+          setResults([]);
+          setSearchError(toUserError(e, 'search'));
+        }
       } finally {
         if (mySeq === seq.current) setSearching(false);
       }
     }, 300);
 
     return () => clearTimeout(timer);
-  }, [query, repository]);
+  }, [query, repository, retryKey]);
 
   const loadMore = useCallback(async () => {
     const q = query.trim();
@@ -236,12 +247,24 @@ export default function SearchScreen() {
     router.push({ pathname: '/pin/[id]', params: { id: pin.id } });
   }, [query, router, saveRecent]);
 
-  // ── Popular pins (from cached catalogue; prefers ones with images) ─────────
+  // ── Popular pins (prefers ones with images) ─────────────────────────────────
+  // One small page from the catalogue: there's no preloaded list to pick from
+  // any more (#25). Mock mode uses the mock catalogue.
+  const [popularPage, setPopularPage] = useState<CataloguePin[] | null>(null);
+  useEffect(() => {
+    if (!repository) return;
+    let cancelled = false;
+    repository.searchPinsPage('', { limit: 24, offset: 0 })
+      .then(page => { if (!cancelled) setPopularPage(page.pins); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repository]);
   const popular = useMemo(() => {
-    const withImages = pins.filter(p => p.imageUrl);
-    const source = withImages.length >= 6 ? withImages : pins;
+    const pool = repository ? (popularPage ?? []) : pins;
+    const withImages = pool.filter(p => p.imageUrl);
+    const source = withImages.length >= 6 ? withImages : pool;
     return source.slice(0, 6);
-  }, [pins]);
+  }, [repository, popularPage, pins]);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 20) : insets.top;
   const showIdle = !query.trim();
@@ -249,14 +272,10 @@ export default function SearchScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: colors.homeBackground, paddingTop: topPad }]}>
       {/* ── Header: back + search input ── */}
-      <View style={styles.header}>
-        <IconButton
-          icon="chevron-left"
-          iconSize={24}
-          accessibilityLabel="Back"
-          onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/scan'))}
-          style={styles.backBtn}
-        />
+      <ScreenHeader
+        safeArea={false}
+        onBack={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/scan'))}
+      >
         <View style={[styles.inputWrap, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine, borderRadius: radius.pill }]}>
           <Feather name="search" size={16} color={colors.homeMuted} />
           <TextInput
@@ -282,7 +301,7 @@ export default function SearchScreen() {
             />
           )}
         </View>
-      </View>
+      </ScreenHeader>
 
       <ScrollView
         style={styles.body}
@@ -298,6 +317,7 @@ export default function SearchScreen() {
               <TouchableOpacity
                 onPress={() => { Keyboard.dismiss(); router.push('/browse-catalogue'); }}
                 activeOpacity={0.85}
+                accessibilityRole="button"
                 style={[styles.browseCta, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
               >
                 <View style={[styles.browseIcon, { backgroundColor: colors.homeCoral + '1A' }]}>
@@ -329,7 +349,7 @@ export default function SearchScreen() {
                 </View>
                 {recents.map(term => (
                   <View key={term} style={styles.recentRow}>
-                    <TouchableOpacity style={styles.recentTap} onPress={() => setQuery(term)} activeOpacity={0.7}>
+                    <TouchableOpacity style={styles.recentTap} onPress={() => setQuery(term)} activeOpacity={0.7} accessibilityRole="button" accessibilityLabel={`Search again for ${term}`}>
                       <Feather name="clock" size={15} color={colors.homeMuted} />
                       <Text style={[styles.recentText, { color: colors.homeInk }]} numberOfLines={1}>{term}</Text>
                     </TouchableOpacity>
@@ -357,8 +377,10 @@ export default function SearchScreen() {
                       style={[styles.popularCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
                       onPress={() => openPin(pin)}
                       activeOpacity={0.8}
+                      accessibilityRole="button"
+                      accessibilityLabel={pin.title}
                     >
-                      <Image source={getPinImageSource(pin)} style={styles.popularImage} resizeMode="contain" />
+                      <PinImage source={getPinImageSource(pin)} style={styles.popularImage} contentFit="contain" />
                     </TouchableOpacity>
                   ))}
                 </View>
@@ -368,10 +390,15 @@ export default function SearchScreen() {
         ) : (
           <View style={styles.section}>
             {searching && results.length === 0 ? (
-              <View style={styles.stateRow}>
-                <ActivityIndicator size="small" color={colors.homeMuted} />
-                <Text style={[styles.stateText, { color: colors.homeMuted }]}>Searching…</Text>
-              </View>
+              // Shaped like the result count + rows that replace it (UX-045).
+              <Skeleton label="Searching pins">
+                <SkeletonBlock width={96} height={11} style={styles.resultCountSkeleton} />
+                {Array.from({ length: 6 }, (_, i) => (
+                  <SkeletonRow key={i} style={[styles.resultRow, { borderBottomColor: colors.homeLine }]} />
+                ))}
+              </Skeleton>
+            ) : searchError ? (
+              <ErrorState error={searchError} onRetry={() => setRetryKey(k => k + 1)} />
             ) : results.length === 0 ? (
               <>
                 <View style={styles.stateRow}>
@@ -403,7 +430,7 @@ export default function SearchScreen() {
                     activeOpacity={0.8}
                     style={[styles.resultRow, { borderBottomColor: colors.homeLine }]}
                   >
-                    <Image source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.homeAqua }]} />
+                    <PinImage source={getPinImageSource(pin)} style={[styles.resultImage, { backgroundColor: colors.homeAqua }]} />
                     <View style={styles.resultInfo}>
                       <Text style={[styles.resultTitle, { color: colors.homeInk }]} numberOfLines={1}>{pin.title}</Text>
                       <Text style={[styles.resultMeta, { color: colors.homeMuted }]} numberOfLines={1}>
@@ -455,14 +482,6 @@ export default function SearchScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.sm,
-    gap: spacing.xs,
-  },
-  backBtn: { marginLeft: -spacing.sm },
   inputWrap: {
     flex: 1,
     minWidth: 0,
@@ -473,7 +492,6 @@ const styles = StyleSheet.create({
     height: 40,
     gap: spacing.sm,
     overflow: 'visible',
-    marginRight: spacing.sm,
   },
   // minWidth 0: on web the <input> otherwise keeps a ~20-character minimum
   // width and pushes the page wider than a 320 pt screen.
@@ -514,6 +532,7 @@ const styles = StyleSheet.create({
   },
   popularImage: { width: '100%', height: '100%' },
   resultCount: { fontSize: 13, fontFamily: 'Inter_500Medium', marginBottom: spacing.xs },
+  resultCountSkeleton: { marginTop: 3, marginBottom: spacing.xs + 2 },
   endOfList: { fontSize: 13, textAlign: 'center', paddingVertical: spacing.lg, fontFamily: 'Inter_400Regular' },
   stateRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.lg },
   stateText: { fontSize: 14, fontFamily: 'Inter_400Regular' },

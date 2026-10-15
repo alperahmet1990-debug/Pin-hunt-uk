@@ -20,6 +20,9 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, CommunityPost, Conversation, ConversationMessage } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, userErrorLine, type UserError } from '@/utils/userError';
 
 function previewBody(msg: ConversationMessage) {
   if (msg.body.trim()) return msg.body;
@@ -38,7 +41,7 @@ function MessageBubble({ msg, isMe, colors, pins }: {
       <View style={[styles.bubble, { backgroundColor: isMe ? colors.homeCoral : colors.homeSurface, borderColor: colors.homeLine }, isMe && styles.bubbleMe]}>
         {msg.messageType === 'photo' && msg.photoUrls.length > 0 && (
           <View style={styles.photoGrid}>
-            {msg.photoUrls.map((url, index) => <Image key={`${url}-${index}`} source={{ uri: url }} style={[styles.sharedPhoto, { backgroundColor: colors.homeLine }]} />)}
+            {msg.photoUrls.map((url, index) => <Image key={`${url}-${index}`} source={{ uri: url }} accessibilityLabel={`Photo ${index + 1} of ${msg.photoUrls.length}${isMe ? ' you sent' : ''}`} style={[styles.sharedPhoto, { backgroundColor: colors.homeLine }]} />)}
           </View>
         )}
         {msg.messageType === 'pin_share' && msg.pinIds.map(pinId => {
@@ -50,8 +53,8 @@ function MessageBubble({ msg, isMe, colors, pins }: {
           );
           const forTrade = msg.forTradePinIds.includes(pinId);
           return (
-            <TouchableOpacity key={pinId} onPress={() => router.push({ pathname: '/pin/[id]' as any, params: { id: pinId } })} style={[styles.pinCard, { backgroundColor: isMe ? colors.homeSurface + '24' : colors.homeAqua }]} activeOpacity={0.8}>
-              <Image source={getPinImageSource(pin)} style={styles.pinImage} />
+            <TouchableOpacity key={pinId} accessibilityRole="button" accessibilityLabel={`${pin.title}${forTrade ? ', for trade' : ''}`} onPress={() => router.push({ pathname: '/pin/[id]' as any, params: { id: pinId } })} style={[styles.pinCard, { backgroundColor: isMe ? colors.homeSurface + '24' : colors.homeAqua }]} activeOpacity={0.8}>
+              <PinImage source={getPinImageSource(pin)} style={styles.pinImage} />
               <View style={{ flex: 1 }}>
                 <Text numberOfLines={2} style={[styles.pinTitle, { color: isMe ? colors.homeSurface : colors.homeInk }]}>{pin.title}</Text>
                 {forTrade && <Text style={[styles.tradeTag, { color: isMe ? colors.homeSurface : colors.homeCoral }]}>FOR TRADE</Text>}
@@ -82,7 +85,7 @@ export default function ChatScreen() {
   const [conv, setConv] = useState<Conversation | null>(null);
   const [messages, setMessages] = useState<ConversationMessage[]>([]);
   const [contextPost, setContextPost] = useState<CommunityPost | null>(null);
-  const [loading, setLoading] = useState(true); const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true); const [error, setError] = useState<UserError | null>(null);
   const [msgText, setMsgText] = useState(''); const [sending, setSending] = useState(false);
   const [attachmentMenuOpen, setAttachmentMenuOpen] = useState(false);
   const [photoPickerPending, setPhotoPickerPending] = useState(false);
@@ -118,7 +121,7 @@ export default function ChatScreen() {
       const hasNew = isInitial || msgs.some(m => m.senderId !== userId && !seenIdsRef.current.has(m.id));
       seenIdsRef.current = new Set(msgs.map(m => m.id)); setMessages(msgs);
       if (hasNew) { if (isFocusedRef.current) markRead(id); else pendingReadRef.current = true; }
-    } catch (e) { setError(e instanceof Error ? e.message : 'Failed to load conversation.'); }
+    } catch (e) { setError(toUserError(e, 'chat')); }
     finally { setLoading(false); }
   }, [repo, userId, id, markRead]);
   useEffect(() => { load(true); }, [repo, userId, id]);
@@ -146,7 +149,7 @@ export default function ChatScreen() {
       setMsgText('');
       setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 100);
     } catch (e) {
-      Alert.alert('Send failed', e instanceof Error ? e.message : 'Try again.');
+      Alert.alert("Message not sent", userErrorLine(e, 'chat-send'));
     } finally {
       setSending(false);
     }
@@ -179,7 +182,7 @@ export default function ChatScreen() {
       );
       await send('', { messageType: 'photo', photoUrls: urls });
     } catch (e) {
-      Alert.alert('Photo upload failed', e instanceof Error ? e.message : 'Please try again.');
+      Alert.alert('Photo not sent', userErrorLine(e, 'chat-photo'));
     } finally {
       setSending(false);
     }
@@ -248,7 +251,7 @@ export default function ChatScreen() {
       setConv(current => current ? { ...current, tradeId: accepted.id } : current);
       setTradeConfirmOpen(false);
     } catch (e) {
-      Alert.alert('Could not mark agreed', e instanceof Error ? e.message : 'Please try again.');
+      Alert.alert('Trade not marked agreed', userErrorLine(e, 'chat-agree'));
     } finally {
       setSending(false);
     }
@@ -268,7 +271,7 @@ export default function ChatScreen() {
           <View style={styles.center}><ActivityIndicator color={colors.homeCoral} /></View>
         ) : error ? (
           <View style={styles.center}>
-            <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
+            <ErrorState error={error} onRetry={() => { setError(null); load(true); }} />
           </View>
         ) : (
           <>
@@ -293,7 +296,7 @@ export default function ChatScreen() {
                   <Text style={[styles.contextText, { color: colors.homeMuted }]}>Arrange delivery when ready.</Text>
                 </View>
               ) : (
-                <TouchableOpacity onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
+                <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
                   <Feather name="check-circle" size={16} color={colors.homeCoral} />
                   <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Mark Trade Agreed</Text>
                 </TouchableOpacity>
@@ -322,6 +325,8 @@ export default function ChatScreen() {
             }]}>
               <TouchableOpacity
                 onPress={() => setAttachmentMenuOpen(true)}
+                accessibilityRole="button"
+                accessibilityLabel="Add a photo or pins"
                 style={[styles.plusBtn, { backgroundColor: colors.homeAqua }]}
               >
                 <Feather name="plus" size={21} color={colors.homeInk} />
@@ -342,6 +347,9 @@ export default function ChatScreen() {
               <TouchableOpacity
                 onPress={handleSend}
                 disabled={!msgText.trim() || sending}
+                accessibilityRole="button"
+                accessibilityLabel="Send"
+                accessibilityState={{ disabled: !msgText.trim() || sending, busy: sending }}
                 style={[styles.sendBtn, {
                   backgroundColor: msgText.trim() ? colors.homeCoral : colors.homeAqua,
                 }]}
@@ -373,6 +381,7 @@ export default function ChatScreen() {
               <TouchableOpacity
                 disabled={sending}
                 onPress={() => setTradeConfirmOpen(false)}
+                accessibilityRole="button"
                 style={[styles.confirmButton, { backgroundColor: colors.homeAqua }]}
               >
                 <Text style={[styles.confirmButtonText, { color: colors.homeInk }]}>Cancel</Text>
@@ -380,6 +389,8 @@ export default function ChatScreen() {
               <TouchableOpacity
                 disabled={sending}
                 onPress={() => void agreeTrade()}
+                accessibilityRole="button"
+                accessibilityLabel="Confirm trade agreed"
                 style={[styles.confirmButton, { backgroundColor: colors.homeCoral }]}
               >
                 {sending ? (
@@ -408,17 +419,20 @@ export default function ChatScreen() {
             activeOpacity={1}
             style={StyleSheet.absoluteFill}
             onPress={closeAttachmentMenu}
+            accessibilityRole="button"
+            accessibilityLabel="Close"
           />
           <View style={[styles.attachmentSheet, { backgroundColor: colors.homeBackground }]}>
             <View style={styles.pickerHeader}>
               <Text style={[styles.pickerTitle, { color: colors.homeInk }]}>Add to conversation</Text>
-              <TouchableOpacity onPress={closeAttachmentMenu}>
+              <TouchableOpacity onPress={closeAttachmentMenu} accessibilityRole="button" accessibilityLabel="Close" hitSlop={11}>
                 <Feather name="x" size={22} color={colors.homeInk} />
               </TouchableOpacity>
             </View>
             <TouchableOpacity
               style={[styles.attachmentOption, { borderColor: colors.homeLine }]}
               onPress={openPhotoPicker}
+              accessibilityRole="button"
             >
               <View style={[styles.attachmentIcon, { backgroundColor: colors.homeAqua }]}>
                 <Feather name="image" size={20} color={colors.homeCoral} />
@@ -433,6 +447,7 @@ export default function ChatScreen() {
             </TouchableOpacity>
             <TouchableOpacity
               style={[styles.attachmentOption, { borderColor: colors.homeLine }]}
+              accessibilityRole="button"
               onPress={() => {
                 setAttachmentMenuOpen(false);
                 setPinPickerOpen(true);
@@ -457,7 +472,7 @@ export default function ChatScreen() {
           <View style={[styles.pinPicker, { backgroundColor: colors.homeBackground }]}>
             <View style={styles.pickerHeader}>
               <Text style={[styles.pickerTitle, { color: colors.homeInk }]}>Share pins</Text>
-              <TouchableOpacity onPress={() => setPinPickerOpen(false)}>
+              <TouchableOpacity onPress={() => setPinPickerOpen(false)} accessibilityRole="button" accessibilityLabel="Close" hitSlop={11}>
                 <Feather name="x" size={22} color={colors.homeInk} />
               </TouchableOpacity>
             </View>
@@ -474,12 +489,14 @@ export default function ChatScreen() {
                 return (
                   <TouchableOpacity
                     key={pin.id}
+                    accessibilityRole="checkbox"
+                    accessibilityState={{ checked: selected }}
                     onPress={() => setSelectedPinIds(current => selected
                       ? current.filter(x => x !== pin.id)
                       : [...current, pin.id])}
                     style={[styles.pickerRow, { borderBottomColor: colors.homeLine }]}
                   >
-                    <Image source={getPinImageSource(pin)} style={styles.pickerImage} />
+                    <PinImage source={getPinImageSource(pin)} style={styles.pickerImage} />
                     <View style={{ flex: 1 }}>
                       <Text style={[styles.pinTitle, { color: colors.homeInk }]}>{pin.title}</Text>
                       {collection[pin.id]?.status === 'for_trade' && <Text style={[styles.tradeTag, { color: colors.homeCoral }]}>FOR TRADE</Text>}
@@ -492,6 +509,8 @@ export default function ChatScreen() {
             <TouchableOpacity
               disabled={!selectedPinIds.length}
               onPress={sharePins}
+              accessibilityRole="button"
+              accessibilityState={{ disabled: !selectedPinIds.length }}
               style={[styles.shareButton, {
                 backgroundColor: selectedPinIds.length ? colors.homeCoral : colors.homeAqua,
               }]}
@@ -508,7 +527,7 @@ export default function ChatScreen() {
 }
 
 const styles = StyleSheet.create({
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' }, messageList: { flex: 1 }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, messageList: { flex: 1 }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
   inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },

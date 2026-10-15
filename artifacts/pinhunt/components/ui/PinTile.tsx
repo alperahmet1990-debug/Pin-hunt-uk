@@ -4,6 +4,7 @@
  *   top-left     ×N copies, or a camera badge when the pin has no catalogue photo
  *   top-right    collection status (Owned ✓, For Trade ⇄, ISO bookmark)
  *   bottom-right selection tick (select mode) or the quick-add "+"
+ *   bottom-left  "Missing" tag on a set's pins you don't have (with a dashed outline)
  * Screen readers hear one label: "Title, Owned, 2 copies, photo needed".
  * Images go through expo-image (memory + disk cache).
  */
@@ -13,7 +14,7 @@ import { Image } from 'expo-image';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
-import { radius, spacing } from '@/constants/theme';
+import { fontScale, radius, spacing } from '@/constants/theme';
 import type { CollectionStatus } from '@/types/pin';
 import { STATUS_BADGE } from './StatusBadge';
 
@@ -35,8 +36,13 @@ export interface PinTileProps {
   status?: CollectionStatus;
   /** Copies owned; ×N top-left when above 1. */
   copies?: number;
-  /** Fade the artwork (a pin you don't have yet); markers stay full strength. */
+  /** Fade the artwork (e.g. a pin that can't be picked); markers stay full strength. */
   dimmed?: boolean;
+  /**
+   * A set's pin you don't have yet: dashed outline and a "Missing" tag, so the
+   * state never relies on colour or fading alone (UX-048). Artwork stays full colour.
+   */
+  missing?: boolean;
   /** Camera badge top-left: no catalogue photo yet (photo contributors). */
   photoNeeded?: boolean;
   /** Select mode: true/false makes the tile a checkbox with a tick; undefined outside select mode. */
@@ -52,16 +58,16 @@ export interface PinTileProps {
 }
 
 /** "Title, Owned, 2 copies, photo needed" — what VoiceOver reads for the tile. */
-export function pinTileLabel(p: Pick<PinTileProps, 'title' | 'status' | 'copies' | 'photoNeeded'>): string {
+export function pinTileLabel(p: Pick<PinTileProps, 'title' | 'status' | 'copies' | 'photoNeeded' | 'missing'>): string {
   const status = p.status && p.status !== 'none' ? STATUS_BADGE[p.status].label : null;
-  return [p.title, status, p.copies && p.copies > 1 ? `${p.copies} copies` : null, p.photoNeeded ? 'photo needed' : null]
+  return [p.title, status, p.missing ? 'missing' : null, p.copies && p.copies > 1 ? `${p.copies} copies` : null, p.photoNeeded ? 'photo needed' : null]
     .filter(Boolean)
     .join(', ');
 }
 
 export function PinTile(props: PinTileProps) {
   const {
-    title, imageUrl, size, onPress, onLongPress, status, copies, dimmed, photoNeeded,
+    title, imageUrl, size, onPress, onLongPress, status, copies, dimmed, missing, photoNeeded,
     selected, selectionDisabled, onQuickAdd, quickAddLabel, accessibilityActions, onAccessibilityAction,
   } = props;
   const colors = useColors();
@@ -84,7 +90,13 @@ export function PinTile(props: PinTileProps) {
     >
       <View style={{ width: size, height: size }}>
         {/* Only the artwork fades; the markers stay full strength. */}
-        <View style={[styles.imageWrap, { width: size, height: size, backgroundColor: colors.homeAqua, opacity: dimmed ? 0.5 : 1 }]}>
+        <View
+          style={[
+            styles.imageWrap,
+            { width: size, height: size, backgroundColor: colors.homeAqua, opacity: dimmed ? 0.5 : 1 },
+            missing && [styles.missingOutline, { borderColor: colors.homeMuted }],
+          ]}
+        >
           <Image source={source} style={styles.image} contentFit="contain" cachePolicy="memory-disk" transition={120} />
         </View>
         {selected && <View pointerEvents="none" style={[styles.selectedRing, { width: size, height: size, borderColor: colors.homeCoral }]} />}
@@ -95,13 +107,18 @@ export function PinTile(props: PinTileProps) {
         )}
         {copies != null && copies > 1 ? (
           <View style={[styles.copies, { backgroundColor: colors.homeInk }]}>
-            <Text style={[styles.copiesLabel, { color: colors.homeSurface }]}>×{copies}</Text>
+            <Text maxFontSizeMultiplier={fontScale.badge} style={[styles.copiesLabel, { color: colors.homeSurface }]}>×{copies}</Text>
           </View>
         ) : photoNeeded ? (
           <View style={[styles.photoBadge, { backgroundColor: colors.homeSurface + 'F2', borderColor: colors.homeCoral }]}>
             <Feather name="camera" size={10} color={colors.homeCoral} />
           </View>
         ) : null}
+        {missing && (
+          <View pointerEvents="none" style={[styles.missingTag, { backgroundColor: colors.homeSurface + 'F2', borderColor: colors.homeLine }]}>
+            <Text maxFontSizeMultiplier={fontScale.badge} style={[styles.missingLabel, { color: colors.homeMuted }]}>Missing</Text>
+          </View>
+        )}
         {selecting ? (
           !selectionDisabled && (
             <View
@@ -125,7 +142,7 @@ export function PinTile(props: PinTileProps) {
           </TouchableOpacity>
         ) : null}
       </View>
-      <Text numberOfLines={1} style={[styles.name, { color: dimmed ? colors.homeMuted : colors.homeInk }]}>
+      <Text numberOfLines={1} maxFontSizeMultiplier={fontScale.dense} style={[styles.name, { color: dimmed ? colors.homeMuted : colors.homeInk }]}>
         {title}
       </Text>
     </TouchableOpacity>
@@ -142,5 +159,8 @@ const styles = StyleSheet.create({
   photoBadge: { position: 'absolute', top: 5, left: 5, width: 20, height: 20, borderRadius: 10, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
   selectCircle: { position: 'absolute', bottom: 5, right: 5, width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
   addBadge: { position: 'absolute', bottom: 5, right: 5, width: 18, height: 18, borderRadius: 9, alignItems: 'center', justifyContent: 'center' },
+  missingOutline: { borderWidth: 1.5, borderStyle: 'dashed' },
+  missingTag: { position: 'absolute', bottom: 5, left: 5, borderRadius: radius.pill, borderWidth: StyleSheet.hairlineWidth, paddingHorizontal: 5, paddingVertical: 1 },
+  missingLabel: { fontSize: 9.5, fontFamily: 'Inter_700Bold' },
   name: { fontSize: 11, fontFamily: 'Inter_600SemiBold', marginTop: 6, textAlign: 'center' },
 });

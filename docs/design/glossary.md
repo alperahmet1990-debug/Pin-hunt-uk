@@ -13,6 +13,9 @@ the maintainer on 2026-10-13 (#108).
 | Groupings you create | — | **Boards** | — |
 | Catalogue groupings | — | **Sets** | "Collection" when it means a set |
 | Everything you have | — | **Your collection** | — |
+| Light appearance | `light` | **Light Side** | "Light Mode" |
+| Dark appearance | `dark` | **Dark Side** | "Dark Mode" |
+| Follow the device's appearance | `system` | **System** | "Auto" |
 
 Notes:
 
@@ -25,4 +28,6 @@ Notes:
 - "Traders" and "collectors" are fine for *people* ("3 collectors offering
   this for trade"). The rule above is about the state.
 - For Trade copies count as owned (Pin detail, Sets, Home progress).
+- Light Side / Dark Side are wording only (#224): no Star Wars imagery,
+  logos or fonts; icons stay sun and moon. Palette keys stay `light` / `dark`.
 - `artifacts/pinhunt/__tests__/glossary.test.js` fails if a retired label comes back.

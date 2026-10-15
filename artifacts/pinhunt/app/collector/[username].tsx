@@ -4,8 +4,6 @@
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import {
-  ActivityIndicator,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -20,9 +18,14 @@ import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
 import { Chip } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { Button } from '@/components/ui/Button';
+import { SkeletonHeader, SkeletonRows } from '@/components/ui/Skeleton';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, type UserError } from '@/utils/userError';
 import { radius, spacing } from '@/constants/theme';
 import type { PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Potential trade row ──────────────────────────────────────────────────────
 
@@ -42,7 +45,7 @@ function PotentialTradeRow({
       ]}
     >
       {pin.imageUrl ? (
-        <Image source={{ uri: pin.imageUrl }} style={styles.tradePinThumb} />
+        <PinImage source={{ uri: pin.imageUrl }} style={styles.tradePinThumb} />
       ) : (
         <View style={[styles.tradePinIcon, { backgroundColor: tone + '26' }]}>
           <Feather name={isTheyHave ? 'download' : 'upload'} size={12} color={tone} />
@@ -76,6 +79,9 @@ export default function CollectorProfileScreen() {
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  // Couldn't load (offline, server…) is not the same as "not found" (UX-046).
+  const [loadError, setLoadError] = useState<UserError | null>(null);
+  const [reloadKey, setReloadKey] = useState(0);
   const [rating, setRating] = useState<{ positive: number; total: number } | null>(null);
 
   const [potentialTrades, setPotentialTrades] = useState<PotentialTradePin[]>([]);
@@ -85,6 +91,8 @@ export default function CollectorProfileScreen() {
   useEffect(() => {
     if (!username) return;
     setLoading(true);
+    setLoadError(null);
+    setNotFound(false);
     getPublicProfile(username)
       .then(p => {
         if (!p) { setNotFound(true); return; }
@@ -95,9 +103,9 @@ export default function CollectorProfileScreen() {
             .catch(() => {});
         }
       })
-      .catch(() => setNotFound(true))
+      .catch(e => setLoadError(toUserError(e, 'collector')))
       .finally(() => setLoading(false));
-  }, [username, getPublicProfile, repo]);
+  }, [username, getPublicProfile, repo, reloadKey]);
 
   // Load potential trades once we have both IDs
   const loadPotentialTrades = useCallback(async () => {
@@ -137,16 +145,28 @@ export default function CollectorProfileScreen() {
 
   return (
     <>
-      <Stack.Screen
-        options={{
-          title: profile?.username ? `@${profile.username}` : 'Collector',
-          headerBackTitle: 'Back',
-        }}
-      />
+      <Stack.Screen options={{ headerShown: false }} />
       <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
+        <ScreenHeader title={profile?.username ? `@${profile.username}` : 'Collector'} />
         {loading ? (
+          // Placeholder in the hero's place: compact row for a match entry,
+          // the full centred hero otherwise (UX-045).
+          isMatchEntry ? (
+            <SkeletonHeader
+              label="Loading collector"
+              layout="inline"
+              avatarSize={44}
+              style={[styles.compactHero, { borderBottomColor: colors.homeLine }]}
+            />
+          ) : (
+            <SkeletonHeader
+              label="Loading collector"
+              style={[styles.hero, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}
+            />
+          )
+        ) : loadError ? (
           <View style={styles.centred}>
-            <ActivityIndicator color={colors.homeCoral} />
+            <ErrorState error={loadError} onRetry={() => setReloadKey(k => k + 1)} />
           </View>
         ) : notFound || !profile ? (
           <View style={styles.centred}>
@@ -346,7 +366,9 @@ export default function CollectorProfileScreen() {
                   <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
                     <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>POTENTIAL TRADE MATCH</Text>
                     {tradesLoading ? (
-                      <ActivityIndicator color={colors.homeCoral} style={{ marginTop: spacing.sm }} />
+                      <View style={[styles.tradeMatchCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                        <SkeletonRows label="Loading trade matches" count={3} thumb={22} style={styles.tradeGroup} />
+                      </View>
                     ) : tradeMatchCard}
                   </View>
                 )}

@@ -1,4 +1,4 @@
-import { useColorScheme } from 'react-native';
+import { useResolvedColorScheme } from './useAppearance';
 import colors, { semanticColors } from '@/constants/colors';
 
 /**
@@ -11,10 +11,11 @@ import colors, { semanticColors } from '@/constants/colors';
  * constants/colors.ts (the scaffold ships light-only by default).
  * When a sibling web artifact's dark tokens are synced into a `dark`
  * key, this hook will automatically switch palettes based on the
- * device's appearance setting.
+ * device's appearance setting, or the in-app Appearance choice
+ * (System · Light Side · Dark Side, #224) when one is set.
  */
 export function useColors() {
-  const scheme = useColorScheme();
+  const scheme = useResolvedColorScheme();
   const palette =
     scheme === 'dark' && 'dark' in colors
       ? (colors as unknown as Record<string, typeof colors.light>).dark

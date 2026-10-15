@@ -1,22 +1,19 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
-  Dimensions,
-  Image,
+  useWindowDimensions,
   Linking,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
-import { Button, IconButton } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
@@ -27,14 +24,14 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { collectionStatusLine } from '@/utils/collectionStatusLine';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import type { PrimaryActionBarAction } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
 import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
+import { pinHeroSize } from '@/utils/pinHeroSize';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const HERO_HEIGHT = Math.min(SCREEN_WIDTH * 1.05, 440);
-const IMAGE_CARD = SCREEN_WIDTH - 40;
 const SET_TILE = 78;
 
 // ─── Main screen ──────────────────────────────────────────────────────────────
@@ -42,11 +39,13 @@ const SET_TILE = 78;
 export default function PinDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const colors = useColors();
-  const insets = useSafeAreaInsets();
+  const screen = useWindowDimensions();
+  // Capped so the title and Add to Collection fit above the fold at 320×568 (B-P2-07).
+  const { hero: heroHeight, card: imageCard } = pinHeroSize(screen.width, screen.height);
   const router = useRouter();
   const { collection, getEntry, markViewed, setStatus } = useCollection();
   const { customBoards } = useBoards();
-  const { pins, repository } = usePinCatalogue();
+  const { pins, repository, ensureCollections } = usePinCatalogue();
 
   const { repo: marketplaceRepo } = useMarketplace();
 
@@ -68,6 +67,10 @@ export default function PinDetailScreen() {
   }, [id, cachedPin, repository]);
 
   const pin = cachedPin ?? fetchedPin ?? undefined;
+  // Set-mates and set progress need the whole set; the catalogue isn't
+  // preloaded any more (#25).
+  const pinSet = pin?.collection;
+  useEffect(() => { if (pinSet) ensureCollections([pinSet]).catch(() => {}); }, [pinSet, ensureCollections]);
   const entry = pin ? getEntry(pin.id) : undefined;
   const [manageSheetPin, setManageSheetPin] = useState<CataloguePin | null>(null);
   const [marketplaceListings, setMarketplaceListings] = useState<ExternalSaleListing[]>([]);
@@ -107,8 +110,9 @@ export default function PinDetailScreen() {
 
   if (!pin) {
     return (
-      <ScreenContainer>
-        <Stack.Screen options={{ title: 'Pin Detail' }} />
+      <ScreenContainer edges={{ top: false, bottom: true }}>
+        <Stack.Screen options={{ headerShown: false }} />
+        <ScreenHeader />
         <View style={styles.notFound}>
           {pinLoading ? (
             <ActivityIndicator color={colors.homeCoral} />
@@ -175,7 +179,6 @@ export default function PinDetailScreen() {
     },
   ];
 
-  const topInset = Platform.OS === 'web' ? Math.max(insets.top, 24) : insets.top;
 
   const manageIcon: React.ComponentProps<typeof Feather>['name'] =
     currentStatus === 'none' ? 'plus'
@@ -198,21 +201,14 @@ export default function PinDetailScreen() {
           colors={[colors.homeCoralDeep, colors.homeCoral, colors.homeSand]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          style={[styles.hero, { height: HERO_HEIGHT }]}
+          style={[styles.hero, { height: heroHeight }]}
         >
-          <IconButton
-            icon="chevron-left"
-            accessibilityLabel="Back"
-            variant="surface"
-            onPress={() => router.back()}
-            style={[styles.backBtn, { top: topInset + 10 }]}
-          />
-
-          {pin.limitedEditionSize != null && pin.limitedEditionSize > 0 && (
-            <View style={[styles.leBadgeWrap, { top: topInset + 10 }]}>
+          <ScreenHeader
+            overlay
+            right={pin.limitedEditionSize != null && pin.limitedEditionSize > 0 ? (
               <Chip variant="solid" tone="sand" size="sm" icon="star" label={`LE ${pin.limitedEditionSize.toLocaleString()}`} />
-            </View>
-          )}
+            ) : undefined}
+          />
 
           {images.length > 1 ? (
             <>
@@ -220,12 +216,12 @@ export default function PinDetailScreen() {
                 horizontal
                 pagingEnabled
                 showsHorizontalScrollIndicator={false}
-                onMomentumScrollEnd={e => setActiveImage(Math.round(e.nativeEvent.contentOffset.x / IMAGE_CARD))}
-                style={{ width: IMAGE_CARD, flexGrow: 0 }}
+                onMomentumScrollEnd={e => setActiveImage(Math.round(e.nativeEvent.contentOffset.x / imageCard))}
+                style={{ width: imageCard, flexGrow: 0 }}
               >
                 {images.map((src, i) => (
-                  <View key={i} style={[styles.imagePage, { width: IMAGE_CARD, height: IMAGE_CARD }]}>
-                    <Image source={src} style={[styles.image, { shadowColor: colors.homeShadow }]} resizeMode="contain" />
+                  <View key={i} style={[styles.imagePage, { width: imageCard, height: imageCard }]}>
+                    <PinImage source={src} accessibilityLabel={`${pin.title}, photo ${i + 1} of ${images.length}`} style={[styles.image, { shadowColor: colors.homeShadow }]} contentFit="contain" />
                   </View>
                 ))}
               </ScrollView>
@@ -239,10 +235,11 @@ export default function PinDetailScreen() {
               </View>
             </>
           ) : (
-            <Image
+            <PinImage
               source={images[0]}
-              style={[styles.image, { width: IMAGE_CARD, height: IMAGE_CARD, shadowColor: colors.homeShadow }]}
-              resizeMode="contain"
+              accessibilityLabel={pin.title}
+              style={[styles.image, { width: imageCard, height: imageCard, shadowColor: colors.homeShadow }]}
+              contentFit="contain"
             />
           )}
         </LinearGradient>
@@ -333,6 +330,8 @@ export default function PinDetailScreen() {
               <TouchableOpacity
                 onPress={() => router.push({ pathname: '/traders/[pinId]', params: { pinId: pin.id } })}
                 activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel={`Other collectors: ${traderCount > 0 ? `${traderCount} offering this for trade` : 'no traders yet'}`}
                 style={FEATURES.marketplaceListings ? [styles.tradingRow, { borderBottomColor: colors.homeLine }] : styles.tradingRowLast}
               >
                 <View style={[styles.tradingIcon, { backgroundColor: colors.forTrade + '20' }]}>
@@ -352,6 +351,8 @@ export default function PinDetailScreen() {
                 <TouchableOpacity
                   onPress={() => setMarketplaceExpanded(e => !e)}
                   activeOpacity={0.85}
+                  accessibilityRole="button"
+                  accessibilityState={{ expanded: marketplaceExpanded }}
                   style={styles.tradingRowLast}
                 >
                   <View style={[styles.tradingIcon, { backgroundColor: colors.homeCoral + '20' }]}>
@@ -483,8 +484,6 @@ const styles = StyleSheet.create({
   scrollContent: { paddingBottom: spacing.xxxl },
   // Hero
   hero: { width: '100%', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
-  backBtn: { position: 'absolute', left: spacing.lg, zIndex: 2 },
-  leBadgeWrap: { position: 'absolute', right: spacing.lg, zIndex: 2 },
   imagePage: { alignItems: 'center', justifyContent: 'center' },
   image: {
     borderRadius: radius.xl,

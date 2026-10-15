@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
-import { radius, spacing } from '@/constants/theme';
+import { fontScale, radius, spacing } from '@/constants/theme';
 
 export type ChipTone = 'coral' | 'coralDeep' | 'teal' | 'sand' | 'neutral' | 'owned' | 'wanted' | 'forTrade';
 export type ChipVariant = 'soft' | 'solid' | 'outline';
@@ -19,7 +19,8 @@ function toneColor(colors: ReturnType<typeof useColors>, tone: ChipTone): string
   switch (tone) {
     case 'coral': return colors.homeCoral;
     case 'coralDeep': return colors.homeCoralDeep;
-    case 'teal': return colors.homeTeal;
+    // Deep teal type: homeInk is the same teal in light and stays readable in dark (UX-062).
+    case 'teal': return colors.homeInk;
     case 'sand': return colors.homeSandInk;
     case 'owned': return colors.owned;
     case 'wanted': return colors.wanted;
@@ -49,7 +50,7 @@ export function Chip({ label, icon, tone = 'neutral', variant = 'soft', size = '
       ]}
     >
       {icon && <Feather name={icon} size={isSm ? 10 : 12} color={fg} />}
-      <Text numberOfLines={1} style={[styles.label, isSm ? styles.labelSm : styles.labelMd, { color: fg }]}>
+      <Text numberOfLines={1} maxFontSizeMultiplier={fontScale.dense} style={[styles.label, isSm ? styles.labelSm : styles.labelMd, { color: fg }]}>
         {label}
       </Text>
     </View>

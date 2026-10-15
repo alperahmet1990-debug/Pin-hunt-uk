@@ -37,6 +37,14 @@ jest.mock('@/context/BoardsContext', () => ({
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: {}, getEntry: () => undefined }) }));
 jest.mock('@/context/PinCatalogueContext', () => ({ usePinCatalogue: () => ({ pins: mockPins }) }));
 
+/** True when the element sits inside the shared Sheet's keyboard handling (#47). */
+function insideKeyboardAvoidingView(el: { parent: unknown }): boolean {
+  for (let n = el.parent as { props?: { testID?: string }; parent: unknown } | null; n; n = n.parent as typeof n) {
+    if (n.props?.testID === 'keyboard-avoiding-view') return true;
+  }
+  return false;
+}
+
 beforeEach(() => jest.clearAllMocks());
 
 describe('Board detail: options, rename and delete (UX-041)', () => {
@@ -67,5 +75,12 @@ describe('Board detail: options, rename and delete (UX-041)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Delete' }));
     expect(mockDelete).toHaveBeenCalledWith('b1');
     expect(mockBack).toHaveBeenCalled();
+  });
+
+  it('keeps the board name field above the keyboard (B-P1-21)', async () => {
+    await render(<BoardDetailScreen />);
+    await fireEvent.press(screen.getByLabelText('Board options'));
+    await fireEvent.press(screen.getByRole('button', { name: /Rename Board/ }));
+    expect(insideKeyboardAvoidingView(screen.getByLabelText('Board name'))).toBe(true);
   });
 });

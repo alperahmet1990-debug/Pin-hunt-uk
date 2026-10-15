@@ -13,7 +13,6 @@
 import React, { useMemo, useState } from 'react';
 import {
   ActivityIndicator,
-  Image,
   Platform,
   RefreshControl,
   SectionList,
@@ -34,6 +33,7 @@ import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 import { radius, spacing } from '@/constants/theme';
+import { PinImage } from '@/components/ui/PinImage';
 
 type PhotoFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community';
 
@@ -272,7 +272,7 @@ function Tile({ row, owned, onPress }: { row: CatalogueImageCoverage; owned: boo
   if (row.myStatus === 'pending') badge = { icon: 'clock', label: 'Your photo', bg: colors.homeWarmSurface, fg: colors.homeSandInk };
   else if (pending) badge = { icon: 'clock', label: 'In review', bg: colors.homeWarmSurface, fg: colors.homeSandInk };
   else if (needs) badge = { icon: 'camera', label: 'Needs photo', bg: colors.homeCoral, fg: colors.homeHeroText };
-  else if (row.imageSource === 'community') badge = { icon: 'check', label: 'Community', bg: colors.homeAqua, fg: colors.homeTeal };
+  else if (row.imageSource === 'community') badge = { icon: 'check', label: 'Community', bg: colors.homeAqua, fg: colors.homeInk };
 
   return (
     <TouchableOpacity activeOpacity={0.85} onPress={onPress} style={styles.tile}>
@@ -286,7 +286,7 @@ function Tile({ row, owned, onPress }: { row: CatalogueImageCoverage; owned: boo
             <Feather name="camera" size={22} color={pending ? colors.homeMuted : colors.homeCoral} />
           </View>
         ) : (
-          <Image source={row.imageUrl ? { uri: row.imageUrl } : PLACEHOLDER_IMAGE} style={styles.tileImage} resizeMode="contain" />
+          <PinImage source={row.imageUrl ? { uri: row.imageUrl } : PLACEHOLDER_IMAGE} style={styles.tileImage} contentFit="contain" />
         )}
         {owned && (
           <View style={[styles.ownedDot, { backgroundColor: colors.homeTeal }]}>

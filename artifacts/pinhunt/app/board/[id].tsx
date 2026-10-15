@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import {
   FlatList,
-  Image,
   Modal,
   Platform,
   StyleSheet,
@@ -23,10 +22,12 @@ import { EmptyState } from '@/components/EmptyState';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { BulkSelectBar, BULK_BAR_HEIGHT } from '@/components/BulkSelectBar';
 import { usePinSelection } from '@/hooks/usePinSelection';
-import { ConfirmDialog, PinGrid, PinTile, ScreenContainer, Sheet } from '@/components/ui';
+import { ConfirmDialog, IconButton, PinGrid, PinTile, ScreenContainer, Sheet } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { BOARD_SORT_OPTIONS, sortBoardPins, type BoardSort } from '@/utils/boardSort';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // Search scope for Add Pins to Board: name/title, character, set/series —
 // mirrors the fields collection.tsx's search matches, minus the broader
@@ -85,7 +86,6 @@ export default function BoardDetailScreen() {
     if (!addModalVisible) setAddSearchQuery('');
   }, [addModalVisible]);
 
-  const topInset = Platform.OS === 'web' ? Math.max(insets.top, 24) : insets.top;
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 20;
 
   // Owned/for-trade pins, regardless of board membership.
@@ -129,8 +129,9 @@ export default function BoardDetailScreen() {
 
   if (!board) {
     return (
-      <ScreenContainer>
+      <ScreenContainer edges={{ top: false, bottom: true }}>
         <Stack.Screen options={{ headerShown: false }} />
+        <ScreenHeader />
         <View style={styles.notFound}>
           <Text style={[styles.notFoundText, { color: colors.homeInk }]}>Board not found.</Text>
           <TouchableOpacity onPress={() => router.back()}>
@@ -163,40 +164,28 @@ export default function BoardDetailScreen() {
     <ScreenContainer edges={{ top: false, bottom: false }}>
       <Stack.Screen options={{ headerShown: false }} />
 
-      <View style={[styles.header, { paddingTop: topInset + 10, borderBottomColor: colors.homeLine }]}>
-        <View style={styles.headerTop}>
-          <TouchableOpacity
-            accessibilityLabel="Go back"
-            onPress={() => router.back()}
-            activeOpacity={0.85}
-            style={[styles.roundBtn, { backgroundColor: colors.homeAqua }]}
-          >
-            <Feather name="chevron-left" size={20} color={colors.homeInk} />
-          </TouchableOpacity>
-
-          {board.isCustom && (
-            <View style={styles.headerRightActions}>
-              {editMode ? (
-                <TouchableOpacity
-                  onPress={() => setEditMode(false)}
-                  activeOpacity={0.85}
-                  style={[styles.doneBtn, { backgroundColor: colors.homeCoral }]}
-                >
-                  <Text style={[styles.doneBtnLabel, { color: colors.homeSurface }]}>Done</Text>
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity
-                  accessibilityLabel="Board options"
-                  onPress={() => setMenuVisible(true)}
-                  activeOpacity={0.85}
-                  style={[styles.roundBtn, { backgroundColor: colors.homeAqua }]}
-                >
-                  <Feather name="more-horizontal" size={20} color={colors.homeInk} />
-                </TouchableOpacity>
-              )}
-            </View>
-          )}
-        </View>
+      <View style={[styles.header, { borderBottomColor: colors.homeLine }]}>
+        <ScreenHeader
+          style={styles.headerTop}
+          right={board.isCustom ? (
+            editMode ? (
+              <TouchableOpacity
+                onPress={() => setEditMode(false)}
+                activeOpacity={0.85}
+                style={[styles.doneBtn, { backgroundColor: colors.homeCoral }]}
+              >
+                <Text style={[styles.doneBtnLabel, { color: colors.homeSurface }]}>Done</Text>
+              </TouchableOpacity>
+            ) : (
+              <IconButton
+                icon="more-horizontal"
+                accessibilityLabel="Board options"
+                variant="tinted"
+                onPress={() => setMenuVisible(true)}
+              />
+            )
+          ) : undefined}
+        />
 
         <Text style={[styles.boardTitle, { color: colors.homeInk }]} numberOfLines={2}>
           {board.name}
@@ -207,9 +196,9 @@ export default function BoardDetailScreen() {
             {boardPins.length} {boardPins.length === 1 ? 'pin' : 'pins'}
           </Text>
           {!board.isCustom && (
-            <View style={[styles.suggestedChip, { backgroundColor: colors.homeTeal + '1E' }]}>
-              <Feather name="zap" size={10} color={colors.homeTeal} />
-              <Text style={[styles.suggestedChipText, { color: colors.homeTeal }]}>
+            <View style={[styles.suggestedChip, { backgroundColor: colors.homeInk + '1E' }]}>
+              <Feather name="zap" size={10} color={colors.homeInk} />
+              <Text style={[styles.suggestedChipText, { color: colors.homeInk }]}>
                 Auto-updated from your collection
               </Text>
             </View>
@@ -231,8 +220,8 @@ export default function BoardDetailScreen() {
               style={[styles.editBtn, { backgroundColor: colors.homeAqua }]}
               activeOpacity={0.85}
             >
-              <Feather name="sliders" size={15} color={colors.homeTeal} />
-              <Text style={[styles.editBtnText, { color: colors.homeTeal }]}>Edit</Text>
+              <Feather name="sliders" size={15} color={colors.homeInk} />
+              <Text style={[styles.editBtnText, { color: colors.homeInk }]}>Edit</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -382,7 +371,7 @@ export default function BoardDetailScreen() {
           onPress={() => { setMenuVisible(false); setRenameVisible(true); }}
         >
           <View style={[styles.menuIcon, { backgroundColor: colors.homeAqua }]}>
-            <Feather name="edit-2" size={16} color={colors.homeTeal} />
+            <Feather name="edit-2" size={16} color={colors.homeInk} />
           </View>
           <Text style={[styles.menuLabel, { color: colors.homeInk }]}>Rename Board</Text>
         </TouchableOpacity>
@@ -462,7 +451,7 @@ export default function BoardDetailScreen() {
                         disabled={isAdded}
                         style={[styles.addRow, { borderBottomColor: colors.homeLine }]}
                       >
-                        <Image source={getPinImageSource(item)} style={[styles.addRowImage, { backgroundColor: colors.homeAqua }]} />
+                        <PinImage source={getPinImageSource(item)} style={[styles.addRowImage, { backgroundColor: colors.homeAqua }]} />
                         <View style={styles.addRowInfo}>
                           <Text style={[styles.addRowTitle, { color: colors.homeInk }]} numberOfLines={2}>
                             {item.title}
@@ -554,10 +543,9 @@ const styles = StyleSheet.create({
   notFoundText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   // Header
   header: { paddingHorizontal: spacing.lg, paddingBottom: spacing.md, borderBottomWidth: StyleSheet.hairlineWidth, gap: spacing.sm },
-  headerTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  headerRightActions: { flexDirection: 'row', alignItems: 'center' },
-  roundBtn: { width: 38, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center' },
-  doneBtn: { paddingHorizontal: spacing.md, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center' },
+  // ScreenHeader sits inside the padded header box.
+  headerTop: { paddingHorizontal: 0, paddingBottom: 0 },
+  doneBtn: { paddingHorizontal: spacing.lg, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   doneBtnLabel: { fontSize: 13.5, fontFamily: 'Inter_700Bold' },
   boardTitle: { fontSize: 21, lineHeight: 26, fontFamily: 'Inter_700Bold', letterSpacing: -0.4, marginTop: spacing.sm },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flexWrap: 'wrap' },

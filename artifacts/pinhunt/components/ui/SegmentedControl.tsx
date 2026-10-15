@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
-import { radius, spacing } from '@/constants/theme';
+import { fontScale, radius, spacing } from '@/constants/theme';
 import type { ChipTone } from './Chip';
 
 export interface SegmentedControlOption<T extends string> {
@@ -22,7 +22,8 @@ function toneColor(colors: ReturnType<typeof useColors>, tone: ChipTone): string
   switch (tone) {
     case 'coral': return colors.homeCoral;
     case 'coralDeep': return colors.homeCoralDeep;
-    case 'teal': return colors.homeTeal;
+    // Deep teal type: homeInk is the same teal in light and stays readable in dark (UX-062).
+    case 'teal': return colors.homeInk;
     case 'sand': return colors.homeSandInk;
     case 'owned': return colors.owned;
     case 'wanted': return colors.wanted;
@@ -37,7 +38,7 @@ function toneColor(colors: ReturnType<typeof useColors>, tone: ChipTone): string
 export function SegmentedControl<T extends string>({ options, value, onChange }: SegmentedControlProps<T>) {
   const colors = useColors();
   return (
-    <View style={[styles.row, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+    <View accessibilityRole="tablist" style={[styles.row, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
       {options.map(opt => {
         const active = opt.value === value;
         const tone = toneColor(colors, opt.tone);
@@ -46,6 +47,10 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
             key={opt.value}
             onPress={() => onChange(opt.value)}
             activeOpacity={0.85}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: active }}
+            // The row's 4 pt padding is part of each segment's target: 36 + 4 + 4 = 44 pt.
+            hitSlop={SEGMENT_HIT_SLOP}
             style={[
               styles.segment,
               active && { backgroundColor: tone, shadowColor: tone },
@@ -57,6 +62,7 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
               numberOfLines={1}
               adjustsFontSizeToFit
               minimumFontScale={0.8}
+              maxFontSizeMultiplier={fontScale.badge}
               style={[styles.label, { color: active ? colors.homeSurface : colors.homeMuted }]}
             >
               {opt.label}
@@ -68,12 +74,17 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
   );
 }
 
+/** Visible pill height; with SEGMENT_HIT_SLOP the tap target is 44 pt (B-P2-08). */
+export const SEGMENT_HEIGHT = 36;
+const ROW_PADDING = 4;
+export const SEGMENT_HIT_SLOP = { top: ROW_PADDING, bottom: ROW_PADDING, left: 0, right: 0 };
+
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     borderWidth: 1,
     borderRadius: radius.lg,
-    padding: 4,
+    padding: ROW_PADDING,
     gap: 4,
   },
   segment: {
@@ -82,7 +93,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: spacing.xs,
-    paddingVertical: 10,
+    minHeight: SEGMENT_HEIGHT,
+    paddingVertical: 4,
     borderRadius: radius.md,
   },
   segmentActiveShadow: {

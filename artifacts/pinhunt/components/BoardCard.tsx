@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -8,9 +7,11 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { fontScale } from '@/constants/theme';
 import { getPinImageSource } from '@/utils/pinImage';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 interface BoardCardProps {
   board: Board;
@@ -25,7 +26,7 @@ export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardP
   const thumbs = pins.slice(0, 4);
 
   const t = seaGlass
-    ? { card: colors.homeSurface, border: colors.homeLine, fg: colors.homeInk, muted: colors.homeMuted, thumbBg: colors.homeAqua, accent: colors.homeTeal, radius: 18 }
+    ? { card: colors.homeSurface, border: colors.homeLine, fg: colors.homeInk, muted: colors.homeMuted, thumbBg: colors.homeAqua, accent: colors.homeInk, radius: 18 }
     : { card: colors.card, border: colors.border, fg: colors.foreground, muted: colors.mutedForeground, thumbBg: colors.muted, accent: colors.accent, radius: colors.radius };
 
   return (
@@ -52,7 +53,7 @@ export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardP
             {[0, 1, 2, 3].map(i => (
               <View key={i} style={[styles.thumbCell, { backgroundColor: t.thumbBg, borderColor: t.card }]}>
                 {thumbs[i] ? (
-                  <Image source={getPinImageSource(thumbs[i]!)} style={styles.thumbCellImage} resizeMode="contain" />
+                  <PinImage source={getPinImageSource(thumbs[i]!)} style={styles.thumbCellImage} contentFit="contain" />
                 ) : null}
               </View>
             ))}
@@ -71,7 +72,7 @@ export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardP
           </Text>
           {!board.isCustom && (
             <View style={[styles.suggestedBadge, { backgroundColor: t.accent + '22' }]}>
-              <Text style={[styles.suggestedLabel, { color: t.accent }]}>Suggested</Text>
+              <Text maxFontSizeMultiplier={fontScale.dense} style={[styles.suggestedLabel, { color: t.accent }]}>Suggested</Text>
             </View>
           )}
         </View>
@@ -99,7 +100,7 @@ export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
       ]}
     >
       {thumb ? (
-        <Image source={getPinImageSource(thumb)} style={styles.hThumb} />
+        <PinImage source={getPinImageSource(thumb)} style={styles.hThumb} />
       ) : (
         <View style={[styles.hThumb, styles.hThumbEmpty, { backgroundColor: colors.muted }]}>
           <Feather name="grid" size={18} color={colors.mutedForeground} />
@@ -114,7 +115,7 @@ export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
         </Text>
         {!board.isCustom && (
           <View style={[styles.suggestedBadge, { backgroundColor: colors.accent + '22', marginTop: 4 }]}>
-            <Text style={[styles.suggestedLabel, { color: colors.accent }]}>Suggested</Text>
+            <Text maxFontSizeMultiplier={fontScale.dense} style={[styles.suggestedLabel, { color: colors.accent }]}>Suggested</Text>
           </View>
         )}
       </View>

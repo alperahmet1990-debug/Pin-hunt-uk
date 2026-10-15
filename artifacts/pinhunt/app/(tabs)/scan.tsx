@@ -12,7 +12,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
@@ -21,8 +21,8 @@ import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
-import { getPinImageSource } from '@/utils/pinImage';
 import { identifyPin, type ImageInsights } from '@/utils/identifyPin';
+import { prepareScanPhoto, type ScanPhoto } from '@/utils/scanPhoto';
 import {
   RETAKE_TIPS,
   RETAKE_TIPS_KEY,
@@ -32,6 +32,12 @@ import {
 } from '@/utils/scanRecovery';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { CataloguePin } from '@workspace/pin-repository';
+import { QuickAddSheet } from '@/components/QuickAddSheet';
+import { ScanResult } from '@/components/scan/ScanResult';
+import { useMyAccess } from '@/hooks/useMyAccess';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { toUserError, type UserError } from '@/utils/userError';
+import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -104,20 +110,39 @@ export default function ScanScreen() {
   const { markViewed } = useCollection();
   const { pins, repository } = usePinCatalogue();
   const { session } = useAuth();
+  const access = useMyAccess();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
   const [insights, setInsights] = useState<ImageInsights | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  // A failed identify (offline, timeout, server…) in plain words (UX-046).
+  const [failure, setFailure] = useState<UserError | null>(null);
   const [noMatchFound, setNoMatchFound] = useState(false);
   // "None of these" keeps the photo and offers ways forward instead of resetting.
   const [showRecovery, setShowRecovery] = useState(false);
   const [showRetakeTips, setShowRetakeTips] = useState(false);
+  // "That's it" adds the pin in place (UX-005); a new scan starts a fresh result.
+  const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
+  // "Scan next" (UX-061, #264): pins added from this visit to the scan
+  // screen, and which result the latest add came from.
+  const [sessionAdded, setSessionAdded] = useState<string[]>([]);
+  const [addedOnResult, setAddedOnResult] = useState<number | null>(null);
+  useFocusEffect(useCallback(() => () => {
+    // Leaving the scan screen ends the session.
+    setSessionAdded([]);
+    setAddedOnResult(null);
+  }, []));
+  const [resultKey, setResultKey] = useState(0);
   const shutterAnim = useRef(new Animated.Value(1)).current;
+  // Each identification run has an id; a cancelled or superseded run's
+  // result is ignored when it arrives (UX-008a).
+  const identifyRun = useRef(0);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+  // Clears the floating web tab bar (#260).
+  const botPad = tabScreenBottomPad(insets.bottom + 80);
 
   const flashShutter = useCallback(
     (cb?: () => void) => {
@@ -131,29 +156,42 @@ export default function ScanScreen() {
   );
 
   // ── Shared: accept a picked/captured asset ───────────────────────────────────
-  const handlePickerResult = useCallback((result: ImagePicker.ImagePickerResult) => {
+  async function handlePickerResult(result: ImagePicker.ImagePickerResult) {
     if (result.canceled || !result.assets?.[0]) return;
 
     const asset = result.assets[0];
-    if (!asset.base64) {
+    // Identify straight away, no separate tap (UX-008a). The photo shows
+    // with the progress overlay while it is shrunk and sent.
+    const run = ++identifyRun.current;
+    flashShutter();
+    clearResult();
+    setCaptured({ uri: asset.uri, base64: '', mimeType: 'image/jpeg' });
+    setScanState('identifying');
+
+    // Shrink before upload (UX-050): the preview keeps the original photo.
+    let photo: ScanPhoto;
+    try {
+      photo = await prepareScanPhoto(asset.uri, asset.width, asset.height);
+    } catch (err) {
+      if (run !== identifyRun.current) return;
+      toUserError(err, 'scan-photo');
+      setCaptured(null);
+      setScanState('idle');
       Alert.alert('Could not read image', 'Please try again.');
       return;
     }
+    if (run !== identifyRun.current) return;
 
-    flashShutter(() => {
-      setCaptured({
-        uri: asset.uri,
-        base64: asset.base64!,
-        mimeType: asset.mimeType ?? 'image/jpeg',
-      });
-      setScanState('captured');
-    });
-  }, [flashShutter]);
+    const image: CapturedImage = { uri: asset.uri, base64: photo.base64, mimeType: photo.mimeType };
+    setCaptured(image);
+    runIdentify(image, run);
+  }
 
   // ── Scan Pin (camera) — falls back to the photo library on web, where no
   // camera is available. ──────────────────────────────────────────────────────
-  const handleScanPin = useCallback(async () => {
+  async function handleScanPin() {
     setErrorMsg(null);
+    setFailure(null);
 
     const launcher = Platform.OS === 'web'
       ? ImagePicker.launchImageLibraryAsync
@@ -172,44 +210,50 @@ export default function ScanScreen() {
 
     const result = await launcher({
       mediaTypes: 'images',
-      quality: 0.7,
-      base64: true,
+      // Full quality here: prepareScanPhoto does the one lossy re-encode.
+      quality: 1,
       allowsEditing: true,
       aspect: [1, 1],
     });
 
-    handlePickerResult(result);
-  }, [handlePickerResult]);
+    await handlePickerResult(result);
+  }
 
   // ── Choose Photo (library) ───────────────────────────────────────────────────
-  const handleChoosePhoto = useCallback(async () => {
+  async function handleChoosePhoto() {
     setErrorMsg(null);
+    setFailure(null);
 
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: 'images',
-      quality: 0.7,
-      base64: true,
+      // Full quality here: prepareScanPhoto does the one lossy re-encode.
+      quality: 1,
       allowsEditing: true,
       aspect: [1, 1],
     });
 
-    handlePickerResult(result);
-  }, [handlePickerResult]);
+    await handlePickerResult(result);
+  }
 
   // ── Identify ─────────────────────────────────────────────────────────────────
-  const handleIdentify = useCallback(async () => {
-    if (!captured) return;
+  function clearResult() {
     setErrorMsg(null);
+    setFailure(null);
     setNoMatchFound(false);
     setShowRecovery(false);
+  }
+
+  async function runIdentify(image: CapturedImage, run = ++identifyRun.current) {
+    clearResult();
     setScanState('identifying');
 
     try {
       const { matches: rawMatches, imageInsights } = await identifyPin(
-        captured.base64,
-        captured.mimeType,
+        image.base64,
+        image.mimeType,
         session?.access_token,
       );
+      if (run !== identifyRun.current) return;
       setInsights(imageInsights);
 
       // The cached list only holds part of the catalogue — fetch any matched
@@ -230,6 +274,7 @@ export default function ScanScreen() {
           }),
         )
       ).filter(Boolean) as Match[];
+      if (run !== identifyRun.current) return;
 
       if (resolved.length === 0) {
         setErrorMsg('No matches found in our catalogue. Try a clearer photo, or add this pin yourself.');
@@ -239,23 +284,48 @@ export default function ScanScreen() {
       }
 
       setMatches(resolved);
+      setResultKey(k => k + 1);
       setScanState('results');
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Something went wrong';
-      setErrorMsg(msg);
+      if (run !== identifyRun.current) return;
+      setFailure(toUserError(err, 'scan'));
       setScanState('captured');
     }
-  }, [captured, pins, repository, session?.access_token]);
+  }
 
-  // ── Confirm match ─────────────────────────────────────────────────────────────
-  const handleSelectMatch = (match: Match) => {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    markViewed(match.pin.id);
-    if (!match.pin.imageUrl) {
-      router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: match.pin.id } });
-      return;
+  /** Identify the current photo again (after Cancel, or Try again). */
+  const handleIdentify = () => {
+    if (captured?.base64) runIdentify(captured);
+  };
+
+  /** Stop waiting for this identification; the photo is kept if it's ready. */
+  const cancelIdentify = () => {
+    identifyRun.current += 1;
+    if (captured?.base64) {
+      setScanState('captured');
+    } else {
+      setCaptured(null);
+      setScanState('idle');
     }
-    router.push({ pathname: '/pin/[id]', params: { id: match.pin.id } });
+  };
+
+  const retakeWhileIdentifying = () => {
+    cancelIdentify();
+    handleScanPin();
+  };
+
+  // ── Confirm match: "That's it" adds the pin without leaving the scan ─────────
+  const handleConfirm = (pin: CataloguePin) => {
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    markViewed(pin.id);
+    setQuickAddPin(pin);
+  };
+
+  // A pin without a catalogue photo opens Pin detail like any other: a scan
+  // never routes collectors into the photo-contribution flow.
+  const handleOpenPin = (pin: CataloguePin) => {
+    markViewed(pin.id);
+    router.push({ pathname: '/pin/[id]', params: { id: pin.id } });
   };
 
   const handleReset = () => {
@@ -264,6 +334,7 @@ export default function ScanScreen() {
     setMatches([]);
     setInsights(null);
     setErrorMsg(null);
+    setFailure(null);
     setNoMatchFound(false);
     setShowRecovery(false);
   };
@@ -289,7 +360,8 @@ export default function ScanScreen() {
 
   // ── Hand off to Add Pin ───────────────────────────────────────────────────────
   // Carries the already-captured photo forward, plus any characters the AI
-  // scan recognised, so the user doesn't have to start from scratch.
+  // scan recognised, so the user doesn't have to start from scratch. The
+  // text, logo and shared set it saw go as tap-to-use hints (UX-011).
   const handleAddPinInstead = () => {
     if (!captured) return;
     router.push({
@@ -297,20 +369,11 @@ export default function ScanScreen() {
       params: {
         frontUri: captured.uri,
         characters: insights?.characters.join(', ') ?? '',
+        nameHint: insights?.textOnPin ?? '',
+        brandHint: insights?.logos[0] ?? '',
+        setHint: recoverySet ?? '',
       },
     });
-  };
-
-  const confidenceColor = (score: number) => {
-    if (score >= 75) return colors.owned;
-    if (score >= 50) return colors.wanted;
-    return colors.homeMuted;
-  };
-
-  const confidenceLabel = (score: number) => {
-    if (score >= 75) return 'Strong match';
-    if (score >= 50) return 'Possible match';
-    return 'Weak match';
   };
 
   return (
@@ -327,7 +390,8 @@ export default function ScanScreen() {
           </Text>
         </View>
 
-        {/* ── Viewfinder ── */}
+        {/* ── Viewfinder (hidden once there's a result: the comparison shows the photo) ── */}
+        {scanState !== 'results' && (
         <View style={[styles.viewfinderWrap, { marginHorizontal: 16 }]}>
           <Animated.View
             style={[
@@ -340,6 +404,8 @@ export default function ScanScreen() {
                 style={styles.viewfinderPlaceholder}
                 onPress={handleScanPin}
                 activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel="Scan a pin with the camera"
               >
                 <Feather name="camera" size={48} color="rgba(255,255,255,0.25)" />
                 <Text style={styles.viewfinderHint}>Point camera at your pin</Text>
@@ -367,6 +433,7 @@ export default function ScanScreen() {
             <CornerMarker corner="br" color={colors.homeSand} />
           </Animated.View>
         </View>
+        )}
 
         {/* ── Error banner ── */}
         {errorMsg && (
@@ -376,12 +443,20 @@ export default function ScanScreen() {
           </View>
         )}
 
-        {/* ── Every failure offers Try again + Search instead ── */}
-        {errorMsg && scanState === 'captured' && (
+        {/* ── A failed identify: plain words, Try again + Search instead ── */}
+        {failure && scanState === 'captured' && (
+          <ErrorState
+            compact
+            error={failure}
+            onRetry={handleIdentify}
+            secondary={{ label: 'Search instead', icon: 'search', onPress: searchFromScan }}
+            style={styles.failure}
+          />
+        )}
+
+        {/* ── No match: Search instead ── */}
+        {errorMsg && noMatchFound && scanState === 'captured' && (
           <View style={styles.errorActions}>
-            {!noMatchFound && (
-              <Button label="Try again" icon="refresh-cw" size="compact" onPress={handleIdentify} style={styles.errorActionBtn} />
-            )}
             <Button label="Search instead" icon="search" size="compact" variant="secondary" onPress={searchFromScan} style={styles.errorActionBtn} />
           </View>
         )}
@@ -414,12 +489,11 @@ export default function ScanScreen() {
             </View>
           )}
 
+          {/* The photo's overlay shows progress; Retake or stop at any point (UX-008a). */}
           {scanState === 'identifying' && (
-            <View style={[styles.loadingRow, { backgroundColor: colors.homeSurface, borderRadius: 18, borderColor: colors.homeLine }]}>
-              <ActivityIndicator color={colors.homeCoral} />
-              <Text style={[styles.loadingText, { color: colors.homeMuted }]}>
-                Searching pin database…
-              </Text>
+            <View style={styles.captureRow}>
+              <Button label="Retake" icon="refresh-cw" variant="secondary" onPress={retakeWhileIdentifying} style={styles.halfBtn} />
+              <Button label="Cancel" icon="x" variant="secondary" onPress={cancelIdentify} style={styles.halfBtn} />
             </View>
           )}
 
@@ -428,122 +502,32 @@ export default function ScanScreen() {
         {/* ── Match results ── */}
         {scanState === 'results' && (
           <View style={styles.matchesSection}>
-            {/* ── What the scan understood from the photo ── */}
-            {insights &&
-              (insights.textOnPin ||
-                insights.characters.length > 0 ||
-                insights.keywords.length > 0 ||
-                insights.logos.length > 0 ||
-                insights.webGuesses.length > 0) && (
-              <View
-                style={[
-                  styles.insightsCard,
-                  { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 },
-                ]}
-              >
-                <View style={styles.insightsHeader}>
-                  <Feather name="eye" size={14} color={colors.homeCoral} />
-                  <Text style={[styles.insightsTitle, { color: colors.homeInk }]}>
-                    What we saw in your photo
-                  </Text>
-                </View>
-                {insights.textOnPin ? (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Text on pin</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={3}>
-                      “{insights.textOnPin}”
-                    </Text>
-                  </View>
-                ) : null}
-                {insights.characters.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Characters</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]}>
-                      {insights.characters.join(', ')}
-                    </Text>
-                  </View>
-                )}
-                {insights.logos.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Logos</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]}>
-                      {insights.logos.join(', ')}
-                    </Text>
-                  </View>
-                )}
-                {insights.keywords.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Looks like</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={2}>
-                      {insights.keywords.join(', ')}
-                    </Text>
-                  </View>
-                )}
-                {insights.webGuesses.length > 0 && (
-                  <View style={styles.insightRow}>
-                    <Text style={[styles.insightLabel, { color: colors.homeMuted }]}>Web matches</Text>
-                    <Text style={[styles.insightValue, { color: colors.homeInk }]} numberOfLines={2}>
-                      {insights.webGuesses.join(', ')}
-                    </Text>
-                  </View>
-                )}
+            {captured && (
+              <ScanResult
+                key={resultKey}
+                photoUri={captured.uri}
+                candidates={matches}
+                insights={insights}
+                showDetails={access.isAdmin || access.isAppCreator}
+                onConfirm={handleConfirm}
+                onOpenPin={handleOpenPin}
+                onNoneOfThese={openRecovery}
+                recoveryOpen={showRecovery}
+              />
+            )}
+            {addedOnResult === resultKey ? (
+              // Sorting a pile of pins: the next scan is one tap (UX-061).
+              <View style={styles.scanNext}>
+                <Button label="Scan next pin" icon="camera" fullWidth onPress={handleScanPin} />
+                <Text accessibilityLiveRegion="polite" style={[styles.scanNextCount, { color: colors.homeMuted }]}>
+                  {sessionAdded.length} {sessionAdded.length === 1 ? 'pin' : 'pins'} added this session
+                </Text>
               </View>
+            ) : (
+              <Button label="Scan another pin" icon="camera" variant="text" fullWidth onPress={handleScanPin} />
             )}
 
-            <Text style={[styles.matchesTitle, { color: colors.homeInk }]}>Possible Matches</Text>
-            <Text style={[styles.matchesSub, { color: colors.homeMuted }]}>
-              Tap the correct pin to see its details and value
-            </Text>
-
-            {matches.map((match, i) => (
-              <TouchableOpacity
-                key={`${match.pin.id}-${i}`}
-                onPress={() => handleSelectMatch(match)}
-                activeOpacity={0.85}
-                style={[
-                  styles.matchCard,
-                  { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 },
-                ]}
-              >
-                <View style={styles.matchRankWrap}>
-                  <Text style={[styles.matchRank, { color: colors.homeMuted }]}>#{i + 1}</Text>
-                </View>
-                <Image source={getPinImageSource(match.pin)} style={styles.matchImage} />
-                <View style={styles.matchInfo}>
-                  <Text style={[styles.matchTitle, { color: colors.homeInk }]} numberOfLines={2}>
-                    {match.pin.title}
-                  </Text>
-                  <Text style={[styles.matchBrand, { color: colors.homeMuted }]}>{match.pin.brand}</Text>
-                  <Text style={[styles.matchCollection, { color: colors.homeMuted }]} numberOfLines={1}>
-                    {match.pin.collection}
-                  </Text>
-                  {match.reasoning ? (
-                    <Text style={[styles.matchReasoning, { color: colors.homeMuted }]} numberOfLines={2}>
-                      {match.reasoning}
-                    </Text>
-                  ) : null}
-                </View>
-                <View style={styles.confidenceWrap}>
-                  <Text style={[styles.confidenceScore, { color: confidenceColor(match.confidence) }]}>
-                    {match.confidence}%
-                  </Text>
-                  <Text style={[styles.confidenceLabel, { color: confidenceColor(match.confidence) }]}>
-                    {confidenceLabel(match.confidence)}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-
-            {!showRecovery ? (
-              <TouchableOpacity
-                onPress={openRecovery}
-                style={styles.noneMatch}
-                activeOpacity={0.7}
-                accessibilityRole="button"
-              >
-                <Text style={[styles.noneMatchText, { color: colors.homeCoralDeep }]}>None of these?</Text>
-              </TouchableOpacity>
-            ) : (
+            {showRecovery && (
               <View
                 style={[styles.recoveryCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                 accessibilityLabel="Not the right pin? Options"
@@ -597,6 +581,16 @@ export default function ScanScreen() {
 
       </ScrollView>
 
+      <QuickAddSheet
+        pin={quickAddPin}
+        onClose={() => setQuickAddPin(null)}
+        onAdded={pinId => {
+          setSessionAdded(prev => (prev.includes(pinId) ? prev : [...prev, pinId]));
+          setAddedOnResult(resultKey);
+        }}
+        seaGlass
+      />
+
     </View>
   );
 }
@@ -604,6 +598,8 @@ export default function ScanScreen() {
 // ─── Styles ──────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
+  scanNext: { gap: 6, marginTop: 4, marginHorizontal: 16 },
+  scanNextCount: { fontSize: 12.5, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   root: { flex: 1 },
   headerRow: { paddingHorizontal: 16, marginBottom: 12 },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
@@ -672,20 +668,16 @@ const styles = StyleSheet.create({
   errorActions: { flexDirection: 'row', gap: 10, marginHorizontal: 16, marginBottom: 12 },
   errorActionBtn: { flex: 1 },
   addPinCta: { marginHorizontal: 16, marginBottom: 12 },
+  failure: { marginHorizontal: 16, marginBottom: 12 },
   // Controls
   controls: { paddingHorizontal: 16, gap: 12 },
   captureRow: { flexDirection: 'row', gap: 12 },
-  retakeBtn: { flex: 1 },
-  identifyBtn: { flex: 2 },
+  // Retake keeps its natural width so its label never wraps at 320 pt;
+  // Identify Pin takes the rest (UX-058, #261).
+  retakeBtn: { flexShrink: 0 },
+  identifyBtn: { flex: 1 },
+  halfBtn: { flex: 1 },
 
-  loadingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 16,
-    gap: 12,
-    borderWidth: 1,
-  },
-  loadingText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   // Confirmed
   confirmedBlock: { gap: 12 },
   confirmedCard: {
@@ -709,37 +701,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   boardsBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  // Insights ("what we saw")
-  insightsCard: { borderWidth: 1, padding: 12, gap: 8, marginBottom: 4 },
-  insightsHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  insightsTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  insightRow: { flexDirection: 'row', gap: 8 },
-  insightLabel: { fontSize: 12, fontFamily: 'Inter_500Medium', width: 82 },
-  insightValue: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 },
   // Matches
-  matchesSection: { marginTop: 20, paddingHorizontal: 16, gap: 10 },
-  matchesTitle: { fontSize: 18, fontFamily: 'Inter_700Bold' },
-  matchesSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginBottom: 4 },
-  matchCard: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    borderWidth: 1,
-    overflow: 'hidden',
-  },
-  matchRankWrap: { width: 32, alignItems: 'center', paddingTop: 14 },
-  matchRank: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  matchImage: { width: 72, height: 72, resizeMode: 'cover', alignSelf: 'center' },
-  matchInfo: { flex: 1, padding: 10, gap: 2 },
-  matchTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', lineHeight: 17 },
-  matchBrand: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  matchCollection: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  matchReasoning: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 4, lineHeight: 15 },
-  confidenceWrap: { paddingRight: 12, paddingTop: 10, alignItems: 'center', minWidth: 68 },
-  confidenceScore: { fontSize: 20, fontFamily: 'Inter_700Bold' },
-  confidenceLabel: { fontSize: 9, fontFamily: 'Inter_600SemiBold', textAlign: 'center', marginTop: 2 },
-  noneMatch: { alignItems: 'center', justifyContent: 'center', minHeight: 44, paddingVertical: 10 },
-  noneMatchText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
-  recoveryCard: { borderWidth: 1, borderRadius: 18, paddingHorizontal: 16, paddingTop: 14, marginTop: 4, marginBottom: 12 },
+  matchesSection: { marginTop: 4, gap: 10 },
+  recoveryCard: { borderWidth: 1, borderRadius: 18, paddingHorizontal: 16, paddingTop: 14, marginTop: 4, marginBottom: 12, marginHorizontal: 16 },
   recoveryTitle: { fontSize: 16, fontFamily: 'Inter_700Bold' },
   recoverySub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2, marginBottom: 8 },
   recoveryOption: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52, borderTopWidth: StyleSheet.hairlineWidth, paddingVertical: 8 },

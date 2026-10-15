@@ -24,8 +24,6 @@
  */
 import React from 'react';
 import {
-  ActivityIndicator,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -36,6 +34,7 @@ import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { ScreenContainer } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
@@ -45,7 +44,10 @@ import { useCollection } from '@/context/CollectionContext';
 import { findTradesEmptyState, type FindTradesEmptyAction } from '@/utils/findTradesEmpty';
 import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { Button } from '@/components/ui/Button';
+import { Skeleton, SkeletonBlock } from '@/components/ui/Skeleton';
+import { ErrorState } from '@/components/ui/ErrorState';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
+import { PinImage } from '@/components/ui/PinImage';
 
 function pinImageSource(imageUrl?: string) {
   return imageUrl ? { uri: imageUrl } : PLACEHOLDER_IMAGE;
@@ -89,22 +91,18 @@ export default function FindTradesScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Find Trades' }} />
+      <Stack.Screen options={{ headerShown: false }} />
       <ScreenContainer edges={{ top: false, bottom: false }}>
+        <ScreenHeader title="Find Trades" />
         <ScrollView
           style={{ flex: 1 }}
           contentContainerStyle={{ padding: spacing.lg, paddingBottom: spacing.xxxl }}
           showsVerticalScrollIndicator={false}
         >
           {loading ? (
-            <View style={styles.center}>
-              <ActivityIndicator color={colors.homeCoral} />
-            </View>
+            <FindTradesSkeleton colors={colors} />
           ) : error ? (
-            <View style={styles.center}>
-              <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
-              <Button variant="text" label="Try again" icon="refresh-cw" onPress={refresh} />
-            </View>
+            <ErrorState error={error} onRetry={refresh} />
           ) : nothingAtAll ? (
             <View style={styles.center}>
               <Feather name="compass" size={36} color={colors.homeMuted} />
@@ -234,6 +232,36 @@ function SectionHeader({ icon, tint, title, colors }: {
   );
 }
 
+// ─── Loading ────────────────────────────────────────────────────────────────
+// Two shelves shaped like "On your ISO" (header, subtitle, tile cards), so
+// the first real section lands where the placeholder was (UX-045).
+
+function FindTradesSkeleton({ colors }: { colors: ReturnType<typeof useColors> }) {
+  return (
+    <Skeleton label="Finding trades">
+      {[0, 1].map(section => (
+        <View key={section} style={styles.section}>
+          <View style={styles.sectionHeadRow}>
+            <SkeletonBlock width={24} height={24} rounded={7} tone="art" />
+            <SkeletonBlock width={section === 0 ? 96 : 128} height={14} />
+          </View>
+          <SkeletonBlock width={180} height={9} style={styles.skeletonSubtitle} />
+          <View style={styles.skeletonShelf}>
+            {[0, 1, 2, 3].map(i => (
+              <View key={i} style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                <SkeletonBlock width={86} height={86} rounded={radius.sm} tone="art" />
+                <SkeletonBlock width="85%" height={10} style={{ marginTop: 7 }} />
+                <SkeletonBlock width="55%" height={10} style={{ marginTop: 4 }} />
+                <SkeletonBlock width="70%" height={8} style={{ marginTop: 5 }} />
+              </View>
+            ))}
+          </View>
+        </View>
+      ))}
+    </Skeleton>
+  );
+}
+
 // ─── Shelf ──────────────────────────────────────────────────────────────────
 // A partially visible next card is its own affordance — how the App Store,
 // Airbnb and Spotify all handle "there's more, swipe" in a horizontal shelf,
@@ -265,7 +293,7 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
       style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
-        <Image source={pinImageSource(opportunity.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+        <PinImage source={pinImageSource(opportunity.imageUrl)} style={styles.tileImage} contentFit="contain" />
         {hasMatch && (
           <View style={[styles.matchDot, { backgroundColor: colors.homeCoral }]}>
             <Feather name="repeat" size={9} color={colors.homeSurface} />
@@ -319,10 +347,10 @@ function PotentialTradeHero({ card, colors, onPress }: {
       </View>
       <View style={[styles.ptImageWrap, { backgroundColor: colors.homeAqua }]}>
         <View style={styles.ptImageHalf}>
-          {firstPin && <Image source={pinImageSource(firstPin.imageUrl)} style={styles.ptImage} resizeMode="contain" />}
+          {firstPin && <PinImage source={pinImageSource(firstPin.imageUrl)} style={styles.ptImage} contentFit="contain" />}
         </View>
         <View style={styles.ptImageHalf}>
-          {secondPin && <Image source={pinImageSource(secondPin.imageUrl)} style={styles.ptImage} resizeMode="contain" />}
+          {secondPin && <PinImage source={pinImageSource(secondPin.imageUrl)} style={styles.ptImage} contentFit="contain" />}
         </View>
       </View>
       <Text numberOfLines={2} style={[styles.ptMeta, { color: colors.homeMuted }]}>{summary}</Text>
@@ -350,7 +378,7 @@ function SetCard({ set, colors, onPress, onPressAvailable }: {
   const representative = set.available[0];
   const image = (
     <>
-      <Image source={pinImageSource(representative?.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+      <PinImage source={pinImageSource(representative?.imageUrl)} style={styles.tileImage} contentFit="contain" />
       <View style={styles.setProgressTrack}>
         <View style={[styles.setProgressFill, { width: `${Math.round(pct * 100)}%`, backgroundColor: colors.homeSand }]} />
       </View>
@@ -401,7 +429,7 @@ function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors:
       style={[styles.tileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
-        <Image source={pinImageSource(item.imageUrl)} style={styles.tileImage} resizeMode="contain" />
+        <PinImage source={pinImageSource(item.imageUrl)} style={styles.tileImage} contentFit="contain" />
       </View>
       <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{item.title}</Text>
       <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>
@@ -413,7 +441,6 @@ function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors:
 
 const styles = StyleSheet.create({
   center: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
-  errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },
 
@@ -425,6 +452,8 @@ const styles = StyleSheet.create({
   // Plain contentContainerStyle only — no `style`/height on the ScrollView
   // itself. Matches app/pin/[id].tsx's proven "MORE FROM THIS SET" shelf.
   shelf: { paddingBottom: 2, paddingRight: spacing.lg },
+  skeletonShelf: { flexDirection: 'row', overflow: 'hidden', paddingBottom: 2 },
+  skeletonSubtitle: { marginLeft: 32, marginTop: 4, marginBottom: spacing.sm },
 
   // ─── Shared tile grammar — used identically by On Your ISO, Complete Your
   // Sets (image portion) and Based on Your Collection: image mat → title →
@@ -451,7 +480,8 @@ const styles = StyleSheet.create({
   ptImageHalf: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   ptImage: { width: '100%', height: '100%' },
   ptMeta: { fontSize: 10.5, fontFamily: 'Inter_400Regular', marginTop: spacing.sm - 2, marginBottom: spacing.sm - 2, lineHeight: 14 },
-  ptCta: { paddingVertical: spacing.sm - 1, borderRadius: radius.sm, alignItems: 'center' },
+  // 44 pt, like any button (B-P2-08); the whole card is the tap target.
+  ptCta: { minHeight: 44, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   ptCtaText: { fontSize: 12.5, fontFamily: 'Inter_700Bold' },
 
   // Complete your sets — same grammar as the shared tile, card just a touch

@@ -44,6 +44,7 @@ import { useFeature } from '@/hooks/useFeature';
 import { useCatalogueCoverage } from '@/hooks/useCatalogueCoverage';
 import { needsPhoto } from '@/utils/photoGaps';
 import { SearchBar } from '@/components/SearchBar';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { EmptyState } from '@/components/EmptyState';
 import { PinTile } from '@/components/ui/PinTile';
 import { Sheet } from '@/components/ui/Sheet';
@@ -282,10 +283,13 @@ export default function BrowseCatalogueScreen() {
 
   if (loading && rows.length === 0) {
     return (
-      <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
-        <Stack.Screen options={{ title: screenTitle }} />
-        <ActivityIndicator color={colors.homeCoral} />
-        <Text style={[styles.loadingText, { color: colors.homeMuted }]}>Loading the catalogue…</Text>
+      <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
+        <Stack.Screen options={{ headerShown: false }} />
+        <ScreenHeader title={screenTitle} />
+        <View style={styles.center}>
+          <ActivityIndicator color={colors.homeCoral} />
+          <Text style={[styles.loadingText, { color: colors.homeMuted }]}>Loading the catalogue…</Text>
+        </View>
       </View>
     );
   }
@@ -295,6 +299,9 @@ export default function BrowseCatalogueScreen() {
       key={label}
       onPress={onPress}
       activeOpacity={0.8}
+      accessibilityRole="button"
+      accessibilityState={caret ? undefined : { selected: active }}
+      accessibilityHint={caret ? 'Opens a list to filter by' : undefined}
       style={[styles.chip, {
         backgroundColor: active ? colors.homeInk : colors.homeSurface,
         borderColor: active ? colors.homeInk : colors.homeLine,
@@ -335,7 +342,7 @@ export default function BrowseCatalogueScreen() {
           {anyFilter ? ` of ${rows.length.toLocaleString()}` : ''}
         </Text>
         {anyFilter && (
-          <TouchableOpacity onPress={clearFilters} hitSlop={8}>
+          <TouchableOpacity onPress={clearFilters} hitSlop={8} accessibilityRole="button">
             <Text style={[styles.metaLink, { color: colors.homeCoral }]}>Clear filters</Text>
           </TouchableOpacity>
         )}
@@ -362,7 +369,8 @@ export default function BrowseCatalogueScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
-      <Stack.Screen options={{ title: screenTitle }} />
+      <Stack.Screen options={{ headerShown: false }} />
+      <ScreenHeader title={screenTitle} />
       <SectionList
         sections={sections}
         keyExtractor={(chunk, i) => `${chunk[0]?.id ?? 'row'}-${i}`}
@@ -379,6 +387,7 @@ export default function BrowseCatalogueScreen() {
             <TouchableOpacity
               onPress={() => router.push({ pathname: '/add-pin', params: { name: query.trim() } })}
               activeOpacity={0.85}
+              accessibilityRole="button"
               style={[styles.addPinLink, { borderColor: colors.homeCoral, backgroundColor: colors.homeCoral + '12' }]}
             >
               <Feather name="plus-circle" size={15} color={colors.homeCoral} />
@@ -402,7 +411,12 @@ export default function BrowseCatalogueScreen() {
                 </Text>
               </View>
               {selectable.length > 0 && (
-                <TouchableOpacity onPress={() => toggleSet(section.pins)} hitSlop={8}>
+                <TouchableOpacity
+                  onPress={() => toggleSet(section.pins)}
+                  hitSlop={8}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${allSelected ? 'Deselect' : 'Select all'} in ${section.title}`}
+                >
                   <Text style={[styles.selectAll, { color: colors.homeCoral }]}>
                     {allSelected ? 'Deselect' : 'Select all'}
                   </Text>
@@ -448,7 +462,7 @@ export default function BrowseCatalogueScreen() {
               <Text style={[styles.bottomCount, { color: colors.homeInk }]}>
                 {selected.size} selected
               </Text>
-              <TouchableOpacity onPress={() => setSelected(new Set())} hitSlop={8}>
+              <TouchableOpacity onPress={() => setSelected(new Set())} hitSlop={8} accessibilityRole="button" accessibilityLabel="Clear selection">
                 <Text style={[styles.metaLink, { color: colors.homeMuted }]}>Clear</Text>
               </TouchableOpacity>
             </View>
@@ -610,6 +624,8 @@ function BoardSheet({ visible, count, boards, onPickBoard, onCreateBoard, onClos
             onPress={create}
             disabled={!newName.trim()}
             activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityState={{ disabled: !newName.trim() }}
             style={[styles.newBoardBtn, { backgroundColor: newName.trim() ? colors.homeCoral : colors.homeAqua }]}
           >
             <Text style={[styles.newBoardBtnLabel, { color: newName.trim() ? colors.homeHeroText : colors.homeMuted }]}>Create</Text>
@@ -627,6 +643,8 @@ function BoardSheet({ visible, count, boards, onPickBoard, onCreateBoard, onClos
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => onPickBoard(item.id, item.name)}
+              accessibilityRole="button"
+              accessibilityLabel={`${item.name}, ${item.count} ${item.count === 1 ? 'pin' : 'pins'}`}
               style={[styles.sheetRow, { borderBottomColor: colors.homeLine }]}
             >
               <Feather name="folder" size={16} color={colors.homeMuted} />
@@ -681,6 +699,8 @@ function FilterSheet({ visible, title, searchable, items, value, onSelect, onClo
             return (
               <TouchableOpacity
                 onPress={() => pick(item.value || null)}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
                 style={[styles.sheetRow, { borderBottomColor: colors.homeLine }]}
               >
                 <Text style={[styles.sheetRowLabel, { color: colors.homeInk }]} numberOfLines={2}>{item.label}</Text>

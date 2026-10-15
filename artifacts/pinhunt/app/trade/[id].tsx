@@ -7,7 +7,6 @@ import {
   ActivityIndicator,
   Alert,
   AppState,
-  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -30,6 +29,7 @@ import {
   tradeBannerDismissalKey,
 } from '@/utils/tradeBannerDismissals';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -80,10 +80,10 @@ function PotentialMatchBanner({
           </Text>
         </View>
         <View style={bannerStyles.headerActions}>
-          <TouchableOpacity onPress={() => setCollapsed(c => !c)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+          <TouchableOpacity onPress={() => setCollapsed(c => !c)} hitSlop={{ top: 14, bottom: 14, left: 14, right: 14 }} accessibilityRole="button" accessibilityLabel={collapsed ? 'Show matching pins' : 'Hide matching pins'} accessibilityState={{ expanded: !collapsed }}>
             <Feather name={collapsed ? 'chevron-down' : 'chevron-up'} size={16} color={colors.homeCoral} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={onDismiss} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginLeft: spacing.md }}>
+          <TouchableOpacity onPress={onDismiss} hitSlop={{ top: 14, bottom: 14, left: 14, right: 14 }} style={{ marginLeft: spacing.md }} accessibilityRole="button" accessibilityLabel="Dismiss matching pins">
             <Feather name="x" size={16} color={colors.homeMuted} />
           </TouchableOpacity>
         </View>
@@ -101,10 +101,12 @@ function PotentialMatchBanner({
                     key={pin.pinId}
                     onPress={() => onPinPress(pin.pinhuntId)}
                     activeOpacity={0.8}
+                    accessibilityRole="button"
+                    accessibilityLabel={pin.title}
                     style={[bannerStyles.pinCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                   >
                     {pin.imageUrl ? (
-                      <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
+                      <PinImage source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} contentFit="cover" />
                     ) : (
                       <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.homeAqua }]}>
                         <Feather name="image" size={18} color={colors.homeMuted} />
@@ -128,10 +130,12 @@ function PotentialMatchBanner({
                     key={pin.pinId}
                     onPress={() => onPinPress(pin.pinhuntId)}
                     activeOpacity={0.8}
+                    accessibilityRole="button"
+                    accessibilityLabel={pin.title}
                     style={[bannerStyles.pinCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                   >
                     {pin.imageUrl ? (
-                      <Image source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} resizeMode="cover" />
+                      <PinImage source={{ uri: pin.imageUrl }} style={bannerStyles.pinImage} contentFit="cover" />
                     ) : (
                       <View style={[bannerStyles.pinImagePlaceholder, { backgroundColor: colors.homeAqua }]}>
                         <Feather name="image" size={18} color={colors.homeMuted} />
@@ -202,7 +206,7 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
     return (
       <View style={[styles.ratingBox, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
         <Text style={[styles.ratingTitle, { color: colors.homeInk }]}>Rating submitted! 👍</Text>
-        <TouchableOpacity onPress={onDone} style={{ padding: spacing.sm }}>
+        <TouchableOpacity onPress={onDone} style={{ padding: spacing.sm }} accessibilityRole="button">
           <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium', textAlign: 'center' }}>Done</Text>
         </TouchableOpacity>
       </View>
@@ -230,6 +234,7 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
           <TouchableOpacity
             onPress={() => submit(false)}
             activeOpacity={0.85}
+            accessibilityRole="button"
             style={[styles.ratingBtn, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
           >
             <Feather name="thumbs-down" size={18} color={colors.destructive} />
@@ -238,6 +243,7 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
           <TouchableOpacity
             onPress={() => submit(true)}
             activeOpacity={0.85}
+            accessibilityRole="button"
             style={[styles.ratingBtn, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '55' }]}
           >
             <Feather name="thumbs-up" size={18} color={colors.owned} />
@@ -245,7 +251,7 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
           </TouchableOpacity>
         </View>
       )}
-      <TouchableOpacity onPress={onDone} style={{ padding: spacing.sm }}>
+      <TouchableOpacity onPress={onDone} style={{ padding: spacing.sm }} accessibilityRole="button">
         <Text style={[styles.skipLabel, { color: colors.homeMuted }]}>Skip rating</Text>
       </TouchableOpacity>
     </View>
@@ -521,6 +527,7 @@ export default function TradeScreen() {
                     <TouchableOpacity
                       onPress={() => updateStatus('rejected')}
                       activeOpacity={0.85}
+                      accessibilityRole="button"
                       style={[styles.actionBtn, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
                     >
                       <Text style={[styles.actionBtnLabel, { color: colors.destructive }]}>Decline</Text>
@@ -528,6 +535,7 @@ export default function TradeScreen() {
                     <TouchableOpacity
                       onPress={() => updateStatus('accepted')}
                       activeOpacity={0.85}
+                      accessibilityRole="button"
                       style={[styles.actionBtn, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '55' }]}
                     >
                       <Text style={[styles.actionBtnLabel, { color: colors.owned }]}>Accept</Text>
@@ -544,6 +552,7 @@ export default function TradeScreen() {
                         { text: 'Yes, cancel', style: 'destructive', onPress: () => updateStatus('cancelled') },
                       ])}
                       activeOpacity={0.85}
+                      accessibilityRole="button"
                       style={[styles.actionBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
                     >
                       <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Cancel</Text>
@@ -554,6 +563,7 @@ export default function TradeScreen() {
                         { text: 'Yes, completed', onPress: () => updateStatus('completed') },
                       ])}
                       activeOpacity={0.85}
+                      accessibilityRole="button"
                       style={[styles.actionBtn, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
                     >
                       <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>Mark Complete</Text>
@@ -566,6 +576,7 @@ export default function TradeScreen() {
                   <TouchableOpacity
                     onPress={() => updateStatus('cancelled')}
                     activeOpacity={0.85}
+                    accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
                   >
                     <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Cancel Request</Text>
@@ -577,6 +588,7 @@ export default function TradeScreen() {
                   <TouchableOpacity
                     onPress={() => setShowRating(true)}
                     activeOpacity={0.85}
+                    accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
                   >
                     <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>Rate this Trade</Text>
@@ -599,6 +611,9 @@ export default function TradeScreen() {
                       onPress={sendMessage}
                       disabled={!msgText.trim() || sending}
                       activeOpacity={0.85}
+                      accessibilityRole="button"
+                      accessibilityLabel="Send"
+                      accessibilityState={{ disabled: !msgText.trim() || sending, busy: sending }}
                       style={[styles.sendBtn, { backgroundColor: msgText.trim() ? colors.homeCoral : colors.homeAqua }]}
                     >
                       {sending

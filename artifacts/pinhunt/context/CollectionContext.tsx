@@ -12,6 +12,7 @@ import type { CollectionStatus } from '@/types/pin';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useAuth } from '@/context/AuthContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { demoCatalogueSize } from '@/lib/demoMode';
 import {
   CollectionPushQueue,
   normalizeCollectionQuantities,
@@ -78,8 +79,15 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
       AsyncStorage.getItem(STORAGE_KEY),
       AsyncStorage.getItem(VIEWED_KEY),
       AsyncStorage.getItem(OWNER_KEY),
-    ]).then(([colData, viewData, ownerId]) => {
-      if (colData) {
+    ]).then(async ([colData, viewData, ownerId]) => {
+      if (!colData && demoCatalogueSize > 0) {
+        // Large-collection demo (UX-051): a fresh install holds most of the
+        // generated catalogue. Demo mode only (lib/demoMode.ts).
+        const { buildLargeCatalogue, buildLargeCollection } = await import('../mock-data/largeFixture');
+        const seeded = buildLargeCollection(buildLargeCatalogue(demoCatalogueSize));
+        latestCollectionRef.current = seeded;
+        setCollection(seeded);
+      } else if (colData) {
         const saved = normalizeCollectionQuantities(
           JSON.parse(colData) as Record<string, CollectionEntry>,
         ) as CollectionMap;

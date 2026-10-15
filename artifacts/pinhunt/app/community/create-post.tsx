@@ -22,6 +22,8 @@ import * as ImagePicker from 'expo-image-picker';
 import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import type { CataloguePin } from '@workspace/pin-repository';
+import { usePinSearch } from '@/hooks/usePinSearch';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
 import type { CommunityPostType } from '@workspace/pin-repository';
@@ -64,16 +66,12 @@ export default function CreatePostScreen() {
   const [uploadProgress, setUploadProgress] = useState('');
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
-  const selectedPin = linkedPinId ? pins.find(p => p.id === linkedPinId) : undefined;
+  // The picked pin is kept as is: the catalogue isn't preloaded (#25).
+  const [pickedPin, setPickedPin] = useState<CataloguePin | undefined>();
+  const selectedPin = linkedPinId ? (pickedPin?.id === linkedPinId ? pickedPin : pins.find(p => p.id === linkedPinId)) : undefined;
 
-  const filteredPins = pinSearch.trim()
-    ? pins
-        .filter(p =>
-          p.title.toLowerCase().includes(pinSearch.toLowerCase()) ||
-          p.collection.toLowerCase().includes(pinSearch.toLowerCase()),
-        )
-        .slice(0, 12)
-    : [];
+  // Server search, not a filter over a cached slice (#25, 12 Oct amendment).
+  const { results: filteredPins } = usePinSearch(pinSearch, 12);
 
   const handlePickPhotos = async () => {
     const remaining = MAX_PHOTOS - localPhotos.length;
@@ -315,7 +313,7 @@ export default function CreatePostScreen() {
                 </Text>
               </View>
               <TouchableOpacity
-                onPress={() => { setLinkedPinId(undefined); setPinSearch(''); }}
+                onPress={() => { setPickedPin(undefined); setLinkedPinId(undefined); setPinSearch(''); }}
                 hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
               >
                 <Feather name="x" size={16} color={colors.homeMuted} />
@@ -345,7 +343,7 @@ export default function CreatePostScreen() {
                   {filteredPins.map(p => (
                     <TouchableOpacity
                       key={p.id}
-                      onPress={() => { setLinkedPinId(p.id); setShowPins(false); setPinSearch(''); }}
+                      onPress={() => { setPickedPin(p); setLinkedPinId(p.id); setShowPins(false); setPinSearch(''); }}
                       style={[styles.pinDropdownItem, { borderBottomColor: colors.homeLine }]}
                       activeOpacity={0.75}
                     >

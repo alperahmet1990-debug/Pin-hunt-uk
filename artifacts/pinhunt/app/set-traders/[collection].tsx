@@ -7,7 +7,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -24,6 +23,7 @@ import { useAddMissingToIso } from '@/hooks/useAddMissingToIso';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 import { hasThemLabel, type SetTrader } from '@/utils/setTraders';
 import { radius, spacing } from '@/constants/theme';
+import { PinImage } from '@/components/ui/PinImage';
 
 const THUMBS = 4;
 
@@ -126,7 +126,7 @@ export default function SetTradersScreen() {
                       accessibilityLabel={pin.title}
                       style={styles.thumbWrap}
                     >
-                      <Image
+                      <PinImage
                         source={pin.imageUrl ? { uri: pin.imageUrl } : PLACEHOLDER_IMAGE}
                         style={[styles.thumb, { backgroundColor: colors.homeAqua }]}
                       />

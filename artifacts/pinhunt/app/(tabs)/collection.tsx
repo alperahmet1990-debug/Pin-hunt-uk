@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   FlatList,
-  Image,
   Modal,
   Platform,
   ScrollView,
@@ -18,6 +17,7 @@ import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
+import { useProfile } from '@/context/ProfileContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
@@ -25,17 +25,23 @@ import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
+import { buildSetGroups, compareIsoDesc, compareText, indexBySet, partitionByStatus } from '@/utils/collectionDerive';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { Button, IconButton } from '@/components/ui/Button';
 import { BulkSelectBar, BULK_BAR_HEIGHT, tabBarOffset } from '@/components/BulkSelectBar';
 import { usePinSelection } from '@/hooks/usePinSelection';
-import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui';
+import { SegmentedControl, Sheet, PinTile, pinGridColumns, pinTileSize, PIN_GRID_GUTTER, SkeletonGrid } from '@/components/ui';
 import { spacing } from '@/constants/theme';
 import type { SegmentedControlOption } from '@/components/ui';
 import {
   type CataloguePin,
   type PinSetSummary,
 } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
+import { WhatsIsoSheet } from '@/components/WhatsIsoSheet';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
+import { buildShareListText, shareListTitle, shareOrCopy, type ShareListKind } from '@/utils/shareList';
+import { useToast } from '@/components/ui/Toast';
 
 // All is the default (B-P1-03): owned pins first, with Boards as a row on it.
 type Tab = 'all' | 'sets' | 'traders' | 'iso';
@@ -96,16 +102,16 @@ function processPins(pins: CataloguePin[], filter: PinFilterType, sort: PinSortT
     res = res.filter(p => !p.limitedEditionSize && (!p.edition || p.edition.toLowerCase().includes('open') || p.edition.toLowerCase().includes('core')));
   }
 
+  // Plain string compares for ISO dates and a shared collator for names:
+  // localeCompare per comparison is slow on thousands of pins (UX-051).
   res = res.sort((a, b) => {
-    if (sort === 'name') return (a.title || '').localeCompare(b.title || '');
+    if (sort === 'name') return compareText(a.title || '', b.title || '');
     if (sort === 'year') {
       const releaseA = a.releaseDate || a.releaseYear?.toString() || '';
       const releaseB = b.releaseDate || b.releaseYear?.toString() || '';
-      return releaseB.localeCompare(releaseA);
+      return compareIsoDesc(releaseA, releaseB);
     }
-    const dateA = collectionMap[a.id]?.dateAdded || '';
-    const dateB = collectionMap[b.id]?.dateAdded || '';
-    return dateB.localeCompare(dateA);
+    return compareIsoDesc(collectionMap[a.id]?.dateAdded || '', collectionMap[b.id]?.dateAdded || '');
   });
   return res;
 }
@@ -198,7 +204,7 @@ export default function CollectionScreen() {
   const selection = usePinSelection();
   const params = useLocalSearchParams<{ tab?: string }>();
   const { collection } = useCollection();
-  const { pins: catalogue, ensurePins, ensureCollections, repository } = usePinCatalogue();
+  const { pins: catalogue, loading: catalogueLoading, ensurePins, ensureCollections, repository } = usePinCatalogue();
   const { customBoards, createBoard, getBoardPins } = useBoards();
 
   const [activeTab, setActiveTab] = useState<Tab>('all');
@@ -215,6 +221,11 @@ export default function CollectionScreen() {
   const [isoSort, setIsoSort] = useState<PinSortType>('recent');
   const [setsSort, setSetsSort] = useState<'completion' | 'name' | 'year'>('completion');
   const [filterSheetTab, setFilterSheetTab] = useState<'traders' | 'iso' | 'sets' | null>(null);
+  const [whatsIsoOpen, setWhatsIsoOpen] = useState(false);
+  // Share my ISO / For Trade list (#146); a private profile explains first.
+  const { profile } = useProfile();
+  const [privateShare, setPrivateShare] = useState<ShareListKind | null>(null);
+  const toast = useToast();
 
   const [addModalVisible, setAddModalVisible] = useState(false);
   const [repoSetSummaries, setSetSummaries] = useState<PinSetSummary[]>([]);
@@ -246,9 +257,16 @@ export default function CollectionScreen() {
   const forTradeIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'for_trade').map(e => e.pinId)), [collection]);
   const wantedIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'wanted').map(e => e.pinId)), [collection]);
 
+  // True while the catalogue rows for collection entries are being fetched,
+  // so the grid shows placeholders rather than "No pins yet" (UX-045).
+  const [resolvingPins, setResolvingPins] = useState(false);
   useEffect(() => {
     const pinIds = Object.values(collection).map(entry => entry.pinId);
-    if (pinIds.length > 0) void ensurePins(pinIds);
+    if (pinIds.length === 0) return;
+    let cancelled = false;
+    setResolvingPins(true);
+    Promise.resolve(ensurePins(pinIds)).finally(() => { if (!cancelled) setResolvingPins(false); });
+    return () => { cancelled = true; };
   }, [collection, ensurePins]);
 
   useEffect(() => {
@@ -259,15 +277,20 @@ export default function CollectionScreen() {
     if (names.size > 0) void ensureCollections([...names]);
   }, [catalogue, ownedIds, ensureCollections]);
 
+  const [summariesLoading, setSummariesLoading] = useState(!!repository);
   useEffect(() => {
     if (!repository) return;
     let cancelled = false;
+    setSummariesLoading(true);
     repository.getSetSummaries()
       .then(summaries => {
         if (!cancelled) setSetSummaries(summaries);
       })
       .catch(() => {
         if (!cancelled) setSetSummaries([]);
+      })
+      .finally(() => {
+        if (!cancelled) setSummariesLoading(false);
       });
     return () => {
       cancelled = true;
@@ -279,34 +302,17 @@ export default function CollectionScreen() {
     [repository, repoSetSummaries, catalogue],
   );
 
-  const ownedPins = useMemo(() => catalogue.filter(pin => ownedIds.has(pin.id)), [catalogue, ownedIds]);
-  const forTradePins = useMemo(() => catalogue.filter(pin => forTradeIds.has(pin.id)), [catalogue, forTradeIds]);
-  const wantedPins = useMemo(() => catalogue.filter(pin => wantedIds.has(pin.id)), [catalogue, wantedIds]);
+  // One pass for all three lists, and pins indexed by set once (UX-051).
+  const { owned: ownedPins, forTrade: forTradePins, wanted: wantedPins } = useMemo(
+    () => partitionByStatus(catalogue, collection),
+    [catalogue, collection],
+  );
+  const pinsBySet = useMemo(() => indexBySet(catalogue), [catalogue]);
 
-  const automaticSetGroups = useMemo<GroupData[]>(() => {
-    const ownedSetNames = new Set(ownedPins.map(p => p.collection).filter(Boolean));
-
-    return setSummaries
-      .filter(summary => ownedSetNames.has(summary.setName))
-      .map(summary => {
-        const pins = catalogue.filter(pin => pin.collection === summary.setName);
-        const ownedCount = pins.filter(pin => ownedIds.has(pin.id) || forTradeIds.has(pin.id)).length;
-        // Use the same catalogue membership that Set Detail renders.
-        const total = pins.length;
-        const complete = total > 0 && ownedCount >= total;
-        return {
-          isGroup: true as const,
-          id: summary.id,
-          setId: summary.id,
-          title: summary.setName,
-          subtitle: complete ? `${ownedCount} / ${total} · Complete ✓` : `${ownedCount} / ${total} · ${total ? Math.round((ownedCount / total) * 100) : 0}%`,
-          pins,
-          isSet: true,
-          progress: total > 0 ? Math.min(ownedCount / total, 1) : 0,
-          complete,
-        };
-      });
-  }, [setSummaries, catalogue, ownedPins, ownedIds, forTradeIds]);
+  const automaticSetGroups = useMemo<GroupData[]>(
+    () => buildSetGroups(setSummaries, pinsBySet, ownedPins, collection),
+    [setSummaries, pinsBySet, ownedPins, collection],
+  );
 
   const setGroups = useMemo<GroupData[]>(() => {
     const query = searchQuery.trim().toLowerCase();
@@ -320,7 +326,7 @@ export default function CollectionScreen() {
           return (b.progress || 0) - (a.progress || 0);
         }
         if (setsSort === 'name') {
-          return a.title.localeCompare(b.title);
+          return compareText(a.title, b.title);
         }
         if (setsSort === 'year') {
           const aYear = a.pins[0]?.releaseYear || 0;
@@ -380,6 +386,18 @@ export default function CollectionScreen() {
     return processPins(wantedPins, isoFilter, isoSort, searchQuery, collection);
   }, [wantedPins, isoFilter, isoSort, searchQuery, collection]);
 
+  const shareList = async (kind: ShareListKind) => {
+    if (profile?.profileVisibility === 'private') {
+      setPrivateShare(kind);
+      return;
+    }
+    const list = kind === 'iso' ? wantedPins : forTradePins;
+    const message = buildShareListText(kind, list.map(p => p.title), profile?.username);
+    if (!message) return;
+    const result = await shareOrCopy(message, shareListTitle(kind));
+    if (result === 'copied') toast.show({ message: 'List copied. Paste it into WhatsApp or a group chat.' });
+  };
+
   const gridData = useMemo(() => {
     if (activeTab === 'all') return filteredOwnedPins;
     if (activeTab === 'sets') return setGroups;
@@ -389,6 +407,11 @@ export default function CollectionScreen() {
   }, [activeTab, filteredOwnedPins, setGroups, filteredTraderPins, filteredIsoPins]);
   // Pin tabs use the shared 3-column PinTile grid (B-P1-04); Sets keep 2-up cards.
   const pinGrid = activeTab !== 'sets';
+  // Nothing to show yet but this tab has entries whose pins are still on
+  // their way: placeholders instead of the empty state (UX-045).
+  const tabEntryCount = activeTab === 'traders' ? forTradeIds.size : activeTab === 'iso' ? wantedIds.size : ownedIds.size;
+  const showSkeleton = gridData.length === 0 && tabEntryCount > 0 && !searchQuery &&
+    (catalogueLoading || resolvingPins || (activeTab === 'sets' && summariesLoading));
   const visiblePinIds = useMemo(
     () => (pinGrid ? (gridData as CataloguePin[]).map(p => p.id) : []),
     [pinGrid, gridData],
@@ -496,7 +519,7 @@ export default function CollectionScreen() {
               </Text>
             </View>
             {!searchActive && (
-              <TouchableOpacity onPress={() => setFilterSheetTab('sets')} style={s.iconStatBtn}>
+              <TouchableOpacity onPress={() => setFilterSheetTab('sets')} accessibilityRole="button" accessibilityLabel="Sort and filter sets" style={s.iconStatBtn}>
                 <Feather name="sliders" size={16} color={colors.homeInk} />
                 <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
               </TouchableOpacity>
@@ -505,11 +528,15 @@ export default function CollectionScreen() {
         )}
         {activeTab === 'traders' && (
           <>
-          <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
-            <Text style={[s.statText, { color: colors.homeInk }]}>
+          {/* Wraps the actions onto their own line when they don't fit (#146). */}
+          <View style={[s.statsRow, s.statsRowWrap]}>
+            <Text style={[s.statText, s.statCount, { color: colors.homeInk }]}>
               {forTradePins.length} <Text style={{ color: colors.homeMuted }}>For Trade</Text>
             </Text>
-            <View style={{ flexDirection: 'row', gap: 4 }}>
+            <View style={s.statActions}>
+              {!selection.active && forTradePins.length > 0 && (
+                <IconButton icon="share" iconSize={17} color={colors.homeInk} accessibilityLabel="Share your For Trade list" onPress={() => shareList('for_trade')} />
+              )}
               {!selection.active && filteredTraderPins.length > 0 && (
                 <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
                   <Feather name="check-square" size={16} color={colors.homeInk} />
@@ -517,7 +544,7 @@ export default function CollectionScreen() {
                 </TouchableOpacity>
               )}
               {!searchActive && (
-                <TouchableOpacity onPress={() => setFilterSheetTab('traders')} style={s.iconStatBtn}>
+                <TouchableOpacity onPress={() => setFilterSheetTab('traders')} accessibilityRole="button" accessibilityLabel="Sort and filter For Trade" style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />
                   <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
                 </TouchableOpacity>
@@ -535,11 +562,21 @@ export default function CollectionScreen() {
         )}
         {activeTab === 'iso' && (
           <>
-          <View style={[s.statsRow, { justifyContent: 'space-between' }]}>
-            <Text style={[s.statText, { color: colors.homeInk }]}>
-              {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
-            </Text>
-            <View style={{ flexDirection: 'row', gap: 4 }}>
+          <View style={[s.statsRow, s.statsRowWrap]}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+              <Text style={[s.statText, s.statCount, { color: colors.homeInk }]}>
+                {wantedPins.length} <Text style={{ color: colors.homeMuted }}>ISO</Text>
+              </Text>
+              {/* The one place ISO is explained (#65, docs/design/glossary.md). */}
+              <TouchableOpacity onPress={() => setWhatsIsoOpen(true)} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="What's ISO?">
+                <Feather name="help-circle" size={15} color={colors.homeCoralDeep} />
+                <Text style={[s.iconStatBtnText, { color: colors.homeCoralDeep }]}>What's ISO?</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={s.statActions}>
+              {!selection.active && wantedPins.length > 0 && (
+                <IconButton icon="share" iconSize={17} color={colors.homeInk} accessibilityLabel="Share your ISO list" onPress={() => shareList('iso')} />
+              )}
               {!selection.active && filteredIsoPins.length > 0 && (
                 <TouchableOpacity onPress={selection.start} style={s.iconStatBtn} accessibilityRole="button" accessibilityLabel="Select pins">
                   <Feather name="check-square" size={16} color={colors.homeInk} />
@@ -547,7 +584,7 @@ export default function CollectionScreen() {
                 </TouchableOpacity>
               )}
               {!searchActive && (
-                <TouchableOpacity onPress={() => setFilterSheetTab('iso')} style={s.iconStatBtn}>
+                <TouchableOpacity onPress={() => setFilterSheetTab('iso')} accessibilityRole="button" accessibilityLabel="Sort and filter ISO" style={s.iconStatBtn}>
                   <Feather name="sliders" size={16} color={colors.homeInk} />
                   <Text style={[s.iconStatBtnText, { color: colors.homeInk }]}>Sort</Text>
                 </TouchableOpacity>
@@ -619,6 +656,13 @@ export default function CollectionScreen() {
   );
 
   const renderEmpty = () => {
+    if (showSkeleton) {
+      return pinGrid ? (
+        <SkeletonGrid sidePadding={0} tileSize={tileSize} columns={pinColumns} label="Loading your pins" />
+      ) : (
+        <SkeletonGrid sidePadding={0} tileSize={gridCardWidth} columns={2} gap={12} rows={2} label="Loading your sets" />
+      );
+    }
     if (activeTab === 'all') {
       if (searchActive && searchQuery || Object.keys(pinFilters).length > 0) {
         return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
@@ -658,6 +702,11 @@ export default function CollectionScreen() {
         keyExtractor={item => ('isGroup' in item ? item.id : item.id)}
         numColumns={pinGrid ? pinColumns : 2}
         key={pinGrid ? `pin-grid-${pinColumns}` : 'grid-2'}
+        // Later batches stay small for collections of thousands of pins (UX-051);
+        // the first render keeps FlatList's default 10 rows.
+        maxToRenderPerBatch={4}
+        windowSize={7}
+        removeClippedSubviews={Platform.OS === 'android'}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={renderHeader}
         ListEmptyComponent={renderEmpty}
@@ -685,18 +734,18 @@ export default function CollectionScreen() {
             // Sets use the visual group card
             const preview = group.pins.slice(0, 4);
             return (
-              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} style={[s.groupCard, { width: gridCardWidth, backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+              <TouchableOpacity onPress={() => handleGroupPress(group)} activeOpacity={0.8} accessibilityRole="button" accessibilityLabel={`${group.title}, ${group.subtitle}`} style={[s.groupCard, { width: gridCardWidth, backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
                 <View style={[s.groupPreviewArea, { height: gridCardWidth * 0.8, backgroundColor: colors.homeAqua }]}>
                   {preview.length === 0 ? (
                     <View style={s.groupEmpty}>
                       <Feather name="folder" size={24} color={colors.homeMuted} />
                     </View>
                   ) : preview.length === 1 ? (
-                    <Image source={getPinImageSource(preview[0])} style={s.groupPreviewSingle} />
+                    <PinImage source={getPinImageSource(preview[0])} style={s.groupPreviewSingle} />
                   ) : (
                     <View style={s.groupPreviewGrid}>
                       {preview.map(p => (
-                        <Image key={p.id} source={getPinImageSource(p)} style={[s.groupPreviewSmall, { borderColor: colors.homeSurface }]} />
+                        <PinImage key={p.id} source={getPinImageSource(p)} style={[s.groupPreviewSmall, { borderColor: colors.homeSurface }]} />
                       ))}
                     </View>
                   )}
@@ -835,6 +884,8 @@ export default function CollectionScreen() {
                         const active = pinFilters[key] === option;
                         return (
                           <TouchableOpacity
+                            accessibilityRole="button"
+                            accessibilityState={{ selected: active }}
                             key={option}
                             onPress={() => setPinFilters(current => {
                               const next = { ...current };
@@ -863,6 +914,8 @@ export default function CollectionScreen() {
                     const label = option === 'recent' ? 'Recently Added' : option === 'name' ? 'Name' : 'Release date';
                     return (
                       <TouchableOpacity
+                        accessibilityRole="radio"
+                        accessibilityState={{ checked: active }}
                         key={option}
                         onPress={() => setAllPinsSort(option)}
                         style={[s.compactChip, {
@@ -887,6 +940,24 @@ export default function CollectionScreen() {
       </Modal>
 
       {/* Filter / Sort Modal */}
+      <ConfirmDialog
+        visible={privateShare !== null}
+        title="Your profile is private"
+        message="Collectors can't find you while your profile is private. Make it public in Edit Profile, then share your list."
+        confirmLabel="Edit Profile"
+        cancelLabel="Not now"
+        onConfirm={() => { setPrivateShare(null); router.push('/edit-profile'); }}
+        onCancel={() => setPrivateShare(null)}
+      />
+
+      <WhatsIsoSheet
+        visible={whatsIsoOpen}
+        onClose={() => setWhatsIsoOpen(false)}
+        isoCount={wantedPins.length}
+        onFindTrades={() => router.push('/find-trades')}
+        onFindPins={() => router.push('/search')}
+      />
+
       <Sheet
         visible={filterSheetTab !== null}
         onClose={() => setFilterSheetTab(null)}
@@ -902,6 +973,8 @@ export default function CollectionScreen() {
                   const label = f === 'all' ? 'All Sets' : f === 'progress' ? 'In Progress' : 'Completed';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={f}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
@@ -922,6 +995,8 @@ export default function CollectionScreen() {
                   const label = sOpt === 'completion' ? 'Completion %' : sOpt === 'name' ? 'Name (A-Z)' : 'Year (Newest)';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={sOpt}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
@@ -944,6 +1019,8 @@ export default function CollectionScreen() {
                   const label = f === 'all' ? 'All' : f === 'le' ? 'Limited' : 'Open/Core';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={f}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
@@ -967,6 +1044,8 @@ export default function CollectionScreen() {
                   const label = sOpt === 'recent' ? 'Recently Added' : sOpt === 'name' ? 'Name (A-Z)' : 'Year (Newest)';
                   return (
                     <TouchableOpacity
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked: active }}
                       key={sOpt}
                       style={[s.sheetChip, {
                         backgroundColor: active ? colors.homeCoral + '15' : colors.homeAqua,
@@ -999,6 +1078,10 @@ const s = StyleSheet.create({
   contextualArea: { paddingBottom: 8 },
   statsRow: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 16, paddingVertical: 12 },
   statText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  statsRowWrap: { justifyContent: 'space-between', flexWrap: 'wrap', rowGap: 0, columnGap: 8 },
+  statCount: { flexShrink: 0 },
+  // Right-aligned, on the count's line when there's room, else on its own.
+  statActions: { flexDirection: 'row', gap: 4, marginLeft: 'auto' },
   photoGapsCard: { marginTop: 0, marginBottom: 12, marginHorizontal: 16 },
   listFooter: { marginTop: 8, marginHorizontal: -16 },
   linkRow: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56, marginHorizontal: 16, marginBottom: 12, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 14, borderWidth: StyleSheet.hairlineWidth },

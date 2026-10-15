@@ -27,6 +27,8 @@ import { useCommunity } from '@/hooks/useCommunity';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
+import { PinImage } from '@/components/ui/PinImage';
+import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -89,7 +91,7 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
 
   if (count === 1) {
     return (
-      <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9} style={styles.photoGrid1}>
+      <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9} accessibilityRole="imagebutton" accessibilityLabel={`Photo 1 of ${count}`} style={styles.photoGrid1}>
         <Image source={{ uri: photos[0] }} style={styles.photoGrid1Image} />
       </TouchableOpacity>
     );
@@ -100,7 +102,7 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
     return (
       <View style={[styles.photoGridRow, { gap }]}>
         {photos.slice(0, 2).map((uri, i) => (
-          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9}>
+          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9} accessibilityRole="imagebutton" accessibilityLabel={`Photo ${i + 1} of ${count}`}>
             <Image source={{ uri }} style={{ width: cellW, height: 160, borderRadius: 6 }} />
           </TouchableOpacity>
         ))}
@@ -113,12 +115,12 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
     const leftW = CARD_INNER_WIDTH - rightW - gap;
     return (
       <View style={[styles.photoGridRow, { gap }]}>
-        <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9}>
+        <TouchableOpacity onPress={() => onPress(0)} activeOpacity={0.9} accessibilityRole="imagebutton" accessibilityLabel={`Photo 1 of ${count}`}>
           <Image source={{ uri: photos[0] }} style={{ width: leftW, height: 210, borderRadius: 6 }} />
         </TouchableOpacity>
         <View style={{ gap, flexDirection: 'column' }}>
           {photos.slice(1, 3).map((uri, i) => (
-            <TouchableOpacity key={i} onPress={() => onPress(i + 1)} activeOpacity={0.9}>
+            <TouchableOpacity key={i} onPress={() => onPress(i + 1)} activeOpacity={0.9} accessibilityRole="imagebutton" accessibilityLabel={`Photo ${i + 2} of ${count}`}>
               <Image source={{ uri }} style={{ width: rightW, height: (210 - gap) / 2, borderRadius: 6 }} />
             </TouchableOpacity>
           ))}
@@ -136,14 +138,14 @@ function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: numbe
     <View style={{ gap }}>
       <View style={[styles.photoGridRow, { gap }]}>
         {[0, 1].map(i => (
-          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9}>
+          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9} accessibilityRole="imagebutton" accessibilityLabel={`Photo ${i + 1} of ${count}`}>
             <Image source={{ uri: photos[i] }} style={{ width: cellW, height: cellH, borderRadius: 6 }} />
           </TouchableOpacity>
         ))}
       </View>
       <View style={[styles.photoGridRow, { gap }]}>
         {[2, 3].map(i => (
-          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9} style={{ position: 'relative' }}>
+          <TouchableOpacity key={i} onPress={() => onPress(i)} activeOpacity={0.9} accessibilityRole="imagebutton" accessibilityLabel={i === 3 && extra > 0 ? `Photo 4 of ${count}, plus ${extra} more` : `Photo ${i + 1} of ${count}`} style={{ position: 'relative' }}>
             <Image source={{ uri: photos[i] }} style={{ width: cellW, height: cellH, borderRadius: 6 }} />
             {i === 3 && extra > 0 && (
               <View style={[styles.moreOverlay, { width: cellW, height: cellH, borderRadius: 6 }]}>
@@ -167,6 +169,9 @@ function Chip({ label, icon, color, active, onPress }: {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.75}
+      accessibilityRole="button"
+      accessibilityState={{ selected: active }}
+      accessibilityLabel={`Show ${label} posts`}
       style={[
         styles.chip,
         {
@@ -199,6 +204,8 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.85}
+      accessibilityRole="button"
+      accessibilityLabel={`${TYPE_LABEL[post.postType]} post by @${authorName}, ${timeAgo(post.createdAt)}. ${post.body}. ${post.commentCount ?? 0} comment${post.commentCount !== 1 ? 's' : ''}`}
       style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 18 }]}
     >
       {/* Header row */}
@@ -230,7 +237,7 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
       {post.linkedPin && (
         <View style={[styles.pinChip, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
           {post.linkedPin.imageUrl
-            ? <Image source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
+            ? <PinImage source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />
             : <Feather name="tag" size={12} color={colors.homeMuted} />
           }
           <Text style={[styles.pinChipLabel, { color: colors.homeMuted }]} numberOfLines={1}>
@@ -295,7 +302,8 @@ export default function CommunityScreen() {
   const instanceIdRef           = useRef(`${Date.now()}_${Math.random().toString(36).slice(2, 8)}`);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
-  const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 80;
+  // Clears the floating web tab bar (#260).
+  const botPad = tabScreenBottomPad(insets.bottom + 80);
 
   const load = useCallback(async (isRefresh = false) => {
     if (!repo) { setLoading(false); return; }
@@ -523,6 +531,7 @@ export default function CommunityScreen() {
           <TouchableOpacity
             onPress={handleNewPostsPress}
             activeOpacity={0.85}
+            accessibilityRole="button"
             style={[styles.newPostsBanner, { backgroundColor: colors.homeCoral }]}
           >
             <Feather name="arrow-up" size={13} color="#fff" />
@@ -560,7 +569,7 @@ export default function CommunityScreen() {
         ) : error ? (
           <View style={styles.center}>
             <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
-            <TouchableOpacity onPress={() => load()} style={{ padding: 8 }}>
+            <TouchableOpacity onPress={() => load()} accessibilityRole="button" style={{ minHeight: 44, justifyContent: 'center', paddingHorizontal: 8 }}>
               <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
@@ -580,6 +589,7 @@ export default function CommunityScreen() {
               }}
               style={[styles.emptyBtn, { backgroundColor: colors.homeCoral, borderRadius: 18 }]}
               activeOpacity={0.85}
+              accessibilityRole="button"
             >
               <Feather name="plus" size={14} color="#fff" />
               <Text style={styles.emptyBtnLabel}>Create Post</Text>

@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { generateKeyPairSync, verify } from 'node:crypto';
+import { generateKeyPairSync, sign, verify } from 'node:crypto';
 import {
-  buildIssue, buildVersion, filedKeys, listUrl, makeAscToken, marker, redact, summariseCrashLog,
+  buildIssue, buildVersion, filedKeys, listUrl, makeAscToken, marker, parseP8, redact, summariseCrashLog,
 } from './lib.mjs';
 
 const APP_ID = '6823062114';
@@ -37,6 +37,32 @@ test('ASC token accepts a key stored with literal \\n escapes', () => {
   const { privateKey } = generateKeyPairSync('ec', { namedCurve: 'P-256' });
   const escaped = privateKey.export({ type: 'pkcs8', format: 'pem' }).replace(/\n/g, '\\n');
   assert.equal(makeAscToken({ keyId: 'K', issuerId: 'I', privateKey: escaped }).split('.').length, 3);
+});
+
+test('the .p8 key is accepted however it was pasted into the secret', () => {
+  const { privateKey, publicKey } = generateKeyPairSync('ec', { namedCurve: 'P-256' });
+  const pem = privateKey.export({ type: 'pkcs8', format: 'pem' });
+  const body = pem.replace(/-----[A-Z ]+-----/g, '').trim();
+  const variants = {
+    pem,
+    crlf: pem.replace(/\n/g, '\r\n'),
+    'literal \\n': pem.replace(/\n/g, '\\n'),
+    'one line with spaces': pem.replace(/\n/g, ' '),
+    'body only': body,
+    'body only, one line': body.replace(/\s+/g, ''),
+    'surrounding blank lines': `\n\n${pem}\n\n`,
+  };
+  for (const [name, input] of Object.entries(variants)) {
+    const key = parseP8(input);
+    const sig = sign('sha256', Buffer.from('x'), key);
+    assert.ok(verify('sha256', Buffer.from('x'), publicKey, sig), name);
+  }
+});
+
+test('a malformed key gives a clear error without echoing the secret', () => {
+  for (const bad of ['', 'not a key at all', '-----BEGIN PRIVATE KEY-----\nAAAA\n-----END PRIVATE KEY-----', 'c2VjcmV0LXZhbHVl']) {
+    assert.throws(() => parseP8(bad), err => /not a valid \.p8 key/.test(err.message) && !err.message.includes('c2VjcmV0') && !err.message.includes('not a key at all'));
+  }
 });
 
 test('ASC token refuses to run without credentials', () => {

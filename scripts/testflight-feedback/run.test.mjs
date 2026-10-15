@@ -129,6 +129,20 @@ test('dry run creates nothing', async () => {
   }
 });
 
+test('a malformed key fails with a readable message and no stack trace', async () => {
+  const api = await fakeApis();
+  try {
+    const out = await run(api, { ASC_PRIVATE_KEY: 'MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg' });
+    assert.notEqual(out.code, 0);
+    assert.match(out.stderr, /ASC_PRIVATE_KEY is not a valid \.p8 key/);
+    assert.ok(!out.stderr.includes('MIGTAgEAMBMG'), 'the secret is not echoed');
+    assert.ok(!/at makeAscToken/.test(out.stderr), 'no stack trace');
+    assert.equal(api.state.issues.length, 0);
+  } finally {
+    api.close();
+  }
+});
+
 test('a key without permission fails loudly and files nothing', async () => {
   const api = await fakeApis({ ascStatus: 403 });
   try {

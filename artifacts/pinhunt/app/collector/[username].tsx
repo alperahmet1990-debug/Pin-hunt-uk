@@ -29,6 +29,9 @@ import { PinImage } from '@/components/ui/PinImage';
 
 // ─── Potential trade row ──────────────────────────────────────────────────────
 
+/** Pin thumbnail size in the trade-match rows (B-P1-20, #46). */
+const TRADE_THUMB = 56;
+
 function PotentialTradeRow({
   pin,
 }: {
@@ -45,10 +48,16 @@ function PotentialTradeRow({
       ]}
     >
       {pin.imageUrl ? (
-        <PinImage source={{ uri: pin.imageUrl }} style={styles.tradePinThumb} />
+        <PinImage
+          source={{ uri: pin.imageUrl }}
+          style={[styles.tradePinThumb, { backgroundColor: colors.homeSurface }]}
+          contentFit="contain"
+          accessible={false}
+          testID="trade-pin-thumb"
+        />
       ) : (
-        <View style={[styles.tradePinIcon, { backgroundColor: tone + '26' }]}>
-          <Feather name={isTheyHave ? 'download' : 'upload'} size={12} color={tone} />
+        <View testID="trade-pin-thumb" style={[styles.tradePinThumb, styles.tradePinIcon, { backgroundColor: tone + '26' }]}>
+          <Feather name={isTheyHave ? 'download' : 'upload'} size={20} color={tone} />
         </View>
       )}
       <Text style={[styles.tradePinTitle, { color: colors.homeInk }]} numberOfLines={2}>
@@ -367,7 +376,7 @@ export default function CollectorProfileScreen() {
                     <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>POTENTIAL TRADE MATCH</Text>
                     {tradesLoading ? (
                       <View style={[styles.tradeMatchCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
-                        <SkeletonRows label="Loading trade matches" count={3} thumb={22} style={styles.tradeGroup} />
+                        <SkeletonRows label="Loading trade matches" count={3} thumb={TRADE_THUMB} style={styles.tradeGroup} />
                       </View>
                     ) : tradeMatchCard}
                   </View>
@@ -441,13 +450,9 @@ const styles = StyleSheet.create({
     borderRadius: radius.md,
     padding: spacing.sm + 1,
   },
-  tradePinIcon: {
-    width: 22, height: 22, borderRadius: 11,
-    alignItems: 'center', justifyContent: 'center',
-  },
-  tradePinThumb: {
-    width: 22, height: 22, borderRadius: 6,
-  },
+  tradePinIcon: { alignItems: 'center', justifyContent: 'center' },
+  // B-P1-20 (#46): big enough to recognise the pin (was 22 pt).
+  tradePinThumb: { width: TRADE_THUMB, height: TRADE_THUMB, borderRadius: radius.sm },
   tradePinTitle: { flex: 1, fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18 },
   moreLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', paddingLeft: spacing.xs },
   tradeDivider: { height: StyleSheet.hairlineWidth, marginHorizontal: spacing.lg - 2 },

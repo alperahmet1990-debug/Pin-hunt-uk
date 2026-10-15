@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import { PinImage } from '../PinImage';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 
@@ -22,9 +22,19 @@ describe('PinImage', () => {
     expect(mockProps.contentFit).toBe('contain');
   });
 
-  it('renders the bundled placeholder too (no URL to key on)', async () => {
-    await render(<PinImage source={PLACEHOLDER_IMAGE} />);
-    expect(mockProps.cachePolicy).toBe('memory-disk');
-    expect(mockProps.recyclingKey).toBeUndefined();
+  // UX-066 (#308): no photo → the drawn placeholder, read as "No photo yet".
+  it('draws the no-photo placeholder instead of an image', async () => {
+    mockProps = {};
+    await render(<PinImage source={PLACEHOLDER_IMAGE} style={{ width: 44, height: 44 }} />);
+    expect(mockProps).toEqual({});
+    expect(screen.getByTestId('no-photo-placeholder')).toBeTruthy();
+    expect(screen.getByLabelText('No photo yet')).toBeTruthy();
+  });
+
+  it('names the pin with the placeholder, or stays silent inside a labelled tile', async () => {
+    await render(<PinImage source={PLACEHOLDER_IMAGE} accessibilityLabel="Dumbo Blue Sky" />);
+    expect(screen.getByLabelText('Dumbo Blue Sky. No photo yet')).toBeTruthy();
+    await render(<PinImage source={PLACEHOLDER_IMAGE} accessible={false} />);
+    expect(screen.queryByLabelText('No photo yet')).toBeNull();
   });
 });

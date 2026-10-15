@@ -16,7 +16,9 @@ export function getPinImageSource(pin: CataloguePin): ImageSourcePropType {
 }
 
 // Single bundled placeholder used when a pin has no catalogue image yet.
-// A neutral "no photo" glyph — never a real pin's photo, so a missing
+// PinImage draws NoPhotoPlaceholder in its place (theme-aware, UX-066);
+// the PNG is the same design in light mode, for anything that loads it raw.
+// A neutral "no photo" image — never a real pin's photo, so a missing
 // catalogue image is never mistaken for that pin's genuine artwork.
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 export const PLACEHOLDER_IMAGE = require('../assets/images/pins/pin-image-unavailable.png') as ImageSourcePropType;

@@ -1,5 +1,7 @@
 # Laptop session checklist: staging, verification, smoke test, safe imports
 
+**Fastest path:** follow `STAGING-QUICKSTART.md` (exact commands, about 1½ hours). This file has the background.
+
 Work top to bottom.
 - **Only staging is touched.** Production is not part of this checklist.
 - **Nothing here imports pins.** Approving a candidate only changes its status in the research tables.

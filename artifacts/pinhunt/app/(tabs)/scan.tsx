@@ -10,6 +10,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
@@ -34,10 +35,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { CataloguePin } from '@workspace/pin-repository';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScanResult } from '@/components/scan/ScanResult';
+import { ScanCamera, type ScanCameraPhoto } from '@/components/scan/ScanCamera';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, type UserError } from '@/utils/userError';
 import { tabScreenBottomPad } from '@/utils/tabBarSpace';
+
+/** Live camera on the Find tab (UX-009, #117); web keeps the photo picker. */
+const LIVE_CAMERA = Platform.OS !== 'web';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -129,11 +134,21 @@ export default function ScanScreen() {
   // screen, and which result the latest add came from.
   const [sessionAdded, setSessionAdded] = useState<string[]>([]);
   const [addedOnResult, setAddedOnResult] = useState<number | null>(null);
-  useFocusEffect(useCallback(() => () => {
-    // Leaving the scan screen ends the session.
-    setSessionAdded([]);
-    setAddedOnResult(null);
+  // The live camera only runs while this tab is on screen.
+  const [focused, setFocused] = useState(false);
+  useFocusEffect(useCallback(() => {
+    setFocused(true);
+    return () => {
+      setFocused(false);
+      // Leaving the scan screen ends the session.
+      setSessionAdded([]);
+      setAddedOnResult(null);
+    };
   }, []));
+  const scrollRef = useRef<ScrollView>(null);
+  const { width: screenWidth } = useWindowDimensions();
+  // Square live preview, as wide as the screen allows (capped for tall phones).
+  const viewfinderHeight = LIVE_CAMERA ? Math.min(screenWidth - 32, 420) : 300;
   const [resultKey, setResultKey] = useState(0);
   const shutterAnim = useRef(new Animated.Value(1)).current;
   // Each identification run has an id; a cancelled or superseded run's
@@ -158,8 +173,11 @@ export default function ScanScreen() {
   // ── Shared: accept a picked/captured asset ───────────────────────────────────
   async function handlePickerResult(result: ImagePicker.ImagePickerResult) {
     if (result.canceled || !result.assets?.[0]) return;
+    await handleAsset(result.assets[0]);
+  }
 
-    const asset = result.assets[0];
+  /** A photo from the picker or the live camera (already cropped to its frame). */
+  async function handleAsset(asset: ScanCameraPhoto) {
     // Identify straight away, no separate tap (UX-008a). The photo shows
     // with the progress overlay while it is shrunk and sent.
     const run = ++identifyRun.current;
@@ -192,6 +210,17 @@ export default function ScanScreen() {
   async function handleScanPin() {
     setErrorMsg(null);
     setFailure(null);
+
+    // With the live camera, scanning again means back to the preview.
+    if (LIVE_CAMERA) {
+      identifyRun.current += 1;
+      clearResult();
+      setCaptured(null);
+      setMatches([]);
+      setScanState('idle');
+      scrollRef.current?.scrollTo({ y: 0, animated: true });
+      return;
+    }
 
     const launcher = Platform.OS === 'web'
       ? ImagePicker.launchImageLibraryAsync
@@ -379,6 +408,7 @@ export default function ScanScreen() {
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       <ScrollView
+        ref={scrollRef}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad, flexGrow: 1 }}
       >
@@ -396,10 +426,18 @@ export default function ScanScreen() {
           <Animated.View
             style={[
               styles.viewfinder,
-              { backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
+              { height: viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
             ]}
           >
-            {scanState === 'idle' && (
+            {scanState === 'idle' && LIVE_CAMERA && (
+              <ScanCamera
+                active={focused && scanState === 'idle'}
+                onCapture={photo => { void handleAsset(photo); }}
+                onError={() => Alert.alert('Could not take the photo', 'Please try again, or choose a photo.')}
+              />
+            )}
+
+            {scanState === 'idle' && !LIVE_CAMERA && (
               <TouchableOpacity
                 style={styles.viewfinderPlaceholder}
                 onPress={handleScanPin}
@@ -427,10 +465,14 @@ export default function ScanScreen() {
               </View>
             )}
 
-            <CornerMarker corner="tl" color={colors.homeSand} />
-            <CornerMarker corner="tr" color={colors.homeSand} />
-            <CornerMarker corner="bl" color={colors.homeSand} />
-            <CornerMarker corner="br" color={colors.homeSand} />
+            {!(LIVE_CAMERA && scanState === 'idle') && (
+              <>
+                <CornerMarker corner="tl" color={colors.homeSand} />
+                <CornerMarker corner="tr" color={colors.homeSand} />
+                <CornerMarker corner="bl" color={colors.homeSand} />
+                <CornerMarker corner="br" color={colors.homeSand} />
+              </>
+            )}
           </Animated.View>
         </View>
         )}
@@ -476,7 +518,8 @@ export default function ScanScreen() {
         <View style={styles.controls}>
           {scanState === 'idle' && (
             <>
-              <Button label="Scan Pin" icon="camera" onPress={handleScanPin} />
+              {/* With the live camera, its shutter is the scan button. */}
+              {!LIVE_CAMERA && <Button label="Scan Pin" icon="camera" onPress={handleScanPin} />}
               <Button label="Choose Photo" icon="image" variant="secondary" onPress={handleChoosePhoto} />
               <Button label="Manually Search" icon="search" variant="text" fullWidth onPress={() => router.push('/search')} />
             </>
@@ -608,7 +651,6 @@ const styles = StyleSheet.create({
   // Viewfinder
   viewfinderWrap: { marginBottom: 16 },
   viewfinder: {
-    height: 300,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',

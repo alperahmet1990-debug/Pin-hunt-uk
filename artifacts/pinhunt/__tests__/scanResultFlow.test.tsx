@@ -89,12 +89,13 @@ describe('Scan result (UX-005)', () => {
     await act(async () => { mockOnAdded?.('p2', 'for_trade'); });
     expect(screen.getByText('1 pin added this session')).toBeTruthy();
 
-    // Scan next goes straight to the photo picker; the new result starts
-    // with the plain "Scan another pin" again.
-    picker.launchCameraAsync.mockResolvedValueOnce({ canceled: false, assets: [{ uri: 'file:///next.jpg', width: 3024, height: 3024, mimeType: 'image/jpeg' }] });
+    // Scan next goes straight back to the live camera (UX-009, #117), whose
+    // shutter starts the next scan; the new result starts with the plain
+    // "Scan another pin" again.
     await fireEvent.press(screen.getByRole('button', { name: 'Scan next pin' }));
-    await waitFor(() => expect(picker.launchCameraAsync).toHaveBeenCalled());
-    await waitFor(() => expect(screen.queryByRole('button', { name: 'Scan next pin' })).toBeNull());
+    expect(await screen.findByRole('button', { name: 'Take photo' })).toBeTruthy();
+    expect(picker.launchCameraAsync).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByRole('button', { name: 'Take photo' }));
     await screen.findByRole('header', { name: 'Best match' }, { timeout: 3000 });
     expect(screen.getByRole('button', { name: 'Scan another pin' })).toBeTruthy();
 

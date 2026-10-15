@@ -3,14 +3,14 @@
 # `human-approved-config` (agents cannot edit .github/**).
 # See docs/release/TESTFLIGHT-FEEDBACK.md.
 #
-# Every 6 hours, files new TestFlight feedback and crash reports as GitHub
+# Every 15 minutes, files new TestFlight feedback and crash reports as GitHub
 # issues labelled `testflight-feedback` + `agent-proposed`. Read-only towards
 # Apple; never files the same feedback twice.
 name: TestFlight feedback
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:

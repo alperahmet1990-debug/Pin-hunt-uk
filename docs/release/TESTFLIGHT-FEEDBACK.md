@@ -1,6 +1,6 @@
 # TestFlight feedback → GitHub issues
 
-Every 6 hours a GitHub Actions job reads new TestFlight feedback for PinHunt
+Every 15 minutes a GitHub Actions job reads new TestFlight feedback for PinHunt
 (App Store Connect app `6823062114`) and files each item as a GitHub issue for
 triage. It only reads from Apple and only creates issues.
 
@@ -57,9 +57,22 @@ triage. It only reads from Apple and only creates issues.
    PR labelled `human-approved-config`, and merge it.
 4. **First run.** Actions → **TestFlight feedback** → Run workflow with
    **dry run** ticked. Check the log shows what it would file, then run it
-   again without dry run. After that it runs by itself every 6 hours.
+   again without dry run. After that it runs by itself every 15 minutes.
 
 The job creates the `testflight-feedback` label on its first real run.
+
+## Timing
+
+Scheduled runs are every 15 minutes, so new feedback normally becomes an issue
+within 15–30 minutes (GitHub can start scheduled runs a few minutes late). Each
+run takes about 20 seconds; Actions minutes are free on public repositories.
+For an immediate check, use **Run workflow**. Instant delivery is possible later
+via App Store Connect webhooks (`BETA_FEEDBACK_SCREENSHOT_SUBMISSION_CREATED`,
+`BETA_FEEDBACK_CRASH_SUBMISSION_CREATED`) calling a `repository_dispatch`, but
+needs an always-on receiver.
+
+GitHub pauses scheduled workflows after 60 days without repository activity;
+re-enable it from the Actions tab if that happens.
 
 ## Turning it off
 

@@ -18,6 +18,7 @@ import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
 import { Chip } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { Button } from '@/components/ui/Button';
 import { SkeletonHeader, SkeletonRows } from '@/components/ui/Skeleton';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -144,13 +145,9 @@ export default function CollectorProfileScreen() {
 
   return (
     <>
-      <Stack.Screen
-        options={{
-          title: profile?.username ? `@${profile.username}` : 'Collector',
-          headerBackTitle: 'Back',
-        }}
-      />
+      <Stack.Screen options={{ headerShown: false }} />
       <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
+        <ScreenHeader title={profile?.username ? `@${profile.username}` : 'Collector'} />
         {loading ? (
           // Placeholder in the hero's place: compact row for a match entry,
           // the full centred hero otherwise (UX-045).

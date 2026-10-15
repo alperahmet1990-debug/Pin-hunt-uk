@@ -34,6 +34,7 @@ import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { ScreenContainer } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
@@ -90,8 +91,9 @@ export default function FindTradesScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Find Trades' }} />
+      <Stack.Screen options={{ headerShown: false }} />
       <ScreenContainer edges={{ top: false, bottom: false }}>
+        <ScreenHeader title="Find Trades" />
         <ScrollView
           style={{ flex: 1 }}
           contentContainerStyle={{ padding: spacing.lg, paddingBottom: spacing.xxxl }}

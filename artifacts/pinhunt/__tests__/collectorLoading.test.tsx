@@ -38,7 +38,8 @@ describe('Collector profile while loading (UX-045)', () => {
     expect(screen.getByRole('progressbar', { name: 'Loading collector' })).toBeTruthy();
     await act(async () => { resolveProfile(profile); });
     expect(screen.queryByRole('progressbar', { name: 'Loading collector' })).toBeNull();
-    expect(screen.getByText('@pinpal')).toBeTruthy();
+    // The header title and the profile hero both name the collector.
+    expect(screen.getAllByText('@pinpal').length).toBeGreaterThan(0);
   });
 
   it('shows placeholder rows while trade matches load', async () => {
@@ -64,6 +65,6 @@ describe('Collector profile while loading (UX-045)', () => {
     mockProfileFails = false;
     await fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
     await act(async () => { resolveProfile(profile); });
-    expect(screen.getByText('@pinpal')).toBeTruthy();
+    expect(screen.getAllByText('@pinpal').length).toBeGreaterThan(0);
   });
 });

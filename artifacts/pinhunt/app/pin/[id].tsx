@@ -3,19 +3,17 @@ import {
   ActivityIndicator,
   useWindowDimensions,
   Linking,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
-import { Button, IconButton } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
@@ -26,6 +24,7 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { collectionStatusLine } from '@/utils/collectionStatusLine';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import type { PrimaryActionBarAction } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
@@ -43,7 +42,6 @@ export default function PinDetailScreen() {
   const screen = useWindowDimensions();
   // Capped so the title and Add to Collection fit above the fold at 320×568 (B-P2-07).
   const { hero: heroHeight, card: imageCard } = pinHeroSize(screen.width, screen.height);
-  const insets = useSafeAreaInsets();
   const router = useRouter();
   const { collection, getEntry, markViewed, setStatus } = useCollection();
   const { customBoards } = useBoards();
@@ -112,8 +110,9 @@ export default function PinDetailScreen() {
 
   if (!pin) {
     return (
-      <ScreenContainer>
-        <Stack.Screen options={{ title: 'Pin Detail' }} />
+      <ScreenContainer edges={{ top: false, bottom: true }}>
+        <Stack.Screen options={{ headerShown: false }} />
+        <ScreenHeader />
         <View style={styles.notFound}>
           {pinLoading ? (
             <ActivityIndicator color={colors.homeCoral} />
@@ -180,7 +179,6 @@ export default function PinDetailScreen() {
     },
   ];
 
-  const topInset = Platform.OS === 'web' ? Math.max(insets.top, 24) : insets.top;
 
   const manageIcon: React.ComponentProps<typeof Feather>['name'] =
     currentStatus === 'none' ? 'plus'
@@ -205,19 +203,12 @@ export default function PinDetailScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.hero, { height: heroHeight }]}
         >
-          <IconButton
-            icon="chevron-left"
-            accessibilityLabel="Back"
-            variant="surface"
-            onPress={() => router.back()}
-            style={[styles.backBtn, { top: topInset + 10 }]}
-          />
-
-          {pin.limitedEditionSize != null && pin.limitedEditionSize > 0 && (
-            <View style={[styles.leBadgeWrap, { top: topInset + 10 }]}>
+          <ScreenHeader
+            overlay
+            right={pin.limitedEditionSize != null && pin.limitedEditionSize > 0 ? (
               <Chip variant="solid" tone="sand" size="sm" icon="star" label={`LE ${pin.limitedEditionSize.toLocaleString()}`} />
-            </View>
-          )}
+            ) : undefined}
+          />
 
           {images.length > 1 ? (
             <>
@@ -488,8 +479,6 @@ const styles = StyleSheet.create({
   scrollContent: { paddingBottom: spacing.xxxl },
   // Hero
   hero: { width: '100%', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
-  backBtn: { position: 'absolute', left: spacing.lg, zIndex: 2 },
-  leBadgeWrap: { position: 'absolute', right: spacing.lg, zIndex: 2 },
   imagePage: { alignItems: 'center', justifyContent: 'center' },
   image: {
     borderRadius: radius.xl,

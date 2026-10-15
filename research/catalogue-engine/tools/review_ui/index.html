@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pin check</title>
+<style>
+  :root { --ink:#12343b; --muted:#6b7280; --line:#e5e1da; --bg:#f8f4ee; --card:#fff; --ok:#1f7a4d; --okbg:#e3f3ea;
+          --warn:#8a5a00; --warnbg:#fff4d6; --bad:#a3302a; --badbg:#fde8e6; --accent:#5f6493; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); }
+  button { font:inherit; cursor:pointer; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink); padding:10px 14px; }
+  button:disabled { opacity:.45; cursor:not-allowed; }
+  kbd { font:12px ui-monospace, monospace; background:#eee9e1; border-radius:4px; padding:1px 5px; margin-left:6px; }
+  .wrap { display:grid; grid-template-columns: 250px 1fr; min-height:100vh; }
+  aside { border-right:1px solid var(--line); background:#fff; padding:14px; overflow:auto; max-height:100vh; position:sticky; top:0; }
+  aside h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:6px 0 10px; }
+  .pg { display:block; width:100%; text-align:left; border:0; border-radius:8px; padding:8px; margin-bottom:2px; font-size:13px; }
+  .pg.cur { background:#ecebf5; font-weight:600; }
+  .pg small { display:block; color:var(--muted); font-weight:400; }
+  main { padding:18px 22px 60px; max-width:860px; }
+  .top { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:14px; }
+  .bar { flex:1; min-width:200px; height:8px; background:#e9e4dc; border-radius:99px; overflow:hidden; }
+  .bar i { display:block; height:100%; background:var(--ok); }
+  .stat { font-size:13px; color:var(--muted); }
+  .page { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:14px; }
+  .page .url { font-weight:600; word-break:break-all; }
+  .page .tip { color:var(--muted); font-size:13px; margin-top:4px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; }
+  .card h1 { font-size:22px; margin:0 0 4px; }
+  .sub { color:var(--muted); font-size:13px; margin-bottom:14px; }
+  table { width:100%; border-collapse:collapse; margin:8px 0 12px; }
+  td { padding:7px 6px; border-top:1px solid var(--line); vertical-align:top; }
+  td:first-child { width:150px; color:var(--muted); }
+  td.seen { width:150px; text-align:right; white-space:nowrap; }
+  label.chk { font-size:13px; color:var(--muted); cursor:pointer; }
+  .chip { display:inline-block; font-size:12px; border-radius:99px; padding:2px 9px; margin:0 6px 6px 0; }
+  .c-ok { background:var(--okbg); color:var(--ok); } .c-warn { background:var(--warnbg); color:var(--warn); } .c-bad { background:var(--badbg); color:var(--bad); }
+  .c-n { background:#eee9e1; color:var(--ink); }
+  .q { background:var(--warnbg); border-radius:12px; padding:12px; margin:10px 0; }
+  .q b { display:block; margin-bottom:8px; }
+  .q button.on { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .yes { background:var(--ok); color:#fff; border-color:var(--ok); font-weight:600; font-size:16px; padding:12px 20px; }
+  .no { background:var(--badbg); color:var(--bad); border-color:#f3c4bf; }
+  .done { background:var(--okbg); border-radius:12px; padding:12px; margin-top:14px; }
+  textarea { width:100%; min-height:70px; font:inherit; border:1px solid var(--line); border-radius:10px; padding:8px; margin-top:8px; }
+  .msg { margin-top:12px; font-size:14px; } .err { color:var(--bad); }
+  .login { max-width:380px; margin:12vh auto; background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; }
+  .login input { width:100%; font:inherit; padding:10px; border:1px solid var(--line); border-radius:10px; margin:6px 0 12px; }
+  .nav { display:flex; justify-content:space-between; margin-top:18px; }
+  .src { font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const $ = s => document.querySelector(s);
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+const DONE = new Set(['approved', 'rejected', 'imported', 'needs_more_research']);
+const S = { pages: [], p: 0, i: 0, extras: {}, structure: {}, mode: null, msg: '', err: '', busy: false };
+
+async function call(path, body) {
+  const r = await fetch(path, body === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || 'Request failed');
+  return j;
+}
+
+// ── Sign in ────────────────────────────────────────────────────────────────
+function login(error = '') {
+  $('#app').innerHTML = `<form class="login" id="f">
+    <h1 style="margin-top:0">Pin check</h1>
+    <p class="sub">Staging only. Sign in with your App Creator account on staging.</p>
+    <input id="e" type="email" placeholder="Email" autocomplete="username" required>
+    <input id="pw" type="password" placeholder="Password" autocomplete="current-password" required>
+    <button class="yes" style="width:100%">Sign in</button>
+    <p class="msg err">${esc(error)}</p></form>`;
+  $('#f').onsubmit = async ev => {
+    ev.preventDefault();
+    try { await call('/api/login', { email: $('#e').value, password: $('#pw').value }); await load(); }
+    catch (e) { login(e.message); }
+  };
+}
+
+async function load() {
+  $('#app').innerHTML = '<p class="login">Loading the pins…</p>';
+  try {
+    const d = await call('/api/data');
+    if (!d.run) return ($('#app').innerHTML = '<p class="login">No research run is loaded on staging yet.</p>');
+    S.run = d.run; S.pages = d.pages;
+    jumpToNextOpen(0, 0);
+    render();
+  } catch (e) { login(e.message); }
+}
+
+// ── Navigation ─────────────────────────────────────────────────────────────
+const pin = () => S.pages[S.p]?.pins[S.i];
+const allPins = () => S.pages.flatMap(p => p.pins);
+const isOpen = p => p.reopened || (!DONE.has(p.status) && !p.localDone);
+function jumpToNextOpen(p, i) {
+  const flat = S.pages.flatMap((pg, pi) => pg.pins.map((x, ii) => [pi, ii, x]));
+  const start = flat.findIndex(([pi, ii]) => pi === p && ii === i);
+  const next = [...flat.slice(Math.max(start, 0)), ...flat.slice(0, Math.max(start, 0))].find(([, , x]) => isOpen(x));
+  if (next) { S.p = next[0]; S.i = next[1]; } else { S.p = p; S.i = i; }
+  S.mode = null;
+}
+function step(d) {
+  const flat = S.pages.flatMap((pg, pi) => pg.pins.map((_, ii) => [pi, ii]));
+  const k = flat.findIndex(([pi, ii]) => pi === S.p && ii === S.i) + d;
+  if (k >= 0 && k < flat.length) { [S.p, S.i] = flat[k]; S.mode = null; S.msg = S.err = ''; render(); }
+}
+
+// ── Pin facts ──────────────────────────────────────────────────────────────
+const chars = p => String(p.proposed['Characters'] || '').split(';').map(s => s.trim()).filter(Boolean);
+const held = p => p.reasons.filter(r => /duplicate/i.test(r) || r.startsWith('conflict:'));
+const needsStructure = p => chars(p).length >= 2 && p.reasons.some(r => r.startsWith('structure'));
+const money = (v, c) => v == null || v === '' ? '' : ({ GBP: '£', EUR: '€', USD: '$' }[c] ?? (c ? c + ' ' : '')) + v;
+const EXTRAS = [
+  ['set_name', 'Set', p => p.proposed['Collection name'] || p.proposed['Series']],
+  ['edition_type', 'Edition', p => p.proposed['Edition type']],
+  ['edition_size', 'Edition size', p => p.proposed['Edition size']],
+  ['original_price', 'Price', p => money(p.proposed['Original price'], p.proposed['Currency'])],
+  ['release_date', 'Release date', p => p.proposed['Release date'] || (p.proposed['Release year'] ? `${p.proposed['Release year']} (year only)` : '')],
+];
+const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+const openPage = () => { const u = S.pages[S.p].url; if (u.startsWith('https://')) window.open(u, 'pinhunt_source'); };
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function render() {
+  const all = allPins();
+  const done = all.filter(x => !isOpen(x)).length;
+  const approved = all.filter(x => x.status === 'approved').length;
+  const pg = S.pages[S.p], p = pin();
+  const ex = S.extras[p.id] ?? {};
+  const st = S.structure[p.id];
+  const h = held(p);
+  const canMatch = pg.url.startsWith('https://') && (!needsStructure(p) || st === 'one');
+  const status = !isOpen(p) ? (p.status === 'approved' ? ['Approved', 'c-ok'] : p.status === 'direct_verified' ? ['Checked, held', 'c-warn']
+    : p.status === 'needs_more_research' ? ['Sent back for research', 'c-bad'] : [p.status.replace(/_/g, ' '), 'c-n']) : null;
+
+  $('#app').innerHTML = `<div class="wrap">
+  <aside><h2>Pages (${S.pages.length})</h2>
+    ${S.pages.map((x, k) => { const left = x.pins.filter(isOpen).length;
+      return `<button class="pg ${k === S.p ? 'cur' : ''}" data-pg="${k}">${left ? '' : '✓ '}${esc(host(x.url))}
+        <small>${esc(decodeURIComponent(x.url.split('/').pop() || '').replace(/\.html$/, '').replace(/-\d{9,}$/, '').replace(/-/g, ' ').slice(0, 60))}</small>
+        <small>${x.pins.length - left}/${x.pins.length} done</small></button>`; }).join('')}
+  </aside>
+  <main>
+    <div class="top"><div class="bar"><i style="width:${(100 * done / all.length).toFixed(1)}%"></i></div>
+      <span class="stat">${done}/${all.length} done · ${approved} approved · run ${esc(S.run.commit)}</span></div>
+
+    <div class="page"><div class="url">Page ${S.p + 1} of ${S.pages.length}: ${esc(host(pg.url))}</div>
+      <div class="src">${esc(pg.url)}</div>
+      <div class="actions" style="margin-top:10px"><button data-act="open">Open this Disney page<kbd>O</kbd></button></div>
+      <div class="tip">Put the Disney page on the left half of your screen (green window button → Tile Window to Left) and this on the right.</div></div>
+
+    <div class="card">
+      <div class="sub">Pin ${S.i + 1} of ${pg.pins.length} on this page${status ? ` · <span class="chip ${status[1]}">${status[0]}</span>` : ''}</div>
+      <h1>${esc(p.proposed['Pin name'] || p.key.split('/').pop())}</h1>
+      <div>${chars(p).map(c => `<span class="chip c-n">${esc(c)}</span>`).join('') || '<span class="chip c-warn">No character named: read it off the page</span>'}</div>
+      <table>${EXTRAS.map(([f, label, get], n) => { const v = get(p); return v ? `<tr><td>${label}</td><td>${esc(v)}</td>
+        <td class="seen"><label class="chk"><input type="checkbox" data-x="${f}" ${ex[f] ? 'checked' : ''}> also on page<kbd>${n + 1}</kbd></label></td></tr>` : ''; }).join('')}
+        <tr><td>Found on</td><td class="src" colspan="2">${Object.entries(p.sources).map(([k, v]) => `<b>${esc(k)}</b>: ${esc(v.join(', '))}`).join(' · ')}</td></tr>
+      </table>
+      ${p.citesPage === false && pg.url.startsWith('https://') ? `<div class="sub">Our sources didn't cite this page for this pin. If the page doesn't show it, press <b>Not on this page</b>.</div>` : ''}
+      ${p.warnings.length ? `<div><span class="chip c-warn">Sources differ: ${esc(p.warnings.map(w => w.replace(/^variants:\s*/, '').replace(/original_price/g, 'price').replace(/_/g, ' ')).join(', '))}</span> Tick the value only if the page shows it.</div>` : ''}
+      ${h.length ? `<div class="q" style="background:var(--badbg)"><b>Held: can't be imported yet</b>${esc(h.join('; '))}. "Matches" records your check; the duplicate decision is separate.</div>` : ''}
+      ${needsStructure(p) && isOpen(p) ? `<div class="q"><b>Does the page show ONE pin with all of these characters?</b>
+        <button data-st="one" class="${st === 'one' ? 'on' : ''}">Yes, one pin</button>
+        <button data-st="separate" class="${st === 'separate' ? 'on' : ''}">No, separate pins</button></div>` : ''}
+
+      ${isOpen(p) ? (S.mode === 'off' || S.mode === 'separate' ? `<div class="q"><b>What's wrong?</b>
+          <textarea id="note" placeholder="e.g. wrong character, different design, price is £16">${S.mode === 'separate' ? 'Page shows separate pins, not one pin with all these characters.' : ''}</textarea>
+          <div class="actions"><button class="no" data-act="send-off">Send back for research</button><button data-act="cancel">Cancel</button></div></div>`
+        : `<div class="actions">
+          <button class="yes" data-act="match" ${canMatch && !S.busy ? '' : 'disabled'}>✓ Matches the page<kbd>Y</kbd></button>
+          <button class="no" data-act="off" ${S.busy ? 'disabled' : ''}>Something's off<kbd>N</kbd></button>
+          <button data-act="absent" ${S.busy ? 'disabled' : ''}>Not on this page<kbd>S</kbd></button></div>`)
+      : `<div class="done">${status ? esc(status[0]) : 'Done'}. <button data-act="undo" style="margin-left:8px">Change my answer</button></div>`}
+      <p class="msg ${S.err ? 'err' : ''}">${esc(S.err || S.msg)}</p>
+      <div class="nav"><button data-act="prev">← Previous</button><button data-act="next">Next →</button></div>
+    </div>
+  </main></div>`;
+
+  document.querySelectorAll('[data-pg]').forEach(b => b.onclick = () => { S.p = +b.dataset.pg; S.i = 0; S.mode = null; S.msg = S.err = ''; render(); });
+  document.querySelectorAll('[data-x]').forEach(b => b.onchange = () => { (S.extras[p.id] ??= {})[b.dataset.x] = b.checked; });
+  document.querySelectorAll('[data-st]').forEach(b => b.onclick = () => { S.structure[p.id] = b.dataset.st; if (b.dataset.st === 'separate') S.mode = 'separate'; render(); });
+  document.querySelectorAll('[data-act]').forEach(b => b.onclick = () => doAct(b.dataset.act));
+}
+
+// ── Answers ────────────────────────────────────────────────────────────────
+async function doAct(a) {
+  const p = pin(), pg = S.pages[S.p];
+  if (a === 'open') return openPage();
+  if (a === 'prev') return step(-1);
+  if (a === 'next') return step(1);
+  if (a === 'off') { S.mode = 'off'; return render(); }
+  if (a === 'cancel') { S.mode = null; return render(); }
+  if (S.busy) return;
+  S.busy = true; S.err = ''; S.msg = '';
+  try {
+    if (a === 'match') {
+      const ex = S.extras[p.id] ?? {};
+      const extras = EXTRAS.filter(([f]) => ex[f]);
+      const fields = ['characters', 'pin_name', ...extras.map(([f]) => f)];
+      const note = `Checked on ${host(pg.url)}: characters and design${extras.length ? '; also ' + extras.map(([, l, get]) => `${l.toLowerCase()} ${get(p)}`).join(', ') : ''}${S.structure[p.id] === 'one' ? '; one pin with all characters' : ''}.`;
+      const r = await call('/api/act', { id: p.id, action: 'match', sourceUrl: pg.url, fields, note, approve: held(p).length === 0 });
+      p.status = r.status; p.localDone = true; p.reopened = false;
+      S.msg = r.status === 'approved' ? 'Approved.' : 'Checked and held for your duplicate decision.';
+    } else if (a === 'send-off' || a === 'absent') {
+      const note = a === 'absent' ? `Not shown on ${host(pg.url)}.` : ($('#note')?.value || '').trim();
+      if (note.length < 3) { S.busy = false; S.err = 'Add a few words about what is wrong.'; return render(); }
+      const r = await call('/api/act', { id: p.id, action: a === 'absent' ? 'absent' : 'off', note });
+      p.status = r.status; p.localDone = true; p.reopened = false; S.msg = 'Sent back for more research.';
+    } else if (a === 'undo') {
+      const r = await call('/api/act', { id: p.id, action: 'undo', note: 'Reviewer changed their answer in Pin check.' });
+      p.status = r.status; p.localDone = false; p.reopened = true; S.busy = false; S.msg = 'Reopened: check it again.'; S.mode = null; return render();
+    }
+    S.busy = false;
+    const msg = S.msg;
+    jumpToNextOpen(S.p, S.i);
+    S.msg = msg;
+    render();
+  } catch (e) { S.busy = false; S.err = e.message; render(); }
+}
+
+document.addEventListener('keydown', e => {
+  if (!S.pages.length || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.metaKey || e.ctrlKey) return;
+  const k = e.key.toLowerCase();
+  if (k === 'y') { const b = document.querySelector('[data-act="match"]'); if (b && !b.disabled) doAct('match'); }
+  else if (k === 'n') doAct('off');
+  else if (k === 's') { if (document.querySelector('[data-act="absent"]')) doAct('absent'); }
+  else if (k === 'o') openPage();
+  else if (k === 'arrowright') step(1);
+  else if (k === 'arrowleft') step(-1);
+  else if ('12345'.includes(k)) { const box = document.querySelector(`[data-x="${EXTRAS[+k - 1][0]}"]`); if (box) { box.checked = !box.checked; box.onchange(); } }
+});
+
+call('/api/data').then(() => load()).catch(() => login());
+</script>
+</body>
+</html>

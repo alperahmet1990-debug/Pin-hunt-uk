@@ -52,14 +52,23 @@ Press **w** to open it in the browser. Sign in with your **App Creator** account
 - Go to `http://localhost:8081/admin/research-review`. It shows "No runs".
 - Admin → a pin → change its title → Save. It saves. (Change it back.)
 
-## 6. Load and check the pilot (about 50 min)
-1. Research Review → **Load research run (JSON)** → `docs/research/catalogue-sprint/pilot-dsuk-high/pilot_dsuk_high_payload.json`. The preview shows 100 pins, 22 sets → **Load run**.
-2. Open `docs/research/catalogue-sprint/pilot-dsuk-high/pilot_dsuk_high_checklist.xlsx`. For each of the 23 rows:
-   1. Open the Disney Store link in your browser.
-   2. Research Review → **Review set** → paste the link → tick **only** the pins the page shows and the fields you could see (name/characters; edition size, price or date if shown) → **Record set check**.
-   3. Multi-character pins: check the page shows **one pin** with those characters, not separate pins.
-   4. **Approve ticked pins**. Rows marked "Review on its own": approve one at a time with a short note.
-   5. Anything the page doesn't support: **Needs more research** or **Reject**.
+## 6. Load and check the pilot (about 40 min)
+1. Research Review (`http://localhost:8081/admin/research-review`) → **Load research run (JSON)** → `docs/research/catalogue-sprint/pilot-dsuk-high/pilot_dsuk_high_payload.json` → check the preview (100 pins, 22 sets) → **Load run**. Already done if it says "Latest run … 100 pins".
+2. Start **Pin check** in a new Terminal tab (the staging API must still be running):
+   ```sh
+   cd ~/PinHunt-Development && node --env-file=artifacts/api-server/.env.staging research/catalogue-engine/tools/review_ui/server.mjs
+   ```
+   Open http://localhost:4600 and sign in with your staging App Creator email and password.
+3. Press **O** to open the Disney page. Put it on the left half of the screen (green window button → Tile Window to Left of Screen) and Pin check on the right.
+4. For each pin, compare with the page:
+   - **Y / ✓ Matches the page**: the page shows this pin (character and design). Records your check and approves it. Before pressing Y you can tick **1–5** for extra facts the page also shows (set, edition, edition size, price, date).
+   - **N / Something's off**: a few words (wrong character, different design, other price). Sent back for research.
+   - **S / Not on this page**: sent back for research.
+   - Two-character pins ask first: **one pin with both**, or **separate pins**.
+   - Pins marked **Held** (possible duplicates) record your check but are not approved; that decision is separate.
+   - **Change my answer** on a done pin reopens it.
+
+   It moves to the next pin by itself, and the left column shows progress per page. Answers save as you go, so you can stop and come back.
 
 ## 7. Import the approved pins (tab A, 3 min)
 API (tab B) still running:

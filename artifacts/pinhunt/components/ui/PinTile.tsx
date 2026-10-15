@@ -28,6 +28,13 @@ const STATUS_ICON: Record<ActiveStatus, keyof typeof Feather.glyphMap> = {
 
 export interface PinTileProps {
   title: string;
+  /**
+   * Shorter text for the caption, e.g. the variant name on a set's page
+   * (#43). VoiceOver still reads the full `title`.
+   */
+  displayTitle?: string;
+  /** Caption lines: 1 (default) or 2, which also uses 12 pt (#43). */
+  titleLines?: 1 | 2;
   imageUrl?: string;
   size: number;
   onPress: () => void;
@@ -67,7 +74,7 @@ export function pinTileLabel(p: Pick<PinTileProps, 'title' | 'status' | 'copies'
 
 export function PinTile(props: PinTileProps) {
   const {
-    title, imageUrl, size, onPress, onLongPress, status, copies, dimmed, missing, photoNeeded,
+    title, displayTitle, titleLines = 1, imageUrl, size, onPress, onLongPress, status, copies, dimmed, missing, photoNeeded,
     selected, selectionDisabled, onQuickAdd, quickAddLabel, accessibilityActions, onAccessibilityAction,
   } = props;
   const colors = useColors();
@@ -142,8 +149,12 @@ export function PinTile(props: PinTileProps) {
           </TouchableOpacity>
         ) : null}
       </View>
-      <Text numberOfLines={1} maxFontSizeMultiplier={fontScale.dense} style={[styles.name, { color: dimmed ? colors.homeMuted : colors.homeInk }]}>
-        {title}
+      <Text
+        numberOfLines={titleLines}
+        maxFontSizeMultiplier={fontScale.dense}
+        style={[styles.name, titleLines === 2 && styles.nameTwoLines, { color: dimmed ? colors.homeMuted : colors.homeInk }]}
+      >
+        {displayTitle || title}
       </Text>
     </TouchableOpacity>
   );
@@ -163,4 +174,6 @@ const styles = StyleSheet.create({
   missingTag: { position: 'absolute', bottom: 5, left: 5, borderRadius: radius.pill, borderWidth: StyleSheet.hairlineWidth, paddingHorizontal: 5, paddingVertical: 1 },
   missingLabel: { fontSize: 9.5, fontFamily: 'Inter_700Bold' },
   name: { fontSize: 11, fontFamily: 'Inter_600SemiBold', marginTop: 6, textAlign: 'center' },
+  // Two lines reserved, so tiles in a row line up whatever the caption length.
+  nameTwoLines: { fontSize: 12, lineHeight: 15, minHeight: 30 },
 });

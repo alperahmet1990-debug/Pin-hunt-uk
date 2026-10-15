@@ -24,6 +24,7 @@ import { useAddMissingToIso } from '@/hooks/useAddMissingToIso';
 import { usePinSelection } from '@/hooks/usePinSelection';
 import { useToast } from '@/components/ui/Toast';
 import { pinsToAddToIso } from '@/utils/setTraders';
+import { variantTitle } from '@/utils/variantTitle';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { Button } from '@/components/ui/Button';
 
@@ -288,6 +289,9 @@ export default function SetDetailScreen() {
             return (
               <CompactPinTile
                 pin={item}
+                // The set is the page title, so tiles show the variant (#43).
+                displayTitle={variantTitle(item.title, collectionParam)}
+                titleLines={2}
                 owned={isOwned}
                 status={entry?.status}
                 copies={isOwned ? entry?.quantity : undefined}

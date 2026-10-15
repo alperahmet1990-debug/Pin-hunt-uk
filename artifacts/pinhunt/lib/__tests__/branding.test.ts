@@ -24,10 +24,12 @@ describe("branding", () => {
     expect(offenders).toEqual([]);
   });
 
-  it("app.json name is PinHunt; slug and scheme unchanged", () => {
+  // slug must match the linked EAS project (extra.eas.projectId); the scheme
+  // drives deep links and stays "pinhunt".
+  it("app.json name is PinHunt; slug matches EAS project; scheme unchanged", () => {
     const { expo } = JSON.parse(fs.readFileSync(path.join(root, "app.json"), "utf8"));
     expect(expo.name).toBe("PinHunt");
-    expect(expo.slug).toBe("pinhunt");
+    expect(expo.slug).toBe("uk-pin-app");
     expect(expo.scheme).toBe("pinhunt");
   });
 });

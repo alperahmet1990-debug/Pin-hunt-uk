@@ -1,7 +1,8 @@
 {
   "expo": {
     "name": "PinHunt",
-    "slug": "pinhunt",
+    "slug": "uk-pin-app",
+    "owner": "alperahm1990s-team",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -11,6 +12,7 @@
       "policy": "fingerprint"
     },
     "updates": {
+      "url": "https://u.expo.dev/c4696295-1caa-46dd-b770-e07c8b76a83f",
       "checkAutomatically": "ON_LOAD",
       "fallbackToCacheTimeout": 0
     },
@@ -47,6 +49,11 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c4696295-1caa-46dd-b770-e07c8b76a83f"
+      }
     }
   }
 }

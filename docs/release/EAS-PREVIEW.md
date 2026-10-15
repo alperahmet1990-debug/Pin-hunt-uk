@@ -40,10 +40,14 @@ The `production` environment and channel stay unused until launch.
 Agents cannot run `eas`, edit `.github/**` or set secrets, so these steps are
 manual.
 
-1. **Expo project.** On expo.dev create a project with slug `pinhunt` and send
-   the project ID (a UUID, not secret) and your Expo username. They go into
-   `app.json` as `extra.eas.projectId`, `owner` and
-   `updates.url = https://u.expo.dev/<projectId>`.
+1. **Expo project (done).** Linked to the existing project
+   `@alperahm1990s-team/uk-pin-app` (`extra.eas.projectId`, `owner`,
+   `updates.url` in `app.json`). EAS requires `slug` to match the project, so
+   the slug is `uk-pin-app`; the display name (`PinHunt`) and the deep-link
+   scheme (`pinhunt`) are unchanged. Before the first build, check the project
+   on expo.dev for leftovers from earlier development: environment variables
+   (must not point at production), and existing iOS credentials or builds for a
+   different bundle identifier.
 2. **EAS environment variables** (expo.dev → project → Environment variables →
    `preview`): `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY`,
    `EXPO_PUBLIC_API_BASE_URL` (the public, always-on API server URL ending in

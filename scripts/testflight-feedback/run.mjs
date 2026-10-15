@@ -32,7 +32,13 @@ if (!APP_ID || !REPO || !env.GITHUB_TOKEN) {
   process.exit(1);
 }
 
-const ascToken = makeAscToken({ keyId: env.ASC_KEY_ID, issuerId: env.ASC_ISSUER_ID, privateKey: env.ASC_PRIVATE_KEY });
+let ascToken;
+try {
+  ascToken = makeAscToken({ keyId: env.ASC_KEY_ID, issuerId: env.ASC_ISSUER_ID, privateKey: env.ASC_PRIVATE_KEY });
+} catch (err) {
+  console.error(err.message);
+  process.exit(1);
+}
 
 async function asc(url) {
   const res = await fetch(url.startsWith('http') ? url : `${ASC_BASE}${url}`, {

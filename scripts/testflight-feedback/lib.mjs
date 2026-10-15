@@ -29,6 +29,25 @@ export const KINDS = {
 const b64url = (input) => Buffer.from(input).toString('base64url');
 
 /**
+ * The .p8 key as a KeyObject, tolerant of how it was pasted into a secret:
+ * with or without the BEGIN/END lines, with real or literal \\n line breaks,
+ * or squashed onto one line. Never echoes the key in errors.
+ */
+export function parseP8(privateKey) {
+  const body = String(privateKey)
+    .replace(/\\n/g, '\n')
+    .replace(/-----(BEGIN|END)[A-Z ]*-----/g, '')
+    .replace(/\s+/g, '');
+  const der = /^[A-Za-z0-9+/]+={0,2}$/.test(body) ? Buffer.from(body, 'base64') : null;
+  try {
+    if (!der?.length) throw new Error('not base64');
+    return createPrivateKey({ key: der, format: 'der', type: 'pkcs8' });
+  } catch {
+    throw new Error('ASC_PRIVATE_KEY is not a valid .p8 key. Paste the whole AuthKey_XXXX.p8 file into the secret (see docs/release/TESTFLIGHT-FEEDBACK.md).');
+  }
+}
+
+/**
  * App Store Connect API token (ES256 JWT), valid for `ttlSeconds` (Apple's
  * maximum is 20 minutes).
  */
@@ -37,7 +56,7 @@ export function makeAscToken({ keyId, issuerId, privateKey, now = Date.now(), tt
   const iat = Math.floor(now / 1000);
   const header = b64url(JSON.stringify({ alg: 'ES256', kid: keyId, typ: 'JWT' }));
   const payload = b64url(JSON.stringify({ iss: issuerId, iat, exp: iat + ttlSeconds, aud: 'appstoreconnect-v1' }));
-  const key = createPrivateKey(privateKey.replace(/\\n/g, '\n'));
+  const key = parseP8(privateKey);
   const signature = sign('sha256', Buffer.from(`${header}.${payload}`), { key, dsaEncoding: 'ieee-p1363' });
   return `${header}.${payload}.${b64url(signature)}`;
 }

@@ -196,9 +196,9 @@ export default function BoardDetailScreen() {
             {boardPins.length} {boardPins.length === 1 ? 'pin' : 'pins'}
           </Text>
           {!board.isCustom && (
-            <View style={[styles.suggestedChip, { backgroundColor: colors.homeTeal + '1E' }]}>
-              <Feather name="zap" size={10} color={colors.homeTeal} />
-              <Text style={[styles.suggestedChipText, { color: colors.homeTeal }]}>
+            <View style={[styles.suggestedChip, { backgroundColor: colors.homeInk + '1E' }]}>
+              <Feather name="zap" size={10} color={colors.homeInk} />
+              <Text style={[styles.suggestedChipText, { color: colors.homeInk }]}>
                 Auto-updated from your collection
               </Text>
             </View>
@@ -220,8 +220,8 @@ export default function BoardDetailScreen() {
               style={[styles.editBtn, { backgroundColor: colors.homeAqua }]}
               activeOpacity={0.85}
             >
-              <Feather name="sliders" size={15} color={colors.homeTeal} />
-              <Text style={[styles.editBtnText, { color: colors.homeTeal }]}>Edit</Text>
+              <Feather name="sliders" size={15} color={colors.homeInk} />
+              <Text style={[styles.editBtnText, { color: colors.homeInk }]}>Edit</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -371,7 +371,7 @@ export default function BoardDetailScreen() {
           onPress={() => { setMenuVisible(false); setRenameVisible(true); }}
         >
           <View style={[styles.menuIcon, { backgroundColor: colors.homeAqua }]}>
-            <Feather name="edit-2" size={16} color={colors.homeTeal} />
+            <Feather name="edit-2" size={16} color={colors.homeInk} />
           </View>
           <Text style={[styles.menuLabel, { color: colors.homeInk }]}>Rename Board</Text>
         </TouchableOpacity>

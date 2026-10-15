@@ -26,7 +26,7 @@ export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardP
   const thumbs = pins.slice(0, 4);
 
   const t = seaGlass
-    ? { card: colors.homeSurface, border: colors.homeLine, fg: colors.homeInk, muted: colors.homeMuted, thumbBg: colors.homeAqua, accent: colors.homeTeal, radius: 18 }
+    ? { card: colors.homeSurface, border: colors.homeLine, fg: colors.homeInk, muted: colors.homeMuted, thumbBg: colors.homeAqua, accent: colors.homeInk, radius: 18 }
     : { card: colors.card, border: colors.border, fg: colors.foreground, muted: colors.mutedForeground, thumbBg: colors.muted, accent: colors.accent, radius: colors.radius };
 
   return (

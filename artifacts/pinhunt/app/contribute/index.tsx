@@ -272,7 +272,7 @@ function Tile({ row, owned, onPress }: { row: CatalogueImageCoverage; owned: boo
   if (row.myStatus === 'pending') badge = { icon: 'clock', label: 'Your photo', bg: colors.homeWarmSurface, fg: colors.homeSandInk };
   else if (pending) badge = { icon: 'clock', label: 'In review', bg: colors.homeWarmSurface, fg: colors.homeSandInk };
   else if (needs) badge = { icon: 'camera', label: 'Needs photo', bg: colors.homeCoral, fg: colors.homeHeroText };
-  else if (row.imageSource === 'community') badge = { icon: 'check', label: 'Community', bg: colors.homeAqua, fg: colors.homeTeal };
+  else if (row.imageSource === 'community') badge = { icon: 'check', label: 'Community', bg: colors.homeAqua, fg: colors.homeInk };
 
   return (
     <TouchableOpacity activeOpacity={0.85} onPress={onPress} style={styles.tile}>

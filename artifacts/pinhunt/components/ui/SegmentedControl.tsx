@@ -22,7 +22,8 @@ function toneColor(colors: ReturnType<typeof useColors>, tone: ChipTone): string
   switch (tone) {
     case 'coral': return colors.homeCoral;
     case 'coralDeep': return colors.homeCoralDeep;
-    case 'teal': return colors.homeTeal;
+    // Deep teal type: homeInk is the same teal in light and stays readable in dark (UX-062).
+    case 'teal': return colors.homeInk;
     case 'sand': return colors.homeSandInk;
     case 'owned': return colors.owned;
     case 'wanted': return colors.wanted;

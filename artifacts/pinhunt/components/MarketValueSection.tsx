@@ -149,10 +149,10 @@ export function MarketValueSection({ pinId, embedded = false }: MarketValueSecti
             accessibilityState={{ expanded }}
             style={styles.expandToggle}
           >
-            <Text style={[styles.expandLabel, { color: colors.homeTeal }]}>
+            <Text style={[styles.expandLabel, { color: colors.homeInk }]}>
               See the eBay UK listings
             </Text>
-            <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={15} color={colors.homeTeal} />
+            <Feather name={expanded ? 'chevron-up' : 'chevron-down'} size={15} color={colors.homeInk} />
           </TouchableOpacity>
 
           {expanded && comparables.map(item => (

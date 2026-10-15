@@ -1,4 +1,4 @@
-import { recoveryQuery, sharedCandidateSet } from '../scanRecovery';
+import { recoveryQuery, sharedCandidateCharacters, sharedCandidateSet } from '../scanRecovery';
 
 const insights = (over: Partial<Parameters<typeof recoveryQuery>[0] & object> = {}) => ({
   characters: [], keywords: [], textOnPin: null, logos: [], webGuesses: [], ...over,
@@ -33,5 +33,16 @@ describe('sharedCandidateSet', () => {
     expect(sharedCandidateSet(['Park Icons', 'Classics 2024'])).toBeNull();
     expect(sharedCandidateSet(['Park Icons'])).toBeNull();
     expect(sharedCandidateSet([null, null])).toBeNull();
+  });
+});
+
+describe('sharedCandidateCharacters (#301)', () => {
+  it('keeps characters both top candidates have', () => {
+    expect(sharedCandidateCharacters([['Mickey', 'Minnie'], ['minnie', 'Goofy'], ['Mickey']])).toEqual(['Minnie']);
+  });
+  it('is empty when either has none, or they share none', () => {
+    expect(sharedCandidateCharacters([['Mickey'], undefined])).toEqual([]);
+    expect(sharedCandidateCharacters([['Mickey'], ['Dumbo']])).toEqual([]);
+    expect(sharedCandidateCharacters([])).toEqual([]);
   });
 });

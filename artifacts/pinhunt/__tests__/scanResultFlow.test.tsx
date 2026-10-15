@@ -58,7 +58,7 @@ async function scanToResult() {
   await render(<ScanScreen />);
   // UX-008a (#115): picking the photo starts identification, no Identify tap.
   await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
-  await screen.findByRole('header', { name: 'Best match' }, { timeout: 3000 });
+  await screen.findByRole('header', { name: 'Is this your pin?' }, { timeout: 3000 });
 }
 
 describe('Scan result (UX-005)', () => {
@@ -96,7 +96,7 @@ describe('Scan result (UX-005)', () => {
     expect(await screen.findByRole('button', { name: 'Take photo' })).toBeTruthy();
     expect(picker.launchCameraAsync).not.toHaveBeenCalled();
     await fireEvent.press(screen.getByRole('button', { name: 'Take photo' }));
-    await screen.findByRole('header', { name: 'Best match' }, { timeout: 3000 });
+    await screen.findByRole('header', { name: 'Is this your pin?' }, { timeout: 3000 });
     expect(screen.getByRole('button', { name: 'Scan another pin' })).toBeTruthy();
 
     await act(async () => { mockOnAdded?.('p1', 'wanted'); });
@@ -155,7 +155,7 @@ describe('Scan result (UX-005)', () => {
     expect(screen.queryByText(/Network request failed/)).toBeNull();
     // Try again re-runs the identify with the same photo.
     await fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
-    await screen.findByRole('header', { name: 'Best match' });
+    await screen.findByRole('header', { name: 'Is this your pin?' });
     expect(mockIdentify).toHaveBeenCalledTimes(2);
   });
 });
@@ -196,7 +196,7 @@ describe('Auto-identify after capture (UX-008a)', () => {
     expect(screen.queryByRole('header', { name: 'Is this your pin?' })).toBeNull();
     await fireEvent.press(screen.getByRole('button', { name: 'Identify Pin' }));
     // The re-run gets the default two-match result.
-    await screen.findByRole('header', { name: 'Best match' });
+    await screen.findByRole('header', { name: 'Is this your pin?' });
     expect(mockIdentify).toHaveBeenCalledTimes(2);
     expect(mockIdentify).toHaveBeenLastCalledWith('small', 'image/jpeg', undefined);
   });

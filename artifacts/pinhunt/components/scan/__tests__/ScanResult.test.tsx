@@ -29,7 +29,7 @@ function setup(over: Partial<React.ComponentProps<typeof ScanResult>> = {}) {
 describe('ScanResult', () => {
   it('shows the photo beside the best match, with no scan internals for collectors', async () => {
     await setup().view;
-    expect(screen.getByRole('header', { name: 'Best match' })).toBeTruthy();
+    expect(screen.getByRole('header', { name: 'Is this your pin?' })).toBeTruthy();
     expect(screen.getByLabelText('Your photo')).toBeTruthy();
     expect(screen.getByText('Castle Fireworks')).toBeTruthy();
     expect(screen.queryByText(/%/)).toBeNull();
@@ -45,21 +45,32 @@ describe('ScanResult', () => {
     expect(props.onConfirm).toHaveBeenCalledWith(three[0].pin);
   });
 
-  it('"Not it" reveals the others; tapping one promotes it; "None of these" opens recovery', async () => {
+  it('"Not it" removes that pin and "That\'s it" until another is picked (#299); "None of these" opens recovery', async () => {
     const { props, view } = setup();
     await view;
     expect(screen.queryByText('Dumbo Blue Sky')).toBeNull();
     await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
-    expect(screen.getByText('Or is it one of these?')).toBeTruthy();
+    expect(screen.getByRole('header', { name: 'Is it one of these?' })).toBeTruthy();
+    // The rejected pin is gone and nothing can be confirmed yet.
+    expect(screen.getByTestId('scan-match-empty')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: "That's it" })).toBeNull();
     expect(screen.queryByRole('button', { name: 'Not it' })).toBeNull();
+    expect(screen.queryByRole('button', { name: /Castle Fireworks/ })).toBeNull();
     await fireEvent.press(screen.getByRole('button', { name: 'Compare Dumbo Blue Sky' }));
-    // Dumbo is now beside the photo; Castle moved into the strip.
+    // Dumbo is now beside the photo; the rejected Castle doesn't come back.
     expect(screen.getByRole('button', { name: 'Dumbo Blue Sky. Open pin details' })).toBeTruthy();
-    expect(screen.getByRole('button', { name: 'Compare Castle Fireworks' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Compare Castle Fireworks' })).toBeNull();
     await fireEvent.press(screen.getByRole('button', { name: "That's it" }));
     expect(props.onConfirm).toHaveBeenCalledWith(three[1].pin);
     await fireEvent.press(screen.getByRole('button', { name: 'None of these' }));
     expect(props.onNoneOfThese).toHaveBeenCalled();
+  });
+
+  it('says which picture is which (#298)', async () => {
+    await setup().view;
+    expect(screen.getByText('Your photo on the left, our closest match from the catalogue on the right.')).toBeTruthy();
+    expect(screen.getByText('Our match')).toBeTruthy();
+    expect(screen.queryByText('Catalogue')).toBeNull();
   });
 
   it('one candidate: "Not it" goes straight to "None of these"', async () => {

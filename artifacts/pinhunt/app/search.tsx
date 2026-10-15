@@ -246,12 +246,24 @@ export default function SearchScreen() {
     router.push({ pathname: '/pin/[id]', params: { id: pin.id } });
   }, [query, router, saveRecent]);
 
-  // ── Popular pins (from cached catalogue; prefers ones with images) ─────────
+  // ── Popular pins (prefers ones with images) ─────────────────────────────────
+  // One small page from the catalogue: there's no preloaded list to pick from
+  // any more (#25). Mock mode uses the mock catalogue.
+  const [popularPage, setPopularPage] = useState<CataloguePin[] | null>(null);
+  useEffect(() => {
+    if (!repository) return;
+    let cancelled = false;
+    repository.searchPinsPage('', { limit: 24, offset: 0 })
+      .then(page => { if (!cancelled) setPopularPage(page.pins); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repository]);
   const popular = useMemo(() => {
-    const withImages = pins.filter(p => p.imageUrl);
-    const source = withImages.length >= 6 ? withImages : pins;
+    const pool = repository ? (popularPage ?? []) : pins;
+    const withImages = pool.filter(p => p.imageUrl);
+    const source = withImages.length >= 6 ? withImages : pool;
     return source.slice(0, 6);
-  }, [pins]);
+  }, [repository, popularPage, pins]);
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 20) : insets.top;
   const showIdle = !query.trim();

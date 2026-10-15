@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useRouter, Redirect } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useCollection } from '@/context/CollectionContext';
@@ -43,7 +43,7 @@ export default function CatalogueScreen() {
   const router = useRouter();
   const { getEntry } = useCollection();
 
-  const { pins } = usePinCatalogue();
+  const { pins, repository } = usePinCatalogue();
   const [query, setQuery] = useState('');
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
   const [brand, setBrand] = useState<Brand | 'All'>('All');
@@ -79,6 +79,11 @@ export default function CatalogueScreen() {
   }, [pins, query, brand, status, getEntry]);
 
   const numCols = viewMode === 'grid' ? 2 : 1;
+
+  // This screen filters the loaded pins, and the catalogue is no longer
+  // preloaded (#25); with Supabase, Browse Catalogue is the full catalogue.
+  // Nothing links here since #24; old links land in the right place.
+  if (repository) return <Redirect href="/browse-catalogue" />;
 
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>

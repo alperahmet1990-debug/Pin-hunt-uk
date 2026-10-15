@@ -47,7 +47,7 @@ export default function PinDetailScreen() {
   const router = useRouter();
   const { collection, getEntry, markViewed, setStatus } = useCollection();
   const { customBoards } = useBoards();
-  const { pins, repository } = usePinCatalogue();
+  const { pins, repository, ensureCollections } = usePinCatalogue();
 
   const { repo: marketplaceRepo } = useMarketplace();
 
@@ -69,6 +69,10 @@ export default function PinDetailScreen() {
   }, [id, cachedPin, repository]);
 
   const pin = cachedPin ?? fetchedPin ?? undefined;
+  // Set-mates and set progress need the whole set; the catalogue isn't
+  // preloaded any more (#25).
+  const pinSet = pin?.collection;
+  useEffect(() => { if (pinSet) ensureCollections([pinSet]).catch(() => {}); }, [pinSet, ensureCollections]);
   const entry = pin ? getEntry(pin.id) : undefined;
   const [manageSheetPin, setManageSheetPin] = useState<CataloguePin | null>(null);
   const [marketplaceListings, setMarketplaceListings] = useState<ExternalSaleListing[]>([]);

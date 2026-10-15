@@ -60,5 +60,8 @@ it('a failed search explains and retries instead of saying "No pins found" (UX-0
     resolveSearch({ pins: [{ id: 'p1', title: 'Stitch Surfing', brand: 'Disney', collection: 'Lilo', characters: ['Stitch'] }], total: 1 });
   });
   expect(screen.getByText('Stitch Surfing')).toBeTruthy();
-  expect(mockRepository.searchPinsPage).toHaveBeenCalledTimes(2);
+  // Two searches for the query (failed, then retried); the popular-pins page
+  // is a separate empty-query call (#25).
+  const queryCalls = (mockRepository.searchPinsPage.mock.calls as unknown as [string][]).filter(([q]) => q !== '');
+  expect(queryCalls).toHaveLength(2);
 });

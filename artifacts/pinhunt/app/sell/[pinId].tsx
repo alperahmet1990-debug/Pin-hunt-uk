@@ -4,7 +4,7 @@
  * The pinId URL param is the pinhunt_id (e.g. "PHUK-00000001").
  * PinHunt never processes payments; buyers are directed to the marketplace.
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -40,10 +40,12 @@ export default function SellScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { pins } = usePinCatalogue();
+  const { pins, ensurePins } = usePinCatalogue();
   const { repo, userId } = useMarketplace();
 
   const pin = pins.find(p => p.id === pinId);
+  // The catalogue isn't preloaded (#25): fetch this pin if it isn't loaded.
+  useEffect(() => { if (pinId) ensurePins([pinId]).catch(() => {}); }, [pinId, ensurePins]);
 
   const [platform, setPlatform] = useState<ExternalSaleListingPlatform>('vinted');
   const [url, setUrl] = useState('');

@@ -11,6 +11,9 @@ import { PinTile } from './PinTile';
 
 interface CompactPinTileProps {
   pin: CataloguePin;
+  /** Caption in place of the pin's title (VoiceOver keeps the title), e.g. the variant on a set's page. */
+  displayTitle?: string;
+  titleLines?: 1 | 2;
   owned: boolean;
   size: number;
   onPress: () => void;
@@ -34,10 +37,12 @@ interface CompactPinTileProps {
   onAccessibilityAction?: (event: AccessibilityActionEvent) => void;
 }
 
-export function CompactPinTile({ pin, owned, size, onPress, onQuickAdd, status, copies, selected, onLongPress, accessibilityActions, onAccessibilityAction }: CompactPinTileProps) {
+export function CompactPinTile({ pin, displayTitle, titleLines, owned, size, onPress, onQuickAdd, status, copies, selected, onLongPress, accessibilityActions, onAccessibilityAction }: CompactPinTileProps) {
   return (
     <PinTile
       title={pin.title}
+      displayTitle={displayTitle}
+      titleLines={titleLines}
       imageUrl={pin.imageUrl}
       size={size}
       onPress={onPress}

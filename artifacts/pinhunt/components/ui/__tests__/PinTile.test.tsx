@@ -75,4 +75,12 @@ describe('pin grid sizing', () => {
     }
     expect(pinTileSize(390, 3, 16)).toBe(114);
   });
+
+  it('shows displayTitle on two lines but VoiceOver reads the full title (#43)', async () => {
+    const { getByText, getByRole } = await render(
+      <PinTile title="Park Icons - Dumbo" displayTitle="Dumbo" titleLines={2} size={95} onPress={noop} />,
+    );
+    expect(getByText('Dumbo').props.numberOfLines).toBe(2);
+    expect(getByRole('button', { name: 'Park Icons - Dumbo' })).toBeTruthy();
+  });
 });

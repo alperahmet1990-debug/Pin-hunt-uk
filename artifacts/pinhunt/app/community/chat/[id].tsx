@@ -5,7 +5,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator, Alert, Image, InteractionManager, KeyboardAvoidingView, Modal, Platform,
-  ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
+  FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -21,8 +21,14 @@ import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, CommunityPost, Conversation, ConversationMessage } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { chatListData } from '@/utils/chatList';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, userErrorLine, type UserError } from '@/utils/userError';
+
+/** Space between messages (FlatList content has no `gap`). */
+function MessageGap() {
+  return <View style={styles.messageGap} />;
+}
 
 function previewBody(msg: ConversationMessage) {
   if (msg.body.trim()) return msg.body;
@@ -81,7 +87,7 @@ export default function ChatScreen() {
   const { repo, userId } = useCommunity(); const { markRead } = useUnreadMessages();
   const { collection } = useCollection(); const { pins, ensurePins } = usePinCatalogue();
   const seenIdsRef = useRef<Set<string>>(new Set()); const isFocusedRef = useRef(false);
-  const pendingReadRef = useRef(false); const scrollRef = useRef<ScrollView>(null);
+  const pendingReadRef = useRef(false); const listRef = useRef<FlatList<ConversationMessage>>(null);
   const [conv, setConv] = useState<Conversation | null>(null);
   const [messages, setMessages] = useState<ConversationMessage[]>([]);
   const [contextPost, setContextPost] = useState<CommunityPost | null>(null);
@@ -94,6 +100,7 @@ export default function ChatScreen() {
   const [pinSearch, setPinSearch] = useState('');
 
   const pinMap = useMemo(() => new Map(pins.map(pin => [pin.id, pin])), [pins]);
+  const newestFirst = useMemo(() => chatListData(messages), [messages]);
   const shareablePins = useMemo(() => Object.values(collection)
     .filter(entry => entry.status === 'for_trade' || entry.status === 'owned')
     .sort((a, b) => Number(b.status === 'for_trade') - Number(a.status === 'for_trade'))
@@ -147,7 +154,8 @@ export default function ChatScreen() {
       const msg = await repo.sendConversationMessage(id, userId, body, options);
       setMessages(prev => [...prev, msg]);
       setMsgText('');
-      setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 100);
+      // Offset 0 is the newest end of the inverted list.
+      listRef.current?.scrollToOffset({ offset: 0, animated: true });
     } catch (e) {
       Alert.alert("Message not sent", userErrorLine(e, 'chat-send'));
     } finally {
@@ -275,49 +283,61 @@ export default function ChatScreen() {
           </View>
         ) : (
           <>
-            <ScrollView
-              ref={scrollRef}
+            {/* Inverted list (UX-052, #160): only what's on screen renders, the
+                newest message sits at the bottom without scrollToEnd, and new
+                or older content doesn't make the view jump. The context banner
+                and trade card head the conversation, so they're the footer
+                (the top of an inverted list). */}
+            <FlatList
+              ref={listRef}
+              testID="chat-messages"
+              inverted
+              data={newestFirst}
+              keyExtractor={msg => msg.id}
+              renderItem={({ item }) => (
+                <MessageBubble msg={item} isMe={item.senderId === userId} colors={colors} pins={pinMap} />
+              )}
+              ItemSeparatorComponent={MessageGap}
+              ListFooterComponent={
+                <View style={styles.listTop}>
+                  {contextPost && (
+                    <View style={[styles.contextBanner, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+                      <Feather name="link" size={14} color={colors.homeMuted} />
+                      <Text numberOfLines={2} style={[styles.contextText, { color: colors.homeMuted }]}>
+                        From post: {contextPost.body}
+                      </Text>
+                    </View>
+                  )}
+                  {tradeRelated && (conv?.tradeId ? (
+                    <View style={[styles.agreedCard, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+                      <Text style={[styles.agreedTitle, { color: colors.homeInk }]}>Trade agreed ✓</Text>
+                      <Text style={[styles.contextText, { color: colors.homeMuted }]}>Arrange delivery when ready.</Text>
+                    </View>
+                  ) : (
+                    <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
+                      <Feather name="check-circle" size={16} color={colors.homeCoral} />
+                      <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Mark Trade Agreed</Text>
+                    </TouchableOpacity>
+                  ))}
+                  {messages.length === 0 && (
+                    <View style={styles.emptyMessages}>
+                      <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>
+                        No messages yet. Say hello!
+                      </Text>
+                    </View>
+                  )}
+                </View>
+              }
               style={styles.messageList}
-              contentContainerStyle={{ padding: spacing.lg, gap: spacing.sm, paddingBottom: spacing.sm }}
+              contentContainerStyle={{ padding: spacing.lg }}
               showsVerticalScrollIndicator={false}
-              onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}
-            >
-              {contextPost && (
-                <View style={[styles.contextBanner, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
-                  <Feather name="link" size={14} color={colors.homeMuted} />
-                  <Text numberOfLines={2} style={[styles.contextText, { color: colors.homeMuted }]}>
-                    From post: {contextPost.body}
-                  </Text>
-                </View>
-              )}
-              {tradeRelated && (conv?.tradeId ? (
-                <View style={[styles.agreedCard, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
-                  <Text style={[styles.agreedTitle, { color: colors.homeInk }]}>Trade agreed ✓</Text>
-                  <Text style={[styles.contextText, { color: colors.homeMuted }]}>Arrange delivery when ready.</Text>
-                </View>
-              ) : (
-                <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
-                  <Feather name="check-circle" size={16} color={colors.homeCoral} />
-                  <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Mark Trade Agreed</Text>
-                </TouchableOpacity>
-              ))}
-              {messages.length === 0 && (
-                <View style={styles.emptyMessages}>
-                  <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>
-                    No messages yet. Say hello!
-                  </Text>
-                </View>
-              )}
-              {messages.map(msg => (
-                <MessageBubble
-                  key={msg.id}
-                  msg={msg}
-                  isMe={msg.senderId === userId}
-                  colors={colors}
-                  pins={pinMap}
-                />
-              ))}
-            </ScrollView>
+              keyboardShouldPersistTaps="handled"
+              initialNumToRender={15}
+              windowSize={11}
+              // Reading older messages: a new one arriving doesn't move them;
+              // near the newest, the list follows it down.
+              maintainVisibleContentPosition={{ minIndexForVisible: 1, autoscrollToTopThreshold: 80 }}
+            />
             <View style={[styles.inputBar, {
               borderTopColor: colors.homeLine,
               backgroundColor: colors.homeBackground,
@@ -527,7 +547,7 @@ export default function ChatScreen() {
 }
 
 const styles = StyleSheet.create({
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, messageList: { flex: 1 }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, messageList: { flex: 1 }, messageGap: { height: spacing.sm }, listTop: { gap: spacing.sm, paddingBottom: spacing.sm }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
   inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },

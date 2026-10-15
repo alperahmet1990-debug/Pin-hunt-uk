@@ -1,0 +1,53 @@
+# PROPOSED GitHub Actions workflow — inactive until a human moves it to
+# .github/workflows/testflight-feedback.yml in a PR labelled
+# `human-approved-config` (agents cannot edit .github/**).
+# See docs/release/TESTFLIGHT-FEEDBACK.md.
+#
+# Every 6 hours, files new TestFlight feedback and crash reports as GitHub
+# issues labelled `testflight-feedback` + `agent-proposed`. Read-only towards
+# Apple; never files the same feedback twice.
+name: TestFlight feedback
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only print what would be filed'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: testflight-feedback
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # The App Store Connect key lives in this GitHub environment (deployment
+    # branch: main only), so PR and agent workflows cannot read it.
+    environment: testflight-feedback
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      # No dependencies to install: Node's built-in fetch and crypto only.
+      - name: File new TestFlight feedback
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+          ASC_APP_ID: '6823062114'
+          GITHUB_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: node scripts/testflight-feedback/run.mjs

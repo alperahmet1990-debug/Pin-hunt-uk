@@ -7,8 +7,19 @@
     "icon": "./assets/images/icon.png",
     "scheme": "pinhunt",
     "userInterfaceStyle": "automatic",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    },
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "bundleIdentifier": "uk.pinhunt.app",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {},
     "web": {

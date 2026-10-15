@@ -1,0 +1,33 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "base": {
+      "pnpm": "9.15.9"
+    },
+    "preview": {
+      "extends": "base",
+      "distribution": "store",
+      "channel": "preview",
+      "environment": "preview",
+      "autoIncrement": true
+    },
+    "production": {
+      "extends": "base",
+      "distribution": "store",
+      "channel": "production",
+      "environment": "production",
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "preview": {
+      "ios": {}
+    },
+    "production": {
+      "ios": {}
+    }
+  }
+}

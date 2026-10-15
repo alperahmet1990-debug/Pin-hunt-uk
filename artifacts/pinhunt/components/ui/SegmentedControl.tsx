@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
-import { radius, spacing } from '@/constants/theme';
+import { fontScale, radius, spacing } from '@/constants/theme';
 import type { ChipTone } from './Chip';
 
 export interface SegmentedControlOption<T extends string> {
@@ -61,6 +61,7 @@ export function SegmentedControl<T extends string>({ options, value, onChange }:
               numberOfLines={1}
               adjustsFontSizeToFit
               minimumFontScale={0.8}
+              maxFontSizeMultiplier={fontScale.badge}
               style={[styles.label, { color: active ? colors.homeSurface : colors.homeMuted }]}
             >
               {opt.label}

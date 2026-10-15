@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
-import { radius, spacing } from '@/constants/theme';
+import { fontScale, radius, spacing } from '@/constants/theme';
 
 export type ChipTone = 'coral' | 'coralDeep' | 'teal' | 'sand' | 'neutral' | 'owned' | 'wanted' | 'forTrade';
 export type ChipVariant = 'soft' | 'solid' | 'outline';
@@ -49,7 +49,7 @@ export function Chip({ label, icon, tone = 'neutral', variant = 'soft', size = '
       ]}
     >
       {icon && <Feather name={icon} size={isSm ? 10 : 12} color={fg} />}
-      <Text numberOfLines={1} style={[styles.label, isSm ? styles.labelSm : styles.labelMd, { color: fg }]}>
+      <Text numberOfLines={1} maxFontSizeMultiplier={fontScale.dense} style={[styles.label, isSm ? styles.labelSm : styles.labelMd, { color: fg }]}>
         {label}
       </Text>
     </View>

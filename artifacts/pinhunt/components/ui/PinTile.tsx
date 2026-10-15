@@ -14,7 +14,7 @@ import { Image } from 'expo-image';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
-import { radius, spacing } from '@/constants/theme';
+import { fontScale, radius, spacing } from '@/constants/theme';
 import type { CollectionStatus } from '@/types/pin';
 import { STATUS_BADGE } from './StatusBadge';
 
@@ -107,7 +107,7 @@ export function PinTile(props: PinTileProps) {
         )}
         {copies != null && copies > 1 ? (
           <View style={[styles.copies, { backgroundColor: colors.homeInk }]}>
-            <Text style={[styles.copiesLabel, { color: colors.homeSurface }]}>×{copies}</Text>
+            <Text maxFontSizeMultiplier={fontScale.badge} style={[styles.copiesLabel, { color: colors.homeSurface }]}>×{copies}</Text>
           </View>
         ) : photoNeeded ? (
           <View style={[styles.photoBadge, { backgroundColor: colors.homeSurface + 'F2', borderColor: colors.homeCoral }]}>
@@ -116,7 +116,7 @@ export function PinTile(props: PinTileProps) {
         ) : null}
         {missing && (
           <View pointerEvents="none" style={[styles.missingTag, { backgroundColor: colors.homeSurface + 'F2', borderColor: colors.homeLine }]}>
-            <Text style={[styles.missingLabel, { color: colors.homeMuted }]}>Missing</Text>
+            <Text maxFontSizeMultiplier={fontScale.badge} style={[styles.missingLabel, { color: colors.homeMuted }]}>Missing</Text>
           </View>
         )}
         {selecting ? (
@@ -142,7 +142,7 @@ export function PinTile(props: PinTileProps) {
           </TouchableOpacity>
         ) : null}
       </View>
-      <Text numberOfLines={1} style={[styles.name, { color: dimmed ? colors.homeMuted : colors.homeInk }]}>
+      <Text numberOfLines={1} maxFontSizeMultiplier={fontScale.dense} style={[styles.name, { color: dimmed ? colors.homeMuted : colors.homeInk }]}>
         {title}
       </Text>
     </TouchableOpacity>

@@ -43,3 +43,18 @@ export const shadow = {
     elevation: 3,
   },
 } as const;
+
+/**
+ * Dynamic Type policy (B-P2-15, docs/design/dynamic-type.md). Text follows
+ * the system text size by default. Only text inside fixed-size, dense UI is
+ * capped, as a `maxFontSizeMultiplier`:
+ * - `badge`: labels on a pin image or inside a fixed-height control (×N,
+ *   "Missing", segmented control labels), which can't grow without covering
+ *   the artwork or clipping.
+ * - `dense`: one-line captions and chips in grids and rows (tile names,
+ *   status chips), which grow a little and then truncate.
+ */
+export const fontScale = {
+  badge: 1.2,
+  dense: 1.35,
+} as const;

@@ -31,6 +31,7 @@ import { useCollection } from '@/context/CollectionContext';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { Button, IconButton } from '@/components/ui/Button';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { getPinImageSource } from '@/utils/pinImage';
 import { StatusBadge } from '@/components/ui';
 import { Skeleton, SkeletonBlock, SkeletonRow } from '@/components/ui/Skeleton';
@@ -271,14 +272,10 @@ export default function SearchScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: colors.homeBackground, paddingTop: topPad }]}>
       {/* ── Header: back + search input ── */}
-      <View style={styles.header}>
-        <IconButton
-          icon="chevron-left"
-          iconSize={24}
-          accessibilityLabel="Back"
-          onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/scan'))}
-          style={styles.backBtn}
-        />
+      <ScreenHeader
+        safeArea={false}
+        onBack={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/scan'))}
+      >
         <View style={[styles.inputWrap, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine, borderRadius: radius.pill }]}>
           <Feather name="search" size={16} color={colors.homeMuted} />
           <TextInput
@@ -304,7 +301,7 @@ export default function SearchScreen() {
             />
           )}
         </View>
-      </View>
+      </ScreenHeader>
 
       <ScrollView
         style={styles.body}
@@ -482,14 +479,6 @@ export default function SearchScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.sm,
-    gap: spacing.xs,
-  },
-  backBtn: { marginLeft: -spacing.sm },
   inputWrap: {
     flex: 1,
     minWidth: 0,
@@ -500,7 +489,6 @@ const styles = StyleSheet.create({
     height: 40,
     gap: spacing.sm,
     overflow: 'visible',
-    marginRight: spacing.sm,
   },
   // minWidth 0: on web the <input> otherwise keeps a ~20-character minimum
   // width and pushes the page wider than a 320 pt screen.

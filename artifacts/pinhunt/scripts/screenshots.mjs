@@ -150,7 +150,7 @@ function clickByText(text) {
   return Boolean(target);
 }
 
-const UPLOAD_FIXTURE = path.join(appDir, 'assets/images/icon.png');
+const UPLOAD_FIXTURE = path.join(appDir, 'assets/images/pins/pin-08.png');
 
 // ── Capture ─────────────────────────────────────────────────────────────
 async function capture(webDir, outDir, routes, viewports, schemes) {

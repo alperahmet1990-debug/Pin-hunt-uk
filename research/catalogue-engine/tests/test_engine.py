@@ -127,6 +127,43 @@ class EndToEnd(unittest.TestCase):
                 self.assertEqual(r["Safe for app search"], "No")
             self.assertTrue(pathlib.Path(d, "catalogue_research_output.xlsx").exists())
 
+    def test_uk_record_takes_its_own_market_value_for_import_fields(self):
+        UK, AU = "https://www.disneystore.co.uk/x", "https://www.disneystore.com.au/x"
+        with tempfile.TemporaryDirectory() as d:
+            pk = pathlib.Path(d, "p.json")
+            pk.write_text(json.dumps(packet(
+                sets=[dict(set_key="dsuk/2026/vday", claims=[claim("set_name", "Valentine's Day Mystery Pin Set", UK),
+                                                              claim("set_name", "Valentine's Day 2026 Blind Pack", AU)])],
+                pins=[dict(pin_key="dsuk/2026/vday/stitch", claims=[claim("characters", ["Stitch"], UK),
+                                                                    claim("currency", "GBP", UK), claim("currency", "AUD", AU)])])))
+            _, pins, sets, _, rows = run([str(pk)], d, seed=None)
+            self.assertEqual(sets["dsuk/2026/vday"]["fields"]["set_name"]["status"], "regional variants")
+            row = rows[0]
+            self.assertEqual(row["Collection name"], "Valentine's Day Mystery Pin Set")
+            self.assertEqual(row["Currency"], "GBP")
+            self.assertEqual(row["Pin name"], "Stitch – Valentine's Day Mystery Pin Set")
+
+    def test_uk_record_with_only_other_markets_values_leaves_the_field_empty(self):
+        EU, US = "https://www.disneystore.eu/x", OFF
+        with tempfile.TemporaryDirectory() as d:
+            pk = pathlib.Path(d, "p.json")
+            pk.write_text(json.dumps(packet(pins=[dict(pin_key="dsuk/2025/s3/fozzie", claims=[
+                claim("characters", ["Fozzie"], EU), claim("currency", "EUR", EU), claim("currency", "USD", US)])])))
+            rows = run([str(pk)], d, seed=None)[4]
+            self.assertEqual(rows[0]["Currency"], "")
+
+    def test_uk_record_does_not_take_a_price_seen_only_in_another_market(self):
+        with tempfile.TemporaryDirectory() as d:
+            pk = pathlib.Path(d, "p.json")
+            pk.write_text(json.dumps(packet(pins=[
+                dict(pin_key="dsuk/2025/sp/stitch", claims=[claim("characters", ["Stitch"], OFF),
+                     claim("original_price", 19.99, OFF), claim("currency", "USD", OFF)]),
+                dict(pin_key="wdw/2025/sp/stitch", claims=[claim("characters", ["Stitch"], OFF),
+                     claim("original_price", 19.99, OFF), claim("currency", "USD", OFF)])])))
+            rows = {r["research_key"]: r for r in run([str(pk)], d, seed=None)[4]}
+            self.assertEqual((rows["dsuk/2025/sp/stitch"]["Original price"], rows["dsuk/2025/sp/stitch"]["Currency"]), ("", ""))
+            self.assertEqual(rows["wdw/2025/sp/stitch"]["Original price"], 19.99)
+
 
 class Hardening(unittest.TestCase):
     def test_formula_injection_neutralised(self):

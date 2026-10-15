@@ -96,6 +96,7 @@ def reconcile_field(field, claims):
             if all(m and "" not in m for m in mk) and all(not (a & b) for i, a in enumerate(mk) for b in mk[i + 1:]):
                 out["status"] = "regional variants"
                 out["value"] = " | ".join(f"{'/'.join(sorted(m))}: {_fmt(g[0])}" for m, g in zip(mk, ev_groups))
+                out["by_market"] = {m: g[0] for ms, g in zip(mk, ev_groups) for m in ms}
             out["alternatives"] = " || ".join(f"{_fmt(g[0])} ({len({c['publisher'] for c in g[1]})} src: {', '.join(sorted({c['publisher'] for c in g[1]}))})" for g in ev_groups)
         claims = best[1]
     ev = [c for c in claims if c["method"] in EVIDENCE_METHODS]

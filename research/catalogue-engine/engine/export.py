@@ -5,6 +5,7 @@ from collections import Counter
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
+from .sources import market_of
 
 # Column order of the live trusted Master Catalogue tab (import-trusted-catalogue.mjs reads these names).
 MASTER_COLUMNS = ["pinhunt_id", "Pin name", "Brand", "Series", "Characters", "Release year", "Edition size", "external_ids",
@@ -29,11 +30,28 @@ FILL = {"High": "C6EFCE", "Medium": "FFEB9C", "Low": "FFC7CE", "Unverified": "D9
         "NEEDS REVIEW": "FFC7CE", "READY FOR HUMAN SIGN-OFF": "C6EFCE"}
 
 
-def _v(f, name):
+# Home retail market of a research line: a record from that line takes its own market's value
+# when official stores differ by market ("regional variants"), and nothing when only other
+# markets are evidenced; the joined value stays in the research output for reviewers.
+HOME_MARKET = {"dsuk": "UK"}
+# Facts that belong to one market: a value evidenced only by other markets' official stores is
+# not this record's value.
+MARKET_FIELDS = {"original_price", "price", "currency"}
+
+
+def _v(f, name, home=None):
     r = f.get(name)
     if not r or r.get("value") in (None, []):
         return ""
     v = r["value"]
+    if home and r.get("by_market"):
+        if home not in r["by_market"]:
+            return ""            # only other markets' values: unknown for this record's market
+        v = r["by_market"][home]
+    elif home and name in MARKET_FIELDS:
+        markets = {market_of(u) for u in r.get("urls", [])}
+        if markets and "" not in markets and home not in markets:
+            return ""
     return "; ".join(map(str, v)) if isinstance(v, list) else v
 
 
@@ -67,9 +85,9 @@ def _set_chain(sets, key):
     return [s for s in out if s]
 
 
-def _from_chain(chain, field):
+def _from_chain(chain, field, home=None):
     for s in chain:
-        v = _v(s["fields"], field)
+        v = _v(s["fields"], field, home)
         if v != "":
             return v
     return ""
@@ -79,12 +97,13 @@ def build_rows(pins, sets, dupes, run_date):
     rows = []
     for key, p in sorted(pins.items()):
         f, chain = p["fields"], _set_chain(sets, p["set_key"])
-        family = _from_chain(chain[1:] or chain, "set_name") or _from_chain(chain, "family") or key.split("/")[0]
-        set_name = _v(chain[0]["fields"], "set_name") if chain else ""
+        home = HOME_MARKET.get(key.split("/")[0])
+        family = _from_chain(chain[1:] or chain, "set_name", home) or _from_chain(chain, "family", home) or key.split("/")[0]
+        set_name = _v(chain[0]["fields"], "set_name", home) if chain else ""
         chars = f.get("characters", {}).get("value") or []
-        main = _v(f, "main_character") or (chars[0] if len(chars) == 1 else "")
-        subject = main or _v(f, "attraction")
-        name = _v(f, "pin_name")
+        main = _v(f, "main_character", home) or (chars[0] if len(chars) == 1 else "")
+        subject = main or _v(f, "attraction", home)
+        name = _v(f, "pin_name", home)
         conflicts = [k for k, r in f.items() if r["status"] == "conflict"]
         verified = p["record_confidence"] in ("High", "Medium") and not any(x.startswith("conflict") for x in p["review_reasons"])
         inherited = [k for k, r in f.items() if r.get("inherited_from")]
@@ -93,27 +112,27 @@ def build_rows(pins, sets, dupes, run_date):
         action = {"DUPLICATE": "RESEARCH-DUPLICATE (compare/enrich existing row)",
                   "PROBABLE DUPLICATE": "RESEARCH-REVIEW"}.get(dstat, "RESEARCH-NEW (needs pinhunt_id at import)")
         urls = sorted({u for r in f.values() for u in r.get("urls", [])}, key=lambda u: ("disneystore" not in u and "disney.go" not in u, u))
-        codes = [c for c in [_v(f, "product_code")] if c]
+        codes = [c for c in [_v(f, "product_code", home)] if c]
         row = {c: "" for c in MASTER_COLUMNS + EXTRA_COLUMNS}
         row.update({
             "pinhunt_id": did if dstat == "DUPLICATE" else "",
             "Pin name": name or (f"{subject or ' & '.join(chars)} – {set_name}" if (subject or chars) and set_name else ""),
-            "Brand": _brand(_from_chain(chain, "issuer"), _v(f, "release_location") or _from_chain(chain, "release_location"))
+            "Brand": _brand(_from_chain(chain, "issuer", home), _v(f, "release_location", home) or _from_chain(chain, "release_location", home))
                      or ("Disney Store" if any(("disneystore." in u or "shopdisney." in u) for u in urls) else ""),
             "Series": set_name, "Characters": "; ".join(chars),
-            "Release year": _v(f, "release_year") or _year(_v(f, "release_date") or _from_chain(chain, "release_date")),
-            "Edition size": _v(f, "edition_size"),
+            "Release year": _v(f, "release_year", home) or _year(_v(f, "release_date", home) or _from_chain(chain, "release_date", home)),
+            "Edition size": _v(f, "edition_size", home),
             "external_ids": "; ".join(f"Disney product code: {c}" for c in codes),
-            "Categories": "; ".join(x for x in [family, _v(f, "visual_form"), _v(f, "visual_features")] if x),
-            "Release date": _v(f, "release_date"), "Park / Retailer": _v(f, "release_location"),
-            "Edition type": _v(f, "edition_type"), "Original price": _v(f, "original_price"), "Currency": _v(f, "currency"),
+            "Categories": "; ".join(x for x in [family, _v(f, "visual_form", home), _v(f, "visual_features", home)] if x),
+            "Release date": _v(f, "release_date", home), "Park / Retailer": _v(f, "release_location", home),
+            "Edition type": _v(f, "edition_type", home), "Original price": _v(f, "original_price", home), "Currency": _v(f, "currency", home),
             "Source URL": urls[0] if urls else "", "Validation source 2": urls[1] if len(urls) > 1 else "",
             "Verification status": f"Research – {p['record_confidence']}",
-            "Notes": _v(f, "visual_description"), "Main character": main, "All characters": "; ".join(chars),
-            "Programme": family, "Collection name": set_name, "Release wave": _from_chain(chain, "sub_series"),
-            "Release scope": _v(f, "region"), "Collection type": _from_chain(chain, "format"),
-            "Normalised series name": " | ".join(str(x) for x in [family, _v(f, "release_year"), _v(f, "release_location"), set_name] if x),
-            "Search aliases": "; ".join(dict.fromkeys(x for x in [set_name, family, _from_chain(chain, "sub_series")] if x)),
+            "Notes": _v(f, "visual_description", home), "Main character": main, "All characters": "; ".join(chars),
+            "Programme": family, "Collection name": set_name, "Release wave": _from_chain(chain, "sub_series", home),
+            "Release scope": _v(f, "region", home), "Collection type": _from_chain(chain, "format", home),
+            "Normalised series name": " | ".join(str(x) for x in [family, _v(f, "release_year", home), _v(f, "release_location", home), set_name] if x),
+            "Search aliases": "; ".join(dict.fromkeys(x for x in [set_name, family, _from_chain(chain, "sub_series", home)] if x)),
             "Character validation": f.get("characters", {}).get("confidence", ""),
             "Expected pin count": chain[0]["expected"] if chain and chain[0]["expected"] is not None else "",
             "Set count check": chain[0]["completeness"] if chain else "",
@@ -126,8 +145,8 @@ def build_rows(pins, sets, dupes, run_date):
             "duplicate_status": dstat, "duplicate_of": did, "duplicate_basis": dbasis,
             "field_conflicts": "; ".join(conflicts), "inherited_fields": "; ".join(inherited),
             "pin_name_source": "claimed" if name else ("composed display label (subject – set)" if subject and set_name else ""),
-            "visual_form": _v(f, "visual_form"), "visual_colours": _v(f, "visual_colours"),
-            "visual_features": _v(f, "visual_features"), "pack_product_code": _v(f, "pack_product_code"),
+            "visual_form": _v(f, "visual_form", home), "visual_colours": _v(f, "visual_colours", home),
+            "visual_features": _v(f, "visual_features", home), "pack_product_code": _v(f, "pack_product_code", home),
         })
         rows.append(row)
     return rows

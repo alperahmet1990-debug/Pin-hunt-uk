@@ -70,3 +70,7 @@ them gets worse, and asks for the entry to be removed once it passes.
 
 - **Continue Collecting "3 of 5 collected"** used `homeAqua` on `homeTeal`, which is about 1:1 in dark mode (invisible).
   It now uses `homeHeroMuted`: 9.3:1 in light and 11.7:1 in dark.
+
+## Fixed in UX-062 (#277)
+
+- **Deep teal type in Dark Side.** `homeTeal` is near-black (#103138) in dark mode, but it was used as a text and icon colour in about 15 places, which were all close to invisible on dark cards. Examples: the board's "Auto-updated from your collection" chip and its Edit button, the collector-value line on Pin detail, the market value "Show more" toggle, `Chip` and `SegmentedControl` in the `teal` tone, and the admin research review. They now use `homeInk`, which is the same #16424A in Light Side (so nothing changes there) and near-white in Dark Side. `homeTeal` stays a fill colour only. `constants/__tests__/tealText.test.js` fails if it's used for text or an icon again.

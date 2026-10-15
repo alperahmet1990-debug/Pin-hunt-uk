@@ -545,7 +545,7 @@ export default function ResearchReviewScreen() {
                   accessibilityState={{ checked: on }}
                   accessibilityLabel={`Tick ${candidateTitle(c)}`}
                 >
-                  <Feather name={on ? 'check-square' : 'square'} size={20} color={on ? colors.homeTeal : colors.homeMuted} />
+                  <Feather name={on ? 'check-square' : 'square'} size={20} color={on ? colors.homeInk : colors.homeMuted} />
                   <View style={{ flex: 1, gap: 4 }}>
                     <Text style={s.rowTitle}>{candidateTitle(c)}</Text>
                     <View style={s.chips}>
@@ -569,7 +569,7 @@ export default function ResearchReviewScreen() {
                   <TouchableOpacity
                     key={f.field}
                     onPress={() => toggleSetField(f.field)}
-                    style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeTeal }]}
+                    style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeInk }]}
                     accessibilityRole="checkbox"
                     accessibilityState={{ checked: on }}
                   >
@@ -628,7 +628,7 @@ export default function ResearchReviewScreen() {
                       accessibilityState={{ checked: on }}
                       accessibilityLabel={`Tick ${candidateTitle(c)}`}
                     >
-                      <Feather name={on ? 'check-square' : 'square'} size={20} color={on ? colors.homeTeal : colors.homeMuted} />
+                      <Feather name={on ? 'check-square' : 'square'} size={20} color={on ? colors.homeInk : colors.homeMuted} />
                       <View style={{ flex: 1, gap: 4 }}>
                         <Text style={s.rowTitle}>{candidateTitle(c)}</Text>
                         <View style={s.chips}>
@@ -643,7 +643,7 @@ export default function ResearchReviewScreen() {
                           <TouchableOpacity
                             key={val}
                             onPress={() => setStructure(prev => ({ ...prev, [c.id]: val }))}
-                            style={[s.toggle, choice === val && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeTeal }]}
+                            style={[s.toggle, choice === val && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeInk }]}
                             accessibilityRole="radio"
                             accessibilityState={{ selected: choice === val }}
                             accessibilityLabel={`${label}: ${candidateTitle(c)}`}
@@ -667,7 +667,7 @@ export default function ResearchReviewScreen() {
                   <TouchableOpacity
                     key={f.field}
                     onPress={() => togglePageField(f.field)}
-                    style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeTeal }]}
+                    style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeInk }]}
                     accessibilityRole="checkbox"
                     accessibilityState={{ checked: on }}
                   >
@@ -758,7 +758,7 @@ export default function ResearchReviewScreen() {
                     <TouchableOpacity
                       key={f.field}
                       onPress={() => setCheckFields(prev => (on ? prev.filter(x => x !== f.field) : [...prev, f.field]))}
-                      style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeTeal }]}
+                      style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeInk }]}
                       accessibilityRole="checkbox"
                       accessibilityState={{ checked: on }}
                     >

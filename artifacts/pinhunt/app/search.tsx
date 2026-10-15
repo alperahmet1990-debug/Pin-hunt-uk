@@ -317,6 +317,7 @@ export default function SearchScreen() {
               <TouchableOpacity
                 onPress={() => { Keyboard.dismiss(); router.push('/browse-catalogue'); }}
                 activeOpacity={0.85}
+                accessibilityRole="button"
                 style={[styles.browseCta, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
               >
                 <View style={[styles.browseIcon, { backgroundColor: colors.homeCoral + '1A' }]}>
@@ -348,7 +349,7 @@ export default function SearchScreen() {
                 </View>
                 {recents.map(term => (
                   <View key={term} style={styles.recentRow}>
-                    <TouchableOpacity style={styles.recentTap} onPress={() => setQuery(term)} activeOpacity={0.7}>
+                    <TouchableOpacity style={styles.recentTap} onPress={() => setQuery(term)} activeOpacity={0.7} accessibilityRole="button" accessibilityLabel={`Search again for ${term}`}>
                       <Feather name="clock" size={15} color={colors.homeMuted} />
                       <Text style={[styles.recentText, { color: colors.homeInk }]} numberOfLines={1}>{term}</Text>
                     </TouchableOpacity>
@@ -376,6 +377,8 @@ export default function SearchScreen() {
                       style={[styles.popularCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
                       onPress={() => openPin(pin)}
                       activeOpacity={0.8}
+                      accessibilityRole="button"
+                      accessibilityLabel={pin.title}
                     >
                       <PinImage source={getPinImageSource(pin)} style={styles.popularImage} contentFit="contain" />
                     </TouchableOpacity>

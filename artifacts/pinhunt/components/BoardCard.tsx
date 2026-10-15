@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { fontScale } from '@/constants/theme';
 import { getPinImageSource } from '@/utils/pinImage';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
@@ -71,7 +72,7 @@ export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardP
           </Text>
           {!board.isCustom && (
             <View style={[styles.suggestedBadge, { backgroundColor: t.accent + '22' }]}>
-              <Text style={[styles.suggestedLabel, { color: t.accent }]}>Suggested</Text>
+              <Text maxFontSizeMultiplier={fontScale.dense} style={[styles.suggestedLabel, { color: t.accent }]}>Suggested</Text>
             </View>
           )}
         </View>
@@ -114,7 +115,7 @@ export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
         </Text>
         {!board.isCustom && (
           <View style={[styles.suggestedBadge, { backgroundColor: colors.accent + '22', marginTop: 4 }]}>
-            <Text style={[styles.suggestedLabel, { color: colors.accent }]}>Suggested</Text>
+            <Text maxFontSizeMultiplier={fontScale.dense} style={[styles.suggestedLabel, { color: colors.accent }]}>Suggested</Text>
           </View>
         )}
       </View>

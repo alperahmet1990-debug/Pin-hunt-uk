@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { fontScale } from '@/constants/theme';
 import { useCollection } from '@/context/CollectionContext';
 import { CollectionBadge } from './CollectionBadge';
 import { getPinImageSource } from '@/utils/pinImage';
@@ -117,7 +118,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
               { backgroundColor: BRAND_COLORS[pin.brand] ?? t.accent, borderRadius: 4 },
             ]}
           >
-            <Text style={styles.brandLabel} numberOfLines={1}>
+            <Text maxFontSizeMultiplier={fontScale.dense} style={styles.brandLabel} numberOfLines={1}>
               {pin.brand}
             </Text>
           </View>
@@ -136,7 +137,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
         </View>
         {pin.limitedEditionSize ? (
           <View style={[styles.leBadge, { backgroundColor: t.gold }]}>
-            <Text style={styles.leLabel}>LE {pin.limitedEditionSize.toLocaleString()}</Text>
+            <Text maxFontSizeMultiplier={fontScale.badge} style={styles.leLabel}>LE {pin.limitedEditionSize.toLocaleString()}</Text>
           </View>
         ) : null}
       </TouchableOpacity>
@@ -162,12 +163,12 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
         <PinImage source={getPinImageSource(pin)} style={[styles.gridImage, { height: gridCardWidth }]} />
         {pin.limitedEditionSize ? (
           <View style={[styles.leBadge, { backgroundColor: t.gold }]}>
-            <Text style={styles.leLabel}>LE</Text>
+            <Text maxFontSizeMultiplier={fontScale.badge} style={styles.leLabel}>LE</Text>
           </View>
         ) : null}
         {pin.isNewRelease ? (
           <View style={[styles.newBadge, { backgroundColor: t.primary }]}>
-            <Text style={styles.newLabel}>NEW</Text>
+            <Text maxFontSizeMultiplier={fontScale.badge} style={styles.newLabel}>NEW</Text>
           </View>
         ) : null}
       </View>
@@ -184,7 +185,7 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
             { backgroundColor: BRAND_COLORS[pin.brand] ?? t.accent, borderRadius: 4 },
           ]}
         >
-          <Text style={styles.brandLabel} numberOfLines={1}>
+          <Text maxFontSizeMultiplier={fontScale.dense} style={styles.brandLabel} numberOfLines={1}>
             {pin.brand}
           </Text>
         </View>

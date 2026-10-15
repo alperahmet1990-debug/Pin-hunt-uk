@@ -8,6 +8,7 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { fontScale } from '@/constants/theme';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinImage } from '@/components/ui/PinImage';
@@ -52,7 +53,7 @@ export function RecentPinsStrip() {
         <View style={[styles.image, styles.findTrades, { backgroundColor: colors.homeTeal }]}>
           <Feather name="compass" size={26} color={colors.homeSand} />
         </View>
-        <Text numberOfLines={1} style={[styles.label, { color: colors.homeInk }]}>Find Trades</Text>
+        <Text numberOfLines={1} maxFontSizeMultiplier={fontScale.dense} style={[styles.label, { color: colors.homeInk }]}>Find Trades</Text>
       </TouchableOpacity>
 
       {recent.map(entry => {
@@ -73,7 +74,7 @@ export function RecentPinsStrip() {
               style={[styles.image, { backgroundColor: colors.homeAqua }]}
               contentFit="contain"
             />
-            <Text numberOfLines={1} style={[styles.label, { color: colors.homeInk }]}>{pin.title}</Text>
+            <Text numberOfLines={1} maxFontSizeMultiplier={fontScale.dense} style={[styles.label, { color: colors.homeInk }]}>{pin.title}</Text>
           </TouchableOpacity>
         );
       })}

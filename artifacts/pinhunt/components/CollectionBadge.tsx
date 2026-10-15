@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useColors } from '@/hooks/useColors';
+import { fontScale } from '@/constants/theme';
 import type { CollectionStatus } from '@/types/pin';
 
 interface CollectionBadgeProps {
@@ -32,6 +33,7 @@ export function CollectionBadge({ status, size = 'sm' }: CollectionBadgeProps) {
   return (
     <View style={[styles.badge, { backgroundColor: bgColor }, isSm && styles.sm]}>
       <Text
+        maxFontSizeMultiplier={fontScale.dense}
         style={[
           styles.label,
           { color: '#fff' },

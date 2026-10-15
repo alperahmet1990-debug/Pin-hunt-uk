@@ -50,6 +50,25 @@ describe('Collector profile while loading (UX-045)', () => {
     expect(screen.queryByRole('progressbar', { name: 'Loading trade matches' })).toBeNull();
   });
 
+  it('shows trade-match pins at 56 pt or more, with or without a photo (B-P1-20)', async () => {
+    const { StyleSheet } = require('react-native');
+    await render(<CollectorProfileScreen />);
+    await act(async () => { resolveProfile(profile); });
+    await act(async () => {
+      resolveTrades([
+        { direction: 'they_have_i_want', pinId: 'a', pinhuntId: 'PHUK-1', title: 'Stitch Surfing', imageUrl: 'https://example.test/a.jpg' },
+        { direction: 'i_have_they_want', pinId: 'b', pinhuntId: 'PHUK-2', title: 'Dumbo Blue Sky' },
+      ]);
+    });
+    const thumbs = screen.getAllByTestId('trade-pin-thumb');
+    expect(thumbs).toHaveLength(2);
+    thumbs.forEach(t => {
+      const { width, height } = StyleSheet.flatten(t.props.style);
+      expect(width).toBeGreaterThanOrEqual(56);
+      expect(height).toBeGreaterThanOrEqual(56);
+    });
+  });
+
   it('uses the same loading label for a match entry', async () => {
     mockEntry = 'match';
     await render(<CollectorProfileScreen />);

@@ -29,7 +29,7 @@ import {
   RETAKE_TIPS_KEY,
   RETAKE_TIPS_LIMIT,
   recoveryQuery,
-  sharedCandidateSet,
+  sharedCandidateCharacters, sharedCandidateSet,
 } from '@/utils/scanRecovery';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { CataloguePin } from '@workspace/pin-repository';
@@ -397,7 +397,9 @@ export default function ScanScreen() {
       pathname: '/add-pin',
       params: {
         frontUri: captured.uri,
-        characters: insights?.characters.join(', ') ?? '',
+        characters: (insights?.characters.length
+          ? insights.characters
+          : sharedCandidateCharacters(matches.map(m => m.pin.characters))).join(', '),
         nameHint: insights?.textOnPin ?? '',
         brandHint: insights?.logos[0] ?? '',
         setHint: recoverySet ?? '',

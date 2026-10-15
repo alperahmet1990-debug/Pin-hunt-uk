@@ -128,18 +128,19 @@ describe('Suggest a missing pin (UX-011)', () => {
     expect(submitted()).toMatchObject({ characterNames: ['Dumbo', 'Timothy'] });
   });
 
-  it('offers the scan\'s guesses as tap-to-use suggestions, never filled in', async () => {
+  it('fills in the scan\'s guesses (#301), editable, with a chip to bring one back', async () => {
     mockParams = { nameHint: 'Happy  30th\nAnniversary', brandHint: 'Disneyland Paris', setHint: 'Park Icons' };
     await toDetails();
-    // Nothing is filled in for the collector…
-    expect(screen.queryByDisplayValue('Happy 30th Anniversary')).toBeNull();
-    // …each guess is one tap away, and goes once it's used.
+    expect(screen.getByTestId('scan-prefill-note')).toBeTruthy();
+    expect(screen.getByDisplayValue('Happy 30th Anniversary')).toBeTruthy();
+    expect(screen.getByDisplayValue('Park Icons')).toBeTruthy();
+    // Brand sits under More details, which opens to show it.
+    expect(screen.getByDisplayValue('Disneyland Paris')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /Use name from your scan/ })).toBeNull();
+    // Changing a guess offers it back.
+    await fireEvent.changeText(screen.getByPlaceholderText('e.g. Dumbo Blue Sky'), 'Lantern');
     await fireEvent.press(screen.getByRole('button', { name: 'Use name from your scan: Happy 30th Anniversary' }));
     expect(screen.getByDisplayValue('Happy 30th Anniversary')).toBeTruthy();
-    expect(screen.queryByRole('button', { name: /Use name from your scan/ })).toBeNull();
-    await fireEvent.press(screen.getByRole('button', { name: 'Use set from your scan: Park Icons' }));
-    await fireEvent.press(screen.getByRole('button', { name: 'More details (optional)' }));
-    await fireEvent.press(screen.getByRole('button', { name: 'Use brand from your scan: Disneyland Paris' }));
     await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
     await screen.findByText('Pin Submitted!');
     expect(submitted()).toMatchObject({ proposedName: 'Happy 30th Anniversary', seriesName: 'Park Icons', brand: 'Disneyland Paris' });
@@ -148,6 +149,7 @@ describe('Suggest a missing pin (UX-011)', () => {
   it('shows no scan suggestions when not coming from a scan', async () => {
     await toDetails();
     expect(screen.queryByRole('button', { name: /from your scan/ })).toBeNull();
+    expect(screen.queryByTestId('scan-prefill-note')).toBeNull();
   });
 });
 

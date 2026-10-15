@@ -17,6 +17,11 @@ export interface ScanResultState {
   best: number;
   /** "Not it" pressed: the other candidates and "None of these" are showing. */
   showAlternatives: boolean;
+  /**
+   * Candidates the collector said "Not it" to (#299). They leave the
+   * comparison and the strip, so a rejected pin is never offered again.
+   */
+  rejected: number[];
 }
 
 /** Every candidate under LOW_CONFIDENCE. */
@@ -32,27 +37,40 @@ export function allLowConfidence(candidates: Candidate[]): boolean {
 export function initialResult(candidates: Candidate[]): ScanResultState {
   let best = 0;
   candidates.forEach((c, i) => { if (c.confidence > candidates[best].confidence) best = i; });
-  return { best, showAlternatives: allLowConfidence(candidates) };
+  return { best, showAlternatives: allLowConfidence(candidates), rejected: [] };
 }
 
-/** "Not it": show the others (and "None of these"). */
+/**
+ * "Not it": reject the pin being compared and show the others (and "None of
+ * these"). Nothing is compared, and "That's it" can't be pressed, until the
+ * collector picks one of the others (#299).
+ */
 export function notIt(state: ScanResultState): ScanResultState {
-  return { ...state, showAlternatives: true };
+  const rejected = state.rejected.includes(state.best) ? state.rejected : [...state.rejected, state.best];
+  return { ...state, showAlternatives: true, rejected };
+}
+
+/** The pin being compared was rejected and nothing else is picked yet. */
+export function awaitingPick(state: ScanResultState): boolean {
+  return state.rejected.includes(state.best);
 }
 
 /** Tapping an alternative makes it the one compared with the photo. */
 export function promote(state: ScanResultState, index: number, count: number): ScanResultState {
-  if (index < 0 || index >= count || index === state.best) return state;
+  if (index < 0 || index >= count || index === state.best || state.rejected.includes(index)) return state;
   return { ...state, best: index };
 }
 
-/** The candidates shown in the strip: everything except the best, in order. */
+/** The candidates shown in the strip: everything except the best and the rejected, in order. */
 export function alternatives(state: ScanResultState, count: number): number[] {
-  return Array.from({ length: count }, (_, i) => i).filter(i => i !== state.best);
+  return Array.from({ length: count }, (_, i) => i).filter(i => i !== state.best && !state.rejected.includes(i));
 }
 
 /** Heading above the comparison. */
-export function resultHeading(candidates: Candidate[]): string {
+export function resultHeading(candidates: Candidate[], state?: ScanResultState): string {
+  if (state && awaitingPick(state)) {
+    return alternatives(state, candidates.length).length > 0 ? 'Is it one of these?' : 'No other close matches';
+  }
   if (allLowConfidence(candidates)) return 'Not sure. Is it one of these?';
-  return candidates.length === 1 ? 'Is this your pin?' : 'Best match';
+  return 'Is this your pin?';
 }

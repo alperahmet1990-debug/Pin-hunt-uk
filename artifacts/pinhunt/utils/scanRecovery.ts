@@ -28,3 +28,15 @@ export function sharedCandidateSet(collections: Array<string | null | undefined>
   const [first, second] = collections;
   return first && second && first === second ? first : null;
 }
+
+/**
+ * Characters both top candidates have (#301), for Suggest a pin when the
+ * scan itself named none: if the two closest pins share a character, the
+ * missing pin very likely has it too. Empty otherwise.
+ */
+export function sharedCandidateCharacters(characterLists: Array<string[] | null | undefined>): string[] {
+  const [first, second] = characterLists;
+  if (!first?.length || !second?.length) return [];
+  const other = new Set(second.map(c => c.trim().toLowerCase()));
+  return first.map(c => c.trim()).filter(c => c && other.has(c.toLowerCase()));
+}

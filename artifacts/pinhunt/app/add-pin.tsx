@@ -19,8 +19,8 @@
  * approve it before it becomes a real, publicly visible catalogue pin.
  *
  * Can be reached directly, or from the scan screen's "can't find it" flow
- * (which pre-fills a captured photo and any characters the AI scan
- * recognised via the frontUri / characters route params). Search, the
+ * (which pre-fills a captured photo, the characters the AI scan
+ * recognised, and its name / brand / set guesses, editable, #301). Search, the
  * catalogue, and the contributor screen also link here when a pin is
  * missing, passing what the user typed as the `name` param.
  */
@@ -271,7 +271,7 @@ export default function AddPinScreen() {
     frontUri?: string;
     characters?: string;
     name?: string;
-    /** Scan guesses, offered as tap-to-use suggestions, never filled in (UX-011). */
+    /** Scan guesses: filled in to start with (#301); a chip brings one back if changed (UX-011). */
     nameHint?: string;
     brandHint?: string;
     setHint?: string;
@@ -279,6 +279,8 @@ export default function AddPinScreen() {
   const nameHint = scanHint(rawNameHint);
   const brandHint = scanHint(rawBrandHint);
   const setHint = scanHint(rawSetHint);
+  /** Something from the scan was filled in, so ask the collector to check it. */
+  const filledFromScan = Boolean(nameHint || brandHint || setHint || handoffCharacters);
 
   const [step, setStep] = useState(0);
 
@@ -335,6 +337,14 @@ export default function AddPinScreen() {
     }
     if (handoffName && !proposedName) {
       setProposedName(handoffName);
+    }
+    // #301: the scan's guesses start filled in (editable). Chips bring a
+    // guess back if the collector clears or changes it.
+    if (nameHint && !handoffName && !proposedName) setProposedName(nameHint);
+    if (setHint && !seriesName) setSeriesName(setHint);
+    if (brandHint && !brand) {
+      setBrand(brandHint);
+      setShowMore(true);
     }
     // Only ever consume the handoff once, on mount.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -609,6 +619,18 @@ export default function AddPinScreen() {
         </View>
       )}
 
+      {filledFromScan && (
+        <View
+          testID="scan-prefill-note"
+          style={[styles.scanNote, { backgroundColor: colors.homeCoral + '14', borderColor: colors.homeCoral + '55' }]}
+        >
+          <Feather name="camera" size={14} color={colors.homeCoral} />
+          <Text style={[styles.scanNoteText, { color: colors.homeInk }]}>
+            Filled in from your scan. Check it before you submit.
+          </Text>
+        </View>
+      )}
+
       {field('Pin name', true, (
         <>
           {inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky', { errKey: 'proposedName' })}
@@ -815,6 +837,8 @@ const styles = StyleSheet.create({
   processingOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', gap: 8, borderRadius: 12 },
   processingText:    { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   previewNote:       { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, textAlign: 'center' },
+  scanNote:          { flexDirection: 'row', alignItems: 'center', gap: 8, borderWidth: 1, borderRadius: radius.md, paddingHorizontal: 12, paddingVertical: 10 },
+  scanNoteText:      { flex: 1, fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18 },
   cleanupNotice:     { flexDirection: 'row', gap: 10, alignSelf: 'stretch', borderWidth: 1, borderRadius: radius.md, padding: 12 },
   cleanupIcon:       { marginTop: 1 },
   cleanupCopy:       { flex: 1, gap: 2 },

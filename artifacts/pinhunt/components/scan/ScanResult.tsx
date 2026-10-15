@@ -1,8 +1,10 @@
 /**
  * ScanResult — the single-answer scan result (UX-005, #112): the collector's
- * photo beside the best match, the pin's name and set, then "That's it" and
- * "Not it". "Not it" reveals the other candidates as a strip (tap one to
- * compare it instead) and "None of these". Confidence %, AI reasoning and
+ * photo beside the best match ("Your photo" / "Our match", with a line
+ * saying so, #298), the pin's name and set, then "That's it" and "Not it".
+ * "Not it" rejects that pin: it leaves the comparison and "That's it" goes
+ * until the collector taps one of the other candidates in the strip (#299),
+ * or "None of these". Confidence %, AI reasoning and
  * "what we saw" are scan internals: only admins see them, behind
  * "Scan details" (D-07).
  */
@@ -16,7 +18,7 @@ import { PinImage } from '@/components/ui/PinImage';
 import { getPinImageSource } from '@/utils/pinImage';
 import type { ImageInsights } from '@/utils/identifyPin';
 import { radius, spacing } from '@/constants/theme';
-import { alternatives, initialResult, notIt, promote, resultHeading } from './scanResult';
+import { alternatives, awaitingPick, initialResult, notIt, promote, resultHeading } from './scanResult';
 
 export interface ScanCandidate {
   pin: CataloguePin;
@@ -51,12 +53,18 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
   const panel = Math.floor((width - spacing.lg * 2 - GAP) / 2);
   const best = candidates[state.best];
   const others = alternatives(state, candidates.length);
+  const picking = awaitingPick(state);
 
   return (
     <View style={styles.root}>
       <Text accessibilityRole="header" style={[styles.heading, { color: colors.homeInk }]}>
-        {resultHeading(candidates)}
+        {resultHeading(candidates, state)}
       </Text>
+      {!picking && (
+        <Text style={[styles.explain, { color: colors.homeMuted }]}>
+          Your photo on the left, our closest match from the catalogue on the right.
+        </Text>
+      )}
 
       <View style={styles.compare}>
         <View style={{ width: panel }}>
@@ -67,6 +75,18 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
           />
           <Text style={[styles.panelLabel, { color: colors.homeMuted }]}>Your photo</Text>
         </View>
+        {picking ? (
+          // The rejected pin leaves the comparison until another is picked.
+          <View style={{ width: panel }} testID="scan-match-empty">
+            <View style={[styles.panelImage, styles.emptyPanel, { width: panel, height: panel, borderColor: colors.homeMuted + '80' }]}>
+              <Feather name={others.length > 0 ? 'arrow-down' : 'search'} size={22} color={colors.homeMuted} />
+              <Text style={[styles.emptyText, { color: colors.homeMuted }]}>
+                {others.length > 0 ? 'Tap a pin below to compare' : 'Try None of these'}
+              </Text>
+            </View>
+            <Text style={[styles.panelLabel, { color: colors.homeMuted }]}>Our match</Text>
+          </View>
+        ) : (
         <TouchableOpacity
           style={{ width: panel }}
           onPress={() => onOpenPin(best.pin)}
@@ -79,32 +99,37 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
             style={[styles.panelImage, { width: panel, height: panel, backgroundColor: colors.homeAqua }]}
             contentFit="contain"
           />
-          <Text style={[styles.panelLabel, { color: colors.homeMuted }]}>Catalogue</Text>
+          <Text style={[styles.panelLabel, { color: colors.homeMuted }]}>Our match</Text>
         </TouchableOpacity>
-      </View>
-
-      <View style={styles.identity}>
-        <Text style={[styles.title, { color: colors.homeInk }]} numberOfLines={2}>{best.pin.title}</Text>
-        {best.pin.collection ? (
-          <Text style={[styles.set, { color: colors.homeMuted }]} numberOfLines={1}>{best.pin.collection}</Text>
-        ) : null}
-      </View>
-
-      <View style={styles.actions}>
-        {/* Once the alternatives are showing, "Not it" has done its job. */}
-        {!state.showAlternatives && (
-          <Button label="Not it" icon="x" variant="secondary" onPress={() => setState(s => notIt(s))} style={styles.actionHalf} />
         )}
-        <Button label="That's it" icon="check" onPress={() => onConfirm(best.pin)} style={styles.actionHalf} />
       </View>
+
+      {!picking && (
+        <>
+          <View style={styles.identity}>
+            <Text style={[styles.title, { color: colors.homeInk }]} numberOfLines={2}>{best.pin.title}</Text>
+            {best.pin.collection ? (
+              <Text style={[styles.set, { color: colors.homeMuted }]} numberOfLines={1}>{best.pin.collection}</Text>
+            ) : null}
+          </View>
+
+          <View style={styles.actions}>
+            <Button label="Not it" icon="x" variant="secondary" onPress={() => setState(s => notIt(s))} style={styles.actionHalf} />
+            <Button label="That's it" icon="check" onPress={() => onConfirm(best.pin)} style={styles.actionHalf} />
+          </View>
+        </>
+      )}
 
       {state.showAlternatives && (
         <View style={styles.alternatives}>
           {others.length > 0 && (
             <>
-              <Text style={[styles.altHeading, { color: colors.homeMuted }]}>
-                {others.length === 1 ? 'Or is it this one?' : 'Or is it one of these?'}
-              </Text>
+              {/* While picking, the main heading already asks. */}
+              {!picking && (
+                <Text style={[styles.altHeading, { color: colors.homeMuted }]}>
+                  {others.length === 1 ? 'Or is it this one?' : 'Or is it one of these?'}
+                </Text>
+              )}
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.strip}>
                 {others.map(i => {
                   const c = candidates[i];
@@ -194,6 +219,9 @@ const styles = StyleSheet.create({
   heading: { fontSize: 18, fontFamily: 'Inter_700Bold' },
   compare: { flexDirection: 'row', gap: GAP },
   panelImage: { borderRadius: radius.lg },
+  explain: { fontSize: 13, lineHeight: 18, fontFamily: 'Inter_400Regular', marginTop: -spacing.sm },
+  emptyPanel: { borderWidth: 1.5, borderStyle: 'dashed', alignItems: 'center', justifyContent: 'center', gap: 6, padding: spacing.sm },
+  emptyText: { fontSize: 12, lineHeight: 16, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
   panelLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold', textAlign: 'center', marginTop: 6 },
   identity: { gap: 2 },
   title: { fontSize: 17, lineHeight: 22, fontFamily: 'Inter_700Bold' },

@@ -4,7 +4,7 @@
  * "image". Same tree walk as the tab screens (#52), in helpers/a11yTree.
  */
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import { unlabelledImages, unlabelledPressables, type Node } from './helpers/a11yTree';
 
 let mockParams: Record<string, string> = {};
@@ -97,6 +97,7 @@ const SCREENS: [string, Record<string, string>, () => React.ComponentType][] = [
   ['Browse Catalogue', {}, () => require('../app/browse-catalogue').default],
   ['Chat', { id: 'c1' }, () => require('../app/community/chat/[id]').default],
   ['Trade', { id: 't1' }, () => require('../app/trade/[id]').default],
+  ['Find a Trade', { pinId: 'p1' }, () => require('../app/traders/[pinId]').default],
 ];
 
 describe('Detail screens: every touchable has a spoken name (#53)', () => {
@@ -109,5 +110,22 @@ describe('Detail screens: every touchable has a spoken name (#53)', () => {
     const tree = toJSON() as Node | Node[] | null;
     expect(unlabelledPressables(tree)).toEqual([]);
     expect(unlabelledImages(tree)).toEqual([]);
+  }, 30_000);
+});
+
+// UX-063 (#278): the content-first screens use the shared ScreenHeader
+// (docs/design/screen-header.md), not the native stack header.
+describe('ScreenHeader on Find a Trade and Browse Catalogue (#278)', () => {
+  it.each([
+    ['Find a Trade', { pinId: 'p1' }, () => require('../app/traders/[pinId]').default],
+    ['Entire Catalogue', {}, () => require('../app/browse-catalogue').default],
+  ] as [string, Record<string, string>, () => React.ComponentType][])('%s', async (title, params, load) => {
+    mockParams = params;
+    const Screen = load();
+    await render(<Screen />);
+    for (let i = 0; i < 5; i++) await new Promise(r => setTimeout(r, 0));
+    expect(screen.getByTestId('screen-header')).toBeTruthy();
+    expect(screen.getByRole('header', { name: title })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Back' })).toBeTruthy();
   }, 30_000);
 });

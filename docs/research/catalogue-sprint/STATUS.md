@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-15 00:30 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-15 03:32 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -18,12 +18,14 @@ _Last updated: 2026-10-15 00:30 UTC by Claude (sprint coordinator session). Chec
 - **#241 (import):** taken interactively in this session at the maintainer's request ("Take #241"). Claimed on the issue.
   - Branch `claude/241-research-import`: built and tested. 383 API tests pass; typecheck passes.
   - Offline replay on the real schema: **95/100** pilot pins import as new non-public pins; 5 are correctly refused (4 flagged duplicates, 1 with no named character).
-  - **PR #272 opened 21:25 UTC** (https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/272). CI green, QA PASS, security PASS (21:27 UTC). Waiting only on your `merge-approved` label and merge.
+  - **PR #272 opened 21:25 UTC** (https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/272). First review: CI green, QA PASS, security PASS (21:27 UTC).
+  - **03:31 UTC: fix pushed (a7f4b4c).** The import wrote an explicit null into `pins.currency`, which is `NOT NULL DEFAULT 'GBP'`, so any candidate without a currency would have failed the whole batch. The offline replay found it. 384 tests pass; the replay creates 95/100. QA and security re-review the new commit; after that it needs your `merge-approved` label and merge.
 - **Open `claude/*` PRs (00:24 UTC):** #271, #272, #273, all QA PASS + security PASS. #271 and #273 also carry `needs-device-check`. That is one over the WIP limit of 2: the dev agent opened #273 at about 21:30, just after #272. No new dev-agent PRs will start until one is merged or closed.
 - **Dev agent:** #240 merged (PR #259). #239 merged (PR #253).
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
 ## Completed milestones (this sprint)
+- **Import data quality (03:30):** UK records no longer carry joined regional values into import fields. Before, 23 pilot pins had a currency like "UK: GBP | EU: EUR", and 10 Valentine's pins had titles joining the UK and Australian product names. Prices and currencies seen only in another market's store are now withheld on UK records: 9 prices and 28 currencies, which were EUR or USD values on UK pins. No confidence levels or review flags changed. 3 new engine tests (49 pass).
 - **#230 set-level verification:** built by the dev agent in PR #234, **merged** (by you). Each ticked pin gets its own evidence row and decision.
 - **Offline staging test:** 045 replays; pilot and full run load exactly as the API loads them; all guards hold (`LAPTOP-CHECKLIST.md` §0).
 - **Blind accuracy audit:** 83% of sampled candidates confirmed, 8% wrong or mis-structured, 8% unconfirmed (`accuracy-audit-2026-10-14.md`).

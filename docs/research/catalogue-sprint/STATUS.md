@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-14 21:30 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-15 00:30 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -17,9 +17,9 @@ _Last updated: 2026-10-14 21:30 UTC by Claude (sprint coordinator session). Chec
 - **Sprint coordinator (this session):** research engine, verification tooling, audits, reports.
 - **#241 (import):** taken interactively in this session at the maintainer's request ("Take #241"). Claimed on the issue.
   - Branch `claude/241-research-import`: built and tested. 383 API tests pass; typecheck passes.
-  - Offline replay on the real schema: 93/100 pilot pins import as new non-public pins; 7 are correctly refused.
+  - Offline replay on the real schema: **95/100** pilot pins import as new non-public pins; 5 are correctly refused (4 flagged duplicates, 1 with no named character).
   - **PR #272 opened 21:25 UTC** (https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/272). CI green, QA PASS, security PASS (21:27 UTC). Waiting only on your `merge-approved` label and merge.
-  - **The PR is not open yet:** the WIP limit is reached (#269, #270 open). The PR opens as soon as one of them is merged or closed. Its description is ready.
+- **Open `claude/*` PRs (00:24 UTC):** #271, #272, #273, all QA PASS + security PASS. #271 and #273 also carry `needs-device-check`. That is one over the WIP limit of 2: the dev agent opened #273 at about 21:30, just after #272. No new dev-agent PRs will start until one is merged or closed.
 - **Dev agent:** #240 merged (PR #259). #239 merged (PR #253).
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
@@ -39,7 +39,7 @@ _Last updated: 2026-10-14 21:30 UTC by Claude (sprint coordinator session). Chec
 ## Catalogue metrics (from `DASHBOARD.md`)
 | | |
 |---|---|
-| Candidate pins | 871 (≈ 816 unique) |
+| Candidate pins | 871 (≈ 807 unique) |
 | Sets / releases | 404 |
 | **Directly verified** | **0** (needs your staging session) |
 | **Publication-ready** | **0** |
@@ -93,6 +93,6 @@ _Last updated: 2026-10-14 21:30 UTC by Claude (sprint coordinator session). Chec
 
 ## Next planned actions (check-ins take these in order)
 1. **Follow PR #272** (#241) through CI, QA and security review, and fix findings on `claude/241-research-import`. Never merge.
-2. **Pilot readiness:** 93/100 importable offline. Try to close the 7: release years for Chip 'n Dale Countdown and Stitch St Patrick's; Big Hero 6 identity. Never invent values.
+2. **Pilot readiness:** 95/100 importable offline (00:26 UTC). Release years for Chip 'n Dale Christmas Countdown 2024 and Stitch St Patrick's Day 2025 are now evidenced: the year is in the official UK product name, and one news source corroborates each (`evidence/100_pilot_years.json`). Their exact dates stay missing on purpose. Left: the Big Hero 6 Magical Medallions character is not evidenced (only resale listings found), so it waits for the direct check. The 4 flagged duplicates wait for your review.
 3. **Keep the laptop checklist current** (import step §6 added).
 4. **Quality, not volume:** no new candidate discovery unless it closes a pilot gap.

@@ -1,0 +1,98 @@
+{
+ "packet_id": "pilot-years-evidence-2026-10-15-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-15",
+ "collector": "agent:sprint-coordinator",
+ "sources": [
+  {
+   "url": "https://www.disneystore.co.uk/chip-n-dale-limited-release-christmas-countdown-2024-jumbo-pin-438018035187.html",
+   "title": "Chip 'n Dale Limited Release Christmas Countdown 2024 Jumbo Pin",
+   "publisher": "Disney Store UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2024/10/christmas-2024-pins-at-walt-disney-world/",
+   "title": "First Christmas 2024 Pins & Other New Releases Today at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2024-10-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/stitch-st.-patricks-day-2025-limited-release-slider-pin-lilo-and-stitch-438018203715.html",
+   "title": "Stitch St. Patrick's Day 2025 Limited Release Slider Pin, Lilo & Stitch",
+   "publisher": "Disney Store UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/disney-merchandise/get-your-new-stitch-st-patricks-day-2025-slider-pin/",
+   "title": "Get Your New Stitch St. Patrick's Day 2025 Slider Pin",
+   "publisher": "WDWinfo",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "dsuk/2024/chip-n-dale-christmas-countdown-2024-jumbo/chip-n-dale",
+   "set_key": "dsuk/2024/chip-n-dale-christmas-countdown-2024-jumbo",
+   "claims": [
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://www.disneystore.co.uk/chip-n-dale-limited-release-christmas-countdown-2024-jumbo-pin-438018035187.html",
+     "method": "search_snippet",
+     "note": "Year stated in the official UK product name ('Christmas Countdown 2024'). Reviewer: confirm on the listing."
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://wdwnt.com/2024/10/christmas-2024-pins-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Article dated 2024-10-08 lists a Chip 'n Dale Christmas Countdown jumbo pin as new and also at Disney Store (US). Release DATE deliberately not claimed: US coverage may describe a different ('Mini Jumbo') product and gives no UK date."
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2025/stitch-st-patricks-day-2025-slider/stitch",
+   "set_key": "dsuk/2025/stitch-st-patricks-day-2025-slider",
+   "claims": [
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://www.disneystore.co.uk/stitch-st.-patricks-day-2025-limited-release-slider-pin-lilo-and-stitch-438018203715.html",
+     "method": "search_snippet",
+     "note": "Year stated in the official UK product name ('St. Patrick's Day 2025'). Reviewer: confirm on the listing."
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://www.wdwinfo.com/disney-merchandise/get-your-new-stitch-st-patricks-day-2025-slider-pin/",
+     "method": "search_snippet",
+     "note": "Article on the 2025 release; snippet reports a 'Disney Pin Trading 2025' backstamp. No exact date found."
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsuk/2025/stitch-st-patricks-day-2025-slider",
+   "field": "release_date",
+   "searched": "1 web search (official listings + news)",
+   "note": "No exact release date in any snippet"
+  },
+  {
+   "key": "dsuk/2024/magical-medallions-jan-2024",
+   "field": "characters",
+   "searched": "1 web search for the Big Hero 6 Magical Medallions pin",
+   "note": "Only resale listings found; character(s) on the pin not evidenced. Leave for direct check of the listing."
+  }
+ ],
+ "discovery_notes": "Pilot gap-fill (2026-10-15). No fan-database or Pin & Pop/PinPics/PinTradingDB sources used."
+}

@@ -1,13 +1,13 @@
 {
  "format": "pinhunt-research-run/v1",
  "engine_version": "engine-spec-v1",
- "git_commit": "5f3a8a77eb1e",
- "generated": "2026-10-14",
+ "git_commit": "7c74652",
+ "generated": "2026-10-15",
  "candidates": [
   {
    "research_key": "dsuk/2024/chip-n-dale-christmas-countdown-2024-jumbo",
    "entity_type": "set",
-   "set_research_key": null,
+   "set_research_key": "dsuk/2024",
    "proposed": {
     "set_name": "Chip 'n Dale Limited Release Christmas Countdown 2024 Jumbo Pin",
     "format": "jumbo countdown pin with dials and easel",
@@ -34,7 +34,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official UK title",
-     "claim_ref": "C04133"
+     "claim_ref": "C04137"
     },
     {
      "field": "format",
@@ -44,7 +44,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Days 'til Christmas label, two numeral dials, folding easel stand",
-     "claim_ref": "C04134"
+     "claim_ref": "C04138"
     },
     {
      "field": "expected_pin_count",
@@ -54,7 +54,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single jumbo pin",
-     "claim_ref": "C04135"
+     "claim_ref": "C04139"
     },
     {
      "field": "edition_type",
@@ -64,7 +64,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Title says Limited Release",
-     "claim_ref": "C04136"
+     "claim_ref": "C04140"
     },
     {
      "field": "price",
@@ -74,7 +74,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing showed GBP 11.99 (possibly reduced), sold out",
-     "claim_ref": "C04137"
+     "claim_ref": "C04141"
     },
     {
      "field": "currency",
@@ -84,7 +84,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C04138"
+     "claim_ref": "C04142"
     },
     {
      "field": "price",
@@ -94,7 +94,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing EUR 14.00, out of stock",
-     "claim_ref": "C04139"
+     "claim_ref": "C04143"
     },
     {
      "field": "pack_product_code",
@@ -104,7 +104,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04140"
+     "claim_ref": "C04144"
     },
     {
      "field": "release_location",
@@ -116,7 +116,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04141"
+     "claim_ref": "C04145"
     },
     {
      "field": "region",
@@ -128,7 +128,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP",
-     "claim_ref": "C04142"
+     "claim_ref": "C04146"
     }
    ]
   },
@@ -164,7 +164,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing names the Disney Magical Collections line; 2024 year from blog series coverage",
-     "claim_ref": "C04071"
+     "claim_ref": "C04075"
     },
     {
      "field": "family",
@@ -174,7 +174,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says pin is part of the Disney Magical Collections",
-     "claim_ref": "C04072"
+     "claim_ref": "C04076"
     },
     {
      "field": "issuer",
@@ -184,7 +184,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Sold by Disney Store UK",
-     "claim_ref": "C04073"
+     "claim_ref": "C04077"
     },
     {
      "field": "format",
@@ -194,7 +194,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog numbers each pin as a release (Vanellope = 12th and final) in the 2024 UK/Europe exclusive collection",
-     "claim_ref": "C04074"
+     "claim_ref": "C04078"
     },
     {
      "field": "expected_pin_count",
@@ -204,7 +204,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says 12 pins to collect through the year",
-     "claim_ref": "C04075"
+     "claim_ref": "C04079"
     },
     {
      "field": "expected_pin_count",
@@ -214,7 +214,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Abu listing also describes a series of 12 pins over the year",
-     "claim_ref": "C04076"
+     "claim_ref": "C04080"
     },
     {
      "field": "expected_pin_count",
@@ -224,7 +224,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog calls Vanellope the 12th and final release of the 2024 collection",
-     "claim_ref": "C04077"
+     "claim_ref": "C04081"
     },
     {
      "field": "edition_type",
@@ -234,7 +234,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing title says Limited Edition Pin",
-     "claim_ref": "C04078"
+     "claim_ref": "C04082"
     },
     {
      "field": "edition_size",
@@ -244,7 +244,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog gives LE 1,100 per pin across the series posts",
-     "claim_ref": "C04079"
+     "claim_ref": "C04083"
     },
     {
      "field": "release_date",
@@ -254,7 +254,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog says the first release (Chip 'n Dale) came out January 2024",
-     "claim_ref": "C04080"
+     "claim_ref": "C04084"
     },
     {
      "field": "release_location",
@@ -266,7 +266,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog describes the line as a Disney Store UK/Europe exclusive collection",
-     "claim_ref": "C04081"
+     "claim_ref": "C04085"
     },
     {
      "field": "region",
@@ -278,7 +278,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "UK/Europe exclusive per blog",
-     "claim_ref": "C04082"
+     "claim_ref": "C04086"
     },
     {
      "field": "currency",
@@ -288,7 +288,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Priced in GBP on UK listing",
-     "claim_ref": "C04083"
+     "claim_ref": "C04087"
     }
    ]
   },
@@ -322,7 +322,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official UK title",
-     "claim_ref": "C04176"
+     "claim_ref": "C04180"
     },
     {
      "field": "expected_pin_count",
@@ -332,7 +332,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04177"
+     "claim_ref": "C04181"
     },
     {
      "field": "edition_type",
@@ -342,7 +342,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says limited release",
-     "claim_ref": "C04178"
+     "claim_ref": "C04182"
     },
     {
      "field": "price",
@@ -352,7 +352,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing original GBP 12.00 (later reduced), out of stock",
-     "claim_ref": "C04179"
+     "claim_ref": "C04183"
     },
     {
      "field": "currency",
@@ -362,7 +362,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C04180"
+     "claim_ref": "C04184"
     },
     {
      "field": "pack_product_code",
@@ -372,7 +372,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04181"
+     "claim_ref": "C04185"
     },
     {
      "field": "release_date",
@@ -382,7 +382,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database release 12/12/2023 with USD price; may reflect US launch, not UK",
-     "claim_ref": "C04182"
+     "claim_ref": "C04186"
     },
     {
      "field": "release_location",
@@ -394,7 +394,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04183"
+     "claim_ref": "C04187"
     },
     {
      "field": "region",
@@ -406,7 +406,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP",
-     "claim_ref": "C04184"
+     "claim_ref": "C04188"
     }
    ]
   },
@@ -437,7 +437,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Forum thread from 6 Jan 2024 lists Big Hero 6 and Meet the Robinsons Magical Medallions pins at Disney Store",
-     "claim_ref": "C04185"
+     "claim_ref": "C04189"
     },
     {
      "field": "family",
@@ -447,7 +447,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says part of Magical Medallions",
-     "claim_ref": "C04186"
+     "claim_ref": "C04190"
     },
     {
      "field": "edition_type",
@@ -457,7 +457,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing describes limited edition of 1,250",
-     "claim_ref": "C04187"
+     "claim_ref": "C04191"
     },
     {
      "field": "release_date",
@@ -467,7 +467,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Forum thread dated 6 Jan 2024 lists both pins",
-     "claim_ref": "C04188"
+     "claim_ref": "C04192"
     },
     {
      "field": "region",
@@ -479,7 +479,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing says exclusive to Disney Store Europe",
-     "claim_ref": "C04189"
+     "claim_ref": "C04193"
     },
     {
      "field": "release_location",
@@ -491,7 +491,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listed on disneystore.co.uk",
-     "claim_ref": "C04190"
+     "claim_ref": "C04194"
     }
    ]
   },
@@ -526,7 +526,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official UK title",
-     "claim_ref": "C04123"
+     "claim_ref": "C04127"
     },
     {
      "field": "family",
@@ -536,7 +536,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says part of this collection",
-     "claim_ref": "C04124"
+     "claim_ref": "C04128"
     },
     {
      "field": "expected_pin_count",
@@ -546,7 +546,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04125"
+     "claim_ref": "C04129"
     },
     {
      "field": "edition_type",
@@ -556,7 +556,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says limited release",
-     "claim_ref": "C04126"
+     "claim_ref": "C04130"
     },
     {
      "field": "price",
@@ -566,7 +566,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 16.00, sold out",
-     "claim_ref": "C04127"
+     "claim_ref": "C04131"
     },
     {
      "field": "currency",
@@ -576,7 +576,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C04128"
+     "claim_ref": "C04132"
     },
     {
      "field": "price",
@@ -586,7 +586,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing EUR 10.80 (likely reduced), sold out",
-     "claim_ref": "C04129"
+     "claim_ref": "C04133"
     },
     {
      "field": "pack_product_code",
@@ -596,7 +596,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04130"
+     "claim_ref": "C04134"
     },
     {
      "field": "release_location",
@@ -608,7 +608,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04131"
+     "claim_ref": "C04135"
     },
     {
      "field": "region",
@@ -620,7 +620,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP",
-     "claim_ref": "C04132"
+     "claim_ref": "C04136"
     },
     {
      "field": "release_date",
@@ -630,7 +630,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US market: Disney Store (US) availability from Tue 15 Oct 2024 at $17.99; UK date not stated. Summary cited 'a Disney Pins Blog post' (blog has two posts on this pin)",
-     "claim_ref": "C09028"
+     "claim_ref": "C09032"
     }
    ]
   },
@@ -672,7 +672,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official EU listing title",
-     "claim_ref": "C04084"
+     "claim_ref": "C04088"
     },
     {
      "field": "set_name",
@@ -682,7 +682,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database entry title",
-     "claim_ref": "C04085"
+     "claim_ref": "C04089"
     },
     {
      "field": "format",
@@ -692,7 +692,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "24 numbered compartments, one cloisonne pin per day, pinboard inside a book-shaped case",
-     "claim_ref": "C04086"
+     "claim_ref": "C04090"
     },
     {
      "field": "expected_pin_count",
@@ -702,7 +702,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says 24 mystery pins, one per day of Advent",
-     "claim_ref": "C04087"
+     "claim_ref": "C04091"
     },
     {
      "field": "expected_pin_count",
@@ -712,7 +712,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Database describes 24 compartments each with a pin",
-     "claim_ref": "C04088"
+     "claim_ref": "C04092"
     },
     {
      "field": "edition_type",
@@ -722,7 +722,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing title says Limited Edition",
-     "claim_ref": "C04089"
+     "claim_ref": "C04093"
     },
     {
      "field": "edition_size",
@@ -732,7 +732,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says limited to 3,300",
-     "claim_ref": "C04090"
+     "claim_ref": "C04094"
     },
     {
      "field": "edition_size",
@@ -742,7 +742,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Database gives quantity 3300",
-     "claim_ref": "C04091"
+     "claim_ref": "C04095"
     },
     {
      "field": "pack_product_code",
@@ -752,7 +752,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in EU listing URL",
-     "claim_ref": "C04092"
+     "claim_ref": "C04096"
     },
     {
      "field": "price",
@@ -762,7 +762,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Database lists original UK price GBP 220.00",
-     "claim_ref": "C04094"
+     "claim_ref": "C04098"
     },
     {
      "field": "currency",
@@ -772,7 +772,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "UK price in pounds",
-     "claim_ref": "C04095"
+     "claim_ref": "C04099"
     },
     {
      "field": "price",
@@ -782,7 +782,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing showed EUR 150.00 (sold out)",
-     "claim_ref": "C04096"
+     "claim_ref": "C04100"
     },
     {
      "field": "currency",
@@ -792,7 +792,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing price in euros",
-     "claim_ref": "C04097"
+     "claim_ref": "C04101"
     },
     {
      "field": "release_date",
@@ -802,7 +802,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Database release date 9/30/2024 for the UK origin entry",
-     "claim_ref": "C04098"
+     "claim_ref": "C04102"
     },
     {
      "field": "release_location",
@@ -814,7 +814,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Database origin field is Disney Store UK/ShopDisney UK",
-     "claim_ref": "C04099"
+     "claim_ref": "C04103"
     },
     {
      "field": "release_location",
@@ -826,7 +826,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Also listed on EU store",
-     "claim_ref": "C04100"
+     "claim_ref": "C04104"
     },
     {
      "field": "region",
@@ -838,7 +838,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "UK origin per database; EU listing also exists",
-     "claim_ref": "C04101"
+     "claim_ref": "C04105"
     },
     {
      "field": "issuer",
@@ -848,7 +848,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US coverage says it was sold at Disney Store",
-     "claim_ref": "C04102"
+     "claim_ref": "C04106"
     },
     {
      "field": "pack_product_code",
@@ -858,7 +858,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in EU listing URL",
-     "claim_ref": "C05296"
+     "claim_ref": "C05300"
     },
     {
      "field": "price",
@@ -868,7 +868,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU price EUR 150, sold out",
-     "claim_ref": "C05297"
+     "claim_ref": "C05301"
     },
     {
      "field": "currency",
@@ -878,7 +878,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing",
-     "claim_ref": "C05298"
+     "claim_ref": "C05302"
     }
    ]
   },
@@ -911,7 +911,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official UK title",
-     "claim_ref": "C04207"
+     "claim_ref": "C04211"
     },
     {
      "field": "expected_pin_count",
@@ -921,7 +921,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04208"
+     "claim_ref": "C04212"
     },
     {
      "field": "edition_type",
@@ -931,7 +931,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says limited release",
-     "claim_ref": "C04209"
+     "claim_ref": "C04213"
     },
     {
      "field": "price",
@@ -941,7 +941,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 14.00",
-     "claim_ref": "C04210"
+     "claim_ref": "C04214"
     },
     {
      "field": "currency",
@@ -951,7 +951,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C04211"
+     "claim_ref": "C04215"
     },
     {
      "field": "pack_product_code",
@@ -961,7 +961,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04212"
+     "claim_ref": "C04216"
     },
     {
      "field": "release_location",
@@ -973,7 +973,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04213"
+     "claim_ref": "C04217"
     },
     {
      "field": "region",
@@ -985,7 +985,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP",
-     "claim_ref": "C04214"
+     "claim_ref": "C04218"
     }
    ]
   },
@@ -1020,7 +1020,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official UK title",
-     "claim_ref": "C04113"
+     "claim_ref": "C04117"
     },
     {
      "field": "family",
@@ -1030,7 +1030,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says part of this collection",
-     "claim_ref": "C04114"
+     "claim_ref": "C04118"
     },
     {
      "field": "expected_pin_count",
@@ -1040,7 +1040,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04115"
+     "claim_ref": "C04119"
     },
     {
      "field": "edition_type",
@@ -1050,7 +1050,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Title says Limited Edition",
-     "claim_ref": "C04116"
+     "claim_ref": "C04120"
     },
     {
      "field": "edition_size",
@@ -1060,7 +1060,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says limited to 4,500",
-     "claim_ref": "C04117"
+     "claim_ref": "C04121"
     },
     {
      "field": "price",
@@ -1070,7 +1070,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Original GBP 16.00; later shown at 9.60 after 40% off",
-     "claim_ref": "C04118"
+     "claim_ref": "C04122"
     },
     {
      "field": "currency",
@@ -1080,7 +1080,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C04119"
+     "claim_ref": "C04123"
     },
     {
      "field": "pack_product_code",
@@ -1090,7 +1090,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04120"
+     "claim_ref": "C04124"
     },
     {
      "field": "release_location",
@@ -1102,7 +1102,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04121"
+     "claim_ref": "C04125"
     },
     {
      "field": "region",
@@ -1114,7 +1114,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP listing",
-     "claim_ref": "C04122"
+     "claim_ref": "C04126"
     }
    ]
   },
@@ -1151,7 +1151,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official UK title",
-     "claim_ref": "C04143"
+     "claim_ref": "C04147"
     },
     {
      "field": "expected_pin_count",
@@ -1161,7 +1161,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04144"
+     "claim_ref": "C04148"
     },
     {
      "field": "edition_type",
@@ -1171,7 +1171,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Title says Limited Edition",
-     "claim_ref": "C04145"
+     "claim_ref": "C04149"
     },
     {
      "field": "edition_size",
@@ -1181,7 +1181,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says limited to 500 worldwide",
-     "claim_ref": "C04146"
+     "claim_ref": "C04150"
     },
     {
      "field": "edition_size",
@@ -1191,7 +1191,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog says limited to 500",
-     "claim_ref": "C04147"
+     "claim_ref": "C04151"
     },
     {
      "field": "price",
@@ -1201,7 +1201,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing showed GBP 6.00 (sold out; likely reduced)",
-     "claim_ref": "C04148"
+     "claim_ref": "C04152"
     },
     {
      "field": "price",
@@ -1211,7 +1211,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog gives retail GBP 14.00 (conflicts with listing)",
-     "claim_ref": "C04149"
+     "claim_ref": "C04153"
     },
     {
      "field": "currency",
@@ -1221,7 +1221,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C04150"
+     "claim_ref": "C04154"
     },
     {
      "field": "price",
@@ -1231,7 +1231,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing EUR 7.00, out of stock",
-     "claim_ref": "C04151"
+     "claim_ref": "C04155"
     },
     {
      "field": "pack_product_code",
@@ -1241,7 +1241,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04152"
+     "claim_ref": "C04156"
     },
     {
      "field": "release_date",
@@ -1251,7 +1251,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog says available from February 2024",
-     "claim_ref": "C04153"
+     "claim_ref": "C04157"
     },
     {
      "field": "release_location",
@@ -1263,7 +1263,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing; exclusive to UK and EU",
-     "claim_ref": "C04154"
+     "claim_ref": "C04158"
     },
     {
      "field": "region",
@@ -1275,7 +1275,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says exclusive to UK and EU",
-     "claim_ref": "C04155"
+     "claim_ref": "C04159"
     }
    ]
   },
@@ -1315,7 +1315,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04472"
+     "claim_ref": "C04476"
     },
     {
      "field": "family",
@@ -1325,7 +1325,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "First of four LE sets marking 25 years of Disney Pin Trading",
-     "claim_ref": "C04473"
+     "claim_ref": "C04477"
     },
     {
      "field": "sub_series",
@@ -1335,7 +1335,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing title says Series, 1 of 4",
-     "claim_ref": "C04474"
+     "claim_ref": "C04478"
     },
     {
      "field": "format",
@@ -1345,7 +1345,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Snippet: three-pin set in window box, magnetic closure",
-     "claim_ref": "C04475"
+     "claim_ref": "C04479"
     },
     {
      "field": "expected_pin_count",
@@ -1355,7 +1355,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing describes a three-pin set",
-     "claim_ref": "C04476"
+     "claim_ref": "C04480"
     },
     {
      "field": "edition_type",
@@ -1365,7 +1365,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing says limited edition",
-     "claim_ref": "C04477"
+     "claim_ref": "C04481"
     },
     {
      "field": "edition_size",
@@ -1375,7 +1375,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Snippet: limited to 900",
-     "claim_ref": "C04478"
+     "claim_ref": "C04482"
     },
     {
      "field": "price",
@@ -1385,7 +1385,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listed at GBP 35, marked out of stock",
-     "claim_ref": "C04479"
+     "claim_ref": "C04483"
     },
     {
      "field": "currency",
@@ -1395,7 +1395,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK price in pounds",
-     "claim_ref": "C04480"
+     "claim_ref": "C04484"
     },
     {
      "field": "pack_product_code",
@@ -1405,7 +1405,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in UK listing URL",
-     "claim_ref": "C04481"
+     "claim_ref": "C04485"
     },
     {
      "field": "release_location",
@@ -1417,7 +1417,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Sold on UK Disney Store site",
-     "claim_ref": "C04482"
+     "claim_ref": "C04486"
     },
     {
      "field": "region",
@@ -1429,7 +1429,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing priced in GBP",
-     "claim_ref": "C04483"
+     "claim_ref": "C04487"
     },
     {
      "field": "release_date",
@@ -1439,7 +1439,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US market: available on DisneyStore.com from Tue 25 Feb 2025 ($49.99, LE 900)",
-     "claim_ref": "C09029"
+     "claim_ref": "C09033"
     },
     {
      "field": "release_date",
@@ -1449,7 +1449,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "UK market: fan database lists 13 Feb 2025 for the Disney Store UK version (£35). Secondary fan source only; not independent",
-     "claim_ref": "C09030"
+     "claim_ref": "C09034"
     }
    ]
   },
@@ -1487,7 +1487,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04484"
+     "claim_ref": "C04488"
     },
     {
      "field": "family",
@@ -1497,7 +1497,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Second of four 25th anniversary LE sets",
-     "claim_ref": "C04485"
+     "claim_ref": "C04489"
     },
     {
      "field": "sub_series",
@@ -1507,7 +1507,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Lilo & Stitch themed second set",
-     "claim_ref": "C04486"
+     "claim_ref": "C04490"
     },
     {
      "field": "format",
@@ -1517,7 +1517,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Snippet: window box, magnetic closure",
-     "claim_ref": "C04487"
+     "claim_ref": "C04491"
     },
     {
      "field": "expected_pin_count",
@@ -1527,7 +1527,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Three pins listed",
-     "claim_ref": "C04488"
+     "claim_ref": "C04492"
     },
     {
      "field": "edition_type",
@@ -1537,7 +1537,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition",
-     "claim_ref": "C04489"
+     "claim_ref": "C04493"
     },
     {
      "field": "edition_size",
@@ -1547,7 +1547,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Snippet: limited edition of 900",
-     "claim_ref": "C04490"
+     "claim_ref": "C04494"
     },
     {
      "field": "price",
@@ -1557,7 +1557,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 35, out of stock",
-     "claim_ref": "C04491"
+     "claim_ref": "C04495"
     },
     {
      "field": "currency",
@@ -1567,7 +1567,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK price",
-     "claim_ref": "C04492"
+     "claim_ref": "C04496"
     },
     {
      "field": "price",
@@ -1577,7 +1577,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing shows EUR 38, sold out",
-     "claim_ref": "C04493"
+     "claim_ref": "C04497"
     },
     {
      "field": "currency",
@@ -1587,7 +1587,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing currency",
-     "claim_ref": "C04494"
+     "claim_ref": "C04498"
     },
     {
      "field": "pack_product_code",
@@ -1597,7 +1597,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in UK listing URL",
-     "claim_ref": "C04495"
+     "claim_ref": "C04499"
     },
     {
      "field": "pack_product_code",
@@ -1607,7 +1607,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Same item number on EU listing",
-     "claim_ref": "C04496"
+     "claim_ref": "C04500"
     },
     {
      "field": "release_location",
@@ -1619,7 +1619,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04497"
+     "claim_ref": "C04501"
     },
     {
      "field": "region",
@@ -1631,7 +1631,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04498"
+     "claim_ref": "C04502"
     },
     {
      "field": "release_date",
@@ -1641,7 +1641,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog says set launched April 1, 2025 (US listing at USD 49.99)",
-     "claim_ref": "C04499"
+     "claim_ref": "C04503"
     },
     {
      "field": "release_date",
@@ -1651,7 +1651,7 @@
      "source_class": "unclassified",
      "method": "search_snippet",
      "note": "Post says set released at Disney Store on April 1, 2025",
-     "claim_ref": "C04500"
+     "claim_ref": "C04504"
     }
    ]
   },
@@ -1689,7 +1689,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing title; no UK listing surfaced",
-     "claim_ref": "C04501"
+     "claim_ref": "C04505"
     },
     {
      "field": "sub_series",
@@ -1699,7 +1699,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Muppets themed: Kermit, Miss Piggy, Animal, Fozzie named across a gold-toned 3-piece set",
-     "claim_ref": "C04502"
+     "claim_ref": "C04506"
     },
     {
      "field": "expected_pin_count",
@@ -1709,7 +1709,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Described as a three-piece set",
-     "claim_ref": "C04503"
+     "claim_ref": "C04507"
     },
     {
      "field": "edition_type",
@@ -1719,7 +1719,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition",
-     "claim_ref": "C04504"
+     "claim_ref": "C04508"
     },
     {
      "field": "edition_size",
@@ -1729,7 +1729,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition of 900",
-     "claim_ref": "C04505"
+     "claim_ref": "C04509"
     },
     {
      "field": "price",
@@ -1739,7 +1739,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EUR 40, sold out",
-     "claim_ref": "C04506"
+     "claim_ref": "C04510"
     },
     {
      "field": "currency",
@@ -1749,7 +1749,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing",
-     "claim_ref": "C04507"
+     "claim_ref": "C04511"
     },
     {
      "field": "pack_product_code",
@@ -1759,7 +1759,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in EU listing URL",
-     "claim_ref": "C04508"
+     "claim_ref": "C04512"
     },
     {
      "field": "release_location",
@@ -1771,7 +1771,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Only EU listing found in searches",
-     "claim_ref": "C04509"
+     "claim_ref": "C04513"
     },
     {
      "field": "region",
@@ -1783,7 +1783,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU store listing",
-     "claim_ref": "C04510"
+     "claim_ref": "C04514"
     },
     {
      "field": "pack_product_code",
@@ -1793,7 +1793,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US item number (differs from EU 438019877908)",
-     "claim_ref": "C05300"
+     "claim_ref": "C05304"
     },
     {
      "field": "edition_size",
@@ -1803,7 +1803,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US listing: LE 900",
-     "claim_ref": "C05301"
+     "claim_ref": "C05305"
     },
     {
      "field": "price",
@@ -1813,7 +1813,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "USD 49.99, sold out",
-     "claim_ref": "C05302"
+     "claim_ref": "C05306"
     },
     {
      "field": "currency",
@@ -1823,7 +1823,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US",
-     "claim_ref": "C05303"
+     "claim_ref": "C05307"
     },
     {
      "field": "release_date",
@@ -1833,7 +1833,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US market: available on DisneyStore.com from Tue 2 Sep 2025, sold out in seconds; UK date not stated",
-     "claim_ref": "C09031"
+     "claim_ref": "C09035"
     },
     {
      "field": "release_date",
@@ -1843,7 +1843,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 1 Sep 2025; market not stated in snippet. Secondary fan source only",
-     "claim_ref": "C09032"
+     "claim_ref": "C09036"
     }
    ]
   },
@@ -1879,7 +1879,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04511"
+     "claim_ref": "C04515"
     },
     {
      "field": "sub_series",
@@ -1889,7 +1889,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Mickey and Friends themed final set",
-     "claim_ref": "C04512"
+     "claim_ref": "C04516"
     },
     {
      "field": "expected_pin_count",
@@ -1899,7 +1899,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Snippet: three-pin release; Mickey, Minnie, Daisy, Pluto named, each with 3D trophy cup",
-     "claim_ref": "C04513"
+     "claim_ref": "C04517"
     },
     {
      "field": "edition_type",
@@ -1909,7 +1909,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition",
-     "claim_ref": "C04514"
+     "claim_ref": "C04518"
     },
     {
      "field": "edition_size",
@@ -1919,7 +1919,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition of 900",
-     "claim_ref": "C04515"
+     "claim_ref": "C04519"
     },
     {
      "field": "price",
@@ -1929,7 +1929,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 35 shown (reduced to 24.49 at capture), out of stock",
-     "claim_ref": "C04516"
+     "claim_ref": "C04520"
     },
     {
      "field": "currency",
@@ -1939,7 +1939,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK price",
-     "claim_ref": "C04517"
+     "claim_ref": "C04521"
     },
     {
      "field": "price",
@@ -1949,7 +1949,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing EUR 40, out of stock",
-     "claim_ref": "C04518"
+     "claim_ref": "C04522"
     },
     {
      "field": "currency",
@@ -1959,7 +1959,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing",
-     "claim_ref": "C04519"
+     "claim_ref": "C04523"
     },
     {
      "field": "pack_product_code",
@@ -1969,7 +1969,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in UK listing URL",
-     "claim_ref": "C04520"
+     "claim_ref": "C04524"
     },
     {
      "field": "pack_product_code",
@@ -1979,7 +1979,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Same item number on EU listing",
-     "claim_ref": "C04521"
+     "claim_ref": "C04525"
     },
     {
      "field": "release_location",
@@ -1991,7 +1991,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04522"
+     "claim_ref": "C04526"
     },
     {
      "field": "region",
@@ -2003,7 +2003,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04523"
+     "claim_ref": "C04527"
     },
     {
      "field": "release_date",
@@ -2013,7 +2013,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US reseller blog post of this date says set now available online at Disney Store (USD 49.99); not a UK-specific date",
-     "claim_ref": "C04524"
+     "claim_ref": "C04528"
     }
    ]
   },
@@ -2048,7 +2048,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04614"
+     "claim_ref": "C04618"
     },
     {
      "field": "format",
@@ -2058,7 +2058,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "5 randomly selected pins from 16 rubber-duck designs",
-     "claim_ref": "C04615"
+     "claim_ref": "C04619"
     },
     {
      "field": "expected_pin_count",
@@ -2068,7 +2068,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "16 designs",
-     "claim_ref": "C04616"
+     "claim_ref": "C04620"
     },
     {
      "field": "expected_pin_count",
@@ -2078,7 +2078,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "16 rubber ducky character designs",
-     "claim_ref": "C04617"
+     "claim_ref": "C04621"
     },
     {
      "field": "pins_per_box",
@@ -2088,7 +2088,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "5 per pouch",
-     "claim_ref": "C04618"
+     "claim_ref": "C04622"
     },
     {
      "field": "price",
@@ -2098,7 +2098,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 28, sold out",
-     "claim_ref": "C04619"
+     "claim_ref": "C04623"
     },
     {
      "field": "price",
@@ -2108,7 +2108,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan page lists GBP 28",
-     "claim_ref": "C04620"
+     "claim_ref": "C04624"
     },
     {
      "field": "currency",
@@ -2118,7 +2118,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04621"
+     "claim_ref": "C04625"
     },
     {
      "field": "pack_product_code",
@@ -2128,7 +2128,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04622"
+     "claim_ref": "C04626"
     },
     {
      "field": "release_date",
@@ -2138,7 +2138,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US news article dated Mar 12 2025 says now available at Disney Store; 2025 backstamps",
-     "claim_ref": "C04623"
+     "claim_ref": "C04627"
     },
     {
      "field": "release_location",
@@ -2150,7 +2150,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04624"
+     "claim_ref": "C04628"
     },
     {
      "field": "region",
@@ -2162,7 +2162,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04625"
+     "claim_ref": "C04629"
     }
    ]
   },
@@ -2200,7 +2200,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04579"
+     "claim_ref": "C04583"
     },
     {
      "field": "format",
@@ -2210,7 +2210,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "13-day countdown with surprise pin per door",
-     "claim_ref": "C04580"
+     "claim_ref": "C04584"
     },
     {
      "field": "expected_pin_count",
@@ -2220,7 +2220,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "13-day countdown",
-     "claim_ref": "C04581"
+     "claim_ref": "C04585"
     },
     {
      "field": "edition_type",
@@ -2230,7 +2230,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition",
-     "claim_ref": "C04582"
+     "claim_ref": "C04586"
     },
     {
      "field": "edition_size",
@@ -2240,7 +2240,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition of 1000",
-     "claim_ref": "C04583"
+     "claim_ref": "C04587"
     },
     {
      "field": "edition_size",
@@ -2250,7 +2250,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database: LE 1000",
-     "claim_ref": "C04584"
+     "claim_ref": "C04588"
     },
     {
      "field": "price",
@@ -2260,7 +2260,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 110, sold out",
-     "claim_ref": "C04585"
+     "claim_ref": "C04589"
     },
     {
      "field": "price",
@@ -2270,7 +2270,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database GBP 110",
-     "claim_ref": "C04586"
+     "claim_ref": "C04590"
     },
     {
      "field": "currency",
@@ -2280,7 +2280,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04587"
+     "claim_ref": "C04591"
     },
     {
      "field": "price",
@@ -2290,7 +2290,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU EUR 150, sold out",
-     "claim_ref": "C04588"
+     "claim_ref": "C04592"
     },
     {
      "field": "currency",
@@ -2300,7 +2300,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU",
-     "claim_ref": "C04589"
+     "claim_ref": "C04593"
     },
     {
      "field": "pack_product_code",
@@ -2310,7 +2310,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04590"
+     "claim_ref": "C04594"
     },
     {
      "field": "pack_product_code",
@@ -2320,7 +2320,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Same code on EU",
-     "claim_ref": "C04591"
+     "claim_ref": "C04595"
     },
     {
      "field": "release_date",
@@ -2330,7 +2330,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database release date 7/28/2025",
-     "claim_ref": "C04592"
+     "claim_ref": "C04596"
     },
     {
      "field": "release_location",
@@ -2342,7 +2342,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04593"
+     "claim_ref": "C04597"
     },
     {
      "field": "region",
@@ -2354,7 +2354,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04594"
+     "claim_ref": "C04598"
     },
     {
      "field": "expected_pin_count",
@@ -2364,7 +2364,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "13 characters listed for the boxed set",
-     "claim_ref": "C05299"
+     "claim_ref": "C05303"
     }
    ]
   },
@@ -2399,7 +2399,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04525"
+     "claim_ref": "C04529"
     },
     {
      "field": "format",
@@ -2409,7 +2409,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Each pack holds two randomly chosen pins",
-     "claim_ref": "C04526"
+     "claim_ref": "C04530"
     },
     {
      "field": "pins_per_box",
@@ -2419,7 +2419,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Two pins per pack",
-     "claim_ref": "C04527"
+     "claim_ref": "C04531"
     },
     {
      "field": "price",
@@ -2429,7 +2429,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 14, sold out",
-     "claim_ref": "C04528"
+     "claim_ref": "C04532"
     },
     {
      "field": "currency",
@@ -2439,7 +2439,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK price",
-     "claim_ref": "C04529"
+     "claim_ref": "C04533"
     },
     {
      "field": "pack_product_code",
@@ -2449,7 +2449,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in UK listing URL",
-     "claim_ref": "C04530"
+     "claim_ref": "C04534"
     },
     {
      "field": "release_location",
@@ -2461,7 +2461,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04531"
+     "claim_ref": "C04535"
     },
     {
      "field": "region",
@@ -2473,7 +2473,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04532"
+     "claim_ref": "C04536"
     },
     {
      "field": "expected_pin_count",
@@ -2483,7 +2483,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Two random pins from 10 designs",
-     "claim_ref": "C05317"
+     "claim_ref": "C05321"
     },
     {
      "field": "expected_pin_count",
@@ -2493,7 +2493,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "10 designs",
-     "claim_ref": "C05318"
+     "claim_ref": "C05322"
     },
     {
      "field": "release_date",
@@ -2503,7 +2503,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US parks market: first released 22 May 2025 at Walt Disney World Pin Trading Nights; Disney Store (UK/EU) date not stated",
-     "claim_ref": "C09033"
+     "claim_ref": "C09037"
     }
    ]
   },
@@ -2541,7 +2541,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04565"
+     "claim_ref": "C04569"
     },
     {
      "field": "set_name",
@@ -2551,7 +2551,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database name for the same 2025 set",
-     "claim_ref": "C04566"
+     "claim_ref": "C04570"
     },
     {
      "field": "pack_product_code",
@@ -2561,7 +2561,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in UK URL",
-     "claim_ref": "C04567"
+     "claim_ref": "C04571"
     },
     {
      "field": "pack_product_code",
@@ -2571,7 +2571,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Same item number on Disney Store Asia listing",
-     "claim_ref": "C04568"
+     "claim_ref": "C04572"
     },
     {
      "field": "format",
@@ -2581,7 +2581,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Two randomly selected pins from ten",
-     "claim_ref": "C04569"
+     "claim_ref": "C04573"
     },
     {
      "field": "expected_pin_count",
@@ -2591,7 +2591,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Ten designs",
-     "claim_ref": "C04570"
+     "claim_ref": "C04574"
     },
     {
      "field": "expected_pin_count",
@@ -2601,7 +2601,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Ten alien experiments in the set",
-     "claim_ref": "C04571"
+     "claim_ref": "C04575"
     },
     {
      "field": "pins_per_box",
@@ -2611,7 +2611,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Two per pack",
-     "claim_ref": "C04572"
+     "claim_ref": "C04576"
     },
     {
      "field": "edition_type",
@@ -2621,7 +2621,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited release per UK title",
-     "claim_ref": "C04573"
+     "claim_ref": "C04577"
     },
     {
      "field": "release_date",
@@ -2631,7 +2631,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database release date 5/22/2025; lists Disney Store UK/shopDisney UK and US parks",
-     "claim_ref": "C04574"
+     "claim_ref": "C04578"
     },
     {
      "field": "price",
@@ -2641,7 +2641,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US parks price USD 34.99",
-     "claim_ref": "C04575"
+     "claim_ref": "C04579"
     },
     {
      "field": "currency",
@@ -2651,7 +2651,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US price",
-     "claim_ref": "C04576"
+     "claim_ref": "C04580"
     },
     {
      "field": "release_location",
@@ -2663,7 +2663,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04577"
+     "claim_ref": "C04581"
     },
     {
      "field": "region",
@@ -2675,14 +2675,14 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04578"
+     "claim_ref": "C04582"
     }
    ]
   },
   {
    "research_key": "dsuk/2025/stitch-st-patricks-day-2025-slider",
    "entity_type": "set",
-   "set_research_key": null,
+   "set_research_key": "dsuk/2025",
    "proposed": {
     "set_name": "Stitch St. Patrick's Day 2025 Limited Release Slider Pin",
     "expected_pin_count": 1,
@@ -2708,7 +2708,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04557"
+     "claim_ref": "C04561"
     },
     {
      "field": "expected_pin_count",
@@ -2718,7 +2718,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04558"
+     "claim_ref": "C04562"
     },
     {
      "field": "edition_type",
@@ -2728,7 +2728,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited release",
-     "claim_ref": "C04559"
+     "claim_ref": "C04563"
     },
     {
      "field": "price",
@@ -2738,7 +2738,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 14, out of stock",
-     "claim_ref": "C04560"
+     "claim_ref": "C04564"
     },
     {
      "field": "currency",
@@ -2748,7 +2748,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04561"
+     "claim_ref": "C04565"
     },
     {
      "field": "pack_product_code",
@@ -2758,7 +2758,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04562"
+     "claim_ref": "C04566"
     },
     {
      "field": "release_location",
@@ -2770,7 +2770,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04563"
+     "claim_ref": "C04567"
     },
     {
      "field": "region",
@@ -2782,7 +2782,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04564"
+     "claim_ref": "C04568"
     }
    ]
   },
@@ -2815,7 +2815,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Name as shown in UK Father's Day category",
-     "claim_ref": "C04639"
+     "claim_ref": "C04643"
     },
     {
      "field": "expected_pin_count",
@@ -2825,7 +2825,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04640"
+     "claim_ref": "C04644"
     },
     {
      "field": "edition_type",
@@ -2835,7 +2835,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited release",
-     "claim_ref": "C04641"
+     "claim_ref": "C04645"
     },
     {
      "field": "price",
@@ -2845,7 +2845,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 16, tagged New on UK category page",
-     "claim_ref": "C04642"
+     "claim_ref": "C04646"
     },
     {
      "field": "currency",
@@ -2855,7 +2855,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04643"
+     "claim_ref": "C04647"
     },
     {
      "field": "price",
@@ -2865,7 +2865,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US listing USD 21.99",
-     "claim_ref": "C04644"
+     "claim_ref": "C04648"
     },
     {
      "field": "currency",
@@ -2875,7 +2875,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US",
-     "claim_ref": "C04645"
+     "claim_ref": "C04649"
     },
     {
      "field": "release_date",
@@ -2885,7 +2885,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Debuted online June 2, 2026 (US); parks June 9",
-     "claim_ref": "C04646"
+     "claim_ref": "C04650"
     },
     {
      "field": "region",
@@ -2897,7 +2897,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listed on UK site",
-     "claim_ref": "C04647"
+     "claim_ref": "C04651"
     },
     {
      "field": "release_location",
@@ -2909,7 +2909,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK Father's Day category page lists this LR pin at £16.00 (category page, not product page)",
-     "claim_ref": "C09040"
+     "claim_ref": "C09044"
     }
    ]
   },
@@ -2949,7 +2949,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK limited edition category lists an Experiment 626 mystery pin set among 2026 items",
-     "claim_ref": "C04665"
+     "claim_ref": "C04669"
     },
     {
      "field": "set_name",
@@ -2959,7 +2959,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US blog post title",
-     "claim_ref": "C04666"
+     "claim_ref": "C04670"
     },
     {
      "field": "format",
@@ -2969,7 +2969,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind pack",
-     "claim_ref": "C04667"
+     "claim_ref": "C04671"
     },
     {
      "field": "edition_type",
@@ -2979,7 +2979,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Limited release",
-     "claim_ref": "C04668"
+     "claim_ref": "C04672"
     },
     {
      "field": "price",
@@ -2989,7 +2989,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 25 on UK category page",
-     "claim_ref": "C04669"
+     "claim_ref": "C04673"
     },
     {
      "field": "currency",
@@ -2999,7 +2999,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04670"
+     "claim_ref": "C04674"
     },
     {
      "field": "region",
@@ -3011,7 +3011,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK category page",
-     "claim_ref": "C04671"
+     "claim_ref": "C04675"
     },
     {
      "field": "pack_product_code",
@@ -3021,7 +3021,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in Asia listing URL",
-     "claim_ref": "C05319"
+     "claim_ref": "C05323"
     },
     {
      "field": "expected_pin_count",
@@ -3031,7 +3031,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Two random pins from a 10-design set",
-     "claim_ref": "C05320"
+     "claim_ref": "C05324"
     },
     {
      "field": "pins_per_box",
@@ -3041,7 +3041,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Two per pack",
-     "claim_ref": "C05321"
+     "claim_ref": "C05325"
     },
     {
      "field": "price",
@@ -3051,7 +3051,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "USD 34.99",
-     "claim_ref": "C05322"
+     "claim_ref": "C05326"
     },
     {
      "field": "currency",
@@ -3061,7 +3061,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US",
-     "claim_ref": "C05323"
+     "claim_ref": "C05327"
     },
     {
      "field": "expected_pin_count",
@@ -3071,7 +3071,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing: blind box gives 2 random pins from a collection of 10 designs",
-     "claim_ref": "C08809"
+     "claim_ref": "C08813"
     },
     {
      "field": "pins_per_box",
@@ -3081,7 +3081,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing: two randomly selected pins per blind box",
-     "claim_ref": "C08810"
+     "claim_ref": "C08814"
     },
     {
      "field": "release_date",
@@ -3091,7 +3091,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US market: blog says released 30 Jun 2026 on Disney Store at $34.99, but cites a different SKU (438010524825), so may be the US variant",
-     "claim_ref": "C09034"
+     "claim_ref": "C09038"
     },
     {
      "field": "release_location",
@@ -3103,7 +3103,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing carrying item 438010927985 is on the Singapore/Asia Disney Store (S$49.90); no UK listing for this code found",
-     "claim_ref": "C09035"
+     "claim_ref": "C09039"
     }
    ]
   },
@@ -3139,7 +3139,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04648"
+     "claim_ref": "C04652"
     },
     {
      "field": "expected_pin_count",
@@ -3149,7 +3149,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Single pin",
-     "claim_ref": "C04649"
+     "claim_ref": "C04653"
     },
     {
      "field": "edition_type",
@@ -3159,7 +3159,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited release; limit 2 per guest",
-     "claim_ref": "C04650"
+     "claim_ref": "C04654"
     },
     {
      "field": "price",
@@ -3169,7 +3169,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 16",
-     "claim_ref": "C04651"
+     "claim_ref": "C04655"
     },
     {
      "field": "currency",
@@ -3179,7 +3179,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04652"
+     "claim_ref": "C04656"
     },
     {
      "field": "pack_product_code",
@@ -3189,7 +3189,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04653"
+     "claim_ref": "C04657"
     },
     {
      "field": "region",
@@ -3201,7 +3201,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04654"
+     "claim_ref": "C04658"
     },
     {
      "field": "release_date",
@@ -3211,7 +3211,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US market: blog says released on Disney Store 7 Jul 2026 at $21.99; UK date not stated",
-     "claim_ref": "C09036"
+     "claim_ref": "C09040"
     },
     {
      "field": "release_date",
@@ -3221,7 +3221,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US parks market: Walt Disney World Pin Tuesday release in late June 2026",
-     "claim_ref": "C09037"
+     "claim_ref": "C09041"
     },
     {
      "field": "release_location",
@@ -3233,7 +3233,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing for item 438011206980 at £16.00, limit 2 per guest",
-     "claim_ref": "C09038"
+     "claim_ref": "C09042"
     },
     {
      "field": "release_location",
@@ -3245,7 +3245,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing for same item number at €18.00",
-     "claim_ref": "C09039"
+     "claim_ref": "C09043"
     }
    ]
   },
@@ -3280,7 +3280,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing title",
-     "claim_ref": "C04626"
+     "claim_ref": "C04630"
     },
     {
      "field": "set_name",
@@ -3290,7 +3290,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "AU listing name for same item number",
-     "claim_ref": "C04627"
+     "claim_ref": "C04631"
     },
     {
      "field": "format",
@@ -3300,7 +3300,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Two random pins from ten designs per box",
-     "claim_ref": "C04628"
+     "claim_ref": "C04632"
     },
     {
      "field": "expected_pin_count",
@@ -3310,7 +3310,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "10 designs",
-     "claim_ref": "C04629"
+     "claim_ref": "C04633"
     },
     {
      "field": "pins_per_box",
@@ -3320,7 +3320,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "2 per box",
-     "claim_ref": "C04630"
+     "claim_ref": "C04634"
     },
     {
      "field": "edition_type",
@@ -3330,7 +3330,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited release; limit 2 per guest",
-     "claim_ref": "C04631"
+     "claim_ref": "C04635"
     },
     {
      "field": "price",
@@ -3340,7 +3340,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "GBP 25",
-     "claim_ref": "C04632"
+     "claim_ref": "C04636"
     },
     {
      "field": "currency",
@@ -3350,7 +3350,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04633"
+     "claim_ref": "C04637"
     },
     {
      "field": "pack_product_code",
@@ -3360,7 +3360,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04634"
+     "claim_ref": "C04638"
     },
     {
      "field": "pack_product_code",
@@ -3370,7 +3370,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Same code on EU (sold out)",
-     "claim_ref": "C04635"
+     "claim_ref": "C04639"
     },
     {
      "field": "pack_product_code",
@@ -3380,7 +3380,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Same code on AU",
-     "claim_ref": "C04636"
+     "claim_ref": "C04640"
     },
     {
      "field": "release_location",
@@ -3392,7 +3392,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing",
-     "claim_ref": "C04637"
+     "claim_ref": "C04641"
     },
     {
      "field": "region",
@@ -3404,7 +3404,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK",
-     "claim_ref": "C04638"
+     "claim_ref": "C04642"
     }
    ]
   },
@@ -3417,6 +3417,7 @@
     "Brand": "Disney Store",
     "Series": "Chip 'n Dale Limited Release Christmas Countdown 2024 Jumbo Pin",
     "Characters": "Chip; Dale",
+    "Release year": 2024,
     "Edition type": "limited release",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
@@ -3442,6 +3443,26 @@
    "duplicate_pinhunt_id": null,
    "evidence": [
     {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://www.disneystore.co.uk/chip-n-dale-limited-release-christmas-countdown-2024-jumbo-pin-438018035187.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Year stated in the official UK product name ('Christmas Countdown 2024'). Reviewer: confirm on the listing.",
+     "claim_ref": "C00787"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://wdwnt.com/2024/10/christmas-2024-pins-at-walt-disney-world/",
+     "publisher": "wdwnt.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Article dated 2024-10-08 lists a Chip 'n Dale Christmas Countdown jumbo pin as new and also at Disney Store (US). Release DATE deliberately not claimed: US coverage may describe a different ('Mini Jumbo') product and gives no UK date.",
+     "claim_ref": "C00788"
+    },
+    {
      "field": "characters",
      "value": [
       "Chip",
@@ -3452,7 +3473,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Chip 'n Dale named in title",
-     "claim_ref": "C04404"
+     "claim_ref": "C04408"
     },
     {
      "field": "size_mm",
@@ -3462,7 +3483,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Approx H6.5 x W7.5 cm",
-     "claim_ref": "C04405"
+     "claim_ref": "C04409"
     },
     {
      "field": "materials",
@@ -3472,7 +3493,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Metal (zinc alloy) and enamel",
-     "claim_ref": "C04406"
+     "claim_ref": "C04410"
     },
     {
      "field": "visual_features",
@@ -3486,7 +3507,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Countdown dials on back and folding easel",
-     "claim_ref": "C04407"
+     "claim_ref": "C04411"
     },
     {
      "field": "product_code",
@@ -3496,7 +3517,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04408"
+     "claim_ref": "C04412"
     },
     {
      "field": "pin_name",
@@ -3506,7 +3527,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing, same item number as UK",
-     "claim_ref": "C07845"
+     "claim_ref": "C07849"
     },
     {
      "field": "characters",
@@ -3519,7 +3540,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "title names Chip n Dale; dialed Days til Christmas jumbo",
-     "claim_ref": "C07846"
+     "claim_ref": "C07850"
     },
     {
      "field": "product_code",
@@ -3529,7 +3550,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "item number in listing",
-     "claim_ref": "C07847"
+     "claim_ref": "C07851"
     },
     {
      "field": "edition_type",
@@ -3539,7 +3560,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited Release",
-     "claim_ref": "C07848"
+     "claim_ref": "C07852"
     },
     {
      "field": "characters",
@@ -3552,7 +3573,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place Oct 2024 article on Disney Store festive pins covers the Chip 'n Dale Christmas countdown pin",
-     "claim_ref": "C08512"
+     "claim_ref": "C08516"
     },
     {
      "field": "original_price",
@@ -3562,7 +3583,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "article gives USD 34.99 (US store; UK/EU prices differ)",
-     "claim_ref": "C08513"
+     "claim_ref": "C08517"
     },
     {
      "field": "currency",
@@ -3572,7 +3593,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US price",
-     "claim_ref": "C08514"
+     "claim_ref": "C08518"
     }
    ]
   },
@@ -3619,7 +3640,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Pin name as given in the blog post title",
-     "claim_ref": "C04289"
+     "claim_ref": "C04293"
     },
     {
      "field": "characters",
@@ -3632,7 +3653,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Characters named in the post title",
-     "claim_ref": "C04290"
+     "claim_ref": "C04294"
     },
     {
      "field": "set_position",
@@ -3642,7 +3663,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog calls it release no. 4 of the 2024 UK/Europe exclusive collection",
-     "claim_ref": "C04291"
+     "claim_ref": "C04295"
     },
     {
      "field": "release_date",
@@ -3652,7 +3673,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Release month as stated by the blog",
-     "claim_ref": "C04292"
+     "claim_ref": "C04296"
     },
     {
      "field": "edition_type",
@@ -3662,7 +3683,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog says limited edition",
-     "claim_ref": "C04293"
+     "claim_ref": "C04297"
     },
     {
      "field": "edition_size",
@@ -3672,7 +3693,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog: limited edition of 1,100",
-     "claim_ref": "C04294"
+     "claim_ref": "C04298"
     },
     {
      "field": "original_price",
@@ -3682,7 +3703,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog gives retail price GBP 16.00",
-     "claim_ref": "C04295"
+     "claim_ref": "C04299"
     },
     {
      "field": "currency",
@@ -3692,7 +3713,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog price in pounds",
-     "claim_ref": "C04296"
+     "claim_ref": "C04300"
     },
     {
      "field": "original_price",
@@ -3702,7 +3723,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists original UK price GBP 14.00; blog says 16.00 (conflict)",
-     "claim_ref": "C04297"
+     "claim_ref": "C04301"
     },
     {
      "field": "characters",
@@ -3715,7 +3736,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK Disney Store listing: Belle and Chip Disney Magical Collections LE pin; part of 12-pin collection released through year",
-     "claim_ref": "C08493"
+     "claim_ref": "C08497"
     },
     {
      "field": "edition_size",
@@ -3725,7 +3746,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "listing says limited to 1100 worldwide",
-     "claim_ref": "C08494"
+     "claim_ref": "C08498"
     },
     {
      "field": "original_price",
@@ -3735,7 +3756,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing shows GBP 14.00 (blog says 16.00; recorded separately elsewhere)",
-     "claim_ref": "C08495"
+     "claim_ref": "C08499"
     },
     {
      "field": "currency",
@@ -3745,7 +3766,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK store price in pounds",
-     "claim_ref": "C08496"
+     "claim_ref": "C08500"
     }
    ]
   },
@@ -3794,7 +3815,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Pin name as given in the blog post title",
-     "claim_ref": "C04280"
+     "claim_ref": "C04284"
     },
     {
      "field": "characters",
@@ -3806,7 +3827,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Characters named in the post title",
-     "claim_ref": "C04281"
+     "claim_ref": "C04285"
     },
     {
      "field": "set_position",
@@ -3816,7 +3837,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog calls it release no. 3 of the 2024 UK/Europe exclusive collection",
-     "claim_ref": "C04282"
+     "claim_ref": "C04286"
     },
     {
      "field": "release_date",
@@ -3826,7 +3847,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Release month as stated by the blog",
-     "claim_ref": "C04283"
+     "claim_ref": "C04287"
     },
     {
      "field": "edition_type",
@@ -3836,7 +3857,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog says limited edition",
-     "claim_ref": "C04284"
+     "claim_ref": "C04288"
     },
     {
      "field": "edition_size",
@@ -3846,7 +3867,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog: limited edition of 1,100",
-     "claim_ref": "C04285"
+     "claim_ref": "C04289"
     },
     {
      "field": "original_price",
@@ -3856,7 +3877,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog gives retail price GBP 16.00",
-     "claim_ref": "C04286"
+     "claim_ref": "C04290"
     },
     {
      "field": "currency",
@@ -3866,7 +3887,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog price in pounds",
-     "claim_ref": "C04287"
+     "claim_ref": "C04291"
     },
     {
      "field": "visual_features",
@@ -3879,7 +3900,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog mentions a 3D jar with objects that move",
-     "claim_ref": "C04288"
+     "claim_ref": "C04292"
     },
     {
      "field": "pin_name",
@@ -3889,7 +3910,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Pinventory Abu entry lists series pins incl. Dug (pin 33867)",
-     "claim_ref": "C07875"
+     "claim_ref": "C07879"
     },
     {
      "field": "characters",
@@ -3901,7 +3922,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dug from Up, in 12-pin series list",
-     "claim_ref": "C07876"
+     "claim_ref": "C07880"
     },
     {
      "field": "characters",
@@ -3913,7 +3934,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK Disney Store listing: Dug LE pin, 2024 Disney Magical Collections pin inspired by Up, 3D jar design",
-     "claim_ref": "C08497"
+     "claim_ref": "C08501"
     },
     {
      "field": "edition_size",
@@ -3923,7 +3944,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "listing states limited to 1,100",
-     "claim_ref": "C08498"
+     "claim_ref": "C08502"
     },
     {
      "field": "original_price",
@@ -3933,7 +3954,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK page shows GBP 14.00, sold out",
-     "claim_ref": "C08499"
+     "claim_ref": "C08503"
     },
     {
      "field": "currency",
@@ -3943,7 +3964,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK store price in pounds",
-     "claim_ref": "C08500"
+     "claim_ref": "C08504"
     },
     {
      "field": "product_code",
@@ -3953,7 +3974,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "item number shown in official UK listing URL/page",
-     "claim_ref": "C08501"
+     "claim_ref": "C08505"
     }
    ]
   },
@@ -4001,7 +4022,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Named in title",
-     "claim_ref": "C04423"
+     "claim_ref": "C04427"
     },
     {
      "field": "size_mm",
@@ -4011,7 +4032,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Approx 3 x 3 cm",
-     "claim_ref": "C04424"
+     "claim_ref": "C04428"
     },
     {
      "field": "materials",
@@ -4021,7 +4042,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Metal (zinc alloy) and enamel",
-     "claim_ref": "C04425"
+     "claim_ref": "C04429"
     },
     {
      "field": "product_code",
@@ -4031,7 +4052,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04426"
+     "claim_ref": "C04430"
     },
     {
      "field": "pin_name",
@@ -4041,7 +4062,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing title",
-     "claim_ref": "C07819"
+     "claim_ref": "C07823"
     },
     {
      "field": "original_price",
@@ -4051,7 +4072,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "€14.00",
-     "claim_ref": "C07820"
+     "claim_ref": "C07824"
     },
     {
      "field": "currency",
@@ -4061,7 +4082,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "euro",
-     "claim_ref": "C07821"
+     "claim_ref": "C07825"
     },
     {
      "field": "characters",
@@ -4073,7 +4094,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB: Mushu Lunar New Year 2024 pin at shopDisney",
-     "claim_ref": "C07822"
+     "claim_ref": "C07826"
     },
     {
      "field": "release_date",
@@ -4083,7 +4104,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB says on sale at shopDisney 12 Dec 2023",
-     "claim_ref": "C07823"
+     "claim_ref": "C07827"
     },
     {
      "field": "edition_type",
@@ -4093,7 +4114,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "limited release",
-     "claim_ref": "C07824"
+     "claim_ref": "C07828"
     },
     {
      "field": "original_price",
@@ -4103,7 +4124,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "$17.99 retail (US)",
-     "claim_ref": "C07825"
+     "claim_ref": "C07829"
     },
     {
      "field": "currency",
@@ -4113,7 +4134,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "dollars",
-     "claim_ref": "C07826"
+     "claim_ref": "C07830"
     }
    ]
   },
@@ -4156,7 +4177,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing title",
-     "claim_ref": "C04427"
+     "claim_ref": "C04431"
     },
     {
      "field": "edition_size",
@@ -4166,7 +4187,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited edition of 1,250",
-     "claim_ref": "C04428"
+     "claim_ref": "C04432"
     },
     {
      "field": "original_price",
@@ -4176,7 +4197,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing showed GBP 6.00 (sold out; likely reduced)",
-     "claim_ref": "C04429"
+     "claim_ref": "C04433"
     },
     {
      "field": "currency",
@@ -4186,7 +4207,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C04430"
+     "claim_ref": "C04434"
     },
     {
      "field": "product_code",
@@ -4196,7 +4217,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04431"
+     "claim_ref": "C04435"
     },
     {
      "field": "pin_name",
@@ -4206,7 +4227,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "forum thread cites Shop Disney UK page by this title",
-     "claim_ref": "C07827"
+     "claim_ref": "C07831"
     }
    ]
   },
@@ -4251,7 +4272,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Mickey helping Santa with the naughty or nice list",
-     "claim_ref": "C04402"
+     "claim_ref": "C04406"
     },
     {
      "field": "product_code",
@@ -4261,7 +4282,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04403"
+     "claim_ref": "C04407"
     },
     {
      "field": "characters",
@@ -4274,7 +4295,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Disney Pins Blog post title: Mickey Mouse and Santa Claus Holiday Pin 2024 at Disney Store",
-     "claim_ref": "C08515"
+     "claim_ref": "C08519"
     }
    ]
   },
@@ -4323,7 +4344,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing snippet names Daisy Duck as Isabelle among known pins",
-     "claim_ref": "C05331"
+     "claim_ref": "C05335"
     },
     {
      "field": "pin_name",
@@ -4333,7 +4354,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan blog shop page for Daisy pin from this calendar",
-     "claim_ref": "C05332"
+     "claim_ref": "C05336"
     },
     {
      "field": "characters",
@@ -4345,7 +4366,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
-     "claim_ref": "C08539"
+     "claim_ref": "C08543"
     },
     {
      "field": "edition_size",
@@ -4355,7 +4376,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08540"
+     "claim_ref": "C08544"
     }
    ]
   },
@@ -4404,7 +4425,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing snippet names Donald Duck as Fred among known pins",
-     "claim_ref": "C05326"
+     "claim_ref": "C05330"
     },
     {
      "field": "characters",
@@ -4416,7 +4437,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Extra Magic Minutes known pins: Donald as Fred",
-     "claim_ref": "C07802"
+     "claim_ref": "C07806"
     },
     {
      "field": "characters",
@@ -4428,7 +4449,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Chip and Co known pins: Donald as Fred",
-     "claim_ref": "C07803"
+     "claim_ref": "C07807"
     },
     {
      "field": "characters",
@@ -4440,7 +4461,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
-     "claim_ref": "C08521"
+     "claim_ref": "C08525"
     },
     {
      "field": "edition_size",
@@ -4450,7 +4471,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08522"
+     "claim_ref": "C08526"
     }
    ]
   },
@@ -4499,7 +4520,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing snippet names Goofy as Marley's Ghost among known pins",
-     "claim_ref": "C05327"
+     "claim_ref": "C05331"
     },
     {
      "field": "pin_name",
@@ -4509,7 +4530,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan blog page titled Goofy (URL slug says pluto); mapped to Marley's Ghost by character only",
-     "claim_ref": "C05328"
+     "claim_ref": "C05332"
     },
     {
      "field": "characters",
@@ -4521,7 +4542,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
-     "claim_ref": "C08525"
+     "claim_ref": "C08529"
     },
     {
      "field": "edition_size",
@@ -4531,7 +4552,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08526"
+     "claim_ref": "C08530"
     }
    ]
   },
@@ -4579,7 +4600,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Database entry title for one advent calendar pin",
-     "claim_ref": "C04390"
+     "claim_ref": "C04394"
     },
     {
      "field": "characters",
@@ -4591,7 +4612,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Jiminy Cricket named in the entry title",
-     "claim_ref": "C04391"
+     "claim_ref": "C04395"
     },
     {
      "field": "characters",
@@ -4603,7 +4624,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing snippet names Jiminy Cricket as Ghost of Christmas Past (second source)",
-     "claim_ref": "C05333"
+     "claim_ref": "C05337"
     },
     {
      "field": "pin_name",
@@ -4613,7 +4634,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan blog page for Jiminy pin from this calendar",
-     "claim_ref": "C05334"
+     "claim_ref": "C05338"
     },
     {
      "field": "characters",
@@ -4625,7 +4646,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
-     "claim_ref": "C08535"
+     "claim_ref": "C08539"
     },
     {
      "field": "edition_size",
@@ -4635,7 +4656,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08536"
+     "claim_ref": "C08540"
     }
    ]
   },
@@ -4684,7 +4705,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing snippet names Mickey Mouse as Bob Cratchit among known pins",
-     "claim_ref": "C05325"
+     "claim_ref": "C05329"
     },
     {
      "field": "characters",
@@ -4696,7 +4717,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Extra Magic Minutes known pins: Mickey as Bob Cratchit",
-     "claim_ref": "C07799"
+     "claim_ref": "C07803"
     },
     {
      "field": "characters",
@@ -4708,7 +4729,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Chip and Co known pins: Mickey as Bob Cratchit",
-     "claim_ref": "C07800"
+     "claim_ref": "C07804"
     },
     {
      "field": "edition_size",
@@ -4718,7 +4739,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "calendar LE 3,300 per EMM",
-     "claim_ref": "C07801"
+     "claim_ref": "C07805"
     },
     {
      "field": "characters",
@@ -4730,7 +4751,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
-     "claim_ref": "C08519"
+     "claim_ref": "C08523"
     },
     {
      "field": "edition_size",
@@ -4740,7 +4761,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08520"
+     "claim_ref": "C08524"
     }
    ]
   },
@@ -4789,7 +4810,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing snippet names Minnie Mouse as Emily Cratchit among known pins",
-     "claim_ref": "C05329"
+     "claim_ref": "C05333"
     },
     {
      "field": "pin_name",
@@ -4799,7 +4820,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan blog shop page for Minnie pin from this calendar; LE 3300 set, 2024 Disney Store",
-     "claim_ref": "C05330"
+     "claim_ref": "C05334"
     },
     {
      "field": "characters",
@@ -4811,7 +4832,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
-     "claim_ref": "C08533"
+     "claim_ref": "C08537"
     },
     {
      "field": "edition_size",
@@ -4821,7 +4842,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08534"
+     "claim_ref": "C08538"
     }
    ]
   },
@@ -4870,7 +4891,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing snippet names Scrooge McDuck as Ebenezer Scrooge among known pins",
-     "claim_ref": "C05324"
+     "claim_ref": "C05328"
     },
     {
      "field": "characters",
@@ -4882,7 +4903,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Extra Magic Minutes known pins: Scrooge McDuck as Scrooge",
-     "claim_ref": "C07797"
+     "claim_ref": "C07801"
     },
     {
      "field": "characters",
@@ -4894,7 +4915,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Chip and Co known pins: Scrooge McDuck as Scrooge",
-     "claim_ref": "C07798"
+     "claim_ref": "C07802"
     },
     {
      "field": "characters",
@@ -4906,7 +4927,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blind re-check: fan blog lists this design in the 24-day advent calendar",
-     "claim_ref": "C08517"
+     "claim_ref": "C08521"
     },
     {
      "field": "edition_size",
@@ -4916,7 +4937,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08518"
+     "claim_ref": "C08522"
     }
    ]
   },
@@ -4968,7 +4989,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Named in title",
-     "claim_ref": "C04451"
+     "claim_ref": "C04455"
     },
     {
      "field": "visual_features",
@@ -4980,7 +5001,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Pin-on-pin design",
-     "claim_ref": "C04452"
+     "claim_ref": "C04456"
     },
     {
      "field": "backstamp_text",
@@ -4990,7 +5011,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "2024 Disney Pin Trading backstamp per listing",
-     "claim_ref": "C04453"
+     "claim_ref": "C04457"
     },
     {
      "field": "product_code",
@@ -5000,7 +5021,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04454"
+     "claim_ref": "C04458"
     },
     {
      "field": "characters",
@@ -5015,7 +5036,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Pinventory: Moana, Simea, Pua and Hei Hei pin, Moana 2",
-     "claim_ref": "C07806"
+     "claim_ref": "C07810"
     },
     {
      "field": "release_date",
@@ -5025,7 +5046,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Pinventory released 10/23/2024",
-     "claim_ref": "C07807"
+     "claim_ref": "C07811"
     },
     {
      "field": "original_price",
@@ -5035,7 +5056,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "UK price £14.00 per Pinventory",
-     "claim_ref": "C07808"
+     "claim_ref": "C07812"
     },
     {
      "field": "currency",
@@ -5045,7 +5066,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C07809"
+     "claim_ref": "C07813"
     },
     {
      "field": "edition_type",
@@ -5055,7 +5076,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Inside the Magic describes the Disney Store Moana 2 pin as a limited release pin-on-pin cloisonne design",
-     "claim_ref": "C08502"
+     "claim_ref": "C08506"
     },
     {
      "field": "original_price",
@@ -5065,7 +5086,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "ITM gives USD 19.99 at Disney Store",
-     "claim_ref": "C08503"
+     "claim_ref": "C08507"
     },
     {
      "field": "currency",
@@ -5075,7 +5096,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US price",
-     "claim_ref": "C08504"
+     "claim_ref": "C08508"
     },
     {
      "field": "characters",
@@ -5090,7 +5111,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan blog roundup of Disney Store Moana 2 collection names a Moana, Simea, Pua and Heihei limited release pin",
-     "claim_ref": "C08505"
+     "claim_ref": "C08509"
     },
     {
      "field": "original_price",
@@ -5100,7 +5121,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "blog lists it at USD 19.99",
-     "claim_ref": "C08506"
+     "claim_ref": "C08510"
     },
     {
      "field": "currency",
@@ -5110,7 +5131,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US price",
-     "claim_ref": "C08507"
+     "claim_ref": "C08511"
     }
    ]
   },
@@ -5157,7 +5178,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Santa Mickey design",
-     "claim_ref": "C04399"
+     "claim_ref": "C04403"
     },
     {
      "field": "visual_features",
@@ -5169,7 +5190,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing mentions pin-on-pin on commemorative 2024 festive card",
-     "claim_ref": "C04400"
+     "claim_ref": "C04404"
     },
     {
      "field": "product_code",
@@ -5179,7 +5200,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04401"
+     "claim_ref": "C04405"
     },
     {
      "field": "characters",
@@ -5191,7 +5212,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB: Santa Mickey Mouse Holiday 2024 pin (US name; UK listing says Festive)",
-     "claim_ref": "C07840"
+     "claim_ref": "C07844"
     },
     {
      "field": "edition_size",
@@ -5201,7 +5222,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "LE 4,500 matches UK listing edition",
-     "claim_ref": "C07841"
+     "claim_ref": "C07845"
     },
     {
      "field": "release_date",
@@ -5211,7 +5232,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "on sale DisneyStore.com 15 Oct 2024 (US)",
-     "claim_ref": "C07842"
+     "claim_ref": "C07846"
     },
     {
      "field": "original_price",
@@ -5221,7 +5242,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "$17.99",
-     "claim_ref": "C07843"
+     "claim_ref": "C07847"
     },
     {
      "field": "currency",
@@ -5231,7 +5252,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "dollars",
-     "claim_ref": "C07844"
+     "claim_ref": "C07848"
     }
    ]
   },
@@ -5279,7 +5300,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Named in title",
-     "claim_ref": "C04409"
+     "claim_ref": "C04413"
     },
     {
      "field": "front_text",
@@ -5289,7 +5310,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Wording on the pin per listing",
-     "claim_ref": "C04410"
+     "claim_ref": "C04414"
     },
     {
      "field": "product_code",
@@ -5299,7 +5320,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number in URL",
-     "claim_ref": "C04411"
+     "claim_ref": "C04415"
     },
     {
      "field": "pin_name",
@@ -5309,7 +5330,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing; exclusive to UK and EU",
-     "claim_ref": "C07828"
+     "claim_ref": "C07832"
     },
     {
      "field": "edition_size",
@@ -5319,7 +5340,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "limited to 500 worldwide",
-     "claim_ref": "C07829"
+     "claim_ref": "C07833"
     },
     {
      "field": "characters",
@@ -5332,7 +5353,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB St David's Day 2024 pin at shopDisney UK & EU",
-     "claim_ref": "C07830"
+     "claim_ref": "C07834"
     },
     {
      "field": "edition_size",
@@ -5342,7 +5363,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "LE 500",
-     "claim_ref": "C07831"
+     "claim_ref": "C07835"
     },
     {
      "field": "release_date",
@@ -5352,7 +5373,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "available from February 2024",
-     "claim_ref": "C07832"
+     "claim_ref": "C07836"
     },
     {
      "field": "original_price",
@@ -5362,7 +5383,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "£14.00",
-     "claim_ref": "C07833"
+     "claim_ref": "C07837"
     },
     {
      "field": "currency",
@@ -5372,7 +5393,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pounds",
-     "claim_ref": "C07834"
+     "claim_ref": "C07838"
     }
    ]
   },
@@ -5420,7 +5441,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing summary names Chip 'n Dale among the three pins",
-     "claim_ref": "C04727"
+     "claim_ref": "C04731"
     },
     {
      "field": "characters",
@@ -5433,7 +5454,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog coverage of Set 1 names Chip 'n Dale",
-     "claim_ref": "C04728"
+     "claim_ref": "C04732"
     }
    ]
   },
@@ -5480,7 +5501,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing summary names Donald Duck among the three pins",
-     "claim_ref": "C04723"
+     "claim_ref": "C04727"
     },
     {
      "field": "characters",
@@ -5492,7 +5513,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog coverage of Set 1 names Donald Duck",
-     "claim_ref": "C04724"
+     "claim_ref": "C04728"
     }
    ]
   },
@@ -5539,7 +5560,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing summary names Goofy among the three pins",
-     "claim_ref": "C04725"
+     "claim_ref": "C04729"
     },
     {
      "field": "characters",
@@ -5551,7 +5572,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog coverage of Set 1 names Goofy",
-     "claim_ref": "C04726"
+     "claim_ref": "C04730"
     }
    ]
   },
@@ -5596,7 +5617,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing names Jumba Jookiba as one of three pins",
-     "claim_ref": "C04734"
+     "claim_ref": "C04738"
     },
     {
      "field": "characters",
@@ -5608,7 +5629,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog lists Jumba Jookiba pin in Set 2",
-     "claim_ref": "C04735"
+     "claim_ref": "C04739"
     }
    ]
   },
@@ -5653,7 +5674,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing names Pleakley as one of three pins",
-     "claim_ref": "C04732"
+     "claim_ref": "C04736"
     },
     {
      "field": "characters",
@@ -5665,7 +5686,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog lists Pleakley pin in Set 2",
-     "claim_ref": "C04733"
+     "claim_ref": "C04737"
     }
    ]
   },
@@ -5712,7 +5733,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "UK listing names Stitch with Angel as one of three pins",
-     "claim_ref": "C04729"
+     "claim_ref": "C04733"
     },
     {
      "field": "characters",
@@ -5725,7 +5746,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog lists Stitch with Angel pin in Set 2",
-     "claim_ref": "C04730"
+     "claim_ref": "C04734"
     },
     {
      "field": "visual_features",
@@ -5738,7 +5759,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Stitch with Angel pin carries a Disney Pins Celebrating 25 Years title plate; pins have 3D 25 trophy cups",
-     "claim_ref": "C04731"
+     "claim_ref": "C04735"
     }
    ]
   },
@@ -5785,7 +5806,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US listing: three pins - Kermit with Miss Piggy, Fozzie, Animal; each with 3D trophy cup",
-     "claim_ref": "C05354"
+     "claim_ref": "C05358"
     },
     {
      "field": "characters",
@@ -5797,7 +5818,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB: Muppets set 3 of 4 has three trophy-cup pins incl. Animal",
-     "claim_ref": "C07785"
+     "claim_ref": "C07789"
     },
     {
      "field": "edition_size",
@@ -5807,7 +5828,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "LE 900 per DPB",
-     "claim_ref": "C07786"
+     "claim_ref": "C07790"
     }
    ]
   },
@@ -5854,7 +5875,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US listing: three pins - Kermit with Miss Piggy, Fozzie, Animal; each with 3D trophy cup",
-     "claim_ref": "C05353"
+     "claim_ref": "C05357"
     },
     {
      "field": "characters",
@@ -5866,7 +5887,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB: Muppets set 3 of 4 has three trophy-cup pins incl. Fozzie Bear",
-     "claim_ref": "C07787"
+     "claim_ref": "C07791"
     },
     {
      "field": "edition_size",
@@ -5876,7 +5897,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "LE 900 per DPB",
-     "claim_ref": "C07788"
+     "claim_ref": "C07792"
     }
    ]
   },
@@ -5924,7 +5945,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US listing: three pins - Kermit with Miss Piggy, Fozzie, Animal; each with 3D trophy cup",
-     "claim_ref": "C05352"
+     "claim_ref": "C05356"
     },
     {
      "field": "characters",
@@ -5937,7 +5958,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB: Muppets set 3 of 4 has three trophy-cup pins incl. Kermit the Frog & Miss Piggy",
-     "claim_ref": "C07789"
+     "claim_ref": "C07793"
     },
     {
      "field": "edition_size",
@@ -5947,7 +5968,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "LE 900 per DPB",
-     "claim_ref": "C07790"
+     "claim_ref": "C07794"
     }
    ]
   },
@@ -5991,7 +6012,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog: three pins - Mickey with Minnie, Daisy, Pluto; each with 3D '25' trophy cup",
-     "claim_ref": "C05357"
+     "claim_ref": "C05361"
     },
     {
      "field": "characters",
@@ -6003,7 +6024,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Store set 4 of 4 contents: Mickey with Minnie, Daisy, Pluto trophy-cup pins",
-     "claim_ref": "C07791"
+     "claim_ref": "C07795"
     },
     {
      "field": "edition_type",
@@ -6013,7 +6034,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "listing title says Limited Edition Pin Set",
-     "claim_ref": "C07792"
+     "claim_ref": "C07796"
     }
    ]
   },
@@ -6058,7 +6079,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog: three pins - Mickey with Minnie, Daisy, Pluto; each with 3D '25' trophy cup",
-     "claim_ref": "C05355"
+     "claim_ref": "C05359"
     },
     {
      "field": "front_text",
@@ -6068,7 +6089,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Mickey and Minnie pin has this title plate",
-     "claim_ref": "C05356"
+     "claim_ref": "C05360"
     },
     {
      "field": "characters",
@@ -6081,7 +6102,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Store set 4 of 4 contents: Mickey with Minnie, Daisy, Pluto trophy-cup pins",
-     "claim_ref": "C07793"
+     "claim_ref": "C07797"
     },
     {
      "field": "edition_type",
@@ -6091,7 +6112,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "listing title says Limited Edition Pin Set",
-     "claim_ref": "C07794"
+     "claim_ref": "C07798"
     }
    ]
   },
@@ -6135,7 +6156,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Blog: three pins - Mickey with Minnie, Daisy, Pluto; each with 3D '25' trophy cup",
-     "claim_ref": "C05358"
+     "claim_ref": "C05362"
     },
     {
      "field": "characters",
@@ -6147,7 +6168,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Store set 4 of 4 contents: Mickey with Minnie, Daisy, Pluto trophy-cup pins",
-     "claim_ref": "C07795"
+     "claim_ref": "C07799"
     },
     {
      "field": "edition_type",
@@ -6157,7 +6178,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "listing title says Limited Edition Pin Set",
-     "claim_ref": "C07796"
+     "claim_ref": "C07800"
     }
    ]
   },
@@ -6202,7 +6223,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Baymax named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04886"
+     "claim_ref": "C04890"
     },
     {
      "field": "characters",
@@ -6214,7 +6235,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Baymax among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07623"
+     "claim_ref": "C07627"
     }
    ]
   },
@@ -6259,7 +6280,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Cheshire Cat named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04880"
+     "claim_ref": "C04884"
     },
     {
      "field": "characters",
@@ -6271,7 +6292,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Cheshire Cat among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07624"
+     "claim_ref": "C07628"
     }
    ]
   },
@@ -6316,7 +6337,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Daisy named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04874"
+     "claim_ref": "C04878"
     },
     {
      "field": "characters",
@@ -6328,7 +6349,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Daisy Duck among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07625"
+     "claim_ref": "C07629"
     }
    ]
   },
@@ -6373,7 +6394,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Donald named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04873"
+     "claim_ref": "C04877"
     },
     {
      "field": "characters",
@@ -6385,7 +6406,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Donald Duck among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07626"
+     "claim_ref": "C07630"
     }
    ]
   },
@@ -6430,7 +6451,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Dumbo named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04879"
+     "claim_ref": "C04883"
     },
     {
      "field": "characters",
@@ -6442,7 +6463,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Dumbo among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07627"
+     "claim_ref": "C07631"
     }
    ]
   },
@@ -6487,7 +6508,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Figment named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04888"
+     "claim_ref": "C04892"
     },
     {
      "field": "characters",
@@ -6499,7 +6520,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Figment among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07628"
+     "claim_ref": "C07632"
     }
    ]
   },
@@ -6544,7 +6565,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Goofy named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04877"
+     "claim_ref": "C04881"
     },
     {
      "field": "characters",
@@ -6556,7 +6577,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Goofy among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07629"
+     "claim_ref": "C07633"
     }
    ]
   },
@@ -6601,7 +6622,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Marie named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04883"
+     "claim_ref": "C04887"
     },
     {
      "field": "characters",
@@ -6613,7 +6634,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Marie among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07630"
+     "claim_ref": "C07634"
     }
    ]
   },
@@ -6658,7 +6679,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Minnie named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04876"
+     "claim_ref": "C04880"
     },
     {
      "field": "characters",
@@ -6670,7 +6691,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Minnie Mouse among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07631"
+     "claim_ref": "C07635"
     }
    ]
   },
@@ -6715,7 +6736,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Nemo named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04884"
+     "claim_ref": "C04888"
     },
     {
      "field": "characters",
@@ -6727,7 +6748,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Nemo among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07632"
+     "claim_ref": "C07636"
     }
    ]
   },
@@ -6772,7 +6793,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Pluto named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04878"
+     "claim_ref": "C04882"
     },
     {
      "field": "characters",
@@ -6784,7 +6805,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Pluto among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07633"
+     "claim_ref": "C07637"
     }
    ]
   },
@@ -6829,7 +6850,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Powerline named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04887"
+     "claim_ref": "C04891"
     },
     {
      "field": "characters",
@@ -6841,7 +6862,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Powerline among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07634"
+     "claim_ref": "C07638"
     }
    ]
   },
@@ -6886,7 +6907,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Sorcerer Mickey named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04875"
+     "claim_ref": "C04879"
     },
     {
      "field": "characters",
@@ -6898,7 +6919,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Sorcerer Mickey among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07635"
+     "claim_ref": "C07639"
     }
    ]
   },
@@ -6943,7 +6964,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Stitch named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04885"
+     "claim_ref": "C04889"
     },
     {
      "field": "characters",
@@ -6955,7 +6976,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Stitch among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07636"
+     "claim_ref": "C07640"
     }
    ]
   },
@@ -7000,7 +7021,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Tigger named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04882"
+     "claim_ref": "C04886"
     },
     {
      "field": "characters",
@@ -7012,7 +7033,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Tigger among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07637"
+     "claim_ref": "C07641"
     }
    ]
   },
@@ -7057,7 +7078,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Tinker Bell named in UK listing character list as a rubber-duck design",
-     "claim_ref": "C04881"
+     "claim_ref": "C04885"
     },
     {
      "field": "characters",
@@ -7069,7 +7090,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Laughing Place lists Tinker Bell among the 16 rubber-duck designs in the Disney Store Ducks of Disney blind pack (5 per pack)",
-     "claim_ref": "C07638"
+     "claim_ref": "C07642"
     }
    ]
   },
@@ -7114,7 +7135,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Chip named among calendar characters; one-pin-per-character mapping implied, not explicit",
-     "claim_ref": "C04854"
+     "claim_ref": "C04858"
     },
     {
      "field": "release_year",
@@ -7124,7 +7145,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2025 backstamps",
-     "claim_ref": "C04855"
+     "claim_ref": "C04859"
     },
     {
      "field": "characters",
@@ -7136,7 +7157,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05350"
+     "claim_ref": "C05354"
     },
     {
      "field": "characters",
@@ -7148,7 +7169,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08561"
+     "claim_ref": "C08565"
     },
     {
      "field": "edition_size",
@@ -7158,7 +7179,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08562"
+     "claim_ref": "C08566"
     }
    ]
   },
@@ -7203,7 +7224,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Daisy named among calendar characters; one-pin-per-character mapping implied, not explicit",
-     "claim_ref": "C04852"
+     "claim_ref": "C04856"
     },
     {
      "field": "release_year",
@@ -7213,7 +7234,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2025 backstamps",
-     "claim_ref": "C04853"
+     "claim_ref": "C04857"
     },
     {
      "field": "characters",
@@ -7225,7 +7246,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05345"
+     "claim_ref": "C05349"
     },
     {
      "field": "characters",
@@ -7237,7 +7258,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08541"
+     "claim_ref": "C08545"
     },
     {
      "field": "edition_size",
@@ -7247,7 +7268,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08542"
+     "claim_ref": "C08546"
     }
    ]
   },
@@ -7292,7 +7313,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05342"
+     "claim_ref": "C05346"
     },
     {
      "field": "characters",
@@ -7304,7 +7325,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08555"
+     "claim_ref": "C08559"
     },
     {
      "field": "edition_size",
@@ -7314,7 +7335,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08556"
+     "claim_ref": "C08560"
     }
    ]
   },
@@ -7359,7 +7380,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05339"
+     "claim_ref": "C05343"
     },
     {
      "field": "characters",
@@ -7371,7 +7392,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08543"
+     "claim_ref": "C08547"
     },
     {
      "field": "edition_size",
@@ -7381,7 +7402,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08544"
+     "claim_ref": "C08548"
     }
    ]
   },
@@ -7426,7 +7447,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Eeyore named among calendar characters; one-pin-per-character mapping implied, not explicit",
-     "claim_ref": "C04862"
+     "claim_ref": "C04866"
     },
     {
      "field": "release_year",
@@ -7436,7 +7457,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2025 backstamps",
-     "claim_ref": "C04863"
+     "claim_ref": "C04867"
     },
     {
      "field": "characters",
@@ -7448,7 +7469,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05351"
+     "claim_ref": "C05355"
     },
     {
      "field": "characters",
@@ -7460,7 +7481,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08565"
+     "claim_ref": "C08569"
     },
     {
      "field": "edition_size",
@@ -7470,7 +7491,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08566"
+     "claim_ref": "C08570"
     }
    ]
   },
@@ -7515,7 +7536,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05343"
+     "claim_ref": "C05347"
     },
     {
      "field": "characters",
@@ -7527,7 +7548,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08559"
+     "claim_ref": "C08563"
     },
     {
      "field": "edition_size",
@@ -7537,7 +7558,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08560"
+     "claim_ref": "C08564"
     }
    ]
   },
@@ -7582,7 +7603,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Max named among calendar characters; one-pin-per-character mapping implied, not explicit",
-     "claim_ref": "C04860"
+     "claim_ref": "C04864"
     },
     {
      "field": "release_year",
@@ -7592,7 +7613,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2025 backstamps",
-     "claim_ref": "C04861"
+     "claim_ref": "C04865"
     },
     {
      "field": "characters",
@@ -7604,7 +7625,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05349"
+     "claim_ref": "C05353"
     },
     {
      "field": "characters",
@@ -7616,7 +7637,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08557"
+     "claim_ref": "C08561"
     },
     {
      "field": "edition_size",
@@ -7626,7 +7647,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08558"
+     "claim_ref": "C08562"
     }
    ]
   },
@@ -7671,7 +7692,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Mickey named among calendar characters; one-pin-per-character mapping implied, not explicit",
-     "claim_ref": "C04850"
+     "claim_ref": "C04854"
     },
     {
      "field": "release_year",
@@ -7681,7 +7702,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2025 backstamps",
-     "claim_ref": "C04851"
+     "claim_ref": "C04855"
     },
     {
      "field": "characters",
@@ -7693,7 +7714,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05347"
+     "claim_ref": "C05351"
     },
     {
      "field": "characters",
@@ -7705,7 +7726,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08549"
+     "claim_ref": "C08553"
     },
     {
      "field": "edition_size",
@@ -7715,7 +7736,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08550"
+     "claim_ref": "C08554"
     }
    ]
   },
@@ -7760,7 +7781,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05340"
+     "claim_ref": "C05344"
     },
     {
      "field": "characters",
@@ -7772,7 +7793,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08547"
+     "claim_ref": "C08551"
     },
     {
      "field": "edition_size",
@@ -7782,7 +7803,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08548"
+     "claim_ref": "C08552"
     }
    ]
   },
@@ -7827,7 +7848,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05341"
+     "claim_ref": "C05345"
     },
     {
      "field": "characters",
@@ -7839,7 +7860,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08551"
+     "claim_ref": "C08555"
     },
     {
      "field": "edition_size",
@@ -7849,7 +7870,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08552"
+     "claim_ref": "C08556"
     }
    ]
   },
@@ -7894,7 +7915,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Pluto named among calendar characters; one-pin-per-character mapping implied, not explicit",
-     "claim_ref": "C04858"
+     "claim_ref": "C04862"
     },
     {
      "field": "release_year",
@@ -7904,7 +7925,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2025 backstamps",
-     "claim_ref": "C04859"
+     "claim_ref": "C04863"
     },
     {
      "field": "characters",
@@ -7916,7 +7937,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05346"
+     "claim_ref": "C05350"
     },
     {
      "field": "characters",
@@ -7928,7 +7949,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08545"
+     "claim_ref": "C08549"
     },
     {
      "field": "edition_size",
@@ -7938,7 +7959,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08546"
+     "claim_ref": "C08550"
     }
    ]
   },
@@ -7983,7 +8004,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Tigger named among calendar characters; one-pin-per-character mapping implied, not explicit",
-     "claim_ref": "C04856"
+     "claim_ref": "C04860"
     },
     {
      "field": "release_year",
@@ -7993,7 +8014,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2025 backstamps",
-     "claim_ref": "C04857"
+     "claim_ref": "C04861"
     },
     {
      "field": "characters",
@@ -8005,7 +8026,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05348"
+     "claim_ref": "C05352"
     },
     {
      "field": "characters",
@@ -8017,7 +8038,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08553"
+     "claim_ref": "C08557"
     },
     {
      "field": "edition_size",
@@ -8027,7 +8048,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08554"
+     "claim_ref": "C08558"
     }
    ]
   },
@@ -8072,7 +8093,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database lists 13 characters for the 2025 boxed set incl. this one",
-     "claim_ref": "C05344"
+     "claim_ref": "C05348"
     },
     {
      "field": "characters",
@@ -8084,7 +8105,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Blind re-check: official EU listing names this character in the countdown calendar",
-     "claim_ref": "C08563"
+     "claim_ref": "C08567"
     },
     {
      "field": "edition_size",
@@ -8094,7 +8115,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "edition size stated for the set",
-     "claim_ref": "C08564"
+     "claim_ref": "C08568"
     }
    ]
   },
@@ -8139,7 +8160,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05509"
+     "claim_ref": "C05513"
     },
     {
      "field": "characters",
@@ -8151,7 +8172,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05510"
+     "claim_ref": "C05514"
     }
    ]
   },
@@ -8196,7 +8217,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05505"
+     "claim_ref": "C05509"
     },
     {
      "field": "characters",
@@ -8208,7 +8229,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05506"
+     "claim_ref": "C05510"
     }
    ]
   },
@@ -8253,7 +8274,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05493"
+     "claim_ref": "C05497"
     },
     {
      "field": "characters",
@@ -8265,7 +8286,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05494"
+     "claim_ref": "C05498"
     }
    ]
   },
@@ -8310,7 +8331,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05501"
+     "claim_ref": "C05505"
     },
     {
      "field": "characters",
@@ -8322,7 +8343,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05502"
+     "claim_ref": "C05506"
     }
    ]
   },
@@ -8367,7 +8388,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05495"
+     "claim_ref": "C05499"
     },
     {
      "field": "characters",
@@ -8379,7 +8400,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05496"
+     "claim_ref": "C05500"
     }
    ]
   },
@@ -8424,7 +8445,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05491"
+     "claim_ref": "C05495"
     },
     {
      "field": "characters",
@@ -8436,7 +8457,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05492"
+     "claim_ref": "C05496"
     }
    ]
   },
@@ -8481,7 +8502,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05507"
+     "claim_ref": "C05511"
     },
     {
      "field": "characters",
@@ -8493,7 +8514,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05508"
+     "claim_ref": "C05512"
     }
    ]
   },
@@ -8538,7 +8559,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05499"
+     "claim_ref": "C05503"
     },
     {
      "field": "characters",
@@ -8550,7 +8571,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05500"
+     "claim_ref": "C05504"
     }
    ]
   },
@@ -8595,7 +8616,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05497"
+     "claim_ref": "C05501"
     },
     {
      "field": "characters",
@@ -8607,7 +8628,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05498"
+     "claim_ref": "C05502"
     }
    ]
   },
@@ -8652,7 +8673,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing summary: one of 10 designs in the series",
-     "claim_ref": "C05503"
+     "claim_ref": "C05507"
     },
     {
      "field": "characters",
@@ -8664,7 +8685,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT summary lists same 10 designs (US parks release)",
-     "claim_ref": "C05504"
+     "claim_ref": "C05508"
     }
    ]
   },
@@ -8708,7 +8729,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 624 Angel listed in set",
-     "claim_ref": "C04826"
+     "claim_ref": "C04830"
     },
     {
      "field": "characters",
@@ -8720,7 +8741,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 624 Angel among the ten designs",
-     "claim_ref": "C04827"
+     "claim_ref": "C04831"
     },
     {
      "field": "pin_name",
@@ -8730,7 +8751,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04828"
+     "claim_ref": "C04832"
     },
     {
      "field": "characters",
@@ -8742,7 +8763,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Angel among its 10 experiment designs",
-     "claim_ref": "C08485"
+     "claim_ref": "C08489"
     },
     {
      "field": "characters",
@@ -8754,7 +8775,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Angel among 10 designs",
-     "claim_ref": "C08486"
+     "claim_ref": "C08490"
     }
    ]
   },
@@ -8798,7 +8819,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 010 Felix listed in set",
-     "claim_ref": "C04835"
+     "claim_ref": "C04839"
     },
     {
      "field": "characters",
@@ -8810,7 +8831,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 010 Felix among the ten designs",
-     "claim_ref": "C04836"
+     "claim_ref": "C04840"
     },
     {
      "field": "pin_name",
@@ -8820,7 +8841,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04837"
+     "claim_ref": "C04841"
     },
     {
      "field": "characters",
@@ -8832,7 +8853,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Felix among its 10 experiment designs",
-     "claim_ref": "C08473"
+     "claim_ref": "C08477"
     },
     {
      "field": "characters",
@@ -8844,7 +8865,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Felix among 10 designs",
-     "claim_ref": "C08474"
+     "claim_ref": "C08478"
     }
    ]
   },
@@ -8888,7 +8909,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 606 Holio listed in set",
-     "claim_ref": "C04829"
+     "claim_ref": "C04833"
     },
     {
      "field": "characters",
@@ -8900,7 +8921,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 606 Holio among the ten designs",
-     "claim_ref": "C04830"
+     "claim_ref": "C04834"
     },
     {
      "field": "pin_name",
@@ -8910,7 +8931,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04831"
+     "claim_ref": "C04835"
     },
     {
      "field": "characters",
@@ -8922,7 +8943,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Holio among its 10 experiment designs",
-     "claim_ref": "C08481"
+     "claim_ref": "C08485"
     },
     {
      "field": "characters",
@@ -8934,7 +8955,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Holio among 10 designs",
-     "claim_ref": "C08482"
+     "claim_ref": "C08486"
     }
    ]
   },
@@ -8978,7 +8999,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 604 Houdini listed in set",
-     "claim_ref": "C04838"
+     "claim_ref": "C04842"
     },
     {
      "field": "characters",
@@ -8990,7 +9011,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 604 Houdini among the ten designs",
-     "claim_ref": "C04839"
+     "claim_ref": "C04843"
     },
     {
      "field": "pin_name",
@@ -9000,7 +9021,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04840"
+     "claim_ref": "C04844"
     },
     {
      "field": "characters",
@@ -9012,7 +9033,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Houdini among its 10 experiment designs",
-     "claim_ref": "C08479"
+     "claim_ref": "C08483"
     },
     {
      "field": "characters",
@@ -9024,7 +9045,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Houdini among 10 designs",
-     "claim_ref": "C08480"
+     "claim_ref": "C08484"
     }
    ]
   },
@@ -9068,7 +9089,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 629 Leroy listed in set",
-     "claim_ref": "C04847"
+     "claim_ref": "C04851"
     },
     {
      "field": "characters",
@@ -9080,7 +9101,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 629 Leroy among the ten designs",
-     "claim_ref": "C04848"
+     "claim_ref": "C04852"
     },
     {
      "field": "pin_name",
@@ -9090,7 +9111,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04849"
+     "claim_ref": "C04853"
     },
     {
      "field": "characters",
@@ -9102,7 +9123,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Leroy among its 10 experiment designs",
-     "claim_ref": "C08491"
+     "claim_ref": "C08495"
     },
     {
      "field": "characters",
@@ -9114,7 +9135,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Leroy among 10 designs",
-     "claim_ref": "C08492"
+     "claim_ref": "C08496"
     }
    ]
   },
@@ -9158,7 +9179,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 625 Reuben listed in set",
-     "claim_ref": "C04841"
+     "claim_ref": "C04845"
     },
     {
      "field": "characters",
@@ -9170,7 +9191,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 625 Reuben among the ten designs",
-     "claim_ref": "C04842"
+     "claim_ref": "C04846"
     },
     {
      "field": "pin_name",
@@ -9180,7 +9201,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04843"
+     "claim_ref": "C04847"
     },
     {
      "field": "characters",
@@ -9192,7 +9213,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Reuben among its 10 experiment designs",
-     "claim_ref": "C08487"
+     "claim_ref": "C08491"
     },
     {
      "field": "characters",
@@ -9204,7 +9225,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Reuben among 10 designs",
-     "claim_ref": "C08488"
+     "claim_ref": "C08492"
     }
    ]
   },
@@ -9248,7 +9269,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 221 Sparky listed in set",
-     "claim_ref": "C04823"
+     "claim_ref": "C04827"
     },
     {
      "field": "characters",
@@ -9260,7 +9281,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 221 Sparky among the ten designs",
-     "claim_ref": "C04824"
+     "claim_ref": "C04828"
     },
     {
      "field": "pin_name",
@@ -9270,7 +9291,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04825"
+     "claim_ref": "C04829"
     },
     {
      "field": "characters",
@@ -9282,7 +9303,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Sparky among its 10 experiment designs",
-     "claim_ref": "C08475"
+     "claim_ref": "C08479"
     },
     {
      "field": "characters",
@@ -9294,7 +9315,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Sparky among 10 designs",
-     "claim_ref": "C08476"
+     "claim_ref": "C08480"
     }
    ]
   },
@@ -9338,7 +9359,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 619 Splodyhead listed in set",
-     "claim_ref": "C04844"
+     "claim_ref": "C04848"
     },
     {
      "field": "characters",
@@ -9350,7 +9371,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 619 Splodyhead among the ten designs",
-     "claim_ref": "C04845"
+     "claim_ref": "C04849"
     },
     {
      "field": "pin_name",
@@ -9360,7 +9381,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04846"
+     "claim_ref": "C04850"
     },
     {
      "field": "characters",
@@ -9372,7 +9393,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Splodyhead among its 10 experiment designs",
-     "claim_ref": "C08483"
+     "claim_ref": "C08487"
     },
     {
      "field": "characters",
@@ -9384,7 +9405,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Splodyhead among 10 designs",
-     "claim_ref": "C08484"
+     "claim_ref": "C08488"
     }
    ]
   },
@@ -9430,7 +9451,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 626 Stitch listed in set",
-     "claim_ref": "C04820"
+     "claim_ref": "C04824"
     },
     {
      "field": "characters",
@@ -9442,7 +9463,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 626 Stitch among the ten designs",
-     "claim_ref": "C04821"
+     "claim_ref": "C04825"
     },
     {
      "field": "pin_name",
@@ -9452,7 +9473,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04822"
+     "claim_ref": "C04826"
     },
     {
      "field": "characters",
@@ -9464,7 +9485,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Stitch among its 10 experiment designs",
-     "claim_ref": "C08489"
+     "claim_ref": "C08493"
     },
     {
      "field": "characters",
@@ -9476,7 +9497,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Stitch among 10 designs",
-     "claim_ref": "C08490"
+     "claim_ref": "C08494"
     }
    ]
   },
@@ -9520,7 +9541,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Experiment 502 Yang listed in set",
-     "claim_ref": "C04832"
+     "claim_ref": "C04836"
     },
     {
      "field": "characters",
@@ -9532,7 +9553,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT lists 502 Yang among the ten designs",
-     "claim_ref": "C04833"
+     "claim_ref": "C04837"
     },
     {
      "field": "pin_name",
@@ -9542,7 +9563,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan database item naming",
-     "claim_ref": "C04834"
+     "claim_ref": "C04838"
     },
     {
      "field": "characters",
@@ -9554,7 +9575,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official AU listing of the 2025 626 Day 2-piece blind pack lists Yang among its 10 experiment designs",
-     "claim_ref": "C08477"
+     "claim_ref": "C08481"
     },
     {
      "field": "characters",
@@ -9566,7 +9587,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official Asia listing of the same 2025 626 Day blind pack (same item no.) lists Yang among 10 designs",
-     "claim_ref": "C08478"
+     "claim_ref": "C08482"
     }
    ]
   },
@@ -9580,6 +9601,7 @@
     "Series": "Stitch St. Patrick's Day 2025 Limited Release Slider Pin",
     "Characters": "Stitch",
     "Main character": "Stitch",
+    "Release year": 2025,
     "Edition type": "limited release",
     "Park / Retailer": "Disney Store UK (disneystore.co.uk)",
     "Release scope": "UK",
@@ -9607,6 +9629,26 @@
    "duplicate_pinhunt_id": null,
    "evidence": [
     {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://www.disneystore.co.uk/stitch-st.-patricks-day-2025-limited-release-slider-pin-lilo-and-stitch-438018203715.html",
+     "publisher": "Disney Store (all regions)",
+     "source_class": "official",
+     "method": "search_snippet",
+     "note": "Year stated in the official UK product name ('St. Patrick's Day 2025'). Reviewer: confirm on the listing.",
+     "claim_ref": "C00789"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://www.wdwinfo.com/disney-merchandise/get-your-new-stitch-st-patricks-day-2025-slider-pin/",
+     "publisher": "wdwinfo.com",
+     "source_class": "news",
+     "method": "search_snippet",
+     "note": "Article on the 2025 release; snippet reports a 'Disney Pin Trading 2025' backstamp. No exact date found.",
+     "claim_ref": "C00790"
+    },
+    {
      "field": "characters",
      "value": [
       "Stitch"
@@ -9616,7 +9658,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Stitch St. Patrick's Day pin",
-     "claim_ref": "C04816"
+     "claim_ref": "C04820"
     },
     {
      "field": "franchise",
@@ -9626,7 +9668,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Title",
-     "claim_ref": "C04817"
+     "claim_ref": "C04821"
     },
     {
      "field": "visual_features",
@@ -9638,7 +9680,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Sliding feature",
-     "claim_ref": "C04818"
+     "claim_ref": "C04822"
     },
     {
      "field": "product_code",
@@ -9648,7 +9690,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number",
-     "claim_ref": "C04819"
+     "claim_ref": "C04823"
     },
     {
      "field": "pin_name",
@@ -9658,7 +9700,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing",
-     "claim_ref": "C07853"
+     "claim_ref": "C07857"
     },
     {
      "field": "edition_type",
@@ -9668,7 +9710,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited Release",
-     "claim_ref": "C07854"
+     "claim_ref": "C07858"
     },
     {
      "field": "original_price",
@@ -9678,7 +9720,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "€16.00",
-     "claim_ref": "C07855"
+     "claim_ref": "C07859"
     },
     {
      "field": "currency",
@@ -9688,7 +9730,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "euro",
-     "claim_ref": "C07856"
+     "claim_ref": "C07860"
     },
     {
      "field": "characters",
@@ -9700,7 +9742,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US listing: Stitch as leprechaun from pot of gold, slider",
-     "claim_ref": "C07857"
+     "claim_ref": "C07861"
     },
     {
      "field": "product_code",
@@ -9710,7 +9752,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US item number differs from UK/EU 438018203715",
-     "claim_ref": "C07858"
+     "claim_ref": "C07862"
     },
     {
      "field": "original_price",
@@ -9720,7 +9762,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "$19.99 US",
-     "claim_ref": "C07859"
+     "claim_ref": "C07863"
     },
     {
      "field": "currency",
@@ -9730,7 +9772,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "dollars",
-     "claim_ref": "C07860"
+     "claim_ref": "C07864"
     },
     {
      "field": "pin_name",
@@ -9740,7 +9782,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWInfo post on the new Stitch St Patrick's Day 2025 slider pin",
-     "claim_ref": "C08508"
+     "claim_ref": "C08512"
     },
     {
      "field": "characters",
@@ -9752,7 +9794,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "post title names Stitch",
-     "claim_ref": "C08509"
+     "claim_ref": "C08513"
     },
     {
      "field": "original_price",
@@ -9762,7 +9804,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWInfo lists USD 19.99",
-     "claim_ref": "C08510"
+     "claim_ref": "C08514"
     },
     {
      "field": "currency",
@@ -9772,7 +9814,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "US price",
-     "claim_ref": "C08511"
+     "claim_ref": "C08515"
     }
    ]
   },
@@ -9817,7 +9859,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Ariel and King Triton pin",
-     "claim_ref": "C04909"
+     "claim_ref": "C04913"
     },
     {
      "field": "characters",
@@ -9830,7 +9872,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Ariel and Triton Father's Day pin",
-     "claim_ref": "C04910"
+     "claim_ref": "C04914"
     },
     {
      "field": "front_text",
@@ -9840,7 +9882,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "Banner reads Happy Father's Day 2026",
-     "claim_ref": "C04911"
+     "claim_ref": "C04915"
     },
     {
      "field": "product_code",
@@ -9850,7 +9892,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "US listing item number; UK code not seen",
-     "claim_ref": "C04912"
+     "claim_ref": "C04916"
     },
     {
      "field": "franchise",
@@ -9860,7 +9902,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Listing title",
-     "claim_ref": "C04913"
+     "claim_ref": "C04917"
     }
    ]
   },
@@ -9904,7 +9946,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05520"
+     "claim_ref": "C05524"
     },
     {
      "field": "characters",
@@ -9917,7 +9959,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes 627; 2 of 10 per pack",
-     "claim_ref": "C07740"
+     "claim_ref": "C07744"
     },
     {
      "field": "original_price",
@@ -9927,7 +9969,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07741"
+     "claim_ref": "C07745"
     },
     {
      "field": "currency",
@@ -9937,7 +9979,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07742"
+     "claim_ref": "C07746"
     },
     {
      "field": "pin_structure",
@@ -9947,7 +9989,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; 627 is listed",
-     "claim_ref": "C08812"
+     "claim_ref": "C08816"
     },
     {
      "field": "characters",
@@ -9960,7 +10002,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names 627 among the characters paired with Stitch",
-     "claim_ref": "C08813"
+     "claim_ref": "C08817"
     }
    ]
   },
@@ -10004,7 +10046,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05512"
+     "claim_ref": "C05516"
     },
     {
      "field": "characters",
@@ -10017,7 +10059,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Angel; 2 of 10 per pack",
-     "claim_ref": "C07743"
+     "claim_ref": "C07747"
     },
     {
      "field": "original_price",
@@ -10027,7 +10069,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07744"
+     "claim_ref": "C07748"
     },
     {
      "field": "currency",
@@ -10037,7 +10079,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07745"
+     "claim_ref": "C07749"
     },
     {
      "field": "pin_structure",
@@ -10047,7 +10089,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Angel is listed",
-     "claim_ref": "C08814"
+     "claim_ref": "C08818"
     },
     {
      "field": "characters",
@@ -10060,7 +10102,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Angel among the characters paired with Stitch",
-     "claim_ref": "C08815"
+     "claim_ref": "C08819"
     }
    ]
   },
@@ -10104,7 +10146,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05511"
+     "claim_ref": "C05515"
     },
     {
      "field": "characters",
@@ -10117,7 +10159,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Jumba Jookiba; 2 of 10 per pack",
-     "claim_ref": "C07746"
+     "claim_ref": "C07750"
     },
     {
      "field": "original_price",
@@ -10127,7 +10169,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07747"
+     "claim_ref": "C07751"
     },
     {
      "field": "currency",
@@ -10137,7 +10179,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07748"
+     "claim_ref": "C07752"
     },
     {
      "field": "pin_structure",
@@ -10147,7 +10189,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Jumba Jookiba is listed",
-     "claim_ref": "C08816"
+     "claim_ref": "C08820"
     },
     {
      "field": "characters",
@@ -10160,7 +10202,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Jumba Jookiba among the characters paired with Stitch",
-     "claim_ref": "C08817"
+     "claim_ref": "C08821"
     }
    ]
   },
@@ -10204,7 +10246,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05518"
+     "claim_ref": "C05522"
     },
     {
      "field": "characters",
@@ -10217,7 +10259,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Kixx; 2 of 10 per pack",
-     "claim_ref": "C07749"
+     "claim_ref": "C07753"
     },
     {
      "field": "original_price",
@@ -10227,7 +10269,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07750"
+     "claim_ref": "C07754"
     },
     {
      "field": "currency",
@@ -10237,7 +10279,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07751"
+     "claim_ref": "C07755"
     },
     {
      "field": "pin_structure",
@@ -10247,7 +10289,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Kixx is listed",
-     "claim_ref": "C08818"
+     "claim_ref": "C08822"
     },
     {
      "field": "characters",
@@ -10260,7 +10302,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Kixx among the characters paired with Stitch",
-     "claim_ref": "C08819"
+     "claim_ref": "C08823"
     }
    ]
   },
@@ -10304,7 +10346,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05514"
+     "claim_ref": "C05518"
     },
     {
      "field": "characters",
@@ -10317,7 +10359,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Leroy; 2 of 10 per pack",
-     "claim_ref": "C07752"
+     "claim_ref": "C07756"
     },
     {
      "field": "original_price",
@@ -10327,7 +10369,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07753"
+     "claim_ref": "C07757"
     },
     {
      "field": "currency",
@@ -10337,7 +10379,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07754"
+     "claim_ref": "C07758"
     },
     {
      "field": "pin_structure",
@@ -10347,7 +10389,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; LeRoy is listed",
-     "claim_ref": "C08820"
+     "claim_ref": "C08824"
     },
     {
      "field": "characters",
@@ -10360,7 +10402,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names LeRoy among the characters paired with Stitch",
-     "claim_ref": "C08821"
+     "claim_ref": "C08825"
     }
    ]
   },
@@ -10404,7 +10446,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05513"
+     "claim_ref": "C05517"
     },
     {
      "field": "characters",
@@ -10417,7 +10459,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Reuben; 2 of 10 per pack",
-     "claim_ref": "C07755"
+     "claim_ref": "C07759"
     },
     {
      "field": "original_price",
@@ -10427,7 +10469,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07756"
+     "claim_ref": "C07760"
     },
     {
      "field": "currency",
@@ -10437,7 +10479,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07757"
+     "claim_ref": "C07761"
     },
     {
      "field": "pin_structure",
@@ -10447,7 +10489,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Reuben is listed",
-     "claim_ref": "C08822"
+     "claim_ref": "C08826"
     },
     {
      "field": "characters",
@@ -10460,7 +10502,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Reuben among the characters paired with Stitch",
-     "claim_ref": "C08823"
+     "claim_ref": "C08827"
     }
    ]
   },
@@ -10504,7 +10546,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05516"
+     "claim_ref": "C05520"
     },
     {
      "field": "characters",
@@ -10517,7 +10559,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Richter; 2 of 10 per pack",
-     "claim_ref": "C07758"
+     "claim_ref": "C07762"
     },
     {
      "field": "original_price",
@@ -10527,7 +10569,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07759"
+     "claim_ref": "C07763"
     },
     {
      "field": "currency",
@@ -10537,7 +10579,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07760"
+     "claim_ref": "C07764"
     },
     {
      "field": "pin_structure",
@@ -10547,7 +10589,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Richter is listed",
-     "claim_ref": "C08824"
+     "claim_ref": "C08828"
     },
     {
      "field": "characters",
@@ -10560,7 +10602,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Richter among the characters paired with Stitch",
-     "claim_ref": "C08825"
+     "claim_ref": "C08829"
     }
    ]
   },
@@ -10604,7 +10646,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05517"
+     "claim_ref": "C05521"
     },
     {
      "field": "characters",
@@ -10617,7 +10659,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Sinker; 2 of 10 per pack",
-     "claim_ref": "C07761"
+     "claim_ref": "C07765"
     },
     {
      "field": "original_price",
@@ -10627,7 +10669,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07762"
+     "claim_ref": "C07766"
     },
     {
      "field": "currency",
@@ -10637,7 +10679,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07763"
+     "claim_ref": "C07767"
     },
     {
      "field": "pin_structure",
@@ -10647,7 +10689,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Sinker is listed",
-     "claim_ref": "C08826"
+     "claim_ref": "C08830"
     },
     {
      "field": "characters",
@@ -10660,7 +10702,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Sinker among the characters paired with Stitch",
-     "claim_ref": "C08827"
+     "claim_ref": "C08831"
     }
    ]
   },
@@ -10704,7 +10746,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05515"
+     "claim_ref": "C05519"
     },
     {
      "field": "characters",
@@ -10717,7 +10759,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Splodyhead; 2 of 10 per pack",
-     "claim_ref": "C07764"
+     "claim_ref": "C07768"
     },
     {
      "field": "original_price",
@@ -10727,7 +10769,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07765"
+     "claim_ref": "C07769"
     },
     {
      "field": "currency",
@@ -10737,7 +10779,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07766"
+     "claim_ref": "C07770"
     },
     {
      "field": "pin_structure",
@@ -10747,7 +10789,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Splodyhead is listed",
-     "claim_ref": "C08828"
+     "claim_ref": "C08832"
     },
     {
      "field": "characters",
@@ -10760,7 +10802,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Splodyhead among the characters paired with Stitch",
-     "claim_ref": "C08829"
+     "claim_ref": "C08833"
     }
    ]
   },
@@ -10804,7 +10846,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Singapore listing: each design pairs Stitch with this character",
-     "claim_ref": "C05519"
+     "claim_ref": "C05523"
     },
     {
      "field": "characters",
@@ -10817,7 +10859,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Dis Merchandise: each 2026 design pairs Stitch with one character; list includes Yaarp; 2 of 10 per pack",
-     "claim_ref": "C07767"
+     "claim_ref": "C07771"
     },
     {
      "field": "original_price",
@@ -10827,7 +10869,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "pack price $34.99 per Dis Merchandise",
-     "claim_ref": "C07768"
+     "claim_ref": "C07772"
     },
     {
      "field": "currency",
@@ -10837,7 +10879,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "US Disney Store price",
-     "claim_ref": "C07769"
+     "claim_ref": "C07773"
     },
     {
      "field": "pin_structure",
@@ -10847,7 +10889,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing says each design in the 2026 series includes Stitch with one named character; Yaarp is listed",
-     "claim_ref": "C08830"
+     "claim_ref": "C08834"
     },
     {
      "field": "characters",
@@ -10860,7 +10902,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Official listing names Yaarp among the characters paired with Stitch",
-     "claim_ref": "C08831"
+     "claim_ref": "C08835"
     }
    ]
   },
@@ -10909,7 +10951,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Title names Spider-Man and Hulk",
-     "claim_ref": "C04914"
+     "claim_ref": "C04918"
     },
     {
      "field": "franchise",
@@ -10919,7 +10961,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Film in title",
-     "claim_ref": "C04915"
+     "claim_ref": "C04919"
     },
     {
      "field": "product_code",
@@ -10929,7 +10971,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Item number",
-     "claim_ref": "C04916"
+     "claim_ref": "C04920"
     },
     {
      "field": "pin_name",
@@ -10939,7 +10981,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "EU listing",
-     "claim_ref": "C07865"
+     "claim_ref": "C07869"
     },
     {
      "field": "characters",
@@ -10952,7 +10994,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "shows Spider-Man and Hulk together, pin-on-pin",
-     "claim_ref": "C07866"
+     "claim_ref": "C07870"
     },
     {
      "field": "edition_type",
@@ -10962,7 +11004,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Limited Release",
-     "claim_ref": "C07867"
+     "claim_ref": "C07871"
     },
     {
      "field": "original_price",
@@ -10972,7 +11014,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "€18.00",
-     "claim_ref": "C07868"
+     "claim_ref": "C07872"
     },
     {
      "field": "currency",
@@ -10982,7 +11024,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "euro",
-     "claim_ref": "C07869"
+     "claim_ref": "C07873"
     },
     {
      "field": "characters",
@@ -10995,7 +11037,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "DPB product: Spider-Man and Hulk Brand New Day pin",
-     "claim_ref": "C07870"
+     "claim_ref": "C07874"
     }
    ]
   },
@@ -11040,7 +11082,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Baymax listed among the 10 designs",
-     "claim_ref": "C04897"
+     "claim_ref": "C04901"
     },
     {
      "field": "release_year",
@@ -11050,7 +11092,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04898"
+     "claim_ref": "C04902"
     },
     {
      "field": "characters",
@@ -11062,7 +11104,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Baymax among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07726"
+     "claim_ref": "C07730"
     }
    ]
   },
@@ -11107,7 +11149,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Fozzie Bear listed among the 10 designs",
-     "claim_ref": "C04907"
+     "claim_ref": "C04911"
     },
     {
      "field": "release_year",
@@ -11117,7 +11159,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04908"
+     "claim_ref": "C04912"
     },
     {
      "field": "characters",
@@ -11129,7 +11171,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Fozzie Bear among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07727"
+     "claim_ref": "C07731"
     },
     {
      "field": "characters",
@@ -11141,7 +11183,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT Valentine 2026 mystery set coverage names Fozzie Bear card pin (\"PIE like you very much\")",
-     "claim_ref": "C07728"
+     "claim_ref": "C07732"
     }
    ]
   },
@@ -11186,7 +11228,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Genie listed among the 10 designs",
-     "claim_ref": "C04889"
+     "claim_ref": "C04893"
     },
     {
      "field": "release_year",
@@ -11196,7 +11238,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04890"
+     "claim_ref": "C04894"
     },
     {
      "field": "characters",
@@ -11208,7 +11250,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Genie among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07729"
+     "claim_ref": "C07733"
     },
     {
      "field": "characters",
@@ -11220,7 +11262,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT Valentine 2026 mystery set coverage names Genie card pin (Genie as a bee, \"Bee Mine!\")",
-     "claim_ref": "C07730"
+     "claim_ref": "C07734"
     }
    ]
   },
@@ -11265,7 +11307,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Hercules listed among the 10 designs",
-     "claim_ref": "C04891"
+     "claim_ref": "C04895"
     },
     {
      "field": "release_year",
@@ -11275,7 +11317,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04892"
+     "claim_ref": "C04896"
     },
     {
      "field": "characters",
@@ -11287,7 +11329,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Hercules among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07731"
+     "claim_ref": "C07735"
     }
    ]
   },
@@ -11332,7 +11374,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Lucky listed among the 10 designs",
-     "claim_ref": "C04893"
+     "claim_ref": "C04897"
     },
     {
      "field": "release_year",
@@ -11342,7 +11384,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04894"
+     "claim_ref": "C04898"
     },
     {
      "field": "characters",
@@ -11354,7 +11396,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Lucky among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07732"
+     "claim_ref": "C07736"
     },
     {
      "field": "characters",
@@ -11366,7 +11408,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT Valentine 2026 mystery set coverage names Lucky card pin (\"I woof you\")",
-     "claim_ref": "C07733"
+     "claim_ref": "C07737"
     }
    ]
   },
@@ -11411,7 +11453,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Mad Hatter listed among the 10 designs",
-     "claim_ref": "C04895"
+     "claim_ref": "C04899"
     },
     {
      "field": "release_year",
@@ -11421,7 +11463,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04896"
+     "claim_ref": "C04900"
     },
     {
      "field": "characters",
@@ -11433,7 +11475,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Mad Hatter among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07734"
+     "claim_ref": "C07738"
     }
    ]
   },
@@ -11478,7 +11520,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Marie listed among the 10 designs",
-     "claim_ref": "C04901"
+     "claim_ref": "C04905"
     },
     {
      "field": "release_year",
@@ -11488,7 +11530,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04902"
+     "claim_ref": "C04906"
     },
     {
      "field": "characters",
@@ -11500,7 +11542,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Marie among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07735"
+     "claim_ref": "C07739"
     }
    ]
   },
@@ -11546,7 +11588,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Powerline listed among the 10 designs",
-     "claim_ref": "C04905"
+     "claim_ref": "C04909"
     },
     {
      "field": "release_year",
@@ -11556,7 +11598,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04906"
+     "claim_ref": "C04910"
     },
     {
      "field": "characters",
@@ -11568,7 +11610,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Powerline among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07736"
+     "claim_ref": "C07740"
     },
     {
      "field": "characters",
@@ -11580,7 +11622,7 @@
      "source_class": "news",
      "method": "search_snippet",
      "note": "WDWNT Valentine 2026 mystery set coverage names Powerline card pin (\"We see Eye2Eye\")",
-     "claim_ref": "C07737"
+     "claim_ref": "C07741"
     }
    ]
   },
@@ -11626,7 +11668,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Stitch listed among the 10 designs",
-     "claim_ref": "C04903"
+     "claim_ref": "C04907"
     },
     {
      "field": "release_year",
@@ -11636,7 +11678,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04904"
+     "claim_ref": "C04908"
     },
     {
      "field": "characters",
@@ -11648,7 +11690,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Stitch among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07738"
+     "claim_ref": "C07742"
     }
    ]
   },
@@ -11694,7 +11736,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Winnie the Pooh listed among the 10 designs",
-     "claim_ref": "C04899"
+     "claim_ref": "C04903"
     },
     {
      "field": "release_year",
@@ -11704,7 +11746,7 @@
      "source_class": "official",
      "method": "search_snippet",
      "note": "Disney Pin Trading 2026 backstamp",
-     "claim_ref": "C04900"
+     "claim_ref": "C04904"
     },
     {
      "field": "characters",
@@ -11716,7 +11758,7 @@
      "source_class": "fan",
      "method": "search_snippet",
      "note": "Fan post lists Winnie the Pooh among the 10 Valentine-card designs in the 2026 two-pin mystery box ($34.99)",
-     "claim_ref": "C07739"
+     "claim_ref": "C07743"
     }
    ]
   }

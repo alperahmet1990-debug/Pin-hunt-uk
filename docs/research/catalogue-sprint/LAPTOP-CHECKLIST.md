@@ -55,8 +55,8 @@ Work top to bottom.
 
 ## 6. Safe import into staging (once #241 is merged and deployed to your staging API)
 **Already done offline.** `tools/offline_import_test.mjs` replays migrations plus 045, loads the pilot, simulates the reviews, and imports with the real #241 rules against the real schema:
-- 93 of 100 pins import as **new, non-public** pins, all linked to their candidates and batch, with unique PHUK ids.
-- 7 are refused: 4 possible duplicates, 2 with no evidenced release year, 1 with no named character.
+- 95 of 100 pins import as **new, non-public** pins, all linked to their candidates and batch, with unique PHUK ids (re-run 2026-10-15).
+- 5 are refused: 4 possible duplicates (decide each in Research Review) and 1 with no named character (Big Hero 6 Magical Medallions: read the character off the listing during the direct check).
 
 **On staging:**
 1. Research Review approvals done (§5).

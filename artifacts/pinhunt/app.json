@@ -44,6 +44,22 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "PinHunt uses the camera to identify pins you scan.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "PinHunt uses the camera to identify pins you scan.",
+          "photosPermission": "PinHunt uses your photos to identify a pin from a picture you already took.",
+          "microphonePermission": false
+        }
       ]
     ],
     "experiments": {

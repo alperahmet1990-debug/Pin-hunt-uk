@@ -12,7 +12,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
@@ -125,6 +125,15 @@ export default function ScanScreen() {
   const [showRetakeTips, setShowRetakeTips] = useState(false);
   // "That's it" adds the pin in place (UX-005); a new scan starts a fresh result.
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
+  // "Scan next" (UX-061, #264): pins added from this visit to the scan
+  // screen, and which result the latest add came from.
+  const [sessionAdded, setSessionAdded] = useState<string[]>([]);
+  const [addedOnResult, setAddedOnResult] = useState<number | null>(null);
+  useFocusEffect(useCallback(() => () => {
+    // Leaving the scan screen ends the session.
+    setSessionAdded([]);
+    setAddedOnResult(null);
+  }, []));
   const [resultKey, setResultKey] = useState(0);
   const shutterAnim = useRef(new Animated.Value(1)).current;
   // Each identification run has an id; a cancelled or superseded run's
@@ -506,7 +515,17 @@ export default function ScanScreen() {
                 recoveryOpen={showRecovery}
               />
             )}
-            <Button label="Scan another pin" icon="camera" variant="text" fullWidth onPress={handleScanPin} />
+            {addedOnResult === resultKey ? (
+              // Sorting a pile of pins: the next scan is one tap (UX-061).
+              <View style={styles.scanNext}>
+                <Button label="Scan next pin" icon="camera" fullWidth onPress={handleScanPin} />
+                <Text accessibilityLiveRegion="polite" style={[styles.scanNextCount, { color: colors.homeMuted }]}>
+                  {sessionAdded.length} {sessionAdded.length === 1 ? 'pin' : 'pins'} added this session
+                </Text>
+              </View>
+            ) : (
+              <Button label="Scan another pin" icon="camera" variant="text" fullWidth onPress={handleScanPin} />
+            )}
 
             {showRecovery && (
               <View
@@ -562,7 +581,15 @@ export default function ScanScreen() {
 
       </ScrollView>
 
-      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
+      <QuickAddSheet
+        pin={quickAddPin}
+        onClose={() => setQuickAddPin(null)}
+        onAdded={pinId => {
+          setSessionAdded(prev => (prev.includes(pinId) ? prev : [...prev, pinId]));
+          setAddedOnResult(resultKey);
+        }}
+        seaGlass
+      />
 
     </View>
   );
@@ -571,6 +598,8 @@ export default function ScanScreen() {
 // ─── Styles ──────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
+  scanNext: { gap: 6, marginTop: 4, marginHorizontal: 16 },
+  scanNextCount: { fontSize: 12.5, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   root: { flex: 1 },
   headerRow: { paddingHorizontal: 16, marginBottom: 12 },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },

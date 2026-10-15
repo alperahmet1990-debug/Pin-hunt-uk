@@ -8,6 +8,8 @@ import ScanScreen from '../app/(tabs)/scan';
 jest.setTimeout(20_000);
 const mockPush = jest.fn();
 let mockQuickAddPin: { id: string } | null = null;
+let mockFocusEffect: (() => (() => void) | void) | undefined;
+let mockOnAdded: ((pinId: string, status: string) => void) | undefined;
 const mockPins = [
   { id: 'p1', title: 'Castle Fireworks', collection: 'Park Icons', imageUrl: 'https://example.test/p1.jpg' },
   { id: 'p2', title: 'Dumbo Blue Sky', collection: 'Park Icons' },
@@ -15,7 +17,7 @@ const mockPins = [
 const mockIdentify = jest.fn();
 
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush, back: jest.fn() }) }));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush, back: jest.fn() }), useFocusEffect: (cb: () => (() => void) | void) => { mockFocusEffect = cb; } }));
 jest.mock('expo-haptics', () => ({ impactAsync: jest.fn(), notificationAsync: jest.fn(), ImpactFeedbackStyle: {}, NotificationFeedbackType: {} }));
 jest.mock('expo-image-picker', () => ({
   launchImageLibraryAsync: jest.fn(() => Promise.resolve({ canceled: false, assets: [{ uri: 'file:///photo.jpg', width: 3024, height: 3024, mimeType: 'image/heic' }] })),
@@ -33,7 +35,11 @@ jest.mock('@/hooks/useMyAccess', () => ({ useMyAccess: () => ({ isAdmin: false, 
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ markViewed: jest.fn() }) }));
 jest.mock('@/context/PinCatalogueContext', () => ({ usePinCatalogue: () => ({ pins: mockPins, repository: null }) }));
 jest.mock('@/components/QuickAddSheet', () => ({
-  QuickAddSheet: ({ pin }: { pin: { id: string } | null }) => { mockQuickAddPin = pin; return null; },
+  QuickAddSheet: ({ pin, onAdded }: { pin: { id: string } | null; onAdded?: (pinId: string, status: string) => void }) => {
+    mockQuickAddPin = pin;
+    mockOnAdded = onAdded;
+    return null;
+  },
 }));
 
 beforeEach(() => {
@@ -68,6 +74,37 @@ describe('Scan result (UX-005)', () => {
     await fireEvent.press(screen.getByRole('button', { name: "That's it" }));
     await waitFor(() => expect(mockQuickAddPin?.id).toBe('p2'));
     expect(mockPush).not.toHaveBeenCalled();
+  });
+
+  it('after adding, "Scan next pin" leads and counts the pins added this session (UX-061)', async () => {
+    const picker = jest.requireMock('expo-image-picker');
+    await scanToResult();
+    expect(screen.queryByRole('button', { name: 'Scan next pin' })).toBeNull();
+    await fireEvent.press(screen.getByRole('button', { name: "That's it" }));
+    await act(async () => { mockOnAdded?.('p2', 'owned'); });
+    expect(screen.getByRole('button', { name: 'Scan next pin' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Scan another pin' })).toBeNull();
+    expect(screen.getByText('1 pin added this session')).toBeTruthy();
+    // Changing the same pin's list doesn't count it twice.
+    await act(async () => { mockOnAdded?.('p2', 'for_trade'); });
+    expect(screen.getByText('1 pin added this session')).toBeTruthy();
+
+    // Scan next goes straight to the photo picker; the new result starts
+    // with the plain "Scan another pin" again.
+    picker.launchCameraAsync.mockResolvedValueOnce({ canceled: false, assets: [{ uri: 'file:///next.jpg', width: 3024, height: 3024, mimeType: 'image/jpeg' }] });
+    await fireEvent.press(screen.getByRole('button', { name: 'Scan next pin' }));
+    await waitFor(() => expect(picker.launchCameraAsync).toHaveBeenCalled());
+    await waitFor(() => expect(screen.queryByRole('button', { name: 'Scan next pin' })).toBeNull());
+    await screen.findByRole('header', { name: 'Best match' }, { timeout: 3000 });
+    expect(screen.getByRole('button', { name: 'Scan another pin' })).toBeTruthy();
+
+    await act(async () => { mockOnAdded?.('p1', 'wanted'); });
+    expect(screen.getByText('2 pins added this session')).toBeTruthy();
+
+    // Leaving the scan screen (blur runs the focus effect's cleanup) ends the session.
+    await act(async () => { const cleanup = mockFocusEffect?.(); if (typeof cleanup === 'function') cleanup(); });
+    expect(screen.queryByText(/added this session/)).toBeNull();
+    expect(screen.getByRole('button', { name: 'Scan another pin' })).toBeTruthy();
   });
 
   it('sends the shrunk JPEG, not the original photo (UX-050)', async () => {

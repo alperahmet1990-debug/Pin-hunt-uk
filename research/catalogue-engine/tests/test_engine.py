@@ -280,6 +280,23 @@ class CrossSetDuplicates(unittest.TestCase):
         out = cross_set_suspects(pins, sets)
         self.assertEqual(out, {"dlp/2026/tangled-spin-june/rapunzel": "dlp/2026/raiponce-tangled-spin/rapunzel"})
 
+    def test_person_recorded_distinct_finding_clears_only_that_pair(self):
+        def go(nf):
+            with tempfile.TemporaryDirectory() as d:
+                pk = pathlib.Path(d, "p.json")
+                pk.write_text(json.dumps(packet(
+                    sets=[dict(set_key=k, claims=[claim("set_name", n, OFF), claim("release_date", "2025-05-22", OFF)])
+                          for k, n in (("dsuk/2025/a", "Stitch Mystery Set"), ("dsuk/2025/b", "Pin Trading Mystery Set"))],
+                    pins=[dict(pin_key=f"dsuk/2025/{x}/stitch", claims=[claim("characters", ["Stitch"], OFF)]) for x in "ab"],
+                    nf=nf)))
+                return run([str(pk)], d, seed=None)[1]
+        flagged = [r for p in go([]).values() for r in p["review_reasons"] if "cross-set duplicate" in r]
+        self.assertEqual(len(flagged), 1)
+        pins = go([dict(key="dsuk/2025/b/stitch", field="identity", note="distinct: not the same pin as dsuk/2025/a/stitch")])
+        self.assertFalse(any("cross-set duplicate" in r for p in pins.values() for r in p["review_reasons"]))
+        pins = go([dict(key="dsuk/2025/b/stitch", field="identity", note="distinct: not the same pin as dsuk/2025/zzz/stitch")])
+        self.assertTrue(any("cross-set duplicate" in r for p in pins.values() for r in p["review_reasons"]))
+
     def test_same_character_in_unrelated_sets_is_not_flagged(self):
         from engine.run import cross_set_suspects
         sets = {

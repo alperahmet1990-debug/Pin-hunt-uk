@@ -113,7 +113,13 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
         exp = _v(sets.get(p["set_key"], {}).get("fields", {}), "expected_pin_count") if sets.get(p["set_key"]) else ""
         if isinstance(exp, (int, float)) and exp > 0 and counts[p["set_key"]] > exp:
             p["review_reasons"].append(f"grouping: {counts[p['set_key']]} pins recorded but the set states {int(exp)}; check for split or extra pins")
+    # A person who compared both listings can record "distinct: not the same pin as <key>"; that
+    # clears the cross-set flag for that pair only (the finding stays in the evidence trail).
+    distinct = {(nf.get("key"), str(nf.get("note", "")).strip()[len("distinct: not the same pin as"):].strip())
+                for nf in store.not_found if str(nf.get("note", "")).strip().lower().startswith("distinct: not the same pin as")}
     for key, other in cross_set_suspects(pins, sets).items():
+        if (key, other) in distinct or (other, key) in distinct:
+            continue
         pins[key]["review_reasons"].append(f"possible cross-set duplicate of {other}")
     seed_notes = {k: seed_note(cat, _v(s["fields"], "set_name") or k.split("/")[0].replace("-", " ")) for k, s in sets.items() if not s["parent"]}
     rows = write_outputs(out_dir, store, pins, sets, dupes, seed_notes)

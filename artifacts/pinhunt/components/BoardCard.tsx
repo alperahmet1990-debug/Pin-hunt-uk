@@ -17,17 +17,18 @@ interface BoardCardProps {
   board: Board;
   pins: CataloguePin[];
   onPress: () => void;
-  /** Renders with Sea Glass & Coral tokens instead of the app-wide Golden Era palette (see QuickAddSheet for the same pattern). */
-  seaGlass?: boolean;
 }
 
-export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardProps) {
+/** Storybook tokens for both board cards (UX-038b, #151). */
+function boardCardTokens(colors: ReturnType<typeof useColors>) {
+  return { card: colors.homeSurface, border: colors.homeLine, fg: colors.homeInk, muted: colors.homeMuted, thumbBg: colors.homeAqua, accent: colors.homeInk, radius: 18 };
+}
+
+export function BoardCard({ board, pins, onPress }: BoardCardProps) {
   const colors = useColors();
   const thumbs = pins.slice(0, 4);
 
-  const t = seaGlass
-    ? { card: colors.homeSurface, border: colors.homeLine, fg: colors.homeInk, muted: colors.homeMuted, thumbBg: colors.homeAqua, accent: colors.homeInk, radius: 18 }
-    : { card: colors.card, border: colors.border, fg: colors.foreground, muted: colors.mutedForeground, thumbBg: colors.muted, accent: colors.accent, radius: colors.radius };
+  const t = boardCardTokens(colors);
 
   return (
     <TouchableOpacity
@@ -84,6 +85,7 @@ export function BoardCard({ board, pins, onPress, seaGlass = false }: BoardCardP
 /** Compact horizontal card for use in the collection list header */
 export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
   const colors = useColors();
+  const t = boardCardTokens(colors);
   const thumb = pins[0];
 
   return (
@@ -93,33 +95,33 @@ export function BoardCardHorizontal({ board, pins, onPress }: BoardCardProps) {
       style={[
         styles.hCard,
         {
-          backgroundColor: colors.card,
-          borderColor: colors.border,
-          borderRadius: colors.radius,
+          backgroundColor: t.card,
+          borderColor: t.border,
+          borderRadius: t.radius,
         },
       ]}
     >
       {thumb ? (
         <PinImage source={getPinImageSource(thumb)} style={styles.hThumb} />
       ) : (
-        <View style={[styles.hThumb, styles.hThumbEmpty, { backgroundColor: colors.muted }]}>
-          <Feather name="grid" size={18} color={colors.mutedForeground} />
+        <View style={[styles.hThumb, styles.hThumbEmpty, { backgroundColor: t.thumbBg }]}>
+          <Feather name="grid" size={18} color={t.muted} />
         </View>
       )}
       <View style={styles.hInfo}>
-        <Text style={[styles.hName, { color: colors.foreground }]} numberOfLines={2}>
+        <Text style={[styles.hName, { color: t.fg }]} numberOfLines={2}>
           {board.name}
         </Text>
-        <Text style={[styles.hCount, { color: colors.mutedForeground }]}>
+        <Text style={[styles.hCount, { color: t.muted }]}>
           {pins.length} {pins.length === 1 ? 'pin' : 'pins'}
         </Text>
         {!board.isCustom && (
-          <View style={[styles.suggestedBadge, { backgroundColor: colors.accent + '22', marginTop: 4 }]}>
-            <Text maxFontSizeMultiplier={fontScale.dense} style={[styles.suggestedLabel, { color: colors.accent }]}>Suggested</Text>
+          <View style={[styles.suggestedBadge, { backgroundColor: t.accent + '22', marginTop: 4 }]}>
+            <Text maxFontSizeMultiplier={fontScale.dense} style={[styles.suggestedLabel, { color: t.accent }]}>Suggested</Text>
           </View>
         )}
       </View>
-      <Feather name="chevron-right" size={16} color={colors.mutedForeground} style={{ marginRight: 10 }} />
+      <Feather name="chevron-right" size={16} color={t.muted} style={{ marginRight: 10 }} />
     </TouchableOpacity>
   );
 }

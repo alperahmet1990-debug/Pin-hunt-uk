@@ -333,7 +333,7 @@ export default function SetDetailScreen() {
         </View>
       )}
 
-      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
       {pinActions.sheet}
     </ScreenContainer>
   );

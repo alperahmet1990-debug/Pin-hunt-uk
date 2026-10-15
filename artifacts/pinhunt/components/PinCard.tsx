@@ -27,11 +27,9 @@ interface PinCardProps {
   mode?: 'grid' | 'list';
   /** When set, shows a quick-add button that opens the QuickAddSheet. */
   onQuickAdd?: () => void;
-  /** Renders with Sea Glass & Coral tokens instead of the app-wide Golden Era palette (see QuickAddSheet for the same pattern). */
-  seaGlass?: boolean;
 }
 
-export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = false }: PinCardProps) {
+export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd }: PinCardProps) {
   const colors = useColors();
   const { getEntry } = useCollection();
   const entry = getEntry(pin.id);
@@ -40,31 +38,19 @@ export function PinCard({ pin, onPress, mode = 'grid', onQuickAdd, seaGlass = fa
   const { width: screenWidth } = useWindowDimensions();
   const gridCardWidth = (screenWidth - 16 * 2 - 12) / 2;
 
-  const t = seaGlass
-    ? {
-        card: colors.homeSurface,
-        border: colors.homeLine,
-        fg: colors.homeInk,
-        muted: colors.homeMuted,
-        primary: colors.homeCoral,
-        primaryFg: colors.homeSurface,
-        accent: colors.homeTeal,
-        gold: colors.homeSandInk,
-        shadow: colors.homeShadow,
-        radius: 18,
-      }
-    : {
-        card: colors.card,
-        border: colors.border,
-        fg: colors.foreground,
-        muted: colors.mutedForeground,
-        primary: colors.primary,
-        primaryFg: '#fff',
-        accent: colors.accent,
-        gold: colors.gold,
-        shadow: colors.primary,
-        radius: colors.radius,
-      };
+  // Storybook tokens (UX-038b, #151); the Golden Era branch is gone.
+  const t = {
+    card: colors.homeSurface,
+    border: colors.homeLine,
+    fg: colors.homeInk,
+    muted: colors.homeMuted,
+    primary: colors.homeCoral,
+    primaryFg: colors.homeSurface,
+    accent: colors.homeTeal,
+    gold: colors.homeSandInk,
+    shadow: colors.homeShadow,
+    radius: 18,
+  };
 
   const quickAddButton = onQuickAdd ? (
     <TouchableOpacity

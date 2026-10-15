@@ -289,7 +289,7 @@ export default function CollectorProfileScreen() {
                 {/* Compact identity — a small row, not the full profile hero,
                     since PinHunt already told the collector this is a match. */}
                 <View style={[styles.compactHero, { borderBottomColor: colors.homeLine }]}>
-                  <Avatar uri={profile.avatarUrl} name={profile.username} size={44} seaGlass />
+                  <Avatar uri={profile.avatarUrl} name={profile.username} size={44} />
                   <View style={styles.compactIdentity}>
                     <Text style={[styles.compactName, { color: colors.homeInk }]}>@{profile.username}</Text>
                     {(profile.town || profile.county || profile.tradingRegion) ? (
@@ -331,7 +331,7 @@ export default function CollectorProfileScreen() {
               <>
                 {/* Avatar + identity — normal profile-first presentation */}
                 <View style={[styles.hero, { backgroundColor: colors.homeSurface, borderBottomColor: colors.homeLine }]}>
-                  <Avatar uri={profile.avatarUrl} name={profile.username} size={88} style={styles.avatar} seaGlass />
+                  <Avatar uri={profile.avatarUrl} name={profile.username} size={88} style={styles.avatar} />
                   <Text style={[styles.displayName, { color: colors.homeInk }]}>
                     @{profile.username}
                   </Text>

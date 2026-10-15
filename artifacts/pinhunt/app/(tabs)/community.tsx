@@ -214,7 +214,7 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
           <Text style={[styles.typeBadgeLabel, { color }]}>{TYPE_LABEL[post.postType]}</Text>
         </View>
         <View style={styles.cardMeta}>
-          <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={22} seaGlass />
+          <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={22} />
           <Text style={[styles.cardAuthor, { color: colors.homeInk }]}>@{authorName}</Text>
           <Text style={[styles.cardTime, { color: colors.homeMuted }]}>
             {timeAgo(post.createdAt)}

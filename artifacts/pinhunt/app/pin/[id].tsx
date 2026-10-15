@@ -463,7 +463,7 @@ export default function PinDetailScreen() {
 
       <PrimaryActionBar actions={primaryActions} />
 
-      <QuickAddSheet pin={manageSheetPin} onClose={() => setManageSheetPin(null)} seaGlass />
+      <QuickAddSheet pin={manageSheetPin} onClose={() => setManageSheetPin(null)} />
     </ScreenContainer>
   );
 }

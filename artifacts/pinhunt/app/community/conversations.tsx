@@ -51,7 +51,7 @@ function ConversationRow({ conv, onPress, colors }: {
       style={[styles.row, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }]}
     >
       {/* Avatar */}
-      <Avatar uri={other?.avatarUrl} name={name} size={46} seaGlass />
+      <Avatar uri={other?.avatarUrl} name={name} size={46} />
 
       {/* Content */}
       <View style={styles.rowContent}>

@@ -202,7 +202,7 @@ export default function ProfileScreen() {
           <>
             {/* Profile card */}
             <View style={[styles.profileCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 16, marginHorizontal: 16 }]}>
-              <Avatar uri={profile?.avatarUrl} name={nameForInitials} size={80} seaGlass />
+              <Avatar uri={profile?.avatarUrl} name={nameForInitials} size={80} />
 
               <Text style={[styles.displayName, { color: colors.homeInk }]}>
                 {profile?.username ? `@${profile.username}` : 'Your Profile'}

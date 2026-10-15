@@ -218,7 +218,7 @@ function CommentRow({ comment, isMe, isAdmin, canReport, hasReported, onReport, 
   const name = comment.authorProfile?.username ?? '…';
   return (
     <View style={[styles.commentRow, { borderBottomColor: colors.homeLine }]}>
-      <Avatar uri={comment.authorProfile?.avatarUrl} name={name} size={32} seaGlass />
+      <Avatar uri={comment.authorProfile?.avatarUrl} name={name} size={32} />
       <View style={styles.commentBody}>
         <View style={styles.commentMeta}>
           <Text style={[styles.commentAuthor, { color: colors.homeInk }]}>@{name}</Text>
@@ -530,7 +530,7 @@ export default function PostDetailScreen() {
 
             {/* Author row */}
             <View style={styles.authorRow}>
-              <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={40} seaGlass />
+              <Avatar uri={post.authorProfile?.avatarUrl} name={authorName} size={40} />
               <View style={{ flex: 1 }}>
                 <Text style={[styles.authorName, { color: colors.homeInk }]}>@{authorName}</Text>
                 <Text style={[styles.postTime, { color: colors.homeMuted }]}>

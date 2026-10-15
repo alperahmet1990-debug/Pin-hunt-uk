@@ -474,7 +474,7 @@ export default function SearchScreen() {
         )}
       </ScrollView>
 
-      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
       {pinActions.sheet}
     </View>
   );

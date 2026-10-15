@@ -45,13 +45,6 @@ interface QuickAddSheetProps {
   /** Pin to act on. Sheet is hidden when null. */
   pin: CataloguePin | null;
   onClose: () => void;
-  /**
-   * Renders with the Sea Glass & Coral tokens instead of the app-wide Golden
-   * Era palette. Used by screens that have already adopted the new design
-   * system (Pin Detail, Set Detail) without restyling this sheet's other
-   * call sites (search, scan matches, catalogue) ahead of the full migration.
-   */
-  seaGlass?: boolean;
   /** Called when this pin is saved to a list (Owned, For Trade or ISO). */
   onAdded?: (pinId: string, status: CollectionStatus) => void;
 }
@@ -62,7 +55,7 @@ interface QuickAddSheetProps {
  * pin onto a board, then jump straight to the collection — all without
  * leaving the current screen.
  */
-export function QuickAddSheet({ pin, onClose, seaGlass = false, onAdded }: QuickAddSheetProps) {
+export function QuickAddSheet({ pin, onClose, onAdded }: QuickAddSheetProps) {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -104,31 +97,18 @@ export function QuickAddSheet({ pin, onClose, seaGlass = false, onAdded }: Quick
     setPendingBoardId(null);
   }, [pendingBoardId, pin, isKept, addPinToBoard]);
 
-  // Token indirection so this one sheet can render in either palette without
-  // duplicating the component for its Sea Glass call sites.
-  const t = seaGlass
-    ? {
-        sheetBg: colors.homeBackground,
-        border: colors.homeLine,
-        fg: colors.homeInk,
-        muted: colors.homeMuted,
-        primary: colors.homeCoral,
-        primaryFg: colors.homeSurface,
-        secondary: colors.homeAqua,
-        card: colors.homeSurface,
-        radius: 16,
-      }
-    : {
-        sheetBg: colors.background,
-        border: colors.border,
-        fg: colors.foreground,
-        muted: colors.mutedForeground,
-        primary: colors.primary,
-        primaryFg: colors.primaryForeground,
-        secondary: colors.secondary,
-        card: colors.card,
-        radius: colors.radius,
-      };
+  // Storybook tokens (UX-038b, #151), kept as one object for the sheet's parts.
+  const t = {
+    sheetBg: colors.homeBackground,
+    border: colors.homeLine,
+    fg: colors.homeInk,
+    muted: colors.homeMuted,
+    primary: colors.homeCoral,
+    primaryFg: colors.homeSurface,
+    secondary: colors.homeAqua,
+    card: colors.homeSurface,
+    radius: 16,
+  };
 
   const statusColor = (s: CollectionStatus) =>
     s === 'owned' ? colors.owned : s === 'wanted' ? colors.wanted : colors.forTrade;

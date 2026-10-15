@@ -73,7 +73,7 @@ function CollectorCard({ item, onPress, onMessage }: {
     >
       {/* Header row */}
       <View style={styles.cardHeader}>
-        <Avatar uri={item.avatarUrl} name={item.username} size={48} seaGlass />
+        <Avatar uri={item.avatarUrl} name={item.username} size={48} />
 
         <View style={styles.cardInfo}>
           <Text style={[styles.cardUsername, { color: colors.homeInk }]}>

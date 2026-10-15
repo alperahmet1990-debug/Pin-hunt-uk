@@ -588,7 +588,6 @@ export default function ScanScreen() {
           setSessionAdded(prev => (prev.includes(pinId) ? prev : [...prev, pinId]));
           setAddedOnResult(resultKey);
         }}
-        seaGlass
       />
 
     </View>

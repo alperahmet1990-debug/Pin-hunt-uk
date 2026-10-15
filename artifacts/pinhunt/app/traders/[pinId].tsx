@@ -75,7 +75,7 @@ function TraderCard({ trader, match, onViewMatch, onMessage, isMe, colors }: {
     >
       <View style={styles.cardTop}>
         {/* Avatar */}
-        <Avatar uri={trader.avatarUrl} name={trader.username} size={44} seaGlass />
+        <Avatar uri={trader.avatarUrl} name={trader.username} size={44} />
 
         {/* Info */}
         <View style={styles.cardInfo}>

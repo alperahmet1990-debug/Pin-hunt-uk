@@ -1,7 +1,11 @@
 const colors = {
   light: {
-    // ── Golden Era palette ──────────────────────────────────────────────────
-    // Warm amber-honey tones; every surface feels bathed in golden-hour light.
+    // ── Golden Era palette (legacy) ─────────────────────────────────────────
+    // Warm amber-honey tones from before Storybook. No shared component uses
+    // these any more (UX-038b, #151); some older screens (admin, forms) still
+    // do. Don't use them in new code: use the Storybook `home*` tokens or
+    // `useColors().tokens`. The status colours below (owned, wanted,
+    // forTrade) are current and shared by both palettes.
     text: '#2D1800',
     tint: '#E07800',
     background: '#FFF8EE',

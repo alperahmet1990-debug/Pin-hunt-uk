@@ -186,7 +186,6 @@ export default function CatalogueScreen() {
             <PinCard
               pin={item}
               mode={viewMode}
-              seaGlass
               onPress={() =>
                 router.push({ pathname: '/pin/[id]', params: { id: item.id } })
               }
@@ -196,7 +195,7 @@ export default function CatalogueScreen() {
         />
       )}
 
-      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} seaGlass />
+      <QuickAddSheet pin={quickAddPin} onClose={() => setQuickAddPin(null)} />
 
       {/* Filters sheet — Brand and Collection Status, in one clean place */}
       <Modal visible={filtersOpen} transparent animationType="slide" onRequestClose={() => setFiltersOpen(false)}>

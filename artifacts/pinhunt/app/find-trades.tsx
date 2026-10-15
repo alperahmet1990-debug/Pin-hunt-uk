@@ -335,7 +335,7 @@ function PotentialTradeHero({ card, colors, onPress }: {
         <Text style={styles.ptLabelText}>TWO-WAY MATCH</Text>
       </View>
       <View style={styles.ptPersonRow}>
-        <Avatar uri={card.profile?.avatarUrl} name={card.profile?.username ?? '?'} size={30} seaGlass />
+        <Avatar uri={card.profile?.avatarUrl} name={card.profile?.username ?? '?'} size={30} />
         <View style={styles.ptPersonCol}>
           <Text numberOfLines={1} style={[styles.ptName, { color: colors.homeInk }]}>
             {card.profile?.displayName || card.profile?.username || 'Collector'}

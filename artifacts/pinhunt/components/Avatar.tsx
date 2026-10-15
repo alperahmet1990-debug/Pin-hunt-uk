@@ -16,8 +16,6 @@ interface AvatarProps {
   size: number;
   /** Optional extra style applied to the outer container. */
   style?: ViewStyle;
-  /** Renders with the collector-app palette instead of the legacy default (see QuickAddSheet for the same pattern). */
-  seaGlass?: boolean;
 }
 
 function getInitials(name: string): string {
@@ -28,7 +26,7 @@ function getInitials(name: string): string {
     .slice(0, 2) || '?';
 }
 
-export function Avatar({ uri, name, size, style, seaGlass = false }: AvatarProps) {
+export function Avatar({ uri, name, size, style }: AvatarProps) {
   const colors = useColors();
   const radius = size / 2;
   const [imgError, setImgError] = useState(false);
@@ -43,7 +41,7 @@ export function Avatar({ uri, name, size, style, seaGlass = false }: AvatarProps
           height: size,
           borderRadius: radius,
           overflow: 'hidden',
-          backgroundColor: seaGlass ? colors.homeTeal : colors.primary,
+          backgroundColor: colors.homeTeal,
         },
         styles.wrap,
         style,

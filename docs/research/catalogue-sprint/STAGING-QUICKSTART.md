@@ -60,15 +60,14 @@ Press **w** to open it in the browser. Sign in with your **App Creator** account
    ```
    Open http://localhost:4600 and sign in with your staging App Creator email and password.
 3. Press **O** to open the Disney page. Put it on the left half of the screen (green window button → Tile Window to Left of Screen) and Pin check on the right.
-4. For each pin, compare with the page:
-   - **Y / ✓ Matches the page**: the page shows this pin (character and design). Records your check and approves it. Before pressing Y you can tick **1–5** for extra facts the page also shows (set, edition, edition size, price, date).
-   - **N / Something's off**: a few words (wrong character, different design, other price). Sent back for research.
-   - **S / Not on this page**: sent back for research.
-   - Two-character pins ask first: **one pin with both**, or **separate pins**.
-   - Pins marked **Held** (possible duplicates) record your check but are not approved; that decision is separate.
-   - **Change my answer** on a done pin reopens it.
+4. One screen per Disney page (22 pages):
+   - Tick each pin the product photos show. Pins start unticked, and each tick becomes that pin's own check and decision record.
+   - If the page also shows edition, size, price or date for the ticked pins and they match, tick those too.
+   - Click **Approve N ticked**. If any pins are left that the page doesn't show, click **Send the N unticked back**.
+   - Two-character pins ask **one pin with both** or **separate**. **Something's off** on a row sends that pin back with your note.
+   - Pins marked **Held** (possible duplicates) record your check but are not approved; that decision is separate. **Change** reopens a done pin.
 
-   It moves to the next pin by itself, and the left column shows progress per page. Answers save as you go, so you can stop and come back.
+   The left column shows progress per page. Answers save as you go, so you can stop and come back. About 15–20 minutes in total.
 
 ## 7. Import the approved pins (tab A, 3 min)
 API (tab B) still running:

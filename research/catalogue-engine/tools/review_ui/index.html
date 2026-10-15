@@ -6,50 +6,49 @@
 <title>Pin check</title>
 <style>
   :root { --ink:#12343b; --muted:#6b7280; --line:#e5e1da; --bg:#f8f4ee; --card:#fff; --ok:#1f7a4d; --okbg:#e3f3ea;
-          --warn:#8a5a00; --warnbg:#fff4d6; --bad:#a3302a; --badbg:#fde8e6; --accent:#5f6493; }
+          --warn:#8a5a00; --warnbg:#fff4d6; --bad:#a3302a; --badbg:#fde8e6; --sel:#eef6f1; }
   * { box-sizing: border-box; }
   body { margin:0; font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); }
-  button { font:inherit; cursor:pointer; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink); padding:10px 14px; }
+  button { font:inherit; cursor:pointer; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink); padding:9px 14px; }
   button:disabled { opacity:.45; cursor:not-allowed; }
-  kbd { font:12px ui-monospace, monospace; background:#eee9e1; border-radius:4px; padding:1px 5px; margin-left:6px; }
-  .wrap { display:grid; grid-template-columns: 250px 1fr; min-height:100vh; }
+  kbd { font:12px ui-monospace, monospace; background:#eee9e1; border-radius:4px; padding:1px 5px; margin-left:6px; color:var(--ink); }
+  .wrap { display:grid; grid-template-columns: 240px 1fr; min-height:100vh; }
   aside { border-right:1px solid var(--line); background:#fff; padding:14px; overflow:auto; max-height:100vh; position:sticky; top:0; }
   aside h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:6px 0 10px; }
   .pg { display:block; width:100%; text-align:left; border:0; border-radius:8px; padding:8px; margin-bottom:2px; font-size:13px; }
   .pg.cur { background:#ecebf5; font-weight:600; }
   .pg small { display:block; color:var(--muted); font-weight:400; }
-  main { padding:18px 22px 60px; max-width:860px; }
+  main { padding:18px 22px 60px; max-width:900px; }
   .top { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:14px; }
   .bar { flex:1; min-width:200px; height:8px; background:#e9e4dc; border-radius:99px; overflow:hidden; }
   .bar i { display:block; height:100%; background:var(--ok); }
   .stat { font-size:13px; color:var(--muted); }
-  .page { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:14px; }
-  .page .url { font-weight:600; word-break:break-all; }
-  .page .tip { color:var(--muted); font-size:13px; margin-top:4px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; }
-  .card h1 { font-size:22px; margin:0 0 4px; }
-  .sub { color:var(--muted); font-size:13px; margin-bottom:14px; }
-  table { width:100%; border-collapse:collapse; margin:8px 0 12px; }
-  td { padding:7px 6px; border-top:1px solid var(--line); vertical-align:top; }
-  td:first-child { width:150px; color:var(--muted); }
-  td.seen { width:150px; text-align:right; white-space:nowrap; }
-  label.chk { font-size:13px; color:var(--muted); cursor:pointer; }
-  .chip { display:inline-block; font-size:12px; border-radius:99px; padding:2px 9px; margin:0 6px 6px 0; }
+  .head { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:14px; }
+  .head h1 { font-size:19px; margin:0 0 2px; }
+  .muted { color:var(--muted); font-size:13px; }
+  .steps { margin:10px 0 0; padding-left:20px; font-size:14px; }
+  .list { background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .row { display:grid; grid-template-columns: 34px 1fr auto; gap:10px; padding:12px 14px; border-top:1px solid var(--line); align-items:start; }
+  .row:first-child { border-top:0; }
+  .row.on { background:var(--sel); }
+  .row input[type=checkbox] { width:20px; height:20px; margin-top:2px; cursor:pointer; }
+  .name { font-weight:600; }
+  .facts { font-size:13px; color:var(--muted); margin-top:2px; }
+  .chip { display:inline-block; font-size:12px; border-radius:99px; padding:1px 8px; margin:4px 4px 0 0; }
   .c-ok { background:var(--okbg); color:var(--ok); } .c-warn { background:var(--warnbg); color:var(--warn); } .c-bad { background:var(--badbg); color:var(--bad); }
-  .c-n { background:#eee9e1; color:var(--ink); }
-  .q { background:var(--warnbg); border-radius:12px; padding:12px; margin:10px 0; }
-  .q b { display:block; margin-bottom:8px; }
-  .q button.on { background:var(--ink); color:#fff; border-color:var(--ink); }
-  .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
-  .yes { background:var(--ok); color:#fff; border-color:var(--ok); font-weight:600; font-size:16px; padding:12px 20px; }
+  .c-n { background:#eee9e1; }
+  .ask { margin-top:6px; font-size:13px; } .ask button { padding:4px 10px; font-size:13px; margin-right:4px; }
+  .ask button.on { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .link { border:0; background:none; color:var(--muted); text-decoration:underline; padding:2px; font-size:13px; }
+  .foot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-top:14px; position:sticky; bottom:10px; box-shadow:0 4px 18px rgba(0,0,0,.06); }
+  .extras { display:flex; flex-wrap:wrap; gap:6px 14px; font-size:14px; margin:6px 0 12px; }
+  .yes { background:var(--ok); color:#fff; border-color:var(--ok); font-weight:600; font-size:16px; padding:11px 20px; }
   .no { background:var(--badbg); color:var(--bad); border-color:#f3c4bf; }
-  .done { background:var(--okbg); border-radius:12px; padding:12px; margin-top:14px; }
-  textarea { width:100%; min-height:70px; font:inherit; border:1px solid var(--line); border-radius:10px; padding:8px; margin-top:8px; }
-  .msg { margin-top:12px; font-size:14px; } .err { color:var(--bad); }
+  textarea { width:100%; min-height:54px; font:inherit; border:1px solid var(--line); border-radius:10px; padding:8px; margin-top:6px; }
+  .msg { margin:10px 0 0; font-size:14px; } .err { color:var(--bad); } .okm { color:var(--ok); }
   .login { max-width:380px; margin:12vh auto; background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; }
   .login input { width:100%; font:inherit; padding:10px; border:1px solid var(--line); border-radius:10px; margin:6px 0 12px; }
-  .nav { display:flex; justify-content:space-between; margin-top:18px; }
-  .src { font-size:13px; color:var(--muted); }
+  .nav { display:flex; justify-content:space-between; margin-top:12px; }
 </style>
 </head>
 <body>
@@ -58,7 +57,7 @@
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
 const DONE = new Set(['approved', 'rejected', 'imported', 'needs_more_research']);
-const S = { pages: [], p: 0, i: 0, extras: {}, structure: {}, mode: null, msg: '', err: '', busy: false };
+const S = { pages: [], p: 0, tick: {}, structure: {}, extras: {}, offOpen: null, msg: '', err: '', busy: false };
 
 async function call(path, body) {
   const r = await fetch(path, body === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
@@ -71,7 +70,7 @@ async function call(path, body) {
 function login(error = '') {
   $('#app').innerHTML = `<form class="login" id="f">
     <h1 style="margin-top:0">Pin check</h1>
-    <p class="sub">Staging only. Sign in with your App Creator account on staging.</p>
+    <p class="muted">Staging only. Sign in with your App Creator account on staging.</p>
     <input id="e" type="email" placeholder="Email" autocomplete="username" required>
     <input id="pw" type="password" placeholder="Password" autocomplete="current-password" required>
     <button class="yes" style="width:100%">Sign in</button>
@@ -89,152 +88,172 @@ async function load() {
     const d = await call('/api/data');
     if (!d.run) return ($('#app').innerHTML = '<p class="login">No research run is loaded on staging yet.</p>');
     S.run = d.run; S.pages = d.pages;
-    jumpToNextOpen(0, 0);
+    const firstOpen = S.pages.findIndex(pg => pg.pins.some(isOpen));
+    S.p = firstOpen < 0 ? 0 : firstOpen;
     render();
   } catch (e) { login(e.message); }
 }
 
-// ── Navigation ─────────────────────────────────────────────────────────────
-const pin = () => S.pages[S.p]?.pins[S.i];
-const allPins = () => S.pages.flatMap(p => p.pins);
-const isOpen = p => p.reopened || (!DONE.has(p.status) && !p.localDone);
-function jumpToNextOpen(p, i) {
-  const flat = S.pages.flatMap((pg, pi) => pg.pins.map((x, ii) => [pi, ii, x]));
-  const start = flat.findIndex(([pi, ii]) => pi === p && ii === i);
-  const next = [...flat.slice(Math.max(start, 0)), ...flat.slice(0, Math.max(start, 0))].find(([, , x]) => isOpen(x));
-  if (next) { S.p = next[0]; S.i = next[1]; } else { S.p = p; S.i = i; }
-  S.mode = null;
-}
-function step(d) {
-  const flat = S.pages.flatMap((pg, pi) => pg.pins.map((_, ii) => [pi, ii]));
-  const k = flat.findIndex(([pi, ii]) => pi === S.p && ii === S.i) + d;
-  if (k >= 0 && k < flat.length) { [S.p, S.i] = flat[k]; S.mode = null; S.msg = S.err = ''; render(); }
-}
-
 // ── Pin facts ──────────────────────────────────────────────────────────────
+const isOpen = p => p.reopened || (!DONE.has(p.status) && !p.localDone);
 const chars = p => String(p.proposed['Characters'] || '').split(';').map(s => s.trim()).filter(Boolean);
 const held = p => p.reasons.filter(r => /duplicate/i.test(r) || r.startsWith('conflict:'));
 const needsStructure = p => chars(p).length >= 2 && p.reasons.some(r => r.startsWith('structure'));
 const money = (v, c) => v == null || v === '' ? '' : ({ GBP: '£', EUR: '€', USD: '$' }[c] ?? (c ? c + ' ' : '')) + v;
+const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+const pageTitle = u => decodeURIComponent((u.split('/').pop() || '')).replace(/\.html$/, '').replace(/-\d{9,}$/, '').replace(/-/g, ' ');
 const EXTRAS = [
-  ['set_name', 'Set', p => p.proposed['Collection name'] || p.proposed['Series']],
-  ['edition_type', 'Edition', p => p.proposed['Edition type']],
+  ['edition_type', 'Edition type', p => p.proposed['Edition type']],
   ['edition_size', 'Edition size', p => p.proposed['Edition size']],
   ['original_price', 'Price', p => money(p.proposed['Original price'], p.proposed['Currency'])],
-  ['release_date', 'Release date', p => p.proposed['Release date'] || (p.proposed['Release year'] ? `${p.proposed['Release year']} (year only)` : '')],
+  ['release_date', 'Release date', p => p.proposed['Release date']],
 ];
-const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+const facts = p => [
+  p.proposed['Edition type'] && `${p.proposed['Edition type']}${p.proposed['Edition size'] ? ' ' + p.proposed['Edition size'] : ''}`,
+  money(p.proposed['Original price'], p.proposed['Currency']),
+  p.proposed['Release date'] || (p.proposed['Release year'] ? String(p.proposed['Release year']) : ''),
+].filter(Boolean).join(' · ');
 const openPage = () => { const u = S.pages[S.p].url; if (u.startsWith('https://')) window.open(u, 'pinhunt_source'); };
+const statusChip = p => p.status === 'approved' ? ['Approved', 'c-ok'] : p.status === 'direct_verified' ? ['Checked · held', 'c-warn']
+  : p.status === 'needs_more_research' ? ['Sent back', 'c-bad'] : [String(p.status).replace(/_/g, ' '), 'c-n'];
 
-// ── Render ─────────────────────────────────────────────────────────────────
+// ── Render one page ────────────────────────────────────────────────────────
 function render() {
-  const all = allPins();
+  const all = S.pages.flatMap(x => x.pins);
   const done = all.filter(x => !isOpen(x)).length;
   const approved = all.filter(x => x.status === 'approved').length;
-  const pg = S.pages[S.p], p = pin();
-  const ex = S.extras[p.id] ?? {};
-  const st = S.structure[p.id];
-  const h = held(p);
-  const canMatch = pg.url.startsWith('https://') && (!needsStructure(p) || st === 'one');
-  const status = !isOpen(p) ? (p.status === 'approved' ? ['Approved', 'c-ok'] : p.status === 'direct_verified' ? ['Checked, held', 'c-warn']
-    : p.status === 'needs_more_research' ? ['Sent back for research', 'c-bad'] : [p.status.replace(/_/g, ' '), 'c-n']) : null;
+  const pg = S.pages[S.p];
+  const open = pg.pins.filter(isOpen);
+  const ticked = open.filter(p => S.tick[p.id]);
+  const missing = ticked.filter(p => needsStructure(p) && S.structure[p.id] !== 'one');
+  const shown = EXTRAS.filter(([, , get]) => ticked.some(p => get(p)));
+  const hasUrl = pg.url.startsWith('https://');
 
   $('#app').innerHTML = `<div class="wrap">
   <aside><h2>Pages (${S.pages.length})</h2>
     ${S.pages.map((x, k) => { const left = x.pins.filter(isOpen).length;
-      return `<button class="pg ${k === S.p ? 'cur' : ''}" data-pg="${k}">${left ? '' : '✓ '}${esc(host(x.url))}
-        <small>${esc(decodeURIComponent(x.url.split('/').pop() || '').replace(/\.html$/, '').replace(/-\d{9,}$/, '').replace(/-/g, ' ').slice(0, 60))}</small>
-        <small>${x.pins.length - left}/${x.pins.length} done</small></button>`; }).join('')}
+      return `<button class="pg ${k === S.p ? 'cur' : ''}" data-pg="${k}">${left ? '' : '✓ '}${esc(pageTitle(x.url).slice(0, 52))}
+        <small>${esc(host(x.url))} · ${x.pins.length - left}/${x.pins.length} done</small></button>`; }).join('')}
   </aside>
   <main>
     <div class="top"><div class="bar"><i style="width:${(100 * done / all.length).toFixed(1)}%"></i></div>
-      <span class="stat">${done}/${all.length} done · ${approved} approved · run ${esc(S.run.commit)}</span></div>
+      <span class="stat">${done}/${all.length} pins done · ${approved} approved · run ${esc(S.run.commit)}</span></div>
 
-    <div class="page"><div class="url">Page ${S.p + 1} of ${S.pages.length}: ${esc(host(pg.url))}</div>
-      <div class="src">${esc(pg.url)}</div>
-      <div class="actions" style="margin-top:10px"><button data-act="open">Open this Disney page<kbd>O</kbd></button></div>
-      <div class="tip">Put the Disney page on the left half of your screen (green window button → Tile Window to Left) and this on the right.</div></div>
+    <div class="head">
+      <div class="muted">Page ${S.p + 1} of ${S.pages.length} · ${esc(host(pg.url))} · ${pg.pins.length} pin${pg.pins.length === 1 ? '' : 's'}</div>
+      <h1>${esc(pageTitle(pg.url))}</h1>
+      <div class="nav" style="margin-top:8px;justify-content:flex-start;gap:10px">
+        <button data-act="open" ${hasUrl ? '' : 'disabled'}>Open the Disney page<kbd>O</kbd></button></div>
+      <ol class="steps"><li>Open the page and look at the product photos.</li>
+        <li>Tick each pin below that the photos show. Leave the rest unticked.</li>
+        <li>Click <b>Approve ticked</b>.</li></ol>
+    </div>
 
-    <div class="card">
-      <div class="sub">Pin ${S.i + 1} of ${pg.pins.length} on this page${status ? ` · <span class="chip ${status[1]}">${status[0]}</span>` : ''}</div>
-      <h1>${esc(p.proposed['Pin name'] || p.key.split('/').pop())}</h1>
-      <div>${chars(p).map(c => `<span class="chip c-n">${esc(c)}</span>`).join('') || '<span class="chip c-warn">No character named: read it off the page</span>'}</div>
-      <table>${EXTRAS.map(([f, label, get], n) => { const v = get(p); return v ? `<tr><td>${label}</td><td>${esc(v)}</td>
-        <td class="seen"><label class="chk"><input type="checkbox" data-x="${f}" ${ex[f] ? 'checked' : ''}> also on page<kbd>${n + 1}</kbd></label></td></tr>` : ''; }).join('')}
-        <tr><td>Found on</td><td class="src" colspan="2">${Object.entries(p.sources).map(([k, v]) => `<b>${esc(k)}</b>: ${esc(v.join(', '))}`).join(' · ')}</td></tr>
-      </table>
-      ${p.citesPage === false && pg.url.startsWith('https://') ? `<div class="sub">Our sources didn't cite this page for this pin. If the page doesn't show it, press <b>Not on this page</b>.</div>` : ''}
-      ${p.warnings.length ? `<div><span class="chip c-warn">Sources differ: ${esc(p.warnings.map(w => w.replace(/^variants:\s*/, '').replace(/original_price/g, 'price').replace(/_/g, ' ')).join(', '))}</span> Tick the value only if the page shows it.</div>` : ''}
-      ${h.length ? `<div class="q" style="background:var(--badbg)"><b>Held: can't be imported yet</b>${esc(h.join('; '))}. "Matches" records your check; the duplicate decision is separate.</div>` : ''}
-      ${needsStructure(p) && isOpen(p) ? `<div class="q"><b>Does the page show ONE pin with all of these characters?</b>
-        <button data-st="one" class="${st === 'one' ? 'on' : ''}">Yes, one pin</button>
-        <button data-st="separate" class="${st === 'separate' ? 'on' : ''}">No, separate pins</button></div>` : ''}
+    <div class="list">
+      ${pg.pins.map(p => {
+        const o = isOpen(p), on = !!S.tick[p.id], h = held(p), st = S.structure[p.id];
+        const sc = statusChip(p);
+        return `<div class="row ${on && o ? 'on' : ''}">
+          <div>${o ? `<input type="checkbox" data-t="${p.id}" ${on ? 'checked' : ''} aria-label="Shown on page: ${esc(p.proposed['Pin name'])}">` : '✓'}</div>
+          <div>
+            <div class="name">${esc(chars(p).join(' & ') || p.proposed['Pin name'] || p.key.split('/').pop())}</div>
+            <div class="facts">${esc(p.proposed['Pin name'] || '')}${facts(p) ? ' · ' + esc(facts(p)) : ''}</div>
+            ${!chars(p).length ? '<span class="chip c-warn">No character named: note it if you can read it</span>' : ''}
+            ${p.warnings.length ? `<span class="chip c-warn">Sources differ: ${esc(p.warnings.map(w => w.replace(/^variants:\s*/, '').replace(/original_price/g, 'price').replace(/_/g, ' ')).join(', '))}</span>` : ''}
+            ${h.length ? `<span class="chip c-bad" title="${esc(h.join('; '))}">Held: possible duplicate. Your tick records the check only</span>` : ''}
+            ${p.citesPage === false && hasUrl ? '<span class="chip c-n">Not cited on this page by our sources</span>' : ''}
+            ${o && on && needsStructure(p) ? `<div class="ask">One pin showing ${esc(chars(p).join(' & '))}?
+              <button data-st="one" data-id="${p.id}" class="${st === 'one' ? 'on' : ''}">Yes, one pin</button>
+              <button data-st="separate" data-id="${p.id}" class="${st === 'separate' ? 'on' : ''}">No, separate</button></div>` : ''}
+            ${S.offOpen === p.id ? `<div><textarea id="note" placeholder="What's wrong? e.g. different design, wrong character">${st === 'separate' ? 'Page shows separate pins, not one pin with all these characters.' : ''}</textarea>
+              <button class="no" data-act="send-off" data-id="${p.id}">Send back for research</button> <button class="link" data-act="cancel">Cancel</button></div>` : ''}
+          </div>
+          <div style="text-align:right">${o ? (S.offOpen === p.id ? '' : `<button class="link" data-act="off" data-id="${p.id}">Something's off</button>`)
+            : `<span class="chip ${sc[1]}">${sc[0]}</span><br><button class="link" data-act="undo" data-id="${p.id}">Change</button>`}</div>
+        </div>`; }).join('')}
+    </div>
 
-      ${isOpen(p) ? (S.mode === 'off' || S.mode === 'separate' ? `<div class="q"><b>What's wrong?</b>
-          <textarea id="note" placeholder="e.g. wrong character, different design, price is £16">${S.mode === 'separate' ? 'Page shows separate pins, not one pin with all these characters.' : ''}</textarea>
-          <div class="actions"><button class="no" data-act="send-off">Send back for research</button><button data-act="cancel">Cancel</button></div></div>`
-        : `<div class="actions">
-          <button class="yes" data-act="match" ${canMatch && !S.busy ? '' : 'disabled'}>✓ Matches the page<kbd>Y</kbd></button>
-          <button class="no" data-act="off" ${S.busy ? 'disabled' : ''}>Something's off<kbd>N</kbd></button>
-          <button data-act="absent" ${S.busy ? 'disabled' : ''}>Not on this page<kbd>S</kbd></button></div>`)
-      : `<div class="done">${status ? esc(status[0]) : 'Done'}. <button data-act="undo" style="margin-left:8px">Change my answer</button></div>`}
-      <p class="msg ${S.err ? 'err' : ''}">${esc(S.err || S.msg)}</p>
-      <div class="nav"><button data-act="prev">← Previous</button><button data-act="next">Next →</button></div>
+    <div class="foot">
+      ${open.length ? `
+        <div><b>${ticked.length} of ${open.length}</b> open pins ticked.${shown.length ? ' The page also shows, for the ticked pins:' : ''}</div>
+        ${shown.length ? `<div class="extras">${shown.map(([f, label]) => `<label><input type="checkbox" data-x="${f}" ${S.extras[f] ? 'checked' : ''}> ${label}</label>`).join('')}
+          <span class="muted">(tick only if the page shows it and it matches)</span></div>` : '<div style="height:8px"></div>'}
+        ${missing.length ? `<div class="msg err">Answer "one pin or separate" for: ${esc(missing.map(p => chars(p).join(' & ')).join(', '))}</div>` : ''}
+        <button class="yes" data-act="approve" ${ticked.length && !missing.length && hasUrl && !S.busy ? '' : 'disabled'}>✓ Approve ${ticked.length || ''} ticked</button>
+        ${open.length - ticked.length > 0 ? `<button data-act="absent" ${S.busy ? 'disabled' : ''} style="margin-left:8px">Send the ${open.length - ticked.length} unticked back: not on this page</button>` : ''}
+      ` : `<div class="okm">All pins on this page are done.</div>`}
+      <p class="msg ${S.err ? 'err' : 'okm'}">${esc(S.err || S.msg)}</p>
+      <div class="nav"><button data-act="prev" ${S.p ? '' : 'disabled'}>← Previous page</button><button data-act="next" ${S.p < S.pages.length - 1 ? '' : 'disabled'}>Next page →</button></div>
     </div>
   </main></div>`;
 
-  document.querySelectorAll('[data-pg]').forEach(b => b.onclick = () => { S.p = +b.dataset.pg; S.i = 0; S.mode = null; S.msg = S.err = ''; render(); });
-  document.querySelectorAll('[data-x]').forEach(b => b.onchange = () => { (S.extras[p.id] ??= {})[b.dataset.x] = b.checked; });
-  document.querySelectorAll('[data-st]').forEach(b => b.onclick = () => { S.structure[p.id] = b.dataset.st; if (b.dataset.st === 'separate') S.mode = 'separate'; render(); });
-  document.querySelectorAll('[data-act]').forEach(b => b.onclick = () => doAct(b.dataset.act));
+  document.querySelectorAll('[data-pg]').forEach(b => b.onclick = () => go(+b.dataset.pg));
+  document.querySelectorAll('[data-t]').forEach(b => b.onchange = () => { S.tick[b.dataset.t] = b.checked; S.msg = S.err = ''; render(); });
+  document.querySelectorAll('[data-x]').forEach(b => b.onchange = () => { S.extras[b.dataset.x] = b.checked; });
+  document.querySelectorAll('[data-st]').forEach(b => b.onclick = () => {
+    S.structure[b.dataset.id] = b.dataset.st;
+    if (b.dataset.st === 'separate') { S.tick[b.dataset.id] = false; S.offOpen = b.dataset.id; }
+    render();
+  });
+  document.querySelectorAll('[data-act]').forEach(b => b.onclick = () => doAct(b.dataset.act, b.dataset.id));
 }
 
-// ── Answers ────────────────────────────────────────────────────────────────
-async function doAct(a) {
-  const p = pin(), pg = S.pages[S.p];
+function go(k) { S.p = k; S.extras = {}; S.offOpen = null; S.msg = S.err = ''; render(); window.scrollTo(0, 0); }
+
+// ── Answers: one API call pair per pin, so each pin has its own record ──────
+async function doAct(a, id) {
+  const pg = S.pages[S.p];
+  const byId = x => pg.pins.find(p => p.id === x);
   if (a === 'open') return openPage();
-  if (a === 'prev') return step(-1);
-  if (a === 'next') return step(1);
-  if (a === 'off') { S.mode = 'off'; return render(); }
-  if (a === 'cancel') { S.mode = null; return render(); }
+  if (a === 'prev') return S.p > 0 && go(S.p - 1);
+  if (a === 'next') return S.p < S.pages.length - 1 && go(S.p + 1);
+  if (a === 'off') { S.offOpen = id; return render(); }
+  if (a === 'cancel') { S.offOpen = null; return render(); }
   if (S.busy) return;
   S.busy = true; S.err = ''; S.msg = '';
   try {
-    if (a === 'match') {
-      const ex = S.extras[p.id] ?? {};
-      const extras = EXTRAS.filter(([f]) => ex[f]);
-      const fields = ['characters', 'pin_name', ...extras.map(([f]) => f)];
-      const note = `Checked on ${host(pg.url)}: characters and design${extras.length ? '; also ' + extras.map(([, l, get]) => `${l.toLowerCase()} ${get(p)}`).join(', ') : ''}${S.structure[p.id] === 'one' ? '; one pin with all characters' : ''}.`;
-      const r = await call('/api/act', { id: p.id, action: 'match', sourceUrl: pg.url, fields, note, approve: held(p).length === 0 });
-      p.status = r.status; p.localDone = true; p.reopened = false;
-      S.msg = r.status === 'approved' ? 'Approved.' : 'Checked and held for your duplicate decision.';
-    } else if (a === 'send-off' || a === 'absent') {
-      const note = a === 'absent' ? `Not shown on ${host(pg.url)}.` : ($('#note')?.value || '').trim();
+    if (a === 'approve') {
+      const ticked = pg.pins.filter(p => isOpen(p) && S.tick[p.id]);
+      let ok = 0, heldN = 0;
+      for (const [n, p] of ticked.entries()) {
+        S.msg = `Saving ${n + 1} of ${ticked.length}…`; render();
+        const extras = EXTRAS.filter(([f, , get]) => S.extras[f] && get(p));
+        const fields = ['characters', 'pin_name', ...extras.map(([f]) => f)];
+        const note = `Checked on ${host(pg.url)}: shown in the product photos${extras.length ? '; also ' + extras.map(([, l, get]) => `${l.toLowerCase()} ${get(p)}`).join(', ') : ''}${S.structure[p.id] === 'one' ? '; one pin with all characters' : ''}.`;
+        const r = await call('/api/act', { id: p.id, action: 'match', sourceUrl: pg.url, fields, note, approve: held(p).length === 0 });
+        p.status = r.status; p.localDone = true; p.reopened = false; S.tick[p.id] = false;
+        r.status === 'approved' ? ok++ : heldN++;
+      }
+      S.msg = `${ok} approved${heldN ? `, ${heldN} checked and held for your duplicate decision` : ''}.`;
+    } else if (a === 'absent') {
+      const rest = pg.pins.filter(p => isOpen(p) && !S.tick[p.id]);
+      for (const p of rest) {
+        const r = await call('/api/act', { id: p.id, action: 'absent', note: `Not shown on ${host(pg.url)}.` });
+        p.status = r.status; p.localDone = true; p.reopened = false;
+      }
+      S.msg = `${rest.length} sent back for more research.`;
+    } else if (a === 'send-off') {
+      const note = ($('#note')?.value || '').trim();
       if (note.length < 3) { S.busy = false; S.err = 'Add a few words about what is wrong.'; return render(); }
-      const r = await call('/api/act', { id: p.id, action: a === 'absent' ? 'absent' : 'off', note });
-      p.status = r.status; p.localDone = true; p.reopened = false; S.msg = 'Sent back for more research.';
+      const r = await call('/api/act', { id, action: 'off', note });
+      const p = byId(id); p.status = r.status; p.localDone = true; p.reopened = false; S.tick[id] = false; S.offOpen = null;
+      S.msg = 'Sent back for more research.';
     } else if (a === 'undo') {
-      const r = await call('/api/act', { id: p.id, action: 'undo', note: 'Reviewer changed their answer in Pin check.' });
-      p.status = r.status; p.localDone = false; p.reopened = true; S.busy = false; S.msg = 'Reopened: check it again.'; S.mode = null; return render();
+      const r = await call('/api/act', { id, action: 'undo', note: 'Reviewer changed their answer in Pin check.' });
+      const p = byId(id); p.status = r.status; p.localDone = false; p.reopened = true;
+      S.msg = 'Reopened: tick it again if the page shows it.';
     }
-    S.busy = false;
-    const msg = S.msg;
-    jumpToNextOpen(S.p, S.i);
-    S.msg = msg;
-    render();
-  } catch (e) { S.busy = false; S.err = e.message; render(); }
+  } catch (e) { S.err = e.message; }
+  S.busy = false;
+  render();
 }
 
 document.addEventListener('keydown', e => {
-  if (!S.pages.length || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.metaKey || e.ctrlKey) return;
+  if (!S.pages.length || ['TEXTAREA', 'INPUT'].includes(e.target.tagName) || e.metaKey || e.ctrlKey) return;
   const k = e.key.toLowerCase();
-  if (k === 'y') { const b = document.querySelector('[data-act="match"]'); if (b && !b.disabled) doAct('match'); }
-  else if (k === 'n') doAct('off');
-  else if (k === 's') { if (document.querySelector('[data-act="absent"]')) doAct('absent'); }
-  else if (k === 'o') openPage();
-  else if (k === 'arrowright') step(1);
-  else if (k === 'arrowleft') step(-1);
-  else if ('12345'.includes(k)) { const box = document.querySelector(`[data-x="${EXTRAS[+k - 1][0]}"]`); if (box) { box.checked = !box.checked; box.onchange(); } }
+  if (k === 'o') openPage();
+  else if (k === 'arrowright') doAct('next');
+  else if (k === 'arrowleft') doAct('prev');
 });
 
 call('/api/data').then(() => load()).catch(() => login());

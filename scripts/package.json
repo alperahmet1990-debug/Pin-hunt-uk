@@ -7,7 +7,8 @@
     "import": "tsx import-catalogue.ts",
     "import:verify-all": "tsx import-catalogue.ts --verify-all",
     "verify": "tsx verify-setup.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test testflight-feedback/*.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",

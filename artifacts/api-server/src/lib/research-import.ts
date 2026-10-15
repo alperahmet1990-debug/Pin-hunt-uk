@@ -50,6 +50,7 @@ const fullDate = (v: unknown): string | null => {
  */
 export function buildPinRow(c: ImportCandidate) {
   const p = c.proposed;
+  const currency = str(p["Currency"]);
   return {
     title: str(p["Pin name"]),
     brand: str(p["Brand"]),
@@ -64,7 +65,9 @@ export function buildPinRow(c: ImportCandidate) {
     limited_edition_size: int(p["Edition size"]),
     retailer: str(p["Park / Retailer"]),
     retail_price: num(p["Original price"]),
-    currency: str(p["Currency"]),
+    // pins.currency is NOT NULL with a default: an explicit null would fail the whole batch, so
+    // the column is only written when the research states a currency.
+    ...(currency !== null ? { currency } : {}),
     verification_status: "needs_source_verification",
     is_seed_record: true,
     needs_review: true,

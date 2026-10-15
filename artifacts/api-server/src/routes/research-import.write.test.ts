@@ -162,6 +162,14 @@ describe("research import (#241)", () => {
     expect(tables.pins.find(p => p.title === "Full day")!.release_date).toBe("2024-04-12");
   });
 
+  it("leaves currency to the column default when the research states none (pins.currency is NOT NULL)", async () => {
+    tables.catalogue_candidates.push(cand(11, { proposed: proposed({ "Pin name": "No currency", Currency: undefined }) }));
+    const res = await request(app).post(URL_).set(auth).send({ candidateIds: [id(11), id(1)] });
+    expect(res.status).toBe(200);
+    expect(tables.pins.find(p => p.title === "No currency")).not.toHaveProperty("currency");
+    expect(tables.pins.find(p => p.title === "Ducks of Disney – Pin 1")!.currency).toBe("GBP");
+  });
+
   it("refuses a candidate with an unresolved conflict that is not a duplicate", async () => {
     tables.catalogue_candidates.push(cand(7, { review_reasons: ["conflict: edition_type"] }));
     const res = await request(app).post(URL_).set(auth).send({ candidateIds: [id(7)] });

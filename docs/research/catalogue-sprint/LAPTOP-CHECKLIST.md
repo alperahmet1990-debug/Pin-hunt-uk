@@ -56,7 +56,7 @@ Work top to bottom.
 ## 6. Safe import into staging (once #241 is merged and deployed to your staging API)
 **Already done offline.** `tools/offline_import_test.mjs` replays migrations plus 045, loads the pilot, simulates the reviews, and imports with the real #241 rules against the real schema:
 - 95 of 100 pins import as **new, non-public** pins, all linked to their candidates and batch, with unique PHUK ids (re-run 2026-10-15).
-- 5 are refused: 4 possible duplicates (decide each in Research Review) and 1 with no named character (Big Hero 6 Magical Medallions: read the character off the listing during the direct check).
+- 5 are refused: 4 possible duplicates and 1 with no named character (Big Hero 6 Magical Medallions). Approval alone does not clear these: send Claude your decision first (see `pilot-dsuk-high/README.md`, *Decisions for you*). Claude rebuilds the pilot before you load it.
 
 **On staging:**
 1. Research Review approvals done (§5).

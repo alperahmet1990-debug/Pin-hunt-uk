@@ -177,10 +177,22 @@ function PhotoStep({
               This is how your photo will look in the catalogue.
             </Text>
           )}
-          {status === 'raw' && (
-            <Text style={[styles.previewNote, { color: colors.homeMuted }]}>
-              We couldn{"\u2019"}t clean up this photo, so it{"\u2019"}ll be reviewed as taken. A plain background and good light help.
-            </Text>
+          {(status === 'off' || status === 'failed') && (
+            <View
+              testID="cleanup-notice"
+              accessibilityLiveRegion="polite"
+              style={[styles.cleanupNotice, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+            >
+              <Feather name="alert-circle" size={18} color={colors.homeCoral} style={styles.cleanupIcon} />
+              <View style={styles.cleanupCopy}>
+                <Text style={[styles.cleanupTitle, { color: colors.homeInk }]}>Photo not cleaned up</Text>
+                <Text style={[styles.cleanupBody, { color: colors.homeMuted }]}>
+                  {status === 'off'
+                    ? 'Background removal isn\u2019t available right now, so your photo will be reviewed as taken, with its background. You can still submit it.'
+                    : 'We couldn\u2019t remove the background from this photo, so it\u2019ll be reviewed as taken. Retake it on a plain background in good light, or submit it as it is.'}
+                </Text>
+              </View>
+            </View>
           )}
           <TouchableOpacity
             onPress={onCamera}
@@ -227,7 +239,12 @@ function PhotoStep({
   );
 }
 
-type PreviewStatus = 'none' | 'processing' | 'ready' | 'raw';
+/**
+ * 'off': the server has no photo clean-up set up (e.g. staging);
+ * 'failed': clean-up was tried and didn't work, or the preview didn't load.
+ * Either way the photo is reviewed as taken (#300).
+ */
+type PreviewStatus = 'none' | 'processing' | 'ready' | 'off' | 'failed';
 
 interface FrontPreview {
   /** Watermarked, cleaned-up JPEG as a data URI — exactly what will publish. */
@@ -235,6 +252,8 @@ interface FrontPreview {
   /** Server-side draft submitted in place of the raw photo. */
   draftPath: string;
   cleaned: boolean;
+  /** Why it wasn't cleaned up, from the server. */
+  cleanupSkipped?: 'off' | 'failed';
 }
 
 // ─── Main screen ──────────────────────────────────────────────────────────────
@@ -337,9 +356,12 @@ export default function AddPinScreen() {
       body: JSON.stringify({ frontImageBase64: front.base64, mimeType: 'image/jpeg' }),
     })
       .then(r => r.json().then(d => (r.ok ? d : null)))
-      .then((d: { draftPath: string; previewBase64: string; cleaned: boolean } | null) => {
+      .then((d: { draftPath: string; previewBase64: string; cleaned: boolean; cleanupSkipped?: 'off' | 'failed' } | null) => {
         if (seq !== previewSeq.current || !d) return;
-        setFrontPreview({ uri: `data:image/jpeg;base64,${d.previewBase64}`, draftPath: d.draftPath, cleaned: d.cleaned });
+        setFrontPreview({
+          uri: `data:image/jpeg;base64,${d.previewBase64}`, draftPath: d.draftPath,
+          cleaned: d.cleaned, cleanupSkipped: d.cleanupSkipped,
+        });
       })
       .catch(() => {})
       .finally(() => { if (seq === previewSeq.current) setPreviewing(false); });
@@ -348,7 +370,8 @@ export default function AddPinScreen() {
   const previewStatus: PreviewStatus = !front ? 'none'
     : previewing ? 'processing'
     : frontPreview?.cleaned ? 'ready'
-    : 'raw';
+    : frontPreview?.cleanupSkipped === 'off' ? 'off'
+    : 'failed';
   const shownFrontUri = frontPreview?.uri ?? front?.uri ?? null;
 
   // ── Already in the catalogue? ────────────────────────────────────────────────
@@ -792,6 +815,11 @@ const styles = StyleSheet.create({
   processingOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', gap: 8, borderRadius: 12 },
   processingText:    { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   previewNote:       { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, textAlign: 'center' },
+  cleanupNotice:     { flexDirection: 'row', gap: 10, alignSelf: 'stretch', borderWidth: 1, borderRadius: radius.md, padding: 12 },
+  cleanupIcon:       { marginTop: 1 },
+  cleanupCopy:       { flex: 1, gap: 2 },
+  cleanupTitle:      { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  cleanupBody:       { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
   scroll: { padding: spacing.lg, gap: spacing.xl },
 
   // Step indicator

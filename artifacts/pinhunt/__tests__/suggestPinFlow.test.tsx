@@ -150,3 +150,43 @@ describe('Suggest a missing pin (UX-011)', () => {
     expect(screen.queryByRole('button', { name: /from your scan/ })).toBeNull();
   });
 });
+
+// #300: when the photo isn't cleaned up, say so plainly, and why.
+describe('Photo clean-up notice (#300)', () => {
+  async function pickPhoto(preview: Record<string, unknown> | null) {
+    fetchMock.mockImplementation((url: string) => Promise.resolve({
+      ok: preview !== null,
+      json: () => Promise.resolve(url.endsWith('/preview') ? (preview ?? { error: 'x' }) : { id: 'sub-1' }),
+    }));
+    await render(<AddPinScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Get started' }));
+    await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
+    await screen.findByLabelText('Your photo');
+    await waitFor(() => expect(screen.queryByText('Cleaning up your photo…')).toBeNull());
+  }
+
+  it('cleaned up: no notice', async () => {
+    await pickPhoto({ draftPath: 'drafts/x.jpg', previewBase64: 'clean', cleaned: true });
+    expect(screen.getByText('This is how your photo will look in the catalogue.')).toBeTruthy();
+    expect(screen.queryByTestId('cleanup-notice')).toBeNull();
+  });
+
+  it('clean-up not set up on the server: says it is unavailable, not the photo’s fault', async () => {
+    await pickPhoto({ draftPath: 'drafts/x.jpg', previewBase64: 'raw', cleaned: false, cleanupSkipped: 'off' });
+    expect(screen.getByTestId('cleanup-notice')).toBeTruthy();
+    expect(screen.getByText('Photo not cleaned up')).toBeTruthy();
+    expect(screen.getByText(/Background removal isn’t available right now/)).toBeTruthy();
+    expect(screen.queryByText(/Retake it on a plain background/)).toBeNull();
+  });
+
+  it('clean-up failed: suggests a retake', async () => {
+    await pickPhoto({ draftPath: 'drafts/x.jpg', previewBase64: 'raw', cleaned: false, cleanupSkipped: 'failed' });
+    expect(screen.getByText('Photo not cleaned up')).toBeTruthy();
+    expect(screen.getByText(/couldn’t remove the background.*Retake it on a plain background/)).toBeTruthy();
+  });
+
+  it('preview request failed: same as a failed clean-up', async () => {
+    await pickPhoto(null);
+    expect(screen.getByText(/couldn’t remove the background/)).toBeTruthy();
+  });
+});

@@ -105,14 +105,24 @@ interface SubmitPinBody {
   frontDraftPath?: string;
 }
 
+/**
+ * Why a photo wasn't cleaned up, so the app can say so: "off" when the
+ * clean-up service isn't set up on this server (e.g. staging), "failed"
+ * when it was tried and didn't work for this photo.
+ */
+export type CleanupSkipped = "off" | "failed";
+
 /** Pixian-normalize, falling back to the raw photo (see header). */
-async function normalizeOrRaw(rawBuffer: Buffer, mimeType: string): Promise<{ buffer: Buffer; cleaned: boolean }> {
-  if (!pixianConfigured()) return { buffer: rawBuffer, cleaned: false };
+async function normalizeOrRaw(
+  rawBuffer: Buffer,
+  mimeType: string,
+): Promise<{ buffer: Buffer; cleaned: boolean; cleanupSkipped?: CleanupSkipped }> {
+  if (!pixianConfigured()) return { buffer: rawBuffer, cleaned: false, cleanupSkipped: "off" };
   try {
     return { buffer: await normalizePinPhoto(rawBuffer, mimeType), cleaned: true };
   } catch (err) {
     console.warn("[pin-submissions] Pixian normalization failed, using raw photo:", err);
-    return { buffer: rawBuffer, cleaned: false };
+    return { buffer: rawBuffer, cleaned: false, cleanupSkipped: "failed" };
   }
 }
 
@@ -126,7 +136,7 @@ const draftDir = (userId: string) => `${userId}/drafts`;
  *
  * Step 1: clean up the front photo and return it as it will appear in the
  * catalogue (watermarked), so the collector can confirm or retake before
- * submitting. Returns { draftPath, previewBase64, cleaned }.
+ * submitting. Returns { draftPath, previewBase64, cleaned, cleanupSkipped? }.
  */
 router.post("/pin-submissions/preview", requireUser, async (req: UserRequest, res: Response) => {
   try {
@@ -137,7 +147,7 @@ router.post("/pin-submissions/preview", requireUser, async (req: UserRequest, re
       return;
     }
     const userId = req.userId!;
-    const { buffer, cleaned } = await normalizeOrRaw(Buffer.from(frontImageBase64, "base64"), mimeType);
+    const { buffer, cleaned, cleanupSkipped } = await normalizeOrRaw(Buffer.from(frontImageBase64, "base64"), mimeType);
 
     const bucket = getStorageClient().storage.from("pin-submissions");
     const { data: old } = await bucket.list(draftDir(userId));
@@ -150,7 +160,7 @@ router.post("/pin-submissions/preview", requireUser, async (req: UserRequest, re
       return;
     }
     const preview = await watermarkPinPhoto(buffer);
-    res.json({ draftPath, previewBase64: preview.toString("base64"), cleaned });
+    res.json({ draftPath, previewBase64: preview.toString("base64"), cleaned, cleanupSkipped });
   } catch (err) {
     res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
   }

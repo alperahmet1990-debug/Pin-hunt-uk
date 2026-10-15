@@ -36,6 +36,7 @@
     "@workspace/api-client-react": "workspace:*",
     "@workspace/pin-repository": "workspace:*",
     "babel-plugin-react-compiler": "^19.0.0-beta-e993439-20250117",
+    "babel-preset-expo": "~57.0.10",
     "expo": "~57.0.20",
     "expo-blur": "~57.0.2",
     "expo-constants": "~57.0.17",
@@ -77,7 +78,8 @@
     "expo-document-picker": "^57.0.1",
     "expo-file-system": "^57.0.6",
     "expo-image-manipulator": "^57.0.16",
-    "expo-sharing": "^57.0.18"
+    "expo-sharing": "^57.0.18",
+    "expo-updates": "~57.0.24"
   },
   "jest": {
     "preset": "jest-expo",

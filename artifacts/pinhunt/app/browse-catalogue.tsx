@@ -44,6 +44,7 @@ import { useFeature } from '@/hooks/useFeature';
 import { useCatalogueCoverage } from '@/hooks/useCatalogueCoverage';
 import { needsPhoto } from '@/utils/photoGaps';
 import { SearchBar } from '@/components/SearchBar';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { EmptyState } from '@/components/EmptyState';
 import { PinTile } from '@/components/ui/PinTile';
 import { Sheet } from '@/components/ui/Sheet';
@@ -282,10 +283,13 @@ export default function BrowseCatalogueScreen() {
 
   if (loading && rows.length === 0) {
     return (
-      <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
-        <Stack.Screen options={{ title: screenTitle }} />
-        <ActivityIndicator color={colors.homeCoral} />
-        <Text style={[styles.loadingText, { color: colors.homeMuted }]}>Loading the catalogue…</Text>
+      <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
+        <Stack.Screen options={{ headerShown: false }} />
+        <ScreenHeader title={screenTitle} />
+        <View style={styles.center}>
+          <ActivityIndicator color={colors.homeCoral} />
+          <Text style={[styles.loadingText, { color: colors.homeMuted }]}>Loading the catalogue…</Text>
+        </View>
       </View>
     );
   }
@@ -365,7 +369,8 @@ export default function BrowseCatalogueScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
-      <Stack.Screen options={{ title: screenTitle }} />
+      <Stack.Screen options={{ headerShown: false }} />
+      <ScreenHeader title={screenTitle} />
       <SectionList
         sections={sections}
         keyExtractor={(chunk, i) => `${chunk[0]?.id ?? 'row'}-${i}`}

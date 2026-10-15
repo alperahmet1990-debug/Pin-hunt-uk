@@ -8,7 +8,7 @@ const mockReplace = jest.fn();
 const mockSetStatuses = jest.fn();
 const mockToast = jest.fn();
 let mockMode: string | undefined;
-let mockTitle: string | undefined;
+let mockHeaderShown: boolean | undefined;
 const mockRows = [
   { id: 'p1', title: 'Mickey Classic', setName: 'Classics 2024' },
   { id: 'p2', title: 'Minnie Bow', setName: 'Classics 2024' },
@@ -22,7 +22,7 @@ jest.mock('react-native-safe-area-context', () => ({
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: mockPush, back: mockBack, canGoBack: () => true, replace: mockReplace }),
   useLocalSearchParams: () => (mockMode ? { mode: mockMode } : {}),
-  Stack: { Screen: ({ options }: { options: { title: string } }) => { mockTitle = options.title; return null; } },
+  Stack: { Screen: ({ options }: { options: { headerShown?: boolean } }) => { mockHeaderShown = options.headerShown; return null; } },
 }));
 jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: mockToast, hide: jest.fn() }) }));
 jest.mock('@/hooks/useCatalogueBrowseIndex', () => ({ useCatalogueBrowseIndex: () => mockIndex }));
@@ -49,7 +49,7 @@ describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockMode = undefined;
-    mockTitle = undefined;
+    mockHeaderShown = undefined;
     mockCanContribute = false;
     mockCoverage = [];
   });
@@ -59,7 +59,8 @@ describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
   // default (seen in CI-like cold runs), so it gets a longer limit.
   it('without mode=add it is the Entire Catalogue, with no Done bar', async () => {
     await render(<BrowseCatalogueScreen />);
-    expect(mockTitle).toBe('Entire Catalogue');
+    expect(mockHeaderShown).toBe(false);
+    expect(screen.getByRole('header', { name: 'Entire Catalogue' })).toBeTruthy();
     expect(screen.queryByText(/Pick a set and tap Select all/)).toBeNull();
     expect(screen.queryByRole('button', { name: /^Done/ })).toBeNull();
   }, 20_000);
@@ -67,7 +68,7 @@ describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
   it('mode=add reframes the screen and counts what was added', async () => {
     mockMode = 'add';
     await render(<BrowseCatalogueScreen />);
-    expect(mockTitle).toBe('Add pins you own');
+    expect(screen.getByRole('header', { name: 'Add pins you own' })).toBeTruthy();
     expect(screen.getByText(/Pick a set and tap Select all/)).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Done' })).toBeTruthy();
 

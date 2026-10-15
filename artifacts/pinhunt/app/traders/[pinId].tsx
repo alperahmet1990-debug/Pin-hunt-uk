@@ -28,6 +28,7 @@ import { radius, spacing } from '@/constants/theme';
 import { formatMatchSummary, isReciprocalMatch } from '@/utils/tradeMatch';
 import type { TraderProfile } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { ScreenHeader } from '@/components/ui/ScreenHeader';
 
 // ─── Rating badge ─────────────────────────────────────────────────────────────
 
@@ -183,10 +184,11 @@ export default function TradersScreen() {
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
   return (
-    <>
-      <Stack.Screen options={{ title: 'Find a Trade' }} />
+    <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
+      <Stack.Screen options={{ headerShown: false }} />
+      <ScreenHeader title="Find a Trade" />
       <ScrollView
-        style={[styles.root, { backgroundColor: colors.homeBackground }]}
+        style={styles.root}
         contentContainerStyle={{ padding: spacing.lg, paddingBottom: botPad }}
         showsVerticalScrollIndicator={false}
         refreshControl={
@@ -199,7 +201,8 @@ export default function TradersScreen() {
         {pin && (
           <View style={[styles.pinHeader, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <View style={[styles.pinImageWrap, { backgroundColor: colors.homeAqua }]}>
-              <PinImage source={getPinImageSource(pin)} style={styles.pinImage} contentFit="contain" />
+              {/* The title sits right next to it, so the photo is decorative here. */}
+              <PinImage source={getPinImageSource(pin)} accessible={false} style={styles.pinImage} contentFit="contain" />
             </View>
             <View style={styles.pinInfo}>
               <Text numberOfLines={2} style={[styles.pinTitle, { color: colors.homeInk }]}>{pin.title}</Text>
@@ -265,7 +268,7 @@ export default function TradersScreen() {
           </>
         )}
       </ScrollView>
-    </>
+    </View>
   );
 }
 

@@ -1,6 +1,6 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-15 03:32 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-15 05:27 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |
@@ -18,9 +18,9 @@ _Last updated: 2026-10-15 03:32 UTC by Claude (sprint coordinator session). Chec
 - **#241 (import):** taken interactively in this session at the maintainer's request ("Take #241"). Claimed on the issue.
   - Branch `claude/241-research-import`: built and tested. 383 API tests pass; typecheck passes.
   - Offline replay on the real schema: **95/100** pilot pins import as new non-public pins; 5 are correctly refused (4 flagged duplicates, 1 with no named character).
-  - **PR #272 opened 21:25 UTC** (https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/272). First review: CI green, QA PASS, security PASS (21:27 UTC).
+  - **PR #272 MERGED by you at 05:26 UTC** (https://github.com/alperahmet1990-debug/Pin-hunt-uk/pull/272). The import endpoint is now on `main`; it runs only once deployed to an API and called by the App Creator. First review: CI green, QA PASS, security PASS (21:27 UTC).
   - **03:31 UTC: fix pushed (a7f4b4c).** The import wrote an explicit null into `pins.currency`, which is `NOT NULL DEFAULT 'GBP'`, so any candidate without a currency would have failed the whole batch. The offline replay found it. 384 tests pass; the replay creates 95/100. QA and security re-review the new commit; after that it needs your `merge-approved` label and merge.
-- **Open `claude/*` PRs (00:24 UTC):** #271, #272, #273, all QA PASS + security PASS. #271 and #273 also carry `needs-device-check`. That is one over the WIP limit of 2: the dev agent opened #273 at about 21:30, just after #272. No new dev-agent PRs will start until one is merged or closed.
+- **Open `claude/*` PRs (05:27 UTC):** #271 and #273, both QA PASS + security PASS + `needs-device-check`. With #272 merged, that is back at the WIP limit of 2.
 - **Dev agent:** #240 merged (PR #259). #239 merged (PR #253).
 - **Roz / Baymax:** will review any PR the dev agent opens.
 
@@ -57,7 +57,7 @@ _Last updated: 2026-10-15 03:32 UTC by Claude (sprint coordinator session). Chec
 - **Search-only research** has hit diminishing returns (≈ 14 pins per 39 searches in the last DLP pass).
 
 ## Decisions requiring your approval
-- **#272 (#241 import):** QA and security passed; add `merge-approved` and merge (medium risk). Do not run it on production.
+- **#272 (#241 import):** merged. Next is the laptop staging session (`LAPTOP-CHECKLIST.md`): migration 045, deploy the API to staging, load the pilot, direct checks, then dry run and import. Do not run it on production.
 - **Labels done:** #235, #237, #239, #240, #241 are approved.
   - **#236:** closed as not planned.
 - **Also:**
@@ -94,7 +94,7 @@ _Last updated: 2026-10-15 03:32 UTC by Claude (sprint coordinator session). Chec
 - **Engine fix (15:30):** spelling variants of one edition type ("open" / "Open Edition" / "OE") were being counted as conflicts. Blocked pins went from 32 to 21 real disagreements.
 
 ## Next planned actions (check-ins take these in order)
-1. **Follow PR #272** (#241) through CI, QA and security review, and fix findings on `claude/241-research-import`. Never merge.
+1. **#241 done** (PR #272 merged 05:26 UTC). Keep the pilot payload and laptop checklist in step with `main`.
 2. **Pilot readiness:** 95/100 importable offline (00:26 UTC). Release years for Chip 'n Dale Christmas Countdown 2024 and Stitch St Patrick's Day 2025 are now evidenced: the year is in the official UK product name, and one news source corroborates each (`evidence/100_pilot_years.json`). Their exact dates stay missing on purpose. Left: the Big Hero 6 Magical Medallions character is not evidenced (only resale listings found), so it waits for the direct check. The 4 flagged duplicates wait for your review.
 3. **Keep the laptop checklist current** (import step §6 added).
 4. **Quality, not volume:** no new candidate discovery unless it closes a pilot gap.

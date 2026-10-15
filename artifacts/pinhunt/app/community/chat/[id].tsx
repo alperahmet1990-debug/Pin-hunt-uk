@@ -41,7 +41,7 @@ function MessageBubble({ msg, isMe, colors, pins }: {
       <View style={[styles.bubble, { backgroundColor: isMe ? colors.homeCoral : colors.homeSurface, borderColor: colors.homeLine }, isMe && styles.bubbleMe]}>
         {msg.messageType === 'photo' && msg.photoUrls.length > 0 && (
           <View style={styles.photoGrid}>
-            {msg.photoUrls.map((url, index) => <Image key={`${url}-${index}`} source={{ uri: url }} style={[styles.sharedPhoto, { backgroundColor: colors.homeLine }]} />)}
+            {msg.photoUrls.map((url, index) => <Image key={`${url}-${index}`} source={{ uri: url }} accessibilityLabel={`Photo ${index + 1} of ${msg.photoUrls.length}${isMe ? ' you sent' : ''}`} style={[styles.sharedPhoto, { backgroundColor: colors.homeLine }]} />)}
           </View>
         )}
         {msg.messageType === 'pin_share' && msg.pinIds.map(pinId => {
@@ -53,7 +53,7 @@ function MessageBubble({ msg, isMe, colors, pins }: {
           );
           const forTrade = msg.forTradePinIds.includes(pinId);
           return (
-            <TouchableOpacity key={pinId} onPress={() => router.push({ pathname: '/pin/[id]' as any, params: { id: pinId } })} style={[styles.pinCard, { backgroundColor: isMe ? colors.homeSurface + '24' : colors.homeAqua }]} activeOpacity={0.8}>
+            <TouchableOpacity key={pinId} accessibilityRole="button" accessibilityLabel={`${pin.title}${forTrade ? ', for trade' : ''}`} onPress={() => router.push({ pathname: '/pin/[id]' as any, params: { id: pinId } })} style={[styles.pinCard, { backgroundColor: isMe ? colors.homeSurface + '24' : colors.homeAqua }]} activeOpacity={0.8}>
               <PinImage source={getPinImageSource(pin)} style={styles.pinImage} />
               <View style={{ flex: 1 }}>
                 <Text numberOfLines={2} style={[styles.pinTitle, { color: isMe ? colors.homeSurface : colors.homeInk }]}>{pin.title}</Text>
@@ -296,7 +296,7 @@ export default function ChatScreen() {
                   <Text style={[styles.contextText, { color: colors.homeMuted }]}>Arrange delivery when ready.</Text>
                 </View>
               ) : (
-                <TouchableOpacity onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
+                <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
                   <Feather name="check-circle" size={16} color={colors.homeCoral} />
                   <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Mark Trade Agreed</Text>
                 </TouchableOpacity>
@@ -325,6 +325,8 @@ export default function ChatScreen() {
             }]}>
               <TouchableOpacity
                 onPress={() => setAttachmentMenuOpen(true)}
+                accessibilityRole="button"
+                accessibilityLabel="Add a photo or pins"
                 style={[styles.plusBtn, { backgroundColor: colors.homeAqua }]}
               >
                 <Feather name="plus" size={21} color={colors.homeInk} />
@@ -345,6 +347,9 @@ export default function ChatScreen() {
               <TouchableOpacity
                 onPress={handleSend}
                 disabled={!msgText.trim() || sending}
+                accessibilityRole="button"
+                accessibilityLabel="Send"
+                accessibilityState={{ disabled: !msgText.trim() || sending, busy: sending }}
                 style={[styles.sendBtn, {
                   backgroundColor: msgText.trim() ? colors.homeCoral : colors.homeAqua,
                 }]}
@@ -376,6 +381,7 @@ export default function ChatScreen() {
               <TouchableOpacity
                 disabled={sending}
                 onPress={() => setTradeConfirmOpen(false)}
+                accessibilityRole="button"
                 style={[styles.confirmButton, { backgroundColor: colors.homeAqua }]}
               >
                 <Text style={[styles.confirmButtonText, { color: colors.homeInk }]}>Cancel</Text>
@@ -383,6 +389,8 @@ export default function ChatScreen() {
               <TouchableOpacity
                 disabled={sending}
                 onPress={() => void agreeTrade()}
+                accessibilityRole="button"
+                accessibilityLabel="Confirm trade agreed"
                 style={[styles.confirmButton, { backgroundColor: colors.homeCoral }]}
               >
                 {sending ? (
@@ -411,17 +419,20 @@ export default function ChatScreen() {
             activeOpacity={1}
             style={StyleSheet.absoluteFill}
             onPress={closeAttachmentMenu}
+            accessibilityRole="button"
+            accessibilityLabel="Close"
           />
           <View style={[styles.attachmentSheet, { backgroundColor: colors.homeBackground }]}>
             <View style={styles.pickerHeader}>
               <Text style={[styles.pickerTitle, { color: colors.homeInk }]}>Add to conversation</Text>
-              <TouchableOpacity onPress={closeAttachmentMenu}>
+              <TouchableOpacity onPress={closeAttachmentMenu} accessibilityRole="button" accessibilityLabel="Close" hitSlop={11}>
                 <Feather name="x" size={22} color={colors.homeInk} />
               </TouchableOpacity>
             </View>
             <TouchableOpacity
               style={[styles.attachmentOption, { borderColor: colors.homeLine }]}
               onPress={openPhotoPicker}
+              accessibilityRole="button"
             >
               <View style={[styles.attachmentIcon, { backgroundColor: colors.homeAqua }]}>
                 <Feather name="image" size={20} color={colors.homeCoral} />
@@ -436,6 +447,7 @@ export default function ChatScreen() {
             </TouchableOpacity>
             <TouchableOpacity
               style={[styles.attachmentOption, { borderColor: colors.homeLine }]}
+              accessibilityRole="button"
               onPress={() => {
                 setAttachmentMenuOpen(false);
                 setPinPickerOpen(true);
@@ -460,7 +472,7 @@ export default function ChatScreen() {
           <View style={[styles.pinPicker, { backgroundColor: colors.homeBackground }]}>
             <View style={styles.pickerHeader}>
               <Text style={[styles.pickerTitle, { color: colors.homeInk }]}>Share pins</Text>
-              <TouchableOpacity onPress={() => setPinPickerOpen(false)}>
+              <TouchableOpacity onPress={() => setPinPickerOpen(false)} accessibilityRole="button" accessibilityLabel="Close" hitSlop={11}>
                 <Feather name="x" size={22} color={colors.homeInk} />
               </TouchableOpacity>
             </View>
@@ -477,6 +489,8 @@ export default function ChatScreen() {
                 return (
                   <TouchableOpacity
                     key={pin.id}
+                    accessibilityRole="checkbox"
+                    accessibilityState={{ checked: selected }}
                     onPress={() => setSelectedPinIds(current => selected
                       ? current.filter(x => x !== pin.id)
                       : [...current, pin.id])}
@@ -495,6 +509,8 @@ export default function ChatScreen() {
             <TouchableOpacity
               disabled={!selectedPinIds.length}
               onPress={sharePins}
+              accessibilityRole="button"
+              accessibilityState={{ disabled: !selectedPinIds.length }}
               style={[styles.shareButton, {
                 backgroundColor: selectedPinIds.length ? colors.homeCoral : colors.homeAqua,
               }]}

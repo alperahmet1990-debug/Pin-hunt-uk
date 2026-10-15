@@ -221,7 +221,7 @@ export default function PinDetailScreen() {
               >
                 {images.map((src, i) => (
                   <View key={i} style={[styles.imagePage, { width: imageCard, height: imageCard }]}>
-                    <PinImage source={src} style={[styles.image, { shadowColor: colors.homeShadow }]} contentFit="contain" />
+                    <PinImage source={src} accessibilityLabel={`${pin.title}, photo ${i + 1} of ${images.length}`} style={[styles.image, { shadowColor: colors.homeShadow }]} contentFit="contain" />
                   </View>
                 ))}
               </ScrollView>
@@ -237,6 +237,7 @@ export default function PinDetailScreen() {
           ) : (
             <PinImage
               source={images[0]}
+              accessibilityLabel={pin.title}
               style={[styles.image, { width: imageCard, height: imageCard, shadowColor: colors.homeShadow }]}
               contentFit="contain"
             />
@@ -329,6 +330,8 @@ export default function PinDetailScreen() {
               <TouchableOpacity
                 onPress={() => router.push({ pathname: '/traders/[pinId]', params: { pinId: pin.id } })}
                 activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel={`Other collectors: ${traderCount > 0 ? `${traderCount} offering this for trade` : 'no traders yet'}`}
                 style={FEATURES.marketplaceListings ? [styles.tradingRow, { borderBottomColor: colors.homeLine }] : styles.tradingRowLast}
               >
                 <View style={[styles.tradingIcon, { backgroundColor: colors.forTrade + '20' }]}>
@@ -348,6 +351,8 @@ export default function PinDetailScreen() {
                 <TouchableOpacity
                   onPress={() => setMarketplaceExpanded(e => !e)}
                   activeOpacity={0.85}
+                  accessibilityRole="button"
+                  accessibilityState={{ expanded: marketplaceExpanded }}
                   style={styles.tradingRowLast}
                 >
                   <View style={[styles.tradingIcon, { backgroundColor: colors.homeCoral + '20' }]}>

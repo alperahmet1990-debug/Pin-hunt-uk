@@ -258,6 +258,26 @@ export default function PinDetailScreen() {
             )}
           </View>
 
+          {/* UX-066 (#308): no catalogue photo yet; invite one. */}
+          {!pin.imageUrl && (
+            <View
+              testID="add-photo-card"
+              style={[styles.addPhotoCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+            >
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.addPhotoTitle, { color: colors.homeInk }]}>No photo yet</Text>
+                <Text style={[styles.addPhotoBody, { color: colors.homeMuted }]}>Have this pin? Add a photo for everyone.</Text>
+              </View>
+              <Button
+                label="Add a photo"
+                icon="camera"
+                size="compact"
+                fullWidth={false}
+                onPress={() => router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: pin.id } })}
+              />
+            </View>
+          )}
+
           {pin.isSeedRecord && (
             <View style={[styles.seedBanner, { backgroundColor: colors.homeWarmSurface, borderColor: colors.homeWarmLine }]}>
               <Feather name="alert-circle" size={13} color={colors.homeSandInk} />
@@ -484,6 +504,9 @@ const styles = StyleSheet.create({
   scrollContent: { paddingBottom: spacing.xxxl },
   // Hero
   hero: { width: '100%', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  addPhotoCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.md },
+  addPhotoTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
+  addPhotoBody: { fontSize: 13, lineHeight: 18, fontFamily: 'Inter_400Regular', marginTop: 2 },
   imagePage: { alignItems: 'center', justifyContent: 'center' },
   image: {
     borderRadius: radius.xl,

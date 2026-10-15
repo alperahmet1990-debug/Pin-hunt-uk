@@ -4,12 +4,17 @@
  * per device instead of on every view, and a recyclingKey so recycled list
  * cells never flash the previous pin's photo.
  *
+ * A pin with no photo (PLACEHOLDER_IMAGE) gets NoPhotoPlaceholder instead,
+ * drawn in code and read as "No photo yet" (UX-066, #308).
+ *
  * Not for user photos (community posts, uploads, private submissions):
  * those aren't catalogue images and some use short-lived signed URLs.
  */
 import React from 'react';
 import type { ImageSourcePropType } from 'react-native';
 import { Image, type ImageProps } from 'expo-image';
+import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
+import { NO_PHOTO_LABEL, NoPhotoPlaceholder } from './NoPhotoPlaceholder';
 
 export type PinImageProps = Omit<ImageProps, 'source' | 'cachePolicy' | 'recyclingKey'> & {
   source: ImageSourcePropType;
@@ -26,6 +31,17 @@ function sourceUri(source: ImageSourcePropType): string | undefined {
 }
 
 export function PinImage({ source, recyclingKey, contentFit = 'cover', ...rest }: PinImageProps) {
+  if (source === PLACEHOLDER_IMAGE) {
+    const { style, accessibilityLabel, accessible, testID } = rest;
+    return (
+      <NoPhotoPlaceholder
+        style={style as React.ComponentProps<typeof NoPhotoPlaceholder>['style']}
+        accessible={accessible !== false}
+        accessibilityLabel={accessibilityLabel ? `${accessibilityLabel}. ${NO_PHOTO_LABEL}` : NO_PHOTO_LABEL}
+        testID={testID}
+      />
+    );
+  }
   return (
     <Image
       {...rest}

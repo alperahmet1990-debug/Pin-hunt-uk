@@ -4,10 +4,11 @@
  * "image". Same tree walk as the tab screens (#52), in helpers/a11yTree.
  */
 import React from 'react';
-import { render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { unlabelledImages, unlabelledPressables, type Node } from './helpers/a11yTree';
 
 let mockParams: Record<string, string> = {};
+const mockPush = jest.fn();
 const mockPins = [
   { id: 'p1', title: 'Mickey Classic', collection: 'Park Icons', characters: ['Mickey'], brand: 'Disneyland Paris', imageUrl: 'https://example.test/p1.jpg', limitedEditionSize: 500, estimatedValueGBP: 12 },
   { id: 'p2', title: 'Dumbo Blue Sky', collection: 'Park Icons', characters: ['Dumbo'], brand: 'Disneyland Paris' },
@@ -56,7 +57,7 @@ jest.mock('react-native-safe-area-context', () => ({
   SafeAreaView: require('react-native').View,
 }));
 jest.mock('expo-router', () => ({
-  useRouter: () => ({ push: jest.fn(), back: jest.fn(), replace: jest.fn(), canGoBack: () => true, setParams: jest.fn() }),
+  useRouter: () => ({ push: mockPush, back: jest.fn(), replace: jest.fn(), canGoBack: () => true, setParams: jest.fn() }),
   useLocalSearchParams: () => mockParams,
   useFocusEffect: () => {},
   Stack: { Screen: () => null },
@@ -127,5 +128,27 @@ describe('ScreenHeader on Find a Trade and Browse Catalogue (#278)', () => {
     expect(screen.getByTestId('screen-header')).toBeTruthy();
     expect(screen.getByRole('header', { name: title })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Back' })).toBeTruthy();
+  }, 30_000);
+});
+
+// UX-066 (#308): a pin with no photo shows the drawn placeholder and invites one.
+describe('Pin detail with no photo (#308)', () => {
+  it('shows the placeholder and an Add a photo card that opens photo contribution', async () => {
+    mockParams = { id: 'p2' };
+    const Screen = require('../app/pin/[id]').default;
+    await render(<Screen />);
+    for (let i = 0; i < 5; i++) await new Promise(r => setTimeout(r, 0));
+    expect(screen.getByLabelText('Dumbo Blue Sky. No photo yet')).toBeTruthy();
+    expect(screen.getByTestId('add-photo-card')).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: 'Add a photo' }));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/contribute-image/[pinId]', params: { pinId: 'p2' } });
+  }, 30_000);
+
+  it('a pin with a photo has no Add a photo card', async () => {
+    mockParams = { id: 'p1' };
+    const Screen = require('../app/pin/[id]').default;
+    await render(<Screen />);
+    for (let i = 0; i < 5; i++) await new Promise(r => setTimeout(r, 0));
+    expect(screen.queryByTestId('add-photo-card')).toBeNull();
   }, 30_000);
 });

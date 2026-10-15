@@ -10,10 +10,10 @@
  */
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, type AccessibilityActionEvent, type AccessibilityActionInfo, type ImageSourcePropType } from 'react-native';
-import { Image } from 'expo-image';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
+import { PinImage } from './PinImage';
 import { fontScale, radius, spacing } from '@/constants/theme';
 import type { CollectionStatus } from '@/types/pin';
 import { STATUS_BADGE } from './StatusBadge';
@@ -104,7 +104,8 @@ export function PinTile(props: PinTileProps) {
             missing && [styles.missingOutline, { borderColor: colors.homeMuted }],
           ]}
         >
-          <Image source={source} style={styles.image} contentFit="contain" cachePolicy="memory-disk" transition={120} />
+          {/* The tile is read as one element, so the artwork itself stays silent. */}
+          <PinImage source={source} accessible={false} style={styles.image} contentFit="contain" transition={120} />
         </View>
         {selected && <View pointerEvents="none" style={[styles.selectedRing, { width: size, height: size, borderColor: colors.homeCoral }]} />}
         {marker && (

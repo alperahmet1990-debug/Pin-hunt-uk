@@ -11,6 +11,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { createSupabaseUserRepository, type MyAccess } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { isDemoAdmin } from '@/lib/demoMode';
 
 const NONE: MyAccess = { isAppCreator: false, isAdmin: false, isContributor: false };
 
@@ -44,5 +45,6 @@ export function useMyAccess(): MyAccess & { loading: boolean } {
     return () => { cancelled = true; };
   }, [repo, userId]);
 
+  if (isDemoAdmin) return { isAppCreator: true, isAdmin: true, isContributor: true, loading: false };  // demo preview only
   return { ...access, loading };
 }

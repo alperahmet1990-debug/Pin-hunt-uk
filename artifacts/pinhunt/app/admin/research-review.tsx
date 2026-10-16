@@ -33,6 +33,7 @@ import { Button, Chip, ConfirmDialog, SegmentedControl } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import { KeepScrollView } from '@/components/research/KeepScrollView';
 import { groupsForTab, isWideLayout, type ReviewTab } from '@/utils/researchLayout';
+import CatalogueBrowser from '@/components/research/CatalogueBrowser';
 import {
   CHECKABLE_FIELDS,
   MAX_SET_BATCH,
@@ -723,12 +724,15 @@ export default function ResearchReviewScreen() {
           { value: 'queue' as const, label: 'Queue', tone: 'teal' as const },
           { value: 'singles' as const, label: 'OE & singles', tone: 'teal' as const },
           { value: 'board' as const, label: 'Set Board', tone: 'teal' as const },
+          { value: 'catalogue' as const, label: 'Catalogue', tone: 'teal' as const },
         ]}
         value={view}
         onChange={setView}
       />
 
-      {view === 'board' ? (
+      {view === 'catalogue' ? (
+        <CatalogueBrowser api={api} runId={runId} onOpen={openCandidate} />
+      ) : view === 'board' ? (
         <>
           <SegmentedControl
             options={[
@@ -821,13 +825,16 @@ export default function ResearchReviewScreen() {
           >
             {listBody}
           </KeepScrollView>
-          <View style={[s.panelCol, { borderLeftColor: colors.homeLine }]} testID="rr-side-panel">
-            {panel ?? (
-              <View style={s.emptyPanel}>
-                <Text style={s.muted}>Select a pin, set or page to review it here.</Text>
-              </View>
-            )}
-          </View>
+          {/* Catalogue uses the full width until a pin is opened */}
+          {(view !== 'catalogue' || panel) && (
+            <View style={[s.panelCol, { borderLeftColor: colors.homeLine }]} testID="rr-side-panel">
+              {panel ?? (
+                <View style={s.emptyPanel}>
+                  <Text style={s.muted}>Select a pin, set or page to review it here.</Text>
+                </View>
+              )}
+            </View>
+          )}
         </View>
       ) : (
         <KeepScrollView

@@ -8,7 +8,7 @@ import { groupBySet } from '@/utils/researchReview';
 /** Width (px) from which the list and detail panel sit side by side. */
 export const WIDE_BREAKPOINT = 900;
 
-export type ReviewTab = 'queue' | 'singles' | 'board';
+export type ReviewTab = 'queue' | 'singles' | 'board' | 'catalogue';
 
 export const NO_SET_KEY = '(no set)';
 

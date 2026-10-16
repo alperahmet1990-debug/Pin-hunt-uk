@@ -1,0 +1,2183 @@
+{
+ "packet_id": "corrob-wdw-oe-2025-2026-2026-10-16-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:sprint72-corrob-wdw-oe",
+ "sources": [
+  {
+   "url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+   "title": "Photos: New EPCOT, Magic Kingdom, and Attraction Open Edition Pins at Walt Disney World",
+   "publisher": "Laughing Place",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+   "title": "Mickey & Minnie World Showcase Pavilion Pins Now at EPCOT",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+   "title": "New EPCOT Disney Pins Feature World Showcase and Figment",
+   "publisher": "WDWInfo",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-world-showcase-food-pins-at-disney-world/",
+   "title": "New EPCOT World Showcase Food Pins at Disney World",
+   "publisher": "WDWInfo",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+   "title": "Disney Princess & Sidekicks Pins Pop-Up at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2025/10/22/these-new-disney-princess-pins-are-fit-for-royalty/",
+   "title": "These NEW Disney Princess Pins Are Fit For Royalty",
+   "publisher": "MickeyBlog",
+   "published_date": "2025-10-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+   "title": "Disney Zootopia: Better Zoogether! Mystery Pin Set at Walt Disney World",
+   "publisher": "Disney Mouseketeer",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+   "title": "Full List (with Prices) of Zootopia: Better Zoogether Merchandise at Disney's Animal Kingdom",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+   "title": "Disney Pumpkin Pals Mystery Pin Box Set",
+   "publisher": "Disney Mouseketeer",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+   "title": "New Designs Celebrate 25th Anniversary of Pin Trading at Disney World",
+   "publisher": "MickeyBlog",
+   "published_date": "2025-01-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+   "title": "New Mickey, Minnie, Stitch, and More Pins Celebrate 25 Years of Pin Trading at Disney World",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2026/01/magic-ear-hat-pin-walt-disney-world/",
+   "title": "Magic Mickey-Shaped Pin Arrives at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+   "title": "Additional Four Parks Merchandise Including MagicBand+, Shirt, and Pins at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+   "title": "Get a Jump Start on the New Year With NEW Disney 2025 Pins",
+   "publisher": "MickeyBlog",
+   "published_date": "2024-11-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-america",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Mickey on flag-inspired background with pavilion name"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Country pin listed at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Reported at EPCOT June 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-canada",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Mickey on flag-inspired background with pavilion name"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Country pin listed at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Reported at EPCOT June 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-china",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Mickey on flag-inspired background with pavilion name"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Country pin listed at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Reported at EPCOT June 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-france",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Mickey on flag-inspired background with pavilion name"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Country pin listed at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Reported at EPCOT June 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-germany",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-italy",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-japan",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-mexico",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Mickey on flag-inspired background with pavilion name"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Country pin listed at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Reported at EPCOT June 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-morocco",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-norway",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Price list includes a Norway pin at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Mickey on flag-inspired background with pavilion name"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Country pin listed at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Reported at EPCOT June 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-mickey-uk",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-mickey-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Series shows Mickey in attire inspired by each of the 11 World Showcase pavilions"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.laughingplace.com/disney-parks/new-walt-disney-world-open-edition-pins-epcot-world-showcase-2026/",
+     "method": "search_snippet",
+     "note": "Article covers new open edition pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Mickey on flag-inspired background with pavilion name"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Country pin listed at $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Reported at EPCOT June 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-italy-mickey-minnie-gondola",
+   "set_key": "wdw/2026/oe-single/epcot-italy-mickey-minnie-gondola",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Italy Mickey & Minnie pin listed (assumed the gondola design)"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Italy Mickey & Minnie pin listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-germany-mickey-minnie-set",
+   "set_key": "wdw/2026/oe-set/epcot-germany-mickey-minnie-2-pin",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 22.99,
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Germany clothing pin set listed at $22.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/06/new-mickey-minnie-world-showcase-pavilion-pins-at-epcot/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-belle-france",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with France in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-remy-france",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Remy"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with France in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-mei-canada",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mei"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with Canada in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-troll-elsa-norway",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Elsa"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with Norway in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-pinocchio-italy",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with Italy in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-snow-white-germany",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with Germany in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-rapunzel-germany",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with Germany in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-char-miguel-mexico",
+   "set_key": "wdw/2026/oe-set/epcot-world-showcase-characters-2026",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Character pin paired with Mexico in World Showcase set"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "World Showcase character pins $17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-disney-pins-feature-world-showcase-and-figment/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-uk-fish-and-chips",
+   "set_key": "wdw/2026/oe-single/epcot-ws-uk-fish-and-chips",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Raised food sculpt (fish and chips) on an enamel Mickey head in UK flag colours",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-world-showcase-food-pins-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Food-sculpt pin series; fish and chips named"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/epcot-ws-germany-pretzel",
+   "set_key": "wdw/2026/oe-single/epcot-ws-germany-pretzel",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Raised Bavarian pretzel sculpt on an enamel Mickey head in German flag colours",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-world-showcase-food-pins-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Food-sculpt pin series"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-world-showcase-food-pins-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Bavarian pretzel pin for Germany listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/walt-disney-world/epcot/new-epcot-world-showcase-food-pins-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-mulan",
+   "set_key": "wdw/2025/oe-single/princess-2025-mulan",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Emporium, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin seen in the Emporium at Magic Kingdom"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-raya",
+   "set_key": "wdw/2025/oe-single/princess-2025-raya",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Emporium, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin seen in the Emporium at Magic Kingdom"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin listed at $14.99 in princess & sidekicks pop-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-rapunzel",
+   "set_key": "wdw/2025/oe-single/princess-2025-rapunzel",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Emporium, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin seen in the Emporium at Magic Kingdom"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin listed at $14.99 in princess & sidekicks pop-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-merida",
+   "set_key": "wdw/2025/oe-single/princess-2025-merida",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Emporium, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin seen in the Emporium at Magic Kingdom"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin listed at $14.99 in princess & sidekicks pop-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Merida shown with her bear cub brothers"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-cinderella",
+   "set_key": "wdw/2025/oe-single/princess-2025-cinderella",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin listed at $14.99 in princess & sidekicks pop-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-pocahontas",
+   "set_key": "wdw/2025/oe-single/princess-2025-pocahontas",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin listed at $14.99 in princess & sidekicks pop-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas",
+      "Meeko"
+     ],
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pocahontas shown with Meeko"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-ariel",
+   "set_key": "wdw/2025/oe-single/princess-2025-ariel",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin listed at $14.99 in princess & sidekicks pop-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-2025-moana",
+   "set_key": "wdw/2025/oe-single/princess-2025-moana",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Moana pin listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://wdwnt.com/2025/10/princess-pins-pop-up-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Princess & sidekicks pins reported at WDW October 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/princess-belle-mrs-potts-chip",
+   "set_key": "wdw/2025/oe-single/princess-belle-mrs-potts-chip",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Mrs. Potts",
+      "Chip"
+     ],
+     "source_url": "https://mickeyblog.com/2025/10/22/these-new-disney-princess-pins-are-fit-for-royalty/",
+     "method": "search_snippet",
+     "note": "Belle with Mrs. Potts and Chip in princess sidekick series"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://mickeyblog.com/2025/10/22/these-new-disney-princess-pins-are-fit-for-royalty/",
+     "method": "search_snippet",
+     "note": "Series pins $14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mickeyblog.com/2025/10/22/these-new-disney-princess-pins-are-fit-for-royalty/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10-22",
+     "source_url": "https://mickeyblog.com/2025/10/22/these-new-disney-princess-pins-are-fit-for-royalty/",
+     "method": "search_snippet",
+     "note": "Reported arriving at Disney Store 22 Oct 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/clawhauser",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Clawhauser"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Named among the 8 designs in the mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clawhauser"
+     ],
+     "source_url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "Character pictured on one of the circular mystery pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/flash",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flash"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Named among the 8 designs in the mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flash"
+     ],
+     "source_url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "Character pictured on one of the circular mystery pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/fru-fru",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Fru Fru"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Named among the 8 designs in the mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Fru Fru"
+     ],
+     "source_url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "Character pictured on one of the circular mystery pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/gazelle",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gazelle"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Named among the 8 designs in the mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gazelle"
+     ],
+     "source_url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "Character pictured on one of the circular mystery pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/heidi-howler",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Heidi Howler"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Named among the 8 designs in the mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Heidi Howler"
+     ],
+     "source_url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "Character pictured on one of the circular mystery pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/judy-hopps",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Named among the 8 designs in the mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "Character pictured on one of the circular mystery pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/nick-wilde",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nick Wilde"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Named among the 8 designs in the mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nick Wilde"
+     ],
+     "source_url": "https://wdwnt.com/2025/11/zootopia-better-zoogether-merchandise-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "Character pictured on one of the circular mystery pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery/tree-of-life",
+   "set_key": "wdw/2025/oe-set/zootopia-better-zoogether-mystery",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Tree of Life",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Tree of Life is one of the 8 designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneymouseketeer.com/disney-zootopia-better-zoogether-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set described as open edition mystery blind box"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/figaro",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/lucky",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lucky"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/meeko",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Meeko"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/pascal",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pascal"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/percy",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Percy"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/piglet",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Piglet"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/stitch",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery/yzma-cat",
+   "set_key": "wdw/2025/oe-set/pumpkin-pals-halloween-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Yzma"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-pumpkin-pals-mystery-pin-box-set/",
+     "method": "search_snippet",
+     "note": "Named among 8 designs; character pops out of a jack-o-lantern; Yzma as a cat"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/pin-trading-25th-florida-license-plate",
+   "set_key": "wdw/2025/oe-single/pin-trading-25th-florida-license-plate",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Florida licence plate design reading I TRADE PINS with Hidden Mickeys in corners",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Described in Jan 2025 report"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01-07",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported 7 Jan 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/pin-trading-25th-minnie-mouse",
+   "set_key": "wdw/2025/oe-single/pin-trading-25th-minnie-mouse",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Character holds a pin trading board"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "$14.99 each at Pin Traders"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01-07",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported 7 Jan 2025"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed among Pin Trading 25th anniversary pins"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed at $14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Reported January 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/pin-trading-25th-donald-duck",
+   "set_key": "wdw/2025/oe-single/pin-trading-25th-donald-duck",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Character holds a pin trading board"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "$14.99 each at Pin Traders"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01-07",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported 7 Jan 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/pin-trading-25th-goofy",
+   "set_key": "wdw/2025/oe-single/pin-trading-25th-goofy",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Character holds a pin trading board"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "$14.99 each at Pin Traders"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01-07",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported 7 Jan 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/pin-trading-25th-chip-n-dale",
+   "set_key": "wdw/2025/oe-single/pin-trading-25th-chip-n-dale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Character holds a pin trading board"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "$14.99 each at Pin Traders"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01-07",
+     "source_url": "https://mickeyblog.com/2025/01/07/new-designs-celebrate-25th-anniversary-of-pin-trading-at-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported 7 Jan 2025"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed among Pin Trading 25th anniversary pins"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed at $14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Reported January 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/pin-trading-25th-mickey-mouse",
+   "set_key": "wdw/2025/oe-single/pin-trading-25th-mickey-mouse",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed among Pin Trading 25th anniversary pins"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed at $14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Reported January 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/pin-trading-25th-stitch",
+   "set_key": "wdw/2025/oe-single/pin-trading-25th-stitch",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed among Pin Trading 25th anniversary pins"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Listed at $14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/new-mickey-pins-25-years-pin-trading-wdw/",
+     "method": "search_snippet",
+     "note": "Reported January 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/oe/magic-kingdom-magic",
+   "set_key": "wdw/2026/oe-single/magic-kingdom-magic",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Mickey ear-hat shaped pin with pink Cinderella Castle; Hat Box Ghost, Country Bears and Jiminy Cricket details",
+     "source_url": "https://wdwnt.com/2026/01/magic-ear-hat-pin-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Magic Kingdom themed design"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2026/01/magic-ear-hat-pin-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2026/01/magic-ear-hat-pin-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01",
+     "source_url": "https://wdwnt.com/2026/01/magic-ear-hat-pin-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported January 2026"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/park-icon-magic-kingdom",
+   "set_key": "wdw/2025/oe-single/park-icon-magic-kingdom",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Individual park pins $12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Four Parks merchandise reported January 2025"
+    },
+    {
+     "field": "visual_description",
+     "value": "Blue Cinderella Castle on lavender background",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Magic Kingdom pin description"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/park-icon-epcot",
+   "set_key": "wdw/2025/oe-single/park-icon-epcot",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Individual park pins $12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Four Parks merchandise reported January 2025"
+    },
+    {
+     "field": "visual_description",
+     "value": "Spaceship Earth shown in purple",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "EPCOT pin description"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/park-icon-hollywood-studios",
+   "set_key": "wdw/2025/oe-single/park-icon-hollywood-studios",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Individual park pins $12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Four Parks merchandise reported January 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/park-icon-animal-kingdom",
+   "set_key": "wdw/2025/oe-single/park-icon-animal-kingdom",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Individual park pins $12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Four Parks merchandise reported January 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe/park-icons-four-parks",
+   "set_key": "wdw/2025/oe-single/park-icons-four-parks",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Multi-park pin $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Price given in US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://wdwnt.com/2025/01/additional-four-parks-merchandise-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported January 2025"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/2025-dated-booster/donald-duck",
+   "set_key": "wdw/2025/oe-set/2025-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "One of six booster pins; character holds a 2025 balloon"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "Reported November 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/2025-dated-booster/goofy",
+   "set_key": "wdw/2025/oe-set/2025-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "One of six booster pins; character holds a 2025 balloon"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "Reported November 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/2025-dated-booster/mickey-mouse",
+   "set_key": "wdw/2025/oe-set/2025-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "One of six booster pins; character holds a 2025 balloon"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "Reported November 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/2025-dated-booster/minnie-mouse",
+   "set_key": "wdw/2025/oe-set/2025-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "One of six booster pins; character holds a 2025 balloon"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "Reported November 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/2025-dated-booster/stitch",
+   "set_key": "wdw/2025/oe-set/2025-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "One of six booster pins; character holds a 2025 balloon"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "Reported November 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2025/oe-set/2025-dated-booster/winnie-the-pooh",
+   "set_key": "wdw/2025/oe-set/2025-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "One of six booster pins; character holds a 2025 balloon"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://mickeyblog.com/2024/11/19/get-a-jump-start-on-the-new-year-with-these-new-disney-2025-pins/",
+     "method": "search_snippet",
+     "note": "Reported November 2024"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2025/oe-set/star-wars-resistance-mystery",
+   "field": "characters",
+   "searched": "2 queries; news sites other than wdwnt",
+   "note": "Only a Droid Depot Resist mystery set price found; no per-design list from another publisher"
+  },
+  {
+   "key": "wdw/2026/oe-set/four-parks-2026",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "No second publisher found for the 2026 four-park pins"
+  }
+ ],
+ "discovery_notes": "Corroboration pass: second independent publisher for single-publisher WDW OE pins. Search budget exhausted (shared per-turn limit) after ~19 queries; Park Pal outfits, Robots booster, Tower of Terror 2026 and many singles not searched. wdwnt princess pop-up prices ($14.99) conflict with input $17.99; Moana $17.99 agrees. Italy Mickey & Minnie pin assumed to be the gondola design."
+}

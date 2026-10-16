@@ -1,0 +1,1088 @@
+{
+ "packet_id": "set-gapfill-sprint72-2026-10-16-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:sprint72-set-gapfill",
+ "sources": [
+  {
+   "url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+   "title": "Full List (With Prices) of 2024 EPCOT International Food & Wine Festival Merchandise",
+   "publisher": "WDW News Today",
+   "published_date": "2024-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2026-week-3/",
+   "title": "New Disney Pins April 2026 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2026-week-3",
+   "title": "New Disney Pins July 2026 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2026-week-3/",
+   "title": "New Disney Pins August 2026 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2026-week-5",
+   "title": "New Disney Pins September 2026 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-night-enchanted-disneyland-paris-19-septembre/",
+   "title": "Pin Trading Night Enchanted à Disneyland Paris le 19 septembre",
+   "publisher": "Disneyphile",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/208148",
+   "title": "208148 (Mickey's Christmas Carol Advent Calendar Mystery Boxed Set)",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+   "title": "Niftie Fifties Flashback Pin Trading Celebration 2025",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/moana-limited-edition-mystery-puzzle-pin-438017784888.html",
+   "title": "Moana Limited Edition Mystery Puzzle Pin",
+   "publisher": "Disney Store UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+   "title": "Full List (With Prices) of 2024 Mickey's Not-So-Scary Halloween Party Exclusive Merchandise",
+   "publisher": "WDW News Today",
+   "published_date": "2024-08-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+   "title": "Epcot International Flower & Garden Festival 2024 Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+   "title": "Disneyland Paris Flyer for July 2026",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
+   "title": "Muppets Haunted Mansion pins",
+   "publisher": "Muppet Wiki (fan wiki)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/mickey-mouse",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Mickey",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/minnie-mouse",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Minnie",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/remy",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Remy",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Remy"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/figment",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Figment",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/donald-duck",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Donald",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/goofy",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Goofy",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/dale",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Dale",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/stitch",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chef Stitch",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set/swedish-chef",
+   "set_key": "wdw/2024/epcot-food-wine-2024-mystery-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Swedish Chef",
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Swedish Chef"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/list-of-2024-epcot-food-wine-festival-merch/",
+     "method": "search_snippet",
+     "note": "Named among the possible designs of the 10-pin, 2-per-box F&W 2024 mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/enchanted-doors/belle-gaston",
+   "set_key": "wdw/2026/enchanted-doors",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beauty and the Beast Enchanted Doors Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2026-week-3/",
+     "method": "search_snippet",
+     "note": "Fourth 2026 Enchanted Doors release, Beauty and the Beast with Gaston and Belle, LE 2500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Gaston"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2026-week-3/",
+     "method": "search_snippet",
+     "note": "Fourth 2026 Enchanted Doors release, Beauty and the Beast with Gaston and Belle, LE 2500"
+    },
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2026-week-3/",
+     "method": "search_snippet",
+     "note": "Fourth 2026 Enchanted Doors release, Beauty and the Beast with Gaston and Belle, LE 2500"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2026-week-3/",
+     "method": "search_snippet",
+     "note": "Fourth 2026 Enchanted Doors release, Beauty and the Beast with Gaston and Belle, LE 2500"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/enchanted-doors/evil-queen",
+   "set_key": "wdw/2026/enchanted-doors",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Evil Queen Enchanted Doors Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2026-week-3",
+     "method": "search_snippet",
+     "note": "Seventh 2026 Enchanted Doors release features Evil Queen"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2026-week-3",
+     "method": "search_snippet",
+     "note": "Seventh 2026 Enchanted Doors release features Evil Queen"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2026-week-3",
+     "method": "search_snippet",
+     "note": "Seventh 2026 Enchanted Doors release features Evil Queen"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/enchanted-doors/lady-and-the-tramp",
+   "set_key": "wdw/2026/enchanted-doors",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lady and the Tramp Enchanted Doors Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2026-week-3/",
+     "method": "search_snippet",
+     "note": "Eighth Enchanted Doors release themed to Lady and the Tramp; characters not itemised in snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "Lady and the Tramp",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2026-week-3/",
+     "method": "search_snippet",
+     "note": "Eighth Enchanted Doors release themed to Lady and the Tramp; characters not itemised in snippet"
+    },
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2026-week-3/",
+     "method": "search_snippet",
+     "note": "Eighth Enchanted Doors release themed to Lady and the Tramp; characters not itemised in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2026/enchanted-doors/monsters-inc",
+   "set_key": "wdw/2026/enchanted-doors",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Monsters, Inc. Enchanted Doors Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2026-week-5",
+     "method": "search_snippet",
+     "note": "Ninth Enchanted Doors release themed to Monsters, Inc.; characters not itemised in snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "Monsters, Inc.",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2026-week-5",
+     "method": "search_snippet",
+     "note": "Ninth Enchanted Doors release themed to Monsters, Inc.; characters not itemised in snippet"
+    },
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2026-week-5",
+     "method": "search_snippet",
+     "note": "Ninth Enchanted Doors release themed to Monsters, Inc.; characters not itemised in snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-09-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2026-week-5",
+     "method": "search_snippet",
+     "note": "Ninth Enchanted Doors release themed to Monsters, Inc.; characters not itemised in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/pin-trading-night-enchanted/gus-jack",
+   "set_key": "dlp/2026/pin-trading-night-enchanted",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gus",
+      "Jaq"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-night-enchanted-disneyland-paris-19-septembre/",
+     "method": "search_snippet",
+     "note": "Named in Disneyphile's (apparently partial) numbered list of the 12 PTN Enchanted pins (spelled 'Gus & Jack')"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/pin-trading-night-enchanted/kenai",
+   "set_key": "dlp/2026/pin-trading-night-enchanted",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Kenai"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-night-enchanted-disneyland-paris-19-septembre/",
+     "method": "search_snippet",
+     "note": "Named in Disneyphile's (apparently partial) numbered list of the 12 PTN Enchanted pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/pin-trading-night-enchanted/mei",
+   "set_key": "dlp/2026/pin-trading-night-enchanted",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mei"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-night-enchanted-disneyland-paris-19-septembre/",
+     "method": "search_snippet",
+     "note": "Named in Disneyphile's (apparently partial) numbered list of the 12 PTN Enchanted pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/pin-trading-night-enchanted/maleficent",
+   "set_key": "dlp/2026/pin-trading-night-enchanted",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-night-enchanted-disneyland-paris-19-septembre/",
+     "method": "search_snippet",
+     "note": "Named in Disneyphile's (apparently partial) numbered list of the 12 PTN Enchanted pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/clara-cluck-cocky-locky",
+   "set_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Clara Cluck & Cocky Locky",
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Listed in DSUK/DSE/DS advent boxed-set roster on MyPinCentral; year match not confirmed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clara Cluck",
+      "Cocky Locky"
+     ],
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Listed in DSUK/DSE/DS advent boxed-set roster on MyPinCentral; year match not confirmed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/willie-the-giant",
+   "set_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Willie the Giant as the Ghost of Christmas Present",
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Listed in DSUK/DSE/DS advent boxed-set roster on MyPinCentral; year match not confirmed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Willie the Giant"
+     ],
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Listed in DSUK/DSE/DS advent boxed-set roster on MyPinCentral; year match not confirmed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/pete",
+   "set_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pete as the Ghost of Christmas Future",
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Listed in DSUK/DSE/DS advent boxed-set roster on MyPinCentral; year match not confirmed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pete"
+     ],
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Listed in DSUK/DSE/DS advent boxed-set roster on MyPinCentral; year match not confirmed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024/morty-fieldmouse-scrooge-mcduck",
+   "set_key": "dsuk/2024/mickeys-christmas-carol-advent-calendar-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tiny Tim & Scrooge",
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Roster lists a 'Tiny Tim & Scrooge' pin separate from Morty as Tiny Tim; may overlap known pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Morty Fieldmouse",
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://mypincentral.com/pin/208148",
+     "method": "search_snippet",
+     "note": "Roster lists a 'Tiny Tim & Scrooge' pin separate from Morty as Tiny Tim; may overlap known pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2025/niftie-fifties-art-corner-set/mickey-mouse",
+   "set_key": "dlr/2025/niftie-fifties-art-corner-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2025/niftie-fifties-art-corner-set/dumbo",
+   "set_key": "dlr/2025/niftie-fifties-art-corner-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2025/niftie-fifties-art-corner-set/pluto",
+   "set_key": "dlr/2025/niftie-fifties-art-corner-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2025/niftie-fifties-art-corner-set/mickey-mouse-painter",
+   "set_key": "dlr/2025/niftie-fifties-art-corner-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Painter",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-dlr-disneyland-resort-niftie-fifties-flashback-pin-trading-celebration-2025",
+     "method": "search_snippet",
+     "note": "Named in Art Corner set list (LE 150, 5 pins, $99.99): Mickey, Donald, Dumbo, Pluto, Mickey Painter"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2024/moana-mystery-puzzle-pin/te-ka",
+   "set_key": "dsuk/2024/moana-mystery-puzzle-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Te Ka"
+     ],
+     "source_url": "https://www.disneystore.co.uk/moana-limited-edition-mystery-puzzle-pin-438017784888.html",
+     "method": "search_snippet",
+     "note": "Official listing names Te Ka among the 10 puzzle-piece designs (non-chase)"
+    },
+    {
+     "field": "is_chaser",
+     "value": false,
+     "source_url": "https://www.disneystore.co.uk/moana-limited-edition-mystery-puzzle-pin-438017784888.html",
+     "method": "search_snippet",
+     "note": "Official listing names Te Ka among the 10 puzzle-piece designs (non-chase)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2024/moana-mystery-puzzle-pin/kakamora",
+   "set_key": "dsuk/2024/moana-mystery-puzzle-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Kakamora"
+     ],
+     "source_url": "https://www.disneystore.co.uk/moana-limited-edition-mystery-puzzle-pin-438017784888.html",
+     "method": "search_snippet",
+     "note": "Official listing names Kakamora among the 10 puzzle-piece designs (non-chase)"
+    },
+    {
+     "field": "is_chaser",
+     "value": false,
+     "source_url": "https://www.disneystore.co.uk/moana-limited-edition-mystery-puzzle-pin-438017784888.html",
+     "method": "search_snippet",
+     "note": "Official listing names Kakamora among the 10 puzzle-piece designs (non-chase)"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/mnsshp-2024-boxed-pin-set/ed-banzai-shenzi",
+   "set_key": "wdw/2024/mnsshp-2024-boxed-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ed",
+      "Banzai",
+      "Shenzi"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set ($110) includes the Ed, Banzai and Shenzi LE pin, 5000 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set ($110) includes the Ed, Banzai and Shenzi LE pin, 5000 each"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/mnsshp-2024-boxed-pin-set/pain-panic",
+   "set_key": "wdw/2024/mnsshp-2024-boxed-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pain",
+      "Panic"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set includes the Pain and Panic LE pin, 5000 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set includes the Pain and Panic LE pin, 5000 each"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/mnsshp-2024-boxed-pin-set/jack-sally",
+   "set_key": "wdw/2024/mnsshp-2024-boxed-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Sally"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set includes the Jack and Sally LE pin, 5000 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set includes the Jack and Sally LE pin, 5000 each"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/mnsshp-2024-boxed-pin-set/winnie-the-pooh",
+   "set_key": "wdw/2024/mnsshp-2024-boxed-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set includes the Winnie the Pooh LE pin, 5000 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://wdwnt.com/2024/08/2024-mickeys-not-so-scary-halloween-party-merch/",
+     "method": "search_snippet",
+     "note": "Boxed set includes the Winnie the Pooh LE pin, 5000 each"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-flower-garden-2024/alice-in-wonderland-topiary",
+   "set_key": "wdw/2024/epcot-flower-garden-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland Topiary",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-flower-garden-2024/beauty-and-the-beast-topiary",
+   "set_key": "wdw/2024/epcot-flower-garden-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beauty and the Beast Topiary",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    },
+    {
+     "field": "franchise",
+     "value": "Beauty and the Beast",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99; characters not itemised"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2024/epcot-flower-garden-2024/sorcerer-mickey-topiary",
+   "set_key": "wdw/2024/epcot-flower-garden-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fantasia Sorcerer Mickey Topiary",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/epcot-international-flower-garden-festival-2024-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin topiary design, limited release $17.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2026/attraction-open-edition-july/big-thunder-mountain",
+   "set_key": "dlp/2026/attraction-open-edition-july",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Big Thunder Mountain",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "method": "search_snippet",
+     "note": "Flyer lists Big Thunder Mountain OE at EUR 12 on 18 July 2026; characters not stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "method": "search_snippet",
+     "note": "Flyer lists Big Thunder Mountain OE at EUR 12 on 18 July 2026; characters not stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07-18",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "method": "search_snippet",
+     "note": "Flyer lists Big Thunder Mountain OE at EUR 12 on 18 July 2026; characters not stated"
+    },
+    {
+     "field": "original_price",
+     "value": 12,
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "method": "search_snippet",
+     "note": "Flyer lists Big Thunder Mountain OE at EUR 12 on 18 July 2026; characters not stated"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/blog_post/pin-releases-disneyland-paris-disneyland-paris-flyer-for-july-2026",
+     "method": "search_snippet",
+     "note": "Flyer lists Big Thunder Mountain OE at EUR 12 on 18 July 2026; characters not stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2024/muppets-haunted-mansion-mystery-puzzle-pin/miss-piggy-madame-pigota",
+   "set_key": "dsuk/2024/muppets-haunted-mansion-mystery-puzzle-pin",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Miss Piggy as Madame Pigota",
+     "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
+     "method": "search_snippet",
+     "note": "Fan wiki names Madame Pigota as one of the 2 chase pins; unconfirmed elsewhere"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Miss Piggy"
+     ],
+     "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
+     "method": "search_snippet",
+     "note": "Fan wiki names Madame Pigota as one of the 2 chase pins; unconfirmed elsewhere"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://muppet.fandom.com/wiki/Muppets_Haunted_Mansion_pins",
+     "method": "search_snippet",
+     "note": "Fan wiki names Madame Pigota as one of the 2 chase pins; unconfirmed elsewhere"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsuk/2025/magic-of-disney",
+   "field": "characters",
+   "searched": "4 queries; disneypinsblog, ridingthemagic, toyworldmag snippets",
+   "note": "29-pin, 3-drop schedule confirmed; no snippet names the 23 unknown designs"
+  },
+  {
+   "key": "dsuk/2025/magic-of-disney/drop-2",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "Drop 2 = 9 designs online 17 Nov 2025; designs not named in snippets"
+  },
+  {
+   "key": "dsuk/2024/moana-mystery-puzzle-pin",
+   "field": "characters",
+   "searched": "official listing snippet",
+   "note": "2 chase designs described only as mystery"
+  },
+  {
+   "key": "dsuk/2024/encanto-mystery-puzzle-pin",
+   "field": "characters",
+   "searched": "official listing snippet",
+   "note": "2 rare chase characters kept a mystery by the listing"
+  },
+  {
+   "key": "dsuk/2026/tails-of-friendship-event-london",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "8 LE designs + London exclusive confirmed; remaining names not in snippets"
+  },
+  {
+   "key": "dlp/2025/disney-music-festival-pueblo-2025-07-05",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "10 pins confirmed; snippets name only Goofy, Chip & Dale, Mickey & Minnie, Donald & Daisy"
+  },
+  {
+   "key": "dlp/2025/peter-pans-flight-2025-06-21",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "3 pins incl. entrance-sign design per Mousesteps; other designs not described"
+  },
+  {
+   "key": "windows-of-attraction/2026-wdw",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "Only releases 1,6,7,8 found (all already known)"
+  },
+  {
+   "key": "dlp/2025/christmas-2025-le",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  },
+  {
+   "key": "dlr/2025/resort-hotel-holiday-snow-globes-2025",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  },
+  {
+   "key": "dlr/2026/70th-vault-collection-set-3",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  },
+  {
+   "key": "dlr/2026/walts-magical-moments-2026-disney-store-completers",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  },
+  {
+   "key": "dsuk/2025/happily-ever-after-slider-series",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  },
+  {
+   "key": "wdw/2026/muppets-disney-park-day-hollywood-studios",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  },
+  {
+   "key": "wdw/2026/oe-set/eng-cat-yzma-squirrel",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  },
+  {
+   "key": "wdw/2026/oe-set/epcot-germany-mickey-minnie-2-pin",
+   "field": "characters",
+   "searched": "not searched",
+   "note": "search budget exhausted"
+  }
+ ],
+ "discovery_notes": "Gap-fill for existing incomplete sets; pins only, set_keys as given. No set entries added (count sources found were already in prior packets). Shared web-search budget ran out after ~29 queries, so 8 low-gap sets were not searched. Christmas Carol additions come from a MyPinCentral roster whose year is unconfirmed; Muppets HM chase is from a fan wiki."
+}

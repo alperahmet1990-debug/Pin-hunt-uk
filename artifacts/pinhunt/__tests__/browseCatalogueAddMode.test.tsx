@@ -68,7 +68,7 @@ describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
   it('mode=add reframes the screen and counts what was added', async () => {
     mockMode = 'add';
     await render(<BrowseCatalogueScreen />);
-    expect(screen.getByRole('header', { name: 'Add pins you own' })).toBeTruthy();
+    expect(screen.getByRole('header', { name: 'Add from catalogue' })).toBeTruthy();
     expect(screen.getByText(/Pick a set and tap Select all/)).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Done' })).toBeTruthy();
 

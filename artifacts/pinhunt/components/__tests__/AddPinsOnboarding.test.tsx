@@ -49,10 +49,10 @@ describe('AddPinsWelcomeSheet', () => {
     await waitFor(async () => expect(await AsyncStorage.getItem('@pinhunt_welcome_add_pins_v1:u1')).toBe('1'));
   });
 
-  it('Add pins you own opens add mode and remembers the answer', async () => {
+  it('Add from catalogue opens add mode and remembers the answer', async () => {
     await render(<AddPinsWelcomeSheet />);
     await waitFor(() => expect(screen.getByText('Already collecting?')).toBeTruthy());
-    await fireEvent.press(screen.getByRole('button', { name: 'Add pins you own' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Add from catalogue' }));
     expect(mockPush).toHaveBeenCalledWith(ADD_ROUTE);
     await waitFor(async () => expect(await AsyncStorage.getItem('@pinhunt_welcome_add_pins_v1:u1')).toBe('1'));
   });

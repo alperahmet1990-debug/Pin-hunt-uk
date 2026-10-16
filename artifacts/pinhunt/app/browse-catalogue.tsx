@@ -8,8 +8,8 @@
  * or new board (which also marks them owned — boards only hold pins the
  * collector has, see BoardsContext.addPinToBoard).
  *
- * Reached from Search ("Browse entire catalogue"), which is where
- * Collection → + → Add Pin lands. Writes go through CollectionContext's
+ * Reached from Search ("Browse entire catalogue") and, in add mode, from
+ * Collection → + → Add from catalogue (#353). Writes go through CollectionContext's
  * setStatuses (one batched sync), with the same retry behaviour as single adds.
  *
  * Pins already owned or for trade are shown but can't be selected; ISO
@@ -36,6 +36,7 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import type { CatalogueBrowsePin } from '@workspace/pin-repository';
 import { useColors } from '@/hooks/useColors';
+import { ADD_PINS_LABEL } from '@/utils/addPinsOnboarding';
 import { useToast } from '@/components/ui/Toast';
 import { useCatalogueBrowseIndex } from '@/hooks/useCatalogueBrowseIndex';
 import { useCollection } from '@/context/CollectionContext';
@@ -77,7 +78,7 @@ export default function BrowseCatalogueScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  // `mode=add` is the "Add pins you own" entry point (UX-055): same screen,
+  // `mode=add` is the "Add from catalogue" entry point (UX-055, #353): same screen,
   // framed for building a collection, with a Done button and running count.
   const { mode } = useLocalSearchParams<{ mode?: string }>();
   const addMode = mode === 'add';
@@ -88,7 +89,7 @@ export default function BrowseCatalogueScreen() {
   // Same columns and tile size as every other pin grid (PinGrid, UX-043).
   const columns = pinGridColumns(screenWidth);
   const tileSize = pinTileSize(screenWidth, columns);
-  const screenTitle = addMode ? 'Add pins you own' : 'Entire Catalogue';
+  const screenTitle = addMode ? ADD_PINS_LABEL : 'Entire Catalogue';
   const [addedCount, setAddedCount] = useState(0);
   // Pins added as owned/For Trade this visit, for the photo prompt on Done (UX-056).
   const [addedOwnedIds, setAddedOwnedIds] = useState<string[]>([]);

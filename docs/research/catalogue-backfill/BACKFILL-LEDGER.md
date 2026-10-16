@@ -55,6 +55,31 @@ Earlier: after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 b
 | B026 | 2016 | wdw-le | WDW LE/LR | in progress | | | |
 | B027 | 2016 | dlr-oe | Disneyland California OE | in progress | | | |
 | B028 | 2016 | dlr-le | Disneyland California LE/LR | in progress | | | |
+| – | | priority | **Licensed 2020–2026 priority block (maintainer, 16 Oct 2026):** Pink a la Mode, ArtLand, then Loungefly and BoxLunch newest year first | | | | |
+| B103 | 2025-2026 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | todo | | | |
+| B104 | 2023-2024 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | todo | | | |
+| B105 | 2021-2022 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | todo | | | |
+| B106 | 2025-2026 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | todo | | | |
+| B107 | 2023-2024 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | todo | | | |
+| B108 | 2021-2022 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | todo | | | |
+| B109 | 2019-2020 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | todo | | | |
+| B086 | 2026 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B087 | 2026 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B084 | 2025 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B085 | 2025 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B082 | 2024 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B083 | 2024 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B080 | 2023 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B081 | 2023 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B078 | 2022 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B079 | 2022 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B076 | 2021 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B077 | 2021 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B074 | 2020 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B075 | 2020 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B090 | 2024-2026 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | todo | | | |
+| B089 | 2022-2023 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | todo | | | |
+| B088 | 2020-2021 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | todo | | | |
 | B029 | 2016 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B030 | 2016 | ds | Disney Store UK/EU + US | todo | | | |
 | B031 | 2016 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
@@ -73,58 +98,48 @@ Earlier: after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 b
 | B073 | 2015 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B041 | 2020-2026 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
 | B042 | 2020-2026 | lic | Licensed retailers (split by brand and year below) | superseded | | | |
-| B074 | 2020 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B075 | 2020 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B076 | 2021 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B077 | 2021 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B078 | 2022 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B079 | 2022 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B080 | 2023 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B081 | 2023 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B082 | 2024 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B083 | 2024 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B084 | 2025 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B085 | 2025 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B086 | 2026 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B087 | 2026 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B088 | 2020-2021 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
-| B089 | 2022-2023 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
-| B090 | 2024-2026 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B043 | 2021-2022 | ds | Disney Store UK 2021-2022 top-up | todo | | | |
 | B044 | 2020-2021 | dlp | Disneyland Paris 2020-2021 top-up | todo | | | |
-| B045 | 2019 | wdw-oe | follow-up of B001: set members unnamed (starter, mystery, Pandora, Resist); Galaxy's Edge WDW OE; edition types unstated | todo | | | |
-| B046 | 2019 | wdw-le | follow-up of B002: countdown/Flower & Garden princess set members; Magic of Honor months; holiday bells; runDisney prices | todo | | | |
-| B047 | 2019 | dlr-oe | follow-up of B003: mystery members (2019 mystery, Resist, First Order, Haunted Mansion); Pixar Pier OE | todo | | | |
-| B048 | 2019 | dlr-le | follow-up of B004: opening mystery/countdown set contents; Club 33 #1-2,#4-6; Windows of Magic/train series | todo | | | |
-| B049 | 2019 | dlp | follow-up of B005: monthly roundups name themes only; Marvel season; Pin Trading Night Feb/Apr/Aug; set members | todo | | | |
-| B050 | 2019 | ds | follow-up of B006: UK thin; Disney Wisdom May-Dec members; mystery members; Lion King 25th Simba pins | todo | | | |
-| B051 | 2019 | asia | follow-up of B007: shdr/hkdl/tdr 2019: unnamed CNY LEs, HKDL monthly members, Tokyo designs, PIN-GO members | todo | | | |
-| B052 | 2019 | lic | follow-up of B008: lic 2019: Pink a la Mode none found pre-2022; Loungefly LE; KH3 Funko members; undated blind boxes | todo | | | |
-| B053 | 2018 | wdw-oe | follow-up of B009: wdw-oe 2018: mystery box/Animal Kingdom/Incredibles/Origami members; prices; Toy Story Land lanyard | todo | | | |
-| B054 | 2018 | wdw-le | follow-up of B010: wdw-le 2018: Lattes/Donut Shop/Lunch Time Tales members; Star Wars helmets; box/framed set contents | todo | | | |
-| B055 | 2018 | dlr-oe | follow-up of B011: dlr-oe 2018: Pixar Pier OE; Coco booster, Sally/Jack, starter members; prices | todo | | | |
-| B056 | 2018 | dlr-le | follow-up of B012: dlr-le 2018: Sept/Oct roundups; Mysterious Shadows, tarot, sweater set members; edition sizes | todo | | | |
-| B057 | 2018 | dlp | follow-up of B013: dlp 2018: 101 Dalmatians/Bambi PTN members; July minis; alphabet letters; Fun Adventures characters; Halloween/Christmas LE | todo | | | |
-| B058 | 2018 | ds | follow-up of B014: ds 2018: Park Pack Jan–Apr/Aug pins; Ralph Breaks the Internet set split; UK/EU dated releases; Mary Poppins Returns date | todo | | | |
-| B059 | 2018 | asia | follow-up of B015: shdr/hkdl/tdr 2018: Toy Story Land box/two-pin, Zootopia Emoji, HKDL Easter/Halloween members; TDR 35th pins; HKDL CNY/Christmas | todo | | | |
-| B060 | 2018 | lic | follow-up of B016: lic 2018: Jan–Jun releases; Funko Alice/Mulan/Mickey 90 members; Hot Topic NBC 12-pack; Cri-Kee pin check; button scope decision | todo | | | |
-| B061 | 2017 | wdw-oe | follow-up of B017: wdw-oe 2017: Booster/Frozen/Tsum Tsum/Haunted Mansion Cameo members; Epcot festival OE; Halloween/Christmas OE; edition types | todo | | | |
-| B062 | 2017 | wdw-le | follow-up of B018: wdw-le 2017: Halloween boxed/mystery members; LiaA box/frame/mystery; Pandora completers; Monorail Magic; Princess Half pins | todo | | | |
-| B091 | 2019 | lic-loungefly | follow-up of B063: Loungefly 2019: 4 of 12 Princess Bows, NBC mystery 3 unnamed, Princess Castle 5 of 9, Lock/Shock/Barrel structure, Pooh/Piglet/Tigger split, undated Mickey Sushi/Timon/Dumbo Circus | todo | | | |
-| B092 | 2019 | lic-boxlunch | follow-up of B064: BoxLunch 2019: NBC mystery 5 unnamed incl. glow/chase, makers for Princess Dresses Vol. 2/WALL-E/Dumbo/Lady and the Tramp, Abu & Rajah date conflict, Pooh Chibi dates, undated Funko leads | todo | | | |
-| B093 | 2018 | lic-loungefly | follow-up of B065: Loungefly 2018: Jan–Jun releases, NYCC Mickey 90 (5 of 9 unnamed), NYCC NBC 25th members, Edna Mode pins, Mary Poppins penguins | todo | | | |
-| B094 | 2018 | lic-boxlunch | follow-up of B066: BoxLunch 2018: Funko Alice/Mulan pin split (held), Mickey 90th mystery, WALL-E & EVE lights, Stitch/Angel/Scrump, NBC 25th remaining ~5, Sally's Jars, Toy Story Land count 6 vs 7 | todo | | | |
-| B095 | 2017 | dlr-oe | follow-up of B019: DLR OE 2017: booster/mystery/starter/emoji/Frozen/Tsum members, prices of dated 2017 pins, edition types, Halloween OE; LE leads passed to B020 | todo | | | |
-| B097 | 2015-2026 | lic-franchise | follow-up of B096: Star Wars/Marvel: Hot Topic Captain Marvel set members, Loungefly NYCC 2019 Marvel LE 1000 members, NYCC 2019 Marvel 80th sets, Marvel Comics blind box 2020, Mandalorian set members, Her Universe Captain Marvel set date, 2018 Star Wars/Marvel licensed | todo | | | |
-| B098 | 2017 | dlr-le | follow-up of B020: DLR LE 2017: Pin Trading Tales #1–9, Charming Characters #1–9, Pirates 50th individual pins, Villains box set contents, Mission Breakout AP pin, earlier AP quarterly pins | todo | | | |
-| B099 | 2017 | dlp | follow-up of B021: DLP 2017: booster/April LE/October LE/Coco/Star Wars/Rapunzel set members, monthly Pin Trading Night pins, Christmas LE, edition size conflict (600 vs 700) | todo | | | |
-| B100 | 2017 | ds | follow-up of B022: Disney Store 2017: 30th Anniversary week 8 and per-pack pin split (held), Storybook Classics #7/#10/#12, Park Pack Oct box, Coco 3 of 8, Last Jedi pin 2/3, UK single LE character details | todo | | | |
-| B101 | 2017 | asia | follow-up of B023: Asia 2017: SHDR zodiac/summer/anniversary box members, anniversary mystery split (held), HKDL Pin Hunting/Passport/Teacup members, HKDL 12th anniversary, TDR 34th anniversary and Christmas | todo | | | |
-| B102 | 2017 | lic-boxlunch | follow-up of B024: BoxLunch 2017: Feb 2017 wave set members (Snow White, Peter Pan, Toy Story, BatB, Up, Bambi, Dumbo, Mickey/Minnie, NBC), hat pin split (held), Halloween Mickey & Friends and Stitch set members, makers | todo | | | |
+| B045 | 2019 | wdw-oe | follow-up 1 of B001: set members unnamed (starter, mystery, Pandora, Resist); Galaxy's Edge WDW OE; edition types unstated | todo | | | |
+| B046 | 2019 | wdw-le | follow-up 1 of B002: countdown/Flower & Garden princess set members; Magic of Honor months; holiday bells; runDisney prices | todo | | | |
+| B047 | 2019 | dlr-oe | follow-up 1 of B003: mystery members (2019 mystery, Resist, First Order, Haunted Mansion); Pixar Pier OE | todo | | | |
+| B048 | 2019 | dlr-le | follow-up 1 of B004: opening mystery/countdown set contents; Club 33 #1-2,#4-6; Windows of Magic/train series | todo | | | |
+| B049 | 2019 | dlp | follow-up 1 of B005: monthly roundups name themes only; Marvel season; Pin Trading Night Feb/Apr/Aug; set members | todo | | | |
+| B050 | 2019 | ds | follow-up 1 of B006: UK thin; Disney Wisdom May-Dec members; mystery members; Lion King 25th Simba pins | todo | | | |
+| B051 | 2019 | asia | follow-up 1 of B007: shdr/hkdl/tdr 2019: unnamed CNY LEs, HKDL monthly members, Tokyo designs, PIN-GO members | todo | | | |
+| B052 | 2019 | lic | follow-up 1 of B008: lic 2019: Pink a la Mode none found pre-2022; Loungefly LE; KH3 Funko members; undated blind boxes | todo | | | |
+| B053 | 2018 | wdw-oe | follow-up 1 of B009: wdw-oe 2018: mystery box/Animal Kingdom/Incredibles/Origami members; prices; Toy Story Land lanyard | todo | | | |
+| B054 | 2018 | wdw-le | follow-up 1 of B010: wdw-le 2018: Lattes/Donut Shop/Lunch Time Tales members; Star Wars helmets; box/framed set contents | todo | | | |
+| B055 | 2018 | dlr-oe | follow-up 1 of B011: dlr-oe 2018: Pixar Pier OE; Coco booster, Sally/Jack, starter members; prices | todo | | | |
+| B056 | 2018 | dlr-le | follow-up 1 of B012: dlr-le 2018: Sept/Oct roundups; Mysterious Shadows, tarot, sweater set members; edition sizes | todo | | | |
+| B057 | 2018 | dlp | follow-up 1 of B013: dlp 2018: 101 Dalmatians/Bambi PTN members; July minis; alphabet letters; Fun Adventures characters; Halloween/Christmas LE | todo | | | |
+| B058 | 2018 | ds | follow-up 1 of B014: ds 2018: Park Pack Jan–Apr/Aug pins; Ralph Breaks the Internet set split; UK/EU dated releases; Mary Poppins Returns date | todo | | | |
+| B059 | 2018 | asia | follow-up 1 of B015: shdr/hkdl/tdr 2018: Toy Story Land box/two-pin, Zootopia Emoji, HKDL Easter/Halloween members; TDR 35th pins; HKDL CNY/Christmas | todo | | | |
+| B060 | 2018 | lic | follow-up 1 of B016: lic 2018: Jan–Jun releases; Funko Alice/Mulan/Mickey 90 members; Hot Topic NBC 12-pack; Cri-Kee pin check; button scope decision | todo | | | |
+| B061 | 2017 | wdw-oe | follow-up 1 of B017: wdw-oe 2017: Booster/Frozen/Tsum Tsum/Haunted Mansion Cameo members; Epcot festival OE; Halloween/Christmas OE; edition types | todo | | | |
+| B062 | 2017 | wdw-le | follow-up 1 of B018: wdw-le 2017: Halloween boxed/mystery members; LiaA box/frame/mystery; Pandora completers; Monorail Magic; Princess Half pins | todo | | | |
+| B091 | 2019 | lic-loungefly | follow-up 1 of B063: Loungefly 2019: 4 of 12 Princess Bows, NBC mystery 3 unnamed, Princess Castle 5 of 9, Lock/Shock/Barrel structure, Pooh/Piglet/Tigger split, undated Mickey Sushi/Timon/Dumbo Circus | todo | | | |
+| B092 | 2019 | lic-boxlunch | follow-up 1 of B064: BoxLunch 2019: NBC mystery 5 unnamed incl. glow/chase, makers for Princess Dresses Vol. 2/WALL-E/Dumbo/Lady and the Tramp, Abu & Rajah date conflict, Pooh Chibi dates, undated Funko leads | todo | | | |
+| B093 | 2018 | lic-loungefly | follow-up 1 of B065: Loungefly 2018: Jan–Jun releases, NYCC Mickey 90 (5 of 9 unnamed), NYCC NBC 25th members, Edna Mode pins, Mary Poppins penguins | todo | | | |
+| B094 | 2018 | lic-boxlunch | follow-up 1 of B066: BoxLunch 2018: Funko Alice/Mulan pin split (held), Mickey 90th mystery, WALL-E & EVE lights, Stitch/Angel/Scrump, NBC 25th remaining ~5, Sally's Jars, Toy Story Land count 6 vs 7 | todo | | | |
+| B095 | 2017 | dlr-oe | follow-up 1 of B019: DLR OE 2017: booster/mystery/starter/emoji/Frozen/Tsum members, prices of dated 2017 pins, edition types, Halloween OE; LE leads passed to B020 | todo | | | |
+| B097 | 2015-2026 | lic-franchise | follow-up 1 of B096: Star Wars/Marvel: Hot Topic Captain Marvel set members, Loungefly NYCC 2019 Marvel LE 1000 members, NYCC 2019 Marvel 80th sets, Marvel Comics blind box 2020, Mandalorian set members, Her Universe Captain Marvel set date, 2018 Star Wars/Marvel licensed | todo | | | |
+| B098 | 2017 | dlr-le | follow-up 1 of B020: DLR LE 2017: Pin Trading Tales #1–9, Charming Characters #1–9, Pirates 50th individual pins, Villains box set contents, Mission Breakout AP pin, earlier AP quarterly pins | todo | | | |
+| B099 | 2017 | dlp | follow-up 1 of B021: DLP 2017: booster/April LE/October LE/Coco/Star Wars/Rapunzel set members, monthly Pin Trading Night pins, Christmas LE, edition size conflict (600 vs 700) | todo | | | |
+| B100 | 2017 | ds | follow-up 1 of B022: Disney Store 2017: 30th Anniversary week 8 and per-pack pin split (held), Storybook Classics #7/#10/#12, Park Pack Oct box, Coco 3 of 8, Last Jedi pin 2/3, UK single LE character details | todo | | | |
+| B101 | 2017 | asia | follow-up 1 of B023: Asia 2017: SHDR zodiac/summer/anniversary box members, anniversary mystery split (held), HKDL Pin Hunting/Passport/Teacup members, HKDL 12th anniversary, TDR 34th anniversary and Christmas | todo | | | |
+| B102 | 2017 | lic-boxlunch | follow-up 1 of B024: BoxLunch 2017: Feb 2017 wave set members (Snow White, Peter Pan, Toy Story, BatB, Up, Bambi, Dumbo, Mickey/Minnie, NBC), hat pin split (held), Halloween Mickey & Friends and Stitch set members, makers | todo | | | |
+
+Follow-up limit (maintainer, 16 Oct 2026): a follow-up cell is **unsuccessful** when it adds fewer than 3 genuinely new unique pins. After **two unsuccessful follow-ups** of the same original cell, its remaining gaps move to the **Long-term backlog** below (status `backlog`) instead of a new todo cell. A backlog item is reopened as a todo cell only when new evidence appears: a research-needed export, a reviewer note, or a new source or lead found by another cell. Follow-up cells say which pass they are ("follow-up 1 of …", "follow-up 2 of …"); the follow-ups appended so far are pass 1.
 
 Licensed lines (maintainer, 16 Oct 2026): `lic-loungefly` and `lic-boxlunch` are tracked separately so each brand's coverage can be measured; a Loungefly pin sold at BoxLunch counts for both. `lic-other` covers the remaining licensees. The hourly report prints new and held pins per brand.
 
 Status: todo → in progress → done / partial (budget ran out; a follow-up cell is appended) / blocked (source restriction or validation failure, flagged to the maintainer) / superseded (replaced by finer cells).
+
+## Long-term backlog
+| Item | Origin cell | Year | Line | Gaps | Reopen when |
+|---|---|---|---|---|---|
+| (none yet) | | | | | |
 
 ## Round log
 | Round | Started (UTC) | Cells | New pins | Notes |
@@ -137,3 +152,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | – | 2026-10-16 15:10 | scope update (no new research) | – | Star Wars and Marvel licensed pins in scope for now (maintainer). Rule 11 updated; B096 queued to record the pins earlier cells skipped |
 | 5 | 2026-10-16 15:30 | B096 (Star Wars/Marvel licensed), B020 (2017 DLR LE), B021 (2017 DLP), B022 (2017 Disney Store), B023 (2017 Asia), B024 (2017 Loungefly) | +170 net new (14 corroborated); 246 pin records | B024 done (no 2017 Loungefly-credited pins), others partial; follow-ups B097–B102. Held for pin-split/grouping confirmation: 37 Disney Store, 4 SHDR, 4 BoxLunch hats, 2 FiGPiN Thor/Loki, 2 Funko LA Comic Con |
 | 6 | 2026-10-16 16:30 | B068 (2017 BoxLunch), B069 (2017 other licensed), B025–B028 (2016 WDW OE/LE, DLR OE/LE) | in progress | |
+| – | 2026-10-16 16:50 | process update (no new research) | – | Licensed 2020–2026 moved to the front of the queue; dedicated Pink a la Mode and ArtLand cells B103–B109; manufacturer/retailer counted as separate dimensions; pin-structure rule 12; follow-up limit and long-term backlog |

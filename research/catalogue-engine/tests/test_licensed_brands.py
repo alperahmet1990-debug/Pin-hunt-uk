@@ -1,21 +1,24 @@
-"""Licensed coverage is tracked per brand from the key's release slug (BACKFILL-RULES 7 and 11)."""
+"""Licensed coverage: manufacturer and retailer are separate dimensions, each pin counted once (BACKFILL-RULES 7, 11)."""
 import os, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'tools'))
-from backfill_report import brands_of
+from backfill_report import maker_retailer
 
 
 class LicensedBrands(unittest.TestCase):
-    def test_loungefly_at_boxlunch_counts_for_both(self):
-        self.assertEqual(brands_of('lic/2018/loungefly-boxlunch-princess-mystery/ariel'), ['Loungefly', 'BoxLunch'])
+    def test_loungefly_at_boxlunch_is_one_maker_and_one_retailer(self):
+        self.assertEqual(maker_retailer('lic/2018/loungefly-boxlunch-princess-mystery/ariel'), ('Loungefly', 'BoxLunch'))
 
-    def test_retailer_only_and_multiword_brands(self):
-        self.assertEqual(brands_of('lic/2018/boxlunch-christmas/minnie-sweater'), ['BoxLunch'])
-        self.assertEqual(brands_of('lic/2019/loungefly-hot-topic-villains/ursula'), ['Loungefly', 'Hot Topic'])
-        self.assertEqual(brands_of('lic/2022/pink-a-la-mode-cupcakes/stitch'), ['Pink a la Mode'])
+    def test_retailer_only_and_multiword_slugs(self):
+        self.assertEqual(maker_retailer('lic/2018/boxlunch-christmas/minnie-sweater'), ('Not stated', 'BoxLunch'))
+        self.assertEqual(maker_retailer('lic/2019/loungefly-hot-topic-villains/ursula'), ('Loungefly', 'Hot Topic'))
+        self.assertEqual(maker_retailer('lic/2022/pink-a-la-mode-cupcakes/stitch'), ('Pink a la Mode', 'Pink a la Mode'))
 
-    def test_unknown_brand_and_non_licensed(self):
-        self.assertEqual(brands_of('lic/2019/primark-mickey/mickey'), ['Other licensed'])
-        self.assertEqual(brands_of('wdw/2019/oe/stitch'), [])
+    def test_claimed_fields_win_over_the_key(self):
+        self.assertEqual(maker_retailer('lic/2019/boxlunch-wall-e/wall-e', {'Manufacturer': 'Loungefly'}), ('Loungefly', 'BoxLunch'))
+
+    def test_unknown_and_non_licensed(self):
+        self.assertEqual(maker_retailer('lic/2019/primark-mickey/mickey'), ('Not stated', 'Not stated'))
+        self.assertIsNone(maker_retailer('wdw/2019/oe/stitch'))
 
 
 if __name__ == '__main__':

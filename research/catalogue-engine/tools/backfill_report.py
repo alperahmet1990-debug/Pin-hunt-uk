@@ -23,16 +23,24 @@ def line_from_key(k):
             'shdr': 'Shanghai', 'hkdl': 'Hong Kong', 'tdr': 'Tokyo', 'lic': 'Licensed retailers',
             'brush-of-magic': 'Disney Store', 'animated-cuties': 'Disney Store', 'disney-classics-london': 'Disney Store'}.get(p, 'Other')
 
-BRANDS = [('loungefly', 'Loungefly'), ('boxlunch', 'BoxLunch'), ('hot-topic', 'Hot Topic'), ('artland', 'ArtLand'),
-          ('pink-a-la-mode', 'Pink a la Mode'), ('funko', 'Funko'), ('her-universe', 'Her Universe')]
+MAKERS = [('loungefly', 'Loungefly'), ('funko', 'Funko'), ('artland', 'ArtLand'), ('pink-a-la-mode', 'Pink a la Mode'),
+          ('her-universe', 'Her Universe'), ('figpin', 'FiGPiN')]
+RETAILERS = [('boxlunch', 'BoxLunch'), ('hot-topic', 'Hot Topic'), ('pink-a-la-mode', 'Pink a la Mode'), ('jcpenney', 'JCPenney')]
 
-def brands_of(key):
-    """Licensed makers/retailers named in a lic/ key's release slug. A Loungefly pin sold at BoxLunch counts for both."""
+def _pick(text, vocab):
+    t = '-' + re.sub(r'[^a-z0-9]+', '-', str(text or '').lower()).strip('-') + '-'
+    return next((name for s, name in vocab if '-' + s + '-' in t), None)
+
+def maker_retailer(key, proposed=None):
+    """(manufacturer, retailer) of a licensed pin, each counted once. Claimed Manufacturer/Retailer
+    fields win; otherwise the lic/ key's release slug (BACKFILL-RULES 7). Unknown -> 'Not stated'."""
     parts = key.split('/')
-    if parts[0] != 'lic' or len(parts) < 3: return []
-    slug = '-' + parts[2] + '-'
-    found = [name for s, name in BRANDS if '-' + s + '-' in slug]
-    return found or ['Other licensed']
+    if parts[0] != 'lic' or len(parts) < 3: return None
+    p = proposed or {}
+    slug = parts[2]
+    maker = _pick(p.get('Manufacturer'), MAKERS) or (str(p['Manufacturer']).strip() if p.get('Manufacturer') else None) or _pick(slug, MAKERS)
+    retailer = _pick(p.get('Retailer'), RETAILERS) or (str(p['Retailer']).strip() if p.get('Retailer') else None) or _pick(slug, RETAILERS)
+    return (maker or 'Not stated', retailer or 'Not stated')
 
 def line_from_live(o):
     o = (o or '').lower()
@@ -95,7 +103,7 @@ def main(payload, out_xlsx, cov_json=None):
                          standalone=('/oe-single/' in (c.get('set_research_key') or '')), status=status,
                          corroborated=len(pubs) >= 2, conf=c['record_confidence'], name=pr.get('Pin name'),
                          chars=pr.get('Characters'), set=c.get('set_research_key'), match=(m[1] if m else ''),
-                         release=pr.get('Release date') or '', srcs=' '.join(sorted({e['source_url'] for e in usable})[:3])))
+                         mr=maker_retailer(c['research_key'], pr), release=pr.get('Release date') or '', srcs=' '.join(sorted({e['source_url'] for e in usable})[:3])))
     livec = collections.Counter((p.get('line') or line_from_live(p.get('o')), p['y'], p.get('ed') or edition(p.get('e'))) for p in live)
     newc = collections.Counter((r['line'], r['year'], r['ed']) for r in rows if r['status'] == 'new')
     stat = collections.Counter(r['status'] for r in rows)
@@ -177,15 +185,22 @@ def main(payload, out_xlsx, cov_json=None):
                   f'Standalone OE (new research): {len(sa)} of {len(oe_new)} new OE pins; live OE 2015-2026: {sum(livec[(l, y, "OE")] for l in LINES for y in YEARS)}']
     ck = collections.Counter(v[0] for k, v in checks.items() if k in {r['key'] for r in rows})
     lines_out.append('Reviewer checks: ' + (', '.join(f'{n} {c}' for c, n in ck.most_common()) if ck else 'none yet'))
-    lic = [r for r in rows if r['line'] == 'Licensed retailers' and in_range(r['year'])]
-    bcount = collections.Counter((b, r['status'] == 'new') for r in lic for b in brands_of(r['key']))
-    names = [n for _, n in BRANDS] + ['Other licensed']
-    lines_out.append('Licensed (research, 2015-2026; Loungefly-at-BoxLunch counts for both): ' + ' | '.join(
-        f'{n} {bcount[(n, True)]} new' + (f' (+{bcount[(n, False)]} held)' if bcount[(n, False)] else '') for n in names))
+    lic = [r for r in rows if r['mr'] and in_range(r['year'])]
+    def by(dim):
+        c = collections.Counter((r['mr'][dim], r['status'] == 'new') for r in lic)
+        names = sorted({n for n, _ in c}, key=lambda n: (n == 'Not stated', -c[(n, True)], n))
+        return c, names
+    for dim, label in ((0, 'manufacturer'), (1, 'retailer')):
+        c, names = by(dim)
+        lines_out.append(f'Licensed by {label} (each pin once): ' + ' | '.join(
+            f'{n} {c[(n, True)]} new' + (f' (+{c[(n, False)]} held)' if c[(n, False)] else '') for n in names))
     ws6 = wb.create_sheet('Licensed by brand')
-    table(ws6, ['Brand', *YEARS, 'New total', 'Held'], [
-        [n, *[sum(1 for r in lic if r['status'] == 'new' and r['year'] == y and n in brands_of(r['key'])) for y in YEARS],
-         bcount[(n, True)], bcount[(n, False)]] for n in names])
+    for dim, label in ((0, 'Manufacturer'), (1, 'Retailer')):
+        c, names = by(dim)
+        table(ws6, [label, *YEARS, 'New total', 'Held'], [
+            [n, *[sum(1 for r in lic if r['status'] == 'new' and r['year'] == y and r['mr'][dim] == n) for y in YEARS],
+             c[(n, True)], c[(n, False)]] for n in names])
+        ws6.append([])
     wb.save(out_xlsx)
     print('\n'.join(lines_out))
     json.dump({'new': new_keys, 'corroborated': corr_keys}, open(state_path, 'w'))

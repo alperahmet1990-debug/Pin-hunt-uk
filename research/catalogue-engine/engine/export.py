@@ -17,7 +17,8 @@ MASTER_COLUMNS = ["pinhunt_id", "Pin name", "Brand", "Series", "Characters", "Re
                   "Subject type", "Validation source 2", "Validated date", "Catalogue status", "Safe for app search",
                   "Confidence basis"]
 EXTRA_COLUMNS = ["research_key", "record_confidence", "verified", "review_status", "warnings", "duplicate_status", "duplicate_of", "duplicate_basis",
-                 "field_conflicts", "inherited_fields", "pin_name_source", "visual_form", "visual_colours", "visual_features", "pack_product_code"]
+                 "field_conflicts", "inherited_fields", "pin_name_source", "visual_form", "visual_colours", "visual_features", "pack_product_code",
+                 "Manufacturer", "Retailer"]
 
 def safe_cell(v):
     """Neutralise spreadsheet formula injection from source-derived text (=, +, -, @, tab, CR)."""
@@ -147,6 +148,10 @@ def build_rows(pins, sets, dupes, run_date):
             "pin_name_source": "claimed" if name else ("composed display label (subject – set)" if subject and set_name else ""),
             "visual_form": _v(f, "visual_form", home), "visual_colours": _v(f, "visual_colours", home),
             "visual_features": _v(f, "visual_features", home), "pack_product_code": _v(f, "pack_product_code", home),
+            # Licensed pins: who made it and who sold it are separate facts, so a Loungefly pin sold at
+            # BoxLunch is counted once per dimension, never twice.
+            "Manufacturer": _v(f, "manufacturer", home) or _from_chain(chain, "manufacturer", home),
+            "Retailer": _v(f, "retailer", home) or _from_chain(chain, "retailer", home),
         })
         rows.append(row)
     return rows
@@ -271,7 +276,7 @@ PROPOSED_COLUMNS = ["Pin name", "Brand", "Series", "Characters", "Main character
                     "Edition type", "Edition size", "Park / Retailer", "Release scope", "Original price", "Currency",
                     "external_ids", "Categories", "Notes", "Collection name", "Release wave", "Collection type",
                     "Expected pin count", "Set count check", "visual_form", "visual_colours", "visual_features",
-                    "pack_product_code", "pin_name_source"]
+                    "pack_product_code", "pin_name_source", "Manufacturer", "Retailer"]
 
 
 def _claim_out(c):

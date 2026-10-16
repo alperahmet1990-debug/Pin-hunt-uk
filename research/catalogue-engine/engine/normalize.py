@@ -6,18 +6,18 @@ PIN_FIELDS = {
     "pin_name", "characters", "main_character", "franchise", "attraction", "set_position", "edition_type",
     "edition_size", "release_date", "release_year", "release_location", "region", "original_price", "currency",
     "product_code", "pack_product_code", "is_chaser", "visual_description", "visual_form", "visual_colours",
-    "visual_features", "front_text", "backstamp_text", "size_mm", "materials", "pin_structure",
+    "visual_features", "front_text", "backstamp_text", "size_mm", "materials", "pin_structure", "manufacturer", "retailer",
 }
 SET_FIELDS = {
     "set_name", "family", "sub_series", "issuer", "format", "expected_pin_count", "pins_per_box", "has_chaser",
     "release_date", "release_location", "region", "price", "currency", "pack_product_code", "edition_type",
-    "edition_size",
+    "edition_size", "manufacturer", "retailer",
 }
 METHODS = {"page_fetch", "search_snippet", "physical_pin", "editorial", "legacy_record"}
 EVIDENCE_METHODS = {"page_fetch", "search_snippet", "physical_pin"}
 LIST_FIELDS = {"characters", "region", "visual_colours", "visual_features", "release_location"}
 # Free-text fields: every distinct statement is kept; disagreement is not a "conflict".
-TEXT_FIELDS = {"visual_description", "materials", "format", "franchise", "attraction"}
+TEXT_FIELDS = {"visual_description", "materials", "format", "franchise", "attraction", "manufacturer", "retailer"}
 NUMBER_FIELDS = {"edition_size", "original_price", "price", "expected_pin_count", "pins_per_box", "release_year", "size_mm"}
 BOOL_FIELDS = {"is_chaser", "has_chaser"}
 

@@ -29,7 +29,7 @@ git fetch origin claude/research-review-historical claude/pinhunt-disney-catalog
 git checkout claude/research-review-historical
 pnpm install
 git show origin/claude/pinhunt-disney-catalogue-research-c8o2x4:research/catalogue-engine/out/backfill-runs/run_01_wdw.json > /tmp/run_01.json
-# repeat for run_02 … run_04 (names are in index.json), then:
+# repeat for run_02 … run_05 (names are in index.json), then:
 node artifacts/pinhunt/scripts/research-review-preview.mjs /tmp/run_0*.json
 ```
 
@@ -54,7 +54,7 @@ When you approve it, the same screen runs against staging and decisions are stor
 
 1. Confirm migration 045 is applied on staging (see the staging runbook).
 2. Run the API server against staging and the app in staging mode from the `claude/research-review-historical` branch (or `main` once the PR is merged).
-3. Sign in as an App Creator, open Research Review → **Load research run (JSON)**, and load `run_01` … `run_04` one at a time. Each load is previewed and validated before anything is written.
+3. Sign in as an App Creator, open Research Review → **Load research run (JSON)**, and load `run_01` … `run_05` one at a time. Each load is previewed and validated before anything is written.
 
 Loading a run writes only to the staging research tables. Importing approved pins into the catalogue is a separate step that does not exist yet and needs its own approval.
 

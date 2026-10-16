@@ -1,0 +1,1951 @@
+{
+ "packet_id": "backfill-b028-dlr-le-2016",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b028",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+   "title": "Mickey's Halloween Party 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+   "title": "Date Night at Disneyland 2016 Pin Release",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-06"
+  },
+  {
+   "url": "https://disneypinforum.com/tags/date-nite/",
+   "title": "date nite (tag page)",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016"
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-61st-anniversary-pin/",
+   "title": "Disneyland 61st Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+   "title": "New Disney Pins March 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+   "title": "New Disney Pins March 2016 Week 4",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+   "title": "New Disney Pins May 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+   "title": "New Disney Pins July 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-07"
+  },
+  {
+   "url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+   "title": "New Disney Pins June 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-06"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+   "title": "New Disney Pins October 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+   "title": "Happy Holidays 2016 Annual Passholder Pin Release",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-12"
+  },
+  {
+   "url": "https://flickr.com/photos/68105287@N03/28994914802",
+   "title": "Disney Royalty Limited Release Mystery Pin Collection - Complete Set of 16 Pins",
+   "publisher": "Flickr (collector photo post)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-08"
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/haunted-mansion-reveal-conceal-set.60544/",
+   "title": "Haunted Mansion Reveal Conceal set",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-11"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/mickeys-halloween-party-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey's Halloween Party 2016",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "DLR party pin lineup post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-23",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "party pins on sale from 23 Sep 2016, party nights only, through 31 Oct"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "sold at Disneyland Resort during the party events"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey's Halloween Party 2016 four-pin costume set",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "set of four pins of characters in costume"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "four different pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "DLR party"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/halloween-time-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween Time 2016",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Halloween Time pin listed in the party post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Halloween Time at DLR"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Date Nite at Disneyland 2016",
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "pin release tied to Date Nite event"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-16",
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "released 16 Jun 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "Pin Traders Downtown Disney plus Little Green Men Store Command"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "eight limited release pins (plus 8 chasers LE 235 and 1 super chaser LE 120)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "regular pins limited release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/disneyland-61st-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 61st Anniversary Cast Member pin",
+     "source_url": "https://disneypinsblog.com/disneyland-61st-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "CM-only anniversary pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/piece-of-disneyland-resort-history",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Piece of Disneyland Resort History",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "PODH pin series at DLR"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/magic-is-in-the-air",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic is in the Air",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Disneyland bi-monthly collection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Disneyland collection"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/ap-quarterly-pixar-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Annual Passholder Exclusive Quarterly Pixar Collection",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "DLR AP quarterly Pixar pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "DLR APs"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/happy-holidays-2016-ap",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Holidays 2016 Annual Passholder",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "DLR AP holiday release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Holiday Puzzle Mystery Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "reveal/conceal mystery set"
+    },
+    {
+     "field": "format",
+     "value": "reveal/conceal mystery",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "reveal/conceal"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "15 pins total"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR 10 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "DLR"
+    },
+    {
+     "field": "visual_form",
+     "value": "puzzle forming a bat",
+     "source_url": "https://www.disneypinforum.com/threads/haunted-mansion-reveal-conceal-set.60544/",
+     "method": "search_snippet",
+     "note": "forum: completed puzzle forms the queue stanchion bat"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/disney-royalty-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Royalty Limited Release Mystery Pin Collection",
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "collector post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "8 princesses + 8 princes"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "one revealed princess + one mystery prince per box"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "$19.95 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-11",
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "released Thu 11 Aug at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "Disneyland"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://flickr.com/photos/68105287@N03/28994914802",
+     "method": "search_snippet",
+     "note": "boxed mystery"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/disneyland-60th-decades",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60th Decades collection",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "Diamond Decades collection continued into 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/dumbo-75th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Dumbo 75th Anniversary",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "film anniversary pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Love Letters Pin of the Month",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "monthly series, DL and WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/disney-duets-pin-of-the-month",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Duets Pin of the Month",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "Duets collection, DL and WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/summer-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Summer 2016",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "Disney Parks summer pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/dvc-compass-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DVC Compass",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "DVC member pin"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/mickeys-halloween-party-2016/logo-mickey-minnie",
+   "set_key": "dlr/2016/mickeys-halloween-party-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey's Halloween Party 2016 logo pin",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "event logo pin with 2016 artwork"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "2016 artwork shows Mickey and Minnie"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "described as limited release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/mickeys-halloween-party-2016/maleficent-evil-queen",
+   "set_key": "dlr/2016/mickeys-halloween-party-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey's Halloween Party 2016 Maleficent & Evil Queen",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "villains pin for the DLR party"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent",
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Maleficent and Evil Queen named"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "pin-on-pin design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "DLR party"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/mickeys-halloween-party-2016/jack-skellington-zero",
+   "set_key": "dlr/2016/mickeys-halloween-party-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey's Halloween Party 2016 Jack Skellington & Zero",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "spinner pin for DLR party"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Zero"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Jack and Zero named"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "spinner pin"
+    },
+    {
+     "field": "front_text",
+     "value": "Halloween Screams",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "bottom of pin reads Halloween Screams"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "DLR party"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/mickeys-halloween-party-2016/stitch-annual-passholder",
+   "set_key": "dlr/2016/mickeys-halloween-party-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey's Halloween Party 2016 Stitch AP pin",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "AP-exclusive pin in the party lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Stitch searching for treats"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE, annual passholder exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland APs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/halloween-time-2016/chernabog",
+   "set_key": "dlr/2016/halloween-time-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween Time 2016 Chernabog",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Halloween Time pin of Chernabog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chernabog"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Chernabog from Fantasia"
+    },
+    {
+     "field": "franchise",
+     "value": "Fantasia",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "Fantasia named"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin",
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "pin-on-pin with glitter accents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+     "method": "search_snippet",
+     "note": "sold also outside party during Halloween Time"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Rapunzel and Flynn",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in a forum member's ISO list for the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel",
+      "Flynn Rider"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in forum ISO list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Duchess and O'Malley",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in a forum member's ISO list for the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duchess",
+      "Thomas O'Malley"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in forum ISO list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/beauty-beast",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Beauty and Beast",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in a forum member's ISO list for the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Beast"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in forum ISO list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Aurora and Phillip",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in a forum member's ISO list for the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora",
+      "Prince Phillip"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in forum ISO list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/roger-anita",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Roger and Anita",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in a forum member's ISO list for the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Roger",
+      "Anita"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in forum ISO list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Anna and Kristoff",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in a forum member's ISO list for the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anna",
+      "Kristoff"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in forum ISO list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Robin and Maid Marian",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in a forum member's ISO list for the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Robin Hood",
+      "Maid Marian"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "couple named in forum ISO list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Aurora and Phillip chaser",
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "forum ISO list names the Aurora Phillip chaser"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora",
+      "Prince Phillip"
+     ],
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "Aurora and Phillip"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinforum.com/tags/date-nite/",
+     "method": "search_snippet",
+     "note": "chaser"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/date-nite-2016/blue-dress-aurora-super-chaser",
+   "set_key": "dlr/2016/date-nite-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Date Nite 2016 - Blue Dress Aurora super chaser",
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "super chaser"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "Blue Dress Aurora"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "super chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 120,
+     "source_url": "https://disneypinsblog.com/date-night-disneyland-2016-pin-release/",
+     "method": "search_snippet",
+     "note": "LE 120"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/disneyland-61st-anniversary-cast-member/61st-anniversary",
+   "set_key": "dlr/2016/disneyland-61st-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland 61st Anniversary Cast Member pin",
+     "source_url": "https://disneypinsblog.com/disneyland-61st-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "marks 17 Jul 2016 anniversary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-61st-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE, cast members only"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/disneyland-61st-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-14",
+     "source_url": "https://disneypinsblog.com/disneyland-61st-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "released 14 Jul 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Cast Member store",
+     "source_url": "https://disneypinsblog.com/disneyland-61st-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "CM store at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/piece-of-disneyland-resort-history/20th-century-music-company",
+   "set_key": "dlr/2016/piece-of-disneyland-resort-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Disneyland Resort History - 20th Century Music Company",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "contains a piece of the store"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR 10 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/magic-is-in-the-air/wall-e-eve",
+   "set_key": "dlr/2016/magic-is-in-the-air",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magic is in the Air - WALL-E and Eve",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "series pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E",
+      "EVE"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "WALL-E and Eve"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR 10 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/magic-is-in-the-air/dumbo",
+   "set_key": "dlr/2016/magic-is-in-the-air",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magic is in the Air - Dumbo",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "bi-monthly collection pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Dumbo"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR 10 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/ap-quarterly-pixar-2016/cars-land",
+   "set_key": "dlr/2016/ap-quarterly-pixar-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "AP Quarterly Pixar Collection - Cars Land",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Cars Land AP pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Cars Land",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Cars Land"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "hinged"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR 5 May 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "DLR, AP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/ap-quarterly-pixar-2016/toy-story-mania-mr-potato-head",
+   "set_key": "dlr/2016/ap-quarterly-pixar-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "AP Quarterly Pixar Collection - Toy Story Mania",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "Mr. Potato Head / Toy Story Mania AP pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Potato Head"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "Mr. Potato Head"
+    },
+    {
+     "field": "attraction",
+     "value": "Toy Story Mania",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "Toy Story Mania"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-07",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR 7 Jul 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2016-week-1",
+     "method": "search_snippet",
+     "note": "DLR, AP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/happy-holidays-2016-ap/nightmare-before-christmas",
+   "set_key": "dlr/2016/happy-holidays-2016-ap",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Happy Holidays 2016 - The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "AP holiday pin with matching ornament"
+    },
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "Nightmare Before Christmas theme"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 84.95,
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "$84.95 incl. ornament"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-08",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "available at DLR 8 Dec 2016 to APs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "DLR APs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/disneyland-60th-decades/1995-2004",
+   "set_key": "dlr/2016/disneyland-60th-decades",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland 60th Decades: 1995-2004",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "decade pin 1995-2004"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-24",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "available at DLR 24 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/dumbo-75th-anniversary/dumbo",
+   "set_key": "dlr/2016/dumbo-75th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo 75th Anniversary",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "celebrates film's 75th"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Dumbo"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-20",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "DL and WDW 20 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/donald-daisy",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Donald Duck & Daisy Duck",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "monthly pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "Donald and Daisy"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "glitter",
+      "slider"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "hinged with glitter and slider"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-24",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "24 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "shared"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/disney-duets-pin-of-the-month/belle-beast",
+   "set_key": "dlr/2016/disney-duets-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Duets - Beauty and the Beast",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "third pin in Duets"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Beast"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "Belle and Beast"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "third in collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "$14.99, comes in a tin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-24",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "24 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2016-week-4/",
+     "method": "search_snippet",
+     "note": "shared"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/summer-2016/ariel",
+   "set_key": "dlr/2016/summer-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Summer 2016 Ariel",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "summer pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "Ariel"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-02",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "2 Jun 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "shared"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/dvc-compass-2016/chip-dale",
+   "set_key": "dlr/2016/dvc-compass-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DVC Compass - Chip & Dale",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "DVC member pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "Chip & Dale"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "hinged"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "LE 2,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-02",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "2 Jun 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "http://disneypinsblog.com/new-disney-pins-june-2016-week-1/",
+     "method": "search_snippet",
+     "note": "shared, DVC members"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "four costumed characters not named in snippets; no members recorded"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016/logo-mickey-minnie",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "logo pin edition size not stated"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016",
+   "field": "original_price",
+   "searched": "3 queries",
+   "note": "no prices seen for the 2016 DLR party pins"
+  },
+  {
+   "key": "dlr/2016/halloween-time-2016/chernabog",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "no edition size given for LR"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "only 7 of 8 regular couples named (forum ISO list, not an official checklist); 8th unknown; other 7 chasers not named"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016",
+   "field": "members_conflict",
+   "searched": "1 query",
+   "note": "one search summary claimed first releases featured Megara and Tiana LE 200; looked blended with another event, not confirmed - not recorded"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "chasers stated LE 235 as a group; not tied to this pin explicitly"
+  },
+  {
+   "key": "dlr/2016/disneyland-61st-anniversary-cast-member/61st-anniversary",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "design not described in snippets"
+  },
+  {
+   "key": "dlr/2016/magic-is-in-the-air",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "other 2016 releases in the series not found; a summary said WALL-E was 2nd in series but source unclear - set_position not recorded"
+  },
+  {
+   "key": "dlr/2016/ap-quarterly-pixar-2016",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "other 2016 quarterly releases (e.g. Q1, Q4) not found"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "individual puzzle pieces not named"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "one jumbled snippet gave LE 3,000 / $15.99 / DL+WDW; another blurb in the same post with those figures is a hinged glitter slider pin, so not recorded"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016",
+   "field": "lead",
+   "searched": "2 queries",
+   "note": "2016 HMH Jack spinner seen only on a reseller listing (collectrandom); not recorded"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "individual princesses/princes not named; collector post only - stained glass style per post"
+  },
+  {
+   "key": "dlr/2016/disneyland-60th-decades",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "other Decades pins in 2016 (e.g. 2005-2015 closing pin) not found; 2015 Decades releases belong to a 2015 cell"
+  },
+  {
+   "key": "dlr/2016/pin-trading-night",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "no 2016 DLR Pin Trading Night LE pin identified in snippets"
+  },
+  {
+   "key": "dlr/2016/season-of-the-force",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "no Season of the Force 2016 pin found; only an undated Force Awakens set on a reseller"
+  },
+  {
+   "key": "dlr/2016/dca-food-wine-2016",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "no 2016 DCA Food & Wine pin found (2017/2018 AP pins exist; 2016 Food & Wine pins seen were Epcot)"
+  },
+  {
+   "key": "dlr/2016/diamond-celebration-closing",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "no explicit Diamond Celebration finale pin found (celebration ended Sep 2016)"
+  },
+  {
+   "key": "dlr/2016/wdi-diamond-character-pins",
+   "field": "lead",
+   "searched": "2 queries",
+   "note": "lead: Mickey's of Glendale (WDI) Diamond 60 character pins, 8 pins LE 250 $14.95, CM-only from 13 Jun 2016 - not a DLR park release; not recorded"
+  },
+  {
+   "key": "dlr/2016/rogue-one",
+   "field": "lead",
+   "searched": "3 queries",
+   "note": "lead: Rogue One Force Friday double-hinged Death Star pin LE 3,000 $15.99 (30 Sep 2016) and parks jumbo pins LE 3,000/1,000; snippet-to-URL attribution unclear, shared DL/WDW - verify"
+  },
+  {
+   "key": "dlr/2016/mystery-oe",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "Disney Racer, Disney Streets, Music Magic Memories 2016 mystery sets described as OE/both resorts - out of LE scope"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/beauty-beast",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/roger-anita",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "pin_name",
+   "searched": "maintainer review of B028",
+   "note": "hold: couple named only in a forum wishlist post; confirm from a publisher source before sign-off"
+  }
+ ],
+ "discovery_notes": "DLR 2016 LE/LR leads from search snippets only (29 standard WebSearch calls, blocked domains excluded). Mostly Disney Pins Blog event posts and weekly roundups; Disney Pin Forum and one Flickr collector post used for Date Nite members, HMH puzzle shape and Royalty mystery set. Shared DL+WDW releases included where snippets name Disneyland. Resellers (ecrater, collectrandom, wdwpinpals, worthpoint, yourwdwstore, whatnot) ignored. No sets split by character without a source naming the pin; Date Nite couples come from a forum ISO list."
+}

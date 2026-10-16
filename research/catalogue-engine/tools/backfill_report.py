@@ -94,7 +94,8 @@ def main(payload, out_xlsx, cov_json=None):
         rows.append(dict(key=c['research_key'], line=line_from_key(c['research_key']), year=y, ed=edition(pr.get('Edition type')),
                          standalone=('/oe-single/' in (c.get('set_research_key') or '')), status=status,
                          corroborated=len(pubs) >= 2, conf=c['record_confidence'], name=pr.get('Pin name'),
-                         chars=pr.get('Characters'), set=c.get('set_research_key'), match=(m[1] if m else '')))
+                         chars=pr.get('Characters'), set=c.get('set_research_key'), match=(m[1] if m else ''),
+                         release=pr.get('Release date') or '', srcs=' '.join(sorted({e['source_url'] for e in usable})[:3])))
     livec = collections.Counter((p.get('line') or line_from_live(p.get('o')), p['y'], p.get('ed') or edition(p.get('e'))) for p in live)
     newc = collections.Counter((r['line'], r['year'], r['ed']) for r in rows if r['status'] == 'new')
     stat = collections.Counter(r['status'] for r in rows)
@@ -133,8 +134,9 @@ def main(payload, out_xlsx, cov_json=None):
                 if lv or nw: data.append([y, l, e, lv, nw, lv + nw])
     table(ws3, ['Year', 'Line', 'Edition', 'Live', 'New research', 'Total unique'], data)
     ws4 = wb.create_sheet('Research pins')
-    table(ws4, ['research_key', 'line', 'year', 'edition', 'standalone OE', 'status', 'corroborated', 'confidence', 'pin name', 'characters', 'set', 'live/archived match'],
-          [[r['key'], r['line'], r['year'], r['ed'], r['standalone'], r['status'], r['corroborated'], r['conf'], r['name'], r['chars'], r['set'], r['match']] for r in rows])
+    table(ws4, ['research_key', 'line', 'year', 'edition', 'standalone OE', 'status', 'corroborated', 'confidence', 'pin name', 'characters', 'set', 'live/archived match', 'release date', 'sources (up to 3)'],
+          [[r['key'], r['line'], r['year'], r['ed'], r['standalone'], r['status'], r['corroborated'], r['conf'], r['name'], r['chars'], r['set'], r['match'], r['release'], r['srcs']] for r in rows])
+    ws4.auto_filter.ref = ws4.dimensions; ws4.freeze_panes = 'A2'
     sets = collections.defaultdict(list)
     for c in pins: sets[c.get('set_research_key')].append(c)
     ws5 = wb.create_sheet('Sets')

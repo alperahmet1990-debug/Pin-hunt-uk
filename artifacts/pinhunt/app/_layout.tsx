@@ -5,6 +5,7 @@ import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ToastProvider, ToastHost } from '@/components/ui/Toast';
+import { SetCompleteWatcher } from '@/components/SetCompleteWatcher';
 import { CollectionProvider } from '@/context/CollectionContext';
 import { BoardsProvider } from '@/context/BoardsContext';
 import { PinCatalogueProvider } from '@/context/PinCatalogueContext';
@@ -157,6 +158,7 @@ export default function RootLayout() {
                               <RootLayoutNav />
                             </AuthGuard>
                             <ToastHost />
+                            <SetCompleteWatcher />
                           </ToastProvider>
                         </KeyboardProvider>
                       </GestureHandlerRootView>

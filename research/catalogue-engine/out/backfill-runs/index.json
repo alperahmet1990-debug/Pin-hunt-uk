@@ -1,6 +1,6 @@
 {
  "source": "staging_payload.json",
- "git_commit": "143b405f42cd",
+ "git_commit": "9046963f4e2f",
  "generated": "2026-10-16",
  "runs": [
   {
@@ -43,20 +43,20 @@
   },
   {
    "file": "run_04_lic.json",
-   "pins": 1113,
-   "sets": 598,
-   "evidence": 12230,
-   "bytes": 4823231,
+   "pins": 1104,
+   "sets": 593,
+   "evidence": 12257,
+   "bytes": 4819381,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_05_lic-to-windows-of-attraction.json",
-   "pins": 494,
-   "sets": 183,
-   "evidence": 5969,
-   "bytes": 2397950,
+   "pins": 612,
+   "sets": 211,
+   "evidence": 6904,
+   "bytes": 2820201,
    "lines": [
     "lic",
     "animated-cuties",

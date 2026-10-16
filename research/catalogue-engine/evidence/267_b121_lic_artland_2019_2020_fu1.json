@@ -1,0 +1,2271 @@
+{
+ "packet_id": "backfill-b121-lic-artland-2019-2020-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b121",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+   "title": "Disney Villains Series 2 Artland Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-09-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/villain-series-jafar",
+   "title": "Villain Series - Jafar",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+   "title": "Fantasia Conducting Mickey ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-08-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+   "title": "Disney Princess Neo Nouveau ArtLand Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+   "title": "Mark Chilcott Pixar Series ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/copy-of-mark-chilcott-pixar-series-wall-e",
+   "title": "Mark Chilcott Pixar Series: Toy Story",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+   "title": "Hades Jumbo LE 100 ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/hades",
+   "title": "Hades",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+   "title": "Rapunzel's The Swing LE 100 ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-10-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/new-from-new-york.76243/",
+   "title": "\"New\" from New York",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+   "title": "Chip n Dale ArtLand Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-09-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins/products/chip-n-dale-cut-out-series",
+   "title": "Chip 'n' Dale - Cut Out Series",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-first-le-200-artland-disney-pin-release",
+   "title": "The First LE 200 ArtLand Disney Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-friends-series-3-artland-disney-pins/",
+   "title": "Princess & Friends Series 3 ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/princess-and-friends-series-2-disney-employee-center-pins",
+   "title": "Princess and Friends Series 2 Disney Employee Center Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "format",
+     "value": "five film designs; Coco painted/silver, Ratatouille gold only, UP/Toy Story/WALL-E silver or gold frame; each version LE 100",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists each film pin and its versions"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020 at these channels"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-pinapalooza-rapunzel-the-swing",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rapunzel's The Swing (ArtLand)",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "one pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "limited edition of 100"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post calls it an ArtLand pin"
+    },
+    {
+     "field": "retailer",
+     "value": "PinAPalooza",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "exclusive to PinAPalooza"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-chip-n-dale-cut-out",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip n Dale ArtLand Pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin (cut out series)",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "one LE 250 cut out pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "September 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "post credits ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2020/artland-villains-series-2/evil-queen",
+   "set_key": "lic/2020/artland-villains-series-2",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Evil Queen LE 250 ArtLand Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post has a separate Evil Queen pin heading with its own LE 250"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "Evil Queen named as its own pin in Series 2"
+    },
+    {
+     "field": "main_character",
+     "value": "Evil Queen",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "pin heading"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post gives a per-pin heading and edition for this villain"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round, 5mm thick",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "series size stated in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "released September 2020 at select retailers"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "September 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "select retailers; DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-villains-series-2/jafar",
+   "set_key": "lic/2020/artland-villains-series-2",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jafar LE 250 ArtLand Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post has a separate Jafar pin heading with its own LE 250"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jafar"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "Jafar named as its own pin in Series 2"
+    },
+    {
+     "field": "main_character",
+     "value": "Jafar",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "pin heading"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post gives a per-pin heading and edition for this villain"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round, 5mm thick",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "series size stated in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "released September 2020 at select retailers"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "September 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "select retailers; DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "pin_name",
+     "value": "Villain Series - Jafar",
+     "source_url": "https://pulse.gallery/products/villain-series-jafar",
+     "method": "search_snippet",
+     "note": "Pulse listing title; undated, linked to Series 2 by subject, size and edition only"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/products/villain-series-jafar",
+     "method": "search_snippet",
+     "note": "numbered edition 250 plus 25 AP/PP, with COA"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round",
+     "source_url": "https://pulse.gallery/products/villain-series-jafar",
+     "method": "search_snippet",
+     "note": "Pulse listing size"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/villain-series-jafar",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-fantasia-conducting-mickey/conducting-mickey-d",
+   "set_key": "lic/2020/artland-fantasia-conducting-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Conducting Mickey \"D\" Fine Art Pin",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post lists a separately titled 'D' Fine Art Pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release features Sorcerer Mickey conducting"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each lettered design has its own Fine Art Pin heading"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "LE 250 stated at release level"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round, 5mm thick",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available August 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "August 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-fantasia-conducting-mickey/conducting-mickey-e",
+   "set_key": "lic/2020/artland-fantasia-conducting-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Conducting Mickey \"E\" Fine Art Pin",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post lists a separately titled 'E' Fine Art Pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release features Sorcerer Mickey conducting"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each lettered design has its own Fine Art Pin heading"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "LE 250 stated at release level"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round, 5mm thick",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available August 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "August 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-fantasia-conducting-mickey/conducting-mickey-f",
+   "set_key": "lic/2020/artland-fantasia-conducting-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Conducting Mickey \"F\" Fine Art Pin",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post lists a separately titled 'F' Fine Art Pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release features Sorcerer Mickey conducting"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each lettered design has its own Fine Art Pin heading"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "LE 250 stated at release level"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round, 5mm thick",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available August 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "August 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/coco-painted",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: Coco (painted)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a Coco pin in a painted version"
+    },
+    {
+     "field": "franchise",
+     "value": "Coco",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "painted"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "painted version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/coco-silver",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: Coco (silver)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a Coco pin in a silver version"
+    },
+    {
+     "field": "franchise",
+     "value": "Coco",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "silver"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "silver version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/ratatouille-gold",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: Ratatouille (gold)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a Ratatouille pin in a gold version"
+    },
+    {
+     "field": "franchise",
+     "value": "Ratatouille",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "gold version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/up-silver",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: UP (silver)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a UP pin in a silver version"
+    },
+    {
+     "field": "franchise",
+     "value": "UP",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "silver"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "silver version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/up-gold",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: UP (gold)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a UP pin in a gold version"
+    },
+    {
+     "field": "franchise",
+     "value": "UP",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "gold version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/toy-story-silver",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: Toy Story (silver)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a Toy Story pin in a silver version"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "silver"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "silver version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Woody",
+      "Buzz Lightyear"
+     ],
+     "source_url": "https://pulse.gallery/products/copy-of-mark-chilcott-pixar-series-wall-e",
+     "method": "search_snippet",
+     "note": "Pulse Toy Story listing shows Woody and Buzz"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://pulse.gallery/products/copy-of-mark-chilcott-pixar-series-wall-e",
+     "method": "search_snippet",
+     "note": "Pulse: silver numbered edition 100 (AP/PP 23); buyer gets silver or gold"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/copy-of-mark-chilcott-pixar-series-wall-e",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/toy-story-gold",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: Toy Story (gold)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a Toy Story pin in a gold version"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "gold version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Woody",
+      "Buzz Lightyear"
+     ],
+     "source_url": "https://pulse.gallery/products/copy-of-mark-chilcott-pixar-series-wall-e",
+     "method": "search_snippet",
+     "note": "Pulse Toy Story listing shows Woody and Buzz"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://pulse.gallery/products/copy-of-mark-chilcott-pixar-series-wall-e",
+     "method": "search_snippet",
+     "note": "Pulse: gold numbered edition 100 (AP/PP 23); buyer gets silver or gold"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/copy-of-mark-chilcott-pixar-series-wall-e",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/wall-e-silver",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: WALL-E (silver)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a WALL-E pin in a silver version"
+    },
+    {
+     "field": "franchise",
+     "value": "WALL-E",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "silver"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "silver version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-mark-chilcott-pixar/wall-e-gold",
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mark Chilcott Pixar Series: WALL-E (gold)",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists a WALL-E pin in a gold version"
+    },
+    {
+     "field": "franchise",
+     "value": "WALL-E",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold"
+     ],
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "gold version"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each film/version listed with its own LE 100"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "each version LE 100; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "available October 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-hades-jumbo/hades-pain-panic-gold",
+   "set_key": "lic/2020/artland-hades-jumbo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hades Jumbo (gold)",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post says 50 gold versions of the Hades jumbo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hades",
+      "Pain",
+      "Panic"
+     ],
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hades with Pain and Panic"
+    },
+    {
+     "field": "main_character",
+     "value": "Hades",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "single jumbo pin; gold and silver versions"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold"
+     ],
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "gold version"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 50,
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "50 gold of the LE 100 total"
+    },
+    {
+     "field": "size_mm",
+     "value": "4.5 x 3.26 in",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "December 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "December 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "visual_description",
+     "value": "based on art by Annick Biaudet; mini giclee of that art included",
+     "source_url": "https://pulse.gallery/products/hades",
+     "method": "search_snippet",
+     "note": "Pulse listing paraphrase"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/hades",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-hades-jumbo/hades-pain-panic-silver",
+   "set_key": "lic/2020/artland-hades-jumbo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hades Jumbo (silver)",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post says 50 silver versions of the Hades jumbo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hades",
+      "Pain",
+      "Panic"
+     ],
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hades with Pain and Panic"
+    },
+    {
+     "field": "main_character",
+     "value": "Hades",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "single jumbo pin; gold and silver versions"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "silver"
+     ],
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "silver version"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 50,
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "50 silver of the LE 100 total"
+    },
+    {
+     "field": "size_mm",
+     "value": "4.5 x 3.26 in",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "December 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "December 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "visual_description",
+     "value": "based on art by Annick Biaudet; mini giclee of that art included",
+     "source_url": "https://pulse.gallery/products/hades",
+     "method": "search_snippet",
+     "note": "Pulse listing paraphrase"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/hades",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-pinapalooza-rapunzel-the-swing/rapunzel",
+   "set_key": "lic/2020/artland-pinapalooza-rapunzel-the-swing",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel's The Swing",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "Tangled pin of Rapunzel"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Rapunzel in Fragonard's The Swing; oversize framed Masterworks-style pin",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "limited edition of 100"
+    },
+    {
+     "field": "original_price",
+     "value": 74.99,
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "dollar price"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post dated 7 Oct 2020; year taken from post date"
+    },
+    {
+     "field": "release_location",
+     "value": "PinAPalooza",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "exclusive to PinAPalooza"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "PinAPalooza",
+     "source_url": "https://disneypinsblog.com/rapunzels-the-swing-le-100-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "PinAPalooza exclusive"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://www.disneypinforum.com/threads/new-from-new-york.76243/",
+     "method": "search_snippet",
+     "note": "dealer post lists it among exclusive ArtLand pins it commissioned"
+    },
+    {
+     "field": "retailer",
+     "value": "PinAPalooza",
+     "source_url": "https://www.disneypinforum.com/threads/new-from-new-york.76243/",
+     "method": "search_snippet",
+     "note": "PinAPalooza owner says it created the exclusive via Pulse Gallery UK"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-chip-n-dale-cut-out/chip-dale-clarice",
+   "set_key": "lic/2020/artland-chip-n-dale-cut-out",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip n Dale ArtLand Pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale",
+      "Clarice"
+     ],
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "Chip on piano, Clarice singing, Dale on bass"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "single cut out pin showing all three"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "2.75 in",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "released September 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "September 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "source credits the pin to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-artland-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "pin_name",
+     "value": "Chip 'n' Dale - Cut Out Series",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/chip-n-dale-cut-out-series",
+     "method": "search_snippet",
+     "note": "Pulse title; undated, linked to DPB post by subject, edition and size only"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/chip-n-dale-cut-out-series",
+     "method": "search_snippet",
+     "note": "Pulse edition 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "2.75 x 2 in approx",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/chip-n-dale-cut-out-series",
+     "method": "search_snippet",
+     "note": "Pulse size"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/chip-n-dale-cut-out-series",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2020/artland-villains-series-2",
+   "field": "pin_structure",
+   "searched": "3 queries (DPB Series 2 post, Pulse)",
+   "note": "hold released: DPB post now seen with separate per-pin headings 'Evil Queen LE 250' and 'Jafar LE 250', so Evil Queen and Jafar are separate pins"
+  },
+  {
+   "key": "lic/2020/artland-villains-series-2/jafar",
+   "field": "set",
+   "searched": "2 queries",
+   "note": "hold: Pulse 'Villain Series - Jafar' listing is undated; Pulse also uses 'Villain Series' for the 2019 LE 250 set; linked to Series 2 by subject only (Jafar not in 2019 set)"
+  },
+  {
+   "key": "lic/2020/artland-villains-series-2/evil-queen",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "no standalone ArtLand Villain Series Evil Queen listing found; Pulse Evil Queen items are other lines (Cut Out Series, glass Hag)"
+  },
+  {
+   "key": "lic/2020/artland-villains-series-2/captain-hook",
+   "field": "set",
+   "searched": "2 queries",
+   "note": "hold kept: still no dated listing tying Pulse 'Villain Series - Captain Hook' to Series 2; DPB names Hook in Series 2 but the Pulse match is by size/edition only"
+  },
+  {
+   "key": "lic/2020/artland-fantasia-conducting-mickey",
+   "field": "expected_pin_count",
+   "searched": "3 queries (DPB, Pulse)",
+   "note": "hold released: post names three separate pins, Conducting Mickey 'D', 'E' and 'F' Fine Art Pins; set size not stated and A-C letters not found in any snippet"
+  },
+  {
+   "key": "lic/2020/artland-fantasia-conducting-mickey/conducting-mickey-d",
+   "field": "visual_description",
+   "searched": "3 queries",
+   "note": "design differences between D/E/F not described in snippets; LE 250 stated only at release level"
+  },
+  {
+   "key": "lic/2020/artland-fantasia-conducting-mickey/conducting-mickey-e",
+   "field": "visual_description",
+   "searched": "3 queries",
+   "note": "design differences between D/E/F not described in snippets; LE 250 stated only at release level"
+  },
+  {
+   "key": "lic/2020/artland-fantasia-conducting-mickey/conducting-mickey-f",
+   "field": "visual_description",
+   "searched": "3 queries",
+   "note": "design differences between D/E/F not described in snippets; LE 250 stated only at release level"
+  },
+  {
+   "key": "lic/2020/artland-neo-nouveau-series-1",
+   "field": "pin_structure",
+   "searched": "3 queries (DPB, Pulse)",
+   "note": "hold kept: post still only lists Ariel, Aurora, Rapunzel, Snow White at release level; Aurora entry shows a Cinderella image and Snow White caption repeats Rapunzel"
+  },
+  {
+   "key": "lic/2020/artland-neo-nouveau-series-1",
+   "field": "members",
+   "searched": "1 query",
+   "note": "a Pulse URL /products/neo-nouveau-aurora exists but its snippet returned no product details; Pulse does list a Neo Nouveau Esmeralda (Series 3, 2021)"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "resolved members from post (5 films, 9 versions); total count not stated as a number, so not recorded"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/coco-painted",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the Coco pin not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/coco-silver",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the Coco pin not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/ratatouille-gold",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the Ratatouille pin not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/up-silver",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the UP pin not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/up-gold",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the UP pin not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/wall-e-silver",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the WALL-E pin not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/wall-e-gold",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the WALL-E pin not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar/toy-story-silver",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "Pulse Toy Story listing URL slug reads 'copy-of-...-wall-e' while titled Toy Story; listing content used, slug ignored"
+  },
+  {
+   "key": "lic/2020/artland-hades-jumbo/hades-pain-panic",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "gold and silver now recorded as variant keys -gold/-silver (50 each); parent key carries the LE 100 release total, dedupe at merge"
+  },
+  {
+   "key": "lic/2020/artland-hades-jumbo",
+   "field": "price",
+   "searched": "1 query",
+   "note": "Pulse shows GBP 160 but listing date unknown; not recorded as launch price"
+  },
+  {
+   "key": "lic/2020/artland-pinapalooza-rapunzel-the-swing/rapunzel",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "exact release month not stated; only the post date (Oct 2020) seen"
+  },
+  {
+   "key": "lic/2020/artland-chip-n-dale-cut-out/chip-dale-clarice",
+   "field": "set",
+   "searched": "1 query",
+   "note": "hold: Pulse Cut Out Series listing undated; matched to Sept 2020 release by subject/edition/size only. DPB archive also shows a 'Chip, Dale & Clarice LE 250' title, likely same pin"
+  },
+  {
+   "key": "lic/2020/artland-chip-n-dale-cut-out",
+   "field": "price",
+   "searched": "1 query",
+   "note": "no launch price in snippets"
+  },
+  {
+   "key": "lic/2019/artland-le200-dec-2019/snow-white-and-grumpy",
+   "field": "pin_structure",
+   "searched": "1 query (DPB post re-checked)",
+   "note": "hold kept: snippet still a release-level list ('feature Snow White/Grumpy, Cheshire Cat, March Hare, Mare and Pascal'); Marie misspelled; no per-pin edition"
+  },
+  {
+   "key": "lic/2019/artland-le200-dec-2019/cheshire-cat",
+   "field": "pin_structure",
+   "searched": "1 query (DPB post re-checked)",
+   "note": "hold kept: snippet still a release-level list ('feature Snow White/Grumpy, Cheshire Cat, March Hare, Mare and Pascal'); Marie misspelled; no per-pin edition"
+  },
+  {
+   "key": "lic/2019/artland-le200-dec-2019/march-hare",
+   "field": "pin_structure",
+   "searched": "1 query (DPB post re-checked)",
+   "note": "hold kept: snippet still a release-level list ('feature Snow White/Grumpy, Cheshire Cat, March Hare, Mare and Pascal'); Marie misspelled; no per-pin edition"
+  },
+  {
+   "key": "lic/2019/artland-le200-dec-2019/marie",
+   "field": "pin_structure",
+   "searched": "1 query (DPB post re-checked)",
+   "note": "hold kept: snippet still a release-level list ('feature Snow White/Grumpy, Cheshire Cat, March Hare, Mare and Pascal'); Marie misspelled; no per-pin edition"
+  },
+  {
+   "key": "lic/2019/artland-le200-dec-2019/pascal",
+   "field": "pin_structure",
+   "searched": "1 query (DPB post re-checked)",
+   "note": "hold kept: snippet still a release-level list ('feature Snow White/Grumpy, Cheshire Cat, March Hare, Mare and Pascal'); Marie misspelled; no per-pin edition"
+  },
+  {
+   "key": "lic/2020/artland-princess-friends-series-2",
+   "field": "coverage",
+   "searched": "3 queries",
+   "note": "not found: S3 post (Apr 2021) links to S1 and S2, implying an ArtLand S2 exists; lineup/date not seen. 2019 Employee Center 'Princess and Friends Series 2' is a different line"
+  },
+  {
+   "key": "lic/2020/artland-*",
+   "field": "price",
+   "searched": "3 queries",
+   "note": "no launch prices for 2020 DPB releases in snippets (only Swing $74.99); Pulse GBP prices undated, DPB archive $ prices are current listings"
+  },
+  {
+   "key": "lic/2019/artland-*",
+   "field": "coverage",
+   "searched": "1 query",
+   "note": "no further 2019 ArtLand releases found beyond Sept 2019 3in round/villains/Pooh and Dec 2019 LE 200/LE 500"
+  },
+  {
+   "key": "lic/2020/artland-hades-jumbo/hades-pain-panic-gold",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: gold/silver variant of the existing Hades jumbo record (LE 100 total in packet 243); decide variant records vs parent before counting, to avoid double-counting"
+  },
+  {
+   "key": "lic/2020/artland-hades-jumbo/hades-pain-panic-silver",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: gold/silver variant of the existing Hades jumbo record (LE 100 total in packet 243); decide variant records vs parent before counting, to avoid double-counting"
+  }
+ ],
+ "discovery_notes": "Follow-up to packet 243 (b109); reuses its keys and 208's 2019 keys. 27 searches. Holds released: Villains S2 structure (per-pin Evil Queen/Jafar headings), Conducting Mickey structure (D/E/F named pins). Kept: Captain Hook Pulse match, Neo Nouveau S1, LE 200 Dec 2019. Out of window seen: Sharing a Dream (2021-03), Blue Fairy jumbo (2021-01), Horned King jumbo (2021-04), Neo Nouveau S2 (2021-02), Princess & Friends S3 (2021-04)."
+}

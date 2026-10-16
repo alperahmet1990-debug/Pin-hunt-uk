@@ -1,0 +1,5661 @@
+{
+ "packet_id": "backfill-b022-ds-2017",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b022",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+   "title": "Hercules Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+   "title": "Treasure Planet Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+   "title": "Snow White and the Seven Dwarfs 80th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+   "title": "Zorro 60th Anniversary Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09-13",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/disney-store-uk-pins/",
+   "title": "Disney Store UK Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+   "title": "Minnie Mouse Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+   "title": "Minnie Mouse Signature Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+   "title": "Disney Store Cars 3 Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-04-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-store-30th-anniversary-pins",
+   "title": "Disney Store 30th Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+   "title": "Disney Store 30th Anniversary Pins - Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+   "title": "Disney Store 30th Anniversary Pins - Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+   "title": "Disney Store 30th Anniversary Pins - Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+   "title": "Disney Store 30th Anniversary Pins - Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+   "title": "Disney Store 30th Anniversary Pins - Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+   "title": "Disney Store 30th Anniversary Pins - Week 6",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+   "title": "Disney Store 30th Anniversary Pins - Week 7",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+   "title": "Disney Store 30th Anniversary Pins - Week 9",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+   "title": "Disney Store 30th Anniversary Pins - Week 10",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+   "title": "Toy Story 2: Disney Store 30th Anniversary Pin (Jessie & Bullseye)",
+   "publisher": "Dan the Pixar Fan",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+   "title": "Mary Poppins Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+   "title": "The Reluctant Dragon Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/three-little-pigs-pin/",
+   "title": "Three Little Pigs Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+   "title": "Snow White and the Seven Dwarfs Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/storybook-classics-disney-pins/",
+   "title": "Storybook Classics Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-park-pack-pin-edition-back",
+   "title": "Disney Park Pack Pin Edition is Back!",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/updated-disney-park-pack-pins/",
+   "title": "Disney Park Pack 3.0 Pin Edition",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+   "title": "September 2017 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+   "title": "November 2017 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+   "title": "December 2017 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+   "title": "Disney Park Pack September 2017 Subscription Box Review - Pin Trading Edition 2.0",
+   "publisher": "Hello Subscription",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+   "title": "Disney Park Pack: Pin Trading Edition Reviews",
+   "publisher": "Hello Subscription",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+   "title": "Coco Pin Set at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+   "title": "Rey Pin - Star Wars: The Last Jedi at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+   "title": "Luke Skywalker - Star Wars: The Last Jedi at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/praetorian-guard-pin-star-wars-last-jedi-shopdisney/",
+   "title": "Praetorian Guard Pin - Star Wars: The Last Jedi at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+   "title": "Star Wars The Last Jedi Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/first-order-executioner-stormtrooper-pin-star-war-last-jedi/",
+   "title": "First Order Executioner Stormtrooper Pin - Star Wars: The Last Jedi",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+   "title": "R2-D2 and Porgs Pin - Star Wars: The Last Jedi",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+   "title": "Disney Store Holiday 2017 Limited Release Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsuk/2017/hercules-le-400",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hercules Pin - Disney Store UK (Disney Store UK)",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "due at DS UK 23 May 2017"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2017/treasure-planet-le-500",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Treasure Planet Pin - Disney Store UK (Disney Store UK)",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-18",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "due at DS UK 18 July 2017"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2017/snow-white-80th-anniversary-le-500",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow White and the Seven Dwarfs 80th Anniversary Pin (Disney Store UK)",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "DPB search summary places it Aug 2017; exact day not in snippet"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2017/zorro-60th-anniversary-le-500",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Zorro 60th Anniversary Pin - Disney Store UK (Disney Store UK)",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-26",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "due at DS UK 26 Sep 2017; post dated 13 Sep"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Minnie Mouse Signature Pin Set",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "set_name",
+     "value": "Minnie Mouse Pin Set",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "UK announcement title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 950,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 950"
+    },
+    {
+     "field": "edition_size",
+     "value": 950,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "150 in Europe, 950 worldwide"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-14",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "coming to Europe 14 Feb 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-09",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "US release 9 Mar 2017 after UK"
+    },
+    {
+     "field": "price",
+     "value": 40.0,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "GBP 40.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "price",
+     "value": 59.95,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 59.95 US release"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "DS UK/Europe online"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store (US)",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "later offered in US"
+    },
+    {
+     "field": "format",
+     "value": "boxed set in hatbox-style case",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "hatbox case with faux-leather handle"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/cars-3-le-750-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store Cars 3 Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "boxed set of four"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-25",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "released 25 Apr 2017"
+    },
+    {
+     "field": "price",
+     "value": 59.95,
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 59.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store (US)",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "Disney Store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-30th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "series title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 30,
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "30 never-released LE pins for films 1988-2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "LE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-30th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "weekend releases 28 Jan to 1 Apr 2017"
+    },
+    {
+     "field": "format",
+     "value": "weekly 3-pin packs, 10 weeks",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-30th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "new 3-pin pack each weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store (US) stores by raffle, then DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-30th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "raffle in store; leftovers online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-01",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 1",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 1",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "release 28 Jan 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-02",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 2",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 2",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-04",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "release 4 Feb 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-03",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 3",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 3",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-11",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "release 11 Feb 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-04",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 4",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 4",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-18",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "release 18 Feb 2017"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "sets of three for 19.99"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-05",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 5",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 5",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "weekly release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "online leftovers from 26 Feb 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-06",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 6",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 6",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-07",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 7",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 7",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "post dated 11 Mar 2017; online leftovers 12 Mar"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-09",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 9",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 9",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "release 25 Mar 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-10",
+   "parent_set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary Pins - Week 10",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "pack of three pins"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "USD 19.95 per 3-pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "sub_series",
+     "value": "Week 10",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "weekly release"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary-backpack-gwp",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store 30th Anniversary backpack gift pin",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "pin given with week 1 backpack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "one pin with backpack"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "week 1"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/storybook-classics-06-mary-poppins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics #6: Mary Poppins Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "pin 6 of series"
+    },
+    {
+     "field": "family",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "single pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "LE 1100"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "January 2017 pin"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/storybook-classics-08-the-reluctant-dragon",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics #8: The Reluctant Dragon Pin",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "pin 8 of series"
+    },
+    {
+     "field": "family",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "single pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "LE 1100"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "eighth pin, Mar 2017"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/storybook-classics-09-three-little-pigs",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics #9: Three Little Pigs Pin",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "pin 9 of series"
+    },
+    {
+     "field": "family",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "single pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "LE 1100"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "ninth pin, Apr 2017"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/storybook-classics-11-snow-white-and-the-seven-dwarfs",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics #11: Snow White and the Seven Dwarfs Pin",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "pin 11 of series"
+    },
+    {
+     "field": "family",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "single pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "LE 1100"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "11th pin, Jun 2017"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - Sep 2017",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "first 3.0 box"
+    },
+    {
+     "field": "family",
+     "value": "Disney Park Pack Pin Edition 3.0",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "shopDisney subscription"
+    },
+    {
+     "field": "sub_series",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "theme Alice in Wonderland"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three pins per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "Sep 2017 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com subscription",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription box"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - Nov 2017",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "third 3.0 box"
+    },
+    {
+     "field": "family",
+     "value": "Disney Park Pack Pin Edition 3.0",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "shopDisney subscription"
+    },
+    {
+     "field": "sub_series",
+     "value": "Lilo & Stitch",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "theme Lilo & Stitch"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three pins per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "Nov 2017 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com subscription",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription box"
+    },
+    {
+     "field": "sub_series",
+     "value": "The Little Mermaid",
+     "source_url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+     "method": "search_snippet",
+     "note": "review site says Nov 2017 box was Little Mermaid - conflict"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - Dec 2017",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "fourth 3.0 box"
+    },
+    {
+     "field": "family",
+     "value": "Disney Park Pack Pin Edition 3.0",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "shopDisney subscription"
+    },
+    {
+     "field": "sub_series",
+     "value": "Fantasia",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "theme Fantasia"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three pins per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "Dec 2017 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com subscription",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription box"
+    },
+    {
+     "field": "sub_series",
+     "value": "Lilo & Stitch",
+     "source_url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+     "method": "search_snippet",
+     "note": "review site says Dec 2017 box was Lilo & Stitch - conflict"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/park-pack-2-0-09-sep",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Trading Edition 2.0 - September 2017",
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "review title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "three pins reviewed"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "Sep 2017 box"
+    },
+    {
+     "field": "format",
+     "value": "2 OE + 1 LE 500 per box",
+     "source_url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+     "method": "search_snippet",
+     "note": "2.0 boxes: two OE plus one LE"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store online subscription",
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "subscription box"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/coco-le-600-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Coco Pin Set at shopDisney",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "8-pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "from 1 Oct 2017"
+    },
+    {
+     "field": "price",
+     "value": 79.95,
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 79.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (online only)",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "online only"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars: The Last Jedi collection at shopDisney",
+     "source_url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+     "method": "search_snippet",
+     "note": "7-pin series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "collect all 7"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "each LE 2000"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE 2000 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-31",
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "first pin 31 Oct 2017"
+    },
+    {
+     "field": "format",
+     "value": "pin with lithograph in flip-top box, sold separately",
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "each pin sold separately with lithograph"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com",
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "shopDisney"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/holiday-2017-limited-release",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store Holiday 2017 Limited Release Pins",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-08",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "8 Nov 2017"
+    },
+    {
+     "field": "price",
+     "value": 5.0,
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD 5 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store (US) retail stores",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "Disney retail stores while supplies last"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsuk/2017/hercules-le-400/hercules-le-400",
+   "set_key": "dsuk/2017/hercules-le-400",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hercules Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "exclusive to Europe"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "due at DS UK 23 May 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Hercules pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/treasure-planet-le-500/treasure-planet-le-500",
+   "set_key": "dsuk/2017/treasure-planet-le-500",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Treasure Planet Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "exclusive to Europe"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-18",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "due at DS UK 18 July 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "franchise",
+     "value": "Treasure Planet",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Treasure Planet pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/treasure-planet-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Disney Store website in Europe"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/snow-white-80th-anniversary-le-500/snow-white-80th-anniversary-le-500",
+   "set_key": "dsuk/2017/snow-white-80th-anniversary-le-500",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Snow White and the Seven Dwarfs 80th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "exclusive to Europe"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "DPB search summary places it Aug 2017; exact day not in snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "franchise",
+     "value": "Snow White and the Seven Dwarfs",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "80th anniversary pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-80th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "snippet says UK only"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/zorro-60th-anniversary-le-500/zorro-60th-anniversary-le-500",
+   "set_key": "dsuk/2017/zorro-60th-anniversary-le-500",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zorro 60th Anniversary Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "exclusive to Europe"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-26",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "due at DS UK 26 Sep 2017; post dated 13 Sep"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Zorro"
+     ],
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Zorro 60th anniversary pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/zorro-60th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "European Disney Store website"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/minnie-mouse-signature-pin-set/minnie-with-figaro",
+   "set_key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse",
+      "Figaro"
+     ],
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "Minnie with Figaro design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Signature set design: Minnie with Figaro",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five listed designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/minnie-mouse-signature-pin-set/bow",
+   "set_key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Signature set design: bow",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five listed designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/minnie-mouse-signature-pin-set/sunglasses",
+   "set_key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Signature set design: sunglasses",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five listed designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/minnie-mouse-signature-pin-set/hat",
+   "set_key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Signature set design: hat",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five listed designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/minnie-mouse-signature-pin-set/luggage",
+   "set_key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Signature set design: luggage",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five listed designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/cars-3-le-750-set/cars-3-logo",
+   "set_key": "dsus/2017/cars-3-le-750-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars 3 logo pin",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "sculpted bas-relief logo pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "bas-relief"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "sculptured bas-relief"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-25",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/cars-3-le-750-set/lightning-mcqueen",
+   "set_key": "dsus/2017/cars-3-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lightning McQueen"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "named enamel pin in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Lightning McQueen",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "named pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-25",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/cars-3-le-750-set/cruz-ramirez",
+   "set_key": "dsus/2017/cars-3-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cruz Ramirez"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "named enamel pin in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Cruz Ramirez",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "named pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-25",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/cars-3-le-750-set/jackson-storm",
+   "set_key": "dsus/2017/cars-3-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jackson Storm"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "named enamel pin in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Jackson Storm",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "named pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-25",
+     "source_url": "https://disneypinsblog.com/disney-store-cars-3-pin-set/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-01/who-framed-roger-rabbit",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-01",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Who Framed Roger Rabbit",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "week 1 features pins from Who Framed Roger Rabbit"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "release 28 Jan 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-01/the-little-mermaid",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-01",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "The Little Mermaid",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "week 1 features pins from The Little Mermaid"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "release 28 Jan 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-01/the-prince-and-the-pauper",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-01",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "The Prince and the Pauper",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "week 1 features pins from The Prince and the Pauper"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "release 28 Jan 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-02/beauty-and-the-beast",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-02",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Beauty and the Beast",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "week 2 features pins from Beauty and the Beast"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-04",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "release 4 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-02/aladdin",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-02",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "week 2 features pins from Aladdin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-04",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "release 4 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-02/the-nightmare-before-christmas",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-02",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "week 2 features pins from The Nightmare Before Christmas"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-04",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-2/",
+     "method": "search_snippet",
+     "note": "release 4 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-03/the-lion-king",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-03",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "week 3 features pins from The Lion King"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-11",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "release 11 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-03/pocahontas",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-03",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "week 3 features pins from Pocahontas"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-11",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "release 11 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-03/the-hunchback-of-notre-dame",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-03",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "The Hunchback of Notre Dame",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "week 3 features pins from The Hunchback of Notre Dame"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-11",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-3/",
+     "method": "search_snippet",
+     "note": "release 11 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-04/hercules",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-04",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "week 4 features pins from Hercules"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-18",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "release 18 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-04/mulan",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-04",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "week 4 features pins from Mulan"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-18",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "release 18 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-04/toy-story-2",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-04",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jessie",
+      "Bullseye"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "Toy Story 2 pin shows Jessie and Bullseye"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story 2",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "week 4 features pins from Toy Story 2"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-18",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-4/",
+     "method": "search_snippet",
+     "note": "release 18 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-05/fantasia-2000",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-05",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Fantasia 2000",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "week 5 features pins from Fantasia 2000"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "online leftovers from 26 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-05/monsters-inc",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-05",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Monsters, Inc.",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "week 5 features pins from Monsters, Inc."
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "online leftovers from 26 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-05/lilo-and-stitch",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-05",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Lilo & Stitch",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "week 5 features pins from Lilo & Stitch"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-5",
+     "method": "search_snippet",
+     "note": "online leftovers from 26 Feb 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-06/pirates-of-the-caribbean",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-06",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "week 6 features pins from Pirates of the Caribbean"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-06/the-incredibles",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-06",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "The Incredibles",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "week 6 features pins from The Incredibles"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-06/chicken-little",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-06",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Chicken Little",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "week 6 features pins from Chicken Little"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-6/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-07/cars",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-07",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Cars",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "week 7 features pins from Cars"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "post dated 11 Mar 2017; online leftovers 12 Mar"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-07/enchanted",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-07",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Enchanted",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "week 7 features pins from Enchanted"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "post dated 11 Mar 2017; online leftovers 12 Mar"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-07/wall-e",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-07",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "WALL-E",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "week 7 features pins from WALL-E"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-7/",
+     "method": "search_snippet",
+     "note": "post dated 11 Mar 2017; online leftovers 12 Mar"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-09/wreck-it-ralph",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-09",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Wreck-It Ralph",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "week 9 features pins from Wreck-It Ralph"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "release 25 Mar 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-09/frozen",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-09",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Frozen",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "week 9 features pins from Frozen"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "release 25 Mar 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-09/big-hero-6",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-09",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Big Hero 6",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "week 9 features pins from Big Hero 6"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-9/",
+     "method": "search_snippet",
+     "note": "release 25 Mar 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-10/inside-out",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-10",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Inside Out",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "week 10 features pins from Inside Out"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-10/zootopia",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-10",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "week 10 features pins from Zootopia"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-week-10/guardians-of-the-galaxy-vol-2",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-week-10",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Guardians of the Galaxy Vol. 2",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "week 10 features pins from Guardians of the Galaxy Vol. 2"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html",
+     "method": "search_snippet",
+     "note": "series described as LE pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-10/",
+     "method": "search_snippet",
+     "note": "2017 series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-store-30th-anniversary-backpack-gwp/jiminy-cricket",
+   "set_key": "dsus/2017/disney-store-30th-anniversary-backpack-gwp",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jiminy Cricket"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "backpack came with a Jiminy Cricket pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins-week-1/",
+     "method": "search_snippet",
+     "note": "week 1 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/storybook-classics-06-mary-poppins/mary-poppins",
+   "set_key": "dsus/2017/storybook-classics-06-mary-poppins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mary Poppins"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "Mary Poppins pin"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "pin #6"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "January 2017 pin"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "opens like a storybook"
+    },
+    {
+     "field": "franchise",
+     "value": "Mary Poppins",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin",
+     "method": "search_snippet",
+     "note": "story subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/storybook-classics-08-the-reluctant-dragon/the-reluctant-dragon",
+   "set_key": "dsus/2017/storybook-classics-08-the-reluctant-dragon",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Reluctant Dragon Pin",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "pin #8"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "eighth pin, Mar 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "opens like a storybook"
+    },
+    {
+     "field": "franchise",
+     "value": "The Reluctant Dragon",
+     "source_url": "https://disneypinsblog.com/reluctant-dragon-pin/",
+     "method": "search_snippet",
+     "note": "story subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/storybook-classics-09-three-little-pigs/three-little-pigs",
+   "set_key": "dsus/2017/storybook-classics-09-three-little-pigs",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Three Little Pigs Pin",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "pin #9"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "ninth pin, Apr 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "opens like a storybook"
+    },
+    {
+     "field": "franchise",
+     "value": "Three Little Pigs",
+     "source_url": "https://disneypinsblog.com/three-little-pigs-pin/",
+     "method": "search_snippet",
+     "note": "story subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/storybook-classics-11-snow-white-and-the-seven-dwarfs/snow-white-and-the-seven-dwarfs",
+   "set_key": "dsus/2017/storybook-classics-11-snow-white-and-the-seven-dwarfs",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Snow White and the Seven Dwarfs Pin",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "pin #11"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "11th pin, Jun 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "opens like a storybook"
+    },
+    {
+     "field": "franchise",
+     "value": "Snow White and the Seven Dwarfs",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin/",
+     "method": "search_snippet",
+     "note": "story subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-09-sep/cheshire-cat",
+   "set_key": "dsus/2017/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cheshire Cat pin",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-09-sep/queen-of-hearts",
+   "set_key": "dsus/2017/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Queen of Hearts pin",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Queen of Hearts"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-09-sep/alice",
+   "set_key": "dsus/2017/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice pin",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/september-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-11-nov/rocket-ship",
+   "set_key": "dsus/2017/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rocket Ship pin",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Lilo & Stitch",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-11-nov/surfing",
+   "set_key": "dsus/2017/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Surfing pin",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Lilo & Stitch",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-11-nov/stitch-stained-glass",
+   "set_key": "dsus/2017/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Stained Glass pin",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Lilo & Stitch",
+     "source_url": "https://disneypinsblog.com/november-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-12-dec/dancing-hippo",
+   "set_key": "dsus/2017/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dancing Hippo pin",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Fantasia",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-12-dec/movie-frame",
+   "set_key": "dsus/2017/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Movie Frame pin",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Fantasia",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-3-0-12-dec/sorcerer-mickey",
+   "set_key": "dsus/2017/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sorcerer Mickey pin",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box month"
+    },
+    {
+     "field": "franchise",
+     "value": "Fantasia",
+     "source_url": "https://disneypinsblog.com/december-2017-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-2-0-09-sep/chewbacca",
+   "set_key": "dsus/2017/park-pack-2-0-09-sep",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chewbacca"
+     ],
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "pin listed in Sep 2017 2.0 box review"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "box month"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-2-0-09-sep/marie",
+   "set_key": "dsus/2017/park-pack-2-0-09-sep",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Marie"
+     ],
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "pin listed in Sep 2017 2.0 box review"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "box month"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/park-pack-2-0-09-sep/tuxedo-mickey",
+   "set_key": "dsus/2017/park-pack-2-0-09-sep",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "pin listed in Sep 2017 2.0 box review"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://hellosubscription.com/disney-park-pack-september-2017-subscription-box-review-pin-trading-edition-2-0/",
+     "method": "search_snippet",
+     "note": "box month"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/coco-le-600-set/miguel",
+   "set_key": "dsus/2017/coco-le-600-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "Miguel named among set's featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/coco-le-600-set/imelda",
+   "set_key": "dsus/2017/coco-le-600-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Imelda"
+     ],
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "Imelda named among set's featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/coco-le-600-set/ernesto",
+   "set_key": "dsus/2017/coco-le-600-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ernesto"
+     ],
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "Ernesto named among set's featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/coco-le-600-set/dante",
+   "set_key": "dsus/2017/coco-le-600-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dante"
+     ],
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "Dante named among set's featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/coco-le-600-set/pepita",
+   "set_key": "dsus/2017/coco-le-600-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pepita"
+     ],
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "Pepita named among set's featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://disneypinsblog.com/coco-pin-set-shopdisney/",
+     "method": "search_snippet",
+     "note": "set release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph/rey",
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rey"
+     ],
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars: The Last Jedi",
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "Last Jedi collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-31",
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "release per post"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/rey-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph/luke-skywalker",
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Luke Skywalker"
+     ],
+     "source_url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars: The Last Jedi",
+     "source_url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "Last Jedi collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "8 or 9 Nov 2017 per summary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/luke-skywalker-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph/praetorian-guard",
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Praetorian Guard"
+     ],
+     "source_url": "https://disneypinsblog.com/praetorian-guard-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars: The Last Jedi",
+     "source_url": "https://disneypinsblog.com/praetorian-guard-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "Last Jedi collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/praetorian-guard-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/praetorian-guard-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-14",
+     "source_url": "https://disneypinsblog.com/praetorian-guard-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "release per post"
+    },
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/praetorian-guard-pin-star-wars-last-jedi-shopdisney/",
+     "method": "search_snippet",
+     "note": "pin 4 of 7"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph/kylo-ren",
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars: The Last Jedi",
+     "source_url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+     "method": "search_snippet",
+     "note": "Last Jedi collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-21",
+     "source_url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+     "method": "search_snippet",
+     "note": "release per post"
+    },
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/tag/star-wars-the-last-jedi-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin 5 of 7"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph/first-order-executioner-stormtrooper",
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "First Order Executioner Stormtrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/first-order-executioner-stormtrooper-pin-star-war-last-jedi/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars: The Last Jedi",
+     "source_url": "https://disneypinsblog.com/first-order-executioner-stormtrooper-pin-star-war-last-jedi/",
+     "method": "search_snippet",
+     "note": "Last Jedi collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/first-order-executioner-stormtrooper-pin-star-war-last-jedi/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/first-order-executioner-stormtrooper-pin-star-war-last-jedi/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-28",
+     "source_url": "https://disneypinsblog.com/first-order-executioner-stormtrooper-pin-star-war-last-jedi/",
+     "method": "search_snippet",
+     "note": "release per post"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/first-order-executioner-stormtrooper-pin-star-war-last-jedi/",
+     "method": "search_snippet",
+     "note": "pin 6 of 7"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph/r2-d2-and-porgs",
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "R2-D2",
+      "Porg"
+     ],
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars: The Last Jedi",
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "Last Jedi collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12-05",
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "release per post"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "pin 7 of 7"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/r2-d2-porgs-pin-star-wars-last-jedi/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/holiday-2017-limited-release/mickey-mouse",
+   "set_key": "dsus/2017/holiday-2017-limited-release",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "holiday pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-08",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "8 Nov 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 5.0,
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD 5"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/holiday-2017-limited-release/minnie-mouse",
+   "set_key": "dsus/2017/holiday-2017-limited-release",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "holiday pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-08",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "8 Nov 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 5.0,
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD 5"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/holiday-2017-limited-release/pluto-reindeer",
+   "set_key": "dsus/2017/holiday-2017-limited-release",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "holiday pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-08",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "8 Nov 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 5.0,
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD 5"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pluto as a reindeer",
+     "source_url": "https://disneypinsblog.com/disney-store-holiday-2017-limited-release-pins/",
+     "method": "search_snippet",
+     "note": "Pluto dressed as reindeer"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsuk/2017/hercules-le-400/hercules-le-400",
+   "field": "characters",
+   "searched": "DPB snippet; 2 queries",
+   "note": "characters on pin not described in snippet"
+  },
+  {
+   "key": "dsuk/2017/hercules-le-400/hercules-le-400",
+   "field": "product_code",
+   "searched": "DPB + disneystore.co.uk snippet",
+   "note": "a DS UK 'Disney Store Hercules Pin' GBP 9 listing (466043426403) exists but snippet does not confirm it is this 2017 pin"
+  },
+  {
+   "key": "dsuk/2017/treasure-planet-le-500/treasure-planet-le-500",
+   "field": "characters",
+   "searched": "DPB snippet; 2 queries",
+   "note": "characters not described"
+  },
+  {
+   "key": "dsuk/2017/snow-white-80th-anniversary-le-500/snow-white-80th-anniversary-le-500",
+   "field": "release_date",
+   "searched": "DPB snippet; 2 queries",
+   "note": "exact day not stated; month is from a search summary only"
+  },
+  {
+   "key": "dsuk/2017/snow-white-80th-anniversary-le-500/snow-white-80th-anniversary-le-500",
+   "field": "characters",
+   "searched": "DPB snippet; 2 queries",
+   "note": "characters not described"
+  },
+  {
+   "key": "dsuk/2017/hercules-le-400/hercules-le-400",
+   "field": "visual_description",
+   "searched": "DPB snippets",
+   "note": "no design description in snippet"
+  },
+  {
+   "key": "dsuk/2017/treasure-planet-le-500/treasure-planet-le-500",
+   "field": "visual_description",
+   "searched": "DPB snippets",
+   "note": "no design description in snippet"
+  },
+  {
+   "key": "dsuk/2017/snow-white-80th-anniversary-le-500/snow-white-80th-anniversary-le-500",
+   "field": "visual_description",
+   "searched": "DPB snippets",
+   "note": "no design description in snippet"
+  },
+  {
+   "key": "dsuk/2017/zorro-60th-anniversary-le-500/zorro-60th-anniversary-le-500",
+   "field": "visual_description",
+   "searched": "DPB snippets",
+   "note": "no design description in snippet"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/bow",
+   "field": "characters",
+   "searched": "DPB snippets; 2 queries",
+   "note": "snippet lists the motif only; whether Minnie appears on this pin not stated"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/sunglasses",
+   "field": "characters",
+   "searched": "DPB snippets; 2 queries",
+   "note": "snippet lists the motif only; whether Minnie appears on this pin not stated"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/hat",
+   "field": "characters",
+   "searched": "DPB snippets; 2 queries",
+   "note": "snippet lists the motif only; whether Minnie appears on this pin not stated"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/luggage",
+   "field": "characters",
+   "searched": "DPB snippets; 2 queries",
+   "note": "snippet lists the motif only; whether Minnie appears on this pin not stated"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "field": "pins",
+   "searched": "DPB snippets",
+   "note": "5 designs named as motifs (Figaro, bow, sunglasses, hat, luggage); one pin per motif is our reading of the list"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/who-framed-roger-rabbit",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/who-framed-roger-rabbit",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/the-little-mermaid",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/the-little-mermaid",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/the-prince-and-the-pauper",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/the-prince-and-the-pauper",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/beauty-and-the-beast",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/beauty-and-the-beast",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/aladdin",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/aladdin",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/the-nightmare-before-christmas",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/the-nightmare-before-christmas",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/the-lion-king",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/the-lion-king",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/pocahontas",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/pocahontas",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/the-hunchback-of-notre-dame",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/the-hunchback-of-notre-dame",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/hercules",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/hercules",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/mulan",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/mulan",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/toy-story-2",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/fantasia-2000",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/fantasia-2000",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/monsters-inc",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/monsters-inc",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/lilo-and-stitch",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/lilo-and-stitch",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06",
+   "field": "release_date",
+   "searched": "DPB snippets; 3 queries",
+   "note": "week post date not in snippet"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/pirates-of-the-caribbean",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/pirates-of-the-caribbean",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/the-incredibles",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/the-incredibles",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/chicken-little",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/chicken-little",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/cars",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/cars",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/enchanted",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/enchanted",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/wall-e",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/wall-e",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/wreck-it-ralph",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/wreck-it-ralph",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/frozen",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/frozen",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/big-hero-6",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/big-hero-6",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10",
+   "field": "release_date",
+   "searched": "DPB snippets; 3 queries",
+   "note": "week post date not in snippet"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/inside-out",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/inside-out",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/zootopia",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/zootopia",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/guardians-of-the-galaxy-vol-2",
+   "field": "characters",
+   "searched": "DPB snippets; 3 queries",
+   "note": "only the film is named, not the characters on the pin"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/guardians-of-the-galaxy-vol-2",
+   "field": "pin_structure",
+   "searched": "DPB snippets",
+   "note": "one pin per film inferred from 3 films in a 3-pin pack; no source states the split"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01",
+   "field": "pins",
+   "searched": "DPB snippets",
+   "note": "conflict: one summary says Week 1 has Ariel, Mickey, Minnie and Roger Rabbit; another lists films Roger Rabbit, Little Mermaid, Prince and the Pauper"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-08",
+   "field": "pins",
+   "searched": "DPB; 2 queries",
+   "note": "Week 8 post exists but its films/pins not in any snippet"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-backpack-gwp/jiminy-cricket",
+   "field": "edition_type",
+   "searched": "DPB snippet",
+   "note": "gift-with-purchase; edition not stated"
+  },
+  {
+   "key": "dsus/2017/storybook-classics-08-the-reluctant-dragon/the-reluctant-dragon",
+   "field": "characters",
+   "searched": "DPB snippets; 2 queries",
+   "note": "characters not listed in snippet"
+  },
+  {
+   "key": "dsus/2017/storybook-classics-09-three-little-pigs/three-little-pigs",
+   "field": "characters",
+   "searched": "DPB snippets; 2 queries",
+   "note": "characters not listed in snippet"
+  },
+  {
+   "key": "dsus/2017/storybook-classics-11-snow-white-and-the-seven-dwarfs/snow-white-and-the-seven-dwarfs",
+   "field": "characters",
+   "searched": "DPB snippets; 2 queries",
+   "note": "characters not listed in snippet"
+  },
+  {
+   "key": "dsus/2017/storybook-classics",
+   "field": "pins",
+   "searched": "DPB tag/snippets; 2 queries",
+   "note": "pins #7 (~Feb 2017), #10 (~May 2017), #12 (~Jul 2017?) not identified; forum notes site sometimes said 'Limited Release of 1100'"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-09-sep/cheshire-cat",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-09-sep/queen-of-hearts",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-09-sep/alice",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-11-nov/rocket-ship",
+   "field": "characters",
+   "searched": "DPB snippet",
+   "note": "characters not named"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-11-nov/rocket-ship",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-11-nov/surfing",
+   "field": "characters",
+   "searched": "DPB snippet",
+   "note": "characters not named"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-11-nov/surfing",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-11-nov/stitch-stained-glass",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-12-dec/dancing-hippo",
+   "field": "characters",
+   "searched": "DPB snippet",
+   "note": "characters not named"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-12-dec/dancing-hippo",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-12-dec/movie-frame",
+   "field": "characters",
+   "searched": "DPB snippet",
+   "note": "characters not named"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-12-dec/movie-frame",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-12-dec/sorcerer-mickey",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "post mentions variant numbering (e.g. variant of 6 / garbled variant numbers); variants not split"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-10-oct",
+   "field": "pins",
+   "searched": "DPB/Hello Subscription; 3 queries",
+   "note": "second 3.0 box (Oct 2017) contents not found; a review site says Alice theme, which conflicts with DPB Sep box"
+  },
+  {
+   "key": "dsus/2017/park-pack-2-0-09-sep/chewbacca",
+   "field": "edition_type",
+   "searched": "Hello Subscription snippet",
+   "note": "which of the three was the LE vs OE not stated"
+  },
+  {
+   "key": "dsus/2017/park-pack-2-0-09-sep/marie",
+   "field": "edition_type",
+   "searched": "Hello Subscription snippet",
+   "note": "which of the three was the LE vs OE not stated"
+  },
+  {
+   "key": "dsus/2017/park-pack-2-0-09-sep/tuxedo-mickey",
+   "field": "edition_type",
+   "searched": "Hello Subscription snippet",
+   "note": "which of the three was the LE vs OE not stated"
+  },
+  {
+   "key": "dsus/2017/park-pack-2-0-09-sep",
+   "field": "release_date",
+   "searched": "DPB vs Hello Subscription",
+   "note": "DPB says Sep 2017 was the first 3.0 box (Alice); this 2.0 box may be a different month - conflict"
+  },
+  {
+   "key": "dsus/2017/park-pack-2-0",
+   "field": "pins",
+   "searched": "DPB/Hello Subscription; 2 queries",
+   "note": "May-Aug 2017 relaunch boxes (2 OE + 1 LE) contents not found"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/miguel",
+   "field": "pin_structure",
+   "searched": "DPB snippet",
+   "note": "source names featured characters; one pin per character is assumed, not stated"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/imelda",
+   "field": "pin_structure",
+   "searched": "DPB snippet",
+   "note": "source names featured characters; one pin per character is assumed, not stated"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/ernesto",
+   "field": "pin_structure",
+   "searched": "DPB snippet",
+   "note": "source names featured characters; one pin per character is assumed, not stated"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/dante",
+   "field": "pin_structure",
+   "searched": "DPB snippet",
+   "note": "source names featured characters; one pin per character is assumed, not stated"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/pepita",
+   "field": "pin_structure",
+   "searched": "DPB snippet",
+   "note": "source names featured characters; one pin per character is assumed, not stated"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set",
+   "field": "pins",
+   "searched": "DPB snippet",
+   "note": "8 pins; only 5 characters named ('and more'); 3 pins unidentified"
+  },
+  {
+   "key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "field": "pins",
+   "searched": "DPB tag/snippets; 3 queries",
+   "note": "one of pins 2-3 unidentified; Luke is 2nd or 3rd"
+  },
+  {
+   "key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph/rey",
+   "field": "set_position",
+   "searched": "DPB snippets",
+   "note": "appears first (31 Oct) but not numbered in snippet"
+  },
+  {
+   "key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "field": "release_date",
+   "searched": "DPB snippet; 1 query",
+   "note": "lead: 3-pin LE 1000 USD 79.95 live-action BatB set; snippet gives Jan 2016 though film was 2017 - date conflict, not keyed as 2017 pins"
+  },
+  {
+   "key": "dsuk/2017/coco-glow-set",
+   "field": "release_date",
+   "searched": "disneystore.eu snippet",
+   "note": "lead: DS EU Disney Pixar Coco 4-pin glow set EUR 15, undated"
+  },
+  {
+   "key": "dsuk/2017/star-wars-le-lightsaber-set",
+   "field": "release_date",
+   "searched": "disneystore.co.uk/.eu snippet",
+   "note": "lead: DS UK/EU Star Wars LE pin set (1900 worldwide), undated, not tied to Last Jedi"
+  },
+  {
+   "key": "dsuk/2016/mary-poppins-le-800",
+   "field": "release_year",
+   "searched": "DPB snippet",
+   "note": "lead: DS UK Mary Poppins umbrella silhouette LE 800 GBP 9 released 28 Dec 2016 - out of year, not keyed"
+  },
+  {
+   "key": "dsus/2017/mickey-and-friends-halloween-pin-set",
+   "field": "release_location",
+   "searched": "DPB snippet",
+   "note": "lead: parks OE Halloween set USD 29.99 also spotted at Disney Store; parks cell"
+  },
+  {
+   "key": "dsus/2017/dsuk-pins-tag",
+   "field": "pins",
+   "searched": "DPB tag page",
+   "note": "DPB DS UK tag archive implies further 2017 DS UK pins whose titles did not surface; not found"
+  },
+  {
+   "key": "lic/2017",
+   "field": "pins",
+   "searched": "all queries",
+   "note": "no licensed (Loungefly/BoxLunch/Hot Topic) 2017 pin surfaced in this cell"
+  },
+  {
+   "key": "dsus/2017/force-friday-ii",
+   "field": "pins",
+   "searched": "DPB snippet",
+   "note": "lead: Force Friday II (Sep 2017) brought Last Jedi pins to Disney Store; individual pins not identified"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/minnie-with-figaro",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/bow",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/sunglasses",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/hat",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsuk/2017/minnie-mouse-signature-pin-set/luggage",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/who-framed-roger-rabbit",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/the-little-mermaid",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-01/the-prince-and-the-pauper",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/beauty-and-the-beast",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/aladdin",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-02/the-nightmare-before-christmas",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/the-lion-king",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/pocahontas",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-03/the-hunchback-of-notre-dame",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/hercules",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/mulan",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-04/toy-story-2",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/fantasia-2000",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/monsters-inc",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-05/lilo-and-stitch",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/pirates-of-the-caribbean",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/the-incredibles",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-06/chicken-little",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/cars",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/enchanted",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-07/wall-e",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/wreck-it-ralph",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/frozen",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-09/big-hero-6",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/inside-out",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/zootopia",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-10/guardians-of-the-galaxy-vol-2",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/miguel",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/imelda",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/ernesto",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/dante",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set/pepita",
+   "field": "pin_structure",
+   "searched": "maintainer review of B022",
+   "note": "hold: one pin per film/character/motif was inferred from the listing; confirm the pin split before sign-off"
+  }
+ ],
+ "discovery_notes": "Cell B022 (Disney Store UK/EU + US/shopDisney, 2017). 30 standard searches, snippets only. UP! New Year 2018 pin (released 19 Dec 2017) skipped: already keyed in 214 as dsuk/2018. Disney Store 30th Anniversary weekly 3-packs: one pin per named film is an inference (no source states the split); Week 8 contents not found. Coco set pins keyed one per named character (assumed). Minnie Signature set keyed once under dsuk (UK first, 14 Feb 2017) with US release claims (9 Mar 2017). Park Pack 3.0 started Sep 2017 (DPB); Hello Subscription conflicts on Nov/Dec themes and lists a Sep 2017 '2.0' box. Reseller yourwdwstore.net seen but not used. No licensed leads found."
+}

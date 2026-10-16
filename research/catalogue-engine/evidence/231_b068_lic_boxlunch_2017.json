@@ -1,0 +1,993 @@
+{
+ "packet_id": "backfill-b068-lic-boxlunch-2017",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b068",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+   "title": "BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+   "title": "Halloween Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+   "title": "Guardians of the Galaxy Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blog/page/341/",
+   "title": "Blog - Disney Pins Blog (archive page 341)",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+   "title": "Disney Pixar Up Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-enamel-pin-set/10831675.html",
+   "title": "Disney Alice In Wonderland Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-beauty-and-the-beast-enamel-pin-set/10831677.html",
+   "title": "Disney Beauty And The Beast Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-snow-white-and-the-seven-dwarfs-enamel-pin-set/10831661.html",
+   "title": "Disney Snow White And The Seven Dwarfs Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-peter-pan-enamel-pin-set/10831669.html",
+   "title": "Disney Peter Pan Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-friends-halloween-enamel-pins/11135922.html",
+   "title": "Disney Mickey & Friends Halloween Enamel Pins",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive sets"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin packs (several open edition film-themed sets)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post lists pin sets per film plus a single Slinky Dog pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-peter-pan",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Peter Pan enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Peter Pan set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Peter Pan Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-peter-pan-enamel-pin-set/10831669.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated, item number sits in the same range as the other Feb 2017 sets"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-snow-white",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Snow White enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Snow White set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Snow White And The Seven Dwarfs Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-snow-white-and-the-seven-dwarfs-enamel-pin-set/10831661.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated, item number in same range as other Feb 2017 sets"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-little-mermaid",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch The Little Mermaid enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "The Little Mermaid set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-beauty-and-the-beast",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Beauty and the Beast enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Beauty and the Beast set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Beauty And The Beast Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-beauty-and-the-beast-enamel-pin-set/10831677.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-beauty-and-the-beast-enamel-pin-set/10831677.html",
+     "method": "search_snippet",
+     "note": "listing price; matches DPB set price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-beauty-and-the-beast-enamel-pin-set/10831677.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-up",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Up enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Up set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Pixar Up Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "listing describes a set of three pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins)",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "set of three enamel pins"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "listing price; matches DPB set price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-bambi",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Bambi enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Bambi set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-dumbo",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Dumbo enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Dumbo set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "set_name",
+     "value": "BoxLunch Dumbo enamel pin sets (two sets)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB roundup lists two Dumbo sets; kept as one set record because the two are not named apart"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-toy-story",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Toy Story enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Toy Story set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-alice-in-wonderland",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Alice in Wonderland enamel pin set (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Alice in Wonderland set listed in DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post calls the sets open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "retail price per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Alice In Wonderland Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-enamel-pin-set/10831675.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-enamel-pin-set/10831675.html",
+     "method": "search_snippet",
+     "note": "listing price; matches DPB set price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-enamel-pin-set/10831675.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Halloween pins at BoxLunch, Sep-Oct 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-halloween-mickey-friends",
+   "parent_set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Friends Halloween enamel pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Mickey & Friends Halloween set named in DPB BoxLunch Halloween list"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "post says the wave released Sep and Oct 2017"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Mickey & Friends Halloween Enamel Pins",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-friends-halloween-enamel-pins/11135922.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated; shows Mickey, Minnie and Goofy in Halloween costumes"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-friends-halloween-enamel-pins/11135922.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-friends-halloween-enamel-pins/11135922.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-friends-halloween-enamel-pins/11135922.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch release Aug 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-christmas",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas Pins at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "DPB archive page lists a post with this title"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12",
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "archive entry dated 10 Dec 2017 (post date, not confirmed release date)"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "BoxLunch Christmas pins"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2017/boxlunch-guardians-of-the-galaxy/awesome-mix-vol-2-cassette",
+   "set_key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Guardians of the Galaxy Vol. 2 Awesome Mix enamel pin",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "Awesome Mix pin styled as Star-Lord's cassette"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "Guardians of the Galaxy Vol. 2"
+    },
+    {
+     "field": "visual_description",
+     "value": "cassette tape styled after Star-Lord's Awesome Mix Vol. 2",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "paraphrase of DPB description"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "available Aug 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-christmas/buzz-lightyear-christmas",
+   "set_key": "lic/2017/boxlunch-christmas",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Buzz Lightyear Christmas Pin",
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "image label beside the Dec 2017 Christmas Pins at BoxLunch archive entry; weak, post body not seen"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Buzz Lightyear"
+     ],
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "from the image label"
+    },
+    {
+     "field": "main_character",
+     "value": "Buzz Lightyear",
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "from the image label"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "archive entry dated 10 Dec 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "labelled BoxLunch"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blog/page/341/",
+     "method": "search_snippet",
+     "note": "labelled BoxLunch"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins",
+   "field": "pins",
+   "searched": "DPB post + BoxLunch listings; 12 queries",
+   "note": "no member pins named for any Feb 2017 set; Mickey/Minnie and Nightmare Before Christmas sets noted by B024 not confirmed in this sweep"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins",
+   "field": "manufacturer",
+   "searched": "DPB + BoxLunch listings; 12 queries",
+   "note": "maker not stated for any Feb 2017 set; Loungefly not confirmed"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-up",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "listing says 3 pins but does not name or describe them"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-beauty-and-the-beast",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "a search summary linked a $14.90 BoxLunch set to Cogsworth, Chip and the enchanted rose, but not traced to a snippet; hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-alice-in-wonderland",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "pin count not stated in listing snippet"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-peter-pan",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "separate BoxLunch listing 11310432 ($22.90) features Peter Pan, the Darling children and Tinker Bell; price differs, not linked to 2017; hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-snow-white",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "listing snippet gives no contents or price"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-bambi",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: undated BoxLunch Bambi Enamel Pin Set (item 10954895) with Bambi and Thumper at $10.90; price differs from DPB $14.90, may be a later 2017 set; hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-dumbo",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "DPB mentions two Dumbo sets; contents and names not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-little-mermaid",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no BoxLunch listing for the 2017 Little Mermaid set found"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-toy-story",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no BoxLunch listing for the 2017 Toy Story set found"
+  },
+  {
+   "key": "lic/2017/boxlunch-alice-cheshire-cat-stack",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: undated BoxLunch Cheshire Cat Stack Enamel Pin Set (item 10954887, 2 pins: body and head, $5.90); item number near the June 2017 hat pins but no dated source"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-mickey-friends",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "listing shows Mickey, Minnie and Goofy in costumes; hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-mickey-friends",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "maker not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-guardians-of-the-galaxy/baby-groot-cassette",
+   "field": "retailer",
+   "searched": "1 query",
+   "note": "lead only: undated BoxLunch listing 11090013 Groot holding Awesome Mix Vol. 2, 1in metal; pin already keyed in B024, not re-recorded"
+  },
+  {
+   "key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "maker not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-christmas",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "post body not seen; only the Buzz Lightyear image label known; prices and other designs unknown"
+  },
+  {
+   "key": "lic/2017/boxlunch-key-chains",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (DPB May 2017 post covers BoxLunch Disney keychains, $8.90-$12.90)"
+  },
+  {
+   "key": "lic/2018/boxlunch-star-wars-porg",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead: BoxLunch Last Jedi Porg 3-pin set ($14.90) released late Jan 2018 per DPB; belongs to 2018 cell"
+  },
+  {
+   "key": "lic/2017/boxlunch-coco",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2017 BoxLunch Coco pin found; only a 2021 BoxLunch Coco post"
+  },
+  {
+   "key": "lic/2017/funko-boxlunch",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "BoxLunch Funko Pop Disney pins start Nov 2018 per DPB; none for 2017"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween/evil-queen-sliding",
+   "field": "pin_name",
+   "searched": "0 new queries",
+   "note": "no further source beyond B024 reader comment"
+  }
+ ],
+ "discovery_notes": "BoxLunch 2017 sweep, 27 standard search-snippet queries, building on B024. Feb 2017 wave split into per-film subsets under B024's set key (Peter Pan, Snow White, Little Mermaid, Beauty and the Beast, Up, Bambi, Dumbo, Toy Story, Alice) from the DPB roundup; BoxLunch listings 10831661-10831677 matched by title, $14.90 price and adjacent item numbers only (undated). No set members named by any snippet, so no member pins created. New pins: GotG Awesome Mix cassette (Aug 2017) and a weak Buzz Lightyear Christmas pin from a DPB archive label (Dec 2017). No maker named for any 2017 BoxLunch item."
+}

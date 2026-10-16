@@ -3,18 +3,18 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-Round 6 (started 2026-10-16 16:30 UTC): B068, B069, B025–B028
+none
 
-## Totals (after round 5, 16 Oct 2026 ~16:00 UTC)
+## Totals (after round 6, 16 Oct 2026 ~17:10 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
-- Research pin records: 3,626.
-- Genuinely new 2015–2026: **3,129** (823 corroborated). Held: 474, including 87 possible live matches. No usable source: 20.
-- **Total unique individual pins identified 2015–2026: 4,927** (1,798 + 3,129).
-- Incomplete sets: 77 sets, 356 named members still missing. Standalone OE (new): 720 of 1,106 new OE pins.
-- Licensed (new research pins; a Loungefly pin sold at BoxLunch counts for both): Loungefly 112 (+46 held), BoxLunch 142 (+57 held), Hot Topic 41 (+14), ArtLand 11 (+5), Funko 34 (+11), other 7 (+2), Pink a la Mode 0.
+- Research pin records: 3,814.
+- Genuinely new 2015–2026: **3,267** (835 corroborated). Held: 524, including 97 possible live matches. No usable source: 20.
+- **Total unique individual pins identified 2015–2026: 5,065** (1,798 + 3,267).
+- Incomplete sets: 79 sets, 398 named members still missing. Standalone OE (new): 741 of 1,131 new OE pins.
+- Licensed by manufacturer (each pin once; new / held): Loungefly 112 / 46, Funko 33 / 11, ArtLand 11 / 5, FiGPiN 2 / 2, not stated 123 / 35. By retailer: BoxLunch 144 / 57, Hot Topic 46 / 14, not stated 91 / 28. Pink a la Mode 0 (dedicated cells queued).
 - Reviewer checks: 87 OK (maintainer, 16 Oct).
 
-Earlier: after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
+Earlier: after round 5, 4,927; after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
 
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |
@@ -49,12 +49,12 @@ Earlier: after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 b
 | B022 | 2017 | ds | Disney Store UK/EU + US | partial | 228_b022_ds_2017.json | 71 | follow-up appended; 37 split pins held |
 | B023 | 2017 | asia | Shanghai, Hong Kong, Tokyo | partial | 229_b023_asia_2017.json | 58 | follow-up appended |
 | B024 | 2017 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | done | 230_b024_lic_loungefly_2017.json | 9 | no Loungefly-credited 2017 Disney pins found (earliest July 2018); 9 BoxLunch 2017 pins recorded |
-| B068 | 2017 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | in progress | | | |
-| B069 | 2017 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | in progress | | | |
-| B025 | 2016 | wdw-oe | WDW open edition (incl. standalone) | in progress | | | |
-| B026 | 2016 | wdw-le | WDW LE/LR | in progress | | | |
-| B027 | 2016 | dlr-oe | Disneyland California OE | in progress | | | |
-| B028 | 2016 | dlr-le | Disneyland California LE/LR | in progress | | | |
+| B068 | 2017 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | partial | 231_b068_lic_boxlunch_2017.json | 2 | gaps merged into B102 (same scope) |
+| B069 | 2017 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | partial | 232_b069_lic_other_2017.json | 49 | follow-up appended |
+| B025 | 2016 | wdw-oe | WDW open edition (incl. standalone) | partial | 233_b025_wdw_oe_2016.json | 30 | follow-up appended |
+| B026 | 2016 | wdw-le | WDW LE/LR | partial | 234_b026_wdw_le_2016.json | 55 | follow-up appended |
+| B027 | 2016 | dlr-oe | Disneyland California OE | partial | 235_b027_dlr_oe_2016.json | 25 | follow-up appended |
+| B028 | 2016 | dlr-le | Disneyland California LE/LR | partial | 236_b028_dlr_le_2016.json | 27 | follow-up appended |
 | – | | priority | **Licensed 2020–2026 priority block (maintainer, 16 Oct 2026):** Pink a la Mode, ArtLand, then Loungefly and BoxLunch newest year first | | | | |
 | B103 | 2025-2026 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | todo | | | |
 | B104 | 2023-2024 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | todo | | | |
@@ -128,7 +128,12 @@ Earlier: after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 b
 | B099 | 2017 | dlp | follow-up 1 of B021: DLP 2017: booster/April LE/October LE/Coco/Star Wars/Rapunzel set members, monthly Pin Trading Night pins, Christmas LE, edition size conflict (600 vs 700) | todo | | | |
 | B100 | 2017 | ds | follow-up 1 of B022: Disney Store 2017: 30th Anniversary week 8 and per-pack pin split (held), Storybook Classics #7/#10/#12, Park Pack Oct box, Coco 3 of 8, Last Jedi pin 2/3, UK single LE character details | todo | | | |
 | B101 | 2017 | asia | follow-up 1 of B023: Asia 2017: SHDR zodiac/summer/anniversary box members, anniversary mystery split (held), HKDL Pin Hunting/Passport/Teacup members, HKDL 12th anniversary, TDR 34th anniversary and Christmas | todo | | | |
-| B102 | 2017 | lic-boxlunch | follow-up 1 of B024: BoxLunch 2017: Feb 2017 wave set members (Snow White, Peter Pan, Toy Story, BatB, Up, Bambi, Dumbo, Mickey/Minnie, NBC), hat pin split (held), Halloween Mickey & Friends and Stitch set members, makers | todo | | | |
+| B102 | 2017 | lic-boxlunch | follow-up 1 of B024 and B068: BoxLunch 2017: no maker stated for any 2017 BoxLunch item; Christmas 2017 post contents; undated leads (Bambi & Thumper, Cheshire Cat stack, Peter Pan $22.90); Feb 2017 wave set members (Snow White, Peter Pan, Toy Story, BatB, Up, Bambi, Dumbo, Mickey/Minnie, NBC), hat pin split (held), Halloween Mickey & Friends and Stitch set members, makers | todo | | | |
+| B110 | 2017 | lic-other | follow-up 1 of B069: Other licensed 2017: NYCC 2017 Marvel packs contents/maker, Star Wars Celebration 2017 three-pack members, Hot Topic listing dates and makers, Her Universe NYCC emoji pins (pin vs button), Drax (reseller-only, held) | todo | | | |
+| B111 | 2016 | wdw-oe | follow-up 1 of B025: WDW OE 2016: MK 45th mystery/starter, soccer, Disney Streets members; Birthstone April/July/Oct/Nov and split (held); dated-line prices; preview-only pins (held); Halloween/Star Wars/Hollywood Studios OE; Hidden Mickey 2016 | todo | | | |
+| B112 | 2016 | wdw-le | follow-up 1 of B026: WDW LE 2016: MVMCP 2016 pins, boxed/mystery set contents (F&W, MNSSHP, MVMCP, Rogue One 14-pin, MK 45th), runDisney Princess Half / Wine & Dine, pin trading events, topiary and bronze-statue splits (held) | todo | | | |
+| B113 | 2016 | dlr-oe | follow-up 1 of B027: DLR OE 2016: Music Magic Memories / Princess 2016 / Racers / HM Holiday Puzzle members, Disney Streets names (held, shop checklist only), Diamond Celebration OE year | todo | | | |
+| B114 | 2016 | dlr-le | follow-up 1 of B028: DLR LE 2016: Pin Trading Nights 2016, Season of the Force, DCA Food & Wine 2016, Diamond closing pins, costume set / HM Holiday puzzle / Royalty members, Date Nite couples (held, forum-only) | todo | | | |
 
 Follow-up limit (maintainer, 16 Oct 2026): a follow-up cell is **unsuccessful** when it adds fewer than 3 genuinely new unique pins. After **two unsuccessful follow-ups** of the same original cell, its remaining gaps move to the **Long-term backlog** below (status `backlog`) instead of a new todo cell. A backlog item is reopened as a todo cell only when new evidence appears: a research-needed export, a reviewer note, or a new source or lead found by another cell. Follow-up cells say which pass they are ("follow-up 1 of …", "follow-up 2 of …"); the follow-ups appended so far are pass 1.
 
@@ -151,5 +156,5 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | 4 | 2026-10-16 14:30 | B063–B066 (2019/2018 Loungefly and BoxLunch dedicated sweeps), B067 (licensed exclusion review), B019 (2017 DLR OE) | +138 net new (42 corroborated); 242 pin records | B067 done, others partial (follow-ups appended). Held for pin-split confirmation: Funko Alice/Mulan 2018 (6), Pooh/Piglet/Tigger 2019 (3). Open question to maintainer: Star Wars/Marvel licensed pins in scope? |
 | – | 2026-10-16 15:10 | scope update (no new research) | – | Star Wars and Marvel licensed pins in scope for now (maintainer). Rule 11 updated; B096 queued to record the pins earlier cells skipped |
 | 5 | 2026-10-16 15:30 | B096 (Star Wars/Marvel licensed), B020 (2017 DLR LE), B021 (2017 DLP), B022 (2017 Disney Store), B023 (2017 Asia), B024 (2017 Loungefly) | +170 net new (14 corroborated); 246 pin records | B024 done (no 2017 Loungefly-credited pins), others partial; follow-ups B097–B102. Held for pin-split/grouping confirmation: 37 Disney Store, 4 SHDR, 4 BoxLunch hats, 2 FiGPiN Thor/Loki, 2 Funko LA Comic Con |
-| 6 | 2026-10-16 16:30 | B068 (2017 BoxLunch), B069 (2017 other licensed), B025–B028 (2016 WDW OE/LE, DLR OE/LE) | in progress | |
+| 6 | 2026-10-16 16:30 | B068 (2017 BoxLunch), B069 (2017 other licensed), B025–B028 (2016 WDW OE/LE, DLR OE/LE) | +138 net new (12 corroborated); 188 pin records | all partial; follow-ups B110–B114 (B068 gaps merged into B102). New holds: topiary/bronze-statue splits (10), Birthstone split (8), preview-only pins (3), Disney Streets shop-checklist names (8), Date Nite forum-only couples (8), Drax reseller-only (1) |
 | – | 2026-10-16 16:50 | process update (no new research) | – | Licensed 2020–2026 moved to the front of the queue; dedicated Pink a la Mode and ArtLand cells B103–B109; manufacturer/retailer counted as separate dimensions; pin-structure rule 12; follow-up limit and long-term backlog |

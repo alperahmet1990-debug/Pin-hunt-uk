@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 2, started 2026-10-16 12:30 UTC: B007, B008, B009, B010, B011, B012
 
 ## Totals (after round 1, 16 Oct 2026 ~11:45 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16; all live rows 15,978).
@@ -23,12 +23,12 @@ Baseline before any round: 3,692 (live 1,798 + new 1,894).
 | B004 | 2019 | dlr-le | Disneyland California LE/LR | partial | 204_b004_dlr_le_2019.json | 60 | follow-up appended |
 | B005 | 2019 | dlp | Disneyland Paris (OE+LE) | partial | 205_b005_dlp_2019.json | 40 | follow-up appended |
 | B006 | 2019 | ds | Disney Store UK/EU + US | partial | 206_b006_ds_2019.json | 63 | follow-up appended |
-| B007 | 2019 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B008 | 2019 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | todo | | | |
-| B009 | 2018 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
-| B010 | 2018 | wdw-le | WDW LE/LR | todo | | | |
-| B011 | 2018 | dlr-oe | Disneyland California OE | todo | | | |
-| B012 | 2018 | dlr-le | Disneyland California LE/LR | todo | | | |
+| B007 | 2019 | asia | Shanghai, Hong Kong, Tokyo | in progress | 207_b007_asia_2019.json | | |
+| B008 | 2019 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | in progress | 208_b008_lic_2019.json | | |
+| B009 | 2018 | wdw-oe | WDW open edition (incl. standalone) | in progress | 209_b009_wdw_oe_2018.json | | |
+| B010 | 2018 | wdw-le | WDW LE/LR | in progress | 210_b010_wdw_le_2018.json | | |
+| B011 | 2018 | dlr-oe | Disneyland California OE | in progress | 211_b011_dlr_oe_2018.json | | |
+| B012 | 2018 | dlr-le | Disneyland California LE/LR | in progress | 212_b012_dlr_le_2018.json | | |
 | B013 | 2018 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B014 | 2018 | ds | Disney Store UK/EU + US | todo | | | |
 | B015 | 2018 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
@@ -74,3 +74,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | Round | Started (UTC) | Cells | New pins | Notes |
 |---|---|---|---|---|
 | 1 | 2026-10-16 11:30 | B001–B006 (2019) | 360 net new (400 pins recorded; 39 held) | all partial; follow-ups B045–B050 appended |
+| 2 | 2026-10-16 12:30 | B007, B008, B009, B010, B011, B012 | | |

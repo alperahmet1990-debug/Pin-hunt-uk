@@ -1,0 +1,4038 @@
+{
+ "packet_id": "backfill-b118-lic-artland-2025-2026-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b118",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+   "title": "New Zootopia Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/cut-out-series-pins",
+   "title": "Cut Out Series Pins - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/officer-clawhauser",
+   "title": "Officer Clawhauser - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+   "title": "Star Wars Fine Art Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins",
+   "title": "Artland Fine Art Pins - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/ben-harman",
+   "title": "Ben Harman - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/on-alert",
+   "title": "On Alert! - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/the-muppet-show",
+   "title": "The Muppet Show - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/aladdin-pins",
+   "title": "Aladdin Pins - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+   "title": "Star Wars Helmets Boba Fett, AT-AT Driver & Stormtrooper Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+   "title": "Star Wars Helmets Stormtrooper, TIE Fighter Pilot & Scout Trooper Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+   "title": "Darth Vader, Death Trooper & Imperial Royal Guard Star Wars Helmet Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/helmets-boba-fett-collectible-pin",
+   "title": "Helmets: Boba Fett Collectible Pin - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/star-wars-pins",
+   "title": "Star Wars Pins - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+   "title": "Cogsworth & Lumiere and Albatross Airlines Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+   "title": "Protective Peg Lady and the Tramp Disney Pin by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+   "title": "Belle & Jasmine Disney Princess and Swing Pin Series by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+   "title": "Merida & Tinker Bell Disney Princess and Swing Pin Series by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+   "title": "Beauty and the Beast Oval Collection Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-series-3-disney-pins-by-artland",
+   "title": "Beauty and the Beast Oval Collection Series 3 Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+   "title": "New Roger Rabbit Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+   "title": "Pinocchio & Jiminy Cricket Glass Series Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins/products/jiminy-cricket-pin-on-glass",
+   "title": "Jiminy Cricket Pin on Glass - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins/products/pinocchio-pin-on-glass-duo",
+   "title": "Pinocchio Pin on Glass Duo - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/artland-disney-pins/",
+   "title": "ArtLand Disney Pins Archives - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2025/artland-zootopia",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post lists four individually described pins, each with its own LE and size"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "four pins listed in post: Young Officer Hopps, Scout Nick Wilde, Finnick, Officer Clawhauser"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post credits ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com while supplies last"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-ember-wade",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse lists Ember and Wade as separate pins with own sizes/editions"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Ember and Wade pins listed"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse Cut Out Series listings, sold out"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-ben-harman-cars-3-tron",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "Pulse lists Cars 3 and Tron Legacy Harman pins as separate products"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "two Harman pins matching headline subjects"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "Pulse Ben Harman collection"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-muppets-electric-mayhem",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold framed pins; also sold as complete collection of 5)",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse lists each framed pin individually plus a 5-pin bundle"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "complete collection of 5: Animal, Janice, Floyd, Zoot, Lips"
+    },
+    {
+     "field": "price",
+     "value": 247.0,
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "complete collection of 5 at GBP 247"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse listings"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "framed",
+      "art by Michael De Pippo"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "framed pins inspired by Michael De Pippo art"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-aladdin-little-mermaid-kiss",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold pins)",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse lists Ariel & Eric Kiss and Jasmine & Prince Ali as separate New Kiss series pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listings"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Helmets Boba Fett, AT-AT Driver & Stormtrooper Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post credits ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "online release"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "each helmet pin listed with own edition/size"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pins named in post title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "designed by Dave Perillo",
+      "backer card 9\" x 4\""
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "Perillo design"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Helmets Stormtrooper, TIE Fighter Pilot & Scout Trooper Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post credits ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "online release"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "each helmet pin listed with own edition/size"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pins named in post title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "designed by Dave Perillo",
+      "backer card 9\" x 4\""
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "Perillo design"
+    },
+    {
+     "field": "sub_series",
+     "value": "Star Wars Helmets series 3",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "described as series 3"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Darth Vader, Death Trooper & Imperial Royal Guard Star Wars Helmet Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post credits ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "online release"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "each helmet pin listed with own edition/size"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pins named in post title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "designed by Dave Perillo",
+      "backer card 9\" x 4\""
+     ],
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Perillo design"
+    },
+    {
+     "field": "sub_series",
+     "value": "Star Wars Helmets series 4",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "described as series 4"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-cogsworth-lumiere-albatross-airlines",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cogsworth & Lumiere and Albatross Airlines Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-09",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "two pins with own editions"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "two pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-protective-peg",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Protective Peg Lady and the Tramp Disney Pin by ArtLand",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin release",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "one pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-princess-and-swing-belle-jasmine",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Belle & Jasmine Disney Princess and Swing Pin Series by ArtLand",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "per-pin edition and size"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "third and fourth releases of the Princess and Swing collection"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-princess-and-swing-merida-tinker-bell",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Merida & Tinker Bell Disney Princess and Swing Pin Series by ArtLand",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-03",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "each pin 3in LE 200"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "seventh and eighth releases in series"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-beauty-and-the-beast-oval",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Beauty and the Beast Oval Collection by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "first and second releases available March 2025"
+    },
+    {
+     "field": "format",
+     "value": "series of separately released pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "releases numbered within a collection"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-series-3-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "series 3 = fifth and sixth releases in a six-pin collection"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "oval",
+      "designed by Guy Vasilovich"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "Vasilovich design"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-roger-rabbit",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Roger Rabbit Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "on sale January 2025"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "two named designs"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-pinocchio-jiminy-cricket-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pinocchio & Jiminy Cricket Glass Series by ArtLand",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "DPBStore.com"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins; also sold as a duo at Pulse)",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/pinocchio-pin-on-glass-duo",
+     "method": "search_snippet",
+     "note": "Pulse duo contains both pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Pinocchio Glass Pin and Jiminy Cricket Glass Pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glass"
+     ],
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "glass series"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2025/artland-zootopia/young-officer-hopps",
+   "set_key": "lic/2025/artland-zootopia",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Young Officer Hopps",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Judy Hopps pin titled Young Officer Hopps in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Judy Hopps pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Judy Hopps",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.5\""
+     ],
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated size 2.5in"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-11",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse Gallery lists Young Officer Hopps (Cut Out Series), sold out"
+    },
+    {
+     "field": "original_price",
+     "value": 40.0,
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse Gallery lists GBP 40.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse Gallery price in pounds"
+    },
+    {
+     "field": "visual_description",
+     "value": "young Judy Hopps dreaming of being a police officer",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse paraphrase of concept"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-zootopia/scout-nick-wilde",
+   "set_key": "lic/2025/artland-zootopia",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scout Nick Wilde",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nick Wilde"
+     ],
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "scout Nick Wilde pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Nick Wilde",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.5\""
+     ],
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "same edition and size as Judy pin per snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-11",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-zootopia/finnick",
+   "set_key": "lic/2025/artland-zootopia",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Finnick",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Finnick"
+     ],
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Finnick pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Finnick",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.5\""
+     ],
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "same edition and size as Judy pin per snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-11",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-zootopia/officer-clawhauser",
+   "set_key": "lic/2025/artland-zootopia",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "corroborates LE 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\" x 3.25\""
+     ],
+     "source_url": "https://disneypinsblog.com/new-zootopia-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "corroborates stated size"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/officer-clawhauser",
+     "method": "search_snippet",
+     "note": "Pulse Gallery product page for Officer Clawhauser"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-star-wars-fine-art/victory-and-defeat",
+   "set_key": "lic/2026/artland-star-wars-fine-art",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Victory & Defeat",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named Victory & Defeat"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "snippet describes a single pin featuring an X-Wing and Ahsoka Tano"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ahsoka Tano"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Ahsoka shown with an X-Wing"
+    },
+    {
+     "field": "main_character",
+     "value": "Ahsoka Tano",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "visual_description",
+     "value": "Ahsoka Tano with an X-Wing fighter",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subjects per snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 350"
+    },
+    {
+     "field": "edition_size",
+     "value": 350,
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 350"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\" x 2.5\"",
+      "edition number stamped on back",
+      "COA backer card"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated size and packaging"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-fine-art-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse lists Victory & Defeat Pin, from GBP 50"
+    },
+    {
+     "field": "original_price",
+     "value": 50.0,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse 'from' price GBP 50"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse price in pounds"
+    },
+    {
+     "field": "visual_description",
+     "value": "based on Danny Haas Clone Wars artwork Victory & Defeat",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse says inspired by Danny Haas Clone Wars art"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-ember-wade/ember",
+   "set_key": "lic/2026/artland-ember-wade",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ember",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing name (Elemental cut-out pin)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ember Lumen"
+     ],
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "character per listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Ember Lumen",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\" x 1\""
+     ],
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "stated size 3\" x 1\""
+    },
+    {
+     "field": "original_price",
+     "value": 55.0,
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse GBP 55.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "listed at Pulse Gallery"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-ember-wade/wade",
+   "set_key": "lic/2026/artland-ember-wade",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Wade",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing name (Elemental cut-out pin)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wade Ripple"
+     ],
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "character per listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Wade Ripple",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.8\" x 1.6\""
+     ],
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "stated size 2.8\" x 1.6\""
+    },
+    {
+     "field": "original_price",
+     "value": 55.0,
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "Pulse GBP 55.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/cut-out-series-pins",
+     "method": "search_snippet",
+     "note": "listed at Pulse Gallery"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-ben-harman-cars-3-tron/cars-3",
+   "set_key": "lic/2026/artland-ben-harman-cars-3-tron",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars 3 Harman Pin",
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "Pulse listing name"
+    },
+    {
+     "field": "original_price",
+     "value": 85.0,
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "Pulse GBP 85.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "listed in Pulse Artland Fine Art Pins collection"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "art by Ben Harman"
+     ],
+     "source_url": "https://pulse.gallery/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "Harman artwork"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-ben-harman-cars-3-tron/tron-legacy",
+   "set_key": "lic/2026/artland-ben-harman-cars-3-tron",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tron Legacy Harman Pin",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing name"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver-toned metal frame with Tron graphic and blue neon lights",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse description paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 85.0,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse 'from' GBP 85.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "listed in Pulse Artland Fine Art Pins collection"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "framed",
+      "art by Ben Harman"
+     ],
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "metal frame, Harman art"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-muppets-electric-mayhem/animal",
+   "set_key": "lic/2026/artland-muppets-electric-mayhem",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Animal Framed Pin",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "individual Pulse listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Animal"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "one character per framed pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Animal",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "original_price",
+     "value": 55.0,
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse GBP 55.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "framed",
+      "art by Michael De Pippo"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "framed De Pippo art"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-muppets-electric-mayhem/janice",
+   "set_key": "lic/2026/artland-muppets-electric-mayhem",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Janice Framed Pin",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "individual Pulse listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Janice"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "one character per framed pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Janice",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "original_price",
+     "value": 70.0,
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse GBP 70.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "framed",
+      "art by Michael De Pippo"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "framed De Pippo art"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-muppets-electric-mayhem/floyd",
+   "set_key": "lic/2026/artland-muppets-electric-mayhem",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Floyd Framed Pin",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "individual Pulse listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Floyd Pepper"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "one character per framed pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Floyd Pepper",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "original_price",
+     "value": 70.0,
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse GBP 70.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "framed",
+      "art by Michael De Pippo"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "framed De Pippo art"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-muppets-electric-mayhem/zoot",
+   "set_key": "lic/2026/artland-muppets-electric-mayhem",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zoot Framed Pin",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "individual Pulse listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Zoot"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "one character per framed pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Zoot",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "original_price",
+     "value": 70.0,
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse GBP 70.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "framed",
+      "art by Michael De Pippo"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "framed De Pippo art"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-muppets-electric-mayhem/lips",
+   "set_key": "lic/2026/artland-muppets-electric-mayhem",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lips Framed Pin",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "individual Pulse listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lips"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "one character per framed pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Lips",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "original_price",
+     "value": 70.0,
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse GBP 70.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "framed",
+      "art by Michael De Pippo"
+     ],
+     "source_url": "https://pulse.gallery/collections/the-muppet-show",
+     "method": "search_snippet",
+     "note": "framed De Pippo art"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-aladdin-little-mermaid-kiss/ariel-and-eric-kiss",
+   "set_key": "lic/2026/artland-aladdin-little-mermaid-kiss",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel & Eric Kiss",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse New Kiss series listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "single pin of the couple"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Prince Eric"
+     ],
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "couple per name"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "title lead"
+    },
+    {
+     "field": "original_price",
+     "value": 85.0,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse GBP 85.00, sold out"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "in Pulse Artland Fine Art Pins collection"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-aladdin-little-mermaid-kiss/jasmine-and-prince-ali",
+   "set_key": "lic/2026/artland-aladdin-little-mermaid-kiss",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine & Prince Ali",
+     "source_url": "https://pulse.gallery/collections/aladdin-pins",
+     "method": "search_snippet",
+     "note": "Pulse New Kiss series listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pulse.gallery/collections/aladdin-pins",
+     "method": "search_snippet",
+     "note": "single pin of the couple"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Aladdin"
+     ],
+     "source_url": "https://pulse.gallery/collections/aladdin-pins",
+     "method": "search_snippet",
+     "note": "Aladdin in Prince Ali costume"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://pulse.gallery/collections/aladdin-pins",
+     "method": "search_snippet",
+     "note": "title lead"
+    },
+    {
+     "field": "original_price",
+     "value": 50.0,
+     "source_url": "https://pulse.gallery/collections/aladdin-pins",
+     "method": "search_snippet",
+     "note": "Pulse GBP 50.00, numbered"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/aladdin-pins",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "ArtLand New Kiss series per Pulse"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/aladdin-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper/boba-fett",
+   "set_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Boba Fett Helmet pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Boba Fett",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.4\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/helmets-boba-fett-collectible-pin",
+     "method": "search_snippet",
+     "note": "Pulse Helmets: Boba Fett pin, Perillo art, LE 250"
+    },
+    {
+     "field": "original_price",
+     "value": 39.0,
+     "source_url": "https://pulse.gallery/products/helmets-boba-fett-collectible-pin",
+     "method": "search_snippet",
+     "note": "Pulse GBP 39.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/products/helmets-boba-fett-collectible-pin",
+     "method": "search_snippet",
+     "note": "pounds"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper/at-at-driver",
+   "set_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "AT-AT Driver Helmet pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "AT-AT Driver"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "AT-AT Driver",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.4\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper/stormtrooper",
+   "set_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stormtrooper Helmet pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Stormtrooper",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.4\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper/stormtrooper",
+   "set_key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stormtrooper Helmet pin",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Stormtrooper",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.5\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper/tie-fighter-pilot",
+   "set_key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "TIE Fighter Pilot Helmet pin",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "TIE Fighter Pilot"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "TIE Fighter Pilot",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.5\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/star-wars-pins",
+     "method": "search_snippet",
+     "note": "Pulse lists TIE Fighter Pilot helmet pin (Perillo)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper/scout-trooper",
+   "set_key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scout Trooper Helmet pin",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scout Trooper"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Scout Trooper",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.5\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard/darth-vader",
+   "set_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Darth Vader Helmet Pin",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Darth Vader",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 350"
+    },
+    {
+     "field": "edition_size",
+     "value": 350,
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 350"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.4\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard/death-trooper",
+   "set_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Death Trooper Helmet Pin",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Death Trooper"
+     ],
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Death Trooper",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.4\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/star-wars-pins",
+     "method": "search_snippet",
+     "note": "Pulse lists Perillo helmet pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard/imperial-royal-guard",
+   "set_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Imperial Royal Guard Helmet Pin",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Imperial Royal Guard"
+     ],
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "helmet subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Imperial Royal Guard",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 295"
+    },
+    {
+     "field": "edition_size",
+     "value": 295,
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 295"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 2.4\" x 3\"",
+      "designed by Dave Perillo"
+     ],
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated size"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-05",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/star-wars-pins",
+     "method": "search_snippet",
+     "note": "Pulse lists Perillo helmet pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-cogsworth-lumiere-albatross-airlines/cogsworth-and-lumiere",
+   "set_key": "lic/2025/artland-cogsworth-lumiere-albatross-airlines",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cogsworth & Lumiere",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "single round pin-on-pin of the pair"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cogsworth",
+      "Lumiere"
+     ],
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\"",
+      "round",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-09",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-cogsworth-lumiere-albatross-airlines/albatross-airlines",
+   "set_key": "lic/2025/artland-cogsworth-lumiere-albatross-airlines",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Albatross Airlines",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "LE 100"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 100"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 5\" x 2.8\"",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-09",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cogsworth-lumiere-and-albatross-airlines-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-protective-peg/peg",
+   "set_key": "lic/2025/artland-protective-peg",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Protective Peg",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "pin name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peg"
+     ],
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "Lady and the Tramp Peg"
+    },
+    {
+     "field": "main_character",
+     "value": "Peg",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/protective-peg-lady-and-the-tramp-disney-pin-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-princess-and-swing-belle-jasmine/belle",
+   "set_key": "lic/2025/artland-princess-and-swing-belle-jasmine",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle Princess and Swing Pin",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "princess"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\""
+     ],
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-princess-and-swing-belle-jasmine/jasmine",
+   "set_key": "lic/2025/artland-princess-and-swing-belle-jasmine",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine Princess and Swing Pin",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "princess"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\""
+     ],
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/belle-jasmine-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-princess-and-swing-merida-tinker-bell/merida",
+   "set_key": "lic/2026/artland-princess-and-swing-merida-tinker-bell",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merida Princess and Swing Pin",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin per post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\""
+     ],
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-03",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/artland-princess-and-swing-merida-tinker-bell/tinker-bell",
+   "set_key": "lic/2026/artland-princess-and-swing-merida-tinker-bell",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell Princess and Swing Pin",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin per post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\""
+     ],
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-03",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/merida-tinker-bell-disney-princess-and-swing-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-beauty-and-the-beast-oval/belle",
+   "set_key": "lic/2025/artland-beauty-and-the-beast-oval",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle Beauty and the Beast Oval pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "first/second releases named Belle and Chip"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-beauty-and-the-beast-oval/chip",
+   "set_key": "lic/2025/artland-beauty-and-the-beast-oval",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip Beauty and the Beast Oval pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "first/second releases named Belle and Chip"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-oval-collection-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-roger-rabbit/i-gotta-make-a-livin",
+   "set_key": "lic/2025/artland-roger-rabbit",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Gotta Make a Livin'!",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "design named in post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Jessica & Roger on one design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jessica Rabbit",
+      "Roger Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\""
+     ],
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-roger-rabbit/outta-my-way-pencil-neck",
+   "set_key": "lic/2025/artland-roger-rabbit",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Outta My Way Pencil Neck!",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "design named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Roger Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "Roger"
+    },
+    {
+     "field": "main_character",
+     "value": "Roger Rabbit",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\""
+     ],
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/new-roger-rabbit-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-pinocchio-jiminy-cricket-glass/pinocchio",
+   "set_key": "lic/2025/artland-pinocchio-jiminy-cricket-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pinocchio Glass Pin",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Pinocchio",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\"",
+      "glass"
+     ],
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/pinocchio-pin-on-glass-duo",
+     "method": "search_snippet",
+     "note": "Pulse sells Pinocchio Pin on Glass"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-pinocchio-jiminy-cricket-glass/jiminy-cricket",
+   "set_key": "lic/2025/artland-pinocchio-jiminy-cricket-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jiminy Cricket Glass Pin",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jiminy Cricket"
+     ],
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Jiminy Cricket",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size 3\"",
+      "glass"
+     ],
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-01",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand release"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/pinocchio-jiminy-cricket-glass-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/jiminy-cricket-pin-on-glass",
+     "method": "search_snippet",
+     "note": "Pulse corroborates edition 200, 3in"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/jiminy-cricket-pin-on-glass",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2025/artland-zootopia",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold released: post describes each of the four pins separately with its own LE and size (per-pin listing), so Judy, Nick, Finnick are separate pins, not mystery or one group pin"
+  },
+  {
+   "key": "lic/2026/artland-star-wars-fine-art",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold released: two independent snippets (DPB, Pulse) describe Victory & Defeat as one pin showing X-Wing and Ahsoka, LE 350"
+  },
+  {
+   "key": "lic/2026/artland-star-wars-fine-art",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "post title is plural (Fine Art Pins); no other pin seen in snippets; count unconfirmed"
+  },
+  {
+   "key": "lic/2026/artland-star-wars-fine-art/victory-and-defeat",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "note: Acme Archives sold a Danny Haas Victory and Defeat pin ($49); likely different product, not merged"
+  },
+  {
+   "key": "lic/2026/artland-ember-wade/ember",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "Pulse listing does not name ArtLand; link to ArtLand headline (Jul 2026) inferred from matching subjects"
+  },
+  {
+   "key": "lic/2026/artland-ember-wade/wade",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "Pulse listing does not name ArtLand; link to ArtLand headline (Jul 2026) inferred from matching subjects"
+  },
+  {
+   "key": "lic/2026/artland-ember-wade",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "DPB headline dated 5 Jul 2026; release month not stated; Pulse calls them its first ever Elemental pins"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron/tron-legacy",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "conflict: another Pulse page lists GBP 110.00"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron/cars-3",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "edition size not in snippets; DPB post body (15 Jul 2026) not returned"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron/tron-legacy",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "edition size not in snippets; DPB post body (15 Jul 2026) not returned"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "DPB headline dated 15 Jul 2026; release month not stated; Pulse-to-headline link inferred from subjects"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/animal",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "listing says numbered, AP/PP editions; edition size not given"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/janice",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "listing says numbered, AP/PP editions; edition size not given"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/floyd",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "listing says numbered, AP/PP editions; edition size not given"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/zoot",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "listing says numbered, AP/PP editions; edition size not given"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/lips",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "listing says numbered, AP/PP editions; edition size not given"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "Pulse snippet does not name ArtLand; ArtLand credit is from DPB headline (29 Aug 2026); link inferred from subjects"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "headline dated 29 Aug 2026; release month not stated"
+  },
+  {
+   "key": "lic/2026/artland-muppets-kermit-trio",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Pulse also lists a numbered framed Kermit pin (GBP 55) and a New Muppets Trio Set of 3 (GBP 148); maker/date not stated"
+  },
+  {
+   "key": "lic/2026/artland-aladdin-little-mermaid-kiss",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "DPB headline (10 Oct 2026) body not returned; series size and editions unknown; Pulse-to-headline link inferred"
+  },
+  {
+   "key": "lic/2026/artland-aladdin-little-mermaid-kiss/ariel-and-eric-kiss",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price gap (GBP 85 vs 50) suggests different sizes; unconfirmed"
+  },
+  {
+   "key": "lic/2026/artland-jumbo-castle-series/cinderella",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "still headline only (related post dated 21 Jun 2026); likely 2nd in series by inference, not stated"
+  },
+  {
+   "key": "lic/2026/artland-jumbo-castle-series/maleficent",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "still headline only (weekly roundup 12 Sep 2026); do not merge with Jumbo Maleficent Dragon Castle LE 250 reseller lead"
+  },
+  {
+   "key": "lic/2026/artland-jumbo-castle-series",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "four castle pins known (BatB, Cinderella, Ariel, Maleficent); total series size not stated"
+  },
+  {
+   "key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "post says May 2025 but listing age stamp conflicts; confirm year"
+  },
+  {
+   "key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper",
+   "field": "sub_series",
+   "searched": "2 queries",
+   "note": "series number unclear (snippets call it series 2, or group it with series 1); series 1 contents not found"
+  },
+  {
+   "key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper/stormtrooper",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "Stormtrooper appears in two helmet series titles; confirm the designs differ (e.g. variant) and this is not a title error"
+  },
+  {
+   "key": "lic/2025/artland-cogsworth-lumiere-albatross-airlines/cogsworth-and-lumiere",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "post also has a stray line giving LE 100; 200 stated elsewhere"
+  },
+  {
+   "key": "lic/2025/artland-cogsworth-lumiere-albatross-airlines/albatross-airlines",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not stated (Rescuers theme implied, not confirmed)"
+  },
+  {
+   "key": "lic/2025/artland-princess-and-swing-belle-jasmine",
+   "field": "family",
+   "searched": "1 query",
+   "note": "Princess and Swing series: post says six-pin collection, but later Merida & Tinker Bell post numbers them 7 and 8; series 1-2 (Megara, Tiana per video) and Alice & Cinderella post undated here"
+  },
+  {
+   "key": "lic/2025/artland-beauty-and-the-beast-oval/belle",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition size not in snippet"
+  },
+  {
+   "key": "lic/2025/artland-beauty-and-the-beast-oval/chip",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition size not in snippet"
+  },
+  {
+   "key": "lic/2025/artland-beauty-and-the-beast-oval",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "releases 3-4 (series 2) and 5-6 (series 3, April 2025) not named in snippets; record only when named"
+  },
+  {
+   "key": "lic/2025/artland-roger-rabbit",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "two designs named; total not stated; LE 200 may be per series wording"
+  },
+  {
+   "key": "lic/2026/artland-ember-wade/ember",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-ember-wade/wade",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron/cars-3",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron/tron-legacy",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/animal",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/janice",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/floyd",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/zoot",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/lips",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-aladdin-little-mermaid-kiss/ariel-and-eric-kiss",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  },
+  {
+   "key": "lic/2026/artland-aladdin-little-mermaid-kiss/jasmine-and-prince-ali",
+   "field": "manufacturer",
+   "searched": "packet review",
+   "note": "hold: ArtLand attribution and release year inferred by matching a headline to a retailer listing; confirm with a source naming both"
+  }
+ ],
+ "discovery_notes": "Follow-up to packet 240 (b106); reuses its keys. Sources: Disney Pins Blog snippets plus Pulse Gallery (UK ArtLand dealer) listings as a second publisher. Holds released: Zootopia 2025 (per-pin listing) and Star Wars Victory & Defeat (one pin). Pulse-to-DPB-headline links for Ember & Wade, Cars 3 & Tron, Electric Mayhem, Kiss are inferred from matching subjects. Undated titles now dated OUT of window: Bruni/Flit/Hei Hei 2021-01; Gothic Princess 2021-07; Princess & Horse 2020-12/2021; Neo Nouveau 2020-11/2021-08; Ben Harman Aladdin, Hunchback, Alice & PATF 2021-11; UP & Monsters Inc Ben Harman 2024-02; Kim Possible 2022-01; Dognapper Mickey 2024-10; Pongo & Pugs 2022-10; Moana Wayfinder & Maui 2022-11; King Triton & Ariel 2024-10; Spider-Man/Infinity Conez/Sith Soda 2024-08; Peter Pan & Mermaid Lagoon 2024-09; Vasilovich Dragon on glass 2022-03; Jessica Rabbit LE300 2022-02; Alex Hovey Robin Hood 2024-01; Fantasia Conducting Mickey 2020-08. Still undated: Tea Party Reunion jumbo, later Alice Playing Card waves, Alice & Cinderella swing, BatB Oval series 2-3 members, Star Wars Helmets series 1. New undated ArtLand leads: Atlantis & Evil Hag glass, Bambi & Thumper, Chernabog jumbo LE100, Blue Fairy jumbo LE100, A Bug's Life Ben Harman, 101 Dalmatians & Aristocats Ben Harman, Your Hand in Mine Anna & Olaf, Part of Your World, Diamond Series 1, Ariel/Jasmine/Tiana Floral, Princess & Friends Series 3. 30 searches used."
+}

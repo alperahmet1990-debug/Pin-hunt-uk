@@ -8,12 +8,13 @@
  * malformed evidence into staging.
  */
 
+import { classifySource } from "./source-registry";
+
 export const RESEARCH_RUN_FORMAT = "pinhunt-research-run/v1";
 export const MAX_CANDIDATES = 2000;
 export const MAX_EVIDENCE = 50000;
 export const MAX_EVIDENCE_PER_CANDIDATE = 500;
 
-const EXCLUDED_HOST = /(^|\.)(pinandpop|pinpics|pintradingdb)\.com$/i;
 const MARKETPLACE_HOST = /(^|\.)(ebay|mercari|amazon|etsy|vinted|depop|poshmark)\./i;
 export const KEY_RE = /^[a-z0-9-]+(\/[a-z0-9-]+)*$/;
 const FIELD_RE = /^[a-z_]{2,40}$/;
@@ -74,7 +75,7 @@ export function checkSourceUrl(url: unknown): string | null {
   let u: URL;
   try { u = new URL(url); } catch { return "source URL invalid"; }
   if (u.protocol !== "https:" && u.protocol !== "http:") return "source URL must be http(s)";
-  if (EXCLUDED_HOST.test(u.hostname)) return "excluded source (Pin & Pop / PinPics / PinTradingDB)";
+  if (classifySource(url)?.class === "excluded") return "excluded source (Pin & Pop / PinPics / PinTradingDB)";
   if (MARKETPLACE_HOST.test(u.hostname)) return "marketplace listings are not evidence";
   return null;
 }

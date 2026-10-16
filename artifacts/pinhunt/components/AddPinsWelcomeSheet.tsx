@@ -12,7 +12,7 @@ import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { useProfile } from '@/context/ProfileContext';
 import { useCollection } from '@/context/CollectionContext';
-import { ADD_PINS_ROUTE, shouldOfferWelcome, welcomeSeenKey } from '@/utils/addPinsOnboarding';
+import { ADD_PINS_LABEL, ADD_PINS_ROUTE, shouldOfferWelcome, welcomeSeenKey } from '@/utils/addPinsOnboarding';
 
 export function AddPinsWelcomeSheet() {
   const colors = useColors();
@@ -61,7 +61,7 @@ export function AddPinsWelcomeSheet() {
             accessibilityRole="button"
             style={[styles.primary, { backgroundColor: colors.homeCoral }]}
           >
-            <Text style={[styles.primaryLabel, { color: colors.homeSurface }]}>Add pins you own</Text>
+            <Text style={[styles.primaryLabel, { color: colors.homeSurface }]}>{ADD_PINS_LABEL}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => close()} accessibilityRole="button" style={styles.secondary}>
             <Text style={[styles.secondaryLabel, { color: colors.homeCoralDeep }]}>Skip for now</Text>

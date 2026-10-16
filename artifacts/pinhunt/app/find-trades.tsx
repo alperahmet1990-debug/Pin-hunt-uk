@@ -42,7 +42,7 @@ import { formatMatchSummary } from '@/utils/tradeMatch';
 import { useFindTrades, type PotentialTradeCard, type SetOpportunity } from '@/hooks/useFindTrades';
 import { useCollection } from '@/context/CollectionContext';
 import { findTradesEmptyState, type FindTradesEmptyAction } from '@/utils/findTradesEmpty';
-import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
+import { ADD_PINS_LABEL, ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { Button } from '@/components/ui/Button';
 import { Skeleton, SkeletonBlock } from '@/components/ui/Skeleton';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -193,7 +193,7 @@ export default function FindTradesScreen() {
                       </Text>
                       <Button
                         variant="text"
-                        label="Add pins you own"
+                        label={ADD_PINS_LABEL}
                         trailingIcon="chevron-right"
                         onPress={() => router.push(ADD_PINS_ROUTE)}
                         style={styles.discoveryAction}

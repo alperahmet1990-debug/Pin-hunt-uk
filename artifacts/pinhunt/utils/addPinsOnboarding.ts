@@ -7,8 +7,15 @@
  */
 import type { Href } from 'expo-router';
 
-/** Where every "Add pins you own" entry point goes: the catalogue in add mode. */
+/** Where every "Add from catalogue" entry point goes: the catalogue in add mode. */
 export const ADD_PINS_ROUTE = { pathname: '/browse-catalogue', params: { mode: 'add' } } as const satisfies Href;
+
+/**
+ * The one name for adding pins from the catalogue (#353): search and sets on
+ * one screen, add one or many. My Collection no longer offers a separate
+ * "Search for a pin" door to the same catalogue.
+ */
+export const ADD_PINS_LABEL = 'Add from catalogue';
 
 /** Accounts younger than this get the one-time welcome offer. */
 export const WELCOME_WINDOW_MS = 3 * 24 * 60 * 60 * 1000;

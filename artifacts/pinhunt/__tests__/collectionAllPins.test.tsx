@@ -147,14 +147,24 @@ describe('My Collection: Boards first, All pins one tap away (UX-067, B-P1-04)',
     expect(screen.getByRole('button', { name: 'Mickey, 3 copies' })).toBeTruthy();
   });
 
-  it('with no pins and no boards, points to scan and search', async () => {
+  it('with no pins and no boards, offers Scan and Add from catalogue only (#353)', async () => {
     mockCollection = {};
     mockBoards = [];
     await render(<CollectionScreen />);
     expect(screen.getByText('No pins yet')).toBeTruthy();
     await fireEvent.press(screen.getByRole('button', { name: 'Scan a pin' }));
     expect(mockPush).toHaveBeenCalledWith('/(tabs)/scan');
-    await fireEvent.press(screen.getByRole('button', { name: /^Search for a pin/ }));
-    expect(mockPush).toHaveBeenCalledWith('/search');
+    await fireEvent.press(screen.getByRole('button', { name: 'Add from catalogue' }));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/browse-catalogue', params: { mode: 'add' } });
+    expect(screen.queryByText(/Search for a pin/)).toBeNull();
+  });
+
+  it('the + menu has one door to the catalogue: Scan, Add from catalogue, New board (#353)', async () => {
+    await render(<CollectionScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Add pins' }));
+    for (const label of ['Scan a pin', 'Add from catalogue', 'New board']) expect(screen.getAllByText(label).length).toBeGreaterThan(0);
+    expect(screen.queryByText('Search for a pin')).toBeNull();
+    await fireEvent.press(screen.getByText('Add from catalogue'));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/browse-catalogue', params: { mode: 'add' } });
   });
 });

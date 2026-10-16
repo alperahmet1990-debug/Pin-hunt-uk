@@ -1,0 +1,1880 @@
+{
+ "packet_id": "backfill-b013-dlp-2018",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b013",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+   "title": "Surprise Coco Pins at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+   "title": "Surprise 101 Dalmatians Pins At Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+   "title": "Bambi Disneyland Paris Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+   "title": "Disneyland Paris September 2018 Pin Trading Day Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+   "title": "December 2018 Surprise Pin Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+   "title": "Disneyland Paris May 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+   "title": "Disneyland Paris Pins For July 2018",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+   "title": "Mickey Alphabet (Disneyland Paris)'s items checklist",
+   "publisher": "Coleka",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/188819",
+   "title": "DLP - Fun Adventures - 2018 - Rock 'n' Roller Coaster (Stitch)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2018/02/disneyland-paris-updates-annual-pass-pricing-benefits-tower-terror-anniversary-event/",
+   "title": "Disneyland Paris Updates Annual Pass Pricing and Benefits, Tower of Terror Anniversary Event",
+   "publisher": "WDW News Today",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-april-2018/",
+   "title": "New Pin Release Disneyland Paris April 2018",
+   "publisher": "Travel to the Magic",
+   "published_date": "2018-04-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Pin Trading Night February 2018 (Coco)",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Coco-themed surprise PTN pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "each pin limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "400 of each pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "released at Feb 23 2018 PTN"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "exclusive to DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Pin Trading Night August 2018 (101 Dalmatians)",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "surprise 101 Dalmatians PTN pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "each pin LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "LE 400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Aug 31 2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-november-2018-bambi",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Pin Trading Night November 2018 (Bambi)",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Bambi-themed PTN pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "each pin LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "LE 400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-30",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Nov 30 2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Pin Trading Day September 2018 (Dia de los Muertos)",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Day of the Dead themed Pin Trading Day releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "character pins LE 500, logo pin LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Sept 15 2018 Pin Trading Day"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/surprise-december-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "December 2018 Surprise Pin Releases at Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "two surprise holiday pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "total of 2 new pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 700 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Dec 20 2018 surprise release"
+    },
+    {
+     "field": "release_location",
+     "value": "Harrington's, Main Street U.S.A., Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "sold at Harrington's while supplies last"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DLP - Fun Adventures - 2018",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series name on listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series pins listed LE 700"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "each series pin LE 700"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "DLP series; backstamp says Disneyland Paris"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/july-2018-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris July 2018 limited edition releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "July 2018 DLP releases roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "DLP pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/bastille-day-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Bastille Day 2018 pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "14 July Bastille Day pin mentioned"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris mini pins July 2018",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "group of six mini pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "group of 6 mini pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "July 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/mickey-alphabet",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Alphabet (Disneyland Paris)",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "collection name on checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 26,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "26 Mickey pins, one per letter"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "letter pins released Sat 7 July 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "checklist gives Jul 7 2018 start"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/may-2018-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris May 2018 pin releases",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+     "method": "search_snippet",
+     "note": "monthly roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/annual-pass-collection-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Annual Pass permanent collection 2018 (includes pin)",
+     "source_url": "https://wdwnt.com/2018/02/disneyland-paris-updates-annual-pass-pricing-benefits-tower-terror-anniversary-event/",
+     "method": "search_snippet",
+     "note": "AP collection said to include a pin and lanyard"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-12",
+     "source_url": "https://wdwnt.com/2018/02/disneyland-paris-updates-annual-pass-pricing-benefits-tower-terror-anniversary-event/",
+     "method": "search_snippet",
+     "note": "available from April 12 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Flora's Boutique",
+     "source_url": "https://wdwnt.com/2018/02/disneyland-paris-updates-annual-pass-pricing-benefits-tower-terror-anniversary-event/",
+     "method": "search_snippet",
+     "note": "sold only at Flora's Boutique"
+    },
+    {
+     "field": "release_location",
+     "value": "Lily's Boutique",
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-april-2018/",
+     "method": "search_snippet",
+     "note": "AP exclusive merch at Lily's Boutique (conflict)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2018/ptn-february-2018-coco/dante",
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dante"
+     ],
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Dante named as featured character"
+    },
+    {
+     "field": "main_character",
+     "value": "Dante",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "one featured character per listed pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Feb 23 2018 event"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-february-2018-coco/miguel",
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Miguel named as featured character"
+    },
+    {
+     "field": "main_character",
+     "value": "Miguel",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "one featured character per listed pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Feb 23 2018 event"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-february-2018-coco/hector",
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hector"
+     ],
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Hector named as featured character"
+    },
+    {
+     "field": "main_character",
+     "value": "Hector",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "one featured character per listed pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Feb 23 2018 event"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/marie",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Marie"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Marie listed among featured characters"
+    },
+    {
+     "field": "main_character",
+     "value": "Marie",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "listed as one of six featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "each character pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pin Trading Day date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/stitch",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Stitch listed among featured characters"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "listed as one of six featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "each character pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pin Trading Day date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/pascal",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pascal"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pascal listed among featured characters"
+    },
+    {
+     "field": "main_character",
+     "value": "Pascal",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "listed as one of six featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "each character pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pin Trading Day date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/minnie-mouse",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Minnie Mouse listed among featured characters"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "listed as one of six featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "each character pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pin Trading Day date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/mickey-mouse",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Mickey Mouse listed among featured characters"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "listed as one of six featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "each character pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pin Trading Day date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/pluto",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pluto listed among featured characters"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "listed as one of six featured characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "each character pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pin Trading Day date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/event-logo",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Day 2018 event logo pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "event logo pin mentioned"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "logo pin LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "logo pin LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "Pin Trading Day date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "2018 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/surprise-december-2018/cheshire-cat",
+   "set_key": "dlp/2018/surprise-december-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Cheshire Cat pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Cheshire Cat",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "single-character pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cheshire Cat with a dangle of presents",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "paraphrase of design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "surprise release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Harrington's, Main Street U.S.A., Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "sold at Harrington's"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/surprise-december-2018/stitch",
+   "set_key": "dlp/2018/surprise-december-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Stitch pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "single-character pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch playing in snow with birds",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "paraphrase of design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "surprise release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Harrington's, Main Street U.S.A., Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "sold at Harrington's"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/stitch-rock-n-roller-coaster",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Stitch riding the coaster"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Stitch pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Rock 'n' Roller Coaster Starring Aerosmith",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "attraction named on listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "listed release Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "listed EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "visual_description",
+     "value": "Slider pin on red background with attraction name",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "paraphrase; sliding element"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "DLP backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/big-thunder-mountain",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Big Thunder Mountain",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Big Thunder Mountain entry listed in same 2018 series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series listed LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series pins LE 700"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series dated 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/pirates-of-the-caribbean",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Pirates of the Caribbean entry listed in same 2018 series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series listed LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series pins LE 700"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series dated 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/phantom-manor",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Phantom Manor",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Phantom Manor entry listed in same 2018 series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series listed LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series pins LE 700"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series dated 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/pinocchio",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Pinocchio",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Pinocchio entry listed in same 2018 series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series listed LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series pins LE 700"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series dated 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/tower-of-terror",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Tower of Terror",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Tower of Terror entry listed in same 2018 series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series listed LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series pins LE 700"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "series dated 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/july-2018-le/scrooge-pirates-of-the-caribbean",
+   "set_key": "dlp/2018/july-2018-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "Scrooge riding Pirates ride"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "Scrooge pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "Pirates of the Caribbean theme"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "July 2018 roundup"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "DLP release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/bastille-day-2018/lumiere",
+   "set_key": "dlp/2018/bastille-day-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lumiere"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "Lumiere Bastille Day pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Lumiere",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "Lumiere pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-14",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "14 July"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "July 2018 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/pluto",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "Pluto named among the six minis"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "Pluto mini"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "July 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/mickey-alphabet/letter-e",
+   "set_key": "dlp/2018/mickey-alphabet",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse letter E",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "letter E pin on checklist"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "Mickey pose letter pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "letter E dated 2018 on checklist"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/mickey-alphabet/letter-s",
+   "set_key": "dlp/2018/mickey-alphabet",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse letter S",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "letter S pin on checklist"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "Mickey pose letter pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "letter S dated 2018 on checklist"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/mickey-alphabet/letter-y",
+   "set_key": "dlp/2018/mickey-alphabet",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse letter Y",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "letter Y pin on checklist"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "Mickey pose letter pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-limited-editions/mickey-alphabet-disneyland-paris_r8482",
+     "method": "search_snippet",
+     "note": "letter Y dated 2018 on checklist"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/may-2018-releases/jasmine-my-cat",
+   "set_key": "dlp/2018/may-2018-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine My Cat pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in May roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+     "method": "search_snippet",
+     "note": "Jasmine pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+     "method": "search_snippet",
+     "note": "May 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-may-2018-pins/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2018/ptn-february-2018-coco/dante",
+   "field": "original_price",
+   "searched": "DPB Coco post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2018/ptn-february-2018-coco/miguel",
+   "field": "original_price",
+   "searched": "DPB Coco post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2018/ptn-february-2018-coco/hector",
+   "field": "original_price",
+   "searched": "DPB Coco post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2018/ptn-february-2018-coco",
+   "field": "expected_pin_count",
+   "searched": "DPB Coco post; 2 queries",
+   "note": "three characters named but set size not stated"
+  },
+  {
+   "key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "field": "pins",
+   "searched": "DPB post + 2 character queries",
+   "note": "snippets name no individual characters; members not recorded"
+  },
+  {
+   "key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "field": "expected_pin_count",
+   "searched": "DPB post; 3 queries",
+   "note": "set size not stated"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi",
+   "field": "pins",
+   "searched": "DPB post + 2 queries",
+   "note": "no character list in snippets; members not recorded"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi",
+   "field": "expected_pin_count",
+   "searched": "DPB post; 2 queries",
+   "note": "set size not stated"
+  },
+  {
+   "key": "dlp/2018/pin-trading-day-september-2018",
+   "field": "original_price",
+   "searched": "DPB post; 3 queries",
+   "note": "no prices in snippets"
+  },
+  {
+   "key": "dlp/2018/pin-trading-day-september-2018/event-logo",
+   "field": "characters",
+   "searched": "DPB post; 2 queries",
+   "note": "logo pin characters not described"
+  },
+  {
+   "key": "dlp/2018/surprise-december-2018/cheshire-cat",
+   "field": "original_price",
+   "searched": "DPB post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2018/surprise-december-2018/stitch",
+   "field": "original_price",
+   "searched": "DPB post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/big-thunder-mountain",
+   "field": "characters",
+   "searched": "My Pin Central series page snippet; 2 queries",
+   "note": "character on this pin not stated"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/big-thunder-mountain",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "only Stitch entry had a month"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pirates-of-the-caribbean",
+   "field": "characters",
+   "searched": "My Pin Central series page snippet; 2 queries",
+   "note": "character on this pin not stated"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pirates-of-the-caribbean",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "only Stitch entry had a month"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/phantom-manor",
+   "field": "characters",
+   "searched": "My Pin Central series page snippet; 2 queries",
+   "note": "character on this pin not stated"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/phantom-manor",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "only Stitch entry had a month"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pinocchio",
+   "field": "characters",
+   "searched": "My Pin Central series page snippet; 2 queries",
+   "note": "character on this pin not stated"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pinocchio",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "only Stitch entry had a month"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/tower-of-terror",
+   "field": "characters",
+   "searched": "My Pin Central series page snippet; 2 queries",
+   "note": "character on this pin not stated"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/tower-of-terror",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "only Stitch entry had a month"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "series size not stated"
+  },
+  {
+   "key": "dlp/2018/july-2018-le/scrooge-pirates-of-the-caribbean",
+   "field": "release_date",
+   "searched": "DDLP post; 2 queries",
+   "note": "exact day not in snippet; may relate to Fun Adventures series, unconfirmed"
+  },
+  {
+   "key": "dlp/2018/bastille-day-2018/lumiere",
+   "field": "edition_size",
+   "searched": "DDLP post; 1 query",
+   "note": "edition not stated"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018",
+   "field": "pins",
+   "searched": "DDLP + DPB July posts; 2 queries",
+   "note": "only Pluto named; other 5 minis not recorded"
+  },
+  {
+   "key": "dlp/2018/mickey-alphabet",
+   "field": "pins",
+   "searched": "Coleka + disneystore.eu snippets; 2 queries",
+   "note": "checklist dates many letters 2019; only E,S,Y recorded as 2018; A (EUR 6.99) and D on disneystore.eu undated"
+  },
+  {
+   "key": "dlp/2018/mickey-alphabet",
+   "field": "edition_type",
+   "searched": "3 sources; 1 query",
+   "note": "edition type not stated"
+  },
+  {
+   "key": "dlp/2018/may-2018-releases/jasmine-my-cat",
+   "field": "edition_size",
+   "searched": "DPB May post; 1 query",
+   "note": "not stated"
+  },
+  {
+   "key": "dlp/2018/annual-pass-collection-2018",
+   "field": "pins",
+   "searched": "WDWNT + TTTM snippets; 2 queries",
+   "note": "pin design not described; snippets ambiguous whether tied to AP or Tower of Terror 10th anniversary"
+  }
+ ],
+ "discovery_notes": "All claims are search snippets only. DPB monthly roundups give only themes: Feb 2018 Toy Story/Tangled/Lion King; Mar St Patrick's/Peter Pan/princess, PTN 30 Mar; Jun Marvel/Incredibles 2/princess; Jul PTN 27 Jul; Dec Peter Pan/Inside Out/Mulan. No pins recorded for those (no names). Travel to the Magic Feb/Mar/Apr 2018 posts embed PDF schedules not readable in snippets (Apr: pin event 28 Apr, Pueblo Trading Post). Easter 2018 Cheshire Cat LE 700 seen only on a resale listing - not recorded. Lion King Tresors de DLP LE 400 (disneystore.eu) undated - not recorded. Halloween/Christmas 2018 DLP LE sets, CM 2018 pin, Marvel season pins not found. My Pin Central 1299/46382 show PTD Stitch/Mickey but mapping unclear - not used. Pocket Parks LE 1500 $34.99 in March snippet looks US-sourced - not recorded."
+}

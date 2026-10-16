@@ -1,0 +1,3151 @@
+{
+ "packet_id": "backfill-b019-dlr-oe-2017",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b019",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+   "title": "Disney Parks 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+   "title": "New Disney Pins May 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+   "title": "New Disney Pins October 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+   "title": "New Disney Pins October 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+   "title": "New Disney Pins November 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+   "title": "Guardians of the Galaxy Mission Breakout Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+   "title": "Digital Disney Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+   "title": "Princess Gold Frame Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+   "title": "Kingdom of Cute Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://jerrodmaruyama.tumblr.com/post/162347189096/kingdom-of-cute-mystery-pin-collection-based-on",
+   "title": "Kingdom of Cute - Mystery Pin Collection",
+   "publisher": "Jerrod Maruyama (artist blog)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+   "title": "Disney Frozen Mystery Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+   "title": "Disney Tsum Tsum Holiday Mystery Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/minnie-mouse-emoji-disney-pin-set/",
+   "title": "Minnie Mouse Emoji Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-emoji-disney-pin-set/",
+   "title": "Stitch Emoji Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://themainstreetmouse.com/2017/02/20/disney-merchandise-announces-disney-parks-new-2017-pin-collections/",
+   "title": "Disney Merchandise Announces Disney Park's New 2017 Pin Collections",
+   "publisher": "The Main Street Mouse",
+   "published_date": "2017-02-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2017/oe-single/castle-2017-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Castle 2017 Pin (Sleeping Beauty Castle)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/sorcerer-mickey-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sorcerer Mickey 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/stitch-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/magic-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/minnie-mouse-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Minnie Mouse 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/disney-parks-2017-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2017 Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Booster in the 2017 line"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Six different character pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Shared 2017 line"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/disney-parks-2017-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2017 Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Mystery box in the 2017 line"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "8 different character pins in total"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Shared 2017 line"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/disney-parks-2017-starter-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2017 Pin Trading Starter Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Starter set in the 2017 line"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Lanyard plus four silhouette pins"
+    },
+    {
+     "field": "format",
+     "value": "starter set with lanyard",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Includes a lanyard"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Shared 2017 line"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/pirates-anchor",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Anchor Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/pirates-glitter-skull",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Glitter Skull Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/pirates-skull-sword",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Skull Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/pirates-flag",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Flag Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/pirates-life-hook",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirate's Life Hook Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/thanksgiving-tinker-bell",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Thanksgiving Tinker Bell Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/snowman-ear-hat",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snowman Ear Hat Holiday Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/coco-skull",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Coco Skull Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/coco-remember-me",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Coco Remember Me Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/holiday-dumbo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday Dumbo Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/holiday-stitch",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Holiday Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/santa-stormtrooper",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Santa Stormtrooper Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/holiday-bb-8",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday BB-8 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/holiday-baymax",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday Baymax Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/mickey-minnie-mailbox",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Minnie Mailbox Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Nov 2017 wk1 roundup"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Two-pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "New open edition set"
+    },
+    {
+     "field": "price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "11.99 for the two-pin set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Nov 2017 wk1"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Available at Disneyland and WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/mission-breakout-star-lord",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mission: Breakout Star-Lord Pin",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/mission-breakout-rocket",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mission: Breakout Rocket Pin",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin OE release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Digital Disney Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set title per post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "8 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Date per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Availability per snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Blind/mystery box"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "8-bit"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Characters in retro 8-bit video game style"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Princess Gold Frame Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set title per post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "8 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Date per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort first; Walt Disney World later",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Availability per snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Blind/mystery box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Kingdom of Cute Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set title per post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "8 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Date per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Availability per snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Blind/mystery box"
+    },
+    {
+     "field": "issuer",
+     "value": "Art by Jerrod Maruyama, based on WonderGround Gallery work",
+     "source_url": "https://jerrodmaruyama.tumblr.com/post/162347189096/kingdom-of-cute-mystery-pin-collection-based-on",
+     "method": "search_snippet",
+     "note": "Artist says designs based on his WonderGround Gallery art"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/frozen-holiday-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Frozen Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Set title per post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "8 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Date per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Availability per snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Blind/mystery box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/tsum-tsum-holiday-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Tsum Tsum Holiday Mystery Pins",
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Set title per post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "10 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Date per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Availability per snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/disney-tsum-tsum-holiday-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Blind/mystery box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/haunted-mansion-holiday-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Holiday Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Set title per post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "12 pins in total"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Date per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Availability per snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Blind/mystery box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/minnie-mouse-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Minnie Mouse Emoji Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Set title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Six emoji-style pins"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Retail 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-12",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at Disneyland Resort on this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at DLR"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://themainstreetmouse.com/2017/02/20/disney-merchandise-announces-disney-parks-new-2017-pin-collections/",
+     "method": "search_snippet",
+     "note": "Emoji series announced as open edition sets of six"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/stitch-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Emoji Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/stitch-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Set title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/stitch-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Six emoji-style pins"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/stitch-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Retail 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-23",
+     "source_url": "https://disneypinsblog.com/stitch-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at Disneyland Resort on this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/stitch-emoji-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at DLR"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://themainstreetmouse.com/2017/02/20/disney-merchandise-announces-disney-parks-new-2017-pin-collections/",
+     "method": "search_snippet",
+     "note": "Emoji series announced as open edition sets of six"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2017/oe/castle-2017-sleeping-beauty-castle",
+   "set_key": "dlr/2017/oe-single/castle-2017-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Castle 2017 Pin (Sleeping Beauty Castle)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Named in the 2017 Disney Parks pin lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 dated line"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 Disney Parks line sold at both US resorts"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "DLR version shows Sleeping Beauty Castle; WDW version shows Cinderella Castle"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/sorcerer-mickey-2017",
+   "set_key": "dlr/2017/oe-single/sorcerer-mickey-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sorcerer Mickey 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Named in the 2017 Disney Parks pin lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 dated line"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 Disney Parks line sold at both US resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/stitch-2017",
+   "set_key": "dlr/2017/oe-single/stitch-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Named in the 2017 Disney Parks pin lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 dated line"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 Disney Parks line sold at both US resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/magic-2017",
+   "set_key": "dlr/2017/oe-single/magic-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magic 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Named in the 2017 Disney Parks pin lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 dated line"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 Disney Parks line sold at both US resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/minnie-mouse-2017",
+   "set_key": "dlr/2017/oe-single/minnie-mouse-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Named in the 2017 Disney Parks pin lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 dated line"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 Disney Parks line sold at both US resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/pirates-anchor",
+   "set_key": "dlr/2017/oe-single/pirates-anchor",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates of the Caribbean Anchor Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed in May 14-20 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Retail 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "May 2017 week 3 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World and Shop Disney Parks app",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Roundup lists the Pirates OE pins for both resorts and the app"
+    },
+    {
+     "field": "visual_description",
+     "value": "Anchor with a skull at centre; Dead Men Tell No Tales text",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Paraphrased from roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Pirates line"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/pirates-glitter-skull",
+   "set_key": "dlr/2017/oe-single/pirates-glitter-skull",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates of the Caribbean Glitter Skull Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed in May 14-20 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Retail 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "May 2017 week 3 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World and Shop Disney Parks app",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Roundup lists the Pirates OE pins for both resorts and the app"
+    },
+    {
+     "field": "visual_description",
+     "value": "Glitter skull with jewelled elements",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Paraphrased from roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Pirates line"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/pirates-skull-sword",
+   "set_key": "dlr/2017/oe-single/pirates-skull-sword",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates of the Caribbean Skull Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed in May 14-20 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Retail 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "May 2017 week 3 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World and Shop Disney Parks app",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Roundup lists the Pirates OE pins for both resorts and the app"
+    },
+    {
+     "field": "visual_description",
+     "value": "Skull in profile with a sword in its mouth",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Paraphrased from roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Pirates line"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/pirates-flag",
+   "set_key": "dlr/2017/oe-single/pirates-flag",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates of the Caribbean Flag Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed in May 14-20 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Retail 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "May 2017 week 3 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World and Shop Disney Parks app",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Roundup lists the Pirates OE pins for both resorts and the app"
+    },
+    {
+     "field": "visual_description",
+     "value": "Distressed flag with pirate and crossed swords",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Paraphrased from roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Pirates line"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/pirates-life-hook",
+   "set_key": "dlr/2017/oe-single/pirates-life-hook",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirate's Life Hook Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Listed in May 14-20 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Retail 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "May 2017 week 3 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World and Shop Disney Parks app",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Roundup lists the Pirates OE pins for both resorts and the app"
+    },
+    {
+     "field": "visual_description",
+     "value": "Hook-shaped pin, hooked on the pirate's life text",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Paraphrased from roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "Pirates line"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/thanksgiving-tinker-bell",
+   "set_key": "dlr/2017/oe-single/thanksgiving-tinker-bell",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Thanksgiving Tinker Bell Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 15-21 2017 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Retail 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "October 2017 week 3"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed for Disneyland and WDW"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tinker Bell holding a slice of pumpkin pie",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/snowman-ear-hat",
+   "set_key": "dlr/2017/oe-single/snowman-ear-hat",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Snowman Ear Hat Holiday Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 15-21 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Retail 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "October 2017 week 3"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed for Disneyland and WDW"
+    },
+    {
+     "field": "visual_description",
+     "value": "Snowman wearing a Mickey ear hat",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/coco-skull",
+   "set_key": "dlr/2017/oe-single/coco-skull",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Coco Skull Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 15-21 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition Coco pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Coco",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Coco pin"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Summary gives 9.99 for the week's OE items"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "October 2017 week 3"
+    },
+    {
+     "field": "release_location",
+     "value": "Spotted at Epcot; roundup lists Disneyland and WDW",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Spotted at Epcot; summary says sold at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/coco-remember-me",
+   "set_key": "dlr/2017/oe-single/coco-remember-me",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Coco Remember Me Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 15-21 2017 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition Coco pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Coco",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Coco pin"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Summary gives 9.99 for the week's OE items"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "October 2017 week 3"
+    },
+    {
+     "field": "release_location",
+     "value": "Spotted at Epcot; roundup lists Disneyland and WDW",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-3/",
+     "method": "search_snippet",
+     "note": "Spotted at Epcot; summary says sold at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/holiday-dumbo",
+   "set_key": "dlr/2017/oe-single/holiday-dumbo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday Dumbo Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 22-28 2017 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "New open edition for Christmas 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Retail 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Oct 22-28 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Sold at Disneyland and WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/holiday-stitch",
+   "set_key": "dlr/2017/oe-single/holiday-stitch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Holiday Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 22-28 2017 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "New open edition for Christmas 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Retail 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Oct 22-28 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Sold at Disneyland and WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/santa-stormtrooper",
+   "set_key": "dlr/2017/oe-single/santa-stormtrooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Santa Stormtrooper Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 22-28 2017 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "New open edition for Christmas 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Retail 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Oct 22-28 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Sold at Disneyland and WDW"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Franchise per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/holiday-bb-8",
+   "set_key": "dlr/2017/oe-single/holiday-bb-8",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday BB-8 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 22-28 2017 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "New open edition for Christmas 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Retail 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Oct 22-28 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Sold at Disneyland and WDW"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Franchise per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/holiday-baymax",
+   "set_key": "dlr/2017/oe-single/holiday-baymax",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday Baymax Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Listed in Oct 22-28 2017 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baymax"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "New open edition for Christmas 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Retail 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Oct 22-28 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Sold at Disneyland and WDW"
+    },
+    {
+     "field": "franchise",
+     "value": "Big Hero 6",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Franchise per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/mission-breakout-star-lord",
+   "set_key": "dlr/2017/oe-single/mission-breakout-star-lord",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mission: Breakout Star-Lord Pin",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name; OE pins section of DPB Mission Breakout post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Star-Lord"
+     ],
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Snippet summaries name Star-Lord and Rocket OE designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Shown in the post's open edition section"
+    },
+    {
+     "field": "attraction",
+     "value": "Guardians of the Galaxy - Mission: BREAKOUT!",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Attraction opened at DCA May 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Post from May 2017 opening"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "DCA attraction merchandise"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/mission-breakout-rocket",
+   "set_key": "dlr/2017/oe-single/mission-breakout-rocket",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mission: Breakout Rocket Pin",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name; OE pins section of DPB Mission Breakout post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rocket"
+     ],
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Snippet summaries name Star-Lord and Rocket OE designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Shown in the post's open edition section"
+    },
+    {
+     "field": "attraction",
+     "value": "Guardians of the Galaxy - Mission: BREAKOUT!",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Attraction opened at DCA May 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "Post from May 2017 opening"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "DCA attraction merchandise"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/mickey-mouse",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/minnie-mouse",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/daisy-duck",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/donald-duck",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/goofy",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/chip",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/pluto",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/digital-disney-mystery/dale",
+   "set_key": "dlr/2017/oe-set/digital-disney-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/cinderella",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/aurora",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/rapunzel",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/belle",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/snow-white",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/ariel",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/jasmine",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/princess-gold-frame-mystery/tiana",
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/teacup",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute Teacup",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/space-mountain",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute Space Mountain",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/jungle-cruise",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute Jungle Cruise",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/dole-whip",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute Dole Whip",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/haunted-mansion",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/sword-in-the-stone",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute Sword in the Stone",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/peoplemover",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute PeopleMover",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/dumbo",
+   "set_key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom of Cute Dumbo",
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Named as one of the set's pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2017/oe/castle-2017-sleeping-beauty-castle",
+   "field": "original_price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No retail price for 2017 dated pins in snippets"
+  },
+  {
+   "key": "dlr/2017/oe/sorcerer-mickey-2017",
+   "field": "original_price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No retail price for 2017 dated pins in snippets"
+  },
+  {
+   "key": "dlr/2017/oe/stitch-2017",
+   "field": "original_price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No retail price for 2017 dated pins in snippets"
+  },
+  {
+   "key": "dlr/2017/oe/magic-2017",
+   "field": "original_price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No retail price for 2017 dated pins in snippets"
+  },
+  {
+   "key": "dlr/2017/oe/minnie-mouse-2017",
+   "field": "original_price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No retail price for 2017 dated pins in snippets"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-booster",
+   "field": "members",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "Member pins not named by a permitted snippet; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-booster",
+   "field": "price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No original retail price in a permitted snippet"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-mystery",
+   "field": "members",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "Member pins not named by a permitted snippet; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-mystery",
+   "field": "price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No original retail price in a permitted snippet"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-starter-set",
+   "field": "members",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "Member pins not named by a permitted snippet; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-starter-set",
+   "field": "price",
+   "searched": "DPB 2017 pins page; 3 queries",
+   "note": "No original retail price in a permitted snippet"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-mystery",
+   "field": "edition_type",
+   "searched": "DPB 2017 pins page",
+   "note": "Snippet did not label the mystery box itself as open edition"
+  },
+  {
+   "key": "dlr/2017/oe/pirates-flag",
+   "field": "release_location",
+   "searched": "May 2017 wk3 roundup",
+   "note": "Explicit Disneyland wording seen for anchor and skull; others covered only by roundup-level summary"
+  },
+  {
+   "key": "dlr/2017/oe/coco-skull",
+   "field": "release_location",
+   "searched": "Oct 2017 wk3 roundup; 1 query",
+   "note": "Pin text says spotted at Epcot; Disneyland sale only from roundup-level summary - verify"
+  },
+  {
+   "key": "dlr/2017/oe/coco-remember-me",
+   "field": "release_location",
+   "searched": "Oct 2017 wk3 roundup; 1 query",
+   "note": "Pin text says spotted at Epcot; Disneyland sale only from roundup-level summary - verify"
+  },
+  {
+   "key": "dlr/2017/oe-set/mickey-minnie-mailbox",
+   "field": "members",
+   "searched": "Nov 2017 wk1 roundup",
+   "note": "Mickey and Minnie sending love letters; the two pins not individually described; no members created"
+  },
+  {
+   "key": "dlr/2017/oe/mission-breakout-star-lord",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "Exact pin names, prices not in snippets; Star-Lord/Rocket identification from search summaries only - verify"
+  },
+  {
+   "key": "dlr/2017/oe/mission-breakout-rocket",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "Exact pin names, prices not in snippets; Star-Lord/Rocket identification from search summaries only - verify"
+  },
+  {
+   "key": "dlr/2017/mission-breakout",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "Premiere-event pins are limited and one AP-exclusive pin noted: lead for dlr LE 2017 cell. Tivan Collection logo pin seen only on reseller; edition unknown"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Snippet did not state open edition explicitly"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Series 1 edition not stated; only a commenter on Series 2 post said OE"
+  },
+  {
+   "key": "dlr/2017/oe-set/frozen-holiday-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "dlr/2017/oe-set/tsum-tsum-holiday-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Characters not named in snippets"
+  },
+  {
+   "key": "dlr/2017/oe-set/haunted-mansion-holiday-mystery",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "Edition, price and designs not stated; may be LR - recheck for LE cell"
+  },
+  {
+   "key": "dlr/2017/oe-set/minnie-mouse-emoji",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Six expressions not individually named; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/stitch-emoji",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Six expressions not individually named; no members created"
+  },
+  {
+   "key": "dlr/2017/oe/stitch-embarrassed-emoji",
+   "field": "set_membership",
+   "searched": "1 query",
+   "note": "DPB product page for a Stitch Embarrassed Emoji pin (2017, Disney Parks); unclear if single or member of Stitch emoji set"
+  },
+  {
+   "key": "dlr/2017/haunted-mansion-holiday-jack-jumbo",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: LE 1000 Jack Skellington jumbo at Disneyland 2 Nov 2017, 54.99 (DPB Nov wk1) - for dlr LE 2017 cell"
+  },
+  {
+   "key": "dlr/2017/halloween-headless-horseman",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Headless Horseman Halloween 2017 pin LE 3000, DL and WDW 31 Oct 2017 - LE cell"
+  },
+  {
+   "key": "dlr/2017/halloween-time-oogie-boogie-spinner",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Halloween Time 2017 Oogie Boogie spinner, DLR LR - seen only on a marketplace listing, not used"
+  },
+  {
+   "key": "dlr/2017/main-street-electrical-parade",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: MSEP 2017 logo pin LR and AP Alice float pin LE 2000 at Disneyland - LE cell"
+  },
+  {
+   "key": "dlr/2017/dca-food-wine-festival",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: DCA Food & Wine 2017 pins are limited edition (DPB) - LE cell"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Disneyland-only Pin Trading Tales series LE 2000 each, 15.99 (wdwinfo/DPB) - LE cell"
+  },
+  {
+   "key": "dlr/2017/charming-characters",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Disneyland-only Charming Characters series LE 3000 each - LE cell"
+  },
+  {
+   "key": "dlr/2017/essence-of-evil-facilier",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Essence of Evil Dr Facilier LE 3000 and Star Wars Slave I LE 6000, DL+WDW Oct 2017 - LE cell"
+  },
+  {
+   "key": "dlr/2017/storybook-steeds-mystery",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Storybook Steeds mystery collection listed as limited release (May 2017) - LE cell"
+  },
+  {
+   "key": "dlr/2017/disney-films-mystery",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Disney Films mystery LR at both resorts per b017 - LE cell; not recorded as OE"
+  },
+  {
+   "key": "dlr/2017/crooked-comrades-mystery",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "lead: Crooked Comrades mystery LR at both resorts per b017 - LE cell"
+  },
+  {
+   "key": "dlr/2017/oe/holiday-elena-of-avalor",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "Shared Holiday Elena pin noted in b017 (DPB Nov 2017 wk2 says both resorts); not re-verified in this cell's searches"
+  },
+  {
+   "key": "dlr/2017/oe-set/haunted-mansion-cameo-mystery",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "Shared HM Cameo mystery (12) noted in b017 as both resorts; not re-verified here; may differ from HM Holiday mystery"
+  },
+  {
+   "key": "dlr/2017/oe-set/dca-mystery-art-deco",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "DCA art-deco mystery set (8, 15.99, DLR exclusive) dated Sept 2016 by DPB - belongs to 2016, not recorded"
+  },
+  {
+   "key": "dlr/2017/pirates-50th",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "Pirates 50th anniversary Disneyland collection (Main Street Mouse) described as limited edition - LE cell"
+  },
+  {
+   "key": "dlr/2017/halloween-time-oe",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "No Disneyland-specific open edition Halloween 2017 pin found in permitted sources"
+  },
+  {
+   "key": "dlr/2017/licensed",
+   "field": "release",
+   "searched": "DPB/wdwinfo/Main Street Mouse snippets",
+   "note": "No licensed (Loungefly/BoxLunch/Hot Topic etc.) pins surfaced in this cell's searches"
+  }
+ ],
+ "discovery_notes": "DLR OE 2017 backfill; 28 WebSearch calls, all search_snippet, mostly Disney Pins Blog. Most 2017 OE lines shared DLR/WDW; included only where a snippet named Disneyland. DLR-specific: Sleeping Beauty Castle 2017, Mission Breakout OE (May 2017), emoji sets spotted at DLR first, Princess Gold Frame DLR first, HM Holiday mystery. Many DLR 2017 releases were LE/LR (Pin Trading Tales, Charming Characters, MSEP) - recorded as leads only. No licensed pins found."
+}

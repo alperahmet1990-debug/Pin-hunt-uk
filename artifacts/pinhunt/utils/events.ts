@@ -71,6 +71,8 @@ export function selectUpcomingEvents(events: PinHuntEvent[]): PinHuntEvent[] {
     .filter(event => !event.hasScheduledDate || (event.endDate ?? event.eventDate) >= today)
     .sort((a, b) => {
       if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
+      // Rumours go after everything with a confirmed date (#352).
+      if (!!a.rumour !== !!b.rumour) return a.rumour ? 1 : -1;
       return a.eventDate.localeCompare(b.eventDate);
     });
 }

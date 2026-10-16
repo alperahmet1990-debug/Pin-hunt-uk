@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 6 (started 2026-10-16 16:30 UTC): B068, B069, B025–B028
 
 ## Totals (after round 5, 16 Oct 2026 ~16:00 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
@@ -49,12 +49,12 @@ Earlier: after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 b
 | B022 | 2017 | ds | Disney Store UK/EU + US | partial | 228_b022_ds_2017.json | 71 | follow-up appended; 37 split pins held |
 | B023 | 2017 | asia | Shanghai, Hong Kong, Tokyo | partial | 229_b023_asia_2017.json | 58 | follow-up appended |
 | B024 | 2017 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | done | 230_b024_lic_loungefly_2017.json | 9 | no Loungefly-credited 2017 Disney pins found (earliest July 2018); 9 BoxLunch 2017 pins recorded |
-| B068 | 2017 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B069 | 2017 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
-| B025 | 2016 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
-| B026 | 2016 | wdw-le | WDW LE/LR | todo | | | |
-| B027 | 2016 | dlr-oe | Disneyland California OE | todo | | | |
-| B028 | 2016 | dlr-le | Disneyland California LE/LR | todo | | | |
+| B068 | 2017 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | in progress | | | |
+| B069 | 2017 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | in progress | | | |
+| B025 | 2016 | wdw-oe | WDW open edition (incl. standalone) | in progress | | | |
+| B026 | 2016 | wdw-le | WDW LE/LR | in progress | | | |
+| B027 | 2016 | dlr-oe | Disneyland California OE | in progress | | | |
+| B028 | 2016 | dlr-le | Disneyland California LE/LR | in progress | | | |
 | B029 | 2016 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B030 | 2016 | ds | Disney Store UK/EU + US | todo | | | |
 | B031 | 2016 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
@@ -136,3 +136,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | 4 | 2026-10-16 14:30 | B063–B066 (2019/2018 Loungefly and BoxLunch dedicated sweeps), B067 (licensed exclusion review), B019 (2017 DLR OE) | +138 net new (42 corroborated); 242 pin records | B067 done, others partial (follow-ups appended). Held for pin-split confirmation: Funko Alice/Mulan 2018 (6), Pooh/Piglet/Tigger 2019 (3). Open question to maintainer: Star Wars/Marvel licensed pins in scope? |
 | – | 2026-10-16 15:10 | scope update (no new research) | – | Star Wars and Marvel licensed pins in scope for now (maintainer). Rule 11 updated; B096 queued to record the pins earlier cells skipped |
 | 5 | 2026-10-16 15:30 | B096 (Star Wars/Marvel licensed), B020 (2017 DLR LE), B021 (2017 DLP), B022 (2017 Disney Store), B023 (2017 Asia), B024 (2017 Loungefly) | +170 net new (14 corroborated); 246 pin records | B024 done (no 2017 Loungefly-credited pins), others partial; follow-ups B097–B102. Held for pin-split/grouping confirmation: 37 Disney Store, 4 SHDR, 4 BoxLunch hats, 2 FiGPiN Thor/Loki, 2 Funko LA Comic Con |
+| 6 | 2026-10-16 16:30 | B068 (2017 BoxLunch), B069 (2017 other licensed), B025–B028 (2016 WDW OE/LE, DLR OE/LE) | in progress | |

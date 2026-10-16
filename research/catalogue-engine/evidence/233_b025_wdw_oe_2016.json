@@ -1,0 +1,2448 @@
+{
+ "packet_id": "backfill-b025-wdw-oe-2016",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b025",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+   "title": "Disney Parks 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+   "title": "Disney Parks 2016 Spinner Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-12-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+   "title": "2016 Disney Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+   "title": "Disney Streets Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-01-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+   "title": "Disney Racer Mystery Pin Collection 2016",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+   "title": "Magic Kingdom 45th Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+   "title": "PHOTOS: Magic Kingdom 45th Anniversary Merchandise Collection Revealed",
+   "publisher": "WDW News Today",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-disney-pin-trading-starter-set/",
+   "title": "Magic Kingdom 45th Anniversary Disney Pin Trading Starter Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+   "title": "Frozen Ever After Open Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-06-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+   "title": "Look Ahead At New Pins Coming To Disney Parks In 2016",
+   "publisher": "The Main Street Mouse",
+   "published_date": "2015-12-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+   "title": "A Look at New Pins Coming to Disney Parks in 2016",
+   "publisher": "Chip and Co",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+   "title": "New Disney Pins June 2016 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+   "title": "2016 Birthstone Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+   "title": "Tsum Tsum Haunted Mansion Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+   "title": "Orange Bird Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/65313",
+   "title": "Pin 65313",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2016/oe-single/spinner-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2016 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/sorcerer-mickey-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sorcerer Mickey 2016 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/mickey-minnie-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Minnie 2016 Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/tinker-bell-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tinker Bell 2016 Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/orange-bird-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Orange Bird 2016 Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/disney-parks-2016-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2016 Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Pin set listed in the 2016 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Roundup says all pins in the 2016 dated line are open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/mk-45th-anniversary-mickey",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic Kingdom 45th Anniversary Mickey Pin",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/mk-45th-anniversary-tinker-bell",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic Kingdom 45th Anniversary Tinker Bell Pin",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic Kingdom 45th Anniversary Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Mystery set of Magic Kingdom attractions"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Eight pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "$15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "July 2016 preview says eight different pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "Two random per box"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Magic Kingdom anniversary release"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/mk-45th-anniversary-starter-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic Kingdom 45th Anniversary Disney Pin Trading Starter Set",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Four pins plus lanyard"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "$29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "WDW only"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/frozen-ever-after",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Frozen Ever After Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/humphrey-the-bear",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Humphrey the Bear Pin",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/20000-leagues-under-the-sea",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "20,000 Leagues Under the Sea Pin",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/mary-poppins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mary Poppins Pin",
+     "source_url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/toy-story-cinderella-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story Open Edition Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/elena-of-avalor-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Elena of Avalor Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/eeyore-moveable-tail",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Eeyore Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/mickey-icon-snowflake",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Icon Snowflake Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/mickey-soccer-teams",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Soccer Team Pins",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Descriptive name for OE Mickey soccer team pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Shared release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Week of 6-12 Nov 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-single/orange-bird-cast-member-dangle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Orange Bird Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2016 Birthstone Disney Pins",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 per pin, sold individually"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "format",
+     "value": "monthly character pins sold individually",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "One character per month"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/music-magic-memories-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2016 Disney Mystery Pin Collection (Music, Magic, Memories)",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Title and theme"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Eight pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random per box"
+    },
+    {
+     "field": "price",
+     "value": 13.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "About $13.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "OE available until end of 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World and Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Parks exclusive also at DLR"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Streets Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Eight street-sign pins with characters"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random per box"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "$14.95 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/disney-racers-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Racer Mystery Pin Collection 2016",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "16 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Five random pins per bag"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "$27.99 per bag"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Released December 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World and Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tsum Tsum Haunted Mansion Pin Set",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Six pins"
+    },
+    {
+     "field": "format",
+     "value": "booster",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Booster set"
+    },
+    {
+     "field": "price",
+     "value": 32.99,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "$32.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Released July 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World and Shop Parks app",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at WDW and the app"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2016/oe/spinner-2016",
+   "set_key": "wdw/2016/oe-single/spinner-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Parks 2016 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Pin title as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Described as an open edition spinner pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Goofy",
+      "Donald Duck",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Features these four characters"
+    },
+    {
+     "field": "original_price",
+     "value": 13.95,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Retail price stated as $13.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Released at both US resorts, later also DisneyStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Spinner with dimensional pin-on-pin design"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disney Parks 2016 dated pin line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/sorcerer-mickey-2016",
+   "set_key": "wdw/2016/oe-single/sorcerer-mickey-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sorcerer Mickey 2016 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Listed in DPB 2016 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Roundup says all pins in the 2016 dated line are open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey named in entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Most 2016 line pins sold at both DLR and WDW"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "2016 dated line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/mickey-minnie-2016",
+   "set_key": "wdw/2016/oe-single/mickey-minnie-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie 2016 Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Entry title names WDW version"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Roundup says all pins in the 2016 dated line are open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Named in title"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Entry labelled as the WDW version"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "2016 dated line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/tinker-bell-2016",
+   "set_key": "wdw/2016/oe-single/tinker-bell-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell 2016 Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Entry title names WDW version"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Roundup says all pins in the 2016 dated line are open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Named in title"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Entry labelled as WDW version"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "2016 dated line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/orange-bird-2016",
+   "set_key": "wdw/2016/oe-single/orange-bird-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Orange Bird 2016 Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Entry title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Roundup says all pins in the 2016 dated line are open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Orange Bird",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Named in title"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Named as the WDW-specific pin of the 2016 line (Oswald was DLR's)"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "2016 dated line"
+    },
+    {
+     "field": "visual_description",
+     "value": "Orange Bird dancing in front of a castle with 2016 Walt Disney World text",
+     "source_url": "https://mypincentral.com/pin/65313",
+     "method": "search_snippet",
+     "note": "Pin Central entry describes this design; Disney Pin Trading logo on back"
+    },
+    {
+     "field": "front_text",
+     "value": "2016 WALT DISNEY WORLD",
+     "source_url": "https://mypincentral.com/pin/65313",
+     "method": "search_snippet",
+     "note": "Text quoted by Pin Central entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/mk-45th-anniversary-mickey",
+   "set_key": "wdw/2016/oe-single/mk-45th-anniversary-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magic Kingdom 45th Anniversary Mickey Pin",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name; DPB lists one Mickey and one Tinker Bell OE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Stated as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Character on pin"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Retail $12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Magic Kingdom 45th anniversary merchandise"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "45th anniversary was 1 Oct 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/mk-45th-anniversary-tinker-bell",
+   "set_key": "wdw/2016/oe-single/mk-45th-anniversary-tinker-bell",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magic Kingdom 45th Anniversary Tinker Bell Pin",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name; DPB lists one Mickey and one Tinker Bell OE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Stated as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Character on pin"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Retail $12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "Magic Kingdom 45th anniversary merchandise"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "45th anniversary was 1 Oct 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/frozen-ever-after",
+   "set_key": "wdw/2016/oe-single/frozen-ever-after",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Frozen Ever After Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Titled as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elsa",
+      "Kristoff",
+      "Sven",
+      "Olaf",
+      "Anna",
+      "Marshmallow",
+      "Snowgies"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Characters listed in post"
+    },
+    {
+     "field": "attraction",
+     "value": "Frozen Ever After",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Grand opening pin for the Epcot attraction"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Retail $9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-21",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Released for attraction opening 21 June 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World (Epcot)",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-ever-open-edition-pin",
+     "method": "search_snippet",
+     "note": "Epcot attraction opening"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/humphrey-the-bear",
+   "set_key": "wdw/2016/oe-single/humphrey-the-bear",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Humphrey the Bear Pin",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive name; preview gave no official title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Announced as one of the 2016 Disney Parks open edition pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (Disneyland Resort and Walt Disney World)",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Preview covered both US resorts; WDW not confirmed per pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Planned for 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/20000-leagues-under-the-sea",
+   "set_key": "wdw/2016/oe-single/20000-leagues-under-the-sea",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "20,000 Leagues Under the Sea Pin",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive name; preview gave no official title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Announced 2016 open edition inspired by the film"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (Disneyland Resort and Walt Disney World)",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Preview covered both US resorts; WDW not confirmed per pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "Planned for 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/mary-poppins",
+   "set_key": "wdw/2016/oe-single/mary-poppins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins Pin",
+     "source_url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+     "method": "search_snippet",
+     "note": "Descriptive name; preview gave no official title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+     "method": "search_snippet",
+     "note": "Listed among announced 2016 open edition pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (Disneyland Resort and Walt Disney World)",
+     "source_url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+     "method": "search_snippet",
+     "note": "Preview covered both US resorts; WDW not confirmed per pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+     "method": "search_snippet",
+     "note": "Planned for 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/toy-story-cinderella-castle",
+   "set_key": "wdw/2016/oe-single/toy-story-cinderella-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Toy Story Open Edition Pin - Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "WDW exclusive version"
+    },
+    {
+     "field": "visual_description",
+     "value": "Toy Story design featuring Cinderella Castle",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "DLR version used Sleeping Beauty Castle"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Week of 26 Jun-2 Jul 2016 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/elena-of-avalor-2016",
+   "set_key": "wdw/2016/oe-single/elena-of-avalor-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Elena of Avalor Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Elena",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Elena of Avalor"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Glitter embellishments"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Shared release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Late June 2016 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/eeyore-moveable-tail",
+   "set_key": "wdw/2016/oe-single/eeyore-moveable-tail",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Eeyore Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Eeyore",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Eeyore"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "moveable tail"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Tail moves"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2016-week-5/",
+     "method": "search_snippet",
+     "note": "Late June 2016 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/mickey-icon-snowflake",
+   "set_key": "wdw/2016/oe-single/mickey-icon-snowflake",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Icon Snowflake Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Title as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Mickey icon"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Glitter detailing"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Retail $9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "At DLR and WDW 10 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort, Walt Disney World and Disney Store",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2016-week-2/",
+     "method": "search_snippet",
+     "note": "Sold at both resorts and Disney Store"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/orange-bird-cast-member-dangle",
+   "set_key": "wdw/2016/oe-single/orange-bird-cast-member-dangle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Orange Bird Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Orange Bird",
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Orange Bird"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Dangle pin"
+    },
+    {
+     "field": "original_price",
+     "value": 8.95,
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "$8.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Released June 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World Cast Member store",
+     "source_url": "https://disneypinsblog.com/orange-bird-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Sold to cast members"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/january-snow-white",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone January Snow White",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "January pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/february-rapunzel",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone February Rapunzel",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "February pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/march-cinderella",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone March Cinderella",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "March pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/may-ariel",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone May Ariel",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "May pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/june-jasmine",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone June Jasmine",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "June pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/august-tiana",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone August Tiana",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "August pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/september-anna",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone September Anna",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Anna",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "September pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/december-elsa",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Birthstone December Elsa",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name from month and character"
+    },
+    {
+     "field": "main_character",
+     "value": "Elsa",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "December pin character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "$11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/2016-birthstone-disney-pins/",
+     "method": "search_snippet",
+     "note": "2016 birthstone line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster/ezra",
+   "set_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Haunted Mansion Ezra",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Descriptive name; character listed in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Ezra",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Named in set contents"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion theme"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "July 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster/maid",
+   "set_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Haunted Mansion Maid",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Descriptive name; character listed in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Maid",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Named in set contents"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion theme"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "July 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster/gus",
+   "set_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Haunted Mansion Gus",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Descriptive name; character listed in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Gus",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Named in set contents"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion theme"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "July 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster/madame-leota",
+   "set_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Haunted Mansion Madame Leota",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Descriptive name; character listed in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Madame Leota",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Named in set contents"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion theme"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "July 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster/phineas",
+   "set_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Haunted Mansion Phineas",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Descriptive name; character listed in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Phineas",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Named in set contents"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion theme"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "July 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster/bride",
+   "set_key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Haunted Mansion Bride",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Descriptive name; character listed in set"
+    },
+    {
+     "field": "main_character",
+     "value": "Bride",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Named in set contents"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion theme"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-haunted-mansion-pin-set/",
+     "method": "search_snippet",
+     "note": "July 2016"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2016/oe/spinner-2016",
+   "field": "release_date",
+   "searched": "DPB spinner post; 2 queries",
+   "note": "Post dated 21 Dec 2015 but snippet gives no explicit release date"
+  },
+  {
+   "key": "wdw/2016/oe/sorcerer-mickey-2016",
+   "field": "original_price",
+   "searched": "DPB 2016 roundup; 3 queries",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2016/oe/mickey-minnie-2016",
+   "field": "original_price",
+   "searched": "DPB 2016 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2016/oe/tinker-bell-2016",
+   "field": "original_price",
+   "searched": "DPB 2016 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2016/oe/orange-bird-2016",
+   "field": "original_price",
+   "searched": "DPB 2016 roundup; Orange Bird query",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-parks-2016-pin-set",
+   "field": "members",
+   "searched": "DPB 2016 roundup; 3 queries",
+   "note": "Set listed but snippets gave no contents, count or price"
+  },
+  {
+   "key": "wdw/2016/oe/stitch-2016",
+   "field": "release_location",
+   "searched": "DPB 2016 roundup",
+   "note": "Stitch 2016 pin entry labelled Disneyland version; WDW version not confirmed - lead for DLR cell"
+  },
+  {
+   "key": "wdw/2016/oe/aurora-2016",
+   "field": "release_location",
+   "searched": "DPB 2016 roundup",
+   "note": "Aurora 2016 pin entry labelled Disneyland version - lead for DLR cell"
+  },
+  {
+   "key": "wdw/2016/oe/disney-parks-2016-lanyard-pouch",
+   "field": "scope",
+   "searched": "DPB 2016 roundup",
+   "note": "scope: confirm pin vs button - lanyard pouch listed in roundup; unclear if it includes pins"
+  },
+  {
+   "key": "wdw/2016/oe/2016-dated-line",
+   "field": "members",
+   "searched": "DPB 2016 roundup",
+   "note": "Snippet list incomplete (some numbered items missing); further 2016 dated pins may exist"
+  },
+  {
+   "key": "wdw/2016/oe/mk-45th-anniversary-mickey",
+   "field": "release_date",
+   "searched": "DPB MK45 post",
+   "note": "Exact on-sale date not in snippets"
+  },
+  {
+   "key": "wdw/2016/oe/mk-45th-anniversary-tinker-bell",
+   "field": "release_date",
+   "searched": "DPB MK45 post",
+   "note": "Exact on-sale date not in snippets"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "field": "members",
+   "searched": "DPB, WDWNT; 2 queries",
+   "note": "Eight attraction designs not named in snippets"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "field": "edition_type",
+   "searched": "DPB, WDWNT",
+   "note": "Snippets do not state OE vs limited release"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-starter-set",
+   "field": "members",
+   "searched": "DPB starter set post; 1 query",
+   "note": "Only a reseller listing (not evidence) names Minnie, Donald, Goofy, Pluto - lead only"
+  },
+  {
+   "key": "wdw/2016/main-street-mystery",
+   "field": "edition_type",
+   "searched": "MK45 query",
+   "note": "lead: Magic Kingdom Main Street 8-pin mystery set (Jul 2016) described as limited release - for LE/LR cell"
+  },
+  {
+   "key": "wdw/2016/oe/humphrey-the-bear",
+   "field": "release_date",
+   "searched": "DPB look-ahead coverage; 2 queries",
+   "note": "Preview only; no confirmed release date, design or price"
+  },
+  {
+   "key": "wdw/2016/oe/20000-leagues-under-the-sea",
+   "field": "release_date",
+   "searched": "DPB look-ahead coverage; 2 queries",
+   "note": "Preview only; no confirmed release date, design or price"
+  },
+  {
+   "key": "wdw/2016/oe/mary-poppins",
+   "field": "release_date",
+   "searched": "DPB look-ahead coverage; 2 queries",
+   "note": "Preview only; no confirmed release date, design or price"
+  },
+  {
+   "key": "wdw/2016/oe/toy-story-cinderella-castle",
+   "field": "characters",
+   "searched": "DPB June wk5",
+   "note": "Characters on pin not stated in snippet"
+  },
+  {
+   "key": "wdw/2016/oe/eeyore-moveable-tail",
+   "field": "release_location",
+   "searched": "DPB June wk5",
+   "note": "Resort not stated in snippet"
+  },
+  {
+   "key": "wdw/2016/oe/toy-story-rex-jesse-alien",
+   "field": "members",
+   "searched": "DPB June wk5",
+   "note": "Snippet also mentions Rex, Jesse and alien Toy Story pins; edition and resort unclear"
+  },
+  {
+   "key": "wdw/2016/timeless-tales-tangled",
+   "field": "edition_type",
+   "searched": "DPB June wk5",
+   "note": "lead: Timeless Tales Tangled hinged pin LE 3000 $24.99 WDW - LE cell"
+  },
+  {
+   "key": "wdw/2016/oe/mickey-icon-snowflake",
+   "field": "sub_series",
+   "searched": "DPB Nov wk2",
+   "note": "Part of Disney Parks Happy Holidays Collection per snippet"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams",
+   "field": "members",
+   "searched": "DPB Nov wk2; 1 query",
+   "note": "Teams not named by DPB; retailer listings (not evidence) mention NYCFC, D.C. United, LA Galaxy, Portland Timbers"
+  },
+  {
+   "key": "wdw/2016/epcot-holidays-figment",
+   "field": "edition_type",
+   "searched": "DPB Nov wk4",
+   "note": "lead: Epcot Holidays Around the World Figment hinged pin $14.99, limited release 21 Nov 2016 - LR cell"
+  },
+  {
+   "key": "wdw/2016/mickey-minnie-le4000",
+   "field": "edition_type",
+   "searched": "DPB",
+   "note": "lead: Mickey and Minnie pin LE 4000 at WDW 10 Nov 2016 - LE cell"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016",
+   "field": "expected_pin_count",
+   "searched": "DPB birthstone post",
+   "note": "Count not stated; months Apr, Jul, Oct, Nov characters not in snippets"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016",
+   "field": "release_location",
+   "searched": "DPB birthstone post",
+   "note": "Snippet says Disney Parks; WDW not separately confirmed"
+  },
+  {
+   "key": "wdw/2016/oe-set/music-magic-memories-mystery",
+   "field": "members",
+   "searched": "DPB; 3 queries",
+   "note": "Eight designs not named in snippets"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery",
+   "field": "members",
+   "searched": "DPB; 2 queries",
+   "note": "Only reseller listings (not evidence) name Daisy Lane, Goofy Circle, Donald Blvd, Chip Rd, Pluto Ave, Minnie Lane, Mickey Ave, Dale Blvd"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery",
+   "field": "release_date",
+   "searched": "DPB; reseller",
+   "note": "DPB page metadata 27 Jan 2016; a reseller says 2015 - year needs confirming, may belong to 2015 cell"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-racers-mystery",
+   "field": "edition_type",
+   "searched": "DPB racer post",
+   "note": "OE not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-racers-mystery",
+   "field": "members",
+   "searched": "DPB; 1 query",
+   "note": "Only a reseller list (not evidence) names 15 racer designs (e.g. Roger Rabbit, Stitch, Simba); not recorded"
+  },
+  {
+   "key": "wdw/2016/oe-set/tsum-tsum-haunted-mansion-booster",
+   "field": "edition_type",
+   "searched": "DPB tsum post",
+   "note": "OE not stated"
+  },
+  {
+   "key": "wdw/2016/epcot-food-wine-figment",
+   "field": "edition_type",
+   "searched": "F&W query",
+   "note": "lead: 2016 F&W Chef Figment $14.99 described as limited release (themeparktrader) - LR cell"
+  },
+  {
+   "key": "wdw/2016/epcot-flower-garden",
+   "field": "edition_type",
+   "searched": "F&G query",
+   "note": "lead: 2016 F&G logo pin limited release; no OE found"
+  },
+  {
+   "key": "wdw/2016/oe/rivers-of-light-logo",
+   "field": "release_year",
+   "searched": "AK query",
+   "note": "Reseller lists a Rivers of Light logo pin; year/edition unknown (show opened Feb 2017)"
+  },
+  {
+   "key": "wdw/2016/oe",
+   "field": "coverage",
+   "searched": "30 queries",
+   "note": "No OE Halloween, Star Wars or Hollywood Studios 2016 pins found; Hidden Mickey 2016 not researched; Disney Mouseketeer 25-OE article undated (likely 2024)"
+  },
+  {
+   "key": "lic/2016",
+   "field": "licensed",
+   "searched": "all queries",
+   "note": "No licensed (Loungefly/BoxLunch/Hot Topic) pins surfaced in this cell"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/january-snow-white",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/february-rapunzel",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/march-cinderella",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/may-ariel",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/june-jasmine",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/august-tiana",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/september-anna",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/december-elsa",
+   "field": "pin_structure",
+   "searched": "maintainer review of B025",
+   "note": "hold: one pin per month inferred from the monthly character list; confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe/humphrey-the-bear",
+   "field": "release_date",
+   "searched": "maintainer review of B025",
+   "note": "hold: only announced in a preview post; release not confirmed"
+  },
+  {
+   "key": "wdw/2016/oe/20000-leagues-under-the-sea",
+   "field": "release_date",
+   "searched": "maintainer review of B025",
+   "note": "hold: only announced in a preview post; release not confirmed"
+  },
+  {
+   "key": "wdw/2016/oe/mary-poppins",
+   "field": "release_date",
+   "searched": "maintainer review of B025",
+   "note": "hold: only announced in a preview post; release not confirmed"
+  }
+ ],
+ "discovery_notes": "WDW 2016 OE backfill; 30 WebSearch calls, all search_snippet, mostly Disney Pins Blog. 2017-dated pins released Dec 2016 are in packet 217 and not duplicated. Birthstone pins split one per month as DPB names a character per month. Humphrey/20,000 Leagues/Mary Poppins are preview announcements only. Several Disney Parks releases shared DLR/WDW. Set member lists from resellers recorded only as not_found leads."
+}

@@ -1,0 +1,2259 @@
+{
+ "packet_id": "backfill-b116-lic-pinkalamode-2023-2024-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b116",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+   "title": "Disney Princess Stained Glass Collectible Pin Series Wave 1 at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-2-at-pink-a-la-mode/",
+   "title": "Disney Princess Stained Glass Collectible Pin Series Wave 2 at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-3-at-pink-a-la-mode/",
+   "title": "Disney Princess Stained Glass Collectible Pin Series Wave 3 at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-03-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+   "title": "Mickey & Friends Stained Glass Collectible Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-06-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+   "title": "Disney 100 Years of Wonder Mystery Pin Sets at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-05-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+   "title": "Disney100 Puzzle Mystery Pin Set at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-07-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tagged/pink-a-la-mode-disney-pins?page=12",
+   "title": "News (Pink a la Mode Disney Pins tag, page 12)",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pinocchio-disney-pin-releases-at-pink-a-la-mode",
+   "title": "Pinocchio Disney Pin Releases at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-07-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-100-princess-florals-pin-releases-at-pink-a-la-mode/",
+   "title": "Disney 100 Princess Florals Pin Releases at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-08-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/monsters-inc-disney-pixar-pin-releases-at-pink-a-la-mode/",
+   "title": "Monsters, Inc. Disney Pixar Pin Releases at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-villains-micro-mystery-pin-set-at-pink-a-la-mode/",
+   "title": "Disney Princess & Villains Micro Mystery Pin Set at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+   "title": "Nightmare Before Christmas 30th Anniversary Micro Mystery Pin Set at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+   "title": "The Nightmare Before Christmas Stained Glass Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+   "title": "Pixar Stained Glass Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+   "title": "Frozen Stained Glass Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+   "title": "Aladdin Storybook Series Pin at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-wish-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Wish Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-best-friends-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Best Friends Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/two-new-stitch-disney-pins-at-pink-a-la-mode/",
+   "title": "Two New Stitch Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-02-16",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sleeping-beauty-icon-series-disney-pins-at-pink-a-la-mode/",
+   "title": "Sleeping Beauty Icon Series Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-01-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+   "title": "Stitch in Costume Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-02-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+   "title": "Beauty and the Beast Icon Series Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-02-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+   "title": "Stitch Portrait Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-05-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+   "title": "New Eeyore & Stitch Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-05-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+   "title": "Disney Wish Star Wave 2 Series Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-cutie-series-2-pins-at-pink-a-la-mode/",
+   "title": "Stitch Cutie Series 2 Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/lilo-stitch-invasion-pin-series-at-pink-a-la-mode",
+   "title": "Lilo & Stitch Invasion Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-coin-series-wave-2-pins-at-pink-a-la-mode/",
+   "title": "Disney Coin Series Wave 2 Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-12-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/get-to-know-locations-non-disney.78195/",
+   "title": "GUIDE - Get to Know: Locations - Non-Disney",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-1",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Stained Glass Collectible Pin Series Wave 1",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says the pins were created by Uncas International"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 stated (corroborates b104)"
+    },
+    {
+     "field": "price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$30 each stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-12",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-1-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-2",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-2-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "search summary says the Wave 2 post is tagged/credited Uncas International; weaker than an explicit 'created by' line, confirm"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-2-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-3",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-3-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE stated in snippet (completes b104 gap)"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-3-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "300 each stated"
+    },
+    {
+     "field": "price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-3-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$30 each stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-3-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-03-30",
+     "source_url": "https://disneypinsblog.com/disney-princess-stained-glass-collectible-pin-series-wave-3-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "date given for Wave 3 in snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-pinocchio",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-disney-pin-releases-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "LE 300 stated (corroborates)"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-disney-pin-releases-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-disney-pin-releases-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-disney-pin-releases-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "on-sale date stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-disney100-princess-florals",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-100-princess-florals-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 stated (corroborates)"
+    },
+    {
+     "field": "price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/disney-100-princess-florals-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$30 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-princess-florals-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08-31",
+     "source_url": "https://disneypinsblog.com/disney-100-princess-florals-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-monsters-inc",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/monsters-inc-disney-pixar-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 stated"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/monsters-inc-disney-pixar-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/monsters-inc-disney-pixar-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-12",
+     "source_url": "https://disneypinsblog.com/monsters-inc-disney-pixar-pin-releases-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-princess-villains-micro-mystery",
+   "claims": [
+    {
+     "field": "price",
+     "value": 18,
+     "source_url": "https://disneypinsblog.com/disney-princess-villains-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$18 per box of two pins"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-villains-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-princess-villains-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "box of two pins stated"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/disney-princess-villains-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "12 pins in total (corroborates)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-best-friends",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/disney-best-friends-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "6 different pins stated (corroborates)"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-best-friends-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/disney-best-friends-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-best-friends-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-stitch-pair",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/two-new-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "each LE 300"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/two-new-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/two-new-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02-16",
+     "source_url": "https://disneypinsblog.com/two-new-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-disney-wish-series",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-wish-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/disney-wish-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$30 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-wish-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-01",
+     "source_url": "https://disneypinsblog.com/disney-wish-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pre-order start"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-sleeping-beauty-icon-series",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 35,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$35 each"
+    },
+    {
+     "field": "price",
+     "value": 180,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "full set price $180"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-coin-series-wave-2",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-coin-series-wave-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "300 each (corroborates)"
+    },
+    {
+     "field": "price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/disney-coin-series-wave-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$29.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-coin-series-wave-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12-06",
+     "source_url": "https://disneypinsblog.com/disney-coin-series-wave-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-storybook-aladdin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Aladdin Storybook Series Pin",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title; fourth Storybook Series release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "single Storybook Series pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-19",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 35,
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (single pin)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Nightmare Before Christmas Stained Glass Pin Series",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "priced $25 each; one design has its own edition size"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-17",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-nbc-30th-micro-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Nightmare Before Christmas 30th Anniversary Micro Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "sold in blind boxes of two"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "10 pins in total stated"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "box of two pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-06",
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 18,
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (box of two)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-30th-anniversary-micro-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-pixar-stained-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Stained Glass Pin Series",
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "full set of 11 pins bundle stated"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "sold individually and as combos"
+    },
+    {
+     "field": "price",
+     "value": 225,
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "full set of 11 at $225"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-08",
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pixar-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-frozen-stained-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Frozen Stained Glass Pin Series",
+     "source_url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-14",
+     "source_url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/frozen-stained-glass-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-mickey-friends-stained-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Friends Stained Glass Collectible Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post credits Uncas International as creator"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-disney100-years-of-wonder-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney 100 Years of Wonder Mystery Pin Sets",
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "two random pins per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "12 pins per set stated"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "two pins per box"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05-11",
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 24,
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (box of two)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-years-of-wonder-mystery-pin-sets-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-disney100-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney100 Puzzle Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "mystery set per title"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07-07",
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 14,
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (box)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney100-puzzle-mystery-pin-set-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/pink-a-la-mode-peter-pan",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Peter Pan Disney Pin Releases",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/pink-a-la-mode-disney-pins?page=12",
+     "method": "search_snippet",
+     "note": "post title seen in Disney Pins Blog tag listing"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/pink-a-la-mode-disney-pins?page=12",
+     "method": "search_snippet",
+     "note": "post title says released at Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/pink-a-la-mode-disney-pins?page=12",
+     "method": "search_snippet",
+     "note": "listing date of the post (not confirmed on-sale date)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-beauty-and-the-beast-icon-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Beauty and the Beast Icon Series Disney Pins",
+     "source_url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-02-15",
+     "source_url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post date; on-sale date not separately confirmed"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 35,
+     "source_url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/beauty-and-the-beast-icon-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-stitch-in-costume",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch in Costume Disney Pins",
+     "source_url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-02-01",
+     "source_url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 35,
+     "source_url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-in-costume-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-stitch-portrait",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Portrait Disney Pins (Disney Animal Portrait Series)",
+     "source_url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title/series named"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-09",
+     "source_url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 35,
+     "source_url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-portrait-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-eeyore-stitch",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "New Eeyore & Stitch Disney Pins",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "four pins listed with separate sizes/prices"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "each pin has its own edition size and price"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-30",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-stitch-cutie-series-2",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Cutie Series 2 Pins",
+     "source_url": "https://disneypinsblog.com/stitch-cutie-series-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/stitch-cutie-series-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "edition_type",
+     "value": "Special Edition",
+     "source_url": "https://disneypinsblog.com/stitch-cutie-series-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/stitch-cutie-series-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 13.9,
+     "source_url": "https://disneypinsblog.com/stitch-cutie-series-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-cutie-series-2-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-lilo-stitch-invasion",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lilo & Stitch Invasion Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-invasion-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-invasion-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "edition_type",
+     "value": "Special Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-invasion-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-invasion-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 27.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-invasion-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-invasion-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/pink-a-la-mode-disney-wish-star-wave-2",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Wish Star Wave 2 Series",
+     "source_url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-09-11",
+     "source_url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Special Edition",
+     "source_url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "price",
+     "value": 13.9,
+     "source_url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated (each)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-wish-star-wave-2-series-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2023/pink-a-la-mode-storybook-aladdin/jasmine",
+   "set_key": "lic/2023/pink-a-la-mode-storybook-aladdin",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aladdin Storybook Series Pin",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "descriptive name from post; not an official listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Jafar"
+     ],
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says this release features Jasmine and Jafar"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named first in post"
+    },
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post calls it the fourth release in the Storybook Series"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-19",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition type stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "edition size stated"
+    },
+    {
+     "field": "original_price",
+     "value": 35,
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "retail price stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/aladdin-storybook-series-pin-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post describes a single Storybook Series pin featuring both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/pink-a-la-mode-nbc-stained-glass/pumpkin-king",
+   "set_key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pumpkin King"
+     ],
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "Pumpkin King named in lineup with its own edition size"
+    },
+    {
+     "field": "pin_name",
+     "value": "Nightmare Before Christmas Stained Glass - Pumpkin King",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "descriptive name; not an official title"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post says pins are licensed and made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-17",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "on-sale date"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "LE stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "post gives Pumpkin King its own LE 100 (others LE 300)"
+    },
+    {
+     "field": "original_price",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "gold tone with stained glass elements, ~3in"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/pink-a-la-mode-eeyore-stitch/stitch-with-chicks",
+   "set_key": "lic/2024/pink-a-la-mode-eeyore-stitch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch with Chicks",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "character in pin name"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "from pin name"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-30",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "original_price",
+     "value": 15.9,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin price stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/pink-a-la-mode-eeyore-stitch/eeyore-with-butterfly",
+   "set_key": "lic/2024/pink-a-la-mode-eeyore-stitch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Eeyore with Butterfly",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "character in pin name"
+    },
+    {
+     "field": "main_character",
+     "value": "Eeyore",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "from pin name"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-30",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "original_price",
+     "value": 17.9,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin price stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/pink-a-la-mode-eeyore-stitch/stitch-surfing",
+   "set_key": "lic/2024/pink-a-la-mode-eeyore-stitch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Surfing",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "character in pin name"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "from pin name"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-30",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "original_price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin price stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/pink-a-la-mode-eeyore-stitch/eeyore-balloon",
+   "set_key": "lic/2024/pink-a-la-mode-eeyore-stitch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Eeyore Balloon",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "character in pin name"
+    },
+    {
+     "field": "main_character",
+     "value": "Eeyore",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "from pin name"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-30",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on-sale date"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin edition size stated"
+    },
+    {
+     "field": "original_price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin price stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-eeyore-stitch-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-1",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "still only a character list (Ariel, Belle, Mulan, Moana); hold kept: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-2",
+   "field": "pins",
+   "searched": "2 queries (b116)",
+   "note": "no per-pin evidence found; hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-3",
+   "field": "manufacturer",
+   "searched": "2 queries (b116)",
+   "note": "Wave 3 surfaced in an Uncas International search but no snippet line credits Uncas for Wave 3; not claimed"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-3",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "snippet lineup wording conflicts (one line gives Aurora/Tiana/Merida/Jasmine as 'second wave'); hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-pinocchio",
+   "field": "pins",
+   "searched": "2 queries (b116)",
+   "note": "still character list only (Pinocchio, Figaro, Honest John, Jiminy Cricket, Blue Fairy), ~3in marbleized; a reseller (distradingpins4u) names a Blue Fairy 'Iconic' pin - lead only. Hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-disney100-princess-florals",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "only a character list (Belle, Ariel, Snow White, Cinderella, Jasmine), gold tone glitter ~3in; hold kept. Distinct from 2024 Floral Princess OE series"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-monsters-inc",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "character list only (Mike, Sulley, Boo, Randall, Roz); hold kept. A separate OE Sulley/Mike/Boo jumbo on pinkalamode.com is undated, not linked"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-villains-micro-mystery",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "12 designs still unnamed in any usable snippet; each design backstamped LE 300"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-best-friends",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "no sidekick/pin pairings named; hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-stitch-pair",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "two Stitch designs still undescribed"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-disney-wish-series",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "character list only (Asha, Valentino, Star, Queen Amaya, King Magnifico); hold kept"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-sleeping-beauty-icon-series",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "still a character list (Maleficent, Aurora blue dress, Dragon, Briar Rose, Three Fairies, Diablo); pin count not stated; hold kept"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-coin-series-wave-2",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "lineup Elsa, Rapunzel, Evil Queen, Cinderella, Belle, Marie, Dinah - character list only; hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-storybook-aladdin",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-storybook",
+   "field": "releases",
+   "searched": "4 queries (b116)",
+   "note": "4th release found (Aladdin, 2023-12-19). 1st and 5th releases still not found in snippets"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "other subjects (Jack, Sally, Zero, Scary Teddy, Oogie Boogie, Mayor, Wreath, Snake) listed only; count not stated. hold: confirm pin structure"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass/pumpkin-king",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "snippet says only 'Pumpkin King'; whether this is Jack as Pumpkin King or a pumpkin object design is not stated - confirm"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-30th-micro-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "10 designs not named in snippets"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-30th-micro-mystery",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-pixar-stained-glass",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "subjects listed partially (Kevin, Gusteau, A Bug's Life, Rex, Edna Mode, Boo, Aliens, Finding Nemo, 'among others'); no per-pin mapping. hold: confirm pin structure"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-pixar-stained-glass",
+   "field": "combos",
+   "searched": "1 query",
+   "note": "Combo 1 $135 and Combo 2 $115 stated; contents not in snippet"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-pixar-stained-glass",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-frozen-stained-glass",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "characters listed only (Elsa, Anna, Olaf, Sven, Kristoff, Oaken, Trolls, Marshmallow); count not stated. hold: confirm pin structure"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-frozen-stained-glass",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-mickey-friends-stained-glass",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "characters and count not in snippet"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-disney100-years-of-wonder-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs not named in snippet"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-disney100-years-of-wonder-mystery",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "appeared in an Uncas International search but snippet does not credit a maker; not claimed"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-disney100-puzzle-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "characters listed only (Mickey, Simba, Snow White, Elsa, Tiana, Woody); count not stated. hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-disney100-puzzle-mystery",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-peter-pan",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "post body not in snippets: characters, edition, price, count unknown"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-beauty-and-the-beast-icon-series",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "characters listed only (Belle, Beast, Cogsworth/Lumiere/Wardrobe, Bimbettes); count not stated. hold: confirm pin structure"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-beauty-and-the-beast-icon-series",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-stitch-in-costume",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs/count not named in snippet; distinct from later (2026) Stitch in Costume mystery jumbo on pinkalamode.com"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-stitch-in-costume",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-stitch-portrait",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "number of Stitch portrait pins and designs not stated"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-stitch-portrait",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-eeyore-stitch/stitch-with-chicks",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "edition size given but LE vs SE wording not in snippet"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-eeyore-stitch/eeyore-with-butterfly",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "edition size given but LE vs SE wording not in snippet"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-eeyore-stitch/stitch-surfing",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "edition size given but LE vs SE wording not in snippet"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-eeyore-stitch/eeyore-balloon",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "edition size given but LE vs SE wording not in snippet"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-eeyore-stitch",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet names Pink a la Mode as exclusive seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-stitch-cutie-series-2",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs/count not named; exact on-sale date not in snippet (Sep 2024 per summary)"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-lilo-stitch-invasion",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "characters listed only (Stitch, Experiment 626, Angel, Leroy); hold: confirm pin structure. Exact date not in snippet (Dec 2024)"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-disney-wish-star-wave-2",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs/count not in snippet"
+  },
+  {
+   "key": "lic/2023-2024/pink-a-la-mode",
+   "field": "manufacturer",
+   "searched": "3 queries (b116)",
+   "note": "Uncas International credited only for Princess Stained Glass W1 (W2 tag), Mickey & Friends SG. Pin Forum names Monogram, Loungefly, Uncas as PALM licensors; not tied to sets"
+  },
+  {
+   "key": "lic/2023-2024/pink-a-la-mode",
+   "field": "coverage",
+   "searched": "b116",
+   "note": "Unchecked leads: Peter Pan Portrait (Tinker Bell, Nana, Cubby; year unclear), Villains Medallions/Mystery Profile, Princess Crest LE300, Animals S1 mystery (Aug 2024), Toy Story, Halloween glow"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-villains-micro-mystery",
+   "field": "pins",
+   "searched": "1 query (b116)",
+   "note": "Micro Mystery designs remain unnamed; no hold released"
+  }
+ ],
+ "discovery_notes": "Follow-up to b104 (packet 238); reuses its keys. Pink a la Mode is retailer; Uncas International stated as maker only for Princess Stained Glass W1 (W2 weaker) and Mickey & Friends Stained Glass. No b104 holds released: no source gave per-pin evidence. 30 searches."
+}

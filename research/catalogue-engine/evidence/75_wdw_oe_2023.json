@@ -1,0 +1,5176 @@
+{
+ "packet_id": "wdw-oe-2023-evidence-2026-10-16-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:sprint72-wdw-oe-2023",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+   "title": "New Disney Pins February 2023 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+   "title": "New Open Edition Figment Pins Available Now at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2023-02-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+   "title": "Oswald the Lucky Rabbit Disney 100 Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2023/02/03/celebrate-oswald-with-these-new-disney100-pins/",
+   "title": "Celebrate Oswald With These New Disney100 Pins",
+   "publisher": "MickeyBlog",
+   "published_date": "2023-02-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+   "title": "Disney 100 Grand Finale Pin Releases at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+   "title": "Walt Disney World Four Parks Open Edition Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+   "title": "PHOTOS: NEW Mickey Mouse Icon Pins Released for All Four Walt Disney World Theme Parks",
+   "publisher": "WDW News Today",
+   "published_date": "2023-12-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+   "title": "Disney Parks 2023 Dated Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+   "title": "New 'Star Wars: A New Hope' Pins, Mandalorian & Clone Trooper Pin Set at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2023-10-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+   "title": "Star Wars Booster Pin Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+   "title": "\"it's a small world\" Pin & Mystery Pin Set Featuring Hercules, Alice, Ariel, and More Characters at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2023-01-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+   "title": "It's a Small World Disney Character 2023 Mystery Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+   "title": "shopDisney Unveils 'Pin-tastic' Tuesday Events, New Disney Pins Released Each Week",
+   "publisher": "WDW News Today",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-1/",
+   "title": "New Disney Pins January 2023 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2023-week-2",
+   "title": "New Disney Pins January 2023 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-3/",
+   "title": "New Disney Pins January 2023 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+   "title": "New Disney Pins January 2023 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+   "title": "New Open Edition Rock 'n' Roller Coaster Pins at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2023-02-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+   "title": "New Disney Pins June 2023 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+   "title": "New EPCOT Mystery Pin Set at Walt Disney World",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/08/new-epcot-mystery-pin-set-in-creations/",
+   "title": "New EPCOT Mystery Pin Set Featuring Mickey & Minnie, Olaf, Figment, Stitch, and More Characters Now Available",
+   "publisher": "WDW News Today",
+   "published_date": "2023-08-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/09/new-mystery-disneys-animal-kingdom-puzzle-pin-set-available/",
+   "title": "Mystery Disney's Animal Kingdom Puzzle Pin Set Available",
+   "publisher": "WDW News Today",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+   "title": "Disney's Animal Kingdom Puzzle Mystery Pin Set at Walt Disney World",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+   "title": "The Haunted Mansion 2023 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+   "title": "Madame Leota, Hatbox Ghost, and More Haunted Mansion Pins Join New Collection at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2023-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+   "title": "Disney Princess 2023 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+   "title": "Christmas 2023 Open Edition Pins at Disney Parks & shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+   "title": "Halloween 2023 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+   "title": "Full List of New 2023 Halloween Merchandise Including Plush, Pins, & Apparel at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2023-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2023/oe-set/2023-dated-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2023 Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Set name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Six pins stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Dated 2023 series spotted early Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/2023-dated-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2023 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Mystery set in dated series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "10 pins stated"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Two per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Series spotted early Dec 2022"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/2023-dated-starter",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2023 Starter Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Starter set with lanyard"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Lanyard plus four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Series spotted early Dec 2022"
+    },
+    {
+     "field": "price",
+     "value": 34.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 34.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "It's a Small World Disney Character 2023 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Set name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Eight-pin collection"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Eight designs"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-03",
+     "source_url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Release date given"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Found at WDW after shopDisney debut"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Where WDWNT found it"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and shopDisney",
+     "source_url": "https://disneypinsblog.com/its-a-small-world-disney-character-2023-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB frames release at DL/shopDisney"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/star-wars-mandalorian-clone-trooper",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 34.99,
+     "source_url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 34.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Article Oct 21 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Frontier Trading Post, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Sold location"
+    },
+    {
+     "field": "family",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2023/10/new-star-wars-a-new-hope-pins-mandalorian-clone-trooper-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Mandalorian and Clone Trooper factions"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/star-wars-booster-2023-07",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Set name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Four-pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 34.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD 34.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-booster-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "EPCOT Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Eight pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Two per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://wdwnt.com/2023/08/new-epcot-mystery-pin-set-in-creations/",
+     "method": "search_snippet",
+     "note": "Reported Aug 7 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Creations Shop, EPCOT",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    },
+    {
+     "field": "release_location",
+     "value": "Creations Shop, World Celebration, EPCOT",
+     "source_url": "https://wdwnt.com/2023/08/new-epcot-mystery-pin-set-in-creations/",
+     "method": "search_snippet",
+     "note": "Found location"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/animal-kingdom-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney's Animal Kingdom Puzzle Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Set name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "12 pins total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Two per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Sept 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://wdwnt.com/2023/09/new-mystery-disneys-animal-kingdom-puzzle-pin-set-available/",
+     "method": "search_snippet",
+     "note": "Sept 2023 report"
+    },
+    {
+     "field": "release_location",
+     "value": "Frontier Trading Post, Magic Kingdom",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2023/09/new-mystery-disneys-animal-kingdom-puzzle-pin-set-available/",
+     "method": "search_snippet",
+     "note": "First found location"
+    },
+    {
+     "field": "format",
+     "value": "puzzle mural mystery",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-puzzle-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "12 pieces form an Animal Kingdom mural"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/halloween-2023-mickey-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Friends Halloween set",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023; earlier online at shopDisney"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/halloween-2023-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh Halloween set",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/halloween-2023-donald-chip-dale",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck & Chip 'n' Dale set",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2023/oe-set/christmas-2023-alice-in-wonderland",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland pin set",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Christmas 2023 set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-booster-mickey-mouse",
+   "set_key": "wdw/2023/oe-set/2023-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Character listed for booster set"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-booster-minnie-mouse",
+   "set_key": "wdw/2023/oe-set/2023-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Character listed for booster set"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-booster-donald-duck",
+   "set_key": "wdw/2023/oe-set/2023-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Character listed for booster set"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-booster-daisy-duck",
+   "set_key": "wdw/2023/oe-set/2023-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Character listed for booster set"
+    },
+    {
+     "field": "main_character",
+     "value": "Daisy Duck",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-booster-pluto",
+   "set_key": "wdw/2023/oe-set/2023-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Character listed for booster set"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-booster-goofy",
+   "set_key": "wdw/2023/oe-set/2023-dated-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Character listed for booster set"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-spinner",
+   "set_key": "wdw/2023/oe-single/2023-dated-spinner",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Donald Duck",
+      "Pluto",
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Has spinner element"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Series spotted early Dec 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-mickey",
+   "set_key": "wdw/2023/oe-single/2023-dated-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Series spotted early Dec 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-edna-mode",
+   "set_key": "wdw/2023/oe-single/2023-dated-edna-mode",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Edna Mode"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Edna Mode",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Series spotted early Dec 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-stitch",
+   "set_key": "wdw/2023/oe-single/2023-dated-stitch",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Series spotted early Dec 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/2023-dated-villains",
+   "set_key": "wdw/2023/oe-single/2023-dated-villains",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades",
+      "Evil Queen",
+      "Ursula",
+      "Maleficent",
+      "Scar",
+      "Cruella de Vil"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Series spotted early Dec 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 release per source"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-hercules",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hercules"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Hercules",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-alice-mad-hatter",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Alice",
+      "Mad Hatter"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-ariel",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-pocahontas-meeko",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas",
+      "Meeko"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-lilo-stitch",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lilo",
+      "Stitch"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-simba",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Simba",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-mowgli-baloo",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mowgli",
+      "Baloo"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-2023-mystery-cinderella",
+   "set_key": "wdw/2023/oe-set/its-a-small-world-2023-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world themed set"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2023",
+     "source_url": "https://wdwnt.com/2023/01/shopdisney-unveils-pin-tastic-tuesday-events-new-disney-pins-released-each-week/",
+     "method": "search_snippet",
+     "note": "Pins carry 2023 backstamp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/its-a-small-world-pin",
+   "set_key": "wdw/2023/oe-single/its-a-small-world-pin",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Small world pin"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Reported Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Magic Kingdom",
+     "source_url": "https://wdwnt.com/2023/01/its-a-small-world-mystery-pins-characters-wdw/",
+     "method": "search_snippet",
+     "note": "Found location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-morocco",
+   "set_key": "wdw/2023/oe-single/epcot-morocco",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "EPCOT World Showcase",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2023-week-2",
+     "method": "search_snippet",
+     "note": "Morocco pavilion pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2023-week-2",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2023-week-2",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2023-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2023-week-2",
+     "method": "search_snippet",
+     "note": "Released Jan 10"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/animal-kingdom-lodge",
+   "set_key": "wdw/2023/oe-single/animal-kingdom-lodge",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom Lodge",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Resort pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-1/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Jan 2023 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/harmonious-dangle",
+   "set_key": "wdw/2023/oe-single/harmonious-dangle",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Harmonious",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "EPCOT nighttime show"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Dangle pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-28",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Spotted at EPCOT Jan 28"
+    },
+    {
+     "field": "release_location",
+     "value": "EPCOT",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/rock-n-roller-coaster-guitar",
+   "set_key": "wdw/2023/oe-single/rock-n-roller-coaster-guitar",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Rock 'n' Roller Coaster",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Attraction pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Red guitar surrounded by roses",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "DPB lists the two RnRC pins at USD 11.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02-02",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Article date"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-27",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Spotted Jan 27 per DPB"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Found location"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/rock-n-roller-coaster-car",
+   "set_key": "wdw/2023/oe-single/rock-n-roller-coaster-car",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Rock 'n' Roller Coaster",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Attraction pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Silver and black limo facing forward",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02-02",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Article date"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-27",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Spotted Jan 27"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-rock-n-roller-coaster-pins-disney-world/",
+     "method": "search_snippet",
+     "note": "Found location"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/soarin-mickey",
+   "set_key": "wdw/2023/oe-single/soarin-mickey",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Soarin' Around the World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Attraction pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Jan wk4 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/soarin-logo",
+   "set_key": "wdw/2023/oe-single/soarin-logo",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Soarin' Around the World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Standard Soarin pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Jan wk4 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/toy-story-family",
+   "set_key": "wdw/2023/oe-single/toy-story-family",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Toy Story",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Family series pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Sold at both"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Jan wk4 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/pinocchio-family",
+   "set_key": "wdw/2023/oe-single/pinocchio-family",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Pinocchio",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-3/",
+     "method": "search_snippet",
+     "note": "Family series pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-3/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-3/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-3/",
+     "method": "search_snippet",
+     "note": "Sold at both"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-3/",
+     "method": "search_snippet",
+     "note": "Jan wk3 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/figment-sleeping",
+   "set_key": "wdw/2023/oe-single/figment-sleeping",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Figment",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Sleeping Figment",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported Feb 10 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-january-2023-week-4/",
+     "method": "search_snippet",
+     "note": "Listed in Jan wk4 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Fantasia Gifts, Disney's Contemporary Resort",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Found location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/figment-lightbulb",
+   "set_key": "wdw/2023/oe-single/figment-lightbulb",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Figment",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Figment with a lightbulb",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported Feb 10 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Fantasia Gifts, Disney's Contemporary Resort",
+     "source_url": "https://wdwnt.com/2023/02/new-open-edition-figment-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Found location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/figment-dreamfinding-since-1983",
+   "set_key": "wdw/2023/oe-single/figment-dreamfinding-since-1983",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Figment",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "front_text",
+     "value": "Dreamfinding Since 1983",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Text on pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Feb 5-11 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/runaway-railway-best-date-night-ever",
+   "set_key": "wdw/2023/oe-single/runaway-railway-best-date-night-ever",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Mickey & Minnie's Runaway Railway",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Attraction pin"
+    },
+    {
+     "field": "front_text",
+     "value": "Best Date Night Ever",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Text on pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Feb wk1 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/typhoon-lagoon-chillin-stitch",
+   "set_key": "wdw/2023/oe-single/typhoon-lagoon-chillin-stitch",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World (Typhoon Lagoon theme)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Typhoon Lagoon pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2023-week-1",
+     "method": "search_snippet",
+     "note": "Feb wk1 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/oswald-disney100-surf-logo",
+   "set_key": "wdw/2023/oe-single/oswald-disney100-surf-logo",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Oswald the Lucky Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Oswald the Lucky Rabbit",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition, part of Disney100 collection"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://mickeyblog.com/2023/02/03/celebrate-oswald-with-these-new-disney100-pins/",
+     "method": "search_snippet",
+     "note": "Yellow tier, USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mickeyblog.com/2023/02/03/celebrate-oswald-with-these-new-disney100-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Sunset Blvd pin shop, Disney's Hollywood Studios",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Found location"
+    },
+    {
+     "field": "release_location",
+     "value": "Sunset Ranch Pins & Souvenirs, Disney's Hollywood Studios",
+     "source_url": "https://mickeyblog.com/2023/02/03/celebrate-oswald-with-these-new-disney100-pins/",
+     "method": "search_snippet",
+     "note": "Found location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/oswald-disney100-car",
+   "set_key": "wdw/2023/oe-single/oswald-disney100-car",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Oswald the Lucky Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Oswald the Lucky Rabbit",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition, part of Disney100 collection"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://mickeyblog.com/2023/02/03/celebrate-oswald-with-these-new-disney100-pins/",
+     "method": "search_snippet",
+     "note": "Yellow tier, USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mickeyblog.com/2023/02/03/celebrate-oswald-with-these-new-disney100-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Sunset Blvd pin shop, Disney's Hollywood Studios",
+     "source_url": "https://disneypinsblog.com/oswald-the-lucky-rabbit-disney-100-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Found location"
+    },
+    {
+     "field": "release_location",
+     "value": "Sunset Ranch Pins & Souvenirs, Disney's Hollywood Studios",
+     "source_url": "https://mickeyblog.com/2023/02/03/celebrate-oswald-with-these-new-disney100-pins/",
+     "method": "search_snippet",
+     "note": "Found location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/turning-red-group",
+   "set_key": "wdw/2023/oe-single/turning-red-group",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Turning Red",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Group pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-08",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Spotted Jun 8"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/randall-scream-canister",
+   "set_key": "wdw/2023/oe-single/randall-scream-canister",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Randall"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Randall",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Randall with the Scream Canister",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "June roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2023-week-1/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-mickey-mouse",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-minnie-mouse",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-stitch",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "Mission: SPACE",
+     "source_url": "https://wdwnt.com/2023/08/new-epcot-mystery-pin-set-in-creations/",
+     "method": "search_snippet",
+     "note": "Stitch paired with Mission: SPACE logo"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-olaf",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Olaf"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Olaf",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-remy",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Remy"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Remy",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-figment",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Figment",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "Imagination! Pavilion",
+     "source_url": "https://wdwnt.com/2023/08/new-epcot-mystery-pin-set-in-creations/",
+     "method": "search_snippet",
+     "note": "Figment paired with Imagination logo"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-crush",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Crush"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Crush",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/epcot-mystery-2023-nemo",
+   "set_key": "wdw/2023/oe-set/epcot-mystery-2023",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nemo"
+     ],
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Nemo",
+     "source_url": "https://disneypinsblog.com/new-epcot-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/haunted-mansion-hatbox-ghost",
+   "set_key": "wdw/2023/oe-single/haunted-mansion-hatbox-ghost",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hatbox Ghost",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hatbox Ghost"
+     ],
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Hatbox Ghost",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/haunted-mansion-let-me-out",
+   "set_key": "wdw/2023/oe-single/haunted-mansion-let-me-out",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Let Me Out",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/haunted-mansion-time-to-party",
+   "set_key": "wdw/2023/oe-single/haunted-mansion-time-to-party",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Time to Party",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/haunted-mansion-madame-leota-a",
+   "set_key": "wdw/2023/oe-single/haunted-mansion-madame-leota-a",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Madame Leota"
+     ],
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Two Madame Leota pins listed"
+    },
+    {
+     "field": "main_character",
+     "value": "Madame Leota",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/haunted-mansion-madame-leota-b",
+   "set_key": "wdw/2023/oe-single/haunted-mansion-madame-leota-b",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Madame Leota"
+     ],
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Two Madame Leota pins listed"
+    },
+    {
+     "field": "main_character",
+     "value": "Madame Leota",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/haunted-mansion-coffin",
+   "set_key": "wdw/2023/oe-single/haunted-mansion-coffin",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Coffin",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "Name as described"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Discovery Trading Post, Disney's Animal Kingdom",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "Spotted location; resort-wide"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/haunted-mansion-ballroom",
+   "set_key": "wdw/2023/oe-single/haunted-mansion-ballroom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ballroom",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "Name as described"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "July 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Discovery Trading Post, Disney's Animal Kingdom",
+     "source_url": "https://wdwnt.com/2023/07/more-haunted-mansion-pins-wdw-july-23/",
+     "method": "search_snippet",
+     "note": "Spotted location; resort-wide"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/princess-2023-ariel",
+   "set_key": "wdw/2023/oe-single/princess-2023-ariel",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted in October"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/princess-2023-belle",
+   "set_key": "wdw/2023/oe-single/princess-2023-belle",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted in October"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/princess-2023-tiana",
+   "set_key": "wdw/2023/oe-single/princess-2023-tiana",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted in October"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/princess-2023-pocahontas",
+   "set_key": "wdw/2023/oe-single/princess-2023-pocahontas",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted in October"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/princess-2023-rapunzel",
+   "set_key": "wdw/2023/oe-single/princess-2023-rapunzel",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted in October"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/princess-2023-snow-white",
+   "set_key": "wdw/2023/oe-single/princess-2023-snow-white",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted in October"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/disney-princess-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted location"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/disney100-moana-ocean",
+   "set_key": "wdw/2023/oe-single/disney100-moana-ocean",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-02",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Grand Finale from Oct 2"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/disney100-winnie-the-pooh",
+   "set_key": "wdw/2023/oe-single/disney100-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-02",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Grand Finale from Oct 2"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/wdw-1st-visit-disney100",
+   "set_key": "wdw/2023/oe-single/wdw-1st-visit-disney100",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Walt Disney World 1st Visit",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "WDW version of 1st Visit pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released alongside Grand Finale"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-grand-finale-pin-releases-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "WDW version"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-mickey-mouse",
+   "set_key": "wdw/2023/oe-single/halloween-2023-mickey-mouse",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World, shopDisney",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-minnie-mouse",
+   "set_key": "wdw/2023/oe-single/halloween-2023-minnie-mouse",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World, shopDisney",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-pluto",
+   "set_key": "wdw/2023/oe-single/halloween-2023-pluto",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World, shopDisney",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-goofy",
+   "set_key": "wdw/2023/oe-single/halloween-2023-goofy",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World, shopDisney",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-mickey-pumpkin",
+   "set_key": "wdw/2023/oe-single/halloween-2023-mickey-pumpkin",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Pumpkin",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-castle-midnight-madness",
+   "set_key": "wdw/2023/oe-single/halloween-2023-castle-midnight-madness",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Castle Midnight Madness",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/halloween-2023-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Around Aug 1 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-mickey-friends-minnie-bat",
+   "set_key": "wdw/2023/oe-set/halloween-2023-mickey-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie dressed as a bat",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-mickey-friends-mickey-jack-o-lantern",
+   "set_key": "wdw/2023/oe-set/halloween-2023-mickey-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey jack-o'-lantern",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-mickey-friends-mickey-hiding-eyes",
+   "set_key": "wdw/2023/oe-set/halloween-2023-mickey-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey hiding his eyes",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-mickey-friends-donald-chip-dale",
+   "set_key": "wdw/2023/oe-set/halloween-2023-mickey-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Donald scaring Chip 'n' Dale",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-winnie-the-pooh-pooh-jack-o-lantern",
+   "set_key": "wdw/2023/oe-set/halloween-2023-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pooh in a jack-o'-lantern",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-winnie-the-pooh-tigger-vampire",
+   "set_key": "wdw/2023/oe-set/halloween-2023-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tigger"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Tigger",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tigger as a vampire",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-winnie-the-pooh-eeyore-frankenstein",
+   "set_key": "wdw/2023/oe-set/halloween-2023-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Eeyore",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Eeyore as Frankenstein",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/halloween-2023-winnie-the-pooh-piglet-witch",
+   "set_key": "wdw/2023/oe-set/halloween-2023-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Piglet"
+     ],
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Piglet",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Piglet as a witch",
+     "source_url": "https://wdwnt.com/2023/08/full-list-of-new-2023-halloween-merchandise-including-plush-pins-apparel-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/christmas-2023-mickey",
+   "set_key": "wdw/2023/oe-single/christmas-2023-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023 online, then parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks/hotels; shopDisney",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/christmas-2023-minnie",
+   "set_key": "wdw/2023/oe-single/christmas-2023-minnie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023 online, then parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks/hotels; shopDisney",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/christmas-2023-mickey-wreath",
+   "set_key": "wdw/2023/oe-single/christmas-2023-mickey-wreath",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Wreath",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023 online, then parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks/hotels; shopDisney",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/christmas-2023-genie",
+   "set_key": "wdw/2023/oe-single/christmas-2023-genie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023 online, then parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks/hotels; shopDisney",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/christmas-2023-simba",
+   "set_key": "wdw/2023/oe-single/christmas-2023-simba",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Simba",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023 online, then parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks/hotels; shopDisney",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/christmas-2023-stitch",
+   "set_key": "wdw/2023/oe-single/christmas-2023-stitch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023 online, then parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks/hotels; shopDisney",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/christmas-2023-hulk-nutcracker",
+   "set_key": "wdw/2023/oe-single/christmas-2023-hulk-nutcracker",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hulk Nutcracker",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Late Oct 2023 online, then parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks/hotels; shopDisney",
+     "source_url": "https://disneypinsblog.com/christmas-2023-open-edition-pins-at-disney-parks-shopdisney/",
+     "method": "search_snippet",
+     "note": "Availability"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/mickey-icon-magic-kingdom",
+   "set_key": "wdw/2023/oe-single/mickey-icon-magic-kingdom",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (park icon pin)",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Park Mickey icon pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Mickey icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Reported Dec 12 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Dec 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/mickey-icon-epcot",
+   "set_key": "wdw/2023/oe-single/mickey-icon-epcot",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "EPCOT (park icon pin)",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Park Mickey icon pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Mickey icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Reported Dec 12 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Dec 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/mickey-icon-hollywood-studios",
+   "set_key": "wdw/2023/oe-single/mickey-icon-hollywood-studios",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney's Hollywood Studios (park icon pin)",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Park Mickey icon pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Mickey icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Reported Dec 12 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Dec 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/mickey-icon-animal-kingdom",
+   "set_key": "wdw/2023/oe-single/mickey-icon-animal-kingdom",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom (park icon pin)",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Park Mickey icon pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Mickey icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Reported Dec 12 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-four-parks-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Dec 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2023/oe/walt-disney-world-four-parks-celebration",
+   "set_key": "wdw/2023/oe-single/walt-disney-world-four-parks-celebration",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Walt Disney World pin celebrating all four parks",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrased"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://wdwnt.com/2023/12/new-walt-disney-world-pins-all-four-parks/",
+     "method": "search_snippet",
+     "note": "Reported Dec 12 2023"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2023/oe-set/2023-dated-mystery",
+   "field": "members",
+   "searched": "DPB dated series snippet; 2 queries",
+   "note": "10 designs stated, none named in snippet"
+  },
+  {
+   "key": "wdw/2023/oe-set/2023-dated-starter",
+   "field": "members",
+   "searched": "DPB dated series snippet",
+   "note": "Four pins stated, not named"
+  },
+  {
+   "key": "wdw/2023/oe-set/its-a-small-world-2023-mystery-simba",
+   "field": "characters",
+   "searched": "WDWNT snippet",
+   "note": "Snippet says Simba and friends; companions not named"
+  },
+  {
+   "key": "wdw/2023/oe/its-a-small-world-pin",
+   "field": "edition_type",
+   "searched": "WDWNT snippet",
+   "note": "Edition type not stated for the single pin"
+  },
+  {
+   "key": "wdw/2023/oe/oswald-disney100-surf-logo",
+   "field": "visual_description",
+   "searched": "DPB, MickeyBlog, WDWNT snippets",
+   "note": "Surfing-on-logo and car designs mentioned but not clearly attributed to a source"
+  },
+  {
+   "key": "wdw/2023/oe-set/star-wars-mandalorian-clone-trooper",
+   "field": "members",
+   "searched": "WDWNT snippet",
+   "note": "Four pins not individually named"
+  },
+  {
+   "key": "wdw/2023/oe-set/animal-kingdom-puzzle-mystery",
+   "field": "members",
+   "searched": "WDWNT + DPB snippets",
+   "note": "Individual puzzle pieces not named"
+  },
+  {
+   "key": "wdw/2023/oe-set/halloween-2023-donald-chip-dale",
+   "field": "expected_pin_count",
+   "searched": "DPB snippet",
+   "note": "Pin count not stated; WDWNT places a Donald/Chip 'n' Dale design in the Mickey & Friends set"
+  },
+  {
+   "key": "wdw/2023/oe-set/christmas-2023-alice-in-wonderland",
+   "field": "expected_pin_count",
+   "searched": "DPB + WDWNT Nov 2023 snippets",
+   "note": "WDWNT mentions a two-pin Alice and Cheshire Cat set; unclear if same set"
+  },
+  {
+   "key": "wdw/2023/oe/walt-disney-world-four-parks-celebration",
+   "field": "edition_type",
+   "searched": "WDWNT snippet",
+   "note": "Edition type not clearly attributed"
+  },
+  {
+   "key": "wdw/2023/oe/chip-and-dale-2023",
+   "field": "members",
+   "searched": "DPB Chip and Dale OE snippet",
+   "note": "OE Chip and Dale pins Apr 2023 at DL/WDW, USD 11.99; designs not named"
+  },
+  {
+   "key": "wdw/2023/oe/princess-crowns-2023",
+   "field": "members",
+   "searched": "DPB princess crowns snippet",
+   "note": "OE Princess Crowns series Dec 2023 USD 16.99 spotted Pin Traders EPCOT; designs not named"
+  },
+  {
+   "key": "wdw/2023/oe/merry-sithmas",
+   "field": "edition_type",
+   "searched": "WDWNT Nov 2023 snippet",
+   "note": "Merry Sithmas pin USD 14.99 with Vader, Luke, Leia; edition type not stated"
+  },
+  {
+   "key": "wdw/2023/epcot-festivals",
+   "field": "edition_type",
+   "searched": "Flower & Garden, Food & Wine, Festival of the Arts 2023 queries",
+   "note": "Only LE/LR/AP festival pins found; no 2023 festival OE pin found"
+  },
+  {
+   "key": "wdw/2023/oe/star-wars-family-cluster",
+   "field": "source_url",
+   "searched": "DPB June 2023 snippet",
+   "note": "OE USD 17.99 pin mentioned but week page not attributable"
+  }
+ ],
+ "discovery_notes": "WDW 2023 open-edition pass; 24 WebSearch calls (shared search budget exhausted before planned ~35), all search_snippet. Mostly Disney Pins Blog and WDWNT. 2023 dated series spotted Dec 2022 but included as 2023 merchandise. Many pins sold at both Disneyland and WDW. EPCOT festival pins in 2023 appear LE/LR only. Possible duplicates kept separate: Figment lightbulb vs 'Dreamfinding Since 1983'; Star Wars Jul booster vs Oct Mandalorian/Clone Trooper set; HM Coffin vs Let Me Out. Price conflict kept for RnRC guitar (12.99 vs 11.99). OE silver tier rose 11.99->12.99 Oct 2023 per DPB. June DPB week attribution for Turning Red/Randall inferred from spotted date. Not covered (budget): TRON, Galaxy's Edge, Toy Story Land, Disney Springs, resort OE, Festival of the Holidays."
+}

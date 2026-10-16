@@ -61,6 +61,17 @@ def cross_set_suspects(pins, sets):
     return out
 
 
+def duplicate_character_suggestion(chars):
+    """A suggested correction (never applied) when one character name is contained in another in
+    the same list, e.g. ["627", "Experiment 627", "Stitch"]. `suggest:` reasons don't block sign-off."""
+    words = [(c, set(re.findall(r"[a-z0-9]+", str(c).lower()))) for c in chars]
+    drop = {a for a, wa in words for b, wb in words if a != b and wa and wa < wb}
+    if not drop:
+        return None
+    kept = [c for c in chars if c not in drop]
+    return f"suggest: Characters → {'; '.join(kept)} (listed twice: {', '.join(sorted(drop))})"
+
+
 def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
     store = load_packets(packet_globs)
     pins, sets = reconcile(store)
@@ -84,8 +95,11 @@ def run(packet_globs, out_dir, trusted=TRUSTED, seed=SEED):
             p["review_reasons"].append("conflict: pin_structure: a source says these characters are on separate pins")
         elif len(chars) >= 2 and "one" not in structure:
             p["review_reasons"].append("structure: confirm one pin showing all of these characters, not separate pins")
+        dup_suggestion = duplicate_character_suggestion(chars)
+        if dup_suggestion:
+            p["review_reasons"].append(dup_suggestion)
         # internal duplicates vs variants: same set + same characters inside this run
-        sig = (p["set_key"], tuple(sorted(c.lower() for c in chars)))
+        sig =(p["set_key"], tuple(sorted(c.lower() for c in chars)))
         if chars and sig in seen:
             other = pins[seen[sig]]["fields"]
             differs = [fld for fld in VARIANT_FIELDS if _v(f, fld) not in ("", None) and _v(other, fld) not in ("", None)

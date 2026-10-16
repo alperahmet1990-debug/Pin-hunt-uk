@@ -492,3 +492,14 @@ class EditionTypeSpelling(unittest.TestCase):
             f.write_text(_j.dumps(pk))
             _, out, _, _, _ = run([str(f)], str(_p.Path(d) / "out"), seed=None)
         self.assertTrue(any(r.startswith("conflict: hold:") for r in out["s/x/chef-remy"]["review_reasons"]))
+
+
+class DuplicateCharacterSuggestion(unittest.TestCase):
+    def test_contained_name_is_suggested_not_applied(self):
+        from engine.run import duplicate_character_suggestion as s
+        self.assertEqual(s(["627", "Experiment 627", "Stitch"]),
+                         "suggest: Characters → Experiment 627; Stitch (listed twice: 627)")
+        self.assertIsNone(s(["Mickey", "Minnie"]))
+        self.assertIsNone(s(["Stitch"]))
+        self.assertIsNone(s([]))
+

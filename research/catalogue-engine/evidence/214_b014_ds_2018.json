@@ -1,0 +1,3180 @@
+{
+ "packet_id": "backfill-b014-ds-2018",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b014",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+   "title": "UP! New Year 2018 Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+   "title": "Disney Store Mary Poppins Returns Limited Edition Pin",
+   "publisher": "shopDisney UK",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+   "title": "Disney Store Mary Poppins Returns Limited Edition Pin",
+   "publisher": "Disney Store EU",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+   "title": "Incredibles 2 Limited Edition Pins, Set of 5",
+   "publisher": "Disney Store EU",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+   "title": "Incredibles 2 Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+   "title": "Vanellope and Princesses from Ralph Breaks the Internet Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+   "title": "The Nutcracker and the Four Realms Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+   "title": "Stitch Holiday 2018 Limited Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+   "title": "Rapunzel Stunning Silhouettes Jumbo Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+   "title": "Ariel Stunning Silhouettes Jumbo Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+   "title": "Mickey's 90th Birthday Disney Store Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+   "title": "May 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+   "title": "June 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+   "title": "July 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+   "title": "September 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+   "title": "October 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+   "title": "November 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+   "title": "December 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+   "title": "Disney Park Pack: Pin Trading Edition Reviews",
+   "publisher": "Hello Subscription",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/2018/06/disney-park-pack-pin-edition-3-0-may-2018-subscription-box-review/",
+   "title": "Disney Park Pack Pin Edition 3.0 May 2018 Subscription Box Review",
+   "publisher": "Hello Subscription",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/disney-park-pack-pin-edition-3-0-august-2018-subscription-box-review/",
+   "title": "Disney Park Pack Pin Edition 3.0 August 2018 Subscription Box Review",
+   "publisher": "Hello Subscription",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsuk/2018/up-new-year-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "UP! New Year 2018 Pin (Disney Store UK)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE, Europe exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "released 19 Dec 2017 for New Year 2018"
+    },
+    {
+     "field": "price",
+     "value": 10.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP 10"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "UK price"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "online, Europe only"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2018/mary-poppins-returns-le-1500",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store Mary Poppins Returns Limited Edition Pin",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "official listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "limited to 1500 worldwide"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "GBP 25, now out of stock"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "UK listing"
+    },
+    {
+     "field": "price",
+     "value": 30.0,
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "EUR 30, sold out"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "EU listing"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2018/incredibles-2-le-set-of-5",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Incredibles 2 Limited Edition Pins, Set of 5",
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "EU listing title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "set of 5"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "LE per title"
+    },
+    {
+     "field": "price",
+     "value": 44.1,
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "EUR 44.10, sold out"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "EU"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058261559",
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "item number in listing"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/incredibles-2-le-750-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Incredibles 2 Limited Edition Pin Set",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 750"
+    },
+    {
+     "field": "price",
+     "value": 89.95,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 89.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-14",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "available 14 Apr 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "sold online via shopDisney"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/ralph-breaks-the-internet-vanellope-and-princesses",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Vanellope and Princesses from Ralph Breaks the Internet Pin Set",
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "six-piece set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4200,
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 4200"
+    },
+    {
+     "field": "price",
+     "value": 39.95,
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 39.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-19",
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "available 19 Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney",
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "shopDisney release"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/vanellope-and-princesses-from-ralph-breaks-the-internet-pin-set/",
+     "method": "search_snippet",
+     "note": "enamelled cloisonne"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/nutcracker-and-the-four-realms-le-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Nutcracker and the Four Realms Limited Edition Pin Set",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2600,
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 2600"
+    },
+    {
+     "field": "price",
+     "value": 39.95,
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 39.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "available 15 Sep 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "shopDisney (US)"
+    },
+    {
+     "field": "format",
+     "value": "window display box with magnetic closure",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "boxed set"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/stitch-holiday-2018-le-1300",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Holiday 2018 Limited Edition Pin (Holiday Cheer Collection)",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "blog title; part of Holiday Cheer Collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1300,
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE 1300"
+    },
+    {
+     "field": "price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "USD 12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-03",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "available 3 Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "shopDisney.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/stunning-silhouettes-jumbo-04-rapunzel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rapunzel Stunning Silhouettes Jumbo Pin (4th in series)",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "fourth in series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 32.99,
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD 32.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-27",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "27 Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney (online exclusive); also Pinapalooza per blog",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "online exclusive, 1 per guest"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/stunning-silhouettes-jumbo-03-ariel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Ariel Stunning Silhouettes Jumbo Pin (3rd in series)",
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "third in series"
+    },
+    {
+     "field": "price",
+     "value": 32.99,
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD 32.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-28",
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "28 May 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/mickey-90th-disney-store-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey's 90th Birthday Disney Store Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "released Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "given to select Disney Store Cast Members",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast gift, not sold"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-05-may",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - May 2018 (Snow White and the Seven Dwarfs)",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box 5 of the 3.0 subscription"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "May 2018 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription from shopDisney.com"
+    },
+    {
+     "field": "sub_series",
+     "value": "Snow White and the Seven Dwarfs",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "May 2018 theme"
+    },
+    {
+     "field": "price",
+     "value": 49.99,
+     "source_url": "https://hellosubscription.com/2018/06/disney-park-pack-pin-edition-3-0-may-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "USD 49.99 monthly subscription"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://hellosubscription.com/2018/06/disney-park-pack-pin-edition-3-0-may-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "sub_series",
+     "value": "Snow White and the Seven Dwarfs",
+     "source_url": "https://hellosubscription.com/2018/06/disney-park-pack-pin-edition-3-0-may-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "review states theme"
+    },
+    {
+     "field": "materials",
+     "value": "cloisonne enamel",
+     "source_url": "https://hellosubscription.com/2018/06/disney-park-pack-pin-edition-3-0-may-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "review notes cloisonne"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-06-jun",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - June 2018 (Peter Pan)",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box 6 of the 3.0 subscription"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "June 2018 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription from shopDisney.com"
+    },
+    {
+     "field": "sub_series",
+     "value": "Peter Pan",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "June 2018 theme"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-07-jul",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - July 2018 (Aladdin)",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box 7 of the 3.0 subscription"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "July 2018 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription from shopDisney.com"
+    },
+    {
+     "field": "sub_series",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "July 2018 theme"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - September 2018 (The Sword in the Stone)",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box 9 of the 3.0 subscription"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "September 2018 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription from shopDisney.com"
+    },
+    {
+     "field": "sub_series",
+     "value": "The Sword in the Stone",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "September 2018 theme"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-10-oct",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - October 2018 (Zootopia)",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box 10 of the 3.0 subscription"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "October 2018 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription from shopDisney.com"
+    },
+    {
+     "field": "sub_series",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "October 2018 theme"
+    },
+    {
+     "field": "price",
+     "value": 49.99,
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "USD 49.99 monthly subscription"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - November 2018 (Hercules)",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box 11 of the 3.0 subscription"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "November 2018 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription from shopDisney.com"
+    },
+    {
+     "field": "sub_series",
+     "value": "Hercules",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "November 2018 theme"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - December 2018 (Mulan)",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box 12 of the 3.0 subscription"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "December 2018 box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subscription from shopDisney.com"
+    },
+    {
+     "field": "sub_series",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "December 2018 theme"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-08-aug",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - August 2018 (Tangled)",
+     "source_url": "https://hellosubscription.com/disney-park-pack-pin-edition-3-0-august-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "review title; Tangled theme"
+    },
+    {
+     "field": "sub_series",
+     "value": "Tangled",
+     "source_url": "https://hellosubscription.com/disney-park-pack-pin-edition-3-0-august-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "review says Tangled pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://hellosubscription.com/disney-park-pack-pin-edition-3-0-august-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "August 2018 box"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/park-pack-3-0-01-jan",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack Pin Edition 3.0 - January 2018 (Fantasia)",
+     "source_url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+     "method": "search_snippet",
+     "note": "review index says Fantasia theme"
+    },
+    {
+     "field": "sub_series",
+     "value": "Fantasia",
+     "source_url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+     "method": "search_snippet",
+     "note": "Fantasia characters"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01",
+     "source_url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+     "method": "search_snippet",
+     "note": "January 2018 box"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsuk/2018/up-new-year-2018/up-new-year-2018",
+   "set_key": "dsuk/2018/up-new-year-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "UP! New Year 2018 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "franchise",
+     "value": "Up (Disney Pixar)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Disney Pixar UP pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "released 19 Dec 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 10.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP 10"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Disney Store Europe online"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-year-2018-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "exclusive to Europe"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2018/mary-poppins-returns-le-1500/mary-poppins-with-kite",
+   "set_key": "dsuk/2018/mary-poppins-returns-le-1500",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Store Mary Poppins Returns Limited Edition Pin",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mary Poppins"
+     ],
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "Mary with a kite"
+    },
+    {
+     "field": "main_character",
+     "value": "Mary Poppins",
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "Mary flying with kite"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "1500 worldwide"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "1500 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "GBP 25"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "original_price",
+     "value": 30.0,
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "EUR 30"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "product_code",
+     "value": "465059032103",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "item number in listing URL/page"
+    },
+    {
+     "field": "product_code",
+     "value": "465059032103",
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "same item number on EU store"
+    },
+    {
+     "field": "visual_description",
+     "value": "Two-part pin: Mary and her kite, the two parts linked by a chain",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "two-piece linked by chain"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "two-piece",
+      "chain-linked"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "two pins joined by chain"
+    },
+    {
+     "field": "materials",
+     "value": "zinc alloy",
+     "source_url": "https://www.shopdisney.co.uk/disney-store-mary-poppins-returns-limited-edition-pin-465059032103.html",
+     "method": "search_snippet",
+     "note": "zinc alloy per listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/incredibles-2-le-750-set/mr-incredible",
+   "set_key": "dsus/2018/incredibles-2-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Incredible"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-14",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "14 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "pin-on-pin designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/incredibles-2-le-750-set/elastigirl",
+   "set_key": "dsus/2018/incredibles-2-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Elastigirl"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-14",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "14 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "pin-on-pin designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/incredibles-2-le-750-set/violet",
+   "set_key": "dsus/2018/incredibles-2-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Violet"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-14",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "14 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "pin-on-pin designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/incredibles-2-le-750-set/dash",
+   "set_key": "dsus/2018/incredibles-2-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dash"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-14",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "14 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "pin-on-pin designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/incredibles-2-le-750-set/jack-jack",
+   "set_key": "dsus/2018/incredibles-2-le-750-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-14",
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "14 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/incredibles-2-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "pin-on-pin designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/nutcracker-and-the-four-realms-le-set/claras-key",
+   "set_key": "dsus/2018/nutcracker-and-the-four-realms-le-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Clara's Key",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named pin in set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 2600"
+    },
+    {
+     "field": "edition_size",
+     "value": 2600,
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 2600"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clara"
+     ],
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Clara named"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/nutcracker-and-the-four-realms-le-set/clara-soldier-uniform",
+   "set_key": "dsus/2018/nutcracker-and-the-four-realms-le-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Clara in soldier uniform",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named pin in set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 2600"
+    },
+    {
+     "field": "edition_size",
+     "value": 2600,
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 2600"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clara"
+     ],
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Clara named"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/nutcracker-and-the-four-realms-le-set/nutcracker-doll",
+   "set_key": "dsus/2018/nutcracker-and-the-four-realms-le-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nutcracker Doll",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named pin in set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 2600"
+    },
+    {
+     "field": "edition_size",
+     "value": 2600,
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 2600"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/the-nutcracker-and-the-four-realms-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/stitch-holiday-2018-le-1300/stitch",
+   "set_key": "dsus/2018/stitch-holiday-2018-le-1300",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Holiday 2018 Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1300,
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE 1300"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "USD 12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-03",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "3 Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "online"
+    },
+    {
+     "field": "front_text",
+     "value": "Ho Ho Ho",
+     "source_url": "https://disneypinsblog.com/stitch-holiday-2018-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "Stitch says Ho Ho Ho"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/stunning-silhouettes-jumbo-04-rapunzel/rapunzel",
+   "set_key": "dsus/2018/stunning-silhouettes-jumbo-04-rapunzel",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "Rapunzel, Tangled"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "fourth in series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 32.99,
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD 32.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-27",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "27 Aug 2018"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jumbo pin with gold-framed silhouette of Rapunzel",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "golden framed silhouette"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/rapunzel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "cloisonne, Mickey pinbacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/stunning-silhouettes-jumbo-03-ariel/ariel-and-flounder",
+   "set_key": "dsus/2018/stunning-silhouettes-jumbo-03-ariel",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Flounder"
+     ],
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "Ariel and Flounder"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "Ariel"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "third in series"
+    },
+    {
+     "field": "original_price",
+     "value": 32.99,
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD 32.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-28",
+     "source_url": "https://disneypinsblog.com/ariel-stunning-silhouettes-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "28 May 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/mickey-90th-disney-store-cast-member/mickey",
+   "set_key": "dsus/2018/mickey-90th-disney-store-cast-member",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Dec 2018"
+    },
+    {
+     "field": "front_text",
+     "value": "Happy Birthday Mickey; 90; 1928; 2018",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "text and years on pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast exclusive",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-birthday-disney-store-cast-member-pin",
+     "method": "search_snippet",
+     "note": "given to Disney Store cast"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-05-may/dopey",
+   "set_key": "dsus/2018/park-pack-3-0-05-may",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dopey Pin",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "May 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Snow White and the Seven Dwarfs",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dopey"
+     ],
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-05-may/movie-frame",
+   "set_key": "dsus/2018/park-pack-3-0-05-may",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Movie Frame Pin",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "May 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Snow White and the Seven Dwarfs",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 2 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 2 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-05-may/evil-queen",
+   "set_key": "dsus/2018/park-pack-3-0-05-may",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Evil Queen Pin",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "May 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Snow White and the Seven Dwarfs",
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 1 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/may-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 1 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-06-jun/tinker-bell",
+   "set_key": "dsus/2018/park-pack-3-0-06-jun",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell Pin",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "June 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Peter Pan",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-06-jun/wendy",
+   "set_key": "dsus/2018/park-pack-3-0-06-jun",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Wendy Pin",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "June 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Peter Pan",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wendy"
+     ],
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-06-jun/peter-pan-shadow",
+   "set_key": "dsus/2018/park-pack-3-0-06-jun",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter Pan Shadow Pin",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "June 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Peter Pan",
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://disneypinsblog.com/june-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-07-jul/jafar",
+   "set_key": "dsus/2018/park-pack-3-0-07-jul",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jafar Pin",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "July 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jafar"
+     ],
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 2 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 2 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-07-jul/aladdin-and-jasmine",
+   "set_key": "dsus/2018/park-pack-3-0-07-jul",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aladdin and Jasmine Pin",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "July 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin",
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 2 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 2 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-07-jul/aladdin-and-genie",
+   "set_key": "dsus/2018/park-pack-3-0-07-jul",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aladdin and Genie Pin",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "July 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin",
+      "Genie"
+     ],
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 3 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/july-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 3 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-09-sep/madam-mim-dragon",
+   "set_key": "dsus/2018/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Madam Mim Dragon Pin",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "September 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "The Sword in the Stone",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Madam Mim"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 2 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 2 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-09-sep/sword-in-the-stone",
+   "set_key": "dsus/2018/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sword in the Stone Pin",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "September 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "The Sword in the Stone",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 3 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 3 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-09-sep/merlin",
+   "set_key": "dsus/2018/park-pack-3-0-09-sep",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merlin Pin",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "September 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "The Sword in the Stone",
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merlin"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 2 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/september-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 2 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-10-oct/gazelle",
+   "set_key": "dsus/2018/park-pack-3-0-10-oct",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gazelle Pin",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "October 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gazelle"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 2 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 2 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-10-oct/zootopia-park-pack",
+   "set_key": "dsus/2018/park-pack-3-0-10-oct",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia Park Pack Pin",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "October 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 1 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 1 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-10-oct/zootopia-stained-glass",
+   "set_key": "dsus/2018/park-pack-3-0-10-oct",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia Stained Glass Pin",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "October 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 3 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "listed as variant 3 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-11-nov/hades",
+   "set_key": "dsus/2018/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hades Pin",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "November 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-11-nov/hercules",
+   "set_key": "dsus/2018/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hercules Pin",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "November 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hercules"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-11-nov/hercules-stained-glass",
+   "set_key": "dsus/2018/park-pack-3-0-11-nov",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hercules Stained Glass Pin",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "November 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Hercules",
+     "source_url": "https://disneypinsblog.com/november-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-12-dec/shan-yu",
+   "set_key": "dsus/2018/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Shan Yu Pin",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "December 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Shan Yu"
+     ],
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-12-dec/mulan",
+   "set_key": "dsus/2018/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mulan Pin",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "December 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-12-dec/mulan-stained-glass",
+   "set_key": "dsus/2018/park-pack-3-0-12-dec",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mulan Stained Glass Pin",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "December 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/december-2018-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "box theme"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsuk/2018/up-new-year-2018/up-new-year-2018",
+   "field": "characters",
+   "searched": "DPB snippet; 3 queries",
+   "note": "characters on the pin not named in snippet"
+  },
+  {
+   "key": "dsuk/2018/up-new-year-2018/up-new-year-2018",
+   "field": "edition_size",
+   "searched": "DPB snippet; 3 queries",
+   "note": "LE stated, size not in snippet"
+  },
+  {
+   "key": "dsuk/2018/mary-poppins-returns-le-1500/mary-poppins-with-kite",
+   "field": "release_date",
+   "searched": "official listings + DPB tag page; 3 queries",
+   "note": "listings undated; DPB tag page hints Dec 2018 surprise release but ambiguous; another lead says May 2019"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5",
+   "field": "pins",
+   "searched": "DS EU listing snippet; 1 query",
+   "note": "members not named in EU snippet; may be EU sale of the US shopDisney LE 750 set, unconfirmed"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5",
+   "field": "release_date",
+   "searched": "DS EU listing snippet",
+   "note": "undated listing"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-vanellope-and-princesses",
+   "field": "pins",
+   "searched": "DPB snippets; 2 queries",
+   "note": "characters listed (Vanellope, Tiana, Ariel, Snow White) but per-pin breakdown of the 6 pins not in snippet"
+  },
+  {
+   "key": "dsus/2018/stunning-silhouettes-jumbo-03-ariel/ariel-and-flounder",
+   "field": "edition_size",
+   "searched": "DPB snippet; 2 queries",
+   "note": "series described as LE 300 but Ariel-specific size not in its own snippet"
+  },
+  {
+   "key": "dsus/2018/stunning-silhouettes-jumbo-02-snow-white",
+   "field": "all",
+   "searched": "2 queries",
+   "note": "search summary mentions Snow White 2nd in series, 5 Mar 2018, USD 32.99, but source page not identifiable; not recorded"
+  },
+  {
+   "key": "dsus/2018/mickey-90th-disney-store-cast-member/mickey",
+   "field": "edition_size",
+   "searched": "DPB snippet; 2 queries",
+   "note": "no edition size stated"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug",
+   "field": "pins",
+   "searched": "Hello Subscription + DPB; 2 queries",
+   "note": "pin names not in snippet"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-01-jan",
+   "field": "pins",
+   "searched": "Hello Subscription index; 3 queries",
+   "note": "pin names not in snippet"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-02-feb",
+   "field": "all",
+   "searched": "DPB + Hello Subscription; 3 queries",
+   "note": "no snippet for this month's box; boxes 2-4 implied by numbering but theme/pins unknown"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-03-mar",
+   "field": "all",
+   "searched": "DPB + Hello Subscription; 3 queries",
+   "note": "no snippet for this month's box; boxes 2-4 implied by numbering but theme/pins unknown"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-04-apr",
+   "field": "all",
+   "searched": "DPB + Hello Subscription; 3 queries",
+   "note": "no snippet for this month's box; boxes 2-4 implied by numbering but theme/pins unknown"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-11-nov/hercules-stained-glass",
+   "field": "characters",
+   "searched": "DPB snippet",
+   "note": "captions inconsistent (Hercules vs Hades)"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-06-jun/peter-pan-shadow",
+   "field": "visual_features",
+   "searched": "DPB snippet",
+   "note": "colour variants seen only on reseller listings; not recorded"
+  },
+  {
+   "key": "dsuk/2018/snow-white-80th-anniversary-le-500",
+   "field": "release_date",
+   "searched": "DPB snippet; 2 queries",
+   "note": "DS UK Europe-exclusive LE 500 GBP 9 pin, UK only; undated (likely Dec 2017), not recorded as 2018"
+  },
+  {
+   "key": "dsuk/2018",
+   "field": "coverage",
+   "searched": "~12 queries",
+   "note": "few dated 2018 DS UK/EU pin releases surfaced; DS UK 2018 LE programme largely unsourced outside excluded databases"
+  }
+ ],
+ "discovery_notes": "Cell B014 (Disney Store UK/EU + US/shopDisney, 2018). 30 standard searches, snippets only. Disney Park Pack 3.0 (shopDisney subscription, 3 LE 500 pins/month) recorded under dsus; DPB 'variant x of 3' suggests each design had 3 colour variants - not split. UP New Year 2018 pin released 2017-12-19 but keyed 2018 by its name. Mary Poppins Returns and Incredibles 2 EU listings undated. Skipped as duplicates: DLP pin advent calendar at shopDisney UK (in 206 as 2019; a DPB snippet suggested Oct 2018 - possible date conflict), Silly Symphony 90th (in 206). Out of scope/unverified leads: Disney Holiday Nutcrackers mystery collection (parks + shopDisney OE, 8 pins, Oct 2018), Disney Handbag Collectible Pin Pack (25 Feb 2018, 16 pins, retailer unclear), JCPenney Mickey 90 sets (licensed), Peter Pan 65th PTN (parks), DPB archive mention of Lion King/small world anniversary DS pins (dates implausible). Resellers (yourwdwstore, collectrandom etc.) not used."
+}

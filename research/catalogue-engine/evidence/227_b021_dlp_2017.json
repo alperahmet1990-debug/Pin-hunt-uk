@@ -1,0 +1,1763 @@
+{
+ "packet_id": "backfill-b021-dlp-2017",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b021",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+   "title": "Disneyland Paris 25th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+   "title": "Disneyland Paris Pins For March 2017",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+   "title": "New Anniversary Pins for April 2017 at Disneyland Paris",
+   "publisher": "Travel to the Magic",
+   "published_date": "2017-03-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+   "title": "Pin Profiles - Disneyland Paris 25th Anniversary Spinner",
+   "publisher": "Theme Park Trader",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+   "title": "Disneyland Paris Pin Trading Day 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/106961",
+   "title": "My Pin Central pin 106961",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+   "title": "Retour sur la 100eme Pin Trading Night",
+   "publisher": "Disney Gazette",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+   "title": "Pin Trading Night Disneyland Paris : le grand retour en 2026",
+   "publisher": "Raconte-moi Disneyland",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+   "title": "Disneyland Paris Half Marathon Weekend 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+   "title": "Disneyland Paris Pins January 2017",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2017-01-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-january-2017-pins/",
+   "title": "Disneyland Paris January 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+   "title": "Disneyland Paris Pins For November 2017",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2017-11-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+   "title": "New Pin Release Disneyland Paris October 2017",
+   "publisher": "Travel to the Magic",
+   "published_date": "2017-09-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2017/cast-member-25th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 25th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "single CM-only anniversary pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "available to cast members only"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2017, ahead of 26 Mar anniversary"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/oe-single/25th-anniversary-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 25th Anniversary Spinner",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "standalone OE spinner"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "not limited"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/oe-set/25th-anniversary-booster-lanyard",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 25th Anniversary booster set with lanyard",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "6 character pins plus Mickey and stars lanyard"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "six character pins"
+    },
+    {
+     "field": "price",
+     "value": 34.99,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "EUR 34,99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "March 2017 25th anniversary releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/st-patricks-day-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "St. Patrick's Day 2017 (Disneyland Paris)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-11",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "released 11 Mar 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/march-25-2017-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 25 March 2017 releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "two pins released 25 Mar"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "25 Mar 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/25th-anniversary-lady-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 25 Lady and castle LE",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "LE X/700"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "X/700"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/25th-anniversary-official-mickey",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Official 25th Anniversary Mickey pin",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disney Gallery-only release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-12",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Wed 12 Apr 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Gallery, Disney Village",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "sold only at Disney Gallery"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/april-2017-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris April 2017 limited editions",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "five LE pins announced"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "5 LE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "batch of 700 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "April 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/pin-trading-day-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Pin Trading Day 2017",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "four exclusive PTD pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-29",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "event 29 Apr 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "29 Apr pin event at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/ptn-100-january-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "100th Pin Trading Night (The Little Mermaid)",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "100th PTN, Little Mermaid theme"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-27",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "27 Jan 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-27",
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "Fri 27 Jan 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel New York",
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "held at Hotel New York convention centre"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/half-marathon-weekend-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Half Marathon Weekend 2017 pins",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "runDisney commemorative pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "commemorative LE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "event 21-24 Sep 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "sold at the expo"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/season-of-the-force-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Season of the Force 2017 Star Wars pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+     "method": "search_snippet",
+     "note": "5 Star Wars pins released 14 Jan"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-14",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+     "method": "search_snippet",
+     "note": "start of Season of the Force"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/rapunzel-january-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rapunzel releases January 2017",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2017-pins/",
+     "method": "search_snippet",
+     "note": "three Rapunzel pins and a lanyard previewed"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-07",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2017-pins/",
+     "method": "search_snippet",
+     "note": "Sat 7 Jan 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/october-2017-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris October 2017 limited editions",
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "two 25th anniversary + one Halloween/Dia de los Muertos LE"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "three LE pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "only at Pueblo Trading Post"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "October 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/coco-october-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Coco release October 2017 (Disneyland Paris)",
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "set with main characters, lanyard and 3 extra pins incl. spinner; author hedged"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-28",
+     "source_url": "https://www.traveltothemagic.net/new-pin-release-disneyland-paris-october-2017/",
+     "method": "search_snippet",
+     "note": "28 Oct 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/november-2017-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris November 2017 releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "Star Wars pin+litho, Peter Pan float pin, 25th set"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "Nov 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/star-wars-pin-lithograph-november-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars pin and lithograph set",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "pin + lithograph, about EUR 20"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-04",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "4 Nov 2017"
+    },
+    {
+     "field": "price",
+     "value": 20,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "approx EUR 20"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2017/cast-member-25th-anniversary/mickey-castle",
+   "set_key": "dlp/2017/cast-member-25th-anniversary",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Mickey shown"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Mickey in front of castle"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast members only"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Feb 2017 post"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "25th anniversary year"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLP cast pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in front of Sleeping Beauty Castle; blue and silver with yellow lettering",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "paraphrased design summary"
+    },
+    {
+     "field": "front_text",
+     "value": "Disneyland Paris Cast Member 25 Anniversaire",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "text reported on pin face"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe/25th-anniversary-spinner",
+   "set_key": "dlp/2017/oe-single/25th-anniversary-spinner",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Donald Duck",
+      "Goofy"
+     ],
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "four characters on spinner"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "not limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-04",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "original release 4 Mar 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "DLP 25th range"
+    },
+    {
+     "field": "visual_description",
+     "value": "spinning pin with Mickey, Minnie, Donald and Goofy before Sleeping Beauty Castle",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "spinning element"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/st-patricks-day-2017/st-patricks-day-pin",
+   "set_key": "dlp/2017/st-patricks-day-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "St. Patrick's Day 2017",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "St Patrick's pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "edition of 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-11",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "11 Mar 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "DLP March releases"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "has a dangle element"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/march-25-2017-releases/star-tours",
+   "set_key": "dlp/2017/march-25-2017-releases",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Star Tours",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "new Star Tours pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "25 Mar"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/march-25-2017-releases/beauty-and-the-beast-book",
+   "set_key": "dlp/2017/march-25-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beauty and the Beast book pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Beauty and the Beast pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "opens like a book"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "pin opens up like a book"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "25 Mar"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/25th-anniversary-lady-castle/lady",
+   "set_key": "dlp/2017/25th-anniversary-lady-castle",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lady"
+     ],
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "Lady from Lady and the Tramp"
+    },
+    {
+     "field": "main_character",
+     "value": "Lady",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "Lady"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "EDITION LIMITEE X/700 backstamp"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "EDITION LIMITEE X/700",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "backstamp edition marking"
+    },
+    {
+     "field": "front_text",
+     "value": "Disneyland Paris 25",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "anniversary text on front"
+    },
+    {
+     "field": "visual_description",
+     "value": "Lady in front of the castle",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/106961",
+     "method": "search_snippet",
+     "note": "DLP pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/25th-anniversary-official-mickey/mickey",
+   "set_key": "dlp/2017/25th-anniversary-official-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "25th anniversary pin with Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-12",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "12 Apr 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Gallery, Disney Village",
+     "source_url": "https://www.traveltothemagic.net/new-anniversary-pins-april-2017-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "not at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/pin-trading-day-2017/ariel",
+   "set_key": "dlp/2017/pin-trading-day-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "Ariel named as featured"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-29",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "PTD 29 Apr 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/pin-trading-day-2017/belle",
+   "set_key": "dlp/2017/pin-trading-day-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "Belle named as featured"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-29",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "PTD 29 Apr 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/pin-trading-day-2017/rapunzel",
+   "set_key": "dlp/2017/pin-trading-day-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "Rapunzel named as featured"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-29",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "PTD 29 Apr 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/pin-trading-day-2017/tinker-bell",
+   "set_key": "dlp/2017/pin-trading-day-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "Tinker Bell named as featured"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-29",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "PTD 29 Apr 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-pin-trading-day-2017-pins/",
+     "method": "search_snippet",
+     "note": "DLP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/ptn-100-january-2017/flounder",
+   "set_key": "dlp/2017/ptn-100-january-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flounder"
+     ],
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Polochon named as one of three PTN pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Flounder",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-27",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "100th PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP PTN"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/ptn-100-january-2017/prince-eric",
+   "set_key": "dlp/2017/ptn-100-january-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Prince Eric"
+     ],
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Eric named as one of three PTN pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Prince Eric",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-27",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "100th PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP PTN"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/ptn-100-january-2017/king-triton",
+   "set_key": "dlp/2017/ptn-100-january-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "King Triton"
+     ],
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Triton named as one of three PTN pins"
+    },
+    {
+     "field": "main_character",
+     "value": "King Triton",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-27",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "100th PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP PTN"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/ptn-100-january-2017/refresh-lanyard-pin",
+   "set_key": "dlp/2017/ptn-100-january-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Refresh Lanyard pin (100th PTN)",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Refresh Lanyard pin accompanied the three pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-27",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "100th PTN"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-night-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP PTN"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/ptn-100-january-2017/tinker-bell-jumbo",
+   "set_key": "dlp/2017/ptn-100-january-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "special jumbo featuring Clochette"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "Clochette jumbo"
+    },
+    {
+     "field": "pin_name",
+     "value": "100th Pin Trading Night jumbo",
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "jumbo made for 100th PTN; sales paused over defects"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-27",
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "100th PTN"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "DLP PTN"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://www.disneygazette.fr/retour-sur-la-100eme-pin-trading-night/",
+     "method": "search_snippet",
+     "note": "jumbo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/half-marathon-weekend-2017/castle-to-chateau-2017",
+   "set_key": "dlp/2017/half-marathon-weekend-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2017 Castle to Chateau",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "named design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE runDisney pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2017-pins/",
+     "method": "search_snippet",
+     "note": "DLP runDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/season-of-the-force-2017/tie-fighter-pilot",
+   "set_key": "dlp/2017/season-of-the-force-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "TIE Fighter Pilot"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+     "method": "search_snippet",
+     "note": "booster includes a Tie Fighter Pilot"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-14",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+     "method": "search_snippet",
+     "note": "14 Jan 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/november-2017-releases/peter-pan-parade-float",
+   "set_key": "dlp/2017/november-2017-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "Peter Pan parade float pin"
+    },
+    {
+     "field": "pin_name",
+     "value": "Peter Pan parade float",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "float pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "Nov 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2017/cast-member-25th-anniversary/mickey-castle",
+   "field": "edition_size",
+   "searched": "DPB CM post; 2 queries",
+   "note": "no run size stated"
+  },
+  {
+   "key": "dlp/2017/oe-set/25th-anniversary-booster-lanyard",
+   "field": "members",
+   "searched": "dedicatedtodlp March post; 2 queries",
+   "note": "six character names not in snippets; members not created"
+  },
+  {
+   "key": "dlp/2017/st-patricks-day-2017/st-patricks-day-pin",
+   "field": "characters",
+   "searched": "dedicatedtodlp March post; 2 queries",
+   "note": "character(s) not named in snippet"
+  },
+  {
+   "key": "dlp/2017/march-25-2017-releases/star-tours",
+   "field": "edition_type",
+   "searched": "dedicatedtodlp March; 1 query",
+   "note": "LE/OE not stated in snippet"
+  },
+  {
+   "key": "dlp/2017/march-25-2017-releases/beauty-and-the-beast-book",
+   "field": "characters",
+   "searched": "dedicatedtodlp March; 1 query",
+   "note": "characters on pin not named"
+  },
+  {
+   "key": "dlp/2017/march-25-2017-releases/beauty-and-the-beast-book",
+   "field": "edition_type",
+   "searched": "dedicatedtodlp March; 1 query",
+   "note": "LE/OE not stated"
+  },
+  {
+   "key": "dlp/2017/25th-anniversary-lady-castle/lady",
+   "field": "release_date",
+   "searched": "MPC 106961; 1 query",
+   "note": "no release date/year in snippet; 2017 inferred only from '25' text, not claimed"
+  },
+  {
+   "key": "dlp/2017/25th-anniversary-official-mickey/mickey",
+   "field": "edition_size",
+   "searched": "TTM April; 2 queries",
+   "note": "not clear if this is one of the five LE 700 April pins"
+  },
+  {
+   "key": "dlp/2017/april-2017-le",
+   "field": "members",
+   "searched": "TTM April; 3 queries",
+   "note": "five pins not named in snippets; may overlap Mickey or PTD pins (PTD sizes differ)"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-2017/ariel",
+   "field": "original_price",
+   "searched": "DPB PTD post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-2017/belle",
+   "field": "original_price",
+   "searched": "DPB PTD post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-2017/rapunzel",
+   "field": "original_price",
+   "searched": "DPB PTD post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-2017/tinker-bell",
+   "field": "original_price",
+   "searched": "DPB PTD post; 2 queries",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "dlp/2017/ptn-100-january-2017/flounder",
+   "field": "edition_size",
+   "searched": "racontemoi/Gazette; 2 queries",
+   "note": "edition size not stated"
+  },
+  {
+   "key": "dlp/2017/ptn-100-january-2017/prince-eric",
+   "field": "edition_size",
+   "searched": "racontemoi/Gazette; 2 queries",
+   "note": "edition size not stated"
+  },
+  {
+   "key": "dlp/2017/ptn-100-january-2017/king-triton",
+   "field": "edition_size",
+   "searched": "racontemoi/Gazette; 2 queries",
+   "note": "edition size not stated"
+  },
+  {
+   "key": "dlp/2017/ptn-100-january-2017/refresh-lanyard-pin",
+   "field": "characters",
+   "searched": "racontemoi; 2 queries",
+   "note": "subject of lanyard pin not stated"
+  },
+  {
+   "key": "dlp/2017/ptn-100-january-2017/tinker-bell-jumbo",
+   "field": "original_price",
+   "searched": "Gazette, racontemoi; 1 query",
+   "note": "EUR 42.99 seen only attributed to a 2017 PDF guide (fichier-pdf) not readable; not recorded"
+  },
+  {
+   "key": "dlp/2017/ptn-100-january-2017/tinker-bell-jumbo",
+   "field": "characters",
+   "searched": "Gazette snippet; 1 query",
+   "note": "Clochette attribution came via combined snippet summary; confirm on page"
+  },
+  {
+   "key": "dlp/2017/half-marathon-weekend-2017",
+   "field": "members",
+   "searched": "DPB half marathon post; 3 queries",
+   "note": "other pins in set not listed in snippets"
+  },
+  {
+   "key": "dlp/2017/half-marathon-weekend-2017/castle-to-chateau-2017",
+   "field": "edition_size",
+   "searched": "DPB; 2 queries",
+   "note": "not stated"
+  },
+  {
+   "key": "dlp/2017/season-of-the-force-2017",
+   "field": "members",
+   "searched": "dedicatedtodlp Jan; 2 queries",
+   "note": "other 4 Star Wars pins / booster contents not named; booster vs single pins unclear"
+  },
+  {
+   "key": "dlp/2017/rapunzel-january-2017",
+   "field": "members",
+   "searched": "DPB/dedicatedtodlp Jan; 2 queries",
+   "note": "three Rapunzel pins not described individually; Elena pins also mentioned, unnamed"
+  },
+  {
+   "key": "dlp/2017/october-2017-le",
+   "field": "members",
+   "searched": "TTM Oct; 2 queries",
+   "note": "pins not named; a Mickey Halloween 2017 DLP LE 700 appears only on a resale listing (whatnot) - lead, not recorded"
+  },
+  {
+   "key": "dlp/2017/coco-october-2017",
+   "field": "members",
+   "searched": "TTM Oct; DPB Oct; 2 queries",
+   "note": "contents hedged ('appears to be'); no characters named"
+  },
+  {
+   "key": "dlp/2017/star-wars-pin-lithograph-november-2017",
+   "field": "members",
+   "searched": "dedicatedtodlp Nov; 1 query",
+   "note": "pin subject not named"
+  },
+  {
+   "key": "dlp/2017/november-2017-releases",
+   "field": "members",
+   "searched": "dedicatedtodlp Nov; 1 query",
+   "note": "25th Anniversary set and DLP 2018 pins incl. fidget spinner (~25 Nov) mentioned, unnamed"
+  },
+  {
+   "key": "dlp/2017/cast-member-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "no 2017 CM pin besides 25th anniversary one found"
+  },
+  {
+   "key": "dlp/2017/ptn-february-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "PTN 24 Feb & 31 Mar 2017 dates only via TripAdvisor forum; no pins found"
+  },
+  {
+   "key": "dlp/2017/ptn-may-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "PTN 26 May 2017 Newport Bay (DPB May); no pins named"
+  },
+  {
+   "key": "dlp/2017/once-upon-a-star-june-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "event 24 Jun 2017 (DPB June); June themes Emojis/Alice; no pins named"
+  },
+  {
+   "key": "dlp/2017/ptn-july-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "PTN 28 Jul 2017 Sequoia Lodge; July themes Moana/Peter Pan/Cars 3/Bambi/Pooh; no pins named"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-september-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "PTD 30 Sep 2017 Pueblo Trading Post (DPB Sep); no pins named"
+  },
+  {
+   "key": "dlp/2017/ptn-october-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "PTN 27 Oct 2017; no pins named"
+  },
+  {
+   "key": "dlp/2017/ptn-november-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "PTN 24 Nov 2017; no pins named"
+  },
+  {
+   "key": "dlp/2017/pin-trading-event-december-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "event 17 Dec 2017 Newport Bay (DPB Dec); themes couples/Stitch/Star Wars; no pins named"
+  },
+  {
+   "key": "dlp/2017/christmas-2017",
+   "field": "members",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "no DLP Christmas 2017 LE pins found"
+  },
+  {
+   "key": "lic/2017",
+   "field": "lead",
+   "searched": "DPB/DTDLP/TTM monthly posts; 28 queries total",
+   "note": "no licensed (Loungefly/BoxLunch/Hot Topic) DLP-related 2017 pin leads seen"
+  }
+ ],
+ "discovery_notes": "All claims are search snippets only (28 searches). DPB monthly 2017 DLP posts give only themes and event dates. TTM April says 5 LE pins of 700 each while DPB PTD gives 600/600/600/500 for 4 PTD pins; TTM 700 figure kept on april-2017-le set only, not applied to PTD pins. PTD split one pin per character is stated by source (per-character sizes). PTN 100 split into Flounder/Eric/Triton stated as three pins by racontemoi. Resale-only leads not recorded: Mickey Halloween 2017 LE 700, Lady castle LE 700 (whatnot), Lilo/Alice PTN LE 400 (no year). Jumbo price EUR 42.99 from unreadable PDF guide not recorded."
+}

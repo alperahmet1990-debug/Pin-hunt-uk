@@ -14,6 +14,7 @@
  *
  * Pins already owned or for trade are shown but can't be selected; ISO
  * pins can be selected so "Add to Collection" moves them to owned.
+ * Tapping a pin's picture selects it; tapping its name opens the pin (#377).
  */
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -187,6 +188,8 @@ export default function BrowseCatalogueScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rows, query, setFilter, yearFilter, editionFilter, hideHave, collection, columns]);
 
+  const openPin = (id: string) => router.push({ pathname: '/pin/[id]', params: { id } });
+
   const toggle = (id: string) => {
     if (isLocked(id)) return;
     setSelected(prev => {
@@ -319,7 +322,7 @@ export default function BrowseCatalogueScreen() {
     <View style={styles.header}>
       {addMode && (
         <Text style={[styles.addHint, { color: colors.homeMuted }]}>
-          Pick a set and tap Select all, or tap the pins you have.
+          Pick a set and tap Select all, or tap the pins you have. Tap a name to see the pin.
         </Text>
       )}
       <SearchBar value={query} onChangeText={setQuery} placeholder="Search pins, characters, sets or years" />
@@ -444,7 +447,9 @@ export default function BrowseCatalogueScreen() {
                   selected={selected.has(pin.id)}
                   selectionDisabled={locked}
                   onPress={() => toggle(pin.id)}
-                  onLongPress={() => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
+                  onLongPress={() => openPin(pin.id)}
+                  // Tapping the picture selects; the name opens the pin (#377).
+                  onTitlePress={() => openPin(pin.id)}
                 />
               );
             })}

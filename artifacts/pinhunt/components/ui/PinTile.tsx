@@ -5,6 +5,8 @@
  *   top-right    collection status (Owned ✓, For Trade ⇄, ISO bookmark)
  *   bottom-right selection tick (select mode) or the quick-add "+"
  *   bottom-left  "Missing" tag on a set's pins you don't have (with a dashed outline)
+ * `onTitlePress` makes the name its own "View details" link, so a tile
+ * whose tap selects can still open the pin (#377).
  * `framed` puts the photo on a white square inside the lilac frame (boards).
  * Screen readers hear one label: "Title, Owned, 2 copies, photo needed".
  * Images go through expo-image (memory + disk cache).
@@ -68,7 +70,16 @@ export interface PinTileProps {
   /** VoiceOver custom actions, e.g. the long-press quick actions (UX-016). */
   accessibilityActions?: AccessibilityActionInfo[];
   onAccessibilityAction?: (event: AccessibilityActionEvent) => void;
+  /**
+   * The name becomes a separate link that opens the pin (#377): for tiles
+   * whose tap selects. Works on tiles that can't be selected, too.
+   */
+  onTitlePress?: () => void;
 }
+
+const VIEW_DETAILS = { name: 'viewDetails', label: 'View details' };
+// With the link's padding, a touch area of at least 44 pt tall.
+const TITLE_HIT_SLOP = { top: 6, bottom: 10, left: 0, right: 0 };
 
 /** "Title, Owned, 2 copies, photo needed" — what VoiceOver reads for the tile. */
 export function pinTileLabel(p: Pick<PinTileProps, 'title' | 'status' | 'copies' | 'photoNeeded' | 'missing'>): string {
@@ -81,15 +92,37 @@ export function pinTileLabel(p: Pick<PinTileProps, 'title' | 'status' | 'copies'
 export function PinTile(props: PinTileProps) {
   const {
     title, displayTitle, titleLines = 1, imageUrl, size, onPress, onLongPress, status, copies, framed, dimmed, missing, photoNeeded,
-    selected, selectionDisabled, onQuickAdd, quickAddLabel, accessibilityActions, onAccessibilityAction,
+    selected, selectionDisabled, onQuickAdd, quickAddLabel, accessibilityActions, onAccessibilityAction, onTitlePress,
   } = props;
   const colors = useColors();
   const marker: ActiveStatus | null = status && status !== 'none' ? status : null;
   const markerColor = marker === 'for_trade' ? colors.forTrade : marker === 'wanted' ? colors.wanted : colors.owned;
   const selecting = selected !== undefined;
   const source: ImageSourcePropType = imageUrl ? { uri: imageUrl } : PLACEHOLDER_IMAGE;
+  const actions = onTitlePress ? [...(accessibilityActions ?? []), VIEW_DETAILS] : accessibilityActions;
+  const onAction = onTitlePress
+    ? (event: AccessibilityActionEvent) => {
+        if (event.nativeEvent.actionName === VIEW_DETAILS.name) onTitlePress();
+        else onAccessibilityAction?.(event);
+      }
+    : onAccessibilityAction;
+  const caption = (
+    <Text
+      numberOfLines={titleLines}
+      maxFontSizeMultiplier={fontScale.dense}
+      style={[
+        styles.name,
+        titleLines === 2 && styles.nameTwoLines,
+        onTitlePress
+          ? [styles.nameLink, { color: colors.homeCoral, textDecorationColor: colors.homeCoral }]
+          : { color: dimmed ? colors.homeMuted : colors.homeInk },
+      ]}
+    >
+      {displayTitle || title}
+    </Text>
+  );
 
-  return (
+  const tile = (
     <TouchableOpacity
       onPress={onPress}
       onLongPress={onLongPress}
@@ -98,8 +131,8 @@ export function PinTile(props: PinTileProps) {
       accessibilityRole={selecting ? 'checkbox' : 'button'}
       accessibilityState={selecting ? (selectionDisabled ? { checked: !!selected, disabled: true } : { checked: !!selected }) : undefined}
       accessibilityLabel={pinTileLabel(props)}
-      accessibilityActions={accessibilityActions}
-      onAccessibilityAction={onAccessibilityAction}
+      accessibilityActions={actions}
+      onAccessibilityAction={onAction}
     >
       <View style={{ width: size, height: size }}>
         {/* Only the artwork fades; the markers stay full strength. */}
@@ -163,14 +196,24 @@ export function PinTile(props: PinTileProps) {
           </TouchableOpacity>
         ) : null}
       </View>
-      <Text
-        numberOfLines={titleLines}
-        maxFontSizeMultiplier={fontScale.dense}
-        style={[styles.name, titleLines === 2 && styles.nameTwoLines, { color: dimmed ? colors.homeMuted : colors.homeInk }]}
-      >
-        {displayTitle || title}
-      </Text>
+      {!onTitlePress && caption}
     </TouchableOpacity>
+  );
+  if (!onTitlePress) return tile;
+
+  return (
+    <View style={{ width: size }}>
+      {tile}
+      <TouchableOpacity
+        onPress={onTitlePress}
+        hitSlop={TITLE_HIT_SLOP}
+        style={styles.titleLink}
+        accessibilityRole="button"
+        accessibilityLabel={`View details for ${title}`}
+      >
+        {caption}
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -192,4 +235,6 @@ const styles = StyleSheet.create({
   name: { fontSize: 11, fontFamily: 'Inter_600SemiBold', marginTop: 6, textAlign: 'center' },
   // Two lines reserved, so tiles in a row line up whatever the caption length.
   nameTwoLines: { fontSize: 12, lineHeight: 15, minHeight: 30 },
+  nameLink: { textDecorationLine: 'underline' },
+  titleLink: { paddingBottom: 6 },
 });

@@ -1,0 +1,2483 @@
+{
+ "packet_id": "backfill-b020-dlr-le-2017",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b020",
+ "sources": [
+  {
+   "url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+   "title": "New Trading Pins Revealed for 2017 from Disney Parks Blog Unboxed",
+   "publisher": "WDWInfo",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-02"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+   "title": "New Disney Pins October 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+   "title": "New Disney Pins October 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+   "title": "New Disney Pins November 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+   "title": "New Disney Pins November 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-november-2017-week-5/",
+   "title": "New Disney Pins November 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+   "title": "New Disney Pins July 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+   "title": "New Disney Pins May 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+   "title": "New Disney Pins May 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+   "title": "Disneyland Main Street Electrical Parade Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-01"
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/new-merchandise-for-the-main-street-electrical-parades-return-to-disneyland/",
+   "title": "New merchandise for the Main Street Electrical Parade's return to Disneyland",
+   "publisher": "WDWInfo",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-01"
+  },
+  {
+   "url": "https://www.mickeynews.com/disneylandresortnews/electrifying-new-products-celebrate-return-of-main-street-electrical-parade-to-disneyland-park/",
+   "title": "Electrifying New Products Celebrate Return of Main Street Electrical Parade to Disneyland Park",
+   "publisher": "Mickey News",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-01"
+  },
+  {
+   "url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+   "title": "Mickey's Halloween Party 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-09"
+  },
+  {
+   "url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+   "title": "New \"Mickey's Halloween Party\" items arrive at Disneyland with limited edition pins, colorful tees and more",
+   "publisher": "Inside the Magic",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+   "title": "Disneyland AP Days 2017 Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-02"
+  },
+  {
+   "url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+   "title": "Cars Land Haul-O-Ween 2017 AP Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+   "title": "Happy Holidays 2017 Annual Passholder Pin Release",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+   "title": "Disney California Adventure Food & Wine Festival 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/egg-stravaganza-2017-passholder-pin",
+   "title": "Egg-stravaganza 2017 Passholder Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017"
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+   "title": "Disney Films Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-05"
+  },
+  {
+   "url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+   "title": "PHOTOS: Disneyland Pirates of the Caribbean 50th Anniversary Merchandise, including Passholder Exclusives",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-03"
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/pirates-of-the-caribbean-50th-anniversary-collection-merchandise/",
+   "title": "Pirates of the Caribbean 50th Anniversary Collection Merchandise",
+   "publisher": "WDWInfo",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+   "title": "Guardians of the Galaxy Mission Breakout Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-05"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2017/pin-trading-tales",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Tales",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "2017 park pin collection named in Parks Blog Unboxed recap"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "each release LE 2,000"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "each release limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "series to be found only at Disneyland Resort"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/charming-characters",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Charming Characters",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "2017 park pin collection named in Parks Blog Unboxed recap"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "each release LE 3,000"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "each release limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "only at Disneyland Resort"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/main-street-electrical-parade",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Main Street Electrical Parade 2017 return pins",
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "DPB post on Disneyland MSEP pins for the 2017 return"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium and Disney Showcase, Main Street U.S.A.",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-merchandise-for-the-main-street-electrical-parades-return-to-disneyland/",
+     "method": "search_snippet",
+     "note": "sold on Main Street after the Jan 19 premiere; wider release Jan 20"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-19",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-merchandise-for-the-main-street-electrical-parades-return-to-disneyland/",
+     "method": "search_snippet",
+     "note": "first sold after the Jan 19 premiere event"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/haunted-mansion-holiday-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Holiday 2017 pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "HMH 2017 releases in DPB roundup for Oct 29-Nov 4"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR Nov 2, 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/halloween-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2017 commemorative pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "commemorative Halloween 2017 Disney Parks pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/mickeys-halloween-party-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey's Halloween Party 2017 pins",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "DLR party pins post"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-20",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "sold from Sept 20, 2017 only during party nights through Oct 31"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Park (Mickey's Halloween Party events)",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "party-only sales"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey's Halloween Party 2017 Disney Villains boxed set",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "boxed villain set in DLR party post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "price",
+     "value": 109,
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "$109 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "five villain pins incl. a completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/dca-food-wine-festival-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney California Adventure Food & Wine Festival 2017 pins",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "DPB festival pins post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "festival at DCA, Mar 10 - Apr 16 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/cars-land-haul-o-ween-2017-ap",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cars Land Haul-O-Ween 2017 AP Pin",
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/happy-holidays-2017-ap",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Holidays 2017 Annual Passholder Pin Set",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "AP pin with matching ornament"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/ap-days-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland AP Days 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/egg-stravaganza-2017-ap",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Egg-stravaganza 2017 Passholder Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/egg-stravaganza-2017-passholder-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/ap-quarterly-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Annual Passholder quarterly pins 2017",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "Tiki Room pin is the final 2017 AP quarterly pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/essence-of-evil",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Essence of Evil",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "villain pin collection"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/star-wars-vehicles",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars vehicle collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "vehicle pin collection"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/storybook-steeds-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Storybook Steeds Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "horse-themed mystery collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-18",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "May 18, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/disney-films-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Films Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "limited release; chasers LE 600"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "limited edition chaser pins"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "two random pins per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-11",
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "May 11, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-films-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/crooked-comrades-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Crooked Comrades Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "reveal/conceal mystery collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "two pins per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "July 6, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/pirates-50th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean 50th Anniversary pins (Disneyland)",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "Disneyland 50th anniversary merchandise incl. AP exclusives"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "individual LE pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "each individual pin LE 2,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-16",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "on sale March 16"
+    },
+    {
+     "field": "release_location",
+     "value": "Westward Ho, 20th Century Music Co., Little Green Store Command; Disney's Pin Traders",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "Disneyland Park and Downtown Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/pirates-50th-boxed-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean 50th Anniversary boxed set",
+     "source_url": "https://www.wdwinfo.com/news-stories/pirates-of-the-caribbean-50th-anniversary-collection-merchandise/",
+     "method": "search_snippet",
+     "note": "boxed set of the individual pins plus one completer"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.wdwinfo.com/news-stories/pirates-of-the-caribbean-50th-anniversary-collection-merchandise/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.wdwinfo.com/news-stories/pirates-of-the-caribbean-50th-anniversary-collection-merchandise/",
+     "method": "search_snippet",
+     "note": "500 boxed sets; completer LE 500"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/mission-breakout-premiere",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Guardians of the Galaxy - Mission: Breakout! premiere pins",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "LE pins released at the preview/premiere event"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "limited edition pins at the premiere party"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure (premiere party)",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "available during premiere party"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/darling-and-dashing-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Darling and Dashing 2017 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "named in DPB roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/dvc-moonlight-magic-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Vacation Club Moonlight Magic 2017 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "DVC event pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/cast-member-62nd-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 62nd Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "listed under 'In case you missed it'"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2017/pin-trading-tales/finding-nemo",
+   "set_key": "dlr/2017/pin-trading-tales",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Tales - Finding Nemo",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "10th release in the series, Finding Nemo"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "described as 10th pin in the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "$15.99 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR Oct 5, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/pin-trading-tales/old-hag",
+   "set_key": "dlr/2017/pin-trading-tales",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Tales - Old Hag",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "11th release in the series, the Old Hag"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Old Hag"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Old Hag named"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "described as 11th pin in the series"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "hinged pin with a dangle chain element"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "$15.99 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR Nov 2, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/pin-trading-tales/finding-dory",
+   "set_key": "dlr/2017/pin-trading-tales",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Tales - Finding Dory",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "snippet summary lists a Finding Dory entry in the series"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "LE 2,000 per snippet summary"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "$15.99 per snippet summary"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "USD price"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "DLR release per snippet summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/charming-characters/mater",
+   "set_key": "dlr/2017/charming-characters",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Charming Characters - Mater",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "7th release in the Charming Characters collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mater"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "7th release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "$15.99 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "USD price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/charming-characters/hat-box-ghost",
+   "set_key": "dlr/2017/charming-characters",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Charming Characters - Hat Box Ghost",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "10th release in the Charming Characters collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hat Box Ghost"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "10th release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "$15.99 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/charming-characters/train-conductor-mickey",
+   "set_key": "dlr/2017/charming-characters",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Charming Characters - Train Conductor Mickey",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "11th release in the Charming Characters collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "11th release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "$15.99 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/main-street-electrical-parade/logo",
+   "set_key": "dlr/2017/main-street-electrical-parade",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Main Street Electrical Parade logo pin",
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "logo pin with Mickey and the train"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "Mickey shown with the train"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/main-street-electrical-parade/passholder-alice-float",
+   "set_key": "dlr/2017/main-street-electrical-parade",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Main Street Electrical Parade Annual Passholder pin",
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "AP pin showing the Alice in Wonderland float"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "Alice in Wonderland float"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/disneyland-main-street-electrical-parade-pins/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.mickeynews.com/disneylandresortnews/electrifying-new-products-celebrate-return-of-main-street-electrical-parade-to-disneyland-park/",
+     "method": "search_snippet",
+     "note": "passholder pin LE 2,000"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Park",
+     "source_url": "https://www.mickeynews.com/disneylandresortnews/electrifying-new-products-celebrate-return-of-main-street-electrical-parade-to-disneyland-park/",
+     "method": "search_snippet",
+     "note": "valid Disneyland Resort Annual Passport required to buy"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/haunted-mansion-holiday-2017/logo-slider",
+   "set_key": "dlr/2017/haunted-mansion-holiday-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion Holiday 2017 logo pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "logo pin with slider element"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "slider"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "slider element"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Nov 2, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/haunted-mansion-holiday-2017/jack-skellington-jumbo",
+   "set_key": "dlr/2017/haunted-mansion-holiday-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion Holiday Jumbo Pin - Jack Skellington",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "jumbo featuring Jack Skellington"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Jack Skellington"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 54.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "$54.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Nov 2, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/haunted-mansion-holiday-2017/gingerbread-display-oogie-boogie-passholder",
+   "set_key": "dlr/2017/haunted-mansion-holiday-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion Holiday Gingerbread Display pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "gingerbread display pin featuring Oogie Boogie"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Oogie Boogie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Oogie Boogie"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition, Disneyland AP exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Nov 2, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR, Annual Passholders"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/halloween-2017/headless-horseman",
+   "set_key": "dlr/2017/halloween-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2017 - Headless Horseman",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "commemorative Halloween 2017 pin featuring the Headless Horseman"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Headless Horseman"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Headless Horseman"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "available Oct 31, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "shared release at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/mickeys-halloween-party-2017/logo",
+   "set_key": "dlr/2017/mickeys-halloween-party-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey's Halloween Party 2017 logo pin",
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "party logo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "limited release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/mickeys-halloween-party-2017/halloween-screams-spinner",
+   "set_key": "dlr/2017/mickeys-halloween-party-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween Screams spinner pin",
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "spinning Halloween Screams pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "spinning element"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/mickeys-halloween-party-2017/frightfully-fun-parade",
+   "set_key": "dlr/2017/mickeys-halloween-party-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Frightfully Fun Parade pin",
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "pin inspired by the Frightfully Fun Parade"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Zero",
+      "Oogie Boogie"
+     ],
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "shows Zero and Oogie Boogie"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://insidethemagic.net/2017/09/new-mickeys-halloween-party-items-arrive-disneyland-limited-edition-pins-colorful-tees/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/mickeys-halloween-party-2017/passholder-headless-horseman",
+   "set_key": "dlr/2017/mickeys-halloween-party-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey's Halloween Party 2017 Annual Passholder pin - Headless Horseman",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "AP Headless Horseman pin in DLR party post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Headless Horseman"
+     ],
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "Headless Horseman"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/2017-mickeys-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "LE 5,000; pass and ID required"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/dca-food-wine-festival-2017/passholder",
+   "set_key": "dlr/2017/dca-food-wine-festival-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DCA Food & Wine Festival 2017 Annual Passholder pin",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "AP exclusive pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 2,000; AP and ID required"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/dca-food-wine-festival-2017/logo",
+   "set_key": "dlr/2017/dca-food-wine-festival-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DCA Food & Wine Festival 2017 logo pin",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "Mickey with 2017 event logo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-food-wine-festival-2017-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/cars-land-haul-o-ween-2017-ap/haul-o-ween",
+   "set_key": "dlr/2017/cars-land-haul-o-ween-2017-ap",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars Land Haul-O-Ween 2017 AP Pin",
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "AP exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "$12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-17",
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "released Sept 17, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/cars-land-haul-o-ween-2017-ap-pin/",
+     "method": "search_snippet",
+     "note": "DCA, Annual Passholders"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/happy-holidays-2017-ap/haunted-mansion",
+   "set_key": "dlr/2017/happy-holidays-2017-ap",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Happy Holidays 2017 AP pin - Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion pin with matching ornament"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "features the Haunted Mansion"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 45,
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "$45 with ornament"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12-07",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "DLR AP sale Dec 7, 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-26",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2017-week-5/",
+     "method": "search_snippet",
+     "note": "roundup says AP sets at DL and WDW Nov 26, 2017 - conflicts"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/happy-holidays-2017-annual-passholder-pin-release/",
+     "method": "search_snippet",
+     "note": "DLR Annual Passholders"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/ap-days-2017/ap-logo",
+   "set_key": "dlr/2017/ap-days-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland AP Days 2017 Pin",
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "AP pin released first day of AP Days"
+    },
+    {
+     "field": "visual_description",
+     "value": "Disneyland AP logo with a Mickey icon on the P, fuchsia background",
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "design as described"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-10",
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "Feb 10, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disneyland-ap-days-2017-pin/",
+     "method": "search_snippet",
+     "note": "DLR exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/egg-stravaganza-2017-ap/mickey-egg",
+   "set_key": "dlr/2017/egg-stravaganza-2017-ap",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Egg-stravaganza 2017 Passholder Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/egg-stravaganza-2017-passholder-pin",
+     "method": "search_snippet",
+     "note": "Mickey egg-shaped AP pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/egg-stravaganza-2017-passholder-pin",
+     "method": "search_snippet",
+     "note": "Mickey Mouse"
+    },
+    {
+     "field": "visual_form",
+     "value": "egg",
+     "source_url": "https://disneypinsblog.com/blogs/news/egg-stravaganza-2017-passholder-pin",
+     "method": "search_snippet",
+     "note": "egg-shaped"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/egg-stravaganza-2017-passholder-pin",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/egg-stravaganza-2017-passholder-pin",
+     "method": "search_snippet",
+     "note": "LE 5,000, AP exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/ap-quarterly-2017/enchanted-tiki-room",
+   "set_key": "dlr/2017/ap-quarterly-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Enchanted Tiki Room Annual Passholder pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "final DL AP quarterly pin of 2017"
+    },
+    {
+     "field": "attraction",
+     "value": "Enchanted Tiki Room",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "features the Tiki Room"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "ribbon"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "ribbon element"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "Oct 19, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/essence-of-evil/dr-facilier",
+   "set_key": "dlr/2017/essence-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Essence of Evil - Dr. Facilier",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "10th pin in the collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "Dr. Facilier"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "10th"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "Oct 19, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/star-wars-vehicles/slave-i",
+   "set_key": "dlr/2017/star-wars-vehicles",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Slave I",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "6th pin in the vehicle collection"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "6th"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "brushed metal",
+      "stand"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "brushed metal with a stand on the bottom"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 6000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "LE 6,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "Oct 19, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/pirates-50th/passholder",
+   "set_key": "dlr/2017/pirates-50th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates of the Caribbean 50th Anniversary Annual Passholder pin",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "passholder LE pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "50th anniversary of the attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "LE 3,000; valid pass required"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-16",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "March 16"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/mission-breakout-premiere/galactic-premiere",
+   "set_key": "dlr/2017/mission-breakout-premiere",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Galactic Premiere Pin",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "named premiere pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+     "method": "search_snippet",
+     "note": "LE per post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/darling-and-dashing-2017/donald-and-daisy",
+   "set_key": "dlr/2017/darling-and-dashing-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Darling and Dashing 2017 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Daisy and Donald Duck"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Donald and Daisy"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Nov 2, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/dvc-moonlight-magic-2017/pluto",
+   "set_key": "dlr/2017/dvc-moonlight-magic-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DVC Moonlight Magic 2017 - Pluto",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "features Pluto"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "Pluto"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "only at the Nov 15, 2017 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Park (Moonlight Magic event)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+     "method": "search_snippet",
+     "note": "Disneyland only during event"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/cast-member-62nd-anniversary/disneyland-62nd",
+   "set_key": "dlr/2017/cast-member-62nd-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland 62nd Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "named in roundup"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2017/pin-trading-tales/finding-dory",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Attribution of the Finding Dory entry to the May 2017 wk4 roundup comes from a search summary; date and set position not seen - verify"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/mad-hatter",
+   "field": "release",
+   "searched": "3 queries",
+   "note": "Mad Hatter hinged pin with Dormouse dangle, LE 2000, 30 Mar 2017 seen only on a reseller listing (ecrater); not recorded"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/hank",
+   "field": "release",
+   "searched": "3 queries",
+   "note": "2017 DLR Pin Trading Tales Hank (Dory dangle) seen only on a reseller listing; may be same as Finding Dory entry; not recorded"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Releases 1-9 (other than Finding Dory) not named in permitted snippets; total series size unknown"
+  },
+  {
+   "key": "dlr/2017/charming-characters",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "Other releases in the series not named in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/main-street-electrical-parade/mickey-casey-jr",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "Snippet mentions a separate Mickey and Casey Jr pin and an AP Alice/Cheshire Cat item; outlet attribution unclear, may duplicate the logo/AP pins - verify"
+  },
+  {
+   "key": "dlr/2017/oe-set/haunted-mansion-holiday-mystery",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "Nov wk1 roundup describes a 12-pin HMH mystery collection at DLR Nov 2, 2017; edition type/price/designs not stated. Already a set in 224 - not duplicated here"
+  },
+  {
+   "key": "dlr/2017/haunted-mansion-holiday-2017/jack-skellington-jumbo",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "Summary noted an adjacent LE 3,000/$15.99 entry on the same page belongs to another pin; 1,000 kept"
+  },
+  {
+   "key": "dlr/2017/halloween-2017/headless-horseman",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "No retail price in snippets"
+  },
+  {
+   "key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Villains not named except a Jafar completer; WDW MNSSHP 2017 boxed set also has a Jafar completer (b018) - possible conflation; no members created"
+  },
+  {
+   "key": "dlr/2017/mickeys-halloween-party-2017",
+   "field": "attribution",
+   "searched": "3 queries",
+   "note": "Logo LR / spinner LE4000 / parade LE4000 seen in summaries citing ITM, wdwinfo and chipandco together; per-outlet attribution uncertain - verify"
+  },
+  {
+   "key": "dlr/2017/mickeys-halloween-party-2017/castle",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "DPB post also lists a castle pin, a Zero pin and a vampire Mickey pin; may overlap logo/parade pins; not recorded separately"
+  },
+  {
+   "key": "dlr/2017/dca-food-wine-festival-2017/logo",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "No edition size stated for the logo pin"
+  },
+  {
+   "key": "dlr/2017/cars-land-haul-o-ween-pin-set",
+   "field": "release",
+   "searched": "1 query",
+   "note": "Separate four-pin Haul-O-Ween set at $24.99 (Ramone's per commenter) on DPB; year and edition not stated in snippet - check 2016/2017 cells"
+  },
+  {
+   "key": "dlr/2017/ap-days-2017/buttons",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (weekly AP Days buttons, e.g. MSEP turtle, Cheshire Cat - buttons per DPB)"
+  },
+  {
+   "key": "dlr/2017/festival-of-holidays-2017-ap-button",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (DPB titles it an AP Button)"
+  },
+  {
+   "key": "dlr/2017/egg-stravaganza-2017-ap/mickey-egg",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "Snippet summary calls it the Disneyland pin; explicit DLR wording not seen - verify. Date/price not stated"
+  },
+  {
+   "key": "dlr/2017/ap-quarterly-2017/enchanted-tiki-room",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "An LE 1,500 / $15.99 line follows on the same page; unclear which pin it belongs to - not recorded"
+  },
+  {
+   "key": "dlr/2017/ap-quarterly-2017",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Earlier 2017 AP quarterly pins not identified"
+  },
+  {
+   "key": "dlr/2017/essence-of-evil",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Earlier releases in the series not covered; series spans multiple years"
+  },
+  {
+   "key": "dlr/2017/star-wars-vehicles",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Earlier releases in the series not covered; series spans multiple years"
+  },
+  {
+   "key": "dlr/2017/storybook-steeds-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Members not named in permitted snippets; reseller lists 7 revealed pins incl. Rainbow Unicorn (Inside Out) - not used"
+  },
+  {
+   "key": "dlr/2017/disney-films-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Designs not named in snippets; no members created"
+  },
+  {
+   "key": "dlr/2017/crooked-comrades-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Characters not named in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/pirates-50th",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual LE 2,500 designs not named in permitted snippets; purple-gem treasure chest (stained glass, opens to skeleton) seen only on reseller ecrater - not used"
+  },
+  {
+   "key": "dlr/2017/pirates-50th-boxed-set",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Summary mentions 'six pins in a boxed set' without clear attribution - not recorded; outlet attribution wdwnt vs wdwinfo uncertain"
+  },
+  {
+   "key": "dlr/2017/wdi-pirates-mystery",
+   "field": "release",
+   "searched": "1 query",
+   "note": "WDI Pirates 50th mystery set LE 300 at Mickey's of Glendale during D23 Expo 2017 - not a DLR park release; lead only"
+  },
+  {
+   "key": "dlr/2017/mission-breakout-premiere",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "An AP-exclusive pin is pictured but not named; edition sizes/prices not in snippets"
+  },
+  {
+   "key": "dlr/2017/darling-and-dashing-2017/donald-and-daisy",
+   "field": "source",
+   "searched": "1 query",
+   "note": "Summary did not name the roundup URL; attributed to Nov 2017 wk1 (Nov 2 releases) - verify"
+  },
+  {
+   "key": "dlr/2017/dvc-moonlight-magic-2017/pluto",
+   "field": "source",
+   "searched": "1 query",
+   "note": "Summary did not name the roundup URL; attributed to Nov 2017 wk3 by date - verify"
+  },
+  {
+   "key": "dlr/2017/cast-member-62nd-anniversary/disneyland-62nd",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "An 'LE 100' line follows in the snippet; unclear whether it belongs to this pin - not recorded"
+  },
+  {
+   "key": "dlr/2017/holiday-gift-card-pins",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "Four LE gift-card pins (Minnie, Mickey, Daisy, Donald) with $100 gift card purchase (DPB); resort/retailer not stated - lead"
+  },
+  {
+   "key": "dlr/2017/halloween-time-oogie-boogie-spinner",
+   "field": "release",
+   "searched": "0 queries",
+   "note": "From 224: seen only on marketplace; not re-searched"
+  },
+  {
+   "key": "dlr/2017/hkdl-halloween-disney-friends",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "DPB 2017 Halloween Disney Friends LE pins are Hong Kong Disneyland, not DLR - for hkdl cell"
+  },
+  {
+   "key": "dlr/2017/licensed",
+   "field": "release",
+   "searched": "29 queries",
+   "note": "No licensed (Loungefly/BoxLunch/Hot Topic etc.) pins surfaced in this cell's searches"
+  },
+  {
+   "key": "dlr/2017/festival-of-holidays",
+   "field": "release",
+   "searched": "1 query",
+   "note": "No DCA Festival of Holidays 2017 pin (non-button) found"
+  }
+ ],
+ "discovery_notes": "DLR 2017 LE/LR leads from search snippets only (29 standard WebSearch calls, blocked domains excluded). Dominated by Disney Pins Blog weekly roundups and event posts; WDWNT, WDWInfo, ITM, Mickey News also used. Shared DL+WDW releases (Facilier, Slave I, Headless Horseman, mystery sets) included because snippets name Disneyland. Reseller listings (ecrater, distradingpins4u, yourwdwstore, magicalears) ignored. Several per-outlet attributions come from blended search summaries and are flagged in not_found. No members invented; no sets split by character without a source naming the pin."
+}

@@ -23,6 +23,17 @@ def line_from_key(k):
             'shdr': 'Shanghai', 'hkdl': 'Hong Kong', 'tdr': 'Tokyo', 'lic': 'Licensed retailers',
             'brush-of-magic': 'Disney Store', 'animated-cuties': 'Disney Store', 'disney-classics-london': 'Disney Store'}.get(p, 'Other')
 
+BRANDS = [('loungefly', 'Loungefly'), ('boxlunch', 'BoxLunch'), ('hot-topic', 'Hot Topic'), ('artland', 'ArtLand'),
+          ('pink-a-la-mode', 'Pink a la Mode'), ('funko', 'Funko'), ('her-universe', 'Her Universe')]
+
+def brands_of(key):
+    """Licensed makers/retailers named in a lic/ key's release slug. A Loungefly pin sold at BoxLunch counts for both."""
+    parts = key.split('/')
+    if parts[0] != 'lic' or len(parts) < 3: return []
+    slug = '-' + parts[2] + '-'
+    found = [name for s, name in BRANDS if '-' + s + '-' in slug]
+    return found or ['Other licensed']
+
 def line_from_live(o):
     o = (o or '').lower()
     if 'walt disney world' in o: return 'WDW'
@@ -134,7 +145,6 @@ def main(payload, out_xlsx, cov_json=None):
         srows.append([k, v[0]['proposed'].get('Collection name'), line_from_key(k), year_of(v[0]['proposed']), exp, len(v),
                       (exp - len(v)) if isinstance(exp, (int, float)) and exp > len(v) else 0])
     table(ws5, ['set key', 'collection', 'line', 'year', 'expected (stated)', 'identified', 'missing (not invented)'], sorted(srows, key=lambda r: str(r[0])))
-    wb.save(out_xlsx)
     cov = {f'{l}|{y}': dict(live=sum(livec[(l, y, e)] for e in ('OE', 'LE', 'LR', 'Other / not stated')),
                             new=sum(newc[(l, y, e)] for e in ('OE', 'LE', 'LR', 'Other / not stated'))) for l in LINES for y in YEARS}
     if cov_json: json.dump(cov, open(cov_json, 'w'), indent=0)
@@ -156,6 +166,16 @@ def main(payload, out_xlsx, cov_json=None):
     lines_out += [f'Latest round: +{len(added)} genuinely new unique pins, {len(added_corr)} of them corroborated',
                   f'Incomplete sets: {len(inc)} sets, {sum(r[6] for r in inc)} named members still missing (never invented)',
                   f'Standalone OE (new research): {len(sa)} of {len(oe_new)} new OE pins; live OE 2015-2026: {sum(livec[(l, y, "OE")] for l in LINES for y in YEARS)}']
+    lic = [r for r in rows if r['line'] == 'Licensed retailers' and in_range(r['year'])]
+    bcount = collections.Counter((b, r['status'] == 'new') for r in lic for b in brands_of(r['key']))
+    names = [n for _, n in BRANDS] + ['Other licensed']
+    lines_out.append('Licensed (research, 2015-2026; Loungefly-at-BoxLunch counts for both): ' + ' | '.join(
+        f'{n} {bcount[(n, True)]} new' + (f' (+{bcount[(n, False)]} held)' if bcount[(n, False)] else '') for n in names))
+    ws6 = wb.create_sheet('Licensed by brand')
+    table(ws6, ['Brand', *YEARS, 'New total', 'Held'], [
+        [n, *[sum(1 for r in lic if r['status'] == 'new' and r['year'] == y and n in brands_of(r['key'])) for y in YEARS],
+         bcount[(n, True)], bcount[(n, False)]] for n in names])
+    wb.save(out_xlsx)
     print('\n'.join(lines_out))
     json.dump({'new': new_keys, 'corroborated': corr_keys}, open(state_path, 'w'))
     print(json.dumps({'live_2015_2026': live_n, 'candidates': len(rows), 'new': new_n,

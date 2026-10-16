@@ -316,6 +316,26 @@ class CrossSetDuplicates(unittest.TestCase):
         self.assertEqual(cross_set_suspects(pins, sets), {})
 
 
+    def test_line_prefix_is_not_a_shared_word(self):
+        # "lic" (and the Asia / shopDisney prefixes) appear in every key of the line, so they must not
+        # make two unrelated licensed releases of the same character look like one pin.
+        from engine.run import cross_set_suspects
+        sets = {
+            "lic/2018/loungefly-hot-topic-blind-box-oct": {"parent": "", "fields": {"set_name": {"value": "Loungefly Hot Topic blind box"}, "release_date": {"value": "2018-10"}}},
+            "lic/2018/boxlunch-princess-dress-collection-mystery": {"parent": "", "fields": {"set_name": {"value": "Princess Dress Collection"}, "release_date": {"value": "2018-08"}}},
+        }
+        pins = {k + "/belle": {"set_key": k, "fields": {}} for k in sets}
+        self.assertEqual(cross_set_suspects(pins, sets), {})
+
+    def test_licensed_and_park_releases_are_not_compared(self):
+        from engine.run import cross_set_suspects
+        sets = {
+            "lic/2019/loungefly-boxlunch-toy-story-4": {"parent": "", "fields": {"set_name": {"value": "Toy Story 4"}, "release_date": {"value": "2019-06"}}},
+            "dlr/2019/oe-set/toy-story-4-mystery": {"parent": "", "fields": {"set_name": {"value": "Toy Story 4 mystery"}, "release_date": {"value": "2019-06"}}},
+        }
+        pins = {k + "/forky": {"set_key": k, "fields": {}} for k in sets}
+        self.assertEqual(cross_set_suspects(pins, sets), {})
+
 class PublisherFamilies(unittest.TestCase):
     def test_regional_disney_stores_are_one_publisher(self):
         self.assertEqual(S.registrable("disneystore.co.uk"), S.registrable("disneystore.eu"))

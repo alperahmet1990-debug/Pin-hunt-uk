@@ -13,7 +13,7 @@ SEED = ROOT / "attached_assets/PinHunt_UK_Master_Seed_13000_Pins_Character_Enric
 
 
 GENERIC = set("""le oe open limited edition editions series set sets pin pins collection mystery box boxed jumbo mini
-event events release releases trading time night disney store park parks dlp dlr wdw dsuk the of and a
+event events release releases trading time night disney store park parks dlp dlr wdw dsuk dsus shdr hkdl tdr lic the of and a
 jan january feb february mar march apr april may jun june jul july aug august sep sept september oct october
 nov november dec december mickey minnie friends anniversary day""".split())
 
@@ -30,7 +30,7 @@ def _pin_date(sets, p):
     return d, y
 
 
-LINES = ("dlp", "dlr", "wdw", "dsuk")
+LINES = ("dlp", "dlr", "wdw", "dsuk", "dsus", "shdr", "hkdl", "tdr", "lic")
 VARIANT_FIELDS = ("pin_name", "is_chaser", "edition_type", "edition_size", "visual_form", "set_position")
 
 

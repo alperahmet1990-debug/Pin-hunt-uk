@@ -5,14 +5,15 @@ _Maintained by the hourly research routine (scheduled task "PinHunt historical b
 ## Active round
 none
 
-## Totals (after round 3, 16 Oct 2026 ~14:00 UTC)
+## Totals (after round 3 + licensed scope fix, 16 Oct 2026 ~14:15 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
 - Research pin records: 3,180.
-- Genuinely new 2015–2026: **2,794** (766 corroborated). Held: 373, including 57 possible live matches. No usable source: 10.
-- **Total unique individual pins identified 2015–2026: 4,592** (1,798 + 2,794).
-- Incomplete sets: 68 sets, 317 named members still missing. Standalone OE (new): 706 of 1,060 new OE pins.
+- Genuinely new 2015–2026: **2,841** (768 corroborated). Held: 326, including 57 possible live matches. No usable source: 10.
+- **Total unique individual pins identified 2015–2026: 4,639** (1,798 + 2,841).
+- Incomplete sets: 68 sets, 317 named members still missing. Standalone OE (new): 706 of 1,071 new OE pins.
+- Licensed (new research pins; a Loungefly pin sold at BoxLunch counts for both): Loungefly 46, BoxLunch 55, Hot Topic 27, ArtLand 10, Funko 19, Pink a la Mode 0.
 
-Earlier: after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
+Earlier: after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
 
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |
@@ -25,6 +26,8 @@ Earlier: after round 2, 4,360; after round 1, 4,052. Baseline before any round, 
 | B006 | 2019 | ds | Disney Store UK/EU + US | partial | 206_b006_ds_2019.json | 63 | follow-up appended |
 | B007 | 2019 | asia | Shanghai, Hong Kong, Tokyo | partial | 207_b007_asia_2019.json | 76 | follow-up appended |
 | B008 | 2019 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | partial | 208_b008_lic_2019.json | 58 | follow-up appended |
+| B063 | 2019 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) — dedicated sweep (the combined licensed cell covered all brands) | todo | | | |
+| B064 | 2019 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) — dedicated sweep | todo | | | |
 | B009 | 2018 | wdw-oe | WDW open edition (incl. standalone) | partial | 209_b009_wdw_oe_2018.json | 41 | follow-up appended |
 | B010 | 2018 | wdw-le | WDW LE/LR | partial | 210_b010_wdw_le_2018.json | 92 | follow-up appended |
 | B011 | 2018 | dlr-oe | Disneyland California OE | partial | 211_b011_dlr_oe_2018.json | 45 | follow-up appended |
@@ -33,14 +36,19 @@ Earlier: after round 2, 4,360; after round 1, 4,052. Baseline before any round, 
 | B014 | 2018 | ds | Disney Store UK/EU + US | partial | 214_b014_ds_2018.json | 35 | follow-up appended |
 | B015 | 2018 | asia | Shanghai, Hong Kong, Tokyo | partial | 215_b015_asia_2018.json | 64 | follow-up appended |
 | B016 | 2018 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | partial | 216_b016_lic_2018.json | 56 | follow-up appended |
+| B065 | 2018 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) — dedicated sweep (the combined licensed cell covered all brands) | todo | | | |
+| B066 | 2018 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) — dedicated sweep | todo | | | |
 | B017 | 2017 | wdw-oe | WDW open edition (incl. standalone) | partial | 217_b017_wdw_oe_2017.json | 40 | follow-up appended |
 | B018 | 2017 | wdw-le | WDW LE/LR | partial | 218_b018_wdw_le_2017.json | 87 | follow-up appended |
+| B067 | 2015-2026 | lic-review | Licensed exclusion review: re-check items earlier cells left out — B006 2019 Hot Topic/BoxLunch items (left out as outside Disney Store scope); B014 JCPenney Mickey 90 sets, Disney Handbag Collectible Pin Pack 2018, Holiday Nutcrackers OE mystery 2018; B015 HK Times Square Incredibles 2 exhibition pins; B008 ArtLand LE 250 Sept 2019 designs and Marvel/Avengers Funko pins; B016 Loungefly princess and Lilo & Stitch mystery sets (pin or button?). Record genuine pins; exclude only confirmed buttons/badges/non-pin | todo | | | |
 | B019 | 2017 | dlr-oe | Disneyland California OE | todo | | | |
 | B020 | 2017 | dlr-le | Disneyland California LE/LR | todo | | | |
 | B021 | 2017 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B022 | 2017 | ds | Disney Store UK/EU + US | todo | | | |
 | B023 | 2017 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B024 | 2017 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | todo | | | |
+| B024 | 2017 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B068 | 2017 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B069 | 2017 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B025 | 2016 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
 | B026 | 2016 | wdw-le | WDW LE/LR | todo | | | |
 | B027 | 2016 | dlr-oe | Disneyland California OE | todo | | | |
@@ -48,7 +56,9 @@ Earlier: after round 2, 4,360; after round 1, 4,052. Baseline before any round, 
 | B029 | 2016 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B030 | 2016 | ds | Disney Store UK/EU + US | todo | | | |
 | B031 | 2016 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B032 | 2016 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | todo | | | |
+| B032 | 2016 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B070 | 2016 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B071 | 2016 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B033 | 2015 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
 | B034 | 2015 | wdw-le | WDW LE/LR | todo | | | |
 | B035 | 2015 | dlr-oe | Disneyland California OE | todo | | | |
@@ -56,9 +66,28 @@ Earlier: after round 2, 4,360; after round 1, 4,052. Baseline before any round, 
 | B037 | 2015 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B038 | 2015 | ds | Disney Store UK/EU + US | todo | | | |
 | B039 | 2015 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B040 | 2015 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | todo | | | |
+| B040 | 2015 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B072 | 2015 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B073 | 2015 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B041 | 2020-2026 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B042 | 2020-2026 | lic | Licensed retailers | todo | | | |
+| B042 | 2020-2026 | lic | Licensed retailers (split by brand and year below) | superseded | | | |
+| B074 | 2020 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B075 | 2020 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B076 | 2021 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B077 | 2021 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B078 | 2022 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B079 | 2022 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B080 | 2023 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B081 | 2023 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B082 | 2024 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B083 | 2024 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B084 | 2025 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B085 | 2025 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B086 | 2026 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B087 | 2026 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
+| B088 | 2020-2021 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
+| B089 | 2022-2023 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
+| B090 | 2024-2026 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B043 | 2021-2022 | ds | Disney Store UK 2021-2022 top-up | todo | | | |
 | B044 | 2020-2021 | dlp | Disneyland Paris 2020-2021 top-up | todo | | | |
 | B045 | 2019 | wdw-oe | follow-up of B001: set members unnamed (starter, mystery, Pandora, Resist); Galaxy's Edge WDW OE; edition types unstated | todo | | | |
@@ -80,7 +109,9 @@ Earlier: after round 2, 4,360; after round 1, 4,052. Baseline before any round, 
 | B061 | 2017 | wdw-oe | follow-up of B017: wdw-oe 2017: Booster/Frozen/Tsum Tsum/Haunted Mansion Cameo members; Epcot festival OE; Halloween/Christmas OE; edition types | todo | | | |
 | B062 | 2017 | wdw-le | follow-up of B018: wdw-le 2017: Halloween boxed/mystery members; LiaA box/frame/mystery; Pandora completers; Monorail Magic; Princess Half pins | todo | | | |
 
-Status: todo → in progress → done / partial (budget ran out; a follow-up cell is appended) / blocked (source restriction or validation failure, flagged to the maintainer).
+Licensed lines (maintainer, 16 Oct 2026): `lic-loungefly` and `lic-boxlunch` are tracked separately so each brand's coverage can be measured; a Loungefly pin sold at BoxLunch counts for both. `lic-other` covers the remaining licensees. The hourly report prints new and held pins per brand.
+
+Status: todo → in progress → done / partial (budget ran out; a follow-up cell is appended) / blocked (source restriction or validation failure, flagged to the maintainer) / superseded (replaced by finer cells).
 
 ## Round log
 | Round | Started (UTC) | Cells | New pins | Notes |
@@ -88,3 +119,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | 1 | 2026-10-16 11:30 | B001–B006 (2019) | 360 net new (400 pins recorded; 39 held) | all partial; follow-ups B045–B050 appended |
 | 2 | 2026-10-16 12:30 | B007–B012 (2019 Asia + licensees; 2018 WDW/DLR) | +309 net new (38 corroborated); 360 pin records | all partial; follow-ups appended. Matcher fix: live CTP rows carry no characters, subject now read from the title; 11 possible live matches held |
 | 3 | 2026-10-16 13:30 | B013–B018 (2018 DLP, Disney Store, Asia, licensees; 2017 WDW OE/LE) | +234 net new (19 corroborated); 307 pin records | all partial; follow-ups B057–B062 appended. Possible live matches rose to 57 (2017–2018 have more live pins); held, not dropped |
+| – | 2026-10-16 14:15 | scope update (no new research) | +47 released from false holds | Licensed pins fully in scope (maintainer). Engine fix: line prefixes (lic, dsus, shdr, hkdl, tdr) no longer count as shared set words, and licensed/Asia lines are no longer compared with park lines for cross-set duplicates. Licensed cells split into lic-loungefly / lic-boxlunch / lic-other (B063–B090); exclusion review cell B067 |

@@ -1,0 +1,4008 @@
+{
+  "packet_id": "disney-store-2020-2023-2026-10-16-a",
+  "spec_version": 1,
+  "collected_at": "2026-10-16",
+  "collector": "agent:backfill-disney-store-2020-2023",
+  "sources": [
+    {
+      "url": "https://www.disneystore.eu/pixar-disney100-limited-release-pin-set-438017423510.html",
+      "title": "Pixar Disney100 Limited Release Pin Set",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+      "title": "Marvel's Avengers Disney100 Limited Release Pin",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/the-disney-afternoon-disney100-limited-release-pin-466044287539.html",
+      "title": "The Disney Afternoon Disney100 Limited Release Pin",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+      "title": "Roger Rabbit Limited Release Disney100 Pin, Who Framed Roger Rabbit",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+      "title": "Disney100 Decades Collection 1920s",
+      "publisher": "Laughing Place",
+      "published_date": "2023-02-13",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+      "title": "Disney100 Decades Collection - 1930s",
+      "publisher": "Laughing Place",
+      "published_date": "2023-03-16",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+      "title": "Scrooge McDuck Disney 100 Decades Hinged Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+      "title": "Goofy and Humphrey Bear Disney 100 Decades Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+      "title": "Ludwig Von Drake Disney 100 Decades Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/petes-dragon-elliott-disney-100-decades-pin-set/",
+      "title": "Pete's Dragon Elliott Disney 100 Decades Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+      "title": "Pixar Disney 100 Decades Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+      "title": "Disney100 Special Moments Pins at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.shopdisney.co.uk/mickey-mouse-genie-and-friends-disney100-special-moments-limited-release-pin-466044287201.html",
+      "title": "Mickey Mouse, Genie and Friends Disney100 Special Moments Limited Release Pin",
+      "publisher": "shopDisney UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+      "title": "Magical Medallions Pins at shopDisney UK",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+      "title": "Mount Olympus Magical Medallions Pin at shopDisney UK",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/beauty-and-the-beast-little-town-magical-medallions-pin-at-shopdisney-uk/",
+      "title": "Beauty and the Beast Little Town Magical Medallions Pin at shopDisney UK",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney-parks-2023-monthly-pin-collections/",
+      "title": "Disney Parks 2023 Monthly Pin Collections",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+      "title": "Meet the Robinsons Magical Medallions Limited Release Pin",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/mickey-mouse-coronation-day-2023-pin-at-shopdisney-uk/",
+      "title": "Mickey Mouse Coronation Day 2023 Pin at shopDisney UK",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+      "title": "Disney Store Mickey Mouse Coronation Day Limited Edition Pin",
+      "publisher": "Disney Store UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.co.uk/disney-store-minnie-mouse-platinum-jubilee-limited-edition-pin-466042861021.html",
+      "title": "Disney Store Minnie Mouse Platinum Jubilee Limited Edition Pin",
+      "publisher": "Disney Store UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney-munchlings-24-day-advent-calendar-mystery-pin-set-2023-at-shopdisney/",
+      "title": "Disney Munchlings 24-Day Advent Calendar Mystery Pin Set 2023 at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.co.uk/disney-munchlings-limited-edition-24-day-advent-calendar-mystery-pin-set-2023-438017519725.html",
+      "title": "Disney Munchlings Limited Edition 24-Day Advent Calendar Mystery Pin Set 2023",
+      "publisher": "Disney Store UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.mousesteps.com/2023/10/18/shopdisney-adds-disney-munchlings-24-day-advent-calendar-le-mystery-pin-set-2023/",
+      "title": "shopDisney Adds Disney Munchlings 24-Day Advent Calendar LE Mystery Pin Set 2023",
+      "publisher": "MouseSteps",
+      "published_date": "2023-10-18",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+      "title": "One Family 2022 Pin Releases at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+      "title": "Aurora Disney Princess Tea Party Completer Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+      "title": "Willow Limited Release Pin at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+      "title": "Rapunzel Disney Designer Collection Limited Release Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+      "title": "The Nightmare Before Christmas Cuties Mystery Pin Set at shopDisney and Disney Parks",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+      "title": "Disney Princess 2022 Mystery Pin Set at shopDisney and Disney Parks",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+      "title": "Disney Holiday 2022 Mystery Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/trick-or-treat-halloween-2022-limited-release-disney-pin/",
+      "title": "Trick or Treat Halloween 2022 Limited Release Disney Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/christmas-2022-advent-calendar-mystery-pin-collection/",
+      "title": "Christmas 2022 Advent Calendar Mystery Pin Collection",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://allears.net/2022/10/18/see-the-disney-advent-calendar-that-costs-more-than-a-park-ticket/",
+      "title": "Disney's NEW Advent Calendar Costs MORE Than a Park Ticket",
+      "publisher": "AllEars.Net",
+      "published_date": "2022-10-18",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mickeyblog.com/2022/10/20/disneys-new-advent-calendar-mystery-pin-collection-is-amazing/",
+      "title": "Disney's New Advent Calendar Mystery Pin Collection is AMAZING",
+      "publisher": "MickeyBlog.com",
+      "published_date": "2022-10-20",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+      "title": "Disney Christmas Cuties Limited Release Mystery Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+      "title": "Disney Christmas Cuties Mystery Pin Set Blind Pack",
+      "publisher": "DisMerchandise",
+      "published_date": "2021-10-27",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+      "title": "Disney Store Mystery Collectible Key Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney-character-food-mystery-pin-set-at-shopdisney/",
+      "title": "Disney Character Food Mystery Pin Set at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+      "title": "Luca Limited Edition Pin Set at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/holiday-gifting-2021-disney-pin-series/",
+      "title": "Holiday Gifting 2021 Disney Pin Series",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+      "title": "Disney Parks Christmas 2021 Advent Calendar Pin Collection",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+      "title": "Raya and the Last Dragon Jumbo Pin at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.co.uk/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+      "title": "Disney Store Mickey and Minnie 2021 Limited Edition Pin",
+      "publisher": "Disney Store UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+      "title": "Disney Store Mickey and Minnie 2021 Limited Edition Pin",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2021-pin/",
+      "title": "Mickey and Minnie Mouse Happy New Year 2021 Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/mickey-and-minnie-new-year-limited-edition-pin-465050769824.html",
+      "title": "Mickey and Minnie New Year Limited Edition Pin",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.com/mickey-and-minnie-mouse-happy-new-year-2020-pin-limited-edition-465054668857.html",
+      "title": "Mickey and Minnie Mouse Happy New Year 2020 Pin",
+      "publisher": "Disney Store US",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2020-pin/",
+      "title": "Mickey and Minnie Mouse Happy New Year 2020 Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+      "title": "Pinocchio 80th Anniversary Pin Set at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/disney-store-pinocchio-limited-edition-pin-set-465051388161.html",
+      "title": "Disney Store Pinocchio Limited Edition Pin Set",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/pinocchio-80th-anniversary-shopdisney-pin/",
+      "title": "Pinocchio 80th Anniversary shopDisney Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+      "title": "Pluto 90th Anniversary Pin Set at shopDisney",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneyfanatic.com/celebrate-plutos-90th-anniversary-with-special-merchandise-on-shopdisney/",
+      "title": "Celebrate Pluto's 90th Anniversary with Special Merchandise on shopDisney",
+      "publisher": "Disney Fanatic",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+      "title": "World of Disney Holiday 2020 Advent Calendar Pin Collection",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://allears.net/2020/11/18/countdown-to-christmas-with-disneys-new-pin-advent-calendar/",
+      "title": "Countdown to Christmas with Disney's NEW Pin Advent Calendar!",
+      "publisher": "AllEars.Net",
+      "published_date": "2020-11-18",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/onward-limited-edition-pin-set/",
+      "title": "Onward Limited Edition Pin Set",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneystore.co.uk/disney-store-onward-limited-edition-pin-set-465050860231.html",
+      "title": "Onward Limited Edition Pin Set",
+      "publisher": "Disney Store UK",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.disneystore.eu/mulan-limited-edition-pin-set-465050956286.html",
+      "title": "Mulan Limited Edition Pin Set",
+      "publisher": "Disney Store Europe",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney100 Decades Collection",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney collection with a new decade assortment each month in 2023"
+        },
+        {
+          "field": "format",
+          "value": "monthly decade assortments, each with a limited release pin or pin set",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "Assortments launch on shopDisney on the third Monday of each month"
+        },
+        {
+          "field": "issuer",
+          "value": "shopDisney",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "Collection sold on shopDisney"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Blog describes decade pins as limited release"
+        },
+        {
+          "field": "region",
+          "value": "Europe",
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "Disney Store Europe also listed Decades pins (2010s Collection)"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2023/disney100-decades/1930s-clarabelle-horace",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Clarabelle Cow and Horace Horsecollar Pin Set",
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "Limited release pin set in the 1930s drop"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 2,
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "Set of two pins"
+        },
+        {
+          "field": "price",
+          "value": 29.99,
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 29.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "US price"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-03-20",
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "1930s drop on 20 Mar 2023"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        }
+      ],
+      "parent_set_key": "dsuk/2023/disney100-decades"
+    },
+    {
+      "set_key": "dsuk/2023/disney100-decades/1970s-petes-dragon-elliott",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Pete's Dragon Elliott Disney 100 Decades Pin Set",
+          "source_url": "https://disneypinsblog.com/petes-dragon-elliott-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Name per blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 3,
+          "source_url": "https://disneypinsblog.com/petes-dragon-elliott-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Three pins of Elliott in different poses"
+        },
+        {
+          "field": "price",
+          "value": 29.99,
+          "source_url": "https://disneypinsblog.com/petes-dragon-elliott-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "USD 29.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/petes-dragon-elliott-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "US price"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/petes-dragon-elliott-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Limited release; sixth release in collection"
+        }
+      ],
+      "parent_set_key": "dsuk/2023/disney100-decades"
+    },
+    {
+      "set_key": "dsuk/2023/disney100-decades/2000s-pixar",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Pixar Disney100 Limited Release Pin Set",
+          "source_url": "https://www.disneystore.eu/pixar-disney100-limited-release-pin-set-438017423510.html",
+          "method": "search_snippet",
+          "note": "EU listing title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://www.disneystore.eu/pixar-disney100-limited-release-pin-set-438017423510.html",
+          "method": "search_snippet",
+          "note": "Four pins"
+        },
+        {
+          "field": "price",
+          "value": 12.0,
+          "source_url": "https://www.disneystore.eu/pixar-disney100-limited-release-pin-set-438017423510.html",
+          "method": "search_snippet",
+          "note": "EUR 12.00"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/pixar-disney100-limited-release-pin-set-438017423510.html",
+          "method": "search_snippet",
+          "note": "Euro price"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog lists four characters"
+        },
+        {
+          "field": "price",
+          "value": 29.99,
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog lists USD 29.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "US price"
+        }
+      ],
+      "parent_set_key": "dsuk/2023/disney100-decades"
+    },
+    {
+      "set_key": "dsuk/2023/disney100-special-moments",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney100 Special Moments",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Limited release pins on shopDisney"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-07-04",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Launched 4 Jul 2023 on shopDisney"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Limited release while supplies last"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2023/magical-medallions",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Magical Medallions",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "shopDisney UK exclusive pin series"
+        },
+        {
+          "field": "region",
+          "value": "UK",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "Exclusive to shopDisney UK"
+        },
+        {
+          "field": "price",
+          "value": 16.0,
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP 16.00 each"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "edition_size",
+          "value": 750,
+          "source_url": "https://disneypinsblog.com/disney-parks-2023-monthly-pin-collections/",
+          "method": "search_snippet",
+          "note": "Monthly roundup gives LE 750"
+        },
+        {
+          "field": "edition_size",
+          "value": 1250,
+          "source_url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+          "method": "search_snippet",
+          "note": "Individual post gives LE 1,250"
+        },
+        {
+          "field": "edition_size",
+          "value": 1250,
+          "source_url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+          "method": "search_snippet",
+          "note": "EU listing gives LE 1250"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2023/munchlings-advent-calendar-2023",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Munchlings 24-Day Advent Calendar Mystery Pin Set 2023",
+          "source_url": "https://disneypinsblog.com/disney-munchlings-24-day-advent-calendar-mystery-pin-set-2023-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 24,
+          "source_url": "https://disneypinsblog.com/disney-munchlings-24-day-advent-calendar-mystery-pin-set-2023-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "24 mystery pins"
+        },
+        {
+          "field": "edition_size",
+          "value": 2600,
+          "source_url": "https://disneypinsblog.com/disney-munchlings-24-day-advent-calendar-mystery-pin-set-2023-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "LE 2,600"
+        },
+        {
+          "field": "price",
+          "value": 249.99,
+          "source_url": "https://disneypinsblog.com/disney-munchlings-24-day-advent-calendar-mystery-pin-set-2023-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 249.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/disney-munchlings-24-day-advent-calendar-mystery-pin-set-2023-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-10-17",
+          "source_url": "https://disneypinsblog.com/disney-munchlings-24-day-advent-calendar-mystery-pin-set-2023-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Released 17 Oct 2023"
+        },
+        {
+          "field": "format",
+          "value": "advent calendar mystery pin set",
+          "source_url": "https://www.mousesteps.com/2023/10/18/shopdisney-adds-disney-munchlings-24-day-advent-calendar-le-mystery-pin-set-2023/",
+          "method": "search_snippet",
+          "note": "LE mystery advent calendar on shopDisney"
+        },
+        {
+          "field": "price",
+          "value": 99.99,
+          "source_url": "https://www.disneystore.co.uk/disney-munchlings-limited-edition-24-day-advent-calendar-mystery-pin-set-2023-438017519725.html",
+          "method": "search_snippet",
+          "note": "UK listing price as shown in snippet (sold out; may be reduced)"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://www.disneystore.co.uk/disney-munchlings-limited-edition-24-day-advent-calendar-mystery-pin-set-2023-438017519725.html",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://www.disneystore.co.uk/disney-munchlings-limited-edition-24-day-advent-calendar-mystery-pin-set-2023-438017519725.html",
+          "method": "search_snippet",
+          "note": "Listing title says Limited Edition"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2022/one-family-2022",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "One Family 2022",
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney One Family 2022 releases"
+        },
+        {
+          "field": "format",
+          "value": "several sub-lines: Pin Pals, Say Cheese!, Wish You Were Here! plus single pins",
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Blog lists multiple sub-lines"
+        },
+        {
+          "field": "edition_size",
+          "value": 1500,
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Pin Pals, Say Cheese! and Wish You Were Here! pins each LE 1,500"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2022/disney-princess-tea-party-aurora-completer",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Aurora Disney Princess Tea Party Completer Pin Set",
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "Two pieces: teapot and cup-and-saucer"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "price",
+          "value": 19.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "USD 19.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2022-07-12",
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "Released 12 Jul 2022"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "Second shopDisney-exclusive completer in the series"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2022/disney-designer-collection",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Designer Collection (limited release pins)",
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "Rapunzel is the 10th pin in the collection"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "The Nightmare Before Christmas Cuties Mystery Pin Set",
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 10,
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "10 possible designs"
+        },
+        {
+          "field": "pins_per_box",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "2 random pins per box"
+        },
+        {
+          "field": "price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "USD 15.99 per box"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2022-08",
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "August 2022"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney and Disney Parks",
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "shopDisney and parks"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2022/disney-princess-2022-mystery",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Princess 2022 Mystery Pin Set",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 12,
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "12 possible designs"
+        },
+        {
+          "field": "pins_per_box",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "2 random pins per box"
+        },
+        {
+          "field": "price",
+          "value": 17.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "USD 17.99 per box"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2022-10",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Release timing per blog"
+        },
+        {
+          "field": "edition_type",
+          "value": "open edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Open edition"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2022/disney-holiday-2022-mystery",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Holiday 2022 Mystery Pin Set",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 8,
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+          "method": "search_snippet",
+          "note": "8 possible designs"
+        },
+        {
+          "field": "pins_per_box",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+          "method": "search_snippet",
+          "note": "2 random pins per box"
+        },
+        {
+          "field": "price",
+          "value": 17.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+          "method": "search_snippet",
+          "note": "USD 17.99 per box"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2022-11-01",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+          "method": "search_snippet",
+          "note": "Release timing per blog"
+        },
+        {
+          "field": "edition_type",
+          "value": "open edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/disney-holiday-2022-mystery-pin-set",
+          "method": "search_snippet",
+          "note": "Open edition"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2022/holiday-countdown-advent-calendar-2022",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Christmas 2022 Advent Calendar Mystery Pin Collection",
+          "source_url": "https://disneypinsblog.com/christmas-2022-advent-calendar-mystery-pin-collection/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 24,
+          "source_url": "https://allears.net/2022/10/18/see-the-disney-advent-calendar-that-costs-more-than-a-park-ticket/",
+          "method": "search_snippet",
+          "note": "24 pins"
+        },
+        {
+          "field": "price",
+          "value": 245.0,
+          "source_url": "https://allears.net/2022/10/18/see-the-disney-advent-calendar-that-costs-more-than-a-park-ticket/",
+          "method": "search_snippet",
+          "note": "USD 245"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://allears.net/2022/10/18/see-the-disney-advent-calendar-that-costs-more-than-a-park-ticket/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "price",
+          "value": 245.0,
+          "source_url": "https://mickeyblog.com/2022/10/20/disneys-new-advent-calendar-mystery-pin-collection-is-amazing/",
+          "method": "search_snippet",
+          "note": "MickeyBlog USD 245 on shopDisney"
+        },
+        {
+          "field": "format",
+          "value": "advent calendar; pins form a wreath display",
+          "source_url": "https://mickeyblog.com/2022/10/20/disneys-new-advent-calendar-mystery-pin-collection-is-amazing/",
+          "method": "search_snippet",
+          "note": "Wreath display"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://allears.net/2022/10/18/see-the-disney-advent-calendar-that-costs-more-than-a-park-ticket/",
+          "method": "search_snippet",
+          "note": "Limited release on shopDisney"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Christmas Cuties Limited Release Mystery Pin Set",
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 8,
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "8 designs"
+        },
+        {
+          "field": "pins_per_box",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "2 random per box"
+        },
+        {
+          "field": "price",
+          "value": 19.99,
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "USD 19.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-10-27",
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "From 27 Oct 2021"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-10-27",
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Article dated 27 Oct 2021, now online"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney and select Disneyland/WDW locations",
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Parks and shopDisney"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2021/mystery-collectible-key",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Store Mystery Collectible Key Pin Set",
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 6,
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "6 designs"
+        },
+        {
+          "field": "pins_per_box",
+          "value": 1,
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "1 pin per box"
+        },
+        {
+          "field": "price",
+          "value": 12.99,
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "USD 12.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-01-18",
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "shopDisney 18 Jan 2021"
+        },
+        {
+          "field": "edition_type",
+          "value": "open edition",
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "Open edition"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2021/character-food-mystery",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Character Food Mystery Pin Set",
+          "source_url": "https://disneypinsblog.com/disney-character-food-mystery-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "price",
+          "value": 12.99,
+          "source_url": "https://disneypinsblog.com/disney-character-food-mystery-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 12.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/disney-character-food-mystery-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-02-15",
+          "source_url": "https://disneypinsblog.com/disney-character-food-mystery-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "15 Feb 2021"
+        },
+        {
+          "field": "edition_type",
+          "value": "open edition",
+          "source_url": "https://disneypinsblog.com/disney-character-food-mystery-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Open edition"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://disneypinsblog.com/disney-character-food-mystery-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2021/luca-limited-edition-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Luca Limited Edition Pin Set",
+          "source_url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 5,
+          "source_url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Five-pin set"
+        },
+        {
+          "field": "edition_size",
+          "value": 2600,
+          "source_url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "LE 2,600"
+        },
+        {
+          "field": "price",
+          "value": 54.99,
+          "source_url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 54.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-05-31",
+          "source_url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "31 May 2021"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://disneypinsblog.com/luca-limited-edition-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2021/holiday-gifting-2021",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Holiday Gifting 2021 Disney Pin Series",
+          "source_url": "https://disneypinsblog.com/holiday-gifting-2021-disney-pin-series/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "price",
+          "value": 17.99,
+          "source_url": "https://disneypinsblog.com/holiday-gifting-2021-disney-pin-series/",
+          "method": "search_snippet",
+          "note": "USD 17.99 each"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/holiday-gifting-2021-disney-pin-series/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-11-01",
+          "source_url": "https://disneypinsblog.com/holiday-gifting-2021-disney-pin-series/",
+          "method": "search_snippet",
+          "note": "From 1 Nov 2021"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/holiday-gifting-2021-disney-pin-series/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney.com and Disney Parks",
+          "source_url": "https://disneypinsblog.com/holiday-gifting-2021-disney-pin-series/",
+          "method": "search_snippet",
+          "note": "Online and parks"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2021/holiday-countdown-advent-calendar-2021",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Parks 24-Day Holiday Countdown Calendar Mystery Pin Set 2021",
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "Blog coverage"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 24,
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "24 pins"
+        },
+        {
+          "field": "price",
+          "value": 245.99,
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "USD 245.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-11-08",
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "8 Nov 2021"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney and Disney Parks",
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "Online at shopDisney and parks"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "format",
+          "value": "advent calendar; pins displayed as stockings on foam mantle",
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "Stocking display"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2020/pinocchio-80th-anniversary-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Pinocchio 80th Anniversary Pin Set",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 5,
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Five pins"
+        },
+        {
+          "field": "edition_size",
+          "value": 2100,
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "LE 2,100"
+        },
+        {
+          "field": "price",
+          "value": 69.99,
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 69.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2020-10-19",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "19 Oct 2020"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney"
+        },
+        {
+          "field": "edition_size",
+          "value": 2100,
+          "source_url": "https://www.disneystore.eu/disney-store-pinocchio-limited-edition-pin-set-465051388161.html",
+          "method": "search_snippet",
+          "note": "EU listing LE 2100"
+        },
+        {
+          "field": "price",
+          "value": 65.0,
+          "source_url": "https://www.disneystore.eu/disney-store-pinocchio-limited-edition-pin-set-465051388161.html",
+          "method": "search_snippet",
+          "note": "EUR 65.00"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/disney-store-pinocchio-limited-edition-pin-set-465051388161.html",
+          "method": "search_snippet",
+          "note": "Euro"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2020/pluto-90th-anniversary-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Pluto 90th Anniversary Pin Set",
+          "source_url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Four pins"
+        },
+        {
+          "field": "edition_size",
+          "value": 2300,
+          "source_url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "LE 2,300"
+        },
+        {
+          "field": "price",
+          "value": 59.99,
+          "source_url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 59.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2020-10-26",
+          "source_url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "26 Oct 2020"
+        },
+        {
+          "field": "format",
+          "value": "boxed set in doghouse-shaped window box",
+          "source_url": "https://disneypinsblog.com/pluto-90th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Doghouse box"
+        }
+      ]
+    },
+    {
+      "set_key": "dsus/2020/world-of-disney-holiday-advent-calendar-2020",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "World of Disney Holiday 2020 Advent Calendar Pin Collection",
+          "source_url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 24,
+          "source_url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+          "method": "search_snippet",
+          "note": "24 pins"
+        },
+        {
+          "field": "price",
+          "value": 245.0,
+          "source_url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+          "method": "search_snippet",
+          "note": "USD 245"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2020-11-17",
+          "source_url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+          "method": "search_snippet",
+          "note": "17 Nov 2020"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney and Disney Parks",
+          "source_url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+          "method": "search_snippet",
+          "note": "Online and parks"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/blogs/news/world-of-disney-holiday-2020-advent-calendar-pin-collection",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "format",
+          "value": "advent calendar; pins hang as ornaments on included tree",
+          "source_url": "https://allears.net/2020/11/18/countdown-to-christmas-with-disneys-new-pin-advent-calendar/",
+          "method": "search_snippet",
+          "note": "Ornament-style pins on tree display"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2020/onward-limited-edition-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Onward Limited Edition Pin Set",
+          "source_url": "https://disneypinsblog.com/onward-limited-edition-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://disneypinsblog.com/onward-limited-edition-pin-set/",
+          "method": "search_snippet",
+          "note": "Four pins"
+        },
+        {
+          "field": "edition_size",
+          "value": 1900,
+          "source_url": "https://disneypinsblog.com/onward-limited-edition-pin-set/",
+          "method": "search_snippet",
+          "note": "LE 1,900"
+        },
+        {
+          "field": "price",
+          "value": 59.95,
+          "source_url": "https://disneypinsblog.com/onward-limited-edition-pin-set/",
+          "method": "search_snippet",
+          "note": "USD 59.95"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/onward-limited-edition-pin-set/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2020-02-10",
+          "source_url": "https://disneypinsblog.com/onward-limited-edition-pin-set/",
+          "method": "search_snippet",
+          "note": "10 Feb 2020"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://disneystore.co.uk/disney-store-onward-limited-edition-pin-set-465050860231.html",
+          "method": "search_snippet",
+          "note": "Four-piece set"
+        },
+        {
+          "field": "edition_size",
+          "value": 1900,
+          "source_url": "https://disneystore.co.uk/disney-store-onward-limited-edition-pin-set-465050860231.html",
+          "method": "search_snippet",
+          "note": "LE 1900 worldwide"
+        },
+        {
+          "field": "price",
+          "value": 20.0,
+          "source_url": "https://disneystore.co.uk/disney-store-onward-limited-edition-pin-set-465050860231.html",
+          "method": "search_snippet",
+          "note": "GBP 20 shown (possibly reduced)"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneystore.co.uk/disney-store-onward-limited-edition-pin-set-465050860231.html",
+          "method": "search_snippet",
+          "note": "GBP"
+        }
+      ]
+    },
+    {
+      "set_key": "dsuk/2020/mulan-limited-edition-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Mulan Limited Edition Pin Set",
+          "source_url": "https://www.disneystore.eu/mulan-limited-edition-pin-set-465050956286.html",
+          "method": "search_snippet",
+          "note": "EU listing title"
+        },
+        {
+          "field": "edition_size",
+          "value": 2200,
+          "source_url": "https://www.disneystore.eu/mulan-limited-edition-pin-set-465050956286.html",
+          "method": "search_snippet",
+          "note": "LE 2200 worldwide"
+        },
+        {
+          "field": "price",
+          "value": 22.5,
+          "source_url": "https://www.disneystore.eu/mulan-limited-edition-pin-set-465050956286.html",
+          "method": "search_snippet",
+          "note": "EUR 22.50 shown"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/mulan-limited-edition-pin-set-465050956286.html",
+          "method": "search_snippet",
+          "note": "Euro"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://www.disneystore.eu/mulan-limited-edition-pin-set-465050956286.html",
+          "method": "search_snippet",
+          "note": "Description says four-piece"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 3,
+          "source_url": "https://www.disneystore.eu/mulan-limited-edition-pin-set-465050956286.html",
+          "method": "search_snippet",
+          "note": "Specs say 3-piece; conflict on same page"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1920s-steamboat-willie",
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Mickey Mouse as Steamboat Willie Pin",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "Limited release pin in the 1920s drop"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse"
+          ],
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "Mickey as Steamboat Willie"
+        },
+        {
+          "field": "main_character",
+          "value": "Mickey Mouse",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "Mickey as Steamboat Willie"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "Article says limited release"
+        },
+        {
+          "field": "original_price",
+          "value": 29.99,
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "Price USD 29.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "US price"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-02-20",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "1920s collection on shopDisney from 20 Feb 2023"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney release"
+        },
+        {
+          "field": "set_position",
+          "value": 1,
+          "source_url": "https://www.laughingplace.com/w/news/2023/02/13/disney100-decades-collection-1920s-mickey-mouse-shopdisney/",
+          "method": "search_snippet",
+          "note": "1920s is the first decade assortment"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1930s-clarabelle-horace/clarabelle-cow",
+      "set_key": "dsuk/2023/disney100-decades/1930s-clarabelle-horace",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Clarabelle Cow"
+          ],
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "Clarabelle Cow named as one of the two pins in the set"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1930s-clarabelle-horace/horace-horsecollar",
+      "set_key": "dsuk/2023/disney100-decades/1930s-clarabelle-horace",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Horace Horsecollar"
+          ],
+          "source_url": "https://www.laughingplace.com/w/news/2023/03/16/disney100-decades-collection-1930s-shopdisney/",
+          "method": "search_snippet",
+          "note": "Horace Horsecollar named as one of the two pins in the set"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1940s-scrooge-mcduck",
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Scrooge McDuck Disney 100 Decades Hinged Pin",
+          "source_url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+          "method": "search_snippet",
+          "note": "Name per blog title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Scrooge McDuck"
+          ],
+          "source_url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+          "method": "search_snippet",
+          "note": "Scrooge McDuck"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged"
+          ],
+          "source_url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+          "method": "search_snippet",
+          "note": "Hinged pin"
+        },
+        {
+          "field": "set_position",
+          "value": 3,
+          "source_url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+          "method": "search_snippet",
+          "note": "Blog calls it the third release in the collection"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "original_price",
+          "value": 34.99,
+          "source_url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+          "method": "search_snippet",
+          "note": "Blog price USD 34.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/scrooge-mcduck-disney-100-decades-hinged-pin/",
+          "method": "search_snippet",
+          "note": "US price"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1950s-goofy-humphrey-bear",
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Goofy and Humphrey Bear Disney 100 Decades Pin",
+          "source_url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Name per blog title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Goofy",
+            "Humphrey Bear"
+          ],
+          "source_url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Goofy and Humphrey Bear"
+        },
+        {
+          "field": "set_position",
+          "value": 4,
+          "source_url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Fourth release in the collection"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "original_price",
+          "value": 34.99,
+          "source_url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "USD 34.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "US price"
+        },
+        {
+          "field": "visual_description",
+          "value": "Inspired by the 1950 short Hold That Pose",
+          "source_url": "https://disneypinsblog.com/goofy-and-humphrey-bear-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Design inspiration per blog"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1960s-ludwig-von-drake",
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Ludwig Von Drake Disney 100 Decades Pin",
+          "source_url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Name per blog title (Wonderful World of Color)"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Ludwig Von Drake"
+          ],
+          "source_url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Ludwig Von Drake"
+        },
+        {
+          "field": "set_position",
+          "value": 5,
+          "source_url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Fifth release, 1960s"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "original_price",
+          "value": 34.99,
+          "source_url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "USD 34.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/ludwig-von-drake-walt-disneys-wonderful-world-of-color-disney-100-decades-pin/",
+          "method": "search_snippet",
+          "note": "US price"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1980s-roger-rabbit",
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Roger Rabbit Limited Release Disney100 Pin",
+          "source_url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+          "method": "search_snippet",
+          "note": "EU listing title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Roger Rabbit"
+          ],
+          "source_url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+          "method": "search_snippet",
+          "note": "Roger Rabbit"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "pin-on-pin"
+          ],
+          "source_url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+          "method": "search_snippet",
+          "note": "Pin-on-pin design"
+        },
+        {
+          "field": "original_price",
+          "value": 16.0,
+          "source_url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+          "method": "search_snippet",
+          "note": "EUR 16.00"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+          "method": "search_snippet",
+          "note": "Euro price"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store Europe",
+          "source_url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+          "method": "search_snippet",
+          "note": "Listed on disneystore.eu; Decades 1980s Collection"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://www.disneystore.eu/roger-rabbit-limited-release-disney100-pin-who-framed-roger-rabbit-466044221861.html",
+          "method": "search_snippet",
+          "note": "Listing says limited release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/1990s-disney-afternoon",
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "The Disney Afternoon Disney100 Limited Release Pin",
+          "source_url": "https://www.disneystore.eu/the-disney-afternoon-disney100-limited-release-pin-466044287539.html",
+          "method": "search_snippet",
+          "note": "EU listing title"
+        },
+        {
+          "field": "visual_description",
+          "value": "Stand-up diorama style pin",
+          "source_url": "https://www.disneystore.eu/the-disney-afternoon-disney100-limited-release-pin-466044287539.html",
+          "method": "search_snippet",
+          "note": "Listing calls it a stand-up diorama"
+        },
+        {
+          "field": "original_price",
+          "value": 10.0,
+          "source_url": "https://www.disneystore.eu/the-disney-afternoon-disney100-limited-release-pin-466044287539.html",
+          "method": "search_snippet",
+          "note": "EUR 10.00"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/the-disney-afternoon-disney100-limited-release-pin-466044287539.html",
+          "method": "search_snippet",
+          "note": "Euro price"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store Europe",
+          "source_url": "https://www.disneystore.eu/the-disney-afternoon-disney100-limited-release-pin-466044287539.html",
+          "method": "search_snippet",
+          "note": "Decades 1990s Collection on disneystore.eu"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://www.disneystore.eu/the-disney-afternoon-disney100-limited-release-pin-466044287539.html",
+          "method": "search_snippet",
+          "note": "Limited release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/2000s-pixar/boo",
+      "set_key": "dsuk/2023/disney100-decades/2000s-pixar",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Boo"
+          ],
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Boo (Monsters, Inc.) listed in the set"
+        },
+        {
+          "field": "franchise",
+          "value": "Monsters, Inc.",
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog attributes Boo to Monsters, Inc."
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/2000s-pixar/nemo",
+      "set_key": "dsuk/2023/disney100-decades/2000s-pixar",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Nemo"
+          ],
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Nemo (Finding Nemo) listed in the set"
+        },
+        {
+          "field": "franchise",
+          "value": "Finding Nemo",
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog attributes Nemo to Finding Nemo"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/2000s-pixar/edna-mode",
+      "set_key": "dsuk/2023/disney100-decades/2000s-pixar",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Edna Mode"
+          ],
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Edna Mode (The Incredibles) listed in the set"
+        },
+        {
+          "field": "franchise",
+          "value": "The Incredibles",
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog attributes Edna Mode to The Incredibles"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/2000s-pixar/buzz-lightyear",
+      "set_key": "dsuk/2023/disney100-decades/2000s-pixar",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Buzz Lightyear"
+          ],
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Buzz Lightyear (Toy Story 3) listed in the set"
+        },
+        {
+          "field": "franchise",
+          "value": "Toy Story 3",
+          "source_url": "https://disneypinsblog.com/pixar-disney-100-decades-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog attributes Buzz Lightyear to Toy Story 3"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-decades/2010s-marvels-avengers",
+      "set_key": "dsuk/2023/disney100-decades",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Marvel's Avengers Disney100 Limited Release Pin",
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "EU listing title"
+        },
+        {
+          "field": "franchise",
+          "value": "Marvel's Avengers",
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "Avengers"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "pin-on-pin"
+          ],
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "Pin-on-pin"
+        },
+        {
+          "field": "backstamp_text",
+          "value": "2023 Disney Pin Trading",
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "Listing mentions 2023 Disney Pin Trading backstamp"
+        },
+        {
+          "field": "original_price",
+          "value": 20.0,
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "EUR 20.00"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "Euro price"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store Europe",
+          "source_url": "https://www.disneystore.eu/marvels-avengers-disney100-limited-release-pin-438017423695.html",
+          "method": "search_snippet",
+          "note": "Decades 2010s Collection"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-special-moments/mickey-stitch-and-friends",
+      "set_key": "dsuk/2023/disney100-special-moments",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Mickey Mouse, Stitch and Friends Disney100 Special Moments Pin",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Named by blog"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse",
+            "Stitch"
+          ],
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Characters in pin name"
+        },
+        {
+          "field": "original_price",
+          "value": 17.99,
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 17.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US price"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-07-04",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Released 4 Jul 2023"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/disney100-special-moments/mickey-genie-and-friends",
+      "set_key": "dsuk/2023/disney100-special-moments",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Mickey Mouse, Genie and Friends Disney100 Special Moments Pin",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Named by blog"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse",
+            "Genie"
+          ],
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Characters in pin name"
+        },
+        {
+          "field": "original_price",
+          "value": 17.99,
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 17.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US price"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-07-04",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Released 4 Jul 2023"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/disney100-special-moments-pins-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Parks and Disney Store",
+          "source_url": "https://www.shopdisney.co.uk/mickey-mouse-genie-and-friends-disney100-special-moments-limited-release-pin-466044287201.html",
+          "method": "search_snippet",
+          "note": "shopDisney UK listing says exclusive to Disney Parks and Disney Store"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/magical-medallions/arendelle",
+      "set_key": "dsuk/2023/magical-medallions",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Arendelle Magical Medallions Pin",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "Arendelle pin in the July 2023 post"
+        },
+        {
+          "field": "original_price",
+          "value": 16.0,
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP 16.00"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-07",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "July 2023 release post"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney UK",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "shopDisney UK exclusive"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/magical-medallions/portorosso",
+      "set_key": "dsuk/2023/magical-medallions",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Portorosso Magical Medallions Pin",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "Portorosso pin in the July 2023 post"
+        },
+        {
+          "field": "original_price",
+          "value": 16.0,
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP 16.00"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-07",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "July 2023 release post"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney UK",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "shopDisney UK exclusive"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/magical-medallions/zootopia",
+      "set_key": "dsuk/2023/magical-medallions",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Zootopia Magical Medallions Pin",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "Zootopia pin in the July 2023 post"
+        },
+        {
+          "field": "original_price",
+          "value": 16.0,
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP 16.00"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-07",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "July 2023 release post"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney UK",
+          "source_url": "https://disneypinsblog.com/magical-medallions-pins-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "shopDisney UK exclusive"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/magical-medallions/mount-olympus",
+      "set_key": "dsuk/2023/magical-medallions",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Mount Olympus Magical Medallions Pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "edition_size",
+          "value": 1250,
+          "source_url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+          "method": "search_snippet",
+          "note": "LE 1,250"
+        },
+        {
+          "field": "original_price",
+          "value": 16.0,
+          "source_url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+          "method": "search_snippet",
+          "note": "GBP 16.00"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-09",
+          "source_url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+          "method": "search_snippet",
+          "note": "September 2023"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney UK",
+          "source_url": "https://disneypinsblog.com/blogs/news/mount-olympus-magical-medallions-pin-at-shopdisney-uk",
+          "method": "search_snippet",
+          "note": "shopDisney UK exclusive"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/magical-medallions/beauty-and-the-beast-little-town",
+      "set_key": "dsuk/2023/magical-medallions",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Beauty and the Beast Little Town Magical Medallions Pin",
+          "source_url": "https://disneypinsblog.com/beauty-and-the-beast-little-town-magical-medallions-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "edition_size",
+          "value": 1250,
+          "source_url": "https://disneypinsblog.com/beauty-and-the-beast-little-town-magical-medallions-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "LE 1,250"
+        },
+        {
+          "field": "original_price",
+          "value": 16.0,
+          "source_url": "https://disneypinsblog.com/beauty-and-the-beast-little-town-magical-medallions-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP 16.00"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneypinsblog.com/beauty-and-the-beast-little-town-magical-medallions-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-09",
+          "source_url": "https://disneypinsblog.com/beauty-and-the-beast-little-town-magical-medallions-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "September 2023"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney UK",
+          "source_url": "https://disneypinsblog.com/beauty-and-the-beast-little-town-magical-medallions-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "shopDisney UK"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/magical-medallions/meet-the-robinsons",
+      "set_key": "dsuk/2023/magical-medallions",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Meet the Robinsons Magical Medallions Limited Release Pin",
+          "source_url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+          "method": "search_snippet",
+          "note": "EU listing title"
+        },
+        {
+          "field": "edition_size",
+          "value": 1250,
+          "source_url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+          "method": "search_snippet",
+          "note": "LE 1250"
+        },
+        {
+          "field": "original_price",
+          "value": 7.0,
+          "source_url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+          "method": "search_snippet",
+          "note": "Listed at EUR 7.00 (possibly reduced)"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+          "method": "search_snippet",
+          "note": "Euro"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store Europe",
+          "source_url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+          "method": "search_snippet",
+          "note": "Exclusive to Disney Store Europe"
+        },
+        {
+          "field": "backstamp_text",
+          "value": "Disney Pin Trading 2023",
+          "source_url": "https://www.disneystore.eu/meet-the-robinsons-magical-medallions-limited-release-pin-438017682733.html",
+          "method": "search_snippet",
+          "note": "2023 backstamp"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2023/coronation-day/mickey-mouse",
+      "set_key": "dsuk/2023/coronation-day-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Disney Store Mickey Mouse Coronation Day Limited Edition Pin",
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+          "method": "search_snippet",
+          "note": "UK listing title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse"
+          ],
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+          "method": "search_snippet",
+          "note": "Mickey as King"
+        },
+        {
+          "field": "visual_description",
+          "value": "Mickey Mouse as a king, with glitter details",
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+          "method": "search_snippet",
+          "note": "Listing description paraphrased"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "glitter"
+          ],
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+          "method": "search_snippet",
+          "note": "Glitter details"
+        },
+        {
+          "field": "materials",
+          "value": "zinc alloy, enamel cloisonne",
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+          "method": "search_snippet",
+          "note": "Listing specs"
+        },
+        {
+          "field": "size_mm",
+          "value": "approx 50 x 40",
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+          "method": "search_snippet",
+          "note": "About 5 cm wide, 4 cm high"
+        },
+        {
+          "field": "region",
+          "value": "UK",
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-mouse-coronation-day-limited-edition-pin-466044177311.html",
+          "method": "search_snippet",
+          "note": "UK exclusive"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/mickey-mouse-coronation-day-2023-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "original_price",
+          "value": 14.0,
+          "source_url": "https://disneypinsblog.com/mickey-mouse-coronation-day-2023-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP 14.00"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://disneypinsblog.com/mickey-mouse-coronation-day-2023-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "release_date",
+          "value": "2023-04-24",
+          "source_url": "https://disneypinsblog.com/mickey-mouse-coronation-day-2023-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "On sale Monday 24 Apr 2023"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney UK",
+          "source_url": "https://disneypinsblog.com/mickey-mouse-coronation-day-2023-pin-at-shopdisney-uk/",
+          "method": "search_snippet",
+          "note": "Blog says shopDisney UK"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/one-family-2022/moana-heart-of-te-fiti",
+      "set_key": "dsus/2022/one-family-2022",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Moana Heart of Te Fiti Pin",
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Named in blog"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Moana"
+          ],
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Moana"
+        },
+        {
+          "field": "edition_size",
+          "value": 300,
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "LE 300"
+        },
+        {
+          "field": "original_price",
+          "value": 21.99,
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 21.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/one-family-2022/rapunzel-crown",
+      "set_key": "dsus/2022/one-family-2022",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Rapunzel Crown Pin",
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Named in blog"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Rapunzel"
+          ],
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Rapunzel"
+        },
+        {
+          "field": "edition_size",
+          "value": 800,
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "LE 800"
+        },
+        {
+          "field": "original_price",
+          "value": 29.99,
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 29.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/one-family-2022-pin-releases-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/disney-princess-tea-party-aurora-completer/teapot",
+      "set_key": "dsus/2022/disney-princess-tea-party-aurora-completer",
+      "claims": [
+        {
+          "field": "visual_form",
+          "value": "teapot",
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "Set includes a teapot pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/disney-princess-tea-party-aurora-completer/cup-and-saucer",
+      "set_key": "dsus/2022/disney-princess-tea-party-aurora-completer",
+      "claims": [
+        {
+          "field": "visual_form",
+          "value": "cup and saucer",
+          "source_url": "https://disneypinsblog.com/blogs/news/aurora-disney-princess-tea-party-completer-pin-set",
+          "method": "search_snippet",
+          "note": "Set includes a cup and saucer pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/willow/willow",
+      "set_key": "dsus/2022/willow-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Willow Limited Release Pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "franchise",
+          "value": "Willow",
+          "source_url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+          "method": "search_snippet",
+          "note": "Lucasfilm Willow"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "original_price",
+          "value": 19.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+          "method": "search_snippet",
+          "note": "USD 19.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2022-09-10",
+          "source_url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+          "method": "search_snippet",
+          "note": "Available 10 Sep 2022"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://disneypinsblog.com/blogs/news/willow-limited-release-pin-at-shopdisney",
+          "method": "search_snippet",
+          "note": "shopDisney"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/disney-designer-collection/rapunzel",
+      "set_key": "dsus/2022/disney-designer-collection",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Rapunzel Disney Designer Collection Limited Release Pin",
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Rapunzel"
+          ],
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "Rapunzel"
+        },
+        {
+          "field": "set_position",
+          "value": 10,
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "10th Disney Designer Collection pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "original_price",
+          "value": 34.99,
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "USD 34.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2022-06-12",
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "shopDisney 12 Jun 2022"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney and Disney Parks",
+          "source_url": "https://disneypinsblog.com/rapunzel-disney-designer-collection-limited-release-pin/",
+          "method": "search_snippet",
+          "note": "shopDisney.com and parks"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/jack",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Jack"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Jack listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/sally",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Sally"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Sally listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/zero",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Zero"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Zero listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/mayor",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Mayor"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Mayor listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/santa",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Santa"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Santa listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/oogie-boogie",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Oogie Boogie"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Oogie Boogie listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/lock",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Lock"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Lock listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/shock",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Shock"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Shock listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/barrel",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Barrel"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Barrel listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/nightmare-before-christmas-cuties-mystery/vampire-teddy",
+      "set_key": "dsus/2022/nightmare-before-christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Vampire Teddy"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-cuties-mystery-pin-set-at-shopdisney-and-disney-parks",
+          "method": "search_snippet",
+          "note": "Vampire Teddy listed as a design in the series"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2022/trick-or-treat-halloween-2022/pin",
+      "set_key": "dsus/2022/trick-or-treat-halloween-2022-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Trick or Treat Halloween 2022 Limited Release Disney Pin",
+          "source_url": "https://disneypinsblog.com/trick-or-treat-halloween-2022-limited-release-disney-pin/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/trick-or-treat-halloween-2022-limited-release-disney-pin/",
+          "method": "search_snippet",
+          "note": "Limited release"
+        },
+        {
+          "field": "original_price",
+          "value": 17.99,
+          "source_url": "https://disneypinsblog.com/trick-or-treat-halloween-2022-limited-release-disney-pin/",
+          "method": "search_snippet",
+          "note": "USD 17.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/trick-or-treat-halloween-2022-limited-release-disney-pin/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://disneypinsblog.com/trick-or-treat-halloween-2022-limited-release-disney-pin/",
+          "method": "search_snippet",
+          "note": "shopDisney US"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2022/platinum-jubilee/minnie-mouse",
+      "set_key": "dsuk/2022/platinum-jubilee-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Disney Store Minnie Mouse Platinum Jubilee Limited Edition Pin",
+          "source_url": "https://www.disneystore.co.uk/disney-store-minnie-mouse-platinum-jubilee-limited-edition-pin-466042861021.html",
+          "method": "search_snippet",
+          "note": "UK listing title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Minnie Mouse"
+          ],
+          "source_url": "https://www.disneystore.co.uk/disney-store-minnie-mouse-platinum-jubilee-limited-edition-pin-466042861021.html",
+          "method": "search_snippet",
+          "note": "Minnie"
+        },
+        {
+          "field": "visual_description",
+          "value": "Minnie in polka-dot skirt and crown on a Union Jack background",
+          "source_url": "https://www.disneystore.co.uk/disney-store-minnie-mouse-platinum-jubilee-limited-edition-pin-466042861021.html",
+          "method": "search_snippet",
+          "note": "Paraphrase of listing"
+        },
+        {
+          "field": "edition_size",
+          "value": 1500,
+          "source_url": "https://www.disneystore.co.uk/disney-store-minnie-mouse-platinum-jubilee-limited-edition-pin-466042861021.html",
+          "method": "search_snippet",
+          "note": "Limited to 1500 worldwide"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney Store UK",
+          "source_url": "https://www.disneystore.co.uk/disney-store-minnie-mouse-platinum-jubilee-limited-edition-pin-466042861021.html",
+          "method": "search_snippet",
+          "note": "disneystore.co.uk"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/mickey-mouse",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog names Mickey"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/minnie-mouse",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Minnie Mouse"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/chip-dale",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Chip",
+            "Dale"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/donald-duck",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Donald Duck"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/huey-dewey-louie",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Huey",
+            "Dewey",
+            "Louie"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/stitch",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Stitch"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Stitch"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog names Stitch"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/winnie-the-pooh",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Winnie the Pooh"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/christmas-cuties-mystery/orange-bird",
+      "set_key": "dsus/2021/christmas-cuties-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Orange Bird"
+          ],
+          "source_url": "https://www.dismerchandise.com/2021/10/27/disney-christmas-cuties-mystery-pin-set-blind-pack-limited-release-now-available-online/",
+          "method": "search_snippet",
+          "note": "Named as one of the 8 holiday Cuties designs"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Orange Bird"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-christmas-cuties-limited-release-mystery-pin-set/",
+          "method": "search_snippet",
+          "note": "Blog names Orange Bird among designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/mystery-collectible-key/minnie-mouse",
+      "set_key": "dsus/2021/mystery-collectible-key",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Minnie Mouse"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "Minnie Mouse key design listed"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/mystery-collectible-key/tigger",
+      "set_key": "dsus/2021/mystery-collectible-key",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Tigger"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "Tigger key design listed"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/mystery-collectible-key/woody",
+      "set_key": "dsus/2021/mystery-collectible-key",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Woody"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "Woody key design listed"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/mystery-collectible-key/mickey-mouse",
+      "set_key": "dsus/2021/mystery-collectible-key",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "Mickey Mouse key design listed"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/mystery-collectible-key/donald-duck",
+      "set_key": "dsus/2021/mystery-collectible-key",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Donald Duck"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-store-mystery-collectible-key-pin-set/",
+          "method": "search_snippet",
+          "note": "Donald Duck key design listed"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/holiday-countdown-advent-calendar-2021/bluebird",
+      "set_key": "dsus/2021/holiday-countdown-advent-calendar-2021",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Bluebird"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "Bluebird (Snow White and the Seven Dwarfs) listed among designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/holiday-countdown-advent-calendar-2021/timothy-mouse",
+      "set_key": "dsus/2021/holiday-countdown-advent-calendar-2021",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Timothy Mouse"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "Timothy Mouse (Dumbo) listed among designs"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/holiday-countdown-advent-calendar-2021/jaq-gus-bluebird",
+      "set_key": "dsus/2021/holiday-countdown-advent-calendar-2021",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Jaq",
+            "Gus",
+            "Bluebird"
+          ],
+          "source_url": "https://disneypinsblog.com/disney-parks-christmas-2021-advent-calendar-pin-collection/",
+          "method": "search_snippet",
+          "note": "Jaq with Gus and Bluebird (Cinderella) listed"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2021/raya-jumbo/raya-and-the-last-dragon",
+      "set_key": "dsus/2021/raya-jumbo-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Raya and the Last Dragon Jumbo Pin",
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Raya",
+            "Sisu",
+            "Ongis",
+            "Little Noi",
+            "Tuk Tuk",
+            "Boun",
+            "Tong"
+          ],
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Characters listed"
+        },
+        {
+          "field": "main_character",
+          "value": "Raya",
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Raya"
+        },
+        {
+          "field": "edition_size",
+          "value": 4500,
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "LE 4,500"
+        },
+        {
+          "field": "original_price",
+          "value": 59.99,
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 59.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2021-02-01",
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "1 Feb 2021"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "pin-on-pin",
+            "spinner"
+          ],
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Pin-on-pin with spinner"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-jumbo-pin-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2021/new-year-2021/mickey-and-minnie",
+      "set_key": "dsuk/2021/new-year-2021-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Disney Store Mickey and Minnie 2021 Limited Edition Pin",
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+          "method": "search_snippet",
+          "note": "UK listing title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse",
+            "Minnie Mouse"
+          ],
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+          "method": "search_snippet",
+          "note": "Mickey and Minnie"
+        },
+        {
+          "field": "edition_size",
+          "value": 4600,
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+          "method": "search_snippet",
+          "note": "LE 4600"
+        },
+        {
+          "field": "original_price",
+          "value": 4.5,
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+          "method": "search_snippet",
+          "note": "GBP 4.50 shown (likely reduced)"
+        },
+        {
+          "field": "currency",
+          "value": "GBP",
+          "source_url": "https://www.disneystore.co.uk/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+          "method": "search_snippet",
+          "note": "GBP"
+        },
+        {
+          "field": "original_price",
+          "value": 12.0,
+          "source_url": "https://www.disneystore.eu/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+          "method": "search_snippet",
+          "note": "EUR 12.00"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/disney-store-mickey-and-minnie-2021-limited-edition-pin-465051389311.html",
+          "method": "search_snippet",
+          "note": "Euro"
+        },
+        {
+          "field": "edition_size",
+          "value": 4600,
+          "source_url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2021-pin/",
+          "method": "search_snippet",
+          "note": "LE 4,600"
+        },
+        {
+          "field": "original_price",
+          "value": 12.99,
+          "source_url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2021-pin/",
+          "method": "search_snippet",
+          "note": "USD 12.99 at shopDisney"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2021-pin/",
+          "method": "search_snippet",
+          "note": "US"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2020/new-year-2020/mickey-and-minnie",
+      "set_key": "dsuk/2020/new-year-2020-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Mickey and Minnie Mouse Happy New Year 2020 Pin",
+          "source_url": "https://www.disneystore.com/mickey-and-minnie-mouse-happy-new-year-2020-pin-limited-edition-465054668857.html",
+          "method": "search_snippet",
+          "note": "US listing title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse",
+            "Minnie Mouse"
+          ],
+          "source_url": "https://www.disneystore.com/mickey-and-minnie-mouse-happy-new-year-2020-pin-limited-edition-465054668857.html",
+          "method": "search_snippet",
+          "note": "Mickey and Minnie"
+        },
+        {
+          "field": "original_price",
+          "value": 15.95,
+          "source_url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2020-pin/",
+          "method": "search_snippet",
+          "note": "USD 15.95"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2020-pin/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "edition_size",
+          "value": 2400,
+          "source_url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2020-pin/",
+          "method": "search_snippet",
+          "note": "LE 2,400"
+        },
+        {
+          "field": "release_date",
+          "value": "2019-12-04",
+          "source_url": "https://disneypinsblog.com/mickey-and-minnie-mouse-happy-new-year-2020-pin/",
+          "method": "search_snippet",
+          "note": "Released 4 Dec 2019"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "glitter",
+            "spinner"
+          ],
+          "source_url": "https://www.disneystore.eu/mickey-and-minnie-new-year-limited-edition-pin-465050769824.html",
+          "method": "search_snippet",
+          "note": "Gold glitter 2020 and spinning element"
+        },
+        {
+          "field": "original_price",
+          "value": 15.0,
+          "source_url": "https://www.disneystore.eu/mickey-and-minnie-new-year-limited-edition-pin-465050769824.html",
+          "method": "search_snippet",
+          "note": "EUR 15.00"
+        },
+        {
+          "field": "currency",
+          "value": "EUR",
+          "source_url": "https://www.disneystore.eu/mickey-and-minnie-new-year-limited-edition-pin-465050769824.html",
+          "method": "search_snippet",
+          "note": "Euro"
+        },
+        {
+          "field": "edition_size",
+          "value": 2400,
+          "source_url": "https://www.disneystore.eu/mickey-and-minnie-new-year-limited-edition-pin-465050769824.html",
+          "method": "search_snippet",
+          "note": "LE 2400"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2020/pinocchio-80th-anniversary-set/pinocchio-figaro",
+      "set_key": "dsuk/2020/pinocchio-80th-anniversary-set",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Pinocchio",
+            "Figaro"
+          ],
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Listed as a pin in the set"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2020/pinocchio-80th-anniversary-set/geppetto",
+      "set_key": "dsuk/2020/pinocchio-80th-anniversary-set",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Geppetto"
+          ],
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Listed as a pin in the set"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2020/pinocchio-80th-anniversary-set/cleo",
+      "set_key": "dsuk/2020/pinocchio-80th-anniversary-set",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Cleo"
+          ],
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Listed as a pin in the set"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2020/pinocchio-80th-anniversary-set/jiminy-cricket",
+      "set_key": "dsuk/2020/pinocchio-80th-anniversary-set",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Jiminy Cricket"
+          ],
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Listed as a pin in the set"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsuk/2020/pinocchio-80th-anniversary-set/cuckoo-clocks",
+      "set_key": "dsuk/2020/pinocchio-80th-anniversary-set",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Cuckoo Clocks",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-pin-set-at-shopdisney/",
+          "method": "search_snippet",
+          "note": "Cuckoo Clocks listed as a pin in the set"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2020/pinocchio-80th-anniversary/pin",
+      "set_key": "dsus/2020/pinocchio-80th-anniversary-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Pinocchio 80th Anniversary shopDisney Pin",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-shopdisney-pin/",
+          "method": "search_snippet",
+          "note": "Blog title"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Pinocchio"
+          ],
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-shopdisney-pin/",
+          "method": "search_snippet",
+          "note": "Pinocchio"
+        },
+        {
+          "field": "original_price",
+          "value": 15.95,
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-shopdisney-pin/",
+          "method": "search_snippet",
+          "note": "USD 15.95"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-shopdisney-pin/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2020-01",
+          "source_url": "https://disneypinsblog.com/pinocchio-80th-anniversary-shopdisney-pin/",
+          "method": "search_snippet",
+          "note": "January 2020"
+        }
+      ]
+    },
+    {
+      "pin_key": "dsus/2020/pluto-90th-anniversary/cake",
+      "set_key": "dsus/2020/pluto-90th-anniversary-cake-single",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Pluto 90th Anniversary Cake Pin",
+          "source_url": "https://www.disneyfanatic.com/celebrate-plutos-90th-anniversary-with-special-merchandise-on-shopdisney/",
+          "method": "search_snippet",
+          "note": "Named in article"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Pluto"
+          ],
+          "source_url": "https://www.disneyfanatic.com/celebrate-plutos-90th-anniversary-with-special-merchandise-on-shopdisney/",
+          "method": "search_snippet",
+          "note": "Pluto"
+        },
+        {
+          "field": "original_price",
+          "value": 12.99,
+          "source_url": "https://www.disneyfanatic.com/celebrate-plutos-90th-anniversary-with-special-merchandise-on-shopdisney/",
+          "method": "search_snippet",
+          "note": "USD 12.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://www.disneyfanatic.com/celebrate-plutos-90th-anniversary-with-special-merchandise-on-shopdisney/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_location",
+          "value": "shopDisney",
+          "source_url": "https://www.disneyfanatic.com/celebrate-plutos-90th-anniversary-with-special-merchandise-on-shopdisney/",
+          "method": "search_snippet",
+          "note": "shopDisney"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "dsuk/2023/disney100-decades/1970s-petes-dragon-elliott",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Blog says three Elliott poses but individual poses not described in snippet"
+    },
+    {
+      "key": "dsuk/2023/disney100-special-moments",
+      "field": "expected_pin_count",
+      "searched": "2 queries",
+      "note": "A third (Ariel) pin mentioned only via reseller; count not confirmed by acceptable source"
+    },
+    {
+      "key": "dsuk/2023/munchlings-advent-calendar-2023",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Individual 24 designs not listed in snippets"
+    },
+    {
+      "key": "dsus/2022/one-family-2022",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Pin Pals / Say Cheese! / Wish You Were Here! individual designs not named; a Peter Pan pin noted as UK only"
+    },
+    {
+      "key": "dsus/2022/disney-princess-2022-mystery",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Designs not individually named in snippet"
+    },
+    {
+      "key": "dsus/2022/disney-holiday-2022-mystery",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Designs not individually named in snippet"
+    },
+    {
+      "key": "dsus/2022/holiday-countdown-advent-calendar-2022",
+      "field": "members",
+      "searched": "1 query",
+      "note": "24 designs not listed in snippets"
+    },
+    {
+      "key": "dsuk/2022/platinum-jubilee/minnie-mouse",
+      "field": "release_date",
+      "searched": "1 query",
+      "note": "No date in snippet; 2022 key from Jubilee year only"
+    },
+    {
+      "key": "dsus/2021/mystery-collectible-key",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Sixth design described only as a Star Wars character"
+    },
+    {
+      "key": "dsus/2021/character-food-mystery",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Designs not named in snippet"
+    },
+    {
+      "key": "dsus/2021/luca-limited-edition-set",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Five pins not described in snippet"
+    },
+    {
+      "key": "dsus/2021/holiday-gifting-2021",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Pins not named"
+    },
+    {
+      "key": "dsus/2020/pluto-90th-anniversary-set",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Four pins not individually described"
+    },
+    {
+      "key": "dsus/2020/world-of-disney-holiday-advent-calendar-2020",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Characters listed only on a reseller page; not recorded"
+    },
+    {
+      "key": "dsuk/2020/onward-limited-edition-set",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Pins described only as key plot points"
+    },
+    {
+      "key": "dsuk/2020/mulan-limited-edition-set",
+      "field": "members",
+      "searched": "1 query",
+      "note": "Pins not described"
+    }
+  ],
+  "discovery_notes": "Search-snippet leads only (34 searches). dsuk = sold on Disney Store UK/EU (often also US); dsus = shopDisney/US-only evidence. Disney100 Decades keyed dsuk because EU listings exist, though many decade pins only have US-blog evidence. No 2020-2023 Disney Store London event pins or Pin Trading Day store pins found. Undated UK items skipped: Up 10th anniv set, DS UK bauble advent calendar (GBP175), Treasure Planet/Scar (2017-era). New Year 2020 pin released Dec 2019. Several GBP/EUR prices may be markdowns."
+}

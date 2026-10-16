@@ -1,0 +1,4426 @@
+{
+ "packet_id": "dlp-2020-2023-2026-10-16-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-dlp-2020-2023",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+   "title": "Disneyland Paris January 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+   "title": "February 2020 Pin Releases for Disneyland Paris Includes Tower of Terror Collection",
+   "publisher": "WDW News Today",
+   "published_date": "2020-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+   "title": "March 2020 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2020-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-august-2020-pins/",
+   "title": "Disneyland Paris August 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+   "title": "September 2020 Pin Trading Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2020-09-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-september-2020-pins/",
+   "title": "Disneyland Paris September 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-october-2020-pins/",
+   "title": "Disneyland Paris October 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+   "title": "Pin's RICHARD ORLINSKI SIMBA, reference par DLP par RP84",
+   "publisher": "DLP par RP84",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+   "title": "Disney Pin News (October 2020)",
+   "publisher": "We Are Lost in the Magic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+   "title": "Holiday 2020 Pins Delayed Release at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+   "title": "Rainbow 2021 Pin Collection at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/june-2021-limited-edition-pin-releases-at-disneyland-paris/",
+   "title": "June 2021 Limited Edition Pin Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+   "title": "Disneyland Paris Shares Pin Releases Throughout July",
+   "publisher": "Laughing Place",
+   "published_date": "2021-06-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+   "title": "New September 2021 Pin Releases for Disneyland Paris",
+   "publisher": "Travel to the Magic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+   "title": "Disneyland Paris Pin Releases for October 2021 Include Villains, Dwarfs, and Halloween Fun!",
+   "publisher": "MickeyBlog",
+   "published_date": "2021-09-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-october-2021-pin-releases/",
+   "title": "Disneyland Paris October 2021 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+   "title": "Pin Trading Time November 2021 Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "title": "Disneyland Paris Pin Trading Releases for November 2021 Include Cowboys, Pirates, and Holiday Fun!",
+   "publisher": "MickeyBlog",
+   "published_date": "2021-10-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "title": "Disneyland Paris December 2021 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+   "title": "Check out the Disneyland Paris Pin Trading Releases for January - Including Attractions, Genie, and 2022 Pins!",
+   "publisher": "MickeyBlog",
+   "published_date": "2022-01-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+   "title": "Disneyland Paris Pin Releases for March 2022 Celebrate 30th Anniversary, Turning Red, and More!",
+   "publisher": "MickeyBlog",
+   "published_date": "2022-03-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-30th-anniversary-pin-466042533003.html",
+   "title": "Disneyland Paris Mickey Mouse 30th Anniversary Pin",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-castle-30th-anniversary-pin-466042532921.html",
+   "title": "Disneyland Paris Castle 30th Anniversary Pin",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+   "title": "Check Out the Spectacular Pin Releases at Disneyland Paris for April!",
+   "publisher": "MickeyBlog",
+   "published_date": "2022-04-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pin-trading-time-may-2022-releases-at-disneyland-paris/",
+   "title": "Pin Trading Time May 2022 Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-time/",
+   "title": "Pin Trading Time a Disneyland Paris",
+   "publisher": "Disneyphile",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2022/06/01/disneyland-paris-june-2022-pin-releases-revealed/",
+   "title": "Disneyland Paris June 2022 Pin Releases Revealed",
+   "publisher": "Mousesteps",
+   "published_date": "2022-06-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2022/06/09/disneyland-paris-reveals-upcoming-pride-pin-trading-collection/",
+   "title": "Disneyland Paris Reveals Upcoming Pride Pin Trading Collection",
+   "publisher": "Mousesteps",
+   "published_date": "2022-06-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/articles/2022/07/10/avengers-campus-merchandise-disneyland-paris/",
+   "title": "Photos: Avengers Campus Merchandise",
+   "publisher": "Laughing Place",
+   "published_date": "2022-07-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+   "title": "Every Piece of Avengers Campus Merchandise at Disneyland Paris With Prices",
+   "publisher": "WDW News Today",
+   "published_date": "2022-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2022/07/30/disneyland-paris-reveals-august-2022-pin-releases/",
+   "title": "Disneyland Paris Reveals August 2022 Pin Releases",
+   "publisher": "Mousesteps",
+   "published_date": "2022-07-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2022/09/29/disneyland-paris-reveals-pin-releases-for-october-2022/",
+   "title": "Disneyland Paris Reveals Pin Releases for October 2022",
+   "publisher": "Mousesteps",
+   "published_date": "2022-09-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mycastleclub.com/disneyland-paris-news/disneyland-paris-october-2022-pin-release-information/",
+   "title": "Disneyland Paris October 2022 Pin Release",
+   "publisher": "My Castle Club",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2022/10/31/disneyland-paris-reveals-pin-releases-for-november-2022/",
+   "title": "Disneyland Paris Reveals Pin Releases for November 2022",
+   "publisher": "Mousesteps",
+   "published_date": "2022-10-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2022/12/01/disneyland-paris-pin-trading-schedule-released-for-december-2022/",
+   "title": "Disneyland Paris Pin Trading Schedule Released for December 2022",
+   "publisher": "Mousesteps",
+   "published_date": "2022-12-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+   "title": "Disney Park to Release Limited-Time Holiday Pins in December",
+   "publisher": "Inside the Magic",
+   "published_date": "2022-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+   "title": "Disneyland Paris January 2023 Pin Release Schedule Revealed",
+   "publisher": "Mousesteps",
+   "published_date": "2022-12-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-pin-releases-at-disneyland-paris-january-2023-pin-trading-time-event",
+   "title": "Stitch Pin Releases at Disneyland Paris January 2023 Pin Trading Time",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/02/01/disneyland-paris-shares-february-2023-pin-release-schedule/",
+   "title": "Disneyland Paris Shares February 2023 Pin Release Schedule",
+   "publisher": "Mousesteps",
+   "published_date": "2023-02-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/03/01/disneyland-paris-pin-release-schedule-for-march-2023-revealed/",
+   "title": "Disneyland Paris Pin Release Schedule for March 2023 Revealed",
+   "publisher": "Mousesteps",
+   "published_date": "2023-03-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/03/31/disneyland-paris-reveals-pin-release-schedule-for-april-2023/",
+   "title": "Disneyland Paris Reveals Pin Release Schedule for April 2023",
+   "publisher": "Mousesteps",
+   "published_date": "2023-03-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/05/02/may-2023-pin-release-schedule-revealed-for-disneyland-paris/",
+   "title": "May 2023 Pin Release Schedule Revealed for Disneyland Paris",
+   "publisher": "Mousesteps",
+   "published_date": "2023-05-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+   "title": "Disneyland Paris Pin Trading Schedule for June 2023 Released",
+   "publisher": "Mousesteps",
+   "published_date": "2023-06-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2023-pin-trading-time-event-releases",
+   "title": "Disneyland Paris July 2023 Pin Trading Time Event Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/08/01/disneyland-paris-pin-release-schedule-revealed-for-august-2023/",
+   "title": "Disneyland Paris Pin Release Schedule Revealed for August 2023",
+   "publisher": "Mousesteps",
+   "published_date": "2023-08-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/08/30/disneyland-paris-pin-release-schedule-revealed-for-september-2023/",
+   "title": "Disneyland Paris Pin Release Schedule Revealed for September 2023",
+   "publisher": "Mousesteps",
+   "published_date": "2023-08-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2023-pin-releases",
+   "title": "Disneyland Paris October 2023 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2023-pin-releases",
+   "title": "Disneyland Paris November 2023 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+   "title": "Disneyland Paris Announces Pin Release Schedule for December 2023",
+   "publisher": "Laughing Place",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2020/january-2020-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris January 2020 pin releases",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "Monthly roundup: Frozen, Star Wars, 101 Dalmatians and more"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "January 2020 roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/sword-in-the-stone-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Sword in the Stone limited edition collection",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Sword in the Stone LE pins scheduled"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Edition of 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-29",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Scheduled Feb 29"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Only these released at Disney Gallery"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/hollywood-tower-hotel-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hollywood Tower Hotel collection",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition collection themed to Hollywood Tower Hotel"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "First week of February 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/st-patricks-day-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "St. Patrick's Day 2020",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Three LE St Patrick's pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Three LE pins"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Only St Patrick's pins at Disney Gallery"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/august-2020-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris August 2020 pin releases",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-august-2020-pins/",
+     "method": "search_snippet",
+     "note": "First releases after 4-month closure; Lilo & Stitch, Super Heroes, Onward"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-august-2020-pins/",
+     "method": "search_snippet",
+     "note": "August 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/parisian-minnie-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Parisian Minnie Mouse collection",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Parisian Minnie pins plus matching lanyard"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "First weekend of September 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/seasons-holidays-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Missed seasons and holidays 2020 collection",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE collection of seasons/holidays missed during year"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Second weekend of September 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/rainbow-mickey-minnie-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey and Minnie rainbow pins",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Pair of rainbow Mickey and Minnie pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "A pair"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Last week of September 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/september-2020-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris September 2020 pin releases",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2020-pins/",
+     "method": "search_snippet",
+     "note": "Minnie, Baymax, Rainbow, Halloween"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-12",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2020-pins/",
+     "method": "search_snippet",
+     "note": "Sept 12 releases incl. Rainbow, Baymax, Pocahontas (garbled page)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/october-2020-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris October 2020 pin releases",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-october-2020-pins/",
+     "method": "search_snippet",
+     "note": "Mickey icon flags, princess babies, Aristocats, The Child, Orlinski"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-october-2020-pins/",
+     "method": "search_snippet",
+     "note": "October 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/richard-orlinski-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Richard Orlinski Simba and Sorcerer Mickey pins",
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Two pins based on Orlinski statuettes"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Two pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-10",
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Released Oct 10, 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Sold at Disney Gallery with Lineberty"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/holiday-2020-delayed",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2020 pins (delayed release)",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Holiday 2020 Stitch and Alice pins held back by closure"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "700"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Released March 13, 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Park closed so sold at World of Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/rainbow-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rainbow 2021 collection",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Rainbow 2021 collection at DLP"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-10",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "June 10, 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "World of Disney at DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/delayed-seasonal-june-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Delayed 2021 seasonal LE backlog (spring, summer, Easter, Mother's/Father's Day, St Patrick's)",
+     "source_url": "https://disneypinsblog.com/june-2021-limited-edition-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Backlog released together"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/june-2021-limited-edition-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/june-2021-limited-edition-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Each 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-18",
+     "source_url": "https://disneypinsblog.com/june-2021-limited-edition-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "June 18, 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/june-2021-limited-edition-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "World of Disney store"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "July 31 2021 Carousel and Best Friends LEs",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Carousel Ariel/Belle and Best Friends pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-31",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "July 31 entries"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Each LE 15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/brave-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Brave limited edition pins",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Four LE pins with Merida and the triplets"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Four LE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-04",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "September 4"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Exclusive to World of Disney; Lineberty required"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/big-thunder-mountain-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Big Thunder Mountain pins",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "OE set plus LEs themed to Big Thunder Mountain"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "September 11"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Riverboat Landing, Frontierland",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LEs at Thunder Mesa Riverboat Landing via Lineberty"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE pins 700 each per summary"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Villains silhouette pins",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Five villain silhouette pins with names"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Five villains each with pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "October 2"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/halloween-trio-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween trio Mickey, Donald, Figaro",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Halloween trio exclusive to Thunder Mesa Mercantile"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Trio"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 2"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Mercantile, Frontierland",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Exclusive location"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/pin-trading-anniversary-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin trading anniversary releases",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Four anniversary releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-09",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 9"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow White and the Seven Dwarfs pins",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Nine pins: each dwarf, Snow White, Prince"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Nine pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 16"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-portraits-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Villains glow-in-the-dark portraits",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Second batch of five villain portrait pins that glow"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Five"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-23",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 23"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Villains and sidekicks set",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Ten-pin set of five villains and sidekicks"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Ten pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 30"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Mercantile, Frontierland",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Thunder Mesa Mercantile"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-jumbo-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Villain Jumbo pins",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-october-2021-pin-releases/",
+     "method": "search_snippet",
+     "note": "Villain jumbo LE 500 listed for Oct 2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-october-2021-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-october-2021-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500 caption"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-october-2021-pin-releases/",
+     "method": "search_snippet",
+     "note": "October 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time November 2021",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "PTT event releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "LE 400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Nov 5, 1-5pm"
+    },
+    {
+     "field": "release_location",
+     "value": "Alamo Trading Post",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "At Alamo Trading Post"
+    },
+    {
+     "field": "release_location",
+     "value": "Alamo Trading Post, Disney's Davy Crockett Ranch",
+     "source_url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+     "method": "search_snippet",
+     "note": "Preview places event at Davy Crockett Ranch"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+     "method": "search_snippet",
+     "note": "Nov 5"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/january-2022-world-of-disney-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "January 2022 World of Disney exclusives",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Two Genie pins and a castle pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Three exclusives"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-15",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 15"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/silver-donald-pluto-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Silver exclusives Donald and Pluto",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Two silver exclusives"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-22",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 22"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Mercantile, Frontierland",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Thunder Mesa Mercantile"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/silver-medallions-january-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Silver attraction medallions (Jan 2022)",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Three silver medallions"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Three"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "150 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-26",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 26"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/30th-anniversary-launch-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "30th Anniversary launch pins",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Five OE pins with 30 logo incl. spinner"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Five OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03-03",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "March 3"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/turning-red-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Turning Red pins",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Two Turning Red pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Two"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03-05",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "March 5"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/medallions-march-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Medallion attraction pins (March 2022)",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Three medallion attraction pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Three"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "150 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03-23",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "March 23"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/march-2022-other",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "March 2022 other releases",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Lion King/Stitch Mar 12, Aristocats kittens Mar 19, Huey Dewey Louie Scrooge Mar 27"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "March 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/april-2022-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "April 2022 releases",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Alice sets Apr 2; 30th gold Tinker Bell Apr 16; OE Chip and Dale Apr 23"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "April 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/30th-anniversary-gold-tinker-bell",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "30th Anniversary gold collection featuring Tinker Bell",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Golden 30th collection with Tinker Bell and two gold castle pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04-16",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "April 16"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/30th-anniversary-spring-ap",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "30th Anniversary spring pins (Annual Passholder)",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Mickey and pals spring 30th pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04-27",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "April 27"
+    },
+    {
+     "field": "release_location",
+     "value": "Storybook Store, Disneyland Park (Annual Passholders only)",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "AP-only shop"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/silver-star-april-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Silver star collection (April 2022)",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Two silver star pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Two more pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04-30",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "April 30"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Pre-bookable via Lineberty"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/pin-trading-time-may-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time May 2022",
+     "source_url": "https://disneypinsblog.com/pin-trading-time-may-2022-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Little Mermaid and Sword in the Stone"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/pin-trading-time-may-2022-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/pin-trading-time-may-2022-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-27",
+     "source_url": "https://www.disneyphile.fr/pin-trading-time/",
+     "method": "search_snippet",
+     "note": "27 May 2022, 12-16h"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Sequoia Lodge",
+     "source_url": "https://www.disneyphile.fr/pin-trading-time/",
+     "method": "search_snippet",
+     "note": "Held at Sequoia Lodge"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.disneyphile.fr/pin-trading-time/",
+     "method": "search_snippet",
+     "note": "Two themes, six pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/june-2022-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "June 2022 releases",
+     "source_url": "https://www.mousesteps.com/2022/06/01/disneyland-paris-june-2022-pin-releases-revealed/",
+     "method": "search_snippet",
+     "note": "Peter Pan, princesses, Sorcerer Mickey"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-06",
+     "source_url": "https://www.mousesteps.com/2022/06/01/disneyland-paris-june-2022-pin-releases-revealed/",
+     "method": "search_snippet",
+     "note": "June 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/pride-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Pride 2022 pins",
+     "source_url": "https://www.mousesteps.com/2022/06/09/disneyland-paris-reveals-upcoming-pride-pin-trading-collection/",
+     "method": "search_snippet",
+     "note": "Marvel, Star Wars, Pixar, Stitch, rainbow Mickey Pride pins + lanyard; some very limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-06",
+     "source_url": "https://www.mousesteps.com/2022/06/09/disneyland-paris-reveals-upcoming-pride-pin-trading-collection/",
+     "method": "search_snippet",
+     "note": "Upcoming weeks after June 9"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/avengers-campus-opening",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Avengers Campus opening merchandise pins",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "Itemized Avengers Campus pins with prices"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/articles/2022/07/10/avengers-campus-merchandise-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Prices in euros"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/avengers-campus-web-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "W.E.B. pin set",
+     "source_url": "https://www.laughingplace.com/w/articles/2022/07/10/avengers-campus-merchandise-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Spider-Man themed set of four"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.laughingplace.com/w/articles/2022/07/10/avengers-campus-merchandise-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Set of four"
+    },
+    {
+     "field": "price",
+     "value": 20.0,
+     "source_url": "https://www.laughingplace.com/w/articles/2022/07/10/avengers-campus-merchandise-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "20 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/articles/2022/07/10/avengers-campus-merchandise-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/avengers-campus-quinjet-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Quinjet pin set",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "Quinjet pin set"
+    },
+    {
+     "field": "price",
+     "value": 13.0,
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "13 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/gardens-of-wonder-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Gardens of Wonder 30th Anniversary pins",
+     "source_url": "https://www.mousesteps.com/2022/07/30/disneyland-paris-reveals-august-2022-pin-releases/",
+     "method": "search_snippet",
+     "note": "Twelve LE 500 pins for Gardens of Wonder"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://www.mousesteps.com/2022/07/30/disneyland-paris-reveals-august-2022-pin-releases/",
+     "method": "search_snippet",
+     "note": "Twelve"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2022/07/30/disneyland-paris-reveals-august-2022-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.mousesteps.com/2022/07/30/disneyland-paris-reveals-august-2022-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08",
+     "source_url": "https://www.mousesteps.com/2022/07/30/disneyland-paris-reveals-august-2022-pin-releases/",
+     "method": "search_snippet",
+     "note": "August 2022 schedule"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/october-2022-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "October 2022 Halloween releases",
+     "source_url": "https://www.mousesteps.com/2022/09/29/disneyland-paris-reveals-pin-releases-for-october-2022/",
+     "method": "search_snippet",
+     "note": "Many OE Halloween pins plus some LEs"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10-01",
+     "source_url": "https://www.mycastleclub.com/disneyland-paris-news/disneyland-paris-october-2022-pin-release-information/",
+     "method": "search_snippet",
+     "note": "Oct 1 pumpkin pins; villains Oct 8/15; Phantom Manor Oct 29 (page shows conflicting schedule)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/pin-trading-event-october-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading event October 2022",
+     "source_url": "https://www.mycastleclub.com/disneyland-paris-news/disneyland-paris-october-2022-pin-release-information/",
+     "method": "search_snippet",
+     "note": "Next pin trading event"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10-21",
+     "source_url": "https://www.mycastleclub.com/disneyland-paris-news/disneyland-paris-october-2022-pin-release-information/",
+     "method": "search_snippet",
+     "note": "Friday Oct 21"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Hotel Santa Fe, La Cantina",
+     "source_url": "https://www.mycastleclub.com/disneyland-paris-news/disneyland-paris-october-2022-pin-release-information/",
+     "method": "search_snippet",
+     "note": "La Cantina"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/november-2022-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "November 2022 releases",
+     "source_url": "https://www.mousesteps.com/2022/10/31/disneyland-paris-reveals-pin-releases-for-november-2022/",
+     "method": "search_snippet",
+     "note": "Train pins, WDS pins, autumn Olaf/Marie/Tink/Dumbo, Cars Road Trip"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-11",
+     "source_url": "https://www.mousesteps.com/2022/10/31/disneyland-paris-reveals-pin-releases-for-november-2022/",
+     "method": "search_snippet",
+     "note": "November 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/beauty-and-the-beast-christmas-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Beauty and the Beast Joyeux Noel / Bonne Annee 2023",
+     "source_url": "https://www.mousesteps.com/2022/12/01/disneyland-paris-pin-trading-schedule-released-for-december-2022/",
+     "method": "search_snippet",
+     "note": "BatB Christmas and New Year pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-03",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "Saturday Dec 3"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/30th-anniversary-minnie-goofy-december-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "30th Anniversary Minnie and Goofy pins",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "30th anniversary Minnie and Goofy"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-10",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "Dec 10"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/mary-poppins-december-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mary Poppins pins",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "Mary Poppins pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-17",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "Dec 17"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/captain-marvel-december-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain Marvel pins",
+     "source_url": "https://www.mousesteps.com/2022/12/01/disneyland-paris-pin-trading-schedule-released-for-december-2022/",
+     "method": "search_snippet",
+     "note": "Captain Marvel pins in Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Resort-wide",
+     "source_url": "https://insidethemagic.net/2022/11/disneyland-paris-december-pins-2022-jrw1/",
+     "method": "search_snippet",
+     "note": "Available throughout resort"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/pin-trading-time-january-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time January 2023 (Stitch surprise)",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pin-releases-at-disneyland-paris-january-2023-pin-trading-time-event",
+     "method": "search_snippet",
+     "note": "Surprise Stitch releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pin-releases-at-disneyland-paris-january-2023-pin-trading-time-event",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pin-releases-at-disneyland-paris-january-2023-pin-trading-time-event",
+     "method": "search_snippet",
+     "note": "400"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pin-releases-at-disneyland-paris-january-2023-pin-trading-time-event",
+     "method": "search_snippet",
+     "note": "Jan 27"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Sequoia Lodge",
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "PTT at Sequoia Lodge Jan 27"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/valentines-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Valentine's 2023 pins",
+     "source_url": "https://www.mousesteps.com/2023/02/01/disneyland-paris-shares-february-2023-pin-release-schedule/",
+     "method": "search_snippet",
+     "note": "Jack & Sally, Simba (with Nala), Stitch"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://www.mousesteps.com/2023/02/01/disneyland-paris-shares-february-2023-pin-release-schedule/",
+     "method": "search_snippet",
+     "note": "February 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/pin-trading-time-february-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time February 2023",
+     "source_url": "https://www.mousesteps.com/2023/02/01/disneyland-paris-shares-february-2023-pin-release-schedule/",
+     "method": "search_snippet",
+     "note": "PTT event"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02-24",
+     "source_url": "https://www.mousesteps.com/2023/02/01/disneyland-paris-shares-february-2023-pin-release-schedule/",
+     "method": "search_snippet",
+     "note": "Feb 24"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Hotel Santa Fe",
+     "source_url": "https://www.mousesteps.com/2023/02/01/disneyland-paris-shares-february-2023-pin-release-schedule/",
+     "method": "search_snippet",
+     "note": "Hotel Santa Fe"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/april-2023-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "April 2023 releases",
+     "source_url": "https://www.mousesteps.com/2023/03/31/disneyland-paris-reveals-pin-release-schedule-for-april-2023/",
+     "method": "search_snippet",
+     "note": "Thin month, all open edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.mousesteps.com/2023/03/31/disneyland-paris-reveals-pin-release-schedule-for-april-2023/",
+     "method": "search_snippet",
+     "note": "All open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04",
+     "source_url": "https://www.mousesteps.com/2023/03/31/disneyland-paris-reveals-pin-release-schedule-for-april-2023/",
+     "method": "search_snippet",
+     "note": "April 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/may-2023-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "May 2023 releases",
+     "source_url": "https://www.mousesteps.com/2023/05/02/may-2023-pin-release-schedule-revealed-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "No LE pins shown"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.mousesteps.com/2023/05/02/may-2023-pin-release-schedule-revealed-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "No limited editions shown this month"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05",
+     "source_url": "https://www.mousesteps.com/2023/05/02/may-2023-pin-release-schedule-revealed-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "May 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/june-2023-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "June 2023 LEs incl. Pride",
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "Some Pride LEs, Chip and Dale 30th, Buzz Lightyear"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "June 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/pin-trading-time-july-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time July 2023 surprise releases",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2023-pin-trading-time-event-releases",
+     "method": "search_snippet",
+     "note": "Rapunzel, Pascal, Maximus, Alice, Caterpillar, Mad Hatter"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2023-pin-trading-time-event-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2023-pin-trading-time-event-releases",
+     "method": "search_snippet",
+     "note": "400"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07-21",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2023-pin-trading-time-event-releases",
+     "method": "search_snippet",
+     "note": "July 21, 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Alamo Trading Post",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2023-pin-trading-time-event-releases",
+     "method": "search_snippet",
+     "note": "Alamo Trading Post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/september-2023-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "September 2023 Halloween and LEs",
+     "source_url": "https://www.mousesteps.com/2023/08/30/disneyland-paris-pin-release-schedule-revealed-for-september-2023/",
+     "method": "search_snippet",
+     "note": "Halloween pins Sep 27; LEs Sep 30"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-27",
+     "source_url": "https://www.mousesteps.com/2023/08/30/disneyland-paris-pin-release-schedule-revealed-for-september-2023/",
+     "method": "search_snippet",
+     "note": "Halloween release Sep 27"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/pin-trading-time-october-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time October 2023",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2023-pin-releases",
+     "method": "search_snippet",
+     "note": "Month features Maleficent, Phantom Manor"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2023-pin-releases",
+     "method": "search_snippet",
+     "note": "Oct 20, 12-4pm"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Hotel Cheyenne",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2023-pin-releases",
+     "method": "search_snippet",
+     "note": "Hotel Cheyenne"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/pin-trading-time-november-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time November 2023",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2023-pin-releases",
+     "method": "search_snippet",
+     "note": "Month: Peter Pan, Coco, Wish, Christmas"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2023-pin-releases",
+     "method": "search_snippet",
+     "note": "Nov 24, 12-4pm"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Sequoia Lodge",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2023-pin-releases",
+     "method": "search_snippet",
+     "note": "Sequoia Lodge"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/christmas-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas 2023 pins",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Santa Grogu, holiday Mickey and Minnie, Chip and Dale, Pluto, three BatB pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-02",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Dec 2"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/december-2023-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "December 2023 LE pins",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Stitch with Angel and Cinderella with Prince Charming"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Two LEs named"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-09",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Dec 9, booked via Lineberty"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/big-feet-december-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Big Feet pins",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Stitch, Donald, Sven, Lucky"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-16",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Dec 16"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2023/frozen-december-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Frozen pins December 2023",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Frozen pins with lanyard and charm"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-20",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Dec 20"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2020/january-2020-releases/merida-carousel",
+   "set_key": "dlp/2020/january-2020-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merida Carousel",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "Listed in Jan 2020 DLP roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "Merida carousel pin named"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "January 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/january-2020-releases/rapunzel-best-friends",
+   "set_key": "dlp/2020/january-2020-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel Best Friends",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "Listed in Jan 2020 DLP roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "Rapunzel Best Friends pin named"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2020-pins",
+     "method": "search_snippet",
+     "note": "January 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/valentines-2020/donald-st-valentin",
+   "set_key": "dlp/2020/valentines-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck St. Valentin",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Only Valentine pin of Feb 2020 shows Donald as St. Valentin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Donald Duck"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Edition size given"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Edition size 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-08",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Drops Saturday Feb 8"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Non-Sword in the Stone LEs released at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/february-2020-le/mulan-mushu-best-friends",
+   "set_key": "dlp/2020/february-2020-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mulan and Mushu World's Best Friends",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Second-week LE release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mulan",
+      "Mushu"
+     ],
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Mulan and Mushu"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Size 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Second week of February 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Other LEs at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/february-2020-le/cinderella-carousel",
+   "set_key": "dlp/2020/february-2020-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Carousel",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Second-week LE release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Cinderella"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Size 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Second week of February 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2020/02/february-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Other LEs at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/st-patricks-day-2020/chip",
+   "set_key": "dlp/2020/st-patricks-day-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Chip among the three St Patrick's pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Each 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03-14",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Dropping March 14"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/st-patricks-day-2020/dale",
+   "set_key": "dlp/2020/st-patricks-day-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Dale among the three St Patrick's pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Each 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03-14",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Dropping March 14"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/st-patricks-day-2020/clarice",
+   "set_key": "dlp/2020/st-patricks-day-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Clarice"
+     ],
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Clarice among the three St Patrick's pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Each 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03-14",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Dropping March 14"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/march-2020-le/maleficent-spring",
+   "set_key": "dlp/2020/march-2020-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Maleficent Spring",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "March LE release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Maleficent"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Among March LEs reserved via Lineberty"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03-21",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "March 21"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Non-St Patrick LEs at Pueblo"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/march-2020-le/pocahontas-carousel",
+   "set_key": "dlp/2020/march-2020-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pocahontas Carousel",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "March LE release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Pocahontas"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Among March LEs"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03-28",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "March 28"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Non-St Patrick LEs at Pueblo"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/marvel-event-2020/spider-man-iron-man",
+   "set_key": "dlp/2020/marvel-event-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man",
+      "Iron Man"
+     ],
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Spider-Man/Iron Man pin for Marvel event"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03",
+     "source_url": "https://wdwnt.com/2020/03/march-2020-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "March 2020 article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/halloween-2020/candy-corn-castle",
+   "set_key": "dlp/2020/halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween Sleeping Beauty Castle (candy corn)",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "OE Halloween collection with castle in candy corn"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Wednesday release in September 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/richard-orlinski-2020/simba",
+   "set_key": "dlp/2020/richard-orlinski-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Richard Orlinski Simba",
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "French DLP pin database entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "Simba"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "EL (limited edition)"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "400 ex."
+    },
+    {
+     "field": "original_price",
+     "value": 49.0,
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "49,00 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-10",
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "Release 10/10/2020"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://dlp.rp84.fr/pins/2455-richard-orlinski-simba/",
+     "method": "search_snippet",
+     "note": "Disney Gallery with Lineberty"
+    },
+    {
+     "field": "original_price",
+     "value": 49.0,
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "EUR 49 at Disney Gallery"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/richard-orlinski-2020/sorcerer-mickey",
+   "set_key": "dlp/2020/richard-orlinski-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Richard Orlinski Sorcerer Mickey",
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Second Orlinski pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-10",
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Oct 10, 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 49.0,
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "EUR 49 quoted for the pins"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.wearelostinthemagic.eu/disney-news/disney-pin-news-october-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/holiday-2020-delayed/stitch-christmas-2020",
+   "set_key": "dlp/2020/holiday-2020-delayed",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Stitch Christmas 2020 pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "700"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "March 13, 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/rainbow-2021/mickey",
+   "set_key": "dlp/2021/rainbow-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainbow 2021 Mickey",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Mickey & Castle LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-10",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "June 10, 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/rainbow-2021/castle",
+   "set_key": "dlp/2021/rainbow-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainbow 2021 Castle",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Mickey & Castle LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-10",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "June 10, 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/rainbow-2021/jumbo",
+   "set_key": "dlp/2021/rainbow-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainbow 2021 Jumbo",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Jumbo pin in collection"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Summary says LE 400; snippet garbled"
+    },
+    {
+     "field": "original_price",
+     "value": 50.0,
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Summary says EUR 50; snippet garbled"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/rainbow-2021/minnie-unicorn",
+   "set_key": "dlp/2021/rainbow-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Unicorn",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Unicorn pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Minnie unicorn"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/rainbow-2021-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/carousel-ariel",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carousel Ariel",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Named July 31 LE"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Characters named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "15.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-31",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "July 31, 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/carousel-belle",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carousel Belle",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Named July 31 LE"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Characters named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "15.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-31",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "July 31, 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/best-friends-simba-nala",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Best Friends Simba and Nala",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Named July 31 LE"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba",
+      "Nala"
+     ],
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Characters named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "15.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-31",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "July 31, 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/best-friends-cogsworth-lumiere",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Best Friends Cogsworth and Lumiere",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Named July 31 LE"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cogsworth",
+      "Lumiere"
+     ],
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Characters named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "15.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-31",
+     "source_url": "https://www.laughingplace.com/w/news/2021/06/28/disneyland-paris-shares-pin-releases-throughout-july/",
+     "method": "search_snippet",
+     "note": "July 31, 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/cruella-autumn",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cruella Halloween 2021",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Cruella enjoying start of autumn"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cruella De Vil"
+     ],
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Cruella"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "700"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "September 25"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Pueblo Trading Post with Lineberty"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/hades",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Hades silhouette pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 2"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/ursula",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Ursula silhouette pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 2"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/maleficent",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Maleficent silhouette pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 2"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/dr-facilier",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Dr. Facilier silhouette pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 2"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/evil-queen",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Evil Queen silhouette pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 2"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-portraits-2021/hades",
+   "set_key": "dlp/2021/villains-portraits-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Hades portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each glows in dark"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-23",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-portraits-2021/maleficent",
+   "set_key": "dlp/2021/villains-portraits-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Maleficent portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each glows in dark"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-23",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-portraits-2021/dr-facilier",
+   "set_key": "dlp/2021/villains-portraits-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Dr. Facilier portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each glows in dark"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-23",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-portraits-2021/ursula",
+   "set_key": "dlp/2021/villains-portraits-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Ursula portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each glows in dark"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-23",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-portraits-2021/evil-queen",
+   "set_key": "dlp/2021/villains-portraits-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Evil Queen portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each glows in dark"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-23",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Oct 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/chip-dale-clarice",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dale",
+      "Clarice",
+      "Chip"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Dale, Clarice, Chip PTT pins caption"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/maleficent-diablo",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent",
+      "Diablo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Maleficent & Diablo PTT pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/cast-refresher-doorknob",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doorknob"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Cast Member refresher pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/cast-refresher-baymax",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Baymax"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Cast Member refresher pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/december-2021-le/genie",
+   "set_key": "dlp/2021/december-2021-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+     "method": "search_snippet",
+     "note": "Genie LE pin Dec 2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+     "method": "search_snippet",
+     "note": "Listed as LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+     "method": "search_snippet",
+     "note": "December 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/december-2021-le/cruella",
+   "set_key": "dlp/2021/december-2021-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cruella De Vil"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+     "method": "search_snippet",
+     "note": "Cruella LE pin Dec 2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+     "method": "search_snippet",
+     "note": "Listed as LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+     "method": "search_snippet",
+     "note": "December 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/january-2022-world-of-disney-le/sleeping-beauty-castle",
+   "set_key": "dlp/2022/january-2022-world-of-disney-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Castle exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "700"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-15",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 15"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/silver-donald-pluto-2022/donald",
+   "set_key": "dlp/2022/silver-donald-pluto-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Silver exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-22",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 22"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/silver-donald-pluto-2022/pluto",
+   "set_key": "dlp/2022/silver-donald-pluto-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Silver exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-22",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 22"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/silver-medallions-january-2022/peter-pan",
+   "set_key": "dlp/2022/silver-medallions-january-2022",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Peter Pan's Flight",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Medallion attraction"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "150"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-26",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 26"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/silver-medallions-january-2022/phantom-manor",
+   "set_key": "dlp/2022/silver-medallions-january-2022",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Phantom Manor",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Medallion attraction"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "150"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-26",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 26"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/silver-medallions-january-2022/pirates-of-the-caribbean",
+   "set_key": "dlp/2022/silver-medallions-january-2022",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Medallion attraction"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "150"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-26",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Jan 26"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/medallions-march-2022/tower-of-terror",
+   "set_key": "dlp/2022/medallions-march-2022",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "The Twilight Zone Tower of Terror",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Medallion attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Limited to 150"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "150"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03-23",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "March 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/medallions-march-2022/star-tours",
+   "set_key": "dlp/2022/medallions-march-2022",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Star Tours",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Medallion attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Limited to 150"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "150"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03-23",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "March 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/medallions-march-2022/disneyland-railroad",
+   "set_key": "dlp/2022/medallions-march-2022",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Disneyland Railroad",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Medallion attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "Limited to 150"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "150"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03-23",
+     "source_url": "https://mickeyblog.com/2022/03/02/disneyland-paris-pin-releases-for-march-2022-celebrate-30th-anniversary-turning-red-and-more/",
+     "method": "search_snippet",
+     "note": "March 23"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/30th-anniversary-disney-store/mickey-mouse",
+   "set_key": "dlp/2022/30th-anniversary-disney-store",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Mickey Mouse 30th Anniversary Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-30th-anniversary-pin-466042533003.html",
+     "method": "search_snippet",
+     "note": "Official listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-30th-anniversary-pin-466042533003.html",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "product_code",
+     "value": "466042533003",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-30th-anniversary-pin-466042533003.html",
+     "method": "search_snippet",
+     "note": "Number in official listing URL"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-30th-anniversary-pin-466042533003.html",
+     "method": "search_snippet",
+     "note": "Sold online; limit 2 per guest; sold out"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/30th-anniversary-disney-store/castle",
+   "set_key": "dlp/2022/30th-anniversary-disney-store",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Castle 30th Anniversary Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-castle-30th-anniversary-pin-466042532921.html",
+     "method": "search_snippet",
+     "note": "Official listing title"
+    },
+    {
+     "field": "product_code",
+     "value": "466042532921",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-castle-30th-anniversary-pin-466042532921.html",
+     "method": "search_snippet",
+     "note": "Number in official listing URL"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-castle-30th-anniversary-pin-466042532921.html",
+     "method": "search_snippet",
+     "note": "Official EU store listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/silver-star-april-2022/daisy-duck",
+   "set_key": "dlp/2022/silver-star-april-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Silver star Daisy"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04-30",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "April 30"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/silver-star-april-2022/chip-and-dale",
+   "set_key": "dlp/2022/silver-star-april-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "Silver star Chip and Dale"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04-30",
+     "source_url": "https://mickeyblog.com/2022/04/01/check-out-the-spectacular-pin-releases-at-disneyland-paris-for-april/",
+     "method": "search_snippet",
+     "note": "April 30"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/avengers-campus-opening/spider-bot",
+   "set_key": "dlp/2022/avengers-campus-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spider-Bot pin",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "Listed among Avengers Campus pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "July 2022 opening merch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/avengers-campus-opening/captain-marvel",
+   "set_key": "dlp/2022/avengers-campus-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain Marvel pin",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "Listed among Avengers Campus pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "July 2022 opening merch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/avengers-campus-opening/avengers-campus-logo",
+   "set_key": "dlp/2022/avengers-campus-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers Campus logo pin",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "Listed among Avengers Campus pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://wdwnt.com/2022/07/every-piece-of-avengers-campus-merchandise-at-disneyland-paris-with-prices/",
+     "method": "search_snippet",
+     "note": "July 2022 opening merch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/january-2023-le/mickey-sleeping-beauty-castle-30th",
+   "set_key": "dlp/2023/january-2023-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey with Sleeping Beauty Castle 30th Anniversary",
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "LE for DLP 30th"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-07",
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "Week of Jan 7"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/january-2023-le/elsa-kite",
+   "set_key": "dlp/2023/january-2023-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Elsa with kite",
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elsa"
+     ],
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "Elsa"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-07",
+     "source_url": "https://www.mousesteps.com/2022/12/30/disneyland-paris-january-2023-pin-release-schedule-revealed/",
+     "method": "search_snippet",
+     "note": "Week of Jan 7"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/march-2023-le/chip-and-dale",
+   "set_key": "dlp/2023/march-2023-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.mousesteps.com/2023/03/01/disneyland-paris-pin-release-schedule-for-march-2023-revealed/",
+     "method": "search_snippet",
+     "note": "LE Chip & Dale"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2023/03/01/disneyland-paris-pin-release-schedule-for-march-2023-revealed/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-03-11",
+     "source_url": "https://www.mousesteps.com/2023/03/01/disneyland-paris-pin-release-schedule-for-march-2023-revealed/",
+     "method": "search_snippet",
+     "note": "March 11"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/march-2023-le/the-lion-king",
+   "set_key": "dlp/2023/march-2023-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Lion King LE",
+     "source_url": "https://www.mousesteps.com/2023/03/01/disneyland-paris-pin-release-schedule-for-march-2023-revealed/",
+     "method": "search_snippet",
+     "note": "LE Lion King pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2023/03/01/disneyland-paris-pin-release-schedule-for-march-2023-revealed/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-03-11",
+     "source_url": "https://www.mousesteps.com/2023/03/01/disneyland-paris-pin-release-schedule-for-march-2023-revealed/",
+     "method": "search_snippet",
+     "note": "March 11"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/june-2023-le/chip-and-dale-30th",
+   "set_key": "dlp/2023/june-2023-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "Chip and Dale 30th LE"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_location",
+     "value": "Fantasyland",
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "Fantasyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/june-2023-le/buzz-lightyear",
+   "set_key": "dlp/2023/june-2023-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Buzz Lightyear"
+     ],
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "Buzz LE"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_location",
+     "value": "Discoveryland",
+     "source_url": "https://www.mousesteps.com/2023/06/01/disneyland-paris-pin-trading-schedule-for-june-2023-released/",
+     "method": "search_snippet",
+     "note": "Discoveryland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/30th-anniversary-jumbo-august-2023/disney-d-light",
+   "set_key": "dlp/2023/30th-anniversary-jumbo-august-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jumbo 30th Anniversary Disney D-Light",
+     "source_url": "https://www.mousesteps.com/2023/08/01/disneyland-paris-pin-release-schedule-revealed-for-august-2023/",
+     "method": "search_snippet",
+     "note": "Jumbo LE"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.mousesteps.com/2023/08/01/disneyland-paris-pin-release-schedule-revealed-for-august-2023/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.mousesteps.com/2023/08/01/disneyland-paris-pin-release-schedule-revealed-for-august-2023/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08-05",
+     "source_url": "https://www.mousesteps.com/2023/08/01/disneyland-paris-pin-release-schedule-revealed-for-august-2023/",
+     "method": "search_snippet",
+     "note": "Aug 5"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/december-2023-le/stitch-angel",
+   "set_key": "dlp/2023/december-2023-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Angel"
+     ],
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "LE Stitch with Angel"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-09",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Dec 9"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2023/december-2023-le/cinderella-prince-charming",
+   "set_key": "dlp/2023/december-2023-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella",
+      "Prince Charming"
+     ],
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "LE Cinderella with Prince"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-09",
+     "source_url": "https://www.laughingplace.com/w/disney-parks/disneyland-paris-announces-pin-release-schedule-for-december-2023/",
+     "method": "search_snippet",
+     "note": "Dec 9"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2020/january-2020-releases/merida-carousel",
+   "field": "edition_size",
+   "searched": "2 searches",
+   "note": "No size/date for January 2020 pins in snippets"
+  },
+  {
+   "key": "dlp/2020/sword-in-the-stone-2020",
+   "field": "expected_pin_count",
+   "searched": "1 search",
+   "note": "Number of pins in collection not in snippet"
+  },
+  {
+   "key": "dlp/2020/august-2020-releases",
+   "field": "edition_size",
+   "searched": "1 search",
+   "note": "No sizes/prices for Aug 2020 in snippet"
+  },
+  {
+   "key": "dlp/2020/richard-orlinski-2020/sorcerer-mickey",
+   "field": "edition_size",
+   "searched": "1 search",
+   "note": "Size only seen for Simba"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "expected_pin_count",
+   "searched": "2 searches",
+   "note": "Number of Alice Holiday 2020 pins not given"
+  },
+  {
+   "key": "dlp/2021/delayed-seasonal-june-2021",
+   "field": "expected_pin_count",
+   "searched": "2 searches",
+   "note": "Individual designs not listed in snippets"
+  },
+  {
+   "key": "dlp/2021/july-2021-le/carousel-ariel",
+   "field": "edition_size",
+   "searched": "1 search",
+   "note": "Size not in snippet"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "edition_size",
+   "searched": "2 searches",
+   "note": "No size/price/date in snippets"
+  },
+  {
+   "key": "dlp/2022/captain-marvel-december-2022",
+   "field": "edition_size",
+   "searched": "2 searches",
+   "note": "No size for Captain Marvel pins"
+  },
+  {
+   "key": "dlp/2023/january-2023-le/elsa-kite",
+   "field": "edition_size",
+   "searched": "2 searches",
+   "note": "No sizes in snippets"
+  },
+  {
+   "key": "dlp/2023/pin-trading-time-july-2023",
+   "field": "expected_pin_count",
+   "searched": "2 searches",
+   "note": "Characters named but pin breakdown not given"
+  },
+  {
+   "key": "dlp/2023/december-2023-le",
+   "field": "edition_size",
+   "searched": "2 searches",
+   "note": "Sizes not in snippets"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "Hotel opened 2021-06-21; only reseller listings name hotel pins, no dated release"
+  },
+  {
+   "key": "dlp/2023/pin-trading-night",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "No 2023 Pin Trading Night release found"
+  },
+  {
+   "key": "dlp/2022/avengers-campus-opening",
+   "field": "edition_type",
+   "searched": "1 search",
+   "note": "No source labels AC opening pins as LE"
+  }
+ ],
+ "discovery_notes": "35 WebSearch calls, all claims from search snippets (no page reads). Mousesteps/MickeyBlog/Laughing Place entries are pre-release monthly schedules, so dates are planned. Conflicts: Nov 2021 PTT location Alamo Trading Post (DPB) vs Davy Crockett Ranch (MickeyBlog); Oct 2022 MyCastleClub page shows two conflicting schedules; Rainbow 2021 jumbo LE400/EUR50 from a garbled snippet. Leads not recorded as claims: WDWNT 30th anniv set of six golden medallions LE 1000 (pin status unclear); DPB says a Rainbow Flag jumbo LE 2500 first released at DLP before WDW Aug 2020 (DLP year unknown); reseller-only claims (30th castle LE 700, World of Frozen LE 1000, Orlinski Simba LE 500) ignored. Gaps: Apr-Jul 2020 (closure), early 2021 (closure), Feb/May/Jul/Sep 2022 detail, Oct-Nov 2023 LEs, Disney Hotel New York and Disneyland Hotel reopening pins, Pin Trading Nights. No instructional content seen."
+}

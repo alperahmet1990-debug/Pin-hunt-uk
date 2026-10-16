@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 1, started 2026-10-16 11:30 UTC: B001–B006 (2019)
 
 ## Totals (after the last round)
 Baseline audit, 16 Oct 2026, before any backfill:
@@ -14,12 +14,12 @@ Baseline audit, 16 Oct 2026, before any backfill:
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |
 |---|---|---|---|---|---|---|---|
-| B001 | 2019 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
-| B002 | 2019 | wdw-le | WDW LE/LR | todo | | | |
-| B003 | 2019 | dlr-oe | Disneyland California OE | todo | | | |
-| B004 | 2019 | dlr-le | Disneyland California LE/LR | todo | | | |
-| B005 | 2019 | dlp | Disneyland Paris (OE+LE) | todo | | | |
-| B006 | 2019 | ds | Disney Store UK/EU + US | todo | | | |
+| B001 | 2019 | wdw-oe | WDW open edition (incl. standalone) | in progress | 201_b001_wdw_oe_2019.json | | |
+| B002 | 2019 | wdw-le | WDW LE/LR | in progress | 202_b002_wdw_le_2019.json | | |
+| B003 | 2019 | dlr-oe | Disneyland California OE | in progress | 203_b003_dlr_oe_2019.json | | |
+| B004 | 2019 | dlr-le | Disneyland California LE/LR | in progress | 204_b004_dlr_le_2019.json | | |
+| B005 | 2019 | dlp | Disneyland Paris (OE+LE) | in progress | 205_b005_dlp_2019.json | | |
+| B006 | 2019 | ds | Disney Store UK/EU + US | in progress | 206_b006_ds_2019.json | | |
 | B007 | 2019 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
 | B008 | 2019 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | todo | | | |
 | B009 | 2018 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
@@ -64,3 +64,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 ## Round log
 | Round | Started (UTC) | Cells | New pins | Notes |
 |---|---|---|---|---|
+| 1 | 2026-10-16 11:30 | B001–B006 | | |

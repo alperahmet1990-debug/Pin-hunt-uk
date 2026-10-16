@@ -1,7 +1,9 @@
 """Historical backfill report (2015–2026): coverage, dedupe status and the consolidated workbook.
 
-Usage: LIVE_PINS=<live_pins.json outside the repo> python3 tools/backfill_report.py <engine staging_payload.json> <out.xlsx> [coverage.json]
-Live data is only ever aggregated here; the raw live export is never written into the repo.
+Usage: python3 tools/backfill_report.py <engine staging_payload.json> <out.xlsx> [coverage.json]
+Duplicate checks use the committed fingerprint baseline (tools/live_match.py). If it is missing or stale
+the report stops with exit code 3 (DUPLICATE CHECK PAUSED) instead of skipping duplicate checks.
+Live public counts come from the baseline's aggregate rows; no readable live data is written.
 """
 import json, os, re, sys, collections
 from urllib.parse import urlparse
@@ -41,18 +43,28 @@ def edition(e):
     if 'limited release' in e or e == 'lr': return 'LR'
     return 'Other / not stated'
 
-def year_of(pr):
+def year_of(pr, key=None):
     y = pr.get('Release year') or str(pr.get('Release date') or '')[:4]
     try: return int(y)
-    except Exception: return None
+    except Exception:
+        m = re.search(r'/(\d{4})/', (key or '') + '/')  # the research key carries the release year
+        return int(m.group(1)) if m else None
+
+def norm(s): return ' '.join(re.findall(r'[a-z0-9]+', str(s or '').lower()))
 
 def main(payload, out_xlsx, cov_json=None):
+    ok, msg = M.baseline_status()
+    if not ok:
+        print('DUPLICATE CHECK PAUSED: ' + msg); sys.exit(3)
+    print('live baseline: ' + msg)
     d = json.load(open(payload))
     pins = [c for c in d['candidates'] if c['entity_type'] == 'pin']
-    live = [p for p in M.live if p.get('v')]
+    live = [p for p in M.live if p['_k'] == 'public']
+    # Shared releases: the same pin recorded under two resorts counts once; later records are held.
+    seen_shared = {}
     rows = []
     for c in pins:
-        pr = c['proposed']; y = year_of(pr)
+        pr = c['proposed']; y = year_of(pr, c['research_key'])
         usable = [e for e in c['evidence'] if e.get('source_url') and not any(r in e['source_url'] for r in RULED)]
         pubs = {urlparse(e['source_url']).hostname.replace('www.', '') for e in usable}
         m = M.match(c)
@@ -63,11 +75,16 @@ def main(payload, out_xlsx, cov_json=None):
             status = 'held: conflict/duplicate'
         elif not usable: status = 'no usable source'
         else: status = 'new'
+        sig = (norm(pr.get('Pin name')), norm(pr.get('Characters')), str(pr.get('Release date') or y))
+        if status == 'new' and pr.get('Pin name'):
+            first = seen_shared.setdefault(sig, c['research_key'])
+            if first != c['research_key'] and first.split('/')[0] != c['research_key'].split('/')[0]:
+                status = 'held: same pin under another resort'
         rows.append(dict(key=c['research_key'], line=line_from_key(c['research_key']), year=y, ed=edition(pr.get('Edition type')),
                          standalone=('/oe-single/' in (c.get('set_research_key') or '')), status=status,
                          corroborated=len(pubs) >= 2, conf=c['record_confidence'], name=pr.get('Pin name'),
                          chars=pr.get('Characters'), set=c.get('set_research_key'), match=(m[1] if m else '')))
-    livec = collections.Counter((line_from_live(p['o']), p['y'], edition(p['e'])) for p in live)
+    livec = collections.Counter((p.get('line') or line_from_live(p.get('o')), p['y'], p.get('ed') or edition(p.get('e'))) for p in live)
     newc = collections.Counter((r['line'], r['year'], r['ed']) for r in rows if r['status'] == 'new')
     stat = collections.Counter(r['status'] for r in rows)
     wb = Workbook(); ws = wb.active; ws.title = 'Summary'
@@ -78,7 +95,7 @@ def main(payload, out_xlsx, cov_json=None):
         for r in data: ws.append(r)
     in_range = lambda y: y is not None and 2015 <= y <= 2026
     live_n = sum(v for (l, y, e), v in livec.items() if in_range(y))
-    new_n = sum(1 for r in rows if r['status'] == 'new' and (r['year'] is None or in_range(r['year'])))
+    new_n = sum(1 for r in rows if r['status'] == 'new' and in_range(r['year']))
     table(ws, ['Measure', 'Count', 'Note'], [
         ['Live public catalogue pins, 2015–2026', live_n, 'Collectible PinTrader (aggregated from the live export)'],
         ['Research candidates (all)', len(rows), 'every identified pin has its own record'],
@@ -87,6 +104,7 @@ def main(payload, out_xlsx, cov_json=None):
         ['Already live (matched a public pin)', stat['already live'], 'not added again'],
         ['Held: archived match', stat['held: archived match'], 'decision needed'],
         ['Held: conflict / duplicate', stat['held: conflict/duplicate'], 'conflicts preserved'],
+        ['Held: same pin under another resort', stat['held: same pin under another resort'], 'shared WDW/DLR releases counted once'],
         ['No usable source', stat['no usable source'], 'lead-only evidence'],
         ['Total unique pins identified (live + new)', live_n + new_n, 'excludes held and duplicates'],
     ])
@@ -122,7 +140,7 @@ def main(payload, out_xlsx, cov_json=None):
     if cov_json: json.dump(cov, open(cov_json, 'w'), indent=0)
     print(json.dumps({'live_2015_2026': live_n, 'candidates': len(rows), 'new': new_n,
                       'corroborated_new': sum(1 for r in rows if r['status'] == 'new' and r['corroborated']),
-                      'already_live': stat['already live'], 'held': stat['held: archived match'] + stat['held: conflict/duplicate'],
+                      'already_live': stat['already live'], 'held': stat['held: archived match'] + stat['held: conflict/duplicate'] + stat['held: same pin under another resort'],
                       'no_usable_source': stat['no usable source']}))
 
 if __name__ == '__main__':

@@ -1,0 +1,2891 @@
+{
+ "packet_id": "backfill-b005-dlp-2019",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b005",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+   "title": "Disneyland Paris January 2019 Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+   "title": "May 2019 Disneyland Paris Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+   "title": "October 2019 Disneyland Paris Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+   "title": "Stitch Cast Member Disneyland Paris 2019 Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+   "title": "Ariel Cast Member Disneyland Paris 2019 Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+   "title": "Pluto Tower of Terror Cast Member DLP 2019 Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+   "title": "February 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+   "title": "March 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/07/july-2019-pin-releases-for-disneyland-paris/",
+   "title": "July 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+   "title": "August 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+   "title": "October 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+   "title": "November 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-january-2019-pins/",
+   "title": "Disneyland Paris January 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2019-pins",
+   "title": "Disneyland Paris March 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-april-2019-pins/",
+   "title": "Disneyland Paris April 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-may-2019-pins",
+   "title": "Disneyland Paris May 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+   "title": "Surprise UP Pin Set at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-august-2019-pins",
+   "title": "Disneyland Paris August 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+   "title": "Disneyland Paris September 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dlpguide.com/news/2019/09/september-2019-pin-releases-at-disneyland-paris/",
+   "title": "September 2019 pin releases at Disneyland Paris",
+   "publisher": "DLP Guide",
+   "published_date": "2019-09-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2019-pins",
+   "title": "Disneyland Paris October 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-time-2019-disneyland-paris-event-pin-releases/",
+   "title": "Christmas Time 2019 Disneyland Paris Event Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+   "title": "Surprise Winnie the Pooh Christmas Time Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-december-2019-pins/",
+   "title": "Disneyland Paris December 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-lion-king-jumbo-pin-disney-store-uk",
+   "title": "The Lion King Jumbo Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-the-lion-king-limited-edition-pin-207821018098.html",
+   "title": "Disneyland Paris The Lion King Limited Edition Pin",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pinsbreaktheinternet.com/products/jerry-jumbeaux-jr-elephant-zootopia-pin-trading-night-ptn-dlrp-paris-disney-pin-c07",
+   "title": "Jerry Jumbeaux Jr Elephant Zootopia Pin Trading Night PTN DLRP Paris",
+   "publisher": "Pins Break The Internet (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/2019-pin-releases.67216/page-98",
+   "title": "2019 pin releases (forum thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://news.disneylandparis.com/en/marvel-season-of-super-heroes-lands-at-disneyland-paris-in-2019-with-captain-marvel-groot-for-an-unforgettable-adventure-from-23-march-to-16-june-2019/",
+   "title": "Marvel Season of Super Heroes lands at Disneyland Paris in 2019",
+   "publisher": "Disneyland Paris News",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2019/ptn-january-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris January 2019 Pin Trading Night (Cinderella)",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Cinderella-themed PTN set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "set of three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "each LE 400"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "400 of each pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-25",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "released at Jan 25 2019 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel Sequoia Lodge",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "PTN held at Sequoia Lodge"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/cast-member-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 2019 Cast Member pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "titled as DLP 2019 Cast Member pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "LE 3,019 CM exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/valentines-up",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Up Valentine's limited edition pins",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Feb 2019 Valentine release"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-09",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "set to release Feb 9"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/february-2019-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris February 2019 limited edition releases",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "second week LE releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/ap-party-march-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Annual Passholder Party March 2019 pins",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Pirates and Princesses LE pin each"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "one Pirates and one Princesses pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-22",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "AP party March 22"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/princesses-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Princesses Day 2019 limited edition pins",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "numerous LE Princess pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-23",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Princesses Day March 23"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE princess pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/ptn-may-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "May 2019 Disneyland Paris Pin Trading Night (Zootopia)",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "Zootopia set"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "each LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "May 31 2019 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel Sequoia Lodge",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "PTN at Sequoia Lodge"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/surprise-up-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Surprise UP Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "surprise DLP release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "five pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "June 9 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/lion-king-jungle-festival-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lion King & Jungle Festival 2019 pin releases",
+     "source_url": "https://wdwnt.com/2019/07/july-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "multiple LE and some OE sets"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07",
+     "source_url": "https://wdwnt.com/2019/07/july-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "July 2019 releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/official-pin-trader-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Official Pin Trader set (with mug and shirt)",
+     "source_url": "https://wdwnt.com/2019/07/july-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "bundle offering in July lineup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07",
+     "source_url": "https://wdwnt.com/2019/07/july-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "July 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/lion-king-jumbo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Lion King Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-jumbo-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "single jumbo release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/cherry-blossom-girl",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cherry Blossom Girl collection",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE collection starting Aug 10"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-10",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "first weekly LE release Aug 10"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE collection"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Aug 10 releases at Disney Gallery"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/medallion-august-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Medallion pins August 2019",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "three medallion-style LE pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "three medallions"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-21",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Wed Aug 21"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/oe-set/joyeux-noel-2019-princess",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Joyeux Noel 2019 Princess Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-august-2019-pins",
+     "method": "search_snippet",
+     "note": "listed in Aug 2019 DLP roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-august-2019-pins",
+     "method": "search_snippet",
+     "note": "August 2019 roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/peter-pan-le-400-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Peter Pan limited edition 400 pin series",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "Sep 2019 roundup"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "Sep 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/medal-september-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Medal pins September 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "Pascal, Alice, Thumper medal pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/villains-annual-pass-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Villains Annual Pass 2019 pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "listed in Sep roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "Sep 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/run-weekend-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Run Weekend 2019 pins",
+     "source_url": "https://www.dlpguide.com/news/2019/09/september-2019-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "13 Run Weekend pins plus lanyard"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 13,
+     "source_url": "https://www.dlpguide.com/news/2019/09/september-2019-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "thirteen pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.dlpguide.com/news/2019/09/september-2019-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Sep 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Halloween 2019 pins",
+     "source_url": "https://www.dlpguide.com/news/2019/09/september-2019-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "full set of new Halloween pins from early Sep"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.dlpguide.com/news/2019/09/september-2019-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "from first Sep weekend"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/lilo-stitch-halloween-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lilo & Stitch Halloween limited edition pins",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE Halloween Lilo & Stitch"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-19",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Oct 19"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2019-pins",
+     "method": "search_snippet",
+     "note": "DPB Oct list"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "sold at Pueblo Trading Post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/stitch-october-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch limited edition pin October 2019",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Stitch LE Oct 26"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/medallion-october-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Medallion pins October 2019",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "three LE medallions"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "three medallions"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-23",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Wed Oct 23"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/rapunzel-best-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rapunzel Best Friends",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Oct 12 release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/ptn-october-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "October 2019 Disneyland Paris Pin Trading Night (Fantasia)",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Fantasia set plus jumbo Maleficent"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-25",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Oct 25 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel Santa Fe",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "PTN at Hotel Santa Fe"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/november-2019-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris November 2019 limited edition releases",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "three LE pins, all LE 700"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Mulan, Buzz & Woody, Stitch"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 700 each"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/christmas-time-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas Time 2019 Pin Trading event",
+     "source_url": "https://disneypinsblog.com/christmas-time-2019-disneyland-paris-event-pin-releases/",
+     "method": "search_snippet",
+     "note": "event pin releases"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/christmas-time-2019-disneyland-paris-event-pin-releases/",
+     "method": "search_snippet",
+     "note": "all LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-09",
+     "source_url": "https://disneypinsblog.com/christmas-time-2019-disneyland-paris-event-pin-releases/",
+     "method": "search_snippet",
+     "note": "Nov 9 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-09",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Sat Nov 9"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Newport Bay Club Convention Center",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "event venue"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2019/ptn-january-2019/gus",
+   "set_key": "dlp/2019/ptn-january-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gus"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Gus named as character in the set"
+    },
+    {
+     "field": "main_character",
+     "value": "Gus",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "one character per pin in 3-pin set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-25",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-january-2019/lucifer",
+   "set_key": "dlp/2019/ptn-january-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lucifer"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Lucifer named as character in the set"
+    },
+    {
+     "field": "main_character",
+     "value": "Lucifer",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "one character per pin in 3-pin set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-25",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-january-2019/jaq",
+   "set_key": "dlp/2019/ptn-january-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jaq"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Jaq named as character in the set"
+    },
+    {
+     "field": "main_character",
+     "value": "Jaq",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "one character per pin in 3-pin set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-25",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-january-2019-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/cast-member-2019/stitch",
+   "set_key": "dlp/2019/cast-member-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "Stitch CM pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "pin-on-pin design"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-30",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3019,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "limited edition of 3019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/cast-member-2019/ariel",
+   "set_key": "dlp/2019/cast-member-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "Ariel CM pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "pin-on-pin design"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3019,
+     "source_url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "limited edition of 3019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/ariel-cast-member-disneyland-paris-2019-pin",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/cast-member-2019/pluto-tower-of-terror",
+   "set_key": "dlp/2019/cast-member-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+     "method": "search_snippet",
+     "note": "Pluto CM pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Tower of Terror",
+     "source_url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+     "method": "search_snippet",
+     "note": "Tower of Terror theme"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-10",
+     "source_url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3019,
+     "source_url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 3019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/pluto-tower-of-terror-cast-member-dlp-2019-pin/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/valentines-up/carl-and-ellie",
+   "set_key": "dlp/2019/valentines-up",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Carl",
+      "Ellie"
+     ],
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE Valentine pins featuring Carl and Ellie from Up"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-09",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/february-2019-le/peter-pans-flight",
+   "set_key": "dlp/2019/february-2019-le",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Peter Pan's Flight",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Peter Pan's Flight pin, second week"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/february-2019-le/jaq-and-gus-best-friends",
+   "set_key": "dlp/2019/february-2019-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jaq",
+      "Gus"
+     ],
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Pin World's Best Friends Jaq & Gus LE"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/february-2019-le/stitch",
+   "set_key": "dlp/2019/february-2019-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Stitch LE pin in February lineup"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ap-party-march-2019/pirates",
+   "set_key": "dlp/2019/ap-party-march-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates (AP Party)",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Pirates-specific LE pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-22",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ap-party-march-2019/princesses",
+   "set_key": "dlp/2019/ap-party-march-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Princesses (AP Party)",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Princesses-specific LE pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-22",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/03/march-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-may-2019/jerry-jumbeaux-jr",
+   "set_key": "dlp/2019/ptn-may-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jerry Jumbeaux Jr."
+     ],
+     "source_url": "https://pinsbreaktheinternet.com/products/jerry-jumbeaux-jr-elephant-zootopia-pin-trading-night-ptn-dlrp-paris-disney-pin-c07",
+     "method": "search_snippet",
+     "note": "reseller listing: May 31 2019 PTN Zootopia pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://pinsbreaktheinternet.com/products/jerry-jumbeaux-jr-elephant-zootopia-pin-trading-night-ptn-dlrp-paris-disney-pin-c07",
+     "method": "search_snippet",
+     "note": "reseller: edition 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-31",
+     "source_url": "https://pinsbreaktheinternet.com/products/jerry-jumbeaux-jr-elephant-zootopia-pin-trading-night-ptn-dlrp-paris-disney-pin-c07",
+     "method": "search_snippet",
+     "note": "reseller: May 31 2019 PTN"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-may-2019/simba-jumbo",
+   "set_key": "dlp/2019/ptn-may-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "surprise jumbo Simba pin"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "jumbo pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/surprise-up-set/adventure-book",
+   "set_key": "dlp/2019/surprise-up-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Adventure Book",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "named in set contents"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "limited edition of 425"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/surprise-up-set/carl",
+   "set_key": "dlp/2019/surprise-up-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carl",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "named in set contents"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carl"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "character pin in set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "limited edition of 425"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/surprise-up-set/paradise-falls-money-jar",
+   "set_key": "dlp/2019/surprise-up-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Paradise Falls money jar",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "named in set contents"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "limited edition of 425"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/surprise-up-set/ellie",
+   "set_key": "dlp/2019/surprise-up-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ellie",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "named in set contents"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ellie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "character pin in set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "limited edition of 425"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/surprise-up-set/compass",
+   "set_key": "dlp/2019/surprise-up-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Compass",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "named in set contents"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "limited edition of 425"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-up-pin-set-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/lion-king-jumbo/hakuna-matata",
+   "set_key": "dlp/2019/lion-king-jumbo",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Simba",
+      "Timon",
+      "Pumbaa"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-jumbo-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Simba, Timon, Pumbaa Hakuna Matata"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-jumbo-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 89.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-jumbo-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Disney Store UK retail £89"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-jumbo-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "UK pricing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris; shopDisney UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-jumbo-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "sold via DLP and shopDisney UK"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/cherry-blossom-girl/dinah",
+   "set_key": "dlp/2019/cherry-blossom-girl",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dinah"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/2019-pin-releases.67216/page-98",
+     "method": "search_snippet",
+     "note": "forum user mentions Cherry Blossom Girl Dinah pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medallion-august-2019/lumiere",
+   "set_key": "dlp/2019/medallion-august-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lumiere"
+     ],
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion-style pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-21",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medallion-august-2019/minnie-mouse",
+   "set_key": "dlp/2019/medallion-august-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion-style pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-21",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medallion-august-2019/tinker-bell",
+   "set_key": "dlp/2019/medallion-august-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion-style pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-21",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medal-september-2019/pascal",
+   "set_key": "dlp/2019/medal-september-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pascal"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "medal pin character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medal",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "medal-style pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "Sep 2019 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medal-september-2019/alice",
+   "set_key": "dlp/2019/medal-september-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "medal pin character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medal",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "medal-style pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "Sep 2019 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medal-september-2019/thumper",
+   "set_key": "dlp/2019/medal-september-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thumper"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "medal pin character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medal",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "medal-style pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "Sep 2019 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/stitch-october-2019/stitch",
+   "set_key": "dlp/2019/stitch-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Stitch LE pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-26",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medallion-october-2019/figaro",
+   "set_key": "dlp/2019/medallion-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion-style"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-23",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medallion-october-2019/pinocchio",
+   "set_key": "dlp/2019/medallion-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion-style"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-23",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/medallion-october-2019/sven",
+   "set_key": "dlp/2019/medallion-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sven"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion character"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "medallion-style"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-23",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/rapunzel-best-friends/rapunzel",
+   "set_key": "dlp/2019/rapunzel-best-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Best Friends Rapunzel release Oct 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-12",
+     "source_url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Oct 12"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-october-2019/hippo",
+   "set_key": "dlp/2019/ptn-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hippo"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Fantasia character in PTN set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-25",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-october-2019/chernabog",
+   "set_key": "dlp/2019/ptn-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chernabog"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Fantasia character in PTN set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-25",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-october-2019/ostrich",
+   "set_key": "dlp/2019/ptn-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ostrich"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Fantasia character in PTN set"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-25",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-october-2019/maleficent-jumbo",
+   "set_key": "dlp/2019/ptn-october-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "jumbo Maleficent pin"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "jumbo"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-25",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/october-2019-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/november-2019-le/mulan-carrousel",
+   "set_key": "dlp/2019/november-2019-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Mulan carrousel pin"
+    },
+    {
+     "field": "visual_form",
+     "value": "carrousel",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "carrousel design"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "limited edition of 700"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/november-2019-le/buzz-and-woody-best-friends",
+   "set_key": "dlp/2019/november-2019-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Buzz Lightyear",
+      "Woody"
+     ],
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Buzz and Woody Best Friends pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "limited edition of 700"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/november-2019-le/stitch",
+   "set_key": "dlp/2019/november-2019-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Stitch LE pin Nov 30"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-30",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "limited edition of 700"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/christmas-time-2019/winnie-the-pooh-jumbo",
+   "set_key": "dlp/2019/christmas-time-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+     "method": "search_snippet",
+     "note": "surprise Christmas Time jumbo Pooh"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+     "method": "search_snippet",
+     "note": "jumbo"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+     "method": "search_snippet",
+     "note": "dated 2019 in source"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-14",
+     "source_url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 425"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/surprise-winnie-the-pooh-christmas-time-pin/",
+     "method": "search_snippet",
+     "note": "Disneyland Paris release"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2019/cast-member-2019/stitch",
+   "field": "original_price",
+   "searched": "DPB CM posts; 2 queries",
+   "note": "no price in snippets"
+  },
+  {
+   "key": "dlp/2019/cast-member-2019/ariel",
+   "field": "original_price",
+   "searched": "DPB CM posts; 2 queries",
+   "note": "no price in snippets"
+  },
+  {
+   "key": "dlp/2019/cast-member-2019/pluto-tower-of-terror",
+   "field": "original_price",
+   "searched": "DPB CM posts; 2 queries",
+   "note": "no price in snippets"
+  },
+  {
+   "key": "dlp/2019/valentines-up/carl-and-ellie",
+   "field": "pin_structure",
+   "searched": "WDWNT Feb 2019; 1 query",
+   "note": "unclear whether Carl and Ellie share one pin or are separate pins"
+  },
+  {
+   "key": "dlp/2019/princesses-day-2019",
+   "field": "pins",
+   "searched": "WDWNT, DPB March 2019; 2 queries",
+   "note": "individual princess pins not named in snippets"
+  },
+  {
+   "key": "dlp/2019/ptn-may-2019",
+   "field": "expected_pin_count",
+   "searched": "DPB May PTN; 2 queries",
+   "note": "number of Zootopia pins not stated in snippets"
+  },
+  {
+   "key": "dlp/2019/ptn-may-2019/simba-jumbo",
+   "field": "edition_size",
+   "searched": "DPB May PTN; 2 queries",
+   "note": "snippet gives 400 for Zootopia pins only"
+  },
+  {
+   "key": "dlp/2019/lion-king-jungle-festival-2019",
+   "field": "pins",
+   "searched": "WDWNT July 2019; 3 queries",
+   "note": "individual festival pins not named in snippets"
+  },
+  {
+   "key": "dlp/2019/official-pin-trader-set",
+   "field": "expected_pin_count",
+   "searched": "WDWNT July 2019; 1 query",
+   "note": "contents not described in snippet"
+  },
+  {
+   "key": "dlp/2019/lion-king-jumbo/hakuna-matata",
+   "field": "release_date",
+   "searched": "DPB, Disney Store EU; 2 queries",
+   "note": "year 2019 not explicitly confirmed in snippet; may be same as Disney Store EU 'Les Tresors' LE 400 Lion King pin"
+  },
+  {
+   "key": "dlp/2019/cherry-blossom-girl",
+   "field": "expected_pin_count",
+   "searched": "WDWNT, DPB, forum; 1 query",
+   "note": "set size and edition size not stated"
+  },
+  {
+   "key": "dlp/2019/medallion-august-2019/lumiere",
+   "field": "edition_size",
+   "searched": "WDWNT Aug 2019; 1 query",
+   "note": "described as extremely limited, no number"
+  },
+  {
+   "key": "dlp/2019/medallion-august-2019/minnie-mouse",
+   "field": "edition_size",
+   "searched": "WDWNT Aug 2019; 1 query",
+   "note": "described as extremely limited, no number"
+  },
+  {
+   "key": "dlp/2019/medallion-august-2019/tinker-bell",
+   "field": "edition_size",
+   "searched": "WDWNT Aug 2019; 1 query",
+   "note": "described as extremely limited, no number"
+  },
+  {
+   "key": "dlp/2019/oe-set/joyeux-noel-2019-princess",
+   "field": "expected_pin_count",
+   "searched": "DPB Aug 2019; 2 queries",
+   "note": "contents and edition type not in snippet"
+  },
+  {
+   "key": "dlp/2019/peter-pan-le-400-series",
+   "field": "pins",
+   "searched": "DPB, DLP Guide; 2 queries",
+   "note": "dlpguide calls them 'Peter Pan women' pins but individual pins not named"
+  },
+  {
+   "key": "dlp/2019/villains-annual-pass-2019",
+   "field": "pins",
+   "searched": "DPB, DLP Guide; 2 queries",
+   "note": "individual AP villain pins not named"
+  },
+  {
+   "key": "dlp/2019/run-weekend-2019",
+   "field": "pins",
+   "searched": "DLP Guide, DPB; 2 queries",
+   "note": "13 designs not named"
+  },
+  {
+   "key": "dlp/2019/halloween-2019",
+   "field": "pins",
+   "searched": "DLP Guide, DPB; 2 queries",
+   "note": "Halloween pins not named individually"
+  },
+  {
+   "key": "dlp/2019/lilo-stitch-halloween-2019",
+   "field": "pins",
+   "searched": "WDWNT, DPB Oct 2019; 2 queries",
+   "note": "individual pins and edition size not stated"
+  },
+  {
+   "key": "dlp/2019/ptn-october-2019/maleficent-jumbo",
+   "field": "edition_size",
+   "searched": "DPB Oct PTN; 2 queries",
+   "note": "400 stated for Fantasia pins; jumbo size unclear"
+  },
+  {
+   "key": "dlp/2019/ptn-october-2019/maleficent-jumbo",
+   "field": "original_price",
+   "searched": "DPB, Collection Hero; 1 query",
+   "note": "no retail price found"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019",
+   "field": "pins",
+   "searched": "DPB, WDWNT; 2 queries",
+   "note": "event pins not individually named in snippets"
+  },
+  {
+   "key": "dlp/2019/marvel-season-of-super-heroes",
+   "field": "pins",
+   "searched": "DLP News, DPB March 2019; 1 query",
+   "note": "no DLP 2019 Marvel season pin named in allowed sources (one marketplace listing ignored)"
+  },
+  {
+   "key": "dlp/2019/hotel-pins",
+   "field": "pins",
+   "searched": "hotel pin queries; 1 query",
+   "note": "no 2019-dated DLP hotel pins found"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019",
+   "field": "pins",
+   "searched": "WDWNT Feb, DPB; 2 queries",
+   "note": "PTN Feb 22 noted, no pins named"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019",
+   "field": "pins",
+   "searched": "DPB archive; 1 query",
+   "note": "April 26 PTN post title only"
+  },
+  {
+   "key": "dlp/2019/ptn-august-2019",
+   "field": "pins",
+   "searched": "WDWNT Aug; 1 query",
+   "note": "PTN Aug 30 Davy Crockett Ranch, no pins named"
+  },
+  {
+   "key": "dlp/2019/monthly-oe",
+   "field": "pins",
+   "searched": "DPB monthly roundups Jan-Dec; ~10 queries",
+   "note": "roundups list themes only (2019 logo, Wreck-It Ralph, Star Wars, Aladdin, Easter, Toy Story, Frozen 2, Rise of Skywalker, Beauty and the Beast) without pin names"
+  }
+ ],
+ "discovery_notes": "All claims from search snippets only. DLP 2019 LE pins reserved via Lineberty app. Monthly DPB roundups (Jan-Dec 2019) list themes but no pin names; full WDWNT/DPB pages would yield many more pins. pinsbreaktheinternet and disneypinforum claims are weak leads (reseller/forum). Lion King jumbo pin year not confirmed. Captain Marvel OE $9.99 pin was DLR/WDW, not recorded."
+}

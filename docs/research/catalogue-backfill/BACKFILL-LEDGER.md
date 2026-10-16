@@ -6,10 +6,20 @@ _Maintained by the hourly research routine (scheduled task "PinHunt historical b
 Round 1, started 2026-10-16 11:30 UTC: B001–B006 (2019)
 
 ## Totals (after the last round)
-Baseline audit, 16 Oct 2026, before any backfill:
-- Live public pins 2015–2026: 1,798 (Collectible PinTrader; aggregated, raw export kept outside the repo)
-- Research candidates: 2,113. Genuinely new: 1,906. Corroborated new: 681. Held: 198. Already live: 0.
-- **Total unique pins identified 2015–2026: 3,704**
+Reconciled baseline, 16 Oct 2026, before any backfill round was processed. Live data comes from the committed fingerprint baseline (`BASELINE.md`).
+
+- **Live public pins with a 2015–2026 release year: 1,798.** All live rows: 15,978, made up of:
+  - 2,978 public: 1,798 from 2015–2026, 1,146 before 2015, 34 with no year;
+  - 11,721 archived synthetic seed rows;
+  - 1,097 archived legacy imports;
+  - 182 archived trusted-test pins.
+- **Research pin records: 2,113.** Set records are not counted.
+  - Genuinely new 2015–2026: **1,894**, of which 678 are corroborated by 2+ independent publishers.
+  - Held: 207 (archived-record matches, conflicts, cross-set duplicates, same pin under two resorts).
+  - No usable source: 9. Already live: 0. Outside 2015–2026: 3.
+- **Total unique individual pins identified 2015–2026: 3,692** (1,798 + 1,894).
+  - Excludes set records, missing set slots, held records and duplicates.
+  - Residual risk: about 10 near-identical rows inside the live catalogue itself, and research pins whose duplicate isn't detectable from names alone.
 
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |

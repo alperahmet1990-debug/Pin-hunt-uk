@@ -39,7 +39,15 @@ interface CollectionContextValue {
   recentlyViewed: string[];
   markViewed: (pinId: string) => void;
   estimatedValue: number;
+  /**
+   * Called with pins the collector just added to their collection (moved to
+   * owned or For Trade by setStatus/setStatuses), e.g. to spot a completed
+   * set (#136). Not called for sync/hydration. Returns an unsubscribe.
+   */
+  onPinsAdded: (listener: (pinIds: string[]) => void) => () => void;
 }
+
+const isHeld = (status?: CollectionStatus) => status === 'owned' || status === 'for_trade';
 
 const CollectionContext = createContext<CollectionContextValue | null>(null);
 
@@ -297,8 +305,19 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     };
   }, [loaded, user?.id, flushPending, pushQueue]);
 
+  const addedListenersRef = useRef(new Set<(pinIds: string[]) => void>());
+  const onPinsAdded = useCallback((listener: (pinIds: string[]) => void) => {
+    addedListenersRef.current.add(listener);
+    return () => { addedListenersRef.current.delete(listener); };
+  }, []);
+  const emitAdded = useCallback((pinIds: string[]) => {
+    if (pinIds.length === 0) return;
+    for (const listener of addedListenersRef.current) listener(pinIds);
+  }, []);
+
   const setStatus = useCallback((pinId: string, status: CollectionStatus) => {
     const existing = collection[pinId];
+    const newlyHeld = isHeld(status) && !isHeld(latestCollectionRef.current[pinId]?.status);
     const quantity = status === 'wanted' || status === 'none'
       ? 1
       : existing?.quantity ?? 1;
@@ -333,7 +352,8 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
       latestCollectionRef.current = next;
       return next;
     });
-  }, [collection, userId, pushEntry, pushQueue]);
+    if (newlyHeld) emitAdded([pinId]);
+  }, [collection, userId, pushEntry, pushQueue, emitAdded]);
 
   const setStatuses = useCallback((pinIds: string[], status: CollectionStatus) => {
     const ids = [...new Set(pinIds)];
@@ -341,6 +361,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     const prev = latestCollectionRef.current;
     const next: CollectionMap = { ...prev };
     const changes: Array<[string, PendingPush]> = [];
+    const newlyHeld = isHeld(status) ? ids.filter(id => !isHeld(prev[id]?.status)) : [];
     for (const pinId of ids) {
       const existing = prev[pinId];
       const quantity = status === 'wanted' || status === 'none' ? 1 : existing?.quantity ?? 1;
@@ -367,7 +388,8 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     latestCollectionRef.current = next;
     setCollection(next);
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-  }, [userId, pushQueue]);
+    emitAdded(newlyHeld);
+  }, [userId, pushQueue, emitAdded]);
 
   const adjustQuantity = useCallback((pinId: string, delta: number) => {
     const existing = latestCollectionRef.current[pinId];
@@ -488,6 +510,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
         recentlyViewed,
         markViewed,
         estimatedValue,
+        onPinsAdded,
       }}
     >
       {children}

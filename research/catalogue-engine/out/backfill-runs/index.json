@@ -1,0 +1,59 @@
+{
+ "source": "staging_payload.json",
+ "git_commit": "3e91bc8a3bd8",
+ "generated": "2026-10-16",
+ "runs": [
+  {
+   "file": "run_01_wdw.json",
+   "pins": 1164,
+   "sets": 736,
+   "evidence": 8491,
+   "bytes": 3563907,
+   "lines": [
+    "wdw"
+   ]
+  },
+  {
+   "file": "run_02_wdw-to-dlp.json",
+   "pins": 1140,
+   "sets": 760,
+   "evidence": 8733,
+   "bytes": 3686301,
+   "lines": [
+    "wdw",
+    "dlr",
+    "dlp"
+   ]
+  },
+  {
+   "file": "run_03_dlp-to-lic.json",
+   "pins": 1230,
+   "sets": 667,
+   "evidence": 8909,
+   "bytes": 3993788,
+   "lines": [
+    "dlp",
+    "dsuk",
+    "dsus",
+    "shdr",
+    "hkdl",
+    "tdr",
+    "lic"
+   ]
+  },
+  {
+   "file": "run_04_lic-to-windows-of-attraction.json",
+   "pins": 919,
+   "sets": 328,
+   "evidence": 9552,
+   "bytes": 3858893,
+   "lines": [
+    "lic",
+    "animated-cuties",
+    "brush-of-magic",
+    "disney-classics-london",
+    "windows-of-attraction"
+   ]
+  }
+ ]
+}

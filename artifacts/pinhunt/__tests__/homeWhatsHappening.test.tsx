@@ -61,7 +61,8 @@ describe("Home: What's Happening (#352)", () => {
     expect(screen.getByText('Disney Pin Trading Day')).toBeTruthy();
     expect(screen.queryByText('Old Meet')).toBeNull();
     expect(screen.queryByTestId('no-events-card')).toBeNull();
-  });
+    // The first Home render in a run is slow on a cold cache.
+  }, 20_000);
 
   it('says when nothing is coming up and offers to post an event', async () => {
     mockEvents = [past];

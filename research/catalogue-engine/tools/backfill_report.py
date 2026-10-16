@@ -25,9 +25,11 @@ def line_from_key(k):
             'brush-of-magic': 'Disney Store', 'animated-cuties': 'Disney Store', 'disney-classics-london': 'Disney Store'}.get(p, 'Other')
 
 MAKERS = [('loungefly', 'Loungefly'), ('funko', 'Funko'), ('artland', 'ArtLand'),
-          ('her-universe', 'Her Universe'), ('figpin', 'FiGPiN')]
+          ('her-universe', 'Her Universe'), ('our-universe', 'Our Universe'), ('figpin', 'FiGPiN'), ('monogram', 'Monogram'),
+          ('uncas', 'Uncas International'), ('mondo', 'Mondo'), ('hallmark', 'Hallmark')]
 RETAILERS = [('boxlunch', 'BoxLunch'), ('hot-topic', 'Hot Topic'), ('pink-a-la-mode', 'Pink a la Mode'), ('jcpenney', 'JCPenney'),
-             ('dpbstore', 'DPB Store'), ('dpb-store', 'DPB Store')]
+             ('dpbstore', 'DPB Store'), ('dpb-store', 'DPB Store'), ('shopdisney', 'Disney Parks / shopDisney'),
+             ('disney-parks', 'Disney Parks / shopDisney'), ('disney-store', 'Disney Store')]
 
 def _pick(text, vocab):
     t = '-' + re.sub(r'[^a-z0-9]+', '-', str(text or '').lower()).strip('-') + '-'

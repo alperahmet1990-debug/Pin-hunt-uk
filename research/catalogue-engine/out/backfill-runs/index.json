@@ -1,6 +1,6 @@
 {
  "source": "staging_payload.json",
- "git_commit": "6d930baf0a7b",
+ "git_commit": "878f65f27e8e",
  "generated": "2026-10-16",
  "runs": [
   {
@@ -43,21 +43,22 @@
   },
   {
    "file": "run_04_lic.json",
-   "pins": 1087,
-   "sets": 529,
-   "evidence": 10583,
-   "bytes": 4359765,
+   "pins": 1127,
+   "sets": 608,
+   "evidence": 12160,
+   "bytes": 4821699,
    "lines": [
     "lic"
    ]
   },
   {
-   "file": "run_05_animated-cuties-to-windows-of-attraction.json",
-   "pins": 77,
-   "sets": 9,
-   "evidence": 2375,
-   "bytes": 851036,
+   "file": "run_05_lic-to-windows-of-attraction.json",
+   "pins": 366,
+   "sets": 121,
+   "evidence": 4409,
+   "bytes": 1796211,
    "lines": [
+    "lic",
     "animated-cuties",
     "brush-of-magic",
     "disney-classics-london",

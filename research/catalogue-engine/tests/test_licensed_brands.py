@@ -19,6 +19,12 @@ class LicensedBrands(unittest.TestCase):
     def test_claimed_fields_win_over_the_key(self):
         self.assertEqual(maker_retailer('lic/2019/boxlunch-wall-e/wall-e', {'Manufacturer': 'Loungefly'}), ('Loungefly', 'BoxLunch'))
 
+    def test_maker_and_retailer_spellings_are_grouped(self):
+        self.assertEqual(maker_retailer('lic/2022/x/y', {'Manufacturer': 'Monogram Products (HK) Ltd | Monogram International',
+                                                         'Retailer': 'Disney Store UK | Disney Store France'}), ('Monogram', 'Disney Store'))
+        self.assertEqual(maker_retailer('lic/2023/x/y', {'Retailer': 'shopDisney'}), ('Not stated', 'Disney Parks / shopDisney'))
+        self.assertEqual(maker_retailer('lic/2021/uncas-boxlunch-tiana-silhouette/tiana'), ('Uncas International', 'BoxLunch'))
+
     def test_unknown_and_non_licensed(self):
         self.assertEqual(maker_retailer('lic/2019/primark-mickey/mickey'), ('Not stated', 'Not stated'))
         self.assertIsNone(maker_retailer('wdw/2019/oe/stitch'))

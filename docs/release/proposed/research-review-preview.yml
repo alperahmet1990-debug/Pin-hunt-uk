@@ -23,7 +23,7 @@ on:
       app_ref:
         description: 'Branch with the Research Review screen to preview'
         type: string
-        default: claude/research-review-web-preview
+        default: claude/research-review-historical
       research_ref:
         description: 'Branch with the research runs (research/catalogue-engine/out/backfill-runs)'
         type: string

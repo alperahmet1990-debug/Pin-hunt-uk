@@ -1,0 +1,2941 @@
+{
+ "packet_id": "backfill-b109-lic-artland-2019-2020",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b109",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+   "title": "Princess & Friends ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+   "title": "The Jungle Book ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+   "title": "Robin Hood ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+   "title": "Fantasia Conducting Mickey ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-08-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+   "title": "Disney Villains Series 2 Artland Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+   "title": "Scrooge Music Box LE 125 ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+   "title": "Chernabog Jumbo LE 100 ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+   "title": "Tinker Bell Precious Moment ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-10-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mark-chilcott-pixar-series-artland-disney-pins",
+   "title": "Mark Chilcott Pixar Series ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+   "title": "Disney Princess Neo Nouveau ArtLand Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+   "title": "Princess & Horse ArtLand Disney Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+   "title": "Hades Jumbo LE 100 ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/princess-horse-jessie-bullseye",
+   "title": "Princess & Horse - Jessie & Bullseye",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/es/collections/artland-fine-art-pins/products/mowgli-and-hathi-jr-the-jungle-book",
+   "title": "Mowgli and Hathi Jr - The Jungle Book",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins/products/mowgli-and-baloo-the-jungle-book",
+   "title": "Mowgli and Baloo - The Jungle Book",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-four-vultures-the-jungle-book-collection",
+   "title": "The Four Vultures - The Jungle Book Collection",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/3-round-pins/products/villain-series-captain-hook-1",
+   "title": "Villain Series - Captain Hook - On Alert!",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://derwincollectables.nl/en/product/artland-disney-princess-and-friends-series-aurora-with-owl-limited-editon-250-pin/",
+   "title": "Artland - Disney Princess and Friends Series - Aurora with Owl LE 250",
+   "publisher": "Derwin Collectables",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-and-friends-series-2-disney-employee-center-pins/",
+   "title": "Princess and Friends Series 2 Disney Employee Center Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2020/artland-princess-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Princess & Friends (ArtLand)",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "series of separately listed LE pins, each a princess with a companion",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives a separate edition for each princess/friend pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post lists five princess/friend pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post text says June 2020; page metadata shows March 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-jungle-book",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Jungle Book (ArtLand)",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "series of separately listed LE pins",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives a separate edition per pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post lists three pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "released June 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPBStore.com and other select retailers"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-robin-hood",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Robin Hood (ArtLand)",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "two separately listed pins (one standard, one jumbo)",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post gives separate editions for each pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post covers two new pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "July 2020 per DPB snippet; post has copy-paste errors"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-fantasia-conducting-mickey",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fantasia Conducting Mickey (ArtLand)",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available August 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPBStore.com and other select retailers"
+    },
+    {
+     "field": "format",
+     "value": "3 in round pins, 5mm thick",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post says pins are 3in round and 5mm thick"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/fantasia-conducting-mickey-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-villains-series-2",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Villains Series 2 (ArtLand)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "3 in round pins, 5mm thick",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post describes 3in round pins featuring Captain Hook, Evil Queen and Jafar"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "released September 2020 at select retailers"
+    },
+    {
+     "field": "release_location",
+     "value": "select retailers; DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-scrooge-music-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Scrooge Music Box (ArtLand)",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "one pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-chernabog-jumbo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chernabog Jumbo (ArtLand)",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single jumbo pin in presentation box with giclee",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "boxed jumbo with giclee artwork and numbered COA"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 100"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-tinker-bell-precious-moment",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tinker Bell Precious Moment (ArtLand)",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "two separately listed pins",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives a separate edition per pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "two pins listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-mark-chilcott-pixar",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mark Chilcott Pixar Series (ArtLand)",
+     "source_url": "https://disneypinsblog.com/blogs/news/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/blogs/news/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "LE 100 per piece; two-variant pins stamped LE 200 on back"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "October 2020 per roundup snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/mark-chilcott-pixar-series-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-neo-nouveau-series-1",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Neo Nouveau (ArtLand)",
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "post title; later posts call later waves Series 2/3"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition of 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11",
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "November 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "format",
+     "value": "pin-on-pin with pearlescent, glitter and matte elements; artist Masey",
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/disney-princess-neo-nouveau-artland-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-princess-horse",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Princess & Horse (ArtLand)",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post title; later posts are Series 2/3"
+    },
+    {
+     "field": "format",
+     "value": "series of separately listed LE pins, each a character with a horse",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post gives a separate edition per pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "six pins listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "December 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/artland-hades-jumbo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hades Jumbo (ArtLand)",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single jumbo pin in presentation box with giclee",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "boxed jumbo with giclee and numbered COA"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "50 gold + 50 silver versions"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "December 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2020/artland-princess-friends/pocahontas-meeko",
+   "set_key": "lic/2020/artland-princess-friends",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pocahontas & Meeko",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas",
+      "Meeko"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin lists princess with companion"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "princess named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each pairing listed as one pin with its own edition"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.9 x 2.75 in",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives size per pin in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 150"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-friends/ariel-flounder",
+   "set_key": "lic/2020/artland-princess-friends",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel & Flounder",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Flounder"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin lists princess with companion"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "princess named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each pairing listed as one pin with its own edition"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.9 x 2.75 in",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives size per pin in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-friends/aurora-owl",
+   "set_key": "lic/2020/artland-princess-friends",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aurora & Owl",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora",
+      "Owl"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin lists princess with companion"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "princess named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each pairing listed as one pin with its own edition"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.9 x 2.75 in",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives size per pin in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://derwincollectables.nl/en/product/artland-disney-princess-and-friends-series-aurora-with-owl-limited-editon-250-pin/",
+     "method": "search_snippet",
+     "note": "retailer listing: Aurora with Owl LE 250, Princess and Friends Series"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://derwincollectables.nl/en/product/artland-disney-princess-and-friends-series-aurora-with-owl-limited-editon-250-pin/",
+     "method": "search_snippet",
+     "note": "listing title names Artland"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-friends/jasmine-abu",
+   "set_key": "lic/2020/artland-princess-friends",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine & Abu",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Abu"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin lists princess with companion"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "princess named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each pairing listed as one pin with its own edition"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.9 x 2.75 in",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives size per pin in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-friends/rapunzel-pascal",
+   "set_key": "lic/2020/artland-princess-friends",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel & Pascal",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel",
+      "Pascal"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin lists princess with companion"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "princess named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "each pairing listed as one pin with its own edition"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.9 x 2.75 in",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post gives size per pin in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-friends-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-jungle-book/mowgli-baloo",
+   "set_key": "lic/2020/artland-jungle-book",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mowgli on Baloo",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post pin name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mowgli",
+      "Baloo"
+     ],
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Mowgli riding Baloo"
+    },
+    {
+     "field": "main_character",
+     "value": "Mowgli",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/mowgli-and-baloo-the-jungle-book",
+     "method": "search_snippet",
+     "note": "Pulse listing edition 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 2.25 x 2.75 in",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/mowgli-and-baloo-the-jungle-book",
+     "method": "search_snippet",
+     "note": "Pulse listing size in inches"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/mowgli-and-baloo-the-jungle-book",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-jungle-book/mowgli-hathi-jr",
+   "set_key": "lic/2020/artland-jungle-book",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mowgli & Hathi Jr.",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post pin name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mowgli",
+      "Hathi Jr."
+     ],
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "both named on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Mowgli",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.9 x 3 in",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post size; differs from Pulse listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/es/collections/artland-fine-art-pins/products/mowgli-and-hathi-jr-the-jungle-book",
+     "method": "search_snippet",
+     "note": "Pulse listing edition 250, numbered on rear"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 2.25 x 2.75 in",
+     "source_url": "https://pulse.gallery/es/collections/artland-fine-art-pins/products/mowgli-and-hathi-jr-the-jungle-book",
+     "method": "search_snippet",
+     "note": "Pulse listing size differs from DPB"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/es/collections/artland-fine-art-pins/products/mowgli-and-hathi-jr-the-jungle-book",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-jungle-book/vultures",
+   "set_key": "lic/2020/artland-jungle-book",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Vultures",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post pin name"
+    },
+    {
+     "field": "visual_description",
+     "value": "the four vultures, styled after The Beatles",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post says the vultures were modelled on The Beatles"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/the-jungle-book-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "pin_name",
+     "value": "The Four Vultures",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-four-vultures-the-jungle-book-collection",
+     "method": "search_snippet",
+     "note": "Pulse listing title"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-four-vultures-the-jungle-book-collection",
+     "method": "search_snippet",
+     "note": "Pulse listing edition 200 with COA"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-four-vultures-the-jungle-book-collection",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-robin-hood/robin-marian-skippy",
+   "set_key": "lic/2020/artland-robin-hood",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Robin, Marian & Skippy",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post pin name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Robin Hood",
+      "Maid Marian",
+      "Skippy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "three characters named on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Robin Hood",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "listed as a single pin with LE 250"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-robin-hood/robin-hood-crest",
+   "set_key": "lic/2020/artland-robin-hood",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Robin Hood Crest Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post pin name"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    },
+    {
+     "field": "size_mm",
+     "value": "4.5 in, 5mm thick",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "jumbo size stated in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "jumbo LE 100"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-artland-disney-pins",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-villains-series-2/captain-hook",
+   "set_key": "lic/2020/artland-villains-series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Hook"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "Captain Hook named in Series 2"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Hook",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "series LE 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "September 2020"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "September 2020"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round, 5mm thick",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "series size"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villains-series-2-artland-pins",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "pin_name",
+     "value": "Villain Series - Captain Hook",
+     "source_url": "https://pulse.gallery/collections/3-round-pins/products/villain-series-captain-hook-1",
+     "method": "search_snippet",
+     "note": "Pulse listing title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pulse.gallery/collections/3-round-pins/products/villain-series-captain-hook-1",
+     "method": "search_snippet",
+     "note": "Pulse sells Captain Hook as its own 3in round pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/collections/3-round-pins/products/villain-series-captain-hook-1",
+     "method": "search_snippet",
+     "note": "numbered edition 250 plus 25 AP/PP"
+    },
+    {
+     "field": "size_mm",
+     "value": "3 in round",
+     "source_url": "https://pulse.gallery/collections/3-round-pins/products/villain-series-captain-hook-1",
+     "method": "search_snippet",
+     "note": "Pulse listing size"
+    },
+    {
+     "field": "visual_description",
+     "value": "Hook pursued by the ticking crocodile",
+     "source_url": "https://pulse.gallery/collections/3-round-pins/products/villain-series-captain-hook-1",
+     "method": "search_snippet",
+     "note": "listing describes the croc chasing Hook"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/3-round-pins/products/villain-series-captain-hook-1",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-scrooge-music-box/scrooge-nephews",
+   "set_key": "lic/2020/artland-scrooge-music-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scrooge Music Box",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "Scrooge shown with his nephews (nephews not named in snippet)"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrooge and nephews in his money vault; based on George Caltsoudas art; first Music Box release",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 3.5 in",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/scrooge-music-box-le-125-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-chernabog-jumbo/chernabog",
+   "set_key": "lic/2020/artland-chernabog-jumbo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chernabog Jumbo",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chernabog"
+     ],
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "Chernabog from Fantasia"
+    },
+    {
+     "field": "main_character",
+     "value": "Chernabog",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 100"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Pulse Gallery and other select retailers",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://disneypinsblog.com/chernabog-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-tinker-bell-precious-moment/tinker-bell-precious-moment",
+   "set_key": "lic/2020/artland-tinker-bell-precious-moment",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell Precious Moment Pin",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post pin name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed as its own pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-tinker-bell-precious-moment/tinker-bell-on-a-daisy",
+   "set_key": "lic/2020/artland-tinker-bell-precious-moment",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell on a Daisy Pin",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post pin name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed as its own pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 100"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/tinker-bell-precious-moment-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-horse/belle-philippe",
+   "set_key": "lic/2020/artland-princess-horse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle & Philippe",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Philippe"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "character with horse on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "each pairing listed as a pin with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition of 150"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-horse/jessie-bullseye",
+   "set_key": "lic/2020/artland-princess-horse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jessie & Bullseye",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jessie",
+      "Bullseye"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "character with horse on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Jessie",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "each pairing listed as a pin with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition of 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://pulse.gallery/products/princess-horse-jessie-bullseye",
+     "method": "search_snippet",
+     "note": "Pulse listing edition 300"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/princess-horse-jessie-bullseye",
+     "method": "search_snippet",
+     "note": "Pulse Gallery sells it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-horse/megara-pegasus",
+   "set_key": "lic/2020/artland-princess-horse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Megara & Pegasus",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Megara",
+      "Pegasus"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "character with horse on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Megara",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "each pairing listed as a pin with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition of 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-horse/merida-angus",
+   "set_key": "lic/2020/artland-princess-horse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merida & Angus",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merida",
+      "Angus"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "character with horse on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "each pairing listed as a pin with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition of 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-horse/rapunzel-maximus",
+   "set_key": "lic/2020/artland-princess-horse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel & Maximus",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel",
+      "Maximus"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "character with horse on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "each pairing listed as a pin with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition of 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-princess-horse/baby-hercules-baby-pegasus",
+   "set_key": "lic/2020/artland-princess-horse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Baby Hercules & Baby Pegasus",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "pairing as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baby Hercules",
+      "Baby Pegasus"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "character with horse on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Baby Hercules",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "each pairing listed as a pin with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "limited edition of 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/princess-horse-artland-disney-pin-series/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/artland-hades-jumbo/hades-pain-panic",
+   "set_key": "lic/2020/artland-hades-jumbo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hades Jumbo",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hades",
+      "Pain",
+      "Panic"
+     ],
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hades with Pain and Panic"
+    },
+    {
+     "field": "main_character",
+     "value": "Hades",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "single jumbo pin with gold and silver versions"
+    },
+    {
+     "field": "size_mm",
+     "value": "4.5 x 3.26 in",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 100"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Pulse Gallery, DPBStore.com and other select retailers",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "sales channels named in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post credits the release to ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    },
+    {
+     "field": "retailer",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/hades-jumbo-le-100-artland-disney-pin/",
+     "method": "search_snippet",
+     "note": "post names this seller"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2020/artland-princess-friends",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "no retail price in snippets"
+  },
+  {
+   "key": "lic/2019/artland-princess-friends-series-2",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "lead: a 2019 Employee Center 'Princess and Friends Series 2' (LE 200) exists; snippet does not tie it to ArtLand; Princess & Friends S2 (ArtLand) not identified"
+  },
+  {
+   "key": "lic/2020/artland-jungle-book/vultures",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "individual vulture names not stated in snippets"
+  },
+  {
+   "key": "lic/2020/artland-jungle-book",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "Pulse listings show GBP 25 each but listing date unknown; not recorded as original price"
+  },
+  {
+   "key": "lic/2020/artland-robin-hood",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "July 2020 seen in a roundup snippet; Robin Hood post itself has stray Jungle Book text; confirm month"
+  },
+  {
+   "key": "lic/2020/artland-robin-hood/robin-hood-crest",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters on crest pin not stated"
+  },
+  {
+   "key": "lic/2020/artland-fantasia-conducting-mickey",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); post refers to pins plural and D/E/F designs, members not described"
+  },
+  {
+   "key": "lic/2020/artland-villains-series-2",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold: confirm pin structure for Evil Queen and Jafar (only a character list seen; no standalone listing found)"
+  },
+  {
+   "key": "lic/2020/artland-villains-series-2/captain-hook",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Pulse 'Villain Series - Captain Hook' listing is undated; match to Series 2 inferred from size/edition"
+  },
+  {
+   "key": "lic/2020/artland-scrooge-music-box/scrooge-nephews",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "only a pin-retailer price seen (date unknown); original retail not stated"
+  },
+  {
+   "key": "lic/2020/artland-mark-chilcott-pixar",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "members, characters and variant pairs not named in snippets"
+  },
+  {
+   "key": "lic/2020/artland-neo-nouveau-series-1",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); post names Ariel, Aurora, Rapunzel, Snow White; its Aurora image shows Cinderella"
+  },
+  {
+   "key": "lic/2020/artland-princess-horse",
+   "field": "price",
+   "searched": "3 queries",
+   "note": "no retail price in snippets; COA backing card and stamped number mentioned"
+  },
+  {
+   "key": "lic/2020/artland-hades-jumbo/hades-pain-panic",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "gold and silver versions (50 each) may need separate variant records"
+  },
+  {
+   "key": "lic/2019/artland-*",
+   "field": "coverage",
+   "searched": "5 queries",
+   "note": "no 2019 ArtLand releases found beyond keys already in packets 208/223 (3in round, villains LE 250, Pooh, LE 200 Dec, LE 500 Dec)"
+  },
+  {
+   "key": "lic/2020/artland-villains-series-2/captain-hook",
+   "field": "set",
+   "searched": "maintainer review of B109",
+   "note": "hold: matched to Villains Series 2 from an undated listing by size and edition only; confirm before sign-off"
+  }
+ ],
+ "discovery_notes": "All 2019 ArtLand keys already recorded in 208/223 (Aladdin/Tinker Bell 3in round LE 250 Sept 2019, villains LE 250, Pooh, LE 200 and LE 500 Dec 2019, castle jumbo); not re-recorded. 2020 coverage is mainly Disney Pins Blog (owner of DPBStore.com) plus Pulse Gallery listings. Keys omit a retailer slug: releases went to DPBStore.com and other select retailers (not exclusives); retailers recorded as claims. Steamboat Willie LE 125 (2023), Castle series (2021), Swing series (2026) seen and skipped as out of window."
+}

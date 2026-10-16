@@ -5,16 +5,15 @@ _Maintained by the hourly research routine (scheduled task "PinHunt historical b
 ## Active round
 none
 
-## Totals (after round 8, 16 Oct 2026 ~19:05 UTC)
+## Totals (after round 8 + licensed mystery-set audit, 16 Oct 2026 ~19:20 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
 - Research pin records: 4,453.
-- Genuinely new 2015–2026: **3,692** (914 corroborated). Held: 734, including 97 possible live matches. No usable source: 24.
-- **Total unique individual pins identified 2015–2026: 5,490** (1,798 + 3,692).
-- Incomplete sets: 94 sets, 466 named members still missing. Standalone OE (new): 741 of 1,136 new OE pins.
-- Licensed by manufacturer (each pin once; new / held): Loungefly 225 / 112, ArtLand 148 / 23, Funko 33 / 11, Her Universe 3 / 0, FiGPiN 2 / 2, not stated 295 / 165. By retailer: BoxLunch 223 / 128, DPB Store 130 / 18, Pink a la Mode 112 / 88, Hot Topic 54 / 26, Loungefly.com 11 / 1, Pulse Gallery 2 / 0, Hallmark 1 / 5, not stated 173 / 47.
+- Genuinely new 2015–2026: **3,449** (885 corroborated). Held: 986, including 97 possible live matches. No usable source: 15.
+- **Total unique individual pins identified 2015–2026: 5,247** (1,798 + 3,449).
+- Licensed by manufacturer (each pin once; new / held): Loungefly 151 / 186, ArtLand 130 / 41, Funko 18 / 26, Her Universe 3 / 0, FiGPiN 2 / 2, not stated 160 / 300. By retailer: BoxLunch 134 / 217, DPB Store 120 / 28, Pink a la Mode 60 / 140, Hot Topic 28 / 52, Loungefly.com 11 / 1, Pulse Gallery 2 / 0, Hallmark 1 / 5, not stated 108 / 112.
 - Reviewer checks: 87 OK (maintainer, 16 Oct).
 
-Earlier: after round 7, 5,299; after round 6, 5,065; after round 5, 4,927; after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
+Earlier: after round 8 before the audits, 5,490; after round 7, 5,299; after round 6, 5,065; after round 5, 4,927; after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
 
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |
@@ -172,4 +171,5 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | 7 | 2026-10-16 17:30 | B103–B105 (Pink a la Mode 2021–2026), B106–B108 (ArtLand 2021–2026) | +234 net new (40 corroborated); 333 pin records | all partial; follow-ups B115–B120. New holds: Pink a la Mode splits without a stated pin count (Coin Wave 3, Royal Couples, Enchanted Princess, Locket, Keys to the Kingdom, Crest, May 2024 Princess, Halloween 2024 villains) and set-only structure holds. Report fix: Pink a la Mode counted as retailer only (no source names its manufacturer); DPB Store added as a retailer |
 | 8 | 2026-10-16 18:30 | B109 (ArtLand 2019–2020), B086/B087 (Loungefly/BoxLunch 2026), B084/B085 (Loungefly/BoxLunch 2025), B082 (Loungefly 2024) | +197 net new (43 corroborated); 306 pin records | all partial; follow-ups B121–B126. New holds: Captain Hook series match, Fantastic Four year, Cats & Dogs Halloween split, Villains Portrait match, Grandfather Clock / Movie Ticket film splits. Blind-box designs named by a retailer listing or Disney Pins Blog accepted as mystery designs (rule 12). Futurama (Disney-owned via 20th Television) included under rule 11 |
 | – | 2026-10-16 18:50 | BoxLunch 2026 audit (no new research) | −51 genuinely new (moved to held) | Maintainer rule: keep mystery pins only where a source explicitly confirms each named character is a separate design. 16 of 19 BoxLunch 2026 blind-box sets list characters only ("This assortment features …"), so 93 more pins are held; kept: Nightmare Before Christmas skateboard (BoxLunch: each pin a different character), D23 2026 singles, Minnie Pumpkin. Totals now 3,641 genuinely new, 5,439 unique, 785 held. Split staging runs written to research/catalogue-engine/out/backfill-runs/ (4 runs, all pass the API validator) |
+| – | 2026-10-16 19:15 | Licensed mystery-set audit, all 22 licensed packets (no new research) | −192 genuinely new (moved to held) | Maintainer rule applied to every licensed packet: individual pins kept only where a source establishes distinct designs (per-design listings, per-pin descriptions or edition sizes, "collect all six: …"). 292 more pin records held across 18 packets (largest: Pink a la Mode 2021–24 73, Loungefly/BoxLunch 2019 41, BoxLunch 2018–19 51, Star Wars/Marvel 22, Marvel SDCC 2017 22). Maintainer overrides: Princess Bows held except designs BoxLunch names; ArtLand 2019 villains held except Cruella; Holiday Nutcrackers held (reseller only); Evil Queen slider held (reader comment only). Set-level research unchanged. Blocked-domain list extended (eBay country sites, PicClick, Whatnot, WorthPoint). Staging split runs regenerated (4 runs, all pass the API validator) |
 | – | 2026-10-16 16:50 | process update (no new research) | – | Licensed 2020–2026 moved to the front of the queue; dedicated Pink a la Mode and ArtLand cells B103–B109; manufacturer/retailer counted as separate dimensions; pin-structure rule 12; follow-up limit and long-term backlog |

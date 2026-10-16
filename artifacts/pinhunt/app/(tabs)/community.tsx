@@ -28,6 +28,7 @@ import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { PostPinPreview, showsPinPreview } from '@/components/PostPinPreview';
 import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -233,8 +234,11 @@ function PostCard({ post, onPress, onPhotoPress, colors }: {
         <PhotoGrid photos={photos} onPress={onPhotoPress} />
       )}
 
-      {/* Linked pin */}
-      {post.linkedPin && (
+      {/* Linked pin: a 72 pt photo on For Trade / ISO posts (B-P2-17), a chip otherwise. */}
+      {post.linkedPin && (post.postType === 'for_trade' || post.postType === 'in_search_of') && (
+        <PostPinPreview pin={post.linkedPin} postType={post.postType} />
+      )}
+      {post.linkedPin && !showsPinPreview(post.postType) && (
         <View style={[styles.pinChip, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
           {post.linkedPin.imageUrl
             ? <PinImage source={{ uri: post.linkedPin.imageUrl }} style={styles.pinChipImage} />

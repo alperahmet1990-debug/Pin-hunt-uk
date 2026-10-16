@@ -21,6 +21,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
 import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -32,6 +33,7 @@ import { API_BASE } from '@/lib/apiBase';
 import { Button, Chip, ConfirmDialog, SegmentedControl } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import { KeepScrollView } from '@/components/research/KeepScrollView';
+import { FieldTickBar } from '@/components/research/FieldTickBar';
 import { groupsForTab, isWideLayout, type ReviewTab } from '@/utils/researchLayout';
 import CatalogueBrowser from '@/components/research/CatalogueBrowser';
 import {
@@ -42,6 +44,7 @@ import {
   confidenceTone,
   describeSetDecision,
   evidenceByField,
+  evidenceLabel,
   formatValue,
   groupBySet,
   needsStructureChoice,
@@ -91,6 +94,9 @@ export default function ResearchReviewScreen() {
   const [busy, setBusy] = useState(false);
   const [actionMsg, setActionMsg] = useState<string | null>(null);
   const [confirm, setConfirm] = useState<Decision | null>(null);
+  // Source sheet (RR-21): the URL the reviewer just opened for this pin, and what it confirms.
+  const [sheet, setSheet] = useState<{ pinId: string; url: string } | null>(null);
+  const [sheetFields, setSheetFields] = useState<string[]>([]);
 
   // Set view: one source page checked against many pins. Pins always start unticked.
   const [setKey, setSetKey] = useState<string | null>(null);
@@ -194,6 +200,8 @@ export default function ResearchReviewScreen() {
       setCheckUrl('');
       setCheckNote('');
       setNotes('');
+      setSheet(null);
+      setSheetFields([]);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not open candidate');
     }
@@ -214,6 +222,45 @@ export default function ResearchReviewScreen() {
     } finally {
       setBusy(false);
     }
+  };
+
+  // Open evidence for this pin. The list, selection and tab stay where they are;
+  // when the browser closes (immediately on web) the field-tick bar appears, unticked.
+  const openEvidence = async (pinId: string, url: string | null) => {
+    const safe = safeExternalUrl(url);
+    if (!safe) return;
+    setSheetFields([]);
+    if (Platform.OS === 'web') {
+      window.open(safe, '_blank', 'noopener,noreferrer');
+    } else {
+      try { await WebBrowser.openBrowserAsync(safe); } catch { return; }
+    }
+    setSheet({ pinId, url: safe });
+  };
+
+  const saveSheet = async () => {
+    if (!detail || !sheet || sheet.pinId !== detail.candidate.id || sheetFields.length === 0) return;
+    setBusy(true);
+    try {
+      await api(`/admin/research/candidates/${sheet.pinId}/direct-check`, {
+        method: 'POST', body: JSON.stringify({ fields: sheetFields, sourceUrl: sheet.url, note: null }),
+      });
+      setActionMsg('Direct check recorded.');
+      setSheet(null);
+      setSheetFields([]);
+      await openCandidate(sheet.pinId);
+      await loadCandidates(true);
+    } catch (e) {
+      setActionMsg(e instanceof Error ? e.message : 'Could not record the check');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const sheetNoMatch = () => {
+    setSheet(null);
+    setSheetFields([]);
+    setActionMsg("Noted: that page doesn't match this pin. Nothing was recorded.");
   };
 
   const decide = async (decision: Decision) => {
@@ -447,9 +494,17 @@ export default function ResearchReviewScreen() {
                         <Text style={s.muted}>
                           {e.publisher ?? 'unknown'} · {e.source_class} · {e.method.replace(/_/g, ' ')}{e.note ? ` · ${e.note}` : ''}
                         </Text>
+                        {safeExternalUrl(e.source_url) && (() => {
+                          const label = evidenceLabel(e, detail.evidence);
+                          return (
+                            <Text style={label === 'checked' ? s.notice : s.muted} testID={`evidence-label-${e.id}`}>
+                              {label === 'checked' ? 'checked' : label === 'excluded' ? "doesn't count" : "lead · doesn't count until you check it"}
+                            </Text>
+                          );
+                        })()}
                         {safeExternalUrl(e.source_url) && (
                           <View style={s.chips}>
-                            <Button label="Open source" size="compact" variant="text" icon="external-link" onPress={() => openSource(e.source_url)} />
+                            <Button label="Open source" size="compact" variant="text" icon="external-link" onPress={() => openEvidence(detail.candidate.id, e.source_url)} />
                             <Button label="Use as checked source" size="compact" variant="text" onPress={() => setCheckUrl(e.source_url ?? '')} />
                           </View>
                         )}
@@ -459,6 +514,18 @@ export default function ResearchReviewScreen() {
                 ))}
               </View>
   
+              {sheet && sheet.pinId === detail.candidate.id && (
+                <FieldTickBar
+                  url={sheet.url}
+                  ticked={sheetFields}
+                  busy={busy}
+                  onToggle={f => setSheetFields(prev => (prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]))}
+                  onTickAll={() => setSheetFields(CHECKABLE_FIELDS.map(f => f.field))}
+                  onNoMatch={sheetNoMatch}
+                  onSave={saveSheet}
+                />
+              )}
+
               <View style={s.card}>
                 <Text style={s.setTitle}>Direct check</Text>
                 <Text style={s.body}>Open a source yourself, then tick only what that page confirms.</Text>

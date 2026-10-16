@@ -102,10 +102,30 @@ describe('Scan result (UX-005)', () => {
     await act(async () => { mockOnAdded?.('p1', 'wanted'); });
     expect(screen.getByText('2 pins added this session')).toBeTruthy();
 
-    // Leaving the scan screen (blur runs the focus effect's cleanup) ends the session.
+    // Leaving the scan screen (blur runs the focus effect's cleanup) ends the
+    // session and clears the last scan (#354).
     await act(async () => { const cleanup = mockFocusEffect?.(); if (typeof cleanup === 'function') cleanup(); });
     expect(screen.queryByText(/added this session/)).toBeNull();
-    expect(screen.getByRole('button', { name: 'Scan another pin' })).toBeTruthy();
+    expect(screen.queryByRole('header', { name: 'Is this your pin?' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Take photo' })).toBeTruthy();
+  });
+
+  it('"Start again" clears the result and returns to the camera (#354)', async () => {
+    await scanToResult();
+    await fireEvent.press(screen.getByRole('button', { name: 'Start again' }));
+    expect(screen.queryByRole('header', { name: 'Is this your pin?' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Start again' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Take photo' })).toBeTruthy();
+  });
+
+  it('a quick look at Pin detail keeps the result for when you come back (#354)', async () => {
+    await scanToResult();
+    // The screen is focused; opening the pin then blurs it.
+    let cleanup: (() => void) | void;
+    await act(async () => { cleanup = mockFocusEffect?.(); });
+    await fireEvent.press(screen.getByRole('button', { name: 'Dumbo Blue Sky. Open pin details' }));
+    await act(async () => { if (typeof cleanup === 'function') cleanup(); });
+    expect(screen.getByRole('header', { name: 'Is this your pin?' })).toBeTruthy();
   });
 
   it('sends the shrunk JPEG, not the original photo (UX-050)', async () => {

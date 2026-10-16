@@ -20,6 +20,7 @@ const FEATURED_IMAGE_HEIGHT = 176;
 
 function badgeTone(event: PinHuntEvent, colors: ReturnType<typeof useColors>): string {
   if (event.sourceType === 'community') return colors.homeCoral;
+  if (event.rumour) return colors.homeMuted;
   switch (event.badgeLabel) {
     case 'DLP EVENT': return colors.homeCoralDeep;
     case 'UK TRADING': return colors.homeTealSoft;
@@ -54,14 +55,17 @@ export function EventCard({ event, onPress }: { event: PinHuntEvent; onPress: ()
   const { day, month } = formatEventDateParts(event);
   const flag = countryFlag(event.country);
   const locationLine = [event.location, flag].filter(Boolean).join(' ') + (event.time ? ` · ${event.time}` : '');
-  const ctaLabel = event.sourceType === 'community' ? 'View post →' : 'View event →';
+  // Curated events without a link (confirmed by hand) have nothing to open.
+  const ctaLabel = event.sourceType === 'community' ? 'View post →'
+    : !event.sourceUrl ? null
+    : event.rumour ? 'Read more →' : 'View event →';
 
   return (
     <TouchableOpacity
       activeOpacity={0.9}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel={[event.badgeLabel, event.title, locationLine.trim()].filter(Boolean).join('. ')}
+      accessibilityLabel={[event.badgeLabel, event.title, event.rumour ? `Rumoured, ${event.whenText ?? 'date to be confirmed'}` : null, locationLine.trim()].filter(Boolean).join('. ')}
       style={[
         styles.card,
         { width, backgroundColor: colors.homeSurface, borderColor: colors.homeLine, shadowColor: colors.homeShadow },
@@ -78,7 +82,12 @@ export function EventCard({ event, onPress }: { event: PinHuntEvent; onPress: ()
         </View>
       </View>
       <View style={styles.body}>
-        {event.hasScheduledDate ? (
+        {event.rumour ? (
+          <View style={styles.dateLineRow}>
+            <Feather name="help-circle" size={11} color={colors.homeMuted} />
+            <Text style={[styles.dateLine, { color: colors.homeMuted }]} numberOfLines={1}>RUMOURED · {(event.whenText ?? 'Date TBC').toUpperCase()}</Text>
+          </View>
+        ) : event.hasScheduledDate ? (
           <Text style={[styles.dateLine, { color: colors.homeCoralDeep }]} numberOfLines={1}>{day} {month}</Text>
         ) : (
           <View style={styles.dateLineRow}>
@@ -94,7 +103,7 @@ export function EventCard({ event, onPress }: { event: PinHuntEvent; onPress: ()
           </View>
         )}
         <Text numberOfLines={2} style={[styles.description, { color: colors.homeMuted }]}>{event.description}</Text>
-        <Text style={[styles.cta, { color: colors.homeCoralDeep }]}>{ctaLabel}</Text>
+        {ctaLabel && <Text style={[styles.cta, { color: colors.homeCoralDeep }]}>{ctaLabel}</Text>}
       </View>
     </TouchableOpacity>
   );

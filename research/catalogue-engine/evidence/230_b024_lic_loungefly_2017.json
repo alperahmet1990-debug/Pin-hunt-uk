@@ -1,0 +1,1000 @@
+{
+ "packet_id": "backfill-b024-lic-loungefly-2017",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b024",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+   "title": "BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+   "title": "Disney Hat Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-06-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-dumbo-hat-enamel-pin/10954879.html",
+   "title": "Disney Dumbo Hat Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-toy-story-slinky-dog-enamel-pin/10863061.html",
+   "title": "Disney Pixar Toy Story Slinky Dog Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+   "title": "Guardians of the Galaxy Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+   "title": "Halloween Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+   "title": "Disney DuckTales Halloween Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-mouse-pumpkin-enamel-pin/11135918.html",
+   "title": "Disney Mickey Mouse Pumpkin Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://distradingpins4u.com/products/disney-pin-124893",
+   "title": "Disney Trading Pin 124893 DuckTales Halloween Enamel Pin Set - Loungefly",
+   "publisher": "DisTradingPins4U",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://funko.com/funko-blog-home/sdcc-2017-exclusives-loungefly.html",
+   "title": "SDCC 2017 Exclusives: Loungefly!",
+   "publisher": "Funko",
+   "published_date": "2017-06-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://funko.com/funko-blog-home/nycc-2017-exclusives-loungefly.html",
+   "title": "NYCC 2017 Exclusives: Loungefly!",
+   "publisher": "Funko",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-york-comic-con-2017-marvel-pins/",
+   "title": "New York Comic Con 2017 MARVEL Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Disney Pins (Feb 2017 wave)",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB post on BoxLunch-exclusive Disney pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store exclusives"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "post dated 20 Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "described as open edition pin sets"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "per pin set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Hat Pins (BoxLunch)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "in store and online at BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "released June 2017"
+    },
+    {
+     "field": "price",
+     "value": 5.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Guardians of the Galaxy Pins at BoxLunch",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "available Aug 2017"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "Guardians of the Galaxy Vol. 2 themed"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween Pins at BoxLunch (2017)",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch stores and online"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "releases across Sep and Oct 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-halloween-stitch-set",
+   "parent_set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Halloween Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "listed in DPB BoxLunch Halloween post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Sep/Oct 2017 wave"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-halloween-ducktales",
+   "parent_set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DuckTales Halloween Enamel Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "listed in DPB BoxLunch Halloween post"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney DuckTales Halloween Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title (undated)"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Sep/Oct 2017 wave"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://distradingpins4u.com/products/disney-pin-124893",
+     "method": "search_snippet",
+     "note": "pin shop listing titles the set as Loungefly; reseller attribution only, BoxLunch listing has no maker"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2017/boxlunch-february-2017-pins/slinky-dog",
+   "set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Slinky Dog",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Slinky Dog pin named in the Feb 2017 BoxLunch post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Slinky Dog"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Toy Story Slinky Dog pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Slinky Dog",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Slinky Dog pin"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "single pin price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "Feb 2017 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-slinky-dog-enamel-pin/10863061.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing price (undated)"
+    },
+    {
+     "field": "visual_description",
+     "value": "about 1.75in metal pin with a wire coil centre",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-slinky-dog-enamel-pin/10863061.html",
+     "method": "search_snippet",
+     "note": "listing size/material notes; listing undated, match to 2017 post by name and price only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/dumbo-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo Hat",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "hat design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "main_character",
+     "value": "Dumbo",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "priced per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "June 2017 release"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store/online"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://www.boxlunch.com/product/disney-dumbo-hat-enamel-pin/10954879.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing price (undated)"
+    },
+    {
+     "field": "size_mm",
+     "value": 19,
+     "source_url": "https://www.boxlunch.com/product/disney-dumbo-hat-enamel-pin/10954879.html",
+     "method": "search_snippet",
+     "note": "listing gives 3/4 in; converted ~19mm"
+    },
+    {
+     "field": "materials",
+     "value": "metal",
+     "source_url": "https://www.boxlunch.com/product/disney-dumbo-hat-enamel-pin/10954879.html",
+     "method": "search_snippet",
+     "note": "listing material"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/goofy-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Hat",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "hat design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "priced per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "June 2017 release"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store/online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/donald-duck-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Hat",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "hat design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "priced per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "June 2017 release"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store/online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/minnie-mouse-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Hat",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "hat design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "character hat design"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "priced per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "June 2017 release"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch store/online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-guardians-of-the-galaxy/baby-groot-cassette",
+   "set_key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Baby Groot holding cassette tape",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "pin of Baby Groot holding a cassette also released"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baby Groot"
+     ],
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "Baby Groot design"
+    },
+    {
+     "field": "main_character",
+     "value": "Baby Groot",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "Baby Groot design"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "Aug 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+     "method": "search_snippet",
+     "note": "Guardians of the Galaxy"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-halloween/lilo-stitch-skeleton",
+   "set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lilo & Stitch Skeleton Enamel Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "named in DPB Halloween list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Lilo & Stitch skeleton design; character inferred from title"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Sep/Oct 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-halloween/mickey-mouse-pumpkin",
+   "set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Pumpkin Enamel Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "named in DPB Halloween list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Mickey pumpkin design"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Mickey pumpkin design"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "Sep/Oct 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "jack-o-lantern shaped as smiling Mickey face",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-pumpkin-enamel-pin/11135918.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing (undated) paraphrase"
+    },
+    {
+     "field": "materials",
+     "value": "metal",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-pumpkin-enamel-pin/11135918.html",
+     "method": "search_snippet",
+     "note": "listing material"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-halloween/evil-queen-sliding",
+   "set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Evil Queen sliding pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "reader comment on DPB post mentions a new Evil Queen slider pin; weak"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "from reader comment"
+    },
+    {
+     "field": "original_price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "price given in reader comment"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding element"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "comment says it has a slider"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+     "method": "search_snippet",
+     "note": "comment says at BoxLunch"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins",
+   "field": "pins",
+   "searched": "DPB Feb 2017 post snippets; 2 queries",
+   "note": "sets for Snow White, Peter Pan, Toy Story, Beauty and the Beast, Up, Bambi, Dumbo, Mickey/Minnie, NBC mentioned; members and set split not named"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins",
+   "field": "issuer",
+   "searched": "DPB + BoxLunch listings; 2 queries",
+   "note": "maker not stated; Loungefly not confirmed for this wave"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "number of sets/pins in wave not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins",
+   "field": "issuer",
+   "searched": "DPB + BoxLunch Dumbo listing + Loungefly Dumbo query; 2 queries",
+   "note": "BoxLunch listing credits Disney only; Loungefly not confirmed"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "four hats named; full count not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "field": "pins",
+   "searched": "DPB snippet; 1 query",
+   "note": "other designs only described as Awesome Mix Vol. 2 themed; individual pins not named"
+  },
+  {
+   "key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "field": "issuer",
+   "searched": "DPB + BoxLunch; 1 query",
+   "note": "Loungefly not named for 2017 Guardians pins"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-stitch-set",
+   "field": "pins",
+   "searched": "DPB + BoxLunch Stitch Halloween query; 2 queries",
+   "note": "members not named; undated BoxLunch Loungefly Stitch Halloween 4-pin set (item 20611928) not linked to 2017"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-ducktales",
+   "field": "pins",
+   "searched": "BoxLunch + reseller snippets; 1 query",
+   "note": "Huey, Dewey, Louie shown as mummy, cat, skeleton; which nephew wears which and whether separate pins not stated; not split"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-ducktales",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "reseller cites trading-pin ref 124893; not an official product code, not recorded as claim"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween",
+   "field": "pins",
+   "searched": "DPB snippet; 3 queries",
+   "note": "Disney Mickey & Friends Halloween enamel pins listed but designs not named"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween",
+   "field": "issuer",
+   "searched": "DPB + BoxLunch listings; 3 queries",
+   "note": "Loungefly not confirmed as maker except reseller claim on DuckTales set"
+  },
+  {
+   "key": "lic/2017/loungefly",
+   "field": "pins",
+   "searched": "29 standard queries: Loungefly + 2017 across Hot Topic, BoxLunch, loungefly.com, DPB, Funko blog, news sites, mypincentral",
+   "note": "no Disney pin explicitly credited to Loungefly with a 2017 date found; earliest dated Loungefly Disney pins in snippets are Jul 2018"
+  },
+  {
+   "key": "lic/2017/loungefly-sdcc",
+   "field": "pins",
+   "searched": "Funko SDCC 2017 Loungefly post; 1 query",
+   "note": "Funko post lists two exclusive bags (Star Wars, Stranger Things), no pins"
+  },
+  {
+   "key": "lic/2017/loungefly-nycc",
+   "field": "pins",
+   "searched": "Funko NYCC 2017 Loungefly post; 1 query",
+   "note": "named NYCC 2017 exclusives were backpacks; no Loungefly pins found"
+  },
+  {
+   "key": "lic/2017/loungefly-d23",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no Loungefly pin found for D23 Expo 2017"
+  },
+  {
+   "key": "lic/2017/nycc-marvel",
+   "field": "issuer",
+   "searched": "DPB NYCC 2017 Marvel post; 2 queries",
+   "note": "lead: NYCC 2017 Marvel pin packs and mystery pins; maker not Loungefly-confirmed, likely for other lic/Marvel cells"
+  },
+  {
+   "key": "lic/2017/hot-topic",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "no dated 2017 Hot Topic Loungefly Disney pins found; Hot Topic product pages give no years"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins/dumbo-hat",
+   "field": "pin_structure",
+   "searched": "maintainer review of B024",
+   "note": "hold: split into one pin per character was inferred; no source states the hats are separate pins"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins/goofy-hat",
+   "field": "pin_structure",
+   "searched": "maintainer review of B024",
+   "note": "hold: split into one pin per character was inferred; no source states the hats are separate pins"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins/donald-duck-hat",
+   "field": "pin_structure",
+   "searched": "maintainer review of B024",
+   "note": "hold: split into one pin per character was inferred; no source states the hats are separate pins"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins/minnie-mouse-hat",
+   "field": "pin_structure",
+   "searched": "maintainer review of B024",
+   "note": "hold: split into one pin per character was inferred; no source states the hats are separate pins"
+  }
+ ],
+ "discovery_notes": "Loungefly 2017 sweep, 29 standard search-snippet queries. No Disney pin credited to Loungefly with a 2017 date was found; Funko's SDCC/NYCC 2017 Loungefly posts list bags only. Recorded instead are 2017 BoxLunch Disney pin leads from Disney Pins Blog (Feb wave, Jun hat pins, Aug Guardians, Sep-Oct Halloween) keyed boxlunch- only because no source names Loungefly as maker (DuckTales set has a single reseller Loungefly attribution). BoxLunch product pages are undated and matched to 2017 posts by name/price only. Hat pins recorded one per character as DPB names each hat and prices per pin. Evil Queen slider comes from a reader comment; weak."
+}

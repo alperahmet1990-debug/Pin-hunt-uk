@@ -4,7 +4,7 @@ Read fully before starting. You collect research LEADS, not verification.
 
 1. **Spec.** Read `research/catalogue-engine/EVIDENCE_PACKET_SPEC.md`, and look at `evidence/72_wdw_oe_2025.json` (OE style) and `evidence/51_wdw_2023_2024.json` (LE style).
 2. **Searching.** WebSearch only, mode "standard" (WebFetch is unavailable). Every claim is method "search_snippet"; every source has accessed_via "search_snippet" and page_readable false.
-3. **Blocked domains.** ALWAYS pass blocked_domains: ["pinandpop.com","pinpics.com","pintradingdb.com","stewpins.com","disneypinventory.com","ebay.com","ebay.co.uk","amazon.com","mercari.com","etsy.com","poshmark.com","reddit.com","facebook.com","instagram.com","threads.com","x.com","pinterest.com"].
+3. **Blocked domains.** ALWAYS pass blocked_domains: ["pinandpop.com","pinpics.com","pintradingdb.com","stewpins.com","disneypinventory.com","ebay.com","ebay.co.uk","ebay.ca","ebay.com.au","ebay.de","ebay.fr","ebay.it","ebay.es","picclick.com","picclick.co.uk","whatnot.com","worthpoint.com","amazon.com","mercari.com","etsy.com","poshmark.com","reddit.com","facebook.com","instagram.com","threads.com","x.com","pinterest.com"].
    - Never record a claim from these, even if one appears.
    - PinPics and PinTradingDB are excluded by maintainer decision.
    - If a needed fact exists ONLY on an excluded source, record a not_found entry saying so. Never copy it.

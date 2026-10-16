@@ -13,7 +13,8 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill
 
 YEARS = list(range(2015, 2027))
-RULED = ('disneypinventory', 'disneypinforum', 'fandom', 'threads.com', 'x.com', 'reddit', 'facebook', 'instagram')
+RULED = ('disneypinventory', 'disneypinforum', 'fandom', 'threads.com', 'x.com', 'reddit', 'facebook', 'instagram',
+         'ebay.', 'picclick', 'whatnot', 'worthpoint', 'mercari', 'poshmark', 'etsy.', 'amazon.')
 LINES = ['WDW', 'Disneyland California', 'Disneyland Paris', 'Disney Store', 'Shanghai', 'Hong Kong', 'Tokyo',
          'Licensed retailers', 'Multi-park / shared', 'Other']
 

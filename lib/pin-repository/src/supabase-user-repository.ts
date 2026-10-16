@@ -20,6 +20,7 @@ import type {
   ExternalIdentifiers,
   ExternalSaleListing,
   ForTradeInventoryItem,
+  CollectorForTradePin,
   GetAllSubmissionsInput,
   GetForTradeInventoryInput,
   GetNearbyCollectorsInput,
@@ -1552,6 +1553,38 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         collection: r.pins!.collection ?? undefined,
         traderId: r.user_id,
         traderUsername: usernameById.get(r.user_id)!,
+      }));
+  }
+
+  async getCollectorForTradePins(username: string): Promise<CollectorForTradePin[]> {
+    // Same visibility rule as getPublicProfile: a private profile shows nothing.
+    const { data: profile, error: profileErr } = await this.client
+      .from('profiles')
+      .select('id')
+      .eq('username', username.toLowerCase())
+      .eq('profile_visibility', 'public')
+      .not('username', 'is', null)
+      .maybeSingle();
+    if (profileErr || !profile) return [];
+
+    // Only for_trade rows: other collectors' owned and ISO pins stay private
+    // (RLS user_pins_for_trade_read allows exactly these rows).
+    const { data: rows, error } = await this.client
+      .from('user_pins')
+      .select('pin_id, pins(pinhunt_id, title, image_url, collection)')
+      .eq('user_id', (profile as { id: string }).id)
+      .eq('status', 'for_trade')
+      .limit(500);
+    if (error || !rows) return [];
+
+    type Row = { pin_id: string; pins: { pinhunt_id: string; title: string; image_url: string | null; collection: string | null } | null };
+    return (rows as unknown as Row[])
+      .filter(r => r.pins)
+      .map(r => ({
+        pinId: r.pins!.pinhunt_id,
+        title: r.pins!.title,
+        imageUrl: r.pins!.image_url ?? undefined,
+        collection: r.pins!.collection ?? undefined,
       }));
   }
 

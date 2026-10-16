@@ -24,8 +24,12 @@ import { SkeletonHeader, SkeletonRows } from '@/components/ui/Skeleton';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, type UserError } from '@/utils/userError';
 import { radius, spacing } from '@/constants/theme';
-import type { PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
+import type { CollectorForTradePin, PotentialTradePin, PublicProfile } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { CollectorForTradeGrid } from '@/components/CollectorForTradeGrid';
+import { useCollection } from '@/context/CollectionContext';
+import { useToast } from '@/components/ui/Toast';
+import { sortCollectorForTrade } from '@/utils/collectorForTrade';
 
 // ─── Potential trade row ──────────────────────────────────────────────────────
 
@@ -131,6 +135,40 @@ export default function CollectorProfileScreen() {
   }, [repo, userId, profile]);
 
   useEffect(() => { loadPotentialTrades(); }, [loadPotentialTrades]);
+
+  // Their whole For Trade list (UX-027, #139): public profiles only.
+  const { collection, setStatus } = useCollection();
+  const toast = useToast();
+  const [forTradePins, setForTradePins] = useState<CollectorForTradePin[]>([]);
+  const [forTradeLoading, setForTradeLoading] = useState(false);
+  useEffect(() => {
+    if (!repo || !profile) return;
+    let cancelled = false;
+    setForTradeLoading(true);
+    repo.getCollectorForTradePins(profile.username)
+      .then(pins => { if (!cancelled) setForTradePins(pins); })
+      .catch(() => { if (!cancelled) setForTradePins([]); })
+      .finally(() => { if (!cancelled) setForTradeLoading(false); });
+    return () => { cancelled = true; };
+  }, [repo, profile]);
+  const isoIds = new Set(Object.values(collection).filter(e => e.status === 'wanted').map(e => e.pinId));
+  const sortedForTrade = sortCollectorForTrade(forTradePins, isoIds);
+  const addToIso = (pin: CollectorForTradePin) => {
+    const current = collection[pin.pinId]?.status;
+    if (current === 'wanted') { toast.show({ message: `${pin.title} is already on your ISO` }); return; }
+    if (current === 'owned' || current === 'for_trade') { toast.show({ message: `You already have ${pin.title}` }); return; }
+    setStatus(pin.pinId, 'wanted');
+    toast.show({ message: `Added ${pin.title} to your ISO`, action: { label: 'Undo', onPress: () => setStatus(pin.pinId, 'none') } });
+  };
+  const forTradeSection = (
+    <CollectorForTradeGrid
+      pins={sortedForTrade}
+      loading={forTradeLoading}
+      matchIds={isoIds}
+      onOpen={id => router.push({ pathname: '/pin/[id]', params: { id } })}
+      onAddToIso={addToIso}
+    />
+  );
 
   const theyHaveIWant = potentialTrades.filter(p => p.direction === 'they_have_i_want');
   const iHaveTheyWant = potentialTrades.filter(p => p.direction === 'i_have_they_want');
@@ -334,6 +372,8 @@ export default function CollectorProfileScreen() {
 
                 {/* Secondary — badges/rating, now that the match itself has
                     already been shown first. */}
+                {forTradeSection}
+
                 {(badgeRow || ratingRow) && (
                   <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
                     <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>ABOUT {profile.username}</Text>
@@ -389,6 +429,8 @@ export default function CollectorProfileScreen() {
                     ) : tradeMatchCard}
                   </View>
                 )}
+
+                {forTradeSection}
               </>
             )}
           </ScrollView>

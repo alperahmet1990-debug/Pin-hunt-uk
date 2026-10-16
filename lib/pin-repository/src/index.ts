@@ -50,6 +50,7 @@ export type {
   PotentialTradePin,
   GetPotentialTradesInput,
   ForTradeInventoryItem,
+  CollectorForTradePin,
   GetForTradeInventoryInput,
   // Community (migration 007_community)
   CommunityPost,

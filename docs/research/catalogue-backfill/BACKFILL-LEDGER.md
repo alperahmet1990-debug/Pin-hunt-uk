@@ -3,18 +3,18 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-Round 5 (started 2026-10-16 15:30 UTC): B096, B020–B024
+none
 
-## Totals (after round 4, 16 Oct 2026 ~15:05 UTC)
+## Totals (after round 5, 16 Oct 2026 ~16:00 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
-- Research pin records: 3,380.
-- Genuinely new 2015–2026: **2,960** (809 corroborated). Held: 401, including 77 possible live matches. No usable source: 16.
-- **Total unique individual pins identified 2015–2026: 4,758** (1,798 + 2,960).
-- Incomplete sets: 71 sets, 330 named members still missing. Standalone OE (new): 718 of 1,087 new OE pins.
-- Licensed (new research pins; a Loungefly pin sold at BoxLunch counts for both): Loungefly 83 (+36 held), BoxLunch 128 (+53 held), Hot Topic 41 (+12), ArtLand 11 (+5), Funko 28 (+8), other 5, Pink a la Mode 0.
+- Research pin records: 3,626.
+- Genuinely new 2015–2026: **3,129** (823 corroborated). Held: 474, including 87 possible live matches. No usable source: 20.
+- **Total unique individual pins identified 2015–2026: 4,927** (1,798 + 3,129).
+- Incomplete sets: 77 sets, 356 named members still missing. Standalone OE (new): 720 of 1,106 new OE pins.
+- Licensed (new research pins; a Loungefly pin sold at BoxLunch counts for both): Loungefly 112 (+46 held), BoxLunch 142 (+57 held), Hot Topic 41 (+14), ArtLand 11 (+5), Funko 34 (+11), other 7 (+2), Pink a la Mode 0.
 - Reviewer checks: 87 OK (maintainer, 16 Oct).
 
-Earlier: after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
+Earlier: after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
 
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |
@@ -42,13 +42,13 @@ Earlier: after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; 
 | B017 | 2017 | wdw-oe | WDW open edition (incl. standalone) | partial | 217_b017_wdw_oe_2017.json | 40 | follow-up appended |
 | B018 | 2017 | wdw-le | WDW LE/LR | partial | 218_b018_wdw_le_2017.json | 87 | follow-up appended |
 | B067 | 2015-2026 | lic-review | Licensed exclusion review: re-check items earlier cells left out — B006 2019 Hot Topic/BoxLunch items (left out as outside Disney Store scope); B014 JCPenney Mickey 90 sets, Disney Handbag Collectible Pin Pack 2018, Holiday Nutcrackers OE mystery 2018; B015 HK Times Square Incredibles 2 exhibition pins; B008 ArtLand LE 250 Sept 2019 designs and Marvel/Avengers Funko pins; B016 Loungefly princess and Lilo & Stitch mystery sets (pin or button?). Record genuine pins; exclude only confirmed buttons/badges/non-pin | done | 223_b067_lic_review.json | 47 | review complete; 2018 Loungefly mystery buttons confirmed as buttons (excluded) |
-| B096 | 2015-2026 | lic-franchise | Star Wars / Marvel licensed pins previously skipped (now in scope, provisional): 2019 Loungefly Ewok Wicket and Captain Marvel pins (B063), Hot Topic Captain Marvel set members (B067), Marvel/Avengers Funko pins skipped by B008 and B064 (keep keys already in 223), plus other 2018–2019 Loungefly/BoxLunch/Hot Topic Star Wars and Marvel enamel pins | in progress | | | |
+| B096 | 2015-2026 | lic-franchise | Star Wars / Marvel licensed pins previously skipped (now in scope, provisional): 2019 Loungefly Ewok Wicket and Captain Marvel pins (B063), Hot Topic Captain Marvel set members (B067), Marvel/Avengers Funko pins skipped by B008 and B064 (keep keys already in 223), plus other 2018–2019 Loungefly/BoxLunch/Hot Topic Star Wars and Marvel enamel pins | partial | 225_b096_lic_franchise.json | 59 | follow-up appended |
 | B019 | 2017 | dlr-oe | Disneyland California OE | partial | 224_b019_dlr_oe_2017.json | 45 | follow-up appended |
-| B020 | 2017 | dlr-le | Disneyland California LE/LR | in progress | | | |
-| B021 | 2017 | dlp | Disneyland Paris (OE+LE) | in progress | | | |
-| B022 | 2017 | ds | Disney Store UK/EU + US | in progress | | | |
-| B023 | 2017 | asia | Shanghai, Hong Kong, Tokyo | in progress | | | |
-| B024 | 2017 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | in progress | | | |
+| B020 | 2017 | dlr-le | Disneyland California LE/LR | partial | 226_b020_dlr_le_2017.json | 30 | follow-up appended |
+| B021 | 2017 | dlp | Disneyland Paris (OE+LE) | partial | 227_b021_dlp_2017.json | 19 | follow-up appended |
+| B022 | 2017 | ds | Disney Store UK/EU + US | partial | 228_b022_ds_2017.json | 71 | follow-up appended; 37 split pins held |
+| B023 | 2017 | asia | Shanghai, Hong Kong, Tokyo | partial | 229_b023_asia_2017.json | 58 | follow-up appended |
+| B024 | 2017 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | done | 230_b024_lic_loungefly_2017.json | 9 | no Loungefly-credited 2017 Disney pins found (earliest July 2018); 9 BoxLunch 2017 pins recorded |
 | B068 | 2017 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
 | B069 | 2017 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B025 | 2016 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
@@ -115,6 +115,12 @@ Earlier: after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; 
 | B093 | 2018 | lic-loungefly | follow-up of B065: Loungefly 2018: Jan–Jun releases, NYCC Mickey 90 (5 of 9 unnamed), NYCC NBC 25th members, Edna Mode pins, Mary Poppins penguins | todo | | | |
 | B094 | 2018 | lic-boxlunch | follow-up of B066: BoxLunch 2018: Funko Alice/Mulan pin split (held), Mickey 90th mystery, WALL-E & EVE lights, Stitch/Angel/Scrump, NBC 25th remaining ~5, Sally's Jars, Toy Story Land count 6 vs 7 | todo | | | |
 | B095 | 2017 | dlr-oe | follow-up of B019: DLR OE 2017: booster/mystery/starter/emoji/Frozen/Tsum members, prices of dated 2017 pins, edition types, Halloween OE; LE leads passed to B020 | todo | | | |
+| B097 | 2015-2026 | lic-franchise | follow-up of B096: Star Wars/Marvel: Hot Topic Captain Marvel set members, Loungefly NYCC 2019 Marvel LE 1000 members, NYCC 2019 Marvel 80th sets, Marvel Comics blind box 2020, Mandalorian set members, Her Universe Captain Marvel set date, 2018 Star Wars/Marvel licensed | todo | | | |
+| B098 | 2017 | dlr-le | follow-up of B020: DLR LE 2017: Pin Trading Tales #1–9, Charming Characters #1–9, Pirates 50th individual pins, Villains box set contents, Mission Breakout AP pin, earlier AP quarterly pins | todo | | | |
+| B099 | 2017 | dlp | follow-up of B021: DLP 2017: booster/April LE/October LE/Coco/Star Wars/Rapunzel set members, monthly Pin Trading Night pins, Christmas LE, edition size conflict (600 vs 700) | todo | | | |
+| B100 | 2017 | ds | follow-up of B022: Disney Store 2017: 30th Anniversary week 8 and per-pack pin split (held), Storybook Classics #7/#10/#12, Park Pack Oct box, Coco 3 of 8, Last Jedi pin 2/3, UK single LE character details | todo | | | |
+| B101 | 2017 | asia | follow-up of B023: Asia 2017: SHDR zodiac/summer/anniversary box members, anniversary mystery split (held), HKDL Pin Hunting/Passport/Teacup members, HKDL 12th anniversary, TDR 34th anniversary and Christmas | todo | | | |
+| B102 | 2017 | lic-boxlunch | follow-up of B024: BoxLunch 2017: Feb 2017 wave set members (Snow White, Peter Pan, Toy Story, BatB, Up, Bambi, Dumbo, Mickey/Minnie, NBC), hat pin split (held), Halloween Mickey & Friends and Stitch set members, makers | todo | | | |
 
 Licensed lines (maintainer, 16 Oct 2026): `lic-loungefly` and `lic-boxlunch` are tracked separately so each brand's coverage can be measured; a Loungefly pin sold at BoxLunch counts for both. `lic-other` covers the remaining licensees. The hourly report prints new and held pins per brand.
 
@@ -129,4 +135,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | – | 2026-10-16 14:15 | scope update (no new research) | +47 released from false holds | Licensed pins fully in scope (maintainer). Engine fix: line prefixes (lic, dsus, shdr, hkdl, tdr) no longer count as shared set words, and licensed/Asia lines are no longer compared with park lines for cross-set duplicates. Licensed cells split into lic-loungefly / lic-boxlunch / lic-other (B063–B090); exclusion review cell B067 |
 | 4 | 2026-10-16 14:30 | B063–B066 (2019/2018 Loungefly and BoxLunch dedicated sweeps), B067 (licensed exclusion review), B019 (2017 DLR OE) | +138 net new (42 corroborated); 242 pin records | B067 done, others partial (follow-ups appended). Held for pin-split confirmation: Funko Alice/Mulan 2018 (6), Pooh/Piglet/Tigger 2019 (3). Open question to maintainer: Star Wars/Marvel licensed pins in scope? |
 | – | 2026-10-16 15:10 | scope update (no new research) | – | Star Wars and Marvel licensed pins in scope for now (maintainer). Rule 11 updated; B096 queued to record the pins earlier cells skipped |
-| 5 | 2026-10-16 15:30 | B096 (Star Wars/Marvel licensed), B020 (2017 DLR LE), B021 (2017 DLP), B022 (2017 Disney Store), B023 (2017 Asia), B024 (2017 Loungefly) | in progress | |
+| 5 | 2026-10-16 15:30 | B096 (Star Wars/Marvel licensed), B020 (2017 DLR LE), B021 (2017 DLP), B022 (2017 Disney Store), B023 (2017 Asia), B024 (2017 Loungefly) | +170 net new (14 corroborated); 246 pin records | B024 done (no 2017 Loungefly-credited pins), others partial; follow-ups B097–B102. Held for pin-split/grouping confirmation: 37 Disney Store, 4 SHDR, 4 BoxLunch hats, 2 FiGPiN Thor/Loki, 2 Funko LA Comic Con |

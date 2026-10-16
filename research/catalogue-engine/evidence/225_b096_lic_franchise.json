@@ -1,0 +1,3586 @@
+{
+ "packet_id": "backfill-b096-lic-franchise",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b096",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+   "title": "Ewok Wicket BoxLunch Star Wars Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-ewok-wicket-enamel-pin---boxlunch-exclusive/12091471.html",
+   "title": "Loungefly Star Wars Ewok Wicket Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+   "title": "Star Wars Planets Loungefly Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+   "title": "Star Wars The Rise of Skywalker BoxLunch Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-resistance-forever-enamel-pin/11945082.html",
+   "title": "Star Wars: The Rise of Skywalker Resistance Forever Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-sith-trooper-enamel-pin/11945114.html",
+   "title": "Star Wars: The Rise of Skywalker Sith Trooper Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+   "title": "Star Wars Sith BoxLunch Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-sith-enamel-pin---boxlunch-exclusive/12539633.html",
+   "title": "Star Wars Sith Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+   "title": "The Infinity Gauntlet Comic BoxLunch Marvel Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+   "title": "Marvel 80th Anniversary BoxLunch Exclusive Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+   "title": "Funko Marvel Pop! Cosmic Ghost Rider Enamel Pin 2019 L.A. Comic Con Exclusive",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/funko-marvel-pop-venom-corrupted-enamel-pin-2019-l.a.-comic-con-exclusive/12207494.html",
+   "title": "Funko Marvel Pop! Venom Corrupted Enamel Pin 2019 L.A. Comic Con Exclusive",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+   "title": "Captain Marvel FiGPiN Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+   "title": "Thor & Loki FiGPiN 2-Pack - NYCC 2019",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+   "title": "Marvel Funko Pop! Jumbo Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-04-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+   "title": "Star Wars Funko Pop! Jumbo Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+   "title": "Star Wars Pop by Loungefly Blind Box Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+   "title": "Star Wars Backpacks Blind Box Loungefly Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+   "title": "Star Wars The Mandalorian Loungefly Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+   "title": "Marvel Pop! Avengers Blind Box Loungefly Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+   "title": "Avengers Blind Box Pin - Marvel",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+   "title": "Marvel Backpacks Blind Box Loungefly Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+   "title": "Marvel Avengers Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+   "title": "Iron Man 2020 Fall Virtual Con Funko Pop! Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+   "title": "Iron Man Funko Pop! Limited Edition Loungefly Marvel Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+   "title": "Marvel Infinity Saga Backpack Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-ewok-wicket",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Ewok Wicket BoxLunch Star Wars Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "single pin post"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "DPB says made by Loungefly"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-ewok-wicket-enamel-pin---boxlunch-exclusive/12091471.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-star-wars-planets",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Planets Loungefly Pin Set",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "Loungefly set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "price",
+     "value": 50.0,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "retail $50"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "released Dec 2019 after NYCC 2019 premiere"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2019 (premiere)",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "premiered at NYCC 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Rise of Skywalker BoxLunch Pins",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "DPB roundup title"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "2019 roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-star-wars-sith",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Sith BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-infinity-gauntlet-comic",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Infinity Gauntlet Comic BoxLunch Marvel Pin",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-marvel-80th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel 80th Anniversary BoxLunch Exclusive Pin",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/funko-hot-topic-la-comic-con",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Funko Marvel Pop! 2019 L.A. Comic Con Exclusive enamel pins",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "grouping of two Hot Topic listings; not a stated set"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "Funko listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/figpin-captain-marvel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain Marvel FiGPiN Pins",
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "from Feb 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "GameStop, Best Buy, Target",
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "select retailers named"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/figpin-nycc-thor-loki",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Thor & Loki FiGPiN 2-Pack - NYCC 2019",
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "two-pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 35.0,
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "$35 for the 2-pin set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2019 (FiGPiN booth)",
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "NYCC exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/funko-marvel-jumbo-pin-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Funko Pop! Jumbo Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "Funko Pop!"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "March 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "GameStop.com, Hot Topic, BoxLunch, Barnes & Noble",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "retailers listed"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "1 in 12 chase"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/funko-star-wars-jumbo-pin-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Funko Pop! Jumbo Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "Funko Pop!"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "March 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "GameStop.com, Hot Topic, BoxLunch, Barnes & Noble",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "retailers"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "1 in 12 chase"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-star-wars-pop-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Pop by Loungefly Blind Box Pins",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Pop! by Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Chewbacca/AT-ST chase with glitter"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "select retailers",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "select retailers"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Backpacks Blind Box Loungefly Pins",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "six characters"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Ewok chase, glitter"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "select retailers",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "select retailers"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-star-wars-mandalorian-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Mandalorian Loungefly Pin Set",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "$25"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Pop! Avengers Blind Box Loungefly Pins",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "set_name",
+     "value": "Avengers Blind Box Pin - Marvel",
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "Loungefly site"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "six characters"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "6 designs"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Iron Man chase"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "glitter Iron Man chase 1 in 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "select retailers",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "select retailers"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Backpacks Blind Box Loungefly Pins",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Captain Marvel chase"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "select retailers",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "select retailers"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-marvel-avengers-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Avengers Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/funko-fall-virtual-con-iron-man",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Iron Man 2020 Fall Virtual Con Funko Pop! Pin",
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-iron-man-funko-pop-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Iron Man Funko Pop! Limited Edition Loungefly Marvel Pin",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Infinity Saga Backpack Loungefly Blind Box Pin Set",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "June 2023"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Iron Gauntlet chase, glitter"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-ewok-wicket/wicket",
+   "set_key": "lic/2019/loungefly-boxlunch-ewok-wicket",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Star Wars Ewok Wicket Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-ewok-wicket-enamel-pin---boxlunch-exclusive/12091471.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wicket"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "Ewok Wicket"
+    },
+    {
+     "field": "main_character",
+     "value": "Wicket",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "Wicket the Ewok"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "Star Wars pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "gold-tone pin of Wicket in the Endor forest",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of DPB snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "released Sept 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-ewok-wicket-enamel-pin---boxlunch-exclusive/12091471.html",
+     "method": "search_snippet",
+     "note": "listing marked BoxLunch Exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "retailer exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-ewok-wicket-enamel-pin---boxlunch-exclusive/12091471.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive label"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/ewok-wicket-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-star-wars-planets/bespin",
+   "set_key": "lic/2019/loungefly-star-wars-planets",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bespin",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "planet named in set"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "Star Wars planets"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins, each a different planet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2 inches stated; converted"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Loungefly crown pattern",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "unique Loungefly crown pattern on back"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-star-wars-planets/tatooine",
+   "set_key": "lic/2019/loungefly-star-wars-planets",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tatooine",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "planet named in set"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "Star Wars planets"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins, each a different planet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2 inches stated; converted"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Loungefly crown pattern",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "unique Loungefly crown pattern on back"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-star-wars-planets/dagobah",
+   "set_key": "lic/2019/loungefly-star-wars-planets",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dagobah",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "planet named in set"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "Star Wars planets"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins, each a different planet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2 inches stated; converted"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Loungefly crown pattern",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "unique Loungefly crown pattern on back"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-star-wars-planets/endor",
+   "set_key": "lic/2019/loungefly-star-wars-planets",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Endor",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "planet named in set"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "Star Wars planets"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins, each a different planet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2 inches stated; converted"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Loungefly crown pattern",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "unique Loungefly crown pattern on back"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-star-wars-planets/hoth",
+   "set_key": "lic/2019/loungefly-star-wars-planets",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hoth",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "planet named in set"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "Star Wars planets"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins, each a different planet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "2 inches stated; converted"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Loungefly crown pattern",
+     "source_url": "https://disneypinsblog.com/star-wars-planets-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "unique Loungefly crown pattern on back"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker/resistance-forever",
+   "set_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars: The Rise of Skywalker Resistance Forever Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-resistance-forever-enamel-pin/11945082.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "Rise of Skywalker"
+    },
+    {
+     "field": "visual_description",
+     "value": "gold-tone enamel pin",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "Oct 2019"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-resistance-forever-enamel-pin/11945082.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker/sith-trooper",
+   "set_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars: The Rise of Skywalker Sith Trooper Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-sith-trooper-enamel-pin/11945114.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sith Trooper"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "Sith Trooper"
+    },
+    {
+     "field": "visual_description",
+     "value": "red Sith Trooper helmet",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-sith-trooper-enamel-pin/11945114.html",
+     "method": "search_snippet",
+     "note": "listing original price before sale"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-sith-trooper-enamel-pin/11945114.html",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-rise-of-skywalker-sith-trooper-enamel-pin/11945114.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker/stormtrooper",
+   "set_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stormtrooper",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "named in DPB roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "Rise of Skywalker roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker/x-wing-badge",
+   "set_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "X-Wing Badge",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "named in DPB roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "Rise of Skywalker roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker/resistance-hero-x-wing-squadron",
+   "set_key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Resistance Hero X-Wing Squadron",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "named in DPB roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-the-rise-of-skywalker-boxlunch-pins",
+     "method": "search_snippet",
+     "note": "Rise of Skywalker roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-star-wars-sith/sith",
+   "set_key": "lic/2019/boxlunch-star-wars-sith",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Sith Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/star-wars-sith-enamel-pin---boxlunch-exclusive/12539633.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver-tone pin with Sith-themed tagline",
+     "source_url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "Nov 2019"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/star-wars-sith-enamel-pin---boxlunch-exclusive/12539633.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-sith-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/star-wars-sith-enamel-pin---boxlunch-exclusive/12539633.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "retailer exclusive",
+     "source_url": "https://www.boxlunch.com/product/star-wars-sith-enamel-pin---boxlunch-exclusive/12539633.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-infinity-gauntlet-comic/infinity-gauntlet-comic",
+   "set_key": "lic/2019/boxlunch-infinity-gauntlet-comic",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Infinity Gauntlet Comic",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "DPB"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "features Thanos"
+    },
+    {
+     "field": "main_character",
+     "value": "Thanos",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Thanos"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Marvel pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver-tone pin featuring Thanos, Infinity Gauntlet comic",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Aug 2019"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-infinity-gauntlet-comic-boxlunch-marvel-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-marvel-80th-anniversary/marvel-80th-anniversary",
+   "set_key": "lic/2019/boxlunch-marvel-80th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel 80th Anniversary",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "DPB"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver-tone pin marking 80 years of Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Release",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "described as exclusive limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Aug 2019"
+    },
+    {
+     "field": "original_price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/marvel-80th-anniversary-boxlunch-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch in store and online only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-hot-topic-la-comic-con/cosmic-ghost-rider",
+   "set_key": "lic/2019/funko-hot-topic-la-comic-con",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Funko Marvel Pop! Cosmic Ghost Rider Enamel Pin",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cosmic Ghost Rider"
+     ],
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "Cosmic Ghost Rider"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "2019 L.A. Comic Con exclusive"
+    },
+    {
+     "field": "release_location",
+     "value": "L.A. Comic Con 2019 (listed at Hot Topic)",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "exclusive label on Hot Topic listing"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-cosmic-ghost-rider-enamel-pin-2019-l.a.-comic-con-exclusive/12207496.html",
+     "method": "search_snippet",
+     "note": "US price"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-hot-topic-la-comic-con/venom-corrupted",
+   "set_key": "lic/2019/funko-hot-topic-la-comic-con",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Funko Marvel Pop! Venom Corrupted Enamel Pin",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-venom-corrupted-enamel-pin-2019-l.a.-comic-con-exclusive/12207494.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Venom"
+     ],
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-venom-corrupted-enamel-pin-2019-l.a.-comic-con-exclusive/12207494.html",
+     "method": "search_snippet",
+     "note": "Venom (Corrupted)"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-venom-corrupted-enamel-pin-2019-l.a.-comic-con-exclusive/12207494.html",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-venom-corrupted-enamel-pin-2019-l.a.-comic-con-exclusive/12207494.html",
+     "method": "search_snippet",
+     "note": "2019 L.A. Comic Con exclusive"
+    },
+    {
+     "field": "release_location",
+     "value": "L.A. Comic Con 2019 (listed at Hot Topic)",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-venom-corrupted-enamel-pin-2019-l.a.-comic-con-exclusive/12207494.html",
+     "method": "search_snippet",
+     "note": "exclusive label on Hot Topic listing"
+    },
+    {
+     "field": "visual_description",
+     "value": "Venom as on the Absolute Carnage #1 cover",
+     "source_url": "https://www.hottopic.com/product/funko-marvel-pop-venom-corrupted-enamel-pin-2019-l.a.-comic-con-exclusive/12207494.html",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/figpin-captain-marvel/captain-marvel",
+   "set_key": "lic/2019/figpin-captain-marvel",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "Captain Marvel pin named"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "Captain Marvel film"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/figpin-captain-marvel/goose",
+   "set_key": "lic/2019/figpin-captain-marvel",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goose"
+     ],
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "Goose pin named"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "Captain Marvel film"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/captain-marvel-figpin-pins/",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/figpin-nycc-thor-loki/thor",
+   "set_key": "lic/2019/figpin-nycc-thor-loki",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thor"
+     ],
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "Thor in 2-pack"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "NYCC 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/figpin-nycc-thor-loki/loki",
+   "set_key": "lic/2019/figpin-nycc-thor-loki",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Loki"
+     ],
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "Loki in 2-pack"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/thor-loki-figpin-2-pack-nycc-2019/",
+     "method": "search_snippet",
+     "note": "NYCC 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/funko-marvel-jumbo-pin-series/iron-man",
+   "set_key": "lic/2020/funko-marvel-jumbo-pin-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "named in series"
+    },
+    {
+     "field": "main_character",
+     "value": "Iron Man",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "series member"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/funko-marvel-jumbo-pin-series/thor",
+   "set_key": "lic/2020/funko-marvel-jumbo-pin-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thor"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "named in series"
+    },
+    {
+     "field": "main_character",
+     "value": "Thor",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "series member"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/funko-marvel-jumbo-pin-series/loki",
+   "set_key": "lic/2020/funko-marvel-jumbo-pin-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Loki"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "named in series"
+    },
+    {
+     "field": "main_character",
+     "value": "Loki",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "series member"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/funko-marvel-jumbo-pin-series/thanos",
+   "set_key": "lic/2020/funko-marvel-jumbo-pin-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "named in series"
+    },
+    {
+     "field": "main_character",
+     "value": "Thanos",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "series member"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/funko-star-wars-jumbo-pin-series/darth-vader",
+   "set_key": "lic/2020/funko-star-wars-jumbo-pin-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "featured pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-funko-pop-jumbo-pin-series",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-pop-blind-box/c-3po",
+   "set_key": "lic/2020/loungefly-star-wars-pop-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "C-3PO"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-pop-blind-box/boba-fett",
+   "set_key": "lic/2020/loungefly-star-wars-pop-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-pop-blind-box/jawa",
+   "set_key": "lic/2020/loungefly-star-wars-pop-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jawa"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-pop-blind-box/yoda",
+   "set_key": "lic/2020/loungefly-star-wars-pop-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Yoda"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-pop-blind-box/ewok",
+   "set_key": "lic/2020/loungefly-star-wars-pop-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ewok"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-pop-blind-box/chewbacca",
+   "set_key": "lic/2020/loungefly-star-wars-pop-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chewbacca"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "chase named Chewbacca/AT-ST, glitter"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-pop-by-loungefly-blind-box-pins/",
+     "method": "search_snippet",
+     "note": "chase has glitter"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-backpacks-blind-box/darth-vader",
+   "set_key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "backpack design named"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-backpacks-blind-box/boba-fett",
+   "set_key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "backpack design named"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-backpacks-blind-box/luke-skywalker",
+   "set_key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Luke Skywalker"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "backpack design named"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-backpacks-blind-box/r2-d2",
+   "set_key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "R2-D2"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "backpack design named"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-backpacks-blind-box/princess-leia",
+   "set_key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Princess Leia"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "backpack design named"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-backpacks-blind-box/ewok",
+   "set_key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ewok"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "backpack design named"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "chase pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "glitter embellishments"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-mandalorian-pin-set/the-mandalorian",
+   "set_key": "lic/2020/loungefly-star-wars-mandalorian-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "The Mandalorian"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "one pin of The Mandalorian"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-loungefly-pin-set/",
+     "method": "search_snippet",
+     "note": "The Mandalorian"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box/captain-america",
+   "set_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box/spider-man",
+   "set_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box/hulk",
+   "set_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box/loki",
+   "set_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Loki"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Loki"
+     ],
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box/thor",
+   "set_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thor"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thor"
+     ],
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box/iron-man",
+   "set_key": "lic/2020/loungefly-marvel-pop-avengers-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "chase"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://loungefly.com/gb/avengers-blind-box-pin---marvel/MVPN0074.html",
+     "method": "search_snippet",
+     "note": "chase 1 in 12"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-pop-avengers-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "glitter"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-backpacks-blind-box/iron-man",
+   "set_key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-backpacks-blind-box/thor",
+   "set_key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thor"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-backpacks-blind-box/loki",
+   "set_key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Loki"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-backpacks-blind-box/captain-america",
+   "set_key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-backpacks-blind-box/ant-man",
+   "set_key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ant-Man"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-backpacks-blind-box/captain-marvel",
+   "set_key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "named in lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "characters as backpacks"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "chase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-backpacks-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "glitter"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-marvel-avengers-le/avengers",
+   "set_key": "lic/2020/loungefly-marvel-avengers-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thor",
+      "Iron Man",
+      "Captain America",
+      "Hulk"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "four Avengers shown"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "one pin shows all four"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_description",
+     "value": "Funko Pop-style Avengers with sliding elements",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "sliding elements"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "$25"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07-21",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-avengers-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "21 July 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/funko-fall-virtual-con-iron-man/iron-man",
+   "set_key": "lic/2020/funko-fall-virtual-con-iron-man",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "Iron Man"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "glitter accents"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 325,
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "LE 325"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "2020 Fall Virtual Con"
+    },
+    {
+     "field": "release_location",
+     "value": "Funko Fall Virtual Con 2020",
+     "source_url": "https://disneypinsblog.com/iron-man-2020-fall-virtual-con-funko-pop-pin/",
+     "method": "search_snippet",
+     "note": "virtual con exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/loungefly-iron-man-funko-pop-le/iron-man",
+   "set_key": "lic/2021/loungefly-iron-man-funko-pop-le",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man",
+      "Tony Stark"
+     ],
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Iron Man; mask slides to reveal Tony Stark"
+    },
+    {
+     "field": "main_character",
+     "value": "Iron Man",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Iron Man"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_description",
+     "value": "Iron Man before Stark Tower; sliding mask reveals Tony Stark",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "slide-up mask"
+    },
+    {
+     "field": "size_mm",
+     "value": 76,
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "3 inches stated; converted"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "$25"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-06",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "6 July 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/iron-man-funko-pop-limited-edition-loungefly-marvel-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box/gamora",
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gamora"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "backpack designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box/rescue",
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rescue"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "backpack designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box/drax",
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Drax"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "backpack designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box/vision",
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Vision"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "backpack designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box/doctor-strange",
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doctor Strange"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_form",
+     "value": "backpack",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "backpack designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box/iron-gauntlet",
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Iron Gauntlet",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "chase pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "chase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "glitter"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2019/loungefly-boxlunch-ewok-wicket/wicket",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "lead: a Walmart listing says a Wicket pin featured at NYCC 2019; not matched to this pin, not recorded"
+  },
+  {
+   "key": "lic/undated/loungefly-boxlunch-wicket-ewok-terrarium",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: separate Loungefly Wicket Ewok Terrarium pin, BoxLunch exclusive, undated listing; not recorded"
+  },
+  {
+   "key": "lic/2019/hot-topic-captain-marvel-pin-set",
+   "field": "pins",
+   "searched": "4 queries (DPB, Hot Topic, Her Universe)",
+   "note": "no source names the members of the Apr 2019 $22.90 Hot Topic set; no member pins recorded"
+  },
+  {
+   "key": "lic/2019/hot-topic-captain-marvel-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Her Universe 'Marvel Captain Marvel Enamel Pin Set' (4 pins incl. star emblem, flying silhouette, lettering; $19.90) undated and price differs; not matched"
+  },
+  {
+   "key": "lic/2019/loungefly-captain-marvel",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2019 Loungefly Captain Marvel pin found; Hot Topic logo pin already keyed in 223 as lic/2019/hot-topic-captain-marvel/captain-marvel-logo (maker not stated)"
+  },
+  {
+   "key": "lic/2019/zavvi-captain-marvel-9-pin-set",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "lead: Zavvi-exclusive 9-pin Captain Marvel set (ComicBook.com, Apr 2019); scope: confirm pin vs button (called pin badge set)"
+  },
+  {
+   "key": "dsus/2019/captain-marvel-limited-release",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead for dsus cell: shopDisney Captain Marvel LR pin, 11 Feb 2019, $12.95 (DPB); not licensed, not recorded here"
+  },
+  {
+   "key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "maker (e.g. Loungefly) not named in snippets; retailer-only key"
+  },
+  {
+   "key": "lic/2019/boxlunch-star-wars-rise-of-skywalker",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "total number of pins in the roundup not stated; 5 named"
+  },
+  {
+   "key": "lic/2019/boxlunch-star-wars-rise-of-skywalker/stormtrooper",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "only Resistance Forever dated (Oct 2019) in snippet; other pins' dates/prices not stated"
+  },
+  {
+   "key": "lic/2019/boxlunch-star-wars-sith",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "maker not named in snippets"
+  },
+  {
+   "key": "lic/2019/boxlunch-infinity-gauntlet-comic",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "maker not named in snippet"
+  },
+  {
+   "key": "lic/2019/boxlunch-marvel-80th-anniversary/marvel-80th-anniversary",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "BoxLunch 'Marvel Logo 80th Anniversary' listing ($7.99) not confirmed as same pin; also undated BoxLunch Spider-Man 80th Anniversary pin lead"
+  },
+  {
+   "key": "lic/2019/funko-hot-topic-la-comic-con",
+   "field": "pin_structure",
+   "searched": "maintainer note",
+   "note": "set key groups two separate listings by shared event; no source calls them a set"
+  },
+  {
+   "key": "lic/undated/funko-hot-topic-marvel",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "leads: Funko Pop! Spider-Man Doppelganger (L.A. Comic Con), Blue Venom, Venomized Green Goblin pins at Hot Topic undated; not recorded"
+  },
+  {
+   "key": "lic/2019/figpin-captain-marvel",
+   "field": "price",
+   "searched": "1 query",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "lic/2019/figpin-nycc-thor-loki",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "split Thor/Loki into one pin each from '2-pin set' title; per-pin subject not explicitly stated"
+  },
+  {
+   "key": "lic/2020/funko-marvel-jumbo-pin-series",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "Funko fan wiki (fandom) gives 2019 for these large pins; user wiki, not recorded as claim; conflicts with DPB Mar 2020"
+  },
+  {
+   "key": "lic/2020/funko-marvel-jumbo-pin-series",
+   "field": "has_chaser",
+   "searched": "1 query",
+   "note": "which character has the chase variant not stated"
+  },
+  {
+   "key": "lic/2020/funko-star-wars-jumbo-pin-series",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "only Darth Vader named in snippet; other members not stated"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-pop-blind-box/chewbacca",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "chase named 'Chewbacca/AT-ST'; unclear if AT-ST is on the same pin; price not stated"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-backpacks-blind-box",
+   "field": "price",
+   "searched": "1 query",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-mandalorian-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "other 3 pins are three different images of The Child; individual designs not described, not recorded"
+  },
+  {
+   "key": "lic/2020/loungefly-marvel-backpacks-blind-box",
+   "field": "price",
+   "searched": "1 query",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "lic/2020/loungefly-marvel-avengers-le/avengers",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "sales channel not in snippet"
+  },
+  {
+   "key": "lic/2020/funko-fall-virtual-con-iron-man",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "snippet calls it a jumbo Funko Pop! pin; whether Loungefly made it not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "total count not in snippet; named list may be partial"
+  },
+  {
+   "key": "lic/2019/loungefly-nycc-marvel-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: Funko blog says Loungefly LE 1000 Marvel pin set at NYCC 2019 booth; contents not named; not recorded"
+  },
+  {
+   "key": "lic/2019/nycc-marvel-80th-anniversary-sets",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "lead: DPB lists three Marvel 80th NYCC 2019 sets LE 500 $40 and one LE 120 $120; maker and contents not stated"
+  },
+  {
+   "key": "lic/2020/loungefly-marvel-comics-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Marvel Comics Loungefly blind box Oct 2020, six pins with glitter chase; members not named"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-blind-boxes",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "leads (DPB): BoxLunch Star Wars Vinyl Record (Jul 2024, 6), Villains (Oct 2024, 5), Sand (May 2024), Character Poster (Dec 2024) blind boxes, $10.90; members not named"
+  },
+  {
+   "key": "lic/2018/loungefly-star-wars-marvel",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "no 2018 Loungefly/BoxLunch/Hot Topic/Funko Star Wars or Marvel enamel pin found; SDCC 2018 Loungefly SW items were bags; NYCC 2018 Loungefly pin set contents unseen"
+  },
+  {
+   "key": "lic/2019/funko-star-wars",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2018-2019 Funko Star Wars enamel pin at BoxLunch/Hot Topic found; undated BoxLunch Funko R2-D2 large pin lead"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "field": "pins",
+   "searched": "maintainer instruction",
+   "note": "already keyed in 223; not re-recorded. Avengers Attributes also in 223 (lic/2019/boxlunch-avengers-attributes); not re-recorded"
+  },
+  {
+   "key": "lic/2019/funko-hot-topic-la-comic-con/cosmic-ghost-rider",
+   "field": "set",
+   "searched": "maintainer review of B096",
+   "note": "hold: the set grouping was made by the researcher, not stated by a source; confirm before sign-off"
+  },
+  {
+   "key": "lic/2019/funko-hot-topic-la-comic-con/venom-corrupted",
+   "field": "set",
+   "searched": "maintainer review of B096",
+   "note": "hold: the set grouping was made by the researcher, not stated by a source; confirm before sign-off"
+  },
+  {
+   "key": "lic/2019/figpin-nycc-thor-loki/thor",
+   "field": "pin_structure",
+   "searched": "maintainer review of B096",
+   "note": "hold: split into one pin per character was inferred from the 2-pin set title; confirm before sign-off"
+  },
+  {
+   "key": "lic/2019/figpin-nycc-thor-loki/loki",
+   "field": "pin_structure",
+   "searched": "maintainer review of B096",
+   "note": "hold: split into one pin per character was inferred from the 2-pin set title; confirm before sign-off"
+  }
+ ],
+ "discovery_notes": "Cell B096 licensed Star Wars/Marvel sweep (2015-2026, focus 2018-2019). 28 standard searches, snippets only, mostly Disney Pins Blog plus BoxLunch/Hot Topic/Loungefly listings. 2018 yielded nothing; 2019 adds Wicket, SW Planets LE, Rise of Skywalker, Sith, Infinity Gauntlet, Marvel 80th, LA Comic Con Funko, FiGPiN. 2020-2023 Loungefly/Funko Marvel and SW sets added where members were named. Hot Topic Captain Marvel set members not found. Retailer-only keys where maker unstated. Resellers, Walmart, fandom wiki not used for claims."
+}

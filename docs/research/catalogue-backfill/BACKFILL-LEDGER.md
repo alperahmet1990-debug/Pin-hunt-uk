@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 3 (started 2026-10-16 13:30 UTC): B013–B018
 
 ## Totals (after round 2, 16 Oct 2026 ~12:50 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
@@ -29,12 +29,12 @@ Earlier: after round 1, 4,052. Baseline before any round, 3,692.
 | B010 | 2018 | wdw-le | WDW LE/LR | partial | 210_b010_wdw_le_2018.json | 92 | follow-up appended |
 | B011 | 2018 | dlr-oe | Disneyland California OE | partial | 211_b011_dlr_oe_2018.json | 45 | follow-up appended |
 | B012 | 2018 | dlr-le | Disneyland California LE/LR | partial | 212_b012_dlr_le_2018.json | 48 | follow-up appended |
-| B013 | 2018 | dlp | Disneyland Paris (OE+LE) | todo | | | |
-| B014 | 2018 | ds | Disney Store UK/EU + US | todo | | | |
-| B015 | 2018 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B016 | 2018 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | todo | | | |
-| B017 | 2017 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
-| B018 | 2017 | wdw-le | WDW LE/LR | todo | | | |
+| B013 | 2018 | dlp | Disneyland Paris (OE+LE) | in progress | | | |
+| B014 | 2018 | ds | Disney Store UK/EU + US | in progress | | | |
+| B015 | 2018 | asia | Shanghai, Hong Kong, Tokyo | in progress | | | |
+| B016 | 2018 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | in progress | | | |
+| B017 | 2017 | wdw-oe | WDW open edition (incl. standalone) | in progress | | | |
+| B018 | 2017 | wdw-le | WDW LE/LR | in progress | | | |
 | B019 | 2017 | dlr-oe | Disneyland California OE | todo | | | |
 | B020 | 2017 | dlr-le | Disneyland California LE/LR | todo | | | |
 | B021 | 2017 | dlp | Disneyland Paris (OE+LE) | todo | | | |
@@ -81,3 +81,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 |---|---|---|---|---|
 | 1 | 2026-10-16 11:30 | B001–B006 (2019) | 360 net new (400 pins recorded; 39 held) | all partial; follow-ups B045–B050 appended |
 | 2 | 2026-10-16 12:30 | B007–B012 (2019 Asia + licensees; 2018 WDW/DLR) | +309 net new (38 corroborated); 360 pin records | all partial; follow-ups appended. Matcher fix: live CTP rows carry no characters, subject now read from the title; 11 possible live matches held |
+| 3 | 2026-10-16 13:30 | B013–B018 (2018 DLP, Disney Store, Asia, licensees; 2017 WDW OE/LE) | in progress | |

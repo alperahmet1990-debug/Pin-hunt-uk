@@ -46,6 +46,7 @@ import {
 } from '@/utils/searchPaging';
 import type { CataloguePin } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { searchResultSubtitle } from '@/utils/searchSubtitle';
 
 const RECENTS_KEY = 'recent_pin_searches';
 const MAX_RECENTS = 8;
@@ -434,7 +435,7 @@ export default function SearchScreen() {
                     <View style={styles.resultInfo}>
                       <Text style={[styles.resultTitle, { color: colors.homeInk }]} numberOfLines={1}>{pin.title}</Text>
                       <Text style={[styles.resultMeta, { color: colors.homeMuted }]} numberOfLines={1}>
-                        {pin.brand} · {pin.collection}
+                        {searchResultSubtitle(pin)}
                       </Text>
                       {inCollection && (
                         <View style={styles.resultStatus}>
@@ -444,13 +445,14 @@ export default function SearchScreen() {
                     </View>
                     <TouchableOpacity
                       onPress={e => { e.stopPropagation?.(); saveRecent(query); setQuickAddPin(pin); }}
-                      hitSlop={8}
                       activeOpacity={0.8}
                       accessibilityRole="button"
                       accessibilityLabel={inCollection ? `Change status of ${pin.title}` : `Quick add ${pin.title}`}
-                      style={[styles.quickAddBtn, { backgroundColor: colors.homeCoral }]}
+                      style={styles.quickAddTarget}
                     >
-                      <Feather name={inCollection ? 'edit-2' : 'plus'} size={inCollection ? 13 : 15} color={colors.homeSurface} />
+                      <View style={[styles.quickAddBtn, { backgroundColor: colors.homeCoral }]}>
+                        <Feather name={inCollection ? 'edit-2' : 'plus'} size={inCollection ? 13 : 15} color={colors.homeSurface} />
+                      </View>
                     </TouchableOpacity>
                   </TouchableOpacity>
                 );
@@ -546,9 +548,12 @@ const styles = StyleSheet.create({
   },
   browseCta: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, borderWidth: 1, padding: spacing.md },
   browseIcon: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
-  resultImage: { width: 44, height: 44, borderRadius: radius.sm - 2 },
+  // 64 pt so similar variants can be told apart (B-P2-01).
+  resultImage: { width: 64, height: 64, borderRadius: radius.sm },
   resultInfo: { flex: 1 },
   resultStatus: { marginTop: 4 },
+  // The 28 pt disc sits in a 44 pt target.
+  quickAddTarget: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', marginRight: -8 },
   quickAddBtn: {
     width: 28,
     height: 28,

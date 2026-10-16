@@ -197,11 +197,20 @@ export default function HomeScreen() {
         </TouchableOpacity>}
         {forYou.map(item => <TouchableOpacity key={item.id} accessibilityRole="button" accessibilityLabel={`${item.title}. ${item.detail}`} onPress={item.action} activeOpacity={0.8} style={[styles.update, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}><View style={[styles.cardIcon, { backgroundColor: item.tone + '25' }]}><Feather name={item.icon} size={18} color={item.tone} /></View><View style={styles.cardText}><Text style={[styles.cardTitle, { color: colors.homeInk }]}>{item.title}</Text><Text style={[styles.cardDetail, { color: colors.homeMuted }]}>{item.detail}</Text></View><Feather name="chevron-right" size={18} color={colors.homeMuted} /></TouchableOpacity>)}
       </Section>}
-      {whatsHappening.length > 0 && <Section title="What’s Happening" subtitle="Pin drops, trading events & community meet-ups" colors={colors} actionLabel="See all" action={() => router.push({ pathname: '/(tabs)/community', params: { filter: 'new_pickup' } })}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.eventsShelf}>
-          {whatsHappening.map(event => <EventCard key={event.id} event={event} onPress={() => handleViewEvent(event)} />)}
-        </ScrollView>
-      </Section>}
+      <Section title="What’s Happening" subtitle="Pin drops, trading events & community meet-ups" colors={colors} actionLabel="See all" action={() => router.push({ pathname: '/(tabs)/community', params: { filter: 'new_pickup' } })}>
+        {whatsHappening.length > 0 ? (
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.eventsShelf}>
+            {whatsHappening.map(event => <EventCard key={event.id} event={event} onPress={() => handleViewEvent(event)} />)}
+          </ScrollView>
+        ) : (
+          // Never vanish silently when the list runs out (#352).
+          <TouchableOpacity testID="no-events-card" accessibilityRole="button" accessibilityLabel="No events coming up. Post an event" onPress={() => router.push({ pathname: '/community/create-post', params: { type: 'new_pickup' } })} activeOpacity={0.8} style={[styles.update, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <View style={[styles.cardIcon, { backgroundColor: colors.homeAqua }]}><Feather name="calendar" size={18} color={colors.homeCoral} /></View>
+            <View style={styles.cardText}><Text style={[styles.cardTitle, { color: colors.homeInk }]}>No events coming up</Text><Text style={[styles.cardDetail, { color: colors.homeMuted }]}>Know of a pin meet-up? Post an event</Text></View>
+            <Feather name="plus" size={18} color={colors.homeCoral} />
+          </TouchableOpacity>
+        )}
+      </Section>
       {visibleSet && !activeSetLoading && progress && progress.total > 0 && <Section title="Continue Collecting" colors={colors} action={() => router.push({ pathname: '/set/[collection]', params: { collection: visibleSet.setName } })}><TouchableOpacity accessibilityRole="button" accessibilityLabel={`${visibleSet.setName}: ${progress.owned} of ${progress.total} collected`} onPress={() => router.push({ pathname: '/set/[collection]', params: { collection: visibleSet.setName } })} style={[styles.collect, { backgroundColor: colors.homeTeal }]}><View style={styles.cardText}><Text numberOfLines={1} style={[styles.collectTitle, { color: colors.homeCollectText }]}>{visibleSet.setName}</Text><Text style={[styles.collectDetail, { color: colors.homeHeroMuted }]}>{progress.owned} of {progress.total} collected</Text><View style={[styles.progressTrack, { backgroundColor: colors.homeTealSoft }]}><View style={[styles.progressFill, { backgroundColor: colors.homeSand, width: `${Math.round(progress.owned / progress.total * 100)}%` }]} /></View></View><View style={[styles.percent, { borderColor: colors.homeSand }]}><Text style={[styles.percentText, { color: colors.homeCollectText }]}>{Math.round(progress.owned / progress.total * 100)}%</Text></View></TouchableOpacity></Section>}
     </ScrollView>
     <AddPinsWelcomeSheet />

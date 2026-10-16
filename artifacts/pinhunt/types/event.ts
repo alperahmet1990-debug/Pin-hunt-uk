@@ -35,5 +35,13 @@ export interface PinHuntEvent {
   /** False for events with no real scheduled date (e.g. community posts) —
    * the card shows "posted" recency instead of a day/month pill. */
   hasScheduledDate: boolean;
+  /**
+   * Talked about but not yet dated or confirmed (#352). Shown last, marked
+   * "Rumoured", with `whenText` instead of a date. `eventDate`/`endDate`
+   * then only decide when the rumour stops being shown.
+   */
+  rumour?: boolean;
+  /** Rumours only: roughly when, e.g. "December · date TBC". */
+  whenText?: string;
   createdAt: string;
 }

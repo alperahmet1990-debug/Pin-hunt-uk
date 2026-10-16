@@ -16,7 +16,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { useColors } from '@/hooks/useColors';
@@ -53,7 +53,11 @@ export default function CreatePostScreen() {
     discussion:   colors.homeMuted,
   };
 
-  const [postType,    setPostType]    = useState<CommunityPostType>('discussion');
+  // Home's "Post an event" opens straight on the Event type (#352).
+  const { type: initialType } = useLocalSearchParams<{ type?: string }>();
+  const [postType,    setPostType]    = useState<CommunityPostType>(
+    initialType === 'new_pickup' ? 'new_pickup' : 'discussion',
+  );
   const [body,        setBody]        = useState('');
   const [linkedPinId, setLinkedPinId] = useState<string | undefined>();
   const [pinSearch,   setPinSearch]   = useState('');

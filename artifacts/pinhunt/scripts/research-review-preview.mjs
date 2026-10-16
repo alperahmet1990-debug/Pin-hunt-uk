@@ -32,6 +32,13 @@ if (!args.includes('--skip-build')) {
   if (r.status !== 0) { console.error('expo export failed'); process.exit(1); }
 }
 
+// The workbook reader is the API server's own module (no copy), bundled for this script.
+const readerOut = path.join(outDir, '..', 'pinhunt-preview-reviewer-checks.mjs');
+const rb = spawnSync('pnpm', ['exec', 'esbuild', path.join(appDir, '..', 'api-server', 'src', 'lib', 'reviewer-checks.ts'),
+  '--bundle', '--platform=node', '--format=esm', `--outfile=${readerOut}`], { cwd: path.join(appDir, '..', 'api-server'), stdio: ['ignore', 'ignore', 'inherit'] });
+if (rb.status !== 0) { console.error('bundling the workbook reader failed'); process.exit(1); }
+const { checksFromWorkbook, normaliseChecks } = await import(readerOut);
+
 // ── In-memory research staging, from the engine payload ───────────────────
 const payload = JSON.parse(readFileSync(payloadPath, 'utf8'));
 const RUN = randomUUID();
@@ -64,6 +71,7 @@ const strip = ({ evidence, ...c }) => c;
 function decide(c, decision, notes) {
   if (decision === 'approve') {
     if (c.status !== 'direct_verified') return 'Open a source and confirm the pin\'s identity before approving';
+    if (!['High', 'Medium'].includes(c.record_confidence)) return 'Identity confidence is too low to approve';
     if (c.review_reasons.some(r => r.startsWith('conflict:'))) return 'Resolve the conflicting values first';
   } else if (!notes || notes.trim().length < 3) return 'Add a short note explaining the decision';
   c.status = decision === 'approve' ? 'approved' : decision === 'reject' ? 'rejected' : 'needs_more_research';
@@ -109,6 +117,34 @@ function api(req, url, body) {
   if (p === '/admin/research/catalogue/decisions') {
     const results = (body.candidateIds ?? []).map(id => { const c = byId.get(id); const err = c ? decide(c, body.decision, body.notes) : 'Candidate not found'; return err ? { candidateId: id, ok: false, reason: err } : { candidateId: id, ok: true, status: c.status }; });
     return { ok: true, results, decided: results.filter(r => r.ok).length };
+  }
+  if (p === '/admin/research/catalogue/checks') {
+    let parsed;
+    try { parsed = typeof body.file === 'string' ? checksFromWorkbook(Buffer.from(body.file, 'base64')) : normaliseChecks(body.checks ?? []); }
+    catch (e) { return [400, { error: e.message }]; }
+    if (!parsed.checks.length) return [400, { error: 'No checks found: fill in the "My check" column' }];
+    const byKey = new Map(cands.map(c => [c.research_key, c]));
+    const recorded = { ok: 0, research_needed: 0, flagged: 0 }; const held = []; const ready = []; let alreadyRecorded = 0;
+    const note = ck => `Spreadsheet check ${new Date().toISOString().slice(0, 10)}: ${ck.check}${ck.note ? ` (${ck.note})` : ''}`;
+    for (const ck of parsed.checks) {
+      const c = byKey.get(ck.research_key); if (!c) continue;
+      if (ck.check === 'ok') {
+        const src = c.evidence.find(e => e.source_url && e.method !== 'human_direct_check');
+        if (!src) { held.push({ research_key: c.research_key, reason: 'No usable source link to record the check against' }); continue; }
+        if (c.evidence.some(e => e.method === 'human_direct_check' && String(e.note ?? '').startsWith('Spreadsheet check'))) alreadyRecorded++;
+        else { c.evidence.push({ id: randomUUID(), field: 'characters', value: { confirmed: true }, source_url: src.source_url, source_class: 'unclassified', method: 'human_direct_check', note: note(ck) }); recorded.ok++; }
+        if (['researched', 'needs_direct_verification', 'needs_more_research'].includes(c.status)) c.status = 'direct_verified';
+        if (c.status === 'approved') continue;
+        if (dup(c)) held.push({ research_key: c.research_key, reason: 'Possible duplicate: decide on the pin\'s own page' });
+        else if (!['High', 'Medium'].includes(c.record_confidence)) held.push({ research_key: c.research_key, reason: 'Identity confidence is too low to approve' });
+        else if (c.review_reasons.some(r => r.startsWith('conflict:'))) held.push({ research_key: c.research_key, reason: 'Resolve the conflicting values first' });
+        else ready.push({ id: c.id, research_key: c.research_key });
+      } else if (ck.check === 'wrong' || ck.check === 'research needed') { c.status = 'needs_more_research'; c.decision_notes = note(ck); recorded.research_needed++; }
+      else { c.evidence.push({ id: randomUUID(), field: 'flag', value: { issue: note(ck) }, source_url: null, source_class: 'none', method: 'human_direct_check', note: note(ck) }); recorded.flagged++; }
+    }
+    const unknown = parsed.checks.filter(ck => !byKey.has(ck.research_key)).map(ck => ck.research_key);
+    return { ok: true, checks: parsed.checks.length, matched: parsed.checks.length - unknown.length, recorded, alreadyRecorded,
+      unknownCount: unknown.length, unknown: unknown.slice(0, 20), unrecognised: parsed.unrecognised.slice(0, 20), ready, heldCount: held.length, held: held.slice(0, 200) };
   }
   if (p === '/admin/research/catalogue/research-needed') {
     const items = cands.filter(c => c.status === 'needs_more_research' || flags(c).length).map(c => ({ research_key: c.research_key, pin_name: c.proposed['Pin name'] ?? null,

@@ -5,8 +5,13 @@
  * statuses; "Flag issue" is an attributed evidence row. Nothing is ticked on load, and "Validate"
  * still needs a direct check by a person (the API re-applies the per-pin rules on every batch).
  * "Research needed" decisions and flags are exported for the hourly research queue.
+ * "Import my checks" uploads the reviewer's checked backfill workbook (My check column); the API records
+ * the checks under the logged-in reviewer and lists the pins now ready, which are approved only after
+ * the reviewer confirms "Approve".
  */
 import React, { useCallback, useEffect, useState } from 'react';
+import * as DocumentPicker from 'expo-document-picker';
+import * as FileSystem from 'expo-file-system/legacy';
 import { Modal, Platform, Share, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
@@ -34,6 +39,34 @@ const ACTION_LABEL: Record<Action, string> = {
   validate: 'Validate', needs_more_research: 'Research needed', reject: 'Reject', flag: 'Flag issue',
 };
 
+export interface ChecksResult {
+  checks: number; matched: number; recorded: { ok: number; research_needed: number; flagged: number }; alreadyRecorded: number;
+  unknownCount: number; unknown: string[]; unrecognised: string[];
+  ready: Array<{ id: string; research_key: string }>; heldCount: number; held: Array<{ research_key: string; reason: string }>;
+}
+
+/** Most common reasons first, e.g. "12 × Identity confidence is too low to approve". */
+export function heldSummary(held: ChecksResult['held']): string[] {
+  const n = new Map<string, number>();
+  for (const h of held) n.set(h.reason, (n.get(h.reason) ?? 0) + 1);
+  return [...n.entries()].sort((a, b) => b[1] - a[1]).map(([r, c]) => `${c} × ${r}`);
+}
+
+async function pickWorkbookBase64(): Promise<string | null> {
+  const res = await DocumentPicker.getDocumentAsync({
+    type: ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '*/*'], copyToCacheDirectory: true,
+  });
+  if (res.canceled || !res.assets?.length) return null;
+  const asset = res.assets[0] as DocumentPicker.DocumentPickerAsset & { file?: File };
+  if (Platform.OS === 'web' && asset.file) {
+    const bytes = new Uint8Array(await asset.file.arrayBuffer());
+    let bin = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+  return FileSystem.readAsStringAsync(asset.uri, { encoding: FileSystem.EncodingType.Base64 });
+}
+
 /** Query string for the browse endpoint; empty filters are left out. */
 export function browseQuery(f: { runId: string | null; year: string; line: string; edition: string; status: string; only: Only; q: string; source: string; set: string }, offset: number) {
   const p = new URLSearchParams({ offset: String(offset), limit: String(BROWSE_PAGE) });
@@ -59,6 +92,8 @@ export default function CatalogueBrowser({ api, runId, onOpen }: { api: Api; run
   const [facets, setFacets] = useState<Record<string, Record<string, number>>>({});
   const [selected, setSelected] = useState<string[]>([]);
   const [msg, setMsg] = useState<string | null>(null);
+  const [checks, setChecks] = useState<ChecksResult | null>(null);
+  const [checksBusy, setChecksBusy] = useState(false);
   const [busy, setBusy] = useState(false);
   const [pending, setPending] = useState<{ action: Action; ids: string[] } | null>(null);
   const [note, setNote] = useState('');
@@ -121,6 +156,36 @@ export default function CatalogueBrowser({ api, runId, onOpen }: { api: Api; run
     } catch (e) { setMsg((e as Error).message); }
   };
 
+  const importChecks = async () => {
+    if (!runId) { setMsg('Choose a research run first.'); return; }
+    try {
+      const file = await pickWorkbookBase64();
+      if (!file) return;
+      setChecksBusy(true);
+      setChecks(await api('/admin/research/catalogue/checks', { method: 'POST', body: JSON.stringify({ runId, file }) }));
+      await load(0);
+    } catch (e) { setMsg((e as Error).message); } finally { setChecksBusy(false); }
+  };
+
+  const approveReady = async () => {
+    if (!checks) return;
+    setChecksBusy(true);
+    let decided = 0; const refused: string[] = [];
+    try {
+      for (let i = 0; i < checks.ready.length; i += 100) {
+        const data = await api('/admin/research/catalogue/decisions', {
+          method: 'POST',
+          body: JSON.stringify({ candidateIds: checks.ready.slice(i, i + 100).map(r => r.id), decision: 'approve', notes: 'Approved after spreadsheet check' }),
+        });
+        decided += data.decided;
+        for (const r of data.results as Array<{ ok: boolean; reason?: string }>) if (!r.ok && r.reason) refused.push(r.reason);
+      }
+      setMsg(`Validated ${decided} pin${decided === 1 ? '' : 's'} from your spreadsheet checks${refused.length ? `; ${refused.length} not changed (${refused[0]})` : ''}. Importing into the catalogue is a separate step.`);
+      setChecks(null);
+      await load(0);
+    } catch (e) { setMsg((e as Error).message); } finally { setChecksBusy(false); }
+  };
+
   const chipRow = (label: string, values: string[], value: string, set: (v: string) => void, counts?: Record<string, number>, names?: Record<string, string>) => (
     <View style={s.filterRow}>
       <Text style={s.filterLabel}>{label}</Text>
@@ -168,6 +233,8 @@ export default function CatalogueBrowser({ api, runId, onOpen }: { api: Api; run
         <View style={s.headerRow}>
           <Text style={s.muted}>{total} pin{total === 1 ? '' : 's'} match</Text>
           <View style={{ flex: 1 }} />
+          <Button label={checksBusy && !checks ? 'Reading…' : 'Import my checks'} variant="secondary" size="compact" icon="upload"
+            loading={checksBusy && !checks} onPress={importChecks} />
           <Button label="Export research needed" variant="secondary" size="compact" icon="download" onPress={exportResearchNeeded} />
         </View>
         {msg && <Text style={s.notice} accessibilityLiveRegion="polite">{msg}</Text>}
@@ -251,6 +318,39 @@ export default function CatalogueBrowser({ api, runId, onOpen }: { api: Api; run
               <Button label="Cancel" variant="text" onPress={() => { setPending(null); setNote(''); }} />
               <Button label={busy ? 'Saving…' : 'Save'} loading={busy} disabled={!!needsNote && note.trim().length < 3}
                 variant={pending?.action === 'reject' ? 'destructive' : 'primary'} onPress={run} />
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal visible={!!checks} transparent animationType="fade" onRequestClose={() => setChecks(null)}>
+        <View style={s.backdrop}>
+          <View style={[s.card, s.dialog]} testID="checks-result">
+            <Text style={s.setTitle}>Your spreadsheet checks</Text>
+            {checks && (
+              <>
+                <Text style={s.muted}>
+                  {`${checks.matched} of ${checks.checks} checks matched pins in this run. Recorded under your name: ${checks.recorded.ok} OK, `
+                    + `${checks.recorded.research_needed} research needed, ${checks.recorded.flagged} flagged`
+                    + `${checks.alreadyRecorded ? `; ${checks.alreadyRecorded} were already recorded` : ''}.`}
+                </Text>
+                {checks.unknownCount > 0 && <Text style={s.muted}>{`${checks.unknownCount} not in this run (e.g. ${checks.unknown[0]}).`}</Text>}
+                {checks.unrecognised.length > 0 && <Text style={s.muted}>{`Not understood: ${checks.unrecognised.slice(0, 3).join('; ')}.`}</Text>}
+                <Text style={s.setTitle}>{`${checks.ready.length} ready to validate`}</Text>
+                {checks.heldCount > 0 && (
+                  <View>
+                    <Text style={s.muted}>{`${checks.heldCount} held back, to decide on their own page:`}</Text>
+                    {heldSummary(checks.held).slice(0, 4).map(line => <Text key={line} style={s.muted}>{`• ${line}`}</Text>)}
+                  </View>
+                )}
+                <Text style={s.muted}>Validating does not change the catalogue; importing approved pins is a separate step.</Text>
+              </>
+            )}
+            <View style={s.headerRow}>
+              <View style={{ flex: 1 }} />
+              <Button label="Close" variant="text" onPress={() => setChecks(null)} />
+              <Button label={checksBusy ? 'Validating…' : `Validate ${checks?.ready.length ?? 0}`} loading={checksBusy}
+                disabled={!checks?.ready.length} onPress={approveReady} />
             </View>
           </View>
         </View>

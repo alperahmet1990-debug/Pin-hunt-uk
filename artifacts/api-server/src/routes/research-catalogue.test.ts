@@ -10,15 +10,15 @@ const uuid = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, "0
 
 function builder(table: string) {
   const filters: Array<[string, unknown]> = [];
-  let inFilter: [string, unknown[]] | null = null;
+  const inFilters: Array<[string, unknown[]]> = [];
   let range: [number, number] | null = null;
   let op: "select" | "insert" | "update" = "select";
-  let payload: Row | null = null;
+  let payload: Row | Row[] | null = null;
   const rows = () => (tables[table] ??= []);
-  const match = (r: Row) => filters.every(([k, v]) => r[k] === v) && (!inFilter || inFilter[1].includes(r[inFilter[0]]));
+  const match = (r: Row) => filters.every(([k, v]) => r[k] === v) && inFilters.every(([k, v]) => v.includes(r[k]));
   const run = () => {
     if (table === "profiles") return { data: { is_app_creator: isCreator }, error: null };
-    if (op === "insert") { const r = { id: uuid(nextId++), ...payload }; rows().push(r); return { data: [r], error: null }; }
+    if (op === "insert") { const ins = (Array.isArray(payload) ? payload : [payload]).map(p => ({ id: uuid(nextId++), ...p })); rows().push(...ins); return { data: ins, error: null }; }
     if (op === "update") { const hit = rows().filter(match); hit.forEach(r => Object.assign(r, payload)); return { data: hit.map(r => ({ id: r.id })), error: null }; }
     const all = rows().filter(match);
     return { data: range ? all.slice(range[0], range[1] + 1) : all, error: null };
@@ -26,10 +26,10 @@ function builder(table: string) {
   const b: Row = {
     select: () => b, order: () => b, limit: () => b,
     range: (a: number, z: number) => { range = [a, z]; return b; },
-    insert: (p: Row) => { op = "insert"; payload = p; return b; },
+    insert: (p: Row | Row[]) => { op = "insert"; payload = p; return b; },
     update: (p: Row) => { op = "update"; payload = p; return b; },
     eq: (k: string, v: unknown) => { filters.push([k, v]); return b; },
-    in: (k: string, v: unknown[]) => { inFilter = [k, v]; return b; },
+    in: (k: string, v: unknown[]) => { inFilters.push([k, v]); return b; },
     maybeSingle: async () => { const r = run(); return { ...r, data: Array.isArray(r.data) ? r.data[0] ?? null : r.data }; },
     single: async () => { const r = run(); return { ...r, data: Array.isArray(r.data) ? r.data[0] ?? null : r.data }; },
     then: (resolve: (v: unknown) => unknown) => Promise.resolve(run()).then(resolve),
@@ -76,7 +76,7 @@ describe("research catalogue routes", () => {
   it.each([
     ["get", "/api/admin/research/catalogue"], ["get", "/api/admin/research/catalogue/sets"],
     ["post", "/api/admin/research/catalogue/decisions"], ["post", `/api/admin/research/candidates/${uuid(10)}/flag`],
-    ["get", "/api/admin/research/catalogue/research-needed"],
+    ["get", "/api/admin/research/catalogue/research-needed"], ["post", "/api/admin/research/catalogue/checks"],
   ] as Array<["get" | "post", string]>)("%s %s is App Creator only", async (m, p) => {
     expect((await request(app)[m](p).send({})).status).toBe(401);
     isCreator = false;
@@ -131,5 +131,87 @@ describe("research catalogue routes", () => {
     expect(exp.body.format).toBe("pinhunt-research-needed-v1");
     expect(exp.body.items.map((i: Row) => i.research_key).sort()).toEqual(["wdw/2019/mnsshp/logo", "wdw/2019/oe/stitch"]);
     expect((await request(app).get("/api/admin/research/catalogue?only=flagged").set(auth)).body.total).toBe(1);
+  });
+
+  describe("spreadsheet checks", () => {
+    const upload = (body: Row) => request(app).post("/api/admin/research/catalogue/checks").set(auth).send(body);
+
+    it("records OK as the reviewer's own direct check and lists the pins ready to approve, approving none", async () => {
+      const res = await upload({ runId: RUN, checks: [
+        { research_key: "wdw/2019/oe/stitch", check: "OK" },
+        { research_key: "wdw/2019/mnsshp/hades", check: "ok" },
+        { research_key: "nope/2019/x/y", check: "OK" },
+      ] });
+      expect(res.status).toBe(200);
+      expect(res.body.recorded.ok).toBe(1);
+      expect(res.body.ready.map((r: Row) => r.research_key)).toEqual(["wdw/2019/oe/stitch"]);
+      expect(res.body.held).toEqual(expect.arrayContaining([
+        { research_key: "wdw/2019/mnsshp/hades", reason: "No usable source link to record the check against" }]));
+      expect(res.body.unknown).toEqual(["nope/2019/x/y"]);
+      const ev = tables.catalogue_evidence.filter(e => e.method === "human_direct_check");
+      expect(ev.length).toBeGreaterThan(0);
+      expect(ev.every(e => e.checked_by === "creator-1" && e.source_url === "https://wdwnt.com/a" && String(e.note).startsWith("Spreadsheet check"))).toBe(true);
+      const stitch = tables.catalogue_candidates.find(c => c.id === uuid(10))!;
+      expect(stitch.status).toBe("direct_verified");
+      expect(tables.catalogue_candidates.some(c => c.status === "approved")).toBe(false);
+      // Untouched pins keep their status even though the update filters on status too.
+      expect(tables.catalogue_candidates.find(c => c.id === uuid(11))!.status).toBe("needs_direct_verification");
+    });
+
+    it("is idempotent: uploading the same checks again adds no evidence", async () => {
+      await upload({ runId: RUN, checks: [{ research_key: "wdw/2019/oe/stitch", check: "OK" }] });
+      const n = tables.catalogue_evidence.length;
+      const again = await upload({ runId: RUN, checks: [{ research_key: "wdw/2019/oe/stitch", check: "OK" }] });
+      expect(again.body.alreadyRecorded).toBe(1);
+      expect(tables.catalogue_evidence.length).toBe(n);
+    });
+
+    it("holds possible duplicates back from bulk approval", async () => {
+      tables.catalogue_evidence.push({ id: uuid(52), candidate_id: uuid(12), field: "pin_name", value: "Hades", source_url: "https://wdwnt.com/h" });
+      const res = await upload({ runId: RUN, checks: [{ research_key: "wdw/2019/mnsshp/hades", check: "OK" }] });
+      expect(res.body.ready).toEqual([]);
+      expect(res.body.held).toEqual([{ research_key: "wdw/2019/mnsshp/hades", reason: "Possible duplicate: decide on the pin's own page" }]);
+    });
+
+    it("turns Wrong / Research needed into research-needed decisions and Not a pin into a flag", async () => {
+      const res = await upload({ runId: RUN, checks: [
+        { research_key: "wdw/2019/oe/stitch", check: "Research needed", note: "only one source" },
+        { research_key: "wdw/2019/mnsshp/logo", check: "Not a pin" },
+        { research_key: "wdw/2019/mnsshp/hades", check: "maybe" },
+      ] });
+      expect(res.body.recorded).toEqual({ ok: 0, research_needed: 1, flagged: 1 });
+      expect(res.body.unrecognised).toEqual(["wdw/2019/mnsshp/hades: maybe"]);
+      const stitch = tables.catalogue_candidates.find(c => c.id === uuid(10))!;
+      expect(stitch.status).toBe("needs_more_research");
+      expect(stitch.decision_notes).toMatch(/Research needed \(only one source\)$/);
+      expect(tables.catalogue_evidence.find(e => e.field === "flag")!.checked_by).toBe("creator-1");
+    });
+
+    it("reads the returned workbook", async () => {
+      const XLSX = await import("xlsx");
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([["Measure"], ["x"]]), "Summary");
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([
+        ["research_key", "status", "My check", "Note"], ["wdw/2019/oe/stitch", "new", "OK", ""], ["wdw/2019/mnsshp/logo", "new", "", ""],
+      ]), "Research pins");
+      for (const bookSST of [true, false]) {
+        seed();
+        const file = (XLSX.write(wb, { type: "buffer", bookType: "xlsx", bookSST }) as Buffer).toString("base64");
+        const res = await upload({ runId: RUN, file });
+        expect(res.status).toBe(200);
+        expect(res.body.checks).toBe(1);
+        expect(res.body.ready.map((r: Row) => r.research_key)).toEqual(["wdw/2019/oe/stitch"]);
+      }
+    });
+
+    it("rejects a missing run, a non-workbook file and a sheet without a My check column", async () => {
+      expect((await upload({ checks: [{ research_key: "wdw/2019/oe/stitch", check: "OK" }] })).status).toBe(400);
+      expect((await upload({ runId: RUN, file: Buffer.from("not a zip").toString("base64") })).body.error).toBe("not an .xlsx file");
+      const XLSX = await import("xlsx");
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([["research_key"], ["wdw/2019/oe/stitch"]]), "Research pins");
+      const res = await upload({ runId: RUN, file: (XLSX.write(wb, { type: "buffer", bookType: "xlsx" }) as Buffer).toString("base64") });
+      expect(res.body.error).toMatch(/My check/);
+    });
   });
 });

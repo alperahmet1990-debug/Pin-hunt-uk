@@ -11,13 +11,20 @@
  * POST /api/admin/research/catalogue/decisions  { candidateIds[], decision, notes }   batch decision
  * POST /api/admin/research/candidates/:id/flag  { note }                            flag an issue
  * GET  /api/admin/research/catalogue/research-needed?runId   export for the hourly research queue
+ * POST /api/admin/research/catalogue/checks  { runId, file (base64 .xlsx) | checks[] }   reviewer's spreadsheet checks
+ *
+ * Spreadsheet checks are recorded under the logged-in reviewer: "OK" is that reviewer's direct check
+ * against the source the workbook listed, the other marks become research-needed decisions or flags.
+ * Nothing is approved here; the response lists the pins that are now ready, and the reviewer approves
+ * them with the batch decision route.
  *
  * Batch decisions re-run checkDecision per pin: "Validate" (approve) still requires a direct check
  * by a person, so nothing is approved in bulk without its own evidence.
  */
 import { Router, type IRouter, type Response } from "express";
-import { checkDecision, type Decision } from "../lib/research-run";
-import { UUID, fail, getAdminClient, requireAppCreator, type CreatorRequest } from "./research-review";
+import { IDENTITY_FIELDS, checkDecision, checkSourceUrl, type Decision } from "../lib/research-run";
+import { MAX_CHECKS, checksFromWorkbook, normaliseChecks, type ReviewerCheck } from "../lib/reviewer-checks";
+import { UUID, fail, getAdminClient, isOfficialHost, requireAppCreator, type CreatorRequest } from "./research-review";
 
 const router: IRouter = Router();
 
@@ -252,6 +259,118 @@ router.get("/admin/research/catalogue/research-needed", requireAppCreator, async
       });
     res.json({ format: "pinhunt-research-needed-v1", generated_at: new Date().toISOString(), run_id: runId ?? null, count: items.length, items });
   } catch (err) { fail(res, "research needed", err); }
+});
+
+const MAX_FILE_BASE64 = 14_000_000;
+const CHECKABLE = ["researched", "needs_direct_verification", "needs_more_research"];
+const PROPOSED_FIELD: Record<string, string> = { characters: "Characters", main_character: "Main character", attraction: "Attraction", pin_name: "Pin name" };
+const SHEET_NOTE = "Spreadsheet check";
+
+router.post("/admin/research/catalogue/checks", requireAppCreator, async (req: CreatorRequest, res: Response) => {
+  const { runId, file, checks: rawChecks } = (req.body ?? {}) as { runId?: unknown; file?: unknown; checks?: unknown };
+  if (typeof runId !== "string" || !UUID.test(runId)) { res.status(400).json({ error: "Choose a research run first" }); return; }
+  let parsed: { checks: ReviewerCheck[]; unrecognised: string[] };
+  try {
+    if (typeof file === "string") {
+      if (file.length > MAX_FILE_BASE64) { res.status(413).json({ error: "The workbook is too large (10 MB maximum)" }); return; }
+      parsed = checksFromWorkbook(Buffer.from(file, "base64"));
+    } else if (Array.isArray(rawChecks)) {
+      parsed = normaliseChecks(rawChecks as Array<Record<string, unknown>>);
+    } else { res.status(400).json({ error: "Upload the checked workbook" }); return; }
+  } catch (err) { res.status(400).json({ error: err instanceof Error ? err.message : "Could not read the workbook" }); return; }
+  if (parsed.checks.length === 0) { res.status(400).json({ error: 'No checks found: fill in the "My check" column (OK, Wrong, Duplicate, Not a pin, Research needed)' }); return; }
+  if (parsed.checks.length > MAX_CHECKS) { res.status(400).json({ error: `At most ${MAX_CHECKS} checks per upload` }); return; }
+  try {
+    const db = getAdminClient();
+    const today = new Date().toISOString().slice(0, 10);
+    const pins = await allPins(runId, "id, research_key, status, entity_type, proposed, record_confidence, review_reasons, warnings, direct_verified_by");
+    const byKey = new Map(pins.map(c => [c.research_key as string, c as Cand]));
+    const matched = parsed.checks.filter(c => byKey.has(c.research_key));
+    const unknown = parsed.checks.filter(c => !byKey.has(c.research_key)).map(c => c.research_key);
+    const ids = matched.map(c => byKey.get(c.research_key)!.id);
+    const evidence = await evidenceFor(ids, "candidate_id, field, source_url, method, checked_by, note");
+    const mine = new Set(evidence.filter(e => e.method === "human_direct_check" && e.checked_by === req.creatorId
+      && String(e.note ?? "").startsWith(SHEET_NOTE)).map(e => `${e.candidate_id}|${e.field}`));
+    const sourceOf = new Map<string, string>();
+    for (const e of evidence) {
+      const u = e.source_url as string | null;
+      if (e.method !== "human_direct_check" && u && !sourceOf.has(e.candidate_id as string) && !checkSourceUrl(u)) sourceOf.set(e.candidate_id as string, u);
+    }
+    const recorded = { ok: 0, research_needed: 0, flagged: 0 };
+    let alreadyRecorded = 0;
+    const held: Array<{ research_key: string; reason: string }> = [];
+    const okRows: Row[] = [];
+    const verify: string[] = [];
+    for (const ck of matched) {
+      const c = byKey.get(ck.research_key)!;
+      if (["imported", "superseded"].includes(c.status)) { held.push({ research_key: ck.research_key, reason: "Can no longer be changed" }); continue; }
+      const label = ck.check === "ok" ? "OK" : ck.check[0].toUpperCase() + ck.check.slice(1);
+      const note = `${SHEET_NOTE} ${today}: ${label}${ck.note ? ` (${ck.note})` : ""}`.slice(0, 240);
+      if (ck.check === "ok") {
+        const url = sourceOf.get(c.id);
+        if (!url) { held.push({ research_key: ck.research_key, reason: "No usable source link to record the check against" }); continue; }
+        const p = c.proposed ?? {};
+        const fields = IDENTITY_FIELDS.filter(f => p[PROPOSED_FIELD[f]] != null && p[PROPOSED_FIELD[f]] !== "");
+        const todo = (fields.length ? fields : ["characters"]).filter(f => !mine.has(`${c.id}|${f}`));
+        if (!todo.length) alreadyRecorded += 1;
+        const host = new URL(url).hostname;
+        for (const f of todo) okRows.push({
+          candidate_id: c.id, field: f, value: { confirmed: true }, source_url: url, publisher: host.replace(/^www\./, ""),
+          source_class: isOfficialHost(host.toLowerCase()) ? "official" : "unclassified",
+          method: "human_direct_check", note, checked_by: req.creatorId,
+        });
+        if (c.entity_type === "pin" && CHECKABLE.includes(c.status)) verify.push(c.id);
+        if (todo.length) recorded.ok += 1;
+      } else if (ck.check === "wrong" || ck.check === "research needed") {
+        if (c.status === "needs_more_research") { alreadyRecorded += 1; continue; }
+        const now = new Date().toISOString();
+        const { error } = await db.from("catalogue_candidates").update({
+          status: "needs_more_research", decided_by: req.creatorId, decided_at: now, decision_notes: note, updated_at: now,
+        }).eq("id", c.id).eq("status", c.status);
+        if (error) throw error;
+        recorded.research_needed += 1;
+      } else {
+        if (mine.has(`${c.id}|flag`)) { alreadyRecorded += 1; continue; }
+        okRows.push({ candidate_id: c.id, field: "flag", value: { issue: note }, source_url: null, publisher: null,
+          source_class: "none", method: "human_direct_check", note, checked_by: req.creatorId });
+        recorded.flagged += 1;
+      }
+    }
+    for (let i = 0; i < okRows.length; i += 500) {
+      const { error } = await db.from("catalogue_evidence").insert(okRows.slice(i, i + 500));
+      if (error) throw error;
+    }
+    for (let i = 0; i < verify.length; i += CHUNK) {
+      const now = new Date().toISOString();
+      const { error } = await db.from("catalogue_candidates").update({
+        status: "direct_verified", direct_verified_by: req.creatorId, direct_verified_at: now, updated_at: now,
+      }).in("id", verify.slice(i, i + CHUNK)).in("status", CHECKABLE);
+      if (error) throw error;
+    }
+    // Which OK'd pins could be approved now? Same rules as a single decision; nothing is approved here.
+    const okKeys = new Set(matched.filter(c => c.check === "ok").map(c => c.research_key));
+    const fresh = (await allPins(runId, "id, research_key, status, entity_type, record_confidence, review_reasons, warnings, direct_verified_by, duplicate_status"))
+      .filter(c => okKeys.has(c.research_key as string));
+    const ready: Array<{ id: string; research_key: string }> = [];
+    for (const c of fresh) {
+      if (held.some(h => h.research_key === c.research_key)) continue;
+      if (c.status === "approved") continue;
+      // Possible duplicates are never approved in bulk; they are decided on their own page.
+      if (isDuplicate(c)) { held.push({ research_key: c.research_key as string, reason: "Possible duplicate: decide on the pin's own page" }); continue; }
+      const problem = checkDecision({ decision: "approve", notes: null, candidate: {
+        entity_type: c.entity_type as string, status: c.status as string, record_confidence: c.record_confidence as string,
+        review_reasons: (c.review_reasons as string[]) ?? [], warnings: (c.warnings as string[]) ?? [],
+        direct_verified_by: (c.direct_verified_by as string | null) ?? null,
+      } });
+      if (problem) held.push({ research_key: c.research_key as string, reason: problem });
+      else ready.push({ id: c.id as string, research_key: c.research_key as string });
+    }
+    res.json({
+      ok: true, checks: parsed.checks.length, matched: matched.length, recorded, alreadyRecorded,
+      unknownCount: unknown.length, unknown: unknown.slice(0, 20), unrecognised: parsed.unrecognised.slice(0, 20),
+      ready, heldCount: held.length, held: held.slice(0, 200),
+    });
+  } catch (err) { fail(res, "spreadsheet checks", err); }
 });
 
 export default router;

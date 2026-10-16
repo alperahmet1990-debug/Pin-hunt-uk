@@ -68,3 +68,14 @@ describe('CatalogueBrowser', () => {
     expect(onOpen).toHaveBeenCalledWith('a');
   });
 });
+
+describe('spreadsheet checks summary', () => {
+  it('groups held pins by reason, most common first', () => {
+    const { heldSummary } = require('@/components/research/CatalogueBrowser');
+    expect(heldSummary([
+      { research_key: 'a', reason: 'Identity confidence is too low to approve' },
+      { research_key: 'b', reason: 'Possible duplicate: decide on the pin\'s own page' },
+      { research_key: 'c', reason: 'Identity confidence is too low to approve' },
+    ])).toEqual(['2 × Identity confidence is too low to approve', '1 × Possible duplicate: decide on the pin\'s own page']);
+  });
+});

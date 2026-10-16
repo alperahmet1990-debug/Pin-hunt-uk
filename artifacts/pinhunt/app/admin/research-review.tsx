@@ -36,6 +36,8 @@ import { KeepScrollView } from '@/components/research/KeepScrollView';
 import { FieldTickBar } from '@/components/research/FieldTickBar';
 import { groupsForTab, isWideLayout, type ReviewTab } from '@/utils/researchLayout';
 import CatalogueBrowser from '@/components/research/CatalogueBrowser';
+import PreviewBanner from '@/components/research/PreviewBanner';
+import { isStaticResearchPreview, previewApi } from '@/lib/researchPreview';
 import {
   CHECKABLE_FIELDS,
   MAX_SET_BATCH,
@@ -109,7 +111,7 @@ export default function ResearchReviewScreen() {
   const [confirmSet, setConfirmSet] = useState(false);
 
   // Page view: one source page, with its pins from every set. Pins always start unticked.
-  const [view, setView] = useState<ReviewTab>('queue');
+  const [view, setView] = useState<ReviewTab>(isStaticResearchPreview ? 'catalogue' : 'queue');
   const [tab, setTab] = useState<'sets' | 'pages'>('sets');
   const [pages, setPages] = useState<ResearchPage[]>([]);
   const [pagesError, setPagesError] = useState<string | null>(null);
@@ -122,6 +124,8 @@ export default function ResearchReviewScreen() {
   const [pageMsg, setPageMsg] = useState<string | null>(null);
 
   const api = useCallback(async (path: string, init?: RequestInit) => {
+    // Static web preview: answered in the browser from bundled research data, nothing is sent anywhere.
+    if (isStaticResearchPreview) return previewApi(path, init);
     const resp = await fetch(`${API_BASE}${path}`, { ...init, headers: headers() });
     const data = await resp.json().catch(() => ({}));
     if (!resp.ok) {
@@ -771,6 +775,7 @@ export default function ResearchReviewScreen() {
 
   const listBody = (
     <>
+      {isStaticResearchPreview && <PreviewBanner />}
       <View style={s.card}>
           <Text style={s.title}>Public-source research</Text>
           <Text style={s.body}>

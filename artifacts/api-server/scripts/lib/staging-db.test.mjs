@@ -136,6 +136,14 @@ describe("verification", () => {
       .toEqual(["auth.users (3)", "storage.objects (1)", "public.profiles (3)"]);
     expect(DATA_COUNTS_QUERY).toMatch(/auth\.users/);
   });
+
+  it("accepts the copied public catalogue only when asked, never user tables (#372)", () => {
+    const counts = { "auth.users": 0, "storage.objects": 0, public: { pins: 500, pin_images: 400, characters: 20, user_pins: 0 } };
+    expect(copiedData(counts)).toEqual(["public.pins (500)", "public.pin_images (400)", "public.characters (20)"]);
+    expect(copiedData(counts, { allowCatalogue: true })).toEqual([]);
+    expect(copiedData({ ...counts, public: { ...counts.public, profiles: 2, user_pins: 3 } }, { allowCatalogue: true }))
+      .toEqual(["public.user_pins (3)", "public.profiles (2)"]);
+  });
 });
 
 describe("findTool", () => {

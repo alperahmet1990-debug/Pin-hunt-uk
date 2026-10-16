@@ -14,6 +14,10 @@
  * - Production is read-only: every production SQL script starts with
  *   `set default_transaction_read_only = on` and runs in a READ ONLY
  *   transaction that is rolled back; pg_dump runs with --schema-only.
+ * - Catalogue exception (#372): scripts/copy-catalogue-to-staging.mjs may later
+ *   fill the public catalogue tables (lib/catalogue-copy.mjs). verify accepts
+ *   those; every user table must still be empty of copied data. A fresh
+ *   restore accepts nothing.
  * - No data: the dump is checked for row data and refused if it has any;
  *   config.sql is built only from bucket settings, policies, triggers,
  *   realtime membership and two configuration tables. After restore, staging
@@ -262,7 +266,8 @@ async function verify(s, { password, requireEmpty = false } = {}) {
   const { missingInStaging, extraInStaging } = diffFingerprints(fs.readFileSync(path.join(dir, "prod-fingerprint.txt"), "utf8"), stagingPrint);
   const marker = psql(conn, pw, `select count(*) from storage.buckets where id = '${STAGING_MARKER_BUCKET}';`) === "1";
   const counts = JSON.parse(psql(conn, pw, DATA_COUNTS_QUERY));
-  const copied = copiedData(counts);
+  // After a restore nothing may hold data; later, the public catalogue may (copy-catalogue-to-staging, #372).
+  const copied = copiedData(counts, { allowCatalogue: !requireEmpty });
 
   console.log(`  schema: ${missingInStaging.length} missing, ${extraInStaging.length} extra (vs production)`);
   for (const l of missingInStaging.slice(0, 20)) console.log(`    - missing: ${l}`);

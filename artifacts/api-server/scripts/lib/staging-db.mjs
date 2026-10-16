@@ -6,6 +6,7 @@
  * Nothing here opens a connection. Unit-tested in staging-db.test.mjs.
  */
 import { STAGING_MARKER_BUCKET, isValidRef } from "./staging-guard.mjs";
+import { CATALOGUE_TABLE_NAMES } from "./catalogue-copy.mjs";
 
 /** Where psql/pg_dump usually live on a Mac, checked after PATH. */
 export const TOOL_DIRS = [
@@ -285,13 +286,17 @@ select json_build_object(
 /** Tables restore fills from config.sql (configuration, no personal data). */
 export const REFERENCE_TABLES = new Set(["catalogue_sources", "feature_flags"]);
 
-/** Non-empty tables that would mean data was copied, given DATA_COUNTS_QUERY output. */
-export function copiedData(counts) {
+/**
+ * Non-empty tables that would mean data was copied, given DATA_COUNTS_QUERY
+ * output. `allowCatalogue` accepts the public catalogue tables that
+ * copy-catalogue-to-staging fills (#372); a fresh restore never allows them.
+ */
+export function copiedData(counts, { allowCatalogue = false } = {}) {
   const found = [];
   if (counts["auth.users"] > 0) found.push(`auth.users (${counts["auth.users"]})`);
   if (counts["storage.objects"] > 0) found.push(`storage.objects (${counts["storage.objects"]})`);
   for (const [table, n] of Object.entries(counts.public ?? {})) {
-    if (n > 0 && !REFERENCE_TABLES.has(table)) found.push(`public.${table} (${n})`);
+    if (n > 0 && !REFERENCE_TABLES.has(table) && !(allowCatalogue && CATALOGUE_TABLE_NAMES.has(table))) found.push(`public.${table} (${n})`);
   }
   return found;
 }

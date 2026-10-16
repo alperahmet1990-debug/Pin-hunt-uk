@@ -8,7 +8,7 @@ iPhone without a Mac running. Nothing here runs automatically.
 | Piece | Where | What it does |
 |---|---|---|
 | `expo-updates` | `artifacts/pinhunt/package.json` | Lets an installed build download new JS bundles over the air. |
-| `runtimeVersion: { policy: "fingerprint" }` | `app.json` + `fingerprint.config.js` | The runtime version is a hash of everything native (native packages, Expo SDK, native `app.json` settings). An update is only delivered to builds with the same hash, so JS that needs new native code can never reach an old build. `eas.json` and `package.json` scripts are excluded from the hash. |
+| `runtimeVersion: { policy: "fingerprint" }` | `app.json` + `fingerprint.config.js` | The runtime version is a hash of everything native (native packages, Expo SDK, native `app.json` settings). An update is only delivered to builds with the same hash, so JS that needs new native code can never reach an old build. `eas.json`, `.gitignore` and `package.json` scripts are excluded from the hash. Anything else in the hash (a native package, the icon or splash, native `app.json` settings) needs a new `testflight-build` before OTA updates reach phones again. |
 | `preview` build profile | `eas.json` | Store-signed iOS build for TestFlight, on the `preview` channel, using the EAS `preview` environment variables. Build numbers auto-increment on EAS. |
 | `production` build profile | `eas.json` | Same, on the `production` channel. Not used yet. |
 | Manual workflow (proposed) | `docs/release/proposed/eas-preview.yml` | GitHub Actions "Run workflow" button: `ota-update` or `testflight-build`, from `main` only. |

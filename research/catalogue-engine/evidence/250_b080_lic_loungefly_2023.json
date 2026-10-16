@@ -1,0 +1,4604 @@
+{
+ "packet_id": "backfill-b080-lic-loungefly-2023",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b080",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+   "title": "Snow White Lenticular Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+   "title": "Cinderella Happily Ever After Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+   "title": "Disney100 Sketchbook Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/disney100-sketchbook-3-collector-box-pin/WDPN3100.html",
+   "title": "Disney100 Sketchbook 3\" Collector Box Pin",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+   "title": "Monsters, Inc. Sulley Mixed Emotions Loungefly Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+   "title": "Lilo & Stitch Ukulele Limited Edition Loungefly Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+   "title": "Lilo & Stitch The Series Stitch & Angel Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+   "title": "Stitch Holiday Snow Angel Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+   "title": "Disney Princesses Floral Limited Edition Loungefly Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+   "title": "Loungefly Disney Princesses Floral Limited Edition Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+   "title": "Lilo & Stitch Snowball Glitter Limited Edition Loungefly Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+   "title": "Loungefly Disney Lilo & Stitch Snowball Glitter Limited Edition Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+   "title": "Up Carl & Ellie Balloons Stained Glass Limited Edition Loungefly Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+   "title": "Fox and the Hound Book Hinged Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+   "title": "Stitch Spooky Stories Halloween 3\" Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+   "title": "Haunted Mansion Stretching Room Portraits 3\" Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/haunted-mansion-stretching-room-portraits-loungefly-blind-box-pin-set",
+   "title": "Haunted Mansion Stretching Room Portraits Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+   "title": "Disney Loungefly Blind Box Pin - Haunted Mansion Stretching Room Portraits",
+   "publisher": "yourWDWstore",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+   "title": "COMING SOON! Disney100 Loungefly Collection Showcasing Mickey Mouse Club",
+   "publisher": "MickeyBlog",
+   "published_date": "2023-03-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2023/03/14/disney100-loungefly-collection/",
+   "title": "Disney100 Loungefly Collection Now Available Online",
+   "publisher": "MickeyBlog",
+   "published_date": "2023-03-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+   "title": "Loungefly San Diego Comic-Con Exclusives 2023",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2023-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2023/07/20/loungefly-disney-marvel-star-wars-san-diego-comic-con-2023/",
+   "title": "Disney, Marvel and Star Wars Loungefly Exclusives at San Diego Comic-Con 2023",
+   "publisher": "Laughing Place",
+   "published_date": "2023-07-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+   "title": "Rock Out with Loungefly at NYCC 2023",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+   "title": "Loungefly Star Wars: Lightspeed Backpack, Wallet & Pin (Amazon Exclusives) Available for Preorder",
+   "publisher": "MouseSteps",
+   "published_date": "2023-02-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+   "title": "The Little Mermaid Live Action Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+   "title": "The Little Mermaid Ariel on Rock Loungefly Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ariel-on-rock-sliding-enamel-pin---boxlunch-exclusive/20336650.html",
+   "title": "Loungefly Disney The Little Mermaid Ariel on Rock Sliding Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+   "title": "\"The Incredibles,\" \"Tangled,\" and More Disney Movies Featured on New Loungefly Bags, Wallets and Pins",
+   "publisher": "Laughing Place",
+   "published_date": "2023-02-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://circleofhopeboutique.com/products/loungefly-disney-pixar-incredibles-jack-jack-mixed-emotions-pin-set",
+   "title": "Loungefly Disney Pixar Incredibles Jack Jack Mixed Emotions Pin Set",
+   "publisher": "Circle of Hope Boutique",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-incredibles-puzzle-loungefly-blind-box-pin-set",
+   "title": "The Incredibles Puzzle Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/gb/the-incredibles-puzzle-blind-box-pin/WDPN3013.html",
+   "title": "The Incredibles Puzzle Blind Box Pin",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+   "title": "Disney Loungefly Blind Box Pin - Incredibles Puzzle",
+   "publisher": "yourWDWstore",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+   "title": "Disney100 Anniversary Character Mystery Box Pin",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-anniversary-character-mystery-box-pin.html",
+   "title": "Disney Loungefly Blind Box Pin - Disney100",
+   "publisher": "yourWDWstore",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/mystery-disney-pins/",
+   "title": "Mystery Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+   "title": "Disney 100 Platinum Character Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+   "title": "Disney Loungefly Blind Box Pin - Disney100 Platinum Characters",
+   "publisher": "yourWDWstore",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+   "title": "Star Wars Episode 1, 2 & 3 Backpack Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.radartoys.com/products/loungefly-star-wars-episodes-1-2-3-mini-backpack-single-blind-box-pin",
+   "title": "Loungefly Star Wars Episodes 1 2 3 Mini Backpack Single Blind Box Pin",
+   "publisher": "Radar Toys",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+   "title": "Marvel Infinity Saga Backpack Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/winnie-the-pooh-heffa-dream-loungefly-blind-box-pin-set/",
+   "title": "Winnie the Pooh Heffa-Dream Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+   "title": "Loungefly Disney Winnie the Pooh Heffa-Dreams Blind Box Pin",
+   "publisher": "Modern Pinup",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+   "title": "Winnie The Pooh Character Soda Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+   "title": "Winnie The Pooh Butterfly Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2023/loungefly-snow-white-lenticular",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow White Lenticular Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-cinderella-happily-ever-after",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella Happily Ever After Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-disney100-sketchbook",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney100 Sketchbook Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-sulley-mixed-emotions",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Monsters, Inc. Sulley Mixed Emotions Loungefly Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-lilo-stitch-ukulele",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lilo & Stitch Ukulele Limited Edition Loungefly Pin (BoxLunch)",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-stitch-angel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lilo & Stitch The Series Stitch & Angel Limited Edition Loungefly Pin (BoxLunch)",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-stitch-holiday-snow-angel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Holiday Snow Angel Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-princesses-floral",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princesses Floral Limited Edition Loungefly Pin (BoxLunch)",
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-stitch-snowball-glitter",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lilo & Stitch Snowball Glitter Limited Edition Loungefly Pin (BoxLunch)",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-up-carl-ellie-balloons-stained-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Up Carl & Ellie Balloons Stained Glass Limited Edition Loungefly Pin (BoxLunch)",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-fox-and-the-hound-book-hinged",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fox and the Hound Book Hinged Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-stitch-spooky-stories-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Spooky Stories Halloween 3\" Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-haunted-mansion-stretching-room-portraits-3in",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Stretching Room Portraits 3\" Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-disney100-mickey-mouse-club-hinged",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney100 Mickey Mouse Club Loungefly collection hinged pin",
+     "source_url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-sdcc-stitch-scrump",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly SDCC 2023 Stitch & Scrump glitter pin",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-nycc-oogie-boogie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly NYCC 2023 Oogie Boogie 3\" pin",
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-amazon-star-wars-lightspeed",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Star Wars Light Speed 3\" pin (Amazon exclusive)",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-little-mermaid-live-action",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Little Mermaid live action pins at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "two pins, each $9.90"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Ariel & Friends and Ariel & Sisters"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "May 2023"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "source says Loungefly made them"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-little-mermaid-ariel-on-rock",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Little Mermaid Ariel on Rock Loungefly Pin (BoxLunch)",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-tangled-lenticular-collector-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tangled lenticular collector box pin",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-incredibles-jack-jack-mixed-emotions",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Incredibles Jack-Jack Mixed Emotions pin set",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "post/listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-disney100-glitter-characters-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney100 Anniversary Character Mystery Box Pin",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "official listing title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-anniversary-character-mystery-box-pin.html",
+     "method": "search_snippet",
+     "note": "sold individually and blind; collect all 6"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-anniversary-character-mystery-box-pin.html",
+     "method": "search_snippet",
+     "note": "retailer: collect all 6"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "1 in 12 glow Baymax chase"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "WDPN3233-EA",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "SKU in Loungefly URL"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/tag/mystery-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB archive post dated 17 Aug 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "Loungefly product listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney 100 Platinum Character Loungefly Blind Box Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "sold blind, random selection"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "collect all 6 per listing summary"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "Stitch chase 1 in 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "April 2023 at select retailers"
+    },
+    {
+     "field": "price",
+     "value": 12.0,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "avg $12 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Stretching Room Portraits Loungefly Blind Box Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/haunted-mansion-stretching-room-portraits-loungefly-blind-box-pin-set",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "designs listed individually"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "six designs named"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "glow grandfather clock chase 1 in 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/haunted-mansion-stretching-room-portraits-loungefly-blind-box-pin-set",
+     "method": "search_snippet",
+     "note": "Sept 2023 select retailers"
+    },
+    {
+     "field": "price",
+     "value": 10.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/haunted-mansion-stretching-room-portraits-loungefly-blind-box-pin-set",
+     "method": "search_snippet",
+     "note": "avg $10 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/haunted-mansion-stretching-room-portraits-loungefly-blind-box-pin-set",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/haunted-mansion-stretching-room-portraits-loungefly-blind-box-pin-set",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-incredibles-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Incredibles Puzzle Blind Box Pin",
+     "source_url": "https://loungefly.com/gb/the-incredibles-puzzle-blind-box-pin/WDPN3013.html",
+     "method": "search_snippet",
+     "note": "official listing title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "assortment of six puzzle-piece pins forming logo"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "assortment features six pins"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "1 in 12 pink glitter Jack-Jack monster chase"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "WDPN3013",
+     "source_url": "https://loungefly.com/gb/the-incredibles-puzzle-blind-box-pin/WDPN3013.html",
+     "method": "search_snippet",
+     "note": "SKU in Loungefly URL"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-puzzle-loungefly-blind-box-pin-set",
+     "method": "search_snippet",
+     "note": "Feb 2023 select retailers"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/gb/the-incredibles-puzzle-blind-box-pin/WDPN3013.html",
+     "method": "search_snippet",
+     "note": "Loungefly product listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh Heffa-Dream Loungefly Blind Box Pin Set",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-heffa-dream-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "assortment of six designs"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-heffa-dream-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "assortment features six pins"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "glitter Pooh with hunny pot chase ~1 in 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-03",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-heffa-dream-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "March 2023 select retailers"
+    },
+    {
+     "field": "price",
+     "value": 10.0,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-heffa-dream-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "avg $10 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-heffa-dream-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-heffa-dream-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Episode 1, 2 & 3 Backpack Loungefly Blind Box Pin Set",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "blind box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.radartoys.com/products/loungefly-star-wars-episodes-1-2-3-mini-backpack-single-blind-box-pin",
+     "method": "search_snippet",
+     "note": "six different pins"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Jar Jar Binks glitter chaser"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "May 2023 select retailers"
+    },
+    {
+     "field": "price",
+     "value": 10.0,
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "avg $10 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "June 2023"
+    },
+    {
+     "field": "price",
+     "value": 10.0,
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "avg $10 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Iron Gauntlet glitter chaser"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/marvel-infinity-saga-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie The Pooh Character Soda Blind Box Pin Set",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "blind box"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "release month stated"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "at Hot Topic"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "six pins in total"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "$9.90 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-character-soda-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie The Pooh Butterfly Blind Box Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+     "method": "search_snippet",
+     "note": "release month stated"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+     "method": "search_snippet",
+     "note": "at Hot Topic"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2023/loungefly-snow-white-lenticular/snow-white",
+   "set_key": "lic/2023/loungefly-snow-white-lenticular",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Snow White Lenticular Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "named in title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1400,
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "LE 1,400"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "May 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "lenticular"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "layered lenticular design"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "sold via DPBStore"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-lenticular-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-cinderella-happily-ever-after/cinderella",
+   "set_key": "lic/2023/loungefly-cinderella-happily-ever-after",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Happily Ever After Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "May 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "slider moves birds drawing back curtains"
+    },
+    {
+     "field": "visual_description",
+     "value": "Sliding pin where birds pull back curtains",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-happily-ever-after-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-sketchbook/sketchbook",
+   "set_key": "lic/2023/loungefly-disney100-sketchbook",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney100 Sketchbook 3\" Collector Box Pin",
+     "source_url": "https://loungefly.com/disney100-sketchbook-3-collector-box-pin/WDPN3100.html",
+     "method": "search_snippet",
+     "note": "official listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "snippet says hinged pin with Tinker Bell"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "June 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "collector box"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "opens to reveal character sketches"
+    },
+    {
+     "field": "product_code",
+     "value": "WDPN3100",
+     "source_url": "https://loungefly.com/disney100-sketchbook-3-collector-box-pin/WDPN3100.html",
+     "method": "search_snippet",
+     "note": "SKU in Loungefly URL"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-sketchbook-3-collector-box-pin/WDPN3100.html",
+     "method": "search_snippet",
+     "note": "Loungefly product listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney100-sketchbook-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/disney100-sketchbook-3-collector-box-pin/WDPN3100.html",
+     "method": "search_snippet",
+     "note": "one 3in collector box pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-sulley-mixed-emotions/sulley",
+   "set_key": "lic/2023/loungefly-sulley-mixed-emotions",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Monsters, Inc. Sulley Mixed Emotions Loungefly Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sulley"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named in title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "$25"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "June 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "interchangeable face parts"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "swappable face parts"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-lilo-stitch-ukulele/stitch-ukulele",
+   "set_key": "lic/2023/loungefly-boxlunch-lilo-stitch-ukulele",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lilo & Stitch Ukulele Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Stitch with ukulele per title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "1 of 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 19.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "$19.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "June 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "size_mm",
+     "value": 64,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "approx 2.5in stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-ukulele-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-stitch-angel/stitch-and-angel",
+   "set_key": "lic/2023/loungefly-boxlunch-stitch-angel",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lilo & Stitch The Series Stitch & Angel Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Angel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "named in title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 19.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "$19.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Feb 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-the-series-stitch-angel-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "listed as a single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-stitch-holiday-snow-angel/stitch",
+   "set_key": "lic/2023/loungefly-stitch-holiday-snow-angel",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Holiday Snow Angel Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "Stitch in hat and scarf"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "1 of 2,500"
+    },
+    {
+     "field": "original_price",
+     "value": 20.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "$20.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "Nov 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "moveable arms"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "arms move to make snow angel"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch and select retailers",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch plus other select retailers"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-holiday-snow-angel-limited-edition-loungefly-disney-pin",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-princesses-floral/princesses-floral",
+   "set_key": "lic/2023/loungefly-boxlunch-princesses-floral",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Princesses Floral Limited Edition Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "1 of 1,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+     "method": "search_snippet",
+     "note": "1 of 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 19.9,
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "$19.90 per DPB"
+    },
+    {
+     "field": "original_price",
+     "value": 18.99,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+     "method": "search_snippet",
+     "note": "$18.99 on BoxLunch page (may be later price)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-limited-edition-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "listed as Nov 2023; page metadata conflicts"
+    },
+    {
+     "field": "visual_description",
+     "value": "Portrait of the princesses framed by flowers and stripes",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+     "method": "search_snippet",
+     "note": "Loungefly in listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-limited-edition-enamel-pin---boxlunch-exclusive/30626020.html",
+     "method": "search_snippet",
+     "note": "one portrait pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-stitch-snowball-glitter/stitch",
+   "set_key": "lic/2023/loungefly-boxlunch-stitch-snowball-glitter",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Lilo & Stitch Snowball Glitter Limited Edition Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "Stitch holding snowball"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "1 of 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 19.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "$19.90 per DPB"
+    },
+    {
+     "field": "original_price",
+     "value": 18.99,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "$18.99 on BoxLunch"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Nov 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/lilo-stitch-snowball-glitter-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "glittery snow details"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "Loungefly in listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-snowball-glitter-limited-edition-enamel-pin---boxlunch-exclusive/20982736.html",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-up-carl-ellie-balloons-stained-glass/carl-and-ellie",
+   "set_key": "lic/2023/loungefly-boxlunch-up-carl-ellie-balloons-stained-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Up Carl & Ellie Balloons Stained Glass Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carl",
+      "Ellie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Carl and Ellie by balloon cart"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "1 of 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Dec 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "stained glass heart balloon"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-carl-ellie-balloons-stained-glass-limited-edition-loungefly-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "single LE pin showing both"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-fox-and-the-hound-book-hinged/book",
+   "set_key": "lic/2023/loungefly-fox-and-the-hound-book-hinged",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fox and the Hound Book Hinged Limited Edition Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Jan 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "hinged book"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/fox-and-the-hound-book-hinged-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-stitch-spooky-stories-halloween/stitch",
+   "set_key": "lic/2023/loungefly-stitch-spooky-stories-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Spooky Stories Halloween 3\" Limited Edition Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Stitch with duckling on hat"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Sept 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "duckling slides on hat"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/stitch-spooky-stories-halloween-3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-stretching-room-portraits-3in/stretching-room-portraits",
+   "set_key": "lic/2023/loungefly-haunted-mansion-stretching-room-portraits-3in",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion Stretching Room Portraits 3\" Limited Edition Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Stretching Room portraits"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2700,
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE 2,700"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Sept 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding",
+      "collector box"
+     ],
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "portraits stretch to reveal fates"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "also sold via DPB Store"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-3%E2%80%B3-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "single 3in pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-mickey-mouse-club-hinged/mickey-mouse-club",
+   "set_key": "lic/2023/loungefly-disney100-mickey-mouse-club-hinged",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney100 Mickey Mouse Club hinged pin",
+     "source_url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+     "method": "search_snippet",
+     "note": "descriptive name; hinged pin in Mickey Mouse Club collection"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "grayscale palette"
+     ],
+     "source_url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+     "method": "search_snippet",
+     "note": "grayscale hinged pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1800,
+     "source_url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+     "method": "search_snippet",
+     "note": "LE 1,800"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-03",
+     "source_url": "https://mickeyblog.com/2023/03/14/disney100-loungefly-collection/",
+     "method": "search_snippet",
+     "note": "collection online March 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://mickeyblog.com/2023/03/14/disney100-loungefly-collection/",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mickeyblog.com/2023/03/06/coming-soon-disney100-loungefly-collection-showcasing-mickey-mouse-club/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-sdcc-stitch-scrump/stitch-and-scrump",
+   "set_key": "lic/2023/loungefly-sdcc-stitch-scrump",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch holding Scrump glitter enamel pin (SDCC 2023)",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "descriptive name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Scrump"
+     ],
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "Stitch holding Scrump"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Scrump"
+     ],
+     "source_url": "https://www.laughingplace.com/w/news/2023/07/20/loungefly-disney-marvel-star-wars-san-diego-comic-con-2023/",
+     "method": "search_snippet",
+     "note": "Stitch and Scrump collection"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "glittery pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "booth exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "LE 500 booth-only"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "SDCC July 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2023 Loungefly booth",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "booth exclusive"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "Loungefly (SDCC booth)",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly booth"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://sdccblog.com/2023/07/loungefly-san-diego-comic-con-exclusives-2023/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-nycc-oogie-boogie/oogie-boogie",
+   "set_key": "lic/2023/loungefly-nycc-oogie-boogie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Oogie Boogie 3\" pin (NYCC 2023)",
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "descriptive; matches Neon Cosplay backpack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Oogie Boogie"
+     ],
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "Oogie Boogie"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-13",
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "online sales from 13 Oct 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2023",
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "NYCC 12-15 Oct 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "Loungefly blog"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/loungefly-blog-home/rock-out-with-loungefly-at-nycc-2023.html",
+     "method": "search_snippet",
+     "note": "single 3in pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-amazon-star-wars-lightspeed/han-solo-and-chewbacca",
+   "set_key": "lic/2023/loungefly-amazon-star-wars-lightspeed",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Star Wars: Light Speed 3 Inch Pin",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "named in article"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Han Solo",
+      "Chewbacca"
+     ],
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "features Han and Chewie"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05-01",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "scheduled 1 May 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "Amazon",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "Amazon exclusive (reported by MouseSteps)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.mousesteps.com/2023/02/24/loungefly-star-wars-lightspeed-backpack-wallet-pin-amazon-exclusives-available-for-preorder/",
+     "method": "search_snippet",
+     "note": "single exclusive pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-little-mermaid-live-action/ariel-and-friends",
+   "set_key": "lic/2023/loungefly-boxlunch-little-mermaid-live-action",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel & Friends",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Ariel named in pin name"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "$9.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "May 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "individual pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-little-mermaid-live-action/ariel-and-sisters",
+   "set_key": "lic/2023/loungefly-boxlunch-little-mermaid-live-action",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel & Sisters",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Ariel named in pin name"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "$9.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "May 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-live-action-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "individual pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-little-mermaid-ariel-on-rock/ariel",
+   "set_key": "lic/2023/loungefly-boxlunch-little-mermaid-ariel-on-rock",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney The Little Mermaid Ariel on Rock Sliding Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ariel-on-rock-sliding-enamel-pin---boxlunch-exclusive/20336650.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Ariel on rock"
+    },
+    {
+     "field": "original_price",
+     "value": 19.9,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "$19.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "June 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-on-rock-loungefly-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2023 release stated"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ariel-on-rock-sliding-enamel-pin---boxlunch-exclusive/20336650.html",
+     "method": "search_snippet",
+     "note": "3in sliding pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ariel-on-rock-sliding-enamel-pin---boxlunch-exclusive/20336650.html",
+     "method": "search_snippet",
+     "note": "Loungefly in listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ariel-on-rock-sliding-enamel-pin---boxlunch-exclusive/20336650.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ariel-on-rock-sliding-enamel-pin---boxlunch-exclusive/20336650.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-tangled-lenticular-collector-box/tangled-lenticular",
+   "set_key": "lic/2023/loungefly-tangled-lenticular-collector-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tangled lenticular collector box pin",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "descriptive, from EE Feb 2023 wave"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "lenticular",
+      "collector box"
+     ],
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "lenticular collector box"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "Entertainment Earth pre-order wave Feb 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "Entertainment Earth",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "EE pre-order"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-incredibles-jack-jack-mixed-emotions/jack-jack",
+   "set_key": "lic/2023/loungefly-incredibles-jack-jack-mixed-emotions",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Jack Mixed Emotions Pin Set",
+     "source_url": "https://circleofhopeboutique.com/products/loungefly-disney-pixar-incredibles-jack-jack-mixed-emotions-pin-set",
+     "method": "search_snippet",
+     "note": "retail listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack"
+     ],
+     "source_url": "https://circleofhopeboutique.com/products/loungefly-disney-pixar-incredibles-jack-jack-mixed-emotions-pin-set",
+     "method": "search_snippet",
+     "note": "Jack-Jack"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://circleofhopeboutique.com/products/loungefly-disney-pixar-incredibles-jack-jack-mixed-emotions-pin-set",
+     "method": "search_snippet",
+     "note": "one 3in pin with magnetic interchangeable faces"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "interchangeable magnetic faces"
+     ],
+     "source_url": "https://circleofhopeboutique.com/products/loungefly-disney-pixar-incredibles-jack-jack-mixed-emotions-pin-set",
+     "method": "search_snippet",
+     "note": "happy, surprised, angry faces"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "in EE Feb 2023 pre-order wave"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://circleofhopeboutique.com/products/loungefly-disney-pixar-incredibles-jack-jack-mixed-emotions-pin-set",
+     "method": "search_snippet",
+     "note": "listing regular price $25 (retailer)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://circleofhopeboutique.com/products/loungefly-disney-pixar-incredibles-jack-jack-mixed-emotions-pin-set",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "Entertainment Earth",
+     "source_url": "https://www.laughingplace.com/w/news/2023/02/02/disney-loungefly-february-2023-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "EE pre-order"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-glitter-characters-mystery/cheshire-cat",
+   "set_key": "lic/2023/loungefly-disney100-glitter-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cheshire Cat",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "official listing names each pin in the set; retailer says collect all 6"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-glitter-characters-mystery/meilin-lee-red-panda",
+   "set_key": "lic/2023/loungefly-disney100-glitter-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Meilin Lee as red panda",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Meilin Lee"
+     ],
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "official listing names each pin in the set; retailer says collect all 6"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-glitter-characters-mystery/snow-white",
+   "set_key": "lic/2023/loungefly-disney100-glitter-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Snow White",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "official listing names each pin in the set; retailer says collect all 6"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-glitter-characters-mystery/ursula",
+   "set_key": "lic/2023/loungefly-disney100-glitter-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "official listing names each pin in the set; retailer says collect all 6"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-glitter-characters-mystery/pinocchio",
+   "set_key": "lic/2023/loungefly-disney100-glitter-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pinocchio",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "official listing names each pin in the set; retailer says collect all 6"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-glitter-characters-mystery/baymax-glow-chase",
+   "set_key": "lic/2023/loungefly-disney100-glitter-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Baymax glow-in-the-dark chase",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baymax"
+     ],
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "official listing names each pin in the set; retailer says collect all 6"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "1 in 12 chase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow-in-the-dark"
+     ],
+     "source_url": "https://loungefly.com/disney100-anniversary-character-mystery-box-pin/WDPN3233-EA.html",
+     "method": "search_snippet",
+     "note": "glow chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-platinum-characters-mystery/mickey-mouse",
+   "set_key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "listing names the pins in the set with Stitch as chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-platinum-characters-mystery/winnie-the-pooh",
+   "set_key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Winnie the Pooh",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "listing names the pins in the set with Stitch as chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-platinum-characters-mystery/tiana",
+   "set_key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Princess Tiana",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "listing names the pins in the set with Stitch as chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-platinum-characters-mystery/simba",
+   "set_key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Simba",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "listing names the pins in the set with Stitch as chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-platinum-characters-mystery/alice",
+   "set_key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "listing names the pins in the set with Stitch as chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-disney100-platinum-characters-mystery/stitch-chase",
+   "set_key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch glitter chase",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "listing names the pins in the set with Stitch as chase"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-disney100-platinum-characters.html",
+     "method": "search_snippet",
+     "note": "1 in 12 chase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "glitter chaser"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-icons-mystery/tightrope-girl",
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tightrope girl portrait",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "listing says designs include each of these"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "Haunted Mansion set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-icons-mystery/bearded-man",
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bearded man portrait",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "listing says designs include each of these"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "Haunted Mansion set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-icons-mystery/widow-on-grave",
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Woman sitting on husband's grave",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "listing says designs include each of these"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "Haunted Mansion set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-icons-mystery/quicksand-men",
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Three men in quicksand",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "listing says designs include each of these"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "Haunted Mansion set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-icons-mystery/logo-plaque",
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion logo",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "listing says designs include each of these"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "Haunted Mansion set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-icons-mystery/grandfather-clock",
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Grandfather clock",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "listing says designs include each of these"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "Haunted Mansion set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-haunted-mansion-icons-mystery/grandfather-clock-glow-chase",
+   "set_key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Grandfather clock glow-in-the-dark chase",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "listing says designs include each of these"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "1 in 12 glow chase"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-haunted-mansion-stretching-room-portraits.html",
+     "method": "search_snippet",
+     "note": "Haunted Mansion set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-incredibles-puzzle-blind-box/mr-incredible",
+   "set_key": "lic/2023/loungefly-incredibles-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mr. Incredible",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Incredible"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "puzzle-piece pins that join to form logo"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-incredibles-puzzle-blind-box/elastigirl",
+   "set_key": "lic/2023/loungefly-incredibles-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Elastigirl",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elastigirl"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "puzzle-piece pins that join to form logo"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-incredibles-puzzle-blind-box/violet",
+   "set_key": "lic/2023/loungefly-incredibles-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Violet",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Violet"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "puzzle-piece pins that join to form logo"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-incredibles-puzzle-blind-box/dash",
+   "set_key": "lic/2023/loungefly-incredibles-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dash",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dash"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "puzzle-piece pins that join to form logo"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-incredibles-puzzle-blind-box/jack-jack",
+   "set_key": "lic/2023/loungefly-incredibles-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack-Jack",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "puzzle-piece pins that join to form logo"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-incredibles-puzzle-blind-box/jack-jack-monster-chase",
+   "set_key": "lic/2023/loungefly-incredibles-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack-Jack monster glitter chase",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "puzzle-piece pins that join to form logo"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "1 in 12 chase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-blind-box-pin-incredibles-puzzle.html",
+     "method": "search_snippet",
+     "note": "pink glitter"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box/heffalump-hot-air-balloon",
+   "set_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hot-air-balloon Heffalump",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Heffalump"
+     ],
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "listing describes each design"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box/heffalump-winged-ears",
+   "set_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Yellow Heffalump with winged ears",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Heffalump"
+     ],
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "listing describes each design"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box/woozle-marching-band",
+   "set_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Woozle in a marching band",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Woozle"
+     ],
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "listing describes each design"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box/watering-can",
+   "set_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Watering can",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "listing describes each design"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box/pooh-hunny-pot-chase",
+   "set_key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Winnie the Pooh with hunny pot glitter chase",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "listing describes each design"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.modernpinup.com/products/loungefly-disney-winnie-the-pooh-heffa-dreams-blind-box-pin",
+     "method": "search_snippet",
+     "note": "chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/queen-amidala",
+   "set_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Queen Amidala",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Queen Amidala"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/obi-wan-kenobi",
+   "set_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Obi-Wan Kenobi",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Obi-Wan Kenobi"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/general-grievous",
+   "set_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "General Grievous",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "General Grievous"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/anakin-skywalker",
+   "set_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Anakin Skywalker",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anakin Skywalker"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/darth-maul",
+   "set_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Darth Maul",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Maul"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/jar-jar-binks-chase",
+   "set_key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jar Jar Binks glitter chase",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "design named in listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "source names Loungefly as maker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jar Jar Binks"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/star-wars-episode-1-2-3-backpack-loungefly-blind-box-pin-set/",
+     "method": "search_snippet",
+     "note": "chaser"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2023/loungefly-sulley-mixed-emotions",
+   "field": "format",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); titled 'pin set' but likely one pin plus swap faces"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-princesses-floral/princesses-floral",
+   "field": "characters",
+   "searched": "2 snippets",
+   "note": "which princesses appear not named"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-princesses-floral/princesses-floral",
+   "field": "release_date",
+   "searched": "2 snippets",
+   "note": "Nov 2023 listing conflicts with page date metadata; confirm"
+  },
+  {
+   "key": "lic/2023/loungefly-fox-and-the-hound-book-hinged/book",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters shown not in snippet"
+  },
+  {
+   "key": "lic/2023/loungefly-disney100-mickey-mouse-club-hinged/mickey-mouse-club",
+   "field": "pin_name",
+   "searched": "2 snippets",
+   "note": "official pin title, characters and price not in snippet; which MickeyBlog article states LE 1,800 not certain"
+  },
+  {
+   "key": "lic/2023/loungefly-sdcc-stitch-scrump/stitch-and-scrump",
+   "field": "original_price",
+   "searched": "2 snippets",
+   "note": "pin price not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-nycc-oogie-boogie/oogie-boogie",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition size and price not in snippet"
+  },
+  {
+   "key": "lic/2023/loungefly-amazon-star-wars-lightspeed/han-solo-and-chewbacca",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-tangled-lenticular-collector-box/tangled-lenticular",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition size, price, characters not in snippet"
+  },
+  {
+   "key": "lic/2023/loungefly-incredibles-jack-jack-mixed-emotions/jack-jack",
+   "field": "edition_size",
+   "searched": "2 snippets",
+   "note": "LE status not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-little-mermaid-tritons-gift",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "scope: confirm pin vs button / non-pin: 'Triton's Gift puzzle blind-box pin case' (EE Feb 2023) may be a case; separate Triton's Gift hinged pin LE 1,800 seen, year not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-disney100-platinum-characters-mystery",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "'collect all 6' phrasing seen in a retailer listing summary; exact retailer not pinned"
+  },
+  {
+   "key": "lic/2023/loungefly-incredibles-puzzle-blind-box/jack-jack",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "snippet lists Jack-Jack among characters and a Jack-Jack monster chase; confirm a non-chase Jack-Jack design exists"
+  },
+  {
+   "key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "6 designs stated; only 4 regular + chase described; one design unnamed. Design-list attribution to Modern Pinup vs other retailer not certain"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/queen-amidala",
+   "field": "pin_structure",
+   "searched": "see set",
+   "note": "hold: mystery designs not individually confirmed (DPB lists characters; set size 6 from a different retailer)"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/obi-wan-kenobi",
+   "field": "pin_structure",
+   "searched": "see set",
+   "note": "hold: mystery designs not individually confirmed (DPB lists characters; set size 6 from a different retailer)"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/general-grievous",
+   "field": "pin_structure",
+   "searched": "see set",
+   "note": "hold: mystery designs not individually confirmed (DPB lists characters; set size 6 from a different retailer)"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/anakin-skywalker",
+   "field": "pin_structure",
+   "searched": "see set",
+   "note": "hold: mystery designs not individually confirmed (DPB lists characters; set size 6 from a different retailer)"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/darth-maul",
+   "field": "pin_structure",
+   "searched": "see set",
+   "note": "hold: mystery designs not individually confirmed (DPB lists characters; set size 6 from a different retailer)"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box/jar-jar-binks-chase",
+   "field": "pin_structure",
+   "searched": "see set",
+   "note": "hold: mystery designs not individually confirmed (DPB lists characters; set size 6 from a different retailer)"
+  },
+  {
+   "key": "lic/2023/loungefly-marvel-infinity-saga-backpack-blind-box",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "corroboration only; DPB lists Gamora, Rescue, Drax, Vision, Doctor Strange + Iron Gauntlet chase; existing hold in 225_b096 stands (set size not stated)"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet does not name the maker; confirm Loungefly before counting toward loungefly"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "designs not named; record set only"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "snippet does not name the maker; confirm Loungefly before counting toward loungefly"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "designs not named; record set only"
+  },
+  {
+   "key": "lic/2023/loungefly-haunted-mansion-icons-mystery",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "collection announced Mar 2023 for fall (WDWNT); retailer list not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-scary-teddy-present-sliding",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: Loungefly NBC 30th Anniversary collection 3in Scary Teddy Present sliding pin, LE 1,000 (loungefly.com collection page); release year not in snippet"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-nbc-zero-gravestone",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: Loungefly NBC 30th Anniversary Zero Gravestone sliding glow LE 1,000 BoxLunch exclusive; year not in snippet"
+  },
+  {
+   "key": "lic/2023/boxlunch-nbc-lock-shock-barrel-snow-globe",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: licensed BoxLunch NBC 30th Lock, Shock & Barrel snow globe pin, Oct 2023, $14.90 (DPB); maker not stated - boxlunch cell"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-han-solo-carbonite",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: Loungefly 3in Han Solo in Carbonite sliding collector box pin, ROTJ 40th, ed. 1000; year not stated (yourWDWstore)"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-blind-box",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: BoxLunch-exclusive Loungefly Little Mermaid blind box (11 characters listed); year/structure unconfirmed; hold: confirm pin structure"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-ursula-vanessa-lenticular",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: BoxLunch Loungefly Ursula & Vanessa lenticular pin; year not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-ariel-eric-dancing",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: BoxLunch Loungefly Ariel & Eric dancing pin; year not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-wish",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "no Loungefly Wish pin found; EE Wish Star item is a mini backpack (non-pin)"
+  },
+  {
+   "key": "lic/2023/loungefly-elemental",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "no Loungefly Elemental pin found"
+  },
+  {
+   "key": "lic/2023/loungefly-parks",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "no 2023 parks-exclusive Loungefly pin found; WDWNT park items were bags"
+  }
+ ],
+ "discovery_notes": "Loungefly 2023 cell. 30 standard searches, all claims search_snippet. Mystery designs recorded only where a listing names each design or states set size alongside the named list; Ep1-2-3 held (names and count from different sources). Infinity Saga is corroboration of 225_b096 key only. Hot Topic Pooh sets recorded with maker unconfirmed. NBC 30th / Han Solo / LM BoxLunch items left as leads (year not stated). Keys for Disney100 glitter/anniversary, Disney100 platinum and Haunted Mansion stretching-room blind box aligned with parallel packet 251_b081 (same products) so claims corroborate rather than duplicate; 251 names the HM set 'Icons' while DPB/yourWDWstore call it Stretching Room Portraits - same six designs."
+}

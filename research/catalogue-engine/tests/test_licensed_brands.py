@@ -11,7 +11,10 @@ class LicensedBrands(unittest.TestCase):
     def test_retailer_only_and_multiword_slugs(self):
         self.assertEqual(maker_retailer('lic/2018/boxlunch-christmas/minnie-sweater'), ('Not stated', 'BoxLunch'))
         self.assertEqual(maker_retailer('lic/2019/loungefly-hot-topic-villains/ursula'), ('Loungefly', 'Hot Topic'))
-        self.assertEqual(maker_retailer('lic/2022/pink-a-la-mode-cupcakes/stitch'), ('Pink a la Mode', 'Pink a la Mode'))
+        self.assertEqual(maker_retailer('lic/2022/pink-a-la-mode-cupcakes/stitch'), ('Not stated', 'Pink a la Mode'))  # retailer; maker only when a source says
+
+    def test_artland_sold_at_dpb_store(self):
+        self.assertEqual(maker_retailer('lic/2024/artland-dpbstore-alice-playing-card/alice'), ('ArtLand', 'DPB Store'))
 
     def test_claimed_fields_win_over_the_key(self):
         self.assertEqual(maker_retailer('lic/2019/boxlunch-wall-e/wall-e', {'Manufacturer': 'Loungefly'}), ('Loungefly', 'BoxLunch'))

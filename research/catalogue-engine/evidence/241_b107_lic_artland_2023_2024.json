@@ -1,0 +1,5055 @@
+{
+ "packet_id": "backfill-b107-lic-artland-2023-2024",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b107",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+   "title": "Steamboat Willie Disney Pin by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+   "title": "Cinderella Pin Series by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-02-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+   "title": "Maleficent Dragon Signature Series Pin by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+   "title": "Fantasia Sorcerer Mickey Mouse Glass Limited Edition ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-07-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+   "title": "The Aristocats & The Lion King Glass Limited Edition ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+   "title": "Donald's Better Self Disney Pin Set by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/donalds-better-self",
+   "title": "Donald's Better Self - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+   "title": "The Lion King Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+   "title": "Artland Fine Art Pins Page 5 - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/young-love-nala-and-simba",
+   "title": "Young Love - Nala and Simba - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+   "title": "Part of Your World The Little Mermaid ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+   "title": "Ariel & Pocahontas Signature Series Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/product/pocahontas-signature-series-le-125-artland-pin/",
+   "title": "Pocahontas Signature Series LE 125 ArtLand Pin - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+   "title": "Moana & Mulan Signature Series Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/product/moana-signature-series-le-200-artland-pin/",
+   "title": "Moana Signature Series LE 200 ArtLand Pin - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+   "title": "Donald Duck Golf & Vacation Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-04-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+   "title": "Mr. Toad and Moley Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins?page=4",
+   "title": "Artland Fine Art Pins Page 4 - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/artland-disney-pins/page/4/",
+   "title": "ArtLand Disney Pins Archives - Page 4 of 12",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/lady-and-the-tramp-disney-pins/",
+   "title": "Lady and the Tramp Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+   "title": "Sleeping Beauty Awakening Kiss & Dragon Fire Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+   "title": "Sleeping Beauty Feel My Wrath! & The Three Good Fairies Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+   "title": "Sleeping Beauty Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+   "title": "Alice in Wonderland Playing Card Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-08-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+   "title": "Cheshire Cat & Alice in Wonderland Playing Card Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-08-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+   "title": "King of Hearts & Queen of Hearts Alice in Wonderland Playing Card Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-08-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+   "title": "Peter Pan & Mermaid Lagoon Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+   "title": "Atlantis & The Evil Hag Glass Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-11-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-evil-hag",
+   "title": "The Evil Hag Pin on Glass - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+   "title": "Star Wars Helmets Jango Fett, Captain Rex & Clone Commander Cody Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/d23-marketplace-disney-pin-releases-at-d23-2024/",
+   "title": "D23 Marketplace Disney Pin Releases at D23 2024",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/beauty-and-the-beast-jumbo-castle-series-pin-by-artland/",
+   "title": "Beauty and the Beast Jumbo Castle Series Pin by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2023/artland-dpbstore-steamboat-willie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Steamboat Willie Disney Pin by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/artland-dpbstore-cinderella-crest",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella Pin Series by ArtLand (Cinderella Crest)",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "series: one jumbo crest pin plus four round character pins",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post describes a jumbo crest pin then four circular character pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "sub_series",
+     "value": "Inspired by Dave Perillo's 'Cinderella Crest' artwork",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "post credits Perillo art piece"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/artland-dpbstore-maleficent-dragon-signature",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Maleficent Dragon Signature Series Pin by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "sub_series",
+     "value": "Signature Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "part of series that began with Cruella, Ursula, Maleficent and Scar"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/artland-dpbstore-fantasia-sorcerer-mickey-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fantasia Sorcerer Mickey Mouse Glass Limited Edition ArtLand Disney Pins",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 3 separate pins",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "three designs named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "sub_series",
+     "value": "Glass series",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "glass limited edition"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/artland-dpbstore-aristocats-lion-king-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Aristocats & The Lion King Glass Limited Edition ArtLand Disney Pins",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 2 separate pins",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "two pins named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "sub_series",
+     "value": "Glass series",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "glass limited edition"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/artland-dpbstore-donalds-better-self",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald's Better Self Disney Pin Set by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack: trio of separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "post calls it a trio of pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/products/donalds-better-self",
+     "method": "search_snippet",
+     "note": "UK stockist listing for the set"
+    },
+    {
+     "field": "price",
+     "value": 90.0,
+     "source_url": "https://pulse.gallery/products/donalds-better-self",
+     "method": "search_snippet",
+     "note": "Pulse Gallery listing price for set; may not be launch price"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/products/donalds-better-self",
+     "method": "search_snippet",
+     "note": "Pulse Gallery price in pounds"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/artland-dpbstore-lion-king",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Lion King Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 3 separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "three pins named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+     "method": "search_snippet",
+     "note": "UK stockist lists all three"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/artland-dpbstore-part-of-your-world",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Part of Your World The Little Mermaid ArtLand Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-ariel-pocahontas-signature",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Ariel & Pocahontas Signature Series Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-03",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 2 separate pins",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "Ariel and Pocahontas pins with separate edition sizes"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "sub_series",
+     "value": "Signature Series (Guy Vasilovich)",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "designed by Guy Vasilovich with his signature"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-moana-mulan-signature",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Moana & Mulan Signature Series Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-03",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 2 separate pins",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "each pin LE 200"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "sub_series",
+     "value": "Signature Series (Guy Vasilovich)",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "designed by Guy Vasilovich"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-donald-golf-vacation",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck Golf & Vacation Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 2 separate pins",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "golf and vacation pins with separate sizes"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-mr-toad-moley",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mr. Toad and Moley Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 2 separate pins",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "each pin LE 250; Pulse sells them as a duo"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "franchise",
+     "value": "The Adventures of Ichabod and Mr. Toad",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names the film"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins?page=4",
+     "method": "search_snippet",
+     "note": "listed as 'The Adventurous Duo'"
+    },
+    {
+     "field": "price",
+     "value": 29.0,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins?page=4",
+     "method": "search_snippet",
+     "note": "Pulse lists each pin at 29 GBP; not launch price"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins?page=4",
+     "method": "search_snippet",
+     "note": "pounds"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-lady-yzma",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lady and Yzma Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/tag/lady-and-the-tramp-disney-pins/",
+     "method": "search_snippet",
+     "note": "heading listed on tag archive"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/tag/lady-and-the-tramp-disney-pins/",
+     "method": "search_snippet",
+     "note": "title names ArtLand"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-05",
+     "source_url": "https://disneypinsblog.com/category/artland-disney-pins/page/4/",
+     "method": "search_snippet",
+     "note": "ArtLand archive page 4 lists post on this date"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04-08",
+     "source_url": "https://disneypinsblog.com/category/artland-disney-pins/page/4/",
+     "method": "search_snippet",
+     "note": "another archive snippet gives this date; conflict, year unconfirmed"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-sleeping-beauty-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sleeping Beauty ArtLand Disney Pin Series (Guy Vasilovich)",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "series of 6 separate pins released in pairs",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says six pins in total"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pins five and six available July 2024"
+    },
+    {
+     "field": "sub_series",
+     "value": "Designed by Guy Vasilovich",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "designer stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland Playing Card Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "series of separate pins released in three batches",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "4 + 2 + 2 across three posts; third post calls its pair the final two"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "sub_series",
+     "value": "Designed by Guy Vasilovich",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "designer stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-peter-pan-mermaid-lagoon",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Peter Pan & Mermaid Lagoon Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-09",
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multiple pins (count not stated)",
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/peter-pan-mermaid-lagoon-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/category/artland-disney-pins/page/4/",
+     "method": "search_snippet",
+     "note": "archive summary placed it in August 2024; conflicts with post text"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-atlantis-evil-hag-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Atlantis & The Evil Hag Glass Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 2 separate pins",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "two pins with separate editions"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post dated Nov 9, 2024; conflicts with June 2024 in text"
+    },
+    {
+     "field": "sub_series",
+     "value": "Glass series",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "glass pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/artland-dpbstore-star-wars-helmets-clones",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Helmets Jango Fett, Captain Rex & Clone Commander Cody Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post names ArtLand as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post says available at DPBStore.com"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold online at DPBStore.com while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post says available starting this month"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin release: 3 separate pins",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "structure as described in post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "three helmet pins named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 195,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 195"
+    },
+    {
+     "field": "sub_series",
+     "value": "Helmets by Dave Perillo",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "designed by Dave Perillo"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2023/artland-dpbstore-steamboat-willie/mickey-steamboat-willie",
+   "set_key": "lic/2023/artland-dpbstore-steamboat-willie",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "size_mm",
+     "value": "89 x 102",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.5\" x 4\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin of Mickey in a captain's hat steering a steamboat, glittering smoke from the stack",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin",
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "pin-on-pin with glittering smoke"
+    },
+    {
+     "field": "franchise",
+     "value": "Steamboat Willie",
+     "source_url": "https://disneypinsblog.com/blogs/news/steamboat-willie-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-cinderella-crest/cinderella-crest",
+   "set_key": "lic/2023/artland-dpbstore-cinderella-crest",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Crest",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "size_mm",
+     "value": "114 x 89",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 4.5\" x 3.5\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo crest",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "jumbo crest pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-cinderella-crest/grand-duke-and-cinderella",
+   "set_key": "lic/2023/artland-dpbstore-cinderella-crest",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Grand Duke & Cinderella",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Grand Duke",
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "single pin showing these characters per post wording"
+    },
+    {
+     "field": "visual_form",
+     "value": "round",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "circular style character pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-cinderella-crest/fairy-godmother-and-cinderella",
+   "set_key": "lic/2023/artland-dpbstore-cinderella-crest",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fairy Godmother & Cinderella",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Fairy Godmother",
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "single pin showing these characters per post wording"
+    },
+    {
+     "field": "visual_form",
+     "value": "round",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "circular style character pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-cinderella-crest/prince-charming-and-cinderella",
+   "set_key": "lic/2023/artland-dpbstore-cinderella-crest",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Prince Charming & Cinderella",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Prince Charming",
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "single pin showing these characters per post wording"
+    },
+    {
+     "field": "visual_form",
+     "value": "round",
+     "source_url": "https://disneypinsblog.com/cinderella-pin-series-by-artland/",
+     "method": "search_snippet",
+     "note": "circular style character pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-maleficent-dragon-signature/maleficent-dragon",
+   "set_key": "lic/2023/artland-dpbstore-maleficent-dragon-signature",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/maleficent-dragon-signature-series-pin-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-fantasia-sorcerer-mickey-glass/bewitched-broom",
+   "set_key": "lic/2023/artland-dpbstore-fantasia-sorcerer-mickey-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bewitched Broom",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Sorcerer Mickey",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glass"
+     ],
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "glass series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-fantasia-sorcerer-mickey-glass/fill-the-cauldron",
+   "set_key": "lic/2023/artland-dpbstore-fantasia-sorcerer-mickey-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fill the Cauldron",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Sorcerer Mickey",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glass"
+     ],
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "glass series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-fantasia-sorcerer-mickey-glass/take-a-bow",
+   "set_key": "lic/2023/artland-dpbstore-fantasia-sorcerer-mickey-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Take a Bow",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Sorcerer Mickey",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glass"
+     ],
+     "source_url": "https://disneypinsblog.com/fantasia-sorcerer-mickey-mouse-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "glass series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-aristocats-lion-king-glass/aristocats-family-portrait",
+   "set_key": "lic/2023/artland-dpbstore-aristocats-lion-king-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Aristocats Family Portrait Glass Pin",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "The Aristocats",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin name"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-aristocats-lion-king-glass/lion-king-guiding-kings",
+   "set_key": "lic/2023/artland-dpbstore-aristocats-lion-king-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Lion King Guiding Kings Glass Pin",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "https://disneypinsblog.com/the-aristocats-the-lion-king-glass-limited-edition-artland-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin name"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-donalds-better-self/donald",
+   "set_key": "lic/2023/artland-dpbstore-donalds-better-self",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "size_mm",
+     "value": "76 x 51",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\" x 2\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-donalds-better-self/angel-donald",
+   "set_key": "lic/2023/artland-dpbstore-donalds-better-self",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "size_mm",
+     "value": "51 x 38",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 2\" x 1.5\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_description",
+     "value": "Angel version of Donald",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "post lists Angel Donald size"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-donalds-better-self/devil-donald",
+   "set_key": "lic/2023/artland-dpbstore-donalds-better-self",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "size_mm",
+     "value": "51 x 38",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 2\" x 1.5\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_description",
+     "value": "Devil version of Donald",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-better-self-disney-pin-set-by-artland",
+     "method": "search_snippet",
+     "note": "post lists Devil Donald size (shared with Angel)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-lion-king/king-simba",
+   "set_key": "lic/2023/artland-dpbstore-lion-king",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "King Simba",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Simba",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "76 x 81",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\" x 3.2\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cut-out design of Simba on a giraffe",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+     "method": "search_snippet",
+     "note": "Pulse Gallery paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 32.0,
+     "source_url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+     "method": "search_snippet",
+     "note": "Pulse Gallery listing price; may not be launch price"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+     "method": "search_snippet",
+     "note": "pounds"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-lion-king/rafikis-wisdom",
+   "set_key": "lic/2023/artland-dpbstore-lion-king",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rafiki's Wisdom",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rafiki"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Rafiki",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76 x 64",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\" x 2.5\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_description",
+     "value": "Round pin, Rafiki meditating on pale blue pearlescent background",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+     "method": "search_snippet",
+     "note": "Pulse Gallery paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 35.0,
+     "source_url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+     "method": "search_snippet",
+     "note": "Pulse Gallery listing price; may not be launch price"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins?page=5",
+     "method": "search_snippet",
+     "note": "pounds"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-lion-king/nala-simba-young-love",
+   "set_key": "lic/2023/artland-dpbstore-lion-king",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nala & Simba Young Love",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nala",
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "single pin showing these characters per post wording"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "red",
+      "copper"
+     ],
+     "source_url": "https://pulse.gallery/products/young-love-nala-and-simba",
+     "method": "search_snippet",
+     "note": "red finish with copper border"
+    },
+    {
+     "field": "original_price",
+     "value": 48.0,
+     "source_url": "https://pulse.gallery/products/young-love-nala-and-simba",
+     "method": "search_snippet",
+     "note": "Pulse Gallery listing price; may not be launch price"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/products/young-love-nala-and-simba",
+     "method": "search_snippet",
+     "note": "pounds"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/artland-dpbstore-part-of-your-world/part-of-your-world",
+   "set_key": "lic/2023/artland-dpbstore-part-of-your-world",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Part of Your World",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "The Little Mermaid",
+     "source_url": "https://disneypinsblog.com/blogs/news/part-of-your-world-the-little-mermaid-artland-disney-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-ariel-pocahontas-signature/ariel",
+   "set_key": "lic/2024/artland-dpbstore-ariel-pocahontas-signature",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-03",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sandblasted background",
+      "glitter",
+      "screen print",
+      "artist signature"
+     ],
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post describes these finishes"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-ariel-pocahontas-signature/pocahontas",
+   "set_key": "lic/2024/artland-dpbstore-ariel-pocahontas-signature",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-03",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sandblasted background",
+      "glitter",
+      "screen print",
+      "artist signature"
+     ],
+     "source_url": "https://disneypinsblog.com/ariel-pocahontas-signature-series-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post describes these finishes"
+    },
+    {
+     "field": "original_price",
+     "value": 78.0,
+     "source_url": "https://disneypinsblog.com/product/pocahontas-signature-series-le-125-artland-pin/",
+     "method": "search_snippet",
+     "note": "DPB store product page price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/product/pocahontas-signature-series-le-125-artland-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "pin_name",
+     "value": "Pocahontas Signature Series",
+     "source_url": "https://disneypinsblog.com/product/pocahontas-signature-series-le-125-artland-pin/",
+     "method": "search_snippet",
+     "note": "product page title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-moana-mulan-signature/moana",
+   "set_key": "lic/2024/artland-dpbstore-moana-mulan-signature",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moana"
+     ],
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-03",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sandblasted background",
+      "glitter",
+      "screen print",
+      "artist signature"
+     ],
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post describes these finishes"
+    },
+    {
+     "field": "original_price",
+     "value": 78.0,
+     "source_url": "https://disneypinsblog.com/product/moana-signature-series-le-200-artland-pin/",
+     "method": "search_snippet",
+     "note": "DPB store product page price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/product/moana-signature-series-le-200-artland-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "pin_name",
+     "value": "Moana Signature Series",
+     "source_url": "https://disneypinsblog.com/product/moana-signature-series-le-200-artland-pin/",
+     "method": "search_snippet",
+     "note": "product page title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-moana-mulan-signature/mulan",
+   "set_key": "lic/2024/artland-dpbstore-moana-mulan-signature",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-03",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sandblasted background",
+      "glitter",
+      "screen print",
+      "artist signature"
+     ],
+     "source_url": "https://disneypinsblog.com/moana-mulan-signature-series-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post describes these finishes"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-donald-golf-vacation/donald-golf-game",
+   "set_key": "lic/2024/artland-dpbstore-donald-golf-vacation",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Golf Game Pin",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "64 x 64",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 2.5\" x 2.5\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-donald-golf-vacation/donald-vacation",
+   "set_key": "lic/2024/artland-dpbstore-donald-golf-vacation",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Vacation Pin",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "76 x 51",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\" x 2\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/donald-duck-golf-vacation-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-mr-toad-moley/mr-toad",
+   "set_key": "lic/2024/artland-dpbstore-mr-toad-moley",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Toad"
+     ],
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Mr. Toad",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "70 x 51",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 2.75\" x 2\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-mr-toad-moley/moley",
+   "set_key": "lic/2024/artland-dpbstore-mr-toad-moley",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moley"
+     ],
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Moley",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "70 x 51",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 2.75\" x 2\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/mr-toad-and-moley-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-sleeping-beauty-series/awakening-kiss",
+   "set_key": "lic/2024/artland-dpbstore-sleeping-beauty-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Awakening Kiss",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Sleeping Beauty",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-sleeping-beauty-series/dragon-fire",
+   "set_key": "lic/2024/artland-dpbstore-sleeping-beauty-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dragon Fire",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 150"
+    },
+    {
+     "field": "size_mm",
+     "value": "95 x 64",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.75\" x 2.5\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Sleeping Beauty",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-sleeping-beauty-series/ruling-from-above",
+   "set_key": "lic/2024/artland-dpbstore-sleeping-beauty-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ruling From Above",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Sleeping Beauty",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-15",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "tag archive lists this pair's post on June 15, 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-sleeping-beauty-series/i-know-you",
+   "set_key": "lic/2024/artland-dpbstore-sleeping-beauty-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Know You",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Sleeping Beauty",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-15",
+     "source_url": "https://disneypinsblog.com/tag/sleeping-beauty-disney-pins/",
+     "method": "search_snippet",
+     "note": "tag archive lists this pair's post on June 15, 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-sleeping-beauty-series/feel-my-wrath",
+   "set_key": "lic/2024/artland-dpbstore-sleeping-beauty-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Feel My Wrath!",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 150"
+    },
+    {
+     "field": "size_mm",
+     "value": "89 x 64",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.5\" x 2.5\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Sleeping Beauty",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-sleeping-beauty-series/three-good-fairies",
+   "set_key": "lic/2024/artland-dpbstore-sleeping-beauty-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Three Good Fairies",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Sleeping Beauty",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/alice-please-let-me-in",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Please Let Me In",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice",
+      "Doorknob"
+     ],
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "single pin showing these characters per post wording"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/white-rabbit-forever-late",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Forever Late",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "White Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/alices-travels",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice's Travels",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/mad-hatter-pour-the-tea",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pour the Tea",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mad Hatter"
+     ],
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/cheshire-cat-were-all-mad-here",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "We're All Mad Here",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/alice-advice-from-a-caterpillar",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Advice From a Caterpillar",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/cheshire-cat-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/king-of-hearts",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "King of Hearts",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "King of Hearts"
+     ],
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 125"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-alice-playing-card/queen-of-hearts",
+   "set_key": "lic/2024/artland-dpbstore-alice-playing-card",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Queen of Hearts",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Queen of Hearts"
+     ],
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "83 x 57",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3.25\" x 2.25\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/king-of-hearts-queen-of-hearts-alice-in-wonderland-playing-card-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-atlantis-evil-hag-glass/love-in-atlantis",
+   "set_key": "lic/2024/artland-dpbstore-atlantis-evil-hag-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love in Atlantis Glass Pin",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 150"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Atlantis: The Lost Empire",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-atlantis-evil-hag-glass/the-evil-hag",
+   "set_key": "lic/2024/artland-dpbstore-atlantis-evil-hag-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Evil Hag Glass Pin",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Evil Queen",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "limited edition of 200"
+    },
+    {
+     "field": "size_mm",
+     "value": "76",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "converted from stated size 3\""
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/atlantis-the-evil-hag-glass-disney-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "visual_description",
+     "value": "Queen in old hag disguise shining the poisoned apple, castle silhouette behind",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-evil-hag",
+     "method": "search_snippet",
+     "note": "Pulse Gallery paraphrase"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-evil-hag",
+     "method": "search_snippet",
+     "note": "UK stockist"
+    },
+    {
+     "field": "original_price",
+     "value": 70.0,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-evil-hag",
+     "method": "search_snippet",
+     "note": "Pulse listing price; not launch price"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/the-evil-hag",
+     "method": "search_snippet",
+     "note": "pounds"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-star-wars-helmets-clones/jango-fett",
+   "set_key": "lic/2024/artland-dpbstore-star-wars-helmets-clones",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jango Fett Helmet",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jango Fett"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Jango Fett",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 195,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 195"
+    },
+    {
+     "field": "size_mm",
+     "value": "61-66 x 76",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size approx 2.4-2.6\" x 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-star-wars-helmets-clones/captain-rex",
+   "set_key": "lic/2024/artland-dpbstore-star-wars-helmets-clones",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain Rex Helmet",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Rex"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Rex",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 195,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 195"
+    },
+    {
+     "field": "size_mm",
+     "value": "61-66 x 76",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size approx 2.4-2.6\" x 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/artland-dpbstore-star-wars-helmets-clones/clone-commander-cody",
+   "set_key": "lic/2024/artland-dpbstore-star-wars-helmets-clones",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Clone Commander Cody Helmet",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "pin named in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clone Commander Cody"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "characters named in post/title"
+    },
+    {
+     "field": "main_character",
+     "value": "Clone Commander Cody",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "subject named in post/title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 195,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 195"
+    },
+    {
+     "field": "size_mm",
+     "value": "61-66 x 76",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "converted from stated size approx 2.4-2.6\" x 3\""
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "available starting this month at DPBStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin per post"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2023/artland-dpbstore-cinderella-crest",
+   "field": "pins",
+   "searched": "DPB post snippet; 1 query",
+   "note": "four round pins stated but only three named in snippets; fourth round pin not identified"
+  },
+  {
+   "key": "lic/2023/artland-dpbstore-part-of-your-world/part-of-your-world",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "snippet did not state which characters are shown"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-lady-yzma",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); pins, editions and year (2023 vs 2024) unconfirmed"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-lady-yzma",
+   "field": "pins",
+   "searched": "Pulse Gallery snippets",
+   "note": "lead: 'Curious Lady' (Apr 2024, LE 250?) and 'Yzma's Disdain' (LE 200) on Pulse; descriptions conflict, not recorded"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-sleeping-beauty-series/awakening-kiss",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size not in snippets"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-sleeping-beauty-series/ruling-from-above",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size not in snippets"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-sleeping-beauty-series/i-know-you",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size not in snippets"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-sleeping-beauty-series/three-good-fairies",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size not in snippets"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-sleeping-beauty-series/awakening-kiss",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not stated in snippet"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-alice-playing-card/alices-travels",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "series stated LE 200 generally; not confirmed for this pin"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-alice-playing-card/mad-hatter-pour-the-tea",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "series stated LE 200 generally; not confirmed for this pin"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-alice-playing-card/alices-travels",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not stated"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-peter-pan-mermaid-lagoon",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); individual pins not named"
+  },
+  {
+   "key": "lic/2024/artland-dpbstore-star-wars-helmets-clones",
+   "field": "sub_series",
+   "searched": "2 queries",
+   "note": "likely the first helmet series but no source says so"
+  },
+  {
+   "key": "lic/2024/artland-d23-2024",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no ArtLand D23 2024 exclusive confirmed; D23 roundup snippet mentions a Castle Jumbo Series (BatB LE 100) but its own post dates it May 2026"
+  },
+  {
+   "key": "lic/2024/artland-jumbo-framed",
+   "field": "pins",
+   "searched": "29 queries total",
+   "note": "no ArtLand jumbo or framed pieces dated 2023-2024 found; no open-edition ArtLand pins found"
+  },
+  {
+   "key": "lic/2026/artland-dpbstore-castle-jumbo",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead for 2025-2026 cell: Beauty and the Beast Jumbo Castle Series LE 100, DPB post says May 2026"
+  },
+  {
+   "key": "lic/2022/artland-dpbstore-diamond-series-1",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead for 2021-2022 cell: Diamond Series 1 (4 couple pins LE 200), March 2022"
+  },
+  {
+   "key": "lic/2022/artland-dpbstore-art-deco",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead for 2021-2022 cell: Art Deco (Silent Castle, Beastly Rose, Mirror Mirror...), July 2022"
+  },
+  {
+   "key": "lic/2022/artland-dpbstore-maleficent-dragon-glass",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead for 2021-2022 cell: Vasilovich Dragon LE 100 and Maleficent Dragon on Glass, Feb-Mar 2022"
+  },
+  {
+   "key": "lic/2025/artland-dpbstore-star-wars-helmets",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead for 2025-2026 cell: helmet series 2 (May 2025), 3, and 4 (May 2026)"
+  },
+  {
+   "key": "lic/2023/artland-dpbstore-maleficent-dragon-signature",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "Cruella, Ursula, Maleficent & Scar Signature Series predates June 2023; year not found"
+  }
+ ],
+ "discovery_notes": "ArtLand 2023-2024 releases found are all DPBStore.com (Disney Pins Blog store) limited editions; retailer DPB Store recorded separately from manufacturer ArtLand. Pulse Gallery is a UK stockist; its prices are listing prices, not launch prices. All claims are search snippets. Multi-pin releases were split into pins only where the post names/describes each pin; Donald's Better Self trio split by per-pin sizes (Donald, Angel, Devil) given in the post. Alice set count 8 derived from three posts (4+2+2)."
+}

@@ -23,9 +23,10 @@ def line_from_key(k):
             'shdr': 'Shanghai', 'hkdl': 'Hong Kong', 'tdr': 'Tokyo', 'lic': 'Licensed retailers',
             'brush-of-magic': 'Disney Store', 'animated-cuties': 'Disney Store', 'disney-classics-london': 'Disney Store'}.get(p, 'Other')
 
-MAKERS = [('loungefly', 'Loungefly'), ('funko', 'Funko'), ('artland', 'ArtLand'), ('pink-a-la-mode', 'Pink a la Mode'),
+MAKERS = [('loungefly', 'Loungefly'), ('funko', 'Funko'), ('artland', 'ArtLand'),
           ('her-universe', 'Her Universe'), ('figpin', 'FiGPiN')]
-RETAILERS = [('boxlunch', 'BoxLunch'), ('hot-topic', 'Hot Topic'), ('pink-a-la-mode', 'Pink a la Mode'), ('jcpenney', 'JCPenney')]
+RETAILERS = [('boxlunch', 'BoxLunch'), ('hot-topic', 'Hot Topic'), ('pink-a-la-mode', 'Pink a la Mode'), ('jcpenney', 'JCPenney'),
+             ('dpbstore', 'DPB Store'), ('dpb-store', 'DPB Store')]
 
 def _pick(text, vocab):
     t = '-' + re.sub(r'[^a-z0-9]+', '-', str(text or '').lower()).strip('-') + '-'

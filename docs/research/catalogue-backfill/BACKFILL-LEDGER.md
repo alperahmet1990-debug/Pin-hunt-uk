@@ -3,18 +3,18 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-Round 7 (started 2026-10-16 17:30 UTC): B103–B108
+none
 
-## Totals (after round 6, 16 Oct 2026 ~17:10 UTC)
+## Totals (after round 7, 16 Oct 2026 ~18:05 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
-- Research pin records: 3,814.
-- Genuinely new 2015–2026: **3,267** (835 corroborated). Held: 524, including 97 possible live matches. No usable source: 20.
-- **Total unique individual pins identified 2015–2026: 5,065** (1,798 + 3,267).
-- Incomplete sets: 79 sets, 398 named members still missing. Standalone OE (new): 741 of 1,131 new OE pins.
-- Licensed by manufacturer (each pin once; new / held): Loungefly 112 / 46, Funko 33 / 11, ArtLand 11 / 5, FiGPiN 2 / 2, not stated 123 / 35. By retailer: BoxLunch 144 / 57, Hot Topic 46 / 14, not stated 91 / 28. Pink a la Mode 0 (dedicated cells queued).
+- Research pin records: 4,147.
+- Genuinely new 2015–2026: **3,501** (875 corroborated). Held: 623, including 97 possible live matches. No usable source: 20.
+- **Total unique individual pins identified 2015–2026: 5,299** (1,798 + 3,501).
+- Incomplete sets: 87 sets, 441 named members still missing. Standalone OE (new): 741 of 1,136 new OE pins.
+- Licensed by manufacturer (each pin once; new / held): ArtLand 127 / 22, Loungefly 112 / 46, Funko 33 / 11, FiGPiN 2 / 2, not stated 241 / 117. By retailer: BoxLunch 144 / 57, Pink a la Mode 118 / 82, DPB Store 112 / 17, Hot Topic 46 / 14, Pulse Gallery 1 / 0, not stated 94 / 28.
 - Reviewer checks: 87 OK (maintainer, 16 Oct).
 
-Earlier: after round 5, 4,927; after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
+Earlier: after round 6, 5,065; after round 5, 4,927; after round 4, 4,758; after round 3 + scope fix, 4,639; after round 3 before the fix, 4,592; after round 2, 4,360; after round 1, 4,052. Baseline before any round, 3,692.
 
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |
@@ -56,12 +56,12 @@ Earlier: after round 5, 4,927; after round 4, 4,758; after round 3 + scope fix, 
 | B027 | 2016 | dlr-oe | Disneyland California OE | partial | 235_b027_dlr_oe_2016.json | 25 | follow-up appended |
 | B028 | 2016 | dlr-le | Disneyland California LE/LR | partial | 236_b028_dlr_le_2016.json | 27 | follow-up appended |
 | – | | priority | **Licensed 2020–2026 priority block (maintainer, 16 Oct 2026):** Pink a la Mode, ArtLand, then Loungefly and BoxLunch newest year first | | | | |
-| B103 | 2025-2026 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | in progress | | | |
-| B104 | 2023-2024 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | in progress | | | |
-| B105 | 2021-2022 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | in progress | | | |
-| B106 | 2025-2026 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | in progress | | | |
-| B107 | 2023-2024 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | in progress | | | |
-| B108 | 2021-2022 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | in progress | | | |
+| B103 | 2025-2026 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | partial | 237_b103_lic_pinkalamode_2025_2026.json | 44 | follow-up appended |
+| B104 | 2023-2024 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | partial | 238_b104_lic_pinkalamode_2023_2024.json | 60 | follow-up appended |
+| B105 | 2021-2022 | lic-pinkalamode | Pink a la Mode Disney pins (dedicated sweep; Disney pins debuted there Sept 2021): individual pins, LE releases, sets, collabs | partial | 239_b105_lic_pinkalamode_2021_2022.json | 96 | follow-up appended |
+| B106 | 2025-2026 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | partial | 240_b106_lic_artland_2025_2026.json | 36 | follow-up appended |
+| B107 | 2023-2024 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | partial | 241_b107_lic_artland_2023_2024.json | 45 | follow-up appended |
+| B108 | 2021-2022 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | partial | 242_b108_lic_artland_2021_2022.json | 52 | follow-up appended |
 | B109 | 2019-2020 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | todo | | | |
 | B086 | 2026 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
 | B087 | 2026 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
@@ -134,6 +134,12 @@ Earlier: after round 5, 4,927; after round 4, 4,758; after round 3 + scope fix, 
 | B112 | 2016 | wdw-le | follow-up 1 of B026: WDW LE 2016: MVMCP 2016 pins, boxed/mystery set contents (F&W, MNSSHP, MVMCP, Rogue One 14-pin, MK 45th), runDisney Princess Half / Wine & Dine, pin trading events, topiary and bronze-statue splits (held) | todo | | | |
 | B113 | 2016 | dlr-oe | follow-up 1 of B027: DLR OE 2016: Music Magic Memories / Princess 2016 / Racers / HM Holiday Puzzle members, Disney Streets names (held, shop checklist only), Diamond Celebration OE year | todo | | | |
 | B114 | 2016 | dlr-le | follow-up 1 of B028: DLR LE 2016: Pin Trading Nights 2016, Season of the Force, DCA Food & Wine 2016, Diamond closing pins, costume set / HM Holiday puzzle / Royalty members, Date Nite couples (held, forum-only) | todo | | | |
+| B115 | 2025-2026 | lic-pinkalamode | follow-up 1 of B103: Pink a la Mode 2025–26: mystery/micro set designs (Princess/Villains Jumbo, UP, Sidekicks, Goofy Movie, Descendants, Zootopia, Tinker Bell, Cupcakes), Coin Wave 3 split (held) and Waves 5–7, Prince Shields year (held), Halloween 2026 sizes, PINKtacular 2026 pins, manufacturer | todo | | | |
+| B116 | 2023-2024 | lic-pinkalamode | follow-up 1 of B104: Pink a la Mode 2023–24: Storybook releases 1/4/5, set-only holds (Pinocchio, D100 Florals, Monsters Inc, Stained Glass 1–3, Best Friends, Wish, Sleeping Beauty Icon, Coin Wave 2), Micro Mystery designs, NBC 30th micro, Pixar/Frozen stained glass, BatB Icon, Stitch, manufacturer | todo | | | |
+| B117 | 2021-2022 | lic-pinkalamode | follow-up 1 of B105: Pink a la Mode 2021–22: Sept 2021 debut designs, Frozen Watercolor 2 of 5, Princess Crest 5 of 12, Princess/Villain Wave 1 4 of 7, Turning Red, Carousel mystery 1–2, Christmas pins, pair/character splits (held), Cute Princess chase designs, manufacturer | todo | | | |
+| B118 | 2025-2026 | lic-artland | follow-up 1 of B106: ArtLand 2025–26: Zootopia structure (held), Star Wars Victory & Defeat (held), headline-only releases (Ember & Wade, Cars 3 & Tron, Electric Mayhem, Kiss series), castle jumbo sizes/dates, Star Wars Helmets series 2–4, ~30 undated titles | todo | | | |
+| B119 | 2023-2024 | lic-artland | follow-up 1 of B107: ArtLand 2023–24: Cinderella Crest 5th pin, Sleeping Beauty/Alice edition sizes, Lady & Yzma and Peter Pan & Mermaid Lagoon structure (held), date conflicts, D23 2024 exclusives | todo | | | |
+| B120 | 2021-2022 | lic-artland | follow-up 1 of B108: ArtLand 2021–22: Pixar Mystery waves 1–2 unnamed designs, Neo Nouveau S2–S3 and Princess & Horse members (held), Rescuers edition mapping, D23 2022, Princess and Swing / BatB Oval / Coco / Roger Rabbit / Lion King LE 200 | todo | | | |
 
 Follow-up limit (maintainer, 16 Oct 2026): a follow-up cell is **unsuccessful** when it adds fewer than 3 genuinely new unique pins. After **two unsuccessful follow-ups** of the same original cell, its remaining gaps move to the **Long-term backlog** below (status `backlog`) instead of a new todo cell. A backlog item is reopened as a todo cell only when new evidence appears: a research-needed export, a reviewer note, or a new source or lead found by another cell. Follow-up cells say which pass they are ("follow-up 1 of …", "follow-up 2 of …"); the follow-ups appended so far are pass 1.
 
@@ -157,5 +163,5 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | – | 2026-10-16 15:10 | scope update (no new research) | – | Star Wars and Marvel licensed pins in scope for now (maintainer). Rule 11 updated; B096 queued to record the pins earlier cells skipped |
 | 5 | 2026-10-16 15:30 | B096 (Star Wars/Marvel licensed), B020 (2017 DLR LE), B021 (2017 DLP), B022 (2017 Disney Store), B023 (2017 Asia), B024 (2017 Loungefly) | +170 net new (14 corroborated); 246 pin records | B024 done (no 2017 Loungefly-credited pins), others partial; follow-ups B097–B102. Held for pin-split/grouping confirmation: 37 Disney Store, 4 SHDR, 4 BoxLunch hats, 2 FiGPiN Thor/Loki, 2 Funko LA Comic Con |
 | 6 | 2026-10-16 16:30 | B068 (2017 BoxLunch), B069 (2017 other licensed), B025–B028 (2016 WDW OE/LE, DLR OE/LE) | +138 net new (12 corroborated); 188 pin records | all partial; follow-ups B110–B114 (B068 gaps merged into B102). New holds: topiary/bronze-statue splits (10), Birthstone split (8), preview-only pins (3), Disney Streets shop-checklist names (8), Date Nite forum-only couples (8), Drax reseller-only (1) |
-| 7 | 2026-10-16 17:30 | B103–B105 (Pink a la Mode 2021–2026), B106–B108 (ArtLand 2021–2026) | in progress | |
+| 7 | 2026-10-16 17:30 | B103–B105 (Pink a la Mode 2021–2026), B106–B108 (ArtLand 2021–2026) | +234 net new (40 corroborated); 333 pin records | all partial; follow-ups B115–B120. New holds: Pink a la Mode splits without a stated pin count (Coin Wave 3, Royal Couples, Enchanted Princess, Locket, Keys to the Kingdom, Crest, May 2024 Princess, Halloween 2024 villains) and set-only structure holds. Report fix: Pink a la Mode counted as retailer only (no source names its manufacturer); DPB Store added as a retailer |
 | – | 2026-10-16 16:50 | process update (no new research) | – | Licensed 2020–2026 moved to the front of the queue; dedicated Pink a la Mode and ArtLand cells B103–B109; manufacturer/retailer counted as separate dimensions; pin-structure rule 12; follow-up limit and long-term backlog |

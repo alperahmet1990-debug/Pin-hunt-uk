@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 8 (started 2026-10-16 18:30 UTC): B109, B086, B087, B084, B085, B082
 
 ## Totals (after round 7, 16 Oct 2026 ~18:05 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
@@ -62,12 +62,12 @@ Earlier: after round 6, 5,065; after round 5, 4,927; after round 4, 4,758; after
 | B106 | 2025-2026 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | partial | 240_b106_lic_artland_2025_2026.json | 36 | follow-up appended |
 | B107 | 2023-2024 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | partial | 241_b107_lic_artland_2023_2024.json | 45 | follow-up appended |
 | B108 | 2021-2022 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | partial | 242_b108_lic_artland_2021_2022.json | 52 | follow-up appended |
-| B109 | 2019-2020 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | todo | | | |
-| B086 | 2026 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B087 | 2026 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B084 | 2025 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B085 | 2025 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B082 | 2024 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B109 | 2019-2020 | lic-artland | ArtLand Disney pins (dedicated sweep; earliest dated releases 2019): LE and OE releases, jumbo/framed pieces, convention exclusives | in progress | | | |
+| B086 | 2026 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | in progress | | | |
+| B087 | 2026 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | in progress | | | |
+| B084 | 2025 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | in progress | | | |
+| B085 | 2025 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | in progress | | | |
+| B082 | 2024 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | in progress | | | |
 | B083 | 2024 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
 | B080 | 2023 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
 | B081 | 2023 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
@@ -164,4 +164,5 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | 5 | 2026-10-16 15:30 | B096 (Star Wars/Marvel licensed), B020 (2017 DLR LE), B021 (2017 DLP), B022 (2017 Disney Store), B023 (2017 Asia), B024 (2017 Loungefly) | +170 net new (14 corroborated); 246 pin records | B024 done (no 2017 Loungefly-credited pins), others partial; follow-ups B097–B102. Held for pin-split/grouping confirmation: 37 Disney Store, 4 SHDR, 4 BoxLunch hats, 2 FiGPiN Thor/Loki, 2 Funko LA Comic Con |
 | 6 | 2026-10-16 16:30 | B068 (2017 BoxLunch), B069 (2017 other licensed), B025–B028 (2016 WDW OE/LE, DLR OE/LE) | +138 net new (12 corroborated); 188 pin records | all partial; follow-ups B110–B114 (B068 gaps merged into B102). New holds: topiary/bronze-statue splits (10), Birthstone split (8), preview-only pins (3), Disney Streets shop-checklist names (8), Date Nite forum-only couples (8), Drax reseller-only (1) |
 | 7 | 2026-10-16 17:30 | B103–B105 (Pink a la Mode 2021–2026), B106–B108 (ArtLand 2021–2026) | +234 net new (40 corroborated); 333 pin records | all partial; follow-ups B115–B120. New holds: Pink a la Mode splits without a stated pin count (Coin Wave 3, Royal Couples, Enchanted Princess, Locket, Keys to the Kingdom, Crest, May 2024 Princess, Halloween 2024 villains) and set-only structure holds. Report fix: Pink a la Mode counted as retailer only (no source names its manufacturer); DPB Store added as a retailer |
+| 8 | 2026-10-16 18:30 | B109 (ArtLand 2019–2020), B086/B087 (Loungefly/BoxLunch 2026), B084/B085 (Loungefly/BoxLunch 2025), B082 (Loungefly 2024) | in progress | |
 | – | 2026-10-16 16:50 | process update (no new research) | – | Licensed 2020–2026 moved to the front of the queue; dedicated Pink a la Mode and ArtLand cells B103–B109; manufacturer/retailer counted as separate dimensions; pin-structure rule 12; follow-up limit and long-term backlog |

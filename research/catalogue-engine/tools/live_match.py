@@ -13,13 +13,22 @@ def toks(s): return {w for w in re.findall(r"[a-z0-9]+", str(s or '').lower()) i
 def chars(s): return {c.strip().lower() for c in re.split(r"[;,/&]| and ", str(s or '')) if c.strip() and c.strip().lower() not in ('unknown', 'various', 'null')}
 def fp(x): return hashlib.sha256(str(x).encode('utf-8')).hexdigest()[:12]
 
+def live_chars(p):
+    """Character names for a live row. Collectible PinTrader rows carry none, but put the subject
+    after the last " - " in the title ("Toy Story Land Mystery Set - Slinky Dog"); use that."""
+    ch = chars(p.get('a')) | chars(p.get('m'))
+    if not ch and p.get('t'):
+        subject = str(p['t']).rsplit(' - ', 1)[-1] if ' - ' in str(p['t']) else str(p['t'])
+        ch = {subject.strip().lower()} if subject.strip() else set()
+    return ch
+
 MODE, META, live, STATUS = None, {}, [], (False, 'not loaded')
 _raw = os.environ.get('LIVE_PINS')
 if _raw:
     MODE = 'raw'
     live = json.load(open(_raw))
     for p in live:
-        p['_ch'] = chars(p.get('a')) | chars(p.get('m')); p['_chw'] = toks(' '.join(p['_ch']))
+        p['_ch'] = live_chars(p); p['_chw'] = toks(' '.join(p['_ch']))
         p['_t'] = toks(p.get('t')); p['_c'] = toks(p.get('c')); p['_k'] = 'public' if p.get('v') else 'archived'
     live = [p for p in live if p.get('e') != 'Seed']
     STATUS = (True, f'raw export {_raw} ({len(live)} non-seed rows)')

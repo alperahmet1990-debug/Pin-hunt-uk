@@ -69,7 +69,7 @@ def main(payload, out_xlsx, cov_json=None):
         pubs = {urlparse(e['source_url']).hostname.replace('www.', '') for e in usable}
         m = M.match(c)
         rr = c['review_reasons']
-        if m and m[2] == 'public': status = 'already live'
+        if m and m[2] == 'public': status = 'held: possible live match'  # never dropped silently; a person decides
         elif m: status = 'held: archived match'
         elif any(r.startswith(('conflict', 'possible cross', 'probable duplicate', 'possible internal')) for r in rr) or c['duplicate_status'] == 'DUPLICATE':
             status = 'held: conflict/duplicate'
@@ -101,7 +101,7 @@ def main(payload, out_xlsx, cov_json=None):
         ['Research candidates (all)', len(rows), 'every identified pin has its own record'],
         ['Genuinely new research pins', new_n, 'not live, not held'],
         ['Corroborated new pins (2+ independent publishers)', sum(1 for r in rows if r['status'] == 'new' and r['corroborated']), ''],
-        ['Already live (matched a public pin)', stat['already live'], 'not added again'],
+        ['Held: possible live match', stat['held: possible live match'], 'matches a public live pin; a person decides'],
         ['Held: archived match', stat['held: archived match'], 'decision needed'],
         ['Held: conflict / duplicate', stat['held: conflict/duplicate'], 'conflicts preserved'],
         ['Held: same pin under another resort', stat['held: same pin under another resort'], 'shared WDW/DLR releases counted once'],
@@ -160,7 +160,7 @@ def main(payload, out_xlsx, cov_json=None):
     json.dump({'new': new_keys, 'corroborated': corr_keys}, open(state_path, 'w'))
     print(json.dumps({'live_2015_2026': live_n, 'candidates': len(rows), 'new': new_n,
                       'corroborated_new': sum(1 for r in rows if r['status'] == 'new' and r['corroborated']),
-                      'already_live': stat['already live'], 'held': stat['held: archived match'] + stat['held: conflict/duplicate'] + stat['held: same pin under another resort'],
+                      'possible_live_match': stat['held: possible live match'], 'held': stat['held: possible live match'] + stat['held: archived match'] + stat['held: conflict/duplicate'] + stat['held: same pin under another resort'],
                       'no_usable_source': stat['no usable source']}))
 
 if __name__ == '__main__':

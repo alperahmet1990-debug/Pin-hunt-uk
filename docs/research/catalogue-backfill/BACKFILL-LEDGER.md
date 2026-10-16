@@ -3,16 +3,16 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-Round 2, started 2026-10-16 12:30 UTC: B007, B008, B009, B010, B011, B012
+none
 
-## Totals (after round 1, 16 Oct 2026 ~11:45 UTC)
-- Live public pins 2015–2026: 1,798 (baseline 2026-10-16; all live rows 15,978).
-- Research pin records: 2,513 (2019: 400 new records this round).
-- Genuinely new 2015–2026: **2,254**, of which 709 are corroborated by 2+ independent publishers.
-- Held: 246. No usable source: 10. Already live: 0.
-- **Total unique individual pins identified 2015–2026: 4,052** (1,798 + 2,254). Excludes set records, missing slots, held records and duplicates.
+## Totals (after round 2, 16 Oct 2026 ~12:50 UTC)
+- Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
+- Research pin records: 2,873.
+- Genuinely new 2015–2026: **2,562** (747 corroborated). Held: 298, including 11 possible live matches. No usable source: 10.
+- **Total unique individual pins identified 2015–2026: 4,360** (1,798 + 2,562).
+- Incomplete sets: 58 sets, 261 named members still missing. Standalone OE (new): 682 of 1,038 new OE pins.
 
-Baseline before any round: 3,692 (live 1,798 + new 1,894).
+Earlier: after round 1, 4,052. Baseline before any round, 3,692.
 
 ## Work cells (taken top-down; up to 6 per round)
 | Cell | Year | Line | Scope | Status | Packet | Pins | Notes |
@@ -23,12 +23,12 @@ Baseline before any round: 3,692 (live 1,798 + new 1,894).
 | B004 | 2019 | dlr-le | Disneyland California LE/LR | partial | 204_b004_dlr_le_2019.json | 60 | follow-up appended |
 | B005 | 2019 | dlp | Disneyland Paris (OE+LE) | partial | 205_b005_dlp_2019.json | 40 | follow-up appended |
 | B006 | 2019 | ds | Disney Store UK/EU + US | partial | 206_b006_ds_2019.json | 63 | follow-up appended |
-| B007 | 2019 | asia | Shanghai, Hong Kong, Tokyo | in progress | 207_b007_asia_2019.json | | |
-| B008 | 2019 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | in progress | 208_b008_lic_2019.json | | |
-| B009 | 2018 | wdw-oe | WDW open edition (incl. standalone) | in progress | 209_b009_wdw_oe_2018.json | | |
-| B010 | 2018 | wdw-le | WDW LE/LR | in progress | 210_b010_wdw_le_2018.json | | |
-| B011 | 2018 | dlr-oe | Disneyland California OE | in progress | 211_b011_dlr_oe_2018.json | | |
-| B012 | 2018 | dlr-le | Disneyland California LE/LR | in progress | 212_b012_dlr_le_2018.json | | |
+| B007 | 2019 | asia | Shanghai, Hong Kong, Tokyo | partial | 207_b007_asia_2019.json | 76 | follow-up appended |
+| B008 | 2019 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | partial | 208_b008_lic_2019.json | 58 | follow-up appended |
+| B009 | 2018 | wdw-oe | WDW open edition (incl. standalone) | partial | 209_b009_wdw_oe_2018.json | 41 | follow-up appended |
+| B010 | 2018 | wdw-le | WDW LE/LR | partial | 210_b010_wdw_le_2018.json | 92 | follow-up appended |
+| B011 | 2018 | dlr-oe | Disneyland California OE | partial | 211_b011_dlr_oe_2018.json | 45 | follow-up appended |
+| B012 | 2018 | dlr-le | Disneyland California LE/LR | partial | 212_b012_dlr_le_2018.json | 48 | follow-up appended |
 | B013 | 2018 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B014 | 2018 | ds | Disney Store UK/EU + US | todo | | | |
 | B015 | 2018 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
@@ -67,6 +67,12 @@ Baseline before any round: 3,692 (live 1,798 + new 1,894).
 | B048 | 2019 | dlr-le | follow-up of B004: opening mystery/countdown set contents; Club 33 #1-2,#4-6; Windows of Magic/train series | todo | | | |
 | B049 | 2019 | dlp | follow-up of B005: monthly roundups name themes only; Marvel season; Pin Trading Night Feb/Apr/Aug; set members | todo | | | |
 | B050 | 2019 | ds | follow-up of B006: UK thin; Disney Wisdom May-Dec members; mystery members; Lion King 25th Simba pins | todo | | | |
+| B051 | 2019 | asia | follow-up of B007: shdr/hkdl/tdr 2019: unnamed CNY LEs, HKDL monthly members, Tokyo designs, PIN-GO members | todo | | | |
+| B052 | 2019 | lic | follow-up of B008: lic 2019: Pink a la Mode none found pre-2022; Loungefly LE; KH3 Funko members; undated blind boxes | todo | | | |
+| B053 | 2018 | wdw-oe | follow-up of B009: wdw-oe 2018: mystery box/Animal Kingdom/Incredibles/Origami members; prices; Toy Story Land lanyard | todo | | | |
+| B054 | 2018 | wdw-le | follow-up of B010: wdw-le 2018: Lattes/Donut Shop/Lunch Time Tales members; Star Wars helmets; box/framed set contents | todo | | | |
+| B055 | 2018 | dlr-oe | follow-up of B011: dlr-oe 2018: Pixar Pier OE; Coco booster, Sally/Jack, starter members; prices | todo | | | |
+| B056 | 2018 | dlr-le | follow-up of B012: dlr-le 2018: Sept/Oct roundups; Mysterious Shadows, tarot, sweater set members; edition sizes | todo | | | |
 
 Status: todo → in progress → done / partial (budget ran out; a follow-up cell is appended) / blocked (source restriction or validation failure, flagged to the maintainer).
 
@@ -74,4 +80,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | Round | Started (UTC) | Cells | New pins | Notes |
 |---|---|---|---|---|
 | 1 | 2026-10-16 11:30 | B001–B006 (2019) | 360 net new (400 pins recorded; 39 held) | all partial; follow-ups B045–B050 appended |
-| 2 | 2026-10-16 12:30 | B007, B008, B009, B010, B011, B012 | | |
+| 2 | 2026-10-16 12:30 | B007–B012 (2019 Asia + licensees; 2018 WDW/DLR) | +309 net new (38 corroborated); 360 pin records | all partial; follow-ups appended. Matcher fix: live CTP rows carry no characters, subject now read from the title; 11 possible live matches held |

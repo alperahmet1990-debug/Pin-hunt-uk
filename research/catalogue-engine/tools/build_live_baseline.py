@@ -11,7 +11,7 @@ Usage: python3 tools/build_live_baseline.py <export.csv> <export-date YYYY-MM-DD
 """
 import csv, hashlib, json, os, sys, datetime
 sys.path.insert(0, os.path.dirname(__file__))
-from live_match import toks, chars, fp  # same normalisation as the matcher
+from live_match import toks, chars, fp, live_chars  # same normalisation as the matcher
 from backfill_report import line_from_live, edition  # coarse categories for the coverage counts
 
 OUT = os.path.join(os.path.dirname(__file__), '..', 'baseline', 'live_catalogue_fingerprint.json')
@@ -34,8 +34,8 @@ def main(path, date):
         'rows_seed_excluded': len(pins) - len(keep), 'rows_indexed': len(keep),
         'note': 'Fingerprints only (truncated SHA-256 of normalised words); no readable catalogue text.',
         'pins': [{'id': p['id'], 'y': p.get('y'), 'k': 'public' if p.get('v') else 'archived',
-                  'ch': sorted(fp(x) for x in chars(p.get('a')) | chars(p.get('m'))),
-                  'chw': sorted(fp(x) for x in toks(' '.join(chars(p.get('a')) | chars(p.get('m'))))),
+                  'ch': sorted(fp(x) for x in live_chars(p)),
+                  'chw': sorted(fp(x) for x in toks(' '.join(live_chars(p)))),
                   't': sorted(fp(x) for x in toks(p.get('t'))), 'c': sorted(fp(x) for x in toks(p.get('c'))),
                   'line': line_from_live(p.get('o')), 'ed': edition(p.get('e'))} for p in keep],
     }

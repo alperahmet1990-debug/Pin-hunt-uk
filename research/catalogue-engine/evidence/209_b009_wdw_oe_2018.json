@@ -1,0 +1,3265 @@
+{
+ "packet_id": "backfill-b009-wdw-oe-2018",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b009",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+   "title": "Disney Parks 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/product/mickey-friends-2018-spinner-pin/",
+   "title": "Mickey & Friends 2018 Spinner Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+   "title": "New Halloween 2018 Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+   "title": "PHOTOS: Disney Parks Halloween 2018 Pins Released, First to Feature New Backer Cards and Disney Pin Trading Logo",
+   "publisher": "WDW News Today",
+   "published_date": "2018-08-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+   "title": "Halloween Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+   "title": "New Holiday 2018 Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+   "title": "Toy Story Land Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-land-pin-preview/",
+   "title": "Toy Story Land Pin Preview",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2018/01/photos-first-look-toy-story-land-pins-disneys-hollywood-studios/",
+   "title": "PHOTOS: First Look at Toy Story Land Pins for Disney's Hollywood Studios",
+   "publisher": "WDW News Today",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwkingdom.com/2018/07/toy-story-land-slinky-dog-magicband-and-attraction-pins-now-available-on-shop-disney-parks-mobile-app/",
+   "title": "Toy Story Land Slinky Dog MagicBand And Attraction Pins Now Available On Shop Disney Parks Mobile App",
+   "publisher": "WDW Kingdom",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-4/",
+   "title": "New Disney Pins June 2018 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+   "title": "Incredibles 2 Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+   "title": "Disney's Animal Kingdom Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+   "title": "Origami Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+   "title": "New Disney Pins August 2018 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+   "title": "Magic Kingdom Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09-16",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-1",
+   "title": "New Disney Pins January 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+   "title": "Disney Resorts Holiday 2018 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+   "title": "Epcot International Flower & Garden Festival 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2018/oe-single/disney-parks-2018-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2018 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/mickey-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/minnie-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Minnie Mouse 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/donald-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/castle-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Castle 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/mickey-friends-2018-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Friends 2018 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/product/mickey-friends-2018-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-mystery-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2018 Mystery Pin Box",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "USD 15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2018 Booster Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Five pins in booster"
+    },
+    {
+     "field": "format",
+     "value": "booster set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Booster set"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-starter-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2018 Pin Trading Starter Set",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Four pins plus lanyard"
+    },
+    {
+     "field": "format",
+     "value": "starter set with lanyard",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Includes lanyard"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-minnie-witch",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2018 Minnie Witch",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-mickey-vampire",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2018 Mickey Vampire",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-mickey-pumpkin-wreath",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2018 Mickey Pumpkin Wreath",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-mickey-witch-broom",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2018 Mickey Witch on Broom",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-goofy-mummy",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2018 Goofy Mummy",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-pluto-trick-or-treat",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2018 Pluto Trick or Treat",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-donald-candy",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2018 Donald Candy",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/halloween-2018-bb-8-pumpkin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BB-8 Pumpkin Pin",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/halloween-2018-chip-dale-bats",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip and Dale Bats Halloween Pin Set",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set listed"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Line release start"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Four pins"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "USD 24.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Released Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/holiday-2018-mickey-icon-lights",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2018 Mickey Icon Lights",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/holiday-2018-mickey-santa-tree",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2018 Mickey Santa",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/holiday-2018-wall-e",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2018 WALL-E",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/holiday-2018-porg",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2018 Porg Christmas Pin",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/holiday-2018-donald-bah-humbug",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2018 Donald Bah Humbug",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/holiday-2018-mickey-minnie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2018 Mickey & Minnie Set",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive; listed as Mickey & Minnie set"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet: 9.99 one pin or 14.99 set; ambiguous"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Holiday 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-18",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First available Oct 18 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/holiday-2018-four-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2018 Four Pin Set",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Four-pin set"
+    },
+    {
+     "field": "price",
+     "value": 24.95,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 24.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Holiday 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-18",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First available Oct 18 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/toy-story-land-logo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story Land Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/slinky-dog-dash",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Slinky Dog Dash Pin",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/alien-swirling-saucers",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alien Swirling Saucers Pin",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/incredibles-2-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Incredibles 2 Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Five different pins"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-29",
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at Epcot Apr 29 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "format",
+     "value": "booster set",
+     "source_url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Booster"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/animal-kingdom-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney's Animal Kingdom Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Eight OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD 15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-11",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Spotted at WDW Feb 11 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "WDW listing"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/origami-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Origami Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Eight pins total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random per box"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD 14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-17",
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "First spotted at Magic Kingdom Aug 17 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/splash-mountain-everything-is-satisfactual",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Everything is Satisfactual Splash Mountain Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/splash-mountain-i-conquered",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "I Conquered Splash Mountain Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Single-pin release name as listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/magic-kingdom-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic Kingdom Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Four pins"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 24.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Released Sept 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "WDW exclusive"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2018/oe/disney-parks-2018-spinner",
+   "set_key": "wdw/2018/oe-single/disney-parks-2018-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Parks 2018 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Retail USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 line arriving at both resorts"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Spinner pin stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/mickey-2018",
+   "set_key": "wdw/2018/oe-single/mickey-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Character named in pin title"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 line arriving at both resorts"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 dated logo pin featuring Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Described as 2018 logo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/minnie-2018",
+   "set_key": "wdw/2018/oe-single/minnie-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Character named in pin title"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 line arriving at both resorts"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 dated logo pin featuring Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Described as 2018 logo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/donald-2018",
+   "set_key": "wdw/2018/oe-single/donald-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Character named in pin title"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 line arriving at both resorts"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 dated logo pin featuring Donald Duck",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Described as 2018 logo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/castle-2018",
+   "set_key": "wdw/2018/oe-single/castle-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Castle 2018 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 line arriving at both resorts"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 dated logo pin with castle",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Described as 2018 logo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/mickey-friends-2018-spinner",
+   "set_key": "wdw/2018/oe-single/mickey-friends-2018-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Friends 2018 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/product/mickey-friends-2018-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Goofy",
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/product/mickey-friends-2018-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Four characters named"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/product/mickey-friends-2018-spinner-pin/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/product/mickey-friends-2018-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Released at Disney Parks"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/product/mickey-friends-2018-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Spinner pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/disney-parks-2018-booster/space-mountain",
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Space Mountain",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named among booster designs"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 booster pin featuring Space Mountain",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Paraphrase of snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/disney-parks-2018-booster/peter-pans-flight",
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Peter Pan's Flight",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named among booster designs"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 booster pin featuring Peter Pan's Flight",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Paraphrase of snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/disney-parks-2018-booster/partners-statue",
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Partners statue",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named among booster designs"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 booster pin featuring Partners statue",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Paraphrase of snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/disney-parks-2018-booster/teacups",
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Mad Tea Party teacups",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named among booster designs"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 booster pin featuring Mad Tea Party teacups",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Paraphrase of snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/disney-parks-2018-booster/its-a-small-world",
+   "set_key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Named among booster designs"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "2018 booster pin featuring it's a small world",
+     "source_url": "https://disneypinsblog.com/disney-parks-2018-pins/",
+     "method": "search_snippet",
+     "note": "Paraphrase of snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-minnie-witch",
+   "set_key": "wdw/2018/oe-single/halloween-2018-minnie-witch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2018 Minnie Witch",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie dressed as a witch",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-mickey-vampire",
+   "set_key": "wdw/2018/oe-single/halloween-2018-mickey-vampire",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2018 Mickey Vampire",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey dressed as a vampire",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-mickey-pumpkin-wreath",
+   "set_key": "wdw/2018/oe-single/halloween-2018-mickey-pumpkin-wreath",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2018 Mickey Pumpkin Wreath",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey as a pumpkin in a wreath",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-mickey-witch-broom",
+   "set_key": "wdw/2018/oe-single/halloween-2018-mickey-witch-broom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2018 Mickey Witch on Broom",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey flying as a witch on a broomstick",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-goofy-mummy",
+   "set_key": "wdw/2018/oe-single/halloween-2018-goofy-mummy",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2018 Goofy Mummy",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Goofy as a mummy; text Creep it Real",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    },
+    {
+     "field": "front_text",
+     "value": "Creep it Real",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Phrase on pin"
+    },
+    {
+     "field": "front_text",
+     "value": "Creep It Real",
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "Goofy pin phrase"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "WDWNT says open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-pluto-trick-or-treat",
+   "set_key": "wdw/2018/oe-single/halloween-2018-pluto-trick-or-treat",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2018 Pluto Trick or Treat",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pluto with Trick or Treat text",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    },
+    {
+     "field": "front_text",
+     "value": "Trick or Treat",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Phrase on pin"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "WDWNT says open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-donald-candy",
+   "set_key": "wdw/2018/oe-single/halloween-2018-donald-candy",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2018 Donald Candy",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Donald with I'm Just Here for the Candy text",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    },
+    {
+     "field": "front_text",
+     "value": "I'm Just Here for the Candy",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Phrase on pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-bb-8-pumpkin",
+   "set_key": "wdw/2018/oe-single/halloween-2018-bb-8-pumpkin",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "BB-8 Pumpkin Pin",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "main_character",
+     "value": "BB-8",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named character"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Star Wars BB-8 as a pumpkin",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Halloween 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released starting Aug 3 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks and hotels at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set/witch-hat",
+   "set_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped designs"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey-shaped pin with witch hat with Halloween phrase",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "visual_form",
+     "value": "Mickey icon",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set/ghost-mickey",
+   "set_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped designs"
+    },
+    {
+     "field": "visual_description",
+     "value": "Ghost Mickey with Halloween phrase",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "visual_form",
+     "value": "Mickey icon",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set/popcorn-bucket",
+   "set_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped designs"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey-shaped popcorn bucket with Halloween phrase",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "visual_form",
+     "value": "Mickey icon",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set/pumpkin",
+   "set_key": "wdw/2018/oe-set/halloween-2018-mickey-icon-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped designs"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey-shaped pumpkin with Halloween phrase",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "visual_form",
+     "value": "Mickey icon",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Mickey-shaped"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-disney-pin-set",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/holiday-2018-mickey-icon-lights",
+   "set_key": "wdw/2018/oe-single/holiday-2018-mickey-icon-lights",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday 2018 Mickey Icon Lights",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey icon with Christmas lights",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Holiday 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-18",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First available Oct 18 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at WDW World of Disney"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/holiday-2018-mickey-santa-tree",
+   "set_key": "wdw/2018/oe-single/holiday-2018-mickey-santa-tree",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday 2018 Mickey Santa",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey as Santa beside a tree",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Holiday 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-18",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First available Oct 18 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at WDW World of Disney"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/holiday-2018-wall-e",
+   "set_key": "wdw/2018/oe-single/holiday-2018-wall-e",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday 2018 WALL-E",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E"
+     ],
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "visual_description",
+     "value": "WALL-E holiday design",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Holiday 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-18",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First available Oct 18 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at WDW World of Disney"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/holiday-2018-porg",
+   "set_key": "wdw/2018/oe-single/holiday-2018-porg",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday 2018 Porg Christmas Pin",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Porg"
+     ],
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Star Wars Porg with Christmas lights",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Holiday 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-18",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First available Oct 18 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at WDW World of Disney"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/holiday-2018-donald-bah-humbug",
+   "set_key": "wdw/2018/oe-single/holiday-2018-donald-bah-humbug",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Holiday 2018 Donald Bah Humbug",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Descriptive name; source lists by design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Donald with Bah Humbug text",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Holiday 2018 pins all open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-18",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First available Oct 18 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Springs",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at WDW World of Disney"
+    },
+    {
+     "field": "front_text",
+     "value": "Bah Humbug",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Text on pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/holiday-2018-four-pin-set/all-warm-and-fuzzy",
+   "set_key": "wdw/2018/oe-set/holiday-2018-four-pin-set",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "All Warm and Fuzzy",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Text on pin per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/holiday-2018-four-pin-set/meet-me-under-the-mistletoe",
+   "set_key": "wdw/2018/oe-set/holiday-2018-four-pin-set",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Meet me under the Mistletoe",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Text on pin per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/holiday-2018-four-pin-set/happy-jolly-merry",
+   "set_key": "wdw/2018/oe-set/holiday-2018-four-pin-set",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Happy Jolly Merry",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Text on pin per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/holiday-2018-four-pin-set/the-magic-of-the-season",
+   "set_key": "wdw/2018/oe-set/holiday-2018-four-pin-set",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "The Magic of the Season",
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Text on pin per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-holiday-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/toy-story-land-logo",
+   "set_key": "wdw/2018/oe-single/toy-story-land-logo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Toy Story Land Open Edition Pin",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2018/01/photos-first-look-toy-story-land-pins-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "OE logo pin for the land"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-4/",
+     "method": "search_snippet",
+     "note": "Listed as OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-30",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Released June 30 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hollywood Studios",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-4/",
+     "method": "search_snippet",
+     "note": "At DHS June 30"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/slinky-dog-dash",
+   "set_key": "wdw/2018/oe-single/slinky-dog-dash",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Slinky Dog Dash Pin",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "attraction",
+     "value": "Slinky Dog Dash",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Attraction named"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.wdwkingdom.com/2018/07/toy-story-land-slinky-dog-magicband-and-attraction-pins-now-available-on-shop-disney-parks-mobile-app/",
+     "method": "search_snippet",
+     "note": "WDW Kingdom says USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2018/01/photos-first-look-toy-story-land-pins-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "OE logo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-land-pin-preview/",
+     "method": "search_snippet",
+     "note": "Previewed as OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-30",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Released June 30 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hollywood Studios",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-4/",
+     "method": "search_snippet",
+     "note": "At DHS June 30"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/alien-swirling-saucers",
+   "set_key": "wdw/2018/oe-single/alien-swirling-saucers",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alien Swirling Saucers Pin",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "attraction",
+     "value": "Alien Swirling Saucers",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Attraction named"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.wdwkingdom.com/2018/07/toy-story-land-slinky-dog-magicband-and-attraction-pins-now-available-on-shop-disney-parks-mobile-app/",
+     "method": "search_snippet",
+     "note": "WDW Kingdom says USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "visual_description",
+     "value": "Logo pin styled after the Pizza Planet logo",
+     "source_url": "https://wdwnt.com/2018/01/photos-first-look-toy-story-land-pins-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2018/01/photos-first-look-toy-story-land-pins-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "OE logo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-land-pin-preview/",
+     "method": "search_snippet",
+     "note": "Previewed as OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-30",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Released June 30 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hollywood Studios",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-4/",
+     "method": "search_snippet",
+     "note": "At DHS June 30"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/splash-mountain-everything-is-satisfactual",
+   "set_key": "wdw/2018/oe-single/splash-mountain-everything-is-satisfactual",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Everything is Satisfactual Splash Mountain Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "attraction",
+     "value": "Splash Mountain",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Attraction named"
+    },
+    {
+     "field": "front_text",
+     "value": "Everything is Satisfactual",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Text on pin"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Week of Aug 5-11 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/splash-mountain-i-conquered",
+   "set_key": "wdw/2018/oe-single/splash-mountain-i-conquered",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Conquered Splash Mountain Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Pin name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Source says open edition"
+    },
+    {
+     "field": "attraction",
+     "value": "Splash Mountain",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Attraction named"
+    },
+    {
+     "field": "front_text",
+     "value": "I Conquered Splash Mountain & Barely Got Wet",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Text on pin"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "USD retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Week of Aug 5-11 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/magic-kingdom-pin-set/here-you-leave-today-sign",
+   "set_key": "wdw/2018/oe-set/magic-kingdom-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Sign with the here you leave today line; silver-tone",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "MK-themed WDW set"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/magic-kingdom-pin-set/cinderella-castle",
+   "set_key": "wdw/2018/oe-set/magic-kingdom-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Cinderella Castle; silver-tone",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "MK-themed WDW set"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/magic-kingdom-pin-set/mickey-balloons",
+   "set_key": "wdw/2018/oe-set/magic-kingdom-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Mickey balloons; silver-tone",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "MK-themed WDW set"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/magic-kingdom-pin-set/welcome-sign",
+   "set_key": "wdw/2018/oe-set/magic-kingdom-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Magic Kingdom welcome sign; silver-tone",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "MK-themed WDW set"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/magic-kingdom-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "2018 release per snippet"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/oe/mickey-2018",
+   "field": "original_price",
+   "searched": "DPB 2018 pins; 2 queries",
+   "note": "Snippet only gave prices for spinner and mystery box"
+  },
+  {
+   "key": "wdw/2018/oe/minnie-2018",
+   "field": "original_price",
+   "searched": "DPB 2018 pins; 2 queries",
+   "note": "Snippet only gave prices for spinner and mystery box"
+  },
+  {
+   "key": "wdw/2018/oe/donald-2018",
+   "field": "original_price",
+   "searched": "DPB 2018 pins; 2 queries",
+   "note": "Snippet only gave prices for spinner and mystery box"
+  },
+  {
+   "key": "wdw/2018/oe/castle-2018",
+   "field": "original_price",
+   "searched": "DPB 2018 pins; 2 queries",
+   "note": "No price in snippet"
+  },
+  {
+   "key": "wdw/2018/oe/mickey-friends-2018-spinner",
+   "field": "edition_type",
+   "searched": "DPB product page; 1 query",
+   "note": "Edition type not in snippet; may be same pin as Disney Parks 2018 Spinner"
+  },
+  {
+   "key": "wdw/2018/oe-set/disney-parks-2018-mystery-box",
+   "field": "expected_pin_count",
+   "searched": "DPB 2018 pins; 3 queries",
+   "note": "Total designs not in snippet"
+  },
+  {
+   "key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "field": "price",
+   "searched": "DPB 2018 pins; 2 queries",
+   "note": "Booster price not in snippet; a non-preferred listing gave USD 29.99 and a Nov 2017 date, not recorded"
+  },
+  {
+   "key": "wdw/2018/oe-set/disney-parks-2018-starter-set",
+   "field": "price",
+   "searched": "DPB 2018 pins; 2 queries",
+   "note": "Original retail price not found"
+  },
+  {
+   "key": "wdw/2018/oe-set/halloween-2018-chip-dale-bats",
+   "field": "expected_pin_count",
+   "searched": "DPB+WDWNT; 3 queries",
+   "note": "Number of pins in set not stated"
+  },
+  {
+   "key": "wdw/2018/oe/holiday-2018-mickey-icon-lights",
+   "field": "original_price",
+   "searched": "DPB holiday 2018; 2 queries",
+   "note": "Individual price not in snippet"
+  },
+  {
+   "key": "wdw/2018/oe/holiday-2018-mickey-santa-tree",
+   "field": "original_price",
+   "searched": "DPB holiday 2018; 2 queries",
+   "note": "Individual price not in snippet"
+  },
+  {
+   "key": "wdw/2018/oe/holiday-2018-wall-e",
+   "field": "original_price",
+   "searched": "DPB holiday 2018; 2 queries",
+   "note": "Individual price not in snippet"
+  },
+  {
+   "key": "wdw/2018/oe/holiday-2018-donald-bah-humbug",
+   "field": "original_price",
+   "searched": "DPB holiday 2018; 2 queries",
+   "note": "Individual price not in snippet"
+  },
+  {
+   "key": "wdw/2018/oe-set/holiday-2018-mickey-minnie",
+   "field": "expected_pin_count",
+   "searched": "DPB holiday 2018; 2 queries",
+   "note": "Set size and member designs not stated"
+  },
+  {
+   "key": "wdw/2018/oe-set/incredibles-2-booster",
+   "field": "pins",
+   "searched": "DPB; 2 queries",
+   "note": "Characters named (Mr. Incredible, Elastigirl, Jack Jack, Violet, Dash) but not mapped to individual pins; no members created"
+  },
+  {
+   "key": "wdw/2018/oe-set/animal-kingdom-mystery",
+   "field": "pins",
+   "searched": "DPB; 2 queries",
+   "note": "Member designs not in snippet"
+  },
+  {
+   "key": "wdw/2018/oe-set/origami-mystery",
+   "field": "edition_type",
+   "searched": "DPB; 2 queries",
+   "note": "OE status not stated in snippet; included as candidate"
+  },
+  {
+   "key": "wdw/2018/oe-set/origami-mystery",
+   "field": "pins",
+   "searched": "DPB; 2 queries",
+   "note": "Characters listed (Mickey, Minnie, Donald, Daisy, Goofy, Pluto, Chip, Dale) but not mapped to pins"
+  },
+  {
+   "key": "wdw/2018/oe/mickey-90th",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "Mickey 90th OE pins and booster found were released Jan 2019 (belong to 2019); Nov 2018 90th pins were LR/AP"
+  },
+  {
+   "key": "wdw/2018/toy-story-land-mystery",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "TSL mystery collection (14 pins, 19.99/box) is limited release; excluded as LR"
+  },
+  {
+   "key": "wdw/2018/epcot-flower-garden-oe",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "No 2018 F&G open edition pins surfaced; found pins were LR/LE"
+  },
+  {
+   "key": "wdw/2018/epcot-food-wine-oe",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "No 2018 Food & Wine OE pins found in snippets"
+  },
+  {
+   "key": "wdw/2018/resort-holiday-2018",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Resort holiday 2018 pins have varying edition sizes, 16.99; not OE; excluded"
+  },
+  {
+   "key": "wdw/2018/animal-kingdom-20th-oe",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "AK 20th anniversary pins (Mar 29 2018) described as LE; no OE found"
+  },
+  {
+   "key": "wdw/2018/toy-story-land-lanyard-set",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "DPB mentions a TSL lanyard set; edition and contents not stated"
+  }
+ ],
+ "discovery_notes": "WDW 2018 OE backfill; 29 WebSearch calls, all search_snippet, mostly Disney Pins Blog plus WDWNT. Many pins sold at both DLR and WDW. Mickey & Friends 2018 Spinner may duplicate Disney Parks 2018 Spinner. TSL OE price conflict 9.99 vs 12.99 recorded. Origami OE status unconfirmed. Mickey 90th OE belongs to Jan 2019."
+}

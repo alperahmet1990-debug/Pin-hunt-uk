@@ -1,0 +1,2285 @@
+{
+ "packet_id": "backfill-b127-lic-boxlunch-2024-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b127",
+ "sources": [
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-portraits-blind-box-enamel-pin---boxlunch-exclusive/32579131.html",
+   "title": "Loungefly Disney Princesses Floral Portraits Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princesses-floral-portraits-blind-box-pin-set-at-boxlunch/",
+   "title": "Disney Princesses Floral Portraits Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-cupcake-blind-box-scented-pin-set-at-boxlunch/",
+   "title": "Disney Cupcake Blind Box Scented Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/202149",
+   "title": "MyPinCentral pin 202149 (Scented Cupcake, Cheshire Cat)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/202150",
+   "title": "MyPinCentral pin 202150 (Scented Cupcake, Simba)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/202152",
+   "title": "MyPinCentral pin 202152 (Scented Cupcake, Dumbo)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/202154",
+   "title": "MyPinCentral pin 202154 (Scented Cupcake, Dalmatian puppies)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/200117",
+   "title": "MyPinCentral pin 200117 (LFY - BL - Characters With Bubbles, Dumbo With Circus Tent)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-characters-bubbles-blind-box-enamel-pin---boxlunch-exclusive/31091644.html",
+   "title": "Loungefly Disney Characters Bubbles Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/gb/classic-vhs-covers-blind-box-pin---disney/WDPN3534.html?brand=loungefly",
+   "title": "Classic VHS Covers Blind Box Pin - Disney (Loungefly UK)",
+   "publisher": "Loungefly",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-classic-vhs-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/31328060.html",
+   "title": "Loungefly Disney Classic VHS Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/209443",
+   "title": "MyPinCentral pin 209443 (Loungefly (BoxLunch) Princess Compact Mirror, Cinderella)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/209444",
+   "title": "MyPinCentral pin 209444 (Princess Compact Mirror, Mulan)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/209441",
+   "title": "MyPinCentral pin 209441 (Princess Compact Mirror, Belle)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princess-compact-mirror-blind-box-enamel-pin---boxlunch-exclusive/32579129.html",
+   "title": "Loungefly Disney Princess Compact Mirror Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/211162",
+   "title": "MyPinCentral pin 211162 (Star Wars Character Poster Blind Box, Jawa)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-character-poster-blind-box-enamel-pin/33284618.html",
+   "title": "Star Wars Character Poster Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-aristocats-kittens-holiday-pajamas-enamel-pin-set---boxlunch-exclusive/32577085.html",
+   "title": "Loungefly Disney the Aristocats Kittens Holiday Pajamas Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-character-holiday-pajamas-pins-at-boxlunch",
+   "title": "Disney Character Holiday Pajamas Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+   "title": "BoxLunch Pin Releases on Saturday, August 10th",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+   "title": "Loungefly Disney Pixar Inside Out Sadness Portrait Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+   "title": "Loungefly Disney Pixar Inside Out Anger Translucent Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.liberty-center.com/buy/product/loungefly-disney-pixar-inside-out-fear-panel-enamel-pin-boxlunch-exclusive-boxlunch-29a28c",
+   "title": "Loungefly Disney Pixar Inside Out Fear Panel Enamel Pin - BoxLunch Exclusive (mall-hosted BoxLunch listing)",
+   "publisher": "Liberty Center mall (BoxLunch listing)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/disney-pixar-inside-out-exclusive-pins-at-boxlunch/",
+   "title": "Disney-Pixar Inside Out Exclusive Pins at BoxLunch",
+   "publisher": "Disney Mouseketeer",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+   "title": "Valentine's Day 2024 Disney Pin Sets at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+   "title": "Loungefly Disney Mickey Mouse & Friends Kites Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickey-mouse-friends-kites-blind-box-pin-set-at-boxlunch",
+   "title": "Mickey Mouse & Friends Kites Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-breakfast-blind-box-enamel-pin---boxlunch-exclusive/32989483.html",
+   "title": "Loungefly Disney Mickey Mouse & Friends Breakfast Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-friends-breakfast-blind-box-pin-set-at-boxlunch/",
+   "title": "Mickey Mouse & Friends Breakfast Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/december-2024-pins/",
+   "title": "December 2024 Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-moon-nap-blind-box-enamel-pin---boxlunch-exclusive/32989477.html",
+   "title": "Loungefly Disney Winnie the Pooh Moon Nap Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/winnie-the-pooh-moon-nap-blind-box-pin-set-at-boxlunch/",
+   "title": "Winnie the Pooh Moon Nap Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+   "title": "Our Universe Disney Lilo & Stitch Baby Stitch Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-fall-characters-blind-box-enamel-pin---boxlunch-exclusive/32108777.html",
+   "title": "Loungefly Disney The Nightmare Before Christmas Fall Characters Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-villains-blind-box-pin-set-at-boxlunch/",
+   "title": "Star Wars Villains Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-lion-king-framed-blind-box-enamel-pin/33397827.html",
+   "title": "Disney The Lion King Framed Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-lion-king-framed-blind-box-pin-set-at-boxlunch/",
+   "title": "The Lion King Framed Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-inside-out-2-emotions-train-blind-box-enamel-pin/33397818.html",
+   "title": "Disney Pixar Inside Out 2 Emotions Train Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-holiday-stitch-blind-box-enamel-pin/20761701.html",
+   "title": "Loungefly Disney Lilo & Stitch Holiday Stitch Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-vinyl-record-blind-box-pin-set-at-boxlunch/",
+   "title": "Star Wars Vinyl Record Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2024-03",
+     "source_url": "https://disneypinsblog.com/disney-cupcake-blind-box-scented-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog again says March 2024"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/disney-cupcake-blind-box-scented-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-cupcake-blind-box-scented-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-classic-vhs-blind-box",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-classic-vhs-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/31328060.html",
+     "method": "search_snippet",
+     "note": "BoxLunch: six to collect"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-classic-vhs-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/31328060.html",
+     "method": "search_snippet",
+     "note": "Loungefly in BoxLunch title"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-portraits-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: released October 2024 (lead confirmed)"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-portraits-blind-box-enamel-pin---boxlunch-exclusive/32579131.html",
+     "method": "search_snippet",
+     "note": "BoxLunch page price"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/disney-princesses-floral-portraits-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per box"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-portraits-blind-box-enamel-pin---boxlunch-exclusive/32579131.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-portraits-blind-box-enamel-pin---boxlunch-exclusive/32579131.html",
+     "method": "search_snippet",
+     "note": "Loungefly in title"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "fan DB gives October 2024"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "fan DB price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-nbc-fall-characters-blind-box",
+   "claims": [
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-fall-characters-blind-box-enamel-pin---boxlunch-exclusive/32108777.html",
+     "method": "search_snippet",
+     "note": "BoxLunch page price"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-fall-characters-blind-box-enamel-pin---boxlunch-exclusive/32108777.html",
+     "method": "search_snippet",
+     "note": "one random pin; Jack, Sally, Zero and more with autumn decor"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-aristocats-kittens-holiday-pajamas",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/disney-character-holiday-pajamas-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog: open edition"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-aristocats-kittens-holiday-pajamas-enamel-pin-set---boxlunch-exclusive/32577085.html",
+     "method": "search_snippet",
+     "note": "set of 3"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-d23-2024-saturday",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Pin Releases on Saturday, August 10th (D23 2024)",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "individual pins",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "three LE pins each priced separately"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "BoxLunch D23 lineup"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-08-10",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "Saturday Aug 10"
+    },
+    {
+     "field": "release_location",
+     "value": "D23 2024 (Anaheim) BoxLunch",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "D23 2024 Saturday drop"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-valentines-2024-couples-mulan-shang-portrait",
+   "parent_set_key": "lic/2024/boxlunch-valentines-2024-couples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Li Shang & Mulan portrait",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "descriptive pair name from blog lineup"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins forming one scene)",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "each set two pins that form a scene"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "two pins per set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "exclusive to BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "January 2024"
+    },
+    {
+     "field": "price",
+     "value": 15.9,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-valentines-2024-couples-meg-hercules",
+   "parent_set_key": "lic/2024/boxlunch-valentines-2024-couples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Meg & Hercules",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "descriptive pair name from blog lineup"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins forming one scene)",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "each set two pins that form a scene"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "two pins per set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "exclusive to BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "January 2024"
+    },
+    {
+     "field": "price",
+     "value": 15.9,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-valentines-2024-couples-stitch-angel-beach",
+   "parent_set_key": "lic/2024/boxlunch-valentines-2024-couples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Angel & Stitch beach",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "descriptive pair name from blog lineup"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins forming one scene)",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "each set two pins that form a scene"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "two pins per set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "exclusive to BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "January 2024"
+    },
+    {
+     "field": "price",
+     "value": 15.9,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-valentines-2024-couples-carl-ellie-picnic",
+   "parent_set_key": "lic/2024/boxlunch-valentines-2024-couples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Carl & Ellie picnic",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "descriptive pair name from blog lineup"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins forming one scene)",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "each set two pins that form a scene"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "two pins per set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "exclusive to BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "January 2024"
+    },
+    {
+     "field": "price",
+     "value": 15.9,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-valentines-2024-couples-pongo-perdita-frame",
+   "parent_set_key": "lic/2024/boxlunch-valentines-2024-couples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pongo & Perdita frame",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "descriptive pair name from blog lineup"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins forming one scene)",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "each set two pins that form a scene"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "two pins per set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "exclusive to BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "January 2024"
+    },
+    {
+     "field": "price",
+     "value": 15.9,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-valentines-2024-couples-wall-e-eve",
+   "parent_set_key": "lic/2024/boxlunch-valentines-2024-couples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E & EVE",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "descriptive pair name from blog lineup"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins forming one scene)",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "each set two pins that form a scene"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "two pins per set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "exclusive to BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "January 2024"
+    },
+    {
+     "field": "price",
+     "value": 15.9,
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/valentines-day-2024-disney-pin-sets-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-mickey-friends-kites-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Mickey Mouse & Friends Kites Blind Box Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+     "method": "search_snippet",
+     "note": "one random pin; characters with different kites"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+     "method": "search_snippet",
+     "note": "Loungefly in title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-friends-kites-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog: December 2024 (post Dec 13)"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-friends-kites-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog per box"
+    },
+    {
+     "field": "price",
+     "value": 11.99,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+     "method": "search_snippet",
+     "note": "BoxLunch page price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-mickey-friends-breakfast-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Mickey Mouse & Friends Breakfast Blind Box Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-breakfast-blind-box-enamel-pin---boxlunch-exclusive/32989483.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-friends-breakfast-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "one random pin; pals in pajamas with breakfast foods"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-breakfast-blind-box-enamel-pin---boxlunch-exclusive/32989483.html",
+     "method": "search_snippet",
+     "note": "Loungefly in title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-breakfast-blind-box-enamel-pin---boxlunch-exclusive/32989483.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-friends-breakfast-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: December 2024"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-friends-breakfast-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-friends-breakfast-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-pooh-moon-nap-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Winnie the Pooh Moon Nap Blind Box Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-moon-nap-blind-box-enamel-pin---boxlunch-exclusive/32989477.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-moon-nap-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "one random pin; characters asleep on crescent moons"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-moon-nap-blind-box-enamel-pin---boxlunch-exclusive/32989477.html",
+     "method": "search_snippet",
+     "note": "Loungefly in title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-moon-nap-blind-box-enamel-pin---boxlunch-exclusive/32989477.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-moon-nap-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: December 2024 (post Dec 27)"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-moon-nap-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-moon-nap-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/our-universe-boxlunch-baby-stitch-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Our Universe Disney Lilo & Stitch Baby Stitch Blind Box Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+     "method": "search_snippet",
+     "note": "one random pin; six designs"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+     "method": "search_snippet",
+     "note": "six designs"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Our Universe",
+     "source_url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+     "method": "search_snippet",
+     "note": "Our Universe brand in title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+     "method": "search_snippet",
+     "note": "BoxLunch page price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/our-universe-disney-lilo-stitch-baby-stitch-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/32866744.html",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/category/december-2024-pins/",
+     "method": "search_snippet",
+     "note": "DPB Dec 2024 archive lists 'Lilo & Stitch Baby Stitch blind box' at BoxLunch (Dec 28, $10.90)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-lion-king-framed-blind-box",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/disney-the-lion-king-framed-blind-box-enamel-pin/33397827.html",
+     "method": "search_snippet",
+     "note": "listing: collect all six"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-the-lion-king-framed-blind-box-enamel-pin/33397827.html",
+     "method": "search_snippet",
+     "note": "BoxLunch page price"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/the-lion-king-framed-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/the-lion-king-framed-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog December 2024"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/cheshire-cat",
+   "set_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://mypincentral.com/pin/202149",
+     "method": "search_snippet",
+     "note": "fan DB entry describes this single design in the scented cupcake blind box"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cheshire-themed cupcake in purple and light pink with leaves and a butterfly; rubberised raised element",
+     "source_url": "https://mypincentral.com/pin/202149",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/202149",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "rubberised 3D element"
+     ],
+     "source_url": "https://mypincentral.com/pin/202149",
+     "method": "search_snippet",
+     "note": "entry notes raised rubber element"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/dumbo",
+   "set_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://mypincentral.com/pin/202152",
+     "method": "search_snippet",
+     "note": "fan DB entry describes this single design in the scented cupcake blind box"
+    },
+    {
+     "field": "visual_description",
+     "value": "Red and yellow striped cup, light blue icing, peanut sprinkles",
+     "source_url": "https://mypincentral.com/pin/202152",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/202152",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/simba",
+   "set_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://mypincentral.com/pin/202150",
+     "method": "search_snippet",
+     "note": "fan DB entry describes this single design in the scented cupcake blind box"
+    },
+    {
+     "field": "visual_description",
+     "value": "Yellow cupcake with red logo on top and leaf sprinkles",
+     "source_url": "https://mypincentral.com/pin/202150",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/202150",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/dalmatian-puppies",
+   "set_key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dalmatian puppies"
+     ],
+     "source_url": "https://mypincentral.com/pin/202154",
+     "method": "search_snippet",
+     "note": "fan DB entry for a 101 Dalmatians-themed design in same series"
+    },
+    {
+     "field": "visual_description",
+     "value": "White cupcake with red collar and black spot-print sprinkles",
+     "source_url": "https://mypincentral.com/pin/202154",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/202154",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box/dumbo",
+   "set_key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo With Circus Tent",
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "fan DB title for this design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "per-pin entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dumbo facing left blowing a circus-tent-shaped bubble",
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass",
+      "translucent"
+     ],
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "stained glass bubble is see-through"
+    },
+    {
+     "field": "original_price",
+     "value": 10.9,
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "entry price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "one design in series 'LFY - BL - Characters With Bubbles Blind Box'"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "series prefix LFY"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://mypincentral.com/pin/200117",
+     "method": "search_snippet",
+     "note": "series prefix BL; barcode field equals BoxLunch product id 31091644"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box/cinderella",
+   "set_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella",
+      "Jaq"
+     ],
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "per-pin fan DB entry in Princess Compact Mirror series"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "princess the compact represents"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "series tagged Loungefly (BoxLunch)"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "series tagged BoxLunch"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "mirror",
+      "hinged",
+      "3D rubber"
+     ],
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "mirror, hinge, rubber features"
+    },
+    {
+     "field": "visual_description",
+     "value": "Round silver compact for Cinderella with Jaq; opens to a mirror",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "entry date"
+    },
+    {
+     "field": "original_price",
+     "value": 14.9,
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "entry price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box/mulan",
+   "set_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://mypincentral.com/pin/209444",
+     "method": "search_snippet",
+     "note": "per-pin fan DB entry in Princess Compact Mirror series"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://mypincentral.com/pin/209444",
+     "method": "search_snippet",
+     "note": "princess the compact represents"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/209444",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/209444",
+     "method": "search_snippet",
+     "note": "series tagged Loungefly (BoxLunch)"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://mypincentral.com/pin/209444",
+     "method": "search_snippet",
+     "note": "series tagged BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box/belle",
+   "set_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Lumiere"
+     ],
+     "source_url": "https://mypincentral.com/pin/209441",
+     "method": "search_snippet",
+     "note": "per-pin fan DB entry in Princess Compact Mirror series"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://mypincentral.com/pin/209441",
+     "method": "search_snippet",
+     "note": "princess the compact represents"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/209441",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/209441",
+     "method": "search_snippet",
+     "note": "series tagged Loungefly (BoxLunch)"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://mypincentral.com/pin/209441",
+     "method": "search_snippet",
+     "note": "series tagged BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/boxlunch-star-wars-character-poster-blind-box/jawa",
+   "set_key": "lic/2024/boxlunch-star-wars-character-poster-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jawa"
+     ],
+     "source_url": "https://mypincentral.com/pin/211162",
+     "method": "search_snippet",
+     "note": "fan DB entry: Jawa design, part of Star Wars Character Poster Blind Box"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jawa on a light orange poster",
+     "source_url": "https://mypincentral.com/pin/211162",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/211162",
+     "method": "search_snippet",
+     "note": "one design of the blind-box set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-inside-out-may-2024/sadness-portrait",
+   "set_key": "lic/2024/loungefly-boxlunch-inside-out-may-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Pixar Inside Out Sadness Portrait Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sadness"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "translucent backdrop"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "Sadness on translucent backdrop"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "listing original price"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneymouseketeer.com/disney-pixar-inside-out-exclusive-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: $9.90 each for Sadness and Anger pins"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-sadness-portrait-enamel-pin---boxlunch-exclusive/31714677.html",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-inside-out-may-2024/anger-translucent",
+   "set_key": "lic/2024/loungefly-boxlunch-inside-out-may-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Pixar Inside Out Anger Translucent Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anger"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "translucent"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "original_price",
+     "value": 10.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "later listing price"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneymouseketeer.com/disney-pixar-inside-out-exclusive-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: $9.90 each for Sadness and Anger"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-inside-out-anger-translucent-pin-%E2%80%94-boxlunch-exclusive/31714681.html",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-inside-out-may-2024/fear-panel",
+   "set_key": "lic/2024/loungefly-boxlunch-inside-out-may-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Pixar Inside Out Fear Panel Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-pixar-inside-out-fear-panel-enamel-pin-boxlunch-exclusive-boxlunch-29a28c",
+     "method": "search_snippet",
+     "note": "mall-hosted BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Fear"
+     ],
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-pixar-inside-out-fear-panel-enamel-pin-boxlunch-exclusive-boxlunch-29a28c",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-pixar-inside-out-fear-panel-enamel-pin-boxlunch-exclusive-boxlunch-29a28c",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-pixar-inside-out-fear-panel-enamel-pin-boxlunch-exclusive-boxlunch-29a28c",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-pixar-inside-out-fear-panel-enamel-pin-boxlunch-exclusive-boxlunch-29a28c",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/boxlunch-d23-2024-saturday/jack-hinged-coffin",
+   "set_key": "lic/2024/boxlunch-d23-2024-saturday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Nightmare Before Christmas Jack Skellington hinged coffin pin",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "descriptive name from blog lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "blog"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 16.9,
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "BoxLunch D23"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "hinged coffin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/boxlunch-d23-2024-saturday/darth-vader-stormtroopers",
+   "set_key": "lic/2024/boxlunch-d23-2024-saturday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Darth Vader & Stormtroopers pin",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "descriptive name from blog lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader",
+      "Stormtroopers"
+     ],
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "blog"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 18.9,
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "BoxLunch D23"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/boxlunch-d23-2024-saturday/patch-cookie-jar",
+   "set_key": "lic/2024/boxlunch-d23-2024-saturday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "101 Dalmatians Patch Cookie Jar pin",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "descriptive name from blog lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Patch"
+     ],
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "blog"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "original_price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/boxlunch-pin-releases-on-saturday-august-10th-d23-2024/",
+     "method": "search_snippet",
+     "note": "BoxLunch D23"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/cheshire-cat",
+   "field": "pin_structure",
+   "searched": "MyPinCentral series search",
+   "note": "hold released: per-pin fan DB entry describes this design in the 'Disney Scented Cupcake Blind Mystery Box'; tied to BoxLunch set by series name + DPB lineup, not by code"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/dumbo",
+   "field": "pin_structure",
+   "searched": "MyPinCentral series search",
+   "note": "hold released: per-pin fan DB entry describes this design in the 'Disney Scented Cupcake Blind Mystery Box'; tied to BoxLunch set by series name + DPB lineup, not by code"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/simba",
+   "field": "pin_structure",
+   "searched": "MyPinCentral series search",
+   "note": "hold released: per-pin fan DB entry describes this design in the 'Disney Scented Cupcake Blind Mystery Box'; tied to BoxLunch set by series name + DPB lineup, not by code"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box/dalmatian-puppies",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "fan DB series name only; not named in DPB/BoxLunch snippets - confirm it is in the BoxLunch 2024 scented set"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-cupcake-scented-blind-box",
+   "field": "expected_pin_count",
+   "searched": "4 queries",
+   "note": "set size still not stated; four designs now seen (Cheshire, Dumbo, Simba, Dalmatians)"
+  },
+  {
+   "key": "lic/2025/boxlunch-character-cupcakes-blind-box",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: separate unscented Character Cupcakes blind box (DPB, $12.90, ships Oct 2025) - for 2025 cell; do not merge with scented set"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box/dumbo",
+   "field": "pin_structure",
+   "searched": "MyPinCentral series search",
+   "note": "hold released: per-pin fan DB entry (200117) for this design; series tagged LFY-BL and code matches BoxLunch listing 31091644"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box/pumbaa",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin entry surfaced; still a 'featuring ... and more' list"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box/pinocchio",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin entry surfaced; still a 'featuring ... and more' list"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box/marie",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin entry surfaced; still a 'featuring ... and more' list"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box/thumper",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin entry surfaced; still a 'featuring ... and more' list"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "fan DB shows sibling entries 200114-200121 but count not stated in snippet; not recorded"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-classic-vhs-blind-box",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: Loungefly UK WDPN3534 'Classic VHS Covers Blind Box Pin' (6 designs: Alice, Dumbo, Lion King, Pinocchio, 101 Dalmatians, Aristocats); hold: linked by name/subject only - confirm same set"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-classic-vhs-blind-box/dumbo",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: BoxLunch listing still names these as examples; Loungefly WDPN3534 list not confirmed as same release"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-classic-vhs-blind-box/aristocats",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: BoxLunch listing still names these as examples; Loungefly WDPN3534 list not confirmed as same release"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-classic-vhs-blind-box/pinocchio",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: BoxLunch listing still names these as examples; Loungefly WDPN3534 list not confirmed as same release"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box/rapunzel",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold kept: blog 'assortment features' list and listing 'princesses like ... and more'; no per-pin entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box/ariel",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold kept: blog 'assortment features' list and listing 'princesses like ... and more'; no per-pin entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box/jasmine",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold kept: blog 'assortment features' list and listing 'princesses like ... and more'; no per-pin entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box/tiana",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold kept: blog 'assortment features' list and listing 'princesses like ... and more'; no per-pin entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box/mulan",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold kept: blog 'assortment features' list and listing 'princesses like ... and more'; no per-pin entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box/belle",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold kept: blog 'assortment features' list and listing 'princesses like ... and more'; no per-pin entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box",
+   "field": "set_name",
+   "searched": "1 query",
+   "note": "a mirror listing reportedly calls same product id 'Princess Sidekick Portrait' - naming inconsistent; not recorded"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "three of six designs named via fan DB (Cinderella, Mulan, Belle); other three not seen"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-character-poster-blind-box/jawa",
+   "field": "retailer",
+   "searched": "1 query",
+   "note": "fan DB snippet names series only; tied to BoxLunch set by exact series name"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-character-poster-blind-box/chewbacca",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: still listing examples only"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-character-poster-blind-box/leia",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: still listing examples only"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-character-poster-blind-box/boba-fett",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: still listing examples only"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-character-poster-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "still no maker in BoxLunch title"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-villains-blind-box/thrawn",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no BoxLunch page or per-pin entry found; only DPB 'featuring' list (MyPinCentral Grievous hit is a 2005 pin)"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-villains-blind-box/darth-vader",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no BoxLunch page or per-pin entry found; only DPB 'featuring' list (MyPinCentral Grievous hit is a 2005 pin)"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-villains-blind-box/darth-maul",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no BoxLunch page or per-pin entry found; only DPB 'featuring' list (MyPinCentral Grievous hit is a 2005 pin)"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-villains-blind-box/emperor-palpatine",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no BoxLunch page or per-pin entry found; only DPB 'featuring' list (MyPinCentral Grievous hit is a 2005 pin)"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-villains-blind-box/general-grievous",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: no BoxLunch page or per-pin entry found; only DPB 'featuring' list (MyPinCentral Grievous hit is a 2005 pin)"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-villains-blind-box",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "maker still not stated"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-nbc-fall-characters-blind-box/jack-skellington",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: listing still 'Jack, Sally, Zero, and more'; no per-pin entries"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-nbc-fall-characters-blind-box/sally",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: listing still 'Jack, Sally, Zero, and more'; no per-pin entries"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-nbc-fall-characters-blind-box/zero",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: listing still 'Jack, Sally, Zero, and more'; no per-pin entries"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-nbc-fall-characters-blind-box",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "set size not stated; do not confuse with Fall Characters Puzzle blind box (34415549, later)"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-aristocats-kittens-holiday-pajamas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: confirm pin structure - listing: set of 3 featuring Marie, Toulouse, Berlioz in pajamas and Santa hats; per-pin tie still not explicit"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-inside-out-may-2024",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "structure partly resolved: individual Sadness Portrait, Anger Translucent, Fear Panel listings (ids 31714677/81 beside group pin 31714678); Fear/Anger portrait variants, if any, not seen"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-inside-out-may-2024/fear-panel",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold: linked to May 2024 release by listing family/subject only; blog snippet names Sadness and Anger, not Fear - confirm"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-inside-out-may-2024/fear-panel",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "lic/2024/boxlunch-d23-2024-saturday/jack-hinged-coffin",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "LE size not in snippet; maker not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch-d23-2024-saturday/darth-vader-stormtroopers",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "LE size not in snippet; maker not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch-d23-2024-saturday/patch-cookie-jar",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "LE size not in snippet; maker not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch-d23-2024",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "Friday LE sizes still not found"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples-mulan-shang-portrait",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "left/right pins of Li Shang & Mulan portrait pair not separately named; characters Mulan, Li Shang per pair (editorial split not recorded)"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples-meg-hercules",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "left/right pins of Meg & Hercules pair not separately named; characters Megara, Hercules per pair (editorial split not recorded)"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples-stitch-angel-beach",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "left/right pins of Angel & Stitch beach pair not separately named; characters Stitch, Angel per pair (editorial split not recorded)"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples-carl-ellie-picnic",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "left/right pins of Carl & Ellie picnic pair not separately named; characters Carl, Ellie per pair (editorial split not recorded)"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples-pongo-perdita-frame",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "left/right pins of Pongo & Perdita frame pair not separately named; characters Pongo, Perdita per pair (editorial split not recorded)"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples-wall-e-eve",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "left/right pins of WALL-E & EVE pair not separately named; characters WALL-E, EVE per pair (editorial split not recorded)"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples",
+   "field": "sets",
+   "searched": "1 query",
+   "note": "hold resolved: DPB lineup names all couples and states each set is two pins forming a scene; exact BoxLunch product titles still not seen"
+  },
+  {
+   "key": "lic/2024/boxlunch-valentines-2024-couples",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker still not stated"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-kites-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs/characters and set size not named"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-breakfast-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs and set size not named; exact day Dec 22 vs 23 differs between archive and post"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-pooh-moon-nap-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "characters/designs and set size not named"
+  },
+  {
+   "key": "lic/2024/our-universe-boxlunch-baby-stitch-blind-box",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "hold: DPB Dec 2024 post linked to Our Universe listing 32866744 by product name only (prices differ $10.90 vs $12.90) - confirm same set"
+  },
+  {
+   "key": "lic/2024/our-universe-boxlunch-baby-stitch-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "listing mentions Stitch with Scrump and ducklings scenes; per-design list not given"
+  },
+  {
+   "key": "lic/2024/boxlunch-mickey-beanstalk",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: DPB headline 'Mickey Mouse Beanstalk' pin dated Dec 29 2024; retailer, maker, price not in snippet"
+  },
+  {
+   "key": "lic/2024/boxlunch-holiday-december-2024",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "no December 2024 BoxLunch holiday single pins found beyond Oct pajamas line; DPB Dec 2024 BoxLunch items are blind boxes"
+  },
+  {
+   "key": "lic/2024/boxlunch-lion-king-framed-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names Mufasa, Scar, Simba 'and more')"
+  },
+  {
+   "key": "lic/2024/boxlunch-lion-king-framed-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "still no maker in BoxLunch title ('Disney The Lion King Framed...'); listing says approx 3 in"
+  },
+  {
+   "key": "lic/2024/boxlunch-inside-out-2-emotions-train-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "BoxLunch title has no maker; emotions per car still not named"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-vinyl-record-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "no BoxLunch product page surfaced; maker and films still unnamed"
+  },
+  {
+   "key": "lic/2024/boxlunch-lilo-stitch-holiday-outfits-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "no product page found; Loungefly Holiday Stitch (20761701, six designs incl. snowman, gingerbread, Santa) not labelled BoxLunch exclusive - not linked"
+  },
+  {
+   "key": "lic/2024/boxlunch-halloween-2024/devil-stitch-pearlescent",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "no BoxLunch listing found for Devil Stitch pearlescent pin; maker unknown"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-sand-blind-box",
+   "field": "manufacturer",
+   "searched": "0 queries",
+   "note": "not searched this run (budget)"
+  },
+  {
+   "key": "lic/2024/boxlunch-pixar-book-bookmark-blind-box",
+   "field": "manufacturer",
+   "searched": "0 queries",
+   "note": "not searched this run (budget)"
+  },
+  {
+   "key": "lic/2024/boxlunch-singles-undated",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "Inside Out 2 Anxiety Stained Glass (33397820) seen again, still undated; id near Dec 2024 IO2 train/Lion King ids - not evidence"
+  }
+ ],
+ "discovery_notes": "Follow-up to 249_b083 (reuses its keys). 30 standard searches, snippets only (BoxLunch, MyPinCentral, DPB, Loungefly UK, Disney Mouseketeer, mall-hosted BoxLunch listing). Holds released only where a per-pin fan DB entry names the design: Cupcake Cheshire/Dumbo/Simba, Bubbles Dumbo. Valentine's couples 2-pin hold resolved by DPB lineup. Added Compact Mirror Cinderella/Mulan/Belle, Poster Jawa, Cupcake Dalmatians, Inside Out Sadness/Anger/Fear singles, D23 Saturday 3 LE pins, 6 couples sets, 4 Dec 2024 blind boxes. Classic VHS WDPN3534 kept as held lead."
+}

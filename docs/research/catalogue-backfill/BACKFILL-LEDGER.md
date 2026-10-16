@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 4 (started 2026-10-16 14:30 UTC): B063–B067, B019
 
 ## Totals (after round 3 + licensed scope fix, 16 Oct 2026 ~14:15 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
@@ -26,8 +26,8 @@ Earlier: after round 3 before the fix, 4,592; after round 2, 4,360; after round 
 | B006 | 2019 | ds | Disney Store UK/EU + US | partial | 206_b006_ds_2019.json | 63 | follow-up appended |
 | B007 | 2019 | asia | Shanghai, Hong Kong, Tokyo | partial | 207_b007_asia_2019.json | 76 | follow-up appended |
 | B008 | 2019 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | partial | 208_b008_lic_2019.json | 58 | follow-up appended |
-| B063 | 2019 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) — dedicated sweep (the combined licensed cell covered all brands) | todo | | | |
-| B064 | 2019 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) — dedicated sweep | todo | | | |
+| B063 | 2019 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) — dedicated sweep (the combined licensed cell covered all brands) | in progress | | | |
+| B064 | 2019 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) — dedicated sweep | in progress | | | |
 | B009 | 2018 | wdw-oe | WDW open edition (incl. standalone) | partial | 209_b009_wdw_oe_2018.json | 41 | follow-up appended |
 | B010 | 2018 | wdw-le | WDW LE/LR | partial | 210_b010_wdw_le_2018.json | 92 | follow-up appended |
 | B011 | 2018 | dlr-oe | Disneyland California OE | partial | 211_b011_dlr_oe_2018.json | 45 | follow-up appended |
@@ -36,12 +36,12 @@ Earlier: after round 3 before the fix, 4,592; after round 2, 4,360; after round 
 | B014 | 2018 | ds | Disney Store UK/EU + US | partial | 214_b014_ds_2018.json | 35 | follow-up appended |
 | B015 | 2018 | asia | Shanghai, Hong Kong, Tokyo | partial | 215_b015_asia_2018.json | 64 | follow-up appended |
 | B016 | 2018 | lic | Licensed: Loungefly, BoxLunch, Hot Topic, Pink a la Mode, Artland | partial | 216_b016_lic_2018.json | 56 | follow-up appended |
-| B065 | 2018 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) — dedicated sweep (the combined licensed cell covered all brands) | todo | | | |
-| B066 | 2018 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) — dedicated sweep | todo | | | |
+| B065 | 2018 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) — dedicated sweep (the combined licensed cell covered all brands) | in progress | | | |
+| B066 | 2018 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) — dedicated sweep | in progress | | | |
 | B017 | 2017 | wdw-oe | WDW open edition (incl. standalone) | partial | 217_b017_wdw_oe_2017.json | 40 | follow-up appended |
 | B018 | 2017 | wdw-le | WDW LE/LR | partial | 218_b018_wdw_le_2017.json | 87 | follow-up appended |
-| B067 | 2015-2026 | lic-review | Licensed exclusion review: re-check items earlier cells left out — B006 2019 Hot Topic/BoxLunch items (left out as outside Disney Store scope); B014 JCPenney Mickey 90 sets, Disney Handbag Collectible Pin Pack 2018, Holiday Nutcrackers OE mystery 2018; B015 HK Times Square Incredibles 2 exhibition pins; B008 ArtLand LE 250 Sept 2019 designs and Marvel/Avengers Funko pins; B016 Loungefly princess and Lilo & Stitch mystery sets (pin or button?). Record genuine pins; exclude only confirmed buttons/badges/non-pin | todo | | | |
-| B019 | 2017 | dlr-oe | Disneyland California OE | todo | | | |
+| B067 | 2015-2026 | lic-review | Licensed exclusion review: re-check items earlier cells left out — B006 2019 Hot Topic/BoxLunch items (left out as outside Disney Store scope); B014 JCPenney Mickey 90 sets, Disney Handbag Collectible Pin Pack 2018, Holiday Nutcrackers OE mystery 2018; B015 HK Times Square Incredibles 2 exhibition pins; B008 ArtLand LE 250 Sept 2019 designs and Marvel/Avengers Funko pins; B016 Loungefly princess and Lilo & Stitch mystery sets (pin or button?). Record genuine pins; exclude only confirmed buttons/badges/non-pin | in progress | | | |
+| B019 | 2017 | dlr-oe | Disneyland California OE | in progress | | | |
 | B020 | 2017 | dlr-le | Disneyland California LE/LR | todo | | | |
 | B021 | 2017 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B022 | 2017 | ds | Disney Store UK/EU + US | todo | | | |
@@ -120,3 +120,4 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | 2 | 2026-10-16 12:30 | B007–B012 (2019 Asia + licensees; 2018 WDW/DLR) | +309 net new (38 corroborated); 360 pin records | all partial; follow-ups appended. Matcher fix: live CTP rows carry no characters, subject now read from the title; 11 possible live matches held |
 | 3 | 2026-10-16 13:30 | B013–B018 (2018 DLP, Disney Store, Asia, licensees; 2017 WDW OE/LE) | +234 net new (19 corroborated); 307 pin records | all partial; follow-ups B057–B062 appended. Possible live matches rose to 57 (2017–2018 have more live pins); held, not dropped |
 | – | 2026-10-16 14:15 | scope update (no new research) | +47 released from false holds | Licensed pins fully in scope (maintainer). Engine fix: line prefixes (lic, dsus, shdr, hkdl, tdr) no longer count as shared set words, and licensed/Asia lines are no longer compared with park lines for cross-set duplicates. Licensed cells split into lic-loungefly / lic-boxlunch / lic-other (B063–B090); exclusion review cell B067 |
+| 4 | 2026-10-16 14:30 | B063–B066 (2019/2018 Loungefly and BoxLunch dedicated sweeps), B067 (licensed exclusion review), B019 (2017 DLR OE) | in progress | |

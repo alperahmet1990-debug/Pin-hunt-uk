@@ -6,7 +6,7 @@
  * Nothing on this screen writes to the catalogue: approving records a
  * decision, and importing approved pins is a separate, later step.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Linking,
@@ -18,6 +18,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
@@ -30,6 +31,8 @@ import { useAuth } from '@/context/AuthContext';
 import { API_BASE } from '@/lib/apiBase';
 import { Button, Chip, ConfirmDialog, SegmentedControl } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
+import { KeepScrollView } from '@/components/research/KeepScrollView';
+import { groupsForTab, isWideLayout, type ReviewTab } from '@/utils/researchLayout';
 import {
   CHECKABLE_FIELDS,
   MAX_SET_BATCH,
@@ -62,6 +65,8 @@ type Decision = 'approve' | 'reject' | 'needs_more_research';
 export default function ResearchReviewScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
+  const wide = isWideLayout(useWindowDimensions().width);
+  const scrollStore = useRef<Record<string, number>>({});
   const { session } = useAuth();
   const token = session?.access_token;
   const headers = useCallback(() => ({ 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }), [token]);
@@ -97,6 +102,7 @@ export default function ResearchReviewScreen() {
   const [confirmSet, setConfirmSet] = useState(false);
 
   // Page view: one source page, with its pins from every set. Pins always start unticked.
+  const [view, setView] = useState<ReviewTab>('queue');
   const [tab, setTab] = useState<'sets' | 'pages'>('sets');
   const [pages, setPages] = useState<ResearchPage[]>([]);
   const [pagesError, setPagesError] = useState<string | null>(null);
@@ -309,7 +315,7 @@ export default function ResearchReviewScreen() {
     }
   }, [api, runId, token]);
 
-  useEffect(() => { if (tab === 'pages') loadPages(); }, [tab, loadPages]);
+  useEffect(() => { if (view === 'board' && tab === 'pages') loadPages(); }, [view, tab, loadPages]);
 
   const openPage = async (url: string) => {
     setPageUrl(url);
@@ -392,123 +398,107 @@ export default function ResearchReviewScreen() {
   };
 
   const s = styles(colors);
+  const paneContent = wide
+    ? { padding: spacing.lg, paddingBottom: 40, gap: spacing.lg }
+    : { padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + 40, gap: spacing.lg };
 
-  return (
-    <View style={[s.root, { backgroundColor: colors.homeBackground }]}>
-      <Stack.Screen options={{ title: 'Research Review' }} />
-      <ScrollView
-        contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + 32, gap: spacing.lg }}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => loadCandidates(true)} />}
-      >
-        <View style={s.card}>
-          <Text style={s.title}>Public-source research</Text>
-          <Text style={s.body}>
-            Pins found by catalogue research wait here. Nothing on this screen changes the catalogue: open a source,
-            record what it confirms, then decide. Importing approved pins is a separate step.
-          </Text>
-          <Button label="Load research run (JSON)" icon="upload" variant="secondary" onPress={pickRun} />
-          {runs.length > 0 && (
-            <Text style={s.muted}>
-              Latest run {runs[0].git_commit} · {runs[0].summary?.pins ?? 0} pins · {runs[0].summary?.engineVerified ?? 0} engine-verified
-            </Text>
-          )}
-          {actionMsg && !detail && <Text style={s.notice}>{actionMsg}</Text>}
-        </View>
-
-        <SegmentedControl
-          options={[
-            { value: 'sets' as const, label: 'By set', tone: 'teal' as const },
-            { value: 'pages' as const, label: 'By page', tone: 'teal' as const },
-          ]}
-          value={tab}
-          onChange={setTab}
-        />
-
-        {tab === 'pages' ? (
-          pagesError ? <Text style={s.error}>{pagesError}</Text>
-          : pages.length === 0 ? <Text style={s.muted}>No source pages in this run.</Text>
-          : pages.map(pg => (
-            <TouchableOpacity
-              key={pg.source_url}
-              style={[s.card, s.row, { borderTopWidth: 0 }]}
-              onPress={() => openPage(pg.source_url)}
-              accessibilityRole="button"
-              accessibilityLabel={`Open page ${pageLabel(pg.source_url)}`}
-            >
-              <View style={{ flex: 1, gap: 4 }}>
-                <Text style={s.rowTitle}>{pageLabel(pg.source_url)}</Text>
-                <View style={s.chips}>
-                  <Chip label={pg.source_class ?? 'unclassified'} tone={pg.source_class === 'official' ? 'owned' : 'neutral'} size="sm" />
-                  <Chip label={`${pg.pin_count} pin${pg.pin_count === 1 ? '' : 's'}`} tone="teal" size="sm" />
-                  <Chip label={`${pg.unchecked_count} unchecked`} tone="sand" size="sm" />
-                </View>
-              </View>
-              <Feather name="chevron-right" size={18} color={colors.homeMuted} />
-            </TouchableOpacity>
-          ))
-        ) : (<>
-        <SegmentedControl
-          options={STATUS_FILTERS.map(f => ({ value: f.value, label: f.label, tone: 'teal' as const }))}
-          value={status}
-          onChange={v => setStatus(v)}
-        />
-
-        {loading ? (
-          <ActivityIndicator color={colors.homeCoral} />
-        ) : error ? (
-          <Text style={s.error}>{error}</Text>
-        ) : groups.length === 0 ? (
-          <Text style={s.muted}>No pins in this list.</Text>
-        ) : (
-          groups.map(g => (
-            <View key={g.setKey} style={s.card}>
+  const candidatePane = detail ? (
+<KeepScrollView store={scrollStore} id="pane-candidate" testID="pane-candidate" style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={paneContent}>
               <View style={s.headerRow}>
-                <Text style={[s.setTitle, { flex: 1 }]}>{g.setKey}</Text>
-                {g.setKey !== '(no set)' && (
-                  <Button label="Review set" size="compact" variant="secondary" onPress={() => openSet(g.setKey)} />
-                )}
+                <Text style={[s.title, { flex: 1 }]}>{candidateTitle(detail.candidate)}</Text>
+                <Button label="Close" variant="text" onPress={() => setDetail(null)} />
               </View>
-              {g.items.map(c => (
-                <TouchableOpacity
-                  key={c.id}
-                  style={s.row}
-                  onPress={() => openCandidate(c.id)}
-                  accessibilityRole="button"
-                  accessibilityLabel={`Open ${candidateTitle(c)}`}
-                >
-                  <View style={{ flex: 1, gap: 4 }}>
-                    <Text style={s.rowTitle}>{candidateTitle(c)}</Text>
-                    <View style={s.chips}>
-                      <Chip label={c.record_confidence} tone={confidenceTone(c.record_confidence)} size="sm" />
-                      {c.duplicate_status.startsWith('DUPLICATE') || c.duplicate_status.startsWith('PROBABLE')
-                        ? <Chip label="Already in catalogue" tone="sand" size="sm" /> : null}
-                      {c.warnings.length > 0 ? <Chip label={`${c.warnings.length} variant${c.warnings.length > 1 ? 's' : ''}`} tone="neutral" size="sm" /> : null}
-                      {c.review_reasons.some(r => r.startsWith('conflict:')) ? <Chip label="Conflict" tone="coralDeep" size="sm" /> : null}
-                    </View>
+              <View style={s.chips}>
+                <Chip label={`Identity: ${detail.candidate.record_confidence}`} tone={confidenceTone(detail.candidate.record_confidence)} />
+                <Chip label={detail.candidate.status.replace(/_/g, ' ')} tone="teal" />
+              </View>
+              {detail.candidate.review_reasons.length > 0 && <Text style={s.error}>{detail.candidate.review_reasons.join(' · ')}</Text>}
+              {detail.candidate.warnings.length > 0 && <Text style={s.muted}>{detail.candidate.warnings.join(' · ')}</Text>}
+  
+              <View style={s.card}>
+                <Text style={s.setTitle}>Proposed record</Text>
+                {Object.entries(detail.candidate.proposed).map(([k, v]) => (
+                  <View key={k} style={s.kv}>
+                    <Text style={s.k}>{k}</Text>
+                    <Text style={s.v}>{formatValue(v)}</Text>
                   </View>
-                  <Feather name="chevron-right" size={18} color={colors.homeMuted} />
-                </TouchableOpacity>
-              ))}
-            </View>
-          ))
-        )}
-        </>)}
-      </ScrollView>
+                ))}
+              </View>
+  
+              {detail.duplicatePin && (
+                <View style={s.card}>
+                  <Text style={s.setTitle}>Already in the catalogue</Text>
+                  <Text style={s.body}>
+                    {formatValue(detail.duplicatePin.pinhunt_id)} · {formatValue(detail.duplicatePin.title)} · {formatValue(detail.duplicatePin.collection)}
+                  </Text>
+                  <Text style={s.muted}>Approving this means enriching that pin later, never replacing it.</Text>
+                </View>
+              )}
+  
+              <View style={s.card}>
+                <Text style={s.setTitle}>Evidence</Text>
+                {evidenceByField(detail.evidence).map(g => (
+                  <View key={g.field} style={{ gap: 6 }}>
+                    <Text style={s.k}>{g.field}</Text>
+                    {g.items.map(e => (
+                      <View key={e.id} style={s.evidence}>
+                        <Text style={s.v}>{formatValue(e.value)}</Text>
+                        <Text style={s.muted}>
+                          {e.publisher ?? 'unknown'} · {e.source_class} · {e.method.replace(/_/g, ' ')}{e.note ? ` · ${e.note}` : ''}
+                        </Text>
+                        {safeExternalUrl(e.source_url) && (
+                          <View style={s.chips}>
+                            <Button label="Open source" size="compact" variant="text" icon="external-link" onPress={() => openSource(e.source_url)} />
+                            <Button label="Use as checked source" size="compact" variant="text" onPress={() => setCheckUrl(e.source_url ?? '')} />
+                          </View>
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                ))}
+              </View>
+  
+              <View style={s.card}>
+                <Text style={s.setTitle}>Direct check</Text>
+                <Text style={s.body}>Open a source yourself, then tick only what that page confirms.</Text>
+                <View style={s.chips}>
+                  {CHECKABLE_FIELDS.map(f => {
+                    const on = checkFields.includes(f.field);
+                    return (
+                      <TouchableOpacity
+                        key={f.field}
+                        onPress={() => setCheckFields(prev => (on ? prev.filter(x => x !== f.field) : [...prev, f.field]))}
+                        style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeInk }]}
+                        accessibilityRole="checkbox"
+                        accessibilityState={{ checked: on }}
+                      >
+                        <Text style={s.v}>{on ? '✓ ' : ''}{f.label}</Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+                <TextInput style={s.input} value={checkUrl} onChangeText={setCheckUrl} placeholder="https:// link of the page you opened"
+                  placeholderTextColor={colors.homeMuted} autoCapitalize="none" autoCorrect={false} />
+                <TextInput style={s.input} value={checkNote} onChangeText={setCheckNote} placeholder="Note (optional, 240 characters)"
+                  placeholderTextColor={colors.homeMuted} maxLength={240} />
+                <Button label="Record direct check" icon="check" loading={busy}
+                  disabled={checkFields.length === 0 || !checkUrl.trim()} onPress={recordCheck} />
+              </View>
+  
+              <View style={s.card}>
+                <Text style={s.setTitle}>Decision</Text>
+                <TextInput style={[s.input, { minHeight: 64 }]} value={notes} onChangeText={setNotes} multiline maxLength={2000}
+                  placeholder="Notes (needed for variants, rejections and more research)" placeholderTextColor={colors.homeMuted} />
+                <Button label="Approve" icon="check-circle" loading={busy} onPress={() => setConfirm('approve')} />
+                <Button label="Needs more research" variant="secondary" onPress={() => setConfirm('needs_more_research')} />
+                <Button label="Reject" variant="destructive" onPress={() => setConfirm('reject')} />
+                {actionMsg && <Text style={s.notice}>{actionMsg}</Text>}
+              </View>
+            </KeepScrollView>
+  ) : null;
 
-      {/* Preview of a run before loading it */}
-      <ConfirmDialog
-        visible={!!pendingRun}
-        title="Load this run into staging?"
-        message={pendingRun ? `${pendingRun.counts.pins} pins and ${pendingRun.counts.sets} sets with ${pendingRun.counts.evidence} evidence rows. `
-          + `${pendingRun.counts.engineVerified} engine-verified, ${pendingRun.counts.duplicates} already in the catalogue. The catalogue itself is not changed.` : undefined}
-        confirmLabel={loadingRun ? 'Loading…' : 'Load run'}
-        onConfirm={loadRun}
-        onCancel={() => setPendingRun(null)}
-      />
-
-      {/* Set view: one source beside a checklist of the set's pins */}
-      <Modal visible={!!setKey} animationType="slide" onRequestClose={() => setSetKey(null)}>
-        <ScrollView style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + 40, gap: spacing.lg }}>
+  const setPane = setKey ? (
+<KeepScrollView store={scrollStore} id="pane-set" testID="pane-set" style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={paneContent}>
           <View style={s.headerRow}>
             <Text style={[s.title, { flex: 1 }]}>{setKey}</Text>
             <Button label="Close" variant="text" onPress={() => setSetKey(null)} />
@@ -589,20 +579,11 @@ export default function ResearchReviewScreen() {
             </Text>
             {setMsg && <Text style={s.notice}>{setMsg}</Text>}
           </View>
-        </ScrollView>
-        <ConfirmDialog
-          visible={confirmSet}
-          title={`Approve ${ticked.length} ticked pin${ticked.length === 1 ? '' : 's'}?`}
-          message="This records your decision only. The catalogue is not changed until a separate import. Pins that fail the usual checks stay pending."
-          confirmLabel="Approve"
-          onConfirm={approveSet}
-          onCancel={() => setConfirmSet(false)}
-        />
-      </Modal>
+        </KeepScrollView>
+  ) : null;
 
-      {/* Page view: one source page beside its pins from every set */}
-      <Modal visible={!!pageUrl} animationType="slide" onRequestClose={() => setPageUrl(null)}>
-        <ScrollView style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + 40, gap: spacing.lg }}>
+  const pagePane = pageUrl ? (
+<KeepScrollView store={scrollStore} id="pane-page" testID="pane-page" style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={paneContent}>
           <View style={s.headerRow}>
             <Text style={[s.title, { flex: 1 }]}>{pageUrl ? pageLabel(pageUrl) : ''}</Text>
             <Button label="Close" variant="text" onPress={() => setPageUrl(null)} />
@@ -687,121 +668,224 @@ export default function ResearchReviewScreen() {
               onPress={recordPage} />
             {pageMsg && <Text style={s.notice}>{pageMsg}</Text>}
           </View>
-        </ScrollView>
-      </Modal>
+        </KeepScrollView>
+  ) : null;
 
-      {/* Candidate detail */}
-      <Modal visible={!!detail} animationType="slide" onRequestClose={() => setDetail(null)}>
-        {detail && (
-          <ScrollView style={{ backgroundColor: colors.homeBackground }} contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + 40, gap: spacing.lg }}>
-            <View style={s.headerRow}>
-              <Text style={[s.title, { flex: 1 }]}>{candidateTitle(detail.candidate)}</Text>
-              <Button label="Close" variant="text" onPress={() => setDetail(null)} />
+  const renderRows = (list: ReturnType<typeof groupBySet>) => (
+    list.length === 0 ? <Text style={s.muted}>No pins in this list.</Text> : list.map(g => (
+      <View key={g.setKey} style={s.card}>
+        <Text style={s.setTitle}>{g.setKey}</Text>
+        {g.items.map(c => (
+          <TouchableOpacity
+            key={c.id}
+            style={[s.row, wide && detail?.candidate.id === c.id && s.rowSelected]}
+            onPress={() => openCandidate(c.id)}
+            accessibilityRole="button"
+            accessibilityState={{ selected: detail?.candidate.id === c.id }}
+            accessibilityLabel={`Open ${candidateTitle(c)}`}
+          >
+            <View style={{ flex: 1, gap: 4 }}>
+              <Text style={s.rowTitle}>{candidateTitle(c)}</Text>
+              <View style={s.chips}>
+                <Chip label={c.record_confidence} tone={confidenceTone(c.record_confidence)} size="sm" />
+                {c.duplicate_status.startsWith('DUPLICATE') || c.duplicate_status.startsWith('PROBABLE')
+                  ? <Chip label="Already in catalogue" tone="sand" size="sm" /> : null}
+                {c.warnings.length > 0 ? <Chip label={`${c.warnings.length} variant${c.warnings.length > 1 ? 's' : ''}`} tone="neutral" size="sm" /> : null}
+                {c.review_reasons.some(r => r.startsWith('conflict:')) ? <Chip label="Conflict" tone="coralDeep" size="sm" /> : null}
+              </View>
             </View>
-            <View style={s.chips}>
-              <Chip label={`Identity: ${detail.candidate.record_confidence}`} tone={confidenceTone(detail.candidate.record_confidence)} />
-              <Chip label={detail.candidate.status.replace(/_/g, ' ')} tone="teal" />
-            </View>
-            {detail.candidate.review_reasons.length > 0 && <Text style={s.error}>{detail.candidate.review_reasons.join(' · ')}</Text>}
-            {detail.candidate.warnings.length > 0 && <Text style={s.muted}>{detail.candidate.warnings.join(' · ')}</Text>}
+            <Feather name="chevron-right" size={18} color={colors.homeMuted} />
+          </TouchableOpacity>
+        ))}
+      </View>
+    ))
+  );
 
-            <View style={s.card}>
-              <Text style={s.setTitle}>Proposed record</Text>
-              {Object.entries(detail.candidate.proposed).map(([k, v]) => (
-                <View key={k} style={s.kv}>
-                  <Text style={s.k}>{k}</Text>
-                  <Text style={s.v}>{formatValue(v)}</Text>
+  const listBody = (
+    <>
+      <View style={s.card}>
+          <Text style={s.title}>Public-source research</Text>
+          <Text style={s.body}>
+            Pins found by catalogue research wait here. Nothing on this screen changes the catalogue: open a source,
+            record what it confirms, then decide. Importing approved pins is a separate step.
+          </Text>
+          <Button label="Load research run (JSON)" icon="upload" variant="secondary" onPress={pickRun} />
+          {runs.length > 0 && (
+            <Text style={s.muted}>
+              Latest run {runs[0].git_commit} · {runs[0].summary?.pins ?? 0} pins · {runs[0].summary?.engineVerified ?? 0} engine-verified
+            </Text>
+          )}
+          {actionMsg && !detail && <Text style={s.notice}>{actionMsg}</Text>}
+        </View>
+
+      <SegmentedControl
+        options={[
+          { value: 'queue' as const, label: 'Queue', tone: 'teal' as const },
+          { value: 'singles' as const, label: 'OE & singles', tone: 'teal' as const },
+          { value: 'board' as const, label: 'Set Board', tone: 'teal' as const },
+        ]}
+        value={view}
+        onChange={setView}
+      />
+
+      {view === 'board' ? (
+        <>
+          <SegmentedControl
+            options={[
+              { value: 'sets' as const, label: 'By set', tone: 'teal' as const },
+              { value: 'pages' as const, label: 'By page', tone: 'teal' as const },
+            ]}
+            value={tab}
+            onChange={setTab}
+          />
+          {tab === 'sets' && (
+            <SegmentedControl
+              options={STATUS_FILTERS.map(f => ({ value: f.value, label: f.label, tone: 'teal' as const }))}
+              value={status}
+              onChange={v => setStatus(v)}
+            />
+          )}
+          {tab === 'pages' ? (
+          pagesError ? <Text style={s.error}>{pagesError}</Text>
+            : pages.length === 0 ? <Text style={s.muted}>No source pages in this run.</Text>
+            : pages.map(pg => (
+              <TouchableOpacity
+                key={pg.source_url}
+                style={[s.card, s.row, { borderTopWidth: 0 }]}
+                onPress={() => openPage(pg.source_url)}
+                accessibilityRole="button"
+                accessibilityLabel={`Open page ${pageLabel(pg.source_url)}`}
+              >
+                <View style={{ flex: 1, gap: 4 }}>
+                  <Text style={s.rowTitle}>{pageLabel(pg.source_url)}</Text>
+                  <View style={s.chips}>
+                    <Chip label={pg.source_class ?? 'unclassified'} tone={pg.source_class === 'official' ? 'owned' : 'neutral'} size="sm" />
+                    <Chip label={`${pg.pin_count} pin${pg.pin_count === 1 ? '' : 's'}`} tone="teal" size="sm" />
+                    <Chip label={`${pg.unchecked_count} unchecked`} tone="sand" size="sm" />
+                  </View>
                 </View>
-              ))}
-            </View>
+                <Feather name="chevron-right" size={18} color={colors.homeMuted} />
+              </TouchableOpacity>
+            ))
+          ) : loading ? (
+            <ActivityIndicator color={colors.homeCoral} />
+          ) : error ? (
+            <Text style={s.error}>{error}</Text>
+          ) : groups.filter(g => g.setKey !== '(no set)').length === 0 ? (
+            <Text style={s.muted}>No sets in this list.</Text>
+          ) : (
+            groups.filter(g => g.setKey !== '(no set)').map(g => (
+              <View key={g.setKey} style={[s.card, wide && setKey === g.setKey && s.cardSelected]}>
+                <View style={s.headerRow}>
+                  <View style={{ flex: 1, gap: 2 }}>
+                    <Text style={s.setTitle}>{g.setKey}</Text>
+                    <Text style={s.muted}>{g.items.length} pin{g.items.length === 1 ? '' : 's'}</Text>
+                  </View>
+                  <Button label="Review set" size="compact" variant="secondary" onPress={() => openSet(g.setKey)} />
+                </View>
+              </View>
+            ))
+          )}
+        </>
+      ) : (
+        <>
+          <SegmentedControl
+            options={STATUS_FILTERS.map(f => ({ value: f.value, label: f.label, tone: 'teal' as const }))}
+            value={status}
+            onChange={v => setStatus(v)}
+          />
+          {loading ? (
+            <ActivityIndicator color={colors.homeCoral} />
+          ) : error ? (
+            <Text style={s.error}>{error}</Text>
+          ) : renderRows(groupsForTab(view, candidates))}
+        </>
+      )}
+    </>
+  );
 
-            {detail.duplicatePin && (
-              <View style={s.card}>
-                <Text style={s.setTitle}>Already in the catalogue</Text>
-                <Text style={s.body}>
-                  {formatValue(detail.duplicatePin.pinhunt_id)} · {formatValue(detail.duplicatePin.title)} · {formatValue(detail.duplicatePin.collection)}
-                </Text>
-                <Text style={s.muted}>Approving this means enriching that pin later, never replacing it.</Text>
+  const panel = view === 'board' ? (setPane ?? pagePane) : candidatePane;
+
+  return (
+    <View style={[s.root, { backgroundColor: colors.homeBackground }]}>
+      <Stack.Screen options={{ title: 'Research Review' }} />
+      {wide ? (
+        <View style={s.split} testID="rr-split">
+          <KeepScrollView
+            store={scrollStore}
+            id={`list-${view}-${tab}`}
+            key={`list-${view}-${tab}`}
+            style={s.listCol}
+            contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + 32, gap: spacing.lg }}
+            refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => loadCandidates(true)} />}
+          >
+            {listBody}
+          </KeepScrollView>
+          <View style={[s.panelCol, { borderLeftColor: colors.homeLine }]} testID="rr-side-panel">
+            {panel ?? (
+              <View style={s.emptyPanel}>
+                <Text style={s.muted}>Select a pin, set or page to review it here.</Text>
               </View>
             )}
+          </View>
+        </View>
+      ) : (
+        <KeepScrollView
+          store={scrollStore}
+          id={`list-${view}-${tab}`}
+          key={`list-${view}-${tab}`}
+          contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + 32, gap: spacing.lg }}
+          refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => loadCandidates(true)} />}
+        >
+          {listBody}
+        </KeepScrollView>
+      )}
 
-            <View style={s.card}>
-              <Text style={s.setTitle}>Evidence</Text>
-              {evidenceByField(detail.evidence).map(g => (
-                <View key={g.field} style={{ gap: 6 }}>
-                  <Text style={s.k}>{g.field}</Text>
-                  {g.items.map(e => (
-                    <View key={e.id} style={s.evidence}>
-                      <Text style={s.v}>{formatValue(e.value)}</Text>
-                      <Text style={s.muted}>
-                        {e.publisher ?? 'unknown'} · {e.source_class} · {e.method.replace(/_/g, ' ')}{e.note ? ` · ${e.note}` : ''}
-                      </Text>
-                      {safeExternalUrl(e.source_url) && (
-                        <View style={s.chips}>
-                          <Button label="Open source" size="compact" variant="text" icon="external-link" onPress={() => openSource(e.source_url)} />
-                          <Button label="Use as checked source" size="compact" variant="text" onPress={() => setCheckUrl(e.source_url ?? '')} />
-                        </View>
-                      )}
-                    </View>
-                  ))}
-                </View>
-              ))}
-            </View>
+      {/* Preview of a run before loading it */}
+      <ConfirmDialog
+        visible={!!pendingRun}
+        title="Load this run into staging?"
+        message={pendingRun ? `${pendingRun.counts.pins} pins and ${pendingRun.counts.sets} sets with ${pendingRun.counts.evidence} evidence rows. `
+          + `${pendingRun.counts.engineVerified} engine-verified, ${pendingRun.counts.duplicates} already in the catalogue. The catalogue itself is not changed.` : undefined}
+        confirmLabel={loadingRun ? 'Loading…' : 'Load run'}
+        onConfirm={loadRun}
+        onCancel={() => setPendingRun(null)}
+      />
 
-            <View style={s.card}>
-              <Text style={s.setTitle}>Direct check</Text>
-              <Text style={s.body}>Open a source yourself, then tick only what that page confirms.</Text>
-              <View style={s.chips}>
-                {CHECKABLE_FIELDS.map(f => {
-                  const on = checkFields.includes(f.field);
-                  return (
-                    <TouchableOpacity
-                      key={f.field}
-                      onPress={() => setCheckFields(prev => (on ? prev.filter(x => x !== f.field) : [...prev, f.field]))}
-                      style={[s.toggle, on && { backgroundColor: colors.homeTealSoft, borderColor: colors.homeInk }]}
-                      accessibilityRole="checkbox"
-                      accessibilityState={{ checked: on }}
-                    >
-                      <Text style={s.v}>{on ? '✓ ' : ''}{f.label}</Text>
-                    </TouchableOpacity>
-                  );
-                })}
-              </View>
-              <TextInput style={s.input} value={checkUrl} onChangeText={setCheckUrl} placeholder="https:// link of the page you opened"
-                placeholderTextColor={colors.homeMuted} autoCapitalize="none" autoCorrect={false} />
-              <TextInput style={s.input} value={checkNote} onChangeText={setCheckNote} placeholder="Note (optional, 240 characters)"
-                placeholderTextColor={colors.homeMuted} maxLength={240} />
-              <Button label="Record direct check" icon="check" loading={busy}
-                disabled={checkFields.length === 0 || !checkUrl.trim()} onPress={recordCheck} />
-            </View>
+      {/* Narrow screens: the detail opens as a full sheet, one at a time */}
+      <Modal visible={!wide && !!setKey} animationType="slide" onRequestClose={() => setSetKey(null)}>{setPane}</Modal>
+      <Modal visible={!wide && !!pageUrl} animationType="slide" onRequestClose={() => setPageUrl(null)}>{pagePane}</Modal>
+      <Modal visible={!wide && !!detail} animationType="slide" onRequestClose={() => setDetail(null)}>{candidatePane}</Modal>
 
-            <View style={s.card}>
-              <Text style={s.setTitle}>Decision</Text>
-              <TextInput style={[s.input, { minHeight: 64 }]} value={notes} onChangeText={setNotes} multiline maxLength={2000}
-                placeholder="Notes (needed for variants, rejections and more research)" placeholderTextColor={colors.homeMuted} />
-              <Button label="Approve" icon="check-circle" loading={busy} onPress={() => setConfirm('approve')} />
-              <Button label="Needs more research" variant="secondary" onPress={() => setConfirm('needs_more_research')} />
-              <Button label="Reject" variant="destructive" onPress={() => setConfirm('reject')} />
-              {actionMsg && <Text style={s.notice}>{actionMsg}</Text>}
-            </View>
-          </ScrollView>
-        )}
-        <ConfirmDialog
-          visible={!!confirm}
-          title={confirm === 'approve' ? 'Approve this pin?' : confirm === 'reject' ? 'Reject this pin?' : 'Send back for more research?'}
-          message={confirm === 'approve' ? 'This records your decision only. The catalogue is not changed until a separate import.' : undefined}
-          confirmLabel={confirm === 'approve' ? 'Approve' : confirm === 'reject' ? 'Reject' : 'Send back'}
-          destructive={confirm === 'reject'}
-          onConfirm={() => confirm && decide(confirm)}
-          onCancel={() => setConfirm(null)}
-        />
-      </Modal>
+      <ConfirmDialog
+        visible={confirmSet}
+        title={`Approve ${ticked.length} ticked pin${ticked.length === 1 ? '' : 's'}?`}
+        message="This records your decision only. The catalogue is not changed until a separate import. Pins that fail the usual checks stay pending."
+        confirmLabel="Approve"
+        onConfirm={approveSet}
+        onCancel={() => setConfirmSet(false)}
+      />
+      <ConfirmDialog
+        visible={!!confirm}
+        title={confirm === 'approve' ? 'Approve this pin?' : confirm === 'reject' ? 'Reject this pin?' : 'Send back for more research?'}
+        message={confirm === 'approve' ? 'This records your decision only. The catalogue is not changed until a separate import.' : undefined}
+        confirmLabel={confirm === 'approve' ? 'Approve' : confirm === 'reject' ? 'Reject' : 'Send back'}
+        destructive={confirm === 'reject'}
+        onConfirm={() => confirm && decide(confirm)}
+        onCancel={() => setConfirm(null)}
+      />
     </View>
   );
 }
 
 const styles = (c: ReturnType<typeof useColors>) => StyleSheet.create({
   root: { flex: 1 },
+  split: { flex: 1, flexDirection: 'row' },
+  listCol: { flex: 2, minWidth: 0 },
+  panelCol: { flex: 3, minWidth: 0, borderLeftWidth: StyleSheet.hairlineWidth },
+  emptyPanel: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.xl },
+  cardSelected: { borderColor: c.homeInk },
+  rowSelected: { backgroundColor: c.homeAqua },
   card: { backgroundColor: c.homeSurface, borderRadius: radius.lg, borderWidth: 1, borderColor: c.homeLine, padding: spacing.lg, gap: spacing.md },
   title: { fontSize: 18, fontFamily: 'Inter_700Bold', color: c.homeInk },
   setTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold', color: c.homeInk },

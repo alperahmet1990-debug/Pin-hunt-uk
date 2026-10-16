@@ -118,6 +118,7 @@ describe('Research Review set view', () => {
   it('starts with every pin unticked, has no select-all, and confirms before approving', async () => {
     await render(<ResearchReviewScreen />);
     await waitFor(() => screen.getByText('Zazu'));
+    await fireEvent.press(screen.getByRole('tab', { name: 'Set Board' }));
     await fireEvent.press(screen.getByRole('button', { name: 'Review set' }));
     await waitFor(() => screen.getByText('Set source'));
 
@@ -170,6 +171,7 @@ describe('Research Review by page', () => {
 
   const openPage = async () => {
     await render(<ResearchReviewScreen />);
+    await fireEvent.press(await screen.findByRole('tab', { name: 'Set Board' }));
     await waitFor(() => screen.getByText('By page'));
     await fireEvent.press(screen.getByRole('tab', { name: 'By page' }));
     await fireEvent.press(await screen.findByRole('button', { name: 'Open page disneystore.com/pins' }));

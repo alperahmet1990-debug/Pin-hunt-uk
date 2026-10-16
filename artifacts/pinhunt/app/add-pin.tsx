@@ -503,6 +503,14 @@ export default function AddPinScreen() {
   };
 
   // ── Confirmation ────────────────────────────────────────────────────────────
+  // Done leaves the flow. Arriving from a scan, going back would land on the
+  // old scan result, so go Home instead (#350); otherwise return to where the
+  // collector started (Search, the catalogue, My Submissions…).
+  const finish = () => {
+    if (handoffUri || !router.canGoBack()) router.replace('/(tabs)');
+    else router.back();
+  };
+
   if (done) {
     return (
       <>
@@ -519,8 +527,9 @@ export default function AddPinScreen() {
             "{proposedName}" has been submitted for review. We'll let you know once an admin has checked it — you can track its status under My Submissions.
           </Text>
           <TouchableOpacity
-            onPress={() => router.back()}
+            onPress={finish}
             activeOpacity={0.85}
+            accessibilityRole="button"
             style={[styles.confirmBtn, { backgroundColor: colors.homeCoral, borderRadius: radius.md, shadowColor: colors.homeShadow }]}
           >
             <Text style={[styles.confirmBtnLabel, { color: colors.homeSurface }]}>Done</Text>

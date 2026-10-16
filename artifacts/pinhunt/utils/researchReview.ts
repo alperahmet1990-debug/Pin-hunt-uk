@@ -78,6 +78,32 @@ export function safeExternalUrl(url: unknown): string | null {
   }
 }
 
+// Mirrors the server's checkSourceUrl (api-server/src/lib/research-run.ts) so the
+// screen can say up front that a host will not be accepted as evidence.
+const EXCLUDED_HOST = /(^|\.)(pinandpop|pinpics|pintradingdb)\.com$/i;
+const MARKETPLACE_HOST = /(^|\.)(ebay|mercari|amazon|etsy|vinted|depop|poshmark)\./i;
+
+/** True when evidence from this URL can never count (excluded database or marketplace). */
+export function isExcludedSource(url: string | null): boolean {
+  const safe = safeExternalUrl(url);
+  if (!safe) return false;
+  const host = new URL(safe).hostname;
+  return EXCLUDED_HOST.test(host) || MARKETPLACE_HOST.test(host);
+}
+
+export type EvidenceLabel = 'checked' | 'lead' | 'excluded';
+
+/**
+ * Engine evidence is only a lead until a person has checked that URL for this
+ * pin. `evidence` is the pin's whole evidence list.
+ */
+export function evidenceLabel(e: ResearchEvidence, evidence: ResearchEvidence[]): EvidenceLabel {
+  if (isExcludedSource(e.source_url)) return 'excluded';
+  if (e.method === 'human_direct_check') return 'checked';
+  const checked = evidence.some(x => x.method === 'human_direct_check' && x.source_url === e.source_url);
+  return checked ? 'checked' : 'lead';
+}
+
 /** Group pins under their set, sets sorted by key; pins sorted by title. */
 export function groupBySet(cands: ResearchCandidate[]): Array<{ setKey: string; items: ResearchCandidate[] }> {
   const map = new Map<string, ResearchCandidate[]>();

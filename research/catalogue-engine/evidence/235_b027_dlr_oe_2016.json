@@ -1,0 +1,1892 @@
+{
+ "packet_id": "backfill-b027-dlr-oe-2016",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b027",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+   "title": "Disney California Adventure Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-09-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+   "title": "2016 Disney Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+   "title": "Disney Streets Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+   "title": "Disney Streets/Disney Parks - Street Signs Mystery Box",
+   "publisher": "Let's Go Pin Trading (fan site)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+   "title": "Disney Princess Mystery Pin Collection 2016",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-08-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+   "title": "Disney Racer Mystery Pin Collection 2016",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-12-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.imnotbad.com/2016/12/pin-release-disney-racers-mystery-set.html",
+   "title": "Pin Release: Disney Racers Mystery Set",
+   "publisher": "ImNotBad.com (fan site)",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+   "title": "Disney Parks 2016 Spinner Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+   "title": "Disney Parks 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-11-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+   "title": "New Disney Pins June 2016 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+   "title": "New Disney Pins October 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://disneypinsblog.com/new-disney-pins-may-2016-week-1/",
+   "title": "New Disney Pins May 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-diamond-celebration-event/",
+   "title": "Disneyland Diamond Celebration Event!",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+   "title": "Disneyland 60th Framed Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneyparks.disney.go.com/blog/2016/08/disney-pin-preview-new-pins-coming-to-disney-parks-in-late-summer-2016/",
+   "title": "Disney Pin Preview: New Pins Coming to Disney Parks in Late Summer 2016",
+   "publisher": "Disney Parks Blog",
+   "published_date": "2016-08-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+   "title": "A Look at New Pins Coming to Disney Parks in 2016",
+   "publisher": "Chip and Company",
+   "published_date": "2015-12-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/happy-holidays-2016-annual-passholder-pin-release/",
+   "title": "Happy Holidays 2016 Annual Passholder Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+   "title": "Disney California Adventure 15th Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-02-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+   "title": "Disney Parks 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney California Adventure Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Art Deco style mystery set of DCA attractions/areas"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Eight pins in the set"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two pins per blind box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Exclusive to the Disneyland Resort"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Blog post dated 12 Sep 2016"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-set/music-magic-memories-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2016 Disney Mystery Pin Collection (Music, Magic, Memories)",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "2016 parks mystery set themed Music, Magic, Memories"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Eight pins total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 13.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Around 13.95 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Open edition, sold until end of 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World Resort and Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Disney Parks exclusive so also at Disneyland"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Streets Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Street signs with characters behind them"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Eight pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Open edition collection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World Resort",
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2016 collection"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists eight street-sign pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-set/disney-princess-mystery-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Mystery Pin Collection 2016",
+     "source_url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "New 2016 princess mystery set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Eight different princess pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-31",
+     "source_url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Post date"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World Resort and Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-princess-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-set/disney-racers-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Racers Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Racer-themed mystery collection"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "16 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Five random pins per bag"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Per bag"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://www.imnotbad.com/2016/12/pin-release-disney-racers-mystery-set.html",
+     "method": "search_snippet",
+     "note": "Per pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-02",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Post dated 2 Dec 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World Resort and Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-racer-mystery-pin-collection-2016/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.imnotbad.com/2016/12/pin-release-disney-racers-mystery-set.html",
+     "method": "search_snippet",
+     "note": "Fan site says the set appears to be open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/disney-parks-2016-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Parks 2016 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Open edition spinner"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/oswald-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Oswald 2016 Pin (Disney Parks 2016 line)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "All 2016 logo pins open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/toy-story-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story Pin with Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Week of 26 Jun - 2 Jul 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/walt-disney-hinged-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Walt Disney Hinged Pin (Sleeping Beauty Castle)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Week of 26 Jun - 2 Jul 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/lava-i-lava-you",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lava 'I Lava You' Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/its-a-small-world-pin-on-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "it's a small world Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/grumpy-holiday",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Grumpy Holiday Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/rainbow-mickey-silhouette",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rainbow Mickey Mouse Silhouette Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-single/mickey-icon-snowflake",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Icon Snowflake Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Single-pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Week of 6-12 Nov 2016; Happy Holidays collection"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Holiday Puzzle Mystery Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Reveal/conceal mystery set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "15 pins in total (snippet text jumbled)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Listed under Disneyland Resort releases"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Week of 6-12 Nov 2016"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/carthay-circle",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Carthay Circle",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/soarin-around-the-world",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Soarin' Around the World",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/ariels-undersea-adventure",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Ariel's Undersea Adventure",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/paradise-pier",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Paradise Pier",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/mickeys-fun-wheel",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Mickey's Fun Wheel",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/cars-land",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Cars Land",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/hollywood-tower-hotel",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "The Hollywood Tower Hotel",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/dca-mystery-art-deco/grizzly-river-run",
+   "set_key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Grizzly River Run",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Listed as one of the eight designs"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR-exclusive set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Set released 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/daisy-lane",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy Lane",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Daisy Duck",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/goofy-cir",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Cir.",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/donald-blvd",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Blvd.",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/chip-rd",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip Rd.",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/pluto-ave",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto Ave.",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/minnie-lane",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Lane",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/mickey-ave",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Ave.",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe-set/disney-streets-mystery/dale-blvd",
+   "set_key": "dlr/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dale Blvd.",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Street-sign name from fan checklist of the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character inferred from street-sign name on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Dale",
+     "source_url": "https://letsgopintrading.com/DISNEYSTREETSMYSTERYBOX.HTML",
+     "method": "search_snippet",
+     "note": "Character named in sign"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/disney-parks-2016-spinner",
+   "set_key": "dlr/2016/oe-single/disney-parks-2016-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Parks 2016 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Open edition spinner"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Goofy",
+      "Donald Duck",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Features the four characters"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Spinner pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World Resort",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Released at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 13.95,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "Price when later sold at DisneyStore.com"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-spinner-pin/",
+     "method": "search_snippet",
+     "note": "2016 dated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/oswald-2016",
+   "set_key": "dlr/2016/oe-single/oswald-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Oswald 2016 Pin (Disney Parks 2016 line)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "All 2016 logo pins open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Oswald the Lucky Rabbit",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "Oswald pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "One of two resort-specific pins; Oswald for Disneyland"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-parks-2016-pins/",
+     "method": "search_snippet",
+     "note": "2016 dated line"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/toy-story-sleeping-beauty-castle",
+   "set_key": "dlr/2016/oe-single/toy-story-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Toy Story Pin with Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Exclusive to Disneyland; WDW version shows Cinderella Castle"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Shows Sleeping Beauty castle"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Toy Story pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Week of 26 Jun - 2 Jul 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/walt-disney-hinged-sleeping-beauty-castle",
+   "set_key": "dlr/2016/oe-single/walt-disney-hinged-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Walt Disney Hinged Pin (Sleeping Beauty Castle)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Hinged; castle front, Walt Disney inside"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Castle on front"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Shared release per roundup summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Week of 26 Jun - 2 Jul 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/lava-i-lava-you",
+   "set_key": "dlr/2016/oe-single/lava-i-lava-you",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lava 'I Lava You' Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "front_text",
+     "value": "I LAVA YOU",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Pin text"
+    },
+    {
+     "field": "franchise",
+     "value": "Pixar - Lava",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Pixar short Lava"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Available at both"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/its-a-small-world-pin-on-pin",
+   "set_key": "dlr/2016/oe-single/its-a-small-world-pin-on-pin",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "it's a small world Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Attraction pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin element"
+    },
+    {
+     "field": "front_text",
+     "value": "it's a small world",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Pin text"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Available at both"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/grumpy-holiday",
+   "set_key": "dlr/2016/oe-single/grumpy-holiday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Grumpy Holiday Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Grumpy",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Grumpy holiday design"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Summary lists it among shared releases that week"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/rainbow-mickey-silhouette",
+   "set_key": "dlr/2016/oe-single/rainbow-mickey-silhouette",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainbow Mickey Mouse Silhouette Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Rainbow Mickey silhouette"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Summary lists it among shared releases that week"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Week of 16-22 Oct 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/oe/mickey-icon-snowflake",
+   "set_key": "dlr/2016/oe-single/mickey-icon-snowflake",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Icon Snowflake Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Name as described in roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Mickey icon"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Glitter detailing"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland, Walt Disney World and Disney Store",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Sold at all three"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Week of 6-12 Nov 2016; Happy Holidays collection"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "field": "edition_type",
+   "searched": "DPB post; 2 queries",
+   "note": "Snippets do not label the set open edition or limited release - confirm"
+  },
+  {
+   "key": "dlr/2016/oe-set/dca-mystery-art-deco",
+   "field": "members",
+   "searched": "DPB post; 2 queries",
+   "note": "Pin names are attraction/area labels from the design list; characters on each pin not stated"
+  },
+  {
+   "key": "dlr/2016/oe-set/music-magic-memories-mystery",
+   "field": "members",
+   "searched": "DPB post; 2 queries",
+   "note": "Eight designs not named in snippets; no members created"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Member names come only from a fan checklist snippet (letsgopintrading); DPB snippet did not name designs - verify"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-princess-mystery-2016",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "Open edition not stated for this set"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-princess-mystery-2016",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Eight princesses not named in snippets; no members created"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-racers-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "16 racers not named in snippets (only a Roger Rabbit pack seen on a reseller - not used)"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-racers-mystery",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Only ImNotBad hedges 'appears to be' OE; DPB snippet silent"
+  },
+  {
+   "key": "dlr/2016/oe/walt-disney-hinged-sleeping-beauty-castle",
+   "field": "edition_type",
+   "searched": "June 2016 wk5 roundup",
+   "note": "Edition not stated in snippet - confirm OE"
+  },
+  {
+   "key": "dlr/2016/oe/grumpy-holiday",
+   "field": "release_location",
+   "searched": "Oct 2016 wk3 roundup",
+   "note": "Disneyland sale from search summary grouping only - verify"
+  },
+  {
+   "key": "dlr/2016/oe/rainbow-mickey-silhouette",
+   "field": "release_location",
+   "searched": "Oct 2016 wk3 roundup",
+   "note": "Disneyland sale from search summary grouping only - verify"
+  },
+  {
+   "key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery",
+   "field": "edition_type",
+   "searched": "Nov 2016 wk2 roundup; 2 queries",
+   "note": "Edition not stated; may be limited release - recheck for LE cell"
+  },
+  {
+   "key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery",
+   "field": "members",
+   "searched": "Nov 2016 wk2 roundup",
+   "note": "Designs not named; no members created"
+  },
+  {
+   "key": "dlr/2016/oe/stitch-2016",
+   "field": "release",
+   "searched": "DPB Disney Parks 2016 Pins; 2 queries",
+   "note": "Summary mentioned Stitch and Aurora as Disneyland-labelled items in the 2016 dated line but snippets did not name pins - verify"
+  },
+  {
+   "key": "dlr/2016/oe/toy-story-aliens",
+   "field": "release_location",
+   "searched": "June 2016 wk5 roundup",
+   "note": "Toy Story Aliens and Rex OE pins listed at Disney Parks; Disneyland sale not stated"
+  },
+  {
+   "key": "dlr/2016/oe/marie-aristocats",
+   "field": "release_location",
+   "searched": "May 2016 wk1 roundup",
+   "note": "Marie OE pin and Mickey & Minnie two-on-card icon pins listed only as 'Disney Parks' - Disneyland not stated"
+  },
+  {
+   "key": "dlr/2016/diamond-celebration-oe",
+   "field": "release_date",
+   "searched": "DPB Diamond Celebration posts",
+   "note": "Diamond Celebration OE pins (Mickey 60 logo, jeweled D, stained glass castle) and 60th framed set (9 pins, OE, 225) seen; release year (2015 vs 2016) not stated - not recorded"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "lead: Disney Royalty mystery (8 princesses + 8 princes), Limited Release, 19.95, Disneyland Aug 2016 - LE cell"
+  },
+  {
+   "key": "dlr/2016/love-letters",
+   "field": "release",
+   "searched": "Chip and Co; Disney Parks Blog preview",
+   "note": "lead: Disney Love Letters LE 3000, D character pins LE 3000 (DL only), Disney Duets, Piece of Disney History - LE cell"
+  },
+  {
+   "key": "dlr/2016/disney-grins-world-of-evil",
+   "field": "release",
+   "searched": "Disney Parks Blog Aug 2016 preview",
+   "note": "lead: Disney Grins limited-release mystery (Sep 2016) and World of Evil mystery - LE cell"
+  },
+  {
+   "key": "dlr/2016/cars-land-ap-hinged",
+   "field": "release",
+   "searched": "May 2016 wk1 roundup",
+   "note": "lead: Cars Land AP hinged pin LE 3000, DLR 5 May 2016 - LE cell"
+  },
+  {
+   "key": "dlr/2016/dumbo-75th",
+   "field": "release",
+   "searched": "Oct 2016 wk3 roundup",
+   "note": "lead: Dumbo 75th anniversary LE 2000, DL+WDW 20 Oct 2016 - LE cell"
+  },
+  {
+   "key": "dlr/2016/ap-happy-holidays-nightmare",
+   "field": "release",
+   "searched": "DPB Happy Holidays 2016 AP",
+   "note": "lead: AP Happy Holidays set LE 500, 84.95, Nightmare Before Christmas, DLR 8 Dec 2016 - LE cell"
+  },
+  {
+   "key": "dlr/2016/dca-15th-anniversary",
+   "field": "release",
+   "searched": "DPB DCA 15th post",
+   "note": "lead: DCA 15th anniversary (Feb 2016) cast member pins, one LE; plus a guest button (scope: button) - not OE"
+  },
+  {
+   "key": "dlr/2016/hidden-mickey",
+   "field": "release",
+   "searched": "DPB snippets",
+   "note": "2016 Hidden Mickey pins previewed at Pixar Party were rebranded as 2017 Hidden Mickey pins - not recorded for 2016"
+  },
+  {
+   "key": "dlr/2016/disney-parks-2017-line",
+   "field": "release",
+   "searched": "DPB Disney Parks 2017 Pins",
+   "note": "Disney Parks 2017 dated OE line began appearing early Dec 2016; already recorded in b019 (dlr/2017) - not duplicated"
+  },
+  {
+   "key": "dlr/2016/licensed",
+   "field": "release",
+   "searched": "all searches",
+   "note": "No licensed (Loungefly/BoxLunch/Hot Topic etc.) pins surfaced in this cell"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/daisy-lane",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/goofy-cir",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/donald-blvd",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/chip-rd",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/pluto-ave",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/minnie-lane",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/mickey-ave",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-streets-mystery/dale-blvd",
+   "field": "pin_name",
+   "searched": "maintainer review of B027",
+   "note": "hold: member name comes only from a pin-shop checklist (letsgopintrading.com); confirm from a publisher source before sign-off"
+  }
+ ],
+ "discovery_notes": "DLR OE 2016 backfill; 27 WebSearch calls, all search_snippet, mostly Disney Pins Blog. DLR-specific: DCA art-deco mystery (Sep 2016, 8 named designs), Oswald 2016, Toy Story castle OE, HM Holiday puzzle mystery. Shared DL/WDW OE recorded only where a snippet named Disneyland. Disney Streets members from a fan checklist only. No licensed pins found."
+}

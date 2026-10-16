@@ -1,0 +1,3736 @@
+{
+ "packet_id": "backfill-b067-lic-review",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b067",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+   "title": "Winnie the Pooh BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-enamel-pin---boxlunch-exclusive/11837826.html",
+   "title": "Loungefly Disney Winnie the Pooh Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+   "title": "Mickey Mouse Rainbow Heads BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+   "title": "Hercules Meg BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+   "title": "Princess Belle Castle BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+   "title": "WALL-E & EVE BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+   "title": "WALL-E EVE Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+   "title": "Princess Bows BoxLunch Disney Mystery Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+   "title": "Loungefly Disney Princess Bows Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+   "title": "Loungefly Princess Bows Blind box set",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+   "title": "Sleeping Beauty Happily Ever After BoxLunch Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-happily-ever-after-enamel-pin-set---boxlunch-exclusive/12446447.html",
+   "title": "Loungefly Disney Princess Sleeping Beauty Happily Ever After Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+   "title": "The Emperor's New Groove No Touchy Hot Topic Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-the-emperors-new-groove-no-touchy-enamel-pin/12707931.html",
+   "title": "Loungefly Disney The Emperor's New Groove No Touchy Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+   "title": "Captain Marvel Hot Topic Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+   "title": "Mickey 90 Years Collectible Pin Sets at JCPenney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+   "title": "Disney Handbag Collectible Pin Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02-25",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneyfashionista.com/stylish-disney-handbag-collectible-pin-series-mystery-packs/",
+   "title": "Stylish Disney Handbag Collectible Pin Series Mystery Packs",
+   "publisher": "Disney Fashionista",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+   "title": "Disney Holiday Nutcrackers Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.shopdisney.com/disney-holiday-nutcrackers-mystery-pin-set-2-pc-1488929",
+   "title": "Disney Holiday Nutcrackers Mystery Pin Set - 2-Pc.",
+   "publisher": "shopDisney",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+   "title": "Incredibles 2 Pins at Exhibition in Times Square",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.timeout.com/hong-kong/things-to-do/the-incredibles-2-special-exhibition",
+   "title": "The Incredibles 2 Special Exhibition",
+   "publisher": "Time Out Hong Kong",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+   "title": "Artland Tinker Bell, Aladdin, Maleficent, QOH, Cruella, Hag & Pooh LE 250 Pins - More Previews 9/25",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2019-09-25",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins/products/acme-artland-villain-series-cruella",
+   "title": "Acme/ Artland - Villain Series - Cruella",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+   "title": "Funko Pop! Avengers Endgame BoxLunch Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+   "title": "Funko Pop! Marvel Avengers: Endgame Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+   "title": "Avengers Attributes BoxLunch Marvel Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11-25",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-avengers-attributes-enamel-pin---boxlunch-exclusive/12558929.html",
+   "title": "Marvel Avengers Attributes Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+   "title": "Loungefly Disney Princess Mystery Buttons",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-25",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+   "title": "Loungefly Lilo and Stitch Disney Mystery Buttons",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Loungefly enamel pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-mickey-rainbow-heads",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Rainbow Heads BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "by Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-hercules-meg",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hercules Meg BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "enamel pin by Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-belle-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Princess Belle Castle BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-wall-e-and-eve",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E & EVE BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-eve-earth-day",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E EVE Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Princess Bows Blind Box Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "Loungefly named"
+    },
+    {
+     "field": "format",
+     "value": "blind box enamel pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "12 pins in collection"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "Maleficent chase pin mentioned"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04",
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "April 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-sleeping-beauty-happily-ever-after",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Princess Sleeping Beauty Happily Ever After Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-happily-ever-after-enamel-pin-set---boxlunch-exclusive/12446447.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-happily-ever-after-enamel-pin-set---boxlunch-exclusive/12446447.html",
+     "method": "search_snippet",
+     "note": "Loungefly named"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-happily-ever-after-enamel-pin-set---boxlunch-exclusive/12446447.html",
+     "method": "search_snippet",
+     "note": "set of 2"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-happily-ever-after-enamel-pin-set---boxlunch-exclusive/12446447.html",
+     "method": "search_snippet",
+     "note": "listing original price; shown discounted to 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "November 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-happily-ever-after-enamel-pin-set---boxlunch-exclusive/12446447.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-hot-topic-no-touchy",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Emperor's New Groove No Touchy Hot Topic Disney Pin",
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "created by Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/hot-topic-captain-marvel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain Marvel Hot Topic Disney Pin",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/hot-topic-captain-marvel-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain Marvel Hot Topic pin set",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB notes a later Hot Topic Captain Marvel pin set"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "April 2019"
+    },
+    {
+     "field": "price",
+     "value": 22.9,
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "set price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/jcpenney-mickey-90-heritage-1928-true-original",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Heritage 1928 True Original Pin Set",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "one of three JCPenney Mickey 90 sets"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "three different pins per set"
+    },
+    {
+     "field": "format",
+     "value": "boxed pin set, silver plated over brass",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "collectible box"
+    },
+    {
+     "field": "price",
+     "value": 60,
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "late September 2018, in store and online"
+    },
+    {
+     "field": "release_location",
+     "value": "JCPenney",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "JCPenney"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/jcpenney-mickey-90-mickey-heads",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Heads JCPenney Pin Set",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "one of three JCPenney Mickey 90 sets"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "three different pins per set"
+    },
+    {
+     "field": "format",
+     "value": "boxed pin set, silver plated over brass",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "collectible box"
+    },
+    {
+     "field": "price",
+     "value": 60,
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "late September 2018, in store and online"
+    },
+    {
+     "field": "release_location",
+     "value": "JCPenney",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "JCPenney"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/jcpenney-mickey-90-years",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey 90 Years Pin Set",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "one of three JCPenney Mickey 90 sets"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "three different pins per set"
+    },
+    {
+     "field": "format",
+     "value": "boxed pin set, silver plated over brass",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "collectible box"
+    },
+    {
+     "field": "price",
+     "value": 60,
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "late September 2018, in store and online"
+    },
+    {
+     "field": "release_location",
+     "value": "JCPenney",
+     "source_url": "https://disneypinsblog.com/mickey-90-years-collectible-pin-sets-at-jcpenney/",
+     "method": "search_snippet",
+     "note": "JCPenney"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-set/disney-handbag-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Handbag Collectible Pin Pack",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery pin pack",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "five random pins per pack"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "five randomly selected pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "16 handbag pins in collection"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "per pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-25",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "released 25 Feb 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "sold at both resorts"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "admin comment says OE; not official"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/oe-set/disney-handbag-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Handbag Collectible Pin Pack",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery pin pack",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "five random pins per pack"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "five randomly selected pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "16 handbag pins in collection"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "per pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-25",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "released 25 Feb 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "sold at both resorts"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-handbag-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "admin comment says OE; not official"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Holiday Nutcrackers Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Holiday Nutcrackers Mystery Pin Set - 2-Pc.",
+     "source_url": "https://www.shopdisney.com/disney-holiday-nutcrackers-mystery-pin-set-2-pc-1488929",
+     "method": "search_snippet",
+     "note": "shopDisney listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "8 open edition pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "8 pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "post 20 Oct 2018; box seen at Disney Springs 19 Oct"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort, Walt Disney World, shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "both resorts plus shopDisney online"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World and Disneyland",
+     "source_url": "https://www.shopdisney.com/disney-holiday-nutcrackers-mystery-pin-set-2-pc-1488929",
+     "method": "search_snippet",
+     "note": "listing says made for both resorts"
+    },
+    {
+     "field": "materials",
+     "value": "cloisonne",
+     "source_url": "https://www.shopdisney.com/disney-holiday-nutcrackers-mystery-pin-set-2-pc-1488929",
+     "method": "search_snippet",
+     "note": "listing calls them cloisonne pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/times-square-hk-incredibles-2-exhibition",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Incredibles 2 pins at exhibition in Times Square",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "five pins named"
+    },
+    {
+     "field": "release_location",
+     "value": "Times Square, Causeway Bay, Hong Kong",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "Incredibles 2 exhibition"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-29",
+     "source_url": "https://www.timeout.com/hong-kong/things-to-do/the-incredibles-2-special-exhibition",
+     "method": "search_snippet",
+     "note": "exhibition ran 29 Jun - 29 Jul 2018"
+    },
+    {
+     "field": "region",
+     "value": "Hong Kong",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "Hong Kong"
+    },
+    {
+     "field": "issuer",
+     "value": "officially licensed (not Disney Pin Trading)",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "licensed; no Pin Trading backstamp logo or rubber Mickey backs"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/artland-villain-series-le250",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "ArtLand Villain Series",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/acme-artland-villain-series-cruella",
+     "method": "search_snippet",
+     "note": "series name on retailer listing"
+    },
+    {
+     "field": "issuer",
+     "value": "ArtLand",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "ArtLand pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "forum: villain pins shipping from ArtLand late Sept 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/artland-pooh-le250",
+   "claims": [
+    {
+     "field": "issuer",
+     "value": "ArtLand",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "ArtLand pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "shipping with villain pins late Sept 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Funko Pop! Marvel Avengers: Endgame Blind Box Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Funko Pop! branding"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB says created by Loungefly"
+    },
+    {
+     "field": "format",
+     "value": "blind box enamel pin",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "enamel pin blind box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Thanos chase variant"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "one snippet dates DPB post to June 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-avengers-attributes",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Avengers Attributes Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-avengers-attributes-enamel-pin---boxlunch-exclusive/12558929.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh/pooh-and-friends",
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh",
+      "Piglet",
+      "Eeyore",
+      "Tigger"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "four characters shown"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh",
+      "Piglet",
+      "Eeyore",
+      "Tigger"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-enamel-pin---boxlunch-exclusive/11837826.html",
+     "method": "search_snippet",
+     "note": "same four characters on listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Pooh pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "post dated 22 Jul 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "2019 release"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-enamel-pin---boxlunch-exclusive/11837826.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive per listing"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1.75in x 1.75in",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-enamel-pin---boxlunch-exclusive/11837826.html",
+     "method": "search_snippet",
+     "note": "listing size"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-mickey-rainbow-heads/mickey-rainbow-heads",
+   "set_key": "lic/2019/loungefly-boxlunch-mickey-rainbow-heads",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Mickey-shaped pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey head shape outlined with colourful mini Mickey heads",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-rainbow-heads-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-hercules-meg/meg",
+   "set_key": "lic/2019/loungefly-boxlunch-hercules-meg",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Meg"
+     ],
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "Meg from Hercules"
+    },
+    {
+     "field": "main_character",
+     "value": "Meg",
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "Meg"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "gunmetal tone"
+     ],
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "gunmetal enamel pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "October 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/hercules-meg-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-belle-castle/belle-castle",
+   "set_key": "lic/2019/boxlunch-belle-castle",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Beauty and the Beast Belle"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Belle"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "lenticular"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "lenticular enamel pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "November 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-belle-castle-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-wall-e-and-eve/wall-e-and-eve",
+   "set_key": "lic/2019/boxlunch-wall-e-and-eve",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E",
+      "EVE"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "both on pin"
+    },
+    {
+     "field": "main_character",
+     "value": "WALL-E",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "WALL-E"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin with both characters"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "PVC texture"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "PVC texture"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "April 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-eve-earth-day/eve",
+   "set_key": "lic/2019/loungefly-eve-earth-day",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "EVE"
+     ],
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "EVE pin"
+    },
+    {
+     "field": "main_character",
+     "value": "EVE",
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "EVE"
+    },
+    {
+     "field": "front_text",
+     "value": "EXTRATERRESTRIAL VEGETATION EVALUATOR",
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "text on pin per snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04",
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "April 2019, for Earth Day"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 6.32,
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/wall-e-eve-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/pocahontas-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/maleficent-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "named in listing copy"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "chase pin per listing"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "forum calls it the chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/aurora-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/snow-white-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/rapunzel-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/belle-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "named in listing copy"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/jasmine-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/cinderella-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/ariel-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "named in listing copy"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/tiana-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/merida-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/mulan-bow",
+   "set_key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow named in forum lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://www.disneypinforum.com/threads/loungefly-princess-bows-blind-box-set.70581/",
+     "method": "search_snippet",
+     "note": "bow design for this character"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/princess-bows-boxlunch-disney-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Apr 2019 set"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-bows-blind-box-enamel-pin---boxlunch-exclusive/11774832.html",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-sleeping-beauty-happily-ever-after/aurora-and-phillip",
+   "set_key": "lic/2019/loungefly-boxlunch-sleeping-beauty-happily-ever-after",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora",
+      "Prince Phillip"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Aurora and Phillip pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "princess pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one pin of the couple"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Nov 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-sleeping-beauty-happily-ever-after/happily-ever-after-book",
+   "set_key": "lic/2019/loungefly-boxlunch-sleeping-beauty-happily-ever-after",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happily Ever After book",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "book pin"
+    },
+    {
+     "field": "visual_form",
+     "value": "book",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "book-shaped pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-happily-ever-after-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Nov 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-hot-topic-no-touchy/kuzco-llama",
+   "set_key": "lic/2019/loungefly-hot-topic-no-touchy",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Kuzco"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-the-emperors-new-groove-no-touchy-enamel-pin/12707931.html",
+     "method": "search_snippet",
+     "note": "Kuzco as a llama"
+    },
+    {
+     "field": "main_character",
+     "value": "Kuzco",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-the-emperors-new-groove-no-touchy-enamel-pin/12707931.html",
+     "method": "search_snippet",
+     "note": "Kuzco"
+    },
+    {
+     "field": "front_text",
+     "value": "No touchy",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-the-emperors-new-groove-no-touchy-enamel-pin/12707931.html",
+     "method": "search_snippet",
+     "note": "text on pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "December 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/the-emperors-new-groove-no-touchy-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hot Topic release"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1.25in x 1.25in",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-the-emperors-new-groove-no-touchy-enamel-pin/12707931.html",
+     "method": "search_snippet",
+     "note": "listing size"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/hot-topic-captain-marvel/captain-marvel-logo",
+   "set_key": "lic/2019/hot-topic-captain-marvel",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Captain Marvel logo"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Marvel",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Captain Marvel"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_description",
+     "value": "Captain Marvel signature logo, gold finish",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "January 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/captain-marvel-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/mickey-mouse-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/minnie-mouse-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/donald-duck-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/goofy-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/pluto-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/tinker-bell-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/winnie-the-pooh-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery/stitch-nutcracker",
+   "set_key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in series lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "dressed as a nutcracker"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "OE mystery"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://disneypinsblog.com/disney-holiday-nutcrackers-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "parks + shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/times-square-hk-incredibles-2-exhibition/mr-incredible",
+   "set_key": "lic/2018/times-square-hk-incredibles-2-exhibition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Incredible"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "named in five-pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Mr. Incredible",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "character pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "2018 exhibition"
+    },
+    {
+     "field": "release_location",
+     "value": "Times Square, Causeway Bay, Hong Kong",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "exhibition sale"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/times-square-hk-incredibles-2-exhibition/mrs-incredible",
+   "set_key": "lic/2018/times-square-hk-incredibles-2-exhibition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mrs. Incredible"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "named in five-pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Mrs. Incredible",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "character pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "2018 exhibition"
+    },
+    {
+     "field": "release_location",
+     "value": "Times Square, Causeway Bay, Hong Kong",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "exhibition sale"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/times-square-hk-incredibles-2-exhibition/violet",
+   "set_key": "lic/2018/times-square-hk-incredibles-2-exhibition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Violet"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "named in five-pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Violet",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "character pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "2018 exhibition"
+    },
+    {
+     "field": "release_location",
+     "value": "Times Square, Causeway Bay, Hong Kong",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "exhibition sale"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/times-square-hk-incredibles-2-exhibition/dash",
+   "set_key": "lic/2018/times-square-hk-incredibles-2-exhibition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dash"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "named in five-pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Dash",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "character pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "2018 exhibition"
+    },
+    {
+     "field": "release_location",
+     "value": "Times Square, Causeway Bay, Hong Kong",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "exhibition sale"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/times-square-hk-incredibles-2-exhibition/jack-jack",
+   "set_key": "lic/2018/times-square-hk-incredibles-2-exhibition",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "named in five-pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Jack-Jack",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "character pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "2018 exhibition"
+    },
+    {
+     "field": "release_location",
+     "value": "Times Square, Causeway Bay, Hong Kong",
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "exhibition sale"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "light-up"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/incredibles-2-pins-at-exhibition-in-times-square",
+     "method": "search_snippet",
+     "note": "Jack-Jack pin lights up"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/artland-villain-series-le250/maleficent",
+   "set_key": "lic/2019/artland-villain-series-le250",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "named in forum thread title"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "villain pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "Sept 2019 preview/shipping"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/artland-villain-series-le250/queen-of-hearts",
+   "set_key": "lic/2019/artland-villain-series-le250",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Queen of Hearts"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "named in forum thread title"
+    },
+    {
+     "field": "main_character",
+     "value": "Queen of Hearts",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "villain pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "Sept 2019 preview/shipping"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/artland-villain-series-le250/cruella-de-vil",
+   "set_key": "lic/2019/artland-villain-series-le250",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cruella de Vil"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "named in forum thread title"
+    },
+    {
+     "field": "main_character",
+     "value": "Cruella de Vil",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "villain pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "Sept 2019 preview/shipping"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/acme-artland-villain-series-cruella",
+     "method": "search_snippet",
+     "note": "edition 250"
+    },
+    {
+     "field": "size_mm",
+     "value": "3in round",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/acme-artland-villain-series-cruella",
+     "method": "search_snippet",
+     "note": "3 inch round"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cruella driving her car, fur coat flying",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins/products/acme-artland-villain-series-cruella",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/artland-villain-series-le250/hag",
+   "set_key": "lic/2019/artland-villain-series-le250",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "The Hag"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "named in forum thread title"
+    },
+    {
+     "field": "main_character",
+     "value": "The Hag",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "villain pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "Sept 2019 preview/shipping"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/artland-pooh-le250/winnie-the-pooh",
+   "set_key": "lic/2019/artland-pooh-le250",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "Pooh named in thread title"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "Pooh pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.disneypinforum.com/threads/artland-tinker-bell-aladdin-maleficent-qoh-cruella-hag-pooh-le-250-pins-more-previews-9-25.71175/",
+     "method": "search_snippet",
+     "note": "Sept 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery/captain-america",
+   "set_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in DPB lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain America",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Funko Pop style pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Avengers: Endgame"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery/hawkeye",
+   "set_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hawkeye"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hawkeye"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in DPB lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Hawkeye",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Funko Pop style pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Avengers: Endgame"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery/captain-marvel",
+   "set_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in DPB lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Marvel",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Funko Pop style pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Avengers: Endgame"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery/hulk",
+   "set_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in DPB lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Hulk",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Funko Pop style pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Avengers: Endgame"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery/iron-man",
+   "set_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in DPB lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Iron Man",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Funko Pop style pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Avengers: Endgame"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow-in-the-dark eyes"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "eyes glow in the dark"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery/thanos",
+   "set_key": "lic/2019/funko-boxlunch-avengers-endgame-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "named in assortment"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in DPB lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Thanos",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Funko Pop style pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "Avengers: Endgame"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/funko-pop-avengers-endgame-boxlunch-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-marvel-avengers-endgame-blind-box-enamel-pin---boxlunch-exclusive/11880966.html",
+     "method": "search_snippet",
+     "note": "chase variant"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-avengers-attributes/avengers-attributes",
+   "set_key": "lic/2019/boxlunch-avengers-attributes",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers Attributes",
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "DPB post"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "Marvel pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "list of heroic traits such as courageous and tenacious",
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "November 2019, in store and online"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.boxlunch.com/product/marvel-avengers-attributes-enamel-pin---boxlunch-exclusive/12558929.html",
+     "method": "search_snippet",
+     "note": "listing original price; price conflict"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/avengers-attributes-boxlunch-marvel-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-avengers-attributes-enamel-pin---boxlunch-exclusive/12558929.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1.125in x 1.125in",
+     "source_url": "https://www.boxlunch.com/product/marvel-avengers-attributes-enamel-pin---boxlunch-exclusive/12558929.html",
+     "method": "search_snippet",
+     "note": "listing size"
+    },
+    {
+     "field": "materials",
+     "value": "enamel, metal",
+     "source_url": "https://www.boxlunch.com/product/marvel-avengers-attributes-enamel-pin---boxlunch-exclusive/12558929.html",
+     "method": "search_snippet",
+     "note": "listing materials"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2019/boxlunch-belle-castle",
+   "field": "issuer",
+   "searched": "DPB snippet; 1 query",
+   "note": "maker not stated in snippet"
+  },
+  {
+   "key": "lic/2019/boxlunch-wall-e-and-eve",
+   "field": "issuer",
+   "searched": "DPB snippet",
+   "note": "maker not stated in snippet"
+  },
+  {
+   "key": "lic/2019/loungefly-eve-earth-day",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "snippet summary linked it to Hot Topic but retailer not clearly stated; Hot Topic also lists a separate WALL-E & EVE two-robot pin (undated)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-princess-bows-mystery/belle-bow",
+   "field": "visual_features",
+   "searched": "forum snippet",
+   "note": "forum says restock Belle bow differs (glitter bottom layer); variant not split"
+  },
+  {
+   "key": "lic/2019/loungefly-hot-topic-no-touchy",
+   "field": "scope",
+   "searched": "Hot Topic listings",
+   "note": "a separate 1.25in Disney 'No Touchy' pinback button ($1.99) exists; scope: confirmed button/badge/non-pin (Hot Topic lists it as a pinback button) - not recorded"
+  },
+  {
+   "key": "lic/2019/hot-topic-captain-marvel-pin-set",
+   "field": "pins",
+   "searched": "DPB snippet; 1 query",
+   "note": "set contents and pin count not named in snippet"
+  },
+  {
+   "key": "lic/2018/boxlunch-cri-kee/cri-kee",
+   "field": "release_date",
+   "searched": "DPB snippet 'Mulan Cri-Kee BoxLunch Disney Pin' (https://disneypinsblog.com/blogs/news/mulan-cri-kee-boxlunch-disney-pin)",
+   "note": "a second DPB post dates a BoxLunch Cri-Kee pin ($8.90) to Feb 2019 vs Jul 2018 in packet 216; possibly same pin; not duplicated"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-stitch-pineapple/stitch",
+   "field": "release_date",
+   "searched": "DPB snippet 'Stitch Eating Pineapple Hot Topic Disney Pin'",
+   "note": "another DPB post dates an OE Loungefly Stitch eating pineapple Hot Topic pin to Mar 2019 at $7.90 (216 has Jul 2018, $6.90); same or different pin unclear; not duplicated"
+  },
+  {
+   "key": "lic/2019/loungefly-hot-topic-lock-shock-barrel",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "one snippet said a Hot Topic Lock, Shock & Barrel set was Sep 2019 $10.90, another DPB post gives Dec 2020 $16.90; conflicting, not recorded"
+  },
+  {
+   "key": "lic/2019/boxlunch-earth-day-mystery",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "BoxLunch Loungefly Earth Day blind box (EVE, Forky, Stitch, Marie, Pooh, alien) undated; not recorded"
+  },
+  {
+   "key": "lic/2018/jcpenney-mickey-90-heritage-1928-true-original",
+   "field": "pins",
+   "searched": "DPB snippets; 2 queries",
+   "note": "individual pin designs not named in snippets"
+  },
+  {
+   "key": "lic/2018/jcpenney-mickey-90-mickey-heads",
+   "field": "pins",
+   "searched": "DPB snippets; 2 queries",
+   "note": "individual pin designs not named in snippets"
+  },
+  {
+   "key": "lic/2018/jcpenney-mickey-90-years",
+   "field": "pins",
+   "searched": "DPB snippets; 2 queries",
+   "note": "individual pin designs not named in snippets"
+  },
+  {
+   "key": "lic/2018/jcpenney-mickey-90-years",
+   "field": "set_name",
+   "searched": "DPB snippet",
+   "note": "third set name read as 'Mickey 90 Years' from a fragmentary snippet; confirm"
+  },
+  {
+   "key": "lic/2018/jcpenney-mickey-90-heritage-1928-true-original",
+   "field": "issuer",
+   "searched": "DPB snippet",
+   "note": "maker not stated"
+  },
+  {
+   "key": "wdw/2018/oe-set/disney-handbag-collectible-pin-pack",
+   "field": "pins",
+   "searched": "DPB + Disney Fashionista snippets; 2 queries",
+   "note": "16 designs not listed; Ariel/Ursula/Minnie seen only in blog comments and a reseller list; Fashionista says princesses, villains, Minnie"
+  },
+  {
+   "key": "dlr/2018/oe-set/disney-handbag-collectible-pin-pack",
+   "field": "pins",
+   "searched": "DPB + Disney Fashionista snippets; 2 queries",
+   "note": "16 designs not listed; Ariel/Ursula/Minnie seen only in blog comments and a reseller list; Fashionista says princesses, villains, Minnie"
+  },
+  {
+   "key": "wdw/2018/oe-set/disney-handbag-collectible-pin-pack",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "parks release, not licensed; recorded under both wdw and dlr as earlier cells did for shared parks OE"
+  },
+  {
+   "key": "dsus/2018/oe-set/holiday-nutcrackers-mystery",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "parks + shopDisney OE, not licensed; keyed dsus because shopDisney sold it; wdw/dlr cells may want cross-reference"
+  },
+  {
+   "key": "lic/2018/times-square-hk-incredibles-2-exhibition",
+   "field": "price",
+   "searched": "DPB snippet; 1 query",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "lic/2019/artland-villain-series-le250",
+   "field": "price",
+   "searched": "forum + retailer snippets",
+   "note": "only forum resale prices (~$42-45) seen; original retail not stated"
+  },
+  {
+   "key": "lic/2019/artland-villain-series-le250/queen-of-hearts",
+   "field": "size_mm",
+   "searched": "1 query",
+   "note": "a reseller calls the QOH villain pin jumbo, not 3in round; reseller not used"
+  },
+  {
+   "key": "lic/2019/artland-villain-series-le250/hag",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "no listing or description of the Hag pin beyond the forum title"
+  },
+  {
+   "key": "lic/2019/artland-pooh-le250/winnie-the-pooh",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "design not described in any snippet"
+  },
+  {
+   "key": "lic/2019/boxlunch-avengers-endgame-singles",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "BoxLunch Endgame Thor, Iron Man light-up, Stark Heart GITD pins undated; I Love You 3000 dated Jan 2020 by DPB; not recorded"
+  },
+  {
+   "key": "lic/2019/hot-topic-avengers-endgame-funko",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "only a Funko Pop (figure) Captain America Hot Topic exclusive found; no Hot Topic Endgame Funko enamel pin found"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-princess-mystery-buttons",
+   "field": "scope",
+   "searched": "DPB snippets; 3 queries",
+   "note": "scope: confirmed button/badge/non-pin (DPB: miniature buttons about one inch, one per blind bag, $2.90 each; never called enamel pins)"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-lilo-stitch-mystery-buttons",
+   "field": "scope",
+   "searched": "DPB snippets; 1 query",
+   "note": "scope: confirmed button/badge/non-pin (DPB: 12 miniature ~1in buttons, one per blind bag, $2.90 each; not enamel pins)"
+  }
+ ],
+ "discovery_notes": "Cell B067 licensed exclusion review (2015-2026). 25 standard searches, snippets only. Re-checked items left out of 206/208/214/215/216. Recorded: 2019 BoxLunch/Hot Topic pins not in 208 (Pooh, Mickey Rainbow Heads, Meg, Belle Castle, WALL-E & EVE, EVE Earth Day, Princess Bows mystery, Sleeping Beauty set, No Touchy, Captain Marvel); JCPenney Mickey 90 sets (set level); Handbag pin pack (parks OE, wdw+dlr set level); Holiday Nutcrackers (dsus OE, 8 pins); HK Times Square Incredibles 2 (lic, 5 pins); ArtLand LE 250 villains + Pooh; Funko Endgame BoxLunch mystery + Avengers Attributes. Princess and Lilo & Stitch mystery buttons (216) confirmed ~1in buttons -> excluded. Princess Bows full lineup from Disney Pin Forum only. Resellers (collectrandom, jd-collectibles, yourwdwstore, letsgopintrading, distradingpins4u) not used."
+}

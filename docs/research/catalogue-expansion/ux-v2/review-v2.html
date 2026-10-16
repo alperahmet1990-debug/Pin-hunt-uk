@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Review v2</title>
+<style>
+:root{
+  --bg:#FAF6F0; --surface:#fff; --ink:#16424A; --muted:#6E6B80; --line:#E9E2ED;
+  --lav:#E9E7F3; --primary:#6C6FA0; --primaryDeep:#4C4E78; --plum:#8C3A5C; --warm:#F5EAF0; --warmLine:#E3C9D6;
+  --ok:#2D7A5B; --okBg:#E6F2EC; --warn:#9A6200; --warnBg:#FFF3DC; --bad:#A33A35; --badBg:#FBE9E7; --ai:#4C4E78; --aiBg:#EEEDF8;
+}
+*{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif}
+a{color:var(--primaryDeep)}
+.view{display:none;min-height:100vh;flex-direction:column} .view.on{display:flex}
+/* chrome */
+.top{display:flex;align-items:center;gap:14px;padding:10px 18px;background:var(--surface);border-bottom:1px solid var(--line)}
+.top h1{font-size:16px;margin:0;white-space:nowrap}.crumb{color:var(--muted);font-size:12px}
+.seg{display:flex;background:var(--lav);border-radius:10px;padding:3px}.seg span{padding:6px 12px;border-radius:8px;font-weight:600;color:var(--muted);font-size:13px}.seg .on{background:#fff;color:var(--ink);box-shadow:0 1px 2px #0001}
+.sp{flex:1}.mock{font-size:11px;color:var(--muted);text-align:right}
+.lanes{display:flex;gap:6px;padding:10px 18px;flex-wrap:wrap;border-bottom:1px solid var(--line);background:var(--surface)}
+.lane{border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:12.5px;background:#fff;white-space:nowrap}.lane b{font-weight:700}
+.lane.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.body{flex:1;display:flex;min-height:0}
+.main{flex:1;padding:14px 18px 90px;overflow:hidden}
+.side{width:360px;border-left:1px solid var(--line);background:var(--surface);padding:14px 16px;overflow:hidden}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:10px 18px;z-index:5}
+.bar .hint{color:var(--muted);font-size:12px;flex:1}
+.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 14px;font-weight:600;font-size:13.5px;color:var(--ink);white-space:nowrap}
+.btn.pri{background:var(--ok);border-color:var(--ok);color:#fff}.btn.alt{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.ghost{background:transparent}.btn.sm{padding:5px 9px;font-size:12px;border-radius:8px}.btn.bad{color:var(--bad);border-color:#EBC3C0;background:var(--badBg)}
+.btn[disabled]{opacity:.45}
+.chip{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:2px 8px;font-size:11.5px;font-weight:600;background:var(--lav);color:var(--primaryDeep);white-space:nowrap}
+.c-off{background:var(--okBg);color:var(--ok)}.c-news{background:#EAF0F7;color:#2F5D8A}.c-fan{background:#F1EFEA;color:#6B655A}.c-warn{background:var(--warnBg);color:var(--warn)}.c-bad{background:var(--badBg);color:var(--bad)}.c-ai{background:var(--aiBg);color:var(--ai)}.c-plum{background:var(--warm);color:var(--plum)}.c-strike{background:#F1EFEA;color:#8a857a;text-decoration:line-through}
+kbd{font:11px ui-monospace,monospace;background:var(--lav);border-radius:4px;padding:1px 5px;color:var(--primaryDeep)}
+.muted{color:var(--muted)} .small{font-size:12px}.tiny{font-size:11px}
+.box{width:20px;height:20px;border:2px solid #C9C3D3;border-radius:6px;flex:none;background:#fff;display:inline-flex;align-items:center;justify-content:center}
+.box.on{background:var(--ok);border-color:var(--ok)}.box.on::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+/* compact OE rows */
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.qhead h2{font-size:15px;margin:0}
+.rows{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:28px 44px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1.3fr) 150px;gap:10px;align-items:center;padding:9px 12px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}.row.sel{background:#F3FAF6}.row.focus{box-shadow:inset 3px 0 0 var(--primary)}
+.row.hold{background:#FFFAF9}
+.thumb{width:44px;height:44px;border-radius:9px;background:var(--lav);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--muted);text-align:center;line-height:1.1;overflow:hidden}
+.thumb.none{background:#F4F1EC;border:1px dashed #D8D1C5}
+.title{font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:flex;gap:4px;flex-wrap:wrap}
+.acts{display:flex;gap:4px;justify-content:flex-end}
+.state{font-size:11.5px;font-weight:650}
+.st-ok{color:var(--ok)}.st-wait{color:var(--muted)}.st-hold{color:var(--bad)}
+.ai{background:var(--aiBg);border:1px solid #DAD8F0;border-radius:10px;padding:8px 10px;font-size:12.5px;color:#2E3060}
+.ai b{color:var(--ai)}
+.ai .lbl{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ai);margin-bottom:2px}
+.conf{background:var(--warnBg);border:1px solid #F0DDB0;border-radius:10px;padding:8px 10px;font-size:12.5px}
+/* side panel */
+.side h3{font-size:13px;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.side h3:first-child{margin-top:0}
+.ev{display:flex;gap:8px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--line);font-size:12.5px}
+.ev:first-of-type{border-top:0}.ev .u{flex:1;min-width:0}.ev .u div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fld{display:grid;grid-template-columns:96px 1fr;gap:4px 8px;font-size:12.5px}.fld .k{color:var(--muted)}
+.diff{background:var(--warnBg);border-radius:4px;padding:0 3px}
+/* sheet */
+.sheet{position:fixed;top:0;right:0;bottom:0;width:62%;background:#fff;box-shadow:-12px 0 30px #3A2E4226;display:flex;flex-direction:column;z-index:6;border-left:1px solid var(--line)}
+.sheet .sh{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.urlbar{flex:1;background:#F4F1EC;border-radius:8px;padding:6px 10px;font:12px ui-monospace,monospace;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.page{flex:1;background:repeating-linear-gradient(45deg,#FAF8F4,#FAF8F4 14px,#F4F1EC 14px,#F4F1EC 28px);display:flex;align-items:center;justify-content:center;color:#8a857a;text-align:center;padding:30px;font-size:13px}
+.sf{border-top:1px solid var(--line);padding:12px 14px;background:#fff}
+.dim{position:fixed;inset:0;background:#16424A22;z-index:5}
+/* set board */
+.nav{width:250px;border-right:1px solid var(--line);background:var(--surface);padding:12px;overflow:hidden}
+.nav .it{padding:8px 9px;border-radius:9px;margin-bottom:3px;font-size:12.5px}.nav .it.on{background:var(--lav)}
+.nav .it b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog{height:4px;background:var(--line);border-radius:4px;margin-top:5px;overflow:hidden}.prog i{display:block;height:100%;background:var(--ok)}
+.sethead{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px}
+.sethead h2{margin:2px 0;font-size:18px}
+.counts{display:flex;gap:18px;margin-top:6px;align-items:baseline}.counts b{font-size:22px}
+.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.tile{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:8px;min-height:92px;display:flex;flex-direction:column;gap:4px;position:relative}
+.tile.sel{border-color:var(--ok);background:#F3FAF6}.tile.hold{border-color:#EBC3C0;background:#FFFAF9}.tile.flag{border-color:#C9C6EA}
+.tile .n{font-weight:650;font-size:13px;line-height:1.2;padding-right:22px}.tile .box{position:absolute;top:8px;right:8px}
+.tile.miss{border-style:dashed;background:#FBF9F5;align-items:center;justify-content:center;text-align:center;color:var(--muted)}
+.tile .ft{margin-top:auto;display:flex;gap:4px;align-items:center;justify-content:space-between}
+.tile .noimg{font-size:10.5px;color:var(--muted)}
+.tile.edited{border-color:var(--primary)}
+/* edit sheet */
+.form label{display:block;font-size:11.5px;color:var(--muted);margin:10px 0 3px;font-weight:600}
+.inp{border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;font-size:14px;background:#fff}
+.inp.focus{border-color:var(--primary);box-shadow:0 0 0 3px #6C6FA022}
+.old{text-decoration:line-through;color:var(--bad)}
+/* compare */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.cmp .img{flex-direction:column;gap:4px;height:120px;border-radius:10px;background:#F4F1EC;border:1px dashed #D8D1C5;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;text-align:center;margin-bottom:8px}
+.cmp .img.has{background:var(--lav);border:0}
+.cmprow{display:grid;grid-template-columns:110px 1fr 1fr;gap:8px;font-size:12.5px;padding:5px 0;border-top:1px solid var(--line)}
+.cmprow .k{color:var(--muted)}.cmprow.d{background:var(--warnBg)}
+/* queue home */
+.lanegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.lc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.lc .big{font-size:30px;font-weight:750}.lc h3{margin:0 0 2px;font-size:14px}
+table.t{border-collapse:collapse;width:100%;font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.t td,table.t th{padding:7px 10px;border-top:1px solid var(--line);text-align:left}table.t th{background:#F7F4F9;color:var(--muted);font-weight:600;border-top:0}
+.legend{font-size:11.5px;color:var(--muted);margin-top:8px}
+.tag{position:fixed;left:12px;bottom:66px;background:var(--ink);color:#fff;border-radius:8px;padding:5px 9px;font-size:11.5px;z-index:9;opacity:.9}
+@media (max-width:1250px){ .side{width:300px} .tiles{grid-template-columns:repeat(4,minmax(0,1fr))} .row{grid-template-columns:28px 40px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1.2fr) 130px} .nav{width:210px}}
+@media (max-width:700px){ .side,.nav{display:none} .tiles{grid-template-columns:repeat(2,1fr)} .row{grid-template-columns:28px 40px 1fr} .row>*:nth-child(n+4){display:none} .sheet{width:100%} .lanegrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ VIEW 0: queue overview ============ -->
+<section class="view" id="queue">
+  <div class="top"><h1>Research Review</h1><span class="crumb">Admin › Catalogue › Research Review</span><span class="sp"></span>
+    <div class="seg"><span class="on">Queue</span><span>OE &amp; singles</span><span>Set Board</span></div><span class="sp"></span><span class="mock">Mock-up · real backlog counts (run 871 pins)<br>nothing is ticked by default</span></div>
+  <div class="main" style="padding-bottom:30px">
+    <div class="ai" style="margin-bottom:12px"><div class="lbl">Prepared before you arrive</div>
+      The 871 researched pins were checked against the live catalogue and each other, sources were tiered, and conflicts were flagged. <b>Nothing has been approved.</b> Every pin below still needs your decision.</div>
+    <div class="lanegrid">
+      <div class="lc"><span class="chip c-off">Lane A</span><h3 style="margin-top:6px">One page confirms it</h3><div class="big">184</div><div class="small muted">pins on 71 official pages (≈2.6 per page). High/Medium identity, no conflicts.</div><div class="small" style="margin-top:6px">DSUK 149 · DLR 13 · WDW 4 · other 18</div><div style="margin-top:10px"><span class="btn sm alt">Start (Set Board)</span></div></div>
+      <div class="lc"><span class="chip c-news">Lane B</span><h3 style="margin-top:6px">Quick check</h3><div class="big">37</div><div class="small muted">2+ independent news sources, or one official page with low identity confidence.</div><div class="small" style="margin-top:6px">WDW 15 · DLR 11 · DSUK 9 · other 2</div><div style="margin-top:10px"><span class="btn sm alt">Start (singles)</span></div></div>
+      <div class="lc"><span class="chip c-bad">Lane C</span><h3 style="margin-top:6px">Needs a decision</h3><div class="big">79</div><div class="small muted">Possible duplicates, conflicting values, one-pin-or-two questions. One at a time with compare.</div><div class="small" style="margin-top:6px">DLP 24 · WDW 11 · DLR 9 · DSUK 5 · other 30</div><div style="margin-top:10px"><span class="btn sm">Open</span></div></div>
+      <div class="lc" style="background:#FBF9F5"><span class="chip c-fan">Lane D</span><h3 style="margin-top:6px">Parked: needs more research</h3><div class="big muted">571</div><div class="small muted">Only one weak source, or only sources we don't count (Pinventory, forums, social). Not shown in your queue until the engine finds a usable source.</div><div class="small" style="margin-top:6px">DLP 316 · WDW 135 · DLR 75 · DSUK 18 · other 27</div></div>
+    </div>
+    <h3 style="margin:18px 0 8px;font-size:14px">Your priorities, by lane</h3>
+    <table class="t">
+      <tr><th>Line</th><th>A · one page</th><th>B · quick</th><th>C · decide</th><th>D · parked</th><th>Open editions in backlog</th></tr>
+      <tr><td><b>Walt Disney World</b></td><td>4</td><td>15</td><td>11</td><td>135</td><td><span class="chip c-bad">0: needs the OE research pass</span></td></tr>
+      <tr><td><b>Disneyland Resort</b></td><td>13</td><td>11</td><td>9</td><td>75</td><td><span class="chip c-bad">0: needs the OE research pass</span></td></tr>
+      <tr><td>Disneyland Paris</td><td>0</td><td>0</td><td>24</td><td>316</td><td>112 (no official page yet)</td></tr>
+      <tr><td>Disney Store UK</td><td>149</td><td>9</td><td>5</td><td>18</td><td>–</td></tr>
+    </table>
+    <div class="legend">Lane rules are proposals (see WORKFLOWS.md §4). Counts are from <code>staging_payload.json</code>, before deduplication against the live CTP catalogue, which needs QUERY 1.</div>
+  </div>
+</section>
+
+<!-- ============ VIEW 1: OE / singles compact ============ -->
+<section class="view" id="oe-compact">
+  <div class="top"><h1>Research Review</h1><div class="seg"><span>Queue</span><span class="on">OE &amp; singles</span><span>Set Board</span></div><span class="sp"></span>
+    <div class="seg"><span class="on">Compact</span><span>Detailed</span></div><span class="mock">Mock-up · real backlog records<br>nothing is ticked by default</span></div>
+  <div class="lanes"><span class="lane on">WDW + DLR</span><span class="lane">Standalone only</span><span class="lane">Lane A+B <b>· 43</b></span><span class="lane">Lane C <b>· 20</b></span><span class="lane">2025–2026</span><span class="lane">Has image we may show</span><span class="sp" style="flex:1"></span><span class="lane">Sort: lane, then date ↓</span></div>
+  <div class="body">
+    <div class="main">
+      <div class="conf" style="margin-bottom:10px;background:#F7F4F9;border-color:var(--line)"><b>Note:</b> the backlog has no WDW/DLR open-edition pins yet (the US pass collected LE and LR only). These are the real WDW/DLR standalone records. The OE research pass will feed this same list.</div>
+      <div class="rows">
+        <div class="row sel focus">
+          <span class="box on"></span><div class="thumb none">no image<br>held</div>
+          <div><div class="title">Deadpool 10th Anniversary Pin</div><div class="meta">WDW · Limited release · $21.99 · 27 Jan 2026</div></div>
+          <div class="chips"><span class="chip c-off">Official ✓ opened</span><span class="chip c-news">WDWNT</span></div>
+          <div class="small st-ok state">✓ You checked: name, character, edition, price</div>
+          <div class="acts"><span class="btn sm">Edit</span><span class="btn sm ghost">Skip</span></div>
+        </div>
+        <div class="row sel">
+          <span class="box on"></span><div class="thumb none">no image<br>held</div>
+          <div><div class="title">Tiana's Sweet Treats pin</div><div class="meta">WDW · Limited release · $19.99 · 23 Sep 2025</div></div>
+          <div class="chips"><span class="chip c-news">WDWNT ✓ opened</span><span class="chip c-fan">fan blog</span></div>
+          <div class="small st-ok state">✓ You checked: name, character, price, date</div>
+          <div class="acts"><span class="btn sm">Edit</span><span class="btn sm ghost">Skip</span></div>
+        </div>
+        <div class="row sel">
+          <span class="box on"></span><div class="thumb none">no image<br>held</div>
+          <div><div class="title">Aladdin &amp; Jasmine Valentine's Day 2026</div><div class="meta">WDW · Limited release · $21.99 · 27 Jan 2026</div></div>
+          <div class="chips"><span class="chip c-off">Official ✓ opened</span><span class="chip c-ai">AI: one pin, 2 characters</span></div>
+          <div class="small st-ok state">✓ You checked: one pin, both characters, name</div>
+          <div class="acts"><span class="btn sm">Edit</span><span class="btn sm ghost">Skip</span></div>
+        </div>
+        <div class="row">
+          <span class="box"></span><div class="thumb none">no image<br>held</div>
+          <div><div class="title">Expedition Everest 20th · Yeti</div><div class="meta">WDW · LE 2,000 · $24.99 · 24 Mar 2026</div></div>
+          <div class="chips"><span class="chip c-news">WDWNT</span><span class="chip c-fan">fan blog</span></div>
+          <div class="small st-wait state">Not checked yet: <a href="#">Open source ↗</a></div>
+          <div class="acts"><span class="btn sm">Edit</span><span class="btn sm ghost">Skip</span></div>
+        </div>
+        <div class="row">
+          <span class="box"></span><div class="thumb none">no image<br>held</div>
+          <div><div class="title">Dumbo 85th Anniversary</div><div class="meta">DLR · LE 4,000 · $49.99 · 6 Oct 2026</div></div>
+          <div class="chips"><span class="chip c-news">news ×3</span></div>
+          <div class="small st-wait state">Not checked yet: <a href="#">Open source ↗</a></div>
+          <div class="acts"><span class="btn sm">Edit</span><span class="btn sm ghost">Skip</span></div>
+        </div>
+        <div class="row hold">
+          <span class="box" style="opacity:.35"></span><div class="thumb none">no image<br>held</div>
+          <div><div class="title">Super Jumbo 70th Anniversary · Mickey</div><div class="meta">DLR · LE 250 · $225 · Sep 2025</div></div>
+          <div class="chips"><span class="chip c-bad">Possible duplicate</span></div>
+          <div class="small st-hold state">Held: compare with Jumbo Countdown pin</div>
+          <div class="acts"><span class="btn sm bad">Compare</span></div>
+        </div>
+        <div class="row">
+          <span class="box"></span><div class="thumb none">no image<br>held</div>
+          <div><div class="title">Sam Eagle U.S.A. 250th Anniversary</div><div class="meta">WDW · Limited release · $21.99 · 19 May 2026</div></div>
+          <div class="chips"><span class="chip c-news">WDWNT</span><span class="chip c-warn">1 source only</span></div>
+          <div class="small st-wait state">Needs a 2nd source or the card</div>
+          <div class="acts"><span class="btn sm">Edit</span><span class="btn sm ghost">Skip</span></div>
+        </div>
+      </div>
+      <div class="legend">Compact mode is one row per pin, with no empty image boxes. A pin can be ticked only after you have opened a source for it (in the side sheet), or if it's on a page you opened for another pin. A thumbnail appears only when we hold an image we're allowed to show (own photo, licensed contributor photo).</div>
+    </div>
+    <div class="side">
+      <h3>Deadpool 10th Anniversary Pin</h3>
+      <div class="fld"><span class="k">Character</span><span>Deadpool</span><span class="k">Edition</span><span>Limited release</span><span class="k">Price</span><span>$21.99 USD</span><span class="k">Released</span><span>27 Jan 2026 (WDW Pin Tuesday)</span><span class="k">Product no.</span><span>438010104492</span><span class="k">Live match</span><span class="st-ok">None found in live catalogue</span></div>
+      <h3>Evidence</h3>
+      <div class="ev"><span class="chip c-off">official</span><div class="u"><div>disneystore.com · Deadpool 10th Anniversary Pin – Limited Release</div><a href="#">Open in side sheet</a> · <span class="muted">opened 14:02 ✓</span></div></div>
+      <div class="ev"><span class="chip c-news">news</span><div class="u"><div>wdwnt.com · Disney World Pin Tuesday: Deadpool 10th…</div><a href="#">Open in side sheet</a></div></div>
+      <h3>Image</h3>
+      <div class="small">No image we may show. <a href="#">See the official photo ↗</a> (opens Disney's page; nothing is copied). <span class="muted">Image rights are recorded separately and don't affect verification.</span></div>
+      <h3>Keys</h3>
+      <div class="small muted"><kbd>J</kbd>/<kbd>K</kbd> move · <kbd>O</kbd> open source · <kbd>X</kbd> tick · <kbd>E</kbd> edit · <kbd>S</kbd> skip · <kbd>⇧V</kbd> verify ticked</div>
+    </div>
+  </div>
+  <div class="bar"><b>3 ticked</b><span class="hint">Each tick is a pin you checked against a page you opened. Unticked pins stay unverified. Skipped pins go to the back of the queue.</span><span class="btn">Send back with note</span><span class="btn pri">Verify 3 ticked pins</span></div>
+</section>
+
+<!-- ============ VIEW 2: source sheet over OE ============ -->
+<section class="view" id="oe-source">
+  <div class="top"><h1>Research Review</h1><div class="seg"><span>Queue</span><span class="on">OE &amp; singles</span><span>Set Board</span></div><span class="sp"></span><span class="mock">Mock-up</span></div>
+  <div class="lanes"><span class="lane on">WDW + DLR</span><span class="lane">Standalone only</span><span class="lane">Lane A+B · 43</span></div>
+  <div class="body"><div class="main">
+    <div class="rows">
+      <div class="row focus"><span class="box"></span><div class="thumb none">no image</div><div><div class="title">Expedition Everest 20th · Yeti</div><div class="meta">WDW · LE 2,000 · $24.99</div></div><div></div><div></div><div></div></div>
+      <div class="row"><span class="box"></span><div class="thumb none">no image</div><div><div class="title">Dumbo 85th Anniversary</div><div class="meta">DLR · LE 4,000 · $49.99</div></div><div></div><div></div><div></div></div>
+      <div class="row"><span class="box"></span><div class="thumb none">no image</div><div><div class="title">Sam Eagle U.S.A. 250th</div><div class="meta">WDW · LR · $21.99</div></div><div></div><div></div><div></div></div>
+    </div></div></div>
+  <div class="dim"></div>
+  <div class="sheet">
+    <div class="sh"><span class="btn sm">✕ Back to list</span><div class="urlbar">https://wdwnt.com/2026/03/… expedition-everest-20th-anniversary-pin …</div><span class="btn sm">Open in browser ↗</span><span class="btn sm">Next source →</span></div>
+    <div class="page">The source page loads here in an in-app browser.<br>On iPad this is a Safari view sheet; on desktop, a side panel or new tab.<br><br>You are reading the publisher's own page. PinHunt does not copy, store or reframe its text or images.</div>
+    <div class="sf">
+      <div class="small" style="margin-bottom:6px"><b>Yeti, Expedition Everest 20th.</b> Tick what this page shows <span class="muted">(nothing is pre-ticked)</span>:</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+        <span class="chip" style="background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:5px 10px"><span class="box on" style="width:14px;height:14px;border-radius:4px"></span>&nbsp;Pin name</span>
+        <span class="chip" style="background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:5px 10px"><span class="box on" style="width:14px;height:14px;border-radius:4px"></span>&nbsp;Character: Yeti</span>
+        <span class="chip" style="background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:5px 10px"><span class="box on" style="width:14px;height:14px;border-radius:4px"></span>&nbsp;LE 2,000</span>
+        <span class="chip" style="background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:5px 10px"><span class="box" style="width:14px;height:14px;border-radius:4px"></span>&nbsp;$24.99</span>
+        <span class="chip" style="background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:5px 10px"><span class="box" style="width:14px;height:14px;border-radius:4px"></span>&nbsp;24 Mar 2026</span>
+        <span class="chip c-ai" style="padding:5px 10px">Tick all 5 shown</span><span class="chip c-ai" style="padding:5px 10px">Different on the page? Edit</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center"><span class="small muted" style="flex:1">The URL is filled in for you: no copy and paste. Saved as a direct check by you, with the time.</span><span class="btn">Doesn't match</span><span class="btn alt">Save 3 checks &amp; tick pin</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIEW 3: detailed + duplicate compare ============ -->
+<section class="view" id="oe-dup">
+  <div class="top"><h1>Research Review</h1><div class="seg"><span>Queue</span><span class="on">OE &amp; singles</span><span>Set Board</span></div><span class="sp"></span>
+    <div class="seg"><span>Compact</span><span class="on">Detailed</span></div><span class="mock">Mock-up · real backlog records</span></div>
+  <div class="lanes"><span class="lane">WDW + DLR</span><span class="lane on">Lane C · needs a decision · 20</span><span class="sp" style="flex:1"></span><span class="lane">3 of 20</span><span class="btn sm">← Prev</span><span class="btn sm">Next →</span></div>
+  <div class="body"><div class="main" style="overflow:auto">
+    <div class="ai" style="margin-bottom:10px"><div class="lbl">Why this is held</div>The engine flagged <b>Super Jumbo 70th Anniversary (Mickey)</b> as a possible duplicate of <b>Jumbo Countdown Pin (Disneyland 70th)</b>: same resort, same character, same anniversary, both jumbo. <b>Suggestion: probably different pins</b>, because the edition size, price and release month all differ (3 of 3 strong fields). Your call.</div>
+    <div class="cmp">
+      <div class="card"><div class="small muted">Candidate (held)</div><b>Limited Edition Super Jumbo 70th Anniversary Pin</b>
+        <div class="img" style="margin-top:8px">No image we may show<br><a href="#">Official photo ↗ (none found)</a> · <a href="#">News photo ↗</a></div>
+        <div class="chips"><span class="chip c-news">wdwnt.com</span><span class="chip c-fan">disneybymark.com</span></div></div>
+      <div class="card"><div class="small muted">Compared with: another research candidate</div><b>Jumbo Countdown Pin (Disneyland 70th)</b>
+        <div class="img" style="margin-top:8px">No image we may show<br><a href="#">News photo ↗</a></div>
+        <div class="chips"><span class="chip c-news">wdwnt.com</span><span class="chip c-fan">disneypinsblog.com</span></div></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <div class="cmprow" style="border-top:0"><span class="k"></span><b>Super Jumbo</b><b>Jumbo Countdown</b></div>
+      <div class="cmprow"><span class="k">Character</span><span>Mickey Mouse</span><span>Mickey Mouse</span></div>
+      <div class="cmprow"><span class="k">Resort</span><span>Disneyland Resort</span><span>Disneyland Resort</span></div>
+      <div class="cmprow d"><span class="k">Edition</span><span>LE <b>250</b></span><span>LE <b>3,000</b></span></div>
+      <div class="cmprow d"><span class="k">Price</span><span><b>$225</b></span><span><b>$49.99</b></span></div>
+      <div class="cmprow d"><span class="k">Released</span><span><b>Sep 2025</b></span><span><b>Mar 2025</b></span></div>
+      <div class="cmprow"><span class="k">Set</span><span>70th Super Jumbo (1 pin)</span><span>70th Celebrate Happy (1 pin)</span></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+      <span class="btn pri">Different pins: release the hold</span><span class="btn">Same pin: keep one…</span><span class="btn">Same as a live pin…</span><span class="btn ghost">Not sure: send back</span>
+    </div>
+    <div class="legend">Your choice is saved with your name, time and a one-line reason (pre-filled from the differences, editable). Releasing the hold doesn't verify the pin: it moves back to the queue to be checked like any other.</div>
+  </div>
+  <div class="side">
+    <h3>Evidence for both</h3>
+    <div class="ev"><span class="chip c-news">news</span><div class="u"><div>wdwnt.com · Disneyland 70th anniversary &amp; Magic Key Halloween pins (Sep 2025)</div><a href="#">Open in side sheet</a> <span class="muted">· Super Jumbo</span></div></div>
+    <div class="ev"><span class="chip c-fan">fan</span><div class="u"><div>disneybymark.com · New Disneyland 70th anniversary pins…</div><a href="#">Open in side sheet</a> <span class="muted">· Super Jumbo</span></div></div>
+    <div class="ev"><span class="chip c-news">news</span><div class="u"><div>wdwnt.com · New colorful Disneyland 70th merchandise (Mar 2025)</div><a href="#">Open in side sheet</a> <span class="muted">· Countdown</span></div></div>
+    <div class="ev"><span class="chip c-fan">fan</span><div class="u"><div>disneypinsblog.com · Disneyland 70th Celebrate Happy pin releases</div><a href="#">Open in side sheet</a> <span class="muted">· Countdown</span></div></div>
+    <h3>Live catalogue</h3>
+    <div class="small">Checked against all live pins: <span class="st-ok">no match</span> on title, character + year, or product number.<br><span class="muted">When a live pin matches, its image shows here if we may display it (e.g. CTP image, licence evidence pending: shown with that label).</span></div>
+    <h3>Keys</h3><div class="small muted"><kbd>D</kbd> different · <kbd>M</kbd> same / merge · <kbd>L</kbd> same as live · <kbd>N</kbd> not sure · <kbd>→</kbd> next</div>
+  </div></div>
+</section>
+
+<!-- ============ VIEW 4: Set Board, complete mystery set ============ -->
+<section class="view" id="set-626">
+  <div class="top"><h1>Research Review</h1><div class="seg"><span>Queue</span><span>OE &amp; singles</span><span class="on">Set Board</span></div><span class="sp"></span><span class="mock">Mock-up · real backlog set<br>nothing is ticked by default</span></div>
+  <div class="body">
+    <div class="nav">
+      <div class="small muted" style="margin-bottom:6px">Lane A sets · 71 pages · <b>Disney Store</b></div>
+      <div class="it on"><b>Experiment 626 mystery set (2026)</b><span class="muted">10 of 10 · 0 verified</span><div class="prog"><i style="width:0"></i></div></div>
+      <div class="it"><b>Stitch 626 Day 2025 mystery</b><span class="muted">10 of 10 · 1 held</span><div class="prog"><i style="width:0"></i></div></div>
+      <div class="it"><b>Ducks of Disney mystery pouch</b><span class="muted">16 of 16 · 0 verified</span><div class="prog"><i style="width:0"></i></div></div>
+      <div class="it"><b>Pin Trading 25 Years mystery</b><span class="muted">10 of 10</span><div class="prog"><i style="width:0"></i></div></div>
+      <div class="it"><b>Valentine's Day 2026 mystery</b><span class="muted">10 of 10 · 3 flags</span><div class="prog"><i style="width:0"></i></div></div>
+      <div class="it"><b>Encanto mystery puzzle pin</b><span class="muted">10 of 12 · 2 missing</span><div class="prog"><i style="width:0"></i></div></div>
+      <div class="it"><b>Moana mystery puzzle pin</b><span class="muted">8 of 12 · 4 missing</span><div class="prog"><i style="width:0"></i></div></div>
+      <div class="it" style="color:var(--ok)"><b>Brush of Magic series 3</b>10 of 10 · 10 verified ✓<div class="prog"><i style="width:100%"></i></div></div>
+      <div class="small muted" style="margin-top:8px"><kbd>[</kbd> / <kbd>]</kbd> previous / next set</div>
+    </div>
+    <div class="main" style="overflow:auto">
+      <div class="sethead">
+        <div class="small muted">Disney Store · mystery blind pack (2 random of 10) · 2026 · product 438010927985</div>
+        <h2>Experiment 626 mystery pin set (626 Day 2026)</h2>
+        <div class="counts"><span><b>10</b> <span class="muted">expected</span></span><span><b>10</b> <span class="muted">identified</span></span><span><b style="color:var(--muted)">0</b> <span class="muted">missing</span></span><span><b style="color:var(--plum)">1</b> <span class="muted">flagged</span></span><span><b style="color:var(--ok)">0</b> <span class="muted">ticked</span></span><span class="sp" style="flex:1"></span><span class="btn sm alt">Open official page in side sheet</span></div>
+        <div class="ai" style="margin-top:8px"><div class="lbl">Prepared</div>All 10 characters are named on <b>one official page</b> (disneystore.asia) and one news post (dismerchandise.com). No live-catalogue match. <b>1 suggestion:</b> "627" and "Experiment 627" look like the same character listed twice.</div>
+      </div>
+      <div class="tiles">
+        <div class="tile flag"><span class="box"></span><span class="n">627 &amp; Stitch</span><span class="chip c-ai" style="align-self:flex-start">AI: name listed twice</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Angel &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Jumba Jookiba &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Kixx &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Leroy &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Reuben &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Richter &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Sinker &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Splodyhead &amp; Stitch</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+        <div class="tile"><span class="box"></span><span class="n">Stitch &amp; Yaarp</span><div class="ft"><span class="noimg">no image</span><a class="small" href="#">Edit</a></div></div>
+      </div>
+      <div class="legend">Tiles are compact when there's no image we may show. Tap a tile to tick it, or use <kbd>1</kbd>–<kbd>0</kbd>. "Select all on this page" is a button you press, never a default. Flagged tiles can be ticked after you look at the flag.</div>
+    </div>
+    <div class="side">
+      <h3>Set facts (confirm once for all pins)</h3>
+      <div class="fld"><span class="k">Type</span><span>Mystery blind pack, 2 random</span><span class="k">Designs</span><span>10</span><span class="k">Edition</span><span>Limited release <span class="chip c-warn">1 source</span></span><span class="k">Price</span><span>$34.99 <span class="chip c-warn">region varies</span></span><span class="k">Released</span><span>30 Jun 2026</span></div>
+      <h3>Evidence</h3>
+      <div class="ev"><span class="chip c-off">official</span><div class="u"><div>disneystore.asia · Experiment 626 2026 mystery pin blind pack</div><a href="#">Open in side sheet</a> · names all 10</div></div>
+      <div class="ev"><span class="chip c-news">news</span><div class="u"><div>dismerchandise.com · Experiment 626 Day 2026 mystery pin…</div><a href="#">Open in side sheet</a></div></div>
+      <h3>Conflicts</h3><div class="small">Price: USD on the news post, SGD/MYR on the official page. Tick price only for the market you saw.</div>
+      <h3>Image rights (separate)</h3><div class="small muted">Verifying facts never grants image rights. A tile shows a picture only from our own or licensed contributor photos.</div>
+    </div>
+  </div>
+  <div class="bar"><b>0 ticked</b><span class="hint">Open the page, then tick the pins it shows, or press "Select all 10 on this page".</span><span class="btn">Select all 10 on this page</span><span class="btn">Skip set</span><span class="btn pri" disabled>Verify 0 ticked pins</span></div>
+</section>
+
+<!-- ============ VIEW 5: correcting a character (edit sheet) ============ -->
+<section class="view" id="set-edit">
+  <div class="top"><h1>Research Review</h1><div class="seg"><span>Queue</span><span>OE &amp; singles</span><span class="on">Set Board</span></div><span class="sp"></span><span class="mock">Mock-up</span></div>
+  <div class="body"><div class="main" style="overflow:hidden">
+    <div class="sethead"><h2 style="font-size:16px">Experiment 626 mystery pin set (626 Day 2026)</h2><div class="counts"><span><b>10</b> expected</span><span><b>10</b> identified</span><span><b style="color:var(--ok)">9</b> ticked</span></div></div>
+    <div class="tiles">
+      <div class="tile flag edited"><span class="box"></span><span class="n">627 &amp; Stitch</span><span class="chip c-ai" style="align-self:flex-start">editing…</span></div>
+      <div class="tile sel"><span class="box on"></span><span class="n">Angel &amp; Stitch</span></div>
+      <div class="tile sel"><span class="box on"></span><span class="n">Jumba Jookiba &amp; Stitch</span></div>
+      <div class="tile sel"><span class="box on"></span><span class="n">Kixx &amp; Stitch</span></div>
+      <div class="tile sel"><span class="box on"></span><span class="n">Leroy &amp; Stitch</span></div>
+      <div class="tile sel"><span class="box on"></span><span class="n">Reuben &amp; Stitch</span></div>
+      <div class="tile sel"><span class="box on"></span><span class="n">Richter &amp; Stitch</span></div>
+      <div class="tile sel"><span class="box on"></span><span class="n">Sinker &amp; Stitch</span></div>
+    </div></div></div>
+  <div class="dim"></div>
+  <div class="sheet" style="width:46%">
+    <div class="sh"><b style="flex:1">Edit pin · 627 &amp; Stitch</b><span class="btn sm">✕</span></div>
+    <div style="padding:14px;overflow:auto;flex:1" class="form">
+      <div class="ai"><div class="lbl">Suggested correction</div>Characters reads <b>"627; Experiment 627; Stitch"</b>. "627" and "Experiment 627" are the same character, so the pin would show 3 characters instead of 2. <b>Suggest: "Experiment 627; Stitch"</b>, matching how the other 9 pins in this set are named.<div style="margin-top:6px" class="small">Based on: the set's own naming pattern · official page (disneystore.asia) · <a href="#">open it ↗</a></div><div style="margin-top:8px;display:flex;gap:6px"><span class="btn sm alt">Use suggestion</span><span class="btn sm">Ignore</span></div></div>
+      <label>Characters (one per line)</label>
+      <div class="inp focus">Experiment 627<br>Stitch</div>
+      <div class="tiny muted" style="margin-top:3px">Was: <span class="old">627 · Experiment 627 · Stitch</span></div>
+      <label>Pin name</label>
+      <div class="inp">Experiment 627 &amp; Stitch – Experiment 626 mystery pin set (626 Day 2026)</div>
+      <div class="tiny muted" style="margin-top:3px">Was: <span class="old">627 &amp; Experiment 627 &amp; Stitch – …</span> (updated to match)</div>
+      <label>Main character</label><div class="inp">Experiment 627</div>
+      <label>Where did you see this?</label>
+      <div class="inp" style="font:12px ui-monospace,monospace;color:#555">disneystore.asia/experiment-626-2026-mystery-pin-blind-pack…  <span class="chip c-off">official · opened 14:09</span></div>
+      <label>Note (optional)</label><div class="inp muted">Duplicate character name removed</div>
+    </div>
+    <div class="sf" style="display:flex;gap:8px;align-items:center"><span class="small muted" style="flex:1">Saved as a correction by you: old value, new value, source and time. The engine's original stays in the audit trail.</span><span class="btn">Cancel</span><span class="btn alt">Save correction</span><span class="btn pri">Save &amp; tick</span></div>
+  </div>
+</section>
+
+<!-- ============ VIEW 6: missing member ============ -->
+<section class="view" id="set-missing">
+  <div class="top"><h1>Research Review</h1><div class="seg"><span>Queue</span><span>OE &amp; singles</span><span class="on">Set Board</span></div><span class="sp"></span><span class="mock">Mock-up · real backlog set</span></div>
+  <div class="body"><div class="main" style="overflow:hidden">
+    <div class="sethead">
+      <div class="small muted">Disney Store UK/EU · mystery puzzle-piece pins · 2024 · £14 · product 438018033930</div>
+      <h2>Encanto Limited Edition Mystery Puzzle Pin</h2>
+      <div class="counts"><span><b>12</b> <span class="muted">expected</span></span><span><b>10</b> <span class="muted">identified</span></span><span><b style="color:var(--bad)">2</b> <span class="muted">missing</span></span><span><b style="color:var(--plum)">2</b> <span class="muted">one pin or two?</span></span></div>
+      <div class="conf" style="margin-top:8px"><b>Sources:</b> 1 official page (disneystore.eu). 47 other claims come from Disney Pinventory, which we don't count as evidence (its terms forbid automated use), so they are shown only as leads.</div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><span class="box"></span><span class="n">Alma</span></div>
+      <div class="tile"><span class="box"></span><span class="n">Antonio</span></div>
+      <div class="tile"><span class="box"></span><span class="n">Bruno</span></div>
+      <div class="tile"><span class="box"></span><span class="n">Camilo</span></div>
+      <div class="tile"><span class="box"></span><span class="n">Dolores</span></div>
+      <div class="tile"><span class="box"></span><span class="n">Isabela</span></div>
+      <div class="tile flag"><span class="box"></span><span class="n">Julieta &amp; Agustín</span><span class="chip c-plum" style="align-self:flex-start">1 pin or 2?</span></div>
+      <div class="tile"><span class="box"></span><span class="n">Luisa</span></div>
+      <div class="tile"><span class="box"></span><span class="n">Mirabel</span><span class="chip c-warn" style="align-self:flex-start">no date</span></div>
+      <div class="tile flag"><span class="box"></span><span class="n">Pepa &amp; Félix</span><span class="chip c-plum" style="align-self:flex-start">1 pin or 2?</span></div>
+      <div class="tile miss" style="border-color:var(--primary);background:#fff"><b style="color:var(--ink)">Slot 11</b><span class="small">adding…</span></div>
+      <div class="tile miss"><b>? Slot 12</b><span class="small">+ Add the character you see</span></div>
+    </div></div></div>
+  <div class="dim"></div>
+  <div class="sheet" style="width:44%">
+    <div class="sh"><b style="flex:1">Add missing pin · slot 11 of 12</b><span class="btn sm">✕</span></div>
+    <div style="padding:14px;overflow:auto;flex:1" class="form">
+      <label>Character(s) on the pin</label>
+      <div class="inp focus">Casita<span style="border-left:2px solid var(--primary);margin-left:1px">&nbsp;</span></div>
+      <div class="tiny muted" style="margin-top:3px">Illustrative entry: type what the checklist or page shows. Suggestions come from the set's franchise character list, never from excluded sources.</div>
+      <label>Inherited from the set (change if different)</label>
+      <div class="fld" style="background:#F7F4F9;border-radius:9px;padding:8px"><span class="k">Set</span><span>Encanto LE Mystery Puzzle Pin</span><span class="k">Edition</span><span>Limited edition</span><span class="k">Price</span><span>£14 (pack)</span><span class="k">Released</span><span>4 Oct 2024</span><span class="k">Pin name</span><span>Casita – Encanto Limited Edition Mystery Puzzle Pin (auto)</span></div>
+      <label>Where did you see it?</label>
+      <div class="inp" style="font:12px ui-monospace,monospace;color:#555">disneystore.eu/encanto-limited-edition-mystery-puzzle-pin-438018033930.html <span class="chip c-off">official · opened</span></div>
+      <div class="ai" style="margin-top:12px"><div class="lbl">Check before saving</div>No live pin or other candidate named "Casita" in an Encanto set. The new pin will be <b>unverified</b> until you tick and verify it like the others.</div>
+    </div>
+    <div class="sf" style="display:flex;gap:8px;align-items:center"><span class="small muted" style="flex:1">Creates a reviewer-added candidate in this set, attributed to you, with the page as its evidence.</span><span class="btn">Cancel</span><span class="btn alt">Add pin (11 of 12)</span></div>
+  </div>
+</section>
+
+<div class="tag" id="tag"></div>
+<script>
+const v=(new URLSearchParams(location.search).get('view'))||'queue';
+(document.getElementById(v)||document.getElementById('queue')).classList.add('on');
+const names={queue:'Queue overview',"oe-compact":'OE & singles · compact',"oe-source":'Source sheet',"oe-dup":'Duplicate compare',"set-626":'Set Board · complete set',"set-edit":'Correct a character',"set-missing":'Add a missing member'};
+if(new URLSearchParams(location.search).get('shot'))document.getElementById('tag').style.display='none';document.getElementById('tag').textContent='Mock-up: '+(names[v]||v)+' · switch with ?view='+Object.keys(names).join(' | ');
+</script>
+</body>
+</html>

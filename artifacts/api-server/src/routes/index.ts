@@ -14,6 +14,7 @@ import contributePinImageRouter from "./contribute-pin-image";
 import pinSubmissionsRouter from "./pin-submissions";
 import researchReviewRouter from "./research-review";
 import researchImportRouter from "./research-import";
+import researchCatalogueRouter from "./research-catalogue";
 
 const router: IRouter = Router();
 
@@ -32,5 +33,6 @@ router.use(contributePinImageRouter);
 router.use(pinSubmissionsRouter);
 router.use(researchReviewRouter);
 router.use(researchImportRouter);
+router.use(researchCatalogueRouter);
 
 export default router;

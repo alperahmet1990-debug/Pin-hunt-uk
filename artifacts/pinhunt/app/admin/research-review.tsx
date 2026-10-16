@@ -35,6 +35,9 @@ import { radius, spacing } from '@/constants/theme';
 import { KeepScrollView } from '@/components/research/KeepScrollView';
 import { FieldTickBar } from '@/components/research/FieldTickBar';
 import { groupsForTab, isWideLayout, type ReviewTab } from '@/utils/researchLayout';
+import CatalogueBrowser from '@/components/research/CatalogueBrowser';
+import PreviewBanner from '@/components/research/PreviewBanner';
+import { isStaticResearchPreview, previewApi } from '@/lib/researchPreview';
 import {
   CHECKABLE_FIELDS,
   MAX_SET_BATCH,
@@ -108,7 +111,7 @@ export default function ResearchReviewScreen() {
   const [confirmSet, setConfirmSet] = useState(false);
 
   // Page view: one source page, with its pins from every set. Pins always start unticked.
-  const [view, setView] = useState<ReviewTab>('queue');
+  const [view, setView] = useState<ReviewTab>(isStaticResearchPreview ? 'catalogue' : 'queue');
   const [tab, setTab] = useState<'sets' | 'pages'>('sets');
   const [pages, setPages] = useState<ResearchPage[]>([]);
   const [pagesError, setPagesError] = useState<string | null>(null);
@@ -121,6 +124,8 @@ export default function ResearchReviewScreen() {
   const [pageMsg, setPageMsg] = useState<string | null>(null);
 
   const api = useCallback(async (path: string, init?: RequestInit) => {
+    // Static web preview: answered in the browser from bundled research data, nothing is sent anywhere.
+    if (isStaticResearchPreview) return previewApi(path, init);
     const resp = await fetch(`${API_BASE}${path}`, { ...init, headers: headers() });
     const data = await resp.json().catch(() => ({}));
     if (!resp.ok) {
@@ -770,6 +775,7 @@ export default function ResearchReviewScreen() {
 
   const listBody = (
     <>
+      {isStaticResearchPreview && <PreviewBanner />}
       <View style={s.card}>
           <Text style={s.title}>Public-source research</Text>
           <Text style={s.body}>
@@ -790,12 +796,15 @@ export default function ResearchReviewScreen() {
           { value: 'queue' as const, label: 'Queue', tone: 'teal' as const },
           { value: 'singles' as const, label: 'OE & singles', tone: 'teal' as const },
           { value: 'board' as const, label: 'Set Board', tone: 'teal' as const },
+          { value: 'catalogue' as const, label: 'Catalogue', tone: 'teal' as const },
         ]}
         value={view}
         onChange={setView}
       />
 
-      {view === 'board' ? (
+      {view === 'catalogue' ? (
+        <CatalogueBrowser api={api} runId={runId} onOpen={openCandidate} />
+      ) : view === 'board' ? (
         <>
           <SegmentedControl
             options={[
@@ -888,13 +897,16 @@ export default function ResearchReviewScreen() {
           >
             {listBody}
           </KeepScrollView>
-          <View style={[s.panelCol, { borderLeftColor: colors.homeLine }]} testID="rr-side-panel">
-            {panel ?? (
-              <View style={s.emptyPanel}>
-                <Text style={s.muted}>Select a pin, set or page to review it here.</Text>
-              </View>
-            )}
-          </View>
+          {/* Catalogue uses the full width until a pin is opened */}
+          {(view !== 'catalogue' || panel) && (
+            <View style={[s.panelCol, { borderLeftColor: colors.homeLine }]} testID="rr-side-panel">
+              {panel ?? (
+                <View style={s.emptyPanel}>
+                  <Text style={s.muted}>Select a pin, set or page to review it here.</Text>
+                </View>
+              )}
+            </View>
+          )}
         </View>
       ) : (
         <KeepScrollView

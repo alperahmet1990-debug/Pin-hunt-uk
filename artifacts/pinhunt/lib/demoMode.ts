@@ -15,6 +15,13 @@ export const isDemoMode =
   !isSupabaseConfigured && process.env.EXPO_PUBLIC_DEMO_MODE === '1';
 
 /**
+ * Admin preview (scripts/research-review-preview.mjs): EXPO_PUBLIC_DEMO_ADMIN=1 makes the demo
+ * account an App Creator so admin screens can be previewed against a local mock API. Demo mode
+ * only, so it can never apply to a build that talks to Supabase.
+ */
+export const isDemoAdmin = isDemoMode && process.env.EXPO_PUBLIC_DEMO_ADMIN === '1';
+
+/**
  * Large-collection demo (UX-051, #159): EXPO_PUBLIC_DEMO_PINS=2000 swaps the
  * mock catalogue for a generated one of that size, and a fresh install's
  * collection for a collector holding most of it (mock-data/largeFixture.ts).
@@ -53,7 +60,7 @@ export const DEMO_PROFILE: Profile = {
   allowTradeRequests: true,
   allowMessages: true,
   profileVisibility: 'public',
-  isAdmin: false,
+  isAdmin: isDemoAdmin,
   createdAt: EPOCH,
   updatedAt: EPOCH,
   hasLocationSet: false,

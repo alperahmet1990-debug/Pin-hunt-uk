@@ -1,6 +1,8 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import {
   FlatList,
+  type StyleProp,
+  type ViewStyle,
   Modal,
   Platform,
   StyleSheet,
@@ -10,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
@@ -24,7 +27,10 @@ import { BulkSelectBar, BULK_BAR_HEIGHT } from '@/components/BulkSelectBar';
 import { usePinSelection } from '@/hooks/usePinSelection';
 import { ConfirmDialog, IconButton, PinGrid, PinTile, ScreenContainer, Sheet } from '@/components/ui';
 import { ScreenHeader } from '@/components/ui/ScreenHeader';
-import { BOARD_SORT_OPTIONS, sortBoardPins, type BoardSort } from '@/utils/boardSort';
+import { BOARD_SORT_OPTIONS, boardStats, sortBoardPins, type BoardPinSort } from '@/utils/boardSort';
+import { COLLECTION_VIEW_KEY, type CollectionView } from '@/utils/collectionBoards';
+import { CollectionSummary } from '@/components/CollectionSummary';
+import { pinTileLabel } from '@/components/ui/PinTile';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
@@ -65,15 +71,31 @@ export default function BoardDetailScreen() {
   const [renameVisible, setRenameVisible] = useState(false);
   const [newName, setNewName] = useState('');
   const [pinToRemove, setPinToRemove] = useState<CataloguePin | null>(null);
-  const [sort, setSort] = useState<BoardSort>('recent');
+  const [sort, setSort] = useState<BoardPinSort>('recent');
   const [sortVisible, setSortVisible] = useState(false);
+  const [searchActive, setSearchActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  // Grid or list, shared with My Collection's boards (UX-067b).
+  const [view, setView] = useState<CollectionView>('grid');
+  useEffect(() => {
+    AsyncStorage.getItem(COLLECTION_VIEW_KEY)
+      .then(saved => { if (saved === 'grid' || saved === 'list') setView(saved); })
+      .catch(() => {});
+  }, []);
+  const changeView = (next: CollectionView) => {
+    setView(next);
+    AsyncStorage.setItem(COLLECTION_VIEW_KEY, next).catch(() => {});
+  };
 
   const board = getBoardById(id ?? '');
   const boardPins = board ? getBoardPins(board) : [];
   const sortedPins = useMemo(
-    () => (board ? sortBoardPins(boardPins, board.pinIds, sort) : []),
-    [board, boardPins, sort],
+    () => (board
+      ? sortBoardPins(boardPins, board.pinIds, sort, collection).filter(p => pinMatchesAddSearch(p, searchQuery))
+      : []),
+    [board, boardPins, sort, collection, searchQuery],
   );
+  const stats = boardStats(boardPins, collection);
   const sortLabel = BOARD_SORT_OPTIONS.find(o => o.value === sort)?.label ?? '';
 
   useEffect(() => {
@@ -160,51 +182,66 @@ export default function BoardDetailScreen() {
     setPinToRemove(pin);
   };
 
-  return (
-    <ScreenContainer edges={{ top: false, bottom: false }}>
-      <Stack.Screen options={{ headerShown: false }} />
+  const openOrToggle = (item: CataloguePin) => {
+    if (selection.active) selection.toggle(item.id);
+    else if (!editMode) router.push({ pathname: '/pin/[id]', params: { id: item.id } });
+  };
 
-      <View style={[styles.header, { borderBottomColor: colors.homeLine }]}>
-        <ScreenHeader
-          style={styles.headerTop}
-          right={board.isCustom ? (
-            editMode ? (
-              <TouchableOpacity
-                onPress={() => setEditMode(false)}
-                activeOpacity={0.85}
-                style={[styles.doneBtn, { backgroundColor: colors.homeCoral }]}
-              >
-                <Text style={[styles.doneBtnLabel, { color: colors.homeSurface }]}>Done</Text>
-              </TouchableOpacity>
-            ) : (
-              <IconButton
-                icon="more-horizontal"
-                accessibilityLabel="Board options"
-                variant="tinted"
-                onPress={() => setMenuVisible(true)}
-              />
-            )
-          ) : undefined}
-        />
+  const removeControl = (item: CataloguePin, style: StyleProp<ViewStyle>) => (
+    <TouchableOpacity
+      onPress={() => handleRemovePin(item)}
+      hitSlop={8}
+      accessibilityRole="button"
+      accessibilityLabel={`Remove ${item.title} from this board`}
+      style={[style, { backgroundColor: colors.destructive }]}
+    >
+      <Feather name="minus" size={16} color="#fff" />
+    </TouchableOpacity>
+  );
 
-        <Text style={[styles.boardTitle, { color: colors.homeInk }]} numberOfLines={2}>
+  const coverControl = (item: CataloguePin, isCover: boolean, style: StyleProp<ViewStyle>) => (
+    <TouchableOpacity
+      onPress={() => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        setBoardThumbnail(board.id, isCover ? undefined : item.id);
+      }}
+      hitSlop={8}
+      accessibilityRole="button"
+      accessibilityLabel={isCover ? `Remove ${item.title} as board cover` : `Set ${item.title} as board cover`}
+      accessibilityState={{ selected: isCover }}
+      style={[style, { backgroundColor: isCover ? colors.homeCoral : 'rgba(0,0,0,0.55)' }]}
+    >
+      <Feather name="image" size={14} color="#fff" />
+    </TouchableOpacity>
+  );
+
+  const noMatches = (
+    <Text style={[styles.noMatches, { color: colors.homeMuted }]}>No pins on this board match "{searchQuery.trim()}".</Text>
+  );
+
+  const listHeader = (
+    <View style={styles.listHeader}>
+        <Text style={[styles.eyebrow, { color: colors.homeSand }]}>{board.isCustom ? 'BOARD' : 'SUGGESTED BOARD'}</Text>
+        <Text accessibilityRole="header" style={[styles.boardTitle, { color: colors.homeInk }]} numberOfLines={2}>
           {board.name}
         </Text>
+        {!board.isCustom && (
+          <View style={[styles.suggestedChip, { backgroundColor: colors.homeInk + '1E' }]}>
+            <Feather name="zap" size={10} color={colors.homeInk} />
+            <Text style={[styles.suggestedChipText, { color: colors.homeInk }]}>
+              Auto-updated from your collection
+            </Text>
+          </View>
+        )}
 
-        <View style={styles.metaRow}>
-          <Text style={[styles.pinCount, { color: colors.homeMuted }]}>
-            {boardPins.length} {boardPins.length === 1 ? 'pin' : 'pins'}
-          </Text>
-          {!board.isCustom && (
-            <View style={[styles.suggestedChip, { backgroundColor: colors.homeInk + '1E' }]}>
-              <Feather name="zap" size={10} color={colors.homeInk} />
-              <Text style={[styles.suggestedChipText, { color: colors.homeInk }]}>
-                Auto-updated from your collection
-              </Text>
-            </View>
-          )}
-        </View>
-
+        <CollectionSummary
+          style={styles.summary}
+          stats={[
+            { value: stats.pins, label: stats.pins === 1 ? 'Pin' : 'Pins', icon: 'map-pin' },
+            { value: stats.forTrade, label: 'For Trade', icon: 'repeat', tone: 'trade' },
+            { value: stats.duplicates, label: 'Duplicates', icon: 'copy' },
+          ]}
+        />
         {board.isCustom && !editMode && !selection.active && boardPins.length > 0 && (
           <View style={styles.actionsRow}>
             <TouchableOpacity
@@ -216,7 +253,7 @@ export default function BoardDetailScreen() {
               <Text style={[styles.addBtnText, { color: colors.homeSurface }]}>Add Pins</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setEditMode(true)}
+              onPress={() => { setSearchActive(false); setSearchQuery(''); setEditMode(true); }}
               style={[styles.editBtn, { backgroundColor: colors.homeAqua }]}
               activeOpacity={0.85}
             >
@@ -226,24 +263,39 @@ export default function BoardDetailScreen() {
           </View>
         )}
 
-        {!editMode && !selection.active && boardPins.length > 1 && (
+        {!editMode && !selection.active && boardPins.length > 0 && (
           <View style={styles.toolRow}>
-            <TouchableOpacity
-              onPress={() => setSortVisible(true)}
-              accessibilityRole="button"
-              accessibilityLabel={`Sort: ${sortLabel}`}
-              style={styles.sortBtn}
-            >
-              <Feather name="bar-chart-2" size={14} color={colors.homeMuted} style={{ transform: [{ rotate: '90deg' }] }} />
-              <Text style={[styles.sortBtnText, { color: colors.homeMuted }]}>Sort: <Text style={{ color: colors.homeInk }}>{sortLabel}</Text></Text>
-              <Feather name="chevron-down" size={14} color={colors.homeMuted} />
-            </TouchableOpacity>
-            {board.isCustom && (
-              <TouchableOpacity onPress={selection.start} accessibilityRole="button" accessibilityLabel="Select pins" style={styles.sortBtn}>
-                <Feather name="check-square" size={14} color={colors.homeInk} />
-                <Text style={[styles.sortBtnText, { color: colors.homeInk }]}>Select</Text>
+            <View style={[styles.viewToggle, { backgroundColor: colors.homeAqua }]} accessibilityRole="radiogroup">
+              {(['grid', 'list'] as const).map(v => (
+                <TouchableOpacity
+                  key={v}
+                  onPress={() => changeView(v)}
+                  accessibilityRole="radio"
+                  accessibilityLabel={v === 'grid' ? 'Grid view' : 'List view'}
+                  accessibilityState={{ selected: view === v }}
+                  style={[styles.viewToggleBtn, view === v && { backgroundColor: colors.homeSurface }]}
+                >
+                  <Feather name={v === 'grid' ? 'grid' : 'list'} size={17} color={view === v ? colors.homeCoral : colors.homeMuted} />
+                </TouchableOpacity>
+              ))}
+            </View>
+            <View style={styles.toolRight}>
+              {board.isCustom && (
+                <TouchableOpacity onPress={selection.start} accessibilityRole="button" accessibilityLabel="Select pins" style={styles.sortBtn}>
+                  <Feather name="check-square" size={15} color={colors.homeInk} />
+                  <Text style={[styles.sortBtnText, { color: colors.homeInk }]}>Select</Text>
+                </TouchableOpacity>
+              )}
+              <TouchableOpacity
+                onPress={() => setSortVisible(true)}
+                accessibilityRole="button"
+                accessibilityLabel={`Sort: ${sortLabel}`}
+                style={styles.sortBtn}
+              >
+                <Text style={[styles.sortBtnText, { color: colors.homeCoral }]} numberOfLines={1}>{sortLabel}</Text>
+                <Feather name="chevron-down" size={16} color={colors.homeCoral} />
               </TouchableOpacity>
-            )}
+            </View>
           </View>
         )}
         {selection.active && (
@@ -264,27 +316,169 @@ export default function BoardDetailScreen() {
             Tap − to remove a pin, or the picture icon to make it the board cover.
           </Text>
         )}
+    </View>
+  );
+
+  return (
+    <ScreenContainer edges={{ top: false, bottom: false }}>
+      <Stack.Screen options={{ headerShown: false }} />
+
+      <View style={styles.header}>
+        <ScreenHeader
+          style={styles.headerTop}
+          right={<>
+          {!editMode && boardPins.length > 0 && (
+            <IconButton
+              icon={searchActive ? 'x' : 'search'}
+              accessibilityLabel={searchActive ? 'Close search' : 'Search this board'}
+              variant="tinted"
+              active={searchActive}
+              onPress={() => {
+                setSearchActive(!searchActive);
+                setSearchQuery('');
+              }}
+            />
+          )}
+          {board.isCustom ? (
+            editMode ? (
+              <TouchableOpacity
+                onPress={() => setEditMode(false)}
+                activeOpacity={0.85}
+                style={[styles.doneBtn, { backgroundColor: colors.homeCoral }]}
+              >
+                <Text style={[styles.doneBtnLabel, { color: colors.homeSurface }]}>Done</Text>
+              </TouchableOpacity>
+            ) : (
+              <IconButton
+                icon="more-horizontal"
+                accessibilityLabel="Board options"
+                variant="tinted"
+                onPress={() => setMenuVisible(true)}
+              />
+            )
+          ) : null}
+          </>}
+        >
+          {searchActive ? (
+            <View style={[styles.searchBox, { backgroundColor: colors.homeAqua }]}>
+              <Feather name="search" size={15} color={colors.homeMuted} />
+              <TextInput
+                value={searchQuery}
+                onChangeText={setSearchQuery}
+                placeholder="Search this board"
+                placeholderTextColor={colors.homeMuted}
+                accessibilityLabel="Search this board"
+                style={[styles.searchInput, { color: colors.homeInk }]}
+                returnKeyType="search"
+                autoCorrect={false}
+                autoFocus
+              />
+            </View>
+          ) : <View style={{ flex: 1 }} />}
+        </ScreenHeader>
       </View>
 
       {boardPins.length === 0 ? (
-        <EmptyState
-          icon="grid"
-          title="No pins on this board yet"
-          subtitle={
-            board.isCustom
-              ? 'Tap Add Pins to add owned pins to this board.'
-              : 'Add pins from this set to your Owned list and they will appear here automatically.'
-          }
-          actionLabel={board.isCustom ? 'Add Pins' : undefined}
-          onAction={board.isCustom ? () => setAddModalVisible(true) : undefined}
+        <View style={{ flex: 1 }}>
+          {listHeader}
+          <EmptyState
+            icon="grid"
+            title="No pins on this board yet"
+            subtitle={
+              board.isCustom
+                ? 'Tap Add Pins to add owned pins to this board.'
+                : 'Add pins from this set to your Owned list and they will appear here automatically.'
+            }
+            actionLabel={board.isCustom ? 'Add Pins' : undefined}
+            onAction={board.isCustom ? () => setAddModalVisible(true) : undefined}
+          />
+        </View>
+      ) : view === 'list' ? (
+        <FlatList
+          data={sortedPins}
+          keyExtractor={p => p.id}
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={listHeader}
+          ListEmptyComponent={noMatches}
+          contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: botPad + (selection.active ? BULK_BAR_HEIGHT : 0) }}
+          extraData={[selection.selected, editMode, board.thumbnailPinId]}
+          renderItem={({ item }) => {
+            const isCover = board.thumbnailPinId === item.id;
+            const entry = collection[item.id];
+            const selecting = selection.active;
+            const copies = entry?.quantity ?? 0;
+            return (
+              <View style={[styles.pinRow, { backgroundColor: colors.homeSurface, borderColor: selecting && selection.has(item.id) ? colors.homeCoral : colors.homeLine }]}>
+                <TouchableOpacity
+                  onPress={() => openOrToggle(item)}
+                  onLongPress={editMode || selecting ? undefined : () => pinActions.open(item)}
+                  activeOpacity={editMode ? 1 : 0.85}
+                  accessibilityRole={selecting ? 'checkbox' : 'button'}
+                  accessibilityState={selecting ? { checked: selection.has(item.id) } : undefined}
+                  accessibilityLabel={pinTileLabel({ title: item.title, status: entry?.status === 'for_trade' ? 'for_trade' : undefined, copies: editMode ? undefined : copies })}
+                  {...(editMode || selecting ? {} : pinActions.a11y(item))}
+                  style={styles.pinRowMain}
+                >
+                  <View style={[styles.rowFrame, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+                    <View style={[styles.rowInner, { backgroundColor: colors.homeSurface }]}>
+                      <PinImage source={getPinImageSource(item)} accessible={false} style={styles.rowImage} contentFit="contain" />
+                    </View>
+                  </View>
+                  <View style={{ flex: 1, minWidth: 0 }}>
+                    <Text style={[styles.rowTitle, { color: colors.homeInk }]} numberOfLines={2}>{item.title}</Text>
+                    {item.collection ? (
+                      <Text style={[styles.rowMeta, { color: colors.homeMuted }]} numberOfLines={1}>{item.collection}</Text>
+                    ) : null}
+                    <View style={styles.rowChips}>
+                      {entry?.status === 'for_trade' && (
+                        <View style={[styles.rowChip, { backgroundColor: colors.forTrade }]}>
+                          <Feather name="repeat" size={10} color={colors.homeSurface} />
+                          <Text style={[styles.rowChipText, { color: colors.homeSurface }]}>For Trade</Text>
+                        </View>
+                      )}
+                      {!editMode && copies > 1 && (
+                        <View style={[styles.rowChip, { backgroundColor: colors.homeInk }]}>
+                          <Text style={[styles.rowChipText, { color: colors.homeSurface }]}>×{copies}</Text>
+                        </View>
+                      )}
+                      {!editMode && isCover && (
+                        <View style={[styles.rowChip, { backgroundColor: colors.homeCoral }]}>
+                          <Feather name="image" size={10} color={colors.homeSurface} />
+                          <Text style={[styles.rowChipText, { color: colors.homeSurface }]}>Cover</Text>
+                        </View>
+                      )}
+                    </View>
+                  </View>
+                  {selecting && (
+                    <View
+                      pointerEvents="none"
+                      style={[styles.rowSelect, selection.has(item.id)
+                        ? { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }
+                        : { borderColor: colors.homeLine }]}
+                    >
+                      {selection.has(item.id) && <Feather name="check" size={12} color={colors.homeSurface} />}
+                    </View>
+                  )}
+                </TouchableOpacity>
+                {editMode && (
+                  <View style={styles.rowEdit}>
+                    {coverControl(item, isCover, styles.rowControl)}
+                    {removeControl(item, styles.rowControl)}
+                  </View>
+                )}
+              </View>
+            );
+          }}
         />
       ) : (
         <PinGrid
           data={sortedPins}
           keyExtractor={p => p.id}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingTop: 12, paddingBottom: botPad + (selection.active ? BULK_BAR_HEIGHT : 0) }}
-          extraData={selection.selected}
+          ListHeaderComponent={listHeader}
+          ListEmptyComponent={noMatches}
+          contentContainerStyle={{ paddingBottom: botPad + (selection.active ? BULK_BAR_HEIGHT : 0) }}
+          extraData={[selection.selected, editMode, board.thumbnailPinId]}
           renderTile={(item, size) => {
             const isCover = board.thumbnailPinId === item.id;
             return (
@@ -293,13 +487,12 @@ export default function BoardDetailScreen() {
                   title={item.title}
                   imageUrl={item.imageUrl}
                   size={size}
+                  framed
+                  status={collection[item.id]?.status === 'for_trade' ? 'for_trade' : undefined}
                   copies={editMode ? undefined : collection[item.id]?.quantity}
                   // Edit mode only acts through the two controls below, never the tile.
                   selected={selection.active ? selection.has(item.id) : undefined}
-                  onPress={() => {
-                    if (selection.active) selection.toggle(item.id);
-                    else if (!editMode) router.push({ pathname: '/pin/[id]', params: { id: item.id } });
-                  }}
+                  onPress={() => openOrToggle(item)}
                   onLongPress={editMode || selection.active ? undefined : () => pinActions.open(item)}
                   {...(editMode || selection.active ? {} : pinActions.a11y(item))}
                 />
@@ -310,32 +503,8 @@ export default function BoardDetailScreen() {
                   </View>
                 )}
                 {/* Remove and cover are siblings with their own 44 pt targets (UX-019). */}
-                {editMode && (
-                  <TouchableOpacity
-                    onPress={() => handleRemovePin(item)}
-                    hitSlop={8}
-                    accessibilityRole="button"
-                    accessibilityLabel={`Remove ${item.title} from this board`}
-                    style={[styles.editControl, styles.removeControl, { backgroundColor: colors.destructive }]}
-                  >
-                    <Feather name="minus" size={16} color="#fff" />
-                  </TouchableOpacity>
-                )}
-                {editMode && (
-                  <TouchableOpacity
-                    onPress={() => {
-                      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                      setBoardThumbnail(board.id, isCover ? undefined : item.id);
-                    }}
-                    hitSlop={8}
-                    accessibilityRole="button"
-                    accessibilityLabel={isCover ? `Remove ${item.title} as board cover` : `Set ${item.title} as board cover`}
-                    accessibilityState={{ selected: isCover }}
-                    style={[styles.editControl, styles.coverControl, { backgroundColor: isCover ? colors.homeCoral : 'rgba(0,0,0,0.55)' }]}
-                  >
-                    <Feather name="image" size={14} color="#fff" />
-                  </TouchableOpacity>
-                )}
+                {editMode && removeControl(item, [styles.editControl, styles.removeControl])}
+                {editMode && coverControl(item, isCover, [styles.editControl, styles.coverControl])}
               </View>
             );
           }}
@@ -542,15 +711,18 @@ const styles = StyleSheet.create({
   notFound: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
   notFoundText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   // Header
-  header: { paddingHorizontal: spacing.lg, paddingBottom: spacing.md, borderBottomWidth: StyleSheet.hairlineWidth, gap: spacing.sm },
+  header: { paddingHorizontal: spacing.lg },
+  searchBox: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 6, height: 44, borderRadius: 22, paddingHorizontal: spacing.md },
+  searchInput: { flex: 1, height: '100%', fontSize: 15, fontFamily: 'Inter_500Medium' },
+  listHeader: { gap: spacing.sm, paddingTop: spacing.xs, paddingBottom: spacing.md },
+  eyebrow: { fontSize: 11, fontFamily: 'Inter_700Bold', letterSpacing: 1.2, marginTop: spacing.xs },
   // ScreenHeader sits inside the padded header box.
   headerTop: { paddingHorizontal: 0, paddingBottom: 0 },
   doneBtn: { paddingHorizontal: spacing.lg, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   doneBtnLabel: { fontSize: 13.5, fontFamily: 'Inter_700Bold' },
-  boardTitle: { fontSize: 21, lineHeight: 26, fontFamily: 'Inter_700Bold', letterSpacing: -0.4, marginTop: spacing.sm },
-  metaRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flexWrap: 'wrap' },
-  pinCount: { fontSize: 13, fontFamily: 'Inter_500Medium' },
-  suggestedChip: { flexDirection: 'row', alignItems: 'center', gap: 4, borderRadius: 6, paddingHorizontal: 7, paddingVertical: 3 },
+  boardTitle: { fontSize: 26, lineHeight: 31, fontFamily: 'Inter_700Bold', letterSpacing: -0.5, marginTop: -4 },
+  suggestedChip: { flexDirection: 'row', alignItems: 'center', gap: 4, borderRadius: 6, paddingHorizontal: 7, paddingVertical: 3, alignSelf: 'flex-start' },
+  summary: { marginTop: spacing.xs },
   suggestedChipText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   actionsRow: { flexDirection: 'row', gap: spacing.sm, marginTop: 2 },
   addBtn: {
@@ -569,8 +741,26 @@ const styles = StyleSheet.create({
   editBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: spacing.md, height: 40, borderRadius: radius.md },
   editBtnText: { fontSize: 13.5, fontFamily: 'Inter_700Bold' },
   toolRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
-  sortBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', minHeight: 44 },
-  sortBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  toolRight: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, flexShrink: 1 },
+  viewToggle: { flexDirection: 'row', borderRadius: 999, padding: 3 },
+  viewToggleBtn: { width: 44, height: 36, borderRadius: 999, alignItems: 'center', justifyContent: 'center' },
+  sortBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, minHeight: 44, flexShrink: 1 },
+  sortBtnText: { fontSize: 14, fontFamily: 'Inter_600SemiBold', flexShrink: 1 },
+  noMatches: { fontSize: 14, fontFamily: 'Inter_500Medium', textAlign: 'center', paddingVertical: spacing.xl },
+  // List view: one row per pin, the photo in the same tile-within-a-tile frame.
+  pinRow: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderRadius: radius.lg, marginBottom: spacing.sm, paddingRight: spacing.sm },
+  pinRowMain: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: spacing.md, padding: spacing.sm },
+  rowFrame: { width: 64, height: 64, borderRadius: radius.md, borderWidth: 1, padding: 4 },
+  rowInner: { flex: 1, borderRadius: radius.sm, overflow: 'hidden', padding: 3 },
+  rowImage: { width: '100%', height: '100%' },
+  rowTitle: { fontSize: 14.5, lineHeight: 19, fontFamily: 'Inter_700Bold' },
+  rowMeta: { fontSize: 12.5, fontFamily: 'Inter_500Medium', marginTop: 2 },
+  rowChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 4, marginTop: 4 },
+  rowChip: { flexDirection: 'row', alignItems: 'center', gap: 3, borderRadius: radius.pill, paddingHorizontal: 6, paddingVertical: 2 },
+  rowChipText: { fontSize: 10.5, fontFamily: 'Inter_700Bold' },
+  rowSelect: { width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
+  rowEdit: { flexDirection: 'row', gap: spacing.md, paddingRight: spacing.xs },
+  rowControl: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center' },
   editHint: { fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18, marginTop: 4 },
   // Grid: edit controls sit on opposite top corners, 28 pt + 8 pt slop = 44 pt targets
   editControl: { position: 'absolute', top: 6, width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },

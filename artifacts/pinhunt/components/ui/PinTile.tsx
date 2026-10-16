@@ -5,6 +5,7 @@
  *   top-right    collection status (Owned ✓, For Trade ⇄, ISO bookmark)
  *   bottom-right selection tick (select mode) or the quick-add "+"
  *   bottom-left  "Missing" tag on a set's pins you don't have (with a dashed outline)
+ * `framed` puts the photo on a white square inside the lilac frame (boards).
  * Screen readers hear one label: "Title, Owned, 2 copies, photo needed".
  * Images go through expo-image (memory + disk cache).
  */
@@ -43,6 +44,11 @@ export interface PinTileProps {
   status?: CollectionStatus;
   /** Copies owned; ×N top-left when above 1. */
   copies?: number;
+  /**
+   * Tile-within-a-tile (UX-067b, #342): the photo sits on a white inner square
+   * inside the lilac frame, like the board cards on My Collection.
+   */
+  framed?: boolean;
   /** Fade the artwork (e.g. a pin that can't be picked); markers stay full strength. */
   dimmed?: boolean;
   /**
@@ -74,7 +80,7 @@ export function pinTileLabel(p: Pick<PinTileProps, 'title' | 'status' | 'copies'
 
 export function PinTile(props: PinTileProps) {
   const {
-    title, displayTitle, titleLines = 1, imageUrl, size, onPress, onLongPress, status, copies, dimmed, missing, photoNeeded,
+    title, displayTitle, titleLines = 1, imageUrl, size, onPress, onLongPress, status, copies, framed, dimmed, missing, photoNeeded,
     selected, selectionDisabled, onQuickAdd, quickAddLabel, accessibilityActions, onAccessibilityAction,
   } = props;
   const colors = useColors();
@@ -101,11 +107,18 @@ export function PinTile(props: PinTileProps) {
           style={[
             styles.imageWrap,
             { width: size, height: size, backgroundColor: colors.homeAqua, opacity: dimmed ? 0.5 : 1 },
+            framed && [styles.frame, { borderColor: colors.homeLine }],
             missing && [styles.missingOutline, { borderColor: colors.homeMuted }],
           ]}
         >
           {/* The tile is read as one element, so the artwork itself stays silent. */}
-          <PinImage source={source} accessible={false} style={styles.image} contentFit="contain" transition={120} />
+          {framed ? (
+            <View style={[styles.inner, { backgroundColor: colors.homeSurface }]}>
+              <PinImage source={source} accessible={false} style={styles.image} contentFit="contain" transition={120} />
+            </View>
+          ) : (
+            <PinImage source={source} accessible={false} style={styles.image} contentFit="contain" transition={120} />
+          )}
         </View>
         {selected && <View pointerEvents="none" style={[styles.selectedRing, { width: size, height: size, borderColor: colors.homeCoral }]} />}
         {marker && (
@@ -164,6 +177,8 @@ export function PinTile(props: PinTileProps) {
 const styles = StyleSheet.create({
   imageWrap: { borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', padding: spacing.sm, overflow: 'hidden' },
   image: { width: '100%', height: '100%' },
+  frame: { borderRadius: radius.lg, borderWidth: 1, padding: 5 },
+  inner: { width: '100%', height: '100%', borderRadius: radius.sm, padding: spacing.xs, overflow: 'hidden' },
   selectedRing: { position: 'absolute', top: 0, left: 0, borderWidth: 2.5, borderRadius: radius.md },
   statusMarker: { position: 'absolute', top: 5, right: 5, width: 16, height: 16, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
   copies: { position: 'absolute', top: 5, left: 5, borderRadius: radius.pill, paddingHorizontal: 5, paddingVertical: 1 },

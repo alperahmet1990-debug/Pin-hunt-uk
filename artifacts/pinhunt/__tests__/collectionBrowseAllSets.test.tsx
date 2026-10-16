@@ -55,7 +55,7 @@ describe('Collection → Sets: Browse all sets (UX-025)', () => {
     expect(mockPush).toHaveBeenCalledWith('/browse-catalogue');
   });
 
-  it('offers Add pins you own in the empty state when no set is started (UX-055)', async () => {
+  it('offers Add from catalogue in the empty state when no set is started (UX-055)', async () => {
     // Collection opens on All (B-P1-03); these are about the Sets tab.
     mockTab = 'sets';
     mockCollection = {};
@@ -63,7 +63,7 @@ describe('Collection → Sets: Browse all sets (UX-025)', () => {
     expect(screen.getByText('No sets started')).toBeTruthy();
     // Only the empty-state button, not the end-of-list row as well.
     expect(screen.queryByRole('button', { name: /^Browse all sets\./ })).toBeNull();
-    await fireEvent.press(screen.getByText('Add pins you own'));
+    await fireEvent.press(screen.getByText('Add from catalogue'));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/browse-catalogue', params: { mode: 'add' } });
   });
 

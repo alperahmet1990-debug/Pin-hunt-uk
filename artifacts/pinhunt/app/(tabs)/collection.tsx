@@ -21,7 +21,7 @@ import { useProfile } from '@/context/ProfileContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
-import { ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
+import { ADD_PINS_LABEL, ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
 import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
@@ -704,10 +704,10 @@ export default function CollectionScreen() {
       }
       return (
         <View>
-          <EmptyState icon="camera" title="No pins yet" subtitle="Scan a pin, or search the catalogue and add the ones you own." actionLabel="Scan a pin" onAction={() => router.push('/(tabs)/scan')} />
-          <View style={{ marginHorizontal: -16 }}>
-            <LinkRow icon="search" label="Search for a pin" detail="Find one pin in the catalogue" onPress={() => router.push('/search')} colors={colors} />
-            <LinkRow icon="grid" label="Add pins you own" detail="Select many from the catalogue" onPress={() => router.push(ADD_PINS_ROUTE)} colors={colors} />
+          <EmptyState icon="camera" title="No pins yet" subtitle="Scan a pin, or add the ones you own from the catalogue." actionLabel="Scan a pin" onAction={() => router.push('/(tabs)/scan')} />
+          {/* The same two ways in as the + menu (#353). */}
+          <View style={s.emptySecondary}>
+            <Button label={ADD_PINS_LABEL} icon="grid" variant="secondary" size="compact" fullWidth={false} onPress={() => router.push(ADD_PINS_ROUTE)} />
           </View>
         </View>
       );
@@ -717,7 +717,7 @@ export default function CollectionScreen() {
       if (setProgressFilter !== 'all') {
         return <EmptyState icon="bookmark" title="No sets found" subtitle="No sets match this progress filter." actionLabel="Show all sets" onAction={() => setSetProgressFilter('all')} />;
       }
-      return <EmptyState icon="bookmark" title="No sets started" subtitle="Sets appear here automatically once you own a pin from one." actionLabel="Add pins you own" onAction={() => router.push(ADD_PINS_ROUTE)} />;
+      return <EmptyState icon="bookmark" title="No sets started" subtitle="Sets appear here automatically once you own a pin from one." actionLabel={ADD_PINS_LABEL} onAction={() => router.push(ADD_PINS_ROUTE)} />;
     }
     if (activeTab === 'traders') {
       if (searchActive && searchQuery || traderFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
@@ -838,42 +838,25 @@ export default function CollectionScreen() {
 
       {/* Add Menu Modal */}
       <Sheet visible={addModalVisible} onClose={() => setAddModalVisible(false)} title="Add to Collection">
-        {/* Building a collection: many at once first, then one at a time (UX-055). */}
-        <TouchableOpacity
-          style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
-          accessibilityRole="button"
-          onPress={() => { setAddModalVisible(false); router.push(ADD_PINS_ROUTE); }}
-        >
-          <Feather name="grid" size={24} color={colors.homeInk} />
-          <View style={{ flex: 1 }}>
-            <Text style={[s.addMenuText, { color: colors.homeInk }]}>Add pins you own</Text>
-            <Text style={[s.addMenuSub, { color: colors.homeMuted }]}>Select many from the catalogue</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
-          accessibilityRole="button"
-          onPress={() => { setAddModalVisible(false); router.push('/(tabs)/scan'); }}
-        >
-          <Feather name="camera" size={24} color={colors.homeInk} />
-          <Text style={[s.addMenuText, { color: colors.homeInk }]}>Scan a pin</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[s.addMenuItem, { borderBottomColor: colors.homeLine }]}
-          accessibilityRole="button"
-          onPress={() => { setAddModalVisible(false); router.push('/search'); }}
-        >
-          <Feather name="search" size={24} color={colors.homeInk} />
-          <Text style={[s.addMenuText, { color: colors.homeInk }]}>Search for a pin</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[s.addMenuItem, { borderBottomWidth: 0 }]}
-          accessibilityRole="button"
-          onPress={() => { setAddModalVisible(false); setCreateBoardVisible(true); }}
-        >
-          <Feather name="folder-plus" size={24} color={colors.homeInk} />
-          <Text style={[s.addMenuText, { color: colors.homeInk }]}>Create Board</Text>
-        </TouchableOpacity>
+        {/* Three ways in, one door to the catalogue (#353). */}
+        {([
+          { icon: 'camera', label: 'Scan a pin', sub: 'Point your camera at a pin', go: () => router.push('/(tabs)/scan') },
+          { icon: 'grid', label: ADD_PINS_LABEL, sub: 'Search or browse sets, then add one or many', go: () => router.push(ADD_PINS_ROUTE) },
+          { icon: 'folder-plus', label: 'New board', sub: 'Group pins however you like', go: () => setCreateBoardVisible(true) },
+        ] as const).map((item, i, all) => (
+          <TouchableOpacity
+            key={item.label}
+            style={[s.addMenuItem, i === all.length - 1 ? { borderBottomWidth: 0 } : { borderBottomColor: colors.homeLine }]}
+            accessibilityRole="button"
+            onPress={() => { setAddModalVisible(false); item.go(); }}
+          >
+            <Feather name={item.icon} size={24} color={colors.homeInk} />
+            <View style={{ flex: 1 }}>
+              <Text style={[s.addMenuText, { color: colors.homeInk }]}>{item.label}</Text>
+              <Text style={[s.addMenuSub, { color: colors.homeMuted }]}>{item.sub}</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
       </Sheet>
 
       {/* Create Board: input at the top of a Sheet so it stays above the keyboard (UX-041). */}
@@ -1208,6 +1191,7 @@ const s = StyleSheet.create({
   addMenuItem: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52, borderBottomWidth: StyleSheet.hairlineWidth },
   addMenuText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   addMenuSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  emptySecondary: { alignItems: 'center', marginTop: -spacing.md },
   modalTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold', marginBottom: 16 },
   modalInput: { height: 44, borderWidth: 1, borderRadius: 12, paddingHorizontal: 12, fontSize: 15, fontFamily: 'Inter_400Regular' },
   sheetSectionTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 12 },

@@ -15,7 +15,8 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
 }));
 jest.mock('expo-router', () => ({
-  useLocalSearchParams: () => ({}),
+  // These cover the All pins view (UX-067 opens on Boards; All is one tap from it).
+  useLocalSearchParams: () => ({ tab: 'all' }),
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
 }));
 jest.mock('expo-haptics', () => ({ selectionAsync: jest.fn(), impactAsync: jest.fn(), ImpactFeedbackStyle: {} }));

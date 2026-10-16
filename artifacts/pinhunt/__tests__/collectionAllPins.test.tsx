@@ -49,8 +49,9 @@ function insideKeyboardAvoidingView(el: { parent: unknown }): boolean {
   return false;
 }
 
-beforeEach(() => {
+beforeEach(async () => {
   jest.clearAllMocks();
+  await require('@react-native-async-storage/async-storage').clear();
   mockParams = {};
   mockBoards = [{ id: 'b1', name: 'Favourites', pinIds: ['p1', 'p2'] }];
   // p1 owned ×3, p2 for trade, p3 on the ISO, p4 not collected.
@@ -61,24 +62,55 @@ beforeEach(() => {
   };
 });
 
-describe('My Collection: All pins (B-P1-03, B-P1-04)', () => {
-  it('opens on All with owned pins as image-first tiles, ×N for duplicates and For Trade marked', async () => {
+const openAllPins = async () => {
+  await fireEvent.press(screen.getByRole('button', { name: /^All pins, / }));
+};
+
+describe('My Collection: Boards first, All pins one tap away (UX-067, B-P1-04)', () => {
+  it('opens on Boards with the summary, "All pins" first and each board as a card', async () => {
     await render(<CollectionScreen />);
+    expect(screen.getByLabelText('2 Total pins, 1 Boards, 1 For Trade')).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'All pins, 2 pins, 1 for trade' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Favourites, 2 pins, 1 for trade' })).toBeTruthy();
+    // No values on My Collection (maintainer, 16 Oct).
+    expect(screen.queryByText(/£|\$/)).toBeNull();
+  }, 20_000);
+
+  it('All pins shows owned pins as image-first tiles, ×N for duplicates and For Trade marked', async () => {
+    await render(<CollectionScreen />);
+    await openAllPins();
     // Owned and For Trade pins, not ISO or uncollected ones.
     expect(screen.getByRole('button', { name: 'Mickey, 3 copies' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Dumbo, For Trade' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: /^Castle/ })).toBeNull();
     expect(screen.queryByRole('button', { name: /^Stitch/ })).toBeNull();
     expect(screen.getByText('×3')).toBeTruthy();
-    expect(screen.getByText('Mickey')).toBeTruthy();
-  }, 20_000);
+    await fireEvent.press(screen.getByRole('button', { name: 'Back to boards' }));
+    expect(screen.getByRole('button', { name: /^All pins, / })).toBeTruthy();
+  });
 
-  it('shows Boards on All: New board is one tap and a board opens in one tap', async () => {
+  it('a board opens in one tap and New board is one tap', async () => {
     await render(<CollectionScreen />);
-    await fireEvent.press(screen.getByRole('button', { name: 'Favourites, 2 pins' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Favourites, 2 pins, 1 for trade' }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/board/[id]', params: { id: 'b1' } });
     await fireEvent.press(screen.getByRole('button', { name: 'New board' }));
     expect(screen.getByRole('header', { name: 'New board' })).toBeTruthy();
+  });
+
+  it('sorts boards and switches to a remembered list view', async () => {
+    mockBoards = [
+      { id: 'b1', name: 'Zoo', pinIds: ['p1'] },
+      { id: 'b2', name: 'Apples', pinIds: ['p1', 'p2'] },
+    ];
+    await render(<CollectionScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Sort boards: Recent' }));
+    await fireEvent.press(screen.getByRole('radio', { name: 'Name' }));
+    const names = screen.getAllByRole('button', { name: /pins?(, \d+ for trade)?$/ }).map(b => b.props.accessibilityLabel);
+    expect(names.indexOf('Apples, 2 pins, 1 for trade')).toBeLessThan(names.indexOf('Zoo, 1 pin'));
+    await fireEvent.press(screen.getByRole('radio', { name: 'List view' }));
+    const AsyncStorage = require('@react-native-async-storage/async-storage');
+    expect(AsyncStorage.setItem).toHaveBeenCalledWith('@pinhunt_collection_view_v1', 'list');
+    expect(screen.getByRole('radio', { name: 'List view' }).props.accessibilityState.selected).toBe(true);
   });
 
   it('keeps the Create Board name field above the keyboard (B-P1-21)', async () => {
@@ -92,24 +124,30 @@ describe('My Collection: All pins (B-P1-03, B-P1-04)', () => {
     await fireEvent.press(screen.getByText('ISO'));
     expect(screen.getByRole('button', { name: 'Castle' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: /^Mickey/ })).toBeNull();
-    expect(screen.queryByRole('button', { name: 'Favourites, 2 pins' })).toBeNull();
+    expect(screen.queryByRole('button', { name: /^Favourites/ })).toBeNull();
   });
 
   it('For Trade shows only for_trade pins, without the redundant marker', async () => {
     await render(<CollectionScreen />);
-    await fireEvent.press(screen.getByText('For Trade'));
+    // The tab, not the summary's "For Trade" label.
+    await fireEvent.press(screen.getAllByText('For Trade')[0]);
     expect(screen.getByRole('button', { name: 'Dumbo' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: /^Mickey/ })).toBeNull();
   });
 
-  it('old links to the Boards tab land on All', async () => {
+  it('links to ?tab=boards land on Boards', async () => {
     mockParams = { tab: 'boards' };
     await render(<CollectionScreen />);
-    expect(screen.getByRole('button', { name: 'New board' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /^All pins, / })).toBeTruthy();
+  });
+
+  it('links to ?tab=all open All pins', async () => {
+    mockParams = { tab: 'all' };
+    await render(<CollectionScreen />);
     expect(screen.getByRole('button', { name: 'Mickey, 3 copies' })).toBeTruthy();
   });
 
-  it('with no pins, points to scan and search', async () => {
+  it('with no pins and no boards, points to scan and search', async () => {
     mockCollection = {};
     mockBoards = [];
     await render(<CollectionScreen />);

@@ -1,8 +1,9 @@
 import json,re,collections,sys
-STOP=set('the and pin pins disney parks park store mystery series collection limited edition release set box blind pack open of a with in on at for to le lr oe mini booster starter walt world disneyland resort wdw dlr 2020 2021 2022 2023 2024 2025 2026 pc piece'.split())
+STOP=set('the and pin pins disney parks park store mystery series collection limited edition release set box blind pack open of a with in on at for to le lr oe mini booster starter walt world disneyland resort wdw dlr 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 pc piece'.split())
 def toks(s): return {w for w in re.findall(r"[a-z0-9]+",str(s or '').lower()) if w not in STOP and len(w)>1}
 def chars(s): return {c.strip().lower() for c in re.split(r"[;,/&]| and ",str(s or '')) if c.strip() and c.strip().lower() not in('unknown','various','null')}
-live=json.load(open('live_pins.json'))
+import os
+live=json.load(open(os.environ.get('LIVE_PINS','live_pins.json')))  # live export: keep outside the repo
 idx=collections.defaultdict(list)
 for p in live:
     if p['e']=='Seed': continue

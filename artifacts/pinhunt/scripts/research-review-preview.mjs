@@ -2,9 +2,10 @@
 // Research Review preview: the real admin screen (Expo web export, demo mode, no Supabase) served
 // with a local mock of the Research Review API, loaded from a research-engine staging payload.
 //
-//   node scripts/research-review-preview.mjs <run.json> [<run2.json> …] [--port 8787] [--skip-build] [--state <file>]
-//   then open http://localhost:8787/admin/research-review on the Mac, or http://<mac-ip>:8787/admin/research-review
-//   on an iPad on the same Wi-Fi. Several run files (e.g. the split backfill runs) are merged into one run.
+//   node scripts/research-review-preview.mjs <run.json> [<run2.json> …] [--port 8787] [--skip-build] [--state <file>] [--lan]
+//   then open http://localhost:8787/admin/research-review on the Mac. With --lan the preview also listens on the
+//   local network, so an iPad on the same Wi-Fi can open http://<mac-ip>:8787/admin/research-review. The mock API
+//   has no login, so only use --lan on a network you trust; it serves research data, never credentials. Several run files (e.g. the split backfill runs) are merged into one run.
 //
 // Preview only: review decisions are saved to a local state file (default ~/.pinhunt-research-review-preview.json)
 // so they survive restarts; delete it to start again. Nothing talks to Supabase or any external service. The demo account is an App Creator only in this build
@@ -25,7 +26,8 @@ const port = Number(portIdx >= 0 ? args[portIdx + 1] : 8787);
 const stateIdx = args.indexOf('--state');
 const valueIdx = new Set([portIdx, stateIdx].filter(i => i >= 0).map(i => i + 1));
 const payloadPaths = args.filter((a, i) => !a.startsWith('--') && !valueIdx.has(i));
-if (!payloadPaths.length) { console.error('usage: research-review-preview.mjs <run.json> [<run2.json> …] [--port 8787] [--skip-build] [--state <file>]'); process.exit(2); }
+if (!payloadPaths.length) { console.error('usage: research-review-preview.mjs <run.json> [<run2.json> …] [--port 8787] [--skip-build] [--state <file>] [--lan]'); process.exit(2); }
+const lan = args.includes('--lan');
 const statePath = stateIdx >= 0 ? args[stateIdx + 1] : path.join(os.homedir(), '.pinhunt-research-review-preview.json');
 const outDir = path.join(os.tmpdir(), 'pinhunt-research-review-preview');
 
@@ -197,9 +199,12 @@ createServer((req, res) => {
   if (!existsSync(file) || statSync(file).isDirectory()) file = existsSync(`${file}.html`) ? `${file}.html` : path.join(outDir, 'index.html');
   res.writeHead(200, { 'Content-Type': types[path.extname(file)] ?? 'application/octet-stream' });
   createReadStream(file).pipe(res);
-}).listen(port, '0.0.0.0', () => {
+}).listen(port, lan ? '0.0.0.0' : '127.0.0.1', () => {
   const ips = Object.values(os.networkInterfaces()).flat().filter(i => i && i.family === 'IPv4' && !i.internal).map(i => i.address);
   console.log(`Research Review preview (${cands.length} pins from ${payloadPaths.length} file(s); decisions saved to ${statePath})`);
   console.log(`  Mac:  http://localhost:${port}/admin/research-review`);
-  for (const ip of ips) console.log(`  iPad (same Wi-Fi): http://${ip}:${port}/admin/research-review`);
+  if (lan) {
+    for (const ip of ips) console.log(`  iPad (same Wi-Fi): http://${ip}:${port}/admin/research-review`);
+    console.log('  Listening on the local network (--lan): the mock admin API has no login; stop the preview when you are done.');
+  } else console.log('  Only this Mac can open it. Add --lan to open it from an iPad on the same Wi-Fi.');
 });

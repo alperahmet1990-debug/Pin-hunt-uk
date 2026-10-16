@@ -2,15 +2,16 @@
 // Research Review preview: the real admin screen (Expo web export, demo mode, no Supabase) served
 // with a local mock of the Research Review API, loaded from a research-engine staging payload.
 //
-//   node scripts/research-review-preview.mjs <staging_payload.json> [--port 8787] [--skip-build]
-//   then open http://localhost:8787/admin/research-review   (Mac browser, or iPad on the same network)
+//   node scripts/research-review-preview.mjs <run.json> [<run2.json> …] [--port 8787] [--skip-build] [--state <file>]
+//   then open http://localhost:8787/admin/research-review on the Mac, or http://<mac-ip>:8787/admin/research-review
+//   on an iPad on the same Wi-Fi. Several run files (e.g. the split backfill runs) are merged into one run.
 //
-// Preview only: decisions are kept in memory and lost when the server stops. Nothing talks to
-// Supabase or any external service. The demo account is an App Creator only in this build
+// Preview only: review decisions are saved to a local state file (default ~/.pinhunt-research-review-preview.json)
+// so they survive restarts; delete it to start again. Nothing talks to Supabase or any external service. The demo account is an App Creator only in this build
 // (EXPO_PUBLIC_DEMO_ADMIN=1, which lib/demoMode.ts ignores whenever Supabase is configured).
 
 import { spawnSync } from 'node:child_process';
-import { createReadStream, existsSync, readFileSync, statSync } from 'node:fs';
+import { createReadStream, existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import os from 'node:os';
 import path from 'node:path';
@@ -21,8 +22,11 @@ const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const portIdx = args.indexOf('--port');
 const port = Number(portIdx >= 0 ? args[portIdx + 1] : 8787);
-const payloadPath = args.find((a, i) => !a.startsWith('--') && !(portIdx >= 0 && i === portIdx + 1));
-if (!payloadPath) { console.error('usage: research-review-preview.mjs <staging_payload.json> [--port 8787] [--skip-build]'); process.exit(2); }
+const stateIdx = args.indexOf('--state');
+const valueIdx = new Set([portIdx, stateIdx].filter(i => i >= 0).map(i => i + 1));
+const payloadPaths = args.filter((a, i) => !a.startsWith('--') && !valueIdx.has(i));
+if (!payloadPaths.length) { console.error('usage: research-review-preview.mjs <run.json> [<run2.json> …] [--port 8787] [--skip-build] [--state <file>]'); process.exit(2); }
+const statePath = stateIdx >= 0 ? args[stateIdx + 1] : path.join(os.homedir(), '.pinhunt-research-review-preview.json');
 const outDir = path.join(os.tmpdir(), 'pinhunt-research-review-preview');
 
 if (!args.includes('--skip-build')) {
@@ -40,9 +44,10 @@ if (rb.status !== 0) { console.error('bundling the workbook reader failed'); pro
 const { checksFromWorkbook, normaliseChecks } = await import(readerOut);
 
 // ── In-memory research staging, from the engine payload ───────────────────
-const payload = JSON.parse(readFileSync(payloadPath, 'utf8'));
+const merged = new Map();
+for (const f of payloadPaths) for (const c of JSON.parse(readFileSync(f, 'utf8')).candidates) if (c.entity_type === 'pin') merged.set(c.research_key, c);
 const RUN = randomUUID();
-const cands = payload.candidates.filter(c => c.entity_type === 'pin').map(c => ({
+const cands = [...merged.values()].map(c => ({
   id: randomUUID(), run_id: RUN, research_key: c.research_key, entity_type: 'pin', set_research_key: c.set_research_key ?? null,
   proposed: c.proposed, record_confidence: c.record_confidence, engine_verified: !!c.engine_verified,
   review_reasons: c.review_reasons ?? [], warnings: c.warnings ?? [], duplicate_status: c.duplicate_status ?? 'NEW',
@@ -50,6 +55,27 @@ const cands = payload.candidates.filter(c => c.entity_type === 'pin').map(c => (
   evidence: (c.evidence ?? []).map(e => ({ id: randomUUID(), ...e })),
 }));
 const byId = new Map(cands.map(c => [c.id, c]));
+
+// Persistent preview decisions, keyed by research_key so they survive restarts and re-generated runs.
+function saveState() {
+  const out = {};
+  for (const c of cands) {
+    const review = c.evidence.filter(e => e.method === 'human_direct_check');
+    if (c.decided_at || review.length) out[c.research_key] = { status: c.status, decision_notes: c.decision_notes, decided_at: c.decided_at, review };
+  }
+  try { writeFileSync(statePath, JSON.stringify({ format: 'pinhunt-research-review-preview-v1', saved_at: new Date().toISOString(), decisions: out }, null, 1)); }
+  catch (e) { console.error(`could not save ${statePath}: ${e.message}`); }
+}
+try {
+  const saved = existsSync(statePath) ? JSON.parse(readFileSync(statePath, 'utf8')).decisions ?? {} : {};
+  let n = 0;
+  for (const c of cands) {
+    const s = saved[c.research_key]; if (!s) continue;
+    Object.assign(c, { status: s.status, decision_notes: s.decision_notes, decided_at: s.decided_at, direct_verified_by: s.review?.length ? 'preview' : null });
+    c.evidence.push(...(s.review ?? [])); n++;
+  }
+  if (n) console.log(`Restored ${n} saved review decisions from ${statePath}`);
+} catch (e) { console.error(`ignoring unreadable ${statePath}: ${e.message}`); }
 const LINES = new Set(['wdw', 'dlr', 'dlp', 'dsuk', 'dsus', 'shdr', 'hkdl', 'tdr', 'lic']);
 const line = k => (LINES.has(k.split('/')[0]) ? k.split('/')[0] : 'other');
 const edition = p => { const e = String(p['Edition type'] ?? '').toLowerCase(); return e.startsWith('open') ? 'OE' : e.includes('limited edition') ? 'LE' : e.includes('limited release') ? 'LR' : 'other'; };
@@ -161,6 +187,7 @@ createServer((req, res) => {
     let raw = ''; req.on('data', d => { raw += d; });
     req.on('end', () => {
       let out; try { out = api(req, url, raw ? JSON.parse(raw) : {}); } catch (e) { out = [500, { error: String(e) }]; }
+      if (req.method !== 'GET') saveState();
       const [code, data] = Array.isArray(out) ? out : [200, out];
       res.writeHead(code, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(data));
     });
@@ -171,5 +198,8 @@ createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': types[path.extname(file)] ?? 'application/octet-stream' });
   createReadStream(file).pipe(res);
 }).listen(port, '0.0.0.0', () => {
-  console.log(`Research Review preview: http://localhost:${port}/admin/research-review  (${cands.length} pins from ${path.basename(payloadPath)}; decisions in memory only)`);
+  const ips = Object.values(os.networkInterfaces()).flat().filter(i => i && i.family === 'IPv4' && !i.internal).map(i => i.address);
+  console.log(`Research Review preview (${cands.length} pins from ${payloadPaths.length} file(s); decisions saved to ${statePath})`);
+  console.log(`  Mac:  http://localhost:${port}/admin/research-review`);
+  for (const ip of ips) console.log(`  iPad (same Wi-Fi): http://${ip}:${port}/admin/research-review`);
 });

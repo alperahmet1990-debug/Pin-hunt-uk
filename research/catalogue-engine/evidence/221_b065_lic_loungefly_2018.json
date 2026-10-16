@@ -1,0 +1,1112 @@
+{
+ "packet_id": "backfill-b065-lic-loungefly-2018",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b065",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+   "title": "Loungefly Pin Sets at New York Comic Con 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+   "title": "Review: NYCC Mickey 90th Pin Set by Loungefly",
+   "publisher": "DisKingdom",
+   "published_date": "2019-01-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+   "title": "New 2018 NYCC Loungefly Reveals For Mickey and NBC",
+   "publisher": "Disney Fashionista",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://funko.com/funko-blog-home/2018-nycc-reveals-loungefly.html",
+   "title": "2018 NYCC Reveals: Loungefly!",
+   "publisher": "Funko",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+   "title": "Stitch Scrump Best Friends Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+   "title": "Loungefly Disney Lilo & Stitch Scrump & Stitch Best Friends Enamel Pin Set",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/103758",
+   "title": "103758",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+   "title": "Edna Mode Incredibles 2 BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-incredibles-2-edna-mode-enamel-pin-set---boxlunch-exclusive/11502730.html",
+   "title": "Disney Pixar Incredibles 2 Edna Mode Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+   "title": "Mary Poppins Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mary-poppins-penguin-enamel-pin-set---boxlunch-exclusive/11584244.html",
+   "title": "Disney Mary Poppins Penguin Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-ralph-breaks-the-internet-enamel-pin-set---boxlunch-exclusive/11640187.html",
+   "title": "Disney Ralph Breaks The Internet Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+   "title": "Loungefly Disney Princess Mystery Buttons",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-25",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+   "title": "Loungefly Lilo and Stitch Disney Mystery Buttons",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/07/loungefly-san-diego-comic-con-2018-exclusives/",
+   "title": "Loungefly San Diego Comic-Con 2018 Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse 90 Years Pin Set (Loungefly NYCC 2018)",
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "Loungefly pin set sold at NYCC 2018 for Mickey's 90th"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "Loungefly pin set at the con"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "review names Loungefly as maker"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "set of 9 pins in different Mickey styles"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "nine pins of Mickey across his lifetime"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "9-pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "limited set"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "limited to 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "limited to 500"
+    },
+    {
+     "field": "price",
+     "value": 40.0,
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "$40 at Loungefly booth"
+    },
+    {
+     "field": "price",
+     "value": 40.0,
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "$40 at Loungefly booth"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "US con pricing in dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "NYCC held 4-7 Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018, Loungefly booth",
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2018-mickey-mouse-90-years-pin-set/",
+     "method": "search_snippet",
+     "note": "sold at the Loungefly booth"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-nycc-nightmare-before-christmas-25th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Nightmare Before Christmas 25th Anniversary Pin Set (Loungefly NYCC 2018)",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "NBC 25th anniversary pin set at Loungefly booth"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "Loungefly NYCC reveal"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "set of 6"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "LE 500 sets"
+    },
+    {
+     "field": "price",
+     "value": 40.0,
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "$40 at Loungefly booth"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "2018 NYCC"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018, Loungefly booth",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly booth"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-hot-topic-stitch-scrump-best-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch & Scrump Best Friends Pin Set",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "two-pin best friends set"
+    },
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Lilo & Stitch Scrump & Stitch Best Friends Enamel Pin Set",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+     "method": "search_snippet",
+     "note": "Hot Topic listing title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+     "method": "search_snippet",
+     "note": "listing names Loungefly"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "one Stitch pin and one Scrump pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018; post 23 Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "Hot Topic release"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "retail $9.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "format",
+     "value": "2-pin set on tear-apart backing card",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+     "method": "search_snippet",
+     "note": "card tears in two, one half each"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-edna-mode-incredibles-2",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Edna Mode Incredibles 2 BoxLunch Pin Set",
+     "source_url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "Edna Mode enamel pin set"
+    },
+    {
+     "field": "set_name",
+     "value": "Disney Pixar Incredibles 2 Edna Mode Enamel Pin Set - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-incredibles-2-edna-mode-enamel-pin-set---boxlunch-exclusive/11502730.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "two enamel pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "available July 2018 at select stores"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-incredibles-2-edna-mode-enamel-pin-set---boxlunch-exclusive/11502730.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "retail $14.90"
+    },
+    {
+     "field": "price",
+     "value": 10.99,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-incredibles-2-edna-mode-enamel-pin-set---boxlunch-exclusive/11502730.html",
+     "method": "search_snippet",
+     "note": "listing price $10.99, possibly a markdown"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mary Poppins Disney Pins at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Dec 2018 BoxLunch Mary Poppins pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "available Dec 2018; post 15 Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-mary-poppins-penguins",
+   "parent_set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Mary Poppins Penguin Enamel Pin Set - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-penguin-enamel-pin-set---boxlunch-exclusive/11584244.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive penguin set"
+    },
+    {
+     "field": "set_name",
+     "value": "Penguin Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "penguins pin set in Dec 2018 post"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-penguin-enamel-pin-set---boxlunch-exclusive/11584244.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-penguin-enamel-pin-set---boxlunch-exclusive/11584244.html",
+     "method": "search_snippet",
+     "note": "$14.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-penguin-enamel-pin-set---boxlunch-exclusive/11584244.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2018/loungefly-nycc-mickey-90-years/plane-crazy",
+   "set_key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Plane Crazy Mickey",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Plane Crazy look named among set designs; reviewer favourite"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design in 90th set"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "part of LE 500 set"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "set LE 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC 2018 release"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC exclusive set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-nycc-mickey-90-years/steamboat-willie",
+   "set_key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Steamboat Willie Mickey",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Steamboat Willie look named among set designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design in 90th set"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "part of LE 500 set"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "set LE 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC 2018 release"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC exclusive set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-nycc-mickey-90-years/comic-book-mickey",
+   "set_key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Comic Book Mickey",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "comic book Mickey named among set designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design in 90th set"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "part of LE 500 set"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "set LE 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC 2018 release"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC exclusive set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-nycc-mickey-90-years/little-whirlwind",
+   "set_key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Little Whirlwind Mickey",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Little Whirlwind look named as reviewer favourite"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design in 90th set"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "Mickey design"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "part of LE 500 set"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "set LE 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC 2018 release"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "NYCC exclusive set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-stitch-scrump-best-friends/stitch",
+   "set_key": "lic/2018/loungefly-hot-topic-stitch-scrump-best-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "Stitch pin in two-pin set"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "Stitch half"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch half of a heart reading Best Friends",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins join to form Best Friends heart"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 32 x 13 (1.25 x 0.5 in)",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+     "method": "search_snippet",
+     "note": "each pin 1 1/4 by 1/2 inch"
+    },
+    {
+     "field": "materials",
+     "value": "silver-tone metal with enamel",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+     "method": "search_snippet",
+     "note": "listing materials"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://mypincentral.com/pin/103758",
+     "method": "search_snippet",
+     "note": "fan db lists Stitch and Scrump in a 2018 booster"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-stitch-scrump-best-friends/scrump",
+   "set_key": "lic/2018/loungefly-hot-topic-stitch-scrump-best-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Scrump"
+     ],
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "Scrump pin in two-pin set"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrump",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "Scrump half"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrump half of a heart reading Best Friends",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins join to form Best Friends heart"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/stitch-scrump-best-friends-pin-set/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 32 x 13 (1.25 x 0.5 in)",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+     "method": "search_snippet",
+     "note": "each pin 1 1/4 by 1/2 inch"
+    },
+    {
+     "field": "materials",
+     "value": "silver-tone metal with enamel",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-scrump-stitch-best-friends-enamel-pin-set/11605667.html",
+     "method": "search_snippet",
+     "note": "listing materials"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrump"
+     ],
+     "source_url": "https://mypincentral.com/pin/103758",
+     "method": "search_snippet",
+     "note": "fan db lists Stitch and Scrump in a 2018 booster"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mary-poppins/parrot-umbrella",
+   "set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Umbrella",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "design listed in BoxLunch Mary Poppins post"
+    },
+    {
+     "field": "visual_description",
+     "value": "parrot-head umbrella",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "short paraphrase of listed design"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mary-poppins/carousel-horse",
+   "set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carousel",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "design listed in BoxLunch Mary Poppins post"
+    },
+    {
+     "field": "visual_description",
+     "value": "carousel horse from Mary Poppins",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "short paraphrase of listed design"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mary-poppins/practically-perfect",
+   "set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Practically Perfect",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "design listed in BoxLunch Mary Poppins post"
+    },
+    {
+     "field": "visual_description",
+     "value": "Practically Perfect design",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "short paraphrase of listed design"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "field": "pins",
+   "searched": "DPB, DisKingdom, Disney Fashionista, Funko snippets; 4 queries",
+   "note": "only 4 of 9 Mickey looks named in snippets (via review summary; verify); other 5 unnamed"
+  },
+  {
+   "key": "lic/2018/loungefly-nycc-nightmare-before-christmas-25th",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "6 members not named; a follow-up query did not corroborate the set at all; verify existence"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-stitch-scrump-best-friends",
+   "field": "pin_structure",
+   "searched": "DPB + Hot Topic + My Pin Central snippets",
+   "note": "My Pin Central calls it a 2018 booster; confirm same product as the Hot Topic Loungefly set"
+  },
+  {
+   "key": "lic/2018/boxlunch-edna-mode-incredibles-2",
+   "field": "issuer",
+   "searched": "2 queries",
+   "note": "maker not stated (not identified as Loungefly); out of Loungefly scope unless confirmed; prices conflict"
+  },
+  {
+   "key": "lic/2018/boxlunch-edna-mode-incredibles-2",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "both pins feature Edna Mode per snippet but individual designs not described"
+  },
+  {
+   "key": "lic/2018/boxlunch-mary-poppins",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "maker not stated (not identified as Loungefly); set appears based on 1964 film not Mary Poppins Returns; full list may be longer"
+  },
+  {
+   "key": "lic/2018/boxlunch-mary-poppins-penguins",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "penguin count and individual designs not named"
+  },
+  {
+   "key": "lic/2018/boxlunch-mary-poppins/practically-perfect",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "design subject not described beyond the phrase"
+  },
+  {
+   "key": "lic/2018/boxlunch-ralph-breaks-the-internet",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead: BoxLunch exclusive pin set (Ralph, Vanellope, cookie, $16.90); undated listing, 2018 not confirmed, maker not stated; not recorded"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-princess-mystery-buttons",
+   "field": "format",
+   "searched": "DPB snippets + BoxLunch query; 3 queries",
+   "note": "scope: confirm pin vs button (DPB: 12 blind-bag 'buttons' ~1in, $2.90 each; neither enamel nor pinback stated; low price/size suggests pinback). Set already keyed in 216; not re-recorded"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-princess-mystery-buttons",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "12 designs not named in any allowed snippet"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-lilo-stitch-mystery-buttons",
+   "field": "format",
+   "searched": "DPB snippets + BoxLunch query; 3 queries",
+   "note": "scope: confirm pin vs button (DPB: 12 'miniature buttons' ~1in, $2.90 per blind bag; neither enamel nor pinback stated; low price/size suggests pinback). Set already keyed in 216; not re-recorded"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-lilo-stitch-mystery-buttons",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "12 designs not named in any allowed snippet"
+  },
+  {
+   "key": "lic/2018/loungefly",
+   "field": "pins",
+   "searched": "8 queries (Jan-Jun months, spring 2018, Hot Topic/BoxLunch spotted posts)",
+   "note": "no dated Jan-Jun 2018 Loungefly Disney pin found; earliest dated remain July 2018 (already in 216)"
+  },
+  {
+   "key": "lic/2018/loungefly-sdcc",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "SDCC 2018 Loungefly exclusives found were Star Wars bags; no Disney Loungefly pin surfaced"
+  },
+  {
+   "key": "lic/2018/loungefly-parks",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2018 Disney-park Loungefly pin found"
+  },
+  {
+   "key": "lic/2018/loungefly-incredibles-2",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no dated 2018 Loungefly Incredibles 2 pin; Loungefly Incredibles listings undated or 20th-anniversary era"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-mickey-90",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no Hot Topic Loungefly Mickey 90th pin set found"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "many undated Loungefly BoxLunch/Hot Topic blind-box listings (Villains, Coco, holiday etc.) could not be dated to 2018; not recorded"
+  },
+  {
+   "key": "lic/2018/loungefly-wondercon-eccc",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2018 WonderCon/ECCC Loungefly Disney pin surfaced"
+  }
+ ],
+ "discovery_notes": "Dedicated Loungefly 2018 sweep, 30 standard search-snippet queries. Adds NYCC 2018 Loungefly LE 500 sets (Mickey 90 Years, NBC 25th), Hot Topic Loungefly Stitch & Scrump Best Friends set (Nov 2018), plus non-Loungefly-confirmed BoxLunch Edna Mode (Jul 2018) and Mary Poppins (Dec 2018) leads. Jan-Jun 2018 still empty. Mystery buttons: DPB only says ~1in buttons at $2.90; flagged scope: confirm pin vs button. Keys from 216 not re-recorded."
+}

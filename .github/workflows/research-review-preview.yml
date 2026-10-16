@@ -1,0 +1,133 @@
+# PROPOSED GitHub Actions workflow, inactive until a human copies it to
+# .github/workflows/research-review-preview.yml in a PR labelled
+# `human-approved-config` (agents cannot edit .github/**).
+# See docs/release/RESEARCH-REVIEW-PREVIEW.md.
+#
+# Manual only: nothing runs on push, merge or schedule. Run it from
+# GitHub → Actions → "Research Review preview (manual)" → Run workflow, with
+# "Use workflow from" left on main. It can preview ANY branch (for example a PR
+# branch that is not merged yet) without giving that branch the Expo token:
+#
+#   build  : checks out the chosen branch with no secrets and no environment,
+#            builds the static preview (Supabase deliberately empty), scans it
+#            for credentials and uploads it as a workflow artifact.
+#   deploy : runs main's code only, in the eas-preview environment (EXPO_TOKEN,
+#            branch rule main). It never runs code from the chosen branch: it
+#            only uploads the built static files to EAS Hosting under the fixed
+#            alias `research-review`.
+name: Research Review preview (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_ref:
+        description: 'Branch with the Research Review screen to preview'
+        type: string
+        default: claude/research-review-historical
+      research_ref:
+        description: 'Branch with the research runs (research/catalogue-engine/out/backfill-runs)'
+        type: string
+        default: claude/pinhunt-disney-catalogue-research-c8o2x4
+
+permissions:
+  contents: read
+
+concurrency:
+  group: research-review-preview
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # No environment and no secrets: this job runs code from app_ref.
+    defaults:
+      run:
+        working-directory: artifacts/pinhunt
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.app_ref }}
+          persist-credentials: false
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.research_ref }}
+          path: research-data
+          sparse-checkout: research/catalogue-engine/out/backfill-runs
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 9.15.9
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install
+        working-directory: .
+        run: pnpm install --frozen-lockfile
+
+      - name: Build static preview (no Supabase, credential scan)
+        env:
+          EXPO_PUBLIC_SUPABASE_URL: ''
+          EXPO_PUBLIC_SUPABASE_ANON_KEY: ''
+        run: |
+          node scripts/build-research-preview.mjs \
+            --out "$GITHUB_WORKSPACE/research-review-dist" \
+            --runs "$GITHUB_WORKSPACE"/research-data/research/catalogue-engine/out/backfill-runs/run_*.json
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: research-review-dist
+          path: research-review-dist
+          retention-days: 3
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: eas-preview
+    defaults:
+      run:
+        working-directory: artifacts/pinhunt
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      EAS_CLI: eas-cli@24.13.0
+    steps:
+      # main's own code (app.json with the EAS project id); nothing from app_ref.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 9.15.9
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install (main)
+        working-directory: .
+        run: pnpm install --frozen-lockfile
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: research-review-dist
+          path: ${{ runner.temp }}/research-review-dist
+
+      - name: Deploy to EAS Hosting (alias research-review)
+        env:
+          DIST: ${{ runner.temp }}/research-review-dist
+        run: |
+          npx --yes "$EAS_CLI" deploy \
+            --export-dir "$DIST" \
+            --alias research-review \
+            --non-interactive

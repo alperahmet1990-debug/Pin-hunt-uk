@@ -1,6 +1,13 @@
 # Catalogue sprint: live status
 
-_Last updated: 2026-10-16 06:26 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+_Last updated: 2026-10-16 09:23 UTC by Claude (sprint coordinator session). Check-in routine `trig_017mtnSxDpVuuBk3AdKk2H4b`: every 3 h at :23, first 15:23 UTC, ends 2026-10-16 12:00 UTC. Branch `claude/catalogue-research-sprint1`, no PR._
+
+## 09:23 UTC check-in: execution has moved to the backlog
+- **Research Review v2 and catalogue expansion are now 29 GitHub issues, #311–#339** (all `agent-proposed`; nothing starts until you add `approved` and the suggested labels in each body). DB-1 (#320) stays on hold until `approved` + `l3-go`.
+- **WDW + Disneyland California open-edition pass (#336), 2025–2026: done.** 336 candidates (WDW 2025 118, WDW 2026 90, DLR 2025 70, DLR 2026 58), 0 excluded-domain claims, `engine.audit` 0 problems, offline 045 load test passes. Payload: `research/catalogue-engine/out/oe-pass-2026-10-16/staging_payload.json` on branch `claude/pinhunt-disney-catalogue-research-c8o2x4`. Not loaded anywhere.
+- **Open `claude/*` PRs:** none. The dev routine is idle until issues are approved.
+- **Blocked on you:** approve the issues; run QUERY 1 of `docs/research/catalogue-expansion/live-catalogue-audit.sql` and share the CSV (live dedupe, #337); load the OE payload into staging when ready.
+- The "Next planned actions" below are superseded by the issues above. The last check-in (after 12:00 UTC) deletes this routine.
 
 ## What runs while you're away (actually scheduled)
 | Runner | Schedule | What it can do | State |

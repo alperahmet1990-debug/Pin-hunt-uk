@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalogue review mock-up</title>
+<style>
+  :root { --ink:#12343b; --muted:#6b7280; --line:#e5e1da; --bg:#f8f4ee; --card:#fff; --ok:#1f7a4d; --okbg:#e3f3ea;
+          --warn:#8a5a00; --warnbg:#fff4d6; --bad:#a3302a; --badbg:#fde8e6; --sel:#e9f4ee; --acc:#5f6493; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); }
+  header { display:flex; align-items:center; gap:14px; padding:12px 18px; background:#fff; border-bottom:1px solid var(--line); position:sticky; top:0; z-index:5; flex-wrap:wrap; }
+  header h1 { font-size:17px; margin:0; }
+  .tabs { display:flex; gap:6px; background:#eee9e1; border-radius:12px; padding:4px; }
+  .tabs button { border:0; background:none; padding:9px 16px; border-radius:9px; font:inherit; font-weight:600; color:var(--muted); cursor:pointer; min-height:44px; }
+  .tabs button.on { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  .spacer { flex:1; }
+  .pill { font-size:13px; color:var(--muted); }
+  main { padding:16px 18px 120px; max-width:1280px; margin:0 auto; }
+  .filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+  .filters span { background:#fff; border:1px solid var(--line); border-radius:99px; padding:7px 12px; font-size:13px; }
+  .filters span.on { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap:12px; }
+  .pin { background:var(--card); border:2px solid var(--line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; }
+  .pin.sel { border-color:var(--ok); background:var(--sel); }
+  .img { height:130px; display:flex; align-items:center; justify-content:center; background:#f1ede6; color:var(--muted); font-size:12px; text-align:center; padding:8px; position:relative; }
+  .img.ok { background:linear-gradient(135deg,#dfeee6,#f4f1ea); color:var(--ok); }
+  .img .badge { position:absolute; top:8px; left:8px; }
+  .body { padding:10px 12px; flex:1; }
+  .name { font-weight:700; }
+  .meta { font-size:13px; color:var(--muted); margin-top:2px; }
+  .chip { display:inline-block; font-size:12px; border-radius:99px; padding:2px 8px; margin:5px 4px 0 0; }
+  .c-ok { background:var(--okbg); color:var(--ok); } .c-warn { background:var(--warnbg); color:var(--warn); }
+  .c-bad { background:var(--badbg); color:var(--bad); } .c-n { background:#eee9e1; } .c-acc { background:#ecebf5; color:var(--acc); }
+  .foot { display:flex; gap:6px; padding:10px 12px; border-top:1px solid var(--line); align-items:center; }
+  .chk { width:28px; height:28px; border:2px solid #b9b2a6; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; background:#fff; flex:none; }
+  .sel .chk { background:var(--ok); border-color:var(--ok); color:#fff; }
+  .src { font-size:13px; text-decoration:underline; color:var(--ink); }
+  .bar { position:fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid var(--line); padding:12px 18px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; box-shadow:0 -4px 16px rgba(0,0,0,.05); }
+  .bar .count { font-weight:700; }
+  .btn { font:inherit; font-weight:600; border-radius:12px; border:1px solid var(--line); background:#fff; color:var(--ink); padding:11px 16px; min-height:44px; }
+  .btn.go { background:var(--ok); border-color:var(--ok); color:#fff; }
+  .btn.no { background:var(--badbg); color:var(--bad); border-color:#f3c4bf; }
+  .note { font-size:12px; color:var(--muted); }
+  /* Set Board */
+  .setwrap { display:grid; grid-template-columns: 1fr 320px; gap:14px; }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .panel h2 { font-size:19px; margin:0 0 4px; }
+  .slots { display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:10px; margin-top:12px; }
+  .slot { border:2px solid var(--line); border-radius:14px; padding:10px; min-height:118px; display:flex; flex-direction:column; gap:4px; background:#fff; }
+  .slot.sel { border-color:var(--ok); background:var(--sel); }
+  .slot.miss { border-style:dashed; background:#fbfaf7; color:var(--muted); align-items:center; justify-content:center; text-align:center; }
+  .slot.held { border-color:#f3c4bf; background:#fff8f7; }
+  .slot .top { display:flex; justify-content:space-between; align-items:center; }
+  .count-big { font-size:28px; font-weight:800; }
+  .ev li { margin:4px 0; font-size:14px; }
+  .kbd { font:12px ui-monospace,monospace; background:#eee9e1; border-radius:4px; padding:1px 5px; }
+  .view { display:none; } .view.on { display:block; }
+  @media (max-width: 900px) { .setwrap { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Catalogue review</h1>
+  <div class="tabs"><button class="on" data-v="oe">OE Review</button><button data-v="set">Set Board</button></div>
+  <div class="spacer"></div>
+  <span class="pill">Mock-up · illustrative rows · nothing is ticked by default</span>
+</header>
+
+<main>
+  <!-- ── OE Review ───────────────────────────────────────────── -->
+  <section class="view on" id="oe">
+    <div class="filters">
+      <span class="on">Walt Disney World</span><span>Disneyland Resort</span><span>Open edition</span><span class="on">2026 · Oct week 2</span>
+      <span>Has 2+ independent sources</span><span>Possible duplicates</span>
+    </div>
+    <div class="grid">
+      <div class="pin sel">
+        <div class="img ok"><span class="badge chip c-ok">Image: contributor photo · licensed</span>Collector photo<br>(front + card back)</div>
+        <div class="body"><div class="name">Kuzco (Emperor's New Groove)</div>
+          <div class="meta">WDW · Open edition · $14.99 · Oct 2026</div>
+          <span class="chip c-acc">SKU 400…(card barcode)</span><span class="chip c-ok">News ×2</span></div>
+        <div class="foot"><div class="chk">✓</div><a class="src" href="#">Open source ↗</a><span class="spacer"></span><span class="note">You ticked</span></div>
+      </div>
+      <div class="pin">
+        <div class="img">No permitted image<br><small>(official photo: link only)</small></div>
+        <div class="body"><div class="name">Yzma (Emperor's New Groove)</div>
+          <div class="meta">WDW · Open edition · $14.99 · Oct 2026</div>
+          <span class="chip c-ok">News ×2</span></div>
+        <div class="foot"><div class="chk"></div><a class="src" href="#">Open source ↗</a></div>
+      </div>
+      <div class="pin">
+        <div class="img">No permitted image</div>
+        <div class="body"><div class="name">Kronk Spinach Puffs</div>
+          <div class="meta">WDW · Open edition · $17.99 · Oct 2026</div>
+          <span class="chip c-warn">1 source only</span></div>
+        <div class="foot"><div class="chk"></div><a class="src" href="#">Open source ↗</a></div>
+      </div>
+      <div class="pin">
+        <div class="img">No permitted image</div>
+        <div class="body"><div class="name">Star Tours ride vehicle</div>
+          <div class="meta">DLR + WDW · Open edition · $14.99 · Sep 2026</div>
+          <span class="chip c-ok">Official page</span><span class="chip c-bad">Possible duplicate: PHUK-0001xxxx (2023 Star Tours)</span></div>
+        <div class="foot"><div class="chk"></div><a class="src" href="#">Compare ↗</a><span class="spacer"></span><span class="note">held</span></div>
+      </div>
+      <div class="pin">
+        <div class="img ok"><span class="badge chip c-ok">Image: own photo</span>Our photo</div>
+        <div class="body"><div class="name">Pluto 2026 dated</div>
+          <div class="meta">WDW + DLR · Open edition · $14.99 · 2026</div>
+          <span class="chip c-acc">SKU from card</span><span class="chip c-ok">Official page</span></div>
+        <div class="foot"><div class="chk"></div><a class="src" href="#">Open source ↗</a></div>
+      </div>
+      <div class="pin">
+        <div class="img">No permitted image</div>
+        <div class="body"><div class="name">EPCOT World Showcase · Japan</div>
+          <div class="meta">WDW · Open edition · 2026</div>
+          <span class="chip c-ok">News ×2</span></div>
+        <div class="foot"><div class="chk"></div><a class="src" href="#">Open source ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Set Board ───────────────────────────────────────────── -->
+  <section class="view" id="set">
+    <div class="setwrap">
+      <div class="panel">
+        <div class="note">Set 3 of 50 with an official page · Disney Store UK · 2025</div>
+        <h2>Ducks of Disney Mystery Pin Pouch</h2>
+        <div class="meta">Mystery pouch · 1 random pin · product 438038208431 · £28</div>
+        <div style="display:flex;gap:18px;margin-top:10px;align-items:baseline">
+          <div><span class="count-big">14</span> <span class="note">of 16 known</span></div>
+          <div><span class="count-big" style="color:var(--bad)">2</span> <span class="note">missing</span></div>
+          <div><span class="count-big" style="color:var(--ok)">3</span> <span class="note">you ticked</span></div>
+        </div>
+        <div class="slots">
+          <div class="slot sel"><div class="top"><b>Baymax</b><div class="chk">✓</div></div><span class="note">no permitted image</span></div>
+          <div class="slot sel"><div class="top"><b>Cheshire Cat</b><div class="chk">✓</div></div><span class="note">no permitted image</span></div>
+          <div class="slot sel"><div class="top"><b>Daisy Duck</b><div class="chk">✓</div></div><span class="chip c-ok">contributor photo</span></div>
+          <div class="slot"><div class="top"><b>Donald Duck</b><div class="chk"></div></div><span class="note">tap if the page shows it</span></div>
+          <div class="slot"><div class="top"><b>Dumbo</b><div class="chk"></div></div></div>
+          <div class="slot"><div class="top"><b>Figment</b><div class="chk"></div></div></div>
+          <div class="slot held"><div class="top"><b>Stitch</b><span class="chip c-bad">held</span></div><span class="note">possible duplicate of another set: decide separately</span></div>
+          <div class="slot"><div class="top"><b>Goofy</b><div class="chk"></div></div></div>
+          <div class="slot miss">? Missing slot 15<br><small>Type the character you see on the checklist</small></div>
+          <div class="slot miss">? Missing slot 16<br><small>+ Add character</small></div>
+        </div>
+      </div>
+      <div class="panel">
+        <b>Evidence</b>
+        <ul class="ev">
+          <li><span class="chip c-ok">official</span> disneystore.co.uk product page ↗</li>
+          <li><span class="chip c-n">news</span> disneypinsblog.com ↗</li>
+          <li><span class="chip c-n">news</span> wdwnt.com ↗</li>
+        </ul>
+        <b>Conflicts</b>
+        <div class="note" style="margin:6px 0 12px">Release date: sources differ (Mar vs Apr 2025). Tick the date only if the page shows it.</div>
+        <b>What you're confirming</b>
+        <div style="margin:6px 0 12px">
+          <span class="chip c-acc">✓ Characters</span><span class="chip c-acc">✓ Set membership</span><span class="chip c-n">Price</span><span class="chip c-n">Release date</span>
+        </div>
+        <b>Image rights (separate)</b>
+        <div class="note" style="margin:6px 0">Verifying facts never grants image rights. Images show only from our photos, licensed contributor photos, or licensed feeds.</div>
+        <div class="note" style="margin-top:12px">Keys: <span class="kbd">1–9</span> tick · <span class="kbd">V</span> verify ticked · <span class="kbd">M</span> add missing · <span class="kbd">→</span> next set</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="bar">
+  <span class="count">1 ticked</span><span class="note">Each tick = one pin you checked against the open source. Untouched pins stay unverified.</span>
+  <span class="spacer" style="flex:1"></span>
+  <button class="btn no">Send back with note</button>
+  <button class="btn go">Verify 1 ticked pin</button>
+</div>
+<script>
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === b.dataset.v));
+  document.querySelector('.bar .count').textContent = b.dataset.v === 'set' ? '3 ticked' : '1 ticked';
+  document.querySelector('.bar .go').textContent = b.dataset.v === 'set' ? 'Verify 3 ticked pins' : 'Verify 1 ticked pin';
+});
+</script>
+</body>
+</html>

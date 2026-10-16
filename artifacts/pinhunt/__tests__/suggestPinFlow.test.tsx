@@ -5,6 +5,8 @@ import AddPinScreen from '../app/add-pin';
 
 // UX-011 (#121): "Suggest a missing pin" in three short steps.
 const mockPush = jest.fn();
+const mockBack = jest.fn();
+const mockReplace = jest.fn();
 const mockPins = [
   { id: 'dp-006', title: 'Dumbo Blue Sky', collection: 'Park Icons' },
   { id: 'dp-003', title: 'Castle Fireworks', collection: 'Park Icons' },
@@ -12,7 +14,7 @@ const mockPins = [
 let mockParams: Record<string, string> = {};
 
 jest.mock('expo-router', () => ({
-  useRouter: () => ({ push: mockPush, back: jest.fn() }),
+  useRouter: () => ({ push: mockPush, back: mockBack, replace: mockReplace, canGoBack: () => true }),
   useLocalSearchParams: () => mockParams,
   Stack: { Screen: () => null },
 }));
@@ -66,6 +68,33 @@ describe('Suggest a missing pin (UX-011)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
     await screen.findByText('Pin Submitted!');
     expect(submitted()).toMatchObject({ proposedName: 'Tinker Bell Lantern', brand: 'Unknown', frontDraftPath: 'drafts/x.jpg' });
+  });
+
+  it('Done returns to where the collector came from (#350)', async () => {
+    await toDetails();
+    await fireEvent.changeText(screen.getByPlaceholderText('e.g. Dumbo Blue Sky'), 'Tinker Bell Lantern');
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    await screen.findByText('Pin Submitted!');
+    await fireEvent.press(screen.getByRole('button', { name: 'Done' }));
+    expect(mockBack).toHaveBeenCalled();
+    expect(mockReplace).not.toHaveBeenCalled();
+  });
+
+  it('Done after a scan goes Home, not back to the old scan (#350)', async () => {
+    const { compressSubmissionImage } = jest.requireMock('@/utils/submissionImage');
+    compressSubmissionImage.mockResolvedValue({ uri: 'file:///scan.jpg', width: 800, height: 800, base64: 'scan64' });
+    jest.spyOn(require('react-native').Image, 'getSize').mockImplementation((...args: unknown[]) => (args[1] as (w: number, h: number) => void)(800, 800));
+    mockParams = { frontUri: 'file:///scan.jpg' };
+    await render(<AddPinScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Get started' }));
+    await fireEvent.press(await screen.findByRole('button', { name: 'Next' }));
+    await screen.findByRole('header', { name: 'About this pin' });
+    await fireEvent.changeText(screen.getByPlaceholderText('e.g. Dumbo Blue Sky'), 'Scanned Pin');
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    await screen.findByText('Pin Submitted!');
+    await fireEvent.press(screen.getByRole('button', { name: 'Done' }));
+    expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
+    expect(mockBack).not.toHaveBeenCalled();
   });
 
   it('asks for a name before submitting', async () => {

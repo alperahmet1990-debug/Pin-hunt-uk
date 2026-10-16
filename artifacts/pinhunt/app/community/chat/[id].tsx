@@ -83,6 +83,7 @@ function MessageBubble({ msg, isMe, colors, pins }: {
 
 export default function ChatScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const router = useRouter();
   const colors = useColors(); const insets = useSafeAreaInsets();
   const { repo, userId } = useCommunity(); const { markRead } = useUnreadMessages();
   const { collection } = useCollection(); const { pins, ensurePins } = usePinCatalogue();
@@ -311,7 +312,12 @@ export default function ChatScreen() {
                   {tradeRelated && (conv?.tradeId ? (
                     <View style={[styles.agreedCard, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
                       <Text style={[styles.agreedTitle, { color: colors.homeInk }]}>Trade agreed ✓</Text>
-                      <Text style={[styles.contextText, { color: colors.homeMuted }]}>Arrange delivery when ready.</Text>
+                      <Text style={[styles.contextText, { color: colors.homeMuted }]}>Each of you posts your own pins. Use a tracked service.</Text>
+                      <TouchableOpacity onPress={() => router.push('/trading-safely')} accessibilityRole="link" accessibilityLabel="Trading safely guide" hitSlop={{ top: 10, bottom: 10 }} style={styles.safelyLink}>
+                        <Feather name="shield" size={13} color={colors.homeCoral} />
+                        <Text style={[styles.safelyText, { color: colors.homeCoral }]}>Trading safely</Text>
+                        <Feather name="chevron-right" size={13} color={colors.homeCoral} />
+                      </TouchableOpacity>
                     </View>
                   ) : (
                     <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
@@ -565,4 +571,6 @@ const styles = StyleSheet.create({
   confirmButton: { flex: 1, minHeight: 44, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
   confirmButtonText: { fontSize: 14, fontFamily: 'Inter_700Bold' },
   modalShade: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,.45)' }, pinPicker: { maxHeight: '78%', borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 }, pickerHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }, pickerTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' }, pinSearch: { borderWidth: 1, borderRadius: radius.sm - 1, paddingHorizontal: 11, paddingVertical: spacing.sm + 1, fontSize: 14, fontFamily: 'Inter_400Regular' }, pickerRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2, paddingVertical: spacing.sm + 2, borderBottomWidth: StyleSheet.hairlineWidth }, pickerImage: { width: 48, height: 48, borderRadius: 7 }, shareButton: { alignItems: 'center', padding: spacing.md + 1, borderRadius: radius.sm }, shareLabel: { fontFamily: 'Inter_600SemiBold' },
+  safelyLink: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 6, alignSelf: 'flex-start' },
+  safelyText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
 });

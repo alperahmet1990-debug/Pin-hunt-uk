@@ -278,10 +278,18 @@ export default function CollectorProfileScreen() {
                 </View>
               )}
 
-              <View style={styles.safetyNote}>
-                <Feather name="shield" size={11} color={colors.homeMuted} />
-                <Text style={[styles.safetyText, { color: colors.homeMuted }]}>Trading safely</Text>
-              </View>
+              {/* Opens the guide (#144); it used to look like a link and do nothing. */}
+              <TouchableOpacity
+                onPress={() => router.push('/trading-safely')}
+                accessibilityRole="link"
+                accessibilityLabel="Trading safely guide"
+                hitSlop={{ top: 12, bottom: 12 }}
+                style={styles.safetyNote}
+              >
+                <Feather name="shield" size={12} color={colors.homeCoral} />
+                <Text style={[styles.safetyText, { color: colors.homeCoral }]}>Trading safely</Text>
+                <Feather name="chevron-right" size={12} color={colors.homeCoral} />
+              </TouchableOpacity>
 
               {/* Opens a normal chat; never silently creates a formal Trade Request. */}
               <Button label="Start Conversation" icon="message-circle" onPress={startConversation} style={styles.convoBtn} />
@@ -463,6 +471,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: spacing.xs,
   },
-  safetyText: { fontSize: 11, fontFamily: 'Inter_400Regular' },
+  safetyText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   convoBtn: { margin: spacing.lg - 2, marginTop: spacing.xs },
 });

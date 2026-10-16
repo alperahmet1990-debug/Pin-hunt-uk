@@ -5,6 +5,7 @@ import CollectorProfileScreen from '../app/collector/[username]';
 // UX-045: the collector profile loads with a header placeholder in the
 // hero's place (compact for a match entry), then trade-match rows.
 let mockEntry: string | undefined;
+const mockPush = jest.fn();
 let resolveProfile: (p: unknown) => void = () => {};
 let mockProfileFails = false;
 const mockGetPublicProfile = jest.fn(() => (mockProfileFails
@@ -21,7 +22,7 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ username: 'pinpal', entry: mockEntry }),
-  useRouter: () => ({ push: jest.fn(), back: jest.fn() }),
+  useRouter: () => ({ push: mockPush, back: jest.fn() }),
   Stack: { Screen: () => null },
 }));
 jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ getPublicProfile: mockGetPublicProfile }) }));
@@ -67,6 +68,16 @@ describe('Collector profile while loading (UX-045)', () => {
       expect(width).toBeGreaterThanOrEqual(56);
       expect(height).toBeGreaterThanOrEqual(56);
     });
+  });
+
+  it('"Trading safely" opens the guide instead of doing nothing (#144)', async () => {
+    await render(<CollectorProfileScreen />);
+    await act(async () => { resolveProfile(profile); });
+    await act(async () => {
+      resolveTrades([{ direction: 'they_have_i_want', pinId: 'a', pinhuntId: 'PHUK-1', title: 'Stitch Surfing' }]);
+    });
+    await fireEvent.press(screen.getByRole('link', { name: 'Trading safely guide' }));
+    expect(mockPush).toHaveBeenCalledWith('/trading-safely');
   });
 
   it('uses the same loading label for a match entry', async () => {

@@ -121,13 +121,12 @@ jobs:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: research-review-dist
-          path: ${{ runner.temp }}/research-review-dist
+          # eas deploy resolves --export-dir relative to the app folder, so it must live inside it.
+          path: artifacts/pinhunt/dist-research-preview
 
       - name: Deploy to EAS Hosting (alias research-review)
-        env:
-          DIST: ${{ runner.temp }}/research-review-dist
         run: |
           npx --yes "$EAS_CLI" deploy \
-            --export-dir "$DIST" \
+            --export-dir dist-research-preview \
             --alias research-review \
             --non-interactive

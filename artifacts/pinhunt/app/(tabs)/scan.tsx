@@ -136,13 +136,20 @@ export default function ScanScreen() {
   const [addedOnResult, setAddedOnResult] = useState<number | null>(null);
   // The live camera only runs while this tab is on screen.
   const [focused, setFocused] = useState(false);
+  // Opening a match's Pin detail is a quick look: coming back keeps the result.
+  const keepResultOnLeave = useRef(false);
+  const resetRef = useRef<() => void>(() => {});
   useFocusEffect(useCallback(() => {
     setFocused(true);
+    keepResultOnLeave.current = false;
     return () => {
       setFocused(false);
       // Leaving the scan screen ends the session.
       setSessionAdded([]);
       setAddedOnResult(null);
+      // …and clears the last scan, so Find a Pin opens ready for the next
+      // one (#354). Any identification still running is dropped.
+      if (!keepResultOnLeave.current) resetRef.current();
     };
   }, []));
   const scrollRef = useRef<ScrollView>(null);
@@ -354,10 +361,12 @@ export default function ScanScreen() {
   // never routes collectors into the photo-contribution flow.
   const handleOpenPin = (pin: CataloguePin) => {
     markViewed(pin.id);
+    keepResultOnLeave.current = true;
     router.push({ pathname: '/pin/[id]', params: { id: pin.id } });
   };
 
   const handleReset = () => {
+    identifyRun.current += 1;
     setScanState('idle');
     setCaptured(null);
     setMatches([]);
@@ -367,6 +376,7 @@ export default function ScanScreen() {
     setNoMatchFound(false);
     setShowRecovery(false);
   };
+  resetRef.current = handleReset;
 
   // ── "None of these": recovery that keeps the photo ───────────────────────────
   const openRecovery = async () => {
@@ -415,11 +425,17 @@ export default function ScanScreen() {
         contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad, flexGrow: 1 }}
       >
         {/* ── Header ── */}
-        <View style={styles.headerRow}>
-          <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Find a Pin</Text>
-          <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
-            Scan, upload or search for a pin
-          </Text>
+        <View style={[styles.headerRow, styles.headerWithAction]}>
+          <View style={{ flex: 1 }}>
+            <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Find a Pin</Text>
+            <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
+              Scan, upload or search for a pin
+            </Text>
+          </View>
+          {/* Done with this scan: back to the camera in one tap (#354). */}
+          {scanState !== 'idle' && (
+            <Button label="Start again" icon="x" variant="secondary" size="compact" fullWidth={false} onPress={handleReset} />
+          )}
         </View>
 
         {/* ── Viewfinder (hidden once there's a result: the comparison shows the photo) ── */}
@@ -646,6 +662,7 @@ const styles = StyleSheet.create({
   scanNextCount: { fontSize: 12.5, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   root: { flex: 1 },
   headerRow: { paddingHorizontal: 16, marginBottom: 12 },
+  headerWithAction: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
   headerSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2 },
   // Search

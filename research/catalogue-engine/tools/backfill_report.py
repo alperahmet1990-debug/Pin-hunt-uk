@@ -5,7 +5,7 @@ Duplicate checks use the committed fingerprint baseline (tools/live_match.py). I
 the report stops with exit code 3 (DUPLICATE CHECK PAUSED) instead of skipping duplicate checks.
 Live public counts come from the baseline's aggregate rows; no readable live data is written.
 """
-import json, os, re, sys, collections
+import glob, json, os, re, sys, collections
 from urllib.parse import urlparse
 sys.path.insert(0, os.path.dirname(__file__))
 import live_match as M
@@ -133,9 +133,16 @@ def main(payload, out_xlsx, cov_json=None):
                 lv, nw = livec[(l, y, e)], newc[(l, y, e)]
                 if lv or nw: data.append([y, l, e, lv, nw, lv + nw])
     table(ws3, ['Year', 'Line', 'Edition', 'Live', 'New research', 'Total unique'], data)
+    # Reviewer checks (docs/research/catalogue-backfill/reviewer-checks/*.json) carry over every rebuild.
+    checks = {}
+    for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(out_xlsx)), 'reviewer-checks', '*.json'))):
+        doc = json.load(open(f))
+        for ck in doc.get('checks', []):
+            checks[ck['research_key']] = (ck['check'].upper() if ck['check'] == 'ok' else ck['check'].capitalize(),
+                                          f"{doc.get('checked_by', '')} {doc.get('checked_on', '')}".strip(), ck.get('note') or '')
     ws4 = wb.create_sheet('Research pins')
-    table(ws4, ['research_key', 'line', 'year', 'edition', 'standalone OE', 'status', 'corroborated', 'confidence', 'pin name', 'characters', 'set', 'live/archived match', 'release date', 'sources (up to 3)'],
-          [[r['key'], r['line'], r['year'], r['ed'], r['standalone'], r['status'], r['corroborated'], r['conf'], r['name'], r['chars'], r['set'], r['match'], r['release'], r['srcs']] for r in rows])
+    table(ws4, ['research_key', 'line', 'year', 'edition', 'standalone OE', 'status', 'corroborated', 'confidence', 'pin name', 'characters', 'set', 'live/archived match', 'release date', 'sources (up to 3)', 'My check', 'Checked by', 'Note'],
+          [[r['key'], r['line'], r['year'], r['ed'], r['standalone'], r['status'], r['corroborated'], r['conf'], r['name'], r['chars'], r['set'], r['match'], r['release'], r['srcs'], *checks.get(r['key'], ('', '', ''))] for r in rows])
     ws4.auto_filter.ref = ws4.dimensions; ws4.freeze_panes = 'A2'
     sets = collections.defaultdict(list)
     for c in pins: sets[c.get('set_research_key')].append(c)
@@ -168,6 +175,8 @@ def main(payload, out_xlsx, cov_json=None):
     lines_out += [f'Latest round: +{len(added)} genuinely new unique pins, {len(added_corr)} of them corroborated',
                   f'Incomplete sets: {len(inc)} sets, {sum(r[6] for r in inc)} named members still missing (never invented)',
                   f'Standalone OE (new research): {len(sa)} of {len(oe_new)} new OE pins; live OE 2015-2026: {sum(livec[(l, y, "OE")] for l in LINES for y in YEARS)}']
+    ck = collections.Counter(v[0] for k, v in checks.items() if k in {r['key'] for r in rows})
+    lines_out.append('Reviewer checks: ' + (', '.join(f'{n} {c}' for c, n in ck.most_common()) if ck else 'none yet'))
     lic = [r for r in rows if r['line'] == 'Licensed retailers' and in_range(r['year'])]
     bcount = collections.Counter((b, r['status'] == 'new') for r in lic for b in brands_of(r['key']))
     names = [n for _, n in BRANDS] + ['Other licensed']

@@ -1,0 +1,5666 @@
+{
+ "packet_id": "dlr-oe-2020-2022-evidence-2026-10-16-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:sprint72-dlr-oe-2020-2022",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+   "title": "Disney Parks 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2019/12/27/these-new-2020-disney-parks-pins-are-the-coolest/",
+   "title": "These New 2020 Disney Parks Pins Are The COOLEST!",
+   "publisher": "Disney Food Blog",
+   "published_date": "2019-12-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+   "title": "Halloween 2020 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+   "title": "PHOTOS: New Halloween 2020 Pins Arrive at Downtown Disney in Disneyland Resort",
+   "publisher": "WDW News Today",
+   "published_date": "2020-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+   "title": "Holiday Stockings 2020 Disney Parks Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+   "title": "Disney Parks 2021 Dated Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+   "title": "New UP Mystery Pin Set for 2021 at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+   "title": "Disney Princess 2021 Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+   "title": "Avengers Campus Pins at Disney California Adventure",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2021/06/photos-every-piece-of-new-avengers-campus-merchandise-and-prices-now-available-at-disneyland-resort-backlot-premiere-shop/",
+   "title": "Every Piece of Exclusive Avengers Campus Merchandise (with Prices) Now Available at Disney California Adventure",
+   "publisher": "WDW News Today",
+   "published_date": "2021-06-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+   "title": "W.E.B. Worldwide Engineering Brigade Disney Pin Releases at Avengers Campus",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+   "title": "Halloween 2021 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+   "title": "Holiday 2021 Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+   "title": "PHOTOS: Two New Sleeping Beauty Castle Pins Available at Disneyland Resort",
+   "publisher": "WDW News Today",
+   "published_date": "2021-11-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+   "title": "Disney Parks 2022 Dated Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+   "title": "Disney Princess Castle Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+   "title": "New Mickey Mouse Open Edition Pins for 2022 at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+   "title": "Halloween 2022 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+   "title": "Winnie the Pooh Halloween 2022 Pin Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+   "title": "Christmas 2022 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-holiday-2022-mystery-pin-set/",
+   "title": "Disney Holiday 2022 Mystery Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+   "title": "New Cars Land Open Edition Pins at Disney California Adventure",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+   "title": "Space Mountain 2022 Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/01/new-open-edition-pins-at-disneyland-feature-muppets-mickey-stitch-others-enjoying-popular-disney-parks-attractions/",
+   "title": "New Open-Edition Pins at Disneyland Feature Mickey, Stitch & Others Enjoying Popular Disney Parks Attractions",
+   "publisher": "WDW News Today",
+   "published_date": "2023-01-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneybymark.com/2023/01/new-open-edition-pins-at-disneyland-feature-mickey-stitch-others-enjoying-popular-disney-parks-attractions-the-muppets-and-more/",
+   "title": "New Open-Edition Pins at Disneyland Feature Mickey, Stitch & Others Enjoying Popular Disney Parks Attractions",
+   "publisher": "Disney by Mark",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2020/oe-set/halloween-2020-mickey-minnie-pumpkin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Minnie pumpkin pin set",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Two-pin set in Halloween 2020 OE lineup"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as a two-pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday Stockings 2020 Disney Parks Pin Set",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Set name per blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Six pins stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 24.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2021/oe-set/up-mystery-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "UP Mystery Pin Set 2021",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Per blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD 15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "8 different designs stated"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Two random pins per blind box"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Blog says also available at Disneyland Resort"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "January 2021 release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2021/oe-set/disney-princess-mystery-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess 2021 Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Per blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD 15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "12 designs stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "January 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-2021-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Also sold at Disneyland Resort"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2021/oe-set/avengers-campus-mystery-collection",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Avengers Campus Mystery Collection",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Mystery collection at land opening"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD 15.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-04",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Released at Avengers Campus opening"
+    },
+    {
+     "field": "release_location",
+     "value": "Avengers Campus, Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "DCA land"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2021/oe-set/spider-man-web-pin-and-patch",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spider-Man WEB Avengers Campus Disney Pin & Patch Set",
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "Pin set in W.E.B. lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "W.E.B. pins described as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2021/oe-set/chip-n-dale-halloween-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip 'n' Dale Halloween 2021 set",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed as a set at 15.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney date"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2021/oe-set/mickey-minnie-pumpkin-halloween-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Minnie pumpkin Halloween 2021 set",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed as a set at 15.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney date"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2021/oe-set/chip-n-dale-holiday-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip 'n' Dale holiday 2021 set",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set at 15.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-01",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "1 Nov 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Castle Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Per blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Seven pins forming a castle"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted late March 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at Disneyland"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2022/oe-set/donald-duck-halloween-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck Halloween 2022 set",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set at 14.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh Halloween 2022 Pin Set",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Per blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Four pins"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "From August 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2022/oe-set/mickey-minnie-christmas-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey & Minnie Christmas 2022 Pin Set",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set at 17.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2022/oe-set/disney-holiday-2022-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Holiday 2022 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2022-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Per blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2022-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-holiday-2022-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 17.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2022-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-holiday-2022-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Two pins per box"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com and Disney Parks",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2022-mystery-pin-set/",
+     "method": "search_snippet",
+     "note": "Sold online and in parks"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2020/oe/sorcerer-mickey-matterhorn-2020",
+   "set_key": "dlr/2020/oe-single/sorcerer-mickey-matterhorn-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sorcerer Mickey 2020 (Disneyland version)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Dated 2020 Disney Parks pin; DLR variant"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin dated 2020 design with Matterhorn in background (DLR variant)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Blog contrasts WDW and DLR backgrounds"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.disneyfoodblog.com/2019/12/27/these-new-2020-disney-parks-pins-are-the-coolest/",
+     "method": "search_snippet",
+     "note": "DFB says the new 2020 Disney Parks pins cost 14.99; not per-variant"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/stitch-carthay-circle-2020",
+   "set_key": "dlr/2020/oe-single/stitch-carthay-circle-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch 2020 (Disneyland version)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Dated 2020 Disney Parks pin; DLR variant"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin dated 2020 design with Carthay Circle in background (DLR variant)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Blog contrasts WDW and DLR backgrounds"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/russell-fun-wheel-2020",
+   "set_key": "dlr/2020/oe-single/russell-fun-wheel-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Russell 2020 (Disneyland version)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Dated 2020 Disney Parks pin; DLR variant"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Russell"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Russell",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin dated 2020 design with Mickey's Fun Wheel in background (DLR variant)",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Blog contrasts WDW and DLR backgrounds"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/disney-parks-2020-pins/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/magician-mickey-halloween-2020",
+   "set_key": "dlr/2020/oe-single/magician-mickey-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magician Mickey",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/witch-minnie-halloween-2020",
+   "set_key": "dlr/2020/oe-single/witch-minnie-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Witch Minnie",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/joker-goofy-halloween-2020",
+   "set_key": "dlr/2020/oe-single/joker-goofy-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Joker Goofy",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/skeleton-pluto-halloween-2020",
+   "set_key": "dlr/2020/oe-single/skeleton-pluto-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Skeleton Pluto",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/chip-n-dale-halloween-2020",
+   "set_key": "dlr/2020/oe-single/chip-n-dale-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip 'n' Dale Halloween 2020",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/candy-castle-halloween-2020",
+   "set_key": "dlr/2020/oe-single/candy-castle-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Candy castle",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/thor-loki-halloween-2020",
+   "set_key": "dlr/2020/oe-single/thor-loki-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Thor and Loki Halloween 2020",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thor",
+      "Loki"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe/boba-fett-halloween-2020",
+   "set_key": "dlr/2020/oe-single/boba-fett-halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Boba Fett Halloween 2020",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed in Halloween 2020 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Boba Fett",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Downtown Disney, Disneyland Resort",
+     "source_url": "https://wdwnt.com/2020/08/photos-new-halloween-pins-scared-up-in-downtown-disney-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT found Halloween 2020 pins here at 9.99; per-pin match to this lineup not confirmed"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/halloween-2020-mickey-minnie-pumpkin/mickey-mouse",
+   "set_key": "dlr/2020/oe-set/halloween-2020-mickey-minnie-pumpkin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/halloween-2020-mickey-minnie-pumpkin/minnie-mouse",
+   "set_key": "dlr/2020/oe-set/halloween-2020-mickey-minnie-pumpkin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/halloween-2020-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/holiday-stockings-2020/mickey-mouse",
+   "set_key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Year per set name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/holiday-stockings-2020/goofy",
+   "set_key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Year per set name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/holiday-stockings-2020/pluto",
+   "set_key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Year per set name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/holiday-stockings-2020/donald-duck",
+   "set_key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Year per set name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/holiday-stockings-2020/minnie-mouse",
+   "set_key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Year per set name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2020/oe-set/holiday-stockings-2020/daisy-duck",
+   "set_key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Daisy Duck",
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/holiday-stockings-2020-disney-parks-pin-set/",
+     "method": "search_snippet",
+     "note": "Year per set name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/jack-skellington-disneyland-2021",
+   "set_key": "dlr/2021/oe-single/jack-skellington-disneyland-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington Disneyland 2021",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Blog lists a Disneyland version of each 2021 character pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Jack Skellington",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition logo pins dated 2021"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin dated 2021 logo design",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin per blog"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/kermit-disneyland-2021",
+   "set_key": "dlr/2021/oe-single/kermit-disneyland-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kermit the Frog Disneyland 2021",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Blog lists a Disneyland version of each 2021 character pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kermit the Frog"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Kermit the Frog",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition logo pins dated 2021"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin dated 2021 logo design",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin per blog"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/stitch-disneyland-2021",
+   "set_key": "dlr/2021/oe-single/stitch-disneyland-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Disneyland 2021",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Blog lists a Disneyland version of each 2021 character pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition logo pins dated 2021"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin dated 2021 logo design",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin per blog"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/winnie-the-pooh-disneyland-2021",
+   "set_key": "dlr/2021/oe-single/winnie-the-pooh-disneyland-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Winnie the Pooh Disneyland 2021",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Blog lists a Disneyland version of each 2021 character pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition logo pins dated 2021"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin dated 2021 logo design",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin per blog"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/disney-parks-2021-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe-set/up-mystery-2021/dug",
+   "set_key": "dlr/2021/oe-set/up-mystery-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dug"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Dug",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Dated 2021 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe-set/up-mystery-2021/russell",
+   "set_key": "dlr/2021/oe-set/up-mystery-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Russell"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Russell",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Dated 2021 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe-set/up-mystery-2021/carl",
+   "set_key": "dlr/2021/oe-set/up-mystery-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Carl Fredricksen"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Carl Fredricksen",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Dated 2021 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe-set/up-mystery-2021/ellie",
+   "set_key": "dlr/2021/oe-set/up-mystery-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ellie Fredricksen"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Ellie Fredricksen",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Dated 2021 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe-set/up-mystery-2021/kevin",
+   "set_key": "dlr/2021/oe-set/up-mystery-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Kevin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Kevin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Dated 2021 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe-set/up-mystery-2021/charles",
+   "set_key": "dlr/2021/oe-set/up-mystery-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Charles Muntz"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Charles Muntz",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-up-mystery-pin-set-for-2021-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Dated 2021 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/avengers-campus-logo",
+   "set_key": "dlr/2021/oe-single/avengers-campus-logo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers Campus logo pin",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Opening-day pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-04",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Released at land opening"
+    },
+    {
+     "field": "release_location",
+     "value": "Avengers Campus, Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "DCA"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2021/06/photos-every-piece-of-new-avengers-campus-merchandise-and-prices-now-available-at-disneyland-resort-backlot-premiere-shop/",
+     "method": "search_snippet",
+     "note": "WDWNT lists an Avengers Campus pin at 9.99"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/quinjet",
+   "set_key": "dlr/2021/oe-single/quinjet",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Quinjet pin",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Opening-day pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-04",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Released at land opening"
+    },
+    {
+     "field": "release_location",
+     "value": "Avengers Campus, Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "DCA"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/avengers-campus-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/spider-man-web-avengers-campus",
+   "set_key": "dlr/2021/oe-single/spider-man-web-avengers-campus",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spider-Man WEB Avengers Campus Disney Pin",
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "Single pin in W.E.B. lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Spider-Man",
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "W.E.B. pins described as open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Avengers Campus, Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "Released for Avengers Campus"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06",
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "Land opened June 2021"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/w-e-b-worldwide-engineering-brigade-disney-pin-releases-at-avengers-campus/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/mickey-halloween-2021",
+   "set_key": "dlr/2021/oe-single/mickey-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/minnie-halloween-2021",
+   "set_key": "dlr/2021/oe-single/minnie-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/castle-halloween-2021",
+   "set_key": "dlr/2021/oe-single/castle-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Castle Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/pluto-halloween-2021",
+   "set_key": "dlr/2021/oe-single/pluto-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/donald-halloween-2021",
+   "set_key": "dlr/2021/oe-single/donald-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/goofy-halloween-2021",
+   "set_key": "dlr/2021/oe-single/goofy-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/the-child-halloween-2021",
+   "set_key": "dlr/2021/oe-single/the-child-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Child Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Child"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "The Child",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/rocket-groot-halloween-2021",
+   "set_key": "dlr/2021/oe-single/rocket-groot-halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rocket & Groot Halloween 2021",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rocket",
+      "Groot"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-09",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Online at shopDisney 9 Aug 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blog says most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/halloween-2021-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/santa-mickey-holiday-2021",
+   "set_key": "dlr/2021/oe-single/santa-mickey-holiday-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Santa Mickey",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Holiday 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-01",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released 1 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/mickey-minnie-holiday-2021",
+   "set_key": "dlr/2021/oe-single/mickey-minnie-holiday-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie holiday 2021",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Holiday 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-01",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released 1 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/101-dalmatians-holiday-2021",
+   "set_key": "dlr/2021/oe-single/101-dalmatians-holiday-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "101 Dalmatians holiday 2021",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Holiday 2021 OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-01",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released 1 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/lady-and-the-tramp-holiday-2021",
+   "set_key": "dlr/2021/oe-single/lady-and-the-tramp-holiday-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lady and the Tramp holiday 2021",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Holiday 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lady",
+      "Tramp"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-01",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released 1 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/dumbo-holiday-2021",
+   "set_key": "dlr/2021/oe-single/dumbo-holiday-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo holiday 2021",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Holiday 2021 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Dumbo",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-01",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Released 1 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/mickey-friends-christmas-jumbo-2021",
+   "set_key": "dlr/2021/oe-single/mickey-friends-christmas-jumbo-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey and Friends Christmas Jumbo pin",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Jumbo listed in holiday 2021 roundup"
+    },
+    {
+     "field": "original_price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 29.99 in parks"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/holiday-2021-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/mickey-sleeping-beauty-castle-2021",
+   "set_key": "dlr/2021/oe-single/mickey-sleeping-beauty-castle-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey and Sleeping Beauty Castle Pin",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Name per WDWNT"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT calls them open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Reported 6 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Downtown Disney District",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Found here"
+    },
+    {
+     "field": "visual_description",
+     "value": "Silhouette Mickey gesturing toward outlined castle",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Castle subject"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/sleeping-beauty-castle-disneyland-logo-2021",
+   "set_key": "dlr/2021/oe-single/sleeping-beauty-castle-disneyland-logo-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sleeping Beauty Castle Disneyland Pin",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Name per WDWNT"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT calls them open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Reported 6 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Downtown Disney District",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Found here"
+    },
+    {
+     "field": "visual_description",
+     "value": "Disneyland logo in front of the castle with pink, blue, teal accents",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Castle subject"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://wdwnt.com/2021/11/photos-two-new-sleeping-beauty-castle-pins-available-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/mickey-mouse-disneyland-2022",
+   "set_key": "dlr/2022/oe-single/mickey-mouse-disneyland-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Disneyland 2022 Pin",
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Dated 2022 series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey Mouse with Sleeping Beauty Castle, dated 2022",
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Castle featured"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/2022-dated-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-castle-booster/jasmine",
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle castle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Pins combine to form a castle"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-castle-booster/tiana",
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle castle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Pins combine to form a castle"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-castle-booster/ariel",
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle castle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Pins combine to form a castle"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-castle-booster/cinderella",
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle castle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Pins combine to form a castle"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-castle-booster/mulan",
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle castle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Pins combine to form a castle"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-castle-booster/aurora",
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle castle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Pins combine to form a castle"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-castle-booster/belle",
+   "set_key": "dlr/2022/oe-set/disney-princess-castle-booster",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle castle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Pins combine to form a castle"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-castle-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/conductor-mickey-2022",
+   "set_key": "dlr/2022/oe-single/conductor-mickey-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Conductor Mickey Mouse Pin",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Roundup of Mickey OE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/steamboat-willie-2022",
+   "set_key": "dlr/2022/oe-single/steamboat-willie-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Steamboat Willie Pin",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Roundup of Mickey OE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/dapper-mickey-2022",
+   "set_key": "dlr/2022/oe-single/dapper-mickey-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dapper Mickey Mouse Pin",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Roundup of Mickey OE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/brave-little-tailor-mickey-2022",
+   "set_key": "dlr/2022/oe-single/brave-little-tailor-mickey-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Brave Little Tailor Mickey Mouse Pin",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Roundup of Mickey OE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/camera-mickey-2022",
+   "set_key": "dlr/2022/oe-single/camera-mickey-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Camera Mickey Mouse Pin",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Roundup of Mickey OE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/happy-birthday-mickey-2022",
+   "set_key": "dlr/2022/oe-single/happy-birthday-mickey-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday Mickey Mouse Pin",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Roundup of Mickey OE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/americana-mickey-2022",
+   "set_key": "dlr/2022/oe-single/americana-mickey-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Americana pin",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Roundup of Mickey OE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-mickey-mouse-open-edition-pins-for-2022-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/castle-halloween-2022",
+   "set_key": "dlr/2022/oe-single/castle-halloween-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Castle Halloween 2022",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2022 OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-02",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney release 2 Aug 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/mickey-halloween-2022",
+   "set_key": "dlr/2022/oe-single/mickey-halloween-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Halloween 2022",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-02",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney release 2 Aug 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/minnie-halloween-2022",
+   "set_key": "dlr/2022/oe-single/minnie-halloween-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Halloween 2022",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-02",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney release 2 Aug 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/pluto-halloween-2022",
+   "set_key": "dlr/2022/oe-single/pluto-halloween-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto Halloween 2022",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-02",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney release 2 Aug 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/goofy-halloween-2022",
+   "set_key": "dlr/2022/oe-single/goofy-halloween-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Halloween 2022",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-02",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney release 2 Aug 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/chip-n-dale-halloween-2022",
+   "set_key": "dlr/2022/oe-single/chip-n-dale-halloween-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip 'n Dale Halloween 2022",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-02",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney release 2 Aug 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/daisy-halloween-2022",
+   "set_key": "dlr/2022/oe-single/daisy-halloween-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy Halloween 2022",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Halloween 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Daisy Duck",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-02",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "shopDisney release 2 Aug 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022/winnie-the-pooh",
+   "set_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022/tigger",
+   "set_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tigger"
+     ],
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Tigger",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022/eeyore",
+   "set_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Eeyore",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022/piglet",
+   "set_key": "dlr/2022/oe-set/winnie-the-pooh-halloween-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Piglet"
+     ],
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Piglet",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-halloween-2022-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/mickey-christmas-2022",
+   "set_key": "dlr/2022/oe-single/mickey-christmas-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Christmas 2022 Pin",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Christmas 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted late Oct 2022 (Epcot/MK)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/wreath-christmas-2022",
+   "set_key": "dlr/2022/oe-single/wreath-christmas-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Wreath Christmas 2022",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Christmas 2022 OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted late Oct 2022 (Epcot/MK)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/goofy-christmas-2022",
+   "set_key": "dlr/2022/oe-single/goofy-christmas-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Christmas 2022",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Christmas 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted late Oct 2022 (Epcot/MK)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/pluto-christmas-2022",
+   "set_key": "dlr/2022/oe-single/pluto-christmas-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto Christmas 2022",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Christmas 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted late Oct 2022 (Epcot/MK)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/chip-n-dale-christmas-2022",
+   "set_key": "dlr/2022/oe-single/chip-n-dale-christmas-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip 'n Dale Christmas 2022",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed in Christmas 2022 OE roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted late Oct 2022 (Epcot/MK)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World parks and hotels",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Most parks/hotels at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/mickey-friends-christmas-jumbo-2022",
+   "set_key": "dlr/2022/oe-single/mickey-friends-christmas-jumbo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Christmas 2022 Mickey & Friends jumbo pin",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Jumbo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Jumbo stated as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10-25",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available from 25 Oct 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at Disneyland"
+    },
+    {
+     "field": "original_price",
+     "value": 34.99,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 34.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/christmas-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/cars-land-billboard-2022",
+   "set_key": "dlr/2022/oe-single/cars-land-billboard-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars Land Billboard pin",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Name per blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lightning McQueen",
+      "Sally Carrera"
+     ],
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "October 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "DCA"
+    },
+    {
+     "field": "attraction",
+     "value": "Cars Land",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Land theme"
+    },
+    {
+     "field": "visual_description",
+     "value": "Billboard design with Lightning McQueen and Sally",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/cars-land-water-tower-2022",
+   "set_key": "dlr/2022/oe-single/cars-land-water-tower-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars Land Water Tower pin",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Name per blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mater",
+      "Cruz Ramirez"
+     ],
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "October 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "DCA"
+    },
+    {
+     "field": "attraction",
+     "value": "Cars Land",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Land theme"
+    },
+    {
+     "field": "visual_description",
+     "value": "Water tower design with Mater and Cruz Ramirez",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/new-cars-land-open-edition-pins-at-disney-california-adventure/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/mickey-space-mountain-2022",
+   "set_key": "dlr/2022/oe-single/mickey-space-mountain-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Space Mountain Pin",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name per blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted Dec 2022 at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at Disneyland"
+    },
+    {
+     "field": "attraction",
+     "value": "Space Mountain",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Attraction theme"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Glitter embellishments"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey racing through space",
+     "source_url": "https://disneybymark.com/2023/01/new-open-edition-pins-at-disneyland-feature-mickey-stitch-others-enjoying-popular-disney-parks-attractions-the-muppets-and-more/",
+     "method": "search_snippet",
+     "note": "Disney by Mark paraphrase"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/stitch-space-mountain-2022",
+   "set_key": "dlr/2022/oe-single/stitch-space-mountain-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Space Mountain Pin",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Name per blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted Dec 2022 at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at Disneyland"
+    },
+    {
+     "field": "attraction",
+     "value": "Space Mountain",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Attraction theme"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Glitter embellishments"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch on Space Mountain with Nipper the Robot-Dog",
+     "source_url": "https://wdwnt.com/2023/01/new-open-edition-pins-at-disneyland-feature-muppets-mickey-stitch-others-enjoying-popular-disney-parks-attractions/",
+     "method": "search_snippet",
+     "note": "WDWNT paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2023/01/new-open-edition-pins-at-disneyland-feature-muppets-mickey-stitch-others-enjoying-popular-disney-parks-attractions/",
+     "method": "search_snippet",
+     "note": "WDWNT calls it open-edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/space-mountain-2022-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Year per source context"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2020/oe/mickey-minnie-2020",
+   "field": "visual_description",
+   "searched": "DPB 2020 dated page snippet",
+   "note": "Mickey & Minnie 2020 pin-on-pin listed but DLR background not stated"
+  },
+  {
+   "key": "dlr/2020/oe/mickey-friends-spinner-2020",
+   "field": "release_location",
+   "searched": "DPB 2020 dated page snippet",
+   "note": "Spinner pin (Mickey, Donald, Minnie, Goofy) 14.99; DLR-specific version not stated"
+  },
+  {
+   "key": "dlr/2020/oe/thor-loki-halloween-2020",
+   "field": "pin_structure",
+   "searched": "DPB Halloween 2020 snippet",
+   "note": "Thor and Loki named together; unclear if one pin or two"
+  },
+  {
+   "key": "dlr/2020/oe-set/holiday-stockings-2020",
+   "field": "release_location",
+   "searched": "DPB holiday 2020 snippets; 1 query",
+   "note": "Disney Parks set; DLR availability not explicitly stated in snippet"
+  },
+  {
+   "key": "dlr/2020/oe/holiday-2020-character-pins",
+   "field": "members",
+   "searched": "DPB Holiday 2020 roundup snippet",
+   "note": "About two dozen OE holiday pins (9.99; Chip 'n Dale set 14.99; Lilo & Stitch 12.99) late Oct 2020; individual names not in snippet"
+  },
+  {
+   "key": "dlr/2020/oe-set/disneyland-65th",
+   "field": "edition_type",
+   "searched": "DPB 65th releases + DFB; 3 queries",
+   "note": "No open edition Disneyland 65th anniversary pin found; 65th pins seen were LE/LR/AP/Club 33/BoxLunch"
+  },
+  {
+   "key": "dlr/2021/oe/dated-2021-series",
+   "field": "release_date",
+   "searched": "DPB 2021 dated snippet",
+   "note": "Released late 2020 per blog; exact DLR date not stated"
+  },
+  {
+   "key": "dlr/2021/oe-set/up-mystery-2021",
+   "field": "members",
+   "searched": "DPB UP snippet",
+   "note": "Only 6 of 8 designs named"
+  },
+  {
+   "key": "dlr/2021/oe-set/disney-princess-mystery-2021",
+   "field": "members",
+   "searched": "DPB princess 2021 snippet",
+   "note": "Member princesses not named in snippet"
+  },
+  {
+   "key": "dlr/2021/oe-set/avengers-campus-mystery-collection",
+   "field": "members",
+   "searched": "DPB Avengers Campus snippet",
+   "note": "Members not named; a reseller (not evidence) suggests 8 pins"
+  },
+  {
+   "key": "dlr/2021/oe/spider-man-web-avengers-campus",
+   "field": "original_price",
+   "searched": "DPB WEB snippet",
+   "note": "Range 9.99 (singles) to 32.99 (sets) given; per-item price not stated"
+  },
+  {
+   "key": "dlr/2021/oe/web-lineup",
+   "field": "members",
+   "searched": "DPB WEB + WDWNT AC merch; 3 queries",
+   "note": "Full W.E.B. single and set list not in snippets"
+  },
+  {
+   "key": "dlr/2021/oe-set/chip-n-dale-halloween-2021",
+   "field": "members",
+   "searched": "DPB Halloween 2021 snippet",
+   "note": "Set contents/count not stated"
+  },
+  {
+   "key": "dlr/2021/oe-set/mickey-minnie-pumpkin-halloween-2021",
+   "field": "members",
+   "searched": "DPB Halloween 2021 snippet",
+   "note": "Set contents/count not stated"
+  },
+  {
+   "key": "dlr/2021/oe-set/halloween-2021-ghost-booster",
+   "field": "release_location",
+   "searched": "DPB Halloween 2021 snippets; 2 queries",
+   "note": "Ghost booster 24.99 OE spotted at Magic Kingdom; DLR sale not confirmed"
+  },
+  {
+   "key": "dlr/2021/oe/mickey-friends-christmas-jumbo-2021",
+   "field": "edition_type",
+   "searched": "DPB holiday 2021 snippet",
+   "note": "Jumbo listed alongside OE pins but edition not stated for it"
+  },
+  {
+   "key": "dlr/2021/oe/marvel-holiday-2021",
+   "field": "members",
+   "searched": "DPB holiday 2021 snippet",
+   "note": "Marvel holiday pins mentioned, not named"
+  },
+  {
+   "key": "dlr/2021/oe/disney-princess-castle-series-2021",
+   "field": "release_location",
+   "searched": "DPB princess castle series; 1 query",
+   "note": "2021 OE princess castle series (12.99) reported at WDW; DLR version only via a reseller"
+  },
+  {
+   "key": "dlr/2021/oe/snow-whites-enchanted-wish",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "No OE pin for the 2021 Snow White's Enchanted Wish reopening found"
+  },
+  {
+   "key": "dlr/2021/oe/jungle-cruise-2021",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Only BoxLunch park pins (edition not stated) and D23 LE found for 2021"
+  },
+  {
+   "key": "dlr/2022/oe/mickey-mouse-disneyland-2022",
+   "field": "edition_type",
+   "searched": "DPB 2022 dated snippets; 2 queries",
+   "note": "Booster in same series stated OE; this pin's edition not stated explicitly"
+  },
+  {
+   "key": "dlr/2022/oe-set/2022-dated-booster",
+   "field": "release_location",
+   "searched": "DPB 2022 dated snippets",
+   "note": "2022 booster (6 chars, 32.99 OE) and mystery (17.99, 8 pins) are Disney Parks items; DLR not stated; spotted at Epcot Dec 2021"
+  },
+  {
+   "key": "dlr/2022/oe/americana-mickey-2022",
+   "field": "release_year",
+   "searched": "DPB Halloween 2020 + Mickey 2022 snippets",
+   "note": "A 17.99 OE Americana Mickey also appears on a 2020 page; year ambiguous"
+  },
+  {
+   "key": "dlr/2022/oe/halloween-2022-lineup",
+   "field": "release_location",
+   "searched": "DPB Halloween 2022 snippet",
+   "note": "DLR park availability of main lineup not explicit in snippet; Marvel/Star Wars pins not named"
+  },
+  {
+   "key": "dlr/2022/oe-set/disney-holiday-2022-mystery",
+   "field": "expected_pin_count",
+   "searched": "DPB holiday mystery snippet",
+   "note": "Total designs not stated"
+  },
+  {
+   "key": "dlr/2022/oe/lunar-new-year-2022",
+   "field": "edition_type",
+   "searched": "MickeyBlog + DPB LNY snippets",
+   "note": "2022 Lunar New Year mystery pins were limited release, not OE"
+  },
+  {
+   "key": "dlr/2022/oe/mickeys-toontown-world-of-color-one",
+   "field": "edition_type",
+   "searched": "not searched (budget)",
+   "note": "Toontown and World of Color One reopened/debuted 2023; no 2022 OE leads collected"
+  },
+  {
+   "key": "dlr/2022/oe/disney-princess-2022",
+   "field": "release_location",
+   "searched": "search budget exhausted",
+   "note": "Disney Princess 2022 OE pins page exists on DPB; DLR details not collected"
+  }
+ ],
+ "discovery_notes": "DLR open-edition pass 2020-2022; ~32 WebSearch calls, all search_snippet, then shared search budget ran out. Mostly Disney Pins Blog with WDWNT and Disney by Mark. Many seasonal OE pins are Disney Parks-wide (DLR+WDW); location claims kept only where stated. No OE Disneyland 65th pin found (all LE/LR). 2021 dated pins released late 2020. Price conflict kept on Sorcerer Mickey 2020 (12.99 vs 14.99). Space Mountain 2022 pins spotted Dec 2022, covered by WDWNT Jan 2023. OE price rises Oct 2022 (9.99->11.99, 12.99->14.99) may explain mixed 2022 prices."
+}

@@ -35,6 +35,10 @@ at the **staging** Supabase project and a staging API server, never production:
 
 The `production` environment and channel stay unused until launch.
 
+Staging starts with no catalogue. To give preview builds real pins and photos,
+copy main's public catalogue into staging: see
+`artifacts/api-server/scripts/COPY-CATALOGUE-TO-STAGING.md` (#372).
+
 ## One-time setup (maintainer)
 
 Agents cannot run `eas`, edit `.github/**` or set secrets, so these steps are

@@ -1,0 +1,4262 @@
+{
+ "packet_id": "backfill-b016-lic-2018",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b016",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+   "title": "Disney Princess Dress Collection Pins At Boxlunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+   "title": "Loungefly Disney Princess Mystery Buttons",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-25",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+   "title": "Loungefly Lilo and Stitch Disney Mystery Buttons",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+   "title": "Disney Loungefly Blind Box Pins at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+   "title": "New Loungefly Pins at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-wall-e-eve-wall-e-enamel-pin/11649016.html",
+   "title": "Loungefly Disney Pixar WALL-E EVE & WALL-E Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+   "title": "Stitch Pineapple Loungefly Pin at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+   "title": "The Lion King Simba Loungefly Pin at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+   "title": "The Lion King Simba BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+   "title": "Mickey Mouse BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-mouse-surfboard-enamel-pin---boxlunch-exclusive/11502734.html",
+   "title": "Disney Mickey Mouse Surfboard Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+   "title": "Mushu And Cri-kee BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+   "title": "Cri-Kee Mulan BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+   "title": "Donald Duck BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09-13",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+   "title": "Alice In Wonderland BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+   "title": "Cupcake and Donut Disney Character BoxLunch Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+   "title": "Minnie Mouse Happy Birthday BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+   "title": "Mickey Mouse Happy Birthday BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+   "title": "Stitch Happy Birthday BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+   "title": "Mickey Mouse Multicolor BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+   "title": "Mickey Mouse Split Face BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+   "title": "Christmas 2018 Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+   "title": "Funko Pop BoxLunch Exclusive Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-villains-evil-queen-enamel-pin---boxlunch-exclusive/11622706.html",
+   "title": "Funko Pop! Disney Villains Evil Queen Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-villains-maleficent-enamel-pin---boxlunch-exclusive/11622708.html",
+   "title": "Funko Pop! Disney Villains Maleficent Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set",
+   "title": "Alice, Queen of Hearts & Hedgehog Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+   "title": "Mulan Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+   "title": "Funko Pop! Mickey Mouse 90th BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pins-at-pink-a-la-mode/",
+   "title": "Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/what-are-artland-disney-pins/",
+   "title": "What Are ArtLand Disney Pins?",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Dress Collection (BoxLunch mystery set)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "title of DPB post"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "one pin per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "11 pins in the set"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post dated Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-boxlunch-princess-mystery-buttons",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Princess Mystery Buttons",
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "Loungefly named in title"
+    },
+    {
+     "field": "format",
+     "value": "blind bag button",
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "one button per blind bag"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "12 buttons total"
+    },
+    {
+     "field": "price",
+     "value": 2.9,
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "per button"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "post dated 25 Jul 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/loungefly-disney-princess-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "filed under BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-boxlunch-lilo-stitch-mystery-buttons",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Lilo and Stitch Disney Mystery Buttons",
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "Loungefly named in title"
+    },
+    {
+     "field": "format",
+     "value": "blind bag button",
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "one random button per blind bag"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "12-button set"
+    },
+    {
+     "field": "price",
+     "value": 2.9,
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "per button"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "post dated 21 Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/loungefly-lilo-and-stitch-disney-mystery-buttons/",
+     "method": "search_snippet",
+     "note": "filed under BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Loungefly Blind Box Pins at Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Loungefly in title"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "one per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "nine pins total"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "post dated 21 Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "spotted in Hot Topic stores, not online"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "New Loungefly Pins at Hot Topic (Nov 2018)",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Loungefly in title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "post lists nine pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "in store and online at Hot Topic"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-hot-topic-stitch-pineapple",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Pineapple Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Loungefly named in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "sold at Hot Topic"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-hot-topic-simba",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Lion King Simba Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Loungefly named in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "sold at Hot Topic"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-boxlunch-simba",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Lion King Simba BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly named in post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-mushu-and-cri-kee",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mushu and Cri-Kee BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-cri-kee",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cri-Kee Mulan BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-donald-duck",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-alice-in-wonderland",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice In Wonderland BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-happy-birthday",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch Happy Birthday pins",
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post says Mickey and Minnie pins exist in same style"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-mickey-multicolor",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Multicolor BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-mickey-split-face",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Split Face BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release title per post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-boxlunch-mickey-mouse",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse BoxLunch Disney Pins",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "created by Loungefly per post"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "post dated 22 Jul 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "price",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "about $9 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-cupcake-and-donut",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cupcake and Donut Disney Character BoxLunch Pins",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "five characters listed: 3 cupcakes, 2 donuts"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "early Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-christmas",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas 2018 Disney Pins at BoxLunch",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "available Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-christmas-wall-e-eve-lights",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E & Eve Christmas Lights pin set",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "from Christmas 2018 BoxLunch post"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "set price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-christmas-stitch-holiday-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch holiday pin set (Stitch, Angel, Scrump)",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "from Christmas 2018 BoxLunch post"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-pop-collection",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Funko Pop BoxLunch Exclusive Disney Pins",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "Funko Pop pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "staggered Nov-Dec 2018 per post dated 14 Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-alice-queen-of-hearts-hedgehog",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice, Queen of Hearts & Hedgehog Funko Pop! BoxLunch Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "Funko Pop"
+    },
+    {
+     "field": "price",
+     "value": 18.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "set price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-mulan",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mulan Funko Pop! BoxLunch Pin Set",
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "Funko Pop"
+    },
+    {
+     "field": "price",
+     "value": 18.9,
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "set price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Funko Pop! Mickey Mouse 90th BoxLunch Pins",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "issuer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "Funko Pop"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "one per box"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/ariel",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/snow-white",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/belle",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/tiana",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/aurora",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/merida",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/jasmine",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/mulan",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/cinderella",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/pocahontas",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-princess-dress-collection-mystery/rapunzel",
+   "set_key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "princess named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "dress design for this princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "mystery box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-dress-collection-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/cinderella",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/snow-white",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/jasmine",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/ursula",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Ursula",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/woody",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Woody"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Woody",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/dumbo",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Dumbo",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/belle",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/alice",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Alice",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-blind-box-oct/stitch-glitter",
+   "set_key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "character named in set list"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "named in set list"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "blind box assortment"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Oct 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "Hot Topic stores"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-loungefly-blind-box-pins-at-hot-topic",
+     "method": "search_snippet",
+     "note": "listed as glitter Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/dumbo-balancing-ball",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo Balancing Ball",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Dumbo",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dumbo balancing on a circus ball",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/aristocats-stack",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Aristocats",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marie",
+      "Berlioz",
+      "Toulouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Marie",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    },
+    {
+     "field": "visual_description",
+     "value": "Marie, Berlioz and Toulouse stacked",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/pegasus",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hercules Pegasus",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pegasus"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Pegasus",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/thumper",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Thumper",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thumper"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Thumper",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    },
+    {
+     "field": "visual_description",
+     "value": "chibi-style Thumper from Bambi",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/cheshire-cat",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cheshire Cat",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Cheshire Cat",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/aliens-spaceship",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Toy Story Aliens Spaceship",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aliens"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Aliens",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/dory",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Finding Nemo Dory",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dory"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Dory",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/heimlich",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "A Bug's Life Heimlich",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Heimlich"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "Heimlich",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-nov-wave/wall-e-and-eve",
+   "set_key": "lic/2018/loungefly-hot-topic-nov-wave",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "WALL-E & Eve",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "name as listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E",
+      "EVE"
+     ],
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "characters named"
+    },
+    {
+     "field": "main_character",
+     "value": "WALL-E",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "launch price in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "spotted Nov 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "Hot Topic"
+    },
+    {
+     "field": "visual_description",
+     "value": "two pin posts on back",
+     "source_url": "https://disneypinsblog.com/new-loungefly-pins-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-wall-e-eve-wall-e-enamel-pin/11649016.html",
+     "method": "search_snippet",
+     "note": "Hot Topic listing shows original price 6.90; listing undated"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-stitch-pineapple/stitch",
+   "set_key": "lic/2018/loungefly-hot-topic-stitch-pineapple",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Pineapple Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "sold at Hot Topic"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch holding a pineapple",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-pineapple-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-simba/baby-simba",
+   "set_key": "lic/2018/loungefly-hot-topic-simba",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Lion King Simba Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Simba",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "sold at Hot Topic"
+    },
+    {
+     "field": "visual_description",
+     "value": "baby Simba in brushed metal",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "brushed metal"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-lion-king-simba-loungefly-pin-at-hot-topic",
+     "method": "search_snippet",
+     "note": "brushed metal finish stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-boxlunch-simba/baby-simba",
+   "set_key": "lic/2018/loungefly-boxlunch-simba",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Lion King Simba BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Simba",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "baby Simba",
+     "source_url": "https://disneypinsblog.com/the-lion-king-simba-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mushu-and-cri-kee/mushu-and-cri-kee",
+   "set_key": "lic/2018/boxlunch-mushu-and-cri-kee",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mushu and Cri-Kee BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mushu",
+      "Cri-Kee"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Mushu",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-cri-kee/cri-kee",
+   "set_key": "lic/2018/boxlunch-cri-kee",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cri-Kee Mulan BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cri-Kee"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Cri-Kee",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-donald-duck/donald-duck",
+   "set_key": "lic/2018/boxlunch-donald-duck",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "an irritated Donald",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-alice-in-wonderland/alice-falling",
+   "set_key": "lic/2018/boxlunch-alice-in-wonderland",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice In Wonderland BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Alice",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "Alice falling down the rabbit hole",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-happy-birthday/minnie-mouse",
+   "set_key": "lic/2018/boxlunch-happy-birthday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Happy Birthday BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie with gifts and Happy Birthday cake",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-happy-birthday/mickey-mouse",
+   "set_key": "lic/2018/boxlunch-happy-birthday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Happy Birthday BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in party hat blowing out candles",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-happy-birthday/stitch",
+   "set_key": "lic/2018/boxlunch-happy-birthday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Happy Birthday BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Scrump"
+     ],
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch with Scrump, cake and presents",
+     "source_url": "https://disneypinsblog.com/stitch-happy-birthday-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mickey-multicolor/mickey-multicolor",
+   "set_key": "lic/2018/boxlunch-mickey-multicolor",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Multicolor BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-multicolor-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mickey-split-face/mickey-split-face",
+   "set_key": "lic/2018/boxlunch-mickey-split-face",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Split Face BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "name per post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "characters stated"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "main subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price stated in post"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "US retailer, dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "release month stated in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post dates release to 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "visual_description",
+     "value": "black and white split-face Mickey",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-split-face-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase of post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-boxlunch-mickey-mouse/surfboard-mickey",
+   "set_key": "lic/2018/loungefly-boxlunch-mickey-mouse",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "Mickey with surfboard"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in flip-flops with surfboard",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "Jul 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Surfboard Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-surfboard-enamel-pin---boxlunch-exclusive/11502734.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated"
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-surfboard-enamel-pin---boxlunch-exclusive/11502734.html",
+     "method": "search_snippet",
+     "note": "listing says 1.5 inch; converted"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-boxlunch-mickey-mouse/classic-mickey-steamboat-willie",
+   "set_key": "lic/2018/loungefly-boxlunch-mickey-mouse",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "classic Mickey and Steamboat Willie Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "visual_description",
+     "value": "classic Mickey and Steamboat Willie Mickey",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "Jul 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-cupcake-and-donut/donald-cupcake",
+   "set_key": "lic/2018/boxlunch-cupcake-and-donut",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "inspiration character"
+    },
+    {
+     "field": "visual_form",
+     "value": "cupcake",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "cupcake design"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-cupcake-and-donut/daisy-cupcake",
+   "set_key": "lic/2018/boxlunch-cupcake-and-donut",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Daisy Duck",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "inspiration character"
+    },
+    {
+     "field": "visual_form",
+     "value": "cupcake",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "cupcake design"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-cupcake-and-donut/pluto-cupcake",
+   "set_key": "lic/2018/boxlunch-cupcake-and-donut",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "inspiration character"
+    },
+    {
+     "field": "visual_form",
+     "value": "cupcake",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "cupcake design"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-cupcake-and-donut/mickey-donut",
+   "set_key": "lic/2018/boxlunch-cupcake-and-donut",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "inspiration character"
+    },
+    {
+     "field": "visual_form",
+     "value": "donut",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "donut design"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-cupcake-and-donut/minnie-donut",
+   "set_key": "lic/2018/boxlunch-cupcake-and-donut",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "inspiration character"
+    },
+    {
+     "field": "visual_form",
+     "value": "donut",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "donut design"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-christmas/mickey-pluto-sweaters",
+   "set_key": "lic/2018/boxlunch-christmas",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "both in holiday sweaters"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "listed first"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey and Pluto in holiday sweaters",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-christmas/minnie-sweater",
+   "set_key": "lic/2018/boxlunch-christmas",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Minnie in holiday sweater"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/christmas-2018-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/funko-boxlunch-pop-collection/aladdin",
+   "set_key": "lic/2018/funko-boxlunch-pop-collection",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "Nov-Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/funko-boxlunch-pop-collection/genie",
+   "set_key": "lic/2018/funko-boxlunch-pop-collection",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Genie",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "Nov-Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/funko-boxlunch-pop-collection/abu-and-rajah",
+   "set_key": "lic/2018/funko-boxlunch-pop-collection",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Abu",
+      "Rajah"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Abu",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "Nov-Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/funko-boxlunch-pop-collection/lumiere-and-cogsworth",
+   "set_key": "lic/2018/funko-boxlunch-pop-collection",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lumiere",
+      "Cogsworth"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Lumiere",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "Nov-Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/funko-boxlunch-pop-collection/maleficent",
+   "set_key": "lic/2018/funko-boxlunch-pop-collection",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "Nov-Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-villains-maleficent-enamel-pin---boxlunch-exclusive/11622708.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing; undated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-villains-maleficent-enamel-pin---boxlunch-exclusive/11622708.html",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/funko-boxlunch-pop-collection/evil-queen",
+   "set_key": "lic/2018/funko-boxlunch-pop-collection",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "main_character",
+     "value": "Evil Queen",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "Nov-Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/funko-pop-boxlunch-exclusive-disney-pins/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-villains-evil-queen-enamel-pin---boxlunch-exclusive/11622706.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing; undated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-villains-evil-queen-enamel-pin---boxlunch-exclusive/11622706.html",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_description",
+     "value": "Evil Queen holding a red apple",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-villains-evil-queen-enamel-pin---boxlunch-exclusive/11622706.html",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2018/boxlunch-princess-dress-collection-mystery",
+   "field": "issuer",
+   "searched": "DPB snippet + BoxLunch listing; 2 queries",
+   "note": "undated BoxLunch Loungefly princess blind box listing not confirmed as this 2018 set"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-princess-mystery-buttons",
+   "field": "pins",
+   "searched": "DPB snippet; 2 queries",
+   "note": "individual button designs not named in snippets"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-princess-mystery-buttons",
+   "field": "format",
+   "searched": "DPB snippet",
+   "note": "items are ~1in pinback buttons, not enamel pins; flag for scope review"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-lilo-stitch-mystery-buttons",
+   "field": "pins",
+   "searched": "DPB snippet; 1 query",
+   "note": "individual button designs not named"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-simba/baby-simba",
+   "field": "original_price",
+   "searched": "DPB snippet; 2 queries",
+   "note": "price not shown in snippet"
+  },
+  {
+   "key": "lic/2018/loungefly-boxlunch-mickey-mouse/classic-mickey-steamboat-willie",
+   "field": "pin_structure",
+   "searched": "DPB snippet; 2 queries",
+   "note": "unclear whether classic and Steamboat Willie Mickey are one pin or two"
+  },
+  {
+   "key": "lic/2018/boxlunch-christmas",
+   "field": "pins",
+   "searched": "DPB snippets; 3 queries",
+   "note": "second entry titled Mickey & Pluto but describes Mickey alone; full list not visible; WALL-E/Eve and Stitch sets not split"
+  },
+  {
+   "key": "lic/2018/boxlunch-christmas-wall-e-eve-lights",
+   "field": "pins",
+   "searched": "DPB snippet",
+   "note": "pin count and per-pin split not stated"
+  },
+  {
+   "key": "lic/2018/boxlunch-christmas-stitch-holiday-set",
+   "field": "pins",
+   "searched": "DPB snippet",
+   "note": "features Stitch, Angel and Scrump; pin count and split not stated"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-pop-collection",
+   "field": "release_date",
+   "searched": "DPB snippet; 3 queries",
+   "note": "per-pin release dates within Nov-Dec 2018 not stated"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-alice-queen-of-hearts-hedgehog",
+   "field": "pins",
+   "searched": "DPB snippet",
+   "note": "characters Alice, Queen of Hearts, hedgehog; pin count/split not stated"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mulan",
+   "field": "pins",
+   "searched": "DPB snippet",
+   "note": "features Mulan, Mushu, Cri-Kee; pin count/split not stated"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "field": "pins",
+   "searched": "DPB + BoxLunch snippets",
+   "note": "Mickey in several iconic roles; individual designs and count not named"
+  },
+  {
+   "key": "lic/2018/pink-a-la-mode",
+   "field": "pins",
+   "searched": "4 queries incl. DPB Pink a la Mode tag",
+   "note": "no 2018 Disney release found; DPB says Disney pins debuted at Pink a la Mode Sept 2021"
+  },
+  {
+   "key": "lic/2018/artland",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2018 ArtLand Disney release found; DPB describes ArtLand taking over license, earliest dated releases 2019"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-nightmare-before-christmas",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "forum mention of 2018 Hot Topic NBC 12-pack only; no named members from allowed source"
+  },
+  {
+   "key": "lic/2018",
+   "field": "pins",
+   "searched": "25 queries",
+   "note": "Jan-Jun 2018 licensed releases not surfaced in snippets"
+  }
+ ],
+ "discovery_notes": "Licensed 2018 sweep via 25 search-snippet queries, mostly Disney Pins Blog with a few undated BoxLunch/Hot Topic listings. Coverage is Jul-Dec 2018 only. Cri-Kee (Jul 2018, $8.90) came from a multi-result summary; verify. Button sets (1in pinbacks) included as sets for scope review. Pink a la Mode and ArtLand had no 2018 Disney releases found. Funko multi-character sets recorded at set level only."
+}

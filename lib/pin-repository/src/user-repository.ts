@@ -14,6 +14,7 @@ import type {
   ExternalSaleListing,
   GetAllSubmissionsInput,
   ForTradeInventoryItem,
+  CollectorForTradePin,
   GetForTradeInventoryInput,
   GetNearbyCollectorsInput,
   GetPotentialTradesInput,
@@ -414,6 +415,13 @@ export interface IUserPinRepository {
    * instead of a bespoke RPC per section.
    */
   getForTradeInventory(input: GetForTradeInventoryInput): Promise<ForTradeInventoryItem[]>;
+
+  /**
+   * Every pin a collector has listed For Trade, for their profile (UX-027).
+   * Public profiles only (same rule as getPublicProfile); empty for a
+   * private or unknown profile. Never returns ISO (wanted) or owned pins.
+   */
+  getCollectorForTradePins(username: string): Promise<CollectorForTradePin[]>;
 
   // ── Community posts ────────────────────────────────────────────────────────
 

@@ -435,6 +435,15 @@ export interface ForTradeInventoryItem {
   traderUsername: string;
 }
 
+/** A pin another collector has listed For Trade (UX-027, #139). */
+export interface CollectorForTradePin {
+  /** App-facing pin id (pinhunt_id). */
+  pinId: string;
+  title: string;
+  imageUrl?: string;
+  collection?: string;
+}
+
 export interface GetForTradeInventoryInput {
   /** Excluded from results — the viewer's own for-trade listings never count as opportunities for themselves. */
   viewerId: string;

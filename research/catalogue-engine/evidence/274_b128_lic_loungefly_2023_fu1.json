@@ -1,0 +1,1231 @@
+{
+ "packet_id": "backfill-b128-lic-loungefly-2023-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b128",
+ "sources": [
+  {
+   "url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+   "title": "Pixar Sulley Door Mixed Emotions 4-Piece Pin Set",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+   "title": "Monsters, Inc. Sulley Mixed Emotions Loungefly Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+   "title": "Nightmare Before Christmas 30th Anniversary Collection",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-loungefly-3-collector-box-pin-nightmare-before-christmas-sliding-scary-teddy-present.html",
+   "title": "Disney Loungefly 3'' Collector Box Pin - Nightmare Before Christmas Sliding Scary Teddy Present",
+   "publisher": "yourWDWstore",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+   "title": "Loungefly The Nightmare Before Christmas 30th Anniversary Zero Gravestone Sliding Glow-in-the-Dark Limited Edition Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/halloween/accessories/",
+   "title": "Halloween Accessories",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ariel-eric-dancing-enamel-pin---boxlunch-exclusive/20364421.html",
+   "title": "Loungefly Disney The Little Mermaid Ariel & Eric Dancing Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ursula-vanessa-lenticular-enamel-pin---boxlunch-exclusive/20364419.html",
+   "title": "Loungefly Disney The Little Mermaid Ursula & Vanessa Lenticular Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/ursula-vanessa-lenticular-boxlunch-disney-pin",
+   "title": "Ursula & Vanessa Lenticular BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-little-mermaid-hinge-shell-blind-box-disney-pin-set-at-boxlunch/",
+   "title": "The Little Mermaid Hinge Shell Blind Box Disney Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-hinge-shell-blind-box-enamel-pin---boxlunch-exclusive/20101742.html",
+   "title": "Loungefly Disney The Little Mermaid Hinge Shell Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-blind-box-enamel-pin---boxlunch-exclusive/11690667.html",
+   "title": "Loungefly Disney The Little Mermaid Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-winnie-the-pooh-butterfly-blind-box-enamel-pin/31058280.html",
+   "title": "Loungefly Disney Winnie The Pooh Butterfly Blind Box Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+   "title": "Winnie The Pooh Butterfly Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/199113",
+   "title": "199113",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-stained-glass-portrait-blind-box-enamel-pin---boxlunch-exclusive/30631011.html",
+   "title": "Loungefly Star Wars Stained Glass Portrait Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-stained-glass-portrait-blind-box-pin-set-at-boxlunch",
+   "title": "Star Wars Stained Glass Portrait Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-candy-boxes-blind-box-enamel-pin---boxlunch-exclusive/30884679.html",
+   "title": "Loungefly Disney Candy Boxes Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-candy-boxes-blind-box-pin-set-at-boxlunch/",
+   "title": "Disney Candy Boxes Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://piratesandprincesses.net/loungefly-nycc-exclusive-pieces-now-available-online/",
+   "title": "Loungefly NYCC Exclusive Pieces Now Available Online",
+   "publisher": "Pirates & Princesses",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+   "title": "Star Wars: Return of the Jedi 40th Anniversary Han Solo in Carbonite Sliding Pin",
+   "publisher": "Loungefly",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+   "title": "Star Wars: Return of the Jedi Han Solo in Carbonite Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://piratesandprincesses.net/loungefly-exclusive-star-wars-han-solo-in-carbonite-mini-backpack-releasing-4-7/",
+   "title": "Loungefly Exclusive Star Wars Han Solo in Carbonite Mini Backpack Releasing 4/7",
+   "publisher": "Pirates & Princesses",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-nightmare-before-christmas-30th-anniversary-pearl-pins-at-boxlunch/",
+   "title": "The Nightmare Before Christmas 30th Anniversary Pearl Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://lflounge.com/products/exclusive-drop-loungefly-wondercon-2023-disney-pinocchio-cuckoo-clock-figural-mini-backpack-3-24-23",
+   "title": "EXCLUSIVE DROP: Loungefly WonderCon 2023 Disney Pinocchio Cuckoo Clock",
+   "publisher": "LF Lounge",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2023/loungefly-sulley-mixed-emotions",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Sulley Door Mixed Emotions 4-Piece Pin Set",
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "official Loungefly product title"
+    },
+    {
+     "field": "format",
+     "value": "single pin with three magnetised interchangeable parts (sold as 4-piece set)",
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "official listing: one 3in pin plus three interchangeable pin parts"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "Loungefly own listing"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/monsters-inc-sulley-mixed-emotions-loungefly-disney-pin-set",
+     "method": "search_snippet",
+     "note": "blog says sold online at DPBStore.com while supplies last"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-scary-teddy-present-sliding",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Nightmare Before Christmas Sliding Scary Teddy Present 3in Collector Box Pin",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "listed under Loungefly NBC 30th Anniversary Collection"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "one 3in pin in window collector box"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "Loungefly own listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-nbc-zero-gravestone",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Nightmare Before Christmas 30th Anniversary Zero Gravestone Sliding Glow-in-the-Dark Limited Edition Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-star-wars-han-solo-carbonite",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars: Return of the Jedi 40th Anniversary Han Solo in Carbonite Sliding Pin",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "official Loungefly title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "single 3in collector box pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "Loungefly own listing"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04",
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "blog: released April 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-little-mermaid-hinge-shell-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Little Mermaid Hinge Shell Blind Box Disney Pin Set at BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-hinge-shell-blind-box-disney-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-hinge-shell-blind-box-disney-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "price per box/pin, blind"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-hinge-shell-blind-box-disney-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "released April 2023"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-hinge-shell-blind-box-disney-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "$14.90 per box/pin"
+    },
+    {
+     "field": "price",
+     "value": 13.99,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-hinge-shell-blind-box-enamel-pin---boxlunch-exclusive/20101742.html",
+     "method": "search_snippet",
+     "note": "listing price $13.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-hinge-shell-blind-box-disney-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-hinge-shell-blind-box-enamel-pin---boxlunch-exclusive/20101742.html",
+     "method": "search_snippet",
+     "note": "eight designs to collect"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-hinge-shell-blind-box-enamel-pin---boxlunch-exclusive/20101742.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-hinge-shell-blind-box-enamel-pin---boxlunch-exclusive/20101742.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-hinge-shell-blind-box-disney-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "at BoxLunch"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-hinge-shell-blind-box-enamel-pin---boxlunch-exclusive/20101742.html",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-winnie-the-pooh-butterfly-blind-box-enamel-pin/31058280.html",
+     "method": "search_snippet",
+     "note": "Hot Topic listing title names Loungefly; matched to DPB Dec 2023 set by product name"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-winnie-the-pooh-butterfly-blind-box-enamel-pin/31058280.html",
+     "method": "search_snippet",
+     "note": "Hot Topic listing"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+     "method": "search_snippet",
+     "note": "$9.90 per box/pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-butterfly-blind-box-pin-set-at-hot-topic",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-winnie-the-pooh-butterfly-blind-box-enamel-pin/31058280.html",
+     "method": "search_snippet",
+     "note": "one pin per purchase, blind"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-star-wars-stained-glass-portrait",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Stained Glass Portrait Blind Box Pin Set at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-stained-glass-portrait-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-stained-glass-portrait-blind-box-enamel-pin---boxlunch-exclusive/30631011.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-stained-glass-portrait-blind-box-enamel-pin---boxlunch-exclusive/30631011.html",
+     "method": "search_snippet",
+     "note": "six different characters"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-stained-glass-portrait-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "released November 2023"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-stained-glass-portrait-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "$10.90 per box/pin"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-stained-glass-portrait-blind-box-enamel-pin---boxlunch-exclusive/30631011.html",
+     "method": "search_snippet",
+     "note": "listing price $12.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-stained-glass-portrait-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-stained-glass-portrait-blind-box-enamel-pin---boxlunch-exclusive/30631011.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-stained-glass-portrait-blind-box-enamel-pin---boxlunch-exclusive/30631011.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-stained-glass-portrait-blind-box-enamel-pin---boxlunch-exclusive/30631011.html",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/loungefly-boxlunch-candy-boxes-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Candy Boxes Blind Box Pin Set at BoxLunch",
+     "source_url": "https://disneypinsblog.com/disney-candy-boxes-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/disney-candy-boxes-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/disney-candy-boxes-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "released December 2023"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/disney-candy-boxes-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "$10.90 per box/pin"
+    },
+    {
+     "field": "price",
+     "value": 9.99,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-candy-boxes-blind-box-enamel-pin---boxlunch-exclusive/30884679.html",
+     "method": "search_snippet",
+     "note": "listing original price $9.99 (later $6.99 sale)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-candy-boxes-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-candy-boxes-blind-box-enamel-pin---boxlunch-exclusive/30884679.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-candy-boxes-blind-box-enamel-pin---boxlunch-exclusive/30884679.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2023/loungefly-sulley-mixed-emotions/sulley",
+   "set_key": "lic/2023/loungefly-sulley-mixed-emotions",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "listing describes a single 3in pin whose mood parts swap magnetically"
+    },
+    {
+     "field": "product_code",
+     "value": "WDPN3093",
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "code in official product URL"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "magnetised interchangeable parts",
+      "door"
+     ],
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "Sulley tearing through a door, swappable mood parts"
+    },
+    {
+     "field": "visual_description",
+     "value": "3in enamel pin of Sulley bursting through a door; three magnetic parts change his expression",
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "paraphrase of official listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/pixar-sulley-door-mixed-emotions-4-piece-pin-set/WDPN3093.html",
+     "method": "search_snippet",
+     "note": "Loungefly own listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-scary-teddy-present-sliding/scary-teddy-present",
+   "set_key": "lic/2023/loungefly-scary-teddy-present-sliding",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scary Teddy Present sliding pin",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "descriptive name from official collection listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scary Teddy"
+     ],
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "teddy slides out of a present; toy duck below"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding",
+      "glow-in-the-dark",
+      "collector box"
+     ],
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "sliding teddy, glow details"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "LE count debossed on back"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "official: 1,000 pieces"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.yourwdwstore.net/disney-loungefly-3-collector-box-pin-nightmare-before-christmas-sliding-scary-teddy-present.html",
+     "method": "search_snippet",
+     "note": "retailer says 1,500 pieces - conflicts with official 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "struck-through list price $25 (later $10 sale)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "US store"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "Loungefly own listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/nightmare-before-christmas-30th-anniversary-collection/PSWDTNBC001.html",
+     "method": "search_snippet",
+     "note": "single sliding pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-boxlunch-nbc-zero-gravestone/zero",
+   "set_key": "lic/2023/loungefly-boxlunch-nbc-zero-gravestone",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zero Gravestone Sliding Glow-in-the-Dark Limited Edition Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "BoxLunch title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Zero"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "Zero slides between two gravestones"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding",
+      "glow-in-the-dark"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "sliding, glow details"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "1 of 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 18.99,
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "product page price"
+    },
+    {
+     "field": "original_price",
+     "value": 19.9,
+     "source_url": "https://www.boxlunch.com/halloween/accessories/",
+     "method": "search_snippet",
+     "note": "category page price; differs from product page"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "US store"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-nightmare-before-christmas-30th-anniversary-zero-gravestone-sliding-glow-in-the-dark-limited-edition-enamel-pin---boxlunch-exclusive/20868853.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-star-wars-han-solo-carbonite/han-solo-carbonite",
+   "set_key": "lic/2023/loungefly-star-wars-han-solo-carbonite",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars: Return of the Jedi 40th Anniversary Han Solo in Carbonite Sliding Pin",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "official title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Han Solo"
+     ],
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "named in title"
+    },
+    {
+     "field": "visual_description",
+     "value": "sliding layer freezes and frees Han in carbonite; Leia in Boushh disguise also shown",
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of blog description"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "Lucasfilm licence"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding",
+      "collector box"
+     ],
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "sliding pin in window box"
+    },
+    {
+     "field": "product_code",
+     "value": "STPN0239",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "code in official product URL"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://piratesandprincesses.net/loungefly-exclusive-star-wars-han-solo-in-carbonite-mini-backpack-releasing-4-7/",
+     "method": "search_snippet",
+     "note": "pin limited to 1,000 alongside matching backpack"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "$20 retail"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://piratesandprincesses.net/loungefly-exclusive-star-wars-han-solo-in-carbonite-mini-backpack-releasing-4-7/",
+     "method": "search_snippet",
+     "note": "pin $20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04",
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "released April 2023"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://disneypinsblog.com/star-wars-return-of-the-jedi-han-solo-in-carbonite-limited-edition-loungefly-pin",
+     "method": "search_snippet",
+     "note": "2023 stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "Loungefly own listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://loungefly.com/star-wars-return-of-the-jedi-40th-anniversary-han-solo-in-carbonite-sliding-pin/STPN0239.html?brand=loungefly",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/boxlunch-little-mermaid-ursula-vanessa-lenticular/ursula-vanessa",
+   "set_key": "lic/2023/boxlunch-little-mermaid-ursula-vanessa-lenticular",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ursula-vanessa-lenticular-enamel-pin---boxlunch-exclusive/20364419.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title names Loungefly; matched to 251 pin by name/subject only"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-little-mermaid-ursula-vanessa-lenticular-enamel-pin---boxlunch-exclusive/20364419.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box/pooh-tigger-net",
+   "set_key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tigger on Pooh's shoulder with net",
+     "source_url": "https://mypincentral.com/pin/199113",
+     "method": "search_snippet",
+     "note": "descriptive name from pin record"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh",
+      "Tigger"
+     ],
+     "source_url": "https://mypincentral.com/pin/199113",
+     "method": "search_snippet",
+     "note": "Tigger sits on Pooh's shoulder holding a net"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/199113",
+     "method": "search_snippet",
+     "note": "single pin record"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-15",
+     "source_url": "https://mypincentral.com/pin/199113",
+     "method": "search_snippet",
+     "note": "pin record date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/loungefly-nycc-oogie-boogie/oogie-boogie",
+   "set_key": "lic/2023/loungefly-nycc-oogie-boogie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Neon Oogie Boogie 3\" Collector Box Pin",
+     "source_url": "https://piratesandprincesses.net/loungefly-nycc-exclusive-pieces-now-available-online/",
+     "method": "search_snippet",
+     "note": "roundup name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://piratesandprincesses.net/loungefly-nycc-exclusive-pieces-now-available-online/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://piratesandprincesses.net/loungefly-nycc-exclusive-pieces-now-available-online/",
+     "method": "search_snippet",
+     "note": "LE 1,200"
+    },
+    {
+     "field": "original_price",
+     "value": 20.0,
+     "source_url": "https://piratesandprincesses.net/loungefly-nycc-exclusive-pieces-now-available-online/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://piratesandprincesses.net/loungefly-nycc-exclusive-pieces-now-available-online/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2023/loungefly-sulley-mixed-emotions",
+   "field": "format",
+   "searched": "1 query (official Loungefly listing)",
+   "note": "hold resolved: Loungefly official page describes one 3in pin with three magnetised interchangeable parts; \"4-piece\" = base pin + 3 parts, not four separate pins"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-sully-interchangeable-face",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: BoxLunch listing Loungefly Sully Interchangeable Face pin set (smiling/confused face plates, ~3.5in); different product, year not stated"
+  },
+  {
+   "key": "lic/2023/loungefly-winnie-the-pooh-heffa-dream-blind-box",
+   "field": "expected_pin_count",
+   "searched": "2 queries (DPB, retailers)",
+   "note": "sixth design still unnamed: all sources list only 4 regular designs + Pooh hunny-pot chase. Hot Topic Heffalumps & Woozles set (bee) is a different product; not linked"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-episode-1-2-3-backpack-blind-box",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "holds kept: Her Universe Mini Backpack listing gives same 6 names as alternatives (one random), but is matched to this set by lineup only and gives no count; confirm"
+  },
+  {
+   "key": "lic/2023/loungefly-scary-teddy-present-sliding",
+   "field": "release_year",
+   "searched": "3 queries",
+   "note": "hold: no source states a release year; only \"30th Anniversary Collection\" branding (film 1993). Key kept from 250 lead; confirm 2023 before counting"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-nbc-zero-gravestone",
+   "field": "release_year",
+   "searched": "3 queries",
+   "note": "hold: no source states a release year; only \"30th Anniversary\" in title (film 1993). Key kept from 250 lead; confirm 2023 before counting"
+  },
+  {
+   "key": "lic/2023/loungefly-star-wars-han-solo-carbonite",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "lead resolved: DPB LE post dates the pin to April 2023 (LE 1,000, $20); matching backpack dropped 7 Apr per Pirates & Princesses"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-ariel-eric-dancing",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "lead kept: BoxLunch Loungefly Ariel & Eric Dancing pin, ~1in, $8.99; no source dates it; not linked to 2023 May releases"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-blind-box",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "lead kept: BoxLunch listing = assortment of 12 (11 characters + Ariel chase), $12.90; no date; hold: confirm pin structure and year"
+  },
+  {
+   "key": "lic/2023/boxlunch-little-mermaid-ursula-vanessa-lenticular/ursula-vanessa",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold: Loungefly BoxLunch listing linked to May 2023 DPB pin by name/subject only; DPB also has an older ($9.90, Apr 2019) Ursula & Vanessa lenticular post; confirm"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-ursula-vanessa-lenticular",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "same product as 251 key lic/2023/boxlunch-little-mermaid-ursula-vanessa-lenticular; claims recorded there to corroborate, not duplicate"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-hinge-shell-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "8 designs not named; listing says shells open to portraits of \"Ariel, Ursula and more\" (pearl on front). BoxLunch listing matched to DPB set by exact product name"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-hinge-shell-mystery/ariel",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in \"Ariel, Ursula and more\", BoxLunch listing)"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-little-mermaid-hinge-shell-mystery/ursula",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in \"Ariel, Ursula and more\", BoxLunch listing)"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box",
+   "field": "manufacturer",
+   "searched": "2 queries (Hot Topic site)",
+   "note": "maker still unconfirmed: no Hot Topic product page for the Soda set surfaced; DPB snippet does not name maker"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box/tigger",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB \"assortment includes Tigger, Owl, Rabbit, Eeyore, Pooh and Piglet\")"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box/owl",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB \"assortment includes Tigger, Owl, Rabbit, Eeyore, Pooh and Piglet\")"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box/rabbit",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB \"assortment includes Tigger, Owl, Rabbit, Eeyore, Pooh and Piglet\")"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box/eeyore",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB \"assortment includes Tigger, Owl, Rabbit, Eeyore, Pooh and Piglet\")"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box/pooh",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB \"assortment includes Tigger, Owl, Rabbit, Eeyore, Pooh and Piglet\")"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-character-soda-blind-box/piglet",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB \"assortment includes Tigger, Owl, Rabbit, Eeyore, Pooh and Piglet\")"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "hold: Hot Topic \"Butterfly\" listing linked to DPB Dec 2023 set by name only; separate 2026 \"Butterflies\" HT exclusive exists (not this set)"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: HT lists \"Pooh, Piglet, Tigger and more\" with butterflies - characters only; set size not stated"
+  },
+  {
+   "key": "lic/2023/hot-topic-winnie-the-pooh-butterfly-blind-box/pooh-tigger-net",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold: set membership inferred from MyPinCentral record (dated 15 Dec 2023) surfacing for this set; snippet does not name the set"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-star-wars-stained-glass-portrait",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "six characters not named in any snippet; chase not stated. Moved from 2024 (249_b083 note). Listing matched to DPB set by exact product name"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-candy-boxes-blind-box",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "designs not named: candy boxes \"inspired by Peter Pan, Lady and the Tramp, Dumbo and more\"; set size not stated. Listing matched to DPB set by name; prices differ"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-candy-boxes-blind-box/peter-pan",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (film named only in \"inspired by ... and more\", BoxLunch listing)"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-candy-boxes-blind-box/lady-and-the-tramp",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (film named only in \"inspired by ... and more\", BoxLunch listing)"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-candy-boxes-blind-box/dumbo",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (film named only in \"inspired by ... and more\", BoxLunch listing)"
+  },
+  {
+   "key": "lic/2023/loungefly-nycc-oogie-boogie/oogie-boogie",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "a fan forum (Funko Funatic) cites LE 1,900 for a \"backpack & 3in pin\" listing - ambiguous (likely backpack); not recorded as a claim"
+  },
+  {
+   "key": "lic/2023/loungefly-wondercon",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no WonderCon 2023 Disney Loungefly pin found; Pinocchio Cuckoo Clock backpack (LE 2,200) has an enamel zipper charm - scope: confirmed non-pin"
+  },
+  {
+   "key": "lic/2023/loungefly-sdcc",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no further SDCC 2023 Disney/Marvel/Star Wars Loungefly pin found beyond Stitch & Scrump LE 500; Krrsantan and Rocket & Groot collections were bags"
+  },
+  {
+   "key": "lic/2023/boxlunch-nbc-30th-pearl",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "lead: licensed BoxLunch NBC 30th Pearl pins (Jack, Sally, Zero, Mayor, Snake & Teddy), Sep 2023, $12.90 each; maker not stated - boxlunch cell"
+  }
+ ],
+ "discovery_notes": "Follow-up to 250_b080; reuses its keys (Ursula & Vanessa claims on the 251_b081 key, same product). 27 standard searches, all snippets. Resolved: Sulley Mixed Emotions structure (one pin + 3 magnetic parts, official listing); Han Solo carbonite year (DPB Apr 2023). Added Hinge Shell blind box (Apr 2023), Star Wars Stained Glass Portrait (Nov 2023) and Candy Boxes (Dec 2023) sets with members unnamed/held. Scary Teddy and Zero recorded as pins but year held (anniversary branding only). Ep1-2-3, Heffa sixth, Pooh Soda maker unresolved; retailer listings matched by name carry holds. Hinge Shell and Zero keys aligned with parallel packet 275_b129."
+}

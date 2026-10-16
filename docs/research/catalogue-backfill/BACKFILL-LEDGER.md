@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 10 (started 2026-10-16 20:31 UTC): B077, B074, B075, B090, B089, B088
 
 ## Totals (after round 9, 16 Oct 2026 ~20:00 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
@@ -74,12 +74,12 @@ Earlier: after round 8 + audits, 5,247; after round 8 before the audits, 5,490; 
 | B078 | 2022 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | partial | 252_b078_lic_loungefly_2022.json | 44 | follow-up appended |
 | B079 | 2022 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | partial | 253_b079_lic_boxlunch_2022.json | 60 | follow-up appended |
 | B076 | 2021 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | partial | 254_b076_lic_loungefly_2021.json | 45 | follow-up appended |
-| B077 | 2021 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B074 | 2020 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B075 | 2020 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B090 | 2024-2026 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | todo | | | |
-| B089 | 2022-2023 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | todo | | | |
-| B088 | 2020-2021 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | todo | | | |
+| B077 | 2021 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | in progress | | | |
+| B074 | 2020 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | in progress | | | |
+| B075 | 2020 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | in progress | | | |
+| B090 | 2024-2026 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | in progress | | | |
+| B089 | 2022-2023 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | in progress | | | |
+| B088 | 2020-2021 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | in progress | | | |
 | B029 | 2016 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B030 | 2016 | ds | Disney Store UK/EU + US | todo | | | |
 | B031 | 2016 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
@@ -180,4 +180,5 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | – | 2026-10-16 18:50 | BoxLunch 2026 audit (no new research) | −51 genuinely new (moved to held) | Maintainer rule: keep mystery pins only where a source explicitly confirms each named character is a separate design. 16 of 19 BoxLunch 2026 blind-box sets list characters only ("This assortment features …"), so 93 more pins are held; kept: Nightmare Before Christmas skateboard (BoxLunch: each pin a different character), D23 2026 singles, Minnie Pumpkin. Totals now 3,641 genuinely new, 5,439 unique, 785 held. Split staging runs written to research/catalogue-engine/out/backfill-runs/ (4 runs, all pass the API validator) |
 | – | 2026-10-16 19:15 | Licensed mystery-set audit, all 22 licensed packets (no new research) | −192 genuinely new (moved to held) | Maintainer rule applied to every licensed packet: individual pins kept only where a source establishes distinct designs (per-design listings, per-pin descriptions or edition sizes, "collect all six: …"). 292 more pin records held across 18 packets (largest: Pink a la Mode 2021–24 73, Loungefly/BoxLunch 2019 41, BoxLunch 2018–19 51, Star Wars/Marvel 22, Marvel SDCC 2017 22). Maintainer overrides: Princess Bows held except designs BoxLunch names; ArtLand 2019 villains held except Cruella; Holiday Nutcrackers held (reseller only); Evil Queen slider held (reader comment only). Set-level research unchanged. Blocked-domain list extended (eBay country sites, PicClick, Whatnot, WorthPoint). Staging split runs regenerated (4 runs, all pass the API validator) |
 | 9 | 2026-10-16 19:33 | B083 (BoxLunch 2024), B080/B081 (Loungefly/BoxLunch 2023), B078/B079 (Loungefly/BoxLunch 2022), B076 (Loungefly 2021) | +217 net new (66 corroborated); 264 pin records | all partial; follow-ups B127–B132. Rule 12 mystery-set rule written into BACKFILL-RULES.md before the round; non-chase blind-box characters from list-only sources held across all six cells. Overlapping keys aligned (Haunted Mansion Icons 250/251; Star Wars chibi 252/253) so they count as corroboration. Uncas International recorded as a manufacturer |
+| 10 | 2026-10-16 20:31 | B077 (BoxLunch 2021), B074/B075 (Loungefly/BoxLunch 2020), B090/B089/B088 (other licensed 2024–26, 2022–23, 2020–21) | in progress | |
 | – | 2026-10-16 16:50 | process update (no new research) | – | Licensed 2020–2026 moved to the front of the queue; dedicated Pink a la Mode and ArtLand cells B103–B109; manufacturer/retailer counted as separate dimensions; pin-structure rule 12; follow-up limit and long-term backlog |

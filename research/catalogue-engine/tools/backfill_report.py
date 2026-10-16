@@ -138,6 +138,26 @@ def main(payload, out_xlsx, cov_json=None):
     cov = {f'{l}|{y}': dict(live=sum(livec[(l, y, e)] for e in ('OE', 'LE', 'LR', 'Other / not stated')),
                             new=sum(newc[(l, y, e)] for e in ('OE', 'LE', 'LR', 'Other / not stated'))) for l in LINES for y in YEARS}
     if cov_json: json.dump(cov, open(cov_json, 'w'), indent=0)
+    # Progress block for the hourly report: year x edition, latest-round delta, sets, standalone OE.
+    state_path = os.path.join(os.path.dirname(os.path.abspath(out_xlsx)), 'report_state.json')
+    try: prev = json.load(open(state_path))
+    except Exception: prev = {'new': [], 'corroborated': []}
+    new_keys = sorted(r['key'] for r in rows if r['status'] == 'new' and in_range(r['year']))
+    corr_keys = sorted(r['key'] for r in rows if r['status'] == 'new' and in_range(r['year']) and r['corroborated'])
+    added = set(new_keys) - set(prev['new']); added_corr = added & set(corr_keys)
+    eds = ('OE', 'LE', 'LR', 'Other / not stated')
+    lines_out = ['YEAR  unique   OE   LE   LR other  (live+new)']
+    for y in YEARS:
+        per = [sum(livec[(l, y, e)] + newc[(l, y, e)] for l in LINES) for e in eds]
+        lines_out.append(f'{y}  {sum(per):6d} {per[0]:4d} {per[1]:4d} {per[2]:4d} {per[3]:5d}')
+    inc = [r for r in srows if r[6]]
+    sa = [r for r in rows if r['status'] == 'new' and in_range(r['year']) and r['standalone']]
+    oe_new = [r for r in rows if r['status'] == 'new' and in_range(r['year']) and r['ed'] == 'OE']
+    lines_out += [f'Latest round: +{len(added)} genuinely new unique pins, {len(added_corr)} of them corroborated',
+                  f'Incomplete sets: {len(inc)} sets, {sum(r[6] for r in inc)} named members still missing (never invented)',
+                  f'Standalone OE (new research): {len(sa)} of {len(oe_new)} new OE pins; live OE 2015-2026: {sum(livec[(l, y, "OE")] for l in LINES for y in YEARS)}']
+    print('\n'.join(lines_out))
+    json.dump({'new': new_keys, 'corroborated': corr_keys}, open(state_path, 'w'))
     print(json.dumps({'live_2015_2026': live_n, 'candidates': len(rows), 'new': new_n,
                       'corroborated_new': sum(1 for r in rows if r['status'] == 'new' and r['corroborated']),
                       'already_live': stat['already live'], 'held': stat['held: archived match'] + stat['held: conflict/duplicate'] + stat['held: same pin under another resort'],

@@ -1,0 +1,1522 @@
+{
+ "packet_id": "backfill-b117-lic-pinkalamode-2021-2022-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-b117",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-pins-at-pink-a-la-mode/",
+   "title": "Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-09-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+   "title": "Disney Cute Villains Mystery Pins & The Haunted Mansion Pin Set at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-10-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+   "title": "2021 Pin Discussion (page 57)",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2021-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Princess Crest LE 300 Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-08-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Princess/Villain Wave 1 Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode",
+   "title": "Disney Princess/Villain Wave 1 Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/pink-a-la-mode-monogram-villain-series-pins.76498/",
+   "title": "PALM - PINK a la Mode/Monogram Villain Series Pins",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2022-05-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-enchanted-princess-pin-series-at-pink-a-la-mode",
+   "title": "Disney Enchanted Princess Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-mei-mei-red-panda-3-collectible-pin-special-edition-300-new-release",
+   "title": "Disney Pixar Turning Red Mei Mei Red Panda 3\" Collectible Pin Special Edition 300",
+   "publisher": "Pink a la Mode",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-pixar-turning-red-pin-series-at-pink-a-la-mode",
+   "title": "Disney Pixar Turning Red Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickey-minnie-christmas-disney-pins-at-pink-a-la-mode",
+   "title": "Mickey & Minnie Christmas Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/vintage-disney-princess-pin-series-at-pink-a-la-mode",
+   "title": "Vintage Disney Princess Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/get-to-know-locations-non-disney.78195/",
+   "title": "GUIDE - Get to Know: Locations - Non-Disney",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-villains-stained-glass-collectible-pin-series-2-at-pink-a-la-mode/",
+   "title": "Disney Villains Stained Glass Collectible Pin Series 2 at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-locket-pin-series-at-pink-a-la-mode",
+   "title": "Disney Princess Locket Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cute-princess-collectible-blind-box-pins-at-pink-a-la-mode",
+   "title": "Cute Princess Collectible Blind Box Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Princess Keys to the Kingdom Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Cute Villains Mystery Pins (Series 1)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "second official Disney pin release at Pink a la Mode"
+    },
+    {
+     "field": "set_name",
+     "value": "Cute Villains Series 1 blind box",
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum post names it Cute Villains Series 1"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "mystery/blind box, one pin per box"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists blind box at per-box price"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale began Fri 22 Oct 2021 noon PT"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 per box"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "$9.90 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "chaser versions in white enamel with glitter, LE 150 each"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "release at Pink a la Mode"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "six full-colour designs listed, each with its own edition size (chasers not counted)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/pink-a-la-mode-haunted-mansion-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Haunted Mansion Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "released alongside Cute Villains blind box"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale began 22 Oct 2021 noon PT"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE 1000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour version with glitter accents LE 1000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists LE 1000"
+    },
+    {
+     "field": "price",
+     "value": 24.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$24.90 full-colour version"
+    },
+    {
+     "field": "price",
+     "value": 24.9,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "$24.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "white-out chaser with glitter accents LE 200 at $29.90"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sold at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-keys-to-the-kingdom-series-1",
+   "claims": [
+    {
+     "field": "format",
+     "value": "each pin comes with corresponding key",
+     "source_url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pins come with matching key; marbleized backgrounds, gold tone"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-08",
+     "source_url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "available 8 Sept 2022 5PM PT"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$29.90 each"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-princess-locket",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 350,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-locket-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "LE 350 (series-level figure)"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-locket-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-locket-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "available 25 Aug 2022 3PM EST"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-villains-stained-glass",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-09-29",
+     "source_url": "https://disneypinsblog.com/disney-villains-stained-glass-collectible-pin-series-2-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "series 2 wave released 29 Sept 2022"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box/maleficent",
+   "set_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "named full-colour design with its own edition size"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "design named for this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE per design"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE 600"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists LE 600 for this design"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale 22 Oct 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 per blind box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sold at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box/evil-queen",
+   "set_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Evil Queen",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "named full-colour design with its own edition size"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "design named for this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE per design"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE 450"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists LE 450 for this design"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale 22 Oct 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 per blind box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sold at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box/queen-of-hearts",
+   "set_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Queen of Hearts",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "named full-colour design with its own edition size"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Queen of Hearts"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "design named for this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE per design"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE 450"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists LE 450 for this design"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale 22 Oct 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 per blind box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sold at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box/ursula",
+   "set_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Ursula",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "named full-colour design with its own edition size"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "design named for this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE per design"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE 450"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists LE 450 for this design"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale 22 Oct 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 per blind box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sold at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box/cruella",
+   "set_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Cruella de Vil",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "named full-colour design with its own edition size"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cruella de Vil"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "design named for this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE per design"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE 450"
+    },
+    {
+     "field": "edition_size",
+     "value": 450,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists LE 450 for this design"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale 22 Oct 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 per blind box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sold at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box/old-hag",
+   "set_key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Old Hag",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "named full-colour design with its own edition size"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Old Hag"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "design named for this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE per design"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "full-colour LE 300"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+     "method": "search_snippet",
+     "note": "forum lists LE 300 for this design"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sale 22 Oct 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 per blind box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "sold at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-crest/pocahontas",
+   "set_key": "lic/2022/pink-a-la-mode-princess-crest",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pocahontas Crest Pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per-pin listing name with LE 300"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "listed as 'Pocahontas Crest Pin LE 300'"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "original_price",
+     "value": 24.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$24.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-crest/tiana",
+   "set_key": "lic/2022/pink-a-la-mode-princess-crest",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named among crest pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "original_price",
+     "value": 24.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$24.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-crest/mulan",
+   "set_key": "lic/2022/pink-a-la-mode-princess-crest",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named among crest pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "original_price",
+     "value": 24.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$24.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-crest/elsa",
+   "set_key": "lic/2022/pink-a-la-mode-princess-crest",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Elsa",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named among crest pins in snippet summary"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "original_price",
+     "value": 24.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$24.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/evil-queen-snow-white",
+   "set_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Evil Queen/Snow White Pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named as one pin in the 7-pin wave list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen",
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pairing on one named pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "listed as a single X/Y pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$29.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "per-pin availability date in weekly drop"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/ursula-ariel",
+   "set_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula/Ariel Pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named as one pin in the 7-pin wave list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula",
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pairing on one named pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "listed as a single X/Y pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$29.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "per-pin availability date in weekly drop"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/cinderella-lady-tremaine",
+   "set_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella/Lady Tremaine Pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named as one pin in the 7-pin wave list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella",
+      "Lady Tremaine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pairing on one named pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "listed as a single X/Y pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$29.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://www.disneypinforum.com/threads/pink-a-la-mode-monogram-villain-series-pins.76498/",
+     "method": "search_snippet",
+     "note": "forum: sold out in minutes, LE 200"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/tiana-dr-facilier",
+   "set_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tiana/Dr. Facilier Pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "named as one pin in the 7-pin wave list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana",
+      "Dr. Facilier"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "pairing on one named pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "listed as a single X/Y pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 29.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$29.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://www.disneypinforum.com/threads/pink-a-la-mode-monogram-villain-series-pins.76498/",
+     "method": "search_snippet",
+     "note": "forum: sold out in minutes, LE 200"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-vintage-princess/sleeping-beauty",
+   "set_key": "lic/2022/pink-a-la-mode-vintage-princess",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sleeping Beauty Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/vintage-disney-princess-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "per-pin listing name with own availability date"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/vintage-disney-princess-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "Sleeping Beauty pin available Sat 9 Apr 2022"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "white glitter chaser versions (LE 150 each) stated but not described per character; no chaser records made"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "field": "manufacturer",
+   "searched": "4 queries",
+   "note": "no maker named for this release; Pink a la Mode is the retailer only"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "field": "identity",
+   "searched": "fu1 review",
+   "note": "relation to 2022 Cute Villains LE 250 series and Cute Villains Medallion series not stated; treat as separate 2021 blind box"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-haunted-mansion-pin-set",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); 'pin set' wording, contents/characters not described"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-haunted-mansion-pin-set",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "characters/designs not named in snippets; chaser (LE 200, $29.90) also undescribed"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-haunted-mansion-pin-set",
+   "field": "manufacturer",
+   "searched": "4 queries",
+   "note": "no maker named; Pink a la Mode is the retailer only"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-debut",
+   "field": "pins",
+   "searched": "4 queries (fu1)",
+   "note": "still no snippet names the Sept 2021 Pinchella debut designs; only LE 400, LE 100 white glitter chasers, $9.90 restated"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode",
+   "field": "releases",
+   "searched": "fu1 2 queries",
+   "note": "correction to earlier note: a second 2021 release found (22 Oct 2021: Cute Villains blind box + Haunted Mansion pin set); recorded as new sets"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest/pocahontas",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "hold: one pin per character/pair inferred without a stated pin count; confirm before sign-off (same as existing crest holds)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest/tiana",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "hold: one pin per character/pair inferred without a stated pin count; confirm before sign-off (same as existing crest holds)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest/mulan",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "hold: one pin per character/pair inferred without a stated pin count; confirm before sign-off (same as existing crest holds)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest/elsa",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "hold: one pin per character/pair inferred without a stated pin count; confirm before sign-off (same as existing crest holds)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest",
+   "field": "pins",
+   "searched": "3 queries (fu1)",
+   "note": "11 of 12 crests now named (7 earlier + Pocahontas, Tiana, Mulan, Elsa); 1 unnamed; Jasmine/Merida not found in crest list"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest/elsa",
+   "field": "identity",
+   "searched": "fu1",
+   "note": "Elsa came only from a search summary of the crest post; confirm on page that an Elsa crest is in this series"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/evil-queen-snow-white",
+   "field": "identity",
+   "searched": "fu1",
+   "note": "hold: possible duplicate of lic/2022/pink-a-la-mode-enchanted-princess/snow-white-evil-queen (same pairing, LE 200, $29.90, Apr vs May 2022 dates); keep blocked until a person compares both"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/ursula-ariel",
+   "field": "identity",
+   "searched": "fu1",
+   "note": "hold: possible duplicate of lic/2022/pink-a-la-mode-enchanted-princess/ariel-ursula (same pairing, LE 200, $29.90, Apr vs May 2022 dates); keep blocked until a person compares both"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/tiana-dr-facilier",
+   "field": "identity",
+   "searched": "fu1",
+   "note": "hold: possible duplicate of lic/2022/pink-a-la-mode-enchanted-princess/tiana-dr-facilier (same pairing, LE 200, $29.90, Apr vs May 2022 dates); keep blocked until a person compares both"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-enchanted-princess",
+   "field": "identity",
+   "searched": "fu1 2 queries",
+   "note": "Enchanted Princess (4 pairings, 22 Apr) and Princess/Villain Wave 1 (7 pairings, from 12 May) may be the same line; sources do not say"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-enchanted-princess",
+   "field": "manufacturer",
+   "searched": "fu1",
+   "note": "lead: forum thread lists a 'Monogram - Enchanted Princess Series - Aurora and Maleficent' pin; not an explicit maker statement, no claim made"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-villain-wave-1",
+   "field": "release_date",
+   "searched": "fu1",
+   "note": "Cinderella/Lady Tremaine and Tiana/Dr. Facilier per-pin dates not stated in snippets"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red",
+   "field": "pins",
+   "searched": "3 queries (fu1)",
+   "note": "designs/count still unnamed; lead: Pink a la Mode product page 'Turning Red Mei Mei Red Panda 3in' SE 300 at $24.90, but release date not given, so not tied to Dec 2022 series"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red",
+   "field": "edition_size",
+   "searched": "fu1",
+   "note": "conflict lead: blog says LE 300; retailer page for Mei pin says Special Edition 300 on backstamp; no claim made pending tie"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-carousel-mystery-series-1",
+   "field": "pins",
+   "searched": "2 queries (fu1)",
+   "note": "designs and set size still not named; only LE 500, $9.90 per pin restated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-carousel-mystery-series-2",
+   "field": "pins",
+   "searched": "2 queries (fu1)",
+   "note": "designs and set size still not named; only LE 500, $9.90 per pin restated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-mickey-minnie-christmas",
+   "field": "pins",
+   "searched": "2 queries (fu1)",
+   "note": "still no per-pin identity; snippet names pins only as 'Mickey & Minnie Christmas 2022'; combo $54.90"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-mickey-minnie-christmas",
+   "field": "manufacturer",
+   "searched": "fu1",
+   "note": "warning: a search summary credited 'Leaning Palm Amusements LLC' here; that is Disney Pins Blog's parent company (likely page footer), NOT a manufacturer; no claim made"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-cute-princess-blind-box",
+   "field": "pins",
+   "searched": "1 query (fu1)",
+   "note": "chase designs still undescribed; snippet says LE 180 chase per character and edition sizes not stamped on pins; chase finish (glitter) not stated; holds stay"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-vintage-princess/sleeping-beauty",
+   "field": "pin_structure",
+   "searched": "fu1 1 query",
+   "note": "hold resolved: source lists each film pin as its own item with its own availability date (e.g. 'Sleeping Beauty Pin: Available starting Apr 9 2022'), a per-design listing under rule 12; depicted characters still unstated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-vintage-princess/little-mermaid",
+   "field": "pin_structure",
+   "searched": "fu1 1 query",
+   "note": "hold resolved: source lists each film pin as its own item with its own availability date (e.g. 'Sleeping Beauty Pin: Available starting Apr 9 2022'), a per-design listing under rule 12; depicted characters still unstated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-vintage-princess/tangled",
+   "field": "pin_structure",
+   "searched": "fu1 1 query",
+   "note": "hold resolved: source lists each film pin as its own item with its own availability date (e.g. 'Sleeping Beauty Pin: Available starting Apr 9 2022'), a per-design listing under rule 12; depicted characters still unstated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-vintage-princess/cinderella",
+   "field": "pin_structure",
+   "searched": "fu1 1 query",
+   "note": "hold resolved: source lists each film pin as its own item with its own availability date (e.g. 'Sleeping Beauty Pin: Available starting Apr 9 2022'), a per-design listing under rule 12; depicted characters still unstated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-vintage-princess/snow-white",
+   "field": "pin_structure",
+   "searched": "fu1 1 query",
+   "note": "hold resolved: source lists each film pin as its own item with its own availability date (e.g. 'Sleeping Beauty Pin: Available starting Apr 9 2022'), a per-design listing under rule 12; depicted characters still unstated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-vintage-princess/aladdin",
+   "field": "pin_structure",
+   "searched": "fu1 1 query",
+   "note": "hold resolved: source lists each film pin as its own item with its own availability date (e.g. 'Sleeping Beauty Pin: Available starting Apr 9 2022'), a per-design listing under rule 12; depicted characters still unstated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-sidekicks",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "9 pins/9 pairings restated; no per-pin listing found; holds not released"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "10 couples restated, LE 300 $24.90 1 Dec 2022; no per-pin listing or pin count found; holds not released"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-locket",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "7 princesses restated; LE 350 given as a single series-level figure, not per pin; holds not released"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-keys-to-the-kingdom-series-1",
+   "field": "pin_structure",
+   "searched": "fu1",
+   "note": "'pins come with corresponding key' but no per-pin listing; holds stay; holds not released"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-frozen-watercolor",
+   "field": "pins",
+   "searched": "2 queries (fu1)",
+   "note": "still 2 of 5 designs unnamed ('and more'); Kristoff/Sven/Hans not confirmed; retailer site search showed no listing"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-villains-stained-glass",
+   "field": "manufacturer",
+   "searched": "fu1",
+   "note": "no maker stated for 2022 Villains stained glass; Uncas International credited only on 2023 Princess/Mickey stained glass posts (out of year scope)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode",
+   "field": "manufacturer",
+   "searched": "6 queries (fu1)",
+   "note": "no per-release maker found for 2021-22; forum guide says PALM sells exclusives licensed via Monogram, Loungefly and Uncas International (general, not per release); forum thread title pairs PALM with Monogram for villain series; no manufacturer claims made"
+  }
+ ],
+ "discovery_notes": "Follow-up to packet 239 (b105) reusing its keys; 30 search snippets. New: Oct 2021 second PALM release (Cute Villains blind box, 6 designs with per-design LE; Haunted Mansion pin set held for structure). Crest +4 (11/12), Wave 1 +4 (7/7, 3 flagged as possible duplicates of Enchanted Princess). Vintage Princess structure holds released (per-pin listings). Pink a la Mode recorded as retailer only; no manufacturer claims."
+}

@@ -58,3 +58,26 @@ describe("POST /api/scan/identify upstream timeouts", () => {
     expect(res.body.error).toMatch(/Vision analysis failed/);
   });
 });
+
+describe("POST /api/scan/identify timings (#349)", () => {
+  beforeEach(() => {
+    create.mockReset();
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(Date.now() + Math.floor(Math.random() * 1e9) + 1e6);
+  });
+
+  it("logs one line of per-stage durations, with no photo or user data", async () => {
+    const log = vi.spyOn(console, "log").mockImplementation(() => {});
+    create.mockRejectedValue(new APIConnectionTimeoutError());
+    await scan();
+    const line = log.mock.calls.find((c) => c[0] === "[scan] timings:");
+    expect(line).toBeTruthy();
+    const timings = JSON.parse(String(line![1]));
+    expect(timings).toMatchObject({ outcome: "timeout" });
+    expect(typeof timings.auth).toBe("number");
+    expect(typeof timings.total).toBe("number");
+    expect(String(line![1])).not.toMatch(/AAAA|user-1/);
+    log.mockRestore();
+  });
+});
+

@@ -11,6 +11,8 @@ import {
   visionSearchTerms,
   type VisionSignals,
 } from "../services/google-vision";
+import { findCandidates } from "../services/scanCandidates";
+import { createStageTimer } from "../services/scanTiming";
 
 const router: IRouter = Router();
 
@@ -44,57 +46,6 @@ function buildCatalogueText(pins: CataloguePin[]): string {
       },
     )
     .join("\n");
-}
-
-/**
- * Find candidate pins for what the vision model saw in the photo.
- *
- * The catalogue is ~13k pins — far too many to hand to the model — so we
- * first describe the pin (stage 1), then search the catalogue by the
- * characters and keywords seen, and only rank those candidates (stage 2).
- */
-async function findCandidates(
-  description: {
-    characters: string[];
-    keywords: string[];
-  },
-  visionTerms: string[] = [],
-): Promise<CataloguePin[]> {
-  if (!repository) {
-    console.warn("[scan] Supabase not configured.");
-    return [];
-  }
-  const byId = new Map<string, CataloguePin>();
-  const add = (pins: CataloguePin[]) => {
-    for (const p of pins) if (!byId.has(p.id)) byId.set(p.id, p);
-  };
-
-  // Character matches are the strongest signal.
-  for (const character of description.characters.slice(0, 4)) {
-    try {
-      add(await repository.searchPins("", { status: "active", character, limit: 120 }));
-    } catch { /* keep going with other terms */ }
-    if (byId.size >= 350) break;
-  }
-  // Character names + keywords against title/brand/collection.
-  // Vision-derived terms (OCR text, web entities) go right after the AI
-  // keywords — text read off the pin is a strong catalogue signal.
-  for (const term of [
-    ...description.characters,
-    ...description.keywords,
-    ...visionTerms,
-  ].slice(0, 14)) {
-    if (byId.size >= 350) break;
-    if (term.trim().length < 3) continue;
-    try {
-      add(await repository.searchPins(term.trim(), { status: "active", limit: 80 }));
-    } catch { /* keep going */ }
-  }
-  // Last resort so the scan still returns something rather than erroring.
-  if (byId.size === 0) {
-    add(await repository.searchPins("", { status: "active", limit: 300 }));
-  }
-  return [...byId.values()].slice(0, 350);
 }
 
 // ── POST /scan/identify ───────────────────────────────────────────────────────
@@ -162,8 +113,10 @@ async function requireUser(req: Request, res: Response, next: NextFunction) {
     return;
   }
   try {
+    const authStart = performance.now();
     const client = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
     const { data: { user }, error } = await client.auth.getUser(token);
+    (req as Request & { authMs?: number }).authMs = Math.round(performance.now() - authStart);
     if (error || !user) {
       res.status(401).json({ error: "Invalid or expired session" });
       return;
@@ -220,6 +173,14 @@ router.post("/scan/identify", requireUser, async (req, res) => {
     return;
   }
 
+  // Per-stage timings (#349), logged once per scan however it ends.
+  const timer = createStageTimer();
+  const logTimings = (outcome: string) => console.log("[scan] timings:", JSON.stringify({
+    outcome,
+    auth: (req as Request & { authMs?: number }).authMs ?? null,
+    ...timer.summary(),
+  }));
+
   try {
     // isAiConfigured() was already checked above, so this won't throw here.
     const openai = getOpenAIClient();
@@ -255,6 +216,8 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       ],
     });
 
+    timer.mark("describe");
+
     let description = { characters: [] as string[], keywords: [] as string[] };
     try {
       const raw = describeResp.choices[0]?.message?.content ?? "{}";
@@ -269,6 +232,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
     console.log("[scan] stage-1 description:", JSON.stringify(description));
 
     const visionSignals = await visionPromise;
+    timer.mark("visionWait");
     const visionTerms = visionSignals ? visionSearchTerms(visionSignals) : [];
     if (visionSignals) {
       console.log("[scan] vision signals:", JSON.stringify({
@@ -283,8 +247,10 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
     }
 
     // ── Stage 2: search the full catalogue for candidates, then rank ──
-    const catalogue = await findCandidates(description, visionTerms);
+    const catalogue = await findCandidates(repository, description, visionTerms);
+    timer.mark("candidates");
     if (catalogue.length === 0) {
+      logTimings("empty-catalogue");
       res.status(503).json({
         error: "Pin catalogue is empty. Connect Supabase and seed the database first.",
       });
@@ -350,6 +316,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       ],
     });
 
+    timer.mark("rank");
     const raw = response.choices[0]?.message?.content ?? "[]";
 
     let matches: ScanMatch[] = [];
@@ -394,18 +361,22 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
     const topCollections = [...new Set(
       matches.slice(0, 3).map((m) => byPinId.get(m.pinId)?.collection).filter(Boolean),
     )] as string[];
-    for (const collection of topCollections.slice(0, 2)) {
-      try {
-        const siblings = await repository.searchPins("", { status: "active", collection, limit: 50 });
-        for (const s of siblings) {
-          if (!s.imageUrl || byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
-          byPinId.set(s.id, s);
-          if (!matches.some((m) => m.pinId === s.id)) {
-            matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a reference image for comparison." });
-          }
+    // Both collections are looked up at once (#349).
+    const siblingLists = await Promise.all(
+      topCollections.slice(0, 2).map((collection) =>
+        repository.searchPins("", { status: "active", collection, limit: 50 }).catch(() => null)),
+    );
+    for (const siblings of siblingLists) {
+      if (!siblings) continue; // siblings are best-effort
+      for (const s of siblings) {
+        if (!s.imageUrl || byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
+        byPinId.set(s.id, s);
+        if (!matches.some((m) => m.pinId === s.id)) {
+          matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a reference image for comparison." });
         }
-      } catch { /* siblings are best-effort */ }
+      }
     }
+    timer.mark("siblings");
     validIds.clear();
     for (const id of byPinId.keys()) validIds.add(id);
     // Hard cap the rerank candidate list to keep stage-3 prompts bounded.
@@ -480,13 +451,16 @@ Give a confidence above 85 only when a reference image visually confirms the mat
       } catch (verifyErr) {
         console.warn("[scan] visual verification failed, using text ranking:", verifyErr);
       }
+      timer.mark("verify");
     }
 
+    logTimings("ok");
     res.json({
       matches: matches.slice(0, 3),
       imageInsights: buildImageInsights(description, visionSignals),
     });
   } catch (err) {
+    logTimings(isUpstreamTimeout(err) ? "timeout" : "error");
     if (isUpstreamTimeout(err)) {
       console.error("[scan] upstream timeout");
       res.status(504).json({

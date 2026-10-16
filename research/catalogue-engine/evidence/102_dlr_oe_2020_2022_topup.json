@@ -1,0 +1,3417 @@
+{
+ "packet_id": "dlr-oe-2020-2022-topup-2026-10-16-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-16",
+ "collector": "agent:backfill-dlr-oe-2020-2022",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+   "title": "Disney Princess 2022 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+   "title": "Disney Princess 2022 Mystery Pin Set at shopDisney and Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+   "title": "Disney Princess Friends Pin Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-friends-pin-set-at-disney-parks/",
+   "title": "Disney Princess Friends Pin Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/52049",
+   "title": "52049",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+   "title": "Disney Princess Pin Trading Starter Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+   "title": "Disney Parks 2023 Dated Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/princess-jasmine-open-edition-pins-at-disney-parks",
+   "title": "Princess Jasmine Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+   "title": "Princess Jasmine Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+   "title": "Disney 100 Platinum Celebration Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.extramagicminutes.com/blog/disney-100-platinum-celebration-merchandise",
+   "title": "Disney 100 Platinum Celebration Merchandise Collection",
+   "publisher": "Extra Magic Minutes",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.undercovertourist.com/blog/disney-100-merchandise/",
+   "title": "Must-Have Merchandise for the Disney 100 Years of Wonder Celebration",
+   "publisher": "Undercover Tourist",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+   "title": "Disney 100 Platinum Character Open Edition Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+   "title": "New Disney Pins April 2021 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess 2022 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Title of DPB post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "12 designs in the series"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Blind two-pin box"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "October 2022 release"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney and Disney Parks",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold online and in parks"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 17.99 per box of two"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2022/oe-set/disney-princess-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Friends Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Title of DPB post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Four pins per set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Late September 2022 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Available at both resorts; spotted at EPCOT Creations Shop"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD 29.99 per set of four"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-friends-pin-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Alternate URL of same post, same 29.99 price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-friends-pin-set-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Pin Trading Starter Set",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Title of DPB post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Four pins plus lanyard"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "2023 dated post also says lanyard and four pins"
+    },
+    {
+     "field": "format",
+     "value": "starter set with lanyard",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Pins come with a lanyard"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "December 2022 release, spotted at EPCOT"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "price",
+     "value": 34.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 34.99"
+    },
+    {
+     "field": "price",
+     "value": 34.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2023-dated-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 34.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2022/oe/ariel-portrait-2022",
+   "set_key": "dlr/2022/oe-single/ariel-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/aurora-portrait-2022",
+   "set_key": "dlr/2022/oe-single/aurora-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aurora Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/belle-portrait-2022",
+   "set_key": "dlr/2022/oe-single/belle-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/cinderella-portrait-2022",
+   "set_key": "dlr/2022/oe-single/cinderella-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/jasmine-portrait-2022",
+   "set_key": "dlr/2022/oe-single/jasmine-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/snow-white-portrait-2022",
+   "set_key": "dlr/2022/oe-single/snow-white-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Snow White Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/merida-portrait-2022",
+   "set_key": "dlr/2022/oe-single/merida-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merida Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/moana-portrait-2022",
+   "set_key": "dlr/2022/oe-single/moana-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Moana Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Moana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/pocahontas-portrait-2022",
+   "set_key": "dlr/2022/oe-single/pocahontas-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pocahontas Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/rapunzel-portrait-2022",
+   "set_key": "dlr/2022/oe-single/rapunzel-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/tiana-portrait-2022",
+   "set_key": "dlr/2022/oe-single/tiana-portrait-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tiana Disney Princess 2022 portrait pin",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Listed among 2022 Princess portrait OE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Post describes open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Reported as October 2022 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Princess portrait design",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as portrait pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/snow-white",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/cinderella",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/aurora",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/ariel",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/belle",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/jasmine",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/pocahontas",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/mulan",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/merida",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/tiana",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/rapunzel",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-2022-mystery/moana",
+   "set_key": "dlr/2022/oe-set/disney-princess-2022-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess listed in mystery set lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "2022 set"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, nickel finish",
+     "source_url": "https://disneypinsblog.com/disney-princess-2022-mystery-pin-set-at-shopdisney-and-disney-parks/",
+     "method": "search_snippet",
+     "note": "Snippet notes enamel cloisonne with nickel finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-friends/moana-mulan-belle",
+   "set_key": "dlr/2022/oe-set/disney-princess-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moana",
+      "Mulan",
+      "Belle"
+     ],
+     "source_url": "https://mypincentral.com/pin/52049",
+     "method": "search_snippet",
+     "note": "Pin from Princess Friends set shows these three"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/52049",
+     "method": "search_snippet",
+     "note": "Three princesses shown together on one pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-26",
+     "source_url": "https://mypincentral.com/pin/52049",
+     "method": "search_snippet",
+     "note": "Listing gives 26 Sep 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://mypincentral.com/pin/52049",
+     "method": "search_snippet",
+     "note": "2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set/rapunzel",
+   "set_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in starter set"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "December 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set/tiana",
+   "set_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in starter set"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "December 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set/ariel",
+   "set_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in starter set"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "December 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set/jasmine",
+   "set_key": "dlr/2022/oe-set/disney-princess-pin-trading-starter-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Princess named in starter set"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Featured princess"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/disney-princess-pin-trading-starter-set-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "December 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/jasmine-pin-on-pin-2022",
+   "set_key": "dlr/2022/oe-single/jasmine-pin-on-pin-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Princess Jasmine open edition pin (2022)",
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "From DPB Jasmine OE post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Jasmine"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Jasmine"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Early July 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin design"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "One version of post lists 9.99"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-jasmine-open-edition-pins-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Other version of post lists 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/princess-jasmine-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-mickey-minnie-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-mickey-minnie-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie Disney 100 Platinum Celebration pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named in DPB Platinum Celebration OE post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-13",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted Tue 13 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pearl metal finish"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Polished pearl metal finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-chip-n-dale-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-chip-n-dale-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip n Dale Disney 100 Platinum Celebration pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named in DPB Platinum Celebration OE post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-13",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted Tue 13 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pearl metal finish"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Polished pearl metal finish"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.extramagicminutes.com/blog/disney-100-platinum-celebration-merchandise",
+     "method": "search_snippet",
+     "note": "Listed at 14.99"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.undercovertourist.com/blog/disney-100-merchandise/",
+     "method": "search_snippet",
+     "note": "UT lists 17.99; may be the Visa cardmember limited release variant"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-donald-daisy-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-donald-daisy-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald & Daisy Disney 100 Platinum Celebration pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named in DPB Platinum Celebration OE post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Characters named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-13",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted Tue 13 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pearl metal finish"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-celebration-open-edition-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Polished pearl metal finish"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.extramagicminutes.com/blog/disney-100-platinum-celebration-merchandise",
+     "method": "search_snippet",
+     "note": "Listed at 14.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-mickey-mouse-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-mickey-mouse-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-minnie-mouse-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-minnie-mouse-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-donald-duck-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-donald-duck-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-alice-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-alice-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Alice",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-dumbo-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-dumbo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Dumbo",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-tinker-bell-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-tinker-bell-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-pooh-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-pooh-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pooh Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Pooh",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-stitch-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-stitch-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-simba-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-simba-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Simba Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Simba",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-elsa-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-elsa-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Elsa Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elsa"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Elsa",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-grogu-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-grogu-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Grogu Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Grogu"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Grogu",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-chewbacca-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-chewbacca-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chewbacca Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chewbacca"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Chewbacca",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-miguel-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-miguel-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Miguel Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Miguel",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-nemo-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-nemo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nemo Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nemo"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Nemo",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2022/oe/disney100-platinum-character-woody-2022",
+   "set_key": "dlr/2022/oe-single/disney100-platinum-character-woody-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Woody Disney 100 Platinum Character pin",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "First wave of DPB Platinum Character OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Woody"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Character in first wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Woody",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-12-27",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Available from Tue 27 Dec 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD 14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-100-platinum-character-open-edition-pin-series/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/the-little-mermaid-family-2021",
+   "set_key": "dlr/2021/oe-single/the-little-mermaid-family-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Little Mermaid family pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Listed among OE family pins in April 2021 week 1 roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "The Little Mermaid",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Film named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Available at Disneyland from 6 Apr 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Disneyland availability stated"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/peter-pan-family-2021",
+   "set_key": "dlr/2021/oe-single/peter-pan-family-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter Pan family pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Listed among OE family pins in April 2021 week 1 roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Peter Pan",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Film named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Available at Disneyland from 6 Apr 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Disneyland availability stated"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2021/oe/the-sword-in-the-stone-family-2021",
+   "set_key": "dlr/2021/oe-single/the-sword-in-the-stone-family-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Sword in the Stone family pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Listed among OE family pins in April 2021 week 1 roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "The Sword in the Stone",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Film named"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Available at Disneyland from 6 Apr 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "Disneyland availability stated"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2021-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2022/oe/mulan-portrait-2022",
+   "field": "pin_name",
+   "searched": "DPB Princess 2022 OE snippet",
+   "note": "Mulan not in the portrait lineup per snippet; only in mystery set"
+  },
+  {
+   "key": "dlr/2022/oe-set/disney-princess-friends",
+   "field": "characters",
+   "searched": "2 queries; DPB + MyPinCentral snippets",
+   "note": "Other three pins of the Princess Friends set not named in snippets"
+  },
+  {
+   "key": "dlr/2022/oe/jasmine-pin-on-pin-2022",
+   "field": "pin_name",
+   "searched": "DPB Jasmine OE snippets",
+   "note": "Post title plural; number of Jasmine pins and exact names not stated"
+  },
+  {
+   "key": "dlr/2022/oe/disney100-platinum-character-series",
+   "field": "original_price",
+   "searched": "DPB snippet",
+   "note": "Same post also mentions an OE item at 17.99 without naming it"
+  },
+  {
+   "key": "dlr/2023/oe/disney100-platinum-character-wave2",
+   "field": "release_year",
+   "searched": "DPB snippet",
+   "note": "Tiana, Mulan, Snow White, Moana and Marvel pins spotted Jan 2023 - out of 2020-2022 scope, not recorded"
+  },
+  {
+   "key": "dlr/2021/oe/inside-out-2021",
+   "field": "pin_name",
+   "searched": "DPB April 2021 week 2 snippet",
+   "note": "OE Inside Out pins at 9.99 mentioned; number and designs not stated"
+  },
+  {
+   "key": "dlr/2021/oe/spring-dumbo-2021",
+   "field": "edition_type",
+   "searched": "DPB April 2021 week 1 snippet",
+   "note": "Spring 2021 Dumbo and Doctors' Day pins listed; edition not stated"
+  },
+  {
+   "key": "dlr/2021/oe/earth-day-moana-2021",
+   "field": "edition_type",
+   "searched": "DPB April 2021 week 2 snippet",
+   "note": "Earth Day 2021 Moana at Disneyland from 13 Apr; edition not stated"
+  },
+  {
+   "key": "dlr/2021/oe/reopening-2021",
+   "field": "pin_name",
+   "searched": "https://disneypinsblog.com/pin-update-from-disneyland-reopening/",
+   "note": "Reopening update notes OE stock at Little Green Men and Julius Katz but names no designs"
+  },
+  {
+   "key": "dlr/2021/oe/magic-is-back",
+   "field": "edition_type",
+   "searched": "https://wdwnt.com/2021/05/photos-new-limited-release-the-magic-is-back-pins-available-at-disneyland-resort/",
+   "note": "Magic is Back pins (3 singles 15.99) are limited release - excluded"
+  },
+  {
+   "key": "dlr/2022/oe/galaxys-edge",
+   "field": "edition_type",
+   "searched": "3 queries; WDWNT, DPB",
+   "note": "Twin Moons Eclipse 2022 pin is LE 2500; GE business pins LE 3000 at DHS; no 2020-22 DLR GE OE found"
+  },
+  {
+   "key": "dlr/2022/oe/toontown",
+   "field": "pin_name",
+   "searched": "https://wdwnt.com/2023/04/new-mickey-minnies-runaway-railway-toontown-pins/",
+   "note": "No 2022 Toontown OE pin found; Toontown pins covered in 2023 at reopening"
+  },
+  {
+   "key": "dlr/2022/oe/world-of-color-one",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "No World of Color One pin found for 2022; show debuted Jan 2023"
+  },
+  {
+   "key": "dlr/2022/oe/pixar-pier",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "No 2020-22 Pixar Pier or other DCA land OE pins found beyond Cars Land pair"
+  },
+  {
+   "key": "dlr/2022/oe/downtown-disney-hotels",
+   "field": "pin_name",
+   "searched": "https://wdwnt.com/2022/11/grand-californian-hotel-2022-gingerbread-display-souvenirs/",
+   "note": "No 2020-22 DTD/hotel OE pins found; Grand Californian 2022 snow globe pin is LE"
+  },
+  {
+   "key": "dlr/2022/oe/haunted-mansion-2022",
+   "field": "release_location",
+   "searched": "https://disneypinsblog.com/the-haunted-mansion-2022-pin-releases-at-disney-parks/",
+   "note": "DPB HM logo and Hatbox Ghost pins (9.99) found at Disney Springs; DLR not stated. WDWNT DLR HM pins were LE/LR"
+  }
+ ],
+ "discovery_notes": "Top-up to packet 78 (84 pins not repeated). 25 WebSearch calls, all search_snippet. Princess 2022 and Disney100 Dec 2022 lead-up filled well, mostly DPB. Most new pins are Disney Parks-wide (DL+WDW) per source. Galaxy's Edge, Toontown, World of Color One, Pixar Pier, DTD/hotel searches found only LE/LR or post-2022 items. Reopening 2021: Magic is Back is LR; April 2021 family pins added. Extra Magic Minutes also lists a Mickey & Pluto Disney100 pin, date unclear, not recorded."
+}

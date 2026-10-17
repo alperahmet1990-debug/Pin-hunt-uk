@@ -1,0 +1,1670 @@
+{
+ "packet_id": "backfill-b092-lic-boxlunch-2019-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b092",
+ "sources": [
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-blind-box-enamel-pin---boxlunch-exclusive/12105747.html",
+   "title": "Loungefly Disney The Nightmare Before Christmas Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-boxlunch-mystery-pin-collection",
+   "title": "The Nightmare Before Christmas BoxLunch Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-princess-dresses-vol.-2-blind-box-enamel-pin---boxlunch-exclusive/11774834.html",
+   "title": "Disney Princess Dresses Vol. 2 Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-dress-collection-vol-2-boxlunch-pins/",
+   "title": "Disney Princess Dress Collection Vol. 2 BoxLunch Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.geekcore.co.uk/collections/loungefly-pins",
+   "title": "Loungefly Collectible Pins",
+   "publisher": "GeekCore",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-wall-e-and-eve-enamel-pin---boxlunch-exclusive/11412379.html",
+   "title": "Disney Pixar WALL-E And EVE Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wall-e-eyes-boxlunch-disney-pin/",
+   "title": "WALL-E Eyes BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+   "title": "WALL-E Eve Plant Funko Pop! BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-aladdin-abu-raja-enamel-pin-set---boxlunch-exclusive/11627569.html",
+   "title": "Funko Pop! Disney Aladdin Abu & Raja Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/abu-raja-funko-pop-disney-boxlunch-pin-set",
+   "title": "Abu & Raja Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://funko.fandom.com/wiki/Pop!_Pins_Disney",
+   "title": "Pop! Pins Disney",
+   "publisher": "Funko Wiki (Fandom)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-funko-pop-disney-boxlunch-pin-set",
+   "title": "Beauty and the Beast Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+   "title": "Funko Pop! Disney The Little Mermaid Ursula with Flotsam & Jetsam Glitter Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/ursula-with-flotsam-jetsam-funko-pop-boxlunch-disney-pin/",
+   "title": "Ursula with Flotsam & Jetsam Funko Pop! BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-eeyore-chibi-moving-enamel-pin---boxlunch-exclusive/12074748.html",
+   "title": "Loungefly Disney Winnie the Pooh Eeyore Chibi Moving Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-tigger-chibi-moving-enamel-pin---boxlunch-exclusive/12074750.html",
+   "title": "Loungefly Disney Winnie the Pooh Tigger Chibi Moving Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-chibi-character-boxlunch-disney-pins",
+   "title": "Winnie the Pooh Chibi Character BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+   "title": "Loungefly Disney Winnie the Pooh Piglet Tigger Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+   "title": "Winnie the Pooh BoxLunch Disney Blind Box Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-blind-box-enamel-pin---boxlunch-exclusive/12499557.html",
+   "title": "Loungefly Disney Winnie the Pooh Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/exclusive-merchandise-coming-to-boxlunch-d23-expo-booth/",
+   "title": "Exclusive Merchandise Coming to BoxLunch D23 Expo Booth",
+   "publisher": "The DIS (wdwinfo.com)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/robin-hood-boxlunch-disney-pin",
+   "title": "Robin Hood BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+   "title": "Loungefly Disney Robin Hood Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-emperors-new-groove-boxlunch-disney-pin",
+   "title": "The Emperor's New Groove BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+   "title": "Loungefly Disney The Emperor's New Groove Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-yzma-and-kronk-lab-coat-enamel-pin-set---boxlunch-exclusive/11676530.html",
+   "title": "Loungefly Disney The Emperor's New Groove Yzma and Kronk Lab Coat Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/yzma-and-kronk-lab-coat-boxlunch-disney-pin-set",
+   "title": "Yzma and Kronk Lab Coat BoxLunch Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-blind-box-enamel-pin---boxlunch-exclusive/12105747.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-blind-box-enamel-pin---boxlunch-exclusive/12105747.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-blind-box-enamel-pin---boxlunch-exclusive/12105747.html",
+     "method": "search_snippet",
+     "note": "one mystery pin per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-boxlunch-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "12 pins in collection"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-boxlunch-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "October 2019"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-blind-box-enamel-pin---boxlunch-exclusive/12105747.html",
+     "method": "search_snippet",
+     "note": "two glow styles plus a mystery chase"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-boxlunch-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "$9.90 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-boxlunch-mystery-pin-collection",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-princess-dresses-vol-2-mystery",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.geekcore.co.uk/collections/loungefly-pins",
+     "method": "search_snippet",
+     "note": "UK shop lists a Loungefly x Disney Princess Dresses Vol.2 blind box pin; third-party retailer only"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-dresses-vol.-2-blind-box-enamel-pin---boxlunch-exclusive/11774834.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-dresses-vol.-2-blind-box-enamel-pin---boxlunch-exclusive/11774834.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-princess-dress-collection-vol-2-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "8 pins in collection"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-dress-collection-vol-2-boxlunch-pins/",
+     "method": "search_snippet",
+     "note": "DPB gives $9.90 per box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-wall-e-eyes",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/wall-e-eyes-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB says created by Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/wall-e-eyes-boxlunch-disney-pin/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07",
+     "source_url": "https://disneypinsblog.com/wall-e-eyes-boxlunch-disney-pin/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-wall-e-and-eve",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-wall-e-and-eve-enamel-pin---boxlunch-exclusive/11412379.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/funko-boxlunch-abu-and-rajah",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-aladdin-abu-raja-enamel-pin-set---boxlunch-exclusive/11627569.html",
+     "method": "search_snippet",
+     "note": "Funko Pop! in listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-aladdin-abu-raja-enamel-pin-set---boxlunch-exclusive/11627569.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://funko.fandom.com/wiki/Pop!_Pins_Disney",
+     "method": "search_snippet",
+     "note": "fan wiki lists the set as 2 quantity, BoxLunch exclusive"
+    },
+    {
+     "field": "price",
+     "value": 16.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/abu-raja-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "DPB retail price $16.90"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/abu-raja-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "DPB says released February 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/funko-boxlunch-belle-and-beast",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-and-the-beast-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/funko-boxlunch-eve-plant",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E Eve Plant Funko Pop! BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/funko-boxlunch-ursula-flotsam-jetsam",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Ursula with Flotsam & Jetsam Funko Pop! BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/ursula-with-flotsam-jetsam-funko-pop-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/ursula-with-flotsam-jetsam-funko-pop-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB says released August 2019"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-pooh-chibi-moving",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-eeyore-chibi-moving-enamel-pin---boxlunch-exclusive/12074748.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-eeyore-chibi-moving-enamel-pin---boxlunch-exclusive/12074748.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-chibi-character-boxlunch-disney-pins",
+     "method": "search_snippet",
+     "note": "$8.90 each"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet",
+     "note": "three enamel pins sold together"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 16.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh BoxLunch Disney Blind Box Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-blind-box-enamel-pin---boxlunch-exclusive/12499557.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-blind-box-enamel-pin---boxlunch-exclusive/12499557.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "$9.90 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-robin-hood",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Robin Hood BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-boxlunch-disney-pin",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-emperors-new-groove-kronk-yzma",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Emperor's New Groove BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-emperors-new-groove-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-emperors-new-groove-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-emperors-new-groove-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-emperors-new-groove-boxlunch-disney-pin",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-yzma-kronk-lab-coat",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Yzma and Kronk Lab Coat BoxLunch Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/yzma-and-kronk-lab-coat-boxlunch-disney-pin-set",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-yzma-and-kronk-lab-coat-enamel-pin-set---boxlunch-exclusive/11676530.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-yzma-and-kronk-lab-coat-enamel-pin-set---boxlunch-exclusive/11676530.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/yzma-and-kronk-lab-coat-boxlunch-disney-pin-set",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/yzma-and-kronk-lab-coat-boxlunch-disney-pin-set",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/yzma-and-kronk-lab-coat-boxlunch-disney-pin-set",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "pin set",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-yzma-and-kronk-lab-coat-enamel-pin-set---boxlunch-exclusive/11676530.html",
+     "method": "search_snippet",
+     "note": "listing calls it an enamel pin set"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/funko-boxlunch-d23-expo-giveaway",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch D23 Expo booth free Pop! Disney enamel pin",
+     "source_url": "https://www.wdwinfo.com/news-stories/exclusive-merchandise-coming-to-boxlunch-d23-expo-booth/",
+     "method": "search_snippet",
+     "note": "paraphrased"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.wdwinfo.com/news-stories/exclusive-merchandise-coming-to-boxlunch-d23-expo-booth/",
+     "method": "search_snippet",
+     "note": "Pop! Disney pin"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.wdwinfo.com/news-stories/exclusive-merchandise-coming-to-boxlunch-d23-expo-booth/",
+     "method": "search_snippet",
+     "note": "BoxLunch booth giveaway"
+    },
+    {
+     "field": "release_location",
+     "value": "D23 Expo 2019, BoxLunch booth",
+     "source_url": "https://www.wdwinfo.com/news-stories/exclusive-merchandise-coming-to-boxlunch-d23-expo-booth/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.wdwinfo.com/news-stories/exclusive-merchandise-coming-to-boxlunch-d23-expo-booth/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "giveaway",
+     "source_url": "https://www.wdwinfo.com/news-stories/exclusive-merchandise-coming-to-boxlunch-d23-expo-booth/",
+     "method": "search_snippet",
+     "note": "free to first 200 booth guests"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2019/boxlunch-wall-e-eyes/wall-e",
+   "set_key": "lic/2019/boxlunch-wall-e-eyes",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/wall-e-eyes-boxlunch-disney-pin/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/wall-e-eyes-boxlunch-disney-pin/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver-tone pin of WALL-E eyes",
+     "source_url": "https://disneypinsblog.com/wall-e-eyes-boxlunch-disney-pin/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-eve-plant/eve",
+   "set_key": "lic/2019/funko-boxlunch-eve-plant",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "EVE with plant",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "EVE"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "EVE",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "glow element noted"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/wall-e-eve-plant-funko-pop-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/funko-boxlunch-ursula-flotsam-jetsam/ursula-flotsam-jetsam",
+   "set_key": "lic/2019/funko-boxlunch-ursula-flotsam-jetsam",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula with Flotsam & Jetsam (glitter)",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula",
+      "Flotsam",
+      "Jetsam"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Ursula",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/ursula-with-flotsam-jetsam-funko-pop-boxlunch-disney-pin/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/ursula-with-flotsam-jetsam-funko-pop-boxlunch-disney-pin/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet",
+     "note": "glitter on dress and tentacles"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1 5/8 in tall",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-the-little-mermaid-ursula-with-flotsam-jetsam-glitter-enamel-pin---boxlunch-exclusive/12042341.html",
+     "method": "search_snippet",
+     "note": "listed as a single enamel pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-pooh-chibi-moving/eeyore",
+   "set_key": "lic/2019/loungefly-boxlunch-pooh-chibi-moving",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-eeyore-chibi-moving-enamel-pin---boxlunch-exclusive/12074748.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-eeyore-chibi-moving-enamel-pin---boxlunch-exclusive/12074748.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 2 in tall",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-eeyore-chibi-moving-enamel-pin---boxlunch-exclusive/12074748.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-pooh-chibi-moving/tigger",
+   "set_key": "lic/2019/loungefly-boxlunch-pooh-chibi-moving",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-tigger-chibi-moving-enamel-pin---boxlunch-exclusive/12074750.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-tigger-chibi-moving-enamel-pin---boxlunch-exclusive/12074750.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1.5 in tall",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-tigger-chibi-moving-enamel-pin---boxlunch-exclusive/12074750.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "moving tail"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-tigger-chibi-moving-enamel-pin---boxlunch-exclusive/12074750.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger/winnie-the-pooh",
+   "set_key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1.5 in",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet",
+     "note": "listing gives a separate size per pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger/piglet",
+   "set_key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Piglet",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1.25 in",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet",
+     "note": "listing gives a separate size per pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger/tigger",
+   "set_key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Tigger",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 2 in",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet",
+     "note": "listing gives a separate size per pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-piglet-tigger-enamel-pin-set---boxlunch-exclusive/11663402.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/winnie-the-pooh",
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "named in assortment description"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/tigger",
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Tigger",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "named in assortment description"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/piglet",
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Piglet",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "named in assortment description"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/eeyore",
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Eeyore",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "named in assortment description"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/roo",
+   "set_key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Roo",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet",
+     "note": "named in assortment description"
+    },
+    {
+     "field": "edition_type",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-boxlunch-disney-blind-box-pins",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-robin-hood/robin-hood",
+   "set_key": "lic/2019/loungefly-boxlunch-robin-hood",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Robin Hood",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Robin Hood"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Robin Hood",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/robin-hood-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "bronze tone"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1 3/8 in tall",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-robin-hood-enamel-pin---boxlunch-exclusive/12308559.html",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-emperors-new-groove-kronk-yzma/kronk-and-yzma",
+   "set_key": "lic/2019/loungefly-boxlunch-emperors-new-groove-kronk-yzma",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Emperor's New Groove Kronk and Yzma",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kronk",
+      "Yzma"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-emperors-new-groove-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-emperors-new-groove-boxlunch-disney-pin",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-emperors-new-groove-enamel-pin---boxlunch-exclusive/11676504.html",
+     "method": "search_snippet",
+     "note": "listed as a single enamel pin showing both"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery",
+   "field": "pins",
+   "searched": "2 queries (BoxLunch listing, DPB)",
+   "note": "re-checked: glow styles and chase still unnamed; 12 total, 9 subjects listed; no per-design confirmation found"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/jack-skellington",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/sally",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/zero",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/zeros-dog-house",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/dr-finkelstein",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/oogie-boogie",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/lock",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/shock",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/barrel",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept; listing still gives an assortment character list only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/lock-shock-barrel",
+   "field": "release_year",
+   "searched": "DPB snippets",
+   "note": "out of year: separate Lock, Shock & Barrel BoxLunch sets dated Sep 2022 and 2025; not this 2019 assortment"
+  },
+  {
+   "key": "lic/2019/boxlunch-princess-dresses-vol-2-mystery",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold: Loungefly maker rests on a third-party UK shop title only; BoxLunch listing title omits Loungefly; key kept as boxlunch"
+  },
+  {
+   "key": "lic/2019/boxlunch-princess-dresses-vol-2-mystery",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "conflict: DPB $9.90 per box vs BoxLunch listing original price $12.90 (packet 220 used 12.90)"
+  },
+  {
+   "key": "lic/2019/boxlunch-wall-e-eyes",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "resolved: DPB names Loungefly as maker; key slug left as boxlunch to match packets 219/220 (maker now known)"
+  },
+  {
+   "key": "lic/2019/boxlunch-wall-e-and-eve",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker still not stated; BoxLunch listing title omits any maker"
+  },
+  {
+   "key": "lic/2019/boxlunch-dumbo-flying-elephant",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker still not stated in DPB post or BoxLunch listings"
+  },
+  {
+   "key": "lic/2019/boxlunch-lady-and-the-tramp-spaghetti-dinner",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "maker still not stated; DPB confirms Jan 2019, open edition, $8.90"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-dumbo-circus-ball",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "conflict: BoxLunch listing title for Dumbo Circus Ball omits Loungefly; packet 220 maker claim should be rechecked"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-lady-and-the-tramp-kiss-lenticular",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "out of year: Loungefly BoxLunch Lady and the Tramp kiss lenticular pin dated Jan 2020 by DPB ($9.90)"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-abu-and-rajah",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "conflict kept: DPB post says Feb 2019; DPB Funko roundup puts the set in Nov-Dec 2018 window; prices also differ ($16.90/$14.90/$7.99)"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-abu-and-rajah/abu",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); 2-pin count known but per-pin split not stated (kept)"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-abu-and-rajah/rajah",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); 2-pin count known but per-pin split not stated (kept)"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-belle-and-beast/belle",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); DPB says pins of Belle and the Beast, split not explicit (kept)"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-belle-and-beast/beast",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); DPB says pins of Belle and the Beast, split not explicit (kept)"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-ursula-flotsam-jetsam",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "one snippet of the DPB tag archive suggested an Apr 2019 post date; DPB post text says Aug 2019, used here"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-stitch-alien-suit",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "still undated: BoxLunch listing ($9.90) gives no date; no DPB post found"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-mulan-mushu-cri-kee",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "out of year: DPB dates the BoxLunch Funko Mulan, Mushu & Cri-Kee 3-pin set to Dec 2018 ($18.90); not 2019"
+  },
+  {
+   "key": "lic/2019/boxlunch-mulan-honor-to-us-all",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: BoxLunch Mulan Honor To Us All pin seen undated; not recorded"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-pooh-chibi-moving",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "hold kept: DPB says Aug 2019 and Mar 2020 without per-pin split; Tigger said released with Eeyore; Piglet chibi listed separately"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-pooh-chibi-moving/piglet",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: chibi Piglet gunmetal pin ($8.90) at BoxLunch; date not stated, may be the Mar 2020 wave; not recorded"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger/winnie-the-pooh",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "released: BoxLunch listing gives a separate size for each of the Pooh, Piglet and Tigger pins in the 3-pin set"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger/piglet",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "released: BoxLunch listing gives a separate size for each of the Pooh, Piglet and Tigger pins in the 3-pin set"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger/tigger",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "released: BoxLunch listing gives a separate size for each of the Pooh, Piglet and Tigger pins in the 3-pin set"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-pooh-piglet-tigger",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "release date not in BoxLunch snippet; 2019 dating rests on packet 219"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/winnie-the-pooh",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed (assortment lists Pooh, Tigger, Piglet, Eeyore, Roo only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/tigger",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed (assortment lists Pooh, Tigger, Piglet, Eeyore, Roo only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/piglet",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed (assortment lists Pooh, Tigger, Piglet, Eeyore, Roo only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/eeyore",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed (assortment lists Pooh, Tigger, Piglet, Eeyore, Roo only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery/roo",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed (assortment lists Pooh, Tigger, Piglet, Eeyore, Roo only)"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "10 pins in set; 5 characters named; designs, duplicates and any chase not identified"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-robin-hood-prince-john",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "out of year: Loungefly Prince John BoxLunch pin dated Feb 2020 by DPB; Little John listing (adjacent ID) undated"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-yzma-kronk-lab-coat",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); pin count and per-pin subjects not stated"
+  },
+  {
+   "key": "lic/2019/loungefly-angel-devil-kronk",
+   "field": "retailer",
+   "searched": "2 queries",
+   "note": "note: BoxLunch Kronk angel/devil 2-pin set is a different item dated Jun 2018 ($12.90); 208 Hot Topic Loungefly key unaffected"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-d23-expo-giveaway",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: giveaway design not named; first-200-guests limit may be per day; no pin record made"
+  },
+  {
+   "key": "lic/2019/boxlunch-gives",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2019 BoxLunch Gives / charity Disney pin found in snippets"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-princess-bows-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "not re-searched (budget); 9 forum-only holds from packet 220 kept"
+  },
+  {
+   "key": "lic/2019/boxlunch-little-mermaid",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "no 2019 BoxLunch Little Mermaid blind box found; results dated 2022-2023"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B064 (BoxLunch 2019), 30 standard searches. Keys reused from 219/220/208. Manufacturer and retailer recorded as separate claims. Mostly Disney Pins Blog and BoxLunch listings; Funko wiki used for a set count only. Loungefly-at-BoxLunch items keyed once with both brands; no Loungefly-only work duplicated."
+}

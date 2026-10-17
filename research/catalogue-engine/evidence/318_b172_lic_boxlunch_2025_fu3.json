@@ -278,87 +278,6 @@
  ],
  "pins": [
   {
-   "pin_key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery/lightning-mcqueen",
-   "set_key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery",
-   "claims": [
-    {
-     "field": "pin_structure",
-     "value": "mystery design",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch: each pin opens to reveal a character inside its room"
-    },
-    {
-     "field": "manufacturer",
-     "value": "Loungefly",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch listing title names Loungefly"
-    },
-    {
-     "field": "retailer",
-     "value": "BoxLunch",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch exclusive"
-    }
-   ]
-  },
-  {
-   "pin_key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery/mater",
-   "set_key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery",
-   "claims": [
-    {
-     "field": "pin_structure",
-     "value": "mystery design",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch: each pin opens to reveal a character inside its room"
-    },
-    {
-     "field": "manufacturer",
-     "value": "Loungefly",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch listing title names Loungefly"
-    },
-    {
-     "field": "retailer",
-     "value": "BoxLunch",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch exclusive"
-    }
-   ]
-  },
-  {
-   "pin_key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery/sally",
-   "set_key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery",
-   "claims": [
-    {
-     "field": "pin_structure",
-     "value": "mystery design",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch: each pin opens to reveal a character inside its room"
-    },
-    {
-     "field": "manufacturer",
-     "value": "Loungefly",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch listing title names Loungefly"
-    },
-    {
-     "field": "retailer",
-     "value": "BoxLunch",
-     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-cars-cozy-cone-motel-hinged-blind-box-enamel-pin---boxlunch-exclusive/33918150.html",
-     "method": "search_snippet",
-     "note": "BoxLunch exclusive"
-    }
-   ]
-  },
-  {
    "pin_key": "lic/2025/boxlunch-pixar-kites-characters-mystery/mike-wazowski",
    "set_key": "lic/2025/boxlunch-pixar-kites-characters-mystery",
    "claims": [
@@ -387,24 +306,6 @@
   }
  ],
  "not_found": [
-  {
-   "key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery/lightning-mcqueen",
-   "field": "set_link",
-   "searched": "1 query",
-   "note": "hold: named only in a collector social video (no hinge/BoxLunch named); linked to the BoxLunch hinged set by subject and timing only; confirm"
-  },
-  {
-   "key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery/mater",
-   "field": "set_link",
-   "searched": "1 query",
-   "note": "hold: named only in a collector social video (no hinge/BoxLunch named); linked to the BoxLunch hinged set by subject and timing only; confirm"
-  },
-  {
-   "key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery/sally",
-   "field": "set_link",
-   "searched": "1 query",
-   "note": "hold: named only in a collector social video (no hinge/BoxLunch named); linked to the BoxLunch hinged set by subject and timing only; confirm"
-  },
   {
    "key": "lic/2025/loungefly-boxlunch-cars-cozy-cone-hinged-mystery",
    "field": "pins",

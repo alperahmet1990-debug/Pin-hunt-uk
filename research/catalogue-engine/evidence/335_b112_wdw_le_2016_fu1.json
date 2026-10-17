@@ -1,0 +1,1067 @@
+{
+ "packet_id": "backfill-b112-wdw-le-2016-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b112",
+ "sources": [
+  {
+   "url": "https://www.kennythepirate.com/2016/11/06/mickeys-very-merry-christmas-party-2016-merchandise/",
+   "title": "Mickey's Very Merry Christmas Party 2016 Merchandise",
+   "publisher": "KennythePirate",
+   "published_date": "2016-11-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+   "title": "Mickey's Very Merry Christmas Party Merchandise to be released",
+   "publisher": "Inside the Magic",
+   "published_date": "2016-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickeys-not-scary-halloween-party-2016-pins",
+   "title": "Mickey's Not So Scary Halloween Party 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/epcot-food-wine-festival-2016-pins/",
+   "title": "Epcot Food & Wine Festival 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+   "title": "PHOTOS: Magic Kingdom 45th Anniversary Merchandise Collection Revealed",
+   "publisher": "WDW News Today",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/additional-magic-kingdom-45th-anniversary-pins/",
+   "title": "Magic Kingdom 45th Anniversary Pins (additional)",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://spreadingmagic.com/around-the-mouse-walt-disney-world-news-october-3-2016/",
+   "title": "Around the Mouse: Walt Disney World News, October 3, 2016",
+   "publisher": "Spreading Magic",
+   "published_date": "2016-10-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+   "title": "Exclusive Pins at Spring 2016 Gathering",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+   "title": "Pixar Party Pin Event Registration",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pixar-party-pin-event-welcome-gift/",
+   "title": "Pixar Party Pin Event Welcome Gift",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pixar-party-pin-event-breakfast-pin/",
+   "title": "Pixar Party Pin Event Breakfast Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pixar-party-scavenger-hunt-pin-set/",
+   "title": "Pixar Party Scavenger Hunt Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+   "title": "Pixar Party Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://allears.net/2016/09/18/pixar-party-2016-a-pin-celebration/",
+   "title": "Pixar Party 2016: A Pin Celebration",
+   "publisher": "AllEars.Net",
+   "published_date": "2016-09-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/details-on-disneys-pixar-party-pin-celebration-2016/",
+   "title": "Details on Disney's Pixar Party Pin Celebration 2016",
+   "publisher": "WDWInfo",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://allears.net/2016/03/01/2016-disney-princess-half-marathon-weekend-part-1/",
+   "title": "2016 Disney Princess Half Marathon Weekend",
+   "publisher": "AllEars.Net",
+   "published_date": "2016-03-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2016/mvmcp",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-11-07",
+     "source_url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+     "method": "search_snippet",
+     "note": "party season opened Nov 7, 2016 (select nights to Dec 22)"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/mnsshp-framed-set",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 255,
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-not-scary-halloween-party-2016-pins",
+     "method": "search_snippet",
+     "note": "DPB ties LE 255 to the six-pin tiered frame set with Ursula completer"
+    },
+    {
+     "field": "format",
+     "value": "framed set",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-not-scary-halloween-party-2016-pins",
+     "method": "search_snippet",
+     "note": "tiered frame holding six pins incl. completer"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/mnsshp-boxed-set",
+   "claims": [
+    {
+     "field": "format",
+     "value": "boxed multi-pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-not-scary-halloween-party-2016-pins",
+     "method": "search_snippet",
+     "note": "boxed LE set with five different villain pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-not-scary-halloween-party-2016-pins",
+     "method": "search_snippet",
+     "note": "described as LE boxed pin set"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/epcot-food-wine-boxed-set",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/epcot-food-wine-festival-2016-pins/",
+     "method": "search_snippet",
+     "note": "boxed pin set LE 2,000"
+    },
+    {
+     "field": "price",
+     "value": 59.99,
+     "source_url": "https://disneypinsblog.com/epcot-food-wine-festival-2016-pins/",
+     "method": "search_snippet",
+     "note": "boxed set $59.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/epcot-food-wine-festival-2016-pins/",
+     "method": "search_snippet",
+     "note": "US park price"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/star-wars-rogue-one-mystery",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery (reveal/conceal box)",
+     "source_url": "https://spreadingmagic.com/around-the-mouse-walt-disney-world-news-october-3-2016/",
+     "method": "search_snippet",
+     "note": "each box: one of 7 visible pins plus one of 7 hidden pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://spreadingmagic.com/around-the-mouse-walt-disney-world-news-october-3-2016/",
+     "method": "search_snippet",
+     "note": "two pins per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://spreadingmagic.com/around-the-mouse-walt-disney-world-news-october-3-2016/",
+     "method": "search_snippet",
+     "note": "roundup calls it a limited release 14-pin mystery collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/magic-kingdom-45th-mystery",
+   "parent_set_key": "wdw/2016/magic-kingdom-45th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic Kingdom 45th Anniversary mystery pin set",
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "July 2016 preview of MK 45th merchandise mentions a mystery set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "eight different pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "two random pins per box"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "randomly selected pins"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/additional-magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "$15.99 per box; designs themed to MK attractions"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/additional-magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "US park price"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/spring-gathering-star-wars",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spring 2016 Gathering Star Wars super jumbo pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "two Star Wars super jumbo pins sold as a pair at a WDW pin gathering"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "event held April 17, 2016 at WDW"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "two pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "two named pins sold together as a set"
+    },
+    {
+     "field": "price",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "$250 per set; limit two sets per person"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "each pin LE 100"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/pixar-party-pin-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Party pin celebration 2016",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+     "method": "search_snippet",
+     "note": "WDW pin event celebrating 30 years of Pixar"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-26",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+     "method": "search_snippet",
+     "note": "event Aug 26-27, 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Epcot World ShowPlace",
+     "source_url": "https://www.wdwinfo.com/news-stories/details-on-disneys-pixar-party-pin-celebration-2016/",
+     "method": "search_snippet",
+     "note": "held at World ShowPlace, Epcot"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+     "method": "search_snippet",
+     "note": "registration lists LE commemorative gifts included with $140 admission"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/pixar-party-scavenger-hunt",
+   "parent_set_key": "wdw/2016/pixar-party-pin-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Party Scavenger Hunt pin set",
+     "source_url": "https://disneypinsblog.com/pixar-party-scavenger-hunt-pin-set/",
+     "method": "search_snippet",
+     "note": "six-pin set given for completing the event scavenger hunt"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/pixar-party-scavenger-hunt-pin-set/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/pixar-party-scavenger-hunt-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+     "method": "search_snippet",
+     "note": "six-pin gift set, previously found on trading boards"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+     "method": "search_snippet",
+     "note": "registration lists a six-pin scavenger hunt gift set"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/pixar-party-goodbye-set",
+   "parent_set_key": "wdw/2016/pixar-party-pin-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Party Goodbye Pin Set",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+     "method": "search_snippet",
+     "note": "goodbye pin set listed among LE event gifts"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-registration/",
+     "method": "search_snippet",
+     "note": "listed under LE commemorative gifts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/pixar-party-mystery",
+   "parent_set_key": "wdw/2016/pixar-party-pin-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Party 2016 mystery pin boxes",
+     "source_url": "https://allears.net/2016/09/18/pixar-party-2016-a-pin-celebration/",
+     "method": "search_snippet",
+     "note": "event mystery boxes"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://allears.net/2016/09/18/pixar-party-2016-a-pin-celebration/",
+     "method": "search_snippet",
+     "note": "8 limited release designs plus 8 chasers"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://allears.net/2016/09/18/pixar-party-2016-a-pin-celebration/",
+     "method": "search_snippet",
+     "note": "chasers LE 400"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://allears.net/2016/09/18/pixar-party-2016-a-pin-celebration/",
+     "method": "search_snippet",
+     "note": "mystery boxes at the event"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/pixar-party-countdown",
+   "parent_set_key": "wdw/2016/pixar-party-pin-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Party countdown pin collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "monthly pin releases leading up to the 2016 event, in Pixar film order"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 13,
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "13 pins in the collection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Springs pin trading store",
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "monthly releases sold at Disney Springs"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 13,
+     "source_url": "https://allears.net/2016/09/18/pixar-party-2016-a-pin-celebration/",
+     "method": "search_snippet",
+     "note": "recap mentions 13 monthly countdown pins"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2016/mvmcp/logo",
+   "set_key": "wdw/2016/mvmcp",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MVMCP 2016 logo pin (standard guest)",
+     "source_url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+     "method": "search_snippet",
+     "note": "one of two LE party pins, this one for general guests"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+     "method": "search_snippet",
+     "note": "2016 party"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+     "method": "search_snippet",
+     "note": "sold in park shops during party"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/mvmcp/annual-passholder",
+   "set_key": "wdw/2016/mvmcp",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MVMCP 2016 Annual Passholder pin",
+     "source_url": "https://www.kennythepirate.com/2016/11/06/mickeys-very-merry-christmas-party-2016-merchandise/",
+     "method": "search_snippet",
+     "note": "pin sold only to Annual Passholders"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.kennythepirate.com/2016/11/06/mickeys-very-merry-christmas-party-2016-merchandise/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.kennythepirate.com/2016/11/06/mickeys-very-merry-christmas-party-2016-merchandise/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://insidethemagic.net/2016/11/mickeys-very-merry-christmas-party-merchandise-to-be-released/",
+     "method": "search_snippet",
+     "note": "ITM: the passholder pin also LE 3,000"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.kennythepirate.com/2016/11/06/mickeys-very-merry-christmas-party-2016-merchandise/",
+     "method": "search_snippet",
+     "note": "2016 party preview"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/spring-gathering-star-wars/boba-fett-the-hunter",
+   "set_key": "wdw/2016/spring-gathering-star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Boba Fett \"The Hunter\" super jumbo pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "super jumbo Star Wars pin, Acme Archives line, artist Mike Kungl"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "Boba Fett"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "LE 100"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "sold at Apr 17, 2016 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "WDW pin gathering"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Acme Archives",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "from the Acme Archives line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/spring-gathering-star-wars/bb-8",
+   "set_key": "wdw/2016/spring-gathering-star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "BB-8 super jumbo pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "super jumbo Star Wars pin, Acme Archives line, artist Mike Kungl"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "BB-8"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "LE 100"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "sold at Apr 17, 2016 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "WDW pin gathering"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Acme Archives",
+     "source_url": "https://disneypinsblog.com/blogs/news/exclusive-pins-at-spring-2016-gathering",
+     "method": "search_snippet",
+     "note": "from the Acme Archives line"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/pixar-party-pin-event/welcome-gift-oozma-kappa",
+   "set_key": "wdw/2016/pixar-party-pin-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pixar Party 2016 welcome gift pin",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-welcome-gift/",
+     "method": "search_snippet",
+     "note": "Monsters University pin given to each registered guest"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Art",
+      "Squishy",
+      "Don Carlton",
+      "Terri",
+      "Terry"
+     ],
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-welcome-gift/",
+     "method": "search_snippet",
+     "note": "pin features Art, Squishy, Don, Terri and Terry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-welcome-gift/",
+     "method": "search_snippet",
+     "note": "described as a single welcome gift pin showing the group"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-welcome-gift/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-welcome-gift/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://allears.net/2016/09/18/pixar-party-2016-a-pin-celebration/",
+     "method": "search_snippet",
+     "note": "recap: welcome gift LE 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-26",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-welcome-gift/",
+     "method": "search_snippet",
+     "note": "event gift, Aug 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/pixar-party-pin-event/breakfast-remy",
+   "set_key": "wdw/2016/pixar-party-pin-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pixar Party 2016 breakfast pin",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-breakfast-pin/",
+     "method": "search_snippet",
+     "note": "pin for registered guests who bought the breakfast add-on"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Remy"
+     ],
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-breakfast-pin/",
+     "method": "search_snippet",
+     "note": "Remy making an omelet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-breakfast-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-breakfast-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08",
+     "source_url": "https://disneypinsblog.com/pixar-party-pin-event-breakfast-pin/",
+     "method": "search_snippet",
+     "note": "2016 event"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/pixar-party-countdown/cars",
+   "set_key": "wdw/2016/pixar-party-countdown",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pixar Party countdown Cars pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "Cars entry in the monthly countdown series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "LE 750"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "Pin Traders, Disney Springs",
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+     "method": "search_snippet",
+     "note": "sold only at Disney Springs Pin Traders"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2016/mvmcp/hinged-elsa",
+   "field": "pin_name",
+   "searched": "3 queries (ITM, KTP)",
+   "note": "lead: ITM lists Elsa among hinged LE 5,300 characters; companion characters and design unknown, so no pin record"
+  },
+  {
+   "key": "wdw/2016/mvmcp",
+   "field": "members",
+   "searched": "5 queries",
+   "note": "other hinged pins still unnamed; box set (LE 1,000) and framed set (LE 300) contents beyond completers not found"
+  },
+  {
+   "key": "wdw/2016/mvmcp/annual-passholder",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "Disney Fashionista describes a glittery toy-soldier AP pin with Donald at $14.99, but year of that page unconfirmed; not recorded"
+  },
+  {
+   "key": "wdw/2016/mvmcp/logo",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "earlier lead now tied to the ITM page (LE 3,000) and recorded as a pin; design not described"
+  },
+  {
+   "key": "wdw/2016/mnsshp-framed-set",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "DPB snippet ties LE 255 to the framed set; Cruella/AP 255 conflict from earlier round not repeated in this round"
+  },
+  {
+   "key": "wdw/2016/mnsshp-boxed-set",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "five villain pins still unnamed; a snippet suggests Gaston appears only in boxed/framed sets but its source page is unclear - lead only"
+  },
+  {
+   "key": "wdw/2016/mnsshp-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "only a reseller describes 12 spider-web character designs with 3 chasers; no preferred source names designs"
+  },
+  {
+   "key": "wdw/2016/epcot-food-wine-boxed-set",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "contents still unstated; reseller titles it Mickey and Pals 2016 (ignored)"
+  },
+  {
+   "key": "wdw/2016/star-wars-rogue-one-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "14 designs still unnamed; reseller Jyn Erso pin not tied to the mystery set"
+  },
+  {
+   "key": "wdw/2016/magic-kingdom-45th-mystery",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "eight attraction-themed designs not individually named"
+  },
+  {
+   "key": "wdw/2016/magic-kingdom-45th-mystery",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "no source calls the mystery set limited; DPB lists it beside OE logo pins - may belong to OE cell"
+  },
+  {
+   "key": "wdw/2016/magic-kingdom-45th/pin-trading-event",
+   "field": "members",
+   "searched": "1 query",
+   "note": "DPB notes an Oct 2, 2016 pin trading event; no event-specific pins identified"
+  },
+  {
+   "key": "wdw/2016/pixar-party-scavenger-hunt",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "six pins not individually named"
+  },
+  {
+   "key": "wdw/2016/pixar-party-goodbye-set",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "goodbye set size, designs and edition not found"
+  },
+  {
+   "key": "wdw/2016/pixar-party-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "mystery designs unnamed; chaser LE 400 per AllEars only"
+  },
+  {
+   "key": "wdw/2016/pixar-party-villains-box-set",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "lead: Pixar Villains boxed set at event; only reseller names six villains and LE 300; not recorded"
+  },
+  {
+   "key": "wdw/2016/pixar-party-countdown",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "DPB/AllEars disagree on start month (Sep vs Oct 2015); 2015 pins belong to 2015 cell; per-pin 2016 dates unstated"
+  },
+  {
+   "key": "wdw/2016/pixar-party-countdown/cars",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "month of Cars release not stated in snippet; 2016 placement inferred from series order - confirm"
+  },
+  {
+   "key": "wdw/2016/spring-gathering-star-wars",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: licensed Acme Archives Star Wars super jumbo pins (Mike Kungl) for licensed cells"
+  },
+  {
+   "key": "wdw/2016/rundisney-princess-half",
+   "field": "members",
+   "searched": "1 query",
+   "note": "AllEars 2016 expo recap mentions a mini medal pin only; other pins only in reseller listings"
+  },
+  {
+   "key": "wdw/2016/rundisney-wine-dine",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no preferred source; only a reseller 2016 metal pin listing"
+  },
+  {
+   "key": "wdw/2016/epcot-flower-garden-topiary-4-pin-set",
+   "field": "split",
+   "searched": "1 query",
+   "note": "DPB: four different character pins (unnamed); Chip and Co names 4 subjects; split still inferred - hold kept"
+  },
+  {
+   "key": "wdw/2016/annual-passholder-bronze-statues",
+   "field": "split",
+   "searched": "1 query",
+   "note": "DPB snippet lists six statue characters and $49.99 only; no per-pin evidence - hold kept"
+  },
+  {
+   "key": "wdw/2016/epcot-flower-garden-topiary-4-pin-set/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/epcot-flower-garden-topiary-4-pin-set/donald",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/epcot-flower-garden-topiary-4-pin-set/goofy",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/epcot-flower-garden-topiary-4-pin-set/pluto",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/annual-passholder-bronze-statues/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/annual-passholder-bronze-statues/pinocchio",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/annual-passholder-bronze-statues/minnie",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/annual-passholder-bronze-statues/dumbo",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/annual-passholder-bronze-statues/brer-rabbit",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/annual-passholder-bronze-statues/donald",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per subject was inferred from the set's subject list; confirm the pin split before sign-off"
+  },
+  {
+   "key": "wdw/2016/spring-gathering-star-wars/boba-fett-the-hunter",
+   "field": "identity",
+   "searched": "packet review",
+   "note": "variant: same pin as lic/2016/acme-spring-gathering-super-jumbo/boba-fett-the-hunter (packet 325: same Acme LE 100 super jumbo, 17 Apr 2016 Spring Gathering); keep one record"
+  },
+  {
+   "key": "wdw/2016/spring-gathering-star-wars/bb-8",
+   "field": "identity",
+   "searched": "packet review",
+   "note": "variant: same pin as lic/2016/acme-spring-gathering-super-jumbo/bb-8 (packet 325: same Acme LE 100 super jumbo, 17 Apr 2016 Spring Gathering); keep one record"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B026. 29 standard WebSearch queries, blocked domains passed, all search_snippet. Keys reused from packet 234. New: MVMCP logo + AP pins (LE 3,000, ITM/KTP), Spring 2016 Gathering Star Wars pair, Pixar Party 2016 event (welcome, breakfast, countdown Cars; sets for scavenger hunt, goodbye, mystery), MK 45th mystery set record. Resellers (yourwdwstore, magicalears, parkscollectibles) ignored. Holds kept: topiary 4-pin and AP bronze statue splits. No mystery designs confirmed, so no mystery member records. No prompt-injection seen."
+}

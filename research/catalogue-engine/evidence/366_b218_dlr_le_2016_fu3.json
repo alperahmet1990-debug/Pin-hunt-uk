@@ -1,0 +1,1005 @@
+{
+ "packet_id": "backfill-b218-dlr-le-2016-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b218",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+   "title": "New Disney Pins February 2016 Week 4",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-02-22"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+   "title": "New Disney Pins October 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+   "title": "New Disney Pins April 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-04-19"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickeys-halloween-party-2016-pins",
+   "title": "Mickey's Halloween Party 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-09"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/easter-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Resort Easter 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "DLR Easter pin in the 21-27 Feb 2016 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "available at DLR 25 Feb 2016"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "one Donald Duck pin listed for DLR"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/haunted-mansion-october-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion surprise release October 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "surprise Haunted Mansion LE release at Disney Parks"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "four individual LE pins in the release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "each pin LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Thursday 13 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "post says Disney Parks; specific resort not stated in snippet"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD 15.99 each"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "each pin has its own edition size and price"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/haunted-mansion-october-2016-box-set",
+   "parent_set_key": "dlr/2016/haunted-mansion-october-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion October 2016 box set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "box set released same day"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "the four individual pins plus a Hat Box Ghost completer"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE box set"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "13 Oct 2016"
+    },
+    {
+     "field": "price",
+     "value": 109,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "box set USD 109"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "boxed set; completer only sold in the box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/disneyland-60-mystery-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60th mystery pin collection (Feb 2016)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "new DL 60th mystery collection in Feb wk4 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "LE 5,000 per snippet"
+    },
+    {
+     "field": "price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "USD 12.95 per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "available at DLR 25 Feb 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "listed under DLR"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, one random pin per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "designs and set size not stated"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/easter-2016/donald-duck",
+   "set_key": "dlr/2016/easter-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Resort Easter 2016 - Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "colourful DLR Easter pin with Donald"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "Donald"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "Donald"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "single listed pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "retail 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "25 Feb 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/disney-duets-pin-of-the-month/evil-queen-snow-white",
+   "set_key": "dlr/2016/disney-duets-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Duets - Evil Queen and Snow White",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "second pin in the Disney Duets collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen",
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "Evil Queen and Snow White on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Evil Queen",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "villain named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "single monthly pin showing both characters"
+    },
+    {
+     "field": "set_position",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "called the second Duets pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "retail 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "25 Feb 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/haunted-mansion-october-2016/viking-singer",
+   "set_key": "dlr/2016/haunted-mansion-october-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion October 2016 - Viking Singer",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "one of four named pins: Viking Singer"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Viking Singer"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Viking Singer"
+    },
+    {
+     "field": "main_character",
+     "value": "Viking Singer",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Viking Singer"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Haunted Mansion release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "own edition size and price"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "each LE 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "13 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "resort not specified in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/haunted-mansion-october-2016/dueling-ghosts",
+   "set_key": "dlr/2016/haunted-mansion-october-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion October 2016 - Dueling Ghosts",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "one of four named pins: Dueling Ghosts"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dueling Ghosts"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Dueling Ghosts"
+    },
+    {
+     "field": "main_character",
+     "value": "Dueling Ghosts",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Dueling Ghosts"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Haunted Mansion release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "own edition size and price"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "each LE 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "13 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "resort not specified in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/haunted-mansion-october-2016/organ-player",
+   "set_key": "dlr/2016/haunted-mansion-october-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion October 2016 - Organ Player",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "one of four named pins: Organ Player"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Organ Player"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Organ Player"
+    },
+    {
+     "field": "main_character",
+     "value": "Organ Player",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Organ Player"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Haunted Mansion release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "own edition size and price"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "each LE 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "13 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "resort not specified in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/haunted-mansion-october-2016/bride",
+   "set_key": "dlr/2016/haunted-mansion-october-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion October 2016 - Bride",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "one of four named pins: Bride"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bride"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Bride"
+    },
+    {
+     "field": "main_character",
+     "value": "Bride",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Bride"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Haunted Mansion release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "own edition size and price"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "each LE 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "13 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "resort not specified in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/haunted-mansion-october-2016-box-set/hat-box-ghost-completer",
+   "set_key": "dlr/2016/haunted-mansion-october-2016-box-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion October 2016 box set - Hat Box Ghost completer",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "completer pin only in the box set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hat Box Ghost"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Hat Box Ghost"
+    },
+    {
+     "field": "main_character",
+     "value": "Hat Box Ghost",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Hat Box Ghost"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "Haunted Mansion"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "single completer pin within pack"
+    },
+    {
+     "field": "is_chaser",
+     "value": false,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "completer, not a chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "completer LE 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "13 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2016-week-2",
+     "method": "search_snippet",
+     "note": "resort not specified"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/haunted-mansion-october-2016",
+   "field": "release_location",
+   "searched": "follow-up B218, 2 queries",
+   "note": "hold: confirm DLR availability; snippet says Disney Parks without naming resort"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-october-2016",
+   "field": "visual_description",
+   "searched": "follow-up B218, 2 queries",
+   "note": "designs not described beyond the ghost named; no frame/series style stated"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-october-2016-box-set/hat-box-ghost-completer",
+   "field": "original_price",
+   "searched": "follow-up B218, 2 queries",
+   "note": "only the USD 109 box price given; completer not sold separately"
+  },
+  {
+   "key": "dlr/2016/easter-2016",
+   "field": "lead",
+   "searched": "follow-up B218, 1 query",
+   "note": "WDW Easter 2016 Chip and Dale LE 5,000 in the same post belongs to a WDW cell; not recorded"
+  },
+  {
+   "key": "dlr/2016/disney-duets-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B218, 2 queries",
+   "note": "Evil Queen/Snow White (Feb, #2) added; #1 and later 2016 Duets not named; OE Prince and Princess set in same post out of LE scope"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "members",
+   "searched": "follow-up B218, 3 queries",
+   "note": "hold: mystery designs not individually confirmed; no design or set size named for the Feb 2016 LE 5,000 box"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "release_conflict",
+   "searched": "follow-up B218, 3 queries",
+   "note": "Apr wk3 lists another DL 60th mystery box (USD 12.95, 21 Apr 2016) with no edition; same or second set unclear; 2015 OE 8-pin set is separate"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B218, 7 queries",
+   "note": "still only Belle (Mar) and Pooh (Apr); no Jan-Feb or May-Sep 2016 Diamond D pin named; DPB monthly roundups for those months not surfaced"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month/winnie-the-pooh",
+   "field": "edition_size",
+   "searched": "follow-up B218, 2 queries",
+   "note": "conflict kept: Apr wk3 snippet LE 5,000 vs DisZine preview that D pins are LE 3,000; no page reconciles it"
+  },
+  {
+   "key": "dlr/2016/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "follow-up B218, 1 query",
+   "note": "no 2016 member beyond Merryweather; Pirates hinged pin (first in series, LE 3,000) appears tied to 2015 event - 2015 cell"
+  },
+  {
+   "key": "dlr/2016/pin-trading-night",
+   "field": "release",
+   "searched": "follow-up B218, 1 query",
+   "note": "still no 2016 DLR Pin Trading Night LE; results only Date Nite and HKDL Pin Trading Fun Days"
+  },
+  {
+   "key": "dlr/2016/season-of-the-force",
+   "field": "release",
+   "searched": "follow-up B218, 1 query",
+   "note": "no 2016 SotF pin; only Tomorrowland film pins and a CM alumni pin, unrelated"
+  },
+  {
+   "key": "dlr/2016/dca-food-wine-2016",
+   "field": "release",
+   "searched": "follow-up B218, 1 query",
+   "note": "no 2016 pin; festival ran weekends 1 Apr-1 May 2016 per Wikipedia; DCA F&W pins seen start 2017 (other cells)"
+  },
+  {
+   "key": "dlr/2016/diamond-celebration-closing",
+   "field": "release",
+   "searched": "follow-up B218, 1 query",
+   "note": "no finale pin; framed 60th set was OE sold only during the celebration but released 2015"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "field": "members",
+   "searched": "follow-up B218, 2 queries",
+   "note": "four costumed characters still unnamed; DPB adds sale only at party nights 23 Sep-31 Oct 2016"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "members",
+   "searched": "follow-up B218, 1 query",
+   "note": "15-piece reveal/conceal set reconfirmed; no piece named; distinct from Oct 2016 Haunted Mansion LE release"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "members",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold kept: still only the collector Flickr post (LR USD 19.95, 8 princesses + 8 mystery princes, 11 Aug); no publisher listing"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war-whose-side",
+   "field": "members",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold kept: confirm pin structure; DPB still says two LR pins, neither named; no Iron Man/Cap design source"
+  },
+  {
+   "key": "dlr/2016/graduation-2016/mickey",
+   "field": "visual_description",
+   "searched": "follow-up B218, 1 query",
+   "note": "conflict kept: resellers say cap-and-gown selfie with diploma, maybe compatible with DPB diploma note; resellers only, not used"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016/revenge-of-the-5th",
+   "field": "visual_description",
+   "searched": "follow-up B218, 1 query",
+   "note": "Vader before Death Star pin-on-pin seen only on an ecrater reseller listing; not used; edition size still unknown"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B218, 1 query",
+   "note": "reseller-only leads: Jack & Sally (29 May 2016, LE 3,000), Lady & Tramp, WALL-E & Eve (Oct); not recorded"
+  },
+  {
+   "key": "dlr/2016/wdi-diamond-character-pins",
+   "field": "lead",
+   "searched": "follow-up B218, 2 queries",
+   "note": "DPB snippet names designs (Tweedles, Cheshire Cat, Alice, Ariel, Jiminy, Pinocchio, Nemo/Dory/Marlin) LE 250, CM-only Glendale; not a DLR park release"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/beauty-beast",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/roger-anita",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "pin_name",
+   "searched": "follow-up B218, 1 query",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B028 (DLR LE 2016). 30 standard WebSearch calls, blocked domains passed. New items from Disney Pins Blog Feb 2016 wk4 and Oct 2016 wk2 roundups. Resellers (ecrater, distradingpins4u, magicalearscollectibles, yourwdwstore, parkscollectibles) ignored. No holds released; Date Nite, Whose Side, Royalty and 60th mystery holds kept; one location hold added."
+}

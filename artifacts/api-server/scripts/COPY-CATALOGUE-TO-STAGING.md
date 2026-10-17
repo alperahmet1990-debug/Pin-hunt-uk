@@ -14,6 +14,7 @@ Preview and TestFlight builds read the **staging** Supabase project, which start
 - It never deletes anything.
 - Re-running it updates the same rows rather than adding duplicates.
 - If staging already has a pin with the same PinHunt ID under a different id, that pin is skipped, never overwritten. Characters, categories and sets that already exist in staging are reused.
+- **Photos added or cleaned in staging are kept (#384).** If a staging pin's photo differs from main's (for example one cleaned with `clean-catalogue-images.mjs`, or added through the TestFlight app), a re-run keeps the staging photo, and the report says "kept N staging photo(s)". Add `--refresh-images` to take main's photos instead.
 
 ## Run it (from artifacts/api-server)
 

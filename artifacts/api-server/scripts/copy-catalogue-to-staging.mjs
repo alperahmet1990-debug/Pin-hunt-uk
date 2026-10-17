@@ -7,6 +7,7 @@
  * staging guard. Copies only the catalogue tables listed in
  * lib/catalogue-copy.mjs; never accounts, collections, messages,
  * submissions or files. Never deletes. Dry run unless --apply.
+ * Photos added or cleaned in staging are kept unless --refresh-images (#384).
  *
  * Usage (from artifacts/api-server):
  *   node --env-file=.env.staging scripts/copy-catalogue-to-staging.mjs           # dry run
@@ -21,12 +22,13 @@ import { requireStaging } from "./lib/staging-guard.mjs";
 import { assertAnonKey, assertMainTarget, runCopy } from "./lib/catalogue-copy.mjs";
 
 const flags = process.argv.slice(2);
-const unknown = flags.filter((f) => f !== "--apply");
+const unknown = flags.filter((f) => f !== "--apply" && f !== "--refresh-images");
 if (unknown.length) {
-  console.error(`Unknown option ${unknown[0]}. Usage: copy-catalogue-to-staging.mjs [--apply]`);
+  console.error(`Unknown option ${unknown[0]}. Usage: copy-catalogue-to-staging.mjs [--apply] [--refresh-images]`);
   process.exit(1);
 }
 const APPLY = flags.includes("--apply");
+const REFRESH_IMAGES = flags.includes("--refresh-images");
 
 // Staging only: refuses production and any project not prepared by staging-db restore.
 const target = await requireStaging();
@@ -58,7 +60,7 @@ async function readAll(client, table, columns, filters = []) {
 }
 
 try {
-  const result = await runCopy({ apply: APPLY }, {
+  const result = await runCopy({ apply: APPLY, refreshImages: REFRESH_IMAGES }, {
     readMain: (table, filters) => readAll(main, table, "*", filters),
     readStaging: (table, columns) => readAll(staging, table, columns.join(", ")),
     async upsert(table, rows, key) {

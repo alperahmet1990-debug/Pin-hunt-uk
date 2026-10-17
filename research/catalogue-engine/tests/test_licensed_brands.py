@@ -24,6 +24,8 @@ class LicensedBrands(unittest.TestCase):
                                                          'Retailer': 'Disney Store UK | Disney Store France'}), ('Monogram', 'Disney Store'))
         self.assertEqual(maker_retailer('lic/2023/x/y', {'Retailer': 'shopDisney'}), ('Not stated', 'Disney Parks / shopDisney'))
         self.assertEqual(maker_retailer('lic/2021/uncas-boxlunch-tiana-silhouette/tiana'), ('Uncas International', 'BoxLunch'))
+        self.assertEqual(maker_retailer('lic/2016/x/y', {'Manufacturer': 'ACME'}), ('Acme Archives', 'Not stated'))
+        self.assertEqual(maker_retailer('lic/2016/x/y', {'Manufacturer': 'Acme Archives (HotArt)'}), ('Acme Archives', 'Not stated'))
 
     def test_unknown_and_non_licensed(self):
         self.assertEqual(maker_retailer('lic/2019/primark-mickey/mickey'), ('Not stated', 'Not stated'))

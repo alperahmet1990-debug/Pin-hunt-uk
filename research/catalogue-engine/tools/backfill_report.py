@@ -26,7 +26,7 @@ def line_from_key(k):
 
 MAKERS = [('loungefly', 'Loungefly'), ('funko', 'Funko'), ('artland', 'ArtLand'),
           ('her-universe', 'Her Universe'), ('our-universe', 'Our Universe'), ('figpin', 'FiGPiN'), ('monogram', 'Monogram'),
-          ('uncas', 'Uncas International'), ('mondo', 'Mondo'), ('hallmark', 'Hallmark')]
+          ('uncas', 'Uncas International'), ('mondo', 'Mondo'), ('hallmark', 'Hallmark'), ('acme', 'Acme Archives')]
 RETAILERS = [('boxlunch', 'BoxLunch'), ('hot-topic', 'Hot Topic'), ('pink-a-la-mode', 'Pink a la Mode'), ('jcpenney', 'JCPenney'),
              ('dpbstore', 'DPB Store'), ('dpb-store', 'DPB Store'), ('shopdisney', 'Disney Parks / shopDisney'),
              ('disney-parks', 'Disney Parks / shopDisney'), ('disney-store', 'Disney Store')]

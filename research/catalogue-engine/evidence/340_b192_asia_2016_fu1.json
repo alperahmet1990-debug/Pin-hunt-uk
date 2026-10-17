@@ -1,0 +1,2258 @@
+{
+ "packet_id": "backfill-b192-asia-2016-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b192",
+ "sources": [
+  {
+   "url": "https://mezzomiki.jp/post-63164/",
+   "title": "Tokyo DisneySea 15th anniversary goods (crystal design)",
+   "publisher": "MezzoMiki",
+   "published_date": "2016-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-63178/",
+   "title": "Tokyo DisneySea 15th anniversary goods (Wish moment design)",
+   "publisher": "MezzoMiki",
+   "published_date": "2016-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-63712/",
+   "title": "Abu's Bazaar Tokyo DisneySea 15th anniversary prizes",
+   "publisher": "MezzoMiki",
+   "published_date": "2016-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-67685/",
+   "title": "Jungle Carnival Disney Natsu Matsuri 2016 prizes",
+   "publisher": "MezzoMiki",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-71521/",
+   "title": "Jungle Carnival Disney Halloween 2016 prizes",
+   "publisher": "MezzoMiki",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-67538/",
+   "title": "Disney Natsu Matsuri 2016 special goods (Sairyo Kabu design)",
+   "publisher": "MezzoMiki",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://travel.watch.impress.co.jp/docs/news/741789.html",
+   "title": "Tokyo Disneyland Star Tours Force Awakens scenes from 2 Feb 2016",
+   "publisher": "Travel Watch (Impress)",
+   "published_date": "2015-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+   "title": "Tokyo Disney Star Wars Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/peter-pan-big-ben-pin",
+   "title": "Peter Pan Big Ben Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+   "title": "HKDL Mickey and Minnie 88th birthday limited edition pins",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+   "title": "HKDL 2016 Walt Disney birthday limited edition pin",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016a-sparkling-christmas.html",
+   "title": "HKDL 2016 A Sparkling Christmas event record",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/11/2016-duffy-2016.html",
+   "title": "HKDL 2016 Christmas and Duffy winter merchandise",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/06/tsum-tsum.html",
+   "title": "HKDL ice cream Tsum Tsum themed pins",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+   "title": "Shanghai Disneyland castle x TRON Lightcycle limited edition commemorative pin",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+   "title": "Tsum Tsum series at Disney pin trading fun day",
+   "publisher": "uLifestyle (U Lifestyle HK)",
+   "published_date": "2016-03-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "tdr/2016/tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "MezzoMiki lists the pins among TDS 15th anniversary special goods"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-15",
+     "source_url": "https://mezzomiki.jp/post-63178/",
+     "method": "search_snippet",
+     "note": "anniversary event ran 15 Apr 2016 to 17 Mar 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Abu's Bazaar TDS 15th anniversary game prize pins",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "fail prize pins during the 15th anniversary event"
+    },
+    {
+     "field": "format",
+     "value": "game prize",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "given when the game is lost"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "five kinds, plus a separate rainy-day pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-11",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "prizes from 11 Apr 2016 per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "Abu's Bazaar game"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jungle Carnival Disney Natsu Matsuri 2016 prize pins",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "fail prize pins in festival kimono"
+    },
+    {
+     "field": "format",
+     "value": "game prize",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "given even when the game is lost"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "five kinds plus a rainy-day pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Jungle Carnival game"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Disney Natsu Matsuri 2016 event; post dated Jul 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2016/game-prize-tdl-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jungle Carnival Disney Halloween 2016 prize pins",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "fail prize pins in Halloween Pop'n Live costumes"
+    },
+    {
+     "field": "format",
+     "value": "game prize",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "one pin given even on a loss"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "five kinds plus a rainy-day pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "Jungle Carnival game"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2016/disney-natsu-matsuri-sairyo-kabu",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Natsu Matsuri 2016 Sairyo Kabu pin",
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "special goods for the 2016 summer festival show"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2016/star-tours",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Tours special version (The Force Awakens) pin",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/741789.html",
+     "method": "search_snippet",
+     "note": "pin sold for the 2016 special version"
+    },
+    {
+     "field": "release_location",
+     "value": "Cosmic Encounter, Tokyo Disneyland",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/741789.html",
+     "method": "search_snippet",
+     "note": "sold at Cosmic Encounter shop"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/mickey-minnie-88th-birthday",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL Mickey and Minnie 88th birthday limited edition pins",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "two medal-style birthday pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "LE per design"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-18",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "on sale on Mickey's birthday"
+    },
+    {
+     "field": "release_location",
+     "value": "Main Street, U.S.A. photo shop, Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "sold at the Main Street photo shop"
+    },
+    {
+     "field": "price",
+     "value": 95,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HK$95 each"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HK dollars"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/walt-disney-birthday",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL 2016 Walt Disney birthday limited edition pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "annual Walt birthday pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-03",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "sale date"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/christmas",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL 2016 Christmas themed pins",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/2016-duffy-2016.html",
+     "method": "search_snippet",
+     "note": "listed in 2016 Christmas merchandise overview"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-19",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/2016-duffy-2016.html",
+     "method": "search_snippet",
+     "note": "sale date per overview"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/2016-duffy-2016.html",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/sparkling-christmas-member-gift",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney's Sparkling Christmas 2016 Magic Access member gift pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016a-sparkling-christmas.html",
+     "method": "search_snippet",
+     "note": "redemption gift, not sold"
+    },
+    {
+     "field": "format",
+     "value": "member redemption gift",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016a-sparkling-christmas.html",
+     "method": "search_snippet",
+     "note": "Platinum and Gold Magic Access members, while stocks last"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/ice-cream-tsum-tsum",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL ice cream Tsum Tsum themed pins",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/06/tsum-tsum.html",
+     "method": "search_snippet",
+     "note": "Tsum Tsum characters as ice cream"
+    },
+    {
+     "field": "price",
+     "value": 75,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/06/tsum-tsum.html",
+     "method": "search_snippet",
+     "note": "HK$75"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/06/tsum-tsum.html",
+     "method": "search_snippet",
+     "note": "HKD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/06/tsum-tsum.html",
+     "method": "search_snippet",
+     "note": "post dated Jun 2016; backstamp says 2016 HKDL"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/06/tsum-tsum.html",
+     "method": "search_snippet",
+     "note": "HKDL merchandise"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/pin-trading-fun-days",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-04-08",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "event 8-10 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Royal Banquet Hall area, Fantasyland, Hong Kong Disneyland",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "venue"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/pin-trading-fun-days-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Fun Days 2016 six-pin gift box set",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "LE box set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "format",
+     "value": "box set",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "gift box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "800 sets"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/pin-trading-fun-days-popcorn",
+   "claims": [
+    {
+     "field": "format",
+     "value": "hidden Mickey series",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "called a popcorn Tsum Tsum hidden Mickey pin series"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2016/castle-x-tron",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disneyland Enchanted Storybook Castle x TRON Lightcycle limited edition commemorative pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "title only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "title says limited edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "post URL month only"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "tdr/2016/tds-15th-anniversary/large-wish-crystal-pin",
+   "set_key": "tdr/2016/tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "TDS 15th anniversary large pin",
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "large pin, about 8.5 cm tall"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Pluto",
+      "Donald Duck",
+      "Daisy Duck",
+      "Goofy"
+     ],
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "six characters named on the pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "single pin showing the group with the 15th anniversary mark"
+    },
+    {
+     "field": "original_price",
+     "value": 1500,
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "1,500 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "blue and gold, 15th anniversary mark, Wish crystal styling",
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "paraphrased from the post"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "TDS 15th anniversary goods"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63164/",
+     "method": "search_snippet",
+     "note": "2016 anniversary goods"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/tds-15th-anniversary/can-badge-set-logo-pin",
+   "set_key": "tdr/2016/tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "TDS 15th anniversary logo pin (can badge and pin set)",
+     "source_url": "https://mezzomiki.jp/post-63178/",
+     "method": "search_snippet",
+     "note": "pin with the 15th logo sold paired with a can badge"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-63178/",
+     "method": "search_snippet",
+     "note": "one pin plus one can badge in the set"
+    },
+    {
+     "field": "original_price",
+     "value": 2500,
+     "source_url": "https://mezzomiki.jp/post-63178/",
+     "method": "search_snippet",
+     "note": "2,500 yen for the can badge and pin together"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-63178/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "15th anniversary logo; about 6 x 3 cm",
+     "source_url": "https://mezzomiki.jp/post-63178/",
+     "method": "search_snippet",
+     "note": "size per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63178/",
+     "method": "search_snippet",
+     "note": "2016 anniversary goods"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tds-15th-anniversary/mickey",
+   "set_key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse TDS 15th Abu's Bazaar prize pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "post names all five kinds by character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "each kind is a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "15th anniversary prizes, 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tds-15th-anniversary/minnie",
+   "set_key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse TDS 15th Abu's Bazaar prize pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "post names all five kinds by character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "each kind is a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "15th anniversary prizes, 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tds-15th-anniversary/donald",
+   "set_key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck TDS 15th Abu's Bazaar prize pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "post names all five kinds by character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "each kind is a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "15th anniversary prizes, 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tds-15th-anniversary/daisy",
+   "set_key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy Duck TDS 15th Abu's Bazaar prize pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "post names all five kinds by character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "each kind is a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "15th anniversary prizes, 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tds-15th-anniversary/goofy",
+   "set_key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy TDS 15th Abu's Bazaar prize pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "post names all five kinds by character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "each kind is a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "15th anniversary prizes, 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tds-15th-anniversary/rainy-day-teru-teru-mickey-minnie",
+   "set_key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainy-day teru teru bozu Mickey and Minnie prize pin",
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "rainy-day-only choice"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie as teru teru bozu"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-63712/",
+     "method": "search_snippet",
+     "note": "15th anniversary prizes"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-natsu-matsuri/mickey",
+   "set_key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Natsu Matsuri 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "post names five kinds by character, in Japanese festival dress"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Natsu Matsuri 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-natsu-matsuri/minnie",
+   "set_key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Natsu Matsuri 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "post names five kinds by character, in Japanese festival dress"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Natsu Matsuri 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-natsu-matsuri/donald",
+   "set_key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Natsu Matsuri 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "post names five kinds by character, in Japanese festival dress"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Natsu Matsuri 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-natsu-matsuri/max",
+   "set_key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Max Goof Natsu Matsuri 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Max Goof"
+     ],
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "post names five kinds by character, in Japanese festival dress"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Natsu Matsuri 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-natsu-matsuri/clarice",
+   "set_key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Clarice Natsu Matsuri 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clarice"
+     ],
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "post names five kinds by character, in Japanese festival dress"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Natsu Matsuri 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-natsu-matsuri/rainy-day-teru-teru-mickey-minnie",
+   "set_key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainy-day teru teru bozu Mickey and Minnie prize pin (Natsu Matsuri 2016)",
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "rainy-day-only prize"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie teru teru bozu"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-67685/",
+     "method": "search_snippet",
+     "note": "2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-halloween/mickey",
+   "set_key": "tdr/2016/game-prize-tdl-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Halloween 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "five kinds named by character, Halloween Pop'n Live costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "Disney Halloween 2016 prizes"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-halloween/minnie",
+   "set_key": "tdr/2016/game-prize-tdl-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Halloween 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "five kinds named by character, Halloween Pop'n Live costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "Disney Halloween 2016 prizes"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-halloween/donald",
+   "set_key": "tdr/2016/game-prize-tdl-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Halloween 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "five kinds named by character, Halloween Pop'n Live costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "Disney Halloween 2016 prizes"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-halloween/daisy",
+   "set_key": "tdr/2016/game-prize-tdl-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy Duck Halloween 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "five kinds named by character, Halloween Pop'n Live costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "Disney Halloween 2016 prizes"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-halloween/pluto",
+   "set_key": "tdr/2016/game-prize-tdl-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto Halloween 2016 Jungle Carnival prize pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "one of five named kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "five kinds named by character, Halloween Pop'n Live costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "each kind a separate prize pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "Disney Halloween 2016 prizes"
+    },
+    {
+     "field": "release_location",
+     "value": "Jungle Carnival, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/game-prize-tdl-halloween/rainy-day-teru-teru-mickey-minnie",
+   "set_key": "tdr/2016/game-prize-tdl-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainy-day teru teru bozu Mickey and Minnie prize pin (Halloween 2016)",
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "rainy-day-only prize"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie teru teru bozu"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-71521/",
+     "method": "search_snippet",
+     "note": "2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/disney-natsu-matsuri-sairyo-kabu/mickey-logo",
+   "set_key": "tdr/2016/disney-natsu-matsuri-sairyo-kabu",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Natsu Matsuri 2016 Mickey logo pin",
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "Mickey in show costume with festival logo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "Mickey in Sairyo Kabu costume"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "1,000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in show costume beside the Natsu Matsuri logo; about 4.5 x 4.5 cm",
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "paraphrased"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "TDL summer event goods"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mezzomiki.jp/post-67538/",
+     "method": "search_snippet",
+     "note": "2016 event"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/star-tours/force-awakens-special-version",
+   "set_key": "tdr/2016/star-tours",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Tours 'Awakening of the Force' pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "DPB names the special version 'Awakening of the Force'"
+    },
+    {
+     "field": "attraction",
+     "value": "Star Tours: The Adventures Continue",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/741789.html",
+     "method": "search_snippet",
+     "note": "special version ran 2 Feb to 7 Sep 2016"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/741789.html",
+     "method": "search_snippet",
+     "note": "1,000 yen; shows characters from the attraction"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/741789.html",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "DPB also gives 1000 yen"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "TDR exclusive per DPB"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/741789.html",
+     "method": "search_snippet",
+     "note": "tied to the Feb 2016 special version"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2016/peter-pan-big-ben/big-ben-silhouettes",
+   "set_key": "tdr/2016/peter-pan-big-ben",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/peter-pan-big-ben-pin",
+     "method": "search_snippet",
+     "note": "DPB calls it an open edition pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/peter-pan-big-ben-pin",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/peter-pan-big-ben-pin",
+     "method": "search_snippet",
+     "note": "released at TDR in December 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/mickey-minnie-88th-birthday/mickey",
+   "set_key": "hkdl/2016/mickey-minnie-88th-birthday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse 88th birthday pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "one of two designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "post gives a Mickey design and a Minnie design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "each design sold separately at HK$95"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "300 per design"
+    },
+    {
+     "field": "original_price",
+     "value": 95,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HK$95"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HKD"
+    },
+    {
+     "field": "visual_description",
+     "value": "medal style",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "inspired by medal pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-18",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "sale date"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/mickey-minnie-88th-birthday/minnie",
+   "set_key": "hkdl/2016/mickey-minnie-88th-birthday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse 88th birthday pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "one of two designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "post gives a Mickey design and a Minnie design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "each design sold separately at HK$95"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "300 per design"
+    },
+    {
+     "field": "original_price",
+     "value": 95,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HK$95"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HKD"
+    },
+    {
+     "field": "visual_description",
+     "value": "medal style",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "inspired by medal pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-18",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "sale date"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/11/88.html",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/walt-disney-birthday/gelatoni",
+   "set_key": "hkdl/2016/walt-disney-birthday",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2016 Walt Disney birthday pin (Gelatoni)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "Gelatoni chosen as the 2016 lead character"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "Gelatoni"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "500"
+    },
+    {
+     "field": "original_price",
+     "value": 95,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "HK$95"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "HKD"
+    },
+    {
+     "field": "visual_description",
+     "value": "medal shape with red ribbon and Partners statue motif",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "paraphrased"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-03",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "sold at Main Street photo shop"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016.html",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/sparkling-christmas-member-gift/christmas-pin",
+   "set_key": "hkdl/2016/sparkling-christmas-member-gift",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sparkling Christmas 2016 member gift pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016a-sparkling-christmas.html",
+     "method": "search_snippet",
+     "note": "Christmas pin given with 3D glasses"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-17",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016a-sparkling-christmas.html",
+     "method": "search_snippet",
+     "note": "redeemable 17 Nov 2016 to 2 Jan 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (Magic Access member services)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/12/2016a-sparkling-christmas.html",
+     "method": "search_snippet",
+     "note": "Platinum/Gold members only"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-fun-days/invitation-pin",
+   "set_key": "hkdl/2016/pin-trading-fun-days",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Days 2016 invitation pin",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "LE invitation pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "1200"
+    },
+    {
+     "field": "original_price",
+     "value": 128,
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "HK$128"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "HKD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-19",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "on sale 19 Mar"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-fun-days/magic-access-version",
+   "set_key": "hkdl/2016/pin-trading-fun-days",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Days 2016 Magic Access version",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "member version"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "1000"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-fun-days/pin-ambassador-version",
+   "set_key": "hkdl/2016/pin-trading-fun-days",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Days 2016 pin ambassador version",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "ambassador version"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "1200"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "tdr/2016/tds-15th-anniversary/can-badge-set-logo-pin",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price covers the can badge (excluded as a button) and pin together; pin not sold alone per snippet"
+  },
+  {
+   "key": "tdr/2016/tds-15th-anniversary/large-wish-crystal-pin",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "exact sale date not tied to this pin; one summary mentions 11 Apr 2016 but not clearly for this item"
+  },
+  {
+   "key": "tdr/2016/tds-15th-anniversary",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "lead: TDS 15th Resort Line pin seen only on a reseller (BUYMA); not used, 2016 date unconfirmed"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/rainy-day-teru-teru-mickey-minnie",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); unclear if one pin or one each for Mickey and Minnie"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "separate from tdr/2016/game-prize-tds (Jul 2016, DPB); this is the Apr 2016 15th anniversary prize lineup"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-natsu-matsuri/rainy-day-teru-teru-mickey-minnie",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); may also be the same design reused from other 2016 prize periods"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-natsu-matsuri",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "hold: may be the TDL July 2016 game prize set (tdr/2016/game-prize-tdl) from the earlier packet; link rests on timing only"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-halloween/rainy-day-teru-teru-mickey-minnie",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); one search summary was confused about the article year"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-halloween",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "exact start date of the Halloween prize period not stated"
+  },
+  {
+   "key": "tdr/2016/disney-natsu-matsuri-sairyo-kabu/mickey-logo",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "hold: may be the Mickey pin of tdr/2016/natsu-matsuri (DPB 2-pin set); no source links them"
+  },
+  {
+   "key": "tdr/2016/natsu-matsuri",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB snippet again lists Mickey and Minnie as a 2-pin set; a single list, not per-pin evidence"
+  },
+  {
+   "key": "tdr/2016/star-tours/force-awakens-special-version",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "conflict: DPB page gives 1 Dec 2015 for TDR Star Wars pins while tying this pin to 2 Feb 2016 debut; not resolved"
+  },
+  {
+   "key": "tdr/2016/star-tours/force-awakens-special-version",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on the pin not named; Travel Watch says attraction characters only"
+  },
+  {
+   "key": "tdr/2016/star-tours",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "answered (lead, not a hold): earlier lead confirmed as a real pin by Travel Watch (1,000 yen, Cosmic Encounter) plus DPB"
+  },
+  {
+   "key": "tdr/2016/peter-pan-big-ben/big-ben-silhouettes",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "answered: DPB states open edition (earlier gap)"
+  },
+  {
+   "key": "tdr/2016/peter-pan-big-ben",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "Bushikaku reports ~40 Peter Pan goods at TDL from 1 Dec 2016 but does not name this pin; day not confirmed"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "no TDS summer 2016 Abu's Bazaar pin lineup found; a '2016 Mickey banana' prize pin seen only on Yahoo Auctions, not used"
+  },
+  {
+   "key": "tdr/2016/setsubun",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched this round"
+  },
+  {
+   "key": "hkdl/2016/christmas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "designs, count, edition and price not in snippets"
+  },
+  {
+   "key": "hkdl/2016/sparkling-christmas-member-gift/christmas-pin",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "design and edition not described"
+  },
+  {
+   "key": "hkdl/2016",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "answered (lead, not a hold): earlier 'no HKDL Christmas 2016 pin found' gap now answered by Disney Magical Kingdom Blog (sale pins 19 Nov, member gift pin)"
+  },
+  {
+   "key": "hkdl/2016/ice-cream-tsum-tsum",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Mickey, Pluto, Donald, Daisy, Chip, Dale listed only"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days/invitation-pin",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "hold: may be the same item as the Tsum Tsum logo pin from the earlier packet; design not described"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days/magic-access-version",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "hold: design not described; confirm whether a variant of the invitation pin"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days/pin-ambassador-version",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "hold: design not described; confirm whether a variant of the invitation pin"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "members not named"
+  },
+  {
+   "key": "hkdl/2016/deluxe-attractions-box-set",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold kept: may be the Fun Days 6-pin box set (LE 800); link rests on pin count only"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days-popcorn",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: now described as a hidden Mickey series but designs and count still unnamed"
+  },
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold kept: still no source names the six characters; uLifestyle 2016 dates Halloween Time 15 Sep-31 Oct"
+  },
+  {
+   "key": "hkdl/2016/halloween",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: DMK Blog Halloween 2016 post lists a separate '2016 Halloween LE themed pin' entry; no details"
+  },
+  {
+   "key": "hkdl/2016/halloween-mystery-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: uLifestyle Halloween piece (year unclear, maybe 2017) cites HK$218 box of 5 random from 11; not dated 2016, not recorded"
+  },
+  {
+   "key": "hkdl/2016",
+   "field": "magic_access_dangle",
+   "searched": "1 query",
+   "note": "Magic Access Sorcerer Mickey key dangle (DPB) still undated; page metadata suggests ~2015, so likely out of the 2016 cell"
+  },
+  {
+   "key": "hkdl/2016/10k-weekend",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "3K family and Mickey 10K pins still not described"
+  },
+  {
+   "key": "hkdl/2016/sports-pin-series",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: Chinese search found nothing on the series; pair structure unresolved"
+  },
+  {
+   "key": "shdr/2016/opening-day",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold: Lets Go Pin Trading lists a character lineup (Mickey, Minnie to Stitch, Tigger, Pooh) without per-pin detail; other designs only on resellers"
+  },
+  {
+   "key": "shdr/2016",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "still no Shanghai Halloween or Christmas 2016 pin found (English and Chinese searches)"
+  },
+  {
+   "key": "shdr/2016/castle-x-tron",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); rests on post title only"
+  },
+  {
+   "key": "shdr/2016/grand-opening/bubble-castle-mickey-minnie",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold kept: no 2016 source found"
+  },
+  {
+   "key": "shdr/2016/grand-opening/ear-hat-gold-castle",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold kept: no 2016 source found"
+  },
+  {
+   "key": "shdr/2016/reveal-conceal",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: designs still unnamed"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/mickey",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/minnie",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/donald",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/daisy",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/goofy",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-natsu-matsuri/mickey",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-natsu-matsuri/minnie",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-natsu-matsuri/donald",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-natsu-matsuri/max",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-natsu-matsuri/clarice",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-halloween/mickey",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-halloween/minnie",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-halloween/donald",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-halloween/daisy",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/game-prize-tdl-halloween/pluto",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: game prize design named only in a full \"all 5 kinds\" list, no per-design entry; pending maintainer decision on full lists"
+  },
+  {
+   "key": "tdr/2016/tds-15th-anniversary/large-wish-crystal-pin",
+   "field": "pin_structure",
+   "searched": "packet review",
+   "note": "hold: confirm pin structure; recorded as one pin showing six characters, not stated pin by pin"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B031 (Asia 2016). 30 standard searches, snippets only. Reuses B031 keys. New: MezzoMiki (TDR goods and game prizes), Disney Magical Kingdom Blog (HKDL), uLifestyle, Travel Watch. Resellers (BUYMA, Yahoo Auctions, yourwdwstore, Carousell) not used."
+}

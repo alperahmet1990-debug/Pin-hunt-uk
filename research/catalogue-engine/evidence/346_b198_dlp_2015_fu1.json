@@ -1,0 +1,3782 @@
+{
+ "packet_id": "backfill-b198-dlp-2015-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b198",
+ "sources": [
+  {
+   "url": "http://passiondlp.com/actus/arc015.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 1",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc016.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 2",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc017.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 3",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc018.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 4",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+   "title": "Pin Trading Kollektion - Juni 2015: Alles Frozen! Oder was?",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+   "title": "Pin Trading Kollektion - Juli 2015 Pins aus dem Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+   "title": "Disneyland Pin Trading Kollektion - August 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+   "title": "Pin Trading Kollektion - September 2015 im Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+   "title": "Pin Trading Kollektion im Disneyland Paris - Mai 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-dezember-2015/",
+   "title": "Pin-Trading Kollektion Dezember 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-june-2015-frozen-summer-pins-avengers-space-mountain-20th-anniversary-vice-versa-more/",
+   "title": "Disneyland Paris Pins for June 2015",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2015-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2015-star-wars-stitch-squares-and-nightmare-before-christmas/",
+   "title": "Disneyland Paris Pins for July 2015",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2015-07-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+   "title": "Disneyland Paris Pins for September 2015: Halloween, Christmas, Star Wars, Duffy & Olaf",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2015-09-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2015-pins",
+   "title": "Disneyland Paris October 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+   "title": "Pin Trading Day Frozen Fun - 11 Juillet 2015",
+   "publisher": "Disney Gazette forum",
+   "published_date": "2015-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+   "title": "Disney Dreams ! Pin Event - 19 Septembre 2015 (COMPLET)",
+   "publisher": "Disney Gazette forum",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneygazette.fr/retour-sur-le-pin-event-disney-dreams",
+   "title": "Retour sur le Pin Event Disney Dreams",
+   "publisher": "Disney Gazette",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/10/28/details-on-disneyland-paris-le-bal-de-cendrillon-pin-trading-event/",
+   "title": "Details On Disneyland Paris Le Bal De Cendrillon Pin Trading Event",
+   "publisher": "DisKingdom",
+   "published_date": "2015-10-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/12/01/disneyland-pariss-le-bal-de-cendrillon-pins/",
+   "title": "Disneyland Paris's Le Bal de Cendrillon Pins",
+   "publisher": "DisKingdom",
+   "published_date": "2015-12-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneycentralplaza.com/t50251-pin-trading-event-dream-19-septembre-2015",
+   "title": "[Pin Trading Event] Dream (19 septembre 2015)",
+   "publisher": "Disney Central Plaza forum",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2015/pin-trading-night-january-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 30 January 2015",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event named in passiondlp quarterly archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-30",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event date per archive"
+    },
+    {
+     "field": "format",
+     "value": "event release: three named pins plus a Refresh Lanyard pin",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Archive lists the three PTN pins and a Refresh Lanyard pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Three named character pins (lanyard pin counted separately, unnamed)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-february-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 27 February 2015",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event named in passiondlp quarterly archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event date per archive"
+    },
+    {
+     "field": "format",
+     "value": "event release: three named pins plus a Refresh Lanyard pin",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Archive lists the three PTN pins and a Refresh Lanyard pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Three named character pins (lanyard pin counted separately, unnamed)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-march-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 27 March 2015",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event named in passiondlp quarterly archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event date per archive"
+    },
+    {
+     "field": "format",
+     "value": "event release: three named pins plus a Refresh Lanyard pin",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Archive lists the three PTN pins and a Refresh Lanyard pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Three named character pins (lanyard pin counted separately, unnamed)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-july-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 31 July 2015",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event named in passiondlp quarterly archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-31",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event date per archive"
+    },
+    {
+     "field": "format",
+     "value": "event release: three named pins plus a Refresh Lanyard pin",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Archive lists the three PTN pins and a Refresh Lanyard pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Three named character pins (lanyard pin counted separately, unnamed)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel Cheyenne",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2015-star-wars-stitch-squares-and-nightmare-before-christmas/",
+     "method": "search_snippet",
+     "note": "Blog places the 31 July trading night at Hotel Cheyenne"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel Cheyenne",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Forum names it the 88th Pin Trading Night, Fri 31 Jul 2015 at Hotel Cheyenne"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-august-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 28 August 2015",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event named in passiondlp quarterly archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-28",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event date per archive"
+    },
+    {
+     "field": "format",
+     "value": "event release: three named pins plus a Refresh Lanyard pin",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Archive lists the three PTN pins and a Refresh Lanyard pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Three named character pins (lanyard pin counted separately, unnamed)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-october-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 30 October 2015",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event named in passiondlp quarterly archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-30",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event date per archive"
+    },
+    {
+     "field": "format",
+     "value": "event release: three named pins plus a Refresh Lanyard pin",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive lists the three PTN pins and a Refresh Lanyard pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Three named character pins (lanyard pin counted separately, unnamed)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Sequoia Lodge, Beaver Creek Tavern",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2015-pins",
+     "method": "search_snippet",
+     "note": "Blog gives venue for the 30 Oct 2015 PTN"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-november-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 27 November 2015",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event named in passiondlp quarterly archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-27",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event date per archive"
+    },
+    {
+     "field": "format",
+     "value": "event release: three named pins plus a Refresh Lanyard pin",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive lists the three PTN pins and a Refresh Lanyard pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Three named character pins (lanyard pin counted separately, unnamed)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-day-frozen-fun-july-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Day Frozen Fun 11 July 2015",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Forum recap title"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Held on Sat 11 Jul 2015"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "http://www.passiondlp.com/actus/arc016.php",
+     "method": "search_snippet",
+     "note": "passiondlp announces PTD 11 Jul 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post",
+     "source_url": "http://www.passiondlp.com/actus/arc016.php",
+     "method": "search_snippet",
+     "note": "Venue per passiondlp announcement"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Recap says four pins were on sale"
+    },
+    {
+     "field": "format",
+     "value": "event release: four separate LE pins",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Four pins; three LE 1000 at EUR 14.99, Sven LE 500 at EUR 13.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "All four limited"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Dreams! Pin Trading Event",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Archive heading for the 19 Sep 2015 event"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event date"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Recap gives 19 September"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel New York convention centre",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Recap venue"
+    },
+    {
+     "field": "format",
+     "value": "ticketed pin event",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Ticket incl. buffet, activities and a free pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Recap mentions 5 Disney Dreams! event pins later sold at Pueblo Trading Post; plus 4 giveaway pins and a mini-jumbo"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/cinderella-ball-event-2015",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel New York convention centre",
+     "source_url": "http://diskingdom.com/2015/10/28/details-on-disneyland-paris-le-bal-de-cendrillon-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "Event 12 Dec 2015, 11:00-15:00; EUR 45 incl. brunch and a pin"
+    },
+    {
+     "field": "format",
+     "value": "ticketed pin event",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive lists slipper mini-jumbo, Bruno giveaway and Locket pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "NBC pins from 11 July; colourful Jack face from 18 July"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Six NBC pins named as month theme"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015-jack-sally-pack",
+   "parent_set_key": "dlp/2015/nightmare-before-christmas-july-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jack & Sally double pack (July 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Two oval silhouette pins sold together"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Described as a double pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Pair"
+    },
+    {
+     "field": "price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR 12.99 for the pair"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Square character pins 2015",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "May article says the Square Pin series starts in May"
+    },
+    {
+     "field": "format",
+     "value": "series of separate single OE pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Each square pin listed individually"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square pins listed unlimited, EUR 7.99 each"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/oe-single/oswald-square-retro",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Oswald square retro (May 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Single OE pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Single"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/oe-single/goofy-mickey-star-wars-outfits",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Goofy & Mickey Star Wars outfits (May 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Single price listed"
+    },
+    {
+     "field": "format",
+     "value": "single listing",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Structure unclear"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/august-2015-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris August 2015 pin releases",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Monthly article"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "August 2015"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Pins listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/oe-set/star-wars-booster-september-2015",
+   "claims": [
+    {
+     "field": "price",
+     "value": 18.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Booster of 4 pins, EUR 18.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Quick overview lists 'SW Cutes Star Wars' booster as unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-05",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+     "method": "search_snippet",
+     "note": "Blog: released the Saturday after 1 Sep post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/oe-set/nutcracker-booster-2015",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Booster with four Christmas Mickey pins"
+    },
+    {
+     "field": "price",
+     "value": 18.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "EUR 18.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/halloween-2015",
+   "claims": [
+    {
+     "field": "format",
+     "value": "group incl. Minnie & Figaro two-pin set (EUR 12.99, unlimited)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Overview lists Pin Set Minnie und Figaro, EUR 12.99"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/june-2015-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris June 2015 pin releases",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Monthly article"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "June 2015"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2015/pin-trading-night-january-2015/elsa",
+   "set_key": "dlp/2015/pin-trading-night-january-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Elsa (PTN January 2015)",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-30",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elsa"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-january-2015/olaf",
+   "set_key": "dlp/2015/pin-trading-night-january-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Olaf (PTN January 2015)",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-30",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Olaf"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-january-2015/chip",
+   "set_key": "dlp/2015/pin-trading-night-january-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip (PTN January 2015)",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-30",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-february-2015/king-of-hearts",
+   "set_key": "dlp/2015/pin-trading-night-february-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Roi de Coeur (King of Hearts)",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "King of Hearts"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-february-2015/pimprenelle",
+   "set_key": "dlp/2015/pin-trading-night-february-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pimprenelle",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive (French name; often used for Fauna, editorial only)"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pimprenelle"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-february-2015/shrimp",
+   "set_key": "dlp/2015/pin-trading-night-february-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Shrimp",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive (film not given in snippet)"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Shrimp"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-march-2015/cancan-marionette",
+   "set_key": "dlp/2015/pin-trading-night-march-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cancan Marionnette",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cancan marionette"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Pinocchio",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-march-2015/kaa",
+   "set_key": "dlp/2015/pin-trading-night-march-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kaa",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kaa"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "The Jungle Book",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-march-2015/bird",
+   "set_key": "dlp/2015/pin-trading-night-march-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bird",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-27",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bird"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Cinderella",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-july-2015/owl",
+   "set_key": "dlp/2015/pin-trading-night-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hibou (Owl)",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive (film not given in snippet)"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-31",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Owl"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-july-2015/amelia",
+   "set_key": "dlp/2015/pin-trading-night-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Amelia",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-31",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Amelia"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "The Aristocats",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-july-2015/marcel",
+   "set_key": "dlp/2015/pin-trading-night-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marcel",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-31",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marcel"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "A Bug's Life",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-august-2015/si",
+   "set_key": "dlp/2015/pin-trading-night-august-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Si",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-28",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Si"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Lady and the Tramp",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-august-2015/bird-2",
+   "set_key": "dlp/2015/pin-trading-night-august-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bird 2",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive (second Cinderella bird design after March)"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-28",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bird"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Cinderella",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-august-2015/dot",
+   "set_key": "dlp/2015/pin-trading-night-august-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dot",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-28",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dot"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "A Bug's Life",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-october-2015/little-brother",
+   "set_key": "dlp/2015/pin-trading-night-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Petit Frere (Little Brother)",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-30",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Little Brother"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Mulan",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-october-2015/uncle-max",
+   "set_key": "dlp/2015/pin-trading-night-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Uncle Max",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-30",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Uncle Max"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-october-2015/abigail",
+   "set_key": "dlp/2015/pin-trading-night-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Abigail",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-30",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Abigail"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "The Aristocats",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-november-2015/lady-tremaine",
+   "set_key": "dlp/2015/pin-trading-night-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lady Tremaine",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-27",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lady Tremaine"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Cinderella",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-november-2015/drizella",
+   "set_key": "dlp/2015/pin-trading-night-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Drizella",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive (spelt Drizilia in archive)"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-27",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Drizella"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Cinderella",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-night-november-2015/anastasia",
+   "set_key": "dlp/2015/pin-trading-night-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Anastasia",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Name as listed in archive"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-27",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Released at the Pin Trading Night"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris Pin Trading Night",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event-only pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anastasia"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Character named in archive list"
+    },
+    {
+     "field": "franchise",
+     "value": "Cinderella",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Film given in brackets in archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/pin-trading-day-frozen-fun-july-2015/sven",
+   "set_key": "dlp/2015/pin-trading-day-frozen-fun-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sven (Pin Trading Day Frozen Fun)",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Only design named in recap"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sven"
+     ],
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Sven pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Limited to 500, sold out quickly"
+    },
+    {
+     "field": "original_price",
+     "value": 13.99,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "EUR 13.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+     "method": "search_snippet",
+     "note": "PTD date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/cinderella-ball-event-2015/glass-slipper-mini-jumbo",
+   "set_key": "dlp/2015/cinderella-ball-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pantoufle (glass slipper) mini-jumbo",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive names a mini-jumbo Pantoufle pin for the event"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-12",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event date"
+    },
+    {
+     "field": "visual_form",
+     "value": "slipper",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Name means slipper"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/cinderella-ball-event-2015/bruno-giveaway",
+   "set_key": "dlp/2015/cinderella-ball-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pataud (Bruno) giveaway pin",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive names the offered giveaway pin Pataud"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bruno"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive gives French name Pataud (Bruno in English)"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-12",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Event date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/anna-medallion",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Anna summer medallion",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Medallion pin of Anna in summer look with sunflowers"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anna"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "EUR price in quick overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-20",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "20 June batch"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Medallion style"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/elsa-medallion",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Elsa summer medallion",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Medallion pin of Elsa in summer look with ice crystals"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elsa"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "EUR price in quick overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-20",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "20 June batch"
+    },
+    {
+     "field": "visual_form",
+     "value": "medallion",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Medallion style"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/olaf-summer",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Olaf 'Summer'",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited Olaf 'Summer' pin; one of two rectangular Olaf pins (meadow/beach), mapping not stated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Olaf"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "EUR price in quick overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-20",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "20 June batch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/olaf-chillin",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Olaf 'Chillin''",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited Olaf 'Chillin'' pin; one of two rectangular Olaf pins (meadow/beach), mapping not stated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Olaf"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "EUR price in quick overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-20",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "20 June batch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/anna-elsa-party-fever",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Anna & Elsa Party Fever",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Sisters in Frozen Fever party outfits"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anna",
+      "Elsa"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Both named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "One summary says one pin shows the sisters together; another says 'pins' - conflict"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-20",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "20 June batch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/nightmare-before-christmas-july-2015-jack-sally-pack/jack-silhouette",
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015-jack-sally-pack",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington oval silhouette (double pack)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Oval silhouette pin, black frame with black-and-white bow"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Pack of Jack and Sally oval pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "From 11 July"
+    },
+    {
+     "field": "visual_form",
+     "value": "oval silhouette",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Silhouette style"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/nightmare-before-christmas-july-2015-jack-sally-pack/sally-silhouette",
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015-jack-sally-pack",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sally oval silhouette (double pack)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Oval silhouette pin, black frame with black-and-white bow"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sally"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Pack of Jack and Sally oval pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "From 11 July"
+    },
+    {
+     "field": "visual_form",
+     "value": "oval silhouette",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Silhouette style"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/nightmare-before-christmas-july-2015/jack-face-silver",
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington silver face",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Silver Jack face pin, EUR 8.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR price per summary"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/nightmare-before-christmas-july-2015/zero-silver",
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zero silver",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Silver Zero pin, EUR 8.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Zero"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR price per summary"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/nightmare-before-christmas-july-2015/jack-oval",
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington oval single",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Single oval Jack pin, EUR 8.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR price per summary"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/nightmare-before-christmas-july-2015/jack-face-colour",
+   "set_key": "dlp/2015/nightmare-before-christmas-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington colourful face",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Colourful Jack face pin EUR 7.99, from 18 July"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR price per summary"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-18",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/remy",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Remy",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Square Pin Remy, unlimited EUR 7.99, 9 May"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Remy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/cheshire-cat",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Cheshire Cat",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Square Pin Grinsekatze, unlimited EUR 7.99, 9 May"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/bambi",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Bambi",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Square Bambi EUR 7.99 from 4 July; blog says whole square is the face"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bambi"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-04",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2015-star-wars-stitch-squares-and-nightmare-before-christmas/",
+     "method": "search_snippet",
+     "note": "Blog names Baloo, Bambi and Flower square pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/flower",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Flower",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Square Blume (Flower) EUR 7.99 from 4 July"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flower"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-04",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2015-star-wars-stitch-squares-and-nightmare-before-christmas/",
+     "method": "search_snippet",
+     "note": "Blog names Baloo, Bambi and Flower square pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/baloo",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Baloo",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Square Balu EUR 7.99 from 4 July"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baloo"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-04",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2015-star-wars-stitch-squares-and-nightmare-before-christmas/",
+     "method": "search_snippet",
+     "note": "Blog names Baloo, Bambi and Flower square pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/tigger",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Tigger",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square Tigger, unlimited EUR 7.99, 1 Aug"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tigger"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-01",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/eeyore",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Eeyore",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square Iah (Eeyore), unlimited EUR 7.99, 1 Aug"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-01",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/bullseye",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Bullseye",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square Bully (Bullseye, Toy Story), unlimited EUR 7.99, 1 Aug"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bullseye"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-01",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/square-pins-2015/art",
+   "set_key": "dlp/2015/square-pins-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Square pin Art",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square Art (Monsters University), unlimited EUR 7.99, 1 Aug"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Art"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-01",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Square pin series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/oe/oswald-square-retro",
+   "set_key": "dlp/2015/oe-single/oswald-square-retro",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Oswald square retro pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Square Oswald pin in retro look"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Oswald the Lucky Rabbit"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Oswald named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "May 2015 collection"
+    },
+    {
+     "field": "visual_form",
+     "value": "square",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Square"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/oe/goofy-mickey-star-wars-outfits",
+   "set_key": "dlp/2015/oe-single/goofy-mickey-star-wars-outfits",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy & Mickey in Star Wars outfits",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Listed as one entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy",
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Both named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-mai-2015/",
+     "method": "search_snippet",
+     "note": "From 9 May"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/august-2015-releases/captain-america",
+   "set_key": "dlp/2015/august-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain America (Marvel, Aug 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "One of four similar Marvel hero pins, EUR 6.99, 8 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR price"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Franchise per article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/august-2015-releases/hulk",
+   "set_key": "dlp/2015/august-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hulk (Marvel, Aug 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "One of four similar Marvel hero pins, EUR 6.99, 8 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR price"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Franchise per article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/august-2015-releases/thor",
+   "set_key": "dlp/2015/august-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Thor (Marvel, Aug 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "One of four similar Marvel hero pins, EUR 6.99, 8 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR price"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thor"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Franchise per article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/august-2015-releases/iron-man",
+   "set_key": "dlp/2015/august-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Iron Man (Marvel, Aug 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "One of four similar Marvel hero pins, EUR 6.99, 8 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR price"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Franchise per article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/august-2015-releases/guardians-of-the-galaxy",
+   "set_key": "dlp/2015/august-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Guardians of the Galaxy rectangle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Fifth Marvel pin, rectangular Guardians of the Galaxy, EUR 8.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR price"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Franchise per article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/august-2015-releases/darth-maul",
+   "set_key": "dlp/2015/august-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Darth Maul round (Aug 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Round Star Wars pin, unlimited EUR 6.99, 15 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "EUR price"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-15",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Release date per summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Maul"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-august-2015/",
+     "method": "search_snippet",
+     "note": "Franchise per article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/oe/darth-vader-star-wars-booster-2015",
+   "set_key": "dlp/2015/oe-set/star-wars-booster-september-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Darth Vader (Star Wars booster Sep 2015)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+     "method": "search_snippet",
+     "note": "Blog singles out the Vader and Yoda designs of the 4-pin booster"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+     "method": "search_snippet",
+     "note": "Named as a booster design"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Booster unlimited"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/oe/yoda-star-wars-booster-2015",
+   "set_key": "dlp/2015/oe-set/star-wars-booster-september-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Yoda (Star Wars booster Sep 2015)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+     "method": "search_snippet",
+     "note": "Blog singles out the Vader and Yoda designs of the 4-pin booster"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Yoda"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+     "method": "search_snippet",
+     "note": "Named as a booster design"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Booster unlimited"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/oe/mickey-nutcracker-booster-2015",
+   "set_key": "dlp/2015/oe-set/nutcracker-booster-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey as Nutcracker (Nutcracker booster)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "One of the four Mickey pins shows him as a nutcracker"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-26",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "From 26 Sep"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-26",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+     "method": "search_snippet",
+     "note": "Booster available 26 Sep"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/halloween-2015/figaro-pumpkin",
+   "set_key": "dlp/2015/halloween-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Figaro in pumpkin (Halloween 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Figaro shown inside a pumpkin; part of Minnie & Figaro set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Figaro"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+     "method": "search_snippet",
+     "note": "Blog calls Minnie & Figaro a two-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/halloween-2015/mickey-spider-web",
+   "set_key": "dlp/2015/halloween-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey spider web (Halloween 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Mickey spider-web Halloween pin, unlimited EUR 8.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "EUR 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/halloween-2015/mickey-ghost",
+   "set_key": "dlp/2015/halloween-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey ghost (Halloween 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Mickey ghost Halloween design, unlimited"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/halloween-2015/duffy-vampire",
+   "set_key": "dlp/2015/halloween-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy vampire (Halloween 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Duffy vampire Halloween pin, unlimited"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/june-2015-releases/daisy-duck",
+   "set_key": "dlp/2015/june-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy Duck (June 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Daisy Duck pin listed among non-Frozen June pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Daisy named"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "June 2015"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2015/pin-trading-night-january-2015",
+   "field": "members",
+   "searched": "passiondlp archive; search snippets",
+   "note": "Refresh Lanyard pin of this date not described; edition sizes and prices not in snippet; Jan entry gave only character names, no lanyard pin mentioned"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-february-2015",
+   "field": "members",
+   "searched": "passiondlp archive; search snippets",
+   "note": "Refresh Lanyard pin of this date not described; edition sizes and prices not in snippet"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-march-2015",
+   "field": "members",
+   "searched": "passiondlp archive; search snippets",
+   "note": "Refresh Lanyard pin of this date not described; edition sizes and prices not in snippet; venue Hotel Cheyenne per one earlier result, unconfirmed"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-july-2015",
+   "field": "members",
+   "searched": "passiondlp archive; search snippets",
+   "note": "Refresh Lanyard pin of this date not described; edition sizes and prices not in snippet"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-august-2015",
+   "field": "members",
+   "searched": "passiondlp archive; search snippets",
+   "note": "Refresh Lanyard pin of this date not described; edition sizes and prices not in snippet"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-october-2015",
+   "field": "members",
+   "searched": "passiondlp archive; search snippets",
+   "note": "Refresh Lanyard pin of this date not described; edition sizes and prices not in snippet"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-november-2015",
+   "field": "members",
+   "searched": "passiondlp archive; search snippets",
+   "note": "Refresh Lanyard pin of this date not described; edition sizes and prices not in snippet"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-february-2015",
+   "field": "members",
+   "searched": "passiondlp Q1 archive",
+   "note": "released: Q1 archive names the three 27 Feb PTN pins (Roi de Coeur, Pimprenelle, Shrimp) plus lanyard pin; resolves earlier gap"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-march-2015",
+   "field": "members",
+   "searched": "passiondlp Q1 archive",
+   "note": "released: Q1 archive names the three 27 Mar PTN pins (Cancan marionette, Kaa, Bird) plus lanyard pin; resolves earlier gap"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-october-2015",
+   "field": "members",
+   "searched": "passiondlp Q4 archive",
+   "note": "released: Q4 archive names the 30 Oct PTN pins (Petit Frere, Uncle Max, Abigail) plus lanyard pin; resolves earlier gap"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-june-2015",
+   "field": "members",
+   "searched": "passiondlp Q2 archive",
+   "note": "Mini-jumbo and Refresh Lanyard pin still not described; no new detail this round"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-april-may-2015",
+   "field": "members",
+   "searched": "passiondlp Q2 archive",
+   "note": "Q2 archive lists no Pin Trading Night in April or May 2015 (PTD 25 Apr and Phantomland event instead)"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-frozen-fun-july-2015",
+   "field": "members",
+   "searched": "Disney Gazette forum; passiondlp",
+   "note": "Other three PTD pins (LE 1000, EUR 14.99) not named; may overlap Olaf LEs already recorded - not assumed. 14 July pin also sold that day"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-april-2015",
+   "field": "members",
+   "searched": "passiondlp Q1/Q2; forum",
+   "note": "Still unnamed: archive says 4 pins of the day; a pre-event forum guess of a Peter Pan theme (crocodile on poster) is speculation only"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015",
+   "field": "members",
+   "searched": "passiondlp Q3; Disney Gazette; Disney Central Plaza",
+   "note": "Event, giveaway and mini-jumbo designs not named; forum rumour of LE 600 (unverified). New event not in prior packet"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015",
+   "field": "members",
+   "searched": "passiondlp Q4; DisKingdom; Salon Mickey",
+   "note": "Locket pins showing before and after midnight named but count/split not stated: hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015/cinderella-ball-1",
+   "field": "identity",
+   "searched": "passiondlp Q4; DisKingdom; dein-dlrp",
+   "note": "hold kept: no source this round describes the '1. Cinderella Ball' design"
+  },
+  {
+   "key": "dlp/2015/alice-in-phantomland-event",
+   "field": "members",
+   "searched": "diskingdom, DPB, collector shop",
+   "note": "Mad Hatter & Bride 'Pin B' appears only as a shop listing title (collectrandom); March Hare, Cheshire Cat, White Rabbit only in a forum wish list - not recorded"
+  },
+  {
+   "key": "dlp/2015/alice-in-phantomland-event/alice-king-queen-of-hearts-phantom-manor",
+   "field": "release_date",
+   "searched": "MyPinCentral 157451",
+   "note": "hold kept: no further page ties this design to the 30 May event beyond its subject"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/anna-elsa-party-fever",
+   "field": "pin_structure",
+   "searched": "dein-dlrp June (2 queries)",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); summaries disagree on one shared pin vs separate pins"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015",
+   "field": "members",
+   "searched": "dein-dlrp June; Dedicated to DLP June",
+   "note": "dein-dlrp lists 7 Frozen pins, Dedicated to DLP says 8; at least one member still unidentified"
+  },
+  {
+   "key": "dlp/2015/space-mountain-20th-anniversary",
+   "field": "members",
+   "searched": "Dedicated to DLP June",
+   "note": "Blog: first SM 20th pin 6 Jun (LE 1000), then a new SM 20th pin next day plus a pin-and-framed-concept-art package; may be 2 items, unclear"
+  },
+  {
+   "key": "dlp/2015/space-mountain-20th-anniversary/space-mountain-20th-framed-concept-art",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "Still no edition size, price or contents for the framed concept-art package"
+  },
+  {
+   "key": "dlp/2015/nightmare-before-christmas-july-2015",
+   "field": "members",
+   "searched": "dein-dlrp July",
+   "note": "released: dein-dlrp July describes all six NBC pins (Jack & Sally pack, silver Jack face, silver Zero, oval Jack, colourful Jack face); fills earlier gap"
+  },
+  {
+   "key": "dlp/2015/square-pins-2015/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "dein-dlrp May",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); square 'Chip und Chap' from 30 May, EUR 7.99 - one or two pins unclear"
+  },
+  {
+   "key": "dlp/2015/square-pins-2015",
+   "field": "release_date",
+   "searched": "dein-dlrp May vs August",
+   "note": "May article says series starts in May; August summary calls the 1 Aug pins the first four - conflict"
+  },
+  {
+   "key": "dlp/2015/oe/goofy-mickey-star-wars-outfits",
+   "field": "pin_structure",
+   "searched": "dein-dlrp May",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "dlp/2015/may-2015-releases",
+   "field": "members",
+   "searched": "dein-dlrp May",
+   "note": "released: May article itemises square Remy/Cheshire Cat/Chip&Dale, Oswald square, Goofy & Mickey SW; princess pins still unnamed"
+  },
+  {
+   "key": "dlp/2015/star-wars-july-2015/darth-vader",
+   "field": "release_date",
+   "searched": "dein-dlrp August",
+   "note": "Same pin? dein-dlrp lists round Vader, Stormtrooper, Yoda (with Maul) unlimited EUR 6.99 on 15 Aug; not duplicated - confirm vs July record"
+  },
+  {
+   "key": "dlp/2015/star-wars-july-2015/stormtrooper",
+   "field": "release_date",
+   "searched": "dein-dlrp August",
+   "note": "Same pin? dein-dlrp lists round Vader, Stormtrooper, Yoda (with Maul) unlimited EUR 6.99 on 15 Aug; not duplicated - confirm vs July record"
+  },
+  {
+   "key": "dlp/2015/star-wars-july-2015/yoda",
+   "field": "release_date",
+   "searched": "dein-dlrp August",
+   "note": "Same pin? dein-dlrp lists round Vader, Stormtrooper, Yoda (with Maul) unlimited EUR 6.99 on 15 Aug; not duplicated - confirm vs July record"
+  },
+  {
+   "key": "dlp/2015/august-2015-releases",
+   "field": "members",
+   "searched": "dein-dlrp August",
+   "note": "released: August OE now itemised (4 square, 5 Marvel, round SW incl. Maul). Earlier key had no members"
+  },
+  {
+   "key": "dlp/2015/oe-set/star-wars-booster-september-2015",
+   "field": "members",
+   "searched": "Dedicated to DLP Sep; dein-dlrp Sep",
+   "note": "Two of four booster designs (Vader, Yoda) named by blog; other two unnamed. One blog gives 12 Sep release vs 5 Sep"
+  },
+  {
+   "key": "dlp/2015/oe-set/nutcracker-booster-2015",
+   "field": "members",
+   "searched": "dein-dlrp Sep; Dedicated to DLP Sep",
+   "note": "Only the nutcracker Mickey design described; other three Mickey designs not named"
+  },
+  {
+   "key": "dlp/2015/halloween-2015",
+   "field": "members",
+   "searched": "dein-dlrp Sep; Dedicated to DLP Sep",
+   "note": "released: Minnie Halloween confirmed as one of a two-pin Minnie & Figaro set (Figaro in pumpkin) by both sources; 25-pin month count vs short list conflicts"
+  },
+  {
+   "key": "dlp/2015/halloween-2015/mickey-ghost",
+   "field": "original_price",
+   "searched": "dein-dlrp Sep",
+   "note": "Price not tied to ghost design in snippet"
+  },
+  {
+   "key": "dlp/2015/june-2015-releases",
+   "field": "members",
+   "searched": "dein-dlrp June",
+   "note": "Avengers and Inside Out pins mentioned but not itemised; Daisy pin edition/price not given"
+  },
+  {
+   "key": "dlp/2015/december-2015-le/villains-2016",
+   "field": "characters",
+   "searched": "dein-dlrp Dec; 1 targeted query",
+   "note": "Villains still not named. Title is Happy New Year 2016 Villains, LE 700, EUR 15.99, Pueblo Trading Post, from 16 Dec. Not in 321/338"
+  },
+  {
+   "key": "dlp/2015/swing-into-spring-2015",
+   "field": "members",
+   "searched": "none this round (budget)",
+   "note": "Not searched this round; no named Swing into Spring pins"
+  },
+  {
+   "key": "dlp/2015/july-2015-releases",
+   "field": "members",
+   "searched": "dein-dlrp July; Dedicated to DLP July",
+   "note": "released (square part): square pins named Bambi, Flower, Baloo. PTD 11 Jul and PTN 31 Jul now recorded as own sets"
+  },
+  {
+   "key": "dlp/2015/oe/ariel-princess-booster-a-2015",
+   "field": "identity",
+   "searched": "not re-searched (budget)",
+   "note": "hold kept: no per-design evidence found this round (princess booster splits)"
+  },
+  {
+   "key": "dlp/2015/january-2015-releases/lady-and-the-tramp",
+   "field": "identity",
+   "searched": "not re-searched (budget)",
+   "note": "hold kept: no per-design evidence found this round (Lady and the Tramp structure)"
+  },
+  {
+   "key": "dlp/2015/may-2015-le/mickey-minnie-flags",
+   "field": "identity",
+   "searched": "not re-searched (budget)",
+   "note": "hold kept: no per-design evidence found this round (flag look structure)"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-thumper/thumper",
+   "field": "identity",
+   "searched": "not re-searched (budget)",
+   "note": "hold kept: no per-design evidence found this round (Thumper edition)"
+  },
+  {
+   "key": "dlp/2015/oe/mickey-tower-of-terror-2016-booster",
+   "field": "identity",
+   "searched": "not re-searched (budget)",
+   "note": "hold kept: no per-design evidence found this round (Earfall Tower naming)"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B037 (DLP 2015). 30 WebSearch calls, all search_snippet. passiondlp quarterly archives named PTN pins (Jan-Nov); dein-dlrp monthly posts itemised square, Marvel, NBC, Halloween, Frozen pins. Reuses 330 keys; nothing 2016-dated duplicated."
+}

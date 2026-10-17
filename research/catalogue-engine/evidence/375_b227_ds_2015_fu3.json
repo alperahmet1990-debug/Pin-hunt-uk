@@ -1,0 +1,1221 @@
+{
+ "packet_id": "backfill-b227-ds-2015-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b227",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+   "title": "New Disney Pins July 2015 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+   "title": "Disney Store UK Lava Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+   "title": "Pin Trader Delights Are Back!",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/03/09/new-pin-trader-delight-pins-at-the-disney-studio-store-hollywood/",
+   "title": "New Pin Trader Delight Pins At The Disney Studio Store Hollywood",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/04/30/latest-pin-trader-delight-pins-4/",
+   "title": "Latest Pin Trader Delight Pins",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+   "title": "Art Of Jasmine Pin Boxed Set Out Now",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-store-uk-pins-august-2015",
+   "title": "Disney Store UK Pins August 2015",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/good-dinosaur-pin-set",
+   "title": "The Good Dinosaur Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-studio-store-hollywood-november-2015-pins/",
+   "title": "Disney Studio Store Hollywood November 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+   "title": "Tomorrowland Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/d23-expo-2015-pin-selection/",
+   "title": "D23 Expo 2015 Pin Selection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/05/29/disney-studio-stores-june-pin-releases/",
+   "title": "Disney Studio Store's June Pin Releases",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+   "title": "Disney Studio Store Hollywood October 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneystore-com-force-friday-pins",
+   "title": "DisneyStore.com Force Friday Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-force-awakens-pin-trading-event",
+   "title": "Star Wars The Force Awakens Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-fairytale-designer-pin-set/",
+   "title": "Disney Fairytale Designer Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-65th-anniversary-pin/",
+   "title": "Cinderella 65th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-store-short-films-collection-pins",
+   "title": "Disney Store Short Films Collection Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/minnie-mouse-signature-pins",
+   "title": "Minnie Mouse Signature Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+   "title": "Disney Studio Store May 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2015/lava-disneystore-com-le-500",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lava Limited Edition Pin (DisneyStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "weekly round-up lists an LE Lava pin on DisneyStore.com"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "one LE pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "released 6 Jul 2015 online"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "DisneyStore.com release"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2015/lava-le-300",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lava Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "DPB post on a Disney Store UK Lava pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "one LE pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-09",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "9 Jul 2015 per search summary of the post"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store UK"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 19 Jan 2015 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "PTDs returned after about a month off"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation of separate pins, one per sundae",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "buyers get one LE pin with a sundae; set flips once all four sell out"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "post says pins change once all four are sold out"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "post dated 19 Jan 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "sold at DSSH sundae counter"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-03-09",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - Mar 2015 (DSSH)",
+     "source_url": "http://diskingdom.com/2015/03/09/new-pin-trader-delight-pins-at-the-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "DisKingdom post on new DSSH PTD pins"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation (LE pin given with ice cream dessert)",
+     "source_url": "http://diskingdom.com/2015/03/09/new-pin-trader-delight-pins-at-the-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "each LE pin comes with a dessert"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-09",
+     "source_url": "http://diskingdom.com/2015/03/09/new-pin-trader-delight-pins-at-the-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "post date; actual flip day not stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "http://diskingdom.com/2015/03/09/new-pin-trader-delight-pins-at-the-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-04-30",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - late Apr 2015 (DSSH)",
+     "source_url": "http://diskingdom.com/2015/04/30/latest-pin-trader-delight-pins-4/",
+     "method": "search_snippet",
+     "note": "DisKingdom post on new DSSH PTD pins"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation (LE pin given with ice cream dessert)",
+     "source_url": "http://diskingdom.com/2015/04/30/latest-pin-trader-delight-pins-4/",
+     "method": "search_snippet",
+     "note": "each LE pin comes with a dessert"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04-30",
+     "source_url": "http://diskingdom.com/2015/04/30/latest-pin-trader-delight-pins-4/",
+     "method": "search_snippet",
+     "note": "post date; actual flip day not stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "http://diskingdom.com/2015/04/30/latest-pin-trader-delight-pins-4/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2015/lava-disneystore-com-le-500/lava",
+   "set_key": "dsus/2015/lava-disneystore-com-le-500",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lava Pin - DisneyStore.com LE 500",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "Pixar Lava short pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Lava",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "Pixar short Lava"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "6 Jul 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-2",
+     "method": "search_snippet",
+     "note": "US online store version of a pin first seen at the Pixar Studios store; sold out within hours"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2015/lava-le-300/lava",
+   "set_key": "dsuk/2015/lava-le-300",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lava Pin - Disney Store UK LE 300",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "UK Lava pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Lava",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "Pixar short Lava"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-09",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "9 Jul 2015; date and year come from a search summary, not quoted text"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store UK"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/dormouse",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dormouse - Pin Trader Delight (DSSH, Jan 2015)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Dormouse named as one of the four PTD pins on sale"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dormouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Dormouse"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "post names four PTD pins, one given per sundae"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "PTD pins are LE per post"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "on sale from 19 Jan 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/buttercup",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Buttercup - Pin Trader Delight (DSSH, Jan 2015)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Buttercup named as one of the four PTD pins on sale"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Buttercup"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Buttercup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "post names four PTD pins, one given per sundae"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "PTD pins are LE per post"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "on sale from 19 Jan 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/eeyore",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Eeyore - Pin Trader Delight (DSSH, Jan 2015)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Eeyore named as one of the four PTD pins on sale"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Eeyore"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "post names four PTD pins, one given per sundae"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "PTD pins are LE per post"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "on sale from 19 Jan 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/baby-herman",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Baby Herman - Pin Trader Delight (DSSH, Jan 2015)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Baby Herman named as one of the four PTD pins on sale"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baby Herman"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "Baby Herman"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "post names four PTD pins, one given per sundae"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "PTD pins are LE per post"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "on sale from 19 Jan 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delights-back",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/art-of-jasmine-boxed-set/jasmine",
+   "set_key": "dsus/2015/art-of-jasmine-boxed-set",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": "enamel cloisonne with glitter accents",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "post describes Jasmine pin as enamelled with glitter accents"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin boxed set",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "post lists three pins and describes each one's finish separately"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/art-of-jasmine-boxed-set/aladdin",
+   "set_key": "dsus/2015/art-of-jasmine-boxed-set",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": "enamel cloisonne with glitter accents",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "post describes Aladdin pin as enamelled with glitter accents"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin boxed set",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "post lists three pins and describes each one's finish separately"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/art-of-jasmine-boxed-set/magic-lamp",
+   "set_key": "dsus/2015/art-of-jasmine-boxed-set",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": "dimensional bas-relief",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "post describes the lamp pin as a dimensional bas-relief design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin boxed set",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "post lists three pins and describes each one's finish separately"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/butch-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-november-2015-pins/",
+     "method": "search_snippet",
+     "note": "post text lists Butch Die Cast as LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-november-2015-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95 per pin text"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-november-2015-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/ramsey-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-november-2015-pins/",
+     "method": "search_snippet",
+     "note": "post text lists Ramsey Die Cast as LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-november-2015-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95 per pin text"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-november-2015-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/tomorrowland-disneystore-com-le-200-set/1964-passport-pin",
+   "set_key": "dsus/2015/tomorrowland-disneystore-com-le-200-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "1964 Passport Pin - Tomorrowland LE 200 Set",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "card backstory: WDI-made pin for the 1964 World's Fair granting access to a station under it's a small world"
+    },
+    {
+     "field": "franchise",
+     "value": "Tomorrowland (2015 film)",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "Tomorrowland film set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin boxed set",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "each pin has its own named backstory in the set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 200"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-13",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "set released 13 Oct 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/tomorrowland-disneystore-com-le-200-set/nix-governors-pin",
+   "set_key": "dsus/2015/tomorrowland-disneystore-com-le-200-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "NIX Governor's Pin - Tomorrowland LE 200 Set",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "card backstory: one-of-a-kind pin made by David Nix for himself"
+    },
+    {
+     "field": "franchise",
+     "value": "Tomorrowland (2015 film)",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "Tomorrowland film set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin boxed set",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "each pin has its own named backstory in the set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 200"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-13",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "set released 13 Oct 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2015/lava-disneystore-com-le-500/lava",
+   "field": "original_price",
+   "searched": "Lava DisneyStore.com query",
+   "note": "price and design not in snippet"
+  },
+  {
+   "key": "dsus/2015/lava-disneystore-com-le-500/lava",
+   "field": "characters",
+   "searched": "Lava DisneyStore.com query",
+   "note": "characters on the pin not named"
+  },
+  {
+   "key": "dsuk/2015/lava-le-300/lava",
+   "field": "release_date",
+   "searched": "UK Lava query",
+   "note": "hold: 2015 date rests on a search summary of the DPB post; confirm year before sign-off"
+  },
+  {
+   "key": "dsuk/2015/lava-le-300/lava",
+   "field": "set_key",
+   "searched": "UK/US Lava queries",
+   "note": "UK LE 300 and US LE 500 are separate editions; whether the design is shared is not stated - not linked"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "field": "edition_size",
+   "searched": "PTD 19 Jan query",
+   "note": "per-pin edition sizes and prices not in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "field": "existence",
+   "searched": "PTD 19 Jan queries",
+   "note": "lead (not released at review: one post naming the four rotating pins as a list; pending maintainer decision on full lists): DPB Pin Trader Delights Are Back! post, 19 Jan 2015"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/dormouse",
+   "field": "pin_name",
+   "searched": "PTD 19 Jan query",
+   "note": "post spells it 'Doormouse'; normalised to Dormouse; film not stated"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/buttercup",
+   "field": "franchise",
+   "searched": "PTD 19 Jan query",
+   "note": "which Buttercup (e.g. Toy Story) not stated in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-03-09",
+   "field": "members",
+   "searched": "DisKingdom PTD query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Queen Narissa, Nala, Jumba and the 3 Little Pigs named only as a list"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-03-09",
+   "field": "edition_size",
+   "searched": "DisKingdom PTD query",
+   "note": "edition sizes, prices and exact flip date not in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-04-30",
+   "field": "members",
+   "searched": "DisKingdom PTD query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Pocahontas, Rosetta, Eli La Bouff and Zurg named only as a list"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-04-30",
+   "field": "edition_size",
+   "searched": "DisKingdom PTD query",
+   "note": "edition sizes, prices and exact flip date not in snippet"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set/jasmine",
+   "field": "pin_structure",
+   "searched": "Art of Jasmine query",
+   "note": "released: DisKingdom post describes each of the 3 pins separately (glitter enamel Jasmine/Aladdin, bas-relief lamp)"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set/aladdin",
+   "field": "pin_structure",
+   "searched": "Art of Jasmine query",
+   "note": "released: DisKingdom post describes each of the 3 pins separately (glitter enamel Jasmine/Aladdin, bas-relief lamp)"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set/magic-lamp",
+   "field": "pin_structure",
+   "searched": "Art of Jasmine query",
+   "note": "released: DisKingdom post describes each of the 3 pins separately (glitter enamel Jasmine/Aladdin, bas-relief lamp)"
+  },
+  {
+   "key": "dsuk/2015/art-of-jasmine-boxed-set",
+   "field": "members",
+   "searched": "UK Art of Jasmine query",
+   "note": "hold kept: UK post says LE 1000 worldwide, 300 in Europe, suggesting one shared edition; contents still only on US post"
+  },
+  {
+   "key": "dsuk/2015/pixar-cars-boxed-set",
+   "field": "set_key",
+   "searched": "UK Cars query",
+   "note": "hold kept: UK post says LE 700 worldwide, 100 in Europe; still no contents; D23 link rests on title and size"
+  },
+  {
+   "key": "dsuk/2015/good-dinosaur-set",
+   "field": "members",
+   "searched": "UK Good Dinosaur query",
+   "note": "hold kept: UK post gives LE 400 worldwide, 200 in Europe, no contents; Arlo/Spot sets found are parks or Pixar Studio items"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/butch-die-cast",
+   "field": "edition_size",
+   "searched": "DSSH die-cast query",
+   "note": "released: snippet now shows the DPB Nov 2015 post's own per-pin line for Butch Die Cast (LE 300, USD 16.95)"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/ramsey-die-cast",
+   "field": "edition_size",
+   "searched": "DSSH die-cast query",
+   "note": "released: snippet now shows the DPB Nov 2015 post's own per-pin line for Ramsey Die Cast (LE 300, USD 16.95)"
+  },
+  {
+   "key": "dsus/2015/tomorrowland-disneystore-com-le-200-set",
+   "field": "members",
+   "searched": "Tomorrowland set queries",
+   "note": "2 of 3 pins named (1964 Passport, NIX Governor's); third pin not named; Plus Ultra rack pin is a separate parks item"
+  },
+  {
+   "key": "dsus/2015/tomorrowland-disneystore-com-le-200-set",
+   "field": "materials",
+   "searched": "Tomorrowland set query",
+   "note": "set-level: golden-finish cloisonne, Mickey pin backs, antiqued box; not split per pin"
+  },
+  {
+   "key": "dsuk/2015/villains-sidekicks-series-2",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "pins 3-4 still unnamed; disneystore.eu multi-sidekick pin is a later undated item"
+  },
+  {
+   "key": "dsuk/2015/cinderella-65th-le-350/cinderella-65th",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "still not stated; design not described; EU 'limited release' Cinderella pin is a different item"
+  },
+  {
+   "key": "dsuk/2015/star-wars-kylo-ren",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead only: UK sell-out still rests on one reader comment; only UK Kylo listing found is the 2019 TROS pin"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/kylo-ren",
+   "field": "set_position",
+   "searched": "1 query",
+   "note": "hold kept: Force Friday post gives date, LE 1000, USD 12.95 but no number; first only by inference from BB-8 being second"
+  },
+  {
+   "key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still only 3 of 12 named"
+  },
+  {
+   "key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: summary mentions a Disney Store Get a Horse pin (Mickey, Minnie, Pete) LE 300; source page unclear, not linked to the box"
+  },
+  {
+   "key": "dsus/2015/d23-expo-minnie-signature-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "six bow pins still not individually described"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-october-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: Mike, Sully and Boo / Chip & Dale each one LE 300, USD 18.95 entry under 9 Oct; structure still not explicit"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-june-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "DisKingdom preview says princess locket pins plus Inside Out pins; per-pin names and sizes not in snippets"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-months",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "no DSSH July or September 2015 LE round-ups surfaced"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015/avengers-age-of-ultron-marquee",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold kept: LE 500 still only on a reseller title (not used); May round-up names Avengers pins without detail"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-february-2015/pinocchio-75th-anniversary",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "no other 2015 DSSH 75th pins found; Dumbo 75th (2016) and Bambi 75th (2017) DSSH pins are later years"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "lead: Goofy/Jiminy/Bolt DSSH October sundae pins seen; year not stated, not keyed to 2015"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-08-23",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence"
+  },
+  {
+   "key": "dsus/2015/d23-expo-music-of-frozen-boxed-set",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold kept: pre-event DPB post says it releases at the Dream Store, not the Disney Store; likely route to parks/D23"
+  },
+  {
+   "key": "dsus/2015/d23-expo-pixar-cars-set",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold kept: D23 seller for the Cars set still not named"
+  },
+  {
+   "key": "dsus/2015/d23-expo-fairytale-designer-pin-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: pin set only in a speculative preview; D23 text quoted on forum describes 2015 line as doll pairs"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-december-2015",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold kept: event at Hollywood & Highland ballroom, tickets by phone; organiser not named as DSSH in snippet"
+  },
+  {
+   "key": "dsus/2015/cinderella-live-action-le-400-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: only the collector photo log describes it; three pins still unnamed"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015/tomorrowland-surprise",
+   "field": "set_key",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/dormouse",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: rests on one post naming all four rotating pins as a list, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/buttercup",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: rests on one post naming all four rotating pins as a list, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/eeyore",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: rests on one post naming all four rotating pins as a list, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19/baby-herman",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: rests on one post naming all four rotating pins as a list, no per-pin description; pending maintainer decision on full lists"
+  }
+ ],
+ "discovery_notes": "Cell B227, follow-up 3 of B038 (DS 2015). 30 standard searches, snippets only. New: DS UK Lava LE 300 and DisneyStore.com Lava LE 500 (Jul 2015), DSSH PTD 19 Jan flip (4 pins), Mar/Apr PTD flips (held), 2 of 3 Tomorrowland set pins. Released 6 holds (3 Art of Jasmine US structure, Butch, Ramsey, PTD 19 Jan lead). Resellers (yourwdwstore, collectrandom, jd-collectibles, parkscollectibles) seen, not used."
+}

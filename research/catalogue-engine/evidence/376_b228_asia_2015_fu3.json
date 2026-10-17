@@ -1,0 +1,965 @@
+{
+ "packet_id": "backfill-b228-asia-2015-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b228",
+ "sources": [
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2015/10/10_14.html",
+   "title": "HKDL 10th anniversary limited edition collectibles",
+   "publisher": "Disney Magical Kingdom Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2015/10/blog-post_23.html",
+   "title": "Magic Access member exclusive limited edition pin",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2015-10-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2015/12/10hong-kong-disneyland-10th-anniversary.html",
+   "title": "Hong Kong Disneyland 10th Anniversary Celebration",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2015/05/happy-memories-to-10th.html",
+   "title": "Happy Memories to 10th series merchandise now arriving",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2015-05-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/76343",
+   "title": "76343",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/76344",
+   "title": "76344",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+   "title": "Hong Kong Disneyland Safety Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-12-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+   "title": "Tokyo Disney Star Wars Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/hong-kong-disneyland-pins/page/14/",
+   "title": "Hong Kong Disneyland Pins Archives - Page 14",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-47136/",
+   "title": "Tokyo Disneyland Disney Halloween 2015 special goods round-up",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-41267/",
+   "title": "Disneyland Hotel and Rainy Day Tokyo Disneyland character pins",
+   "publisher": "MezzoMiki",
+   "published_date": "2015-05-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-27699/",
+   "title": "2015 New Year goods: Mickey and Minnie daruma items",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneynerds.com/2015/07/22/an-american-in-hong-kong-disneyland-a-pin-collector-paradise-and-other-great-finds-part-2/",
+   "title": "An American in Hong Kong Disneyland part 2",
+   "publisher": "Disney Nerds",
+   "published_date": "2015-07-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+   "title": "Disney Pin Trading: Shanghai Cast Member Exclusive Pin",
+   "publisher": "Crazy Cat Nerd",
+   "published_date": "2015-11-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "format",
+     "value": "2-pin cards",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "DPB again confirms each open edition card holds two pins, released Dec 2015"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2015/mickey-lucky-draw-jumbo",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-11",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2015/10/10_14.html",
+     "method": "search_snippet",
+     "note": "lucky-draw jumbo pins added from Nov 2015 in phases, given only as special prizes"
+    },
+    {
+     "field": "format",
+     "value": "prize-only jumbo pins, four designs featuring castle and 10th logo",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2015/10/10_14.html",
+     "method": "search_snippet",
+     "note": "four designs built around the castle and anniversary logo"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2015/happy-memories-to-10th",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2015/05/happy-memories-to-10th.html",
+     "method": "search_snippet",
+     "note": "DMK post dated 30 May 2015 says the series was arriving in stages"
+    },
+    {
+     "field": "format",
+     "value": "series reproducing past HKDL anniversary designs",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2015/12/10hong-kong-disneyland-10th-anniversary.html",
+     "method": "search_snippet",
+     "note": "DMK says the line recreated classic designs from each earlier park anniversary"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2015/halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Halloween 2015 (Tokyo Disneyland) special goods pin",
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "Halloween 2015 TDL special goods round-up includes one pin"
+    },
+    {
+     "field": "price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "pin priced 1000 yen"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "round-up names one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2015/hotel-party-costume",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disneyland Hotel party costume pins",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "hotel party costume pins, four kinds"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "four kinds: Mickey, Minnie, Donald, Goofy"
+    },
+    {
+     "field": "format",
+     "value": "individual pins, one character each",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "listed as four separate kinds"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-15",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "on sale 15 May 2015"
+    },
+    {
+     "field": "price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2015/oe/safety-pin-pinocchio",
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Safety pin Pinocchio",
+     "source_url": "https://mypincentral.com/pin/76343",
+     "method": "search_snippet",
+     "note": "catalogue entry: safety-pin-shaped pin with Pinocchio at left, head at top"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://mypincentral.com/pin/76343",
+     "method": "search_snippet",
+     "note": "Pinocchio is the only character described on this pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Pinocchio",
+     "source_url": "https://mypincentral.com/pin/76343",
+     "method": "search_snippet",
+     "note": "Pinocchio is the subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "pin in a 2-pin card",
+     "source_url": "https://mypincentral.com/pin/76343",
+     "method": "search_snippet",
+     "note": "entry says it is part of the 2015 Pinocchio/Figaro safety pin set; single post on back"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mypincentral.com/pin/76343",
+     "method": "search_snippet",
+     "note": "entry names the set as the 2015 Pinocchio Figaro safety pin set"
+    },
+    {
+     "field": "visual_description",
+     "value": "safety-pin shape with Pinocchio on the left; gold Mickey-head back",
+     "source_url": "https://mypincentral.com/pin/76343",
+     "method": "search_snippet",
+     "note": "paraphrased from catalogue description"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/oe/safety-pin-figaro",
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Safety pin Figaro",
+     "source_url": "https://mypincentral.com/pin/76344",
+     "method": "search_snippet",
+     "note": "catalogue entry: safety-pin design with Figaro at left"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://mypincentral.com/pin/76344",
+     "method": "search_snippet",
+     "note": "Figaro is the only character described"
+    },
+    {
+     "field": "main_character",
+     "value": "Figaro",
+     "source_url": "https://mypincentral.com/pin/76344",
+     "method": "search_snippet",
+     "note": "Figaro is the subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "pin in a 2-pin card",
+     "source_url": "https://mypincentral.com/pin/76344",
+     "method": "search_snippet",
+     "note": "listed as the partner of the Pinocchio safety pin; one post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://mypincentral.com/pin/76344",
+     "method": "search_snippet",
+     "note": "back stamp reported as Hong Kong Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/magic-access/sorcerer-mickey-key",
+   "set_key": "hkdl/2015/magic-access",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Sorcerer Mickey with Magic Access logo behind and a dangle reading MAGIC ACCESS",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2015/10/blog-post_23.html",
+     "method": "search_snippet",
+     "note": "DMK describes the member pin's design; dangle matches existing record, backdrop wording differs"
+    },
+    {
+     "field": "product_code",
+     "value": "400050508349",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2015/10/blog-post_23.html",
+     "method": "search_snippet",
+     "note": "merchandise number quoted for the member-exclusive pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/halloween/mickey-minnie-pumpkin-ghost",
+   "set_key": "tdr/2015/halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Halloween Harvest 2015 Mickey and Minnie pin",
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "pin in the Happy Halloween Harvest parade goods line"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "design shows Mickey and Minnie with pumpkin girls and a ghost"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "Mickey named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "described as a single pin with several figures"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "Disney Halloween 2015 goods"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-47136/",
+     "method": "search_snippet",
+     "note": "TDL Halloween 2015 goods"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/hotel-party-costume/mickey",
+   "set_key": "tdr/2015/hotel-party-costume",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disneyland Hotel party costume Mickey pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "one of four hotel party costume pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Mickey Mouse in hotel party costume"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single-character kind"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article lists four kinds, one per character"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-15",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sale date 15 May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland Hotel (Disney Mercantile)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sold at the hotel shop"
+    },
+    {
+     "field": "visual_description",
+     "value": "top hat and tuxedo",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "costume as paraphrased from the article"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/hotel-party-costume/minnie",
+   "set_key": "tdr/2015/hotel-party-costume",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disneyland Hotel party costume Minnie pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "one of four hotel party costume pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Minnie Mouse in hotel party costume"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single-character kind"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article lists four kinds, one per character"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-15",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sale date 15 May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland Hotel (Disney Mercantile)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sold at the hotel shop"
+    },
+    {
+     "field": "visual_description",
+     "value": "sparkly pink outfit",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "costume as paraphrased from the article"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/hotel-party-costume/donald",
+   "set_key": "tdr/2015/hotel-party-costume",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disneyland Hotel party costume Donald pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "one of four hotel party costume pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Donald Duck in hotel party costume"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single-character kind"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article lists four kinds, one per character"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-15",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sale date 15 May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland Hotel (Disney Mercantile)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sold at the hotel shop"
+    },
+    {
+     "field": "visual_description",
+     "value": "pink tuxedo with green vest",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "costume as paraphrased from the article"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/hotel-party-costume/goofy",
+   "set_key": "tdr/2015/hotel-party-costume",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disneyland Hotel party costume Goofy pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "one of four hotel party costume pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Goofy in hotel party costume"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single-character kind"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article lists four kinds, one per character"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-15",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sale date 15 May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland Hotel (Disney Mercantile)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sold at the hotel shop"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/new-year/mickey-daruma",
+   "set_key": "tdr/2015/new-year",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "New Year 2015 Mickey daruma pin",
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "pin with 2015 logo and Mickey daruma dressed as a sheep"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "Mickey daruma"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "Mickey is the subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "described as a single pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2014-11-13",
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "New Year 2015 goods on sale from 13 Nov 2014"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-27699/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2015/oe/safety-pin-figaro",
+   "field": "release_year",
+   "searched": "MyPinCentral safety pin Pinocchio Figaro; 2 queries",
+   "note": "hold: 2015 year rests on the Pinocchio entry naming the 2015 set; Figaro snippet itself gave no year"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-pinocchio",
+   "field": "release_location",
+   "searched": "MyPinCentral 76343",
+   "note": "back stamp read as Disney / Made in China; HKDL link rests on the set pairing with Figaro (HKDL back) and Let's Go Pin Trading HKDL list"
+  },
+  {
+   "key": "hkdl/2015/oe-set/safety-pins",
+   "field": "release_date",
+   "searched": "DPB safety pins; MyPinCentral",
+   "note": "Pinocchio/Figaro card is not among the three cards in DPB's Dec 2015 post; month of this card unknown"
+  },
+  {
+   "key": "hkdl/2015/oe-set/safety-pins",
+   "field": "expected_pin_count",
+   "searched": "DPB + MyPinCentral; 3 queries",
+   "note": "at least four 2015 cards now seen (Mike/Sulley, Pooh/Piglet, Donald/Daisy, Pinocchio/Figaro); total still not stated"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-mike",
+   "field": "pin_structure",
+   "searched": "safety pin searches; 3 queries",
+   "note": "hold kept: Sulley and Pinocchio/Figaro pins are single-character, but no per-pin description of Mike found"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-pooh",
+   "field": "pin_structure",
+   "searched": "safety pin searches",
+   "note": "hold kept: no per-pin description of Pooh this round"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-piglet",
+   "field": "pin_structure",
+   "searched": "safety pin searches",
+   "note": "hold kept: no per-pin description of Piglet this round"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-donald",
+   "field": "pin_structure",
+   "searched": "safety pin searches",
+   "note": "hold kept: DPB names the Donald/Daisy card only"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-daisy",
+   "field": "pin_structure",
+   "searched": "safety pin searches",
+   "note": "hold kept: DPB names the Donald/Daisy card only"
+  },
+  {
+   "key": "hkdl/2015/magic-access/sorcerer-mickey-key",
+   "field": "edition_size",
+   "searched": "DMK Magic Access post; 1 query",
+   "note": "hold kept: DMK now gives Sorcerer Mickey + MAGIC ACCESS dangle (matches), but logo vs key backdrop not reconciled; product code under same hold"
+  },
+  {
+   "key": "hkdl/2015/10th-anniversary-jumbo-box-set",
+   "field": "expected_pin_count",
+   "searched": "DMK 10th anniversary post; 2 queries",
+   "note": "hold kept: snippets repeat LE 300 sets, mid-Dec 2015, but not how many pins or which designs; a 'double-layer jumbo' line is not tied to this set"
+  },
+  {
+   "key": "hkdl/2015/mickey-lucky-draw-jumbo",
+   "field": "pins",
+   "searched": "DMK 10th anniversary; 2 queries",
+   "note": "hold kept: game/lottery prize pins. Snippet names Queen Elsa and Anna among characters (with Mickey, Minnie, Duffy etc.) but not which design shows whom"
+  },
+  {
+   "key": "hkdl/2015/mickey-lucky-draw-jumbo",
+   "field": "edition_size",
+   "searched": "DMK 10th anniversary",
+   "note": "conflict: same post read as LE 500 each and elsewhere as 100 for a mid-Nov 2015 item; existing 500 kept, unresolved"
+  },
+  {
+   "key": "hkdl/2015/10th-anniversary-frozen",
+   "field": "pins",
+   "searched": "Anna Elsa Olaf 10th LE 1000; 3 queries",
+   "note": "lead kept: still only Collect Random (reseller); possible overlap with Elsa/Anna lucky-draw jumbos unconfirmed. Olaf not named in DMK snippets"
+  },
+  {
+   "key": "hkdl/2015/10th-anniversary",
+   "field": "release_date",
+   "searched": "Sept 2015 anniversary pins; 1 query",
+   "note": "no September 2015 anniversary pin found; DMK 10th anniversary celebration ran 17 Nov 2015 to 28 Aug 2016"
+  },
+  {
+   "key": "hkdl/2015/happy-memories-to-10th",
+   "field": "pins",
+   "searched": "MyPinCentral 34019 series; 3 queries",
+   "note": "lead: summary says the 34019 series list shows 1st, 4th, 5th siblings (1st possibly 34007, title cut off); not tied to own pages, not recorded"
+  },
+  {
+   "key": "hkdl/2015/happy-memories-to-10th/8th-anniversary-mickey",
+   "field": "edition_type",
+   "searched": "Disney Nerds vs MyPinCentral; 2 queries",
+   "note": "hold kept: Disney Nerds still says LE 600 per pin, MyPinCentral OE HK$238; unresolved"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day/elsa",
+   "field": "pin_name",
+   "searched": "Fun Day 2015 Chinese search; 1 query",
+   "note": "hold kept: no Elsa entry found; DMK covered 2013/2014 Fun Days only in snippets"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day/sulley",
+   "field": "pin_name",
+   "searched": "Sulley 4 of 12; 1 query",
+   "note": "lead kept: reseller distradingpins4u describes Sulley 4 of 12 and Fun Day dates 10-12 Apr 2015; no catalogue page; not recorded"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day",
+   "field": "expected_pin_count",
+   "searched": "Fun Day; 1 query",
+   "note": "conflict kept: reseller repeats 12 game pins plus 2 purchasable completers; no non-reseller confirmation"
+  },
+  {
+   "key": "hkdl/2015/christmas",
+   "field": "pins",
+   "searched": "DPB archive; 3 queries",
+   "note": "lead kept: archive title only (24 Dec 2015); individual post not surfaced; design, edition, price unknown"
+  },
+  {
+   "key": "tdr/2015/halloween",
+   "field": "pins",
+   "searched": "MezzoMiki Halloween 2015 goods; 2 queries",
+   "note": "superseded: MezzoMiki Halloween 2015 round-up names one TDL pin; exact sale date not in snippet (goods from 1 Sep per official blog)"
+  },
+  {
+   "key": "tdr/2015/halloween-hotel-dinner",
+   "field": "pins",
+   "searched": "Ambassador Hotel Halloween 2015; 1 query",
+   "note": "lead kept: 2015 hotel Halloween rooms ran 8 Sep-1 Nov; menu extras were charms/coasters, no pin found"
+  },
+  {
+   "key": "tdr/2015/hotel-party-costume/goofy",
+   "field": "visual_description",
+   "searched": "MezzoMiki post-41267; 2 queries",
+   "note": "Goofy named in the list of four kinds; his costume not described in snippets"
+  },
+  {
+   "key": "tdr/2015/hotel-party-costume",
+   "field": "edition_type",
+   "searched": "MezzoMiki post-41267",
+   "note": "edition type not stated; a doorman Mickey pin was also mentioned as sold separately, year unclear, not recorded"
+  },
+  {
+   "key": "tdr/2015/happy-rainy-day",
+   "field": "pins",
+   "searched": "MezzoMiki post-41267",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); 1000-yen rainy-day raincoat Mickey and Minnie pin(s), May 2015"
+  },
+  {
+   "key": "tdr/2015/new-year/mickey",
+   "field": "pin_structure",
+   "searched": "MezzoMiki New Year 2015; 1 query",
+   "note": "hold kept: MezzoMiki gives one Mickey daruma pin (new key mickey-daruma); may be the same pin as this record, not merged"
+  },
+  {
+   "key": "tdr/2015/new-year/mickey-daruma",
+   "field": "pin_name",
+   "searched": "MezzoMiki post-27699",
+   "note": "hold: possible duplicate of tdr/2015/new-year/mickey; link rests on subject and season"
+  },
+  {
+   "key": "tdr/2015/star-wars/darth-maul",
+   "field": "pin_name",
+   "searched": "Star Wars TDR pins; 1 query",
+   "note": "hold kept: this round's DPB snippet lists Vader, Yoda, R2-D2, C-3PO and a Star Tours pin, without Maul"
+  },
+  {
+   "key": "tdr/2015/star-wars",
+   "field": "pins",
+   "searched": "DPB Tokyo Star Wars",
+   "note": "lead: snippet mentions a Star Tours-related pin in the 1 Dec 2015 TDR set; not recorded, design not described"
+  },
+  {
+   "key": "tdr/2015/happiness-is-here",
+   "field": "pins",
+   "searched": "Happiness is Here 2015; 1 query",
+   "note": "no 2015 pin found; only 2013 launch goods and a 2018 finale pin surfaced"
+  },
+  {
+   "key": "tdr/2015/game-prize-tdl",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept: Jungle Carnival prize pins (maintainer decision pending)"
+  },
+  {
+   "key": "shdr/2015/cast-member-exclusive/mickey-painting-snake",
+   "field": "release_year",
+   "searched": "SHDR cast pins; 2 queries",
+   "note": "hold kept: still only the Nov 2015 Crazy Cat Nerd post, which says other Mickey painting designs exist but names none"
+  },
+  {
+   "key": "shdr/2015/cast-member-exclusive",
+   "field": "pins",
+   "searched": "SHDR English and Chinese; 2 queries",
+   "note": "no other painting designs named; Chinese search returned only post-opening trading guides"
+  },
+  {
+   "key": "tdr/2015/hotel-party-costume/goofy",
+   "field": "design",
+   "searched": "review",
+   "note": "hold: named only in the article list of four kinds; costume not described; pending maintainer decision on full lists"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B039 (after B200, B215). 30 standard searches, snippets only. No holds released. New: HKDL Pinocchio/Figaro safety pins, TDL Halloween 2015 pin, 4 TDL Hotel party costume pins, New Year Mickey daruma (held as possible duplicate). Resellers (Collect Random, distradingpins4u, Carousell) leads only."
+}

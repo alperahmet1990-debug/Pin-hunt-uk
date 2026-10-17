@@ -1,0 +1,722 @@
+{
+ "packet_id": "backfill-b148-lic-loungefly-2025-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b148",
+ "sources": [
+  {
+   "url": "https://loungefly.com/gg/daisy-duck-85th-anniversary-mystery-box-pin/WDPN3772-EA.html",
+   "title": "Daisy Duck 85th Anniversary Mystery Box Pin",
+   "publisher": "Loungefly",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hmv.com/store/pop-culture/pin-badges/daisy-85th-anniversary-loungefly-mystery-pins",
+   "title": "Daisy Duck 85th Anniversary Loungefly Mystery Pins",
+   "publisher": "HMV",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/daisy-duck-85th-anniversary-loungefly-mystery-box-pin-set/",
+   "title": "Daisy Duck 85th Anniversary Loungefly Mystery Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-angel-cherry-blossom-loungefly-mystery-box-pin-set",
+   "title": "Stitch & Angel Cherry Blossom Loungefly Mystery Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-vhs-covers-blind-box-enamel-pin---boxlunch-exclusive/33918156.html",
+   "title": "Loungefly Disney Pixar VHS Covers Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.geekcore.co.uk/products/loungefly-x-pixar-vhs-tape-blind-box-mystery-pin",
+   "title": "Loungefly x Pixar VHS Tape Blind Box Mystery Pin",
+   "publisher": "GeekCore",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.lflovers.com/products/loungefly-disney-pixar-vhs-tape-blind-box-mystery-pin-coming-soon",
+   "title": "Loungefly Disney Pixar VHS Tape Blind Box Mystery Pin - COMING SOON",
+   "publisher": "LF Lovers",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://getreadycomics.com/shop/pixar-film-vhs-loungefly-blind-box-mystery-pins/",
+   "title": "Pixar Film VHS Loungefly Blind Box Mystery Pins",
+   "publisher": "Get Ready Comics",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://getreadycomics.com/shop/infinity-stones-marvel-loungefly-blind-box-mystery-pin/",
+   "title": "Infinity Stones Marvel Loungefly Blind Box Mystery Pin",
+   "publisher": "Get Ready Comics",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://magicmadhouse.co.uk/loungefly-marvel-infinity-stones-mystery-box-pin",
+   "title": "Marvel: Infinity Stones Mystery Box Pin",
+   "publisher": "Magic Madhouse",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hmv.com/store/pop-culture/pin-badges/marvel-infinity-stones-loungefly-blind-box-enamel",
+   "title": "Marvel Infinity Stones Loungefly Blind Box Enamel Pin",
+   "publisher": "HMV",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-the-fantastic-four-first-steps-stained-glass-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/34415539.html",
+   "title": "Loungefly The Fantastic Four: First Steps Stained Glass Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://getreadycomics.com/shop/the-fantastic-four-first-steps-stained-glass-loungefly-blind-box-mystery-enamel-pin-badge/",
+   "title": "The Fantastic Four First Steps Stained Glass Loungefly Blind Box Mystery Enamel Pin Badge",
+   "publisher": "Get Ready Comics",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/product/animal-the-muppets-babies-loungefly-pin/",
+   "title": "Animal Muppet Babies Mystery Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://muppet.fandom.com/wiki/Muppet_pins_(BoxLunch)",
+   "title": "Muppet pins (BoxLunch)",
+   "publisher": "Muppet Wiki (fandom)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+   "title": "Loungefly Disney Macy's Mickey Mouse & Minnie Mouse 3\" Car Pin, Macy's Exclusive",
+   "publisher": "Macy's",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-parade-balloon-pin-macys-exclusive?ID=21054223",
+   "title": "Loungefly Disney Macy's Mickey Mouse & Minnie Mouse 3\" Parade Balloon Pin, Macy's Exclusive",
+   "publisher": "Macy's",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+   "title": "Disney and Macy's 2025 Holiday Collection Available Online",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.macysinc.com/newsroom/news/news-details/2025/MACYS-AND-DISNEY-UNVEIL-NEW-HOLIDAY-COLLECTION---CELEBRATING-MAGIC-AND-STYLE--2025-NRZVUgx6s3/default.aspx",
+   "title": "Macy's and Disney Unveil New Holiday Collection Celebrating Magic and Style",
+   "publisher": "Macy's, Inc.",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/macys-minnie-mouse-parade-balloon-loungefly-lenticular-pin",
+   "title": "Macy's Minnie Mouse Parade Balloon Loungefly Lenticular Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hmv.com/store/pop-culture/pin-badges/star-wars-vhs-cassettes-loungefly-blind-box-enamel",
+   "title": "Star Wars VHS Cassettes Loungefly Blind Box Enamel Pin",
+   "publisher": "HMV",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://loungefly.com/mickey-friends-halloween-costume-mystery-box-pin/WDPN3853-EA.html",
+   "title": "Mickey & Friends Halloween Costume Mystery Box Pin",
+   "publisher": "Loungefly",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.startedwiththemouse.com/en-us/products/loungefly-mickey-mouse-halloween-mystery-bag-pin",
+   "title": "Loungefly Mickey Mouse and Friends Halloween Mystery Pin Bag",
+   "publisher": "Started With The Mouse",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/mickey-and-friends-halloween-costume-mystery-box-pin-random-2-pins/lfwdpn3853aa",
+   "title": "Mickey and Friends Halloween Costume Mystery Box Pin Random 2 Pins",
+   "publisher": "Entertainment Earth",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hmv.com/store/pop-culture/mystery-merch/mickey-and-friends-halloween-costume-loungefly-mys",
+   "title": "Mickey And Friends Halloween Costumes Loungefly Mystery Box Pins",
+   "publisher": "HMV",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-travel-cup-blind-box-enamel-pin-hot-topic-exclusive/34973111.html",
+   "title": "Loungefly Disney Pixar Travel Cup Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-fast-food-blind-box-enamel-pin-hot-topic-exclusive/35849942.html",
+   "title": "Loungefly Disney Pixar Fast Food Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-brother-bear-enamel-pin-set-hot-topic-exclusive/34966555.html",
+   "title": "Loungefly Disney Brother Bear Enamel Pin Set Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-character-lollipops-blind-box-enamel-pin-hot-topic-exclusive/34973219.html",
+   "title": "Loungefly Disney Pixar Character Lollipops Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-character-lollipops-blind-box-pin-set-at-hot-topic/",
+   "title": "Disney Pixar Character Lollipops Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2025/loungefly-daisy-duck-85th-anniversary-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2025-03-20",
+     "source_url": "https://hmv.com/store/pop-culture/pin-badges/daisy-85th-anniversary-loungefly-mystery-pins",
+     "method": "search_snippet",
+     "note": "HMV UK listing gives release 20 Mar 2025 (UK retailer date; HMV dates are often Funko shipping estimates)"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://hmv.com/store/pop-culture/pin-badges/daisy-85th-anniversary-loungefly-mystery-pins",
+     "method": "search_snippet",
+     "note": "UK retailer: Daisy among flowers, random blind packaging, duplicates possible"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/loungefly-marvel-infinity-stones-blind-box",
+   "claims": [
+    {
+     "field": "pack_product_code",
+     "value": "MVPN0193",
+     "source_url": "https://getreadycomics.com/shop/infinity-stones-marvel-loungefly-blind-box-mystery-pin/",
+     "method": "search_snippet",
+     "note": "UK retailer SKU MVPN0193-EA"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "MVPN0193",
+     "source_url": "https://magicmadhouse.co.uk/loungefly-marvel-infinity-stones-mystery-box-pin",
+     "method": "search_snippet",
+     "note": "UK retailer code LF-MVPN0193"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://magicmadhouse.co.uk/loungefly-marvel-infinity-stones-mystery-box-pin",
+     "method": "search_snippet",
+     "note": "retailer says collect all 6 and lists Captain Marvel, Doctor Strange, Black Panther, Thor, Iron Man, Thanos"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass",
+   "claims": [
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-the-fantastic-four-first-steps-stained-glass-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/34415539.html",
+     "method": "search_snippet",
+     "note": "BoxLunch original price $12.90, later shown on sale at $6.45"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://getreadycomics.com/shop/the-fantastic-four-first-steps-stained-glass-loungefly-blind-box-mystery-enamel-pin-badge/",
+     "method": "search_snippet",
+     "note": "UK retailer: one random pin from six designs (Invisible Woman, Mr. Fantastic, logo, Thing, Human Torch, H.E.R.B.I.E.)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.startedwiththemouse.com/en-us/products/loungefly-mickey-mouse-halloween-mystery-bag-pin",
+     "method": "search_snippet",
+     "note": "retailer says one of 5 characters - conflicts with official six (incl. Minnie chase)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie",
+   "claims": [
+    {
+     "field": "format",
+     "value": "separate single pins sold individually",
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "2025 Disney x Macy's collection article lists a 3in Mickey & Minnie balloon pin and a 3in car pin, each $20"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "article covers the 2025 Disney and Macy's holiday collection (Oct 2025)"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-10",
+     "source_url": "https://www.macysinc.com/newsroom/news/news-details/2025/MACYS-AND-DISNEY-UNVEIL-NEW-HOLIDAY-COLLECTION---CELEBRATING-MAGIC-AND-STYLE--2025-NRZVUgx6s3/default.aspx",
+     "method": "search_snippet",
+     "note": "Macy's press release on the 2025 Disney holiday collection dated 14 Oct 2025"
+    },
+    {
+     "field": "retailer",
+     "value": "Macy's",
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "collection sold at Macy's"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie/mickey-minnie-3in-balloon",
+   "set_key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie 3\" Parade Balloon Pin",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-parade-balloon-pin-macys-exclusive?ID=21054223",
+     "method": "search_snippet",
+     "note": "Macy's exclusive listing title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-parade-balloon-pin-macys-exclusive?ID=21054223",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "Macy's",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-parade-balloon-pin-macys-exclusive?ID=21054223",
+     "method": "search_snippet",
+     "note": "Macy's exclusive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "one Loungefly pin showing Mickey and Minnie in balloon form over the parade"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "described as a single 3in balloon pin, $20"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "lenticular"
+     ],
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-parade-balloon-pin-macys-exclusive?ID=21054223",
+     "method": "search_snippet",
+     "note": "image changes to Mickey when tilted"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-parade-balloon-pin-macys-exclusive?ID=21054223",
+     "method": "search_snippet",
+     "note": "listing says made for Minnie balloon's second year in the parade (balloon debuted 2024)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie/mickey-minnie-3in-car",
+   "set_key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie 3\" Car Pin",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "Macy's exclusive listing title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "Macy's",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "Macy's exclusive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie in a red convertible in a holiday city"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "listed as a single 3in car pin, $20"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "listing calls it a limited-edition piece; size not stated"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "$20 list price (later shown at $15)"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "$20 in 2025 collection article"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "lenticular",
+      "glow in the dark",
+      "spinning wheels"
+     ],
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "glow headlights, spinning wheels, day-to-night lenticular flip"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 66 x 76 (2.6in W x 3in H)",
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "listing dimensions 2.6in by 3in"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://wdwnt.com/2025/10/disney-and-macys-2025-holiday-collection-available-online/",
+     "method": "search_snippet",
+     "note": "car pin named in 2025 Disney x Macy's collection article"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://www.macys.com/shop/product/loungefly-disney-macys-mickey-mouse-minnie-mouse-3-car-pin-macys-exclusive?ID=21054222",
+     "method": "search_snippet",
+     "note": "listing says made for Minnie balloon's second year (balloon debuted 2024)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2025/loungefly-daisy-duck-85th-anniversary-mystery",
+   "field": "pins",
+   "searched": "fu2",
+   "note": "fu2: 3 queries (official, HMV, UK/US retailers); six poses still not described individually; chase pose not identified (glitter, 1 in 12); no member records created"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "field": "expected_pin_count",
+   "searched": "fu2",
+   "note": "fu2: 2 queries; a summarised result says five possible designs matching the 5 held scenes, but the statement could not be tied to one named source; not claimed"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-among-flowers",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: mystery designs not individually confirmed; fu2 found only unattributed 'five possible designs' summary, not a source-level per-design statement"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-lei",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: mystery designs not individually confirmed; fu2 found only unattributed 'five possible designs' summary, not a source-level per-design statement"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/angel-flower-crown",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: mystery designs not individually confirmed; fu2 found only unattributed 'five possible designs' summary, not a source-level per-design statement"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-angel-together",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: mystery designs not individually confirmed; fu2 found only unattributed 'five possible designs' summary, not a source-level per-design statement"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-cake",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: mystery designs not individually confirmed; fu2 found only unattributed 'five possible designs' summary, not a source-level per-design statement"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-pixar-vhs-covers-blind-box",
+   "field": "pins",
+   "searched": "fu2",
+   "note": "fu2: 5 queries; BoxLunch listing still names no films or set size; no member records created"
+  },
+  {
+   "key": "lic/undated/loungefly-pixar-vhs-tape-blind-box",
+   "field": "release_date",
+   "searched": "fu2: 3 queries",
+   "note": "lead: separate-looking non-exclusive Loungefly Pixar VHS Tape blind box (GeekCore/LF Lovers/Get Ready Comics, SKU WDPN3843-EA, six: Toy Story, Monsters Inc., Up, Inside Out, WALL-E, Ratatouille); undated"
+  },
+  {
+   "key": "lic/undated/loungefly-pixar-vhs-tape-blind-box",
+   "field": "set_match",
+   "searched": "fu2",
+   "note": "hold: not linked to lic/2025/loungefly-boxlunch-pixar-vhs-covers-blind-box - matched by subject only (Pixar VHS); listings never mention BoxLunch; do not merge or copy films across without a source"
+  },
+  {
+   "key": "lic/2025/loungefly-marvel-infinity-stones-blind-box",
+   "field": "pins",
+   "searched": "fu2: 3 queries",
+   "note": "hold kept: confirm pin structure; count conflict persists (HMV/Get Ready Comics 9 vs Magic Madhouse 6 with six characters listed); same SKU MVPN0193 on both sides; no per-design listing"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass",
+   "field": "release_date",
+   "searched": "fu2: 2 queries",
+   "note": "fu2: 2 queries; still no source text states year/month (only listing page-age metadata ~mid-2025, not a statement); hold kept"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/invisible-woman",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu2)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/mr-fantastic",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu2)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/logo",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu2)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/the-thing",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu2)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/human-torch",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu2)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/herbie",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu2)"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery",
+   "field": "release_location",
+   "searched": "fu2: 3 queries",
+   "note": "conflict not resolved in fu2: DPB product page again says Disney Parks 2025; Muppet wiki says BoxLunch; no official Disney Parks or Loungefly source found"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery",
+   "field": "set_match",
+   "searched": "fu2",
+   "note": "hold kept: BoxLunch 'Baby Muppets' listing still linked by title/subject only"
+  },
+  {
+   "key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie/mickey-minnie-3in-balloon",
+   "field": "pin_structure",
+   "searched": "fu2: 3 queries",
+   "note": "released: WDWNT 2025 collection article describes the 3in Mickey & Minnie balloon item as one Loungefly pin ($20); FU1 hold on 'these pins' wording resolved"
+  },
+  {
+   "key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie/mickey-minnie-3in-balloon",
+   "field": "set_match",
+   "searched": "fu2: 3 queries",
+   "note": "released: Macy's listing 21054223 says the pin marks the Minnie balloon's second parade year, so it is not the Oct 2024 debut-year LE 1200 lenticular; WDWNT 2025 article lists the same 3in balloon pin"
+  },
+  {
+   "key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie",
+   "field": "pins",
+   "searched": "fu2: 3 queries",
+   "note": "released (set composition): WDWNT 2025 names two separate $20 pins (3in balloon, 3in car); no pack. Total count of Loungefly pins in the collection not stated - expected_pin_count not claimed"
+  },
+  {
+   "key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie/mickey-minnie-3in-car",
+   "field": "set_match",
+   "searched": "fu2",
+   "note": "link basis: WDWNT 2025 '3in car pin' (Mickey & Minnie red car) matched to Macy's listing 21054222 by product name and design, not SKU; listing itself gives no year beyond 'second year' of the balloon"
+  },
+  {
+   "key": "lic/2025/loungefly-macys-thanksgiving-parade-mickey-minnie/mickey-minnie-3in-car",
+   "field": "edition_size",
+   "searched": "fu2",
+   "note": "listing says limited edition but gives no edition size"
+  },
+  {
+   "key": "lic/2024/loungefly-macys-minnie-parade-balloon-lenticular",
+   "field": "release_date",
+   "searched": "fu2",
+   "note": "lead for 2024 cell (unchanged): DPB says Macy's Minnie parade balloon lenticular, LE 1200, $20, Oct 2024 - distinct from 2025 3in balloon pin"
+  },
+  {
+   "key": "lic/2025/loungefly-star-wars-vhs-cassettes-blind-box",
+   "field": "release_date",
+   "searched": "fu2: 1 query",
+   "note": "fu2: 1 query; US launch date not found; HMV 25 Feb 2025 (Funko estimate) remains; other dates seen only on excluded marketplace listings - not recorded"
+  },
+  {
+   "key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "field": "release_date",
+   "searched": "fu2: 2 queries",
+   "note": "fu2: 2 queries; US launch date still not found; HMV 16 Oct 2025 (Funko shipping estimate) remains the only date"
+  },
+  {
+   "key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "field": "expected_pin_count",
+   "searched": "fu2",
+   "note": "conflict: official listing six (Minnie glitter chase) vs GeekCore and Started With The Mouse five; Entertainment Earth sells a random 2-pin bundle (LFWDPN3853AA), a retailer bundle, not a separate pin"
+  },
+  {
+   "key": "lic/2025/loungefly-hot-topic-exclusives",
+   "field": "release_date",
+   "searched": "fu2: 3 queries",
+   "note": "still undated after fu2 (2 queries): Pixar Travel Cup (HT 34973111, $12.90), Brother Bear Kenai & Koda 2-pin set (HT 34966555, $16.90, 1.5in each); Fast Food (HT 35849942) - no year in any snippet"
+  },
+  {
+   "key": "lic/undated/loungefly-hot-topic-pixar-fast-food-blind-box",
+   "field": "pins",
+   "searched": "fu2: 1 query",
+   "note": "lead: HT listing says Pixar duos as burgers/fries, e.g. Woody & Buzz, Carl & Russell, Dante & Miguel 'and more'; hold: mystery designs not individually confirmed; set size unknown"
+  },
+  {
+   "key": "lic/undated/loungefly-hot-topic-brother-bear-pin-set",
+   "field": "pin_structure",
+   "searched": "fu2: 2 queries",
+   "note": "lead: HT listing says set of 2 pins featuring Kenai and Koda; which character is on which pin not stated - no member records"
+  },
+  {
+   "key": "lic/2025/loungefly-hot-topic-pixar-character-lollipops-mystery",
+   "field": "pins",
+   "searched": "fu2: 1 query",
+   "note": "hold kept: DPB still only lists Dug, Woody, Lightning McQueen, Mei, Nemo, Remy as featured characters; set size and chase not stated (fu2: 1 query)"
+  },
+  {
+   "key": "lic/undated/loungefly-boxlunch-pixar-lollipop-blind-box",
+   "field": "release_date",
+   "searched": "fu2",
+   "note": "lead for BoxLunch cell: separate Loungefly Pixar Lollipop blind box BoxLunch exclusive (listing 34923184), undated; not the Hot Topic Character Lollipops set"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery/animal",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: mystery designs not individually confirmed (character list only), consistent with the Kermit and Piggy holds"
+  }
+ ],
+ "discovery_notes": "B148 follow-up 2 to 246_b084/270_b124 (Loungefly 2025). 30 standard web searches, snippets only; keys reused. New pin: Macy's 3in Mickey & Minnie Car Pin (WDWNT 2025 + Macy's listing). Holds released: Macy's balloon pin_structure and set_match, Macy's set composition (WDWNT names two separate pins; listing 'second year' wording). New claims: Daisy HMV date, Infinity Stones SKU MVPN0193. Lead: undated non-exclusive Pixar VHS Tape set (WDPN3843) held apart from BoxLunch VHS Covers. Cherry Blossom, Infinity, F4, Muppet, Lollipops holds kept."
+}

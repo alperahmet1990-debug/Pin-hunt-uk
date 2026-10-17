@@ -1,0 +1,1202 @@
+{
+ "packet_id": "backfill-b233-dlp-2015-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b233",
+ "sources": [
+  {
+   "url": "http://www.passiondlp.com/actus/arc016.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 2",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc017.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 3",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc018.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 4",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/pins/archives/arc2015/archive2015.php",
+   "title": "Pin Trading : archive affiches 2015 - Paris",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/pin-station-f13/serie-cast-member-20eme-anniversaire-t9864.html",
+   "title": "Series \"Cast Member Exclusive\" - Disney Gazette",
+   "publisher": "Disney Gazette (forum)",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.coleka.com/en/other-collections/pins/disney-pins/disney-pin-cast-member-exclusive/pluto-christmas_i265738",
+   "title": "Pluto Christmas - Disney - Pin Cast Member Exclusive",
+   "publisher": "Coleka",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disney-pin-cast-member-exclusive_r5539",
+   "title": "Disney - Pin Cast Member Exclusive's items checklist",
+   "publisher": "Coleka",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+   "title": "Disney Dreams ! Pin Event - 19 Septembre 2015 (COMPLET) - Disney Gazette",
+   "publisher": "Disney Gazette (forum)",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+   "title": "Pin Trading Day Frozen Fun - 11 Juillet 2015 - Disney Gazette",
+   "publisher": "Disney Gazette (forum)",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-januar-2015/",
+   "title": "Disneyland Paris Pin Kollektion Januar 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2015/",
+   "title": "Pin Trading Kollektion Disneyland Paris - Maerz 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-april-2015/",
+   "title": "Pin Trading Kollektion - April 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juli-2015/",
+   "title": "Pin Trading Kollektion - Juli 2015 Pins aus dem Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-07-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+   "title": "Pin Trading Kollektion - September 2015 im Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-09-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+   "title": "Pin Trading Kollektion - Oktober 2015 im Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+   "title": "Pin-Trading Kollektion November 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2015-halloween-christmas-star-wars-duffy-olaf/",
+   "title": "Disneyland Paris Pins for September 2015: Halloween, Christmas, Star Wars, Duffy & Olaf",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2015-09-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://la-gazette-de-mickey.com/alice-in-phantomland-pin-event-news-1727-html/",
+   "title": "Retour sur le Pin Event \"Alice in Phantomland\" - La Gazette de Mickey",
+   "publisher": "La Gazette de Mickey",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneycentralplaza.com/t48662-alice-in-phantomland-pin-trading-event-30-mai-2015",
+   "title": "Alice in Phantomland [Pin Trading Event - 30 mai 2015]",
+   "publisher": "Disney Central Plaza (forum)",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2015/cast-member-exclusive-gusteau",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member Exclusive Gusteau (July 2015)",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name for a CM Exclusive single pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Archive announces one CM Exclusive pin, Gusteau"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-10",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Released 10 July 2015 for the first anniversary of the Ratatouille attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Edition of 3015"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "3015 copies"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/cast-member-exclusive-mickey-vampire",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member Exclusive Mickey Vampire (September 2015)",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name for a CM Exclusive single pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Archive announces one CM Exclusive pin, Mickey Vampire, for the Halloween season"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-22",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Planned release 22 Sep 2015; archive wording is 'prevue' (scheduled), not confirmed as sold that day"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Edition of 3015"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "3015 copies"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/cast-member-exclusive-pluto-noel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member Exclusive Pluto Noel (December 2015)",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name for a CM Exclusive single pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive announces one CM Exclusive pin, Pluto Noel"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-03",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Planned release Thursday 3 Dec 2015 (worded as scheduled)"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-03",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-pins/disney-pin-cast-member-exclusive/pluto-christmas_i265738",
+     "method": "search_snippet",
+     "note": "Catalogue entry gives 3 Dec 2015"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "3015 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-pins/disney-pin-cast-member-exclusive/pluto-christmas_i265738",
+     "method": "search_snippet",
+     "note": "Catalogue entry gives LE 3015, filed under Cast Member Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/cast-member-exclusive-thumper",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/serie-cast-member-20eme-anniversaire-t9864.html",
+     "method": "search_snippet",
+     "note": "Forum series overview lists 'Cast Member Exclusive 2015 - LE 3015'; sold to CMs at an internal shop on ID; design not named there"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/october-2015-retro-mickey-minnie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Retro Mickey & Minnie pins (October 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name: four retro-styled pins of Mickey and Minnie at leisure"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Article says four retro-style pins released 24 Oct"
+    },
+    {
+     "field": "format",
+     "value": "four separate retro-style pins, each sold individually",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Each retro pin priced EUR 7.99, unlimited; designs not individually described in snippet"
+    },
+    {
+     "field": "price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Euro price"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Not limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Released 24 October"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/november-2015-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris November 2015 pin releases",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name for the November 2015 monthly lineup"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Quick overview lists each pin as its own priced line item"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "November 2015 collection"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2015/cast-member-exclusive-gusteau/gusteau",
+   "set_key": "dlp/2015/cast-member-exclusive-gusteau",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gusteau Cast Member Exclusive (2015)",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Archive names the CM Exclusive pin 'Gusteau'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gusteau"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Gusteau (Ratatouille)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Announced as a single CM Exclusive pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Limited, 3015 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "3015 copies"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-10",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "10 July 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members only)",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive release"
+    },
+    {
+     "field": "attraction",
+     "value": "Ratatouille: L'Aventure Totalement Toquee de Remy",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Issued for the attraction's first anniversary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/cast-member-exclusive-mickey-vampire/mickey-vampire",
+   "set_key": "dlp/2015/cast-member-exclusive-mickey-vampire",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Vampire Cast Member Exclusive (2015)",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Archive names the CM Exclusive pin 'Mickey Vampire'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Announced as a single CM Exclusive pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Limited, 3015 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "3015 copies"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-22",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Scheduled for 22 Sep 2015 (planned date)"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members only)",
+     "source_url": "https://www.passiondlp.com/actus/arc017.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/cast-member-exclusive-pluto-noel/pluto-noel",
+   "set_key": "dlp/2015/cast-member-exclusive-pluto-noel",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto Noel Cast Member Exclusive (2015)",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Archive names the CM Exclusive pin 'Pluto Noel'"
+    },
+    {
+     "field": "pin_name",
+     "value": "Pluto Christmas",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-pins/disney-pin-cast-member-exclusive/pluto-christmas_i265738",
+     "method": "search_snippet",
+     "note": "Catalogue entry title, Cast Member Exclusive collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Pluto"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Announced as a single CM Exclusive pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Limited, 3015 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "3015 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 3015,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-pins/disney-pin-cast-member-exclusive/pluto-christmas_i265738",
+     "method": "search_snippet",
+     "note": "LE 3015"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-03",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Scheduled for 3 Dec 2015"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-03",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-pins/disney-pin-cast-member-exclusive/pluto-christmas_i265738",
+     "method": "search_snippet",
+     "note": "3 Dec 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members only)",
+     "source_url": "http://www.passiondlp.com/actus/arc018.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/cast-member-exclusive-thumper/thumper",
+   "set_key": "dlp/2015/cast-member-exclusive-thumper",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "http://www.passiondlp.com/actus/arc016.php",
+     "method": "search_snippet",
+     "note": "Archive: CM Exclusive Panpan (Thumper) pin, 9 April 2015, 3015 copies"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members only)",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/serie-cast-member-20eme-anniversaire-t9864.html",
+     "method": "search_snippet",
+     "note": "Forum: CM Exclusive series sold only to Cast Members at an internal shop on ID"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/halloween-2015/mickey-vampire",
+   "set_key": "dlp/2015/halloween-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey vampire (Halloween 2015)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Quick overview lists a 'Mickey Vampir' pin as its own line item"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Own priced line item, separate from the Duffy vampire pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in a vampire cape holding a pumpkin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Body text describes Mickey in vampire cape with a pumpkin"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Euro price"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "September 2015 collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/halloween-2015/duffy-vampire",
+   "set_key": "dlp/2015/halloween-2015",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Quick overview lists Duffy Vampir unlimited at EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Euro price"
+    },
+    {
+     "field": "visual_description",
+     "value": "Duffy dressed as a vampire",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Body text: Duffy in vampire costume for the Halloween party"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/october-2015-releases/medaille-2016",
+   "set_key": "dlp/2015/october-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Medal 2016 pin ('Pin Medaille 2016')",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Quick overview line item quoted in snippet: Pin Medaille 2016, unlimited, EUR 6.99"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "First of two 2016 single pins; own line item"
+    },
+    {
+     "field": "visual_description",
+     "value": "Styled like an old medal, 2016-dated",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Article says the first pin looks like an old medal"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "First October pins, incl. the two 2016 singles, from 3 Oct 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/october-2015-releases/mickey-sorcerer-2016",
+   "set_key": "dlp/2015/october-2015-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Quoted text: Mickey as sorcerer's apprentice and Minnie in pink conjured up the new year number"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Article calls this the second of two 2016 pins; both characters on it together"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey as sorcerer's apprentice and Minnie in pink with the 2016 year",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Paraphrase of the quoted description"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Second 2016 pin EUR 8.99, unlimited"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Euro price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/november-2015-releases/good-dinosaur-spot-arlo",
+   "set_key": "dlp/2015/november-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Good Dinosaur pin (Spot and Arlo)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Overview lists an unlimited 'Der gute Dinosaurier' pin; text says it shows Spot and Arlo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Spot",
+      "Arlo"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Spot and Arlo"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "One pin showing both in a tilted frame"
+    },
+    {
+     "field": "visual_description",
+     "value": "Spot and Arlo inside a tilted frame",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Paraphrase of article description"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-21",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "In the park from 21 November"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/november-2015-releases/gang-spinner-2016",
+   "set_key": "dlp/2015/november-2015-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gang Spinner 2016",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Overview lists an unlimited 'Gang Spinner 2016' pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Spinner pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "Euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-november-2015/",
+     "method": "search_snippet",
+     "note": "November 2015 collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/disney-dreams-pin-event-2015/peter-pan-shadow-giveaway",
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter Pan's Shadow giveaway pin ('Ombre de Peter Pan')",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Forum recap names a gaway 'Ombre de Peter Pan' that was not on the shopping list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan's Shadow"
+     ],
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Peter Pan's shadow, per the pin name"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Recap of the 19 Sep 2015 event"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/stage-show-series/jiminy-cricket",
+   "set_key": "dlp/2015/stage-show-series",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-09-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Quoted overview line: from 5 Sep, 'Vorhang auf' Seppl pin, LE 700, Pueblo only, EUR 13.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/march-2015-le/jiminy-cricket",
+   "set_key": "dlp/2015/march-2015-le",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Jiminy Cricket greeting from a large stage",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2015/",
+     "method": "search_snippet",
+     "note": "March article: Jiminy welcomes guests from a big stage; LE 700, Pueblo only"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2015/cast-member-exclusive-thumper/thumper",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: passiondlp Q2 names CM Exclusive Panpan, 9 Apr 2015, 3015; Gazette CM overview gives LE 3015 for the 2015 CM pin, and Gusteau/Mickey Vampire/Pluto also 3015"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-thumper/thumper",
+   "field": "visual_description",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Design of the Panpan CM pin not described in any snippet"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-mickey-vampire/mickey-vampire",
+   "field": "release_date",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Archive gives a planned date only (prevue); actual sale date not confirmed. Coleka lists a 'Mickey Halloween (2015)' CM entry, not tied to this name"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-mickey-vampire/mickey-vampire",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: distinct from OE park pin halloween-2015/mickey-vampire (EUR 6.99); whether the designs match is not stated. Do not merge"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-gusteau/gusteau",
+   "field": "visual_description",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Design not described in snippet; original price not given"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-pluto-noel/pluto-noel",
+   "field": "visual_description",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Design not described in snippet; price not given"
+  },
+  {
+   "key": "dlp/2015/halloween-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: dein-dlrp Sept overview lists Mickey Vampir (EUR 6.99) and Duffy Vampir (EUR 7.99) as separate unlimited items, body text describes each; both kept"
+  },
+  {
+   "key": "dlp/2015/october-2015-releases/mickey-sorcerer-2016",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: quoted Oct text says Mickey (sorcerer) and Minnie (pink) together conjured the year on the second 2016 pin (EUR 8.99): one pin, two characters"
+  },
+  {
+   "key": "dlp/2015/october-2015-releases/minnie-2016",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: likely the same pin as mickey-sorcerer-2016 (Oct page has only two 2016 singles: medal pin and Mickey & Minnie pin); merge candidate, confirm"
+  },
+  {
+   "key": "dlp/2015/october-2015-releases",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: retro medal pin recorded as medaille-2016 from quoted line 'Pin Medaille 2016 (unlimitiert, 6,99)'; characters on it not stated"
+  },
+  {
+   "key": "dlp/2015/october-2015-releases/medaille-2016",
+   "field": "characters",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Characters not stated; one summary calls it the Mickey pin but quoted text does not name a character"
+  },
+  {
+   "key": "dlp/2015/october-2015-retro-mickey-minnie",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Four retro pins of Mickey and Minnie at leisure (24 Oct, EUR 7.99 each); individual designs not described"
+  },
+  {
+   "key": "dlp/2015/november-2015-releases",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Lead: Nov overview also lists Mickey 2016 (EUR 8.99) and Vintage 2016 (EUR 7.99); may repeat October 2016 pins (medal pin was 6.99). Not recorded"
+  },
+  {
+   "key": "dlp/2015/november-2015-releases/lanyard-cover-2016",
+   "field": "scope",
+   "searched": "WebSearch standard; search snippets",
+   "note": "scope: confirmed button/badge/non-pin (2016 lanyard card cover, EUR 5.99, listed in Nov overview)"
+  },
+  {
+   "key": "dlp/2015/november-2015-releases/gang-spinner-2016",
+   "field": "characters",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Characters on the 2016 Gang Spinner not named"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Recap: 7 gaways at Last Chance = 4 Disney Dreams! + 3 Alice in Phantomland; plus 1 mini-jumbo and 5 event pins. Only one gaway (Peter Pan's Shadow) named"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/peter-pan-shadow-giveaway",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: rests on one search summary of a forum recap; whether it is a Disney Dreams! gaway or an Alice gaway is not explicit; design not described"
+  },
+  {
+   "key": "dlp/2015/alice-in-phantomland-event",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Lead: Dreams recap says 3 Alice in Phantomland gaways were resold at the 19 Sep event; designs still unnamed. Jumbo design not described"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-april-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Still unnamed. dein-dlrp: 25 Apr female-character day had 3 princesses, Jessica, Ursula (5 pins); passiondlp says 4 pins of the day. Mapping not stated"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-frozen-fun-july-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Other three pins still unnamed; Gazette thread repeats Sven LE 500 EUR 13.99, others LE 1000 EUR 14.99; dein-dlrp July article omits the PTD"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-june-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Mini-jumbo and Refresh Lanyard pin still not described; passiondlp Q2 again lists only Flora, Cleo, Big Bad Wolf plus those two"
+  },
+  {
+   "key": "dlp/2015/pin-trading-nights-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "2015 Refresh Lanyard designs still undescribed; not re-found this round"
+  },
+  {
+   "key": "dlp/2015/oe-set/star-wars-booster-september-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Still only Vader and Yoda named (Dedicated to DLP); no other source names the other two"
+  },
+  {
+   "key": "dlp/2015/oe-set/nutcracker-booster-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "dein-dlrp Sept: booster holds four Christmas Mickey pins, one as Nutcracker; other three designs still undescribed"
+  },
+  {
+   "key": "dlp/2015/december-2015-le/villains-2016",
+   "field": "characters",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Villains on the pin still not named in any snippet"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/anna-elsa-party-fever",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: June quick overview again only reached as a search summary (joint pin plus solo Anna and Elsa outfit pins, EUR 7.99); no quoted line for these items"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/anna-party-fever",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: same summary-only basis as the joint pin; no quoted page text"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/elsa-party-fever",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: same summary-only basis; no quoted page text"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/anna-elsa-party-fever",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: structure of joint pin vs solo pins still not shown by quoted text; body text gives 6.99 each vs overview 7.99"
+  },
+  {
+   "key": "dlp/2015/january-2015-releases/lady-and-the-tramp-heart",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: Jan page text puts the heart pin at EUR 13.99, Pueblo only; unlimited EUR 6.99 pins are Lady sitting and Lady and Tramp, so 330 record (6.99 OE) is a different pin"
+  },
+  {
+   "key": "dlp/2015/january-2015-releases/lady-and-the-tramp",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Jan page lists 'Lady and Tramp' as one 6.99 line item but does not say whether both dogs share one pin"
+  },
+  {
+   "key": "dlp/2015/stage-show-series/jiminy-cricket",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Sept quoted line names a 'Vorhang auf' Jiminy LE 700 (5 Sep); March Jiminy LE 700 (28 Mar) also shows him on a stage. Same design or two pins unresolved"
+  },
+  {
+   "key": "dlp/2015/oe/mickey-tower-of-terror-2016-booster",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Oct summary again quotes 'Earfall Tower'; source does not resolve Earffel Tower vs Tower of Terror"
+  },
+  {
+   "key": "dlp/2015/oe/ariel-princess-booster-a-2015",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: not re-searched; no per-design evidence for the 8 princess booster records"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015/locket-pins",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: not re-searched this round"
+  },
+  {
+   "key": "dlp/2015/space-mountain-20th-anniversary",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Not re-searched; second SM 20th pin still unconfirmed"
+  }
+ ],
+ "discovery_notes": "Follow-up 4 of B037 (DLP 2015). 30 WebSearch calls, all search_snippet, blocked domains passed. Reuses 330/346/361/374 keys; no 2016-dated packets duplicated. New: 3 CM Exclusives (Gusteau, Mickey Vampire, Pluto Noel), OE Mickey vampire, Medal 2016, Good Dinosaur, Gang Spinner 2016, Peter Pan shadow gaway (hold). Releases: CM Thumper, Halloween vampire, Oct Mickey & Minnie structure, L&T heart."
+}

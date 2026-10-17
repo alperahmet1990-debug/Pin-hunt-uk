@@ -1,0 +1,2358 @@
+{
+ "packet_id": "backfill-b047-dlr-oe-2019-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b047",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+   "title": "New Disney Pins September 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) From Resistance Supply in Star Wars: Galaxy's Edge",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) From First Order Cargo in Star Wars: Galaxy's Edge",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) From Droid Depot in Star Wars: Galaxy's Edge",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+   "title": "Droid Depot Collectible Pin Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+   "title": "Disney 2019 Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/resist-star-wars-galaxys-edge-mystery-pin-collection",
+   "title": "Resist Star Wars Galaxy's Edge Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+   "title": "Resistance Star Wars Galaxy's Edge Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+   "title": "Star Wars Galaxy's Edge Open Edition Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+   "title": "The Haunted Mansion: Celebrating 50 Years of Retirement Unliving Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+   "title": "Toy Story 4 Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+   "title": "New Disney Pins May 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+   "title": "The Lion King Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+   "title": "New Disney Pins February 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+   "title": "Disney Aladdin Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+   "title": "Open Edition Minnie Mouse Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2019/oe-single/incredicoaster-pixar-pier",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "Roundup calls it a new open edition pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-resistance-fighter-glow",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-rey-resist",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-stand-strong-princess-leia",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-poe",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-bb-8",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-shadow-stormtrooper",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-first-order-stormtrooper",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-dj-r3x",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-bb-unit-droid",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-r2-d2-and-l3-37",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/ge-c-3po-and-service-droid",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland shop price list"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/toy-story-4-forky",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "New open edition TS4 pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/toy-story-4-duke-caboom",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "New open edition TS4 pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/simba-feb-2019",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "New open edition pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/minnie-glitter-bow-icon",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition Minnie series"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/jeweled-minnie-mouse",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition Minnie series"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/minnie-always-be-you",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition Minnie series"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-single/minnie-today-is-my-day",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition Minnie series"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/droid-depot-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Droid Depot Collectible Pin Pack",
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "Set name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "16 pins in the collection"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "Five random pins per pack"
+    },
+    {
+     "field": "format",
+     "value": "random pack, 5 random pins per pack",
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "Randomly selected pins"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "USD 27.99 per pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-31",
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "Released 31 May 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://disneypinsblog.com/droid-depot-collectible-pin-pack/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge exclusive, Disneyland opening"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/lion-king-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Lion King Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Set name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Four pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster)",
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Booster set"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 24.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04",
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Post 26 Apr 2019; first seen at Animal Kingdom"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Sold at both resorts"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Post calls it open edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Same post also mentions a limited edition of 2,000; conflict kept"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/the-lion-king-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 2,000 line in same post conflicts with OE statement"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/aladdin-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Aladdin Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Set name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Four different pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster)",
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Booster set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Open edition set"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted May 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/disney-aladdin-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at both DLR parks"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/2019-dated-mystery",
+   "claims": [
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD 14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Sold at both resorts"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/resist-mystery",
+   "claims": [
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/resist-star-wars-galaxys-edge-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD 16.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/resist-star-wars-galaxys-edge-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/resist-star-wars-galaxys-edge-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/resist-star-wars-galaxys-edge-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Disneyland June 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/resistance-booster",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster)",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Four different pins sold as a set"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD 14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Post dated 26 Jun 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/oe-set/haunted-mansion-attraction-scenes-mystery",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD 14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2019/oe/incredicoaster-pixar-pier",
+   "set_key": "dlr/2019/oe-single/incredicoaster-pixar-pier",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Incredicoaster pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "Named as the Incredicoaster pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Incredicoaster",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "Shows the Incredicoaster attraction poster"
+    },
+    {
+     "field": "visual_description",
+     "value": "Incredicoaster poster design with Pixar Pier text along the bottom",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "Paraphrase of roundup entry"
+    },
+    {
+     "field": "front_text",
+     "value": "Pixar Pier",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "Text at bottom of pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "New open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "Sept 22-28 2019 roundup"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "2019 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure (spotted)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "Spotted at DCA"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-resistance-fighter-glow",
+   "set_key": "dlr/2019/oe-single/ge-resistance-fighter-glow",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Resistance Fighter Glow in the Dark Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in Resistance Supply list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Resistance fighter"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Resistance Supply, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 9.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-rey-resist",
+   "set_key": "dlr/2019/oe-single/ge-rey-resist",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rey Resist Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in Resistance Supply list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rey"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Resistance Supply, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 9.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-stand-strong-princess-leia",
+   "set_key": "dlr/2019/oe-single/ge-stand-strong-princess-leia",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stand Strong Princess Leia Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in Resistance Supply list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Princess Leia"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Resistance Supply, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 12.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-poe",
+   "set_key": "dlr/2019/oe-single/ge-poe",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Poe Dameron"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Snippet names a pin of this character"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Resistance Supply, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Shop list"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 12.99 per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-bb-8",
+   "set_key": "dlr/2019/oe-single/ge-bb-8",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Snippet names a pin of this character"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Resistance Supply, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Shop list"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 12.99 per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-shadow-stormtrooper",
+   "set_key": "dlr/2019/oe-single/ge-shadow-stormtrooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Shadow Stormtrooper Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in First Order Cargo list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Shadow Stormtrooper"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "First Order Cargo, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 9.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-first-order-stormtrooper",
+   "set_key": "dlr/2019/oe-single/ge-first-order-stormtrooper",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Stormtrooper Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in First Order Cargo list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "First Order Stormtrooper"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "First Order Cargo, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 9.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-dj-r3x",
+   "set_key": "dlr/2019/oe-single/ge-dj-r3x",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DJ R3X Open Edition Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in Droid Depot list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "DJ R3X"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Droid Depot, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 14.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name says open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-bb-unit-droid",
+   "set_key": "dlr/2019/oe-single/ge-bb-unit-droid",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "BB Unit Droid Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in Droid Depot list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB unit droid"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Droid Depot, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 9.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-r2-d2-and-l3-37",
+   "set_key": "dlr/2019/oe-single/ge-r2-d2-and-l3-37",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "R2-D2 and L3-37 Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in Droid Depot list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "R2-D2",
+      "L3-37"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Droid Depot, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 9.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Sold as a single item named Pin at one price; rests on item name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/ge-c-3po-and-service-droid",
+   "set_key": "dlr/2019/oe-single/ge-c-3po-and-service-droid",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "C-3PO and Service Droid Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Item name in Droid Depot list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "C-3PO",
+      "service droid"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Character(s) per item name"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Droid Depot, Star Wars: Galaxy's Edge, Disneyland",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Disneyland-only period of the land"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 14.99 in shop list"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-the-droid-depot-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Sold as a single item named Pin at one price; rests on item name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/toy-story-4-forky",
+   "set_key": "dlr/2019/oe-single/toy-story-4-forky",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Forky",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Named in May 2019 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Forky"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "main_character",
+     "value": "Forky",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Toy Story 4 pin"
+    },
+    {
+     "field": "front_text",
+     "value": "I'm Homemade",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Text on pin per roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "May 2019 week 2"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Snippet says Disney Parks"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/toy-story-4-duke-caboom",
+   "set_key": "dlr/2019/oe-single/toy-story-4-duke-caboom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duke Caboom",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Named in May 2019 roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duke Caboom"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "main_character",
+     "value": "Duke Caboom",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Featured character"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Toy Story 4 pin"
+    },
+    {
+     "field": "front_text",
+     "value": "I'll Jump for You (Anytime!)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Text on pin per roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "May 2019 week 2"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Snippet says Disney Parks"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/simba-feb-2019",
+   "set_key": "dlr/2019/oe-single/simba-feb-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Simba",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Simba Lion King pin in shared releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Featured"
+    },
+    {
+     "field": "main_character",
+     "value": "Simba",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Featured"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Lion King pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Week of 24 Feb-2 Mar 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland (spotted); Walt Disney World to follow",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Spotted at DLR first"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/minnie-glitter-bow-icon",
+   "set_key": "dlr/2019/oe-single/minnie-glitter-bow-icon",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Glitter Bow",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named among four OE Minnie pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First released June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland (spotted); also Walt Disney World",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at DLR, also at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/jeweled-minnie-mouse",
+   "set_key": "dlr/2019/oe-single/jeweled-minnie-mouse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jeweled Minnie Mouse Pin",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named among four OE Minnie pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First released June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland (spotted); also Walt Disney World",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at DLR, also at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/minnie-always-be-you",
+   "set_key": "dlr/2019/oe-single/minnie-always-be-you",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Always be You Minnie Mouse Pin",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named among four OE Minnie pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First released June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland (spotted); also Walt Disney World",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at DLR, also at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/oe/minnie-today-is-my-day",
+   "set_key": "dlr/2019/oe-single/minnie-today-is-my-day",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Today is my Day Minnie Mouse Pin",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Named among four OE Minnie pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "First released June 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland (spotted); also Walt Disney World",
+     "source_url": "https://disneypinsblog.com/open-edition-minnie-mouse-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Spotted at DLR, also at WDW"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2019/oe/incredicoaster-pixar-pier",
+   "field": "original_price",
+   "searched": "DPB Sep 2019 wk4; 3 queries",
+   "note": "Price not given in snippets; only Pixar Pier OE pin found for 2019"
+  },
+  {
+   "key": "dlr/2019/oe/incredicoaster-pixar-pier",
+   "field": "release_location",
+   "searched": "DPB Sep 2019 wk4",
+   "note": "Snippet also mentions WDW availability on 26 Sep 2019 but may refer to another entry (Fall Eeyore); unclear"
+  },
+  {
+   "key": "dlr/2019/oe/ge-resistance-fighter-glow",
+   "field": "edition_type",
+   "searched": "WDWNT Resistance Supply list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-rey-resist",
+   "field": "edition_type",
+   "searched": "WDWNT Resistance Supply list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-stand-strong-princess-leia",
+   "field": "edition_type",
+   "searched": "WDWNT Resistance Supply list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-poe",
+   "field": "pin_name",
+   "searched": "WDWNT Resistance Supply list; 2 queries",
+   "note": "hold: exact item name not in snippet, only character and price; confirm name and design"
+  },
+  {
+   "key": "dlr/2019/oe/ge-poe",
+   "field": "edition_type",
+   "searched": "WDWNT Resistance Supply list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-bb-8",
+   "field": "pin_name",
+   "searched": "WDWNT Resistance Supply list; 2 queries",
+   "note": "hold: exact item name not in snippet, only character and price; confirm name and design"
+  },
+  {
+   "key": "dlr/2019/oe/ge-bb-8",
+   "field": "edition_type",
+   "searched": "WDWNT Resistance Supply list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-shadow-stormtrooper",
+   "field": "edition_type",
+   "searched": "WDWNT First Order Cargo list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-first-order-stormtrooper",
+   "field": "edition_type",
+   "searched": "WDWNT First Order Cargo list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-dj-r3x",
+   "field": "pin_name",
+   "searched": "review",
+   "note": "Distinct from the LE DJ R3X countdown pin (dlr/2019/galaxys-edge-countdown/dj-r3x, packet 204)"
+  },
+  {
+   "key": "dlr/2019/oe/ge-bb-unit-droid",
+   "field": "edition_type",
+   "searched": "WDWNT Droid Depot list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-r2-d2-and-l3-37",
+   "field": "edition_type",
+   "searched": "WDWNT Droid Depot list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/ge-c-3po-and-service-droid",
+   "field": "edition_type",
+   "searched": "WDWNT Droid Depot list",
+   "note": "Edition type not stated in shop list"
+  },
+  {
+   "key": "dlr/2019/oe/toy-story-4-forky",
+   "field": "release_location",
+   "searched": "DPB May 2019 wk2",
+   "note": "Same product as wdw/2019/oe/toy-story-4-forky (201), which records Disneyland and WDW from this page; my snippet says only Disney Parks"
+  },
+  {
+   "key": "dlr/2019/oe/toy-story-4-duke-caboom",
+   "field": "release_location",
+   "searched": "DPB May 2019 wk2",
+   "note": "Same product as wdw/2019/oe/toy-story-4-duke-caboom (201), which records Disneyland and WDW from this page; my snippet says only Disney Parks"
+  },
+  {
+   "key": "dlr/2019/oe/simba-feb-2019",
+   "field": "pin_name",
+   "searched": "review",
+   "note": "Not the April 2019 Simba 3D pin (wdw/2019/oe/simba-3d); design not described"
+  },
+  {
+   "key": "dlr/2019/oe/minnie-glitter-bow-icon",
+   "field": "original_price",
+   "searched": "DPB Minnie OE page",
+   "note": "Only an approximate ~USD 10 each given; parallel wdw/2019/oe/minnie-glitter-bow-icon exists in 201"
+  },
+  {
+   "key": "dlr/2019/oe/jeweled-minnie-mouse",
+   "field": "original_price",
+   "searched": "DPB Minnie OE page",
+   "note": "Only an approximate ~USD 10 each given; parallel wdw/2019/oe/jeweled-minnie-mouse exists in 201"
+  },
+  {
+   "key": "dlr/2019/oe/minnie-always-be-you",
+   "field": "original_price",
+   "searched": "DPB Minnie OE page",
+   "note": "Only an approximate ~USD 10 each given; parallel wdw/2019/oe/minnie-always-be-you exists in 201"
+  },
+  {
+   "key": "dlr/2019/oe/minnie-today-is-my-day",
+   "field": "original_price",
+   "searched": "DPB Minnie OE page",
+   "note": "Only an approximate ~USD 10 each given; parallel wdw/2019/oe/minnie-today-is-my-day exists in 201"
+  },
+  {
+   "key": "dlr/2019/oe-set/droid-depot-collectible-pin-pack",
+   "field": "edition_type",
+   "searched": "DPB; WDWNT Droid Depot; 2 queries",
+   "note": "Edition type not stated; OE vs LR unknown"
+  },
+  {
+   "key": "dlr/2019/oe-set/droid-depot-collectible-pin-pack",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed; none of 16 designs named"
+  },
+  {
+   "key": "dlr/2019/oe-set/lion-king-booster",
+   "field": "members",
+   "searched": "DPB set page; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters Mufasa, Pumbaa, Scar, Nala/Simba listed only"
+  },
+  {
+   "key": "dlr/2019/oe-set/lion-king-booster",
+   "field": "release_location",
+   "searched": "review",
+   "note": "lead: WDW OE cell has no key for this booster; sold at both resorts per DPB"
+  },
+  {
+   "key": "dlr/2019/oe-set/aladdin-booster",
+   "field": "members",
+   "searched": "DPB set page; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Jasmine, Aladdin, Genie, Abu listed only"
+  },
+  {
+   "key": "dlr/2019/oe-set/2019-dated-booster/donald-duck",
+   "field": "pin_structure",
+   "searched": "packet 203 review; DPB 2019 pins",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "dlr/2019/oe-set/2019-dated-booster/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "packet 203 review; DPB 2019 pins",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "dlr/2019/oe-set/2019-dated-booster/goofy",
+   "field": "pin_structure",
+   "searched": "packet 203 review; DPB 2019 pins",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "dlr/2019/oe-set/2019-dated-booster/daisy-duck",
+   "field": "pin_structure",
+   "searched": "packet 203 review; DPB 2019 pins",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "dlr/2019/oe-set/2019-dated-booster/pluto",
+   "field": "pin_structure",
+   "searched": "packet 203 review; DPB 2019 pins",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "dlr/2019/oe-set/2019-dated-booster/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "packet 203 review; DPB 2019 pins",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/woody",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/bo-peep",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/forky",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/ducky-bunny",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/buzz-lightyear",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/hamm",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/jessie",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/bullseye",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/little-green-men",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/toy-story-4-mystery/rex",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query (403 also searched)",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "dlr/2019/oe-set/resistance-booster/pilot",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: booster member named only by its pin text in one set listing, no per-design description; mirrors 403 hold"
+  },
+  {
+   "key": "dlr/2019/oe-set/resistance-booster/never-tell-me-the-odds",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: booster member named only by its pin text in one set listing, no per-design description; mirrors 403 hold"
+  },
+  {
+   "key": "dlr/2019/oe-set/resistance-booster/black-spire-outpost",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: booster member named only by its pin text in one set listing, no per-design description; mirrors 403 hold"
+  },
+  {
+   "key": "dlr/2019/oe-set/resistance-booster",
+   "field": "set_name",
+   "searched": "DPB GE OE page; 1 query",
+   "note": "hold: GE OE page lists a Millennium Falcon booster beside a Resistance booster; may be two products; fourth pin still unnamed"
+  },
+  {
+   "key": "dlr/2019/oe-set/resistance-booster",
+   "field": "*",
+   "searched": "review",
+   "note": "Same product as wdw/2019/oe-set/swge-resistance-booster (403); no new DLR key created"
+  },
+  {
+   "key": "dlr/2019/oe-set/first-order-booster",
+   "field": "*",
+   "searched": "review",
+   "note": "Likely same product as wdw/2019/oe-set/swge-first-order-booster (403, members held on year); no duplicate DLR members created"
+  },
+  {
+   "key": "dlr/2019/oe-set/2019-dated-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Eight designs still unnamed"
+  },
+  {
+   "key": "dlr/2019/oe-set/haunted-mansion-attraction-scenes-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Eight scenes still unnamed in snippets"
+  },
+  {
+   "key": "dlr/2019/oe-set/resist-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Ten ship designs still unnamed"
+  },
+  {
+   "key": "dlr/2019/oe/frozen-2",
+   "field": "*",
+   "searched": "2 queries",
+   "note": "Frozen 2 OE parks pins (Nov 2019) referenced by DPB lanyard post but not named in snippets"
+  },
+  {
+   "key": "dlr/2019/oe/lion-king-2019-film",
+   "field": "*",
+   "searched": "1 query",
+   "note": "No July 2019 Lion King OE parks pin found; Studio Store LE 300 set is a DS lead"
+  },
+  {
+   "key": "dlr/2019/oe/avengers-endgame-april-2019",
+   "field": "*",
+   "searched": "1 query",
+   "note": "lead: DPB April 2019 says an OE Endgame pin (9.99) was spotted at Disneyland; design unnamed; may match wdw endgame keys (403), not recorded"
+  },
+  {
+   "key": "dlr/2019/oe/toy-story-4-bo-peep",
+   "field": "*",
+   "searched": "review",
+   "note": "Bo Peep OE (May 2019, both resorts per 201) not seen in my snippets; DLR key not created"
+  },
+  {
+   "key": "dlr/2019/oe/pixar-pier",
+   "field": "*",
+   "searched": "3 queries",
+   "note": "Only the Incredicoaster OE pin found for 2019 Pixar Pier"
+  },
+  {
+   "key": "dlr/2019/oe/haunted-mansion-holiday-2019",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "No OE found; Jack & Zero LE 3000, HMH mystery LR 19.99, jumbo LE 3000, AP Jack pin (Oct 2019): leads for DLR LE cell (408)"
+  },
+  {
+   "key": "dlr/2019/le-leads",
+   "field": "edition_type",
+   "searched": "several queries",
+   "note": "LE leads for 408: Fall 2019 Eeyore LE 2000 (both parks, 26 Sep); HM50 Doom Buggy slider LE 1500; HM50 Hitchhiking pin LR 15.99; GE Silhouette mystery LR 19.99"
+  },
+  {
+   "key": "dlr/2019/le-leads-2",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "LE leads for 408: Lunar New Year 2019 pin LE 4000 (USD 16.99) and DLR AP tassel version LE 4000 (USD 17.99)"
+  },
+  {
+   "key": "lic/2019/leads",
+   "field": "*",
+   "searched": "2 queries",
+   "note": "lead: licensed BoxLunch Toy Story 4 Funko pins; Hot Topic Frozen 2 blind box (9 pins); Primark Aladdin 6-pin set (May 2019); Studio Store Nokk surprise LE 150 (DS)"
+  },
+  {
+   "key": "dlr/2019/oe/toy-story-4-forky",
+   "field": "duplicate",
+   "searched": "review",
+   "note": "variant: same pin as wdw/2019/oe/toy-story-4-forky (same park-wide OE product; counted once)"
+  },
+  {
+   "key": "dlr/2019/oe/toy-story-4-duke-caboom",
+   "field": "duplicate",
+   "searched": "review",
+   "note": "variant: same pin as wdw/2019/oe/toy-story-4-duke-caboom (same park-wide OE product; counted once)"
+  },
+  {
+   "key": "dlr/2019/oe/minnie-glitter-bow-icon",
+   "field": "duplicate",
+   "searched": "review",
+   "note": "variant: same pin as wdw/2019/oe/minnie-glitter-bow-icon (same park-wide OE product; counted once)"
+  },
+  {
+   "key": "dlr/2019/oe/jeweled-minnie-mouse",
+   "field": "duplicate",
+   "searched": "review",
+   "note": "variant: same pin as wdw/2019/oe/jeweled-minnie-mouse (same park-wide OE product; counted once)"
+  },
+  {
+   "key": "dlr/2019/oe/minnie-always-be-you",
+   "field": "duplicate",
+   "searched": "review",
+   "note": "variant: same pin as wdw/2019/oe/minnie-always-be-you (same park-wide OE product; counted once)"
+  },
+  {
+   "key": "dlr/2019/oe/minnie-today-is-my-day",
+   "field": "duplicate",
+   "searched": "review",
+   "note": "variant: same pin as wdw/2019/oe/minnie-today-is-my-day (same park-wide OE product; counted once)"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 to packet 203 (B003); 30 standard WebSearches, blocked domains passed, all search_snippet. Reuses 203 keys. New: Incredicoaster OE (Pixar Pier), 11 GE shop-list singles (WDWNT June 2019), Forky/Duke Caboom, Feb 2019 Simba, 4 OE Minnie pins, Droid Depot pack, Lion King and Aladdin boosters (members held). Rule-12 holds added to 203 booster/mystery members. No GE booster duplicated against 403. LE/licensed leads noted."
+}

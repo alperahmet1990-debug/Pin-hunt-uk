@@ -1,0 +1,945 @@
+{
+ "packet_id": "backfill-b250-ds-2015-fu7",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b250",
+ "sources": [
+  {
+   "url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+   "title": "Surprise Pin Releases At Disney Studio Store Hollywood",
+   "publisher": "DisKingdom",
+   "published_date": "2015-03-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+   "title": "Surprise Jasmine Jumbo Pin Released At Disney Studio Store",
+   "publisher": "DisKingdom",
+   "published_date": "2015-09-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/05/29/disney-studio-stores-june-pin-releases/",
+   "title": "Disney Studio Store's June Pin Releases",
+   "publisher": "DisKingdom",
+   "published_date": "2015-05-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+   "title": "July 2015 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+   "title": "Disney Park Pack Pin Trading Edition",
+   "publisher": "DisKingdom",
+   "published_date": "2015-07-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/ursula-disney-pin/",
+   "title": "Ursula Disney Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/06/29/now-playing-inside-out-pins-released-at-disney-studio-store/",
+   "title": "“Now Playing” Inside Out Pins Released At Disney Studio Store",
+   "publisher": "DisKingdom",
+   "published_date": "2015-06-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-june-2015-pins",
+   "title": "Disney Studio Store June 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hyenas-pin",
+   "title": "Hyenas Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/iago-pin",
+   "title": "Iago Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-store-short-films-collection-pins",
+   "title": "Disney Store Short Films Collection Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/minnie-mouse-signature-pins",
+   "title": "Minnie Mouse Signature Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/d23-expo-2015-pin-selection/",
+   "title": "D23 Expo 2015 Pin Selection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-65th-anniversary-pin/",
+   "title": "Cinderella 65th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/43882",
+   "title": "43882",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-uk-lava-pin/",
+   "title": "Disney Store UK Lava Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/le-lava-pin-at-ds-com.54614/",
+   "title": "LE Lava pin at DS.com",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/good-dinosaur-pin-set",
+   "title": "The Good Dinosaur Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-store-uk-pins-august-2015",
+   "title": "Disney Store UK Pins August 2015",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/tag/pin-trader-delights/",
+   "title": "pin trader delights (tag page)",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2015/10/31/pin-trader-delight-review-1/",
+   "title": "Pin Trader Delight Review #1",
+   "publisher": "DisKingdom",
+   "published_date": "2015-10-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2016/01/02/details-on-the-latest-pin-trader-delight-pins-4/",
+   "title": "Details On The Latest Pin Trader Delight Pins",
+   "publisher": "DisKingdom",
+   "published_date": "2016-01-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-march-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood March 2015 surprise release",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "DisKingdom 27 Mar 2015: two low-edition surprise pins released that day"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-27",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "surprise release on the day of the post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "format",
+     "value": "individually sold LE pins",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "two separate pins, limit one of each per person per day"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-september-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood September 2015 surprise release",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "DisKingdom 18 Sep 2015 post on a surprise jumbo pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-18",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "post date; released as a surprise that day"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/disney-park-pack-2015-07",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack: Pin Trading Edition - July 2015",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "monthly online mystery box, July 2015 edition"
+    },
+    {
+     "field": "format",
+     "value": "mystery box of 3 separate pins (1 LE + 2 early-release OE)",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "box holds an exclusive LE pin plus two early-release OE pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "three pins per box"
+    },
+    {
+     "field": "price",
+     "value": 39.95,
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "USD 39.95 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "US online price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-02",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "on sale first Thursday of July 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "DisKingdom says it went on DisneyStore.com; other sources call it the Disney Parks online store"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/jafar-march",
+   "set_key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jafar - March Calendar Pin 2015",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "DisKingdom names a Jafar March calendar pin in the 27 Mar 2015 surprise release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jafar"
+     ],
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "main_character",
+     "value": "Jafar",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "single calendar pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "LE 400, same as Oct/Dec 2015 calendar pins"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "US store price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-27",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "surprise release on 27 Mar 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "DSSH; limit one per person per day"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-march-2015/captain-hook-stained-glass-frame",
+   "set_key": "dsus/2015/studio-store-hollywood-march-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain Hook Stained Glass Frame - DSSH Mar 2015",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "second pin in the 27 Mar 2015 surprise release; not a calendar pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Hook"
+     ],
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Hook",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "single framed stained-glass style pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "US store price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-27",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "surprise release on 27 Mar 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "http://diskingdom.com/2015/03/27/surprise-pin-releases-at-disney-studio-store-hollywood/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-september-2015/jasmine-jumbo",
+   "set_key": "dsus/2015/studio-store-hollywood-september-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine Jumbo Pin - DSSH Sep 2015",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "DisKingdom post title: surprise Jasmine jumbo pin at the studio store"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Aladdin",
+      "Rajah"
+     ],
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "snippet says the jumbo also shows Aladdin and Rajah"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "named in title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "a single jumbo pin showing three characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "US store price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-18",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "surprise release on post date"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "http://diskingdom.com/2015/09/18/surprise-jasmine-jumbo-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/disney-park-pack-2015-07/mickey-and-minnie-old-car",
+   "set_key": "dsus/2015/disney-park-pack-2015-07",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie with Old Car - Park Pack July 2015 LE",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "DPB: this month's LE 500 shows black-and-white Mickey and Minnie beside an old car"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "both on one pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (LE in 4 variants)",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "one LE pin per box; four similar variants exist"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "LE, only in the Park Pack"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "each of four variants LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-02",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "box on sale 2 Jul 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "online exclusive box"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/disney-park-pack-2015-07/rhinestone-mickey-icon",
+   "set_key": "dsus/2015/disney-park-pack-2015-07",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rhinestone Mickey Icon - Park Pack July 2015",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "DPB names it as one of the two OE pins in the July box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "Mickey icon"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "Mickey icon"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin mystery box",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "described individually"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "OE, early release"
+    },
+    {
+     "field": "original_price",
+     "value": 8.95,
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "USD 8.95 individual retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-02",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "early release in the 2 Jul 2015 box"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/disney-park-pack-2015-07/i-am-groot",
+   "set_key": "dsus/2015/disney-park-pack-2015-07",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Am Groot - Park Pack July 2015",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "DPB names it as one of the two OE pins in the July box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Groot"
+     ],
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "Marvel Guardians of the Galaxy character"
+    },
+    {
+     "field": "main_character",
+     "value": "Groot",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "subject per name"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin mystery box",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "described individually"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "OE, early release"
+    },
+    {
+     "field": "original_price",
+     "value": 8.95,
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "USD 8.95 individual retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-02",
+     "source_url": "http://diskingdom.com/2015/07/02/disney-park-pack-pin-trading-edition-july-2015-out-now/",
+     "method": "search_snippet",
+     "note": "early release in the 2 Jul 2015 box"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://disneypinsblog.com/july-2015-disney-park-pack/",
+     "method": "search_snippet",
+     "note": "2015"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "field": "expected_pin_count",
+   "searched": "5 calendar queries",
+   "note": "series size still not stated; now Mar (Jafar), Sep (Ursula, title only), Oct (Maleficent), Dec (Mother Gothel) 2015 known"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "field": "members",
+   "searched": "5 calendar queries",
+   "note": "Jan, Feb, Apr-Aug and Nov 2015 calendar pins not found; Frozone/Mr Incredible May calendar pin is May 2016 (DS 2016 cell)"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/ursula-september",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: Ursula Sep 2015 still known only from a DPB tag-page post title; no store, size or price"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/ursula-september",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "not stated; LE 400 / USD 18.95 of Mar, Oct and Dec pins not assumed"
+  },
+  {
+   "key": "dsus/2015/disney-park-pack-2015-07",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "released: lead in packet 389 (seller unconfirmed) - DisKingdom 2 Jul 2015 says the box went on DisneyStore.com; may also suit a parks/online cell"
+  },
+  {
+   "key": "dsus/2015/disney-park-pack-2015-07/mickey-and-minnie-old-car",
+   "field": "variants",
+   "searched": "2 queries",
+   "note": "hold: four LE 500 variants of a similar design; variants not individually described, so this one record stands for the LE design only"
+  },
+  {
+   "key": "dsus/2015/disney-park-pack-2015-07/i-am-groot",
+   "field": "scope",
+   "searched": "review",
+   "note": "Marvel subject; Disney-owned franchise, kept in scope"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-inside-out-now-playing",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold kept: one summary of the DisKingdom post words it as a single Now Playing pin with the emotions, but the title says pins; structure still not explicit"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-june-2015",
+   "field": "members",
+   "searched": "3 June queries",
+   "note": "princess locket and Inside Out LE pins still unnamed; DisKingdom 29 May 2015 preview and DPB give 6 and 19 Jun dates only"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-months",
+   "field": "scope",
+   "searched": "3 July/Sept/Aug queries",
+   "note": "no DSSH July 2015 LE pins found; Sep 2015 only the Jasmine jumbo; Aug 2015 only Lotso/Eeyore OE and a PTD flip"
+  },
+  {
+   "key": "dsuk/2015/villains-sidekicks-series-2",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "pins 3-4 still unnamed; DPB confirms Hyenas 1 of 4 (LE 600, 4 Jun) and Iago 2 of 4 (LE 350, 18 Jun)"
+  },
+  {
+   "key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still only 3 of 12 named (Happily Ever After, Paperman, Feast)"
+  },
+  {
+   "key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "field": "scope",
+   "searched": "1 Get a Horse query",
+   "note": "Get a Horse LE 300 DS pin seen only on a reseller archive (collectrandom), not used; no Disney or blog source found"
+  },
+  {
+   "key": "dsus/2015/d23-expo-minnie-signature-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "six bow pins still not individually described"
+  },
+  {
+   "key": "dsus/2015/d23-expo-minnie-signature-boxed-set",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "conflict unresolved: DPB LE 300, USD 59.95, 16 Aug 2015 vs Dollect LE 400, USD 79.95, 14 Sep 2015"
+  },
+  {
+   "key": "dsuk/2015/cinderella-65th-le-350/cinderella-65th",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "GBP price still not stated; DPB gives 15 Jan 2015 and LE 350 only"
+  },
+  {
+   "key": "dsuk/2015/cinderella-65th-le-350/cinderella-65th",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: MyPinCentral 43882 (65th design, LE 350 backstamp) still has no region or date"
+  },
+  {
+   "key": "dsuk/2015/lava-le-300/lava",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept: 9 Jul 2015 / LE 300 / GBP 9 again via a search summary; forum notes UK banner said LE 300 vs US LE 500"
+  },
+  {
+   "key": "dsuk/2015/good-dinosaur-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: contents still unnamed; Arlo & Spot 2-pin set seen is a parks/cruise OE item, not linked"
+  },
+  {
+   "key": "dsuk/2015/pixar-cars-boxed-set",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: no contents; LE 700 worldwide / 100 Europe, GBP 55, 18 Aug 2015; D23 link still on title and size"
+  },
+  {
+   "key": "dsus/2015/d23-expo-music-of-frozen-boxed-set",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold kept: DPB pre-event post again places it at the D23 Dream Store, not Disney Store; route to D23/parks"
+  },
+  {
+   "key": "dsuk/2015/art-of-jasmine-boxed-set",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence (budget)"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/kylo-ren",
+   "field": "set_position",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence (budget)"
+  },
+  {
+   "key": "dsuk/2015/star-wars-kylo-ren",
+   "field": "existence",
+   "searched": "not re-searched",
+   "note": "lead only, unchanged (budget)"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-10",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "flip date, edition sizes and price still not found; only the 31 Oct 2015 DisKingdom review"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-12",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "5 Dec 2015 DisKingdom PTD post (USD 15.45) still unnamed; 2 Jan 2016 set (Briar Rose, Kenai, Tagalong, Roquefort) is a DS 2016 lead"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "field": "existence",
+   "searched": "not re-searched",
+   "note": "hold kept: pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-03-09",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: Queen Narissa, Nala, Jumba, Three Little Pigs again only as one list; pending maintainer"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-04-30",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold kept: pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-08-23",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: DPB week round-up notes the Aug 2015 flip but names no pins in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-october-2015/mike-sully-and-boo",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: one pin vs several still rests on a single round-up price line; earlier hold stands"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-october-2015/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: one pin vs several still rests on a single round-up price line; earlier hold stands"
+  }
+ ],
+ "discovery_notes": "Cell B250, follow-up 7 of B038 (DS 2015). 30 standard searches, snippets only. New: Jafar Mar 2015 calendar pin and Captain Hook stained glass frame (DSSH 27 Mar), Jasmine jumbo (DSSH Sep), July 2015 Park Pack (3 pins). Park Pack seller lead released. Resellers (collectrandom, jd-collectibles, yourwdwstore) seen, not used."
+}

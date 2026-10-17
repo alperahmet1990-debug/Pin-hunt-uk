@@ -1,0 +1,2167 @@
+{
+ "packet_id": "backfill-b206-dlp-2016-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b206",
+ "sources": [
+  {
+   "url": "https://www.passiondlp.com/actus/arc020.php",
+   "title": "passiondlp : Archives Disneyland Paris 2016 trimestre 2",
+   "publisher": "passiondlp",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc022.php",
+   "title": "passiondlp : Archives Disneyland Paris 2016 trimestre 4",
+   "publisher": "passiondlp",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+   "title": "Retour sur le Pin Event \"Mickey et le Magicien\"",
+   "publisher": "Disney Gazette",
+   "published_date": "2016-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://radiodisneyclub.fr/mickey-et-le-magicien-disneyland/",
+   "title": "Mickey et le Magicien sort de son chapeau a Disneyland Paris",
+   "publisher": "Radio Disney Club",
+   "published_date": "2016-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+   "title": "Disneyland Paris Pin Neuerscheinungen im Dezember 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+   "title": "Disneyland Paris Pin-Kollektion im November 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-august-2016/",
+   "title": "Disneyland Paris Pin-Trading Kollektion im August 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+   "title": "Disneyland Paris Pins For September 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-09-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+   "title": "Disneyland Paris Pins For August 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-08-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2016/pin-trading-night-may-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 27 May 2016",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-27",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "format",
+     "value": "event release: three pins plus a Refresh lanyard pin",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Structure per snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Three PTN pins named"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "DLP Pin Trading Night"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/pin-trading-night-october-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 28 October 2016",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-28",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "format",
+     "value": "event release: three pins plus a Refresh lanyard pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Structure per snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Three PTN pins named"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "DLP Pin Trading Night"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/pin-trading-night-november-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 25 November 2016",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-25",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "format",
+     "value": "event release: three pins plus a Refresh lanyard pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Structure per snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Three PTN pins named"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "DLP Pin Trading Night"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/pin-trading-day-april-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Day 30 April 2016",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-30",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Date per snippet"
+    },
+    {
+     "field": "format",
+     "value": "event release: gaway pin plus Swing Into Spring pins",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Structure per snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Earlier packet: Pueblo, 30 Apr"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/swing-into-spring-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Swing Into Spring pins (April 2016)",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Name per snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-30",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Sold at Pin Trading Day 30 Apr"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Day"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/mickey-le-magicien-pin-event",
+   "claims": [
+    {
+     "field": "format",
+     "value": "event release: three LE pins plus gaway pins and a mini-jumbo",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Per Disney Gazette recap"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Three pins limited to 700 each (gaways and mini-jumbo separate)"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "700 each, fewer than the 5-6 pins of earlier events"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "EUR 14.99 per LE pin; mini-jumbo raised from 29.99 to 39.99"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/cast-member-chip-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member Exclusive Chip pin (December 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Single CM pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-01",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Scheduled 1 Dec 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/september-2016-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris September 2016 pin releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Weekly releases 3, 10, 17 Sep"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Listed by week"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/pin-day-september-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Pin Day 17 September 2016",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-17",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Pin Day"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "One Pin Day pin named"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/november-2016-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris November 2016 pin releases",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Most pins released 5 Nov, unlimited"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Quick overview lists individual pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/august-2016-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris August 2016 pin releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+     "method": "search_snippet",
+     "note": "Descriptive grouping name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+     "method": "search_snippet",
+     "note": "Weekly releases 6, 13, 20, 27 Aug"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+     "method": "search_snippet",
+     "note": "Listed by week"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2016/pin-trading-night-may-2016/chinese-cat",
+   "set_key": "dlp/2016/pin-trading-night-may-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chinese Cat (Pin Trading Night 27 May 2016)",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Chinese Cat",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (The Aristocats musicians)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-27",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-may-2016/italian-cat",
+   "set_key": "dlp/2016/pin-trading-night-may-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Italian Cat (Pin Trading Night 27 May 2016)",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Italian Cat",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (The Aristocats musicians)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-27",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-may-2016/english-cat",
+   "set_key": "dlp/2016/pin-trading-night-may-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "English Cat (Pin Trading Night 27 May 2016)",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "English Cat",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (The Aristocats musicians)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-27",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-october-2016/lafayette",
+   "set_key": "dlp/2016/pin-trading-night-october-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lafayette (Pin Trading Night 28 October 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Lafayette",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (The Aristocats)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-28",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-october-2016/napoleon",
+   "set_key": "dlp/2016/pin-trading-night-october-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Napoleon (Pin Trading Night 28 October 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Napoleon",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (The Aristocats)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-28",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-october-2016/edgar",
+   "set_key": "dlp/2016/pin-trading-night-october-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Edgar (Pin Trading Night 28 October 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Edgar",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (The Aristocats)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-28",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-november-2016/nick-wilde",
+   "set_key": "dlp/2016/pin-trading-night-november-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nick Wilde (Pin Trading Night 25 November 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Nick Wilde",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (Zootopia)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-25",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-november-2016/judy-hopps",
+   "set_key": "dlp/2016/pin-trading-night-november-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Judy Hopps (Pin Trading Night 25 November 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Judy Hopps",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (Zootopia)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-25",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-night-november-2016/chief-bogo",
+   "set_key": "dlp/2016/pin-trading-night-november-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chief Bogo (Pin Trading Night 25 November 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Chief Bogo",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Named in snippet (Zootopia)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-25",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Event date per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Night"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Listed as one of three separate PTN pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-trading-day-april-2016/cheshire-cat-gaway",
+   "set_key": "dlp/2016/pin-trading-day-april-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cheshire Cat gaway (Pin Trading Day April 2016)",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Cheshire Cat",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Limited quantity"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "500 copies per snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-30",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Day"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Single gaway pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/mickey-le-magicien-pin-event/mickey",
+   "set_key": "dlp/2016/mickey-le-magicien-pin-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey (Mickey & Le Magicien event 2016)",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Recap says this event pin sold out or was still on sale afterwards"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Event pins limited to 700"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "700 per event pin"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-25",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Event day; resold next day at Pueblo Trading Post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "One of three separate 700-piece pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/mickey-le-magicien-pin-event/fairy-godmother",
+   "set_key": "dlp/2016/mickey-le-magicien-pin-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fairy Godmother (Mickey & Le Magicien event 2016)",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Fairy Godmother",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Recap says this event pin sold out or was still on sale afterwards"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Event pins limited to 700"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "700 per event pin"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-25",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Event day; resold next day at Pueblo Trading Post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "One of three separate 700-piece pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/mickey-le-magicien-pin-event/genie",
+   "set_key": "dlp/2016/mickey-le-magicien-pin-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie (Mickey & Le Magicien event 2016)",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Genie",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Recap says this event pin sold out or was still on sale afterwards"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Event pins limited to 700"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "700 per event pin"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-25",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Event day; resold next day at Pueblo Trading Post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "One of three separate 700-piece pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/mickey-le-magicien-pin-event/beauty-beast-mini-jumbo",
+   "set_key": "dlp/2016/mickey-le-magicien-pin-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beauty and the Beast mini-jumbo (Mickey & Le Magicien event 2016)",
+     "source_url": "https://radiodisneyclub.fr/mickey-et-le-magicien-disneyland/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Beast"
+     ],
+     "source_url": "https://radiodisneyclub.fr/mickey-et-le-magicien-disneyland/",
+     "method": "search_snippet",
+     "note": "Jumbo themed on Beauty and the Beast; characters assumed from film title"
+    },
+    {
+     "field": "original_price",
+     "value": 39.99,
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Recap says price rose from EUR 29.99 to 39.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-25",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "Event day"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.disneygazette.fr/retour-sur-le-pin-event-mickey-et-le-magicien/",
+     "method": "search_snippet",
+     "note": "One per buyer; size not stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/cast-member-finding-dory-2016/finding-dory-cast-member",
+   "set_key": "dlp/2016/cast-member-finding-dory-2016",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Dory",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "CM Exclusive pin named Dory"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 3016,
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "3016 copies"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-07",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Scheduled for Thursday 7 July 2016"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Single CM pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/cast-member-chip-2016/chip",
+   "set_key": "dlp/2016/cast-member-chip-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip Cast Member Exclusive (December 2016)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Named Tic (French for Chip)"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Tic"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 3016,
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "3016 copies"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-01",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Thursday 1 Dec 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members)",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "CM exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.passiondlp.com/actus/arc022.php",
+     "method": "search_snippet",
+     "note": "Single CM pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/september-2016-releases/tinker-bell-christmas",
+   "set_key": "dlp/2016/september-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell in green Christmas dress (September 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tink in a green Christmas dress; doubles as a tree ornament",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-03",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "3 Sep"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/villains-series/facilier",
+   "set_key": "dlp/2016/villains-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Villains Facilier",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Post title cites Villains; Facilier pin on 10 Sep"
+    },
+    {
+     "field": "main_character",
+     "value": "Dr. Facilier",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-10",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "10 Sep"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/september-2016-releases/pin-trading-medallion",
+   "set_key": "dlp/2016/september-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading medallion (September 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "visual_description",
+     "value": "Medallion meant to hang from a lanyard",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-10",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "10 Sep"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/september-2016-releases/mary-poppins-le",
+   "set_key": "dlp/2016/september-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins limited edition (September 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Mary Poppins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Pueblo"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-17",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "17 Sep"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/half-marathon-weekend-2016/rundisney-logo",
+   "set_key": "dlp/2016/half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney logo pin (Half Marathon Weekend 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Event 22-24 Sep, event merchandise stand"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Single logo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/pin-day-september-2016/jack-skellington-phantom-manor",
+   "set_key": "dlp/2016/pin-day-september-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington with Phantom Manor (Pin Day September 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Jack Skellington",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "attraction",
+     "value": "Phantom Manor",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Manor in background"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jack in front of Phantom Manor",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-17",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Pin Day"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/november-2016-releases/up-house-balloons",
+   "set_key": "dlp/2016/november-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Up house with balloons (November 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Overview name paraphrased"
+    },
+    {
+     "field": "visual_description",
+     "value": "Carl's house lifted by balloons",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "EUR 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "5 Nov"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/november-2016-releases/mary-poppins-rooftops",
+   "set_key": "dlp/2016/november-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins practically perfect (November 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Overview name paraphrased"
+    },
+    {
+     "field": "main_character",
+     "value": "Mary Poppins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mary Poppins silhouette floating above city rooftops",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "5 Nov"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/star-wars-day-december-2016/rogue-one-trooper",
+   "set_key": "dlp/2016/star-wars-day-december-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rogue One Trooper (Star Wars day December 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Name as given in quick overview list"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "One of six separate singles"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/star-wars-day-december-2016/hero",
+   "set_key": "dlp/2016/star-wars-day-december-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hero (Star Wars day December 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Name as given in quick overview list"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "One of six separate singles"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/star-wars-day-december-2016/planet",
+   "set_key": "dlp/2016/star-wars-day-december-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Planet (Star Wars day December 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Name as given in quick overview list"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "One of six separate singles"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/august-2016-releases/descendants-mal-evie",
+   "set_key": "dlp/2016/august-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Descendants Mal and Evie (August 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-august-2016/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mal",
+      "Evie"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-august-2016/",
+     "method": "search_snippet",
+     "note": "Pin with Mal and Evie"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-august-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-august-2016/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-august-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-06",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+     "method": "search_snippet",
+     "note": "Descendants pin on 6 Aug"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-august-2016/",
+     "method": "search_snippet",
+     "note": "Described as one pin showing both"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2016/pin-trading-night-may-2016",
+   "field": "release_location",
+   "searched": "passiondlp Q2; DPB/earlier packets",
+   "note": "Earlier packets give the 27 May venue as Beaver Creek Tavern vs Sequoia Lodge; passiondlp snippet gives no venue. Edition sizes not stated"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-october-2016",
+   "field": "members",
+   "searched": "passiondlp Q4 vs Dedicated to DLP Oct",
+   "note": "Dedicated to DLP calls a Jack Skellington pin the highlight of the 28 Oct night; not reconciled with the Aristocats trio. Edition sizes not stated"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-november-2016",
+   "field": "release_location",
+   "searched": "passiondlp Q4",
+   "note": "Venue (earlier packet: Hotel Cheyenne pin day 25 Nov) and edition sizes not in snippet"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-may-2016",
+   "field": "members",
+   "searched": "passiondlp",
+   "note": "Refresh lanyard pin sold the same night; not recorded as a PTN member (same treatment as 2015 packets)"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-october-2016",
+   "field": "members",
+   "searched": "passiondlp",
+   "note": "Refresh lanyard pin sold the same night; not recorded as a PTN member (same treatment as 2015 packets)"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-november-2016",
+   "field": "members",
+   "searched": "passiondlp",
+   "note": "Refresh lanyard pin sold the same night; not recorded as a PTN member (same treatment as 2015 packets)"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-january-2016",
+   "field": "members",
+   "searched": "passiondlp Q1/Q3 queries; Dedicated to DLP",
+   "note": "PTN held (Jan 29, Mar 25, Jul 29, Aug 26 at Hotel New York per sources); trio not named in any snippet; passiondlp Q1/Q3 pages not surfaced"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-march-2016",
+   "field": "members",
+   "searched": "passiondlp Q1/Q3 queries; Dedicated to DLP",
+   "note": "PTN held (Jan 29, Mar 25, Jul 29, Aug 26 at Hotel New York per sources); trio not named in any snippet; passiondlp Q1/Q3 pages not surfaced"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-july-2016",
+   "field": "members",
+   "searched": "passiondlp Q1/Q3 queries; Dedicated to DLP",
+   "note": "PTN held (Jan 29, Mar 25, Jul 29, Aug 26 at Hotel New York per sources); trio not named in any snippet; passiondlp Q1/Q3 pages not surfaced"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-august-2016",
+   "field": "members",
+   "searched": "passiondlp Q1/Q3 queries; Dedicated to DLP",
+   "note": "PTN held (Jan 29, Mar 25, Jul 29, Aug 26 at Hotel New York per sources); trio not named in any snippet; passiondlp Q1/Q3 pages not surfaced"
+  },
+  {
+   "key": "dlp/2016/swing-into-spring-2016",
+   "field": "format",
+   "searched": "passiondlp Q2 (1 summary); 1 corroboration query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); snippet lists Mickey, Donald, Goofy with 600 copies; unconfirmed elsewhere"
+  },
+  {
+   "key": "dlp/2016/march-2016-releases",
+   "field": "members",
+   "searched": "passiondlp Q2",
+   "note": "lead: the earlier unnamed Spring pin may relate to Swing Into Spring (30 Apr); link rests on subject only, not recorded"
+  },
+  {
+   "key": "dlp/2016/mickey-le-magicien-pin-event/mickey",
+   "field": "set_key",
+   "searched": "Disney Gazette recap via 2 search summaries",
+   "note": "hold: membership rests on one search summary naming Mickey, Fairy Godmother and Genie pins as on sale/sold out; a second summary did not confirm"
+  },
+  {
+   "key": "dlp/2016/mickey-le-magicien-pin-event/fairy-godmother",
+   "field": "set_key",
+   "searched": "Disney Gazette recap via 2 search summaries",
+   "note": "hold: membership rests on one search summary naming Mickey, Fairy Godmother and Genie pins as on sale/sold out; a second summary did not confirm"
+  },
+  {
+   "key": "dlp/2016/mickey-le-magicien-pin-event/genie",
+   "field": "set_key",
+   "searched": "Disney Gazette recap via 2 search summaries",
+   "note": "hold: membership rests on one search summary naming Mickey, Fairy Godmother and Genie pins as on sale/sold out; a second summary did not confirm"
+  },
+  {
+   "key": "dlp/2016/mickey-le-magicien-pin-event/beauty-beast-mini-jumbo",
+   "field": "characters",
+   "searched": "Radio Disney Club; Disney Gazette",
+   "note": "Exact characters on the jumbo not stated (only 'La Belle et la Bete'); edition size not given"
+  },
+  {
+   "key": "dlp/2016/mickey-le-magicien-pin-event",
+   "field": "members",
+   "searched": "Disney Gazette recap",
+   "note": "hold: confirm pin structure; gaway pins listed as Elsa, Lumiere, Rafiki and the Magician (one per buyer per stage); per-design evidence lacking"
+  },
+  {
+   "key": "dlp/2016/cast-member-finding-dory-2016/finding-dory-cast-member",
+   "field": "pin_name",
+   "searched": "passiondlp Q2 vs packet 338",
+   "note": "Assumed same pin as the Dan the Pixar Fan CM pin (subject and year match); confirm"
+  },
+  {
+   "key": "dlp/2016/villains-series/facilier",
+   "field": "set_key",
+   "searched": "Dedicated to DLP Sep",
+   "note": "Villains series link rests on post title only; edition size not stated"
+  },
+  {
+   "key": "dlp/2016/september-2016-releases/pin-trading-medallion",
+   "field": "scope",
+   "searched": "Dedicated to DLP Sep",
+   "note": "scope: confirm pin vs button (described as a lanyard medallion; may be a charm, not a pin)"
+  },
+  {
+   "key": "dlp/2016/september-2016-releases/mary-poppins-le",
+   "field": "pin_name",
+   "searched": "Dedicated to DLP Sep vs packet 321",
+   "note": "hold: may relate to dlp/2016/june-2016-le/mary-poppins (June LE, Pueblo); dates differ, design not described"
+  },
+  {
+   "key": "dlp/2016/half-marathon-weekend-2016/rundisney-logo",
+   "field": "pin_name",
+   "searched": "Dedicated to DLP Sep",
+   "note": "Medal-replica pins also listed (likely the five already recorded); logo pin design, edition and price not given"
+  },
+  {
+   "key": "dlp/2016/pin-day-september-2016/jack-skellington-phantom-manor",
+   "field": "edition_size",
+   "searched": "Dedicated to DLP Sep; 1 query",
+   "note": "Edition size and price not stated"
+  },
+  {
+   "key": "dlp/2016/september-2016-releases",
+   "field": "members",
+   "searched": "Dedicated to DLP Sep",
+   "note": "Post title also mentions Luna; no Luna pin detail in snippets"
+  },
+  {
+   "key": "dlp/2016/november-2016-releases",
+   "field": "members",
+   "searched": "dein-dlrp Nov",
+   "note": "Vaiana lanyard (EUR 9.99) also listed: non-pin item, not recorded. Frozen OE pins still unnamed"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/rogue-one-trooper",
+   "field": "visual_description",
+   "searched": "dein-dlrp Dec overview",
+   "note": "Design and characters not described; rests on overview list name only"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/hero",
+   "field": "visual_description",
+   "searched": "dein-dlrp Dec overview",
+   "note": "Design and characters not described; rests on overview list name only"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/planet",
+   "field": "visual_description",
+   "searched": "dein-dlrp Dec overview",
+   "note": "Design and characters not described; rests on overview list name only"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016",
+   "field": "members",
+   "searched": "dein-dlrp Dec",
+   "note": "Six singles listed as Trooper, Vader, TIE, Hero, Planet, New Rebel; New Rebel assumed = recorded U-Wing. Gap answered by list, not a hold release"
+  },
+  {
+   "key": "dlp/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "field": "members",
+   "searched": "dein-dlrp Dec; 1 query",
+   "note": "Still unnamed: four Imperial trooper helmets, EUR 18.99, unlimited"
+  },
+  {
+   "key": "dlp/2016/august-2016-releases/descendants-mal-evie",
+   "field": "edition_type",
+   "searched": "dein-dlrp Aug, 2 summaries",
+   "note": "One summary mentions a 700 LE Pueblo pin with two ladies; likely the Hook/Lady LE, not this pin; OE kept"
+  },
+  {
+   "key": "dlp/2016/august-2016-releases",
+   "field": "members",
+   "searched": "dein-dlrp Aug; Dedicated to DLP Aug",
+   "note": "released (partial): Descendants item now described as one Mal & Evie pin. Elsa, Cinderella, pink Minnie and 27 Aug Bijou pins still unnamed"
+  },
+  {
+   "key": "dlp/2016/august-2016-releases",
+   "field": "members",
+   "searched": "Dedicated to DLP Aug",
+   "note": "PTN Fri 26 Aug 2016 at Hotel New York; no event pins named"
+  },
+  {
+   "key": "dlp/2016/star-wars-may-the-4th-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: other three LE 600 pins still unnamed; DPB helmet trio again surfaced without DLP-specific tie"
+  },
+  {
+   "key": "dlp/2016/finding-dory-le-2016/dory",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: Salon Mickey June again says 18 June; May 21 conflict unresolved"
+  },
+  {
+   "key": "dlp/2016/finding-dory-booster-may-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: booster members still not named (Salon Mickey: booster 14 May)"
+  },
+  {
+   "key": "dlp/2016/oe/vaiana-vaiana-booster-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: dein-dlrp again only lists Vaiana, Maui, Pua, Heihei as booster contents; no per-design evidence"
+  },
+  {
+   "key": "dlp/2016/oe/maui-vaiana-booster-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: same single contents list; no per-design evidence"
+  },
+  {
+   "key": "dlp/2016/oe/pua-vaiana-booster-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: same single contents list; no per-design evidence"
+  },
+  {
+   "key": "dlp/2016/oe/heihei-vaiana-booster-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: same single contents list; no per-design evidence"
+  },
+  {
+   "key": "dlp/2016/october-2016-releases/annual-spinner",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: Oct post says five 2017 pins on 1 Oct and spinner is yearly; does not state spinner is 2017-dated"
+  },
+  {
+   "key": "dlp/2016/october-2016-releases/mickey-minnie-spinner-poses",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: same as spinner; year text not stated"
+  },
+  {
+   "key": "dlp/2016/2017-dated-pins-october-2016",
+   "field": "members",
+   "searched": "search snippets",
+   "note": "Nine 2017 designs (5 on 1 Oct, 4 on 15 Oct) still not named"
+  },
+  {
+   "key": "dlp/2016/alice-in-wonderland-65th/alice-doorknob",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: DPB again says Disney Store UK release 9 Aug yet Paris exclusive"
+  },
+  {
+   "key": "dlp/2016/december-3-2016-releases",
+   "field": "members",
+   "searched": "search snippets",
+   "note": "Big Ben and Joyeux Noel characters still not stated (LE 600, EUR 14.99, Pueblo)"
+  },
+  {
+   "key": "dlp/2016/january-2016-releases/mickey-new-year-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no Jan 2016 detail found"
+  },
+  {
+   "key": "dlp/2016/january-2016-releases/minnie-new-year-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no Jan 2016 detail found"
+  },
+  {
+   "key": "dlp/2016/oe-set/christmas-noel-booster-2016",
+   "field": "members",
+   "searched": "search snippets",
+   "note": "Booster Noel contents still unnamed (4 pins, EUR 18.99)"
+  },
+  {
+   "key": "dlp/2016/february-2016-le/aristocats-valentines-day",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no new per-design evidence found this pass"
+  },
+  {
+   "key": "dlp/2016/tsum-tsum-april-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no new per-design evidence found this pass"
+  },
+  {
+   "key": "dlp/2016/disneyland-hotel-christmas-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no new per-design evidence found this pass"
+  },
+  {
+   "key": "dlp/2016/easter-eggs-2016",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no new per-design evidence found this pass"
+  },
+  {
+   "key": "dlp/2016/my-dog-series/nana-wendy",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no new per-design evidence found this pass"
+  },
+  {
+   "key": "dlp/2016/christmas-2016-le/fab-four-christmas",
+   "field": "hold",
+   "searched": "search snippets",
+   "note": "hold kept: no new per-design evidence found this pass"
+  },
+  {
+   "key": "dlp/2016",
+   "field": "lines",
+   "searched": "2 queries",
+   "note": "No Disney Village exclusive tied to 2016 found; no dein-dlrp September 2016 post surfaced"
+  },
+  {
+   "key": "dlp/2016/le-reveillon-de-belle-event-2016",
+   "field": "members",
+   "searched": "passiondlp Q4",
+   "note": "Jumbo and surprise gaway pins not announced in advance; designs still not named"
+  },
+  {
+   "key": "dlp/2016",
+   "field": "sources",
+   "searched": "all queries",
+   "note": "No claims from excluded sites; PinPics/PinTradingDB not consulted"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/rogue-one-trooper",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: design known only by a one-word label in an overview list; confirm what the pin shows"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/hero",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: design known only by a one-word label in an overview list; confirm what the pin shows"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/planet",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: design known only by a one-word label in an overview list; confirm what the pin shows"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B029 (DLP 2016). 30 WebSearch calls, all search_snippet summaries. passiondlp Q2/Q4 archives named May, Oct, Nov 2016 PTN trios and CM pins; Dedicated to DLP Sep 2016 and dein-dlrp Nov/Dec/Aug added singles. Reuses 321/338 keys; no 2015 items duplicated."
+}
